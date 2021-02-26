@@ -8,23 +8,15 @@
 	<meta name="format-detection" content="no" />
    
     <title>다이어트 Farm</title>
-     <style type="text/css">
-    .bx-wrapper {
-      -moz-box-shadow: none !important;
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important;
-    }
-</style>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/product_details.css">
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" /> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js">
-    </script>
-
+    <style type="text/css">
+      .bx-wrapper {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+      }
+    </style>
+    <%-include('general/head')%>
+    <link rel="stylesheet" href="/css/product_details.css">
 </head>
     <script>
       $(document).ready(function(){
@@ -44,12 +36,13 @@
     </script> 
 <body>
 
-   <section class="detail_title">
+<section class="detail_title">
     <h2>(아임월) 다이어트 굿 밀..</h2>
-    <a href="#"><img src="images/leftarrow_ico_my.png" style="width:5%"></a>    
-    <div class="btncart"><a href="javascript:void(0);" onclick="mCart('on');"><img src="images/cart_ico_main.png" alt="" style="width:27px;height:27px;"></a>
+    <a href="#"><img src="/images/leftarrow_ico_my.png" style="width:5%"></a>    
+    <div class="btncart">
+        <a href="javascript:void(0);" onclick="mCart('on');"><img src="/images/cart_ico_main.png" alt="" style="width:27px;height:27px;"></a>
     </div>
-     </section>
+</section>
 
    
 <main id="content" class="content">
@@ -60,36 +53,39 @@
         <li><a href="product_details02.html">상세정보</a></li>
         <li><a href="product_details03.html">리뷰</a></li>
         <li><a href="product_details04.html">문의</a></li>
-        </ul>
+    </ul>
     </div>
-<div class="product_wrap">
-<div class="product">
-   <img src="images/dietfarmbread.jpg" style="width:100%">
-    <div class="infoArea01">
-<h2>든든한 한끼 오늘은 현미밥 7종</h2>
+    <div class="product_wrap">
+    <div class="product">
+      <img src="/images/dietfarmbread.jpg" style="width:100%">
+        <div class="infoArea01">
+    <h2>든든한 한끼 오늘은 현미밥 7종</h2>
 
-  <ul>
-<li style="display:none" class=" product_name_css xans-record-">
-<span class="title"><span style="font-size:16px;color:#555555;">상품명</span></span>
-<span class="con"><span style="font-size:18px;color:#555555;">든든한 한끼 오늘은 현미밥 7종</span></span>
-</li>
-<li class=" simple_desc_css xans-record-">
- <span class="con"><span style="font-size:14px;color:#555555;">다른 반찬 필요없이 4분만에 완성하는 균형잡힌 현미밥 식단<p>
-<p></span></span>
-</li>
-<li class="product_custom">
-    <span class="title"></span>
-    <span class="con"><span style="font-size:16px;color:#000;"><span>25,000원</span></span></span>
-</li>
-<li class="product_price">
-    <span class="title"></span>
-    <span class="con"><span style="font-size:15px;color:#000;"><strike>26000원</strike></span></span>
-</li>
-<li class="discount_rate">
-    <span class="title"></span>
-    <span class="con"><span style="font-size:16px;color:rgba(244, 19, 19, 0.97);"><span class="delv_price_B"><strong>5%</strong> </span></span></span>
-</li>
-</ul>
+    <ul>
+        <li style="display:none" class=" product_name_css xans-record-">
+            <span class="title"><span style="font-size:16px;color:#555555;">상품명</span></span>
+            <span class="con"><span style="font-size:18px;color:#555555;">든든한 한끼 오늘은 현미밥 7종</span></span>
+        </li>
+        <li class=" simple_desc_css xans-record-">
+            <span class="con"><span style="font-size:14px;color:#555555;">다른 반찬 필요없이 4분만에 완성하는 균형잡힌 현미밥 식단<p>
+            <p>
+          
+          </span>
+        </span>
+        </li>
+        <li class="product_custom">
+            <span class="title"></span>
+            <span class="con"><span style="font-size:16px;color:#000;"><span>25,000원</span></span></span>
+        </li>
+        <li class="product_price">
+            <span class="title"></span>
+            <span class="con"><span style="font-size:15px;color:#000;"><strike>26000원</strike></span></span>
+        </li>
+        <li class="discount_rate">
+            <span class="title"></span>
+            <span class="con"><span style="font-size:16px;color:rgba(244, 19, 19, 0.97);"><span class="delv_price_B"><strong>5%</strong> </span></span></span>
+        </li>
+    </ul>
 </div>
 </div>
 </div>
@@ -102,7 +98,7 @@
           <td>로그인, 옵션 선택 후 확인 가능합니다.</td>
       </tr>
        <tr>
-         <td><span>배송방법</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td><span>배송방법</span></td>
           <td>업체 택배배송</td>
       </tr>
        <tr>
@@ -152,20 +148,21 @@
    <section class="purchased_products">
      <h3>이 상품과 같이 구매한 상품들</h3>
       <ul class="multiple_bxslider">
-         <li><a href="#"><img src="images/dietfarmbread.jpg" style="width:100%"><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
-         <li><a href="#"><img src="images/dietfarmbread.jpg" style="width:100%"/><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
-         <li><a href="#"><img src="images/dietfarmbread.jpg" style="width:100%"/><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
-         <li><a href="#"><img src="images/dietfarmbread.jpg" style="width:100%"/><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
-         <li><a href="#"><img src="images/dietfarmbread.jpg" style="width:100%"/><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
+         <li><a href="#"><img src="/images/dietfarmbread.jpg" style="width:100%"><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
+         <li><a href="#"><img src="/images/dietfarmbread.jpg" style="width:100%"/><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
+         <li><a href="#"><img src="/images/dietfarmbread.jpg" style="width:100%"/><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
+         <li><a href="#"><img src="/images/dietfarmbread.jpg" style="width:100%"/><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
+         <li><a href="#"><img src="/images/dietfarmbread.jpg" style="width:100%"/><span class="title">제품이름</span><br><span class="price">0원</span></a></li>
       </ul>
    </section><!--purchased_products-->
 </div><!--//pp_wrap-->
          
 <div class="products_ex">
-<img src="images/goobnemall.jpg.crdownload" style="width:100%;height:100%">
+<img src="/images/goobnemall.jpg.crdownload" style="width:100%;height:100%">
 </div>
 
 </main>
+<script src="/js/product.js"></script>
 <%-include('general/footer') %>
 </body>
 </html>
