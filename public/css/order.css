@@ -1,0 +1,50 @@
+*{font-family:'나눔고딕'}
+ td, tr, h1, h2,{padding-left:20px;}
+.detail_title{overflow:hidden;margin:50px 10px 10px 10px;width:100%;}
+ .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:17.2px;margin-right:10p;margin-bottom:10px}
+.detail_title a img{position:absolute;top:50px}
+.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+
+.order{margin-top:20px;width:100%;}
+.order p{font-size:14px;padding-left:15px;padding-right:15px}
+.downArrow{position:absolute;right:20px;}
+
+.order_q .title{font-size:14px;font-weight:bold}
+.order01 table{width:100%;border-bottom:8px solid #E6E6E6}
+.order01 td{padding:20px 15px 15px;font-size:14px;line-height:22px;min-height:51px}
+.order01 tr.order_q td{cursor:pointer;}
+.order01 tr.faq_a{display:none;}
+.order001 li{margin-bottom:14px}
+
+.src_icon{position:absolute;right:10px;top:15px}
+
+.order_b_box{width:100%;margin:auto}
+.coupon_option{margin-top:-20px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no, address=no, email=no" />
+	<meta name="format-detection" content="no" />
+   
+    <title>다이어트 Farm</title>
+    <style type="text/css">
+        .bx-wrapper {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="/js/jquery.bxslider.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/jquery.bxslider.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" /> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js">
+    </script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    </head>
+    <body>
+    <article class="skip_menu">
+        <a href="#"><span>바로가기1</span></a>
+        <a href="#"><span>바로가기2</span></a>
+        <a href="#"><span>바로가기3</span></a>
+    </article>
+    <%-include('general/header') %>
+    <input type="hidden" value="<%=listType %>" id="listType">
+    <% if (listType === 'EVENT') { %>
+    <input type="hidden" value="<%=standCode %>" id="currentStandCode">
+    <% }
+    if (listType === 'CATEGORY') { %>
+        <input type="hidden" value="<%=category1Code %>" id="category1Code">
+        <input type="hidden" value="<%=category2Code %>" id="category2Code">
+    <% } %>
+    
+    <main id="content" class="content">
+        <div class="main_sub_wrap">
+            <section class="main_sub">
+                <h2>신메뉴</h2>
+                <div class="n_sort" >
+                    <div class="sort">
+                        <select name="sortOption" id="sortOption" class=formSelect>
+                            <option value="RECOMMEND" selected>추천순</option>
+                            <option value="NEW">신상품순</option>
+                            <option value="POPULAR">인기상품순</option>
+                            <option value="LOW_PRICE">낮은 가격순</option>
+                            <option value="HIGH_PRICE">높은 가격순</option>
+                        </select>
+                    </div>
+                </div>
+                <ul>
+                    
+                </ul>
+            </section>
+        </div>
+    </main>   <!--//컨텐츠-->
+ 
+    <%-include('general/footer'); %>
+  
+    <script src="/js/products.js"></script>
+    <script>
+        // 햄버거 메뉴
+        $(document).ready(function () {
+
+            $('.btnMenu>a').on('click', function () {
+                $('.sideMenu').show().animate({
+                    left: 0
+                });
+            });
+            $('.slideMenu_close>a').on('click', function () {
+                $('.sideMenu').animate({
+                    left: -100 + '%'
+                }, function () {
+                    $('.sideMenu').hide();
+                });
+            });
+        });
+
+        
+        // 햄버거 2단계 메뉴
+       $(document).ready(function(){
+           $("dt.faq_q").click(function() {
+               if($(this).next('dd').css("display") != "none") {
+                   $(this).next('dd').hide();
+                   $(this).removeClass("current");
+               } else {
+                   $("dd.faq_a").css('display','none');
+                   $("dt.faq_q").removeClass("current");
+                   $(this).next('dd').show();
+                   $(this).addClass("current");
+               }
+           });
+       });
+
+       $(document).ready(function(){
+
+           $('.btnMenu>a').on('click', function(){
+               $('.gnb').hide();
+           });
+       });
+       $('.slideMenu_close>a').on('click',function(){
+           $('.gnb').show();
+       });
+    </script>
+</body>
+</html>
