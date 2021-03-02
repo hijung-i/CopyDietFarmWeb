@@ -1,14 +1,38 @@
+*{font-family:"Nanum Gothic";font-weight:400}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+html, body {max-width: 100%;overflow-x: hidden;
+}
+.detail_title{margin:50px 10px 20px 10px;width:100%;}
+.detail_title h2{text-align:center;position:relative;font-weight:700;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
+.detail_title a img{position:absolute;top:50px}
+.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+body{min-width:360px}
 .instant-search {
   position:relative;
-  width:90%;
+  width:100%;
+  margin:0px auto;
+  
+}
+
+
+/*검색 결과*/
+.result_wrap{width:100%;border-bottom:1px solid #bbbbbb}
+.search_result{margin:50px 20px 80px;width:100%;}
+.search_result h3{font-size:12px;font-weight:bold;margin-bottom:30px}
+.search_result ul li{width:90%;padding:11px;margin-bottom:10px;border-bottom:1px solid #bbbbbb}
+
+
+
+html, body {max-width: 100%;overflow-x: hidden;
+}
+body{min-width:360px}
+.instant-search {
+  position:relative;
+  width:94%;
   margin:10px auto;
   
 }
 
-.instant-search,
-.instant-search__input {
-  font-family: '나눔고딕';
-}
 
 .instant-search,
 .instant-search * {
@@ -50,14 +74,18 @@
 .instant-search__input-container {
   display: inline-flex;
   box-sizing: border-box;
-  width: 100%;
+  width: 90%;
   padding: 9px;
   background: #eeeeee;
+}
+.instant-search__input-container img {
+  padding: 6px;
 }
 
 .instant-search__input-container:focus-within {
   background: #ffffff;
 }
+
 
 .instant-search__input {
   flex-grow: 1;
@@ -107,21 +135,45 @@
   line-height: 1.5;
   margin: 8px 0;
 }
+#searchUsers {
+  display: flex;
+}
+
+
 /*인기 검색어*/
-.popular_wrap{width:100%;border-bottom:1px solid #bbbbbb}
-.popular{margin:40px 20px 40px;width:100%;}
-.popular h2{font-size:12px;font-weight:bold;margin-bottom:10px}
-.popular ul{display:grid;grid-template-columns: repeat(2, 3fr);;align-items: center;
-justify-self: center;width: 100%;margin: 0 auto; }
+.popular_wrap{
+  width:100%; margin: 15px 15px auto;
+  margin-top: 24px;
+}
+.popular{/* margin:40px 20px 40px; */ width:100%;}
+
+.popular h2{
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:10px;
+  margin-left: 8px;
+}
+.popular .search_list {
+  display: flex;
+}
+.popular ul{
+  /* display:grid;
+  grid-template-columns: repeat(1, 5fr);
+  vertical-align:baseline; */
+  align-items: center;
+  justify-self: center;
+  width: 100%;
+  margin: 0 auto; 
+}
 .popular ul li{padding:10px;font-size:14px;}
 .popular ul li span{color:#31845B;font-weight:bold;}
 
 /*추천 검색어*/
-.recommend_wrap{width:100%;border-bottom:1px solid #bbbbbb}
-.recommend{margin:30px 20px 80px;width:100%;}
+.recommend_wrap{width:100%; /* border-bottom:1px solid #bbbbbb */}
+.recommend{margin:0 auto;padding-top:30px;width:90%;}
 .recommend h2{font-size:12px;font-weight:bold;margin-bottom:10px}
 .recommend ul{display:grid;grid-template-columns: repeat(4, 2fr);width: 100%;margin:auto;}
-.recommend ul li{border:1px solid #BBBBBB;border-radius:20px;padding:8px;text-align:center;margin-right:30px;margin-top:10px;font-weight:bold}
+.recommend ul li{border:1px solid #BBBBBB;border-radius:20px;padding:8px;text-align:center;margin-right:7px;margin-top:10px;font-weight:bold}
 
 /*검색 결과*/
 .result_wrap{width:100%;border-bottom:1px solid #bbbbbb}
@@ -129,11 +181,21 @@ justify-self: center;width: 100%;margin: 0 auto; }
 .search_result h3{font-size:12px;font-weight:bold;margin-bottom:30px}
 .search_result ul li{width:90%;padding:11px;margin-bottom:10px;border-bottom:1px solid #bbbbbb}
 
+/*최근 검색*/
+.search_recent{width:100%;padding-left:25px;margin-top:30px}
+.deleteAll{display:flex;justify-content:space-between;padding-right:20px}
+.deleteAll button{border:0;font-size:12px;background-color:transparent}
+.deleteAll h3{font-size:12px}
+.search_recent ul li ul{width:100%;display: flex;justify-content: space-between;padding-right:25px;font-size:14px;padding-top:25px}
 
 
-
-
-
+/* 슬림 라인 */
+.search_line {
+  width: 90%; height: 0.5px;
+  background: #BBBBBB; 
+  margin: 0 auto;
+  margin-top: 14px;
+}
 
 
 

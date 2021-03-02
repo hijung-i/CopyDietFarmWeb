@@ -1,0 +1,117 @@
+*{font-family:"Nanum Gothic";font-weight:400}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+html, body {
+max-width: 100%;
+overflow-x: hidden;
+}
+body{min-width:360px}
+
+
+/*고객센터*/
+.detail_title{margin:50px 10px 20px 10px;width:100%;}
+.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
+.detail_title a img{position:absolute;top:50px}
+.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+.csBox{padding-left:20px;padding-right:20px}
+.csBox h3{font-size:14px;font-weight:bold;margin-bottom:15px}
+.csBox p{font-size:14px;font-weight:bold;color:#31845B;margin-bottom:15px}
+.csBox ul li{float:left;font-size:12px;line-height:20px;margin-bottom:15px}
+.cs01:after{content:" | ";margin-left:5px}
+.cs02{margin-left:10px}
+.btn_area{margin-bottom:50px}
+#btnCS{width:100%;height:45px;text-align:center;border: 0;cursor: pointer;color: #fff;background-color:#31845B;font-size: 14px;
+font-weight: 400;border-radius:5px;}
+#btnCS a{color:#fff;font-size:14px;font-weight:bold;line-height:14px}
+
+/*알림 받기*/
+.alarmBox{margin-top:31px}
+.alarmBox *:not(ul){padding-left:20px;padding-right:20px;}
+.alarmBox h3{font-size:14px;margin-bottom:10px;margin-top:19px}
+.alarmBox ul{width:100%;padding:0;border-bottom:1px solid #BBBBBB}
+.alarmBox ul li{margin-bottom:18px;font-size:12px;color:#878787;line-height:20px}
+
+.alarmSwitch{position:absolute;left:270px;margin-top:-24px}
+
+.switch {
+  position:relative;
+  display:inline-block;
+  width: 33px;
+  height: 22px;
+  margin-top:-30px;
+  text-align:;
+  
+ 
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#fff;
+  border:1px solid #bbbbbb;
+  -webkit-transition: .4s;
+  transition: .4s;
+  
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 2.5px;
+  background-color: #bbbbbb;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider.active-color{color:#F99319 }
+
+input:checked + .slider {
+  background-color: #fff;
+  border:1px solid #F99319;
+  color:#F99319
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #F99319;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+p {
+	margin:0px;
+	display:inline-block;
+	font-size:15px;
+	font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+

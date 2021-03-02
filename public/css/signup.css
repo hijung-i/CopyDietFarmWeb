@@ -1,148 +1,134 @@
-body{padding-left:15px;padding-right:15px}
+*{font-family:"Nanum Gothic";font-weight:400}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+body{padding-left:15px;padding-right:15px;min-width:360px}
+html, body {max-width: 100%;overflow-x: hidden;
+}
+.detail_title{margin:50px 10px 20px 10px;width:100%;}
+.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
+.detail_title a img{position:absolute;top:50px}
+.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+
+/*로그인*/
+
+  :root{--font-color: #4e4e4e;--border-gray-color : #dadada;--yello-color: #EFA543;--yello-border-color: #EFA543;
+}
+
+.login a{position:absolute;left:20px;margin-top:-20px}
+
+.login-input-section-wrap{padding-top: 20px;display: flex;flex-direction: column;align-items: center;}
+
+.login-input-wrap{border: solid 1px var(--border-gray-color );background: white;border-radius:7px;}
+.password-wrap{margin-top: 13px;}
+.login-input-section-wrap h3{text-align:left}
+.login-input-wrap input{border: none;	width:320px;font-size: 14px;margin-left: 10px;padding-bottom:8px}
+.login-button-wrap {padding-top: 13px;}
+.login-button-wrap button{
+	width: 330px;height :48px;
+	font-size: 18px;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:7px
+}
+.login-stay-sign-in{width: 330px;height: 52px;display: flex;font-size: 15px;	color: #4e4e4e;align-items: center;	justify-content: flex-start;border-bottom: solid 1px var(--border-gray-color);
+}
+.login-stay-sign-in i{font-size: 25px;color: #9ba1a3;
+}
+.login-stay-sign-in span{padding-left:5px;line-height: 25px;}
+
+.Easy-sgin-in-wrap{display: flex;flex-direction: column;align-items: center;padding-top: 40px;}
+.Easy-sgin-in-wrap h2{font-size: 20px;}
+.Easy-sgin-in-wrap .sign-button-list
+{padding-top:25px;list-style: none;
+width: 320px;display: flex;flex-direction: column;align-items: center;}
+.Easy-sgin-in-wrap .sign-button-list li{
+padding-bottom: 10px;}
+.Easy-sgin-in-wrap .sign-button-list li button{width: 320px;height:56px;border: solid 1px var(--border-gray-color);text-align: left;background: white;}
+.Easy-sgin-in-wrap .sign-button-list li button i{font-size: 16px; }
+
+.Easy-sgin-in-wrap .sign-button-list li button span{padding-left:0;font-size: 18px;}
+.Easy-sgin-in-wrap ul{margin-left:-20px}
+.Easy-sgin-in-wrap ul li{float:left;margin-left:20px;font-size:14px}
+ .login1:after{content:" | ";margin:0 0 4px}
+ .login2:after{content:" | ";margin:0 0 4px}
+ .login3:after{content:" | ";margin:0 0 4px}
+.fail-button-wrap button{width: 330px;
+height :48px;font-size: 18px;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);  margin-top:200px;border-radius:7px} 
+
+/*아이디 찾기 완료*/
+.idSearchComp, .btnIdSearchComp{width:100%;padding-left:15px;padding-right:15px;margin-bottom:75px;}
+.idSearchComp h3{margin-bottom:18px;margin-top:32px}
+.idSearchComp p{line-height:20px;color:#6B6B6B}
+.id_info{display:flex;justify-content: space-between;margin-bottom:50px}
+.idSearchComp .id_info{margin-top:32px}
+.idSearchComp .id_info li{float:left;}
+
+.buttons{width:95%;margin: 0 auto;display: flex;
+    justify-content: space-between;}
+.btnidSearch, .btnpwdSearch{width: 48%;    height:45px;text-align:center; border:1px solid #EFA543;display:inline-block;border-radius:5px;
+    color:#EFA543;font-size:14px;font-weight:bold;background-color:#FFF}
+.btnSignup{width: 48%;height:45px;text-align:center;border:0;display:inline-block;
+background-color:#EFA543;border-radius:5px;
+color:#fff;font-size:14px;font-weight:bold}
+
+/* 회원가입 */
+
 /* 입력폼 */
+input:focus {outline: none;}
+h3 {margin: 19px 0 8px;font-size: 14px;font-weight: 700;}
+.box {display: block;width: 100%;height: 51px;
+border: solid 1px #dadada;padding: 10px 14px 10px 14px;box-sizing: border-box;background: #fff;position: relative;border-radius:8px;}
+.int {display: block;position: relative;width: 100%;height: 29px;border: none;background:#fff; font-size: 15px;}
+input {font-family: '나눔고딕'}
+.box.int_id {padding-right: 110px;}
+.box.int_pass {padding-right: 40px;}
+.box.int_pass_check {padding-right: 40px;}
+.step_url {position: absolute;top: 16px;right: 13px;font-size: 15px;color: #8e8e8e;}
+.pswdImg {width: 18px;height: 20px;display: inline-block;position: absolute;top: 50%; right: 16px;margin-top: -10px;cursor: pointer;}
+#bir_wrap {display: table;width: 100%;}
+#bir_yy {display: table-cell;width: 147px;}
+#bir_mm {display: table-cell; width: 147px;
+vertical-align: middle;}
+#bir_dd {display: table-cell;width: 147px;}
+#bir_mm, #bir_dd {padding-left: 10px;}
+#gender label{font-size:14px;}
+.signup_top{width:100%;clear:both;margin-bottom:34px;border-bottom:8px solid #F1F1F1}
 
-input:focus {
-    outline: none;
-}
-
-
-h3 {
-    margin: 19px 0 8px;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-
-.box {
-    display: block;
-    width: 100%;
-    height: 51px;
-    border: solid 1px #dadada;
-    padding: 10px 14px 10px 14px;
-    box-sizing: border-box;
-    background: #fff;
-    position: relative;
-    border-radius:8px;
-    
-}
-
-.int {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 29px;
-    border: none;
-    background: #fff;
-    font-size: 15px;
-}
-
-input {
-    font-family: Dotum,'돋움',Helvetica,sans-serif;    
-}
-
-.box.int_id {
-    padding-right: 110px;
-}
-
-.box.int_pass {
-    padding-right: 40px;
-}
-
-.box.int_pass_check {
-    padding-right: 40px;
-}
-
-.step_url {
-    /*@naver.com*/
-    position: absolute;
-    top: 16px;
-    right: 13px;
-    font-size: 15px;
-    color: #8e8e8e;
-}
-
-.pswdImg {
-    width: 18px;
-    height: 20px;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    right: 16px;
-    margin-top: -10px;
-    cursor: pointer;
-}
-
-#bir_wrap {
-    display: table;
-    width: 100%;
-}
-
-#bir_yy {
-    display: table-cell;
-    width: 147px;
-    
-}
-
-#bir_mm {
-    display: table-cell;
-    width: 147px;
-    vertical-align: middle;
-}
-
-#bir_dd {
-    display: table-cell;
-    width: 147px;
-}
-
-#bir_mm, #bir_dd {
-    padding-left: 10px;
-}
-
-select {
-    width: 100%;
-    height: 29px;
-    font-size: 15px;
-    background: #fff url(https://static.nid.naver.com/images/join/pc/sel_arr_2x.gif) 100% 50% no-repeat;
-    background-size: 20px 8px;
-    -webkit-appearance: none;
-    display: inline-block;
-    text-align: start;
-    border: none;
-    cursor: default;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
-}
+/*회원탈퇴*/
+.withdrawal{margin-top:28px;margin-bottom:32px}
+.withdrawal ul{display:flex;justify-content:space-between}
+.withdrawal ul li{float:left;font-size:14px;color:#6B6B6B}
+.withdrawal .w2{text-decoration:underline;}
 
 /* 에러메세지 */
+.error_next_box {margin-top: 9px;font-size: 12px; color: red;display: none;}
 
-.error_next_box {
-    margin-top: 9px;
-    font-size: 12px;
-    color: red;    
-    display: none;
-}
+#alertTxt {position:absolute;top:19px;    right:38px;font-size:12px;color: #ff0404;display: none;}
 
-#alertTxt {
-    position: absolute;
-    top: 19px;
-    right: 38px;
-    font-size: 12px;
-    color: red;
-    display: none;
-}
+/*약관동의*/
+.terms p{margin-bottom:16px}
+.terms p span{font-size:16px;font-weight:bold}
+.gray{color:#6B6B6B;font-size:10px;border-bottom:1px solid #BBBBBB;padding-bottom:15px}
+.terms ul li{margin-bottom:20px}
+.terms ul li span{color:#BBBBBB}
+.leftarrow{position:absolute;right:20px;}
 
 /* 버튼 */
-.btn_area {
-    margin: 30px 0 91px;
-}
+.btn_area {margin: 30px 0 91px;}
+#btnJoin, #save {width: 100%;height:50px;
+text-align:center;border: 0;cursor: pointer;
+color: #fff;background-color: #EFA543;
+font-size: 18px;font-weight: 400;font-family: '나눔고딕';}
 
-#btnJoin, #save {
-    width: 100%;
-    padding: 21px 0 17px;
-    border: 0;
-    cursor: pointer;
-    color: #fff;
-    background-color: #EFA543;
-    font-size: 18px;
-    font-weight: 400;
-    font-family: '나눔고딕';
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

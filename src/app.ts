@@ -4,8 +4,8 @@ import * as logger from 'morgan'
 import * as session from 'express-session'
 import Err from './error/error'
 
-import indexRouter from './routes'
-import userRouter from './routes/user'
+import indexRouter from './routes/indexViewController'
+import userRouter from './routes/userApiController'
 
 import * as path from 'path'
 import { SessionUser } from './models/user'
