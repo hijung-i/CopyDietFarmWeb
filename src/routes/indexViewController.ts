@@ -51,12 +51,16 @@ router.get('/products/:category1Code/category/:category2Code', (req: Request, re
     })
 })
 
-router.get('/search-form/', (req: Request, res: Response, next: NextFunction) => {
+router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'search', {})
 })
 
-router.get('/mypage/', (req: Request, res: Response, next: NextFunction) => {
+router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'my-page', {})
+})
+
+router.get('/faq', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'faq', {})
 })
 
 const render = (res: Response, view: any, data: any | null) => {
