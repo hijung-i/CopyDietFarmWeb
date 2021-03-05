@@ -1,5 +1,5 @@
-// var API_SERVER = "http://192.168.0.3:9090";
-var API_SERVER = "http://112.217.209.162:9090";
+var API_SERVER = "http://192.168.0.3:9090";
+// var API_SERVER = "http://112.217.209.162:9090";
 var RESOURCE_SERVER = "http://112.217.209.162:8000";
 
 function ajaxCall(url, params, type, onSuccess, onError){
@@ -104,6 +104,10 @@ function generateHtmlForProduct(product){
     html += '</a>';
     html += '</li>';
     return html;
+}
+
+function goBack() {
+	window.history.back();
 }
 
 $(function() {

@@ -11,5 +11,5 @@ html, body {max-width: 100%;overflow-x: hidden;
 .noticeBox h3{font-size:14px;font-weight:normal;margin-bottom:7px;line-height:14px}
 .noticeBox ul, .noticeBox p{margin-top:18px;margin-bottom:18px;padding-left:20px;padding-right:20px}
 .nBox_wrap{width:100%;border-bottom:1px solid #E6E6E6}
-.noticeBox ul li{font-size:12px;color:#878787;letter-spacing:0.1px}
-.noticeBox p{line-height:20px;text-indent:-12px;margin-left:15px}
+.noticeBox ul li{font-size:12px;color:#878787;letter-spacing:0.1px;text-align:left}
+.noticeBox p{line-height:20px;text-indent:-12px;margin-left:15px;}

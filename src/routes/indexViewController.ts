@@ -63,6 +63,15 @@ router.get('/faq', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'faq', {})
 })
 
+router.get('/notice', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'notice', {})
+})
+
+router.get('/notice/:boardNo', (req: Request, res: Response, next: NextFunction) => {
+    const boardNo = req.params.boardNo
+    render(res, 'notice_detail', { boardNo: boardNo })
+})
+
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }

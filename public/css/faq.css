@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
 *{font-family:"Nanum Gothic";font-weight:400}
 
 body{min-width:360px}
@@ -8,9 +8,9 @@ overflow-x: hidden;
 }
 /*faq*/
  td, tr, h1, h2,{padding-left:20px;}
-.detail_title{margin:50px 10px 10px 10px;width:100%;}
+.detail_title{margin:47px 10px 10px 10px;width:100%;}
  .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
-.detail_title a img{position:absolute;top:50px}
+.detail_title a img{position:absolute;top:50px;width:17px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 .faq{margin-top:20px;width:100%;}
 .faq_q .title{padding-top:15px}
@@ -36,15 +36,16 @@ overflow-x: hidden;
 #btnInquiry{width:96%;padding:20px 10px 20px 10px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
+.inquiryBox ul li form p textarea{border-radius:5px;width:100%;height:153px}
 .inquiryBox ul {font-weight:bold;}
 .inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
 .inquirybox ul li ul li{line-height:14px}
+
 .filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
 text-align:center;line-height:17px;
 font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
 border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
-.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;
-  margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
+.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
 .filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
 .tab_cont{display:none;min-height:360px;}
 .tab_cont.active{display:block;}
@@ -54,15 +55,16 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
 .productInquiryBox h3{font-size:14px;font-weight:bold;margin-bottom:16px}
 .productInquiryBox form{margin-bottom:18px;}
+
 input[type="checkbox"] {
   display: none;
 }
 
-label {
+.secret{
   position: relative;margin-left:15px;
 }
 
-label::before {
+.secret::before {
   content: "";
   background: url("../images/aftercheck_icon_join@2x.png");
   background-position: center;
@@ -71,18 +73,18 @@ label::before {
   height: 19px;
   position: absolute;
   left: -12px;
-  top: -3px;
+  top: -2px;
   
 
   transform: scale(0) rotateZ(180deg);
  
 }
 
-input[type="checkbox"]:checked + label::before {
+input#secret[type="checkbox"]:checked + .secret::before {
   transform: scale(1) rotateZ(0deg);
 }
 
-label::after {
+.secret::after {
   content: "";
   border: 2px solid #EFA543;
   width: 16px;
@@ -121,7 +123,9 @@ border: 1px solid #BBBBBB;border-radius:5px;}
 .filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;
   margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
 .filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
-
+.previewBox ul li{float:left;border:1px solid #BBBBBB;width:110px;height:110px;margin-top:15px}
+.p2{margin-left:10px}
+.inquiryBox p{clear:both;padding-top:20px}
 
 
 

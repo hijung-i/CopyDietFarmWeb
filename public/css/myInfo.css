@@ -5,7 +5,7 @@ html, body {
 max-width: 100%;
 overflow-x: hidden;
 }
-.detail_title{overflow:hidden;margin:50px 10px 10px 10px;width:100%;}
+.detail_title{overflow:hidden;margin:45px 10px 10px 10px;width:100%;}
  .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px}
 .detail_title a img{position:absolute;top:50px}
 
@@ -43,6 +43,8 @@ h3 {margin: 19px 0 8px;font-size: 14px;font-weight:700;}
     background: #fff;font-size: 15px;}
 
 input {font-family: Dotum,'나눔돋움',Helvetica,sans-serif;}
+
+.join_title01{margin-top:32px}
 
 .box.int_id {padding-right: 110px;}
 
@@ -87,9 +89,5 @@ select { width: 100%;height: 29px;font-size: 15px;background: #fff url(https://s
 
 .btn_area {margin-bottom:20px;margin: 30px 0px 91px;}
 
-#btnJoin, #save {width: 100%;text-align:center;
-    padding:20px;border: 0;cursor: pointer;
-    color: #fff;background-color: #EFA543;
-    font-size: 18px;font-weight: 400;font-family: '나눔고딕';}
-#btnModify{width:100%;;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+#btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
 font-weight: 400;border-radius:5px;}
