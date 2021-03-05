@@ -40,7 +40,6 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 				if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
 				if(isAvailable(option.address) && option.address == true) params.address = user.address
 			}
-			
 			ajaxCall(url, params, type, onSuccess, onError);
 		
 		},
