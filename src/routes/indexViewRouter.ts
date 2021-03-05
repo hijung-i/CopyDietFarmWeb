@@ -22,12 +22,8 @@ router.get('/login-form', (req: Request, res: Response, next: NextFunction) => {
 })
 
 router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {
-    const isLoggedIn: boolean | undefined = req.session.isLoggedIn
-    if (isLoggedIn === true) {
-        res.redirect('/')
-    }
-
-    render(res, 'product', {})
+    const productCode = req.params.productCode
+    render(res, 'product', { productCode: productCode })
 })
 
 router.get('/products/:salesStandCode/event', (req: Request, res: Response, next: NextFunction) => {

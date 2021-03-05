@@ -4,8 +4,10 @@ import * as logger from 'morgan'
 import * as session from 'express-session'
 import Err from './error/error'
 
-import indexRouter from './routes/indexViewController'
-import userRouter from './routes/userApiController'
+import indexViewRouter from './routes/indexViewRouter'
+import requireLoginViewRouter from './routes/requireLoginViewRouter'
+
+import userApiRouter from './routes/userApiRouter'
 
 import * as path from 'path'
 import { SessionUser } from './models/user'
@@ -33,8 +35,9 @@ app.use(cookieParser())
 
 app.use(logger('dev'))
 
-app.use('/', indexRouter)
-app.use('/user', userRouter)
+app.use('/', indexViewRouter)
+app.use('/', requireLoginViewRouter)
+app.use('/user', userApiRouter)
 
 app.set('views', path.join(__baseDir, 'views'))
 app.set('view engine', 'ejs')

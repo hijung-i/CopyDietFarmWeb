@@ -25,7 +25,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: 'http://localhost:3000/user/login',
+		url: '/user/login',
 		dataType: "json",
 		success: function(data) {
 			if(option.isRequired == true && data.isLoggedIn != true) {		
@@ -94,7 +94,7 @@ function generateHtmlForProductList(products){
 function generateHtmlForProduct(product){
     var html = '';
     html += '<li>';
-    html += '<a href="#">';
+    html += '<a href="/product/'+ product.productCode+'">';
     html += '<div class="thum"><img src="'+RESOURCE_SERVER + product.url + '" alt="썸네일 이미지">';
     html += '</div>';
     html += '<div class="desc">';

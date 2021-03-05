@@ -26,6 +26,19 @@ function getProductDetail(){
         $('.infoArea01 .product_price .con strike').html(numberFormat(product.supplyPrice)+'원');
         $('.infoArea01 .discount_rate .con strong').html(numberFormat(product.discountRate)+'%');
 
+        var optionHtml = '';
+        for(var i = 0; i < product.options.length; i++){
+            var option = product.options[i];
+            optionHtml += `<option value="${option.optionCode}">${option.optionDesc}</option>`;
+        }
+        $('select optgroup').html(optionHtml);
+        var detailHtml = '';
+        for(var i = 0; i < product.detail.length; i++){
+            var image = product.detail[i];
+            detailHtml += `<img src="${RESOURCE_SERVER + image.url}" style="width:100%;height:100%">`
+        }
+        
+        $('.products_ex').html(detailHtml);
         console.log("productDetail success", data);
     }, function (err) {
         console.log("productDetail error", err);
