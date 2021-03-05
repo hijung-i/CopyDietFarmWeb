@@ -72,6 +72,10 @@ router.get('/notice/:boardNo', (req: Request, res: Response, next: NextFunction)
     render(res, 'notice_detail', { boardNo: boardNo })
 })
 
+router.get('/cs-center', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'cs_center', {})
+})
+
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }
