@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="format-detection" content="no" />
+
+    <title>다이어트 Farm</title>
+    <link rel="stylesheet" href="/css/myPage.css">
+    <%-include('general/head') %>
+</head>
+
+<body>
+
+    <section class="detail_title">
+        <h2>친구 초대</h2>
+        <script type="text/javascript">
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
+        </div>
+    </section>
+
+    <main id="content" class="content">
+        <div class="f_recommd">
+            <h3>친구 초대하기</h3>
+            <p>초대받은 친구가 회원가입을 완료하면<br>친구도 나도 1000P가 지급됩니다.</p>
+        </div>
+        <div class="btn_area">
+            <button type="button" id="btnKakao">카카오톡으로 친구 초대</button>
+        </div>
+        <div class="btn_area">
+            <button type="button" id="btnURL">URL 복사하기</button>
+        </div>
+    </main>
+</body></html>

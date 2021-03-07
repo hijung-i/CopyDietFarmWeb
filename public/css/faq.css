@@ -1,5 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
-*{font-family:"Nanum Gothic";font-weight:400}
+*{font-family:"나눔고딕";font-weight:400}
 
 body{min-width:360px}
 html, body {
@@ -8,9 +7,9 @@ overflow-x: hidden;
 }
 /*faq*/
  td, tr, h1, h2,{padding-left:20px;}
-.detail_title{margin:47px 10px 10px 10px;width:100%;}
+.detail_title{margin:40px 10px 10px 10px;width:100%;}
  .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
-.detail_title a img{position:absolute;top:50px;width:17px}
+.detail_title a img{position:absolute;top:42px;width:17px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 .faq{margin-top:20px;width:100%;}
 .faq_q .title{padding-top:15px}
@@ -33,20 +32,22 @@ overflow-x: hidden;
 
 /*판매자 문의하기*/
 .btn_area {width:100%;clear:both;border-top:8px solid #E6E6E6;padding-right:15px}
-#btnInquiry{width:96%;padding:20px 10px 20px 10px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+#btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
 .inquiryBox ul li form p textarea{border-radius:5px;width:100%;height:153px}
-.inquiryBox ul {font-weight:bold;}
+.inquiryBox h3{font-size:12px;font-weight:bold}
 .inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
-.inquirybox ul li ul li{line-height:14px}
-
+.inquiryBox ul li ul li{line-height:14px}
+.inquiryBox .words form{margin-top:-20px}
 .filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
 text-align:center;line-height:17px;
 font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
 border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
 .filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
+.filebox p span{text-decoration:underline
+}
 .tab_cont{display:none;min-height:360px;}
 .tab_cont.active{display:block;}
 
@@ -98,7 +99,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
 /*리뷰쓰기*/
 .review01{width:100%;border-bottom:1px solid #f1f1f1;padding-bottom:10px}
 .reviewProduct ul li{font-weight:normal;margin-top:10px;}
-.star_grade{text-align:center;}
+.star_grade{text-align:center;border-bottom:1px solid #E6E6E6;margin-bottom:25px}
 .star_grade p{margin-top:20px;font-size:16px;font-weight:bold}
 .starRev{display:inline-block;margin:0 auto;margin-bottom:20px;margin-top:10px} 
 .starRev span{padding:5px}
@@ -109,7 +110,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
 .starR1.on{background-position:0 0;}
 .starR2.on{background-position:-15px 0;}
 .btn_area {width:100%;clear:both;border-top:8px solid #E6E6E6}
-#btnModify{width:100%;padding:21px 0 17px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+#btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  10px 0px;}
 .reviewModifyBox{padding-left:20px;padding-right:20px;margin-bottom:20px}
 .reviewModifyBox ul{font-size:12px;font-weight:bold;}
@@ -122,8 +123,9 @@ font-weight:bold;vertical-align: middle; background-color:transparent;cursor: po
 border: 1px solid #BBBBBB;border-radius:5px;}
 .filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;
   margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
-.filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
+.filebox p{color:#878787;line-height:20px;font-weight:normal;padding-top:20px}
 .previewBox ul li{float:left;border:1px solid #BBBBBB;width:110px;height:110px;margin-top:15px}
+.filebox{margin-top:25px}
 .p2{margin-left:10px}
 .inquiryBox p{clear:both;padding-top:20px}
 

@@ -4,9 +4,9 @@ html, body {max-width: 100%;overflow-x: hidden;
 }
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
 /*공지사항*/
-.detail_title{margin:50px 10px 20px 10px;width:100%;}
+.detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:30px;margin-top:2px}
-.detail_title a img{position:absolute;top:50px}
+.detail_title a img{position:absolute;top:42px;width:17px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 .noticeBox h3{font-size:14px;font-weight:normal;margin-bottom:7px;line-height:14px}
 .noticeBox ul, .noticeBox p{margin-top:18px;margin-bottom:18px;padding-left:20px;padding-right:20px}

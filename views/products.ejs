@@ -3,105 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-	<meta name="format-detection" content="telephone=no, address=no, email=no" />
-	<meta name="format-detection" content="no" />
-   
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="format-detection" content="no" />
+
     <title>다이어트 Farm</title>
-    <style type="text/css">
-        .bx-wrapper {
-        -moz-box-shadow: none !important;
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important;
+    <%-icnlude('general/head') %>
+    <style>
+        #mHeader .tab_cont {
+            display: none;
+            min-height: 360px;
+        }
+
+        #mHeader .tab_cont.active {
+            display: block;
+            background: #fff;
+            position: absolute;
+            width: 100%
+        }
+
+        nav a:nth-child(3) {
+            color: #F99319;
         }
     </style>
-    <%-include('general/head') %>
 
 </head>
+
 <body>
     <article class="skip_menu">
         <a href="#"><span>바로가기1</span></a>
         <a href="#"><span>바로가기2</span></a>
         <a href="#"><span>바로가기3</span></a>
     </article>
-    <%-include('general/header') %>
-    <input type="hidden" value="<%=listType %>" id="listType">
-    <% if (listType === 'EVENT') { %>
-    <input type="hidden" value="<%=standCode %>" id="currentStandCode">
-    <% }
-    if (listType === 'CATEGORY') { %>
-        <input type="hidden" value="<%=category1Code %>" id="category1Code">
-        <input type="hidden" value="<%=category2Code %>" id="category2Code">
-    <% } %>
     
+    <%-include('general/header') %>
+
     <main id="content" class="content">
         <div class="main_sub_wrap">
             <section class="main_sub">
                 <h2>신메뉴</h2>
-                <div class="n_sort" >
-                    <div class="sort">
-                        <select name="sortOption" id="sortOption" class=formSelect>
-                            <option value="RECOMMEND" selected>추천순</option>
-                            <option value="NEW">신상품순</option>
-                            <option value="POPULAR">인기상품순</option>
-                            <option value="LOW_PRICE">낮은 가격순</option>
-                            <option value="HIGH_PRICE">높은 가격순</option>
-                        </select>
+                <form name="#" id="#" method="get" action="#">
+                    <div class="n_sort">
+                        <div class="sort">
+                            <select name="#" id="#" class=formSelect>
+                                <option value="#">추천순</option>
+                                <option value="#">신상품순</option>
+                                <option value="#">인기상품순</option>
+                                <option value="#">낮은 가격순</option>
+                                <option value="#">높은 가격순</option>
+                            </select>
+                        </div>
                     </div>
+                </form>
+                <div class="sub_items">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="title">제품이름</p>
+                                    <ul>
+                                        <li class="sale">23,400원</li>
+                                        <li class="cost">26,000원</li>
+                                        <li class="ratio">10%</li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="title">제품이름</p>
+                                    <ul>
+                                        <li class="sale">23,400원</li>
+                                        <li class="cost">26,000원</li>
+                                        <li class="ratio">10%</li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="title">제품이름</p>
+                                    <ul>
+                                        <li class="sale">23,400원</li>
+                                        <li class="cost">26,000원</li>
+                                        <li class="ratio">10%</li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="title">제품이름</p>
+                                    <ul>
+                                        <li class="sale">23,400원</li>
+                                        <li class="cost">26,000원</li>
+                                        <li class="ratio">10%</li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="title">제품이름</p>
+                                    <ul>
+                                        <li class="sale">23,400원</li>
+                                        <li class="cost">26,000원</li>
+                                        <li class="ratio">10%</li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="title">제품이름</p>
+                                    <ul>
+                                        <li class="sale">23,400원</li>
+                                        <li class="cost">26,000원</li>
+                                        <li class="ratio">10%</li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <ul>
-                    
-                </ul>
             </section>
         </div>
-    </main>   <!--//컨텐츠-->
- 
-    <%-include('general/footer'); %>
-  
-    <script src="/js/products.js"></script>
+
+    </main>
+    <!--//컨텐츠-->
+
+    <!--//푸터시작-->
+    <footer id="footer">
+        <div class="footer_inq_info">
+            <div class="top_wrap">
+                <ul class="customer_center">
+                    <li>
+                        <p class="top">고객센터</p>
+                    </li>
+                    <li>
+                        <p class="middle">070-4366-3299</p>
+                    </li>
+                    <li>
+                        <p class="bottom">월~금 10:00~17:00</p>
+                    </li>
+                    <li>
+                        <p class="bottom">점심시간 12:00~13:00</p>
+                    </li>
+                    <li>
+                        <p class="bottom">토,일,공휴일 휴무</p>
+                    </li>
+                </ul>
+                <ul class="account">
+                    <li>
+                        <p class="top">계좌번호</p>
+                    </li>
+                    <li>
+                        <p class="middle">농협<br>317-0021-9321-31</p>
+                    </li>
+                    <li>
+                        <p class="bottom">예금주 (주)데이터플로</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom_wrap">
+                <ul class="notice">
+                    <li>
+                        <p class="top">공지사항</p>
+                    </li>
+                    <li>
+                        <p class="bottom">1월 연휴 배송안내</p>
+                    </li>
+                    <li>
+                        <p class="bottom">추석 연휴 배송안내</p>
+                    </li>
+                </ul>
+
+                <ul class="channelTalk">
+                    <li><a href="#"><img src="./images/talk_icon1_footer.png" alt="채널톡1">채널톡 문의</a></li>
+                    <li><a href="#"><img src="./images/talk_icon2_footer.png" alt="채널톡2">판매자 문의 (주문건)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="footer_bottom">
+            <div class="footer_bottom_wrap">
+                <ul class="grand_title">
+                    <li>사업자정보확인 <span><img src="./images/l_icon_category.png" alt="구분바"></span></li>
+                    <li>개인정보처리방침 <span><img src="./images/l_icon_category.png" alt="구분바"></span></li>
+                    <li>이용약관</li>
+                </ul>
+
+                <div class="footer_bottom_ctt">
+                    <ul class="represent">
+                        <li class="companyName">(주)데이터플로&nbsp;</li>
+                        <li>대표 : 유승열</li>
+                    </ul>
+                    <ul class="company_info">
+                        <li>사업자등록번호 : 509-81-05501</li>
+                        <li>통신판매업 신고번호 :</li>
+                        <li>건강기능식품 판매업 : 제 2021-0105159 호</li>
+                        <li>개인정보보호책임자 : 유승열</li>
+                        <li>주소 : 서울시 강남구 테헤란로8길 11-4 신도빌딩, 2층 202호</li>
+                        <li>팩스 : 070-7500-7691</li>
+                        <li>이메일 : <span class="point">dietfarm119@gmail.com</span></li>
+                    </ul>
+                    <ul class="importPoint">
+                        <li>입점문의 : <span class="point">입점문의하기</span></li>
+                        <li>제휴문의 : <span class="point">dietfarm119@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </footer>
+
     <script>
         // 햄버거 메뉴
-        $(document).ready(function () {
+        $(document).ready(function() {
 
-            $('.btnMenu>a').on('click', function () {
+            $('.btnMenu>a').on('click', function() {
                 $('.sideMenu').show().animate({
                     left: 0
                 });
             });
-            $('.slideMenu_close>a').on('click', function () {
+            $('.slideMenu_close>a').on('click', function() {
                 $('.sideMenu').animate({
                     left: -100 + '%'
-                }, function () {
+                }, function() {
                     $('.sideMenu').hide();
                 });
             });
         });
 
-        
+
         // 햄버거 2단계 메뉴
-       $(document).ready(function(){
-           $("dt.faq_q").click(function() {
-               if($(this).next('dd').css("display") != "none") {
-                   $(this).next('dd').hide();
-                   $(this).removeClass("current");
-               } else {
-                   $("dd.faq_a").css('display','none');
-                   $("dt.faq_q").removeClass("current");
-                   $(this).next('dd').show();
-                   $(this).addClass("current");
-               }
-           });
-       });
+        $(document).ready(function() {
+            $("dt.faq_q").click(function() {
+                if ($(this).next('dd').css("display") != "none") {
+                    $(this).next('dd').hide();
+                    $(this).removeClass("current");
+                } else {
+                    $("dd.faq_a").css('display', 'none');
+                    $("dt.faq_q").removeClass("current");
+                    $(this).next('dd').show();
+                    $(this).addClass("current");
+                }
+            });
+        });
 
-       $(document).ready(function(){
+        $(document).ready(function() {
 
-           $('.btnMenu>a').on('click', function(){
-               $('.gnb').hide();
-           });
-       });
-       $('.slideMenu_close>a').on('click',function(){
-           $('.gnb').show();
-       });
+            $('.btnMenu>a').on('click', function() {
+                $('.gnb').hide();
+            });
+        });
+        $('.slideMenu_close>a').on('click', function() {
+            $('.gnb').show();
+        });
     </script>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+</body></html>

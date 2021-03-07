@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="format-detection" content="no" />
+
+    <title>다이어트 Farm</title>
+    <style type="text/css">
+        .filebox label {
+            display: inline-block;
+            padding: .5em .75em;
+            color: #999;
+            font-size: inherit;
+            line-height: normal;
+            vertical-align: middle;
+            background-color: #fdfdfd;
+            cursor: pointer;
+            border: 1px solid #ebebeb;
+            border-bottom-color: #e2e2e2;
+            border-radius: .25em;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/faq.css">
+    <%-include('general/head') %>
+    <script type="text/javascript">
+        $('.starRev span').click(function() {
+            $(this).parent().children('span').removeClass('on');
+            $(this).addClass('on').prevAll('span').addClass('on');
+            return false;
+        });
+    </script>
+</head>
+
+<body>
+
+    <section class="detail_title">
+        <h2>리뷰쓰기</h2>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:20px"> </a>
+        </div>
+    </section>
+
+    <main id="content" class="content">
+        <div class="reviewModifyBox">
+            <div class="review01">
+                <table>
+                    <tbody>
+                        <tr class="reviewProduct">
+                            <td>
+                                <div class="detailBox">
+                                    <a href="#"><img src="/images/dietfarmbread.jpg" align="left" style="width:90px;margin-right:15px"></a>
+                                    <ul class="reviewProductInfo">
+                                        <li>디어썸라이프</li>
+                                        <li>[디어썸1]간편하고 든든한 고구마스틱 300g</li>
+                                        <li>간편하고 든든한 고구마스틱 300g (20g*15개입)</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="star_grade" class="star_grade">
+                <p>별점으로 만족도를 선택해주세요</p>
+
+                <div class="starRev">
+                    <span class="starR1 on">별1_왼쪽</span>
+                    <span class="starR2">별1_오른쪽</span>
+                    <span class="starR1">별2_왼쪽</span>
+                    <span class="starR2">별2_오른쪽</span>
+                    <span class="starR1">별3_왼쪽</span>
+                    <span class="starR2">별3_오른쪽</span>
+                    <span class="starR1">별4_왼쪽</span>
+                    <span class="starR2">별4_오른쪽</span>
+                    <span class="starR1">별5_왼쪽</span>
+                    <span class="starR2">별5_오른쪽</span>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <form>
+                        <p><textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px"></textarea></p>
+                    </form>
+                </li>
+            </ul>
+            <div class="filebox">
+                <label for="upload">사진 (선택)</label>
+                <input type="file" id="upload" name="upload">
+                <div id="preview">
+                    <div class="previewBox">
+                        <ul>
+                            <li></li>
+                            <li class="p2"></li>
+                        </ul>
+                    </div>
+                    <!-- 미리보기 공간 -->
+                </div>
+
+                <script>
+                    var upload = document.querySelector('#upload');
+                    var preview = document.querySelector('#preview');
+
+                    upload.addEventListener('change', function(e) {
+                        var get_file = e.target.files;
+
+                        var image = document.createElement('img');
+
+                        /* FileReader 객체 생성 */
+                        var reader = new FileReader();
+
+                        /* reader 시작시 함수 구현 */
+                        reader.onload = (function(aImg) {
+                            console.log(1);
+
+                            return function(e) {
+                                console.log(3);
+                                /* base64 인코딩 된 스트링 데이터 */
+                                aImg.src = e.target.result
+                            }
+                        })(image)
+
+                        if (get_file) {
+                            /* 
+                                get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
+                                onload 에 설정했던 return 으로 넘어간다.
+                                이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
+                            */
+                            reader.readAsDataURL(get_file[0]);
+                            console.log(2);
+                        }
+
+                        preview.appendChild(image);
+                    })
+                </script>
+                <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
+            </div>
+        </div>
+
+        <div class="btn_area">
+            <button type="button" id="btnModify">수정</button>
+        </div>
+    </main>
+</body></html>

@@ -1,14 +1,15 @@
-*{font-family:"Nanum Gothic";font-weight:400}
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+*{font-family:'나눔고딕';font-weight:400}
+
 body{min-width:360px;max-width:100%}
-.detail_title{margin:50px 10px 20px 10px;width:100%;}
+.detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-top:-10px}
-.detail_title a img{position:absolute;top:50px}
+.detail_title a img{position:absolute;top:42px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 /*마이페이지*/
 
 .myPage01{width:100%;padding-top:10px;padding-bottom:12px}
+.myPage01 h3{font-size:16px}
 .myPage01, .myPage02, .myPage03, .myPage04, myPage05{width:100%;border-bottom:8px solid #F1F1F1}
 .myPage ul{width:100%;padding:0;clear:both;display:flex;
   justify-content: space-between;border-bottom:0.5px solid #bbbbbb}
@@ -26,7 +27,7 @@ background-color:#F99319;border-radius:5px;
 
 /*포인트*/
 
-
+ul, li, p{list-style:none}
 /* 현재 포인트 */
 .current_point > p {
     text-align: center;
@@ -43,10 +44,9 @@ background-color:#F99319;border-radius:5px;
     background: #F1F1F1;
 }
 
-/* 포인트 기록 */
 .point_history {
     position: relative;
-    right: 16%;
+    right: 18%;
     width: 100%;
     display: flex;
     align-items: center;

@@ -1,5 +1,14 @@
 $(function() {
     getProductDetail();
+
+    $('ul.tab_wrap li').click(function() {
+        var activeTab = $(this).attr('data-tab');
+        $('.tab_wrap li').removeClass('active');
+        $('.tab_cont').removeClass('active');
+        $(this).addClass('active');
+        $('#' + activeTab).addClass('active');
+    })
+
 })
 
 function getProductDetail(){
@@ -29,13 +38,14 @@ function getProductDetail(){
         var optionHtml = '';
         for(var i = 0; i < product.options.length; i++){
             var option = product.options[i];
-            optionHtml += `<option value="${option.optionCode}">${option.optionDesc}</option>`;
+            optionHtml += '<option value="' + option.optionCode +'" '+ ((i==0)?'selected':'')+'>'+ option.optionDesc+'</option>';
         }
-        $('select optgroup').html(optionHtml);
+        $('select#products').html(optionHtml);
+        
         var detailHtml = '';
         for(var i = 0; i < product.detail.length; i++){
             var image = product.detail[i];
-            detailHtml += `<img src="${RESOURCE_SERVER + image.url}" style="width:100%;height:100%">`
+            detailHtml += '<img src="'+ RESOURCE_SERVER + image.url +'" style="width:100%;height:100%">';
         }
         
         $('.products_ex').html(detailHtml);

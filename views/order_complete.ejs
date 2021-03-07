@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="format-detection" content="no" />
+
+    <title>다이어트 Farm</title>
+    <link rel="stylesheet" href="/css/order.css">
+    <%-include('general/head') %>
+
+</head>
+
+<body>
+
+    <section class="detail_title">
+        <h2 style="margin-left:-15px">주문완료</h2>
+        <a href="#"><img src="/images/leftarrow_ico_my.png" style="width:17px"></a>
+    </section>
+
+
+    <main id="content" class="content">
+        <div class="order_complete_info">
+            <h3>주문이 완료되었습니다.</h3>
+            <div class="order_complete_wrap">
+                <table>
+                    <tr class="order_no">
+                        <td><span>주문번호</span></td>
+                        <td>2020101920201019
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>배송지</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td style="line-height:24px">서울 강남구 테헤란로 8길 11-4 202호<br>박민지 010-1234-5678</td>
+
+                    </tr>
+                    <tr>
+                        <td><span>결제정보</span></td>
+                        <td>
+                            <ul>
+                                <li>신용카드</li>
+                                <li>우리카드(1234 **** 8888 567*)</li>
+                                <li>일시불</li>
+                                <li>2020-11-12 11:30:39</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>결제금액</span></td>
+                        <td style="color:#31845B">100,0000원</td>
+                    </tr>
+                    <tr>
+                        <td><span>포인트</span></td>
+                        <td style="color:#31845B;">150p</td>
+                    </tr>
+                </table>
+                <p style="text-align:center;color:#878787;margin-bottom:38px">- 포인트는 구매확정 후 적립됩니다.</p>
+            </div>
+        </div>
+        <div class="btn_area">
+            <a href="index.html"><button type="button" id="btnOrder">홈으로</button></a>
+        </div>
+    </main>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            $("tr.order_q").click(function() {
+                if ($(this).next('tr').css("display") != "current") {
+                    $(this).next('tr').hide();
+                    $(this).removeClass("none");
+                } else {
+                    $("tr.order_a").css('display', 'current');
+                    $("tr.order_q").removeClass("current");
+                    $(this).next('tr').show();
+                    $(this).addClass("none");
+                }
+            });
+        });
+    </script>
+
+</body></html>

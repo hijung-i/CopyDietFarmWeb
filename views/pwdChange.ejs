@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="format-detection" content="no" />
+
+    <title>다이어트 Farm 로그인</title>
+    <link rel="stylesheet" href="/css/signup.css">
+    <%-include('general/head') %>
+</head>
+
+<body>
+    <section class="detail_title">
+        <h2>비밀번호 변경</h2>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
+        </div>
+    </section>
+
+    <!-- wrapper -->
+    <div id="wrapper">
+
+        <!-- content-->
+        <div id="content">
+
+            <!-- ID -->
+            <div>
+                <h3 class="join_title">
+                    <label for="id">아이디</label>
+                </h3>
+                <span class="box int_id">
+                    <input type="text" id="id" class="int" maxlength="20" placeholder="내 현재 아이디가 떠야함">
+                </span>
+                <span class="error_next_box"></span>
+            </div>
+
+            <!-- PW1 -->
+            <div>
+                <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+                <span class="box int_pass">
+                    <input type="password" id="pswd1" class="int" maxlength="20" placeholder="새 비밀번호를 입력해주세요">
+                    <span id="alertTxt">사용불가</span>
+                    <img src="/images/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
+                </span>
+                <span class="error_next_box"></span>
+            </div>
+
+            <!-- PW2 -->
+            <div>
+                <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
+                <span class="box int_pass_check">
+                    <input type="password" id="pswd2" class="int" maxlength="20" placeholder="새 비밀번호를 한번 더 입력해주세요.">
+                    <img src="/images/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
+                </span>
+                <span class="error_next_box"></span>
+            </div>
+            <div>
+                <h3 class="join_title"><label for="name">이름</label></h3>
+                <span class="box int_name">
+                    <input type="text" id="name" class="int" maxlength="20" placeholder=내이름>
+                </span>
+                <span class="/images/error_next_box"></span>
+            </div>
+            <div>
+                <h3 class="join_title"><label for="email">이메일</label></h3>
+                <span class="box int_email">
+                    <input type="text" id="email" class="int" maxlength="80" placeholder="내이메일@naver.com">
+                </span>
+                <span class="/images/error_next_box"></span>
+            </div>
+            <div>
+                <h3 class="join_title"><label for="tel">휴대폰</label></h3>
+                <span class="box int_tel">
+                    <input type="text" id="tel" class="int" maxlength="20" placeholder="010-1234-5678">
+                </span>
+                <span class="/images/error_next_box"></span>
+            </div>
+
+            <!-- BIRTH -->
+            <div>
+                <h3 class="join_title"><label for="yy">생년월일</label></h3>
+
+                <div id="bir_wrap">
+                    <!-- BIRTH_YY -->
+                    <div id="bir_yy">
+                        <span class="box">
+                            <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)">
+                        </span>
+                    </div>
+
+                    <!-- BIRTH_MM -->
+                    <div id="bir_mm">
+                        <span class="box">
+                            <input type="text" id="dd" class="int" maxlength="2" placeholder="월">
+                        </span>
+                    </div>
+
+
+                    <div id="bir_dd">
+                        <span class="box">
+                            <input type="text" id="dd" class="int" maxlength="2" placeholder="일">
+                        </span>
+                    </div>
+
+                </div>
+                <span class="error_next_box"></span>
+            </div>
+
+            <!-- GENDER -->
+            <div id="gender">
+                <h3 class="join_title"><label for="gender">성별</label></h3>
+                <input type="radio" name="gender" id="male" value="m">
+                <label for="apply" style="margin-right:40px">남자</label>
+                <input type="radio" name="gender" id="female" value="f">
+                <label for="apply">여자</label>
+            </div>
+            <div class="member_delete">
+                <p>회원정보를 삭제하시겠어요?</p>
+                <ul>
+                    <li><a href="membership_withdrawal.html">회원탈퇴</a></li>
+                </ul>
+            </div>
+
+            <!-- JOIN BTN-->
+            <div class="btn_area" style="margin-top:20px">
+                <button type="button" id="btnJoin">
+                    <span>수정하기</span>
+                </button>
+            </div>
+
+
+
+        </div>
+        <!-- content-->
+
+    </div>
+    <!-- wrapper -->
+    <script src="signup.js"></script>
+</body></html>

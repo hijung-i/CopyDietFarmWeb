@@ -44,10 +44,18 @@ function getStandDatas() {
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
-                    html += '<li><a href="#">';
-                    html += '<img src="'+RESOURCE_SERVER+ product.url+'" style="width:100%">';
-                    html += '<span class="title">' + product.productName +'</span><br>';
-                    html += '<span class="price">'+ numberFormat(product.discountPrice)+'원</span></a></li>';
+                    html += '<li>'
+                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'" style="width:100%">';
+                    html += '<span class="title">' + product.productName + '</span><br>';
+                    html += '<span class="price">';
+                    html += '<ul>';
+                    html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
+                    html += '<li class="cost">' + numberFormat(product.supplyPrice) + '원</li>';
+                    html += '<li class="ratio">' + product.discountRate + '%</li>';
+                    html += '</ul>';
+                    html += '</span>';
+                    html += '</a>';
+                    html += '</li>';
                 }
 
                 $('.s_price .multiple_bxslider').html(html);
@@ -85,6 +93,28 @@ function getStandDatas() {
                 break;
             }
         }
+        
+        $('.slider').bxSlider();
+        $('.bxslider').bxSlider({
+            mode: 'fade',
+            auto: true,
+            pause: 2000,
+            controls: false,
+            easing: 'swing',
+            pager: false,
+            touchEnabled: true,
+        });
+        $('.multiple_bxslider').bxSlider({
+            mode: 'horizontal',
+            auto: true,
+            slideWidth: 3000,
+            infiniteLoop: true,
+            controls: false,
+            pager: false,
+            minSlides: 2.5,
+            maxSlides: 2.5,
+            slideMargin: 10
+        });
 
     }, function(err){
         console.log("onError", err);

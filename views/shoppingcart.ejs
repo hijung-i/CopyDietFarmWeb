@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="/css/shoppingcart.css">
+    <%-include('general/head') %>
+</head>
+<body>
+    <section class="detail_title">
+        <h2>장바구니</h2>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
+        </div>
+    </section>
+
+    <section id="shpcart_select">
+        <div class="shpcart_select">
+            <input type="radio" id="selt" name="named" value="valued">
+            <label for="selt">전체선택</label>
+        </div>
+        <div class="shpcart_select_del">
+            <button>선택삭제</button>
+        </div>
+    </section>
+    <div class="line"></div>
+    <section id="shplist">
+        <!-- brand 1 -->
+        <div class="brand_1">
+            <h3>아임월</h3>
+            <div class="shoplist_info">
+                <div class="shoplist_ctn">
+                    <input type="radio" id="shoplist_part_selt">
+                    <div class="shopcart_thum">
+                    </div>
+                    <p>(아임월) 굿밸런스 라이트밀 도시락</p>
+                    <a href="#"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="shoplist_price">
+                    <div class="shoplinst_count">
+                        <p>60,720원</p>
+                        <div class="number-input">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                        </div>
+                    </div>
+                    <div class="price_info">
+                        <p>상품금액</p>
+                        <p>60,720원</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="line"></div>
+        <!-- brand2 -->
+        <div class="brand_1">
+            <h3>바디나인</h3>
+            <div class="shoplist_info">
+                <div class="shoplist_ctn">
+                    <input type="radio" id="shoplist_part_selt">
+                    <div class="shopcart_thum">
+                        <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
+                    </div>
+                    <p>(아임월) 굿밸런스 라이트밀 도시락</p>
+                    <a href="#"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="shoplist_price">
+                    <div class="shoplinst_count">
+                        <p>60,720원</p>
+                        <div class="number-input">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                        </div>
+                    </div>
+                    <div class="price_info">
+                        <p>상품금액</p>
+                        <p>60,720원</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="brand_1">
+            <h3></h3>
+            <div class="shoplist_info">
+                <div class="shoplist_ctn">
+                    <input type="radio" id="shoplist_part_selt">
+                    <div class="shopcart_thum">
+                        <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
+                    </div>
+                    <p>(아임월) 굿밸런스 라이트밀 도시락</p>
+                    <a href="#"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="shoplist_price">
+                    <div class="shoplinst_count">
+                        <p>60,720원</p>
+                        <div class="number-input">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                        </div>
+                    </div>
+                    <div class="price_info">
+                        <p>상품금액</p>
+                        <p>60,720원</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <!-- brand 3-->
+        <div class="brand_1">
+            <h3>아임월</h3>
+            <div class="shoplist_info">
+                <div class="shoplist_ctn">
+                    <input type="radio" id="shoplist_part_selt">
+                    <div class="shopcart_thum">
+                        <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
+                    </div>
+                    <p>(아임월) 굿밸런스 라이트밀 도시락</p>
+                    <a href="#"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="shoplist_price">
+                    <div class="shoplinst_count">
+                        <p>60,720원</p>
+                        <div class="number-input">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                        </div>
+                    </div>
+                    <div class="price_info">
+                        <p>상품금액</p>
+                        <p>60,720원</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section id="shoplist_total_price">
+        <div class="prod_price">
+            <p>상품 금액</p>
+            <p>223,600원</p>
+        </div>
+        <div class="prod_discount">
+            <p>상품 할인 금액</p>
+            <p>-76,400원</p>
+        </div>
+        <div class="deliver_price">
+            <p>배송비</p>
+            <p>+0원</p>
+        </div>
+        <div class="line_2"></div>
+
+
+        <div class="total_price">
+            <p>총 결제 금액</p>
+            <p>147,200원</p>
+        </div>
+    </section>
+
+    <div class="btn_area">
+        <button type="button" id="btnOrder">주문하기</button>
+    </div>
+
+
+
+    <!-- radio 선택 해제 -->
+
+</body></html>
+                        

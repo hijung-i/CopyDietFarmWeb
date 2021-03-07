@@ -1,11 +1,11 @@
-*{font-family:"Nanum Gothic";font-weight:400}
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+*{font-family:'나눔고딕';font-weight:400}
+
 body{padding-left:15px;padding-right:15px;min-width:360px}
 html, body {max-width: 100%;overflow-x: hidden;
 }
-.detail_title{margin:50px 10px 32px 10px;width:100%;}
+.detail_title{margin:40px 10px 32px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.detail_title a img{position:absolute;top:50px;width:17px}
+.detail_title a img{position:absolute;top:42px;width:17px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 /*로그인*/
@@ -15,16 +15,16 @@ html, body {max-width: 100%;overflow-x: hidden;
 
 .login a{position:absolute;left:20px;margin-top:-20px}
 
-.login-input-section-wrap{padding-top: 20px;display: flex;flex-direction: column;align-items: center;}
+.login-input-section-wrap{padding-top: 20px;display: flex;}
 
-.login-input-wrap{border: solid 1px var(--border-gray-color );background: white;border-radius:7px;}
+.login-input-wrap{width:border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
-.login-input-wrap input{border: none;	width:320px;font-size: 14px;margin-left: 10px;padding-bottom:8px}
+.login-input-wrap input{border: none;	width:330px;height:45px;font-size: 14px;margin-left: 10px;}
 .login-button-wrap {padding-top: 13px;}
 .login-button-wrap button{
-	width: 330px;height :48px;
-	font-size: 18px;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:7px
+	width: 340px;height :45px;
+	font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;margin-top:50px
 }
 .login-stay-sign-in{width: 330px;height: 52px;display: flex;font-size: 15px;	color: #4e4e4e;align-items: center;	justify-content: flex-start;border-bottom: solid 1px var(--border-gray-color);
 }
@@ -32,7 +32,7 @@ html, body {max-width: 100%;overflow-x: hidden;
 }
 .login-stay-sign-in span{padding-left:5px;line-height: 25px;}
 
-.Easy-sgin-in-wrap{display: flex;flex-direction: column;align-items: center;padding-top: 40px;}
+.Easy-sgin-in-wrap{display: flex;flex-direction: column;align-items: center;padding-top: 40px;color:}
 .Easy-sgin-in-wrap h2{font-size: 20px;}
 .Easy-sgin-in-wrap .sign-button-list
 {padding-top:25px;list-style: none;
@@ -42,14 +42,12 @@ padding-bottom: 10px;}
 .Easy-sgin-in-wrap .sign-button-list li button{width: 320px;height:56px;border: solid 1px var(--border-gray-color);text-align: left;background: white;}
 .Easy-sgin-in-wrap .sign-button-list li button i{font-size: 16px; }
 
-.Easy-sgin-in-wrap .sign-button-list li button span{padding-left:0;font-size: 18px;}
-.Easy-sgin-in-wrap ul{margin-left:-20px}
-.Easy-sgin-in-wrap ul li{float:left;margin-left:20px;font-size:14px}
- .login1:after{content:" | ";margin:0 0 4px}
- .login2:after{content:" | ";margin:0 0 4px}
- .login3:after{content:" | ";margin:0 0 4px}
-.fail-button-wrap button{width: 330px;
-height :48px;font-size: 18px;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);  margin-top:200px;border-radius:7px} 
+.Easy-sgin-in-wrap .sign-button-list li button span{padding-left:0;font-size: 14px;}
+.Easy-sgin-in-wrap ul{margin-left:-30px}
+.Easy-sgin-in-wrap ul li{margin-right:-10px}
+.Easy-sgin-in-wrap ul li a{float:left;font-size:14px;color:#6B6B6B}
+.Easy-sgin-in-wrap ul li img{position:relative;top:4px}
+.fail-button-wrap button{	width: 340px;height :45px;font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;} 
 
 /*아이디 찾기 완료*/
 .idSearchComp, .btnIdSearchComp{width:100%;padding-left:15px;padding-right:15px;margin-bottom:75px;}
@@ -122,7 +120,10 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 /*배송지 등록*/
 .src_icon img{width:13px;position:relative;margin-left:410px;top:-20px}
 
-
+/*탈퇴 버튼*/
+.member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
+.member_delete ul{}
+.member_delete ul li a{text-decoration:underline;}
 
 
 
