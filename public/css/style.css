@@ -551,6 +551,12 @@ justify-self: center;width: 100%;margin: 0 auto;}
         }
         .footer_bottom_ctt .companyName {font-weight: 700;}
 
+/*모바일 페이지 버튼*/
+.pages ul{width:100%;display:flex;justify-content:space-around}
+.pages ul li{float:left;}
+.pages ul li img{width:40px}
+
+
 
 /* 서브메뉴 */
 #content .main_sub_wrap{;width:100%;border-top:2px solid #f1f1f1;}
