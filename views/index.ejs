@@ -388,41 +388,7 @@
     </main>
     <%-include('general/footer') %>
     </div>
-    <script>
-        // 햄버거 메뉴
-        $(document).ready(function() {
 
-        $('.btnMenu>a').on('click', function() {
-            $('.sideMenu').show().animate({
-                left: 0
-            });
-        });
-        $('.slideMenu_close>a').on('click', function() {
-            $('.sideMenu').animate({
-                left: -100 + '%'
-            }, function() {
-                $('.sideMenu').hide();
-            });
-        });
-        });
-
-
-        // 햄버거 2단계 메뉴
-        $(document).ready(function() {
-        $("dt.faq_q").click(function() {
-            if ($(this).next('dd').css("display") != "none") {
-                $(this).next('dd').hide();
-                $(this).removeClass("current");
-            } else {
-                $("dd.faq_a").css('display', 'none');
-                $("dt.faq_q").removeClass("current");
-                $(this).next('dd').show();
-                $(this).addClass("current");
-            }
-        });
-        });
-
-    </script>
     <script src="/js/index.js"></script>
     
    
