@@ -59,20 +59,29 @@ function getEventStands() {
     var param = {}
     ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
     , function(data) {
-		var html = "";
-		html += '<li class="gnb01"><a href="/">홈</a></li>';
+
+		$("#header .gnb").html('');
+		var html = '';
+		
+		console.log(data);
 		for(var i = 0; i < data.result.length; i++){
 			var stand = data.result[i];
-			if( currentStandCode == stand.salesStandCode){
-				html += '<li class="gnb0'+(i + 2)+' active"><a href="/products/'+stand.salesStandCode+'/event">'+ stand.salesStandName+'</a></li>';
-			} else {
-				html += '<li class="gnb0'+(i + 2)+'"><a href="/products/'+stand.salesStandCode+'/event">'+ stand.salesStandName+'</a></li>';
+			if(i == 0){
+				html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'>홈</a>';
 			}
-			
+			console.log(currentStandCode, stand.salesStandCode);
+			if( currentStandCode == stand.salesStandCode){
+				$('#header .gnb a').removeClass("is-current");
+				html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
+			} else {
+				html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
+			}
 		}
-		$('.main_gnb').html(html);
 
-		
+		html += '<div class="nav-underline"></div>';
+		console.log(html);
+		$('#header .gnb').html(html);
+				
     }, function(err) {
         console.log("eventStands err", err);
     })
@@ -133,6 +142,8 @@ $(function() {
 		$(this).addClass('active');
 		$('#' + activeTab).addClass('active');
 	})
+
+	
 })
 
 $(document).ready(function(){
@@ -217,6 +228,37 @@ $(document).ready(function(){
 			$('.gnb_depth02>li.current').addClass("on");
 		}
 	})
+	$(document).ready(function() {
+
+		$('.btnMenu>a').on('click', function() {
+			$('.sideMenu').show().animate({
+				left: 0
+			});
+		});
+		$('.slideMenu_close>a').on('click', function() {
+			$('.sideMenu').animate({
+				left: -100 + '%'
+			}, function() {
+				$('.sideMenu').hide();
+			});
+		});
+	});
+
+
+	// 햄버거 2단계 메뉴
+	$(document).ready(function() {
+	$("dt.faq_q").click(function() {
+		if ($(this).next('dd').css("display") != "none") {
+			$(this).next('dd').hide();
+			$(this).removeClass("current");
+		} else {
+			$("dd.faq_a").css('display', 'none');
+			$("dt.faq_q").removeClass("current");
+			$(this).next('dd').show();
+			$(this).addClass("current");
+		}
+	});
+	});
 });
 
 $(window).bind('orientationchange', function(e) {

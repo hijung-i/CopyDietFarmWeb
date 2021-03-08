@@ -14,8 +14,10 @@ router.get('/', (req: Request, res: Response, next: NextFunction) => {
 
 router.get('/login-form', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
+    console.log(isLoggedIn)
     if (isLoggedIn === true) {
         res.redirect('/')
+        return
     }
 
     render(res, 'login', {})
@@ -70,6 +72,10 @@ router.get('/notice/:boardNo', (req: Request, res: Response, next: NextFunction)
 
 router.get('/cs-center', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'cs_center', {})
+})
+
+router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'my_page', {})
 })
 
 const render = (res: Response, view: any, data: any | null) => {

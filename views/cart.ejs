@@ -10,6 +10,7 @@
     <%-include('general/head') %>
 </head>
 <body>
+    <input type="hidden" value="<%=userId %>" id="currentUserId">
     <section class="detail_title">
         <h2>장바구니</h2>
         <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
@@ -169,10 +170,5 @@
     <div class="btn_area">
         <button type="button" id="btnOrder">주문하기</button>
     </div>
-
-
-
     <!-- radio 선택 해제 -->
-
 </body></html>
-                        
