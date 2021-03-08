@@ -34,6 +34,15 @@
 
 <script>
     $(document).ready(function() {
+        $('.bxslider').bxSlider({
+                    mode: 'horizontal',
+                    auto: false,
+                    pause: 2000,
+                    controls: false,
+                    easing: '',
+                    pager: false,
+                    touchEnabled: true,
+                });
         $('.multiple_bxslider').bxSlider({
             mode: 'horizontal',
             auto: true,
@@ -75,7 +84,12 @@
         <div id="tab1" class="tab_cont active">
             <div class="product_wrap">
                 <div class="product">
-                    <img src="/images/dietfarmbread.jpg" style="width:100%">
+                    <ul class="bxslider">
+                        <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                        <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                        <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                        <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                        </ul>
                     <div class="infoArea01">
                         <h2>든든한 한끼 오늘은 현미밥 7종</h2>
                         <a href="#"><img src="/images/share_icon_detail.png" style="position:absolute;left:420px"></a>

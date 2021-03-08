@@ -357,6 +357,7 @@ height:50px; overflow:hidden }
 .main_img li > img {
 	min-height: 212px;
 }
+#content .main_img ul li a{cursor:pointer}
 #content .catgor_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:-60px}
 #content .category{
 	width:100%;

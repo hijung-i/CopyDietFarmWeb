@@ -30,11 +30,11 @@ function getStandDatas() {
                 $('.main_img .bxslider').html(html);
 
                 $('.main_img .bxslider').bxSlider({
-                    mode: 'fade',
-                    auto: true,
+                    mode: 'horizontal',
+                    auto: false,
                     pause: 2000,
                     controls: false,
-                    easing: 'ease-in',
+                    easing: '',
                     pager: false,
                     touchEnabled: true,
                 });
