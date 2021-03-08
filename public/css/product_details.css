@@ -19,12 +19,14 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 #content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
 
 /*상품설명*/
+#content .product_wrap .bxslider{margin-bottom:-20px}
 #content .product_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:-41px}
 #content .product{overflow:hidden;margin:0 auto ;width:100%;}
-#content .product img{margin-bottom:12px;border-top:2px solid #E6E6E6}
+#content .product ul li img{margin-bottom:12px;border-top:2px solid #E6E6E6}
 #content .product h2, ul li{font-size:16px;font-weight:bold;margin-bottom:6px}
 
-.infoArea01{padding-left:15px;padding-right:15px}
+.infoArea01{padding-left:15px;padding-right:15px;margin-top:-60px}
+.infoArea01 ul li{text-align:left;font-weight:'나눔고딕'}
 #content .infoArea02_wrap{width:100%;border-bottom:8px solid #f1f1f1;}
 #content .infoArea02{margin-top:20px;padding-left:15px;padding-right:5px}
 #content .infoArea02 tr td span{color:#878787}
@@ -49,6 +51,7 @@ font-size:16px;border:none;border-radius: 5px;	transition:0.3s}
 .pp_wrap{margin-bottom:-50px;}
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
 .purchased_products h3{margin-top:20px;margin-bottom:10px}
+.purchased_products ul li{text-align:left}
 .purchased_products .title{font-size:12px}
 .purchased_products .price{font-size:12px;font-weight:bold}
 
@@ -171,7 +174,6 @@ input[type="number"] {
 
 /*리뷰 없을 때*/
 .review_list_null{width:70%; text-align:center; margin:180px auto;}
-.review_list_null img{}
 .no_review{font-size:16px;color:#878787;margin-top:21px}
 
 /*문의*/
