@@ -26,14 +26,28 @@ function getProductDetail(){
             return false;
         }
         console.log(product);
-        $('.detail_title h2').html(product.productName);    
-        $('.product_wrap .product h2').html(product.productName);
+        
+        var headerTitle = $('.detail_title h2'); 
+        headerTitle.html(product.productName);
+
+        var productName = $('.product_wrap .product h2')
+        productName.html(product.productName);
         $('.infoArea01 .product_name_css .con span').html(product.productName);
 
-        $('.infoArea01 .simple_desc_css .con span span').html(product.productDesc);
-        $('.infoArea01 .product_custom .con span span').html(numberFormat(product.discountPrice)+'원');
-        $('.infoArea01 .product_price .con strike').html(numberFormat(product.supplyPrice)+'원');
-        $('.infoArea01 .discount_rate .con strong').html(numberFormat(product.discountRate)+'%');
+        var productDesc = $('.infoArea01 .simple_desc_css .con span')
+        var discountPrice = $('.infoArea01 .product_custom .con span span')
+        var supplyPrice = $('.infoArea01 .product_price')
+        var discountRate = $('.infoArea01 .discount_rate')
+        productDesc.html(product.productDesc);
+        discountPrice.html(numberFormat(product.discountPrice)+'원');
+        
+        if(product.discountPrice != product.supplyPrice){
+            supplyPrice.find('.con strike').html(numberFormat(product.supplyPrice)+'원');
+            discountRate.find('.con strong').html(numberFormat(product.discountRate)+'%');
+        } else {
+            $('.infoArea01 .product_price').hide()
+            $('.infoArea01 .discount_rate').hide();
+        }
 
         var optionHtml = '';
         for(var i = 0; i < product.options.length; i++){
@@ -42,12 +56,17 @@ function getProductDetail(){
         }
         $('select#products').html(optionHtml);
         
+        var representative = '';
         var detailHtml = '';
         for(var i = 0; i < product.detail.length; i++){
             var image = product.detail[i];
             detailHtml += '<img src="'+ RESOURCE_SERVER + image.url +'" style="width:100%;height:100%">';
         }
         
+        // for(var i = 0; i < product.representative.length; i++){
+        //     var image = product.representative[i];
+        //     representative += '<img'
+        // }
         $('.products_ex').html(detailHtml);
         console.log("productDetail success", data);
     }, function (err) {
