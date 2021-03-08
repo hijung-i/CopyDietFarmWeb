@@ -92,7 +92,7 @@ a:hover{text-decoration:none;}
 
 *{}
 /* Header */
-#wrap{position:relative;width:100%;z-index:1;}
+#wrap{position:relative;width:100%;z-index:1;display:none}
 #headerwrap{height:90px;}
 #header{position:relative;width:100%;max-width:800px;margin:auto;height:100px;}
 #header h1{position:relative;left:200px;top:34px;z-index:1;}
