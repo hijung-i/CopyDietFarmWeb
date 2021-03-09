@@ -12,13 +12,45 @@ $(function() {
             
         }
     })
+    getHotKeyowrds();
+    getCFKeywords();
 })
-function getRecommendKeywords {
-    ajaxCall(API_SERVER + '/user/getHotKeyowrd', params, 'POST'
+
+function getHotKeyowrds() {
+    var params = {};
+    ajaxCall(API_SERVER + '/user/getHotKeyword', params, 'POST'
     , function(data) {
+        var result = data.result;
+        var five = '';
+        var ten = '';
+        for(var i = 0; i < result.length; i++){
+            var keyword = result[i];
+            if( i < 5 ){
+                five += '<li><a href="#"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
+            } else if ( i >= 5){
+                ten += '<li><a href="#"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
+            }
+        }
+        $('.search_list ul.five').html(five);
+        $('.search_list ul.ten').html(ten);
+    }, function(err) {
+        console.log("error while get getHotKeyowrd ",err);
+    })
+}
+function getCFKeywords() {
+    var params = {};
+    ajaxCall(API_SERVER + '/user/getCFKeyword', params, 'POST'
+    , function(data) {
+        var result = data.result;
+        var html = '';
+        for(var i = 0; i < result.length; i++){
+            var keyword = result[i];
+            html += '<li><a href="#">'+ keyword.keyword +'</a></li>';
+        }
+        $('.recommend ul').html(html);
 
     }, function(err) {
-
+        console.log("error while get getCFKeyowrd ",err);
     })
 }
 
