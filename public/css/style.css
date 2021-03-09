@@ -357,6 +357,7 @@ height:50px; overflow:hidden }
 .main_img li > img {
 	min-height: 212px;
 }
+#content .main_img ul li a{cursor:pointer}
 #content .catgor_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:-60px}
 #content .category{
 	width:100%;
@@ -496,13 +497,16 @@ justify-self: center;width: 100%;margin: 0 auto;}
             border: 1px solid #878787;
             line-height: 27px;
             border-radius: 5px;
-            margin-bottom: 8px;
+            text-align:center;
+            font-size:10px;
+            margin-top:-10px
            
         }
 
         .channelTalk>li>a>img {
             margin-right: 5px;
             vertical-align: middle;
+            padding-bottom:10px
         }
 
         /* footer bottom */
@@ -512,7 +516,8 @@ justify-self: center;width: 100%;margin: 0 auto;}
             font-size: 12px;
             background: #F4F4F4;
             margin-top: 20px;
-            padding-bottom:20px
+            padding-bottom:20px;
+            text-align:left;
         }
 
         .footer_bottom>.footer_bottom_wrap {
@@ -545,6 +550,12 @@ justify-self: center;width: 100%;margin: 0 auto;}
             display: flex;
         }
         .footer_bottom_ctt .companyName {font-weight: 700;}
+
+/*모바일 페이지 버튼*/
+.pages ul{width:100%;display:flex;justify-content:space-around}
+.pages ul li{float:left;}
+.pages ul li img{width:40px}
+
 
 
 /* 서브메뉴 */
