@@ -1,183 +1,74 @@
-/**
- * @typedef {Object} InstantSearchOptions
- * @property {URL} searchUrl The URL which the search bar will query to retrieve results
- * @property {string} queryParam The name of the query parameter to be used in each request
- * @property {Function} responseParser Takes the response from the instant search and returns an array of results
- * @property {Function} templateFunction Takes an instant search result and produces the HTML for it
- */
-
-class InstantSearch {
-  /**
-   * Initialises the instant search bar. Retrieves and creates elements.
-   *
-   * @param {HTMLElement} instantSearch The container element for the instant search
-   * @param {InstantSearchOptions} options A list of options for configuration
-   */
-  constructor(instantSearch, options) {
-    this.options = options;
-    this.elements = {
-      main: instantSearch,
-      input: instantSearch.querySelector(".instant-search__input"),
-      resultsContainer: document.createElement("div")
-    };
-
-    this.elements.resultsContainer.classList.add(
-      "instant-search__results-container"
-    );
-    this.elements.main.appendChild(this.elements.resultsContainer);
-
-    this.addListeners();
-  }
-
-  /**
-   * Adds event listeners for elements of the instant search.
-   */
-  addListeners() {
-    let delay;
-
-    this.elements.input.addEventListener("input", () => {
-      clearTimeout(delay);
-
-      const query = this.elements.input.value;
-
-      delay = setTimeout(() => {
-        if (query.length < 3) {
-          this.populateResults([]);
-          return;
+$(function() {
+    $(".result_wrap").hide();
+    $('.instant-search__input').keyup(function() {
+        var keyword = $(this).val();
+        console.log(keyword);
+        if(keyword.trim().length > 0 ){
+            $(".result_wrap").show();
+            searchProduct(keyword);
+            
+        } else {
+            $(".result_wrap").hide();
+            
         }
-
-        this.performSearch(query).then((results) => {
-          this.populateResults(results);
-        });
-      }, 500);
-    });
-
-    this.elements.input.addEventListener("focus", () => {
-      this.elements.resultsContainer.classList.add(
-        "instant-search__results-container--visible"
-      );
-    });
-
-    this.elements.input.addEventListener("blur", () => {
-      this.elements.resultsContainer.classList.remove(
-        "instant-search__results-container--visible"
-      );
-    });
-  }
-
-  /**
-   * Updates the HTML to display each result under the search bar.
-   *
-   * @param {Object[]} results
-   */
-  populateResults(results) {
-    // Clear all existing results
-    while (this.elements.resultsContainer.firstChild) {
-      this.elements.resultsContainer.removeChild(
-        this.elements.resultsContainer.firstChild
-      );
-    }
-
-    // Update list of results under the search bar
-    for (const result of results) {
-      this.elements.resultsContainer.appendChild(
-        this.createResultElement(result)
-      );
-    }
-  }
-
-  /**
-   * Creates the HTML to represents a single result in the list of results.
-   *
-   * @param {Object} result An instant search result
-   * @returns {HTMLAnchorElement}
-   */
-  createResultElement(result) {
-    const anchorElement = document.createElement("a");
-
-    anchorElement.classList.add("instant-search__result");
-    anchorElement.insertAdjacentHTML(
-      "afterbegin",
-      this.options.templateFunction(result)
-    );
-
-    // If provided, add a link for the result
-    if ("href" in result) {
-      anchorElement.setAttribute("href", result.href);
-    }
-
-    return anchorElement;
-  }
-
-  /**
-   * Makes a request at the search URL and retrieves results.
-   *
-   * @param {string} query Search query
-   * @returns {Promise<Object[]>}
-   */
-  performSearch(query) {
-    const url = new URL(this.options.searchUrl.toString());
-
-    url.searchParams.set(this.options.queryParam, query);
-
-    this.setLoading(true);
-
-    return fetch(url, {
-      method: "get"
     })
-      .then((response) => {
-        if (response.status !== 200) {
-          throw new Error("Something went wrong with the search!");
+    getHotKeyowrds();
+    getCFKeywords();
+})
+
+function getHotKeyowrds() {
+    var params = {};
+    ajaxCall(API_SERVER + '/user/getHotKeyword', params, 'POST'
+    , function(data) {
+        var result = data.result;
+        var five = '';
+        var ten = '';
+        for(var i = 0; i < result.length; i++){
+            var keyword = result[i];
+            if( i < 5 ){
+                five += '<li><a href="#"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
+            } else if ( i >= 5){
+                ten += '<li><a href="#"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
+            }
         }
+        $('.search_list ul.five').html(five);
+        $('.search_list ul.ten').html(ten);
+    }, function(err) {
+        console.log("error while get getHotKeyowrd ",err);
+    })
+}
+function getCFKeywords() {
+    var params = {};
+    ajaxCall(API_SERVER + '/user/getCFKeyword', params, 'POST'
+    , function(data) {
+        var result = data.result;
+        var html = '';
+        for(var i = 0; i < result.length; i++){
+            var keyword = result[i];
+            html += '<li><a href="#">'+ keyword.keyword +'</a></li>';
+        }
+        $('.recommend ul').html(html);
 
-        return response.json();
-      })
-      .then((responseData) => {
-        console.log(responseData);
-
-        return this.options.responseParser(responseData);
-      })
-      .catch((error) => {
-        console.error(error);
-
-        return [];
-      })
-      .finally((results) => {
-        this.setLoading(false);
-
-        return results;
-      });
-  }
-
-  /**
-   * Shows or hides the loading indicator for the search bar.
-   *
-   * @param {boolean} b True will show the loading indicator, false will not
-   */
-  setLoading(b) {
-    this.elements.main.classList.toggle("instant-search--loading", b);
-  }
+    }, function(err) {
+        console.log("error while get getCFKeyowrd ",err);
+    })
 }
 
-export default InstantSearch;
+function searchProduct(keyword) {
+    var params = {
+        keyword: keyword
+    }
+    ajaxCall(API_SERVER + '/product/productSearchBar', params, 'POST'
+    , function(data) {
+        var result = data.result;
+        var html = '';
+        for(var i = 0; i < result.length; i++) {
+            var product = result[i];
+            html += '<li><a href="/product/'+ product.productCode +'">'+ product.productName +'</a></li>'; 
+        }
+        $(".result_wrap .search_result ul").html(html);
 
-/* Loaded with <script type="module"> */
-import InstantSearch from "./InstantSearch.js";
-
-const searchUsers = document.querySelector("#searchUsers");
-const instantSearchUsers = new InstantSearch(searchUsers, {
-  searchUrl: new URL(
-    "/projects/instant-search/search.php",
-    window.location.origin
-  ),
-  queryParam: "q",
-  responseParser: (responseData) => {
-    return responseData.results;
-  },
-  templateFunction: (result) => {
-    return `
-            <div class="instant-search__title">${result.firstName} ${result.lastName}</div>
-            <p class="instant-search__paragraph">${result.occupation}</p>
-        `;
-  }
-});
+    }, function(err) {
+        console.log(err);
+    })
+}
