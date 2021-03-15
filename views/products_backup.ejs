@@ -8,7 +8,8 @@
     <meta name="format-detection" content="no" />
 
     <title>다이어트 Farm</title>
-    <style type="text/css">
+    <%-icnlude('general/head') %>
+    <style>
         #mHeader .tab_cont {
             display: none;
             min-height: 360px;
@@ -21,11 +22,11 @@
             width: 100%
         }
 
-        nav a:nth-child(4) {
+        nav a:nth-child(3) {
             color: #F99319;
         }
     </style>
-     <%-include('general/head') %>
+
 </head>
 
 <body>
@@ -35,6 +36,8 @@
         <a href="#"><span>바로가기3</span></a>
     </article>
     
+    <%-include('general/header') %>
+
     <main id="content" class="content">
         <div class="main_sub_wrap">
             <section class="main_sub">
@@ -145,5 +148,7 @@
 
     </main>
     <!--//컨텐츠-->
+
+    <%-include('general/footer') %>
 
 </body></html>

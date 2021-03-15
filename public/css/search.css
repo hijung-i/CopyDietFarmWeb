@@ -15,14 +15,6 @@ body{min-width:360px}
 }
 
 
-/*검색 결과*/
-.result_wrap{width:100%;border-bottom:1px solid #bbbbbb}
-.search_result{margin:50px 20px 80px;width:100%;}
-.search_result h3{font-size:12px;font-weight:bold;margin-bottom:30px}
-.search_result ul li{width:90%;padding:11px;margin-bottom:10px;border-bottom:1px solid #bbbbbb}
-
-
-
 html, body {max-width: 100%;overflow-x: hidden;
 }
 body{min-width:360px}
@@ -177,9 +169,10 @@ body{min-width:360px}
 
 /*검색 결과*/
 .result_wrap{width:100%;border-bottom:1px solid #bbbbbb}
-.search_result{margin:50px 20px 80px;width:100%;}
+.search_result{padding:50px 20px 80px;width:100%;}
 .search_result h3{font-size:12px;font-weight:bold;margin-bottom:30px}
-.search_result ul li{width:90%;padding:11px;margin-bottom:10px;border-bottom:1px solid #bbbbbb}
+.search_result ul{overflow:scroll}
+.search_result ul li{width:100%;padding:11px;margin-bottom:10px;border-bottom:1px solid #bbbbbb}
 
 /*최근 검색*/
 .search_recent{width:100%;padding-left:25px;margin-top:30px}
@@ -197,10 +190,15 @@ body{min-width:360px}
   margin-top: 14px;
 }
 
+.result-area{
+  position: relative;
+}
 
-
-
-
+.search_result{
+  background-color: #FFFFFF;
+  position: absolute;
+  z-index: 9999;
+}
 
 
 

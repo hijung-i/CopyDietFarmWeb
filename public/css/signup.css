@@ -54,9 +54,9 @@ padding-bottom: 10px;}
 
 .Easy-sgin-in-wrap .sign-button-list li button span{padding-left:0;font-size: 14px;}
 .Easy-sgin-in-wrap ul{margin-left:-30px}
-.Easy-sgin-in-wrap ul li{margin-right:-10px}
+.Easy-sgin-in-wrap ul li{margin-right:0px}
 .Easy-sgin-in-wrap ul li a{float:left;font-size:14px;color:#6B6B6B}
-.Easy-sgin-in-wrap ul li img{position:relative;top:4px}
+.Easy-sgin-in-wrap ul li img{position:relative;top:4px;}
 .fail-button-wrap button{	width: 340px;height :45px;font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;} 
 
 /*아이디 찾기 완료*/

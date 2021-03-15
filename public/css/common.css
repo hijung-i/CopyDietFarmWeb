@@ -174,12 +174,14 @@ a:hover{text-decoration:none;}
     line-height: 27px;
     border-radius: 5px;
     margin-bottom: 8px;
+    font-size:10px
     
 }
 
 .channelTalk>li>a>img {
     margin-right: 5px;
     vertical-align: middle;
+
 }
 
 /* footer bottom */
@@ -189,7 +191,8 @@ a:hover{text-decoration:none;}
     font-size: 12px;
     background: #F4F4F4;
     margin-top: 20px;
-    padding-bottom:20px
+    padding-bottom:20px;
+    text-align:left;
 }
 
 .footer_bottom>.footer_bottom_wrap {

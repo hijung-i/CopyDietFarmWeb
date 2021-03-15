@@ -8,7 +8,7 @@ body{min-width:360px;max-width:100%}
 
 /*마이페이지*/
 
-.myPage01{width:100%;padding-top:10px;padding-bottom:12px}
+.myPage01{width:100%;padding-top:80px;padding-bottom:12px}
 .myPage01 h3{font-size:16px}
 .myPage01, .myPage02, .myPage03, .myPage04, myPage05{width:100%;border-bottom:8px solid #F1F1F1}
 .myPage ul{width:100%;padding:0;clear:both;display:flex;

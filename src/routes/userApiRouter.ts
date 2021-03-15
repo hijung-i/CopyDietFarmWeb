@@ -24,7 +24,6 @@ router.get('/login', (req: Request, res: Response, next: NextFunction) => {
 
 router.post('/login', async (req: Request, res: Response, next: NextFunction) => {
     const user = req.body as User
-
     const loginResult: UserResult = await userService.login(user)
 
     if (loginResult.message === StatusMessage.success) {

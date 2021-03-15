@@ -1,5 +1,4 @@
-*{font-family:"Nanum Gothic";font-weight:400}
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+*{font-family:"나눔고딕";font-weight:400}
 body{min-width:360px}
 html, body {max-width: 100%;overflow-x: hidden;
 }

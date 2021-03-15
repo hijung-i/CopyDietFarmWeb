@@ -14,11 +14,24 @@ router.get('/', (req: Request, res: Response, next: NextFunction) => {
 
 router.get('/login-form', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
+    console.log(isLoggedIn)
     if (isLoggedIn === true) {
         res.redirect('/')
+        return
     }
 
     render(res, 'login', {})
+})
+
+router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) => {
+    const isLoggedIn: boolean | undefined = req.session.isLoggedIn
+    console.log(isLoggedIn)
+    if (isLoggedIn === true) {
+        res.redirect('/')
+        return
+    }
+
+    render(res, 'sign_up', {})
 })
 
 router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {
@@ -52,7 +65,9 @@ router.get('/search-form', (req: Request, res: Response, next: NextFunction) => 
 })
 
 router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'my-page', {})
+    const isLoggedIn = req.session.isLoggedIn || false
+    console.log('isLoggedIn ->> ', isLoggedIn)
+    render(res, 'my_page', { isLoggedIn: isLoggedIn })
 })
 
 router.get('/faq', (req: Request, res: Response, next: NextFunction) => {
