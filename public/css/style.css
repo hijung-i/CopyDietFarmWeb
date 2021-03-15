@@ -97,7 +97,7 @@ a:hover{text-decoration:none;}
 #header h1{position:relative;left:200px;top:34px;z-index:1;}
 #header h1 img{max-width:50%;
   height: auto;}
-#header .gnb{position:fixed;top:0px; z-index: 11;background-color:#fff;padding-top:60px}
+#header .gnb{position:fixed;top:0px; z-index: 11;background-color:#fff;padding-top:35px}
 
 #header .gnb a{
 	font-family:'나눔고딕';
