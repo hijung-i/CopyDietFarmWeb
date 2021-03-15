@@ -369,8 +369,7 @@ justify-self: center;width: 100%;margin: 10px auto;
 #content .s_wrap{margin-bottom:-50px}
 #content .s_price{margin:20px 10px 20px;width:100%;margin-bottom:-50px}
 #content .s_price h2{font-size:14px;margin-bottom:10px;margin-left:5px}
-#content .s_price p{font-size:12px;margin-left:10px;width:200px;height:20px;white-space:nowrap;
-  overflow:hidden;text-overflow: ellipsis;}
+#content .s_price .title{text-align:left;font-size:12px;margin-left:10px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:140px;height: 20px;display:inline-block}
 #content .s_price li .price{font-size:12px;font-weight:bold;margin-top:12px;overflow:visible;}
 #content .s_price ul li img{margin-bottom:10px}
 #content .s_price ul li ul li{float:left;}
@@ -379,7 +378,7 @@ justify-self: center;width: 100%;margin: 10px auto;
 #content .s_price .ratio{color:red;font-size:11px;margin-left:5px}
 #content .best_wrap{width:100%;border-top:8px solid #f1f1f1;border-bottom:8px solid #f1f1f1; margin: 0 auto;}
 
-#content .w_best{ overflow:hidden; /* margin:20px 10px 10px 6px; */ width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
+#content .w_best{ overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
 #content .w_best h2{font-size:14px; margin-bottom:20px;margin-top:24px}
 #content .w_best li .thum img{width:100%;height:auto;}
 #content .w_best li .title{font-size:12px;padding:5px;padding-top:15px}
@@ -396,7 +395,7 @@ justify-self: center;width: 100%;margin: 10px auto;
 justify-self: center;width: 100%;margin: 0 auto;}
 #content .protein li .desc ul{margin-left:-5px}
 #content .protein li .desc ul li{margin-left:10px;margin-bottom:20px}
-#content .protein .desc p{margin-left:5px;margin-top:15px;margin-bottom:5px}
+#content .protein .desc p{margin-left:5px;margin-top:15px;margin-bottom:5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 #content .protein .desc ul li{margin-bottom:10px}
 #content .protein ul li img{width:90%}
 
@@ -408,7 +407,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 justify-self: center;width: 100%;margin: 0 auto;}
 #content .sweets li .desc ul{margin-left:-5px}
 #content .sweets li .desc ul li{margin-left:10px;margin-bottom:20px}
-#content .sweets .desc p{margin-left:5px;margin-top:15px;margin-bottom:5px}
+#content .sweets .desc p{margin-left:5px;margin-top:15px;margin-bottom:5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 #content .sweets .desc ul li{margin-bottom:10px}
 #content .sweets ul li img{width:90%}
 
@@ -420,7 +419,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 justify-self: center;width: 100%;margin: 0 auto;}
 #content .water li .desc ul{margin-left:-5px}
 #content .water li .desc ul li{margin-left:10px;margin-bottom:20px}
-#content .water .desc p{margin-left:5px;margin-top:15px;margin-bottom:5px}
+#content .water .desc p{margin-left:5px;margin-top:15px;margin-bottom:5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 #content .water .desc ul li{margin-bottom:10px}
 #content .water ul li img{width:90%}
 
@@ -441,6 +440,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
             margin: 0 auto;
             display: flex;
             padding-top: 30px;
+            
         }
         .company_info li{text-align:left;}
         .footer_inq_info .bottom_wrap {
@@ -511,8 +511,9 @@ justify-self: center;width: 100%;margin: 0 auto;}
             font-size: 12px;
             background: #F4F4F4;
             margin-top: 20px;
-            padding-bottom:20px;
             text-align:left;
+            display:block;
+                   
         }
 
         .footer_bottom>.footer_bottom_wrap {
@@ -547,6 +548,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
         .footer_bottom_ctt .companyName {font-weight: 700;}
 
 /*모바일 페이지 버튼*/
+.pages{width:100%;position:fixed;bottom:0;background-color:#fff;z-index:9999;margin-top:300px}
 .pages ul{width:100%;display:flex;justify-content:space-around}
 .pages ul li{float:left;}
 .pages ul li img{width:40px}
@@ -575,7 +577,7 @@ justify-self: center;margin: 0 auto;}
 
 #content .main_sub ul li{float:left;padding:5px}
 #content .main_sub ul li img{width:100%;}
-#content .main_sub ul li .desc p{font-size:12px;padding:5px;margin-top:5px;text-align: left}
+#content .main_sub ul li .desc p{font-size:12px;padding:5px;margin-top:5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:200px;height: 20px;display:inline-block}
 #content .main_sub ul li .desc .price{font-weight:bold;margin-bottom:10px;}
 #content .desc ul{ display: -webkit-box; /* Old webkit */display: -ms-flexbox; /* IE 10~11 */
  display: flex;}
@@ -786,7 +788,6 @@ body {
 }
 
 ul>li {
-  text-align: center;
   padding: 2px 0;
 }
 
