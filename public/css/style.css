@@ -3,7 +3,7 @@
 body,html {overflow-x: hidden; overflow-y: auto; min-width: 360px; width: 100%; /* overflow: hidden; */}
 
 @font-face{ 
-font-family: '나눔고딕'; 
+  font-family: 'Nanum Gothic', sans-serif;
 font-weight: normal; 
 font-style: normal; 
 src:url('../font/NanumGothic.woff') format('woff'); 
@@ -74,7 +74,7 @@ body, select, input, textarea, a[href^="tel:"]:link {
     color: #383838;
     font-weight: normal;
 	font-size:12px;
-	font-family:'나눔고딕';
+  font-family: 'Nanum Gothic', sans-serif;
 	letter-spacing:-0.5px;
 }
 
@@ -100,7 +100,7 @@ a:hover{text-decoration:none;}
 #header .gnb{position:relative;top:50px; z-index: 11}
 
 #header .gnb a{
-	font-family:'나눔고딕';
+	font-family: 'Nanum Gothic', sans-serif;
 	font-size:16px; 
 	/* line-height:16px; */ 
 	font-weight:bold; 
@@ -123,7 +123,7 @@ nav a {
   color:#878787;
   text-decoration: none;
   text-align: center;
-  z-index:1
+  z-index:1;
 }
 
 .nav-underline {
@@ -222,7 +222,7 @@ nav a:nth-child(5):hover ~ .nav-underline {
 .tabMenu{width:100%;z-index:300}
 #content .tab_wrap{width:100%;padding-bottom:40px; border-bottom: none;}
  .tabMenu ul{padding-left:40px;padding-right:20px;background-color:#fff}
- .tabMenu li{float:left;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding:10px 20px 10px 0px;}
+ .tabMenu li{float:left;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family: 'Nanum Gothic', sans-serif; font-weight:bold;padding:10px 20px 10px 0px;}
 .tabMenu li a{color:#878787;}
 .tabMenu li a:hover{color:#F99319;padding-bottom:13px;border-bottom:3px solid #F99319}
 
@@ -627,9 +627,8 @@ font-size: 14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px
 
 /*주문 내역*/
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
-.detail_title h2{text-align:center;font-weight:bold;font-size:16px;margin-bottom:20px;margin-top:-4px}
-.detail_title a img{position:absolute;margin-top:px;width:17px}
-#content .order_list p img{}
+.detail_title h2{text-align:center;font-weight:bold;font-size:16px;margin-bottom:20px;}
+.detail_title a img{position:absolute; /* margin-top:px; */ width:17px}
 #content .order_list .no_list{text-align:center;position:relative;font-weight:bold;font-size:16px;color:#878787;margin-bottom:200px}
 
 /*로그인*/
@@ -647,16 +646,26 @@ font-size: 14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px
 
 .main-container .main-wrap header .logo-wrap{display:flex;flex-direction: column;
 	align-items: center;}
-.login-input-section-wrap{padding-top: 60px;display: flex;flex-direction: column;align-items: center;}
+.login-input-section-wrap{ width: 90%; margin: 0 auto; padding-top: 60px;display: flex;flex-direction: column;align-items: center;}
 
 .login-input-wrap{border: solid 1px var(--border-gray-color );background: white;border-radius:7px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
-.login-input-wrap input{border: none;	width:430px;font-size: 14px;height:30px;}
-.login-button-wrap {padding-top: 13px;}
+.login-input-wrap input{border: none;	font-size: 14px;height: 45px;}
+.login-button-wrap {
+  padding-top: 13px; 
+  width: 90%; margin: 0 auto;
+}
 .login-button-wrap button{
-	width: 440px;height :48px;
-	font-size: 18px;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:7px
+	width: 100%; height :45px; 
+  margin: 0 auto; 
+	font-size: 14px; 
+  font-weight:bold; 
+  background: var(--yello-color); 
+  color: white; 
+  border: solid 1px var(--yello-border-color); 
+  border-radius:5px; 
+  margin-top:50px; 
 }
 .login-stay-sign-in{width:100;height: 52px;display: flex;font-size: 15px;	color: #4e4e4e;align-items: center;	justify-content: flex-start;border-bottom: solid 1px var(--border-gray-color);
 }
@@ -760,7 +769,7 @@ nav a:nth-child(1) {
 * {
   text-decoration: none;
   list-style: none;
-  font-family: "Nanum Gothic";
+  font-family: 'Nanum Gothic', sans-serif;
   font-weight: 400
 }
 
@@ -917,7 +926,7 @@ body {
 #footer .addr {
   margin-top: 10px;
   overflow: hidden;
-  font-family: '나눔고딕';
+  font-family: 'Nanum Gothic', sans-serif;
   font-size: 10px;
   line-height: 20px;
   color: #878787;

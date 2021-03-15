@@ -1,0 +1,224 @@
+/* fonts */
+/* none scroll */
+body,html {overflow-x: hidden; overflow-y: auto; min-width: 360px; width: 100%;}
+/* #content {display: none;}
+#header {display: none;} */
+@font-face{ 
+font-family: '나눔고딕'; 
+font-weight: normal; 
+font-style: normal; 
+src:url('../font/NanumGothic.woff') format('woff'); 
+}
+
+.skip_menu{position:absolute}
+.skip_menu a{position:absolute;top:-90px;left:0;width:138px;border:1px solid #4ec53d;background:#333;text-align:center}
+.skip_menu a:active, .skip_menu a:focus{top:0;z-index:1000;text-decoration:none}
+.skip_menu span{display:inline-block;padding:2px 6px 0 0;color:#fff;letter-spacing:-1px;font-size:13px;line-height:26px}
+
+
+*{box-sizing:border-box;}
+html, body, body div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+	margin:0;
+	padding:0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ol,ul,li {
+	list-style:none;
+}
+legend, caption { 
+	visibility:hidden;
+	width:0;
+	height:0;
+	font-size:0;
+	line-height:0
+}
+i,em,address{
+	font-style:normal
+}
+
+/* Hand cursor on clickable input elements */
+label, input[type="button"],
+input[type="submit"],
+input[type="image"],
+button,
+img.btn{ 
+    cursor: pointer;
+}
+
+/* Remove extra padding and inner border in Firefox */
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0; padding: 0;
+}
+
+img{vertical-align:top;margin:0;font-size:0;line-height:0;}
+
+body, select, input, textarea, a[href^="tel:"]:link {
+    color: #383838;
+    font-weight: normal;
+	font-size:12px;
+	font-family:'나눔고딕';
+	letter-spacing:-0.5px;
+}
+
+
+a{color:#383838;text-decoration:none;cursor:pointer}
+a:hover{text-decoration:none;}
+
+.b {font-weight:bold !important;}
+
+.clear{clear:both;}
+.show{display:block;}
+.hide{display:none;}
+
+/* *{padding-left:15px;padding-right:15px} */
+/* Header */
+#wrap{position:relative;width:100%;z-index:1;}
+#headerwrap{height:90px;}
+#header{position:relative;width:100%;max-width:800px;margin:auto;height:100px;}
+#header h1{position:relative;left:200px;top:34px;z-index:1;}
+#header h1 img{max-width:50%;
+  height: auto;}
+#header .gnb{position:relative;top:50px; z-index: 11}
+
+#header .gnb a{
+	font-family:'나눔고딕';
+	font-size:16px; 
+	/* line-height:16px; */ 
+	font-weight:bold; 
+	padding: 0 20px 0 px; 
+	overflow-x:hidden;
+}
+
+/*footer*/
+
+        @media screen and (min-width: 700px) {
+            .footer_inq_info {
+                display: flex;
+            }
+        }
+ 
+#footer{margin-top:80px;border-top:8px solid #f1f1f1}
+        .footer_inq_info>.top_wrap {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            padding-top: 30px;
+        }
+
+        .footer_inq_info .bottom_wrap {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            padding-top: 30px;
+        }
+
+        .footer_inq_info ul {
+            width: 50%;
+        }
+
+        #footer ul>li {
+            text-align: center;
+            padding: 2px 0;
+        }
+
+        #footer ul>li>.top {
+            font-size: 12px;
+            font-weight: 700;
+            color: #6B6B6B;
+            padding-bottom: 10px;
+        }
+
+        #footer ul li .middle {
+            font-size: 15px;
+            font-weight: 700;
+            color: #000;
+            padding-bottom: 10px;
+        }
+
+       #footer ul li .bottom {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6B6B6B;
+        }
+
+        .channelTalk {
+            font-size: 10px;
+            font-weight: 500;
+            color: #000;
+        }
+
+        .channelTalk>li {
+            width: 144px;
+            height: 27px;
+            margin: 0 auto;
+            border: 1px solid #878787;
+            line-height: 27px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+           
+        }
+
+        .channelTalk>li>a>img {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* footer bottom */
+        .footer_bottom {
+            width: 100%;
+            margin: 0 auto;
+            font-size: 12px;
+            background: #F4F4F4;
+            margin-top: 20px;
+            padding-bottom:20px
+        }
+
+        .footer_bottom>.footer_bottom_wrap {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .footer_bottom .grand_title {
+            display: flex;
+            padding-top: 20px;
+        }
+
+        .grand_title li {
+            font-weight: 700;
+            color: #878787;
+            padding-right: 10px;
+        }
+
+        .grand_title li>span {
+            margin-left: 5px;
+        }
+
+        .footer_bottom_ctt {
+            padding-top: 20px;
+        }
+        .footer_bottom_ctt ul li {
+            text-align: left;
+        }
+        .represent {
+            display: flex;
+        }
+        .footer_bottom_ctt .companyName {font-weight: 700;}
