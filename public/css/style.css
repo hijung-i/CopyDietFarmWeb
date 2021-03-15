@@ -93,11 +93,11 @@ a:hover{text-decoration:none;}
 /* Header */
 #wrap{position:relative;width:100%;z-index:1;}
 #headerwrap{height:90px;}
-#header{position:relative;width:100%;max-width:800px;margin:auto;height:100px;}
+#header{position:relative;width:100%;background-color:#fff;}
 #header h1{position:relative;left:200px;top:34px;z-index:1;}
 #header h1 img{max-width:50%;
   height: auto;}
-#header .gnb{position:relative;top:50px; z-index: 11}
+#header .gnb{position:fixed;top:0px; z-index: 11;background-color:#fff;padding-top:60px}
 
 #header .gnb a{
 	font-family:'나눔고딕';
@@ -153,8 +153,8 @@ nav a:nth-child(5).is-current ~ .nav-underline {
 }
 
 #header h1{display:none;}
-#mHeader{position:absolute;left:0;top:0;width:100%;height:44px;z-index:100;background:#fff;}
-#mHeader h1{padding:40px 10px;text-align:center; height: 20px;}
+#mHeader{position:fixed;left:0;top:0;width:100%;height:44px;z-index:100;background-color:#fff;}
+#mHeader h1{padding:40px 10px;text-align:center; height: 20px;background-color:#fff;}
 #mHeader h1 img{max-width:14%}
 #mHeader .btnMenu{position:absolute;left:15px;top:17px;padding:30px 0}
 #mHeader .btnCart{position:absolute;right:15px;top:17px;padding:25px 0}
