@@ -1,10 +1,10 @@
-*{font-family:'나눔고딕';font-weight:400}
+*{font-family: 'Nanum Gothic', sans-serif;font-weight:400}
 
 body{padding-left:15px;padding-right:15px;min-width:360px}
 html, body {max-width: 100%;overflow-x: hidden;
 }
-.detail_title{margin:40px 10px 32px 10px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
+.detail_title{margin:40px 10px 32px 10px;width:100%; vertical-align: middle;}
+.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:0px;}
 .detail_title a img{position:absolute;top:42px;width:17px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
@@ -13,18 +13,28 @@ html, body {max-width: 100%;overflow-x: hidden;
   :root{--font-color: #4e4e4e;--border-gray-color : #dadada;--yello-color: #EFA543;--yello-border-color: #EFA543;
 }
 
-.login a{position:absolute;left:20px;margin-top:-20px}
+.login a{position:absolute;left:20px;margin-top:-20px;}
 
-.login-input-section-wrap{padding-top: 20px;display: flex;}
+.login-input-section-wrap{width: 90%; margin: 0 auto; padding-top: 20px;display: flex;}
 
 .login-input-wrap{width:border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
-.login-input-wrap input{border: none;	width:330px;height:45px;font-size: 14px;margin-left: 10px;}
-.login-button-wrap {padding-top: 13px;}
+.login-input-wrap input{width:330px; height:45px; font-size: 14px; /* margin-left: 10px; */}
+.login-button-wrap {
+  padding-top: 13px; 
+  width: 90%; margin: 0 auto;
+}
 .login-button-wrap button{
-	width: 340px;height :45px;
-	font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;margin-top:50px
+	width: 100%; height :45px; 
+  margin: 0 auto; 
+	font-size: 14px; 
+  font-weight:bold; 
+  background: var(--yello-color); 
+  color: white; 
+  border: solid 1px var(--yello-border-color); 
+  border-radius:5px; 
+  margin-top:50px; 
 }
 .login-stay-sign-in{width: 330px;height: 52px;display: flex;font-size: 15px;	color: #4e4e4e;align-items: center;	justify-content: flex-start;border-bottom: solid 1px var(--border-gray-color);
 }

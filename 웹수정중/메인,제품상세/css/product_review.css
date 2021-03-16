@@ -1,0 +1,118 @@
+/* 초기화 */
+
+ 
+/* 리뷰쓰기 헤더 */
+.review_title{                            
+    overflow-x:hidden;
+    margin:50px 10px 10px 10px;
+    width:90%;
+}
+ .review_title h2{
+     text-align:center;
+     position:relative;
+     font-weight:700;
+     font-size:16px;
+     margin-right:10px
+}
+.review_title a img{
+    position:absolute;
+    top:50px
+}
+
+
+/* 주문 상세 부제 */
+.prod_rev_menu_nav {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 14px;
+}
+.prod_rev_menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+}
+.prod_rev_menu > .left {
+    color: #EFA543;
+    font-weight: 700;
+    padding-left: 24px;
+}
+.prod_rev_menu > .right {
+    color: #878787;
+    padding-right: 46px;
+}
+.nav_underline {
+    width: 100%;
+    display: flex;
+}
+.nav_underline > .nav_color_underline {
+    width: 50%; height: 2px;
+    background-color: #EFA543;
+    margin-top: 5px;
+}
+.nav_underline .nav_gray_underline {
+    width: 50%; height: 2px;
+    background-color: #E6E6E6;
+    margin-top: 5px;
+}
+
+/* 리뷰상품 리스트 */
+
+.review_list_ctn {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.review_line {
+    width: 100%; height: 1px;
+    margin: 0 auto;
+    background: #BBBBBB;
+    opacity: 0.4;
+    margin: 10px 0 10px 0;
+}
+.review_prod {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.review_prod .review_detail {
+    /* padding-left: 10px; */
+}
+.review_prod .review_detail > li {
+    padding: 4px 0 4px 0;
+    font-size: 12px;
+}
+.review_prod .review_detail > .review_brand {
+    color: #878787; font-size: 12px;
+}
+
+
+.review_prod > .review_img {
+    width: 50px; height: 62px;
+    background: #ccc;
+    background-image: url(../images/dietfarmbread.jpg);
+    background-size: cover; background-position: center;
+}
+
+.review_prod .review_option {
+    color: #878787;
+}
+
+
+/* 하단 버튼 */
+.btn_area_2 {
+    padding-bottom: 18px;
+}
+
+.btn_area_2 > .btnJoin_2 {
+    font-size: 14px;
+    color: #fff;
+    background: #EFA543;
+    border: 0;
+    cursor: pointer;
+    padding: 10px 6px ;
+    border-radius: 5px;
+}

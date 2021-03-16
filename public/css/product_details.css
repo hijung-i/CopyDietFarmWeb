@@ -1,11 +1,17 @@
-*{font-family:'나눔고딕';font-weight:400}
+*{font-family: 'Nanum Gothic', sans-serif;font-weight:400}
 
 body{min-width:360px;}
 html, body {max-width: 100%;overflow-x: hidden;
 }
+<<<<<<< HEAD
  td, tr, h1, h2,{padding-left:20px;}
 .detail_title{;margin-bottom:-20px;width:100%;position:fixed;top:0px; z-index: 11;background-color:#fff;padding-bottom:15px}
 .detail_title{padding-top:42px;width:100%;}
+=======
+ td, tr, h1, h2{padding-left:20px;}
+.detail_title{overflow:hidden;margin-bottom:-20px;width:100%;}
+.detail_title{margin:40px 10px 32px 10px;width:100%;}
+>>>>>>> f2e2607a549187abf10be44f4e6bc4361c147ae4
  .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 .detail_title .title{width:200px;white-space: nowrap;
 overflow:hidden;text-overflow: ellipsis;margin:0 auto}
