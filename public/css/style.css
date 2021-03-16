@@ -97,7 +97,7 @@ a:hover{text-decoration:none;}
 #header h1{position:relative;left:200px;top:34px;z-index:1;}
 #header h1 img{max-width:50%;
   height: auto;}
-#header .gnb{position:fixed;top:0px; z-index: 11;background-color:#fff;padding-top:35px}
+#header .gnb{position:fixed;top:0px; z-index: 11;background-color:#fff;padding-top:36px}
 
 #header .gnb a{
 	font-family:'나눔고딕';
@@ -205,7 +205,7 @@ nav a:nth-child(5).is-current ~ .nav-underline {
 }
 
 .tabMenu{width:100%;z-index:300}
-#content .tab_wrap{width:100%;padding-bottom:40px; border-bottom: none;}
+#content .tab_wrap{width:100%;border-bottom: none;}
  .tabMenu ul{padding-left:40px;padding-right:20px;background-color:#fff}
  .tabMenu li{float:left;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding:10px 20px 10px 0px;}
 .tabMenu li a{color:#878787;}
@@ -512,7 +512,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
             background: #F4F4F4;
             margin-top: 20px;
             text-align:left;
-            display:block;
+            padding-bottom:70px;
                    
         }
 
@@ -551,7 +551,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .pages{width:100%;position:fixed;bottom:0;background-color:#fff;z-index:9999;margin-top:300px}
 .pages ul{width:100%;display:flex;justify-content:space-around}
 .pages ul li{float:left;}
-.pages ul li img{width:40px}
+.pages ul li img{width:40px;}
 
 
 
@@ -620,7 +620,6 @@ justify-self: center;width: 100%;margin: 0 auto;}
 font-size: 14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px;border:1px solid #EFA543}
 
 /*주문 내역*/
-.detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;font-weight:bold;font-size:16px;margin-bottom:20px;margin-top:-4px}
 .detail_title a img{position:absolute;margin-top:px;width:17px}
 #content .order_list p img{}
