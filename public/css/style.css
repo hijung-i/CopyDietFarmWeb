@@ -386,21 +386,39 @@ justify-self: center;width: 100%;margin: 10px auto;
 #content .w_best li .desc ul li{margin-left:10px;margin-bottom:20px}
 
 
-#content .p_wrap{width:100%; border-bottom:8px solid #f1f1f1;}
+#content .p_wrap{
+  width:90%; 
+  border-bottom:8px solid #f1f1f1;
+  
+}
 #content .protein{overflow:hidden; width:100%; margin:20px 10px;}
 #content .btn{background:none;border:0;font-size:12px;}
 #content .protein h2{font-size:14px;margin-bottom:20px; display: flex;padding-left:15px;padding-right:20px; margin: 0 auto; padding-bottom: 19px; justify-content: space-between;}
-#content .protein ul{display:grid;grid-template-columns: repeat(2, 3fr);
-;align-items: center;
-justify-self: center;width: 100%;margin: 0 auto;}
+#content .protein ul{
+  display:grid;
+  grid-template-columns: repeat(2, 3fr);
+  align-items: center;
+  justify-self: center;
+  width: 100%;
+  margin: 0 auto;
+}
 #content .protein li .desc ul{margin-left:-5px}
 #content .protein li .desc ul li{margin-left:10px;margin-bottom:20px}
 #content .protein .desc p{margin-left:5px;margin-top:15px;margin-bottom:5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 #content .protein .desc ul li{margin-bottom:10px}
-#content .protein ul li img{width:90%}
+#content .protein ul li img{width:84%}
 
-#content .s_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-bottom:30px}
-#content .sweets{overflow:hidden;margin:20px 10px; width:100%}
+#content .s_wrap{
+  width:90%; margin: 0 auto;
+  border-bottom:8px solid #f1f1f1;
+  margin-bottom:30px;
+
+}
+#content .sweets{
+  overflow:hidden;
+  width:100%;
+  margin: 0 auto;
+}
 #content .sweets h2{font-size:14px;display: flex;padding-left:15px; margin: 0 auto; padding-bottom:19px;padding-right:20px;justify-content: space-between;}
 #content .sweets ul {display:grid;grid-template-columns: repeat(2, 3fr);
 ;align-items: center;
@@ -409,10 +427,17 @@ justify-self: center;width: 100%;margin: 0 auto;}
 #content .sweets li .desc ul li{margin-left:10px;margin-bottom:20px}
 #content .sweets .desc p{margin-left:5px;margin-top:15px;margin-bottom:5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 #content .sweets .desc ul li{margin-bottom:10px}
-#content .sweets ul li img{width:90%}
+#content .sweets ul li img{width:84%}
 
-#content .w_wrap{width:100%;border-bottom:8px solid #f1f1f1;}
-#content .water{overflow:hidden;margin:20px 10px 10px;width:100%}
+#content .w_wrap{
+  width:90%; margin: 0 auto;
+  border-bottom:8px solid #f1f1f1;
+}
+  
+#content .water{
+  overflow:hidden;
+  width:90%; margin: 0 auto;
+}
 #content .water h2{font-size:14px;margin-bottom:20px; display: flex;padding-left:15px;padding-right:20px;margin: 0 auto; padding-bottom:19px; justify-content: space-between;}
 #content .water ul {display:grid;grid-template-columns: repeat(2, 3fr);
 ;align-items: center;
@@ -563,7 +588,10 @@ justify-self: center;width: 100%;margin: 0 auto;}
 
 
 /* 서브메뉴 */
-#content .main_sub_wrap{;width:100%;border-top:2px solid #f1f1f1;}
+#content .main_sub_wrap{
+  width:100%;
+  border-top:2px solid #f1f1f1;
+}
 #content .main_sub{padding-left:15px;padding-right:15px;width:100%;margin:auto}
 @media screen and (min-width:360px) and (max-width:600px){#content .desc .cost{margin-left:-20px;font-size:10px;color:#bbbbbb;text-decoration:line-through}
 }
@@ -582,8 +610,8 @@ justify-self: center;margin:0 auto;}
 justify-self: center;margin: 0 auto;}
 }
 
-#content .main_sub ul li{float:left;padding:5px}
-#content .main_sub ul li img{width:100%;}
+#content .main_sub ul li{float:left;}
+#content .main_sub ul li img{width:80%;}
 #content .main_sub ul li .desc p{font-size:12px;padding:5px;margin-top:5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:200px;height: 20px;display:inline-block}
 #content .main_sub ul li .desc .price{font-weight:bold;margin-bottom:10px;}
 #content .desc ul{ display: -webkit-box; /* Old webkit */display: -ms-flexbox; /* IE 10~11 */
