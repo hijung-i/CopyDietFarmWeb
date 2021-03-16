@@ -10,7 +10,7 @@
 
     <title>다이어트 Farm</title>
     <%-include('general/head') %>
-    
+    <link rel="stylesheet" href="css/style02.css">
 </head>
 <style type="text/css">
     .bx-wrapper {
@@ -18,8 +18,927 @@
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
     }
+    @media screen and (min-width:360px)and (max-width:1079px) {.web_index{display:none}}
+    @media screen and (min-width:1020px){.mobile_index{display:none} }
 </style>
 <body>
+    <div class="web_index">
+        <header id="wheader">
+       <div id="Wrapper">
+           <div id="skip_navi"><a href="#Container">본문바로가기</a></div>
+   
+           <div id="wHeader">
+               <div class="top_util">
+                   <ul class="menu_list" id="menu_list_header">
+   
+                       <li class="join"><a href="#">회원가입</a></li>
+                       <li class="bar"><img src="images/l_icon_category@2x.png"></li>
+                       <li class="login"><a href="#">로그인</a></li>
+                        <li class="bar"><img src="images/l_icon_category@2x.png"></li>
+                       <li class="cs_center"><a href="#">고객센터<span id="cartToCnt"></span></a></li>
+                       <li class="cart"><a href="#"><img src="images/cart_ico_main.png" alt="장바구니"></a></li>
+                       <li class="mypage"><a href="#"><img src="images/my_icon_menu.png" alt="마이페이지"></a></li>
+                       <li class="pick"><a href="#"><img src="images/afterheart_ico_main.png" alt="찜한 메뉴"></a></li>
+                  </ul>
+               </div>
+               <div class="header_inner">
+                   <h1><a href="javascript:common.link.moveMainHome();"><img src="images/diet_farm_logo.png" alt="다이어트팜" /></a></h1>
+                   </div>
+   
+               <div class="header_design_area"></div>
+   
+           </div>
+   
+   
+           <div id="Gnb" class="main gen1">
+               <div id="gnbWrap">
+                   <a href="#" id="btnGnbOpen">전체카테고리</a>
+                   <!-- 전체 카테고리 레이어 -->
+                   <div class="layer_all_menu" id="gnbAllMenu">
+                
+              <div class="m_slides_n_w"> 
+               <!--메인배너 좌측 버튼-->
+               <div class="m_ba_slides_n_w font_ng" style="top:0px">
+                   <ul class="m_ba_slides_n">                  <li class="m_ba_slides_n_li             m_ba_line_n" style="border-top:none;"><a href="#"><img                                               src="images/salad_icon_category.png">도시락/샐러드</a>
+                           <ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                               <div class="m_slid_2dep_txt font_ng">
+                                   <ul class="mn2dep">
+                                       <li><a href="#">전체보기</a></li>
+                                       <li><a href="#">바/쿠키</a></li>
+                                       <li><a href="#">아이스크림/요거트</a></li>
+                                       <li><a href="#">젤리/잼</a></li>
+                                       <li><a href="#">고구마/계란/견과</a></li>
+                                   </ul>
+                               </div>
+                           </ul>
+                       </li>
+                            <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/meal_icon_category.png">간편식</a>
+                           <ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                               <div class="m_slid_2dep_txt font_ng">
+                                   <ul class="mn2dep">
+                                       <li><a href="#">전체보기</a></li>
+                                       <li><a href="#">빵/떡/면</a></li>
+                                       <li><a href="#">쉐이크/시리얼/두유</a></li>
+                                       <li><a href="#">건강반찬/기타</a></li>
+                                   </ul>
+                               </div>
+                           </ul>
+                       </li>
+                           <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/chicken_icon_category.png">닭가슴살</a>
+                           <ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                               <div class="m_slid_2dep_txt font_ng">
+                                   <ul class="mn2dep">
+                                       <li><a href="#">전체보기</a></li>
+                                       <li><a href="#">닭가슴살</a></li>
+                                       <li><a href="#">큐브/볼</a></li>
+                                       <li><a href="#">소시지</a></li>
+                                   </ul>
+                               </div>
+                           </ul>
+                       </li>
+                           <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/snack_icon_category.png">건강간식</a>
+                           <ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                               <div class="m_slid_2dep_txt font_ng">
+                                   <ul class="mn2dep">
+                                       <li><a href="#">전체보기</a></li>
+                                       <li><a href="#">바/쿠키</a></li>
+                                       <li><a href="#">아이스크림/요거트</a></li>
+                                       <li><a href="#">젤리/잼</a></li>
+                                       <li><a href="#">고구마/계란/견과</a></li>
+                                       
+                                   </ul>
+                               </div>
+                           </ul>
+                       </li>
+                           <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/drink_icon_category.png">음료/소스</a>
+                           <ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                               <div class="m_slid_2dep_txt font_ng">
+                                   <ul class="mn2dep">
+                                       <li><a href="#">전체보기</a></li>
+                                       <li><a href="#">티/분말</a></li>
+                                       <li><a href="#">주스/즙</a></li>
+                                       <li><a href="#">소스/조미료/향신료</a></li>
+                                   </ul>
+                               </div>
+                           </ul>
+                       </li>
+                            <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/fruit_icon_category.png">신선식품</a>
+                           <ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                               <div class="m_slid_2dep_txt font_ng">
+                                   <ul class="mn2dep">
+                                       <li><a href="#">정육</a></li>
+                                       <li><a href="#">수산</a></li>
+                                       <li><a href="#">야채</a></li>
+                                       <li><a href="#">과일</a></li>
+                                       
+                                   </ul>
+                               </div>
+                           </ul>
+                       </li>
+                          <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/meal_icon_category.png">브랜드</a>
+                           <ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                               <div class="m_slid_2dep_brand">
+                            <div id="searchUsers" class="instant-search">
+                       <div class="instant-search__input-container">
+                           <input class="instant-search__input" type="text" spellcheck="false" placeholder="브랜드명을 검색해보세요." style="font-size:14px">
+                           <a href="#"><img src="./images/grayx_icon_login.png" alt="취소"></a>
+                       </div>
+                       <div class="search_box_ico"><a href="#"><img src="./images/searchbox_icon_category.png" alt=""></a></div>
+                   </div>
+   
+                   <section class="brand">
+                       <div class="categ">
+                           <ul>
+                               <li class="all"><a hreef="#">전체</a></li>
+                               <li><img src="images/l_icon_category.png"></li>
+                               <li><a href="#">인기순</a></li>
+                               <li><img src="images/l_icon_category.png"></li>
+                               <li><a href="#">좋아요</a></li>
+                           </ul>
+                       </div>
+                       <ul>
+                           <li>
+                               <ul>
+                                   <li><a href="#">해담은</a>
+                                   <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                               </ul>
+                           </li>
+                           <li>
+                               <ul>
+                                   <li><a href="#">파프리카푸드</a>
+                                   <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                               </ul>
+                           </li>
+                           <li>
+                               <ul>
+                                   <li><a href="#">해담은2</a>
+                                   <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                               </ul>
+                           </li>
+                           <li>
+                               <ul>
+                                   <li><a href="#">파프리카푸드2</a>
+                                   <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                               </ul>
+                           </li>
+                           <li>
+                               <ul>
+                                   <li><a href="#">해담은</a>
+                                   <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                               </ul>
+                           </li>
+                           <li>
+                               <ul>
+                                   <li><a href="#">파프리카푸드</a>
+                                   <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                               </ul>
+                           </li>
+                           <li>
+                               <ul>
+                                   <li><a href="#">해담은2</a>
+                                   <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                               </ul>
+                           </li>
+                           <li>
+                               <ul>
+                                   <li><a href="#">파프리카푸드2</a>
+                                   <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                               </ul>
+                           </li>
+                       </ul>
+                   </section>
+                               </div>
+                           </ul>
+                       </li>
+                   </ul>
+               </div>
+               <!--//메인배너 좌측 버튼-->
+           </div>   
+        </div>
+                   <!--// 전체 카테고리 레이어 -->
+   
+                   <ul class="gnb_menu_list">
+                      
+                        <li><a href="new.html">신상</a></li>
+   
+   
+                       <li><a href="best.html">베스트</a></li>
+   
+   
+                       <li><a href="s_price.html">특가</a></li>
+   
+   
+                       <li><a href="d_delivery.html">매일배송</a></li>
+                   </ul>
+               
+               </div>
+               <div class="searchbox">
+               <form id="search-form">
+                   <div class="search">
+                 <input type="text" name="search" class="round" placeholder="검색해보세요.">
+              <img src="images/search_ico_join.png">              </div>
+            </form>
+               </div>
+           </div>
+       </div>
+     </header>
+     
+     <main id="content">
+             <section class="main_img">
+               <ul class="bxslider">
+                   <li><img src="images/m_img1.jpg"></li>
+                   <li><img src="images/m_img2.jpg"></li>
+                   <li><img src="images/m_img3.jpg"></li>
+                   <li><img src="images/m_img4.jpg"></li>
+               </ul>
+           </section>
+           <!--//메인 이미지-->
+      
+           <!-- multiple slide -->
+           <div class="sp_wrap">
+               <section class="s_price_web">
+                   <h2>2월 특가</h2>
+                   <ul class="multiple_bxslider">
+                       <li><a href="#"><img src="images/dietfarmbread.jpg" >
+                               <span class="title">제품이름</span><br><span class="price">
+                                   <ul>
+                                       <li class="sale">23,400원</li>
+                                       <li class="cost">26,000원</li>
+                                       <li class="ratio">10%</li>
+                                   </ul>
+                               </span></a></li>
+                       <li><a href="#"><img src="images/dietfarmbread.jpg">
+                               <span class="title">제품이름맛있는 도시락한개</span><br><span class="price">
+                                   <ul>
+                                       <li class="sale">23,400원</li>
+                                       <li class="cost">26,000원</li>
+                                       <li class="ratio">10%</li>
+                                   </ul>
+                               </span></a></li>
+                       <li><a href="#"><img src="images/dietfarmbread.jpg" >
+                               <span class="title">제품이름맛있는 도시락한개</span><br><span class="price">
+                                   <ul>
+                                       <li class="sale">23,400원</li>
+                                       <li class="cost">26,000원</li>
+                                       <li class="ratio">10%</li>
+                                   </ul>
+                               </span></a></li>
+                       <li><a href="#"><img src="images/dietfarmbread.jpg" >
+                               <span class="title">제품이름맛있는 도시락한개</span><br><span class="price">
+                                   <ul>
+                                       <li class="sale">23,400원</li>
+                                       <li class="cost">26,000원</li>
+                                       <li class="ratio">10%</li>
+                                   </ul>
+                               </span></a></li>
+                       <li><a href="#"><img src="images/dietfarmbread.jpg" >
+                               <span class="title">제품이름맛있는 도시락한개</span><br><span class="price">
+                                   <ul>
+                                       <li class="sale">23,400원</li>
+                                       <li class="cost">26,000원</li>
+                                       <li class="ratio">10%</li>
+                                   </ul>
+                               </span></a></li>
+                       <li><a href="#"><img src="images/dietfarmbread.jpg" >
+                               <span class="title">제품이름</span><br><span class="price">
+                                   <ul>
+                                       <li class="sale">23,400원</li>
+                                       <li class="cost">26,000원</li>
+                                       <li class="ratio">10%</li>
+                                   </ul>
+                               </span></a></li>
+                       <li><a href="#"><img src="images/dietfarmbread.jpg" >
+                               <span class="title">제품이름</span><br><span class="price">
+                                   <ul>
+                                       <li class="sale">23,400원</li>
+                                       <li class="cost">26,000원</li>
+                                       <li class="ratio">10%</li>
+                                   </ul>
+                               </span></a></li>
+                       <li><a href="#"><img src="images/dietfarmbread.jpg" >
+                               <span class="title">제품이름</span><br><span class="price">
+                                   <ul>
+                                       <li class="sale">23,400원</li>
+                                       <li class="cost">26,000원</li>
+                                       <li class="ratio">10%</li>
+                                   </ul>
+                     </span></a></li>
+                   </ul>
+               </section>
+           </div><!--//sp_wrap(2월 특가)-->
+           
+           <div class="blank_sec">
+               <ul>
+                   <li><a href="#"><img src="images/blank1.jpg" style="width:520px;height:520px"></a></li>
+                   <li><a href="#"><img src="images/blank2.jpg" style="width:520px;height:520px"></a></li>
+               </ul>
+           </div>
+           
+           
+           
+           
+           
+           
+           
+           <div class="m_best"> 
+               <div class="m_bestn_w">
+                       <h2>위클리 베스트</h2>
+                   <div class="w_bestn_tit_w">
+              
+                   </div>
+                   <!--//타이틀-->
+                <!--카테고리 이미지 및 우측 리스트-->
+       <ul>
+               <li class="m_bestn_mn_box">
+               <div class="m_bestn_mn_img"><a href="#"><img src="images/side.jpg" ></a></div>                        
+               </li>
+              <li>
+   <!--리스트-->
+   <div class="m_bestn_list">
+   <ul class="m_bestn_nlst">
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m" >
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   <li class="tb_mw_wrap">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   <li class="tb_mw_wrap">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   </ul>
+   </div>
+   </li>
+   </ul>
+   <!--//카테고리 이미지 및 우측 리스트-->
+   </div>
+   </div>
+   <div class="m_best"> 
+               <div class="m_bestn_w">
+                       <h2>단백질이 필요할 때!</h2>
+                   <div class="w_bestn_tit_w">
+              
+                   </div>
+                   <!--//타이틀-->
+                <!--카테고리 이미지 및 우측 리스트-->
+       <ul>
+               <li class="m_bestn_mn_box">
+               <div class="m_bestn_mn_img"><a href="#"><img src="images/side2.jpg" ></a></div>                        
+               </li>
+              <li>
+   <!--리스트-->
+   <div class="m_bestn_list">
+   <ul class="m_bestn_nlst">
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m" >
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   <li class="tb_mw_wrap">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   <li class="tb_mw_wrap">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   </ul>
+   </div>
+   </li>
+   </ul>
+   <!--//카테고리 이미지 및 우측 리스트-->
+   </div>
+   </div>
+     
+     
+     <div class="banner">
+         <img src="images/banner01.PNG">
+     </div>
+     
+     <div class="m_best"> 
+               <div class="m_bestn_w">
+                   <h2>당충전이 필요할 때!</h2>
+                   <div class="w_bestn_tit_w">
+              
+                   </div>
+                   <!--//타이틀-->
+                <!--카테고리 이미지 및 우측 리스트-->
+       <ul>
+               <li class="m_bestn_mn_box">
+               <div class="m_bestn_mn_img"><a href="#"><img src="images/side3.jpg" ></a></div>                        
+               </li>
+              <li>
+   <!--리스트-->
+   <div class="m_bestn_list">
+   <ul class="m_bestn_nlst">
+   
+   <li class="tb_mw_wrap "\>
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m" >
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap ">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   
+   <li class="tb_mw_wrap">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   <li class="tb_mw_wrap">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   <li class="tb_mw_wrap">
+   <a href="#" onclick="#">
+   <div class="mbestn_zzim_img tb_mw">
+   
+   <p class="m_bestn_img tb_mw">
+     <img src="images/dietfarmbread.jpg" class="tb_m">
+             </p>
+   <div class="desc">
+       <p class="title">제품이름</p>
+       <ul>
+           <li class="sale">23,400원</li>
+           <li class="cost">26,000원</li>
+           <li class="ratio">10%</li>
+       </ul>
+   </div>
+   </div>
+   </a>
+   </li>
+   </ul>
+   </div>
+   </li>
+   </ul>
+   <!--//카테고리 이미지 및 우측 리스트-->
+   </div>
+   </div>
+   
+     </main>
+   
+     <footer id="footer">
+              <div class="footer_top">
+               <div class="footer_top_wrap">
+                   <ul class="grand_title">
+                       <li><a href="#">사업자정보확인</a></li>
+                       <li><img src="images/l_icon_category@2x.png"></li>
+                       <li><a href="#">개인정보처리방침</a></li>
+                       <li><img src="images/l_icon_category@2x.png"></li>
+                       <li><a href="#">이용약관</a></li>
+                   </ul>
+                    </div>
+                  </div>
+                   <div class="footer_bottom">
+                    <div class="footer_bottom_ctt">
+                      <h3>다이어트팜 정보</h3>
+                       <ul>
+                           <li class="companyName">(주)데이터플로&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표 : 유승열</li>
+                           <li>사업자등록번호 : 509-81-05501</li>
+                           <li>통신판매업 신고번호 :</li>
+                           <li>건강기능식품 판매업 : 제 2021-0105159 호</li>
+                           <li>개인정보보호책임자 : 유승열</li>
+                           <li>주소 : 서울시 강남구 테헤란로8길 11-4 신도빌딩, 2층 202호</li>
+                           <li>팩스 : 070-7500-7691</li>
+                           <li style="margin-bottom:15px">이메일 : <span class="point"><a href="mailto:dietfarm119@gmail.com">dietfarm119@gmail.com</a></span></li>
+                          <li>입점문의 : <span class="point"><a href="#">입점문의하기</a></span></li>
+                           <li>제휴문의 : <span class="point"><a href="mailto:dietfarm119@gmail.com">dietfarm119@gmail.com</a></span></li>
+                       </ul>
+                   </div>
+              
+   
+           <div class="footer_inq_info">
+               <div class="top_wrap">
+                   <ul class="customer_center">
+                       <li>
+                           <p class="top">고객센터</p>
+                       </li>
+                       <li>
+                           <p class="middle">070-4366-3299</p>
+                       </li>
+                       <li>
+                           <p class="bottom">월~금 10:00~17:00</p>
+                       </li>
+                       <li>
+                           <p class="bottom">점심시간 12:00~13:00</p>
+                       </li>
+                       <li>
+                           <p class="bottom">토,일,공휴일 휴무</p>
+                       </li>
+                   </ul>
+                   <ul class="account">
+                       <li>계좌번호</li>
+                       <li>농협<br>317-0021-9321-31</li>
+                       <li>예금주 (주)데이터플로</li>
+                   </ul>
+               </div>
+   
+               <div class="bottom_wrap">
+                   <ul class="notice">
+                       <li>공지사항</li>
+                       <li>1월 연휴 배송안내</li>
+                       <li>추석 연휴 배송안내</li>
+                   </ul>
+   
+                   <ul class="channelTalk">
+                       <li><img src="./images/talk_icon1_footer.png" alt="채널톡1">채널톡 문의</li>
+                       <li><img src="./images/talk_icon2_footer.png" alt="채널톡2">판매자 문의 (주문건)</li>
+                   </ul>
+               </div>
+           </div>
+           </div>
+       </footer>
+    </div>
+    <div class="mobile_index">
    <div class="body_ctt">
     <article class="skip_menu">
         <a href="#"><span>바로가기1</span></a>
@@ -387,8 +1306,86 @@
     </main>
     <%-include('general/footer') %>
     </div>
-
+   </div>
     <script src="/js/index.js"></script>
+    <script>
+        // 햄버거 메뉴
+        $(document).ready(function() {
+
+            $('.btnMenu>a').on('click', function() {
+                $('.sideMenu').show().animate({
+                    left: 0
+                });
+            });
+            $('.slideMenu_close>a').on('click', function() {
+                $('.sideMenu').animate({
+                    left: -100 + '%'
+                }, function() {
+                    $('.sideMenu').hide();
+                });
+            });
+        });
+
+
+        // 햄버거 2단계 메뉴
+        $(document).ready(function() {
+            $("dt.faq_q").click(function() {
+                if ($(this).next('dd').css("display") != "none") {
+                    $(this).next('dd').hide();
+                    $(this).removeClass("current");
+                } else {
+                    $("dd.faq_a").css('display', 'none');
+                    $("dt.faq_q").removeClass("current");
+                    $(this).next('dd').show();
+                    $(this).addClass("current");
+                }
+            });
+        });
+
+         $(document).ready(function() {
+
+            $('.btnMenu>a').on('click', function() {
+                $('.gnb').hide();
+            });
+        });
+        $('.slideMenu_close>a').on('click', function() {
+            $('.gnb').show();
+        });
+    </script>
+      <script>
+     	$(document).ready(function(){
+		$("#gnbAllMenu").hide();
+		$("#btnGnbOpen").click(function(){
+			$("#gnbAllMenu").slideToggle("fast");
+		});
+	});
+
+	   $(document).ready(function() {
+            $(".m_slides_sub").hide();
+            $(".m_ba_slides_n_w li").hover(function(){
+                $("ul:not(:animated)",this).slideDown("700");
+
+                $(".m_ba_slides_n_w li a").removeClass("active");
+            },
+            function() {
+                $("ul",this).slideUp("700");
+               });
+
+		    $("#memberMenu").bind("moseover mouseenter",function(){
+				$("#memMenu").show();
+		  });
+		   $("#memMenu").bind("moseout mouseleave",function(){
+				$("#memMenu").hide();
+		  });
+
+		    $("#NotmemberMenu").bind("moseover mouseenter",function(){
+				$("#NotmemMenu").show();
+		  });
+		   $("#NotmemMenu").bind("moseout mouseleave",function(){
+				$("#NotmemMenu").hide();
+		  });
+        });
+    </script>
     
    
 </body></html>
