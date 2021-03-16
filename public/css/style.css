@@ -455,7 +455,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
         }
 
         #footer ul>li {
-            text-align: center;
+            text-align: left;
             padding: 2px 0;
         }
 
@@ -549,7 +549,11 @@ justify-self: center;width: 100%;margin: 0 auto;}
 
 /*모바일 페이지 버튼*/
 .pages{width:100%;position:fixed;bottom:0;background-color:#fff;z-index:9999;margin-top:300px}
-.pages ul{width:100%;display:flex;justify-content:space-around}
+.pages ul{width:100%;
+  display:flex;
+  justify-content:space-around;
+  padding: 20px 0;
+}
 .pages ul li{float:left;}
 .pages ul li img{width:40px}
 
@@ -853,7 +857,7 @@ ul li .bottom {
   font-size: 12px;
   background: #F4F4F4;
   margin-top: 20px;
-  padding-bottom:20px
+  padding-bottom:70px
 }
 
 .footer_bottom>.footer_bottom_wrap {
