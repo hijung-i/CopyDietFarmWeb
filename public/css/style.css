@@ -381,7 +381,7 @@ justify-self: center;width: 100%;margin: 10px auto;
 #content .w_best{ overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
 #content .w_best h2{font-size:14px; margin-bottom:20px;margin-top:24px}
 .p_wrap .thum,.s_wrap .thum, .w_wrap .thum {
-  width: 159px; height: 162px;
+  width: 80%;
   overflow: hidden;
 }
 
@@ -393,11 +393,15 @@ justify-self: center;width: 100%;margin: 10px auto;
 
 
 #content .p_wrap{
-  width:100%; margin: 0 20px;
+  width:90%; margin: 0 auto;
   overflow: hidden;
 }
 .thick_line {width: 100%; height: 8px; background: #f1f1f1;}
-#content .protein{overflow:hidden; width:100%; margin:20px 0;}
+#content .protein{
+  overflow:hidden; 
+  width:100%; 
+  margin:50px 0;
+}
 #content .btn{background:none;border:0;font-size:12px;}
 #content .protein h2{font-size:14px;margin-bottom:20px; display: flex;padding-left:15px;padding-right:20px; margin: 0 auto; padding-bottom: 19px; justify-content: space-between;}
 #content .protein ul{
@@ -408,11 +412,13 @@ justify-self: center;width: 100%;margin: 10px auto;
   width: 100%;
   margin: 0 auto;
 }
+#content .protein ul li {
+}
 #content .protein li .desc ul{margin-left:-5px}
 #content .protein li .desc ul li{margin-left:10px;margin-bottom:20px}
 #content .protein .desc p{margin-left:5px;margin-top:15px;margin-bottom:5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 #content .protein .desc ul li{margin-bottom:10px}
-#content .protein ul li img{width:84%}
+#content .protein ul li img{width:100%}
 
 #content .s_wrap{
   width:100%; margin: 0 20px;

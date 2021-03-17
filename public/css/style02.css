@@ -199,7 +199,7 @@ button {font-family:'Montserrat', -apple-system, 'NotoSansCJKkr', 'AppleSDGothic
 #content .s_price li .title{font-size:14px;padding-left:10px;width:144px;white-space: nowrap;
 overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 #content .s_price li .price{font-size:14px;font-weight:bold;margin-top:14px;}
-#content .s_price ul li img{margin-bottom:10px;width:350px;height:350px;border-radius:5px;}
+#content .s_price ul li img{margin-bottom:10px;width:350px;border-radius:5px;}
 #content .s_price ul li ul li{float:left;}
 #content .s_price .sale{font-size:14px;font-weight:bold;margin-left:10px}
 #content .s_price .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:5px;margin-top:1px;font-size:12px}
