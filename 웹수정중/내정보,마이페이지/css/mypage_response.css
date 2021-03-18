@@ -156,7 +156,7 @@ body,html {font-family: 'Nanum Gothic', sans-serif;}
 
 
 
-/* order_list */
+/* orderlist */
 .ord_detail_btn {cursor: pointer;}
 
 .order_list_ctn {
@@ -483,6 +483,13 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 /* order detail */
 .body_contents > h3 {
     font-size: 20px;
+    text-align: left;
+}
+.body_contents > .orderList {
+    text-align: left;
+}
+.order_detail_top {
+    text-align: left;
 }
 .order_detail_top > p:nth-child(1){
     font-size: 12px;
@@ -544,6 +551,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 }
 .orderList_detail_list > .order_info_ctn {
     display: flex;
+    text-align: left;
 }
 
 /* order_detail table */ 
@@ -572,6 +580,9 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
     justify-content: space-between;
 }
 ul.result {text-align: right; color: #000;}
+.first_subtitle_cts {text-align: left;}
+.sub_title_cts {text-align: left;}
+.second_subtitle, .third_subtitle, .fourth_subtitle {text-align: left;}
 .first_subtitle_cts, .second_subtitle_cts, .third_subtitle_cts, .fourth_subtitle_cts {
     color: #000;
 }
@@ -633,7 +644,13 @@ ul.result {text-align: right; color: #000;}
 
 
     /* 주문 상세 컨텐트 */
-    .orderDetails{border-bottom:8px solid #F1F1F1}
+.orderList_detail {
+    text-align: left; outline: 2px solid red !important;
+}
+.order_detail_top {
+    
+}
+.orderDetails{border-bottom:8px solid #F1F1F1}
 .buttons{width:100%;margin: 0 auto;display: flex;
 justify-content: space-between;padding-bottom:14px;padding-left:15px;padding-right:15px}
 .btnConfirm, .btnTracking{width:50%;    height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
@@ -853,8 +870,22 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .order00 li{margin-bottom:5px;}
 .order_q .title00{padding-top:20px;padding-left:26px;font-size:16px;font-weight:bold;}
 .order_a_box td span{color:#878787}
-.btn_area {margin:20px 15px}
-#btnReorder{width:100%;margin:auto;padding: 21px 0 17px;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
+.btn_area {margin:20px 15px;}
+#btnReorder{
+    position: absolute;
+    width:330px; height: 35px; 
+    line-height: 0px; 
+    margin:auto;
+    padding: 21px 0 17px;
+    border:1px solid #BBBBBB;
+    cursor: pointer;color:#000;
+    background-color:transparent;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: '나눔고딕';
+    border-radius:5px;
+
+}
 
 /*주문 내역*/
 .orderHistory{width:100%;margin-bottom:10px;padding-left:15px;padding-right:15px}
@@ -878,6 +909,10 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .grayLine{width:100%;margin-top:-10px;margin-bottom:10px;border-top:8px solid #E6E6E6;padding:0;}
 
 /*주문 내역 없을때*/
+.body_contents > .orderList_none_tit {
+    font-size: 20px; font-weight: 700;
+    text-align: left;
+}
 .order_list_null{width:70%; text-align:center; margin:197px auto;}
 .order_list_null img{width:100px;height:75px}
 .no_list{font-size:16px;color:#878787;margin-top:15px}
@@ -891,6 +926,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
     padding: 0 0 20px 0;
     text-align: left;
 }
+.pwCheck_contents_header > .pwCheck_subtitle {font-size: 18px;}
 .pwCheck_contents_header p {color: #000; text-align: left;}
 
 .mayinfo_pw1_main_contents {padding: 50px 120px;}
@@ -905,12 +941,12 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .mayinfo_pw1_main_contents > .pw1_ctt_pw input {
     width: 330px; height: 45px;
     border: 1px solid #BBBBBB; border-radius: 5px;
-    margin-left: 10px;
+    margin-left: 50px;
 }
 
 .pwcheck_logIn_btn {
     position: absolute;
-    left: 180px;
+    left: 220px;
     margin: 30px 0px;
     width: 330px; height: 45px;
     border: 0; border-radius: 5px;
@@ -950,13 +986,13 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
     width: 330px;
     display: flex;
     justify-content: space-between;
-    margin: 30px 0 0 140px;
+    margin: 30px 0 0 176px;
 }
 .mebership_wid {border-bottom: 1px solid #6B6B6B;}
 
 .myInfo_edit_btn {
-    position: relative;
-    left: -10px;
+    position: absolute;
+    left: 300px;
     margin: 30px 0;
     width: 330px; height: 45px;
     border: 0; border-radius: 5px;
@@ -964,9 +1000,9 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
     color: #fff;
 }
 
-.gender  input {
+.gender input {
     margin-right: 6px;
-    margin-left: 10px;
+    margin-left: 50px;
 }
 .genderT {margin-right: 10px; font-weight: 500 !important;}
 
