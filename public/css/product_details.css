@@ -10,7 +10,7 @@ html, body {max-width: 100%;overflow-x: hidden;
 .detail_title .title{width:200px;white-space: nowrap;
 overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title .btnback{padding-top:42px;position:absolute;top:42px;width:17px;position:fixed;top:0px;left:10px;z-index: 11;background-color:#fff;}
-.btncart{position:absolute;right:40px;top:-1px;padding:10px 0;position:fixed;top:29px; z-index: 11;background-color:#fff;}
+.btncart{positigon:absolute;right:40px;top:-1px;padding:10px 0;position:fixed;top:29px; z-index: 11;background-color:#fff;}
 
 #content .tabMenu{margin-top:22px;width:100%;text-align:center;position:fixed;top:50px; z-index: 11;background-color:#fff;}
 #content .tabMenu ul{padding-left:25px;padding-right:25px}
