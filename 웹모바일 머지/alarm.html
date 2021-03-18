@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="format-detection" content="no" />
+
+    <title>다이어트 Farm</title>
+    <style type="text/css">
+    @media screen and (min-width:360px)and (max-width:1079px) {.web_alarm{display:none}}
+    @media screen and (min-width:1020px){.mobile_alarm{display:none} }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cs.css">
+    <link rel="stylesheet" href="css/style02.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js">
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    
+</head>
+
+<body>
+<div class="web_alarm">
+     <header id="wheader">
+    <div id="Wrapper">
+        <div id="skip_navi"><a href="#Container">본문바로가기</a></div>
+
+        <div id="wHeader">
+            <div class="top_util">
+                <ul class="menu_list" id="menu_list_header">
+
+                    <li class="join"><a href="#">회원가입</a></li>
+                    <li class="bar"><img src="images/l_icon_category@2x.png"></li>
+                    <li class="login"><a href="#">로그인</a></li>
+                     <li class="bar"><img src="images/l_icon_category@2x.png"></li>
+                    <li class="cs_center"><a href="#">고객센터<span id="cartToCnt"></span></a></li>
+                    <li class="cart"><a href="#"><img src="images/cart_ico_main.png" alt="장바구니"></a></li>
+                    <li class="mypage"><a href="#"><img src="images/my_icon_menu.png" alt="마이페이지"></a></li>
+                    <li class="pick"><a href="#"><img src="images/afterheart_ico_main.png" alt="찜한 메뉴"></a></li>
+               </ul>
+            </div>
+            <div class="header_inner">
+                <h1><a href="javascript:common.link.moveMainHome();"><img src="images/diet_farm_logo.png" alt="다이어트팜" /></a></h1>
+                </div>
+
+            <div class="header_design_area"></div>
+
+        </div>
+
+
+        <div id="Gnb" class="main gen1">
+            <div id="gnbWrap">
+                <a href="#" id="btnGnbOpen">전체카테고리</a>
+                <!-- 전체 카테고리 레이어 -->
+                <div class="layer_all_menu" id="gnbAllMenu">
+             
+           <div class="m_slides_n_w"> 
+        	<!--메인배너 좌측 버튼-->
+            <div class="m_ba_slides_n_w font_ng" style="top:0px">
+                <ul class="m_ba_slides_n">                  <li class="m_ba_slides_n_li             m_ba_line_n" style="border-top:none;"><a href="#"><img                                               src="images/salad_icon_category.png">도시락/샐러드</a>
+						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                            <div class="m_slid_2dep_txt font_ng">
+                            	<ul class="mn2dep">
+									<li><a href="#">전체보기</a></li>
+									<li><a href="#">바/쿠키</a></li>
+									<li><a href="#">아이스크림/요거트</a></li>
+									<li><a href="#">젤리/잼</a></li>
+									<li><a href="#">고구마/계란/견과</a></li>
+								</ul>
+							</div>
+                    	</ul>
+					</li>
+                         <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/meal_icon_category.png">간편식</a>
+						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                            <div class="m_slid_2dep_txt font_ng">
+                            	<ul class="mn2dep">
+									<li><a href="#">전체보기</a></li>
+									<li><a href="#">빵/떡/면</a></li>
+									<li><a href="#">쉐이크/시리얼/두유</a></li>
+									<li><a href="#">건강반찬/기타</a></li>
+								</ul>
+							</div>
+                    	</ul>
+					</li>
+					    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/chicken_icon_category.png">닭가슴살</a>
+						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                            <div class="m_slid_2dep_txt font_ng">
+                            	<ul class="mn2dep">
+									<li><a href="#">전체보기</a></li>
+									<li><a href="#">닭가슴살</a></li>
+									<li><a href="#">큐브/볼</a></li>
+									<li><a href="#">소시지</a></li>
+								</ul>
+							</div>
+                    	</ul>
+					</li>
+					    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/snack_icon_category.png">건강간식</a>
+						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                            <div class="m_slid_2dep_txt font_ng">
+                            	<ul class="mn2dep">
+									<li><a href="#">전체보기</a></li>
+									<li><a href="#">바/쿠키</a></li>
+									<li><a href="#">아이스크림/요거트</a></li>
+									<li><a href="#">젤리/잼</a></li>
+									<li><a href="#">고구마/계란/견과</a></li>
+									
+								</ul>
+							</div>
+                    	</ul>
+					</li>
+					    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/drink_icon_category.png">음료/소스</a>
+						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                            <div class="m_slid_2dep_txt font_ng">
+                            	<ul class="mn2dep">
+									<li><a href="#">전체보기</a></li>
+									<li><a href="#">티/분말</a></li>
+									<li><a href="#">주스/즙</a></li>
+									<li><a href="#">소스/조미료/향신료</a></li>
+								</ul>
+							</div>
+                    	</ul>
+					</li>
+					     <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/fruit_icon_category.png">신선식품</a>
+						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                            <div class="m_slid_2dep_txt font_ng">
+                            	<ul class="mn2dep">
+									<li><a href="#">정육</a></li>
+									<li><a href="#">수산</a></li>
+									<li><a href="#">야채</a></li>
+									<li><a href="#">과일</a></li>
+									
+								</ul>
+							</div>
+                    	</ul>
+					</li>
+                       <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="images/meal_icon_category.png">브랜드</a>
+						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
+                            <div class="m_slid_2dep_brand">
+                         <div id="searchUsers" class="instant-search">
+                    <div class="instant-search__input-container">
+                        <input class="instant-search__input" type="text" spellcheck="false" placeholder="브랜드명을 검색해보세요." style="font-size:14px">
+                        <a href="#"><img src="./images/grayx_icon_login.png" alt="취소"></a>
+                    </div>
+                    <div class="search_box_ico"><a href="#"><img src="./images/searchbox_icon_category.png" alt=""></a></div>
+                </div>
+
+                <section class="brand">
+                    <div class="categ">
+                        <ul>
+                            <li class="all"><a hreef="#">전체</a></li>
+                            <li><img src="images/l_icon_category.png"></li>
+                            <li><a href="#">인기순</a></li>
+                            <li><img src="images/l_icon_category.png"></li>
+                            <li><a href="#">좋아요</a></li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li>
+                            <ul>
+                                <li><a href="#">해담은</a>
+                                <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">파프리카푸드</a>
+                                <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">해담은2</a>
+                                <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">파프리카푸드2</a>
+                                <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">해담은</a>
+                                <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">파프리카푸드</a>
+                                <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">해담은2</a>
+                                <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">파프리카푸드2</a>
+                                <li><a href="#"><img src="images/heart_icon_menu.png"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+							</div>
+                    	</ul>
+					</li>
+                </ul>
+            </div>
+            <!--//메인배너 좌측 버튼-->
+        </div>   
+     </div>
+                <!--// 전체 카테고리 레이어 -->
+
+                <ul class="gnb_menu_list">
+                   
+                     <li><a href="new.html">신상</a></li>
+
+
+                    <li><a href="best.html">베스트</a></li>
+
+
+                    <li><a href="s_price.html">특가</a></li>
+
+
+                    <li><a href="d_delivery.html">매일배송</a></li>
+                </ul>
+            
+            </div>
+            <div class="searchbox">
+            <form id="search-form">
+                <div class="search">
+              <input type="text" name="search" class="round" placeholder="검색해보세요.">
+           <img src="images/search_ico_join.png">              </div>
+         </form>
+            </div>
+        </div>
+    </div>
+  </header>
+
+     <main id="w_content" class="content">
+        <h2>고객센터</h2>
+       <div class="contents">
+       <div class="w_sidemenu">
+           <ul>
+               <a href="notice.html"><li class="menu">공지사항</li></a>
+               <a href="faq.html"><li class="menu">fAQ</li></a>
+               <a href="cs_center.html"><li class="menu">고객센터</li></a>
+               <a href="alarm.html"><li class="menu">알림설정</li></a>
+           </ul>
+       </div>
+          <h3 class="alarm_title">알림설정</h3>
+           <div class="alarmBox_web">
+             <h3>알림 받기</h3>
+            <input type="checkbox" id="prod_detail_toggle"><label for="prod_detail_toggle"><span>아이콘</span></label>
+        </div>
+         <p class="alarmS_web">알림 거절 시 상품배송 및 문의 등의 정보성알림을 포함한 모든 알림을 받아보실 수 없습니다.</p>
+
+        <div class="alarmBox_web" style="c">
+            <h3>광고성 정보 수신 동의</h3>
+            <input type="checkbox" id="prod_detail_toggle"><label for="prod_detail_toggle"><span>아이콘</span></label>
+        </div>
+        <p class="alarmS_web">신규 서비스 및 고객 맞춤 혜택 정보를 받을 수 있습니다.</p>
+         </div>
+    </main>
+    </div><!--//web_alarm-->
+    
+    <div class="mobile_alarm">
+    <section class="detail_title">
+        <h2>알림설정</h2>
+        <script type="text/javascript">
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt=""> </a>
+        </div>
+    </section>
+
+    <main id="content" class="content">
+
+        <div class="alarmBox">
+
+            <h3>알림 받기</h3>
+            <input type="checkbox" id="prod_detail_toggle"><label for="prod_detail_toggle"><span>아이콘</span></label>
+        </div>
+
+        <p class="alarmS">알림 거절 시 상품배송 및 문의 등의 정보성알림을 포함한 모든 알림을 받아보실 수 없습니다.</p>
+
+        <div class="alarmBox">
+            <h3>광고성 정보 수신 동의</h3>
+            <input type="checkbox" id="prod_detail_toggle"><label for="prod_detail_toggle"><span>아이콘</span></label>
+        </div>
+        <p class="alarmS">신규 서비스 및 고객 맞춤 혜택 정보를 받을 수 있습니다.</p>
+    </main>
+    
+    </div>
+    <script type="text/javascript">
+	$(document).ready(function(){
+		$('.menu').each(function(index){
+			$(this).attr('menu-index', index);
+		}).click(function(){
+			var index = $(this).attr('menu-index');
+			$('.menu[menu-index=' + index + ']').addClass('clicked_menu');
+			$('.menu[menu-index!=' + index + ']').removeClass('clicked_menu');
+		});
+
+
+	});
+   </script>
+<script>
+    
+     	$(document).ready(function(){
+		$("#gnbAllMenu").hide();
+		$("#btnGnbOpen").click(function(){
+			$("#gnbAllMenu").slideToggle("fast");
+		});
+	});
+
+	   $(document).ready(function() {
+            $(".m_slides_sub").hide();
+            $(".m_ba_slides_n_w li").hover(function(){
+                $("ul:not(:animated)",this).slideDown("700");
+
+                $(".m_ba_slides_n_w li a").removeClass("active");
+            },
+            function() {
+                $("ul",this).slideUp("700");
+               });
+
+		    $("#memberMenu").bind("moseover mouseenter",function(){
+				$("#memMenu").show();
+		  });
+		   $("#memMenu").bind("moseout mouseleave",function(){
+				$("#memMenu").hide();
+		  });
+
+		    $("#NotmemberMenu").bind("moseover mouseenter",function(){
+				$("#NotmemMenu").show();
+		  });
+		   $("#NotmemMenu").bind("moseout mouseleave",function(){
+				$("#NotmemMenu").hide();
+		  });
+        });
+    </script>
+</body></html>
