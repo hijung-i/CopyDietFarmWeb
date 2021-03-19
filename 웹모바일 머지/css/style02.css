@@ -1,51 +1,93 @@
-@charset "utf-8";
 
-/* ************************************************************ font ************************************************************ */
-@font-face {
-    font-family:'나눔고딕'; 
-    font-style:normal;
-    font-weight:400;
-    }
-@font-face {
-    font-family:'나눔고딕'; 
-    font-style:normal;
-    font-weight:500;
+/* fonts */
+/* none scroll */
+body,html {overflow-x: hidden; overflow-y: auto; min-width:360px; width: 100%; /* overflow: hidden; */}
+
+@font-face{ 
+font-family: '나눔고딕'; 
+font-weight: normal; 
+font-style: normal; 
+src:url('../font/NanumGothic.woff') format('woff'); 
 }
 
-@font-face {
-    font-family:'NotoSansCJKkr';
-    font-style:normal;
-    font-weight:700;
-    src:local(NotoSansCJKkr), 
-    	url(//image.oliveyoung.co.kr/pc-static-root/fonts/NotoSansCJKkr-Bold.woff2) format("woff2"), 
-        url(//image.oliveyoung.co.kr/pc-static-root/fonts/NotoSansCJKkr-Bold.woff) format("woff");
+.skip_menu{position:absolute}
+.skip_menu a{position:absolute;top:-90px;left:0;width:138px;border:1px solid #4ec53d;background:#333;text-align:center}
+.skip_menu a:active, .skip_menu a:focus{top:0;z-index:1000;text-decoration:none}
+.skip_menu span{display:inline-block;padding:2px 6px 0 0;color:#fff;letter-spacing:-1px;font-size:13px;line-height:26px}
+
+
+*{box-sizing:border-box;}
+html, body, body div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+	margin:0;
+	padding:0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ol,ul,li {
+	list-style:none;
+}
+legend, caption { 
+	visibility:hidden;
+	width:0;
+	height:0;
+	font-size:0;
+	line-height:0
+}
+i,em,address{
+	font-style:normal
+}
+
+/* Hand cursor on clickable input elements */
+label, input[type="button"],
+input[type="submit"],
+input[type="image"],
+button,
+img.btn{ 
+    cursor: pointer;
+}
+
+/* Remove extra padding and inner border in Firefox */
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0; padding: 0;
+}
+
+img{vertical-align:top;margin:0;font-size:0;line-height:0;}
+
+body, select, input, textarea, a[href^="tel:"]:link {
+    color: #383838;
+    font-weight: normal;
+	font-size:12px;
+	font-family:'나눔고딕';
+	letter-spacing:-0.5px;
 }
 
 
-/* ************************************************************ reset ************************************************************ */
-/* Reset */
-body, h1, h2, h3, h4, h5, h6, div, p, span, strong, em, blockquote, pre, address,
-ul, ol, li, dl, dt, dd, form, fieldset, input, select, label, textarea, img, a {margin:0; padding:0; border:0/*;word-break:break-all;*/}
-* {margin:0;padding:0;box-sizing:border-box;}
-/* body {word-spacing:-1px;color:#666;font-size:14px;line-height:20px;font-family:'montserrat', 'noto', 'Roboto', sans-serif;letter-spacing:-0.04em} *//* montserrat & Montserrat */
-html, body {word-spacing:-1px;color:#666;font-size:14px;line-height:20px;font-family:'Montserrat', -apple-system, 'NotoSansCJKkr', 'AppleSDGothicNeo', 'Roboto','dotum', '돋움', sans-serif;letter-spacing:-0.04em;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing: antialiased;}
-ul, ol {list-style:none;}
-table {border-spacing:0; border:0;}
-img, input, select, textarea, button {border:0; vertical-align:top; color:#666;}
-legend {position:absolute; overflow:hidden; visibility:hidden; height:0; z-index:-1;}
-hr {display:none;}
-a {color:#666; text-decoration:none;}
-:focus:not(:focus-visible){outline:0;}
-.js-focus-visible :focus:not(.focus-visible){outline:0;}
-/* Safari 10.1+ */
-@media not all and (min-resolution:.001dpcm) { @media {
-	:focus{outline:0;}
-}}
-textarea {resize:none;}
-caption {width:0;height:0;text-indent:-9999px;}
-/* Base */
-label, input.button, input.submit , input.image, button {cursor:pointer;}
+a{color:#383838;text-decoration:none;cursor:pointer}
+a:hover{text-decoration:none;}
 
+.b {font-weight:bold !important;}
+
+.clear{clear:both;}
+.show{display:block;}
+.hide{display:none;}
 /* layout */
 #Wrapper,
 #Header,
@@ -252,19 +294,15 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 #footer >.footer_inq_info ul li{float:left;}
 
 /*페이징 버튼*/
-.page_wrap {width:1080px;text-align:center;font-size:0;margin-top:90px;}
+.page_wrap {width:670px;text-align:center;font-size:0;margin-top:90px;}
 .page_nation {display:inline-block;}
 .page_nation .none {display:none;}
 .page_nation a {display:block;margin:0 3px;float:left;width:28px;
 height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:13px;color:#000;text-decoration:none;}
-.page_nation .pprev {background:#f8f8f8 url('images/page_pprev.png') no-repeat center center;margin-left:0;}
-.page_nation .prev {background:#f8f8f8 url('images/page_prev.png') no-repeat center center;margin-right:7px;}
-.page_nation .next {background:#f8f8f8 url('images/page_next.png') no-repeat center center;margin-left:7px;}
-.page_nation .nnext {background:#f8f8f8 url('images/page_nnext.png') no-repeat center center;margin-right:0;}
+.page_nation .pprev {background:url('../images/page_pprev.png') no-repeat center center;margin-left:0;}
+.page_nation .prev {background:url('../images/page_prev.png') no-repeat center center;margin-right:7px;}
+.page_nation .next {background:url('../images/page_next.png') no-repeat center center;margin-left:7px;}
+.page_nation .nnext {background:url('../images/page_nnext.png') no-repeat center center;margin-right:0;}
 .page_nation a.active {background-color:#fff;color:#F99319;}
 
-/* width 1020 이하 대응 */
-@media only screen and (max-width:1037px) {
-
-}
 

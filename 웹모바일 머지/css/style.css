@@ -464,42 +464,82 @@ margin: 0 auto;}
 .represent {display: flex;}
 .footer_bottom_ctt .companyName {font-weight: 700;}
 
+    
+    
 
-/* 서브메뉴 */
-#content .main_sub_wrap{;width:100%;border-top:2px solid #f1f1f1;}
-#content .main_sub{padding-left:15px;padding-right:15px;width:100%;margin:auto}
-@media screen and (min-width:360px) and (max-width:600px){#content .desc .cost{margin-left:-20px;font-size:10px;color:#bbbbbb;text-decoration:line-through}
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+/* 서브제품페이지 */
+
+#content .main_sub_wrap{margin-top:40px;width:100%;border-top:2px solid #f1f1f1;}
+#content .main_sub{padding-left:15px;padding-right:15px;min-width:360px;max-width:1900px; margin:auto}
+@media screen and (max-width:360px) and (max-width:600px){#content .desc .cost{margin-left:-20px;font-size:10px;color:#bbbbbb;text-decoration:line-through}
+
 }
 @media screen and (min-width:600px) and (max-width:1100px){#content .main_sub{padding-left:20px;padding-right:0px;width:90%;margin:auto}
 }
-@media screen and (min-width:1080px) {#content .main_sub{padding-left:20px;padding-right:0px;width:60%;margin:0 auto}
+@media screen and (min-width:1100px) {#content .main_sub{padding-left:20px;padding-right:0px;width:60%;margin:0 auto}
 }
-
-.n_sort{position:relative;margin-top:15px;text-align:left;margin-bottom:30px;}
+    
+#content .main_sub h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}
+.n_sort{position:relative;margin-top:10px;text-align:left;margin-bottom:20px;}
 #content .sub_items{margin-top:-18px}
 #content .main_sub ul{display:grid;grid-template-columns: repeat(2, 3fr);
 ;align-items: center;
 justify-self: center;margin:0 auto;}
-@media screen and (min-width:600px){
-#content .main_sub ul{display:grid;grid-template-columns: repeat(3, 2fr);
+@media screen and (min-width:360px){#content .main_sub ul{display:grid;grid-template-columns: repeat(3, 2fr);
 ;align-items: center;
 justify-self: center;margin: 0 auto;}
 }
-@media screen and (min-width:1080px){
 
-}
-
-#content .main_sub ul li{float:left;padding:5px}
+#content .main_sub ul li{float:left;padding:5.5px}
 #content .main_sub ul li img{width:100%;}
-#content .main_sub ul li .desc p{font-size:12px;padding:5px;margin-top:5px;text-align: left}
+#content .main_sub ul li .desc p{font-size:12px;padding:5px;margin-top:5px}
 #content .main_sub ul li .desc .price{font-weight:bold;margin-bottom:10px;}
 #content .desc ul{ display: -webkit-box; /* Old webkit */display: -ms-flexbox; /* IE 10~11 */
  display: flex;}
 #content .desc ul li{float:left;}
-#content .desc .sale{font-weight:bold;margin-left:-5px}
-#content .desc .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:1px}
+#content .desc .sale{font-weight:bold}
+#content .desc .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:2px}
 #content .desc .ratio{color:red;font-weight:bold;font-size:11px}
-#content .sort select{border:0;}
+#content .sort select{border:0;}    
+    
+    
+    
+ /*서브제품페이지 웹*/
+@media screen and (min-width:1020px)and (max-width:5000px){
+.top_util ul{}
+#content .pages {display:none;}
+.btnMenu, .btnCart{display:none;}
+#contents .main_sub ul{display:grid;grid-template-columns: repeat(3, 2fr);
+;align-items: center;
+justify-self: center;margin: 0 auto;}
+.sub_items{width:1080px;margin:0 auto;margin-top:20px}
+.sub_items .thum{width:330px;padding-top:23px}
+.sub_items .thum img{border-radius:7px;margin-bottom:10px;width:330px} 
+#contents .main_sub h2{float:left;margin-left:25px;color:#000} 
+.main_sub .sort{float:right;}
+#contents .sub_items{padding-top:20px;margin-top:40px}
+#contents .sub_items .title{padding-top:20px}
+#contents .sub_items .price{margin-top:5px;margin-left:-5px}
+#contents .sub_items .price .sale{font-size:16px}
+#contents .sub_items .price .cost{margin-left:-40px;text-decoration: line-through;color:#878787}
+#contents .sub_items .price .ratio{margin-left:-80px;color:#ef1919}
+
+}   
+    
+    
+    
 
 /*찜한 메뉴*/
 #content .pick_wrap{width:100%;border-bottom:8px solid #f1f1f1}
@@ -612,37 +652,5 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 .btnMenu, .btnCart{display:none;}
 #mHeader h1 img{max-width:11%}
 }
-
-
-@media screen and (min-width:360px)and (max-width:1079px) {
-    #content .main_sub h2{display:none}
-	.main_pager_ctn > .main_pager_wrapper {
-		position: absolute;
-            right: 5%;
-            top: 4.2%;
-	}
-.web_size{display:none}
-}
-/*다이어트팜 웹*/
-@media screen and (min-width:1020px)and (max-width:5000px){
-.top_util ul{}
-#content .pages {display:none;}
-.btnMenu, .btnCart{display:none;}
-.mobile_size{display:none;}
-.web_size{width:100%px;margin:0 auto}
-#content .main_sub ul{display:grid;grid-template-columns: repeat(3, 2fr);
-;align-items: center;
-justify-self: center;margin: 0 auto;}
-.sub_items{width:1080px;margin:0 auto;margin-top:20px}
-.sub_items .thum{width:330px;padding-top:23px}
-.sub_items .thum img{border-radius:7px;margin-bottom:10px} 
-#content .main_sub h2{float:left;margin-left:25px;color:#000} 
-.main_sub .sort{float:right;}
-#content .sub_items{padding-top:20px;margin-top:40px}
-#content .sub_items .title{padding-top:20px}
-#content .sub_items .price{margin-top:5px;margin-left:-5px}
-#content .sub_items .price .sale{font-size:16px}
-#content .sub_items .price .cost{margin-left:-40px;text-decoration: line-through;color:#878787}
-#content .sub_items .price .ratio{margin-left:-80px;color:#ef1919}
 
 }
