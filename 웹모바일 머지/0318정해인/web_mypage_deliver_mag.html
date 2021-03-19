@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문내역</title>
+    <link rel="stylesheet" href="./css/style02.css">
+    <link rel="stylesheet" href="./css/mypage_response.css">
+    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <!-- bxslider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div id="Wrapper">
+            <div id="skip_navi"><a href="#Container">본문바로가기</a></div>
+
+            <div id="Header">
+                <div class="top_util">
+                    <ul class="menu_list" id="menu_list_header">
+
+                        <li class="join"><a href="#">회원가입</a></li>
+                        <li class="bar"><img src="images/l_icon_category@2x.png"></li>
+                        <li class="login"><a href="#">로그인</a></li>
+                        <li class="bar"><img src="images/l_icon_category@2x.png"></li>
+                        <li class="cs_center"><a href="#">고객센터<span id="cartToCnt"></span></a></li>
+                        <li class="cart"><a href="#"><img src="images/cart_ico_main.png" alt="장바구니"></a></li>
+                        <li class="mypage"><a href="#"><img src="images/my_icon_menu.png" alt="마이페이지"></a></li>
+                        <li class="pick"><a href="#"><img src="images/afterheart_ico_main.png" alt="찜한 메뉴"></a></li>
+                    </ul>
+                </div>
+                <div class="header_inner">
+                    <h1><a href="javascript:common.link.moveMainHome();"><img src="images/diet_farm_logo.png"
+                                alt="다이어트팜" /></a></h1>
+                </div>
+
+                <div class="header_design_area"></div>
+
+            </div>
+
+
+            <div id="Gnb" class="main gen1">
+                <div id="gnbWrap">
+                    <a href="#" id="btnGnbOpen">전체카테고리</a>
+                    <!-- 전체 카테고리 레이어 -->
+                    <div class="layer_all_menu" id="gnbAllMenu">
+
+                        <div class="m_slides_n_w">
+                            <!--메인배너 좌측 버튼-->
+                            <div class="m_ba_slides_n_w font_ng" style="top:0px">
+                                <ul class="m_ba_slides_n">
+                                    <li class="m_ba_slides_n_li             m_ba_line_n" style="border-top:none;"><a
+                                            href="#"><img src="images/salad_icon_category.png">도시락/샐러드</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">바/쿠키</a></li>
+                                                    <li><a href="#">아이스크림/요거트</a></li>
+                                                    <li><a href="#">젤리/잼</a></li>
+                                                    <li><a href="#">고구마/계란/견과</a></li>
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/meal_icon_category.png">간편식</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">빵/떡/면</a></li>
+                                                    <li><a href="#">쉐이크/시리얼/두유</a></li>
+                                                    <li><a href="#">건강반찬/기타</a></li>
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/chicken_icon_category.png">닭가슴살</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">닭가슴살</a></li>
+                                                    <li><a href="#">큐브/볼</a></li>
+                                                    <li><a href="#">소시지</a></li>
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/snack_icon_category.png">건강간식</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">바/쿠키</a></li>
+                                                    <li><a href="#">아이스크림/요거트</a></li>
+                                                    <li><a href="#">젤리/잼</a></li>
+                                                    <li><a href="#">고구마/계란/견과</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/drink_icon_category.png">음료/소스</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">티/분말</a></li>
+                                                    <li><a href="#">주스/즙</a></li>
+                                                    <li><a href="#">소스/조미료/향신료</a></li>
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/fruit_icon_category.png">신선식품</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">정육</a></li>
+                                                    <li><a href="#">수산</a></li>
+                                                    <li><a href="#">야채</a></li>
+                                                    <li><a href="#">과일</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/meal_icon_category.png">브랜드</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_brand">
+                                                <div id="searchUsers" class="instant-search">
+                                                    <div class="instant-search__input-container">
+                                                        <input class="instant-search__input" type="text"
+                                                            spellcheck="false" placeholder="브랜드명을 검색해보세요."
+                                                            style="font-size:14px">
+                                                        <a href="#"><img src="./images/grayx_icon_login.png"
+                                                                alt="취소"></a>
+                                                    </div>
+                                                    <div class="search_box_ico"><a href="#"><img
+                                                                src="./images/searchbox_icon_category.png" alt=""></a>
+                                                    </div>
+                                                </div>
+
+                                                <section class="brand">
+                                                    <div class="categ">
+                                                        <ul>
+                                                            <li class="all"><a hreef="#">전체</a></li>
+                                                            <li><img src="images/l_icon_category.png"></li>
+                                                            <li><a href="#">인기순</a></li>
+                                                            <li><img src="images/l_icon_category.png"></li>
+                                                            <li><a href="#">좋아요</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">해담은</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">파프리카푸드</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">해담은2</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">파프리카푸드2</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">해담은</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">파프리카푸드</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">해담은2</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">파프리카푸드2</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--//메인배너 좌측 버튼-->
+                        </div>
+                    </div>
+                    <!--// 전체 카테고리 레이어 -->
+
+                    <ul class="gnb_menu_list">
+
+                        <li><a href="new.html">신상</a></li>
+
+
+                        <li><a href="best.html">베스트</a></li>
+
+
+                        <li><a href="s_price.html">특가</a></li>
+
+
+                        <li><a href="d_delivery.html">매일배송</a></li>
+                    </ul>
+
+                </div>
+                <div class="searchbox">
+                    <form id="search-form">
+                        <div class="search">
+                            <input type="text" name="search" class="round" placeholder="검색해보세요.">
+                            <img src="images/search_ico_join.png">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- web main -->
+    <main id="main">
+        <div class="main_contents">
+
+            <div class="left">
+                <h3>마이팜</h3>
+                <div class="left_ctn">
+                    <ul>
+                        <li><i class="fas fa-shopping-basket"></i></li>
+                        <li><span>김수아님</span></li>
+                        <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="center">
+                <h3>포인트</h3>
+                <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
+            </div>
+
+            <div class="right">
+                <h3>쿠폰</h3>
+                <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
+            </div>
+
+        </div>
+    </main>
+
+    <section id="contents">
+        <div class="contents_ctn">
+
+            <nav class="content_lnb">
+                <ul>
+                    <li class="active"><a href="javascript:void(0);">주문내역</a></li>
+                    <li><a href="javascript:void(0);">배송지 관리</a></li>
+                    <li><a href="javascript:void(0);">상품 리뷰</a></li>
+                    <li><a href="javascript:void(0);">상품 문의</a></li>
+                    <li><a href="javascript:void(0);">판매자 문의</a></li>
+                    <li><a href="javascript:void(0);">포인트</a></li>
+                    <li><a href="javascript:void(0);">쿠폰</a></li>
+                </ul>
+            </nav>
+
+            <div class="body_contents">
+                <h3>배송지 관리</h3>
+                <div class="top_checkBox">
+                    <input
+                     type="checkbox" 
+                     name="list" 
+                     id="selectAll1" 
+                     value="selectAll" 
+                     onclick='selectAll(this)'
+                    >
+                    <label for="selectAll1">전체 선택</label>
+                    <button>선택 삭제</button>
+                </div>
+                <div class="thick_line one"></div>
+
+                <div class="order_list_ctn">
+                    <section class="delivery_manage_list">
+                        <div class="del_mng_list_top">
+                            <ul class="del_mng_type">
+                                <li class="type_first">회사</li>
+                                <li class="type_second"><span class="tema">기본배송지</span></li>
+                            </ul>
+                            <ul class="edit_remove">
+                                <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
+                                <li><img src="images/l_icon_category.png"></li>
+                                <li class="edit_second"><a>삭제</a></li>
+                            </ul>
+                        </div>
+                        <div class="web_del_mag_list_info">
+                            <div class="top_checkBox_piece">
+                                <input 
+                                type="checkbox" 
+                                name="list"
+                                id="selectAll2"
+                                value="s"
+                                >
+                                <label for="selectAll2"></label>
+                            </div>
+                            <ul>
+                                <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
+                                <p class="customer_info">박민지<img src="images/l_icon_category.png">010-3288-0568</p>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <div class="thick_line"></div>
+
+                    <section class="delivery_manage_list">
+                        <div class="del_mng_list_top">
+                            <ul class="del_mng_type">
+                                <li class="type_first">회사</li>
+                            </ul>
+                            <ul class="edit_remove">
+                                <li class="basic"><a>기본배송지로 설정</a><img src="images/l_icon_category.png"></li>
+                                <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
+                                <li><img src="images/l_icon_category.png"></li>
+                                <li class="edit_second"><a>삭제</a></li>
+                            </ul>
+                        </div>
+                        <div class="web_del_mag_list_info">
+                            <div class="top_checkBox_piece">
+                                <input 
+                                type="checkbox"
+                                name="list" 
+                                id="selectAll3"
+                                value="t"
+                                >
+                                <label for="selectAll3"></label>
+                            </div>
+                            <ul>
+                                <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
+                                <p class="customer_info">박민지<img src="images/l_icon_category.png">010-3288-0568</p>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <div class="thick_line"></div>
+
+                    <section class="delivery_manage_list">
+                        <div class="del_mng_list_top">
+                            <ul class="del_mng_type">
+                                <li class="type_first">회사</li>
+                            </ul>
+                            <ul class="edit_remove">
+                                <li class="basic"><a>기본배송지로 설정</a><img src="images/l_icon_category.png"></li>
+                                <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
+                                <li><img src="images/l_icon_category.png"></li>
+                                <li class="edit_second"><a>삭제</a></li>
+                            </ul>
+                        </div>
+                        <div class="web_del_mag_list_info">
+                            <div class="top_checkBox_piece">
+                                <input 
+                                type="checkbox" 
+                                name="list"
+                                id="selectAll4"
+                                value="f"
+                                >
+                                <label for="selectAll4"></label>
+                            </div>
+                            <ul>
+                                <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
+                                <p class="customer_info">박민지<img src="images/l_icon_category.png">010-3288-0568</p>
+                            </ul>
+                        </div>
+                    </section>
+
+
+                    <div class="thick_line"></div>
+
+                    <ul class="pager">
+                        <li><i class="fas fa-chevron-left"></i></li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li>10</li>
+                        <li><i class="fas fa-chevron-right"></i></li>
+                    </ul>
+
+                    <div class="btn_area">
+                        <button type="button" id="btnRegister">배송지 등록</button>
+                    </div>
+                </div> <!-- order_list_ctn -->
+            </div> <!-- body_contents -->
+        </div> <!-- contents_ctn -->
+    </section> <!-- content -->
+
+    <!-- modal window -->
+    <section id="ex1" class="modal deliver_mag_modal">
+        <header class="deliver_magHeader">
+            <ul>
+                <li><h2>배송지 관리</h2></li>
+                <li><i class="fal fa-times"></i></li>
+            </ul>
+            <h3>배송지 등록</h3>
+        </header>
+
+        <div class="deliver_mag_modal_ctt">
+            <p>배송지 이름</p>
+            <input type="text" placeholder="배송지 이름을 입력해주세요">
+            <p>받으시는 분</p>
+            <input type="text" placeholder="받으시는 분 이름을 입력해주세요">
+            <p>주소</p>
+            <input type="text" placeholder="도로명, 지번, 건물명 검색">
+            <input type="text">
+            <p>휴대폰</p>
+            <input type="text" placeholder="숫자만 입력해주세요">
+
+            <div class="btn_area">
+                <button type="button" id="btnRegister">배송지 등록</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- modal window end -->
+    
+    <div class="wide_line"></div>
+    <ul class="footer_top">
+        <li>사업자정보확인 <span><img src="./images/l_icon_category@2x.png" alt="|"></span></li>
+        <li>이용약관 <span><img src="./images/l_icon_category@2x.png" alt="|"></span></li>
+        <li>개인정보처리방침</li>
+    </ul>
+    <footer id="footer">
+
+        <div class="footer_btm">
+            <ul class="dietFarm_info">
+                <li>다이어트팜 정보</li>
+                <li>(주)데이터플로 대표: 유승열</li>
+                <li>사업자등록번호 : 509-81-05501</li>
+                <li>통신판매업 신고번호 :</li>
+                <li>건강기능식품 판매업 : 제 2021-0105159 호</li>
+                <li>개인정보보호책임자 : 유승열</li>
+                <li>주소 : 서울시 강남구 테헤란로8길 11-4 신도빌딩,2층 202호</li>
+                <li>팩스 :070-7500-7691</li>
+                <li>이메일 : <span>dietfarm119@gmail.com</span></li>
+                <li>입점문의 : <span>입점문의하기</span></li>
+                <li>제휴문의 : <span>dietfarm119@gmail.com</span></li>
+            </ul>
+
+            <ul class="account">
+                <li>계좌번호</li>
+                <li>농협 317-0021-9321-31</li>
+                <li>예금주 (주)데이터플로</li>
+                <li>공지사항</li>
+                <li>1월 연휴 배송안내</li>
+                <li>주석 연휴 배송안내</li>
+            </ul>
+
+            <ul class="customer_center">
+                <li>고객센터</li>
+                <li>070-4366-3299</li>
+                <li>월~금 10:00~17:00</li>
+                <li>점심시간 12:00~13:00</li>
+                <li>토,일,공휴일 휴무</li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>
