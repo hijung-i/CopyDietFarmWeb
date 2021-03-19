@@ -26,10 +26,10 @@ html, body {max-width: 100%;overflow-x: hidden;
 .contents .noticeBox ul{width:831px;}
 .notice_content{padding-bottom:10px;border-bottom:1px solid #E6E6E6}
 .noticeBtn{width:116px;height:30px;margin-top:15px;border:1px solid #BBBBBB;background-color:#fff;font-size:12px;font-weight:normal;color:#000}
-.nv_list table{margin-top:33px}
-.nv_list table {width: 100%;border: 1px solid #F5F5F5;
-    border-collapse: collapse;}
-.nv_list th, td {border: 1px solid #F5F5F5;padding: 10px;}
+.nv_list table{margin-top:33px;margin-bottom:149px}
+.nv_list table {width: 100%;border: 1px solid #F5F5F5;border-collapse: collapse;}
+.nv_list tr, td {border: 1px solid #F5F5F5;padding: 10px;}
+.nv_list td{padding:10px}
 .nv_list td img{position:relative;top:6px;margin-right:9px}
 .nv_list td span{color:#878787;font-size:12px;margin-left:5px}
 

@@ -3,9 +3,9 @@
 body{padding-left:15px;padding-right:15px;min-width:360px}
 html, body {max-width: 100%;overflow-x: hidden;
 }
-.detail_title{margin:40px 10px 32px 10px;width:100%;}
+.detail_title{margin:42px 10px 32px 0px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.detail_title a img{position:absolute;top:42px;width:17px}
+.detail_title a img{position:absolute;top:50px;width:17px;}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 /*로그인*/
@@ -124,6 +124,17 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
 .member_delete ul{}
 .member_delete ul li a{text-decoration:underline;}
+
+/*비밀번호 재설정*/
+.content{padding-right:15px;padding-left:14px}
+.new_pwd input{height:45px;width:100%;border-radius:5px;border:1px solid #BBBBBB;}
+.new_pwd p{color:#6B6B6B;font-size:10px}
+.new_pwd_ck input{height:45px;width:100%;border-radius:5px;border:1px solid #BBBBBB}
+.new_pwd_ck p{color:#6B6B6B;font-size:10px}
+.red_sign{font-size:12px;color:#D62828;margin-top:33px;margin-bottom:184px}
+#btnPwdChange{width:100%;height:45px;text-align:center; border:0;cursor: pointer;color:#fff;background-color:#EFA543;font-size:14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-bottom:15px}
+#w_content{width:400px;margin:0 auto}
+#w_content .btnback{display:none}
 
 
 
