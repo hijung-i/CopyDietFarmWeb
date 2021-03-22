@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문내역</title>
+    <link rel="stylesheet" href="./css/style02.css">
+    <link rel="stylesheet" href="./css/mypage_response.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <!-- main.js -->
+    <script src="./js/main.js"></script>
+
+</head>
+
+<body>
+    <script>
+        $(function () {
+            $('ul.tab_wrap li').click(function () {
+                var activeTab = $(this).attr('data-tab');
+                $('.tab_wrap li').removeClass('active');
+                $('.tab_cont').removeClass('active');
+                $(this).addClass('active');
+                $('#' + activeTab).addClass('active');
+            })
+        });
+    </script>
+    <!-- 모바일 섹션 -->
+    <section class="detail_title" style="display: none;">
+        <h2>주문상세</h2>
+        <a href="#"><img src="./images/leftarrow_ico_my.png"></a>
+    </section>
+
+    <header id="header">
+        <div id="Wrapper">
+            <div id="skip_navi"><a href="#Container">본문바로가기</a></div>
+
+            <div id="Header">
+                <div class="top_util">
+                    <ul class="menu_list" id="menu_list_header">
+
+                        <li class="join"><a href="#">회원가입</a></li>
+                        <li class="bar"><img src="images/l_icon_category@2x.png"></li>
+                        <li class="login"><a href="#">로그인</a></li>
+                        <li class="bar"><img src="images/l_icon_category@2x.png"></li>
+                        <li class="cs_center"><a href="#">고객센터<span id="cartToCnt"></span></a></li>
+                        <li class="cart"><a href="#"><img src="images/cart_ico_main.png" alt="장바구니"></a></li>
+                        <li class="mypage"><a href="#"><img src="images/my_icon_menu.png" alt="마이페이지"></a></li>
+                        <li class="pick"><a href="#"><img src="images/afterheart_ico_main.png" alt="찜한 메뉴"></a></li>
+                    </ul>
+                </div>
+                <div class="header_inner">
+                    <h1><a href="javascript:common.link.moveMainHome();"><img src="images/diet_farm_logo.png"
+                                alt="다이어트팜" /></a></h1>
+                </div>
+
+                <div class="header_design_area"></div>
+
+            </div>
+
+
+            <div id="Gnb" class="main gen1">
+                <div id="gnbWrap">
+                    <a href="#" id="btnGnbOpen">전체카테고리</a>
+                    <!-- 전체 카테고리 레이어 -->
+                    <div class="layer_all_menu" id="gnbAllMenu">
+
+                        <div class="m_slides_n_w">
+                            <!--메인배너 좌측 버튼-->
+                            <div class="m_ba_slides_n_w font_ng" style="top:0px">
+                                <ul class="m_ba_slides_n">
+                                    <li class="m_ba_slides_n_li             m_ba_line_n" style="border-top:none;"><a
+                                            href="#"><img src="images/salad_icon_category.png">도시락/샐러드</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">바/쿠키</a></li>
+                                                    <li><a href="#">아이스크림/요거트</a></li>
+                                                    <li><a href="#">젤리/잼</a></li>
+                                                    <li><a href="#">고구마/계란/견과</a></li>
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/meal_icon_category.png">간편식</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">빵/떡/면</a></li>
+                                                    <li><a href="#">쉐이크/시리얼/두유</a></li>
+                                                    <li><a href="#">건강반찬/기타</a></li>
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/chicken_icon_category.png">닭가슴살</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">닭가슴살</a></li>
+                                                    <li><a href="#">큐브/볼</a></li>
+                                                    <li><a href="#">소시지</a></li>
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/snack_icon_category.png">건강간식</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">바/쿠키</a></li>
+                                                    <li><a href="#">아이스크림/요거트</a></li>
+                                                    <li><a href="#">젤리/잼</a></li>
+                                                    <li><a href="#">고구마/계란/견과</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/drink_icon_category.png">음료/소스</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">전체보기</a></li>
+                                                    <li><a href="#">티/분말</a></li>
+                                                    <li><a href="#">주스/즙</a></li>
+                                                    <li><a href="#">소스/조미료/향신료</a></li>
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/fruit_icon_category.png">신선식품</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_txt font_ng">
+                                                <ul class="mn2dep">
+                                                    <li><a href="#">정육</a></li>
+                                                    <li><a href="#">수산</a></li>
+                                                    <li><a href="#">야채</a></li>
+                                                    <li><a href="#">과일</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img
+                                                src="images/meal_icon_category.png">브랜드</a>
+                                        <ul class="m_slides_sub sub01" id="sub01" style="display:none">
+                                            <div class="m_slid_2dep_brand">
+                                                <div id="searchUsers" class="instant-search">
+                                                    <div class="instant-search__input-container">
+                                                        <input class="instant-search__input" type="text"
+                                                            spellcheck="false" placeholder="브랜드명을 검색해보세요."
+                                                            style="font-size:14px">
+                                                        <a href="#"><img src="./images/grayx_icon_login.png"
+                                                                alt="취소"></a>
+                                                    </div>
+                                                    <div class="search_box_ico"><a href="#"><img
+                                                                src="./images/searchbox_icon_category.png" alt=""></a>
+                                                    </div>
+                                                </div>
+
+                                                <section class="brand">
+                                                    <div class="categ">
+                                                        <ul>
+                                                            <li class="all"><a hreef="#">전체</a></li>
+                                                            <li><img src="images/l_icon_category.png"></li>
+                                                            <li><a href="#">인기순</a></li>
+                                                            <li><img src="images/l_icon_category.png"></li>
+                                                            <li><a href="#">좋아요</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">해담은</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">파프리카푸드</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">해담은2</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">파프리카푸드2</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">해담은</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">파프리카푸드</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">해담은2</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <ul>
+                                                                <li><a href="#">파프리카푸드2</a>
+                                                                <li><a href="#"><img
+                                                                            src="images/heart_icon_menu.png"></a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--//메인배너 좌측 버튼-->
+                        </div>
+                    </div>
+                    <!--// 전체 카테고리 레이어 -->
+
+                    <ul class="gnb_menu_list">
+
+                        <li><a href="new.html">신상</a></li>
+
+
+                        <li><a href="best.html">베스트</a></li>
+
+
+                        <li><a href="s_price.html">특가</a></li>
+
+
+                        <li><a href="d_delivery.html">매일배송</a></li>
+                    </ul>
+
+                </div>
+                <div class="searchbox">
+                    <form id="search-form">
+                        <div class="search">
+                            <input type="text" name="search" class="round" placeholder="검색해보세요.">
+                            <img src="images/search_ico_join.png">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- mobile main -->
+    <main id="content" class="content">
+        <div class="order">
+            <div class="orderBox">
+                <div class="order01">
+                    <div class="innerbox">
+
+                        <div class="dateNo">
+                            <p class="date">2020.10.13</p>
+                            <p class="no">2020101920201019</p>
+                        </div>
+                        <div class="orderDetails">
+                            <div class="order_title">
+                                <p><span>아임월<img src="./images/call_icon_order.png"
+                                            style="width:20%;margin-left:10px"></span></p>
+                                <ul>
+                                    <li><a href="seller_inquiry.html">문의하기<img src="./images/arrow_ico_join.png"
+                                                style="width:7px;position:relative;left:4px;top:1px"></a></li>
+                                </ul>
+                            </div>
+                            <!--//order_title-->
+                            <div class="buttons">
+                                <button type="button" class="btnConfirm">구매확정</button>
+                                <button type="button" class="btnTracking" style="margin-left:10px">배송조회</button>
+                            </div>
+                            <!--//buttons-->
+                            <div class="orderBox02">
+                                <a href="product_details.html"><img src="./images/dietfarmbread.jpg" align="left"
+                                        style="width:60px;height:100px;margin-right:20px"></a>
+                                <ul class="order00">
+                                    <li class="ship_state">배송중</li>
+                                    <li class="product">굿밸런스 라이트밀 도시락</li>
+                                    <li class="price">60,720원</li>
+                                    <li class="quantitiy">수량 : 2개</li>
+                                    <li class="option">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                </ul>
+                            </div>
+                            <div class="orderBox02">
+                                <a href="#"><img src="./images/dietfarmbread.jpg" align="left"
+                                        style="width:60px;height:100px;margin-right:20px"></a>
+                                <ul class="order00">
+                                    <li class="ship_state">배송중</li>
+                                    <li class="product">굿밸런스 라이트밀 도시락</li>
+                                    <li class="price">60,720원</li>
+                                    <li class="quantity">수량 : 2개</li>
+                                    <li class="option" style="margin-bottom:23px">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--//orderDetails-->
+
+                        <div class="orderDetails">
+                            <div class="order_title">
+                                <p><span>다신샵<img src="./images/call_icon_order.png"
+                                            style="width:20%;margin-left:10px"></span></p>
+                                <ul>
+                                    <li><a href="seller_inquiry.html">문의하기<img src="./images/arrow_ico_join.png"
+                                                style="width:7px;position:relative;left:4px;top:1px"></a></li>
+                                </ul>
+                            </div>
+                            <!--//order_title-->
+                            <div class="buttons">
+                                <button type="button" class="btnConfirm">구매확정</button>
+                                <button type="button" class="btnTracking" style="margin-left:10px">배송조회</button>
+                            </div>
+                            <!--//buttons-->
+                            <div class="orderBox02">
+                                <a href="product_details.html"><img src="./images/dietfarmbread.jpg" align="left"
+                                        style="width:60px;height:100px;margin-right:20px"></a>
+                                <ul class="order00">
+                                    <li class="ship_state">배송중</li>
+                                    <li class="product">굿밸런스 라이트밀 도시락</li>
+                                    <li class="price">60,720원</li>
+                                    <li class="quantitiy">수량 : 2개</li>
+                                    <li class="option">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                </ul>
+                            </div>
+                            <div class="orderBox02">
+                                <a href="#"><img src="./images/dietfarmbread.jpg" align="left"
+                                        style="width:60px;height:100px;margin-right:20px"></a>
+                                <ul class="order00">
+                                    <li class="ship_state">배송중</li>
+                                    <li class="product">굿밸런스 라이트밀 도시락</li>
+                                    <li class="price">60,720원</li>
+                                    <li class="quantity">수량 : 2개</li>
+                                    <li class="option" style="margin-bottom:23px">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--//orderDetails-->
+
+                        <!--  -->
+                        <table>
+                            <tbody>
+                                <tr class="order_q">
+                                    <td class="title00">
+                                        주문자 정보
+                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표"
+                                            style="width:14px;height:14px;">
+                                    </td>
+                                </tr>
+                                <tr class="order_a">
+                                    <td>
+                                        <div class="order_a_box">
+                                            <table style="border:none;">
+                                                <tr>
+                                                    <td><span>주문자</span></td>
+                                                    <td>박민지</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>연락처</span></td>
+                                                    <td>010-1234-5678</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>이메일</span></td>
+                                                    <td>minji777@dataflow.co.kr</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr class="order_q">
+                                    <td class="title00">
+                                        배송지 정보
+                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표"
+                                            style="width:14px;height:14px;">
+                                    </td>
+                                </tr>
+                                <tr class="order_a">
+                                    <td>
+                                        <div class="order_a_box">
+                                            <table style="border:none;">
+                                                <tr>
+                                                    <td><span>받는분</span></td>
+                                                    <td>박민지</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>주소</span></td>
+                                                    <td>서울 강남구 테헤란로8길 11-4, 2층</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>연락처</span></td>
+                                                    <td>010-1234-5678</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>배송 메모</span></td>
+                                                    <td>항상 안전운전 하세요~</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="paymentInfo">
+                            <table>
+                                <tbody>
+                                    <tr class="order_q">
+                                        <td class="title00">
+                                            결제 정보
+                                            <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표"
+                                                style="width:14px;height:14px;">
+                                        </td>
+                                    </tr>
+                                    <tr class="order_a">
+                                        <td>
+                                            <div class="order_a_box">
+                                                <table style="border:none;">
+                                                    <tr>
+                                                        <td><span>결제 방법</span></td>
+                                                        <td style="width:90px">카드 결제</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span>총 상품금액</span></td>
+                                                        <td>80,400원</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span>쿠폰 할인</span></td>
+                                                        <td>-3,210원</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span>포인트 할인</span></td>
+                                                        <td>0원</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span>배송비 할인</span></td>
+                                                        <td>0원</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>총 결제 금액</td>
+                                                        <td>77,190원</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table>
+                            <tbody>
+                                <tr class="order_q">
+                                    <td class="title00">
+                                        포인트 혜택
+                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표"
+                                            style="width:14px;height:14px;">
+                                    </td>
+                                </tr>
+                                <tr class="order_a">
+                                    <td>
+                                        <div class="order_a_box">
+                                            <table style="border:none;">
+                                                <tr>
+                                                    <td><span>구매적립</span></td>
+                                                    <td style="width:75px">888원</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>리뷰적립</span></td>
+                                                    <td>300원</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>총 적립 금액</td>
+                                                    <td>1188원</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btn_area">
+                            <button type="button" id="btnReorder">전체 재구매</button>
+                        </div>
+                    </div> <!-- inner box -->
+
+                </div>
+            </div>
+
+        </div>
+        <!--//order-->
+    </main>
+    <!-- mobile main end -->
+
+    <div id="content">
+
+        <div id="main">
+            <div class="main_contents">
+
+                <div class="left">
+                    <h3>마이팜</h3>
+                    <div class="left_ctn">
+                        <ul>
+                            <li><i class="fas fa-shopping-basket"></i></li>
+                            <li><span>김수아님</span></li>
+                            <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="center">
+                    <h3>포인트</h3>
+                    <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
+                </div>
+
+                <div class="right">
+                    <h3>쿠폰</h3>
+                    <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
+                </div>
+
+            </div>
+        </div>
+
+        <section id="contents">
+            <div class="contents_ctn">
+
+                <nav class="content_lnb">
+                    <ul>
+                        <li class="active"><a href="javascript:void(0);">주문내역</a></li>
+                        <li><a href="javascript:void(0);">배송지 관리</a></li>
+                        <li><a href="javascript:void(0);">상품 리뷰</a></li>
+                        <li><a href="javascript:void(0);">상품 문의</a></li>
+                        <li><a href="javascript:void(0);">판매자 문의</a></li>
+                        <li><a href="javascript:void(0);">포인트</a></li>
+                        <li><a href="javascript:void(0);">쿠폰</a></li>
+                    </ul>
+                </nav>
+
+                <div class="body_contents">
+                    <h3 class="orderList_detail">상품 리뷰</h3>
+                    <div class="order_detail_ctn">
+
+                        <div class="tabMenu_review" style="margin-top:-20px">
+                            <ul class="tab_wrap">
+                                <li class="active on" data-tab="tab1"><span>작성 가능한 리뷰 (3)</span></li>
+                                <li data-tab="tab2" class="" id="possible"><span>작성한 리뷰 (9)</span></li>
+                                <span></span>
+                            </ul>
+                        </div>
+
+                        <div id="tab1" class="tab_cont active">
+                            <section class="review_list_ctn">
+                                <div class="review_prod">
+                                    <div class="img_detail_ctn">
+                                        <div class="review_img"></div>
+                                        <ul class="review_detail">
+                                            <li class="review_brand">(배송중)</li>
+                                            <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
+                                            <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn_area_2" style="margin-top:20px">
+                                        <button type="button" class="btnJoin_2">
+                                            <span>리뷰쓰기</span>
+                                        </button>
+                                    </div>
+                                    <!--//btnJoin-->
+                                </div>
+
+                                <div class="reviewview_line_wrap">
+                                    <div class="review_line"></div>
+                                </div>
+
+                                <div class="review_prod">
+                                    <div class="img_detail_ctn">
+                                        <div class="review_img"></div>
+                                        <ul class="review_detail">
+                                            <li class="review_brand">(배송중)</li>
+                                            <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
+                                            <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn_area_2" style="margin-top:20px">
+                                        <button type="button" class="btnJoin_2">
+                                            <span>리뷰쓰기</span>
+                                        </button>
+                                    </div>
+                                    <!--//btnJoin-->
+                                </div>
+
+                                <div class="reviewview_line_wrap">
+                                    <div class="review_line"></div>
+                                </div>
+
+                                <div class="review_prod">
+                                    <div class="img_detail_ctn">
+                                        <div class="review_img"></div>
+                                        <ul class="review_detail">
+                                            <li class="review_brand">(배송중)</li>
+                                            <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
+                                            <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn_area_2" style="margin-top:20px">
+                                        <button type="button" class="btnJoin_2">
+                                            <span>리뷰쓰기</span>
+                                        </button>
+                                    </div>
+                                    <!--//btnJoin-->
+                                </div>
+
+                                <div class="reviewview_line_wrap">
+                                    <div class="review_line"></div>
+                                </div>
+
+                                <div class="review_prod">
+                                    <div class="img_detail_ctn">
+                                        <div class="review_img"></div>
+                                        <ul class="review_detail">
+                                            <li class="review_brand">(배송중)</li>
+                                            <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
+                                            <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn_area_2" style="margin-top:20px">
+                                        <button type="button" class="btnJoin_2">
+                                            <span>리뷰쓰기</span>
+                                        </button>
+                                    </div>
+                                    <!--//btnJoin-->
+                                </div>
+
+                                <div class="reviewview_line_wrap">
+                                    <div class="review_line"></div>
+                                </div>
+
+                                <div class="review_prod">
+                                    <div class="img_detail_ctn">
+                                        <div class="review_img"></div>
+                                        <ul class="review_detail">
+                                            <li class="review_brand">(배송중)</li>
+                                            <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
+                                            <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn_area_2" style="margin-top:20px">
+                                        <button type="button" class="btnJoin_2">
+                                            <span>리뷰쓰기</span>
+                                        </button>
+                                    </div>
+                                    <!--//btnJoin-->
+                                </div>
+
+                                <div class="reviewview_line_wrap">
+                                    <div class="review_line"></div>
+                                </div>
+
+                                <div class="review_prod">
+                                    <div class="img_detail_ctn">
+                                        <div class="review_img"></div>
+                                        <ul class="review_detail">
+                                            <li class="review_brand">(배송중)</li>
+                                            <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
+                                            <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn_area_2" style="margin-top:20px">
+                                        <button type="button" class="btnJoin_2">
+                                            <span>리뷰쓰기</span>
+                                        </button>
+                                    </div>
+                                    <!--//btnJoin-->
+                                </div>
+
+                                <div class="reviewview_line_wrap">
+                                    <div class="review_line"></div>
+                                </div>
+
+                                <ul class="pager">
+                                    <li><i class="fas fa-chevron-left"></i></li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li><i class="fas fa-chevron-right"></i></li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div id="tab2" class="tab_cont" style="display: none;">
+                            <div class="reviews">
+                                <div class="review_complete">
+                                    <table class="orderbox">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="order_a_box">
+                                                        <div class="web_prod_info_ctn">
+                                                            <a href="#"><img src="images/dietfarmbread.jpg" align="left"
+                                                                    style="width:50px; height: 62px; margin-right:20px;margin-left:15px"></a>
+                                                            <ul class="order001">
+                                                                <li>(아임월)</li>
+                                                                <li style="color:#000">굿밸런스 라이트밀 도시락</li>
+                                                                <li>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="edit_del_icon">
+                                                            <p class="editBtn_click start1"><img src="./images/one_icon_review.png" alt="수정,삭제 아이콘">
+                                                            </p>
+                                                            <div class="review_edit_del_btn_ctn fade1">
+                                                                <button class="review_editBtn">수정하기</button><br>
+                                                                <button class="review_delBtn">삭제하기</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="reviewview_line_wrap">
+                                        <div class="review_line"></div>
+                                    </div>
+
+                                    <div class="product_review01">
+                                        <div class="review_info02">
+                                            <p>2020.10.21</p>
+                                            <div id="star_grade" class="star_grade">
+                                                <div class="starRev">
+                                                    <span class="starR1 on">별1_왼쪽</span>
+                                                    <span class="starR2">별1_오른쪽</span>
+                                                    <span class="starR1">별2_왼쪽</span>
+                                                    <span class="starR2">별2_오른쪽</span>
+                                                    <span class="starR1">별3_왼쪽</span>
+                                                    <span class="starR2">별3_오른쪽</span>
+                                                    <span class="starR1">별4_왼쪽</span>
+                                                    <span class="starR2">별4_오른쪽</span>
+                                                    <span class="starR1">별5_왼쪽</span>
+                                                    <span class="starR2">별5_오른쪽</span>
+                                                </div>
+                                                <p style="font-size:14px">좋아요좋아요좋아요좋아요</p>
+                                            </div>
+
+                                            <p><img src="images/dietfarmbread.jpg" style="width:30%"></p>
+                                        </div>
+                                    </div>
+                                    <!--//product_review01-->
+                                    <div class="thick_line"></div>
+                                </div>
+                                <!--//review_complete-->
+                            </div>
+
+                            <div class="reviews">
+                                <div class="review_complete">
+                                    <table class="orderbox">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="order_a_box">
+                                                        <div class="web_prod_info_ctn">
+                                                            <a href="#"><img src="images/dietfarmbread.jpg" align="left"
+                                                                    style="width:50px; height: 62px; margin-right:20px;margin-left:15px"></a>
+                                                            <ul class="order001">
+                                                                <li>(아임월)</li>
+                                                                <li style="color:#000">굿밸런스 라이트밀 도시락</li>
+                                                                <li>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="edit_del_icon">
+                                                            <p class="editBtn_click start1"><img src="./images/one_icon_review.png" alt="수정,삭제 아이콘">
+                                                            </p>
+                                                            <div class="review_edit_del_btn_ctn fade1">
+                                                                <button class="review_editBtn">수정하기</button><br>
+                                                                <button class="review_delBtn">삭제하기</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="reviewview_line_wrap">
+                                        <div class="review_line"></div>
+                                    </div>
+
+                                    <div class="product_review01">
+                                        <div class="review_info02">
+                                            <p>2020.10.21</p>
+                                            <div id="star_grade" class="star_grade">
+                                                <div class="starRev">
+                                                    <span class="starR1 on">별1_왼쪽</span>
+                                                    <span class="starR2">별1_오른쪽</span>
+                                                    <span class="starR1">별2_왼쪽</span>
+                                                    <span class="starR2">별2_오른쪽</span>
+                                                    <span class="starR1">별3_왼쪽</span>
+                                                    <span class="starR2">별3_오른쪽</span>
+                                                    <span class="starR1">별4_왼쪽</span>
+                                                    <span class="starR2">별4_오른쪽</span>
+                                                    <span class="starR1">별5_왼쪽</span>
+                                                    <span class="starR2">별5_오른쪽</span>
+                                                </div>
+                                                <p style="font-size:14px">좋아요좋아요좋아요좋아요</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--//product_review01-->
+                                    <div class="thick_line"></div>
+                                </div>
+                                <!--//review_complete-->
+                            </div>
+                            <!--//reviews-->
+                            <div class="reviews">
+                                <div class="review_complete">
+                                    <table class="orderbox">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="order_a_box">
+                                                        <div class="web_prod_info_ctn">
+                                                            <a href="#"><img src="images/dietfarmbread.jpg" align="left"
+                                                                    style="width:50px; height: 62px; margin-right:20px;margin-left:15px"></a>
+                                                            <ul class="order001">
+                                                                <li>(아임월)</li>
+                                                                <li style="color:#000">굿밸런스 라이트밀 도시락</li>
+                                                                <li>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="edit_del_icon">
+                                                            <p class="editBtn_click start1"><img src="./images/one_icon_review.png" alt="수정,삭제 아이콘">
+                                                            </p>
+                                                            <div class="review_edit_del_btn_ctn fade1">
+                                                                <button class="review_editBtn">수정하기</button><br>
+                                                                <button class="review_delBtn">삭제하기</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="reviewview_line_wrap">
+                                        <div class="review_line"></div>
+                                    </div>
+
+                                    <div class="product_review01">
+                                        <div class="review_info02">
+                                            <p>2020.10.21</p>
+                                            <div id="star_grade" class="star_grade">
+                                                <div class="starRev">
+                                                    <span class="starR1 on">별1_왼쪽</span>
+                                                    <span class="starR2">별1_오른쪽</span>
+                                                    <span class="starR1">별2_왼쪽</span>
+                                                    <span class="starR2">별2_오른쪽</span>
+                                                    <span class="starR1">별3_왼쪽</span>
+                                                    <span class="starR2">별3_오른쪽</span>
+                                                    <span class="starR1">별4_왼쪽</span>
+                                                    <span class="starR2">별4_오른쪽</span>
+                                                    <span class="starR1">별5_왼쪽</span>
+                                                    <span class="starR2">별5_오른쪽</span>
+                                                </div>
+                                                <p style="font-size:14px">좋아요좋아요좋아요좋아요</p>
+                                            </div>
+
+                                            <p><img src="images/dietfarmbread.jpg" style="width:30%"></p>
+                                        </div>
+                                    </div>
+                                    <!--//product_review01-->
+                                    <div class="thick_line"></div>
+
+                                    <ul class="pager">
+                                        <li><i class="fas fa-chevron-left"></i></li>
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li>5</li>
+                                        <li>6</li>
+                                        <li>7</li>
+                                        <li>8</li>
+                                        <li>9</li>
+                                        <li>10</li>
+                                        <li><i class="fas fa-chevron-right"></i></li>
+                                    </ul>
+                                </div>
+                                <!--//review_complete-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--//order-->
+    </div>
+
+    </div>
+    </div><!-- contents_ctn -->
+    </section> <!-- content -->
+
+    <div class="wide_line"></div>
+    <ul class="footer_top">
+        <li>사업자정보확인 <span><img src="./images/l_icon_category@2x.png" alt="|"></span></li>
+        <li>이용약관 <span><img src="./images/l_icon_category@2x.png" alt="|"></span></li>
+        <li>개인정보처리방침</li>
+    </ul>
+    <footer id="footer">
+
+        <div class="footer_btm">
+            <ul class="dietFarm_info">
+                <li>다이어트팜 정보</li>
+                <li>(주)데이터플로 대표: 유승열</li>
+                <li>사업자등록번호 : 509-81-05501</li>
+                <li>통신판매업 신고번호 :</li>
+                <li>건강기능식품 판매업 : 제 2021-0105159 호</li>
+                <li>개인정보보호책임자 : 유승열</li>
+                <li>주소 : 서울시 강남구 테헤란로8길 11-4 신도빌딩,2층 202호</li>
+                <li>팩스 :070-7500-7691</li>
+                <li>이메일 : <span>dietfarm119@gmail.com</span></li>
+                <li>입점문의 : <span>입점문의하기</span></li>
+                <li>제휴문의 : <span>dietfarm119@gmail.com</span></li>
+            </ul>
+
+            <ul class="account">
+                <li>계좌번호</li>
+                <li>농협 317-0021-9321-31</li>
+                <li>예금주 (주)데이터플로</li>
+                <li>공지사항</li>
+                <li>1월 연휴 배송안내</li>
+                <li>주석 연휴 배송안내</li>
+            </ul>
+
+            <ul class="customer_center">
+                <li>고객센터</li>
+                <li>070-4366-3299</li>
+                <li>월~금 10:00~17:00</li>
+                <li>점심시간 12:00~13:00</li>
+                <li>토,일,공휴일 휴무</li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $("tr.order_q").click(function () {
+                if ($(this).next('tr').css("display") != "none") {
+                    $(this).next('tr').hide();
+                    $(this).removeClass("current");
+                } else {
+                    $("tr.order_a").css('display', 'current');
+                    $("tr.order_q").removeClass("current");
+                    $(this).next('tr').show();
+                    $(this).addClass("none");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+<script src="./js/main.js"></script>
