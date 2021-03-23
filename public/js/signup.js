@@ -2,54 +2,56 @@
 
 /*변수 선언*/
 
-var id = document.querySelector('#id');
+$(function() {
+    var id = document.querySelector('#id');
 
-var pw1 = document.querySelector('#pswd1');
-var pwMsg = document.querySelector('#alertTxt');
-var pwImg1 = document.querySelector('#pswd1_img1');
+    var pw1 = document.querySelector('#pswd1');
+    var pwMsg = document.querySelector('#alertTxt');
+    var pwImg1 = document.querySelector('#pswd1_img1');
 
-var pw2 = document.querySelector('#pswd2');
-var pwImg2 = document.querySelector('#pswd2_img1');
-var pwMsgArea = document.querySelector('.int_pass');
+    var pw2 = document.querySelector('#pswd2');
+    var pwImg2 = document.querySelector('#pswd2_img1');
+    var pwMsgArea = document.querySelector('.int_pass');
 
-var userName = document.querySelector('#name');
+    var userName = document.querySelector('#name');
 
-var yy = document.querySelector('#yy');
-var mm = document.querySelector('#mm');
-var dd = document.querySelector('#dd');
+    var yy = document.querySelector('#yy');
+    var mm = document.querySelector('#mm');
+    var dd = document.querySelector('#dd');
 
-var gender = document.querySelector('#gender');
+    var gender = document.querySelector('#gender');
 
-var email = document.querySelector('#email');
+    var email = document.querySelector('#email');
 
-var mobile = document.querySelector('#mobile');
+    var mobile = document.querySelector('#mobile');
 
-var error = document.querySelectorAll('.error_next_box');
-
-
-
-/*이벤트 핸들러 연결*/
-
-
-id.addEventListener("focusout", checkId);
-pw1.addEventListener("focusout", checkPw);
-pw2.addEventListener("focusout", comparePw);
-userName.addEventListener("focusout", checkName);
-yy.addEventListener("focusout", isBirthCompleted);
-mm.addEventListener("focusout", isBirthCompleted);
-dd.addEventListener("focusout", isBirthCompleted);
-gender.addEventListener("focusout", function() {
-    if(gender.value === "성별") {
-        error[5].style.display = "block";
-    } else {
-        error[5].style.display = "none";
-    }
-})
-email.addEventListener("focusout", isEmailCorrect);
-mobile.addEventListener("focusout", checkPhoneNum);
+    var error = document.querySelectorAll('.error_next_box');
 
 
 
+    /*이벤트 핸들러 연결*/
+
+
+    id.addEventListener("focusout", checkId);
+    pw1.addEventListener("focusout", checkPw);
+    pw2.addEventListener("focusout", comparePw);
+    userName.addEventListener("focusout", checkName);
+    yy.addEventListener("focusout", isBirthCompleted);
+    mm.addEventListener("focusout", isBirthCompleted);
+    dd.addEventListener("focusout", isBirthCompleted);
+    gender.addEventListener("focusout", function() {
+        if(gender.value === "성별") {
+            error[5].style.display = "block";
+        } else {
+            error[5].style.display = "none";
+        }
+    })
+    email.addEventListener("focusout", isEmailCorrect);
+    mobile.addEventListener("focusout", checkPhoneNum);
+
+
+  
+});
 
 
 /*콜백 함수*/

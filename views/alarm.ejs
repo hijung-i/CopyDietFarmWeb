@@ -8,12 +8,45 @@
     <meta name="format-detection" content="no" />
 
     <title>다이어트 Farm</title>
-    <link rel="stylesheet" href="/css/cs.css">
+    <style type="text/css">
+        @media screen and (min-width:360px)and (max-width:1079px) {.web_alarm{display:none}}
+        @media screen and (min-width:1020px){.mobile_alarm{display:none} }
+        </style>
+    <link rel="stylesheet" href="css/cs.css">
+    <link rel="stylesheet" href="css/style02.css">
     <%-icnlude('general/head') %>
 </head>
 
 <body>
+  <div class="web_alarm">
+    <%-include('general/header_web') %>
+    <main id="w_content" class="content">
+        <h2>고객센터</h2>
+       <div class="contents">
+       <div class="w_sidemenu">
+           <ul>
+               <a href="notice.html"><li class="menu">공지사항</li></a>
+               <a href="faq.html"><li class="menu">fAQ</li></a>
+               <a href="cs_center.html"><li class="menu">고객센터</li></a>
+               <a href="alarm.html"><li class="menu">알림설정</li></a>
+           </ul>
+       </div>
+          <h3 class="alarm_title">알림설정</h3>
+           <div class="alarmBox_web">
+             <h3>알림 받기</h3>
+            <input type="checkbox" id="prod_detail_toggle"><label for="prod_detail_toggle"><span>아이콘</span></label>
+        </div>
+         <p class="alarmS_web">알림 거절 시 상품배송 및 문의 등의 정보성알림을 포함한 모든 알림을 받아보실 수 없습니다.</p>
 
+        <div class="alarmBox_web" style="c">
+            <h3>광고성 정보 수신 동의</h3>
+            <input type="checkbox" id="prod_detail_toggle"><label for="prod_detail_toggle"><span>아이콘</span></label>
+        </div>
+        <p class="alarmS_web">신규 서비스 및 고객 맞춤 혜택 정보를 받을 수 있습니다.</p>
+         </div>
+    </main>
+  </div>
+  <div class="mobile_alarm">
     <section class="detail_title">
         <h2>알림설정</h2>
         <script type="text/javascript">
@@ -41,5 +74,5 @@
         </div>
         <p class="alarmS">신규 서비스 및 고객 맞춤 혜택 정보를 받을 수 있습니다.</p>
     </main>
-
+</div>
 </body></html>
