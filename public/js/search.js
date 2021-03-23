@@ -12,6 +12,12 @@ $(function() {
             
         }
     })
+
+    $(".search_box_ico").click(function() {
+        var keyword = $('.instant-search__input').val();
+        goSearchResult(keyword);
+    })
+    
     getHotKeyowrds();
     getCFKeywords();
 })
@@ -71,4 +77,8 @@ function searchProduct(keyword) {
     }, function(err) {
         console.log(err);
     })
+}
+
+function goSearchResult(keyword) {
+    location.href = '/search/'+ keyword+'/keyword';
 }
