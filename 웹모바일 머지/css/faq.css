@@ -1,0 +1,148 @@
+*{font-family:"나눔고딕";font-weight:400}
+
+body{min-width:360px}
+html, body {
+max-width: 100%;
+overflow-x: hidden;
+}
+/*faq*/
+ td, tr, h1, h2,{padding-left:20px;}
+.detail_title{margin:40px 10px 10px 10px;width:100%;}
+ .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
+.detail_title a img{position:absolute;top:42px;width:17px}
+.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+.faq{margin-top:20px;width:100%;}
+.faq_q .title{padding-top:15px}
+.downArrow{}
+.faq p{font-size:14px;padding-left:15px;padding-right:15px}
+.downArrow{position:absolute;right:20px;margin-top:5px;width:11px;height:11px}
+.faq ul li{float:left;}
+.faq_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;padding-right:20px;margin-bottom:20px;}
+.faq_title p span{font-size:15px;font-weight:bold}
+.review_edit ul li{font-size:12px;margin-left:20px;line-height:14px;}
+.Faq01 table{width:100%;}
+.Faq01 td{padding:10px 15px 15px;font-size:14px;line-height:22px;min-height:51px}
+.Faq01 tr.faq_q td{cursor:pointer;border-bottom:2px solid #E6E6E6}
+.Faq01 tr.faq_a{display:none;}
+.faq_a_box{padding-top:5px;margin-left:-15px}
+.faq_a_box p{line-height:20px;font-size:12px}
+.faq_a01{background-color:#F6F8F9;border-bottom:1px solid #e6e6e6}
+.Faq01 tr.faq_a .faq_a faq_a01{width:100%;clear:both;border-bottom:2px solid #E6E6E6;}
+.src_icon{position:absolute;right:10px;top:15px}
+
+/*판매자 문의하기*/
+.btn_area {width:100%;clear:both;border-top:8px solid #E6E6E6;padding-right:15px}
+#btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
+.inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
+.inquiryBox ul li form p textarea{border-radius:5px;width:100%;height:153px}
+.inquiryBox h3{font-size:12px;font-weight:bold}
+.inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
+.inquiryBox ul li ul li{line-height:14px}
+.inquiryBox .words form{margin-top:-20px}
+.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
+text-align:center;line-height:17px;
+font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
+border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
+.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
+.filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
+.filebox p span{text-decoration:underline
+}
+.tab_cont{display:none;min-height:360px;}
+.tab_cont.active{display:block;}
+
+
+/*문의하기(상품문의)*/
+.productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
+.productInquiryBox h3{font-size:14px;font-weight:bold;margin-bottom:16px}
+.productInquiryBox form{margin-bottom:18px;}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.secret{
+  position: relative;margin-left:15px;
+}
+
+.secret::before {
+  content: "";
+  background: url("../images/aftercheck_icon_join@2x.png");
+  background-position: center;
+  background-size: contain;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  left: -12px;
+  top: -2px;
+  
+
+  transform: scale(0) rotateZ(180deg);
+ 
+}
+
+input#secret[type="checkbox"]:checked + .secret::before {
+  transform: scale(1) rotateZ(0deg);
+}
+
+.secret::after {
+  content: "";
+  border: 2px solid #EFA543;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: -12px;
+  top: -3px;
+  border-radius: 50%;
+}
+
+/*리뷰쓰기*/
+.review01{width:100%;border-bottom:1px solid #f1f1f1;padding-bottom:10px}
+.reviewProduct ul li{font-weight:normal;margin-top:10px;}
+.star_grade{text-align:center;border-bottom:1px solid #E6E6E6;margin-bottom:25px}
+.star_grade p{margin-top:20px;font-size:16px;font-weight:bold}
+.starRev{display:inline-block;margin:0 auto;margin-bottom:20px;margin-top:10px} 
+.starRev span{padding:5px}
+.starR1{background:url(../images/star_ico_reviewxxhdpi.png) no-repeat -52px 0;background-size: auto 100%;width: 15px;height: 30px;    float:left;text-indent: -9999px;cursor: pointer
+}
+.starR2{background:url(../images/star_ico_reviewxxhdpi.png) no-repeat right 0;background-size: auto 100%;width: 15px;height: 30px;   float:left;text-indent: -9999px;cursor: pointer;
+}
+.starR1.on{background-position:0 0;}
+.starR2.on{background-position:-15px 0;}
+.btn_area {width:100%;clear:both;border-top:8px solid #E6E6E6}
+#btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+font-weight: 400;border-radius:5px;margin:24px  10px 0px;}
+.reviewModifyBox{padding-left:20px;padding-right:20px;margin-bottom:20px}
+.reviewModifyBox ul{font-size:12px;font-weight:bold;}
+.reviewModifyBox ul li ul{margin-bottom:20px;font-weight:normal;margin-top:5px}
+
+/*사진 첨부부분은 판매자 문의하기와 같이 사용*/
+.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
+text-align:center;line-height:17px;
+font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
+border: 1px solid #BBBBBB;border-radius:5px;}
+.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;
+  margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
+.filebox p{color:#878787;line-height:20px;font-weight:normal;padding-top:20px}
+.previewBox ul li{float:left;border:1px solid #BBBBBB;width:110px;height:110px;margin-top:15px}
+.filebox{margin-top:25px}
+.p2{margin-left:10px}
+.inquiryBox p{clear:both;padding-top:20px}
+
+/*faq 웹*/
+#w_content{width:1080px;margin:0 auto}
+#w_content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
+.w_sidemenu{margin-top:30px;float:left}
+.w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
+.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
+.contents .faq{float:left;width:669px;margin-left:81px;margin-bottom:360px;margin-top:33px}
+.contents .faq h3{font-size:20px;font-weight:bold;color:#000;padding-bottom:24px;border-bottom:2px solid #6B6B6B}
+.contents .faq_q .title img{position:relative;left:470px}
+
+
+
+
+
+
+
+

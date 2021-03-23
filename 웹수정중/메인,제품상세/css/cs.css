@@ -1,0 +1,75 @@
+*{font-family:"나눔고딕";font-weight:400}
+
+html, body {
+max-width: 100%;
+overflow-x: hidden;
+}
+body{min-width:360px}
+
+
+/*고객센터*/
+.detail_title{margin:40px 10px 20px 10px;width:100%;}
+.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
+.detail_title a img{position:absolute;top:42px;width:17px}
+.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+.csBox{padding-left:20px;padding-right:20px;}
+.csBox h3{font-family:'나눔고딕';font-size:14px;font-weight:bold;margin-bottom:15px}
+.csBox p{font-size:14px;font-weight:bold;color:#31845B;margin-bottom:15px}
+.csBox p span{font-weight:bold;font-family:'나눔고딕'}
+.csBox ul li{float:left;font-size:12px;line-height:20px;margin-bottom:15px}
+.cs01:after{content:" | ";margin-left:5px}
+.cs02{margin-left:10px}
+.btn_area{margin-bottom:50px}
+#btnCS{width:100%;height:45px;text-align:center;border:0;cursor: pointer;color: #fff;background-color:#31845B;font-size:14px;
+font-weight:bold;border-radius:5px;font-family:'나눔고딕'}
+#btnCS a{color:#fff;font-size:14px;font-weight:bold;line-height:14px;top:2px;font-family:'나눔고딕'}
+#btnCS img{width:20px;height:20px;margin-left:-20px;margin-right:10px;}
+
+/*알림 받기*/
+.alarmBox{margin-top:31px}
+.alarmBox *:not(ul){padding-left:15px;padding-right:20px;}
+.alarmBox h3{font-size:14px;margin-bottom:10px;margin-top:19px}
+
+.alarmS{border-bottom:2px solid #E6E6E6;
+    padding-bottom:20px;padding-left:15px}
+
+.alarmBox{width:100%; margin: 0 auto;padding-right:5px;
+    display: flex;justify-content:space-between;   margin-top: 20px;align-items: center;padding-right:15px}
+
+/* 토글 버튼 디자인 */
+.alarmBox input {position: absolute; left: -9999px;}
+.alarmBox  label {
+    position: relative;
+    display: block; 
+    width: 33px; height: 20px;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 13px;
+    transition: ease-in .1s;
+}
+label:after {
+    content: ""; 
+    position: absolute; 
+    left: 2px; top: 50%;
+    width: 16px; height: 16px;
+    border-radius: 100%;
+    background: #bbb;
+    transform: translateY(-50%);
+    transition: all .4s;
+}
+.alarmBox input:checked + label {background: #fff; border: 1px solid #EFA543; }
+.alarmBox input:checked + label:after {
+    left: calc(100% - 18px); right: 2px; background: #EFA543;
+}
+.alarmBox label > span {display: none;}
+
+
+
+
+
+
+
+
+
+
+
