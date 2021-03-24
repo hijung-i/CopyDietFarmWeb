@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="format-detection" content="no" />
+
+    <title>다이어트 Farm - 비밀번호 재설정</title>
+    <style type="text/css">
+        @media screen and (min-width:360px)and (max-width:1079px) {.web_pwdReset{display:none}}
+        @media screen and (min-width:1020px){.mobile_pwdReset{display:none} }
+        </style>
+    <link rel="stylesheet" href="css/style02.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <%-include('general/head') %>
+</head>
+<body>
+    <div class="web_pwdReset">
+        <%-include('general/header_web') %>
+        <main id="w_content" class="content">
+            <section class="detail_title">
+               <h2>비밀번호 재설정</h2>
+               <script type="text/javascript">
+                   function goBack() {
+                       window.history.back();
+                   }
+               </script>
+               <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt="" style="display:none"> </a>
+               </div>
+           </section>
+           <main id="content" class="content">
+              <div class="new_pwd">
+               <h3>새 비밀번호</h3>
+               <input type="password" placeholder="새 비밀번호를 입력해주세요">
+               <p>- 10자 이상 입력</p>
+               <p>- 영문/숫자/특수문자 2개 이상 조합</p>
+               </div>
+               <div class="new_pwd_ck">
+               <h3>새 비밀번호 확인</h3>
+               <input type="password" placeholder="새 비밀번호를 한번 더 입력해주세요">
+               <p>- 동일한 비밀번호를 입력해주세요</p>
+               </div>
+               <p class="red_sign">비밀번호를 변경하려면 PC, PC Player, 모바일 웹/APP에 로그인 되어 있는 모든 계정이 로그아웃 됩니다.</p>
+               <div class="btn_area_pwd">
+                   <button type="button" id="btnPwdChange">
+                       비밀번호 변경
+                   </button>
+               </div>
+           </main>
+         </main>  
+    </div>
+    <div class="mobile_pwdReset">
+        <section class="detail_title">
+            <h2>비밀번호 재설정</h2>
+            <script type="text/javascript">
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt="" style="left:10px;margin-top:-5px"> </a>
+            </div>
+        </section>
+        <main id="content" class="content">
+           <div class="new_pwd">
+            <h3>새 비밀번호</h3>
+            <input type="password" placeholder="새 비밀번호를 입력해주세요">
+            <p>- 10자 이상 입력</p>
+            <p>- 영문/숫자/특수문자 2개 이상 조합</p>
+            </div>
+            <div class="new_pwd_ck">
+            <h3>새 비밀번호 확인</h3>
+            <input type="password" placeholder="새 비밀번호를 한번 더 입력해주세요">
+            <p>- 동일한 비밀번호를 입력해주세요</p>
+            </div>
+            <p class="red_sign">비밀번호를 변경하려면 PC, PC Player, 모바일 웹/APP에 로그인 되어 있는 모든 계정이 로그아웃 됩니다.</p>
+            <div class="btn_area_pwd">
+                <button type="button" id="btnPwdChange">
+                    비밀번호 변경
+                </button>
+            </div>
+        </main>
+    </div>
+    <script>
+        $(document).ready(function(){
+       $("#gnbAllMenu").hide();
+       $("#btnGnbOpen").click(function(){
+           $("#gnbAllMenu").slideToggle("fast");
+       });
+   });
+
+      $(document).ready(function() {
+           $(".m_slides_sub").hide();
+           $(".m_ba_slides_n_w li").hover(function(){
+               $("ul:not(:animated)",this).slideDown("700");
+
+               $(".m_ba_slides_n_w li a").removeClass("active");
+           },
+           function() {
+               $("ul",this).slideUp("700");
+              });
+
+           $("#memberMenu").bind("moseover mouseenter",function(){
+               $("#memMenu").show();
+         });
+          $("#memMenu").bind("moseout mouseleave",function(){
+               $("#memMenu").hide();
+         });
+
+           $("#NotmemberMenu").bind("moseover mouseenter",function(){
+               $("#NotmemMenu").show();
+         });
+          $("#NotmemMenu").bind("moseout mouseleave",function(){
+               $("#NotmemMenu").hide();
+         });
+       });
+   </script>
+</body>
+</html>

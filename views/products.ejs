@@ -21,14 +21,136 @@
             width: 100%
         }
 
-             nav a:nth-child(2).is-current~.nav-underline {
-            left: 20%;
+        nav a:nth-child(2) {
+            color: #F99319;
         }
+
+        nav a:nth-child(2).is-current~.nav-underline {
+            left: 20%;}
+     
+    @media screen and (min-width:360px)and (max-width:1079px) {.web_sub{display:none}}
+            
+    @media screen and (min-width:1020px){.mobile_sub{display:none} }
     </style>
     <%-include('general/head') %>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style02.css">
 </head>
 
 <body>
+    <div class="web_sub">
+        <%-include('general/header_web') %>
+    <main id="contents" class="contents">
+        <div class="main_sub_wrap">
+            <section class="main_sub">
+                <h2>신상</h2>
+                <form name="#" id="#" method="get" action="#">
+                    <div class="n_sort">
+                        <div class="sort">
+                            <select name="#" id="#" class=formSelect>
+                                <option value="#">추천순</option>
+                                <option value="#">신상품순</option>
+                                <option value="#">인기상품순</option>
+                                <option value="#">낮은 가격순</option>
+                                <option value="#">높은 가격순</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+    <div class="sub_items">
+     <ul>
+      <li>    
+        <a href="#">
+            <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
+            </div>
+            <div class="desc">
+                <p class="title">제품이름</p>
+                <ul>
+                    <li class="sale">23,400원</li>
+                    <li class="cost">26,000원</li>
+                    <li class="ratio">10%</li>
+                </ul>
+            </div>
+            </a>
+       </li>
+       <li>    
+        <a href="#">
+            <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
+            </div>
+            <div class="desc">
+                <p class="title">제품이름</p>
+                <ul>
+                    <li class="sale">23,400원</li>
+                    <li class="cost">26,000원</li>
+                    <li class="ratio">10%</li>
+                </ul>
+            </div>
+            </a>
+       </li>
+       <li>    
+        <a href="#">
+            <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
+            </div>
+             <div class="desc">
+                <p class="title">제품이름</p>
+                <ul>
+                    <li class="sale">23,400원</li>
+                    <li class="cost">26,000원</li>
+                    <li class="ratio">10%</li>
+                </ul>
+            </div>
+            </a>
+       </li>
+       <li>    
+        <a href="#">
+            <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
+            </div>
+             <div class="desc">
+                <p class="title">제품이름</p>
+                <ul>
+                    <li class="sale">23,400원</li>
+                    <li class="cost">26,000원</li>
+                    <li class="ratio">10%</li>
+                </ul>
+            </div>
+            </a>
+       </li>
+       <li>    
+        <a href="#">
+            <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
+            </div>
+            <div class="desc">
+                <p class="title">제품이름</p>
+                <ul>
+                    <li class="sale">23,400원</li>
+                    <li class="cost">26,000원</li>
+                    <li class="ratio">10%</li>
+                </ul>
+            </div>
+            </a>
+       </li>
+       <li>    
+        <a href="#">
+            <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
+            </div>
+            <div class="desc">
+                <p class="title">제품이름</p>
+                <ul>
+                    <li class="sale">23,400원</li>
+                    <li class="cost">26,000원</li>
+                    <li class="ratio">10%</li>
+                </ul>
+            </div>
+            </a>
+       </li>
+        </ul>
+        </div>
+    </section>
+    </div>
+    
+ </main>   <!--//컨텐츠-->
+</div>
+<div class="mobile_sub">
     <article class="skip_menu">
         <a href="#"><span>바로가기1</span></a>
         <a href="#"><span>바로가기2</span></a>
@@ -67,6 +189,7 @@
         </div>
 
     </main>
+</div>
     <script>
         // 햄버거 메뉴
         $(document).ready(function() {

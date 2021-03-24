@@ -1,8 +1,3 @@
-*{font-family:"Nanum Gothic";font-weight:400}
-body{min-width:360px}
-html, body {max-width: 100%;overflow-x: hidden;
-}
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
 /*공지사항*/
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:30px;margin-top:2px}
@@ -13,3 +8,22 @@ html, body {max-width: 100%;overflow-x: hidden;
 .nBox_wrap{width:100%;border-bottom:1px solid #E6E6E6}
 .noticeBox ul li{font-size:12px;color:#878787;letter-spacing:0.1px;text-align:left}
 .noticeBox p{line-height:20px;text-indent:-12px;margin-left:15px;}
+
+/*공지사항 웹*/
+#w_content{width:1080px;margin:0 auto}
+#w_content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
+.w_sidemenu{margin-top:30px;float:left}
+.w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
+.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
+.w_sidemenu ul li.selected{background-color:#F99319;color:#fff}
+.contents .noticeBox{float:left;margin-left:81px;margin-top:30px}
+.contents .noticeBox h4{font-size:20px;font-weight:bold;color:#000;margin-bottom:38px}
+.contents .noticeBox ul{width:831px;}
+.notice_content{padding-bottom:10px;border-bottom:1px solid #E6E6E6}
+.noticeBtn{width:116px;height:30px;margin-top:15px;border:1px solid #BBBBBB;background-color:#fff;font-size:12px;font-weight:normal;color:#000}
+.nv_list table{margin-top:33px;margin-bottom:149px}
+.nv_list table {width: 100%;border: 1px solid #F5F5F5;border-collapse: collapse;}
+.nv_list tr, td {border: 1px solid #F5F5F5;padding: 10px;}
+.nv_list td{padding:10px}
+.nv_list td img{position:relative;top:6px;margin-right:9px}
+.nv_list td span{color:#878787;font-size:12px;margin-left:5px}
