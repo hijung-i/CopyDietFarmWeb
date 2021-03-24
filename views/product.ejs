@@ -10,13 +10,13 @@
     <title>다이어트 Farm</title>
     <style type="text/css">
     @media screen and (min-width:360px)and (max-width:1079px) {.web_product_details{display:none}}
-    @media screen and (min-width:1020px){.mobile_product_details{display:none} }
+    @media screen and (min-width:1080px){.mobile_product_details{display:none} }
       
     </style>
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/product_details">
-      <link rel="stylesheet" href="css/product_detail_W.css">
-      <link rel="stylesheet" href="css/style02.css">
+      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/product_details.css">
+      <link rel="stylesheet" href="/css/product_detail_W.css">
+      <link rel="stylesheet" href="/css/style02.css">
     <script type="text/javascript">
         function Show_hidden(e) {
             var menu = new Array("test_1", "test_2", "test_3", "test_4", "test_5"); // 객체 배열로 지정
@@ -1347,6 +1347,68 @@
     <%-include('general/footer') %>
 </div><!--//mobile_product_details-->
     <script src="/js/product.js"></script>
-   
+    <script>
+        $(document).ready(function(){
+       $("#gnbAllMenu").hide();
+       $("#btnGnbOpen").click(function(){
+           $("#gnbAllMenu").slideToggle("fast");
+       });
+   });
+
+      $(document).ready(function() {
+           $(".m_slides_sub").hide();
+           $(".m_ba_slides_n_w li").hover(function(){
+               $("ul:not(:animated)",this).slideDown("700");
+
+               $(".m_ba_slides_n_w li a").removeClass("active");
+           },
+           function() {
+               $("ul",this).slideUp("700");
+              });
+
+           $("#memberMenu").bind("moseover mouseenter",function(){
+               $("#memMenu").show();
+         });
+          $("#memMenu").bind("moseout mouseleave",function(){
+               $("#memMenu").hide();
+         });
+
+           $("#NotmemberMenu").bind("moseover mouseenter",function(){
+               $("#NotmemMenu").show();
+         });
+          $("#NotmemMenu").bind("moseout mouseleave",function(){
+               $("#NotmemMenu").hide();
+         });
+       });
+   </script>
+        <script>
+  //배송지 변경 모달창
+function openModal(modalname){
+ document.get
+ $("#modal").fadeIn(300);
+ $("."+modalname).fadeIn(300);
+}
+
+$("#modal, .close").on('click',function(){
+ $("#modal").fadeOut(300);
+ $(".modal-con").fadeOut(300);
+});
+       </script>
+          
+           <script>
+               $('.multiple_bxslider').bxSlider({
+                   mode: 'horizontal',
+                   auto: true,
+                   slideWidth:1000,
+                   infiniteLoop: true,
+                   controls:true,
+                   pager: false,
+                   minSlides:2,
+                   maxSlides:8,
+                   slideWidth: 170,
+                   slideMargin: 0.4,
+                   touchEnabled: true
+               });
+     </script>
 </body>
 </html>

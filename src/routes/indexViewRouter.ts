@@ -97,6 +97,9 @@ router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'TermsOfService', {})
 })
+router.get('/products', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'products', {})
+})
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }
