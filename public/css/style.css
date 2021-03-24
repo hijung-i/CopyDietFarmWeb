@@ -662,6 +662,27 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .pick_list_null img{width:100px;height:75px}
 .no_list{font-size:16px;color:#878787;margin-top:15px}
 
+/*찜한 메뉴 웹*/
+#contents{width:1080px;margin:0 auto;padding-bottom:347px}
+#contents .pick_wrap{width:1080px;}
+#contents .pick_wrap{margin:10px 10px;width:100%;}
+#contents .pick_product h2{margin-top:40px;margin-bottom:20px;font-size:18px;color:#000;}
+
+#contents .pick_product ul{display:grid;grid-template-columns: repeat(3, 3fr);
+;align-items: center;
+justify-self: center;width: 100%;margin: 0 auto;}
+
+#contents .pick_product ul li img{width:330px;border-radius:5px}
+#contents .pick_product ul li .desc p{font-size:16px;padding:5px;margin-top:10px}
+#contents .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
+#contents .desc ul{margin-left:5px;margin-bottom:44px}
+#contents .desc .sale{color:#000}
+#contents .desc .cost{margin-left:-50px;font-size:14px;color:#6B6B6B;text-decoration:line-through}
+#contents .desc .ratio{margin-left:-100px;color:#F32525}
+#footer{clear:both}
+
+
+
 /*회원 탈퇴*/
 #content .delete a img{position:absolute;top:-1px}
 #content .delete p{margin:32px 15px 45px ;font-size:14px;font-weight:bold}
@@ -686,7 +707,7 @@ font-size: 14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px
 }
 
 .login h2{text-align:center;position:relative;font-weight:bold;font-size:17.2px;margin-right:10px;margin-top:40px}
-.login a{position:absolute;left:20px;margin-top:-20px}
+.login a{left:20px;margin-top:-20px}
 .main-container{width:100%;display:flex;
 	flex-direction:column;align-items:center;margin-top: 21px;}
 .main-container .main-wrap{width:768px;}
@@ -738,8 +759,7 @@ padding-bottom: 10px;}
 height :48px;font-size: 18px;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);   margin-top:200px} 
         
 @media screen and (max-width:360px) { ... }
-@media screen and (min-width:600px) and (max-width:768px){#content .pages {display:none;}
-.btnMenu, .btnCart{display:none;}
+@media screen and (min-width:600px) and (max-width:768px){
 #mHeader h1 img{max-width:11%}
 }
 @media screen and (min-width:769px) and (max-width:1900px){
@@ -747,7 +767,10 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 .btnMenu, .btnCart{display:none;}
     #mHeader h1 img{max-width:8%;}}
 
-
+    .bx-wrapper {
+      -moz-box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;}
 
 /* 메인슬라이드 개 수 표시 */
 @media screen and (min-width:360px) {
