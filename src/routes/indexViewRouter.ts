@@ -95,6 +95,11 @@ router.get('/invite', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'invite', {})
 })
 
+router.get('/delivery-info', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'delivery_info', {})
+})
+
+
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }

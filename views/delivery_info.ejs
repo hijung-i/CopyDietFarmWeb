@@ -7,11 +7,86 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no" />
     <meta name="format-detection" content="no" />
     <title>다이어트 Farm</title>
-    <link rel="stylesheet" href="/css/delivery.css">
+    <style type="text/css">
+    @media screen and (min-width:360px)and (max-width:1079px) {.web_delivery_info{display:none}}
+    @media screen and (min-width:1020px)and (max-width:5000px){.mobile_delivery_info{display:none} }
+    </style>
     
+    <link rel="stylesheet" href="css/delivery.css">
+    <link rel="stylesheet" href="css/style02.css" />
+    <%-include('general/head') %>
 </head>
 
 <body>
+<div class="web_delivery_info">
+    <%-include('general/header_web') %>
+    <h2 class="di_title_web">배송조회</h2>
+    <section class="detail_title01">
+        <h2 class="title">(아임월) 다이어트 굿 밀도시락어쩌구저쩌구</h2>
+        <script type="text/javascript">
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt="" style="display:none"> </a>
+        </div>
+    </section>
+    <div class="circle_line" style="width:312px;margin:0 auto">
+        <div class="line" style="width:312px;margin:0 auto">
+        </div>
+        <ul>
+            <li><img src="images/one_icon_order.png"></li>
+            <li><img src="images/one_icon_order.png"></li>
+            <li><img src="images/one_icon_order.png"></li>
+            <li><img src="images/one_icon_order.png"></li>
+            <li><img src="images/one_icon_order.png"></li>
+        </ul>
+    </div>
+    <div class="d_state" style="width:312px;margin:0 auto">
+        <ul>
+            <li>상품인수</li>
+            <li>상품이동중</li>
+            <li>배송지도착</li>
+            <li>배송출발</li>
+            <li>배송도착</li>
+        </ul>
+    </div>
+    <div class="d_date" style="width:312px;margin:0 auto">
+        <ul>
+            <li>2.23</li>
+            <li>2.23</li>
+            <li>2.23</li>
+            <li>2.23</li>
+            <li>2.23</li>
+        </ul>
+    </div>
+
+    <div class="addr" style="width:312px;margin:0 auto;margin-top:20px">
+        <div class="addr01">
+            <ul>
+                <li class="p">보내는분</li>
+                <li class="a">용산</li>
+            </ul>
+        </div>
+        <div class="addr02">
+            <ul>
+                <li class="p">받는분</li>
+                <li class="a">역삼(대)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="d_num" style="width:312px;margin:0 auto">
+        <ul>
+            <li class="d">운송장번호</li>
+            <li class="num">롯데택배 236308075290</li>
+        </ul>
+    </div>
+    <div class="delivery_list_null">
+        <img src="images/cart_icon_order.png">
+        <p class="no_list">배송 준비 중입니다.</p>
+    </div>
+   </div>
+    <div class="mobile_delivery_info">
     <section class="detail_title01">
         <h2 class="title">(아임월) 다이어트 굿 밀도시락어쩌구저쩌구</h2>
 
@@ -77,4 +152,5 @@
         <img src="/images/cart_icon_order.png">
         <p class="no_list">배송 준비 중입니다.</p>
     </div>
+</div>
 </body></html>
