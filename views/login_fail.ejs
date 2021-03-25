@@ -20,6 +20,7 @@
 
 <body>
     <div class="web_login_fail">
+        <%-include('general/header_Web') %>
         <section class="detail_title" style="width:1080px;margin:0 auto">
             <h2 style="margin-top:55px;font-size:18px;color:#000">로그인</h2>
            </section>
@@ -28,10 +29,10 @@
     
                 <section class="login-input-section-wrap">
                     <div class="login-input-wrap">
-                        <input placeholder="아이디를 입력해주세요" type="text">
+                        <input placeholder="아이디를 입력해주세요" type="text" style="border: none;	width:430px;height:45px;font-size: 14px;margin-left: 10px;">
                     </div>
                     <div class="login-input-wrap password-wrap">
-                        <input placeholder="비밀번호를 입력해주세요" type="password">
+                        <input placeholder="비밀번호를 입력해주세요" type="password" style="border: none;width:430px;height:45px;font-size: 14px;margin-left: 10px;">
                     </div>
                     <div class="login-button-wrap">
                         <button>로그인</button>
@@ -69,18 +70,20 @@
     
                 <section class="login-input-section-wrap">
                     <div class="login-input-wrap">
-                        <input placeholder="아이디를 입력해주세요" type="text">
+                        <input placeholder="아이디를 입력해주세요" type="text" style="border: none;	width:430px;height:45px;font-size: 14px;margin-left: 10px;">
                     </div>
                     <div class="login-input-wrap password-wrap">
-                        <input placeholder="비밀번호를 입력해주세요" type="password">
+                        <input placeholder="비밀번호를 입력해주세요" type="password" style="border: none;	width:430px;height:45px;font-size: 14px;margin-left: 10px;">
                     </div>
                     <div class="login-button-wrap">
                         <button>로그인</button>
                     </div>
                     <section class="Easy-sgin-in-wrap">
                         <ul>
-                            <li class="login01"><a href="#">아이디 찾기 |</a>
-                            <li class="login02"><a href="#">비밀번호 찾기 |</a>
+                            <li class="login01"><a href="#">아이디 찾기</a>
+                            <li><img src="images/l_icon_category@2x.png"></li>
+                            <li class="login02"><a href="#">비밀번호 찾기</a>
+                            <li><img src="images/l_icon_category@2x.png"></li>
                             <li class="login03"><a href="#">회원가입</a>
                         </ul>
                     </section>
@@ -92,39 +95,7 @@
         </div>
      </div>
     </div>
-    <div class="mobile_login_fail">
-    <section class="detail_title">
-        <h2>로그인</h2>
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
-        </div>
-    </section>
-    <div class="main-container">
-        <div class="main-wrap">
 
-            <section class="login-input-section-wrap">
-                <div class="login-input-wrap">
-                    <input placeholder="아이디를 입력해주세요" type="text">
-                </div>
-                <div class="login-input-wrap password-wrap">
-                    <input placeholder="비밀번호를 입력해주세요" type="password">
-                </div>
-                <div class="login-button-wrap">
-                    <button>로그인</button>
-                </div>
-                <section class="Easy-sgin-in-wrap">
-                    <ul>
-                        <li class="login01"><a href="#">아이디 찾기 |</a>
-                        <li class="login02"><a href="#">비밀번호 찾기 |</a>
-                        <li class="login03"><a href="#">회원가입</a>
-                    </ul>
-                </section>
-                <div class="fail-button-wrap">
-                    <button>회원정보를 찾을 수 없습니다.</button>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
 <script>
     $(document).ready(function(){
    $("#gnbAllMenu").hide();
