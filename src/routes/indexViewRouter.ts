@@ -26,10 +26,7 @@ router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) =>
     }
     render(res, 'sign_up', {})
 })
-router.get('/mypage-orderlist', (req: Request, res: Response, next: NextFunction) => {
-    const productCode = req.params.productCode
-    render(res, 'mypage_orderList', { productCode: productCode })
-})
+
 router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {
     const productCode = req.params.productCode
     render(res, 'product', { productCode: productCode })
@@ -103,6 +100,9 @@ router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
 })
 router.get('/products', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'products', {})
+})
+router.get('/mypageorderlist', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'mypage_orderList', {})
 })
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
