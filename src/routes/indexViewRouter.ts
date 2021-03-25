@@ -110,6 +110,9 @@ router.get('/mypageorderlistdetail', (req: Request, res: Response, next: NextFun
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'login_fail', {})
 })
+router.get('/cart', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'cart', {})
+})
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }
