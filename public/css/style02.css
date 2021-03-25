@@ -1,6 +1,6 @@
 /* fonts */
 /* none scroll */
-body,html {min-width:360px; width: 100%;  overflow: hidden;}
+body,html {min-width:360px; width: 100%;  /* overflow: hidden; */}
 
 @font-face{ 
 font-family: '나눔고딕'; 
