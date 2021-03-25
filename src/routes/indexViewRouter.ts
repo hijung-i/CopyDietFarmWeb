@@ -26,9 +26,9 @@ router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) =>
     }
     render(res, 'sign_up', {})
 })
-router.get('/mypage-orderlistall', (req: Request, res: Response, next: NextFunction) => {
+router.get('/mypage-orderlist', (req: Request, res: Response, next: NextFunction) => {
     const productCode = req.params.productCode
-    render(res, 'mypage_orderListAll', { productCode: productCode })
+    render(res, 'mypage_orderList', { productCode: productCode })
 })
 router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {
     const productCode = req.params.productCode
