@@ -1,6 +1,6 @@
 /* fonts */
 /* none scroll */
-body,html {min-width:360px; width: 100%;  overflow: hidden;}
+body,html {min-width:360px; width: 100%}
 
 @font-face{ 
 font-family: '나눔고딕'; 
@@ -92,9 +92,7 @@ a:hover{text-decoration:none;}
 #Wrapper,
 #Header,
 #Container,
-#Footer {width:100%;min-width:1080px}
-
-#Contents {width:1080px;height:100%;margin:0 auto;}
+#contents {width:1080px;height:100%;margin:0 auto;}
 
 
 /* skip navigation */
@@ -135,7 +133,6 @@ a:hover{text-decoration:none;}
 
 /* GNB */
 #wheader #Gnb {position:relative;width:100%;min-width:1020px;height:54px;background:#fff;border-bottom:2px solid #f1f1f1;z-index:1000}
-#wheader #Gnb.main {}
 #wheader #gnbWrap {position:relative;width:1080px;margin:0 auto}
 #wheader #Gnb .gnb_menu_list {top:0px;left:-40px}
 #wheader #Gnb .gnb_menu_list > li{float:left;margin-top:5px;width:124px;height:44px;text-align:center}
@@ -161,7 +158,7 @@ a:hover{text-decoration:none;}
 
 /* 메인카테고리 레이어 메뉴 */
 .web_content{width:1080px;margin:0 auto}
-.main_img{width:1080px}
+.web_content .main_img{width:1080px}
 .m_slides_n_w {position:relative; display:block;width:1110px;text-align:center;margin:0 auto;z-index:500;}
 .m_ba_slides_n_w {position:absolute;top:0px;left:5px;width:168px;height:378px;display:table; font-weight:400;margin-top:40px}
 .m_ba_slides_n_w_sub {position:absolute;top:51px;left:0px;width:160px;height:400px;display:table; font-weight:400;}

@@ -10,16 +10,13 @@
   <meta name="format-detection" content="no" />
 
   <title>다이어트 Farm 로그인</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/signup.css">
-  <link rel="stylesheet" href="../public/css/style.css">
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="js/jquery.bxslider.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js">
-  </script>
+  <style>
+  @media screen and (min-width:360px)and (max-width:1079px) {.web_login{display:none}}
+  @media screen and (min-width:1080px){.mobile_login{display:none} }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/signup.css">
+  <link rel="stylesheet" href="css/style02.css">
     <%-include('general/head') %>
 
     <script> 
@@ -75,6 +72,39 @@
 </head>
 
 <body>
+  <div class="web_login">
+    <%-include('general/header_web') %>
+  <section class="detail_title" style="width:1080px;margin:0 auto">
+    <h2 style="margin-top:55px;font-size:18px;color:#000">로그인</h2>
+ </section>
+<div class="main-container">
+    <div class="main-wrap">
+
+        <section class="login-input-section-wrap">
+            <div class="login-input-wrap">
+                <input placeholder="아이디를 입력해주세요" type="text" style="border: none;	width:430px;height:45px;font-size: 14px;margin-left: 10px;">
+            </div>
+            <div class="login-input-wrap password-wrap">
+                <input placeholder="비밀번호를 입력해주세요" type="password" style="border: none;	width:430px;height:45px;font-size: 14px;margin-left: 10px;">
+            </div>
+            <div class="login-button-wrap">
+                <button>로그인</button>
+            </div>
+            <section class="Easy-sgin-in-wrap">
+                <ul>
+                    <li class="login01"><a href="#">아이디 찾기 </a>
+                    <li><img src="images/l_icon_category@2x.png"></li>
+                    <li><a href="images/l_icon_category.png"></a></li>
+                    <li class="login02"><a href="#">비밀번호 찾기 </a>
+                    <li><img src="images/l_icon_category@2x.png"></li>
+                    <li class="login03"><a href="#">회원가입</a>
+                </ul>
+            </section>
+        </section>
+    </div>
+</div>
+</div>
+<div class="mobile_login">
   <div class="logIn_ctt"><!-- 로그인 -->
   <section class="detail_title">
     <h2>로그인</h2>
@@ -88,10 +118,10 @@
 
       <section class="login-input-section-wrap">
         <div class="login-input-wrap">
-          <input placeholder="아이디를 입력해주세요" type="text">
+          <input placeholder="아이디를 입력해주세요" type="text" style="border: none;	width:430px;height:45px;font-size: 14px;margin-left: 10px;">
         </div>
         <div class="login-input-wrap password-wrap">
-          <input placeholder="비밀번호를 입력해주세요" type="password">
+          <input placeholder="비밀번호를 입력해주세요" type="password" style="border: none;	width:430px;height:45px;font-size: 14px;margin-left: 10px;">
         </div>
         <div class="login-button-wrap">
           <button>로그인</button>
@@ -109,7 +139,7 @@
     </div>
   </div>
 </div>
-
+</div>
   <!-- 아이디 찾기 완료 -->
   <div id="tab1" class="tab_cont active" style="display: none;"> 
     <section class="detail_title">
@@ -144,69 +174,6 @@
       </div>
 
     </main>
-
-    <footer id="footer" style="clear:both">
-      <div class="footer_container">
-        <div class="footer_links">
-          <div class="footer_link--wrapper">
-            <div class="footer_link--items1">
-              <h2>고객센터</h2>
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;070-4366-3299</span>
-              <p class="p1">&nbsp;&nbsp;월~금 10:00~17:00</p>
-              <p>점심시간 12:00~13:00</p>
-              <p>&nbsp;&nbsp;토,일,공휴일 휴무</p>
-            </div>
-            <div class="footer_link--items">
-              <a href="#"><img src="images/talk_ico_footer.png"
-                  style="width:55%;margin-left:15px;margin-top:50px;margin-left:40px"></a>
-            </div>
-          </div>
-          <div class="footer_link--wrapper">
-            <div class="footer_link--items2">
-              <h2>계좌번호</h2>
-              <span>&nbsp;예금주 (주)데이터플로</span>
-              <p>농협 317-0021-9321-31</p>
-              <p>우리 333-3333-3333-33</p>
-              <p>국민 333-3333-3333-33</p>
-              <p>신한 333-3333-3333-33</p>
-              <p>기업 333-3333-3333-33</p>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;토,일,공휴일 휴무</p>
-            </div>
-            <div class="footer_link--items3">
-              <h2>공지사항</h2>
-              <p><a href="#">&nbsp;&nbsp;1월 연휴 배송안내</a> </p>
-              <p><a href="#">&nbsp;추석 연휴 배송안내</a></p>
-            </div>
-          </div>
-        </div>
-        <section class="footer_bottom">
-          <ul class="menu">
-            <li><a href="">사업자정보확인</a></li>
-            <li><a href="">이용약관</a></li>
-            <li><a href="">개인정보처리방침</a></li>
-          </ul>
-          <ul class="addr">
-            <li>(주)데이터플로 대표 : 유승열</li>
-            <li>사업자등록번호 : 509-81-05501</li>
-            <li>통신판매업 신고번호 : </li>
-            <li>건강기능식품 판매업 : 제 2021-0105159 호</li>
-            <li>개인정보보호책임자 : 유승열</li>
-            <li class="addr01">주소 : 서울시 강남구 테헤란로8길 11-4 신도빌딩, 2층 202호</li>
-            <li>팩스 : 070-7500-7691</li>
-            <li>이메일 : <span>dietfarm119@gmail.com</span></li>
-            <li>입점문의 : <span>입점문의하기</span></li>
-            <li>제휴문의 : <span>dietfarm119@gmail.com</span></li>
-
-          </ul>
-
-          <!--// <article class="pages">
-            <ul>
-                <li><a href="#"><img src="images/home_ico_menu.png"></a></li>
-                <li><a href="#"><img src="images/search_ico_menu.png"></a></li>
-                <li><a href="#"><img src="images/heart_ico_menu.png"></a></li>
-                <li><a href="#"><img src="images/my_ico_menu.png"></a></li>
-            </ul>
-        </article>-->
         </section>
 
       </div>
@@ -428,6 +395,40 @@
 >>>>>>> d33e8d073ea7c1e0dbe6c687fabd0cec43add995
 
 </div>
+<script>
+  $(document).ready(function(){
+$("#gnbAllMenu").hide();
+$("#btnGnbOpen").click(function(){
+ $("#gnbAllMenu").slideToggle("fast");
+});
+});
+
+$(document).ready(function() {
+       $(".m_slides_sub").hide();
+       $(".m_ba_slides_n_w li").hover(function(){
+           $("ul:not(:animated)",this).slideDown("700");
+
+           $(".m_ba_slides_n_w li a").removeClass("active");
+       },
+       function() {
+           $("ul",this).slideUp("700");
+          });
+
+   $("#memberMenu").bind("moseover mouseenter",function(){
+   $("#memMenu").show();
+ });
+  $("#memMenu").bind("moseout mouseleave",function(){
+   $("#memMenu").hide();
+ });
+
+   $("#NotmemberMenu").bind("moseover mouseenter",function(){
+   $("#NotmemMenu").show();
+ });
+  $("#NotmemMenu").bind("moseout mouseleave",function(){
+   $("#NotmemMenu").hide();
+ });
+   });
+</script>
 </body>
 
 </html>
