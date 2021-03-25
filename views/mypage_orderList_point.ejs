@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이페이지</title>
+    <title>주문상세</title>
     <link rel="stylesheet" href="./css/style03.css">
     <link rel="stylesheet" href="./css/mypageAll.css">
     <script type="text/javascript" src="js/jquery.bxslider.js"></script>
@@ -22,242 +22,116 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    <!-- select tag design plugin -->
-    <link rel="stylesheet" href="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/css/nice-select.css">
-    <script src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.js"></script> 
-    <script src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
     <!-- bxslider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
     <script src="./js/main.js"></script>
 </head>
 
 <body>
-
-    <!-- 모바일 섹션 orderlist -->
+    <!-- 모바일 섹션 point -->
     <section class="detail_title">
-        <h2>주문내역</h2>
-        <a href="#"><img src="images/leftarrow_ico_my.png" style="width:17px"></a>
+        <h2>포인트</h2>
+        <script type="text/javascript">
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt="뒤로가기"
+                    style="width:17px"> </a>
+        </div>
+
+            <div id="cp" class="current_point">
+                <p>현재 포인트</p>
+                <h2><img src="./images/point_iocn_my.png" style="width: 16px;position:relative;top:3px" alt=""> 3,000원
+                </h2>
+            </div>
     </section>
-
-
     <main id="content" class="content">
-        <div class="orderHistory">
-            <div class="orderBox">
-                <div class="order01">
+    <div class="point_line"></div>
 
-                    <div class="order_list_title">
-                        <p class="t1">2020101920201919&nbsp;&nbsp;<img src="images/l_icon_category.png" style="position:absolute;top:8px">&nbsp; <span>10.20</span></p>
-                        <ul>
-                            <li class="t2"><a href="#">주문상세보기<img src="images/arrow_icon_order.png" style="width:7px;margin-left:5px"></a></li>
-                        </ul>
-                    </div>
-
-                    <table style="border:0">
-                        <tbody>
-                            <tr class="order_a">
-                                <td>
-                                    <div class="order_list_box">
-                                        <div class="order_img">
-                                            <a href="#"><img src="images/dietfarmbread.jpg" align="left" style="width:50px;height:62px;margin-right:8px"></a>
-                                        </div>
-                                        <div class="orderDetail">
-                                            <ul class="order0">
-                                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                                <li>60,720원</li>
-                                                <li><span>배송중</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                                <div class="slim_line"></div>
-                                <td>
-                                    <div class="order_list_btn">
-                                        <ul>
-                                            <li>
-                                                <button type="button" class="btnA">구매확정</button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="btnB">배송조회</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="order_a">
-                                <td>
-                                    <div class="order_list_box">
-                                        <div class="order_img">
-                                            <a href="#"><img src="images/dietfarmbread.jpg" align="left" style="width:50px;height:62px;margin-right:8px"></a>
-                                        </div>
-                                        <div class="orderDetail">
-                                            <ul class="order0">
-                                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                                <li>60,720원</li>
-                                                <li><span>배송중</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="order_list_btn">
-                                        <ul>
-                                            <li>
-                                                <button type="button" class="btnA">구매확정</button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="btnB">배송조회</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="order_a">
-                                <td>
-                                    <div class="order_list_box">
-                                        <div class="order_img">
-                                            <a href="#"><img src="images/dietfarmbread.jpg" align="left" style="width:50px;height:62px;margin-right:8px"></a>
-                                        </div>
-                                        <div class="orderDetail">
-                                            <ul class="order0">
-                                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                                <li>60,720원</li>
-                                                <li><span>배송중</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="order_list_btn">
-                                        <ul>
-                                            <li>
-                                                <button type="button" class="btnA">구매확정</button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="btnB">배송조회</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-                </div>
-            </div>
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
         </div>
-        <!--//orderHistory-->
-        <div class="grayLine"></div>
-
-        <div class="orderHistory">
-            <div class="orderBox">
-                <div class="order01">
-
-                    <div class="order_list_title">
-                        <p class="t1">2020101920201919&nbsp;&nbsp;<img src="images/l_icon_category.png" style="position:absolute;top:360px">&nbsp; <span>10.20</span></p>
-                        <ul>
-                            <li class="t2"><a href="#">주문상세보기<img src="images/arrow_icon_order.png" style="width:7px;margin-left:5px"></a></li>
-                        </ul>
-                    </div>
-
-                    <table style="border:0">
-                        <tbody>
-                            <tr class="order_a">
-                                <td>
-                                    <div class="order_list_box">
-                                        <div class="order_img">
-                                            <a href="#"><img src="images/dietfarmbread.jpg" align="left" style="width:50px;height:62px;margin-right:8px"></a>
-                                        </div>
-                                        <div class="orderDetail">
-                                            <ul class="order0">
-                                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                                <li>60,720원</li>
-                                                <li><span>배송중</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="order_list_btn">
-                                        <ul>
-                                            <li>
-                                                <button type="button" class="btnA">구매확정</button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="btnB">배송조회</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="order_a">
-                                <td>
-                                    <div class="order_list_box">
-                                        <div class="order_img">
-                                            <a href="#"><img src="images/dietfarmbread.jpg" align="left" style="width:50px;height:62px;margin-right:8px"></a>
-                                        </div>
-                                        <div class="orderDetail">
-                                            <ul class="order0">
-                                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                                <li>60,720원</li>
-                                                <li><span>배송중</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="order_list_btn">
-                                        <ul>
-                                            <li>
-                                                <button type="button" class="btnA">구매확정</button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="btnB">배송조회</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="order_a">
-                                <td>
-                                    <div class="order_list_box">
-                                        <div class="order_img">
-                                            <a href="#"><img src="images/dietfarmbread.jpg" align="left" style="width:50px;height:62px;margin-right:8px"></a>
-                                        </div>
-                                        <div class="orderDetail">
-                                            <ul class="order0">
-                                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                                <li>60,720원</li>
-                                                <li><span>배송중</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="order_list_btn">
-                                        <ul>
-                                            <li>
-                                                <button type="button" class="btnA">구매확정</button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="btnB">배송조회</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
         </div>
-        <!--//orderHistory-->
-        <div class="grayLine"></div>
+    </section>
+    <div class="point_history_line"></div>
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
+        </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
+        </div>
+    </section>
+    <div class="point_history_line"></div>
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
+        </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
+        </div>
+    </section>
+    <div class="point_history_line"></div>
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
+        </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
+        </div>
+    </section>
+    <div class="point_history_line"></div>
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
+        </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
+        </div>
+    </section>
+    <div class="point_history_line"></div>
     </main>
     <!-- 모바일 섹션 end -->
-    
-    <!-- 모바일 섹션 deliverymanage -->
-        
-    <!-- 모바일 섹션 deliverymanage end-->
+
     <header id="header">
         <div id="Wrapper">
             <div id="skip_navi"><a href="#Container">본문바로가기</a></div>
@@ -501,6 +375,10 @@
         </div>
     </header>
 
+    <!-- mobile main -->
+
+    <!-- mobile main end -->
+
     <!-- web main -->
     <main id="main">
         <div class="main_contents">
@@ -534,162 +412,48 @@
 
             <nav class="content_lnb">
                 <ul>
-                    <li class="on"><a href="javascript:void(0);">주문내역</a></li>
-                    <li><a href="http://localhost:3000/mypagedelivermag">배송지 관리</a></li>
-                    <li><a href="http://localhost:3000/mypageproductreview">상품 리뷰</a></li>
+                    <li><a href="./mypage_orderList.html">주문내역</a></li>
+                    <li><a href="./web_mypage_deliver_mag.html">배송지 관리</a></li>
+                    <li><a href="./web_mypage_productReview.html">상품 리뷰</a></li>
                     <li><a href="./web_mypage_productInquiry.html">상품 문의</a></li>
                     <li><a href="./web_seller_inquiry.html">판매자 문의</a></li>
-                    <li><a href="./mypage_orderList_point.html">포인트</a></li>
+                    <li class="on"><a href="javascript:void(0);">포인트</a></li>
                     <li><a href="javascript:void(0);">쿠폰</a></li>
                 </ul>
             </nav>
+
             <div class="body_contents">
-                <h3>주문내역</h3>
+                <h3 class="orderList">포인트</h3>
                 <table class="cell">
-                    <th>주문/결제</th>
-                    <th>배송중</th>
-                    <th>배송완료</th>
-                    <tr>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                    <th class="curPoint">주문/결제</th>
+                    <th class="curPoint_value">1000원</th>
                 </table>
 
                 <div class="order_list_ctn">
-
-                    <div class="order_list_top">
-                        <p><span>202010192020...</span> <img src="./images/l_icon_category.png" alt="|"> 10.21</p>
-                        <p><a href="http://localhost:3000/mypageorderlistdetail">주문상세보기<span><i class="fas fa-chevron-right"></i></span></a></p>
-                    </div>
-
-                    <div class="line"></div>
-
-                    <div class="order_list">
-                        <div class="order_info_ctn">
-                            <div class="thum"></div>
-                            <ul>
-                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                <li>60,720원</li>
-                                <li>배송중</li>
-                            </ul>
-                        </div>
-                        <div class="buttons_ctn">
-                            <ul class="buttons">
-                                <li><button class="buy">구매확정</button></li>
-                                <li><a href="#ex1" rel="modal:open" class="inquiry">배송조회</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="line"></div>
-
-                    <div class="order_list">
-                        <div class="order_info_ctn">
-                            <div class="thum"></div>
-                            <ul>
-                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                <li>60,720원</li>
-                                <li>배송중</li>
-                            </ul>
-                        </div>
-                        <div class="buttons_ctn">
-                            <ul class="buttons">
-                                <li><button class="buy">구매확정</button></li>
-                                <li><a href="#ex1" rel="modal:open" class="inquiry">배송조회</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="line"></div>
-
-                    <div class="order_list">
-                        <div class="order_info_ctn">
-                            <div class="thum"></div>
-                            <ul>
-                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                <li>60,720원</li>
-                                <li>배송중</li>
-                            </ul>
-                        </div>
-                        <div class="buttons_ctn">
-                            <ul class="buttons">
-                                <li><button class="buy">구매확정</button></li>
-                                <li><a href="#ex1" rel="modal:open" class="inquiry">배송조회</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="thick_line"></div>
-
-                </div>
-
-                <div class="order_list_ctn">
-
-                    <div class="order_list_top">
-                        <p><span>202010192020...</span> <img src="./images/l_icon_category.png" alt="|"> 10.21</p>
-                        <p class="moveToDetail"><a href="http://localhost:3000/mypageorderlistdetail">주문상세보기<span><i class="fas fa-chevron-right"></i></span></a></p>
-                    </div>
-
-                    <div class="line"></div>
-
-                    <div class="order_list">
-                        <div class="order_info_ctn">
-                            <div class="thum"></div>
-                            <ul>
-                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                <li>60,720원</li>
-                                <li>배송중</li>
-                            </ul>
-                        </div>
-                        <div class="buttons_ctn">
-                            <ul class="buttons">
-                                <li><button class="buy">구매확정</button></li>
-                                <li><a href="#ex1" rel="modal:open" class="inquiry">배송조회</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="line"></div>
-
-                    <div class="order_list">
-                        <div class="order_info_ctn">
-                            <div class="thum"></div>
-                            <ul>
-                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                <li>60,720원</li>
-                                <li>배송중</li>
-                            </ul>
-                        </div>
-                        <div class="buttons_ctn">
-                            <ul class="buttons">
-                                <li><button class="buy">구매확정</button></li>
-                                <li><a href="#ex1" rel="modal:open" class="inquiry">배송조회</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="line"></div>
-
-                    <div class="order_list">
-                        <div class="order_info_ctn">
-                            <div class="thum"></div>
-                            <ul>
-                                <li>(아임월) 굿밸런스 라이트밀 도시락</li>
-                                <li>60,720원</li>
-                                <li>배송중</li>
-                            </ul>
-                        </div>
-                        <div class="buttons_ctn">
-                            <ul class="buttons">
-                                <li><button class="buy">구매확정</button></li>
-                                <li><a href="#ex1" rel="modal:open" class="inquiry">배송조회</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="thick_line"></div>
-
+                    <table class="pointList">
+                        <th>날짜</th>
+                        <th>내용</th>
+                        <th>유효기간</th>
+                        <th>금액</th>
+                        <tr>
+                            <td>2021.02.18</td>
+                            <td>회원 가입 축하 적립</td>
+                            <td>2021.12.31</td>
+                            <td>+1,000원</td>
+                        </tr>
+                        <tr>
+                            <td>2021.02.18</td>
+                            <td>구매 사용</td>
+                            <td>2021.12.31</td>
+                            <td>-1,000원</td>
+                        </tr>
+                        <tr>
+                            <td>2021.02.18</td>
+                            <td>구매 적립</td>
+                            <td>2021.12.31</td>
+                            <td>+1,000원</td>
+                        </tr>
+                    </table>
                     <ul class="pager">
                         <li><i class="fas fa-chevron-left"></i></li>
                         <li>1</li>
@@ -706,72 +470,71 @@
                     </ul>
                 </div> <!-- order_list_ctn -->
 
-            <!-- modal window -->
-            <div id="ex1" class="modal">
+                <!-- modal window -->
+                <div id="ex1" class="modal">
 
-                <header class="detail_title01">
-                    <h2>배송조회</h2>
-                    <h2 class="title">(아임월) 다이어트 굿 밀도시락어쩌구저쩌구</h2>
-                </header>
+                    <header class="detail_title01">
+                        <h2>배송조회</h2>
+                        <h2 class="title">(아임월) 다이어트 굿 밀도시락어쩌구저쩌구</h2>
+                    </header>
 
-                <div class="circle_line">
-                    <div class="line2">
-                    </div>
-                    <ul>
-                        <li><img src="images/one_icon_order.png"></li>
-                        <li><img src="images/one_icon_order.png"></li>
-                        <li><img src="images/one_icon_order.png"></li>
-                        <li><img src="images/one_icon_order.png"></li>
-                        <li><img src="images/one_icon_order.png"></li>
-                    </ul>
-                </div>
-                <div class="d_state">
-                    <ul>
-                        <li>상품인수</li>
-                        <li>상품이동중</li>
-                        <li>배송지도착</li>
-                        <li>배송출발</li>
-                        <li>배송도착</li>
-                    </ul>
-                </div>
-                <div class="d_date">
-                    <ul>
-                        <li>2.23</li>
-                        <li>2.23</li>
-                        <li>2.23</li>
-                        <li>2.23</li>
-                        <li>2.23</li>
-                    </ul>
-                </div>
-
-                <div class="addr">
-                    <div class="addr01">
+                    <div class="circle_line">
+                        <div class="line2">
+                        </div>
                         <ul>
-                            <li class="p">보내는분</li>
-                            <li class="a">용산</li>
+                            <li><img src="images/one_icon_order.png"></li>
+                            <li><img src="images/one_icon_order.png"></li>
+                            <li><img src="images/one_icon_order.png"></li>
+                            <li><img src="images/one_icon_order.png"></li>
+                            <li><img src="images/one_icon_order.png"></li>
                         </ul>
                     </div>
-                    <div class="addr02">
+                    <div class="d_state">
                         <ul>
-                            <li class="p">받는분</li>
-                            <li class="a">역삼(대)</li>
+                            <li>상품인수</li>
+                            <li>상품이동중</li>
+                            <li>배송지도착</li>
+                            <li>배송출발</li>
+                            <li>배송도착</li>
                         </ul>
                     </div>
-                </div>
-                <div class="d_num">
-                    <ul>
-                        <li class="d">운송장번호</li>
-                        <li class="num">롯데택배 236308075290</li>
-                    </ul>
-                </div>
+                    <div class="d_date">
+                        <ul>
+                            <li>2.23</li>
+                            <li>2.23</li>
+                            <li>2.23</li>
+                            <li>2.23</li>
+                            <li>2.23</li>
+                        </ul>
+                    </div>
 
-                <div class="delivery_list_null">
-                    <img src="images/cart_icon_order.png">
-                    <p class="no_list">배송 준비 중입니다.</p>
-                </div>
-            </div> <!-- modal -->
-        </div> <!-- body_contents tab3 -->
+                    <div class="addr">
+                        <div class="addr01">
+                            <ul>
+                                <li class="p">보내는분</li>
+                                <li class="a">용산</li>
+                            </ul>
+                        </div>
+                        <div class="addr02">
+                            <ul>
+                                <li class="p">받는분</li>
+                                <li class="a">역삼(대)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d_num">
+                        <ul>
+                            <li class="d">운송장번호</li>
+                            <li class="num">롯데택배 236308075290</li>
+                        </ul>
+                    </div>
 
+                    <div class="delivery_list_null">
+                        <img src="images/cart_icon_order.png">
+                        <p class="no_list">배송 준비 중입니다.</p>
+                    </div>
+                </div> <!-- modal -->
+            </div> <!-- body_contents -->
         </div> <!-- contents_ctn -->
     </section> <!-- content -->
 
@@ -813,13 +576,15 @@
                 <li>월~금 10:00~17:00</li>
                 <li>점심시간 12:00~13:00</li>
                 <li>토,일,공휴일 휴무</li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
     </footer>
 
+    <script type="text/javascript">
 
-
-
+    </script>
 </body>
 
 </html>
