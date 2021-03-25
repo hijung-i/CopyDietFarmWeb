@@ -1754,3 +1754,107 @@ table.web_qna {padding: 12px 0;}
 }
 .star_grade {margin-bottom: 16px;}
 /* select design css */
+
+/* 판매자문의모바일 css */
+.btn_area {width:100%;clear:both;border-top:8px solid #E6E6E6;padding-right:15px}
+#btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
+.inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
+.inquiryBox ul li form p textarea{border-radius:5px;width:100%;height:153px}
+.inquiryBox h3{font-size:12px;font-weight:bold}
+.inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
+.inquiryBox ul li ul li{line-height:14px}
+.inquiryBox .words form{margin-top:-20px}
+.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
+text-align:center;line-height:17px;
+font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
+border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
+.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
+.filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
+.filebox p span{text-decoration:underline
+}
+.tab_cont{display:none;min-height:360px;}
+.tab_cont.active{display:block;}
+.filebox label {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #999;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #fdfdfd;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+}
+
+/*포인트*/
+
+ul, li, p{list-style:none}
+/* 현재 포인트 */
+.current_point > p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 0 4px 0;
+}
+.current_point h2 {
+    font-weight: 800;
+}
+
+.point_line {
+    width: 100%; height: 4px;
+    background: #F1F1F1;
+}
+
+.point_history {
+    position: relative;
+    right: 18%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.point_history_left {
+    text-align: right;
+    padding: 8px 0 8px 0;
+}
+.point_history_right {
+    text-align: left;
+    padding: 8px 0 8px 0;
+}
+.point_history_line {
+    width: 100%; height: 1px;
+    background: #bbb;
+    opacity: 0.4;
+}
+
+/* point history design */
+
+.point_history > .point_history_left .save {
+    font-size: 14px;
+    color: #6B6B6B;
+    font-weight: 400;
+}
+.point_history > .point_history_left .amount {
+    font-size: 14px;
+    font-weight: 700;
+    color: #31845B;
+}
+
+.point_history .point_history_right .date {
+    font-size: 12px;
+    color: #878787;
+}
+.point_history .point_history_right .type {
+    font-size: 14px;
+    color: #000000;
+    padding: 4px 0;
+}
+.point_history .point_history_right .brand {
+    font-size: 12px;
+}
+.point_history_right > ul .brand {
+    margin-top: 0;
+}
