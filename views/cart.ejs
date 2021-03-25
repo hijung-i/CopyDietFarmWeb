@@ -26,7 +26,7 @@
     <main id="content" class="content" style="width:1080px;margin:0 auto;padding-bottom:361px">
       <section id="shpcart_select">
        <div class="group" style="margin-top:13px">
-        <input type="checkbox" id="secret">
+        <input type="checkbox" id="secret" style="display:none">
         <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
                     </div>
         <div class="shpcart_select_del_web">
@@ -37,14 +37,14 @@
     <div class="shop_null" style="display:none">
         <p>장바구니에 담긴 상품이 없습니다</p>
     </div>
- <div class="shop_active" style="">
+ <div class="shop_active">
     <section id="shplist">
         <!-- brand 1 -->
         <div class="brand_1">
             <h3>아임월</h3>
             <div class="shoplist_info">
                 <div class="shoplist_ctn">
-                    <input type="radio" id="shoplist_part_selt">
+                    <input type="checkbox" id="shoplist_part_selt">
                     <div class="shopcart_thum">
                     </div>
                     <p>(아임월) 굿밸런스 라이트밀 도시락</p>
@@ -72,7 +72,7 @@
             <h3>바디나인</h3>
             <div class="shoplist_info">
                 <div class="shoplist_ctn">
-                    <input type="radio" id="shoplist_part_selt">
+                    <input type="checkbox" id="shoplist_part_selt">
                     <div class="shopcart_thum">
                         <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
                     </div>
@@ -99,7 +99,7 @@
             <h3></h3>
             <div class="shoplist_info">
                 <div class="shoplist_ctn">
-                    <input type="radio" id="shoplist_part_selt">
+                    <input type="checkbox" id="shoplist_part_selt">
                     <div class="shopcart_thum">
                         <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
                     </div>
@@ -127,7 +127,7 @@
             <h3>아임월</h3>
             <div class="shoplist_info">
                 <div class="shoplist_ctn">
-                    <input type="radio" id="shoplist_part_selt">
+                    <input type="checkbox" id="shoplist_part_selt">
                     <div class="shopcart_thum">
                         <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
                     </div>
@@ -279,7 +279,7 @@
                 <h3>아임월</h3>
                 <div class="shoplist_info">
                     <div class="shoplist_ctn">
-                        <input type="radio" id="shoplist_part_selt">
+                        <input type="checkbox" id="shoplist_part_selt">
                         <div class="shopcart_thum">
                         </div>
                         <p>(아임월) 굿밸런스 라이트밀 도시락</p>
@@ -308,7 +308,7 @@
                 <h3>바디나인</h3>
                 <div class="shoplist_info">
                     <div class="shoplist_ctn">
-                        <input type="radio" id="shoplist_part_selt">
+                        <input type="checkbox" id="shoplist_part_selt">
                         <div class="shopcart_thum">
                    
                         </div>
@@ -335,7 +335,7 @@
                 <h3></h3>
                 <div class="shoplist_info">
                     <div class="shoplist_ctn">
-                        <input type="radio" id="shoplist_part_selt">
+                        <input type="checkbox" id="shoplist_part_selt">
                         <div class="shopcart_thum">
                             <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
                         </div>
@@ -364,7 +364,7 @@
                 <h3>아임월</h3>
                 <div class="shoplist_info">
                     <div class="shoplist_ctn">
-                        <input type="radio" id="shoplist_part_selt">
+                        <input type="checkbox" id="shoplist_part_selt">
                         <div class="shopcart_thum">
                             <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
                         </div>
@@ -452,27 +452,19 @@
               });
             });
         </script>
-          <script>
-       //배송지 변경 모달창
-     ;(function($) {
-            $(function() {
-                $('#my-button').bind('click', function(e) {
-                    e.preventDefault();
-                    $('#element_to_pop_up').bPopup({
-                        modalColor:'gray'
-                    });
-                });
-                
-                $('#my-button2').bind('click', function(e) {
-                    e.preventDefault();
-                    $('#element_to_pop_up').bPopup({
-                       
-                    });
-                });
-                
-             });
-         })(jQuery);
-            </script>
+         <script>
+            //배송지 변경 모달창
+         function openModal(modalname){
+           document.get
+           $("#modal").fadeIn(300);
+           $("."+modalname).fadeIn(300);
+         }
+         
+         $("#modal, .close").on('click',function(){
+           $("#modal").fadeOut(300);
+           $(".modal-con").fadeOut(300);
+         });
+                 </script>
      
 </body>
 </html>
