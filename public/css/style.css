@@ -523,7 +523,7 @@ justify-self: center;margin: 0 auto;}
 #contents .main_sub h2{float:left;position:relative;left:30px;color:#000} 
 .main_sub .sort{float:right;border:0}
 #contents .sub_items{padding-top:20px;margin-top:40px}
-#contents .sub_items .title{margin-left:4px;margin-bottom:10px;font-size:16px;overflow:visible;text-overflow: ellipsis;white-space: nowrap;width:100px;height: 20px;display:inline-block}
+#contents .sub_items .title{margin-left:4px;margin-Fbottom:10px;font-size:16px;overflow:visible;text-overflow: ellipsis;white-space: nowrap;width:100px;height: 20px;display:inline-block}
 #contents .sub_items .price{margin-top:5px;margin-left:-5px;font-size:18px}
 #contents .sub_items .price .sale{font-size:16px}
 #contents .sub_items .price .cost{margin-left:-50px;text-decoration: line-through;color:#878787;}

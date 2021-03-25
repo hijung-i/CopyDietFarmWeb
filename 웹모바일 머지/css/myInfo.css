@@ -20,7 +20,7 @@ overflow-x: hidden;
 
 .login-input-section-wrap{padding-top: 20px;display: flex;}
 
-.login-input-wrap{width:border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
+.login-input-wrap{border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
 .login-input-wrap input{border: none;	width:330px;height:45px;font-size: 14px;margin-left: 10px;}
