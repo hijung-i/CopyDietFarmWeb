@@ -3,19 +3,19 @@
 
 .detail_title{margin:42px 10px 32px 0px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.detail_title a img{position:absolute;top:50px;width:17px;}
+.detail_title a img{position:absolute;top:45px;width:17px;}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 /*로그인*/
 
-  :root{--font-color: #4e4e4e;--border-gray-color : #dadada;--yello-color: #EFA543;--yello-border-color: #EFA543;
+:root{--font-color: #4e4e4e;--border-gray-color : #dadada;--yello-color: #EFA543;--yello-border-color: #EFA543;
 }
 
-.login a{position:absolute;left:20px;margin-top:-20px}
+.login a{left:20px;margin-top:-20px}
 
 .login-input-section-wrap{padding-top: 20px;display: flex;}
 
-.login-input-wrap{width:border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
+.login-input-wrap{border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
 .login-input-wrap input{border: none;	width:330px;height:45px;font-size: 14px;margin-left: 10px;}
@@ -125,7 +125,6 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 
 /*탈퇴 버튼*/
 .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
-.member_delete ul{}
 .member_delete ul li a{text-decoration:underline;}
 
 /*비밀번호 재설정*/
@@ -138,8 +137,6 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 #btnPwdChange{width:100%;height:45px;text-align:center; border:0;cursor: pointer;color:#fff;background-color:#EFA543;font-size:14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-bottom:15px}
 #w_content{width:400px;margin:0 auto}
 #w_content .btnback{display:none}
-
-
 
 
 

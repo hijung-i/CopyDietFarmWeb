@@ -122,6 +122,9 @@ router.get('/mypagesellerinquiry', (req: Request, res: Response, next: NextFunct
 router.get('/mypageorderlistpoint', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_orderList_point', {})
 })
+router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'login_fail', {})
+})
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }
