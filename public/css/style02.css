@@ -1,6 +1,10 @@
 /* fonts */
 /* none scroll */
+<<<<<<< HEAD
 body,html {min-width:360px; width: 100%}
+=======
+body,html {min-width:360px; width: 100%;  /* overflow: hidden; */}
+>>>>>>> 922aa25c99912895d160253e1a5a56e9790ad0c4
 
 @font-face{ 
 font-family: '나눔고딕'; 
