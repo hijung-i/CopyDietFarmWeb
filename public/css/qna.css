@@ -41,7 +41,6 @@ html, body {max-width: 100%;overflow-x: hidden;
 .review_edit ul li{float:left;}
 .inquiry{width:100%;}
 .myInquiry{width:100%;border-bottom:2px solid #E6E6E6;padding-bottom:20px}
-.inquiry p{}
 .inquiry01 ul li{float:left;}
 .inquiry_edit {width:100%;display: flex;justify-content: space-between;margin-top:20px;padding-right:20px}
 .inquiry_edit p span{font-size:12px;color:#EFA543;font-weight:bold;padding-left:15px}

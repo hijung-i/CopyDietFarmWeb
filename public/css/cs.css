@@ -70,7 +70,8 @@ label:after {
 #w_content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
 .w_sidemenu{margin-top:30px;float:left}
 .w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
-.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
+.w_sidemenu .active{background-color:#F99319;color:#fff}
+/*.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}*/
 .clicked_menu{background-color:#F99319;color:#fff}
 .csBox_web{float:left;margin-left:30px;margin-top:30px}
 .csBox_web ul li{float:left}

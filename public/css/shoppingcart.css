@@ -204,7 +204,7 @@ right:25px;top:25.8px;}
  
 }
 
-input#secret[type="checkbox"]:checked + .secret::before {
+input #secret[type="checkbox"]:checked + .secret::before {
   transform: scale(1) rotateZ(0deg);
 }
 
