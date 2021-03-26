@@ -1858,3 +1858,46 @@ ul, li, p{list-style:none}
 .point_history_right > ul .brand {
     margin-top: 0;
 }
+/*문의하기(상품문의) 모바일 */
+.productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
+.productInquiryBox h3{font-size:14px;font-weight:bold;margin-bottom:16px}
+.productInquiryBox form{margin-bottom:18px;}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.secret{
+  position: relative;margin-left:15px;
+}
+
+.secret::before {
+  content: "";
+  background: url("../images/aftercheck_icon_join@2x.png");
+  background-position: center;
+  background-size: contain;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  left: -12px;
+  top: -2px;
+  
+
+  transform: scale(0) rotateZ(180deg);
+ 
+}
+
+input#secret[type="checkbox"]:checked + .secret::before {
+  transform: scale(1) rotateZ(0deg);
+}
+
+.secret::after {
+  content: "";
+  border: 2px solid #EFA543;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: -12px;
+  top: -3px;
+  border-radius: 50%;
+}
