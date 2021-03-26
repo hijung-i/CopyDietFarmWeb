@@ -89,7 +89,7 @@ button {font-family:'Montserrat', -apple-system, 'NotoSansCJKkr', 'AppleSDGothic
 #Header .top_util .cart img {width:18px;height:18px;margin-top:8px}
 #Header .top_util .mypage img{margin-top:8px}
 #Header .top_util .pick img{width:20px;margin-top:8px}
-.header_inner {position:relative;top:0;width:100%;margin-bottom:27px;z-index:100;}
+.header_inner {position:relative;top:0;width:100%;margin-bottom:27px;z-index:1;}
 
 .header_inner h1 {margin-top:20px;text-align:center;}
 
@@ -108,7 +108,7 @@ button {font-family:'Montserrat', -apple-system, 'NotoSansCJKkr', 'AppleSDGothic
 .search img{width:18px;position:absolute;top:12px;left:325px;z-index:10}
 
 /* GNB */
-#Gnb {position:relative;width:100%;min-width:1080x;height:54px;background:#fff;border-bottom:2px solid #f1f1f1;z-index:1000}
+#Gnb {position:relative;width:100%;min-width:1080x;height:54px;background:#fff;border-bottom:2px solid #f1f1f1;z-index:1}
 #gnbWrap {position:relative;width:1080px;margin:0 auto}
 #Gnb .gnb_menu_list {top:0px;left:-40px}
 #Gnb .gnb_menu_list > li{float:left;margin-top:5px;width:124px;height:44px;text-align:center}

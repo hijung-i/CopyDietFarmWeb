@@ -105,9 +105,11 @@ body,html {font-family: 'Nanum Gothic', sans-serif;}
     text-align: center;
     margin-right: 70px;
 }
+.content_lnb a {color: #000;}
 .content_lnb li {
     padding: 16px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #F5F5F5;
+    height: 50px;
 }
 .content_lnb li.on {
     background: #F99319;
@@ -263,7 +265,7 @@ ul.pager {
 /* footer */
 #footer {
     width: 100%; height: 300px;
-    background: rgba(189, 189, 189, 0.966);
+    background: #F8F8F8;
     padding-top: 30px;
 }
 .footer_top {
@@ -458,7 +460,8 @@ ul.pager {
 .detail_title01 .title{width:200px;white-space: nowrap;
 overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title01 a img{position:absolute;top:53px;width:17px}
-
+header.orderlistModal > ul {display: flex; justify-content: space-between; align-items: center;}
+header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: pointer; font-size: 18px; font-weight: 700;}
 .line2{border-top:2px solid #F99319;position:relative;top:12px}
 .circle_line ul{display:flex;justify-content:space-around;}
 .circle_line ul li > img {vertical-align: middle;}
@@ -539,6 +542,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 .order_info_ctn .state {
     color: #F99319;
+    font-weight: 700;
 }
 .order_info_ctn .name_price {
     color: #000;
@@ -553,6 +557,9 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
     width: 50px; height: 62px;
     background: #ccc;
     margin-right: 10px;
+    background: url(../images/dietfarmbread.jpg);
+    background-size: cover;
+    background-position: center;
 }
 .orderList_detail_list > .order_info_ctn {
     display: flex;
@@ -611,13 +618,12 @@ ul.result {text-align: right; color: #000;}
 
 /* button */
 .btn_area > button {
-    position: relative; left: 50%; transform: translateX(-50%);
     width: 330px; height: 45px;
+    margin: 0 auto;
     background: #fff;
     font-weight: 14; font-weight: 500;
     border: 1px solid #BBBBBB;
     border-radius: 5px;
-    margin-top: 30px;
 }
 
 
@@ -725,7 +731,7 @@ html, body {max-width: 100%;overflow-x: hidden;
 .order p{font-size:14px;padding-left:15px;padding-right:15px}
 .downArrow{position:absolute;right:20px;}
 .order_q .title{font-size:14px;font-weight:bold;}
-.order01 table{width:100%;border-bottom:8px solid #E6E6E6;margin-top:5px;padding:0}
+.order01 table{width:100%;border-bottom:1px solid #E6E6E6;margin-top:5px;padding:0}
 .order01_1{width:100%;border-top:8px solid #E6E6E6}
 .order01 td{padding:10px 15px 15px;font-size:14px;line-height:22px}
 .order01 td:nth-child(2) {padding-right: -10px;}
@@ -873,6 +879,12 @@ justify-self: center;width: 100%;margin: 0 auto;}
 }
 
 /*주문 상세*/
+.orderDetails .orderBox02 {display: flex;}
+.orderDetails .orderBox02 li {font-size: 12px;}
+.orderDetails .orderBox02 li.product,
+.orderDetails .orderBox02 li.price {color: #000;}
+.orderDetails .orderBox02 li.quantitiy,
+.orderDetails .orderBox02 li.option {color: #878787;}
 .orderDetails{border-bottom:8px solid #F1F1F1}
 .buttons{width:100%;margin: 0 auto;
 justify-content: space-between;padding-bottom:14px;padding-left:15px;padding-right:15px}
@@ -905,6 +917,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
     font-family: '나눔고딕';
     border-radius:5px;
     margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 /*주문 내역*/
@@ -1068,6 +1081,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .body_contents .cell {
     width: 300px;
     border: 2px solid #32845B;
+    height: 53px;
 }
 .body_contents th {font-weight: 700;}
 .body_contents th.curPoint {
@@ -1095,6 +1109,7 @@ table.pointList {
     width: 100%;
     padding: 20px 0 30px 0;
 }
+
 table.pointList th {
     background: #fff;
     color: #000;
@@ -1105,8 +1120,8 @@ table.pointList th {
 table.pointList td {
     font-size: 12px; font-weight: 500;
 }
-table.pointList tr {
-    border-bottom: 1px solid #BBBBBB;
+table.pointList tr.pointList_ctt td {
+    border-bottom: 1px solid #bbb; text-align: center;
 }
 
 /* mypage > orderlist > point_none */
@@ -1126,7 +1141,8 @@ table.pointList tr {
     margin: 0 auto;
     margin-left: 0;
 }
-.web_delivery_manage_list .del_mng_type {align-items: center;}
+.web_delivery_manage_list .del_mng_type {align-items: center; padding-left: 60px;}
+
 .web_delivery_manage_list .del_mng_type,
 .web_delivery_manage_list .edit_remove {
     display: flex;
@@ -1187,12 +1203,21 @@ table.pointList tr {
 }
 
 /* 버튼 */
-.btn_area {margin-top:10px;width:100%; margin: 0 auto;}
+.btn_area {margin-top:10px;width:100%;}
+.sellerInq_regist > button {border: 0; color: #fff;background: #EFA543; font-size: 14px; letter-spacing: 2px;}
 #btnRegister{
-    position: absolute;
-    width: 330px; 
     margin:0 auto;
     padding: 15px 0 15px;
+    border:0;
+    cursor: pointer;
+    color:#fff;
+    background-color:#EFA543;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius:5px;
+}
+.mBtnArea > button {
+    padding: 15px 0 15px; outline: 2px solid red;
     border:0;
     cursor: pointer;
     color:#fff;
@@ -1374,6 +1399,7 @@ table.pointList tr {
 
 
 
+
 /* 상품 리뷰 web */
 .review_complete {padding-top: 16px;}
 .review_complete td {padding: 0 !important;}
@@ -1415,6 +1441,8 @@ table.pointList tr {
 }
 
 .tabMenu_review .tab_wrap > li.on {color: #EFA543; font-weight: 700;}
+.tabMenu_review .tab_wrap > li.on > a {color: #EFA543; font-weight: 700;}
+
 .tabMenu_review .tab_wrap > li.on > span {font-weight: 700;}
 .tabMenu_review .tab_wrap > li:nth-child(1).on ~ span {left: 0; opacity: 1;}
 .tabMenu_review .tab_wrap > li:nth-child(2).on ~ span {left: 50%; opacity: 1;}
@@ -1756,12 +1784,13 @@ table.web_qna {padding: 12px 0;}
 /* select design css */
 
 /* 판매자문의모바일 css */
-.btn_area {width:100%;clear:both;border-top:8px solid #E6E6E6;padding-right:15px}
+.btn_area {width:100%;clear:both; padding-right:38px;}
 #btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
+.inquiryBox > ul {color: #000;}
 .inquiryBox ul li form p textarea{border-radius:5px;width:100%;height:153px}
-.inquiryBox h3{font-size:12px;font-weight:bold}
+.inquiryBox h3{font-size:12px;font-weight:bold;margin-bottom: 20px;}
 .inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
 .inquiryBox ul li ul li{line-height:14px}
 .inquiryBox .words form{margin-top:-20px}
@@ -1777,15 +1806,13 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .tab_cont.active{display:block;}
 .filebox label {
     display: inline-block;
-    padding: .5em .75em;
     color: #999;
     font-size: inherit;
     line-height: normal;
     vertical-align: middle;
     background-color: #fdfdfd;
     cursor: pointer;
-    border: 1px solid #ebebeb;
-    border-bottom-color: #e2e2e2;
+    border: 1px solid #BBBBBB;
     border-radius: .25em;
 }
 

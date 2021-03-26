@@ -176,3 +176,18 @@ $(document).ready(function(){
         $("div.tab9").show();
     });
 });
+
+/* 모달창 이미지 클릭해서 닫기 */
+/* mypage_deliver_mag */
+$(document).ready(function(){
+    $(".clsWindow>i").click(function(){
+        $("#ex1,.blocker").hide();
+    })
+})
+
+/* mypage_orderList */
+$(document).ready(function(){
+    $(".ordlist_clsWindow>i").click(function(){
+        $("#ex1,.blocker").hide();
+    })
+})
