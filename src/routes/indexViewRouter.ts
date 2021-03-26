@@ -101,6 +101,9 @@ router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
 router.get('/products', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'products', {})
 })
+router.get('/product', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'product', {})
+})
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_orderList', {})
 })
