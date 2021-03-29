@@ -16,7 +16,6 @@ body{min-width:360px;max-width:100%}
 .myPage ul li{float:left;font-size:14px;justify-content:space-between;padding:20px 15px 17px 15px;}
 .myPage06 li, .myPage06 li a{color:#6B6B6B;}
 .myPage06 ul{background-color:#F5F5F5;padding-top:10px;padding-bottom:10px}
-.myPage06 ul li{}
 
 /*마이페이지(로그인전)*/
 .myPage01 h3{text-align:center;margin-bottom:20px;font-size:16px;font-weight:normal}
