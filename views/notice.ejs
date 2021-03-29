@@ -8,78 +8,212 @@
     <meta name="format-detection" content="no" />
 
     <title>다이어트 Farm</title>
+    <link rel="stylesheet" href="css/style02.css">
     <link rel="stylesheet" href="/css/notice.css">
+    <style type="text/css">
+        @media screen and (min-width:360px)and (max-width:1079px) {.web_notice{display:none}}
+        @media screen and (min-width:1080px){.mobile_notice{display:none} }
+        </style>
     <%-include('general/head') %>
-
+    
 </head>
-
 <body>
-
-    <section class="detail_title">
-        <h2>공지사항</h2>
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
+<div class="web_notice">
+<%-include('general/header_web') %>
+<main id="w_content">
+       
+    <h2>고객센터</h2>
+    <div class="contents">
+    <div class="w_sidemenu">
+        <ul>
+            <a href="notice"><li class="active">공지사항</li></a>
+            <a href="faq"><li>fAQ</li></a>
+            <a href="cs-center"><li>고객센터</li></a>
+            <a href="alarm"><li>알림설정</li></a>
+        </ul>
+    </div>
+      
+       <div class="noticeBox">
+        <h4>공지사항</h4>
+         <div class="nBox_wrap">
+             <ul>
+                 <h3><a href="notice/:boardNo">포인트 정책 안내</a></h3>
+                 <li>2020.10.20</li>
+             </ul>
+         </div>
+         <div class="nBox_wrap">
+             <ul>
+                 <h3><a href="notice/:boardNo">회원등급 및 혜택 안내</a></h3>
+                 <li>2020.10.20</li>
+             </ul>
+         </div>
+         <div class="nBox_wrap">
+             <ul>
+                 <h3><a href="notice/:boardNo">상품 배송 안내</a></h3>
+                 <li>2020.10.20</li>
+             </ul>
+         </div>
+         <div class="nBox_wrap">
+             <ul>
+                 <h3><a jref="notice/:boardNo">포인트 정책 안내</a></h3>
+                 <li>2020.10.20</li>
+             </ul>
+         </div>
+         <div class="nBox_wrap">
+             <ul>
+                 <h3><a href="notice/:boardNo">회원등급 및 혜택 안내</a></h3>
+                 <li>2020.10.20</li>
+             </ul>
+         </div>
+         <div class="nBox_wrap">
+             <ul>
+                 <h3><a href="notice/:boardNo">상품 배송 안내</a></h3>
+                 <li>2020.10.20</li>
+             </ul>
+         </div>
+         <div class="nBox_wrap">
+             <ul>
+                 <h3><a jref="notice/:boardNo">포인트 정책 안내</a></h3>
+                 <li>2020.10.20</li>
+             </ul>
+         </div>
+         <div class="nBox_wrap">
+             <ul>
+                 <h3><a href="notice/:boardNo">회원등급 및 혜택 안내</a></h3>
+                 <li>2020.10.20</li>
+             </ul>
+         </div>
+         <div class="nBox_wrap">
+             <ul>
+                 <h3><a href="notice/:boardNo">상품 배송 안내</a></h3>
+                 <li>2020.10.20</li>
+             </ul>
+         </div>
+     </div>
+    </div>
+<div class="page_wrap" style="clear:both;width:1020px;margin-left:170px;text-align:center;margin-bottom:380px;padding-top:30px">
+<div class="page_nation">
+   <a class="arrow pprev" href="#"></a>
+   <a class="arrow prev" href="#"></a>
+   <a href="#" class="active">1</a>
+   <a href="#">2</a>
+   <a href="#">3</a>
+   <a href="#">4</a>
+   <a href="#">5</a>
+   <a href="#">6</a>
+   <a href="#">7</a>
+   <a href="#">8</a>
+   <a href="#">9</a>
+   <a href="#">10</a>
+   <a class="arrow next" href="#"></a>
+   <a class="arrow nnext" href="#"></a>
+</div>
+</div>
+  </main>
+</div>
+    <div class="mobile_notice">
+        <section class="detail_title">
+            <h2>공지사항</h2>
+            <script type="text/javascript">
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt=""> </a>
+            </div>
+        </section>
+    
+        <main id="content" class="content" style="padding-top:20px">
+            <div class="noticeBox">
+                <div class="nBox_wrap">
+                    <ul>
+                        <h3><a href="notice/:boardNo">포인트 정책 안내</a></h3>
+                        <li>2020.10.20</li>
+                    </ul>
+                </div>
+                <div class="nBox_wrap">
+                    <ul>
+                        <h3><a href="notice/:boardNo">회원등급 및 혜택 안내</a></h3>
+                        <li>2020.10.20</li>
+                    </ul>
+                </div>
+                <div class="nBox_wrap">
+                    <ul>
+                        <h3><a href="notice/:boardNo">상품 배송 안내</a></h3>
+                        <li>2020.10.20</li>
+                    </ul>
+                </div>
+                <div class="nBox_wrap">
+                    <ul>
+                        <h3><a jref="notice/:boardNo">포인트 정책 안내</a></h3>
+                        <li>2020.10.2tml0</li>
+                    </ul>
+                </div>
+                <div class="nBox_wrap">
+                    <ul>
+                        <h3><a href="notice/:boardNo">회원등급 및 혜택 안내</a></h3>
+                        <li>2020.10.20</li>
+                    </ul>
+                </div>
+                <div class="nBox_wrap">
+                    <ul>
+                        <h3><a href="notice/:boardNo">상품 배송 안내</a></h3>
+                        <li>2020.10.20</li>
+                    </ul>
+                </div>
+                <div class="nBox_wrap">
+                    <ul>
+                        <h3><a jref="notice/:boardNo">포인트 정책 안내</a></h3>
+                        <li>2020.10.20</li>
+                    </ul>
+                </div>
+                <div class="nBox_wrap">
+                    <ul>
+                        <h3><a href="notice/:boardNo">회원등급 및 혜택 안내</a></h3>
+                        <li>2020.10.20</li>
+                    </ul>
+                </div>
+                <div class="nBox_wrap">
+                    <ul>
+                        <h3><a href="notice/:boardNo">상품 배송 안내</a></h3>
+                        <li>2020.10.20</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
         </div>
-    </section>
-
-    <main id="content" class="content">
-        <div class="noticeBox">
-            <div class="nBox_wrap">
-                <ul>
-                    <h3><a href="notice_detail.html">포인트 정책 안내</a></h3>
-                    <li>2020.10.20</li>
-                </ul>
-            </div>
-            <div class="nBox_wrap">
-                <ul>
-                    <h3><a href="notice_detail.html">회원등급 및 혜택 안내</a></h3>
-                    <li>2020.10.20</li>
-                </ul>
-            </div>
-            <div class="nBox_wrap">
-                <ul>
-                    <h3><a href="notice_detail.html">상품 배송 안내</a></h3>
-                    <li>2020.10.20</li>
-                </ul>
-            </div>
-            <div class="nBox_wrap">
-                <ul>
-                    <h3><a jref="notice_detail.html">포인트 정책 안내</a></h3>
-                    <li>2020.10.20</li>
-                </ul>
-            </div>
-            <div class="nBox_wrap">
-                <ul>
-                    <h3><a href="notice_detail.html">회원등급 및 혜택 안내</a></h3>
-                    <li>2020.10.20</li>
-                </ul>
-            </div>
-            <div class="nBox_wrap">
-                <ul>
-                    <h3><a href="notice_detail.html">상품 배송 안내</a></h3>
-                    <li>2020.10.20</li>
-                </ul>
-            </div>
-            <div class="nBox_wrap">
-                <ul>
-                    <h3><a jref="notice_detail.html">포인트 정책 안내</a></h3>
-                    <li>2020.10.20</li>
-                </ul>
-            </div>
-            <div class="nBox_wrap">
-                <ul>
-                    <h3><a href="notice_detail.html">회원등급 및 혜택 안내</a></h3>
-                    <li>2020.10.20</li>
-                </ul>
-            </div>
-            <div class="nBox_wrap">
-                <ul>
-                    <h3><a href="notice_detail.html">상품 배송 안내</a></h3>
-                    <li>2020.10.20</li>
-                </ul>
-            </div>
-        </div>
-    </main>
-
-    <%-include('general/footer') %>
-
+        <script>
+            $(document).ready(function(){
+           $("#gnbAllMenu").hide();
+           $("#btnGnbOpen").click(function(){
+               $("#gnbAllMenu").slideToggle("fast");
+           });
+       });
+   
+          $(document).ready(function() {
+               $(".m_slides_sub").hide();
+               $(".m_ba_slides_n_w li").hover(function(){
+                   $("ul:not(:animated)",this).slideDown("700");
+   
+                   $(".m_ba_slides_n_w li a").removeClass("active");
+               },
+               function() {
+                   $("ul",this).slideUp("700");
+                  });
+   
+               $("#memberMenu").bind("moseover mouseenter",function(){
+                   $("#memMenu").show();
+             });
+              $("#memMenu").bind("moseout mouseleave",function(){
+                   $("#memMenu").hide();
+             });
+   
+               $("#NotmemberMenu").bind("moseover mouseenter",function(){
+                   $("#NotmemMenu").show();
+             });
+              $("#NotmemMenu").bind("moseout mouseleave",function(){
+                   $("#NotmemMenu").hide();
+             });
+           });
+       </script>
 </body></html>

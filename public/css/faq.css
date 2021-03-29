@@ -57,44 +57,18 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .productInquiryBox h3{font-size:14px;font-weight:bold;margin-bottom:16px}
 .productInquiryBox form{margin-bottom:18px;}
 
-input[type="checkbox"] {
-  display: none;
-}
+input[type="checkbox"] {display: none;}
 
-.secret{
-  position: relative;margin-left:15px;
-}
+.secret{position: relative;margin-left:15px;}
 
-.secret::before {
-  content: "";
-  background: url("../images/aftercheck_icon_join@2x.png");
-  background-position: center;
-  background-size: contain;
-  width: 19px;
-  height: 19px;
-  position: absolute;
-  left: -12px;
-  top: -2px;
-  
+.secret::before {background: url("../images/aftercheck_icon_join@2x.png");
+ background-position: center;background-size: contain;width: 19px;height: 19px;
+ position: absolute;left: -12px;top: -2px;
+ transform: scale(0) rotateZ(180deg);}
 
-  transform: scale(0) rotateZ(180deg);
- 
-}
+input#secret[type="checkbox"]:checked + .secret::before {transform: scale(1) rotateZ(0deg);}
 
-input#secret[type="checkbox"]:checked + .secret::before {
-  transform: scale(1) rotateZ(0deg);
-}
-
-.secret::after {
-  content: "";
-  border: 2px solid #EFA543;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  left: -12px;
-  top: -3px;
-  border-radius: 50%;
-}
+.secret::after {content: "";border: 2px solid #EFA543;width: 16px;height: 16px;position: absolute;left: -12px;top: -3px;border-radius: 50%;}
 
 /*리뷰쓰기*/
 .review01{width:100%;border-bottom:1px solid #f1f1f1;padding-bottom:10px}
@@ -128,6 +102,19 @@ border: 1px solid #BBBBBB;border-radius:5px;}
 .filebox{margin-top:25px}
 .p2{margin-left:10px}
 .inquiryBox p{clear:both;padding-top:20px}
+
+/*faq 웹*/
+#w_content{width:1080px;margin:0 auto}
+#w_content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
+.w_sidemenu{margin-top:30px;float:left}
+.w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
+/*.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}*/
+.w_sidemenu .active{background-color:#F99319;color:#fff}
+.w_sidemenu ul li.active-color {background-color:#F99319;color:#fff}
+.contents .faq{float:left;width:669px;margin-left:81px;margin-bottom:360px;margin-top:33px}
+.contents .faq h3{font-size:20px;font-weight:bold;color:#000;padding-bottom:24px;border-bottom:2px solid #6B6B6B}
+.contents .faq_q .title img{position:relative;left:470px}
+
 
 
 
