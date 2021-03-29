@@ -1,6 +1,6 @@
-/* fonts */
+ 
 /* none scroll */
-body,html {overflow-x: hidden; overflow-y: auto; min-width:360px; width: 100%; /* overflow: hidden; */}
+body,html {overflow-x: hidden; overflow-y: auto;width:100%; min-width:360px; width: 100%; /* overflow: hidden; */}
 
 @font-face{ 
 font-family: '나눔고딕'; 
@@ -42,13 +42,7 @@ table {
 ol,ul,li {
 	list-style:none;
 }
-legend, caption { 
-	visibility:hidden;
-	width:0;
-	height:0;
-	font-size:0;
-	line-height:0
-}
+
 i,em,address{
 	font-style:normal
 }
@@ -206,7 +200,7 @@ nav a:nth-child(5).is-current ~ .nav-underline {
 }
 
 .tabMenu{width:100%;z-index:300}
-#content .tab_wrap{width:100%;padding-bottom:40px; border-bottom: none;}
+#content .tab_wrap{width:100%;border-bottom: none;}
  .tabMenu ul{padding-left:40px;padding-right:20px;background-color:#fff}
  .tabMenu li{float:left;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding:10px 20px 10px 0px;}
 .tabMenu li a{color:#878787;}
@@ -472,6 +466,8 @@ margin: 0 auto;}
     border-top:2px solid #f1f1f1;	
   }	
   #content .main_sub{width:100%;margin:auto}	
+
+} 
   @media screen and (min-width:360px) and (max-width:600px){
     #content .main_sub ul{	
       display:grid;	
@@ -492,7 +488,9 @@ margin: 0 auto;}
     overflow: hidden;	
   }	
 
-  @media screen and (min-width:360px)and (max-width:1079px){#content .main_sub ul{display:grid;grid-template-columns: repeat(3, 2fr);	
+  @media screen and (min-width:360px)and (max-width:1079px)
+  
+  {#content .main_sub ul{display:grid;grid-template-columns: repeat(3, 2fr);	
   ;align-items: center;	
   justify-self: center;margin: 0 auto;margin-left:-20px}	
   #content .main_sub ul li{margin-left:10px}
@@ -501,12 +499,10 @@ margin: 0 auto;}
   #content .main_sub ul li img{width:100%;}	
   #content .main_sub ul li .desc p{font-size:12px;padding:5px;margin-top:5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:200px;height: 20px;display:inline-block}	
   #content .main_sub ul li .desc .price{font-weight:bold;margin-bottom:10px;}	
-  #content .desc ul{ display: -webkit-box; /* Old webkit */display: -ms-flexbox; /* IE 10~11 */	
-   display: flex;}	
   #content .desc ul li{float:left;}	
-  #content .desc .sale{font-weight:bold;margin-left:-5px}	
-  #content .desc .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:1px}	
-  #content .desc .ratio{color:red;font-weight:bold;font-size:11px}	
+  #content .desc .sale{font-weight:bold}	
+  #content .desc .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:-20px}	
+  #content .desc .ratio{color:red;font-weight:bold;font-size:11px;margin-left:-50px}	
   #content .sort select{border:0;}
 }	
     
@@ -523,14 +519,14 @@ justify-self: center;margin: 0 auto;}
 #contents .main_sub h2{float:left;position:relative;left:30px;color:#000} 
 .main_sub .sort{float:right;border:0}
 #contents .sub_items{padding-top:20px;margin-top:40px}
-#contents .sub_items .title{margin-left:4px;margin-Fbottom:10px;font-size:16px;overflow:visible;text-overflow: ellipsis;white-space: nowrap;width:100px;height: 20px;display:inline-block}
+#contents .sub_items .title{margin-left:4px;margin-bottom:10px;font-size:16px;overflow: hidden;text-overflow: ellipsis;
+  white-space: nowrap;width: 300px;height: 20px;
+}}
 #contents .sub_items .price{margin-top:5px;margin-left:-5px;font-size:18px}
 #contents .sub_items .price .sale{font-size:16px}
 #contents .sub_items .price .cost{margin-left:-50px;text-decoration: line-through;color:#878787;}
 #contents .sub_items .price .ratio{margin-left:-80px;color:#ef1919}
 
-}   
-    
 
 /*찜한 메뉴*/
 #content .pick_wrap{width:100%;border-bottom:8px solid #f1f1f1}
@@ -558,7 +554,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 justify-self: center;width: 100%;margin: 0 auto;}
 
 #contents .pick_product ul li img{width:330px;border-radius:5px}
-#contents .pick_product ul li .desc p{font-size:16px;padding:5px;margin-top:10px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:200px;height: 20px;display:inline-block}
+#contents .pick_product ul li .desc p{font-size:16px;padding:5px;margin-top:10px;overflow:visible;text-overflow: ellipsis;white-space: nowrap;width:200px;height: 20px;display:inline-block;margin-bottom:10px}
 #contents .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
 #contents .desc ul{margin-left:5px;margin-bottom:44px}
 #contents .desc .sale{color:#000}
@@ -584,7 +580,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 font-size: 14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px;border:1px solid #EFA543}
 
 /*주문 내역*/
-.detail_title{margin:40px 10px 20px 10px;width:100%;}
+.detail_title{width:100%;}
 .detail_title h2{text-align:center;font-weight:bold;font-size:16px;margin-bottom:20px;margin-top:-4px}
 .detail_title a img{position:absolute;margin-top:px;width:17px}
 #content .order_list .no_list{text-align:center;position:relative;font-weight:bold;font-size:16px;color:#878787;margin-bottom:200px}
@@ -646,9 +642,9 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 	}
 }
 
-nav a:nth-child(1) {
+/*nav a:nth-child(1) {
   color: #F99319;
-}
+} */
 
 .bx-wrapper {
   -moz-box-shadow: none !important;
@@ -793,18 +789,12 @@ ul li .bottom {
   padding-top: 20px;
 }
 
-<<<<<<< HEAD
 #footer .addr {
   margin-top: 10px;
   overflow: hidden;
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 10px;
   line-height: 20px;
-=======
-.grand_title li {
-  font-weight: 700;
->>>>>
->> d33e8d073ea7c1e0dbe6c687fabd0cec43add995
   color: #878787;
   padding-right: 10px;
 }

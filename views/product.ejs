@@ -9,7 +9,7 @@
 
     <title>다이어트 Farm</title>
     <style type="text/css">
-    @media screen and (min-width:360px)and (max-width:1079px) {.web_product_details{display:none}}
+    @media screen and (max-width:1079px) {.web_product_details{display:none}}
     @media screen and (min-width:1080px){.mobile_product_details{display:none} }
       
     </style>
@@ -97,73 +97,7 @@
     <div class="web_product_details">
         <%-include('general/header_web') %>
         <div id="m_contents_wrap">
-            <script>
-               
-                $('#myp_select_wrap').mouseleave(function() {
-                    $('#myp_select_wrap').hide();
-                });
-        
-                $('#vminfo').mouseenter(function() {
-        
-                    $('#myp_select_wrap').show();
-                });
-        
-        
-                $( window ).bind( 'scroll', function(){ //window에 스크롤링이 발생하면
-                    var wrap_offset =  $('#tabmenu' ).offset();
-                    var srlTop  = $(this).scrollTop();
-                    
-                    //$("#m_contents_wrap").css("margin-top","0px");
-                 });
-            </script>
-                <!-- 메인배너 좌측메뉴 자바스크립트 -->
-            <script type="text/javascript">
-              $(document).ready(function() {
-                    // 현재 선택된 메뉴의 index값
-                    var current_index = 0;
-        
-                    $(".gnb_n > li").siblings().each(function(i) {
-        
-                        if( $(this).find("a").hasClass("active") ) current_index = i;
-                    });
-        
-                    //alert(current_index);
-        
-                    // 모든 서브메뉴 숨기기
-                    $(".sub").hide();
-                    $(".sub2_n").hide(); //20190312 자바스크립트 수정
-        
-                    $(".gnb_n li").hover(function(){
-                        $("ul:not(:animated)",this).slideDown("fast");
-        
-                        // 현재 선택된 메뉴 off
-                        $(".gnb_n li a").removeClass("active");
-                    },
-                    function() {
-                        $("ul",this).slideUp("fast");
-        
-                        $(".gnb_n > li").eq(current_index).find("a").addClass("active");
-                    });
-        
-                    $("#memberMenu").bind("moseover mouseenter",function(){
-                        $("#memMenu").show();
-                  });
-                   $("#memMenu").bind("moseout mouseleave",function(){
-                        $("#memMenu").hide();
-                  });
-        
-                    $("#NotmemberMenu").bind("moseover mouseenter",function(){
-                        $("#NotmemMenu").show();
-                  });
-                   $("#NotmemMenu").bind("moseout mouseleave",function(){
-                        $("#NotmemMenu").hide();
-                  });
-        
-                });
-            </script>
-        
-            
-                
+                                     
             </div>
             
             
@@ -253,7 +187,7 @@
                         <!--//v_n_top_info2-->
                 
                     <div class="option_wrap">
-                        <h3><img src="images/star_icon_join.png">옵션선택(필수)</h3>
+                        <h3><img src="/images/star_icon_join.png">옵션선택(필수)</h3>
                         <table class="product_option">
                             <tr>
                                 <th scope="row"></th>
@@ -479,20 +413,20 @@
                             <div id="detail_info" class="pdt_detai_tab_vn">
                                 <div class="pdt_detai_tabinner_vn">
                              <ul class="tab_wrap">
-                                 <li class="active" data-tab="tab1"><a href="javascript:void(0);">상품설명</a></li>
-                                 <li data-tab="tab2"><a href="javascript:void(0);">상세정보</a></li>
-                                 <li data-tab="tab3"><a href="javascript:void(0);">리뷰<span class="v_n_numb">(282)</span></a></li>
-                                 <li data-tab="tab4"><a href="javascript:void(0);">문의<span class="tab_detail_qna_count  v_n_numb">(0)</span></a></li>
+                                 <li class="active" data-tab="tab1_w"><a href="javascript:void(0);">상품설명</a></li>
+                                 <li data-tab="tab2_w"><a href="javascript:void(0);">상세정보</a></li>
+                                 <li data-tab="tab3_w"><a href="javascript:void(0);">리뷰<span class="v_n_numb">(282)</span></a></li>
+                                 <li data-tab="tab4_w"><a href="javascript:void(0);">문의<span class="tab_detail_qna_count  v_n_numb">(0)</span></a></li>
                              </ul>
                              </div>
                              </div>
                          </div>
-                           <div id="tab1" class="tab_cont active">
+                           <div id="tab1_w" class="tab_cont active">
                              <div class="products_ex" style="padding:0">
                          <img src="images/peach.jpg" style="width:100%;height:100%">
                           </div>
                              </div>
-                         <div id="tab2" class="tab_cont">
+                         <div id="tab2_w" class="tab_cont">
                      <div class="infoDetails_web">
                          <ul>
                              <li>
@@ -539,7 +473,7 @@
                          </ul>
                      </div>
                  </div>
-                 <div id="tab3" class="tab_cont">
+                 <div id="tab3_w" class="tab_cont">
                             <div class="review_list_null_web" style="">
                          <img src="images/note_icon_review.png">
                          <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
@@ -696,7 +630,7 @@
          </div>          <!--//reviews-->
           
                  
-                 <div id="tab4" class="tab_cont">
+                 <div id="tab4_w" class="tab_cont">
                    <!--//review_btn-->
                     <p class="inquiry" style="">문의 571개</p>
                      <div class="qna">
@@ -922,7 +856,7 @@
                     <div class="productInquiryBox" style="padding-right:20px">
                      <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
                      <form>
-                         <p><textarea style="border-radius:5px;width:965px;height:200px;padding:10px;font-size:14px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
+                         <p><textarea style="border-radius:5px;width:920px;height:200px;padding:10px;font-size:14px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
          
                      </form>
                      <div class="group">
@@ -964,15 +898,21 @@
              </div><!-- // contents-wrap  -->
              </div>
              </div>
+             </div>
+             
+             </div>
+
+   <!--//모바일 제품상세페이지(오류많이뜸)-->
+        
     <div class="mobile_product_details">
-    <input type="hidden" value="<%=productCode %>" id="productCode" >
+    <!--//<input type="hidden" value="<%=productCode %>" id="productCode" > -->
     <section class="detail_title">
         <h2 class="title">(아임월) 다이어트 굿 밀도시락어쩌구저쩌구</h2>
  
         <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style=""> </a>
         </div>
 
-        <div class="btncart"><a href="shoppingcart.html" onclick="mCart('on');"><img src="/images/cart_ico_main.png" alt="" style="width:24px;height:27px;"></a>
+        <div class="btncart"><a href="cart" onclick="mCart('on');"><img src="/images/cart_ico_main.png" alt="" style="width:24px;height:27px;"></a>
         </div>
     </section>
 
@@ -995,7 +935,7 @@
                         <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
                         <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
                         <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
-                        </ul>
+                        </ul>\
                     <div class="infoArea01">
                         <h2>든든한 한끼 오늘은 현미밥 7종</h2>
                         <a href="#"><img src="/images/share_icon_detail.png" style="position:absolute;left:420px"></a>
@@ -1055,7 +995,7 @@
             </div>
             <!--//infoArea02_wrap-->
 
-            <div class="option_wrap">
+            <div class="option_wrap" style="margin-left:15px">
                 <h3><img src="/images/star_icon_join.png">옵션선택(필수)</h3>
                 <table class="product_option">
                     <tr>
@@ -1164,12 +1104,12 @@
                     </ul>
                     <p>예상 포인트 1,283원 (실 결제금액의 3%) </p>
                 </div>
-                <div class="common_btn_wrap">
+                <div class="common_btn_wrap" style="width:100%;margin-left:-10px;margin-right:15px">
                     <div class="option_btns">
-                        <button type="button" style="width:13%;background-color:#fff;border:1px solid #EFA543">
+                        <button type="button" style="width:14%!important;;background-color:#fff;border:1px solid #EFA543">
                             <img src="/images/heart_icon_menu.png" style="width:17px;height:14px"></button>
-                        <button type="button" style="width:42%">장바구니</button>
-                        <button type="button" style="width:42%">구매하기</button>
+                        <button type="button" style="width:42% !important;">장바구니</button>
+                        <button type="button" style="width:42%!important;">구매하기</button>
                     </div>
                 </div>
             </div>
@@ -1228,6 +1168,7 @@
                 <img src="/images/peach.jpg" style="width:100%;height:100%">
             </div>
         </div>
+        <!--//상세정보 시작-->
         <div id="tab2" class="tab_cont">
             <div class="infoDetails">
                 <ul>
@@ -1593,7 +1534,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" style="" class="more_inq">
+                <button type="button" class="more_inq">
                     <div class="more_btn_ctn">
                         <p>더보기
                             <img src="/images/downarrow_icon_category.png" alt="화살표">
@@ -1601,7 +1542,7 @@
                     </div>
                 </button>
 
-                <div class="common_btn_wrap" style="padding-left:15px">
+                <div class="common_btn_wrap_qna" style="padding-left:15px;width:100%">
                     <div class="option_btns">
                         <button type="button" style="width:13%;background-color:#fff;border:1px solid #EFA543">
                             <img src="/images/heart_icon_menu.png" style="width:17px;height:14px"></button>
@@ -1613,7 +1554,7 @@
             <!--//qna-->
         </div>
     </main>
-    <%-include('general/footer') %>
+
 </div><!--//mobile_product_details-->
     <script src="/js/product.js"></script>
     <script>
