@@ -1,30 +1,47 @@
-/*공지사항*/
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:30px;margin-top:2px}
 .detail_title a img{position:absolute;top:42px;width:17px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+
+/*공지사항- 모바일*/
+@media screen and (min-width:360px)and (max-width:1079px) 
+{
+.page_wrap{display:none}
+.noticeBox h4{display:none}
+.notice_web_title{display:none}
 .noticeBox h3{font-size:14px;font-weight:normal;margin-bottom:7px;line-height:14px}
 .noticeBox ul, .noticeBox p{margin-top:18px;margin-bottom:18px;padding-left:20px;padding-right:20px}
 .nBox_wrap{width:100%;border-bottom:1px solid #E6E6E6}
 .noticeBox ul li{font-size:12px;color:#878787;letter-spacing:0.1px;text-align:left}
 .noticeBox p{line-height:20px;text-indent:-12px;margin-left:15px;}
+.notice_detail_web_bottom{display:none}}
 
 /*공지사항 웹*/
-#w_content{width:1080px;margin:0 auto}
-#w_content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
+@media screen and (min-width:1080px)
+{
+#content{width:1080px;margin:0 auto}
+#content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
 .w_sidemenu{margin-top:30px;float:left}
 .w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
-/*.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}*/
-.w_sidemenu .active{background-color:#F99319;color:#fff}
-.w_sidemenu ul li.selected{background-color:#F99319;color:#fff}
-.contents .noticeBox{float:left;margin-left:81px;margin-top:30px}
-.contents .noticeBox h4{font-size:20px;font-weight:bold;color:#000;margin-bottom:38px}
-.contents .noticeBox ul{width:831px;}
+.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
+.clicked_menu{background-color:#F99319;color:#fff}
+.content .noticeBox{float:left;margin-left:200px;margin-top:-200px}
+.noticeBox_detail{float:left;margin-left:200px;margin-top:-200px}
+.noticeBox ul, .noticeBox p{margin-top:18px;margin-bottom:18px;padding-left:20px;padding-right:20px}
+.nBox_wrap{width:831px;border-bottom:1px solid #E6E6E6}
+#content .noticeBox h4{font-size:20px;font-weight:bold;color:#000;margin-bottom:38px}
+#content .noticeBox h3{margin-bottom:7px;font-weight:normal}
+#content .noticeBox ul{width:831px;}
+.noticeBox ul li{font-size:12px;color:#878787;letter-spacing:0.1px;text-align:left}
+.noticeBox p{line-height:20px;text-indent:-12px;margin-left:15px;}
+.content .noticeBox h4{font-size:20px;font-weight:bold;color:#000;margin-bottom:38px}
+.content .noticeBox ul{width:831px;}
+.page_wrap{margin-top:30px}
 .notice_content{padding-bottom:10px;border-bottom:1px solid #E6E6E6}
 .noticeBtn{width:116px;height:30px;margin-top:15px;border:1px solid #BBBBBB;background-color:#fff;font-size:12px;font-weight:normal;color:#000}
 .nv_list table{margin-top:33px;margin-bottom:149px}
-.nv_list table {width: 100%;border: 1px solid #F5F5F5;border-collapse: collapse;}
+.nv_list table {width:831px;border: 1px solid #F5F5F5;border-collapse: collapse;}
 .nv_list tr, td {border: 1px solid #F5F5F5;padding: 10px;}
 .nv_list td{padding:10px}
 .nv_list td img{position:relative;top:6px;margin-right:9px}
-.nv_list td span{color:#878787;font-size:12px;margin-left:5px}
+.nv_list td span{color:#878787;font-size:12px;margin-left:5px} }

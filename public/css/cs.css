@@ -26,6 +26,9 @@ font-weight:bold;border-radius:5px;font-family:'나눔고딕'}
 #btnCS img{width:20px;height:20px;margin-left:-20px;margin-right:10px;}
 
 /*알림 받기*/
+@media screen and (min-width:360px)and (max-width:1079px) 
+{
+.alarm_web_title{display:none}
 .alarmBox{margin-top:31px}
 .alarmBox *:not(ul){padding-left:15px;padding-right:20px;}
 .alarmBox h3{font-size:14px;margin-bottom:10px;margin-top:19px}
@@ -34,7 +37,21 @@ font-weight:bold;border-radius:5px;font-family:'나눔고딕'}
     padding-bottom:20px;padding-left:15px}
 
 .alarmBox{width:100%; margin: 0 auto;padding-right:5px;
-    display: flex;justify-content:space-between;   margin-top: 20px;align-items: center;padding-right:15px}
+ display: flex;justify-content:space-between;   margin-top: 20px;align-items: center;padding-right:15px} }
+
+ /*알림 web*/
+@media screen and (min-width:1080px)
+{
+#content{width:1080px;margin:0 auto;padding-bottom:717px}
+#content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
+.w_sidemenu{margin-top:30px;float:left}
+.w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
+.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
+.clicked_menu{background-color:#F99319;color:#fff}
+.alarm_title{float:left;width:831px;border-bottom:2px solid #6B6B6B;padding-bottom:20px;padding-top:27px;font-size:20px;font-weight:bold;color:#000;margin-left:81px}
+.alarmBox{float:left;width:831px;margin-left:81px;padding-right:5px;
+ display: flex;justify-content:space-between; margin-top: 20px;align-items: center;padding-right:15px;color:#000;}
+.alarmS{float:left;width:831px;margin-left:81px;margin-top:10px;padding-bottom:15px;border-bottom:1px solid #878787;color:#878787} }
 
 /* 토글 버튼 디자인 */
 .alarmBox input,.alarmBox_web input  {position: absolute; left: -9999px;}
@@ -85,11 +102,7 @@ label:after {
 .csBox_web .i_info01, .i_info02{margin-right:25px}
 .csBox_web .i_info02{margin-top:64px}
 
-/*알림 web*/
-.alarm_title{float:left;width:831px;border-bottom:2px solid #6B6B6B;padding-bottom:20px;padding-top:27px;font-size:20px;font-weight:bold;color:#000;margin-left:81px}
-.alarmBox_web{float:left;width:831px;margin-left:81px;padding-right:5px;
- display: flex;justify-content:space-between; margin-top: 20px;align-items: center;padding-right:15px;color:#000;}
-.alarmS_web{float:left;width:831px;margin-left:81px;margin-top:10px;padding-bottom:15px;border-bottom:1px solid #878787;color:#878787}
+
 
 /*이용약관-개인정보처리방침 웹*/
 .term_contents{margin-top:20px;margin-bottom:161px;font-size:20p}
