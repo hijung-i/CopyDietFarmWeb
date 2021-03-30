@@ -8,6 +8,7 @@
     <title>주문내역</title>
     <link rel="stylesheet" href="./css/style03.css">
     <link rel="stylesheet" href="./css/mypageAll.css">
+    <link rel="stylesheet" href="./css/style_web.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -41,7 +42,7 @@
         <div class="productInquiryBox">
             <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
             <form>
-                <p><textarea style="border-radius:5px;width:100%;height:153px; border: 1px solid #BBBBBB;" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
+                <p><textarea style="border-radius:5px;width:330px;height:153px; border: 1px solid #BBBBBB;" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
 
             </form>
             <div class="group">
@@ -345,7 +346,7 @@
                 </nav>
 
                 <div class="body_contents tab6">
-                    <h3 class="orderList_detail">상품 리뷰</h3>
+                    <h3 class="orderList_detail">상품 문의</h3>
                     <div class="order_detail_ctn">
 
                         <div class="tabMenu_review" style="margin-top:-20px">
@@ -364,7 +365,7 @@
                                         <ul>
                                             <li>2020.10.21</li>
                                             <li><img src="images/l_icon_category.png"></li>
-                                            <li><a href="#">수정</a></li>
+                                            <li><a href="#ex1" rel="modal:open">수정</a></li>
                                             <li><img src="images/l_icon_category.png"></li>
                                             <li><a href="#">삭제</a></li>
                                         </ul>
@@ -572,6 +573,38 @@
     </div>
     </div><!-- contents_ctn -->
     </section> <!-- content -->
+
+    <!-- modal window -->
+    <section id="ex1" class="modal deliver_mag_modal">
+        <header class="deliver_magHeader">
+            <ul>
+                <li>
+                    <h2>배송지 관리</h2>
+                </li>
+                <li class="clsWindow"><i class="fal fa-times"></i></li>
+            </ul>
+            <h3>배송지 수정</h3>
+        </header>
+
+        <div class="deliver_mag_modal_ctt">
+            <p>배송지 이름</p>
+            <input type="text" placeholder="배송지 이름을 입력해주세요">
+            <p>받으시는 분</p>
+            <input type="text" placeholder="받으시는 분 이름을 입력해주세요">
+            <p>주소</p>
+            <input type="text" placeholder="도로명, 지번, 건물명 검색">
+            <input type="text">
+            <p>휴대폰</p>
+            <input type="text" placeholder="숫자만 입력해주세요">
+
+            <div class="btn_area_modal">
+                <button type="button" id="btnRegister_modal">저장</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- modal window end -->
+
 
     <div class="wide_line"></div>
     <ul class="footer_top">

@@ -61,7 +61,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 /* 배송지 변경 */
 
 .ord_info_del_place{width:90%}
-.change_p;ace {display: flex;justify-content: space-between;padding: 12px 0;font-size: 14px;
+.change_place {display: flex;justify-content: space-between;padding: 12px 0;font-size: 14px;
 font-weight: 700;}
 .change_place span {color: red; font-size:14px;}
 
