@@ -115,7 +115,6 @@ box-shadow: none !important}
 
 /*리뷰 없을 때*/
 .review_list_null_web{width:1080px; text-align:center; margin:0 auto;padding-top:369px;padding-bottom:238px}
-.review_list_null img{}
 .no_review{font-size:16px;color:#878787;margin-top:21px}
 #btnRW_null{margin-top:238px;margin-left:660px;width:168px;height:45px;color:#fff;background-color:#F99319;border:0;border-radius:5px}
 
@@ -309,7 +308,6 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 
  /*서브제품페이지 웹*/
  @media screen and (min-width:1020px)and (max-width:5000px){
-  .top_util ul{}
   #content .pages {display:none;}
   .btnMenu, .btnCart{display:none;}
   #contents .main_sub ul{display:grid;grid-template-columns: repeat(3, 2fr);
@@ -546,6 +544,7 @@ body,html {font-family: 'Nanum Gothic', sans-serif;}
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .order_list_top > p:nth-child(1) > span {
     font-weight: 700;
@@ -557,6 +556,7 @@ body,html {font-family: 'Nanum Gothic', sans-serif;}
     font-size: 14px;
 }
 .order_list_top p:nth-child(2) {padding-right: 16px;}
+.order_list_top p:nth-child(2) img {vertical-align: middle; padding-left: 2px;}
 .order_list_top p.moveToDetail img {
     vertical-align: middle;
     padding: 0 3px;
@@ -567,7 +567,7 @@ body,html {font-family: 'Nanum Gothic', sans-serif;}
 }
 
 .line {
-    width: 100%; height: 1px;
+    width: 98%; height: 1px;
     background: #ccc; opacity: 0.6;
     margin: 6px 0 8px 0;
 }
@@ -779,11 +779,7 @@ ul.pager {
 
 }
 .del_mng_list_top ul li img{margin-left:5px;margin-right:5px}
-.delivery_manage_list p img{margin-left:10px;margin-right:10px}
-.delivery_manage_list .edit_remove li {
-    font-size: 12px;
-    padding: 2px;
-}
+
 .bar {
     width: 0.1px; height: 0.1px;
     background: #bbb;
@@ -885,7 +881,7 @@ header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: poi
 .brand_info_liq > li:nth-child(2) {
     font-size: 12px; font-weight: 600;
 }
-.brand_info_liq > li:nth-child(2) > span {
+.brand_info_liq > li:nth-child(2) img {
     padding-left: 4px;
     vertical-align: middle;
 }
@@ -1206,7 +1202,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 /*주문 내역*/
 .orderHistory{width:100%;margin-bottom:10px;padding-left:15px;padding-right:15px}
 .order_list_title {width:100%;display:flex;justify-content:space-between;margin-top:20px}
-.order_a{border-top:0.5px solid #BBBBBB;margin-bottom:-25px;}
+.order_a{margin-bottom:-25px;}
 .order_a .order_add{font-size:14px;font-weight:bold}
 .order_a ul li{float:left}
 .orderDetail{padding-top:10px;}
@@ -1530,6 +1526,7 @@ table.pointList tr.pointList_ctt td {
     background-color:#EFA543;
     font-size: 14px;
     font-weight: 700;
+    font-family: 'Nanum Gothic', sans-serif;
     border-radius:5px;
 }
 
@@ -1642,6 +1639,7 @@ table.pointList tr.pointList_ctt td {
 /* web_mypage_deliver_mag modal */
 
 .modal a.close-modal {display: none !important;}
+#ex1 {font-family: 'Nanum Gothic', sans-serif;}
 .deliver_mag_modal {width: 380px;}
 .deliver_magHeader {padding: 12px 0;}
 .deliver_mag_modal > header > ul {
@@ -1656,13 +1654,13 @@ table.pointList tr.pointList_ctt td {
 }
 .deliver_mag_modal > header li i {
     color: #6B6B6B;
-    font-size: 18px; font-weight: 500;
+    font-size: 18px; font-weight: 500; 
     cursor: pointer;
 }
 
 .deliver_mag_modal > header h3 {
     text-align: center;
-    font-size: 16px; font-weight: 700;
+    font-size: 16px; font-weight: 700; 
     color: #000;
     padding: 16px 0;
 }
@@ -1807,7 +1805,6 @@ table.pointList tr.pointList_ctt td {
     width: 90%;
     margin: 0 auto;
     margin: 0 16px;
-    padding-top: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1985,17 +1982,13 @@ table.pointList tr.pointList_ctt td {
 .faq_title span{font-weight:bold}
 .inquiry_top{margin-top:34px;margin-left:15px;}
 .inquiry_top ul{float:left;display:flex; justify-content:space-between;}
-.order_a{
-    border-bottom: 1px solid #ccc;
-}
-.order_a td {}
 .order001 li{width:100%;white-space:nowrap}
 .order_a_box {display: flex;}
 .order_a_box > .web_prod_info_ctn{margin-top:14px;padding-left:15px; display: flex;}
 .order_a_box .edit_del_icon {position: absolute; right: 10px; cursor: pointer; text-align: right;}
 .order_a_box a img {margin-bottom:18px;width:50px;height:90px;margin-right:20px}
 .title p img{margin-bottom:18px;width:50px;height:90px;margin-right:20px;margin-top:10px}
-.order_a_box ul li{margin-bottom:2px}
+.order_a_box ul li{margin-bottom:2px; font-size: 12px;}
 .tab_cont{display:none;min-height:360px;}
 .tab_cont.active{display:block;}
 

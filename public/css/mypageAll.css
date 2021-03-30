@@ -15,6 +15,8 @@
 }
 @media screen and (min-width:360px) and (max-width:1079px) {
     .wide_line {display: none;}
+    header#wheader {display: none;}
+    .order_a:not(:last-child){border-bottom: 1px solid #ccc;}
 }
 /* 모바일 화면 대응 orderdetail */
 @media screen and (min-width:360px) and (max-width:1079px) {
@@ -64,10 +66,10 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .btn_area {margin:20px 15px}
 #btnReorder{width:100%;margin:auto;padding: 21px 0 17px;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
 
-    /* 주문 상세 타이틀 */
-    .detail_title{margin:40px 10px 20px 10px;width:100%;}
-    .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-    .detail_title a img{position:absolute;top:42px;width:17px}
+/* 주문 상세 타이틀 */
+.detail_title{margin:40px 10px 20px 10px;width:100%;}
+.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
+.detail_title a img{position:absolute;top:42px;width:17px}
 }
 
 @media screen and (min-width:1080px) {
@@ -76,6 +78,11 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 
 /* 모바일 화면 대응 deliverymanage */
 @media screen and (min-width:1080px) {
-    section.detail_title, section.delivery_manage_list {display: none;}
-    div.del_line_thick{display: none;}
+        section.detail_title, section.delivery_manage_list {display: none;}
+        div.del_line_thick{display: none;}
+        .delivery_manage_list p img{margin-left:10px;margin-right:10px}
+        .delivery_manage_list .edit_remove li {
+        font-size: 12px;
+        padding: 2px;
+    }
 }
