@@ -1,6 +1,7 @@
 /* 장바구니 헤더 */
 *{font-family:'나눔고딕';font-weight:400}
 html, body {max-width: 100%;overflow-x: hidden;}
+
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
 .detail_title a img{position:absolute;top:42px}
@@ -23,6 +24,7 @@ background: #fff;padding: 4px 6px;}
 
 .brand_1 .shoplist_info .shopcart_thum {width: 50px; height: 62px;background: #abc;background-image:url(../images/dietfarmbread.jpg);
 background-size: cover;background-position: center;}
+
 
 /* 장바구니 목록 */
 .brand_1 {margin: 0 20px 0 20px;}
@@ -75,7 +77,6 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
   .number-input input[type=number] {max-width: 5rem;padding: .5rem;border: 1px solid #bbb;
   font-size: 14px;height: 27px;font-weight: 400;text-align: center;}
 
-
   /* 장바구니 비었을 때 */
   .no_product {width: 100%; height: 200px;      text-align: center;font-size: 14px; font-weight: 500;line-height: 200px;}
 
@@ -87,7 +88,40 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
     background-color: #EFA543;font-size: 14px;
     font-weight: 400;border-radius:5px;}
 
+/*장바구니 모바일*/
+@media screen and (min-width:360px) and (max-width:1079px){
+#content{width:100%;}
+.price_web{position:absolute;top:24px;left:16px}
+.number-input{position:relative;top:20px}
+ .product_name{text-overflow: ellipsis;white-space:nowrap;width:200px;overflow:hidden}
+.p_price {display:flex;justify-content:space-between;border-bottom:1px solid #BBBBBB;padding-bottom:10px}
+.p_price p{color:#000;font-weight:bold}
+.product_p{margin-left:35px}
+.detail_price{width:100%;}
+.detail_price .price{float:right}
+.detail_price{border-collapse: separate;
+border-spacing: 0 10px;}
+.shopBox01{display:none}
+.shopBox02 table{border-collapse: separate;
+border-spacing: 0 20px;}
+.final{width:100%;padding-left:15px;padding-right:15px;border-bottom:1px solid #bbbbbb}
+.final .total{display:none}
+.final .price{float:right}
+.btn_area_web .total{display:flex;justify-content:space-between;padding-left:15px;padding-right:15px;font-size:14px;font-weight:bold;padding-top:20px;padding-bottom:20px}
+.purchaseBtn{width:96%;margin:0 auto;margin-left:10px;height:45px;color:#fff;background-color:#F99319;border-radius:5px;margin-bottom:20px;}
+
+}
+
+
+
 /*장바구니 웹 */
+@media screen and (min-width:1080px){
+#content {width:1080px;margin:0 auto;padding-bottom:361px}
+.detail_price{display:none}
+.p_price{display:none}
+.btnback{display:none}
+.btn_area_web .total{display:none}
+.detail_title h2{margin-left:-15px;margin-bottom:44px;margin-top:55px;font-size:30px;color:#000;}
 .shpcart_select_del_web button{margin-left:-930px;margin-top:14px;border:1px solid #BBBBBB;font-size:12px;font-weight:normal;border-radius:2px}
 .price_web{margin-left:-540px}
 #shoplist_t_price_web{margin-top:25.5px}
@@ -180,9 +214,9 @@ right:25px;top:25.8px;}
 #check{position:relative;top:70px;right:30px}
 
 /*전체선택 checkbox 디자인*/
-/*input[type="checkbox"] {
+input[type="checkbox"] {
   display: none;
-}*/
+}
 
 .secret{
   position: relative;margin-left:15px;
@@ -204,7 +238,7 @@ right:25px;top:25.8px;}
  
 }
 
-input #secret[type="checkbox"]:checked + .secret::before {
+input#secret[type="checkbox"]:checked + .secret::before {
   transform: scale(1) rotateZ(0deg);
 }
 
@@ -219,4 +253,4 @@ input #secret[type="checkbox"]:checked + .secret::before {
   border-radius: 50%;
 }
 
-
+}
