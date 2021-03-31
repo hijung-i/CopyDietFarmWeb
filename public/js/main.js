@@ -3,7 +3,6 @@ jQuery(document).ready(function () {
     $("#gnbAllMenu").hide();
     $("#btnGnbOpen").click(function () {
         $("#gnbAllMenu").slideToggle("fast");
-        console.log('shit')
     });
 });
 

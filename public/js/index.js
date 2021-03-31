@@ -139,3 +139,11 @@ $(document).ready(function(){
         $(this).siblings().removeClass('on');
     });
 });
+
+/* 맨 위로 이동 */
+$(function(){
+    $('#goingTo_top').on('click',function(e){
+        e.preventDefault();
+        $('html,body').animate({scrollTop:0},600);
+    });
+  });

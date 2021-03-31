@@ -358,7 +358,7 @@ height:50px; overflow:hidden }
   .m_bestn_list ul:first-child{width:100%;margin:0 auto;display:grid;grid-template-columns: repeat(2, 3fr);
   ;align-items:center;
   justify-self:center; }
-  .m_bestn_nlst li {position:relative;display:block;float:left;vertical-align:top;}
+  .m_bestn_nlst li {position:relative;display:block;float:left; vertical-align:top;}
   .tb_mw_wrap .desc .title{margin-left:10px;margin-bottom:7px;margin-top:8px}
   .tb_mw_wrap .desc ul li{margin-left:5px;font-weight:bold;margin-bottom:20px}
   .tb_mw_wrap .desc .cost{color:#909090;text-decoration:line-through;font-weight:normal}
@@ -677,12 +677,12 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
   display: block;
   background: #fff;
   position: absolute;
-  width: 100%;
+  width: 100%; height: 100vh;
 }
 
 
 
- /*@media screen and (min-width: 700px) {
+@media screen and (min-width: 700px) {
   .footer_inq_info {
       display: flex;
   }
@@ -749,7 +749,7 @@ ul li .bottom {
 .channelTalk>li>img {
   margin-right: 4px;
   vertical-align: middle;
-} */
+}
 
 /* footer bottom */
 .footer_bottom {
@@ -770,17 +770,11 @@ ul li .bottom {
   display: flex;
   padding-top: 20px;
 }
-
-#footer .addr {
-  margin-top: 10px;
-  overflow: hidden;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-size: 10px;
-  line-height: 20px;
+.grand_title li {
+  font-weight: 700;
   color: #878787;
   padding-right: 10px;
 }
-
 .grand_title li>span {
   margin-left: 5px;
 }
@@ -795,4 +789,36 @@ ul li .bottom {
   display: flex;
 }
 .footer_bottom_ctt .companyName {font-weight: 700;}
-strike{text-decoration: line-through}
+.top_wrap li {text-align: center;}
+.bottom_wrap li {text-align: center;}
+.company_info span.point {color: #EFA543; font-weight: 700;}
+.importPoint span.point {color: #EFA543; font-weight: 700;}
+.importPoint {margin-top: 10px;}
+
+/* 하단 버튼 */
+#footer .pages ul {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 0 30px;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  z-index: 99;
+}
+
+/* 맨 위로 올라가기 */
+#goingTo_top > i {position: absolute; left: 12.5px; line-height: 40px;}
+#scroll_wrap {margin: 0 auto; min-width: 360px;}
+#goingTo_top {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #BBBBBB;
+  width: 40px; height: 40px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 60px; right: 20px;
+  z-index: 99;
+}
+
