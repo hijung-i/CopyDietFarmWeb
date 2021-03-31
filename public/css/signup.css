@@ -3,7 +3,7 @@
 
 .detail_title{margin:42px 10px 32px 0px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.detail_title a img{position:absolute;top:50px;width:17px;margin-left:10px}
+.detail_title a img{position:absolute;top:40px;width:17px;margin-left:10px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 @media screen and (min-width:360px) and (max-width:480px){
@@ -14,6 +14,7 @@
 .id_place .btn_wrap{float:right;position:relative;left:85px;}
 .btn_wrap button{width:83px;height:49px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
 }
+
 @media screen and (min-width:1080px){
 .box.int_pass{width:441px}
 .box.int_pass_check{width:441px}

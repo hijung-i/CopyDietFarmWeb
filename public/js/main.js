@@ -83,14 +83,6 @@ $(document).ready(function(){
     });
 });
 
-/* 모바일 메인페이지 슬라이드 메뉴 카테고리 lnb 언더바 애니메이션 */
-$(document).ready(function(){
-    $('.tabMenu li').on('click',function(){
-        $(this).addClass('on');
-        $(this).siblings().removeClass('on');
-    });
-});
-
 /* 상품문의 답변 열고 닫기 */
 jQuery(document).ready(function() {
     $("tr.faq_q").click(function() {
