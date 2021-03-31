@@ -274,8 +274,9 @@ a:hover{text-decoration:none;}
 .categ ul li img{position:relative;top:10px}
 .categ .all a{font-weight:bold;color:#31845B}
 .categ ul li img{position:relative;margin-top:12px;margin-left:15px}
-.brand ul li ul{width:100%;display: flex;justify-content: space-between;padding-right:25px;font-size:14px;border-bottom:0.5px solid #BBBBBB;}
+.brand ul li ul{width:100%;display: flex;justify-content: space-between;padding: 19px 25px 14px 0;font-size:14px;border-bottom:0.5px solid #BBBBBB;}
 .brand ul li ul li a{margin-left:20px}
+.mDepth01 {height: 100vh;  overflow: hidden;}
 
 @media screen and (min-width:1080px){
 .best_wrap{display:none}
