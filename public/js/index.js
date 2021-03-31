@@ -131,3 +131,11 @@ function getCategory() {
         console.log("onError", err);
     })
 }
+
+/* 모바일 메인페이지 슬라이드 메뉴 카테고리 lnb 언더바 애니메이션 */
+$(document).ready(function(){
+    $('.tabMenu li').on('click',function(){
+        $(this).addClass('on');
+        $(this).siblings().removeClass('on');
+    });
+});
