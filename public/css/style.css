@@ -169,7 +169,7 @@ nav a:nth-child(5).is-current ~ .nav-underline {
 #mHeader .sid_menu .mDepth01 dt .downArrow {
 	width:11px;height:11px
 }
-.mDepth01 {height: 100vh;  overflow: hidden;}
+.mDepth01 {height:100vh;  overflow-y: hidden;}
 
 
 #mHeader .sideMenu .mDepth01{padding-bottom:150px;font-size:16px;line-height:32px; background: #fff;}
@@ -189,7 +189,7 @@ nav a:nth-child(5).is-current ~ .nav-underline {
 .slideMenu_top {
 	display: flex;
 	justify-content: space-between;
-	padding: 12px 30px;
+	padding: 32px 16px 0 16px;
 	align-items: center;
 }
 .slideMenu_title > h2 {
@@ -202,10 +202,10 @@ nav a:nth-child(5).is-current ~ .nav-underline {
 
 .tabMenu{width:100%;z-index:300}
 #content .tab_wrap{width:100%;border-bottom: none;}
- .tabMenu ul{padding-left:40px;padding-right:20px;background-color:#fff}
- .tabMenu li{float:left;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding:10px 20px 10px 0px;}
+ .tabMenu ul{/* padding-left:40px;padding-right:20px; */background-color:#fff}
+ .tabMenu li{float:left;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding: 10px 20;}
 .tabMenu li a{color:#878787;}
-.tabMenu li a:hover{color:#F99319;padding-bottom:13px;border-bottom:3px solid #F99319}
+/* .tabMenu li a:hover{color:#F99319;padding-bottom:13px;border-bottom:3px solid #F99319} */
 
 
 /* 메뉴 아이콘 */
@@ -662,7 +662,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 
 #mHeader .tab_wrap {
   width: 100%;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   border-bottom: 2px solid #E6E6E6;
   background: #fff;
   z-index: 99;

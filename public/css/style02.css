@@ -78,6 +78,48 @@ body, select, input, textarea, a[href^="tel:"]:link {
 	letter-spacing:-0.5px;
 }
 
+/* 모바일 슬라이드메뉴 */ 
+
+.tabMenu {
+    position: relative;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 0;
+}
+.tab_wrap {
+    display: flex;
+    width: 100%; 
+    margin: 0 auto;
+    position: relative;
+}
+.tabMenu .tab_wrap li {
+    flex: 1;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #878787;
+    cursor: pointer;
+}
+
+.tabMenu .tab_wrap > span {
+    position: absolute; left: 0; bottom: 0; height: 3px;
+    background: #EFA543;
+    width: 50%; margin: -1px 0;
+    opacity: 0;
+    transition: all .3s;
+}
+.tabMenu .tab_wrap > li.on {color: #EFA543; font-weight: 700;}
+.tabMenu .tab_wrap > li.on > a {color: #EFA543; font-weight: 700;}
+.tabMenu .tab_wrap > li:nth-child(1).on ~ span {left: 0; opacity: 1;}
+.tabMenu .tab_wrap > li:nth-child(2).on ~ span {left: 50%; opacity: 1;}
+
+
+
+/* 모바일 슬라이드메뉴 끝 */ 
+
+
+
 
 a{color:#383838;text-decoration:none;cursor:pointer}
 a:hover{text-decoration:none;}
@@ -141,7 +183,6 @@ a:hover{text-decoration:none;}
 #wheader #gnbWrap {position:relative;width:1080px;margin:0 auto}
 #wheader #Gnb .gnb_menu_list {top:0px;left:-40px}
 #wheader #Gnb .gnb_menu_list > li{float:left;margin-top:5px;width:124px;height:44px;text-align:center}
-#wheader #Gnb .gnb_menu_list > li:hover{background-color:#F99319;color:#FFF}
 #wheader #Gnb .gnb_menu_list > li.on a ,
 #wheader #Gnb .gnb_menu_list > li:hover a ,
 #wheader #Gnb .gnb_menu_list > li a:focus ,
@@ -150,15 +191,15 @@ a:hover{text-decoration:none;}
 #wheader #Gnb .gnb_menu_list > li > a {display:block;height:44px;line-height:44px;color:#000;font-size:16px;font-weight:700;letter-spacing:-0.04em;}
 *+html body #Gnb .gnb_menu_list > li > a{letter-spacing:-2px;}/* ie7 hack */
 
- #wheader #Gnb .gnb_menu_list > li > a.on,
+ /* #wheader #Gnb .gnb_menu_list > li > a.on,
 #wheader #Gnb .gnb_menu_list > li > a:hover,
-#wheader #Gnb .gnb_menu_list > li > a:focus {color:#fff;background-color:#ffa803}
+#wheader #Gnb .gnb_menu_list > li > a:focus {color:#fff;background-color:#ffa803} */
 
 #wheader #Gnb .gnb_menu_list > li > a.new {position:relative}
 
 #btnGnbOpen{float:left;width:170px;height:44px;padding-left:27px;line-height:44px;color:#000;font-size:16px;font-weight:700;text-align:left;margin-top:5px;}
 #btnGnbOpen:before{content:'';display:inline-block;margin:0 8px 0 0;background:url(../images/hamburger_icon_main.png) no-repeat 0 12px;width:19.44px;height:44px;vertical-align:middle;}
-#btnGnbOpen:hover{background-color:#F99319;color:#FFF}
+/* #btnGnbOpen:hover{background-color:#F99319;color:#FFF} */
 
 
 /* 메인카테고리 레이어 메뉴 */
@@ -168,13 +209,13 @@ a:hover{text-decoration:none;}
 .m_ba_slides_n_w {position:absolute;top:0px;left:5px;width:168px;height:378px;display:table; font-weight:400;margin-top:40px}
 .m_ba_slides_n_w_sub {position:absolute;top:51px;left:0px;width:160px;height:400px;display:table; font-weight:400;}
 .m_ba_slides_n {display:table-cell;width:100%;height:100%;overflow:hidden;text-align:center;vertical-align: middle;}
-.m_ba_slides_n a:hover {background:rgba(255,255,255,1);color:#F99319;height:49px;line-height:49.2px;}
+/* .m_ba_slides_n a:hover {background:rgba(255,255,255,1);color:#F99319;height:49px;line-height:49.2px;} */
 
 
 .m_ba_slides_n_li {display:block;color:#333;font-size:16px;width:170px;height:49px;line-height:49px; }
 .m_ba_slides_n_li img{position:relative;top:10px;left:-5px;}
 .m_ba_slides_n_li a{display:block;color:#333;background:#fff;font-family: 'Noto Sans';font-weight:600;text-align:center;text-decoration-line:none}
-.m_ba_slides_n_li a:hover {background:rgba(255,255,255,1);color:#fdb937;height:49px;line-height:49.2px;}
+/* .m_ba_slides_n_li a:hover {background:rgba(255,255,255,1);color:#fdb937;height:49px;line-height:49.2px;} */
 .m_ba_line_n {border-top:1px solid #f1f1f1}
 .m_ba_n_on {background:rgba(255,255,255,1);height:49px;border-top:1px solid rgba(0,0,0,0.7)}
 .m_ba_n_on a {color:#fff;font-weight: 600; background:none;}
@@ -188,7 +229,7 @@ a:hover{text-decoration:none;}
 .m_slides_sub.sub07 {width:400px;top:0px;left:160px;}
 .m_slid_2dep_txt {float:left;display:inline-table;width:372px;height:347px;background:#F8F8F8;padding-left:30px}
 .m_slid_2dep_txt .mn2dep a{clear:both; display:block;line-height:48px;color:#000;background:none;text-align:left;font-size:16px;list-style:none}
-.m_slid_2dep_txt .mn2dep a:hover {color:#F99319;height:48px;line-height:48px;background:none;font-weight:600;}
+/* .m_slid_2dep_txt .mn2dep a:hover {color:#F99319;height:48px;line-height:48px;background:none;font-weight:600;} */
 
 /*검색창*/
 .instant-search {position:relative;width:330px;height:45px;
@@ -205,7 +246,12 @@ a:hover{text-decoration:none;}
 
 .instant-search,.instant-search__input-container {border-radius: 5px;}
 
-.instant-search__input-container {display: inline-flex;box-sizing: border-box;width: 90%;padding: 2px;background: #eeeeee;}
+
+.instant-search__input-container {
+    display: inline-flex; 
+    box-sizing: border-box; 
+    width: 285px; height: 45px;
+    background: #f5f5f5;}
 .instant-search__input-container img {padding: 2px;margin-left:-20px;}
 
 .instant-search__input-container:focus-within {
@@ -213,12 +259,12 @@ a:hover{text-decoration:none;}
 
 
 .instant-search__input {flex-grow: 1;border: none;outline: none;width: 100%;padding: 0 6px;
-  background: transparent;}
+  background: #F5F5F5;}
 
 .instant-search__result {display: block;color: #333333;text-decoration: none;padding: 10px;
   font-size: 0.8em;cursor: pointer;}
-.search_box_ico{margin-top:-10px}
 
+#searchUsers {display: flex; align-items: center;}
 #searchUsers {display:flex;}
 .m_slid_2dep_brand{height:350px;overflow-x:hidden}
 .brand{width:100%;;margin-top:30px;}
@@ -228,7 +274,7 @@ a:hover{text-decoration:none;}
 .categ ul li img{position:relative;top:10px}
 .categ .all a{font-weight:bold;color:#31845B}
 .categ ul li img{position:relative;margin-top:12px;margin-left:15px}
-.brand ul li ul{width:100%;display: flex;justify-content: space-between;padding-right:25px;font-size:14px;padding-top:5px;padding-bottom:5px;border-bottom:0.5px solid #BBBBBB;}
+.brand ul li ul{width:100%;display: flex;justify-content: space-between;padding-right:25px;font-size:14px;border-bottom:0.5px solid #BBBBBB;}
 .brand ul li ul li a{margin-left:20px}
 
 @media screen and (min-width:1080px){
