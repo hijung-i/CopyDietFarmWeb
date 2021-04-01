@@ -477,7 +477,7 @@ height:50px; overflow:hidden }
   
   @media screen and (min-width:360px)and (max-width:1079px){
   #mHeader{position:fixed;height:90px;background-color:#fff}
-  .btnCart{position:relative;margin-right:22px}
+  .btnCart{position:relative;margin-right:10px}
   #content .pick_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:80px}
   #content .pick_wrap{padding-left:15px;padding-right:15px}
   #content .pick_product h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}
@@ -490,7 +490,7 @@ height:50px; overflow:hidden }
   #content .pick_product ul li .desc p{font-size:12px;padding:5px;text-overflow: ellipsis;white-space:nowrap;}
   #content .pick_product ul li .desc 
   #content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
-  #content .desc ul{margin-left:5px;margin-bottom:10px}
+  #content .desc ul{margin-left:10px;margin-bottom:10px}
   #content .desc .sale{color:#000}
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
   #content .desc .ratio{color:#F32525}
