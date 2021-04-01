@@ -361,10 +361,9 @@ justify-self: center;width: 100%;margin: 0 auto;}
 #contents .desc .ratio{margin-left:-100px;color:#F32525}
 #footer{clear:both}
 
-/* 정해인 */
-
 /* my page shopping list */
-body,html {font-family: 'Nanum Gothic', sans-serif;}
+
+body,html {font-family: Noto Sans KR, sans-serif;}
 #header {
     width: 1080px; margin: 0 auto;
 }
@@ -386,12 +385,11 @@ body,html {font-family: 'Nanum Gothic', sans-serif;}
     padding-left: 10px;
 }
 
-/* main */
+/*마이페이지 공통영역*/
 
 #main {
     width: 100%; height: 218px;
-    margin-top: 100px;
-    background: rgb(224, 224, 224);
+    background-color:#F5F5F5;
     color: #000;
 }
 #main > .main_contents {
@@ -400,7 +398,7 @@ body,html {font-family: 'Nanum Gothic', sans-serif;}
     align-items: center;
 }
 
-/* main > left */
+.main_contents h3 img{position:relative;left:10px}
 .main_contents > .left {
     width: 16%;
     color: #000;
@@ -424,11 +422,11 @@ body,html {font-family: 'Nanum Gothic', sans-serif;}
     padding: 12px 0;
 }
 .left_ctn li:nth-child(2) {
-    font-weight: 800;
+    font-weight:bold;margin-top:-10px;font-size:16px;margin-bottom:13px
 }
 .left_ctn li:nth-child(3) > span {
-    align-items: center; font-size: 12px;
-    padding-left: 4px;
+    align-items: center; font-size: 14px;
+    padding-left: 4px
 }
 
 /* main > center */
@@ -445,6 +443,7 @@ body,html {font-family: 'Nanum Gothic', sans-serif;}
 .center p, .right p {
     font-size: 32px; font-weight: 700;
     text-align: center;
+    margin-top:7px;
     color: #EFA543;
 }
 .center p > span, .right p > span {
