@@ -152,6 +152,9 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 }
 /*주문하기 모바일*/
 @media screen and (min-width:360px) and (max-width:1079px){
+  .detail_title h2{margin:40px 10px 20px 10px;width:100%;text-align:center;}
+  .detail_title a img{position:absolute;top:42px;width:17px}
+  .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 .order{width:100%;margin:0 auto}
 .order_q .title span{display:none}
 .order_q .title{border:none}
@@ -183,14 +186,17 @@ a.button.modal-open{float:right;position:relative;right:20px;top:-20px}
 }
 /*주문하기 웹*/
 @media screen and (min-width:1080px){
+
 .order_a_box{border-bottom:none}
 #my_point{padding-left:10px;width:305px;}
 .delivery_memo{display:none}
  .del_memo_tit{margin-bottom:-80px}
 .coupon_wrap select{width:394px;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-left:14px}
 .mobile{display:none}
-.detail_title h2{margin-left:-15px;margin-bottom:44px;margin-top:55px;font-size:30px;color:#000;
+.detail_title h2{text-align:center;width:100%;margin-bottom:44px;margin-top:55px;font-size:30px;color:#000;
 }
+.btnback{display:none}
+
 .content{width:1080px;margin:0 auto;padding-bottom:266px}
 .content .order{margin-top:20px;width:1080px;margin:0 auto}
 .content .order p{font-size:14px;padding-left:15px;padding-right:15px}
