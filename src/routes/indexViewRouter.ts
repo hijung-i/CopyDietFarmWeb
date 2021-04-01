@@ -107,22 +107,22 @@ router.get('/product', (req: Request, res: Response, next: NextFunction) => {
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_orderList', {})
 })
-router.get('/mypageorderlistdetail', (req: Request, res: Response, next: NextFunction) => {
+router.get('/ol_detail', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_orderList_detail', {})
 })
-router.get('/mypagedelivermag', (req: Request, res: Response, next: NextFunction) => {
+router.get('/delivermag', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_deliver_mag', {})
 })
-router.get('/mypageproductreview', (req: Request, res: Response, next: NextFunction) => {
+router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_productReview', {})
 })
-router.get('/mypageproductinquiry', (req: Request, res: Response, next: NextFunction) => {
+router.get('/p_inquiry', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_productInquiry', {})
 })
-router.get('/mypagesellerinquiry', (req: Request, res: Response, next: NextFunction) => {
+router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'web_seller_inquiry', {})
 })
-router.get('/mypageorderlistpoint', (req: Request, res: Response, next: NextFunction) => {
+router.get('/point', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_orderList_point', {})
 })
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
