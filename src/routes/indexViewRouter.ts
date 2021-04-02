@@ -72,7 +72,7 @@ router.get('/cs-center', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'cs_center', {})
 })
 router.get('/privacyPolicy', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'PrivacyPolicy', {})
+    render(res, 'privacy_policy', {})
 })
 router.get('/invite', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'invite', {})
@@ -96,7 +96,7 @@ router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'alarm', {})
 })
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'TermsOfService', {})
+    render(res, 'terms_of_service', {})
 })
 router.get('/products', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'products', {})
