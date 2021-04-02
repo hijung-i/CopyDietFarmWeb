@@ -5,53 +5,27 @@ max-width: 100%;
 overflow-x: hidden;
 }
 body{min-width:360px}
-
-
-/*고객센터*/
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
 .detail_title a img{position:absolute;top:42px;width:17px}
-.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
-.csBox{padding-left:20px;padding-right:20px;}
-.csBox h3{font-family:'나눔고딕';font-size:14px;font-weight:bold;margin-bottom:15px}
-.csBox p{font-size:14px;font-weight:bold;color:#31845B;margin-bottom:15px}
-.csBox p span{font-weight:bold;font-family:'나눔고딕'}
-.csBox ul li{float:left;font-size:12px;line-height:20px;margin-bottom:15px}
-.cs01:after{content:" | ";margin-left:5px}
-.cs02{margin-left:10px}
-.btn_area{margin-bottom:50px}
-#btnCS{width:100%;height:45px;text-align:center;border:0;cursor: pointer;color: #fff;background-color:#31845B;font-size:14px;
-font-weight:bold;border-radius:5px;font-family:'나눔고딕'}
-#btnCS a{color:#fff;font-size:14px;font-weight:bold;line-height:14px;top:2px;font-family:'나눔고딕'}
-#btnCS img{width:20px;height:20px;margin-left:-20px;margin-right:10px;}
 
-/*알림 받기*/
-@media screen and (min-width:360px)and (max-width:1079px) 
-{
-.alarm_web_title{display:none}
-.alarmBox{margin-top:31px}
-.alarmBox *:not(ul){padding-left:15px;padding-right:20px;}
-.alarmBox h3{font-size:14px;margin-bottom:10px;margin-top:19px}
-
-.alarmS{border-bottom:2px solid #E6E6E6;
-    padding-bottom:20px;padding-left:15px}
-
-.alarmBox{width:100%; margin: 0 auto;padding-right:5px;
- display: flex;justify-content:space-between;   margin-top: 20px;align-items: center;padding-right:15px} }
-
- /*알림 web*/
-@media screen and (min-width:1080px)
-{
-#content{width:1080px;margin:0 auto;padding-bottom:717px}
-#content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
-.w_sidemenu{margin-top:30px;float:left}
-.w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
-.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
-.clicked_menu{background-color:#F99319;color:#fff}
-.alarm_title{float:left;width:831px;border-bottom:2px solid #6B6B6B;padding-bottom:20px;padding-top:27px;font-size:20px;font-weight:bold;color:#000;margin-left:81px}
-.alarmBox{float:left;width:831px;margin-left:81px;padding-right:5px;
- display: flex;justify-content:space-between; margin-top: 20px;align-items: center;padding-right:15px;color:#000;}
-.alarmS{float:left;width:831px;margin-left:81px;margin-top:10px;padding-bottom:15px;border-bottom:1px solid #878787;color:#878787} }
+/*cs-center모바일*/
+@media screen and (min-width:360px) and (max-width:1079px){
+#content{padding-left:15px;padding-right:15px}
+.content h2{display:none}
+.w_sidemenu{display:none}
+.i_info01, .i_info02{display:none}
+.num{display:none}
+#content h3{margin-top:33px;font-size:16px;font-weight:bold;margin-bottom:15px}
+.info_mob p span{color:#31845B;font-size:14px;font-weight:bold}
+.info_mob ul{margin-top:15px}
+.info_mob ul li{float:left;margin-right:10px}
+.info_mob ul li img{position:relative;top:2px}
+.innerbox{clear:both}
+.csBtn01{width:100%;height:45px;text-align:center;border:0;cursor: pointer;color: #fff;background-color:#31845B;font-size:14px;
+font-weight:bold;border-radius:5px;font-family:'나눔고딕';margin-top:15px}
+    .csBtn01 img{width:20px;position:relative;margin-right:10px;margin-left:-15px}
+}
 
 /* 토글 버튼 디자인 */
 .alarmBox input,.alarmBox_web input  {position: absolute; left: -9999px;}
@@ -82,13 +56,15 @@ label:after {
 .alarmBox_web input:checked + label:after { left: calc(100% - 18px); right: 2px; background: #EFA543;}
 .alarmBox label > span {display: none;}
 .alarmBox_web label > span{display:none}
+
 /*cs_center 웹 */
+@media screen and (min-width:1080px){
+.info_mob{display:none}
 #w_content{width:1080px;margin:0 auto;padding-bottom:717px}
 #w_content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
 .w_sidemenu{margin-top:30px;float:left}
 .w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
-.w_sidemenu .active{background-color:#F99319;color:#fff}
-/*.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}*/
+.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
 .clicked_menu{background-color:#F99319;color:#fff}
 .csBox_web{float:left;margin-left:30px;margin-top:30px}
 .csBox_web ul li{float:left}
@@ -100,12 +76,38 @@ label:after {
 .csBox_web ul li ul li{float:right;font-size:14px;color:#000;margin-left:7px}
 .csBox_web ul li ul li img{position:relative;top:5px}
 .csBox_web .i_info01, .i_info02{margin-right:25px}
-.csBox_web .i_info02{margin-top:64px}
+.csBox_web .i_info02{margin-top:64px}}
 
+/*알림 받기*/
 
+@media screen and (min-width:360px)and (max-width:1079px) 
+{
+.alarm_web_title{display:none}
+.alarmBox{margin-top:31px}
+.alarmBox *:not(ul){padding-left:15px;padding-right:20px;}
+.alarmBox h3{font-size:14px;margin-bottom:10px;margin-top:19px}
+
+.alarmS{border-bottom:2px solid #E6E6E6;
+    padding-bottom:20px;padding-left:15px}
+
+.alarmBox{width:100%; margin: 0 auto;padding-right:5px;
+ display: flex;justify-content:space-between;   margin-top: 20px;align-items: center;padding-right:15px} }
+/*알림 web*/
+@media screen and (min-width:1080px)
+{
+#content{width:1080px;margin:0 auto;padding-bottom:717px}
+#content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
+.w_sidemenu{margin-top:30px;float:left}
+.w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
+.w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
+.clicked_menu{background-color:#F99319;color:#fff}
+.alarm_title{float:left;width:831px;border-bottom:2px solid #6B6B6B;padding-bottom:20px;padding-top:27px;font-size:20px;font-weight:bold;color:#000;margin-left:81px}
+.alarmBox{float:left;width:831px;margin-left:81px;padding-right:5px;
+ display: flex;justify-content:space-between; margin-top: 20px;align-items: center;padding-right:15px;color:#000;}
+.alarmS{float:left;width:831px;margin-left:81px;margin-top:10px;padding-bottom:15px;border-bottom:1px solid #878787;color:#878787} }
 
 /*이용약관-개인정보처리방침 웹*/
-.term_contents{margin-top:20px;margin-bottom:161px;font-size:20p}
+.term_contents{margin-top:20px;margin-bottom:161px;font-size:20px}
 
 
 
