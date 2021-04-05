@@ -1,6 +1,5 @@
 td, tr, h1, h2,{padding-left:20px;}
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
 .detail_title a img{position:absolute;top:42px;width:17px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
@@ -61,8 +60,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 /* 배송지 변경 */
 
 .ord_info_del_place{width:90%}
-.change_p;ace {display: flex;justify-content: space-between;padding: 12px 0;font-size: 14px;
-font-weight: 700;}
+
 .change_place span {color: red; font-size:14px;}
 
 .place_addr {width: 90%; margin: 0 auto;}
@@ -129,7 +127,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .orderDetail ul li span{color:#EFA543}
 .t1{font-size:14px;font-weight:bold;letter-spacing:0.1px}
 .t1 span{font-size:12px;color:#BBBBBB;font-weight:normal}
-.t2{;font-size:12px;line-height:14px;margin-top:5px;}
+.t2{font-size:12px;line-height:14px;margin-top:5px;}
 .order_list_box{display:flex;justify-content:flex-start}
 .order ul li{white-space:nowrap}
 .order0{margin-top:-10px}
@@ -152,52 +150,105 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 #content .order_complete_info tr td{font-size:14px;padding-bottom:20px;font-weight:bold;letter-spacing:0.2px}    
 .btn_area{width:400px;margin:0 auto}
 }
-
+/*주문하기 모바일*/
+@media screen and (min-width:360px) and (max-width:1079px){
+  .detail_title h2{margin:40px 10px 20px 10px;width:100%;text-align:center;}
+  .detail_title a img{position:absolute;top:42px;width:17px}
+  .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+.order{width:100%;margin:0 auto}
+.order_q .title span{display:none}
+.order_q .title{border:none}
+.product_info{margin-bottom:20px}
+.product_info ul{display:inline-block;font-size:12px;padding-left:10px}
+.order_a ul li{float:none;}
+.info02{display:none}
+.company_product h3{font-size:14px;font-weight:normal}
+.company_product .title{width:100%;border-bottom:1px solid #BBBBBB;padding-bottom:10px;margin-bottom:18px}
+.order_customer{border-top:8px solid #F1F1F1;padding-top:15px;padding-bottom:10px}
+div.modal-con.modal1{display:none}
+a.button.modal-open{float:right;position:relative;right:20px;top:-20px}
+.order_customer p{font-weight:bold}
+.modal{display:none}
+.order_customer_info span{color:#6B6B6B}
+.change_place p{font-size:14px;font-weight:bold}
+.del_memo_wrap{border-bottom:8px solid #f1f1f1;padding-bottom:24px}
+.delivery_memo{width:100%;height:40px;border-color:#BBBBBB;border-radius:5px}
+#del_memo_ctn{height:80px;margin-top:-10px;border-color:#BBBBBB}
+.coupon_wrap select{width:100%;height:45px;border-radius:5px;border-color:#BBBBBB}
+.coupon_section{border-bottom:8px solid #f1f1f1}
+.final_price p{font-size:16px;font-weight:bold;border-bottom:1px solid #BBBBBB;padding-bottom:20px}
+ .total_price{border-top:0.5px solid #BBBBBB}
+ .final_price_web{border-bottom:8px solid#f1f1f1}
+.payment_method{padding-top:24px}
+.payment_method p{font-size:16px;font-weight:bold}
+    .agree{display:none}
+    .order_confirm p{margin-top:11px;margin-bottom:25px;margin-left:25px;margin-right:45px}
+}
 /*주문하기 웹*/
-#contents{width:1080px;margin:0 auto;padding-bottom:266px}
-#contents .order{margin-top:20px;width:1080px;margin:0 auto}
-#contents .order p{font-size:14px;padding-left:15px;padding-right:15px}
-#contents .downArrow{position:relative;margin-left:949px}
-#contents .company_product{width:1080px;margin-bottom:-20px;border-bottom:8px solid #f1f1f1;}
-#contents .company_product h3{width:1080px;font-size:14px;font-weight:bold;color:#000;margin-bottom:31px;border-bottom:1px solid #F5F5F5;padding-bottom:10px;padding-top:10px}
-#contents .order_q .title{width:1080px;font-size:18px;font-weight:bold;color:#000;}
-#contents .order_q .title span{margin-left:5.5px;color:#F99319;font-size:14px;font-weight:bold;position:relative;top:-2px}
-#contents .info01 ul li{float:none;position:relative;left:70px;top:-50px}
-#contents .info02{float:right;position:relative;top:-89px;left:-50px}
-#contents .info02 ul li{margin-right:40px}
-#contents .info02 ul li img{position:relative;left:50px;width:10px;top:7px}
-#contents .order_a{}
-#contents .order_customer p{font-size:18px;font-weight:bold;color:#000;}
-#contents .order_customer p img{position:relative;right:5px;width:8px;top:5px;}
-#contents .order_a_box{margin-left:-10px}
-#contents .order_cust_info tr td span{color:#000;font-weight:bold;}
+@media screen and (min-width:1080px){
 
-#contents .change_place{border-top:8px solid #f1f1f1}
-#contents .change_place p{margin-top:33px;font-size:18px;font-weight:bold;color:#000;}
-#contents .change_place p img{position:relative;right:5px;width:8px;top:5px}
-#contents .change{float:right;position:relative;top:-55px;right:20px;}
-#contents .change button{background-color:#fff;color:#000;font-size:14px;font-weight:normal}
-#contents .place_addr{width:1080px;margin-left:22px;margin-top:15px}
-#contents .del_memo_wrap{width:1080px;margin-left:6px;margin-bottom:35px}
-#contents .coupon_section{width:1080px;border-top:8px solid #f1f1f1;margin-bottom:-20px}
-#contents .final_price_web .order_box{border-bottom:8px solid #f1f1f1;padding-bottom:20px;}
-#contents .final_price p{;font-size:18px;font-weight:bold;color:#000;margin-bottom:18px;border-top:8px solid #f1f1f1;padding-top:20px}
-#contents .final_price_web{background-color:#F8F8F8;border:1px solid #E4E4E4;}
-#contents .payment_method p{font-size:18px;font-weight:bold;color:#000;margin-bottom:18px;padding-top:20px}
-#contents .order_payment{width:1080px;border-bottom:8px solid #f1f1f1;padding-bottom:20px;}
-#contents .order_payment ul{display:grid;grid-template-columns: repeat(5, 1fr);
+.order_a_box{border-bottom:none}
+#my_point{padding-left:10px;width:305px;}
+.delivery_memo{display:none}
+ .del_memo_tit{margin-bottom:-80px}
+.coupon_wrap select{width:394px;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-left:14px}
+.mobile{display:none}
+.detail_title h2{text-align:center;width:100%;margin-bottom:44px;margin-top:55px;font-size:30px;color:#000;
+}
+.btnback{display:none}
+
+.content{width:1080px;margin:0 auto;padding-bottom:266px}
+.content .order{margin-top:20px;width:1080px;margin:0 auto}
+.content .order p{font-size:14px;padding-left:15px;padding-right:15px}
+.content .downArrow{position:relative;margin-left:949px}
+.content .company_product{width:1080px;margin-bottom:-20px;border-bottom:8px solid #f1f1f1;}
+.content .company_product h3{width:1080px;font-size:14px;font-weight:bold;color:#000;margin-bottom:31px;border-bottom:1px solid #F5F5F5;padding-bottom:10px;padding-top:10px}
+.content .order_q .title{width:1080px;font-size:18px;font-weight:bold;color:#000;}
+.content .order_q .title span{margin-left:5.5px;color:#F99319;font-size:14px;font-weight:bold;position:relative;top:-2px}
+.content .info01 ul li{float:none;position:relative;left:70px;top:-50px}
+.content .info02{float:right;position:relative;top:-89px;left:-50px}
+.content .info02 ul li{margin-right:40px}
+.content .info02 ul li img{position:relative;left:50px;width:10px;top:7px}
+.content .order_customer p{font-size:18px;font-weight:bold;color:#000;}
+.content .order_customer p img{position:relative;right:5px;width:8px;top:5px;}
+.content .order_a_box{margin-left:-10px}
+.content .order_cust_info tr td span{color:#000;font-weight:bold;}
+
+.content .change_place{border-top:8px solid #f1f1f1}
+.content .change_place p{margin-top:33px;font-size:18px;font-weight:bold;color:#000;}
+.content .change_place p img{position:relative;right:5px;width:8px;top:5px}
+.content .change{float:right;position:relative;top:-55px;right:20px;}
+.content .change button{background-color:#fff;color:#000;font-size:14px;font-weight:normal}
+.content .place_addr{width:1080px;margin-left:22px;margin-top:15px}
+.content .del_memo_wrap{width:1080px;margin-left:6px;margin-bottom:35px}
+.content .coupon_section{width:1080px;border-top:8px solid #f1f1f1;margin-bottom:-20px}
+.content .final_price_web .order_box{border-bottom:8px solid #f1f1f1;padding-bottom:20px;}
+.content .final_price p{font-size:18px;font-weight:bold;color:#000;margin-bottom:18px;border-top:8px solid #f1f1f1;padding-top:20px}
+.content .final_price_web{background-color:#F8F8F8;border:1px solid #E4E4E4;}
+.content .payment_method p{font-size:18px;font-weight:bold;color:#000;margin-bottom:18px;padding-top:20px}
+.content .order_payment{width:1080px;border-bottom:8px solid #f1f1f1;padding-bottom:20px;}
+.content .order_payment ul{display:grid;grid-template-columns: repeat(5, 1fr);
 ;align-items:left;
 justify-self: left;width: 100%;}
-#contents .order_payment ul li{border:1px solid #E6E6E6;padding:5px;border-radius:5px;text-align:center;margin:5px;width:200px;height:45px}
-#contents .order_payment ul li img{position:relative;top:5px}
-#contents .order_confirm{width:1080px;margin:auto;padding:20px 15px 15px;}
-#contents .agree{margin-top:20.5px;}
-#contents .agree p{float:left;}
-#contents .agree01{font-size:12px;color:#6B6B6B;margin-bottom:50.5px}
-#contents .agree01 span{color:#BBBBBB}
-#contents .btn_area{padding-top:50.5px}
+.content .order_payment ul li{border:1px solid #E6E6E6;padding:5px;border-radius:5px;text-align:center;margin:5px;width:200px;height:45px}
+.content .order_payment ul li img{position:relative;top:5px}
+.content .order_confirm{width:1080px;margin:auto;padding:20px 15px 15px;}
+.content .agree{margin-top:20.5px;}
+.content .agree p{float:left;}
+.content .agree01{font-size:12px;color:#6B6B6B;margin-bottom:50.5px}
+.content .agree01 span{color:#BBBBBB}
+.content .btn_area{padding-top:50.5px}
 
 /*배송지 변경 웹 모달*/
+a.button{text-decoration:none;color:#000;margin-left:1020px;position:relative;top:-30px;font-weight:bold}
+#modal{display:none;position:fixed;width:100%;height:100%;top:0; left:0; background:rgba(0,0,0,0.3); z-index:1000}
+.modal-con{width:1068px;height:auto;display:none;
+  position:fixed;top:50%; left:50%;transform: translate(-50%,-50%);max-width: 60%; min-height: 30%; background:#fff; z-index:1000}
+.modal-con .title h2{font-size:18px;padding: 20px;font-weight:bold;}
+.modal-con .con{font-size:15px; line-height:1.3; padding: 30px;}
+.modal-con .close{display:block;position:absolute;
+  width:30px; height:30px;right:4px;top:15px;}
+
 
 /*결제중 페이지 웹+모바일*/
 .order_process{width:1080px;margin:0 auto}
@@ -250,6 +301,29 @@ input#secret[type="checkbox"]:checked + .secret::before {
   top: 2px;
   border-radius: 50%;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

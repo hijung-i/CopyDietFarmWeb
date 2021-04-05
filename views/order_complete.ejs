@@ -20,12 +20,13 @@
 <body>
     <div class="web_order_complete">
         <%-include('general/header_web') %>
-        <section class="detail_title">
-          <h2 style="margin-left:-15px">주문완료</h2>
-          <a href="#"><img src="images/leftarrow_ico_my.png" style="width:17px;display:none"></a>
-      </section>
+    </div>
+    
   
-  
+    <section class="detail_title">
+        <h2 style="margin-left:-15px">주문완료</h2>
+        <a href="#"><img src="images/leftarrow_ico_my.png" style="width:17px;display:none"></a>
+    </section>
       <main id="content" class="content">
           <div class="order_complete_info">
               <h3>주문이 완료되었습니다.</h3>
@@ -68,58 +69,7 @@
               <a href="index.html"><button type="button" id="btnOrder">홈으로</button></a>
           </div>
       </main>
-      </div>
 
-       <div class="mobile_order_complete">
-      <section class="detail_title">
-          <h2 style="margin-left:-15px">주문완료</h2>
-          <a href="#"><img src="images/leftarrow_ico_my.png" style="width:17px"></a>
-      </section>
-  
-  
-      <main id="content" class="content">
-          <div class="order_complete_info">
-              <h3>주문이 완료되었습니다.</h3>
-              <div class="order_complete_wrap">
-                  <table>
-                      <tr class="order_no">
-                          <td><span>주문번호</span></td>
-                          <td>2020101920201019
-                          </td>
-                      </tr>
-                      <tr>
-                          <td><span>배송지</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                          <td style="line-height:24px">서울 강남구 테헤란로 8길 11-4 202호<br>박민지 010-1234-5678</td>
-  
-                      </tr>
-                      <tr>
-                          <td><span>결제정보</span></td>
-                          <td>
-                              <ul>
-                                  <li>신용카드</li>
-                                  <li>우리카드(1234 **** 8888 567*)</li>
-                                  <li>일시불</li>
-                                  <li>2020-11-12 11:30:39</li>
-                              </ul>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td><span>결제금액</span></td>
-                          <td style="color:#31845B">100,0000원</td>
-                      </tr>
-                      <tr>
-                          <td><span>포인트</span></td>
-                          <td style="color:#31845B;">150p</td>
-                      </tr>
-                  </table>
-                  <p style="text-align:center;color:#878787;margin-bottom:38px">- 포인트는 구매확정 후 적립됩니다.</p>
-              </div>
-          </div>
-          <div class="btn_area">
-              <a href="index.html"><button type="button" id="btnOrder">홈으로</button></a>
-          </div>
-      </main>
-     </div>
       <script>
            $(document).ready(function(){
           $("#gnbAllMenu").hide();

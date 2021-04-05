@@ -22,286 +22,75 @@
 <body>
     <div class="web_shoppingcart">
     <%-include('general/header_web') %>
+    </div>
+   
     <section class="detail_title">
-        <h2 style="margin-left:-15px;margin-bottom:44px;margin-top:55px;font-size:30px;color:#000;">장바구니</h2>
-   </section>
-    <main id="content"  class="content" style="width:1080px;margin:0 auto;padding-bottom:361px">
-      <section id="shpcart_select">
-       <div class="group" style="margin-top:13px">
-        <input type="checkbox" id="secret" class="checkall" style="display:none">
-        <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
-                    </div>
-        <div class="shpcart_select_del_web">
-            <button>선택삭제</button>
-        </div>
-    </section>
-    <div class="line"></div>
-    <div class="shop_null" style="display:none">
-        <p>장바구니에 담긴 상품이 없습니다</p>
-    </div>
- <div class="shop_active">
-    <section id="shplist">
-        <!-- brand 1 -->
-        <div class="brand_1">
-            <h3>아임월</h3>
-            <div class="shoplist_info">
-                <div class="shoplist_ctn">
-                    <input type="checkbox" id="shoplist_part_selt" name="chk">
-                    <div class="shopcart_thum">
-                    </div>
-                    <p>(아임월) 굿밸런스 라이트밀 도시락</p>
-                    <a href="#"><i class="fas fa-times"></i></a>
-                </div>
-                <div class="shoplist_price_web">
-                    <div class="shoplinst_count">
-                        <p>라이트밀 도시락 5종</p>
-                        <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" style="top:-10px"></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                        </div>
-                        <div class="price_web">
-                            60,720원
-                        </div>
-                    </div>
-                  </div>
+        <h2>장바구니</h2>
+          <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
             </div>
-        </div>
-
-        <div class="line"></div>
-        <!-- brand2 -->
-        <div class="brand_1">
-            <h3>바디나인</h3>
-            <div class="shoplist_info">
-                <div class="shoplist_ctn">
-                    <input type="checkbox" id="shoplist_part_selt" name="chk">
-                    <div class="shopcart_thum">
-                        <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
-                    </div>
-                    <p>(아임월) 굿밸런스 라이트밀 도시락</p>
-                    <a href="#"><i class="fas fa-times"></i></a>
-                </div>
-                <div class="shoplist_price_web">
-                    <div class="shoplinst_count">
-                        <p>라이트밀 도시락 5종</p>
-                        <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" style="top:-10px"></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+       </section>
+        <main id="content" class="content">
+          <section id="shpcart_select">
+           <div class="group" style="margin-top:13px">
+            <input type="checkbox" id="secret">
+            <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
                         </div>
-                        <div class="price_web">
-                            60,720원
-                        </div>
-                    </div>
-              
-                </div>
-            </div>
-        </div>
-        <div class="brand_1">
-            <h3></h3>
-            <div class="shoplist_info">
-                <div class="shoplist_ctn">
-                    <input type="checkbox" id="shoplist_part_selt" name="chk">
-                    <div class="shopcart_thum">
-                        <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
-                    </div>
-                    <p>(아임월) 굿밸런스 라이트밀 도시락</p>
-                    <a href="#"><i class="fas fa-times"></i></a>
-                </div>
-                <div class="shoplist_price_web">
-                    <div class="shoplinst_count">
-                        <p>라이트밀 도시락 5종</p>
-                        <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" style="top:-10px"></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                        </div>
-                        <div class="price_web">
-                            60,720원
-                        </div>
-                    </div>
-                 </div>
-            </div>
-        </div>
-        <div class="line"></div>
-        <!-- brand 3-->
-        <div class="brand_1">
-            <h3>아임월</h3>
-            <div class="shoplist_info">
-                <div class="shoplist_ctn">
-                    <input type="checkbox" id="shoplist_part_selt" name="chk">
-                    <div class="shopcart_thum">
-                        <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
-                    </div>
-                    <p>(아임월) 굿밸런스 라이트밀 도시락</p>
-                    <a href="#"><i class="fas fa-times"></i></a>
-                </div>
-                <div class="shoplist_price_web">
-                    <div class="shoplinst_count">
-                        <p>라이트밀 도시락 5종</p>
-                        <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" style="top:-10px"></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                        </div>
-                        <div class="price_web">
-                            60,720원
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-    <div class="line"></div>
-
-    <section id="shoplist_t_price_web">
-       <div class="shopBox01">
-           <h3>배송지</h3>
-           <p>서울 강남구 테헤란로 8길 11-4 202호</p>
-           <p><span>박민지 &nbsp;&nbsp;&nbsp;010-3288-0568</span></p>
-           <button type="button" class="shopBtn01" id="my-button">배송지 변경</button>
-           <div id="element_to_pop_up">
-           <a class="b-close"><img src="images/x_icon_login.png"></a>
- 
-        <h2>배송지 관리</h2>
-      <h3>배송지 변경</h3>
-
-    <section class="delivery_manage_list">
-       
-<input id="check" type="checkbox">
- 
-        <div class="del_mng_list_top">
-            <ul class="del_mng_type">
-                <li class="type_first">회사</li>
-                <li class="type_second"><span class="tema">기본배송지</span></li>
-            </ul>
-            <ul class="edit_remove">
-                <li class="edit_first"><a>수정</a></li>
-                <li><img src="images/l_icon_category@2x.png"></li>
-                <li class="edit_second"><a>삭제</a></li>
-            </ul>
-        </div>
-        <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-        <p class="customer_info">박민지<img src="images/l_icon_category@2x.png">010-3288-0568</p>
-    </section>
-
-    <div class="del_line_thick"></div>
-    <section class="delivery_manage_list">
-       <input id="check" type="checkbox">
-        <div class="del_mng_list_top">
-            <ul class="del_mng_type">
-                <li class="type_first">회사</li>
-            </ul>
-            <ul class="edit_remove">
-                <li class="basic"><a>기본배송지로 설정</a><img src="images/l_icon_category@2x.png"></li>
-                <li class="edit_first"><a>수정</a>
-                    <img src="images/l_icon_category@2x.png">
-                </li>
-                <li class="edit_second"><a>삭제</a></li>
-            </ul>
-        </div>
-        <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-        <p class="customer_info">박민지<img src="images/l_icon_category@2x.png">010-3288-0568</p>
-    </section>
-
-    <div class="del_line_thick"></div>
-
-    <section class="delivery_manage_list">
-        <input id="check" type="checkbox">
-        <div class="del_mng_list_top">
-            <ul class="del_mng_type">
-                <li class="type_first">회사</li>
-            </ul>
-            <ul class="edit_remove">
-                <li class="basic"><a>기본배송지로 설정</a><img src="images/l_icon_category@2x.png"></li>
-                <li class="edit_first"><a>수정</a></li>
-                <li><img src="images/l_icon_category@2x.png"></li>
-                <li class="edit_second"><a>삭제</a></li>
-            </ul>
-        </div>
-        <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-        <p class="customer_info">박민지<img src="images/l_icon_category@2x.png">010-3288-0568</p>
-    </section>
-
-    <div class="del_line_thick"></div>
-
-   <div class="btn_area">
-        <button type="button" id="btnRegister">확인</button>
-        </div>
-        <!--//btnJoin-->
-            </div>
-       </div>
-           <div class="shopBox02">
-           <table>
-               <tr>
-                   <td class="t1">상품 금액</td>
-                   <td>223,600원</td>
-               </tr>
-                <tr>
-                   <td class="t1">상품 할인 금액</td>
-                   <td>-76,400원</td>
-               </tr>
-                <tr>
-                   <td class="t1">배송비</td>
-                   <td>+0원</td>
-               </tr>
-                <tr class="total">
-                   <td class="t1">총 결제 금액</td>
-                   <td>147,200원</td>
-               </tr>
-           </table>
-       </div>
-    </section>
-    <div class="btn_area_web">
-        <button type="button" class="purchaseBtn" style="border:none">구매하기</button>
-    </div>
-    </main>
-     </div>
-     <div class="mobile_shoppingcart">
-        <section class="detail_title">
-            <h2>장바구니</h2>
-            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
-            </div>
-        </section>
-    
-        <section id="shpcart_select">
-            <div class="shpcart_select">
-                <input type="radio" id="selt" name="named" value="valued">
-                <label for="selt">전체선택</label>
-            </div>
-            <div class="shpcart_select_del">
+            <div class="shpcart_select_del_web">
                 <button>선택삭제</button>
             </div>
         </section>
         <div class="line"></div>
+        <div class="shop_null" style="display:none">
+            <p>장바구니에 담긴 상품이 없습니다</p>
+        </div>
+     <div class="shop_active" style="">
         <section id="shplist">
             <!-- brand 1 -->
             <div class="brand_1">
                 <h3>아임월</h3>
                 <div class="shoplist_info">
                     <div class="shoplist_ctn">
-                        <input type="checkbox" id="shoplist_part_selt">
+                        <input type="radio" id="shoplist_part_selt">
                         <div class="shopcart_thum">
                         </div>
-                        <p>(아임월) 굿밸런스 라이트밀 도시락</p>
-                        <a href="#"><i class="fas fa-times"></i></a>
+                        <p class="product_name">(아임월) 굿밸런스 라이트밀 도시락</p>
+                        <a href="#"><img src="images/x_icon_login.png" style="width:12px"></a>
                     </div>
-                    <div class="shoplist_price">
+                    <div class="shoplist_price_web">
                         <div class="shoplinst_count">
-                            <p>60,720원</p>
+                            <p>라이트밀 도시락 5종</p>
                             <div class="number-input">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" style="top:-10px"></button>
                                 <input class="quantity" min="0" name="quantity" value="1" type="number">
                                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                             </div>
+                            <div class="price_web">
+                                60,720원
+                            </div>
+                            
                         </div>
-                        <div class="price_info">
-                            <p>상품금액</p>
-                            <p>60,720원</p>
-                        </div>
-                    </div>
+                      </div>
                 </div>
+                <div class="p_price">
+                    <p class="product_p">상품금액 </p>
+                    <p>9,900원</p>
+                </div>
+                <div>
+                  <table class="detail_price">
+                                    <tr>
+                                        <td><span>상품금액</span></td>
+                                        <td class="price">9,900원</td>
+                                    </tr>
+                                      <tr>
+                                        <td><span>배송비</span></td>
+                                        <td class="price">4,000원</td>
+                                    </tr>
+                                      <tr>
+                                        <td><span>주문금액</span></td>
+                                        <td class="price">13,900원</td>
+                                    </tr>
+                  </table>
+            </div>
             </div>
     
             <div class="line"></div>
@@ -310,115 +99,256 @@
                 <h3>바디나인</h3>
                 <div class="shoplist_info">
                     <div class="shoplist_ctn">
-                        <input type="checkbox" id="shoplist_part_selt">
+                        <input type="radio" id="shoplist_part_selt">
                         <div class="shopcart_thum">
-                   
+                            <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
                         </div>
-                        <p>(아임월) 굿밸런스 라이트밀 도시락</p>
-                        <a href="#"><i class="fas fa-times"></i></a>
+                        <p class="product_name">(아임월) 굿밸런스 라이트밀 도시락</p>
+                        <a href="#"><img src="images/x_icon_login.png" style="width:12px"></a>
                     </div>
-                    <div class="shoplist_price">
+                    <div class="shoplist_price_web">
                         <div class="shoplinst_count">
-                            <p>60,720원</p>
+                            <p>라이트밀 도시락 5종</p>
                             <div class="number-input">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" style="top:-10px"></button>
                                 <input class="quantity" min="0" name="quantity" value="1" type="number">
                                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                             </div>
+                            <div class="price_web">
+                                60,720원
+                            </div>
                         </div>
-                        <div class="price_info">
-                            <p>상품금액</p>
-                            <p>60,720원</p>
-                        </div>
+                  
                     </div>
                 </div>
+             <div class="p_price">
+                    <p class="product_p">상품금액 </p>
+                    <p>9,900원</p>
+                </div>
+                <div>
+                  <table class="detail_price">
+                                    <tr>
+                                        <td><span>상품금액</span></td>
+                                        <td class="price">9,900원</td>
+                                    </tr>
+                                      <tr>
+                                        <td><span>배송비</span></td>
+                                        <td class="price">4,000원</td>
+                                    </tr>
+                                      <tr>
+                                        <td><span>주문금액</span></td>
+                                        <td class="price">13,900원</td>
+                                    </tr>
+                  </table>
             </div>
+            </div>
+    
             <div class="brand_1">
                 <h3></h3>
                 <div class="shoplist_info">
                     <div class="shoplist_ctn">
-                        <input type="checkbox" id="shoplist_part_selt">
+                        <input type="radio" id="shoplist_part_selt">
                         <div class="shopcart_thum">
                             <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
                         </div>
-                        <p>(아임월) 굿밸런스 라이트밀 도시락</p>
-                        <a href="#"><i class="fas fa-times"></i></a>
+                        <p class="product_name">(아임월) 굿밸런스 라이트밀 도시락</p>
+                        <a href="#"><img src="images/x_icon_login.png" style="width:12px"></a>
                     </div>
-                    <div class="shoplist_price">
+                    <div class="shoplist_price_web">
                         <div class="shoplinst_count">
-                            <p>60,720원</p>
+                            <p>라이트밀 도시락 5종</p>
                             <div class="number-input">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" style="top:-10px"></button>
                                 <input class="quantity" min="0" name="quantity" value="1" type="number">
                                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                             </div>
+                            <div class="price_web">
+                                60,720원
+                            </div>
                         </div>
-                        <div class="price_info">
-                            <p>상품금액</p>
-                            <p>60,720원</p>
-                        </div>
-                    </div>
+                     </div>
                 </div>
+             <div class="p_price">
+                    <p class="product_p">상품금액 </p>
+                    <p>9,900원</p>
+                </div>
+                <div>
+                  <table class="detail_price">
+                                    <tr>
+                                        <td><span>상품금액</span></td>
+                                        <td class="price">9,900원</td>
+                                    </tr>
+                                      <tr>
+                                        <td><span>배송비</span></td>
+                                        <td class="price">4,000원</td>
+                                    </tr>
+                                      <tr>
+                                        <td><span>주문금액</span></td>
+                                        <td class="price">13,900원</td>
+                                    </tr>
+                  </table>
             </div>
+            </div>
+    
             <div class="line"></div>
             <!-- brand 3-->
             <div class="brand_1">
                 <h3>아임월</h3>
                 <div class="shoplist_info">
                     <div class="shoplist_ctn">
-                        <input type="checkbox" id="shoplist_part_selt">
+                        <input type="radio" id="shoplist_part_selt">
                         <div class="shopcart_thum">
                             <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
                         </div>
-                        <p>(아임월) 굿밸런스 라이트밀 도시락</p>
-                        <a href="#"><i class="fas fa-times"></i></a>
+                        <p class="product_name">(아임월) 굿밸런스 라이트밀 도시락</p>
+                        <a href="#"><img src="images/x_icon_login.png" style="width:12px"></a>
                     </div>
-                    <div class="shoplist_price">
+                    <div class="shoplist_price_web">
                         <div class="shoplinst_count">
-                            <p>60,720원</p>
+                            <p>라이트밀 도시락 5종</p>
                             <div class="number-input">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" style="top:-10px"></button>
                                 <input class="quantity" min="0" name="quantity" value="1" type="number">
                                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                             </div>
-                        </div>
-                        <div class="price_info">
-                            <p>상품금액</p>
-                            <p>60,720원</p>
+                            <div class="price_web">
+                                60,720원
+                            </div>
                         </div>
                     </div>
                 </div>
+             <div class="p_price">
+                    <p class="product_p">상품금액 </p>
+                    <p>9,900원</p>
+                </div>
+                <div>
+                  <table class="detail_price">
+                                    <tr>
+                                        <td><span>상품금액</span></td>
+                                        <td class="price">9,900원</td>
+                                    </tr>
+                                      <tr>
+                                        <td><span>배송비</span></td>
+                                        <td class="price">4,000원</td>
+                                    </tr>
+                                      <tr>
+                                        <td><span>주문금액</span></td>
+                                        <td class="price">13,900원</td>
+                                    </tr>
+                  </table>
             </div>
-        </section>
+            </div>
     
+        </section>
+    </div>
         <div class="line"></div>
     
-        <section id="shoplist_total_price">
-            <div class="prod_price">
-                <p>상품 금액</p>
-                <p>223,600원</p>
-            </div>
-            <div class="prod_discount">
-                <p>상품 할인 금액</p>
-                <p>-76,400원</p>
-            </div>
-            <div class="deliver_price">
-                <p>배송비</p>
-                <p>+0원</p>
-            </div>
-            <div class="line_2"></div>
+        <section id="shoplist_t_price_web">
+           <div class="shopBox01">
+               <h3>배송지</h3>
+               <p>서울 강남구 테헤란로 8길 11-4 202호</p>
+               <p><span>박민지 &nbsp;&nbsp;&nbsp;010-3288-0568</span></p>
+               <button type="button" class="shopBtn01" id="my-button">배송지 변경</button>
+               <div id="element_to_pop_up">
+               <a class="b-close"><img src="images/x_icon_login.png"></a>
+     
+            <h2>배송지 관리</h2>
+          <h3>배송지 변경</h3>
     
-    
-            <div class="total_price">
-                <p>총 결제 금액</p>
-                <p>147,200원</p>
+        <section class="delivery_manage_list">
+           
+    <input id="check" type="checkbox">
+     
+            <div class="del_mng_list_top">
+                <ul class="del_mng_type">
+                    <li class="type_first">회사</li>
+                    <li class="type_second"><span class="tema">기본배송지</span></li>
+                </ul>
+                <ul class="edit_remove">
+                    <li class="edit_first"><a>수정</a></li>
+                    <li><img src="images/l_icon_category@2x.png"></li>
+                    <li class="edit_second"><a>삭제</a></li>
+                </ul>
             </div>
+            <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
+            <p class="customer_info">박민지<img src="images/l_icon_category@2x.png">010-3288-0568</p>
         </section>
     
-        <div class="btn_area">
-            <button type="button" id="btnOrder">주문하기</button>
+        <div class="del_line_thick"></div>
+        <section class="delivery_manage_list">
+           <input id="check" type="checkbox">
+            <div class="del_mng_list_top">
+                <ul class="del_mng_type">
+                    <li class="type_first">회사</li>
+                </ul>
+                <ul class="edit_remove">
+                    <li class="basic"><a>기본배송지로 설정</a><img src="images/l_icon_category@2x.png"></li>
+                    <li class="edit_first"><a>수정</a>
+                        <img src="images/l_icon_category@2x.png">
+                    </li>
+                    <li class="edit_second"><a>삭제</a></li>
+                </ul>
+            </div>
+            <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
+            <p class="customer_info">박민지<img src="images/l_icon_category@2x.png">010-3288-0568</p>
+        </section>
+    
+        <div class="del_line_thick"></div>
+    
+        <section class="delivery_manage_list">
+            <input id="check" type="checkbox">
+            <div class="del_mng_list_top">
+                <ul class="del_mng_type">
+                    <li class="type_first">회사</li>
+                </ul>
+                <ul class="edit_remove">
+                    <li class="basic"><a>기본배송지로 설정</a><img src="images/l_icon_category@2x.png"></li>
+                    <li class="edit_first"><a>수정</a></li>
+                    <li><img src="images/l_icon_category@2x.png"></li>
+                    <li class="edit_second"><a>삭제</a></li>
+                </ul>
+            </div>
+            <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
+            <p class="customer_info">박민지<img src="images/l_icon_category@2x.png">010-3288-0568</p>
+        </section>
+    
+        <div class="del_line_thick"></div>
+    
+       <div class="btn_area">
+            <button type="button" id="btnRegister">확인</button>
+            </div>
+            <!--//btnJoin-->
+                </div>
+           </div>
+               <div class="shopBox02">
+               <table class="final">
+                   <tr>
+                       <td class="t1">상품 금액</td>
+                       <td class="price">223,600원</td>
+                   </tr>
+                    <tr>
+                       <td class="t1">상품 할인 금액</td>
+                       <td class="price">-76,400원</td>
+                   </tr>
+                    <tr>
+                       <td class="t1">배송비</td>
+                       <td class="price">+0원</td>
+                   </tr>
+                    <tr class="total">
+                       <td class="t1">총 결제 금액</td>
+                       <td class="price">147,200원</td>
+                   </tr>
+               </table>
+           </div>
+        </section>
+        <div class="btn_area_web">
+            <tr class="total">
+                       <td class="t1">총 결제 금액</td>
+                       <td class="price">147,200원</td>
+                   </tr>
+            <button type="button" class="purchaseBtn" style="border:none">구매하기</button>
         </div>
-    </div>
+        </main>
     <script>
         //웹 햄버거 버튼 
              $(document).ready(function(){

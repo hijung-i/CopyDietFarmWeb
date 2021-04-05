@@ -35,120 +35,14 @@
     </style>
     <%-include('general/head') %>
     <link rel="stylesheet" href="/css/style02.css">
+    <!-- font awesome -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 
 <body>
-    <div class="web_sub">
-        <%-include('general/header_web') %>
-        <main id="contents" class="contents">
-            <div class="main_sub_wrap">
-                <section class="main_sub">
-                    <h2>신상</h2>
-                    <form name="#" id="#" method="get" action="#">
-                        <div class="n_sort">
-                            <div class="sort">
-                                <select name="#" id="#" class=formSelect style="border:none;margin-right:25px">
-                                    <option value="#">추천순</option>
-                                    <option value="#">신상품순</option>
-                                    <option value="#">인기상품순</option>
-                                    <option value="#">낮은 가격순</option>
-                                    <option value="#">높은 가격순</option>
-                                </select>
-                            </div>
-                        </div>
-                    </form>
-        <div class="sub_items">
-         <ul>
-          <li>    
-            <a href="#">
-                <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                </div>
-                <div class="desc">
-                    <p class="title">제품이름</p>
-                    <ul>
-                        <li class="sale">23,400원</li>
-                        <li class="cost">26,000원</li>
-                        <li class="ratio">10%</li>
-                    </ul>
-                </div>
-                </a>
-           </li>
-           <li>    
-            <a href="#">
-                <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                </div>
-                <div class="desc">
-                    <p class="title">제품이름</p>
-                    <ul>
-                        <li class="sale">23,400원</li>
-                        <li class="cost">26,000원</li>
-                        <li class="ratio">10%</li>
-                    </ul>
-                </div>
-                </a>
-           </li>
-           <li>    
-            <a href="#">
-                <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                </div>
-                 <div class="desc">
-                    <p class="title">제품이름</p>
-                    <ul>
-                        <li class="sale">23,400원</li>
-                        <li class="cost">26,000원</li>
-                        <li class="ratio">10%</li>
-                    </ul>
-                </div>
-                </a>
-           </li>
-           <li>    
-            <a href="#">
-                <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                </div>
-                 <div class="desc">
-                    <p class="title">제품이름</p>
-                    <ul>
-                        <li class="sale">23,400원</li>
-                        <li class="cost">26,000원</li>
-                        <li class="ratio">10%</li>
-                    </ul>
-                </div>
-                </a>
-           </li>
-           <li>    
-            <a href="#">
-                <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                </div>
-                <div class="desc">
-                    <p class="title">제품이름</p>
-                    <ul>
-                        <li class="sale">23,400원</li>
-                        <li class="cost">26,000원</li>
-                        <li class="ratio">10%</li>
-                    </ul>
-                </div>
-                </a>
-           </li>
-           <li>    
-            <a href="#">
-                <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                </div>
-                <div class="desc">
-                    <p class="title">제품이름</p>
-                    <ul>
-                        <li class="sale">23,400원</li>
-                        <li class="cost">26,000원</li>
-                        <li class="ratio">10%</li>
-                    </ul>
-                </div>
-                </a>
-           </li>
-            </ul>
-            </div>
-        </section>
-        </div>
-        
-     </main>   <!--//컨텐츠-->
+<div class="web_sub">
+    <%-include('general/header_web') %>
 </div>
 <div class="mobile_sub">
     <article class="skip_menu">
@@ -157,7 +51,7 @@
         <a href="#"><span>바로가기3</span></a>
     </article>
     <%-include('general/header') %>
-    <!--//-->
+</div>
     <input type="hidden" id="listType" value="<%=listType %>">
     <% if(listType == 'CATEGORY') { %>
         <input type="hidden" id="category1Code" value="<%=category1Code %>">
@@ -165,14 +59,14 @@
     <% } else if (listType == 'EVENT') { %>
         <input type="hidden" id="currentStandCode" value="<%=standCode %>">
     <% } %>
-    <main id="content" class="content" style="padding-left:15px;padding-right:15px">
+    <main id="content" class="content">
         <div class="main_sub_wrap">
             <section class="main_sub">
-                <h2 style="display:none">신메뉴</h2>
+                <h2>신상</h2>
                 <form name="#" id="#" method="get" action="#">
                     <div class="n_sort">
                         <div class="sort">
-                            <select name="#" id="#" class=formSelect style="background-color:#fff;border:0;margin-top:10px;margin-bottom:10px">
+                            <select name="#" id="#" class=formSelect style="background-color:#fff;border:0;font-size:12px">
                                 <option value="#">추천순</option>
                                 <option value="#">신상품순</option>
                                 <option value="#">인기상품순</option>
@@ -186,8 +80,9 @@
                     <ul>
                      <li>    
                        <a href="#">
-                           <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                           </div>
+                           <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                            <span><a class="like-Unlike" href="#"><img src="/images/beforeheart_ico_main.png" style="position:absolute;width:28px;margin-top:285px;margin-left:-47px" ></a></span>
+                        </div>
                            <div class="desc">
                                <p class="title">제품이름</p>
                                <ul>
@@ -200,8 +95,9 @@
                       </li>
                       <li>    
                        <a href="#">
-                           <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                           </div>
+                           <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                            <span><a class="like-Unlike" href="#"><img src="/images/beforeheart_ico_main.png" style="position:absolute;width:28px;margin-top:285px;margin-left:-47px" ></a></span>
+                        </div>
                            <div class="desc">
                                <p class="title">제품이름</p>
                                <ul>
@@ -214,8 +110,9 @@
                       </li>
                       <li>    
                        <a href="#">
-                           <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                           </div>
+                           <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                            <span><a class="like-Unlike" href="#"><img src="/images/beforeheart_ico_main.png" style="position:absolute;width:28px;margin-top:285px;margin-left:-47px" ></a></span>
+                        </div>
                             <div class="desc">
                                <p class="title">제품이름</p>
                                <ul>
@@ -228,8 +125,9 @@
                       </li>
                       <li>    
                        <a href="#">
-                           <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
-                           </div>
+                         <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                            <span><a class="like-Unlike" href="#"><img src="/images/beforeheart_ico_main.png" style="position:absolute;width:28px;margin-top:285px;margin-left:-47px" ></a></span>  
+                         </div>
                             <div class="desc">
                                <p class="title">제품이름</p>
                                <ul>
@@ -242,7 +140,8 @@
                       </li>
                       <li>    
                        <a href="#">
-                           <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
+                           <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                            <span><a class="like-Unlike" href="#"><img src="/images/beforeheart_ico_main.png" style="position:absolute;width:28px;margin-top:285px;margin-left:-47px" ></a></span>
                            </div>
                            <div class="desc">
                                <p class="title">제품이름</p>
@@ -256,7 +155,8 @@
                       </li>
                       <li>    
                        <a href="#">
-                           <div class="thum"><img src="images/dietfarmbread.jpg" alt="">
+                           <div class="thum"><img src="/images/dietfarmbread.jpg" alt="">
+                            <span><a class="like-Unlike" href="#"><img src="/images/beforeheart_ico_main.png" style="position:absolute;width:28px;margin-top:285px;margin-left:-47px" ></a></span>
                            </div>
                            <div class="desc">
                                <p class="title">제품이름</p>
@@ -274,44 +174,11 @@
         </div>
 
     </main>
-</div>
-    <script>
-        // 햄버거 메뉴
-        $(document).ready(function() {
-
-            $('.btnMenu>a').on('click', function() {
-                $('.sideMenu').show().animate({
-                    left: 0
-                });
-            });
-            $('.slideMenu_close>a').on('click', function() {
-                $('.sideMenu').animate({
-                    left: -100 + '%'
-                }, function() {
-                    $('.sideMenu').hide();
-                });
-            });
-        });
-
-
-            // 햄버거 2단계 메뉴
-        $(document).ready(function() {
-            $("dt.faq_q").click(function() {
-                if ($(this).next('dd').css("display") != "none") {
-                    $(this).next('dd').hide();
-                    $(this).removeClass("current");
-                } else {
-                    $("dd.faq_a").css('display', 'none');
-                    $("dt.faq_q").removeClass("current");
-                    $(this).next('dd').show();
-                    $(this).addClass("current");
-                }
-            });
-        });
-    </script>
-    <!--//컨텐츠-->
-    <script src="/js/products.js"></script>
-    <!--//푸터시작-->
+    <div class="web_sub">
+    </div>
+    <div class="mobile_sub">
     <%-include('general/footer') %>
+    </div>
+    <script src="/js/index.js"></script>
 
 </body></html>
