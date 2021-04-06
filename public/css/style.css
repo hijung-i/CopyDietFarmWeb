@@ -109,7 +109,7 @@ nav {
   margin: 4em auto;
   
 }
-nav a {
+#header nav a {
   display: block;
   width: 10%;
   padding: .75em 0;

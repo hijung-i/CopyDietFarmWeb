@@ -131,6 +131,9 @@ router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
 router.get('/cart', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'cart', {})
 })
+router.get('/practice', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'practice', {})
+})
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }
