@@ -11,16 +11,10 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 
 /*product_inquiry mobile & web*/
 @media screen and (min-width:360px) and (max-width:1079px){
-.review_list_null p{width:100%;margin:0 auto;text-align:center;
-}
-.review_list_null p img{padding-top:174px}
-.review_list_null .null{padding-top:21px;font-size:16px;color:#878787}
+
 }
 @media screen and (max-width:1080px){
-.review_list_null {width:100%;margin:0 auto;text-align:center;
-    }
-.review_list_null p img{padding-top:174px}
-.review_list_null .null{padding-top:21px;font-size:16px;color:#878787}
+
 }
 /*seller_inquiry mobile & web*/
 @media screen and (min-width:360px) and (max-width:1079px){#btnModify{width:100%;}
@@ -1951,7 +1945,7 @@ table.web_qna {padding: 12px 0;}
     text-align: left;
     font-size: 14px;
 }
-.faq_a_box p.web_qna_report {font-size: 12px;margin-top:17px}
+.faq_a_box p.web_qna_report {font-size: 12px;}
 .faq_a_box p.web_qna_report span {position: relative; top: 8px; padding: 0 4px;}
 
 
@@ -2136,11 +2130,8 @@ input[type="checkbox"] {
   position: absolute;
   left: -12px;
   top: -2px;
-  
-
   transform: scale(0) rotateZ(180deg);
- 
-}
+  }
 
 input#secret[type="checkbox"]:checked + .secret::before {
   transform: scale(1) rotateZ(0deg);
@@ -2156,3 +2147,128 @@ input#secret[type="checkbox"]:checked + .secret::before {
   top: -3px;
   border-radius: 50%;
 }
+
+.detail_title{overflow:hidden;margin:40px 10px 10px 10px;width:100%;}
+ .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px}
+.detail_title a img{position:absolute;top:42px}
+
+/*정보 확인하기 위한 비밀번호 입력란*/
+
+
+/*로그인*/
+
+  :root{--font-color: #4e4e4e;--border-gray-color : #dadada;--yello-color: #F99319;--yello-border-color: #F99319;
+}
+
+.login a{position:absolute;left:20px;margin-top:-20px}
+
+.login-input-section-wrap{padding-top: 20px;display: flex;}
+
+.login-input-wrap{width:border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
+.password-wrap{margin-top: 13px;}
+.login-input-section-wrap h3{text-align:left}
+.login-input-wrap input{border: none;	width:330px;height:45px;font-size: 14px;margin-left: 10px;}
+.login-button-wrap {padding-top: 13px;}
+.login-button-wrap button{
+	width: 340px;height :45px;
+	font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;margin-top:50px
+}
+.login-stay-sign-in{width: 330px;height: 52px;display: flex;font-size: 15px;	color: #4e4e4e;align-items: center;	justify-content: flex-start;border-bottom: solid 1px var(--border-gray-color);
+}
+.login-stay-sign-in i{font-size: 25px;color: #9ba1a3;
+}
+.login-stay-sign-in span{padding-left:5px;line-height: 25px;}
+
+.Easy-sgin-in-wrap{display: flex;flex-direction: column;align-items: center;padding-top: 40px;color:}
+.Easy-sgin-in-wrap h2{font-size: 20px;}
+.Easy-sgin-in-wrap .sign-button-list
+{padding-top:25px;list-style: none;
+width: 320px;display: flex;flex-direction: column;align-items: center;}
+.Easy-sgin-in-wrap .sign-button-list li{
+padding-bottom: 10px;}
+.Easy-sgin-in-wrap .sign-button-list li button{width: 320px;height:56px;border: solid 1px var(--border-gray-color);text-align: left;background: white;}
+.Easy-sgin-in-wrap .sign-button-list li button i{font-size: 16px; }
+
+.Easy-sgin-in-wrap .sign-button-list li button span{padding-left:0;font-size: 14px;}
+.Easy-sgin-in-wrap ul{margin-left:-30px}
+.Easy-sgin-in-wrap ul li{margin-right:-10px}
+.Easy-sgin-in-wrap ul li a{float:left;font-size:14px;color:#6B6B6B}
+.Easy-sgin-in-wrap ul li img{position:relative;top:4px}
+.fail-button-wrap button{	width: 340px;height :45px;font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;} 
+
+        
+/* 입력폼 */
+@media screen and (min-width:360px) and (max-width:1079px){#wrapper{padding-left:15px;padding-right:15px}}
+@media screen and (min-width:1080px){
+#wrapper{width:330px;margin-left:280px}
+#wrapper h3{font-size:14px;font-weight:bold;margin-bottom:-15px}
+.info_title{font-size:20px;font-weight:bold;border-bottom:2px solid #BBBBBB;padding-bottom:20px}
+}
+input:focus {outline: none;}
+
+
+h3 {margin: 19px 0 8px;font-size: 14px;font-weight:700;}
+
+
+.box {display: block;width: 100%;height: 51px;
+    border: solid 1px #dadada;padding: 10px 14px 10px 14px;box-sizing: border-box;   background: #fff;position: relative;
+    border-radius:8px;}
+
+.int {display: block;position: relative;
+    width: 100%;height: 29px;border: none;
+    background: #fff;font-size: 15px;}
+
+input {font-family: Dotum,'나눔돋움',Helvetica,sans-serif;}
+
+.join_title01{margin-top:32px}
+
+.box.int_id {padding-right: 110px;}
+
+.box.int_pass {padding-right: 40px;}
+
+.box.int_pass_check {padding-right: 40px;}
+
+.step_url {/*@naver.com*/position: absolute;
+    top: 16px;right: 13px;font-size: 15px;
+    color: #8e8e8e;}
+
+.pswdImg {width: 18px;height: 20px;
+    display: inline-block;position: absolute;
+    top: 50%;right: 16px;margin-top: -10px;
+    cursor: pointer;}
+
+#bir_wrap {display: table;width: 100%;}
+
+#bir_yy {display: table-cell;width: 147px;   
+}
+
+#bir_mm {display: table-cell;width: 147px;
+    vertical-align: middle}
+
+#bir_dd {display: table-cell;width: 147px;}
+
+#bir_mm, #bir_dd {padding-left: 10px;}
+
+select { width: 100%;height: 29px;font-size: 15px;background: #fff url(https://static.nid.naver.com/images/join/pc/sel_arr_2x.gif) 100% 50% no-repeat;
+    background-size: 20px 8px;-webkit-appearance: none;display: inline-block;
+    text-align: start;border: none;
+    cursor: default;font-family:'나눔고딕'}
+
+.member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
+.member_delete ul li a{text-decoration:underline;}
+#fMale{margin-left:42px}
+.join_title label{font-weight:bold}
+
+/* 에러메세지 */
+
+.error_next_box {margin-top: 9px;font-size: 12px;color: red;display: none;}
+
+#alertTxt {position: absolute; top: 19px;
+    right: 38px;font-size: 12px;color: red;display: none;}
+
+/* 버튼 */
+
+.btn_area {margin-bottom:20px;margin-top:30px}
+
+#btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+font-weight: 400;border-radius:5px;}

@@ -134,6 +134,9 @@ router.get('/cart', (req: Request, res: Response, next: NextFunction) => {
 router.get('/mem-with', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'membership_withdrawal', {})
 })
+router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'myinfo', {})
+})
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }

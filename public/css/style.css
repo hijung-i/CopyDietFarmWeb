@@ -521,17 +521,34 @@ height:50px; overflow:hidden }
 .no_list{font-size:16px;color:#878787;margin-top:15px}
 
 /*회원 탈퇴*/
-#content .delete a img{position:absolute;top:-1px}
-#content .delete p{margin:32px 15px 45px ;font-size:14px;font-weight:bold}
-#content .delete ul{margin:20px 16px auto;margin-bottom:50px}
-#content .delete h3{margin-bottom:35px;font-size:14px;font-weight:normal}
-#content .delete ul li {margin-bottom:5px;padding-left:14px;font-size:12px;line-height:25px;padding-right:15px;text-indent:-14px}
-#content .delete span {margin:10px 10px 20px 10px;font-size:14px;}
-#content .delete .check{margin-bottom:130px}
+@media screen and (min-width:360px) and (max-width:1079px){
+.contents .web_title{display:none}
+.contents .delete a img{position:absolute;top:-1px}
+.contents .delete p{margin:32px 15px 45px ;font-size:14px;font-weight:bold}
+.contents .delete ul{margin:20px 16px auto;margin-bottom:50px}
+.contents .delete h3{margin-bottom:35px;font-size:14px;font-weight:normal}
+.contents .delete ul li {margin-bottom:5px;padding-left:14px;font-size:12px;line-height:25px;padding-right:15px;text-indent:-14px}
+.contents .delete span {margin:10px 10px 20px 10px;font-size:14px;}
+.contents .delete .check{margin-bottom:130px}
 .y_btn{padding-left:15px}
 .y_btn button{width:96%;height :45px;
 font-size: 14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px;border:1px solid #EFA543}
-
+}
+/*회원탈퇴 웹*/
+@media screen and (min-width:1080px){
+.contents .delete .web_title{font-size:25px;font-weight:bold;text-align:center}
+.contents .delete{width:680px;margin:0 auto;margin-top:54px}
+.contents .delete p{text-align:center;font-size:14px;font-weight:bold}
+.contents .delete ul{margin:20px 16px auto;margin-bottom:50px}
+.contents .delete h3{margin-bottom:35px;font-size:14px;font-weight:normal}
+.contents .delete ul li {margin-bottom:5px;padding-left:14px;font-size:12px;
+line-height:70px;padding-right:15px;text-indent:-14px;font-size:14px}
+.contents .delete span {margin:10px 10px 20px 10px;font-size:14px;}
+.contents .delete .check{margin-bottom:130px}
+.y_btn{width:680px;padding-left:15px;margin:0 auto!important;}
+.y_btn button{width:330px;height:45px;
+font-size:14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px;border:1px solid #EFA543}
+}
 /*주문 내역*/
 /*.detail_title{width:100%;}
 .detail_title h2{text-align:center;font-weight:bold;font-size:16px;margin-bottom:20px;margin-top:-4px}
