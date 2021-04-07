@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문내역</title>
-    <link rel="stylesheet" href="./css/style02.css">
-    <link rel="stylesheet" href="./css/style03.css">
-    <link rel="stylesheet" href="./css/mypageAll.css">
-    <link rel="stylesheet" href="./css/style_web.css">
+ <style>
+        @media screen and (min-width:360px)and (max-width:1079px) {.web_s_inquiry{display:none}}
+        @media screen and (min-width:1080px){.mobile_s_inquiry{display:none} }    
+    </style>
+<link rel="stylesheet" href="./css/style02.css">
+<link rel="stylesheet" href="./css/mypageAll.css">
+<link rel="stylesheet" href="./css/style_web.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -41,15 +44,53 @@
 });
      </script>
 
-    <!-- 모바일 섹션 -->
-    <section class="detail_title" style="display: none;">
+  <div class="mobile_s_inquiry">
+    <section class="detail_title">
         <h2>판매자 문의하기 (주문건)</h2>
         <a href="#"><img src="./images/leftarrow_ico_my.png"></a>
     </section>
+   </div>
+   <div class="web_s_inquiry">
+    <%-include('general/header_web') %>
+   </div>
+        <div class="main_contents">
+           <div class="web_contents">
+            <div class="left">
+                <h3>마이팜</h3>
+                <div class="left_ctn">
+                    <ul>
+                        <li><img src="images/basket_ico.png"></li>
+                        <li><span>김수아님</span></li>
+                        <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
+                    </ul>
+                </div>
+            </div>
 
-    <!-- mobile main -->
-    <main id="content" class="content">
-        <div class="inquiryBox">
+            <div class="center">
+                <h3>포인트<img src="images/point.png"></h3>
+                <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
+            </div>
+
+            <div class="right">
+                <h3>쿠폰<img src="images/Coupon_ico.png"></h3>
+                <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
+            </div>
+       </div>
+        </div>
+            <nav class="content_lnb">
+                <ul>
+                    <li><a href="http://localhost:3000/orderlist">주문내역</a></li>
+                    <li class="on" style="white-space:nowrap"><a href="javascript:void(0);">배송지 관리</a></li>
+                    <li><a href="http://localhost:3000/mypageproductreview">상품 리뷰</a></li>
+                    <li><a href="http://localhost:3000/mypageproductinquiry">상품 문의</a></li>
+                    <li><a href="http://localhost:3000/mypagesellerinquiry">판매자 문의</a></li>
+                    <li><a href="http://localhost:3000/mypageorderlistpoint">포인트</a></li>
+                    <li><a href="javascript:void(0);">쿠폰</a></li>
+                </ul>
+            </nav>
+                <div class="contents">
+                <h3 class="web_title">판매자 문의(주문건)</h3>
+                           <div class="inquiryBox">
             <ul>
                 <li>
                     <h3>주문번호</h3>
@@ -73,16 +114,7 @@
                     <h3>문의유형</h3>
                     <ul>
                         <li>
-                            <select style="width:100%;
-padding:12px 10px;
-border: 1px solid #999;
-font-family: inherit;
-border-color:#BBBBBB;
-background: url('images/downarrow_icon_category.png') no-repeat 96% 50%;
-border-radius: 5px;
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;">
+                            <select>
                                 <option value="*">선택</option>
                                 <option value="01">상품</option>
                                 <option value="02">배송</option>
@@ -160,90 +192,7 @@ appearance: none;">
         <div class="btn_area sellerInq_regist">
             <button type="button" id="btnModify" style="margin: 0;">등록</button>
         </div>
-    </main>
-    <!-- mobile main end -->
-
-        <%-include('general/header_web') %>
-
-        <main id="main">
-            <div class="main_contents">
-
-                <div class="left">
-                    <h3>마이팜</h3>
-                    <div class="left_ctn">
-                        <ul>
-                            <li><i class="fas fa-shopping-basket"></i></li>
-                            <li><span>김수아님</span></li>
-                            <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
-                        </ul>
-                    </div>
                 </div>
-
-                <div class="center">
-                    <h3>포인트</h3>
-                    <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
-                </div>
-
-                <div class="right">
-                    <h3>쿠폰</h3>
-                    <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
-                </div>
-
-            </div>
-        </main>
-
-        <section id="web_contents">
-            <div class="contents_ctn">
-
-                <nav class="content_lnb">
-                    <ul>
-                        <li><a href="http://localhost:3000/orderlist">주문내역</a></li>
-                        <li><a href="http://localhost:3000/mypagedelivermag">배송지 관리</a></li>
-                        <li><a href="http://localhost:3000/mypageproductreview">상품 리뷰</a></li>
-                        <li><a href="http://localhost:3000/mypageproductinquiry">상품 문의</a></li>
-                        <li class="on"><a href="javascript:void(0);">판매자 문의</a></li>
-                        <li><a href="http://localhost:3000/mypageorderlistpoint">포인트</a></li>
-                        <li><a href="javascript:void(0);">쿠폰</a></li>
-                    </ul>
-                </nav>
-
-                <div class="body_contents">
-                    <h3 class="orderList_detail">판매자 문의(주문건)</h3>
-                    <div class="order_detail_ctn">
-
-                        <div class="web_sellerInquiry_top">
-                            <p><span>주문번호</span>2020101920201019</p>
-                            <p><span>상품</span>(아임월) 굿밸런스 라이트밀 도시락</p>
-                            <p><span>옵션</span>(아임월) 굿밸런스 라이트밀 도시락</p>
-                        </div>
-
-                        <div class="web_sellerInquiry_ctt">
-                            <p class="inqType">문의유형</p>
-                            <select>
-                                <option data-display="Select">선택</option>
-                                <option value="1">상품</option>
-                                <option value="2">상품</option>
-                                <option value="3">상품</option>
-                                <option value="4">상품</option>
-                            </select>
-                            <p class="inq_ctt">내용</p>
-                            <input type="text" placeholder="문의하실 내용을 입력해주세요">
-                            <button class="photo">사진</button>
-                            <p class="announce">문의하신 내용에 대한 답변은 <span>마이>판매자문의</span>에서 확인하실 수 있습니다.</p>
-                        </div>
-
-                        <div class="thick_line"></div>
-
-                        <div class="seller_inq_btn_area">
-                            <button class="ragistration_btn">등록</button>
-                        </div>
-
-
-                    </div> <!-- order_detail_ctn -->
-
-                </div>
-            </div>
-        </section>
         <!--//order-->
 
     <script type="text/javascript">
@@ -264,12 +213,6 @@ appearance: none;">
         });
 
     </script>
-
-    </div>
-    </div><!-- contents_ctn -->
-    </section> <!-- content -->
-
-    <%-include('general/footer_web') %>
 
     <script type="text/javascript">
         jQuery(document).ready(function () {
