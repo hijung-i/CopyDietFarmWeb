@@ -2270,5 +2270,5 @@ select { width: 100%;height: 29px;font-size: 15px;background: #fff url(https://s
 
 .btn_area {margin-bottom:20px;margin-top:30px}
 
-#btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+#btnModify{height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
 font-weight: 400;border-radius:5px;}

@@ -137,6 +137,12 @@ router.get('/mem-with', (req: Request, res: Response, next: NextFunction) => {
 router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'myinfo', {})
 })
+router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'myinfo', {})
+})
+router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'myinfoUserCheck', {})
+})
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }

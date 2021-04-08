@@ -545,7 +545,7 @@ font-size: 14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px
 line-height:70px;padding-right:15px;text-indent:-14px;font-size:14px}
 .contents .delete span {margin:10px 10px 20px 10px;font-size:14px;}
 .contents .delete .check{margin-bottom:130px}
-.y_btn{width:680px;padding-left:15px;margin:0 auto!important;}
+.y_btn{width:100%;margin-left:200px}
 .y_btn button{width:330px;height:45px;
 font-size:14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px;border:1px solid #EFA543}
 }
