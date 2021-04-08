@@ -202,10 +202,11 @@ nav a:nth-child(5).is-current ~ .nav-underline {
 
 .tabMenu{width:100%;z-index:300}
 #content .tab_wrap{width:100%;border-bottom: none;}
- .tabMenu ul{/* padding-left:40px;padding-right:20px; */background-color:#fff}
- .tabMenu li{float:left;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding: 10px 20;}
-.tabMenu li a{color:#878787;}
-/* .tabMenu li a:hover{color:#F99319;padding-bottom:13px;border-bottom:3px solid #F99319} */
+ .sideMenu .tabMenu{padding-bottom:0px}
+ .sideMenu .tabMenu ul{padding-left:40px;padding-right:20px;background-color:#fff}
+ .sideMenu .tabMenu li{float:left;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding: 10px 20;}
+ .sideMenu .tabMenu li a{color:#878787;}
+ .sideMenu .tabMenu li a:hover{color:#F99319;padding-bottom:13px;border-bottom:3px solid #F99319}
 
 
 /* 메뉴 아이콘 */

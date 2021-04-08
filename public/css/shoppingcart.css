@@ -1,6 +1,6 @@
 /* 장바구니 헤더 */
 *{font-family:'나눔고딕';font-weight:400}
-html, body {max-width: 100%;overflow-x: hidden;}
+html, body {max-width: 100%;overflow-x: hidden}
 
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
@@ -109,13 +109,16 @@ border-spacing: 0 20px;}
 .final .price{float:right}
 .btn_area_web .total{display:flex;justify-content:space-between;padding-left:15px;padding-right:15px;font-size:14px;font-weight:bold;padding-top:20px;padding-bottom:20px}
 .purchaseBtn{width:96%;margin:0 auto;margin-left:10px;height:45px;color:#fff;background-color:#F99319;border-radius:5px;margin-bottom:20px;}
-
+.total_mobile ul li {font-size:16px;font-weight:bold;float:left;padding-left:15px;padding-top:20px;padding-bottom:20px}
+.total_mobile .price{float:right;padding-right:15px}
 }
 
 
 
 /*장바구니 웹 */
 @media screen and (min-width:1080px){
+.shoplist_ctn img{position:relative;left:-50px}
+.total_mobile{display:none}
 #content {width:1080px;margin:0 auto;padding-bottom:361px}
 .detail_price{display:none}
 .p_price{display:none}

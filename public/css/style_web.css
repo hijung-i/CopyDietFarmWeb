@@ -11,7 +11,7 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 
 /*product_inquiry mobile & web*/
 @media screen and (min-width:360px) and (max-width:1079px){
-
+ .order_list_box_w{display:none}
 }
 @media screen and (max-width:1080px){
 
@@ -2153,8 +2153,21 @@ input#secret[type="checkbox"]:checked + .secret::before {
 .detail_title a img{position:absolute;top:42px}
 
 /*정보 확인하기 위한 비밀번호 입력란*/
+@media screen and (min-width:360px) and (max-width:1079px){
+    .main-wrap{width:100%;text-align:left}
+    .main-wrap .p1{font-size:14px;font-weight:bold;margin-bottom:10px;margin-left:220px} 
+    .main-wrap .p2{width:330px;font-size:14px;margin-left:220px}
+    .contents h2{display:none}
+    .main-wrap h4{display:none}
+    .content_lnb{display:none}
+}
 
-
+@media screen and (min-width:1080px){
+    .main-wrap .p1{margin-left:-46px;font-size:18px;font-weight:bold;}
+    .main-wrap .p2{margin-left:-46px;margin-top:15px;margin-bottom:30px}
+    .main-wrap h4{position:relative;top:35px;left:-260px}
+    .password-wrap{position:relative;top:-7px}
+}
 /*로그인*/
 
   :root{--font-color: #4e4e4e;--border-gray-color : #dadada;--yello-color: #F99319;--yello-border-color: #F99319;
@@ -2162,7 +2175,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
 
 .login a{position:absolute;left:20px;margin-top:-20px}
 
-.login-input-section-wrap{padding-top: 20px;display: flex;}
+.login-input-section-wrap{padding-top: 20px;display:flex}
 
 .login-input-wrap{width:border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
@@ -2270,5 +2283,5 @@ select { width: 100%;height: 29px;font-size: 15px;background: #fff url(https://s
 
 .btn_area {margin-bottom:20px;margin-top:30px}
 
-#btnModify{height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+#btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
 font-weight: 400;border-radius:5px;}

@@ -123,7 +123,7 @@ router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'web_seller_inquiry', {})
 })
 router.get('/point', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_orderList_point', {})
+    render(res, 'mypage_point', {})
 })
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'login_fail', {})
