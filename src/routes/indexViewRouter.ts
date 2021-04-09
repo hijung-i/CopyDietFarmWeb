@@ -123,13 +123,25 @@ router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'web_seller_inquiry', {})
 })
 router.get('/point', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_orderList_point', {})
+    render(res, 'mypage_point', {})
 })
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'login_fail', {})
 })
 router.get('/cart', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'cart', {})
+})
+router.get('/mem-with', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'membership_withdrawal', {})
+})
+router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'myinfo', {})
+})
+router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'myinfo', {})
+})
+router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'myinfoUserCheck', {})
 })
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)

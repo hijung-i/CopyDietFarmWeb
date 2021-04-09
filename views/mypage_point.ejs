@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포인트</title>
+     <style>
+        @media screen and (min-width:360px)and (max-width:1079px) {.web_point{display:none}}
+        @media screen and (min-width:1080px){.mobile_point{display:none} }    
+    </style>
+<link rel="stylesheet" href="./css/style02.css">
+<link rel="stylesheet" href="./css/mypageAll.css">
+<link rel="stylesheet" href="./css/style_web.css">
+<%-include('general/head') %>
+<body>
+   <div class="mobile_point">
+    <section class="detail_title">
+        <h2>포인트</h2>
+        <script type="text/javascript">
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt="뒤로가기" style="width:17px"> </a>
+        </div>
+     
+        <div id="cp" class="current_point">
+            <p>현재 포인트</p>
+            <h2><img src="./images/point_iocn_my.png" style="width:16px;position:relative;top:3px" alt=""> 3,000원</h2>
+        </div>
+    </section>
+      </div>
+      <div class="web_point">
+        <%-include('general/header-web') %>   
+      </div>
+      
+           <div class="main_contents">
+               <div class="web_contents">
+                <div class="left">
+                    <h3>마이팜</h3>
+                    <div class="left_ctn">
+                        <ul>
+                            <li><img src="images/basket_ico.png"></li>
+                            <li><span>김수아님</span></li>
+                            <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="center">
+                    <h3>포인트<img src="images/point.png"></h3>
+                    <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
+                </div>
+    
+                <div class="right">
+                    <h3>쿠폰<img src="images/Coupon_ico.png"></h3>
+                    <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
+                </div>
+           </div>
+            </div>
+                <nav class="content_lnb">
+                    <ul>
+                        <li><a href="http://localhost:3000/orderlist">주문내역</a></li>
+                        <li style="white-space:nowrap"><a href="javascript:void(0);">배송지 관리</a></li>
+                        <li><a href="http://localhost:3000/mypageproductreview">상품 리뷰</a></li>
+                        <li><a href="http://localhost:3000/mypageproductinquiry">상품 문의</a></li>
+                        <li><a href="http://localhost:3000/mypagesellerinquiry">판매자 문의</a></li>
+                        <li class="on"><a href="http://localhost:3000/mypageorderlistpoint">포인트</a></li>
+                        <li><a href="javascript:void(0);">쿠폰</a></li>
+                    </ul>
+                </nav>
+    <div class="contents">
+    <h2>쿠폰</h2>
+    <div class="coupon_code">
+      <div class="coupon-input-wrap">
+         <input placeholder="쿠폰코드를 입력해주세요" type="text">
+         <div class="coupon-btn-wrap">
+             <button type="button" id="btnCoupon">쿠폰 등록</button>
+         </div>
+        </div>
+    </div>
+    <div class="point_line"></div>
+
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
+        </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
+        </div>
+    </section>
+    <div class="point_history_line"></div>
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
+        </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
+        </div>
+    </section>
+    <div class="point_history_line"></div>
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
+        </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
+        </div>
+    </section>
+    <div class="point_history_line"></div>
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
+        </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
+        </div>
+    </section>
+    <div class="point_history_line"></div>
+    <section class="point_history">
+        <div class="point_history_left">
+            <ul>
+                <li class="save">적립</li>
+                <li class="amount">+500원</li>
+            </ul>
+        </div>
+        <div class="point_history_right">
+            <ul>
+                <li class="date">2020.11.09</li>
+                <li class="type">구매 적립</li>
+                <li class="brand">바디나인</li>
+            </ul>
+        </div>
+    </section>
+    <div class="point_history_line"></div>
+    </div>
+</body></html>
