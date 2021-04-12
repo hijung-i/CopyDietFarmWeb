@@ -71,7 +71,7 @@ router.get('/notice/:boardNo', (req: Request, res: Response, next: NextFunction)
 router.get('/cs-center', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'cs_center', {})
 })
-router.get('/privacyPolicy', (req: Request, res: Response, next: NextFunction) => {
+router.get('/privacypolicy', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'privacy_policy', {})
 })
 router.get('/invite', (req: Request, res: Response, next: NextFunction) => {

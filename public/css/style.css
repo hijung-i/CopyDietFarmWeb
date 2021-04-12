@@ -1,5 +1,8 @@
 /* none scroll */
 body,html {overflow-x: hidden; overflow-y: auto;width:100%; min-width:360px; width: 100%; /* overflow: hidden; */}
+* {-ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 @font-face{ 
 font-family: '나눔고딕'; 
@@ -204,7 +207,7 @@ nav a:nth-child(5).is-current ~ .nav-underline {
 #content .tab_wrap{width:100%;border-bottom: none;}
  .sideMenu .tabMenu{padding-bottom:0px}
  .sideMenu .tabMenu ul{padding-left:40px;padding-right:20px;background-color:#fff}
- .sideMenu .tabMenu li{float:left;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding: 10px 20;}
+ .sideMenu .tabMenu li{display:inline-block;margin:-1px;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding: 10px 20;}
  .sideMenu .tabMenu li a{color:#878787;}
  .sideMenu .tabMenu li a:hover{color:#F99319;padding-bottom:13px;border-bottom:3px solid #F99319}
 
