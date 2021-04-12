@@ -770,10 +770,56 @@ justify-self: center;width: 100%;margin: 0 auto;}
 
 /*주문 상세*/
 @media screen and (min-width:1080px){
-    
+    .orderDetails .orderBox02 {display: flex;}
+    .orderDetails .orderBox02 li {font-size: 12px;}
+    .orderDetails .orderBox02 li.product,
+    .orderDetails .orderBox02 li.price {color: #000;}
+    .orderDetails .orderBox02 li.quantitiy,
+    .orderDetails .orderBox02 li.option {color: #878787;}
+    .orderDetails{border-bottom:8px solid #F1F1F1}
+    .buttons{
+        width:100%;margin: 0 auto;
+        justify-content: space-between;
+        padding: 0 15px 14px 15px;
+        height: 60px;
+        margin-bottom:-30px;
+      }
+    .btnConfirm, .btnTracking{width:116px;height:30px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
+    color:#000;font-size:14px;background-color:#F1F1F1;}
+    .dateNo{border-bottom:8px solid #F1F1F1; /* margin-top: */}
+    .date{margin-bottom:3px;color:#878787}
+    .no{margin-bottom:14px}
+    .ship_state{color:#F99319;font-weight:bold}
+    .quantity, .option{color:#878787}
+    .order_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;margin-bottom:20px;padding-right:15px}
+    .order_title p span{font-size:14px;font-weight:bold}
+    .orderDetails{padding-left:15px;padding-right:15px;}
+    .orderBox02{margin-top:19px;padding-top:18px;border-top:1px solid #BBBBBB;}
+    .order00 li{margin-bottom:5px;}
+    .order_q .title00{padding-top:20px;padding-left:15px;padding-bottom:15px;font-size:16px;font-weight:bold;}
+        .order_a_box td{padding-bottom:5px}
+    .order_a_box td span{color:#878787}
+    .btn_area {margin:20px 15px;}
+    #btnReorder{
+         width:100%; height: 45px; 
+        line-height: 0px; 
+        margin:auto;
+        padding: 21px 0 17px;
+        border:1px solid #BBBBBB;
+        cursor: pointer;color:#000;
+        background-color:transparent;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: '나눔고딕';
+        border-radius:5px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+          
     
 }
-.orderDetails .orderBox02 {display: flex;}
+@media screen and (min-width:360px) and (max-width:1079px){
+    .orderDetails .orderBox02 {display: flex;}
 .orderDetails .orderBox02 li {font-size: 12px;}
 .orderDetails .orderBox02 li.product,
 .orderDetails .orderBox02 li.price {color: #000;}
@@ -817,7 +863,9 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
     margin-top: 20px;
     padding-bottom: 20px;
 }
-      
+}
+
+
 /*주문 내역*/
 .orderHistory{width:100%;margin-bottom:10px;padding-left:15px;padding-right:15px}
 .order_list_title {width:100%;display:flex;justify-content:space-between;margin-top:20px}

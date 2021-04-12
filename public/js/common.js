@@ -347,5 +347,4 @@ $(document).ready(function() {
 		$("#NotmemMenu").hide();
   });
 });
-</script>
 }
