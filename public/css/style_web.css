@@ -9,9 +9,22 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .page_nation .nnext {background:#f8f8f8 url('images/page_nnext.png') no-repeat center center;margin-right:0;}
 .page_nation a.active {background-color:#fff;color:#F99319;}
 
+/*coupon web*/
+@media screen and (min-width:360px) and (max-width:1079px){
+.contents h2{display:none} 
+.coupon_code{display:none}
+}
+@media screen and (min-width:1080px){
+    .contents h2{margin-left:-20px}
+    .coupon-input-wrap{width:271px;height:45px;border:1px solid #BBBBBB;margin-bottom:25px;margin-top:20px;border-radius:5px}
+    .coupon-input-wrap input{padding:10px;margin-top:4px;width:251px;border:0;font-size:14px}
+    #btnCoupon{width:91px;height:45px;background-color:#F99319;border:0;color:#FFF;position:relative;left:272px;top:-41px;border-radius:5px}
+}
+
+
 /*product_inquiry mobile & web*/
 @media screen and (min-width:360px) and (max-width:1079px){
- .order_list_box_w{display:none}
+
 }
 @media screen and (max-width:1080px){
 
@@ -87,14 +100,14 @@ body,html {font-family: Noto Sans KR, sans-serif;}
     padding: 12px 0;
     font-weight: 800;
 }
-    .main_contents .left h3{font-size:18px;font-weight:bold;position:relative;top:-17px}
+.main_contents .left h3{font-size:18px;font-weight:bold;position:relative;top:-25px}
 .main_contents .left .left_ctn {
     width: 137px; height: 147px;
     background: #fff;
     text-align: center;
     font-size: 14px;
     position:relative;
-    top:-5px
+    top:-30px
 }
 .main_contents .left_ctn li {
     padding: 2px 0;
@@ -117,10 +130,10 @@ body,html {font-family: Noto Sans KR, sans-serif;}
 .web_contents .right{position:relative;left:81px;top:-25px}
 .main_contents .center, .main_contents .right {
 width: 400px; height: 147px;color: #000; background: #fff;margin: 44px 40px 0 0px}
-.main_contents .center > h3, .main_contents .right > h3 {padding: 12px 10px;font-weight: 500}
+.main_contents .center > h3, .main_contents .right > h3 {padding: 12px 10px;font-weight: 500;position:relative;top:-14px}
 .main_contents .center p, .main_contents .right p {font-size: 32px; font-weight: 700;text-align: center;margin-top:7px;color: #EFA543}
 .main_contents .center p > span, .main_contents .right p > span {font-size: 20px; font-weight: 100; color: #ccc;padding: 12px 0 0 12px}
-.main_contents .center p, .main_contents .right p {line-height:49px;}
+.main_contents .center p, .main_contents .right p {line-height:49px;;margin-top:-20px;margin-left:5px}
 
 /* contents */
 .main_contents {width:100%;height:218px}
