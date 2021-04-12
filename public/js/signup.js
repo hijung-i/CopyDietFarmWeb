@@ -20,17 +20,11 @@ $(function() {
     var dd = document.querySelector('#dd');
 
     var gender = document.querySelector('#gender');
-
     var email = document.querySelector('#email');
-
     var mobile = document.querySelector('#mobile');
-
     var error = document.querySelectorAll('.error_next_box');
 
-
-
     /*이벤트 핸들러 연결*/
-
 
     id.addEventListener("focusout", checkId);
     pw1.addEventListener("focusout", checkPw);
@@ -50,6 +44,37 @@ $(function() {
     mobile.addEventListener("focusout", checkPhoneNum);
 
 
+    $("#btnJoin").click(function (){
+        var userId = $("#id").val();
+        var password = $("#pswd1").val();
+        var passwordCheck = $("#pswd2").val();
+        var email = $("#name").val();
+
+        var addr = $("#addr").val();
+        var recommender = $("#recommender").val();
+        var marketingYn = $("#marketingYn").val();
+
+        if( password != passwordCheck ) {
+            alert("비밀번호 확인이 일치하지 않습니다.");
+            return;
+        }
+
+        var params = {
+            userId: userId,
+            password: password,
+            email: email,
+            address: addr,
+            recommender: recommender,
+            marketingYn: marketingYn
+        }
+        ajaxCall('/register', 'POST', params, 
+        function(data) {
+            
+        }, 
+        function(err) {
+            console.log(err);
+        })
+    })
   
 });
 
