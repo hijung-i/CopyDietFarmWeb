@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
     <div class="web_signup"> 
         <%-include('general/header_web') %>
         <section class="detail_title">
@@ -51,17 +52,17 @@
                     <button type="button" onclick="id_check()">중복 확인</button>
                     </div>
                     </div>
-                    <span class="error_next_box" style=""></span>
+                    <span class="error_next_box"></span>
                     <br>- 아이디 중복확인
                 </div>
 
                 <!-- PW1 -->
                 <div>
-                    <h3 class="join_title"><label for="pswd1"><img src="images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px">비밀번호</label></h3>
+                    <h3 class="join_title"><label for="pswd1"><img src="/images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px">비밀번호</label></h3>
                     <span class="box int_pass">
                         <input type="password" id="pswd1" class="int" maxlength="20" placeholder="비밀번호를 입력해주세요" required>
                         <span id="alertTxt">사용불가</span>
-                        <img src="images/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
+                        <img src="/images/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
                     </span>
                     <span class="error_next_box"></span>
                     <p style="margin-top:10px">- 10자 이상 입력</p>
@@ -87,17 +88,30 @@
                     <span class="images/error_next_box"></span>
                 </div>
                 <div>
-                    <h3 class="join_title"><label for="addr"><img src="images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px">주소</label></h3>
+                    <h3 class="join_title">
+                    <label for="addr"><img src="images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px">주소</label></h3>
                     <span class="box int_addr">
-                        <input type="text" id="addr" class="int" maxlength="80" placeholder="도로명, 지번, 건물명 검색">
+                        <input type="text" id="addr" class="int" maxlength="80" onclick="openZipSearch()" placeholder="도로명, 지번, 건물명 검색">
                     </span>
                     <span class="images/error_next_box"></span>
                 </div>
+                <script>
 
+                function openZipSearch() {
+                    new daum.Postcode({
+                        oncomplete: function(data) {
+                            $('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
+                            $('[name=addr1]').val(data.address);
+                            $('[name=addr2]').val(data.buildingName);
+                        }
+                    }).open();
+                }
+
+                </script>
                 <div style="padding-bottom:34px">
                     <h3 class="join_title"><label for="r_id">추천인 아이디</label></h3>
                     <span class="box int_r_id">
-                        <input type="text" id="email" class="int" maxlength="100" placeholder="추천인 아이디를 입력해주세요">
+                        <input type="text" id="recommend" class="int" maxlength="100" placeholder="추천인 아이디를 입력해주세요">
                     </span>
                     <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
                 </div>
@@ -107,10 +121,10 @@
                 <p><input type="checkbox"><span>전체 동의합니다.</span></p>
                 <p class="gray">선택 항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
                 <ul class="terms_web">
-                    <li><input type="checkbox" required>이용약관 <span>(필수)</span><a href=""><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:130px"></a></li>
+                    <li><input type="checkbox" required >이용약관 <span>(필수)</span><a href=""><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:130px"></a></li>
                     <li><input type="checkbox" required> 개인정보처리방침 <span>(필수)</span><a href="#"><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:80px"></a></li>
                     <li><input type="checkbox" required>본인은 만 14세 이상입니다. <span>(필수)</span><a href="#"><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:36px"></a></li>
-                    <li><input type="checkbox">마케팅 수신동의 <span>(선택)</span><input type="checkbox">이메일<input type="checkbox">문자<img class="leftarrow" src="./images/downarrow_ico_main.png" alt="화살표" style="width:10px;height:10px;position:relative;margin-left:-5px;top:8px"><a href="#"></a></li>
+                    <li><input type="checkbox"  id="mrk_agree" >마케팅 수신동의 <span>(선택)</span><input type="checkbox">이메일<input type="checkbox">문자<img class="leftarrow" src="./images/downarrow_ico_main.png" alt="화살표" style="width:10px;height:10px;position:relative;margin-left:-5px;top:8px"><a href="#"></a></li>
                 </ul>
             </div>
 
