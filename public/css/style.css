@@ -1,8 +1,5 @@
 /* none scroll */
 body,html {overflow-x: hidden; overflow-y: auto;width:100%; min-width:360px; width: 100%; /* overflow: hidden; */}
-* {-ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 
 @font-face{ 
 font-family: '나눔고딕'; 
@@ -109,7 +106,7 @@ nav {
   position: relative;
   display: flex;
   width: 700px;
-  margin: 4em auto;
+ /* margin: 4em auto;*/
   
 }
 #header nav a {
