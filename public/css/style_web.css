@@ -1947,6 +1947,13 @@ delivery_manage_list .customer_info {
  .detail_title h2{text-align: center; padding-left: 0;}
 .detail_title a img{position:absolute; top: 44px;}
 
+@media screen and (min-width:360px) and (max-width:1079px){
+.review_complete{padding-left:20px}
+.order_a_box{padding-left:20px}
+}
+@media screen and (min-width:1080px){
+.order_a_box{padding-left:25px}
+}
 .review_edit ul li{float:left;}
 .inquiry{width:100%;}
 .myInquiry{width:100%;border-bottom:2px solid #E6E6E6;padding-bottom:20px}
