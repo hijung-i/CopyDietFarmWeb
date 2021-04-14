@@ -164,11 +164,11 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 del_info_content
 /*배송 준비중 일때*/
 .delivery_list_null{width:70%; text-align:center; margin:180px auto;}
-.order_list_null img{width:100px;height:75px}
+.order_list_null img{width:100px;height:75px;display:none}
 .no_list{font-size:16px;color:#878787;margin-top:21px}
 
 @media screen and (min-width:1080px){
-.del_info_content{width:350px}
+.del_info_content{width:350px;margin:0 auto}
 .delivery_list_null{display:none}
 .btnback{display:none}}
 

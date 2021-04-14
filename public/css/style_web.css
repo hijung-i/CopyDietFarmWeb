@@ -810,8 +810,18 @@ justify-self: center;width: 100%;margin: 0 auto;}
     padding: 0 15px 14px 15px;
     height: 60px;
   }
-.btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
+@media screen and (min-width:1080px){
+.btnConfirm, .btnTracking{width:116px;height:30px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
 color:#000;font-size:14px;background-color:#F1F1F1;}
+.order_title{margin-left:-20px}
+.buttons{margin-left:-20px}
+.no{margin-left:-20px}
+}
+@media screen and (min-width:360px) and (max-width:1079px){
+    .btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
+        color:#000;font-size:14px;background-color:#F1F1F1;}
+}
+
 .dateNo{border-bottom:8px solid #F1F1F1; /* margin-top: */}
 .date{margin-bottom:3px;color:#878787}
 .no{margin-bottom:14px}
