@@ -11,10 +11,10 @@ $(function() {
     
     $(".mDepth01>li>dl>dt").click(function() {
         var objA = $(this).next("dd");
-        if(objA.css("display") != "none"){
+        /*if(objA.css("display") != "none"){
             objA.prev('dt').removeClass("on");
             objA.hide();
-        } else {
+        } else {*/
             jQuery('.mDepth01>li>dl>dd').css('display','none');
             jQuery('.mDepth01>li>dl>dt').removeClass("on");
             objA.prev('dt').addClass("on");

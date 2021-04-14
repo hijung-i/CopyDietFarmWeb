@@ -145,8 +145,8 @@ a:hover{text-decoration:none;}
 #wheader #Gnb .gnb_menu_list > li a:focus ,
 #wheader #Gnb .gnb_menu_list > li:active a  {color:#fff;}
 
-#wheader #Gnb .gnb_menu_list > li > a {display:block;height:44px;line-height:44px;color:#000;font-size:16px;font-weight:700;letter-spacing:-0.04em;}
-*+html body #Gnb .gnb_menu_list > li > a{letter-spacing:-2px;}/* ie7 hack */
+#wheader #Gnb .gnb_menu_list > li > a {display:block;height:44px;line-height:40px;color:#000;font-size:16px;font-weight:700;letter-spacing:-0.04em;}
+*+html body #Gnb .gnb_menu_list > li > a{letter-spacing:-2px;}
 
  #wheader #Gnb .gnb_menu_list > li > a.on,
 #wheader #Gnb .gnb_menu_list > li > a:hover,
@@ -154,7 +154,7 @@ a:hover{text-decoration:none;}
 
 #wheader #Gnb .gnb_menu_list > li > a.new {position:relative}
 
-#btnGnbOpen{float:left;width:170px;height:44px;padding-left:27px;line-height:44px;color:#000;font-size:16px;font-weight:700;text-align:left;margin-top:5px;}
+#btnGnbOpen{float:left;width:170px;height:44px;padding-left:27px;line-height:44px;color:#000;font-size:16px;font-weight:700;text-align:left;margin-top:3px}
 #btnGnbOpen:before{content:'';display:inline-block;margin:0 8px 0 0;background:url(../images/hamburger_icon_main.png) no-repeat 0 12px;width:19.44px;height:44px;vertical-align:middle;}
 #btnGnbOpen:hover{background-color:#F99319;color:#FFF}
 
@@ -221,7 +221,7 @@ a:hover{text-decoration:none;}
 .m_slid_2dep_brand{height:350px;overflow-x:hidden}
 .brand{width:100%;;margin-top:30px;}
 .categ{border-bottom:8px solid #F1F1F1;padding-bottom:4px;margin-top:-12px}
-.categ ul{display:flex;justify-content:flex-start;padding-right:20px;margin-left:20px;}
+.categ ul{display:flex;justify-content:flex-start;padding-right:20px;margin-left:20px;margin-bottom:10px}
 .categ ul li{float:left;margin-right:10px;}
 .categ .all a{font-weight:bold;color:#31845B}
 .categ ul li img{position:relative;top:2px}

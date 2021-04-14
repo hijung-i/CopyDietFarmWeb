@@ -133,9 +133,12 @@ input[type="number"] {
 .infoDetails .title{font-weight:bold;}
 .footer_bottom ul li{font-size:12px;text-align:left;}
 
+@media screen and (min-width:360px) and (max-width:1079px){
+    .review_btn{display:flex;justify-content:center; padding-bottom:21px;border-bottom:8px solid #f1f1f1;border-top:2px solid #E6E6E6;padding-top:18px}
+    .review_btn button{border:2px solid #EFA543;background-color:#fff;color:#EFA543;font-weight:bold;border-radius:5px}
+    .v_floating_wrap{display:none}
+}
 /*리뷰*/
-.review_btn{display:flex;justify-content:center; padding-bottom:21px;border-bottom:8px solid #f1f1f1;border-top:2px solid #E6E6E6;padding-top:18px}
-.review_btn button{border:2px solid #EFA543;background-color:#fff;color:#EFA543;font-weight:bold;border-radius:5px}
 
 
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
