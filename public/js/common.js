@@ -23,6 +23,23 @@ function ajaxCall(url, params, type, onSuccess, onError){
 	})
 }
 
+function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError){
+	var param = JSON.stringify(params);
+	$.ajax({
+		type : type,
+		cache : false,
+		data : param,
+		url : url,
+		contentType : "application/json;charset=UTF-8",
+		beforeSend : function(xmlHttpRequest){
+			xmlHttpRequest.setRequestHeader("AJAX", "true")
+			xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
+		},
+		success : onSuccess,
+		error : onError
+	})
+}
+
 // option -> require user data as parameter
 function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 	$.ajax({

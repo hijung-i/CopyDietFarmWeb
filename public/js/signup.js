@@ -13,12 +13,6 @@ $(function() {
     var pwImg2 = document.querySelector('#pswd2_img1');
     var pwMsgArea = document.querySelector('.int_pass');
 
-    var userName = document.querySelector('#name');
-
-    var yy = document.querySelector('#yy');
-    var mm = document.querySelector('#mm');
-    var dd = document.querySelector('#dd');
-
     var gender = document.querySelector('#gender');
     var email = document.querySelector('#email');
     var mobile = document.querySelector('#mobile');
@@ -29,19 +23,20 @@ $(function() {
     id.addEventListener("focusout", checkId);
     pw1.addEventListener("focusout", checkPw);
     pw2.addEventListener("focusout", comparePw);
-    userName.addEventListener("focusout", checkName);
-    yy.addEventListener("focusout", isBirthCompleted);
-    mm.addEventListener("focusout", isBirthCompleted);
-    dd.addEventListener("focusout", isBirthCompleted);
-    gender.addEventListener("focusout", function() {
-        if(gender.value === "성별") {
-            error[5].style.display = "block";
-        } else {
-            error[5].style.display = "none";
-        }
-    })
+    // userName.addEventListener("focusout", checkName);
+    // yy.addEventListener("focusout", isBirthCompleted);
+    // mm.addEventListener("focusout", isBirthCompleted);
+    // dd.addEventListener("focusout", isBirthCompleted);
+    // gender.addEventListener("focusout", function() {
+    //     if(gender.value === "성별") {
+    //         error[5].style.display = "block";
+    //     } else {
+    //         error[5].style.display = "none";
+    //     }
+    // })
     email.addEventListener("focusout", isEmailCorrect);
-    mobile.addEventListener("focusout", checkPhoneNum);
+    // mobile.addEventListener("focusout", checkPhoneNum);
+
 
 
     $("#btnJoin").click(function (){
@@ -76,12 +71,32 @@ $(function() {
         })
     })
   
+    $("#btnCheckIdDuplicate").click(function () {
+
+        ajaxCallDataTypeHtml('http://localhost:9090/user/getIdentifyingPage', {}, 'GET',
+        function(data) {
+            console.log(data);
+            openModal(data);
+        }, function(err){
+            console.log("err", err);
+        } )
+    });
+    
+    function openModal(html) {
+        $(".nice-modal-area").show();
+
+        $(".nice-modal-area .modal-content").html(html);
+    }
 });
 
 
+
 /*콜백 함수*/
+function isEmailCorrect() {
 
+}
 
+function checkPhoneNum() {}
 function checkId() {
     var idPattern = /[a-zA-Z0-9_-]{5,20}/;
     if(id.value === "") {

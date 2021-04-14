@@ -49,7 +49,7 @@
                         <input type="text" id="id" class="int" maxlength="20" placeholder="아이디를 입력해주세요" required style="width:330px">
                     </div>
                     <div class="btn_wrap">
-                    <button type="button" onclick="id_check()">중복 확인</button>
+                    <button type="button" id="btnCheckIdDuplicate">중복 확인</button>
                     </div>
                     </div>
                     <span class="error_next_box"></span>
@@ -83,7 +83,7 @@
                 <div>
                     <h3 class="join_title"><label for="name"><img src="/images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px">이메일</label></h3>
                     <span class="box int_name">
-                        <input type="text" placeholder="이메일을 입력해주세요" id="name" class="int" maxlength="20" required >
+                        <input type="text" placeholder="이메일을 입력해주세요" id="email" class="int" maxlength="20" required >
                     </span>
                     <span class="/images/error_next_box"></span>
                 </div>
@@ -138,6 +138,13 @@
         <!-- content-->
      </div>
     <!-- wrapper -->
+    <div class="nice-modal-area" style="display: none">
+        <div class="modal-content">
+
+        </div>
+        
+    </div>
+
   
 
 <script>
@@ -174,5 +181,5 @@
      });
    });
 </script>
-    <script src="signup.js"></script>
+    <script src="/js/signup.js"></script>
 </body></html>
