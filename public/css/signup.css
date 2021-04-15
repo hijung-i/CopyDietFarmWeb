@@ -3,7 +3,7 @@
 
 .detail_title{margin:42px 10px 32px 0px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.detail_title a img{position:absolute;top:40px;width:17px;margin-left:10px}
+.detail_title a img{position:absolute;top:50px;width:17px;}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 @media screen and (min-width:360px) and (max-width:480px){
@@ -13,17 +13,6 @@
 .box int_id #id {width:130px}
 .id_place .btn_wrap{float:right;position:relative;left:85px;}
 .btn_wrap button{width:83px;height:49px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
-}
-
-@media screen and (min-width:1080px){
-.box.int_pass{width:441px}
-.box.int_pass_check{width:441px}
-.box.int_name{width:441px}
-.box.int_addr{width:441px}
-.box.int_r_id{width:441px}
-div.signup_top{width:441px}
-.gray{width:441px}
-button#btnJoin{width:441px}
 }
 /*로그인*/
 
@@ -144,10 +133,11 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 
 /*탈퇴 버튼*/
 .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
+.member_delete ul{}
 .member_delete ul li a{text-decoration:underline;}
 
 /*비밀번호 재설정*/
-.content_newPwd{padding-right:15px;padding-left:15px}
+.content_newPwd{padding-right:15px;padding-left:14px}
 .new_pwd input{height:45px;width:100%;border-radius:5px;border:1px solid #BBBBBB;}
 .new_pwd p{color:#6B6B6B;font-size:10px}
 .new_pwd_ck input{height:45px;width:100%;border-radius:5px;border:1px solid #BBBBBB}
@@ -159,13 +149,9 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 
 @media screen and (min-width:1080px){
 .content_newPwd{width:441px;margin:0 auto}
-.btn_area_pwd{width:330px}
-.new_pwd input{width:330px}
-.new_pwd_ck input{width:330px}
 .btnback{display:none}
 .red_sign{width:336px}
 }
-
 
 
 

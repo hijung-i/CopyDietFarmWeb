@@ -3,10 +3,10 @@
 .page_nation .none {display:none;}
 .page_nation a {display:block;margin:0 3px;float:left;width:28px;
 height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:13px;color:#000;text-decoration:none;}
-.page_nation .pprev {background: url('/images/page_pprev.png') no-repeat center center;margin-left:0;}
-.page_nation .prev {background: url('/images/page_prev.png') no-repeat center center;margin-right:7px;}
-.page_nation .next {background: url('/images/page_next.png') no-repeat center center;margin-left:7px;}
-.page_nation .nnext {background: url('/images/page_nnext.png') no-repeat center center;margin-right:0;}
+.page_nation .pprev {background:#f8f8f8 url('images/page_pprev.png') no-repeat center center;margin-left:0;}
+.page_nation .prev {background:#f8f8f8 url('images/page_prev.png') no-repeat center center;margin-right:7px;}
+.page_nation .next {background:#f8f8f8 url('images/page_next.png') no-repeat center center;margin-left:7px;}
+.page_nation .nnext {background:#f8f8f8 url('images/page_nnext.png') no-repeat center center;margin-right:0;}
 .page_nation a.active {background-color:#fff;color:#F99319;}
 
 /*coupon web*/
@@ -57,11 +57,13 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 @media screen and (min-width:360px) and (max-width:1079px){#btnModify{width:100%;}
 .web_title{display:none}
 .inquiryBox select{width:100%;
-padding:12px 10px;
+height:40px;
+font-size:12px;
+padding:10px 10px;
 border: 1px solid #999;
 font-family: inherit;
 border-color:#BBBBBB;
-background: url('images/downarrow_icon_category.png') no-repeat 96% 50%;
+background: url('/images/downarrow_icon_category.png') no-repeat 96% 50%;
 border-radius: 5px;
 -webkit-appearance: none;
 -moz-appearance: none;
@@ -70,7 +72,7 @@ appearance: none;}
 @media screen and (min-width:1080px){
 .inquiryBox{margin-left:-20px}
 .inquiryBox h3{font-size:12px!important;font-weight:bold;margin-bottom:-20px!important}
-.inquiryBox select{width:330px!important;height:36px;border-radius:5px;border: 1px solid #BBBBBB}
+.inquiryBox select{width:330px!important;height:36px;border-radius:5px;border: 1px solid #BBBBBB;font-size:12px;padding:3px}
 .inquiryBox .filebox label{width:330px;height:45px;}
     #btnModify{position:relative;left:-15px}
 }
@@ -124,14 +126,14 @@ body,html {font-family: Noto Sans KR, sans-serif;}
     padding: 12px 0;
     font-weight: 800;
 }
-.main_contents .left h3{font-size:18px;font-weight:bold;position:relative;top:-24px}
+    .main_contents .left h3{font-size:18px;font-weight:bold;position:relative;top:-17px}
 .main_contents .left .left_ctn {
     width: 137px; height: 147px;
     background: #fff;
     text-align: center;
     font-size: 14px;
     position:relative;
-    top:-30px
+    top:-5px
 }
 .main_contents .left_ctn li {
     padding: 2px 0;
@@ -154,9 +156,9 @@ body,html {font-family: Noto Sans KR, sans-serif;}
 .web_contents .right{position:relative;left:81px;top:-25px}
 .main_contents .center, .main_contents .right {
 width: 400px; height: 147px;color: #000; background: #fff;margin: 44px 40px 0 0px}
-.main_contents .center > h3, .main_contents .right > h3 {padding: 12px 10px;font-weight: 500;position:relative;top:-15px;left:5px}
-.main_contents .center p, .main_contents .right p {font-size: 32px; font-weight: 700;text-align: center;color: #EFA543;position:relative;top:-20px}
-.main_contents .center p > span, .main_contents .right p > span {font-size: 20px; font-weight: 100; color: #ccc;padding: 12px 0 0 12px;position:-4px}
+.main_contents .center > h3, .main_contents .right > h3 {padding: 12px 10px;font-weight: 500}
+.main_contents .center p, .main_contents .right p {font-size: 32px; font-weight: 700;text-align: center;margin-top:7px;color: #EFA543}
+.main_contents .center p > span, .main_contents .right p > span {font-size: 20px; font-weight: 100; color: #ccc;padding: 12px 0 0 12px}
 .main_contents .center p, .main_contents .right p {line-height:49px;}
 
 /* contents */
@@ -810,18 +812,8 @@ justify-self: center;width: 100%;margin: 0 auto;}
     padding: 0 15px 14px 15px;
     height: 60px;
   }
-@media screen and (min-width:1080px){
-.btnConfirm, .btnTracking{width:116px;height:30px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
+.btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
 color:#000;font-size:14px;background-color:#F1F1F1;}
-.order_title{margin-left:-20px}
-.buttons{margin-left:-20px}
-.no{margin-left:-20px}
-}
-@media screen and (min-width:360px) and (max-width:1079px){
-    .btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
-        color:#000;font-size:14px;background-color:#F1F1F1;}
-}
-
 .dateNo{border-bottom:8px solid #F1F1F1; /* margin-top: */}
 .date{margin-bottom:3px;color:#878787}
 .no{margin-bottom:14px}
@@ -1957,13 +1949,6 @@ delivery_manage_list .customer_info {
  .detail_title h2{text-align: center; padding-left: 0;}
 .detail_title a img{position:absolute; top: 44px;}
 
-@media screen and (min-width:360px) and (max-width:1079px){
-.review_complete{padding-left:20px}
-.order_a_box{padding-left:20px}
-}
-@media screen and (min-width:1080px){
-.order_a_box{padding-left:25px}
-}
 .review_edit ul li{float:left;}
 .inquiry{width:100%;}
 .myInquiry{width:100%;border-bottom:2px solid #E6E6E6;padding-bottom:20px}
@@ -2274,7 +2259,7 @@ padding-bottom: 10px;}
 input:focus {outline: none;}
 
 
-h3 {margin: 19px 0 8px;font-size: 14px;font-weight:700;}
+h3 {font-size: 14px;font-weight:700;}
 
 
 .box {display: block;width: 100%;height: 51px;
@@ -2331,7 +2316,7 @@ select { width: 100%;height: 29px;font-size: 15px;background: #fff url(https://s
 .error_next_box {margin-top: 9px;font-size: 12px;color: red;display: none;}
 
 #alertTxt {position: absolute; top: 19px;
-    right: 38px;font-size: 12px;color: red;display: none;}
+right: 38px;font-size: 12px;color: red;display: none;}
 
 /* 버튼 */
 
@@ -2339,3 +2324,10 @@ select { width: 100%;height: 29px;font-size: 15px;background: #fff url(https://s
 
 #btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
 font-weight: 400;border-radius:5px;}
+
+@media screen and (min-width:1080px){
+#btnModify{width:330px;height:45px;border:0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+font-weight:400;border-radius:5px;margin-top:-10px}
+.join_title label{position:relative;left:-114px;top:35px}
+#gender input{margin-top:15px}
+}

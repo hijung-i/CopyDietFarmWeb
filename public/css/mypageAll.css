@@ -11,7 +11,7 @@
 
 /* 모바일 화면 대응 orderdelist */
 @media screen and (min-width:1080px){
-
+ 
 }
 @media screen and (min-width:360px) and (max-width:1079px) {
     .wide_line {display: none;}
@@ -26,8 +26,8 @@
     #header {
         display: none;
     }
-    .content_lnb {
-    display: none;
+        .content_lnb {
+        display: none;
     }
     .order_detail_top {
         padding: 8px 12px;
@@ -40,13 +40,11 @@
 
 
     /* 주문 상세 컨텐트 */
-.orderList_detail {
-    text-align: left; outline: 2px solid red !important;
-}
+
 .orderDetails{border-bottom:8px solid #F1F1F1}
 .buttons{width:100%;margin: 0 auto;display: flex;
 justify-content: space-between;padding-bottom:14px;padding-left:15px;padding-right:15px}
-.btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
+.btnConfirm, .btnTracking{width:50%;    height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
 color:#000;font-size:14px;background-color:#F1F1F1;}
 .dateNo{border-bottom:8px solid #F1F1F1;}
 .date{margin-bottom:3px;color:#878787}
@@ -69,10 +67,17 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .detail_title a img{position:absolute;top:42px;width:17px}
 }
 
+@media screen and (min-width:1080px) {
+    .innerbox {display: none;}
+}
+
 /* 모바일 화면 대응 deliverymanage */
 @media screen and (min-width:1080px) {
 section.detail_title, section.delivery_manage_list {display: none;}
 div.del_line_thick{display: none;}
 .delivery_manage_list p img{margin-left:10px;margin-right:10px}
-.delivery_manage_list .edit_remove li {font-size: 12px;padding:2px}
+.delivery_manage_list .edit_remove li {
+font-size: 12px;
+padding: 2px;
+}
 }

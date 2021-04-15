@@ -113,11 +113,9 @@ border-spacing: 0 20px;}
 .total_mobile .price{float:right;padding-right:15px}
 }
 
-
-
 /*장바구니 웹 */
 @media screen and (min-width:1080px){
-.shoplist_ctn img{position:relative;left:-50px}
+.shoplist_ctn img{position:relative;left:-110px}
 .total_mobile{display:none}
 #content {width:1080px;margin:0 auto;padding-bottom:361px}
 .detail_price{display:none}
@@ -157,7 +155,7 @@ right:25px;top:25.8px;}
 .delivery_manage_list .del_mng_type {align-items: center;}
 .delivery_manage_list .del_mng_type,
 .delivery_manage_list .edit_remove {
-    display: flex;
+display: flex;
 }
 .customer_info img{position:relative;top:4px}
 .edit_remove li img{position:relative;top:4px;left:2px}

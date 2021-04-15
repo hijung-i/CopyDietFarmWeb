@@ -161,15 +161,15 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .d_num ul li{float:left;}
 .d_num .d{padding-left:15px;color:#6B6B6B;font-size:12px}
 .d_num .num{margin-left:20px;font-size:12px}
-del_info_content
+
 /*배송 준비중 일때*/
 .delivery_list_null{width:70%; text-align:center; margin:180px auto;}
-.order_list_null img{width:100px;height:75px;display:none}
+.order_list_null img{width:100px;height:75px}
 .no_list{font-size:16px;color:#878787;margin-top:21px}
 
 @media screen and (min-width:1080px){
 .del_info_content{width:350px;margin:0 auto}
-.delivery_list_null{display:none}
+.delivery_list_null{}
 .btnback{display:none}}
 
 
