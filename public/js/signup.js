@@ -73,13 +73,8 @@ $(function() {
   
     $("#btnCheckIdDuplicate").click(function () {
 
-        ajaxCallDataTypeHtml('http://localhost:9090/user/getIdentifyingPage', {}, 'GET',
-        function(data) {
-            console.log(data);
-            openModal(data);
-        }, function(err){
-            console.log("err", err);
-        } )
+        var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';
+        open(API_SERVER +'/user/getIdentifyingPageWeb', '다이어트팜 본인 인증', options);
     });
     
     function openModal(html) {

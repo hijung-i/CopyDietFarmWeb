@@ -31,12 +31,12 @@ router.post('/checkplus_success', (req: Request, res: Response, next: NextFuncti
     let sEncData = req.body.EncodeData
     const cmd = ''
 
-    if ( /^0-9a-zA-Z+\/=/.test(sEncData) == true) {
+    if (/^0-9a-zA-Z+\/=/.test(sEncData) === true) {
         const sRtnMSG = '입력값 오류'
         const requestnumber = ''
         const authtype = ''
         const errcode = ''
-        res.render('checkplus_fail.ejs', {sRtnMSG, requestnumber, authtype, errcode})
+        res.render('checkplus_fail.ejs', { sRtnMSG, requestnumber, authtype, errcode })
       }
 
     res.render('')
