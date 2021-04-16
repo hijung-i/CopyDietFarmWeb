@@ -14,7 +14,7 @@
     <%-include('general/head') %>
     <style type="text/css">
          @media screen and (min-width:360px)and (max-width:1079px) {.web_order_complete{display:none}}
-    @media screen and (min-width:1020px){.mobile_order_complete{display:none} }
+    @media screen and (min-width:1080px){.mobile_order_complete{display:none} }
         </style>
 </head>
 
@@ -23,11 +23,12 @@
         <%-include('general/header_web') %>
     </div>
     
-  
+  <div class="mobile_order_complete">
     <section class="detail_title">
         <h2 style="margin-left:-15px">주문완료</h2>
         <a href="#"><img src="/images/leftarrow_ico_my.png" style="width:17px;display:none"></a>
     </section>
+</div>
       <main id="content" class="content">
           <div class="order_complete_info">
               <h3>주문이 완료되었습니다.</h3>
