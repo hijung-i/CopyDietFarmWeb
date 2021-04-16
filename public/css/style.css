@@ -405,7 +405,7 @@ height:50px;overflow:hidden}
   
   /*찜한 메뉴 웹*/
   @media screen and (min-width:1080px){
-  #content{width:1080px;margin:0 auto;padding-bottom:347px}
+  #content{width:100%;max-width:1080px;margin:0 auto;padding-bottom:347px}
   #content .pick_wrap{width:1080px;}
   #content .pick_wrap{margin:10px 10px;width:100%;}
   #content .pick_product h2{margin-top:40px;margin-bottom:20px;font-size:18px;color:#000;}
@@ -468,7 +468,7 @@ font-size:14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px;
  :root{--font-color: #4e4e4e;--border-gray-color : #dadada;--yello-color: #EFA543;--yello-border-color: #EFA543;
 }
 
-.login h2{text-align:center;position:relative;header .gnb{position:relative;top:50px; z-index: 11}
+.login h2{text-align:center;position:relative;} header .gnb{position:relative;top:50px; z-index: 11}
 
 #header .gnb a{
 	font-family:'나눔고딕';

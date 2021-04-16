@@ -2188,7 +2188,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
 }
 
 .detail_title{overflow:hidden;margin:40px 10px 10px 10px;width:100%;}
- .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px}
+.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px}
 .detail_title a img{position:absolute;top:42px}
 
 /*정보 확인하기 위한 비밀번호 입력란*/
