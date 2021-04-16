@@ -237,13 +237,13 @@ function onLayerPop(layerId, seq, lang) {
 	if (layerId == 'offLayer'){
 		$(".pop_layer").hide();
 	} else {
-	var h = $("#"+layerId).height();
-	if(document.body.scrollHeight <= document.body.Height){
-		var allHeight = document.body.Height;
-	} else {
-		var allHeight = document.body.scrollHeight;
+		var h = $("#"+layerId).height();
+		if(document.body.scrollHeight <= document.body.Height){
+			var allHeight = document.body.Height;
+		} else {
+			var allHeight = document.body.scrollHeight;
+		}
 	}
-
 }
 
 function onLayerPop02(layerId, seq) {
@@ -328,19 +328,16 @@ $(document).ready(function() {
 	$('.btnMenu>a').on('click', function() {
 		$('.gnb').hide();
 	});
-});
-$('.slideMenu_close>a').on('click', function() {
-	$('.gnb').show();
-});
 
- $(document).ready(function(){
-$("#gnbAllMenu").hide();
-$("#btnGnbOpen").click(function(){
-	$("#gnbAllMenu").slideToggle("fast");
-});
-});
+	$('.slideMenu_close>a').on('click', function() {
+		$('.gnb').show();
+	});
 
-$(document).ready(function() {
+	$("#gnbAllMenu").hide();
+	$("#btnGnbOpen").click(function(){
+		$("#gnbAllMenu").slideToggle("fast");
+	});
+
 	$(".m_slides_sub").hide();
 	$(".m_ba_slides_n_w li").hover(function(){
 		$("ul:not(:animated)",this).slideDown("700");
@@ -349,20 +346,42 @@ $(document).ready(function() {
 	},
 	function() {
 		$("ul",this).slideUp("700");
-	   });
-
+	});
 	$("#memberMenu").bind("moseover mouseenter",function(){
 		$("#memMenu").show();
-  });
-   $("#memMenu").bind("moseout mouseleave",function(){
+	});
+
+	$("#memMenu").bind("moseout mouseleave",function(){
 		$("#memMenu").hide();
-  });
+	});
 
 	$("#NotmemberMenu").bind("moseover mouseenter",function(){
 		$("#NotmemMenu").show();
-  });
-   $("#NotmemMenu").bind("moseout mouseleave",function(){
+	});
+
+	$("#NotmemMenu").bind("moseout mouseleave",function(){
 		$("#NotmemMenu").hide();
-  });
+	});
+
+	
 });
+function niceIdentifyPopup() {
+	var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';
+	open('/nice/identifying-page?nextMethod=register', '다이어트팜 본인 인증', options);
 }
+
+function onIdentifiyingSuccess(data, nextMethod) {
+	$("#name").val(data.name);
+	$("#userInfo").val(data.userInfo);
+	$("#dupInfo").val(data.dupInfo);
+	$("#userGender").val(data.userGender);
+	$("#userCellNo").val(data.userCellNo);
+	switch(nextMethod) {
+		case 'register':
+			$("#infoForm").src("action", "/sign-up-form");
+	}
+
+	$("#infoForm").submit();
+}
+
+

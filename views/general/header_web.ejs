@@ -6,9 +6,9 @@
             <div class="top_util">
                 <ul class="menu_list" id="menu_list_header">
 
-                    <li class="join"><a href="#">회원가입</a></li>
+                    <li class="join"><a onclick="niceIdentifyPopup()">회원가입</a></li>
                     <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
-                    <li class="login_top"><a href="#">로그인</a></li>
+                    <li class="login_top"><a href="/login-form">로그인</a></li>
                     <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
                     <li class="cs_center"><a href="#">고객센터</a></li>
                     <li class="cart"><a href="#"><img src="/images/cart_icon_main@2x.png" alt="장바구니"></a></li>
@@ -17,13 +17,20 @@
                </ul>
             </div>
             <div class="header_inner">
-                <h1><a href="javascript:common.link.moveMainHome();"><img src="/images/diet_farm_logo.png" alt="다이어트팜" /></a></h1>
+                <h1><a href="/"><img src="/images/diet_farm_logo.png" alt="다이어트팜" /></a></h1>
                 </div>
 
             <div class="header_design_area"></div>
-
+            <form action="/sign-up-form" method="GET" id="infoForm">
+                <input type="hidden" name="name" id="name">
+                <input type="hidden" name="userInfo" id="userInfo">
+                <input type="hidden" name="dupInfo" id="dupInfo">
+                <input type="hidden" name="userCellNo" id="userCellNo">
+                <input type="hidden" name="userGender" id="userGender">
+                <input type="hidden" name="mobileCo" id="mobileCo">
+                
+            </form>
         </div>
-
 
         <div id="Gnb" class="main gen1">
             <div id="gnbWrap">
@@ -34,7 +41,7 @@
            <div class="m_slides_n_w"> 
         	<!--메인배너 좌측 버튼-->
             <div class="m_ba_slides_n_w font_ng" style="top:0px">
-                <ul class="m_ba_slides_n">                  <li class="m_ba_slides_n_li             m_ba_line_n" style="border-top:none;"><a href="#"><img                                               src="/images/salad_icon_category.png">도시락/샐러드</a>
+                <ul class="m_ba_slides_n">                  <li class="m_ba_slides_n_li m_ba_line_n" style="border-top:none;"><a href="#"><img                                               src="/images/salad_icon_category.png">도시락/샐러드</a>
 						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
                             <div class="m_slid_2dep_txt font_ng">
                             	<ul class="mn2dep">

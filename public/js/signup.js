@@ -72,16 +72,10 @@ $(function() {
     })
   
     $("#btnCheckIdDuplicate").click(function () {
-
-        var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';
-        open(API_SERVER +'/user/getIdentifyingPageWeb', '다이어트팜 본인 인증', options);
+        niceIdentifyPopup();
+        
     });
     
-    function openModal(html) {
-        $(".nice-modal-area").show();
-
-        $(".nice-modal-area .modal-content").html(html);
-    }
 });
 
 

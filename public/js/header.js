@@ -19,7 +19,7 @@ $(function() {
             jQuery('.mDepth01>li>dl>dt').removeClass("on");
             objA.prev('dt').addClass("on");
             objA.slideDown();
-        }
+    // }
     });
 
     jQuery('.side_back').bind("touchend click", function(){

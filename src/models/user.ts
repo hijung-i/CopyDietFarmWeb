@@ -12,6 +12,7 @@ export type User = {
     dupInfo?: string
     serviceAlert?: string
     marketingAlert?: string
+    userGender?: string
 
 }
 

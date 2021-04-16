@@ -12,12 +12,16 @@
     
 </head>
 <body>
-    <input type="hidden" id="name" value="<%=name %>">
-    <input type="hidden" id="birthdate" value="<%=birthdate %>">
-    <input type="hidden" id="gender" value="<%=gender %>">
-    <input type="hidden" id="dupinfo" value="<%=dupinfo %>">
-    <input type="hidden" id="mobileno" value="<%=mobileno %>">
-    <input type="hidden" id="mobileco" value="<%=mobileco %>">
+    <form method="GET" id="infoForm">
+        <input type="hidden" id="nextMethod" name="nextMethod" value="<%=nextMethod %>">
+        <input type="hidden" id="name" name="name" value="<%=name %>">
+        <input type="hidden" id="birthdate" name="userInfo" value="<%=birthdate %>">
+        <input type="hidden" id="gender" name="gender" value="<%=gender %>">
+        <input type="hidden" id="dupinfo" name="dupInfo" value="<%=dupinfo %>">
+        <input type="hidden" id="mobileno" name="mobileNo" value="<%=mobileno %>">
+        <input type="hidden" id="mobileco" value="<%=mobileco %>">
+    </form>
+    
 
 
     <center>
@@ -26,7 +30,7 @@
     <table border=1>
         <tr>
             <td>message</td>
-            <td><%=sRtnMSG%></td>
+            <td id="sRtnMsg"><%=sRtnMSG%></td>
         </tr>            
         <tr>
             <td>요청 번호</td>
@@ -79,18 +83,29 @@
     </table>
     </center>
     <script>
-        const name = document.getElementById("name").value;
-        const userInfo = document.getElementById("birthdate").value;
-        const userGender = document.getElementById("gender").value;
-        const dupInfo = document.getElementById("dupinfo").value;
-        const userCellNo = document.getElementById("mobileno").value;
-        const mobileCo = document.getElementById("mobileco").value;
-        
-        const result = {
-            name, userInfo, userGender, dupInfo, userCellNo, mobileCo
+        var name = document.getElementById("name").value;
+        var userInfo = document.getElementById("birthdate").value;
+        var userGender = document.getElementById("gender").value;
+        var dupInfo = document.getElementById("dupinfo").value;
+        var userCellNo = document.getElementById("mobileno").value;
+        var mobileCo = document.getElementById("mobileco").value;
+
+        var params = {
+            name: name,
+            userInfo: userInfo,
+            userGender: userGender,
+            useCellNo: userCellNo,
+            dupInfo: dupInfo
         }
 
-        window.Android.processData(JSON.stringify(result));
+        var sRtnMsg = $('#sRtnMsg').html();
+
+        if (sRtnMsg == '') {
+            opener.onIdentifyingSuccess(params);
+        } else {
+            alert('본인인증에 실패했습니다.');
+        }
+        
     </script>
 </body>
 </html>

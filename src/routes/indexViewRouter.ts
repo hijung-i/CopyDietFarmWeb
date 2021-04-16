@@ -1,4 +1,5 @@
 import { NextFunction, request, Request, Response, Router } from 'express'
+import { User } from '../models/user'
 const router = Router()
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -24,6 +25,10 @@ router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) =>
         res.redirect('/')
         return
     }
+
+    const userData: User = req.params
+    console.log(userData)
+
     render(res, 'sign_up', {})
 })
 
