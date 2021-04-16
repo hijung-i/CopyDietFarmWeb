@@ -16,6 +16,14 @@ export type User = {
 
 }
 
+export type NiceUser = {
+    name?: string
+    userInfo?: string
+    userGender?: string
+    dupInfo?: string
+    userCellNo?: string
+}
+
 export type SessionUser = {
     userId: string,
     name: string,

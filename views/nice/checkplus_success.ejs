@@ -8,8 +8,10 @@
 -->   
 <html>
 <head>
-    <title>NICE평가정보 - CheckPlus 본인인증 테스트</title>
     
+	<meta charset="utf-8">
+    <title>NICE평가정보 - CheckPlus 본인인증 테스트</title>
+    <%-include('../general/head') %>
 </head>
 <body>
     <form method="GET" id="infoForm">
@@ -89,19 +91,27 @@
         var dupInfo = document.getElementById("dupinfo").value;
         var userCellNo = document.getElementById("mobileno").value;
         var mobileCo = document.getElementById("mobileco").value;
+        var nextMethod = document.getElementById("nextMethod").value;
 
+        if (userGender == '1') {
+            userGender = 'M'
+        } else if ( userGender == '2'){
+            userGender = 'W'
+        }
+        
         var params = {
             name: name,
             userInfo: userInfo,
             userGender: userGender,
-            useCellNo: userCellNo,
+            userCellNo: userCellNo,
             dupInfo: dupInfo
         }
 
         var sRtnMsg = $('#sRtnMsg').html();
 
         if (sRtnMsg == '') {
-            opener.onIdentifyingSuccess(params);
+            opener.onIdentifyingSuccess(params, nextMethod);
+            window.close();
         } else {
             alert('본인인증에 실패했습니다.');
         }

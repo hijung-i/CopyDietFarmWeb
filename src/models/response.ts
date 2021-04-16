@@ -1,3 +1,4 @@
+import { resourceLimits } from 'worker_threads'
 import { User } from './user'
 
 export enum StatusCode {
@@ -8,7 +9,13 @@ export enum StatusCode {
 export enum StatusMessage {
     success     = 'SUCCESS',
     error       = 'ERROR_SERVER',
-    notFound    = 'NOT_FOUND'
+    notFound    = 'NOT_FOUND',
+    forbidden   = 'FORBIDDEN'
+}
+
+export type Result = {
+    resultCd: string,
+    resultMsg?: string
 }
 
 export type UserResult = {

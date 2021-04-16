@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import { StatusCode, StatusMessage, UserResult } from '../models/response'
-import { SessionUser, User } from '../models/user'
+import { NiceUser, SessionUser, User } from '../models/user'
 import userService from '../services/userService'
 import { exec } from 'child_process'
 import * as path from 'path'
@@ -21,8 +21,8 @@ const sModulePath = path.join(globalData.getBaseDir(), 'nice_modules/window/CPCl
 // const sModulePath = '/home/dataflow1/DietFarm/Api/nice_modules/linux/CPClient_64bit'
 
 // 우분투
-// const serverIp = '112.217.209.162'
-const serverIp = '127.0.0.1:3000'
+// const serverIp = '112.217.209.162:3000'
+const serverIp = 'localhost:3000'
 const sAuthType = ''
 const sPopGubun = 'Y'
 const sCustomize = ''
@@ -93,8 +93,89 @@ router.get('/identifying-page', (req: Request, res: Response) => {
     })
 })
 
-const identifyingSuccess = (req: Request, res: Response) => {
+const identifyingSuccessPost = (req: Request, res: Response) => {
   const sEncData = req.body.EncodeData
+  let cmd = ''
+
+  if (/^0-9a-zA-Z+\/=/.test(sEncData) === true) {
+      const sRtnMSG = '입력값 오류'
+      const requestnumber = ''
+      const authtype = ''
+      const errcode = ''
+      res.render('checkplus_fail.ejs', { sRtnMSG , requestnumber , authtype , errcode })
+  }
+
+  if (sEncData !== '') {
+      cmd = sModulePath + ' ' + 'DEC' + ' ' + sSiteCode + ' ' + sSitePW + ' ' + sEncData
+  }
+
+  let sDecData = ''
+
+  const child = exec(cmd , { encoding: 'utf-8' })
+  child.stdout?.on('data', function(data) {
+      sDecData += data
+  })
+  child.on('close', function() {
+      let requestnumber: string = ''
+      let responsenumber: string = ''
+      let authtype: string = ''
+      let name: string = ''
+      let birthdate: string = ''
+      let gender: string = ''
+      let nationalinfo: string = ''
+      let dupinfo: string = ''
+      let conninfo: string = ''
+      let mobileno: string = ''
+      let mobileco: string = ''
+
+      // 처리 결과 메시지
+      let sRtnMSG = ''
+      // 처리 결과 확인
+      if (sDecData === '-1') {
+        sRtnMSG = '암/복호화 시스템 오류'
+      } else if (sDecData === '-4') {
+        sRtnMSG = '복호화 처리 오류'
+      } else if (sDecData === '-5') {
+        sRtnMSG = 'HASH값 불일치 - 복호화 데이터는 리턴됨'
+      } else if (sDecData === '-6') {
+        sRtnMSG = '복호화 데이터 오류'
+      } else if (sDecData === '-9') {
+        sRtnMSG = '입력값 오류'
+      } else if (sDecData === '-12') {
+        sRtnMSG = '사이트 비밀번호 오류'
+      } else {
+        // 항목의 설명은 개발 가이드를 참조
+        requestnumber = decodeURIComponent(GetValue(sDecData , 'REQ_SEQ'))     // CP요청 번호 , main에서 생성한 값을 되돌려준다. 세션등에서 비교 가능
+        responsenumber = decodeURIComponent(GetValue(sDecData , 'RES_SEQ'))    // 고유 번호 , 나이스에서 생성한 값을 되돌려준다.
+        authtype = decodeURIComponent(GetValue(sDecData , 'AUTH_TYPE'))        // 인증수단
+        name = decodeURIComponent(GetValue(sDecData , 'UTF8_NAME'))            // 이름
+        birthdate = decodeURIComponent(GetValue(sDecData , 'BIRTHDATE'))       // 생년월일(YYYYMMDD)
+        gender = decodeURIComponent(GetValue(sDecData , 'GENDER'))             // 성별
+        nationalinfo = decodeURIComponent(GetValue(sDecData , 'NATIONALINFO')) // 내.외국인정보
+        dupinfo = decodeURIComponent(GetValue(sDecData , 'DI'))                // 중복가입값(64byte)
+        conninfo = decodeURIComponent(GetValue(sDecData , 'CI'))               // 연계정보 확인값(88byte)
+        mobileno = decodeURIComponent(GetValue(sDecData , 'MOBILE_NO'))        // 휴대폰번호(계약된 경우)
+        mobileco = decodeURIComponent(GetValue(sDecData , 'MOBILE_CO'))        // 통신사(계약된 경우)
+      }
+      console.log(sDecData)
+
+      const userData: NiceUser = {
+          name: name,
+          userInfo: birthdate,
+          userGender: gender,
+          dupInfo: dupinfo,
+          userCellNo: mobileno
+      }
+
+      req.session.niceUserData = userData
+
+      const nextMethod = req.query.nextMethod
+      res.render('nice/checkplus_success', { sRtnMSG, requestnumber , responsenumber , authtype , name , birthdate , gender , nationalinfo , dupinfo , conninfo , mobileno , mobileco, nextMethod })
+  })
+}
+
+const identifyingSuccessGet = (req: Request, res: Response) => {
+  const sEncData = req.query?.EncodeData as string
   let cmd = ''
 
   if (/^0-9a-zA-Z+\/=/.test(sEncData) === true) {
@@ -167,42 +248,42 @@ const identifyingSuccess = (req: Request, res: Response) => {
 // success for register
 router.post('/success-register', (req: Request, res: Response) => {
     req.query.nextMethod = 'register'
-    identifyingSuccess(req, res)
+    identifyingSuccessPost(req, res)
 })
 
 router.get('/success-register', (req: Request, res: Response) => {
     req.query.nextMethod = 'register'
-    identifyingSuccess(req, res)
+    identifyingSuccessGet(req, res)
 })
 
 // success for find id
 router.post('/success-find-id', (req: Request, res: Response) => {
     req.query.nextMethod = 'find-id'
-    identifyingSuccess(req, res)
+    identifyingSuccessPost(req, res)
 })
 router.get('/success-find-id', (req: Request, res: Response) => {
     req.query.nextMethod = 'find-id'
-    identifyingSuccess(req, res)
+    identifyingSuccessGet(req, res)
 })
 
 // success for find pw
 router.post('/success-find-pw', (req: Request, res: Response) => {
   req.query.nextMethod = 'find-pw'
-  identifyingSuccess(req, res)
+  identifyingSuccessPost(req, res)
 })
 router.get('/success-find-pw', (req: Request, res: Response) => {
   req.query.nextMethod = 'find-pw'
-  identifyingSuccess(req, res)
+  identifyingSuccessGet(req, res)
 })
 
-function GetValue(plaindata , key) {
+function GetValue(plaindata: string, key: string) {
   let arrData = plaindata.split(':')
   let value = ''
   for (let i = 0; i < arrData.length; i++) {
       const item = arrData[i]
       if (item.indexOf(key) === 0) {
         const valLen = parseInt(item.replace(key, ''), 10)
-        value = arrData[i].substr(0, valLen)
+        value = arrData[++i].substr(0, valLen)
         break
       }
   }

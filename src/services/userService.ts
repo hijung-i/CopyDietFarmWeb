@@ -35,6 +35,29 @@ class UserService {
         })
     }
 
+    register = async (user: User): Promise<UserResult> => {
+        let options: Option = {
+            uri: `${serverUrl}/user/register`,
+            method: 'POST',
+            headers: {
+                'Accept-Charset': 'application/json;charset=UTF-8',
+                'Content-Type': 'application/json'
+            },
+            json: true,
+            body: user
+        }
+        user.password = this.SHA256(user.password!)
+
+        return request(options).then((res: any): UserResult => {
+            return setUserResult(StatusCode.success, StatusMessage.success, res.result)
+        }).catch((err: any): UserResult => {
+            if (err) {
+                console.log('Error occured while login', err.statusCode, err.error)
+            }
+            return setUserResult(StatusCode.error, err.error, null)
+        })
+    }
+
     SHA256 = (s: string): string => {
         let chrsz   = 8
         let hexcase = 0

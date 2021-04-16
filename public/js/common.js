@@ -370,7 +370,7 @@ function niceIdentifyPopup() {
 	open('/nice/identifying-page?nextMethod=register', '다이어트팜 본인 인증', options);
 }
 
-function onIdentifiyingSuccess(data, nextMethod) {
+function onIdentifyingSuccess(data, nextMethod) {
 	$("#name").val(data.name);
 	$("#userInfo").val(data.userInfo);
 	$("#dupInfo").val(data.dupInfo);
@@ -378,10 +378,12 @@ function onIdentifiyingSuccess(data, nextMethod) {
 	$("#userCellNo").val(data.userCellNo);
 	switch(nextMethod) {
 		case 'register':
-			$("#infoForm").src("action", "/sign-up-form");
+			$("#infoForm").attr("action", "/sign-up-form");
+			break;
 	}
 
 	$("#infoForm").submit();
+	
 }
 
 

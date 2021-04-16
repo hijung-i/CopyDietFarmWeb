@@ -1,6 +1,7 @@
+import { Console } from 'console'
 import { NextFunction, Request, Response, Router } from 'express'
-import { StatusCode, StatusMessage, UserResult } from '../models/response'
-import { SessionUser, User } from '../models/user'
+import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
+import { NiceUser, SessionUser, User } from '../models/user'
 import userService from '../services/userService'
 
 const router = Router()
@@ -44,6 +45,31 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
         console.log('save user on session', req.session.user)
     }
     res.status(loginResult.statusCode).send(loginResult.data || loginResult.message)
+})
+
+router.post('/register', async (req: Request, res: Response, next: NextFunction) => {
+    const user = req.body as User
+    const niceUser = req.session.niceUserData as NiceUser
+    let registerResult: UserResult
+
+    if (user.name !== niceUser.name
+        || user.dupInfo !== niceUser.dupInfo
+        || user.userInfo !== niceUser.userInfo
+        || user.userCellNo !== niceUser.userCellNo) {
+        registerResult = setUserResult(StatusCode.error, StatusMessage.forbidden, {})
+ 
+        res.status(registerResult.statusCode).send(registerResult.data || registerResult.message)
+        return
+    }
+    console.log("user data on register", user)
+
+    registerResult = await userService.register(user)
+
+    if (registerResult.message === StatusMessage.success) {
+        console.log('loginSuccess -> ', registerResult.data)
+
+    }
+    res.status(registerResult.statusCode).send(registerResult.data || registerResult.message)
 })
 
 export default router

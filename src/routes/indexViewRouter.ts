@@ -26,10 +26,9 @@ router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) =>
         return
     }
 
-    const userData: User = req.params
-    console.log(userData)
+    const userData: User = req.query
 
-    render(res, 'sign_up', {})
+    render(res, 'sign_up', { userData })
 })
 
 router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {

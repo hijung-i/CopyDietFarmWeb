@@ -5,11 +5,12 @@ import * as session from 'express-session'
 import Err from './error/error'
 
 import * as path from 'path'
-import { SessionUser } from './models/user'
+import { NiceUser, SessionUser } from './models/user'
 
 declare module 'express-session' {
     interface SessionData {
         user: SessionUser | undefined
+        niceUserData: NiceUser
         isLoggedIn: boolean
     }
 }
