@@ -30,14 +30,14 @@ function getProductDetail(){
         var headerTitle = $('.detail_title h2'); 
         headerTitle.html(product.productName);
 
-        var productName = $('.product_wrap .product h2')
+        var productName = $('.v_top_name')
         productName.html(product.productName);
         $('.infoArea01 .product_name_css .con span').html(product.productName);
 
-        var productDesc = $('.infoArea01 .simple_desc_css .con span')
-        var discountPrice = $('.infoArea01 .product_custom .con span span')
-        var supplyPrice = $('.infoArea01 .product_price')
-        var discountRate = $('.infoArea01 .discount_rate')
+        var productDesc = $('.v_top_txt')
+        var discountPrice = $('.v_top_txt_box .p1')
+        var supplyPrice = $('.v_top_txt_box .p2')
+        var discountRate = $('.v_top_txt_box .p3')
         productDesc.html(product.productDesc);
         discountPrice.html(numberFormat(product.discountPrice)+'원');
         
@@ -56,17 +56,17 @@ function getProductDetail(){
         }
         $('select#products').html(optionHtml);
         
-        var representative = '';
-        var detailHtml = '';
+        var representative = $('.bxslider li a img')
+        var detailHtml = $('.bxslider li a')
         for(var i = 0; i < product.detail.length; i++){
             var image = product.detail[i];
             detailHtml += '<img src="'+ RESOURCE_SERVER + image.url +'" style="width:100%;height:100%">';
         }
         
-        // for(var i = 0; i < product.representative.length; i++){
-        //     var image = product.representative[i];
-        //     representative += '<img'
-        // }
+    for(var i = 0; i < product.representative.length; i++){
+  var image = product.representative[i];
+     representative += '<img src="'+ RESOURCE_SERVER + image.url +'" style="width:100%;height:100%">';
+  }
         $('.products_ex').html(detailHtml);
         console.log("productDetail success", data);
     }, function (err) {
