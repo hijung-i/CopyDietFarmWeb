@@ -56,17 +56,20 @@ function getProductDetail(){
         }
         $('select#products').html(optionHtml);
         
-        var representative = $('.bxslider li a img')
-        var detailHtml = $('.bxslider li a')
+        var detailHtml = '';
         for(var i = 0; i < product.detail.length; i++){
             var image = product.detail[i];
             detailHtml += '<img src="'+ RESOURCE_SERVER + image.url +'" style="width:100%;height:100%">';
         }
         
-    for(var i = 0; i < product.representative.length; i++){
-  var image = product.representative[i];
-     representative += '<img src="'+ RESOURCE_SERVER + image.url +'" style="width:100%;height:100%">';
-  }
+        var representative = '';
+        console.log(product.representative[i]);
+        for(var i = 0; i < product.representative.length; i++){
+            var image = product.representative[i];
+            representative += '<li><a href="#"><img src="'+ RESOURCE_SERVER + image.url+'"></a></li>';
+        }
+
+        $('.view_top_box .bxslider').html(representative);
         $('.products_ex').html(detailHtml);
         console.log("productDetail success", data);
     }, function (err) {

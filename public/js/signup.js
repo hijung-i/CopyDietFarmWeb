@@ -3,47 +3,60 @@
 /*변수 선언*/
 
 $(function() {
-    var id = document.querySelector('#id');
+    
+    var id = $('#id');
+    var pw1 = $('#pswd1');
+    var pwMsg = $('#alertTxt');
+    var pwImg1 = $('#pswd1_img1');
+    var pw2 = $('#pswd2');
+    var pwImg2 = $('#pswd2_img1');
+    var pwMsgArea = $('.int_pass');
 
-    var pw1 = document.querySelector('#pswd1');
-    var pwMsg = document.querySelector('#alertTxt');
-    var pwImg1 = document.querySelector('#pswd1_img1');
+    var nameInput = $("#name");
+    var userInfoInput = $("#userInfo");
+    var dupInfoInput = $("#dupInfo");
+    var userCellNoInput = $("#userCellNo");
+    var userGenderInput = $('#userGender');
 
-    var pw2 = document.querySelector('#pswd2');
-    var pwImg2 = document.querySelector('#pswd2_img1');
-    var pwMsgArea = document.querySelector('.int_pass');
-
-    var gender = document.querySelector('#gender');
-    var email = document.querySelector('#email');
-    var mobile = document.querySelector('#mobile');
+    var email = $('#email');
     var error = document.querySelectorAll('.error_next_box');
 
     /*이벤트 핸들러 연결*/
-
-    id.addEventListener("focusout", checkId);
-    pw1.addEventListener("focusout", checkPw);
-    pw2.addEventListener("focusout", comparePw);
-    // userName.addEventListener("focusout", checkName);
-    // yy.addEventListener("focusout", isBirthCompleted);
-    // mm.addEventListener("focusout", isBirthCompleted);
-    // dd.addEventListener("focusout", isBirthCompleted);
-    // gender.addEventListener("focusout", function() {
-    //     if(gender.value === "성별") {
-    //         error[5].style.display = "block";
-    //     } else {
-    //         error[5].style.display = "none";
-    //     }
-    // })
-    email.addEventListener("focusout", isEmailCorrect);
-    // mobile.addEventListener("focusout", checkPhoneNum);
-
-
-
+    id.focusout(checkId);
+    pw1.focusout(checkPw);
+    pw2.focusout(comparePw);
+    email.focusout(isEmailCorrect);
+    
     $("#btnJoin").click(function (){
         var userId = $("#id").val();
         var password = $("#pswd1").val();
         var passwordCheck = $("#pswd2").val();
         var email = $("#name").val();
+        var name = nameInput.val();
+        if(name !== '') {
+            alert('본인인증 정보가 없습니다.')
+            return;
+        }
+        var userInfo = userInfoInput.val();
+        if(userInfo !== '') {
+            alert('본인인증 정보가 없습니다.')
+            return;
+        }
+        var dupInfo = dupInfoInput.val();
+        if(dupInfo !== '') {
+            alert('본인인증 정보가 없습니다.')
+            return;
+        }
+        var userCellNo = userCellNoInput.val();
+        if(userCellNo !== '') {
+            alert('본인인증 정보가 없습니다.')
+            return;
+        }
+        var userGender = userGenderInput.val();
+        if(userGender !== '') {
+            alert('본인인증 정보가 없습니다.')
+            return;
+        }
 
         var addr = $("#addr").val();
         var recommender = $("#recommender").val();
@@ -81,8 +94,6 @@ $(function() {
     function isEmailCorrect() {
 
     }
-
-    function checkPhoneNum() {}
     function checkId() {
         var idPattern = /[a-zA-Z0-9_-]{5,20}/;
         if(id.value === "") {
