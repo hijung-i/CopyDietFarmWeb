@@ -29,10 +29,10 @@ function getStandDatas() {
 
                 $('.main_img .bxslider').html(html);
 
-                $('.main_img .bxslider').bxSlider({
+                $('.bxslider').bxSlider({
                     mode: 'horizontal',
-                    auto: false,
-                    pause: 2000,
+                    auto: true,
+                    pause: 4000,
                     controls: false,
                     easing: '',
                     pager: false,
@@ -62,13 +62,14 @@ function getStandDatas() {
                 $('.multiple_bxslider').bxSlider({
                     mode: 'horizontal',
                     auto: true,
-                    slideWidth: 3000,
-                    infiniteLoop: false,
-                    controls: false,
+                    slideWidth: 1080,
+                    infiniteLoop: true,
+                    controls: true,
                     pager: false,
-                    minSlides: 2.5,
-                    maxSlides: 2.5,
-                    slideMargin: 10
+                    minSlides: 3,
+                    maxSlides: 3,
+                    slideMargin:3,
+                    touchEnabled: true
                 });
                 break;
             case 2:
@@ -78,18 +79,23 @@ function getStandDatas() {
                 break;
             case 3:
                 // 단백질이 필요할 때!
-                $('.protein ul').html(generateHtmlForProductList(products));
-                $('.protein h2').html(salesName);
+                $('m_bestn_w ul').html(generateHtmlForProductList(products));
+                $('.m_bestn_w h2').html(salesName);
                 break;
             case 4:
                 // 당충전이 필요할 떄!
-                $('.sweets ul').html(generateHtmlForProductList(products));
-                $('.sweets h2').html(salesName);
+                $('.m_bestn_w ul').html(generateHtmlForProductList(products));
+                $('.m_bestn_w h2').html(salesName);
                 break;
             case 5:
                 // 수분이 필요할 떄!
-                $('.water ul').html(generateHtmlForProductList(products));
-                $('.water h2').html(salesName);
+                $('.m_bestn_w ul').html(generateHtmlForProductList(products));
+                $('.m_bestn_w h2').html(salesName);
+                break;
+            case 6:
+                // 위클리 베스트 웹
+                $('.m_bestn_w').html(generateHtmlForProductList(products));
+                $('.m_bestn_w h2').html(salesName);
                 break;
             }
         }

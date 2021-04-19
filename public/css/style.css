@@ -116,14 +116,16 @@ width: 700px;
 }
 #header nav a {
   display: block;
-  width: 10%;
+  width: 14%;
   padding: .75em 0;
   color:#878787;
   text-decoration: none;
   text-align: center;
   z-index:1;
   font-weight:bolder;
-  margin-top:32px
+  margin-top:32px;
+  white-space: nowrap;
+  overflow:visible
 }
 
 .nav-underline {
@@ -140,12 +142,12 @@ width: 700px;
 nav a:nth-child(1).is-current ~ .nav-underline {
   left: 0;
  
-}
+}fffff
 nav a:nth-child(2).is-current ~ .nav-underline {
-  left: 13%;
+  left: 18%;
 }
 nav a:nth-child(3).is-current ~ .nav-underline {
-    left: 23%;}
+    left: 36%;}
 nav a:nth-child(4).is-current ~ .nav-underline {
   left: 34.5%;
 }
@@ -257,12 +259,21 @@ height:50px;overflow:hidden}
   #content{width:100%;margin-right:15px}
   .m_bestn_mn_box{display:none}
   .banner{display:none}
+  .m_bestn_w {padding-left:10px;padding-right:10px}
+  .m_bestn_w img {width: 50%;
+    height: 250px;
+    object-fit:cover;padding:5px}
+    .s_price .multiple_bxslider img{width:40%;height:160px}
+  .m_bestn_w .thum{float:left}
+  .m_bestn_w .ul li{float:left;white-space:nowrap;}
   .blank_sec{display:none}
   .m_bestn_tit_w {position:relative; width:100%;margin-bottom:20px;}
   .m_bestn_tit_box img{ display:inline-block;width:200px;}
   .m_bestn_list{border-bottom:8px solid #f1f1f1;padding-top:10px}
   .m_bestn_mn_box {float:left;}
-  
+   .m_bestn_w .desc{clear:both}
+  .m_bestn_w .decs .title{font-size:12px;margin-left:10px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100px;height: 20px;display:inline-block}
+  .m_bestn_w .desc ul li{float:left;}
   .m_bestn_img img {border-radius:5px;vertical-align:top;width:100%;padding:5.5px}
   .m_bestn_mn_img{width:100%}
   .m_bestn_list ul {width:100%;margin:0 auto; position:relative;}
@@ -271,7 +282,7 @@ height:50px;overflow:hidden}
   ;align-items:center;
   justify-self:center;
   padding-left:15px;padding-right:15px }
-  .m_bestn_nlst li {position:relative;display:block;float:left; vertical-align:top;}
+  .m_bestn_nlst li {position:relative;display:block;float:left}
   .tb_mw_wrap .desc .title{margin-left:10px;margin-bottom:7px;margin-top:8px}
   .tb_mw_wrap .desc ul li{font-weight:bold;margin-bottom:20px}
   .tb_mw_wrap .desc .cost{margin-left:7px;color:#909090;text-decoration:line-through;font-weight:normal}

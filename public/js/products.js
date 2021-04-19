@@ -12,7 +12,7 @@ function getProductByStandCode() {
         ajaxCallWithLogin(API_SERVER + '/product/getProductByStandCode', params, 'post'
         , function (data) {  
             var html = generateHtmlForProductList(data.result);
-            $('.main_sub ul').html(html);
+            $('.sub_items ul').html(html);
 
         }, function (err){
             console.log("getProductByStandCode err", err);
@@ -46,7 +46,7 @@ function getProductListByCategory() {
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
     , function (data) {  
         var html = generateHtmlForProductList(data.result);
-        $('.main_sub ul').html(html);
+        $('.sub_items ul').html(html);
 
     }, function (err){
         console.log("getProductByStandCode err", err);
