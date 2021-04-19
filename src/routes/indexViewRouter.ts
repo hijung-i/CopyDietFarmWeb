@@ -147,6 +147,9 @@ router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) =
 router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'myinfoUserCheck', {})
 })
+router.get('/login-new', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'login_new', {})
+})
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }

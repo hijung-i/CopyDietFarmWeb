@@ -7,12 +7,20 @@
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 @media screen and (min-width:360px) and (max-width:480px){
+
 .id_place .box int_id{width:20px}
 #content{padding-left:15px;padding-right:15px;width:370px}
 .id_place .box{float:left;width:240px}
 .box int_id #id {width:130px}
 .id_place .btn_wrap{float:right;position:relative;left:85px;}
 .btn_wrap button{width:83px;height:49px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
+}
+@media screen and (min-width:360px) and (max-width:1079px){
+.web_login_title{display:none}
+}
+
+@media screen and (min-width:1080px){
+    .web_login_title{text-align:center;margin-top:55px;font-size:16px;font-weight:bold}
 }
 /*로그인*/
 
@@ -133,7 +141,6 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 
 /*탈퇴 버튼*/
 .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
-.member_delete ul{}
 .member_delete ul li a{text-decoration:underline;}
 
 /*비밀번호 재설정*/
