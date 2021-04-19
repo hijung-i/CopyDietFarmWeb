@@ -2,12 +2,14 @@ export type User = {
     userSeqNo?: number
     userId?: string
     password?: string
-    name?: string
+    userName?: string
     userInfo?: string
     userCellNo?: string
     userEmail?: string
     regDate?: string
     authId?: string
+    postalCode?: string
+    address?: string
     registrationtokens?: string
     dupInfo?: string
     serviceAlert?: string
@@ -17,7 +19,7 @@ export type User = {
 }
 
 export type NiceUser = {
-    name?: string
+    userName?: string
     userInfo?: string
     userGender?: string
     dupInfo?: string
@@ -26,7 +28,7 @@ export type NiceUser = {
 
 export type SessionUser = {
     userId: string,
-    name: string,
+    userName: string,
     userInfo: string,
     userCellNo: string,
     userEmail: string

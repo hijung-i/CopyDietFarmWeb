@@ -160,7 +160,7 @@ const identifyingSuccessPost = (req: Request, res: Response) => {
       console.log(sDecData)
 
       const userData: NiceUser = {
-          name: name,
+          userName: name,
           userInfo: birthdate,
           userGender: gender,
           dupInfo: dupinfo,
@@ -239,6 +239,16 @@ const identifyingSuccessGet = (req: Request, res: Response) => {
         mobileco = decodeURIComponent(GetValue(sDecData , 'MOBILE_CO'))        // 통신사(계약된 경우)
       }
       console.log(sDecData)
+
+      const userData: NiceUser = {
+          userName: name,
+          userInfo: birthdate,
+          userGender: gender,
+          dupInfo: dupinfo,
+          userCellNo: mobileno
+      }
+
+      req.session.niceUserData = userData
 
       const nextMethod = req.query.nextMethod
       res.render('nice/checkplus_success', { sRtnMSG, requestnumber , responsenumber , authtype , name , birthdate , gender , nationalinfo , dupinfo , conninfo , mobileno , mobileco, nextMethod })
