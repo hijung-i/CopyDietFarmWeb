@@ -335,18 +335,9 @@ $(document).ready(function() {
 
 	$("#gnbAllMenu").hide();
 	$("#btnGnbOpen").click(function(){
-		$("#gnbAllMenu").slideToggle("fast");
+		$("#gnbAllMenu").slideToggle("");
 	});
 
-	$(".m_slides_sub").hide();
-	$(".m_ba_slides_n_w li").hover(function(){
-		$("ul:not(:animated)",this).slideDown("700");
-
-		$(".m_ba_slides_n_w li a").removeClass("active");
-	},
-	function() {
-		$("ul",this).slideUp("700");
-	});
 	$("#memberMenu").bind("moseover mouseenter",function(){
 		$("#memMenu").show();
 	});

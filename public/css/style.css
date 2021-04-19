@@ -96,7 +96,8 @@ a:hover{text-decoration:none;}
 	font-family:'나눔고딕';
 	font-size:16px; 
 	font-weight:bold; 
-	padding: 0 20px 0 px; 
+	padding-left:15px;
+  padding-right:15px;
 	overflow-x:hidden;
   float:left;
 }
@@ -104,7 +105,7 @@ a:hover{text-decoration:none;}
 
 }
 @media screen and (min-width:360px)  and (max-width:1079px){
-#header .gnb{position:fixed;width:100%;height:90px;background-color:#fff}
+#header .gnb{position:fixed;width:100%;background-color:#fff}
 }
 /*new gnb*/
 nav {
@@ -116,7 +117,6 @@ width: 700px;
 }
 #header nav a {
   display: block;
-  width: 14%;
   padding: .75em 0;
   color:#878787;
   text-decoration: none;
@@ -131,12 +131,12 @@ width: 700px;
 .nav-underline {
   position: absolute;
   left: 0;
-  bottom: 2.3px;
+  bottom: 1px;
   width: 10%;
   height: 2px;
   background: #F99319;
   transition: all .3s ease-in-out;
-  top:81px
+  top:72.5px
 }
 
 nav a:nth-child(1).is-current ~ .nav-underline {
@@ -486,14 +486,6 @@ font-size:14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px;
 
 .login h2{text-align:center;position:relative;} header .gnb{position:relative;top:50px; z-index: 11}
 
-#header .gnb a{
-	font-family:'나눔고딕';
-	font-size:16px; 
-	font-weight:bold; 
-	padding: 0 20px 0 px; 
-	overflow-x:hidden;
-  float:left;
-font-weight:bold;font-size:17.2px;margin-right:10px;margin-top:40px}
 .login a{left:20px;margin-top:-20px}
 .main-container{width:100%;display:flex;
 flex-direction:column;align-items:center;margin-top: 21px;}

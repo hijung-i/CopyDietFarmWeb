@@ -135,7 +135,7 @@ a:hover{text-decoration:none;}
 .search img{width:18px;position:absolute;top:12px;left:325px;z-index:10}
 
 /* GNB */
-#wheader #Gnb {position:relative;width:100%;min-width:1020px;height:54px;background:#fff;border-bottom:2px solid #f1f1f1;z-index:1000}
+#wheader #Gnb {position:relative;width:100%;min-width:1020px;height:51px;background:#fff;border-bottom:2px solid #f1f1f1;z-index:1000}
 #wheader #gnbWrap {position:relative;width:1080px;margin:0 auto}
 #wheader #Gnb .gnb_menu_list {top:0px;left:-40px}
 #wheader #Gnb .gnb_menu_list > li{float:left;margin-top:5px;width:124px;height:44px;text-align:center}
