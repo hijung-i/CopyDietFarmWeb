@@ -371,11 +371,12 @@ function niceIdentifyPopup() {
 }
 
 function onIdentifyingSuccess(data, nextMethod) {
-	$("#name").val(data.name);
-	$("#userInfo").val(data.userInfo);
-	$("#dupInfo").val(data.dupInfo);
-	$("#userGender").val(data.userGender);
-	$("#userCellNo").val(data.userCellNo);
+	console.log(data);
+	$("#formUserName").val(data.userName);
+	$("#formUserInfo").val(data.userInfo);
+	$("#formDupInfo").val(data.dupInfo);
+	$("#formUserGender").val(data.userGender);
+	$("#formUserCellNo").val(data.userCellNo);
 	switch(nextMethod) {
 		case 'register':
 			$("#infoForm").attr("action", "/sign-up-form");

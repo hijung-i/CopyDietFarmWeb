@@ -35,7 +35,7 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
             userCellNo: loginResult.data?.userCellNo!,
             userEmail: loginResult.data?.userEmail!,
             userInfo: loginResult.data?.userInfo!,
-            name: loginResult.data?.name!
+            userName: loginResult.data?.userName!
         }
 
         req.session.user = sessionUser
@@ -49,24 +49,25 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
 
 router.post('/register', async (req: Request, res: Response, next: NextFunction) => {
     const user = req.body as User
-    const niceUser = req.session.niceUserData as NiceUser
+    const niceUser: NiceUser | undefined = req.session.niceUserData
     let registerResult: UserResult
+    console.log(user, niceUser)
 
-    if (user.name !== niceUser.name
+    if (niceUser === undefined || (user.userName !== niceUser.userName
         || user.dupInfo !== niceUser.dupInfo
         || user.userInfo !== niceUser.userInfo
-        || user.userCellNo !== niceUser.userCellNo) {
+        || user.userCellNo !== niceUser.userCellNo)) {
         registerResult = setUserResult(StatusCode.error, StatusMessage.forbidden, {})
- 
+
         res.status(registerResult.statusCode).send(registerResult.data || registerResult.message)
         return
     }
-    console.log("user data on register", user)
+    console.log('user data on register', user)
 
     registerResult = await userService.register(user)
 
     if (registerResult.message === StatusMessage.success) {
-        console.log('loginSuccess -> ', registerResult.data)
+        console.log('registerSuccess -> ', registerResult)
 
     }
     res.status(registerResult.statusCode).send(registerResult.data || registerResult.message)

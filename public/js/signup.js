@@ -6,61 +6,83 @@ $(function() {
     
     var id = $('#id');
     var pw1 = $('#pswd1');
-    var pwMsg = $('#alertTxt');
-    var pwImg1 = $('#pswd1_img1');
+    var pwMsg = document.querySelectorAll('#alertTxt');
+    var pwImg1 = document.querySelectorAll('#pswd1_img1');
+
     var pw2 = $('#pswd2');
-    var pwImg2 = $('#pswd2_img1');
-    var pwMsgArea = $('.int_pass');
+    var pwImg2 = document.querySelectorAll('#pswd2_img1');
+    var pwMsgArea = document.querySelectorAll('.int_pass');
 
-    var nameInput = $("#name");
-    var userInfoInput = $("#userInfo");
-    var dupInfoInput = $("#dupInfo");
-    var userCellNoInput = $("#userCellNo");
-    var userGenderInput = $('#userGender');
+    var nameInput = $("#userName")[0];
+    var userInfoInput = $("#userInfo")[0];
+    var dupInfoInput = $("#dupInfo")[0];
+    var userCellNoInput = $("#userCellNo")[0];
+    var userGenderInput = $('#userGender')[0];
+    console.log(nameInput, userInfoInput, dupInfoInput, userCellNoInput, userGenderInput)
 
-    var email = $('#email');
+    var emailInput = $('#email');
     var error = document.querySelectorAll('.error_next_box');
 
     /*이벤트 핸들러 연결*/
     id.focusout(checkId);
     pw1.focusout(checkPw);
     pw2.focusout(comparePw);
-    email.focusout(isEmailCorrect);
+    emailInput.focusout(isEmailCorrect);
     
     $("#btnJoin").click(function (){
         var userId = $("#id").val();
         var password = $("#pswd1").val();
         var passwordCheck = $("#pswd2").val();
-        var email = $("#name").val();
-        var name = nameInput.val();
-        if(name !== '') {
+        var email = emailInput.val();
+        
+        var name = $("#userName").val();
+        if(name === '') {
             alert('본인인증 정보가 없습니다.')
             return;
         }
-        var userInfo = userInfoInput.val();
-        if(userInfo !== '') {
+        var userInfo = $("#userInfo").val();
+        if(userInfo === '') {
             alert('본인인증 정보가 없습니다.')
             return;
         }
-        var dupInfo = dupInfoInput.val();
-        if(dupInfo !== '') {
+        var dupInfo = $("#dupInfo").val();
+        if(dupInfo === '') {
             alert('본인인증 정보가 없습니다.')
             return;
         }
-        var userCellNo = userCellNoInput.val();
-        if(userCellNo !== '') {
+        var userCellNo = $("#userCellNo").val();
+        if(userCellNo === '') {
             alert('본인인증 정보가 없습니다.')
             return;
         }
-        var userGender = userGenderInput.val();
-        if(userGender !== '') {
+        var userGender = $("#userGender").val();
+        if(userGender === '') {
             alert('본인인증 정보가 없습니다.')
             return;
         }
 
         var addr = $("#addr").val();
         var recommender = $("#recommender").val();
-        var marketingYn = $("#marketingYn").val();
+
+        var agreementAge = ($("#agreementAge")[0].checked)?'Y':'N';
+        if(agreementAge == 'N') {
+            alert('필수 약관에 동의해주세요.');
+            return;
+        }
+        var agreementTos = ($("#agreementTos")[0].checked)?'Y':'N';
+        if(agreementTos == 'N') {
+            alert('필수 약관에 동의해주세요.');
+            return;
+        }
+        var agreementPrivacy = ($("#agreementPrivacy")[0].checked)?'Y':'N';
+        if(agreementPrivacy == 'N') {
+            alert('필수 약관에 동의해주세요.');
+            return;
+        }
+        
+        var marketingAlert = ($("#mkt_agree")[0].checked)?'Y':'N';
+        var agreementEmail = ($("#mkt_email")[0].checked)?'Y':'N';
+        var agreementSms = ($("#mkt_sms")[0].checked)?'Y':'N';
 
         if( password != passwordCheck ) {
             alert("비밀번호 확인이 일치하지 않습니다.");
@@ -72,17 +94,76 @@ $(function() {
             password: password,
             email: email,
             address: addr,
+            userName: name,
+            userInfo: userInfo,
+            userGender: userGender,
+            dupInfo: dupInfo,
+            userCellNo: userCellNo,
             recommender: recommender,
-            marketingYn: marketingYn
+            agreementTos: agreementTos,
+            agreementAge: agreementAge,
+            agreementPrivacy: agreementPrivacy,
+            agreementPrivacyOptional: agreementEmail,
+            agreementPrivacyOptional2: agreementSms,
+            marketingAlert: marketingAlert
         }
-        ajaxCall('/register', 'POST', params, 
+        console.log(params);
+
+        ajaxCall('/user/register', params, 'POST', 
         function(data) {
-            
+            console.log("register success", data);
+            alert("회원가입에 성공했습니다.");
         }, 
         function(err) {
             console.log(err);
-        })
+            alert("회원가입에 실패했습니다.");
+        });
+        
     })
+
+    $("#addr").click(function() {
+        openZipSearch();
+    })
+
+    $("#addr").keydown(function() {
+        openZipSearch();
+        
+        $(this).val('');
+    })
+
+    $("input[type=checkbox]#all").click(function() {
+        var checkboxes = $("input[type=checkbox]");
+        $(this).checked = !$(this).checked;
+
+        for(var i = 0; i < checkboxes.length; i++){   
+            checkboxes[i].checked = this.checked;
+        }    
+    })
+
+    $("input[type=checkbox]").change(function() {
+        console.log(this.checked);
+        if(!this.checked)
+            $("input[type=checkbox]#all")[0].checked = false;
+    });
+    
+    $("input[type=checkbox]#mkt_agree").change(function() {
+        var mktBoxes = $("input[type=checkbox]#email, input[type=checkbox]#sms")
+        for(var i = 0; i < mktBoxes.length; i++){
+            mktBoxes[i].checked = this.checked;
+        }
+    })
+
+    $("input[type=checkbox]#mkt_email, input[type=checkbox]#mkt_sms").change(function() {
+        var mktBoxes = $("input[type=checkbox]#mkt_email, input[type=checkbox]#mkt_sms");
+        var uncheckAll = true;
+        for(var i = 0; i < mktBoxes.length; i++){
+            var checkbox = mktBoxes[i];
+            if( checkbox.checked ) uncheckAll = false;
+        }
+
+        $("input#mkt_agree")[0].checked = !uncheckAll;
+    })
+
   
     $("#btnCheckIdDuplicate").click(function () {
         niceIdentifyPopup();
@@ -94,12 +175,13 @@ $(function() {
     function isEmailCorrect() {
 
     }
+
     function checkId() {
         var idPattern = /[a-zA-Z0-9_-]{5,20}/;
-        if(id.value === "") {
+        if(id.val() === "") {
             error[0].innerHTML = "필수 정보입니다.";
             error[0].style.display = "block";
-        } else if(!idPattern.test(id.value)) {
+        } else if(!idPattern.test(id.val())) {
             errorr[0].style.display = "block";
         } else {
             error[0].style.color = "#EFA543";
@@ -109,17 +191,17 @@ $(function() {
 
     function checkPw() {
         var pwPattern = /[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,16}/;
-        if(pw1.value === "") {
+        if(pw1.val() === "") {
             error[1].innerHTML = "필수 정보입니다.";
             error[1].style.display = "block";
-        } else if(!pwPattern.test(pw1.value)) {
+        } else if(!pwPattern.test(pw1.val())) {
             error[1].innerHTML = "8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.";
-            pwMsg.innerHTML = "사용불가";
+            pwMsg.innerHtml = "사용불가";
             pwMsgArea.style.paddingRight = "93px";
             error[1].style.display = "block";
             
             pwMsg.style.display = "block";
-            } else {
+        } else {
             error[1].style.display = "none";
             pwMsg.innerHTML = "안전";
             pwMsg.style.display = "block";

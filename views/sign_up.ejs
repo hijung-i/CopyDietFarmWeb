@@ -41,7 +41,7 @@
             <div class="signup_top">
                 <!-- ID -->
                 <div>
-                    <input type="hidden" id="name" value="<%=userData.name %>">
+                    <input type="hidden" id="userName" value="<%=userData.userName %>">
                     <input type="hidden" id="userInfo" value="<%=userData.userInfo %>">
                     <input type="hidden" id="dupInfo" value="<%=userData.dupInfo %>">
                     <input type="hidden" id="userCellNo" value="<%=userData.userCellNo %>">
@@ -88,7 +88,7 @@
                 <div>
                     <h3 class="join_title"><label for="name"><img src="/images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px">이메일</label></h3>
                     <span class="box int_name">
-                        <input type="text" placeholder="이메일을 입력해주세요" id="email" class="int" maxlength="20" required >
+                        <input type="text" placeholder="이메일을 입력해주세요" id="email" class="int" maxlength="64" required >
                     </span>
                     <span class="/images/error_next_box"></span>
                 </div>
@@ -96,7 +96,11 @@
                     <h3 class="join_title">
                     <label for="addr"><img src="/images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px">주소</label></h3>
                     <span class="box int_addr">
-                        <input type="text" id="addr" class="int" maxlength="80" onclick="openZipSearch()" placeholder="도로명, 지번, 건물명 검색">
+                        <input type="text" id="addr" class="int" maxlength="80" placeholder="도로명, 지번, 건물명 검색">
+                    </span>
+                    <span class="box int_addr">
+                        <input type="text" id="addr2" class="int" maxlength="80" placeholder="상세주소">
+                    
                     </span>
                     <span class="/images/error_next_box"></span>
                 </div>
@@ -105,9 +109,9 @@
                 function openZipSearch() {
                     new daum.Postcode({
                         oncomplete: function(data) {
-                            $('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
-                            $('[name=addr1]').val(data.address);
-                            $('[name=addr2]').val(data.buildingName);
+                            var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
+                            $('#addr').val(address);
+                            console.log(data);
                         }
                     }).open();
                 }
@@ -123,13 +127,13 @@
             </div>
             <div class="terms">
                 <p><img src="/images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px"><span>이용약관동의</span></p>
-                <p><input type="checkbox"><span>전체 동의합니다.</span></p>
+                <p><input type="checkbox" id="all"><span>전체 동의합니다.</span></p>
                 <p class="gray">선택 항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
                 <ul class="terms_web">
-                    <li><input type="checkbox" required >이용약관 <span>(필수)</span><a href=""><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:130px"></a></li>
-                    <li><input type="checkbox" required> 개인정보처리방침 <span>(필수)</span><a href="#"><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:80px"></a></li>
-                    <li><input type="checkbox" required>본인은 만 14세 이상입니다. <span>(필수)</span><a href="#"><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:36px"></a></li>
-                    <li><input type="checkbox"  id="mrk_agree" >마케팅 수신동의 <span>(선택)</span><input type="checkbox">이메일<input type="checkbox">문자<img class="leftarrow" src="./images/downarrow_ico_main.png" alt="화살표" style="width:10px;height:10px;position:relative;margin-left:-5px;top:8px"><a href="#"></a></li>
+                    <li><input type="checkbox" class="required" id="agreementTos" required >이용약관 <span>(필수)</span><a href=""><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:130px"></a></li>
+                    <li><input type="checkbox" class="required" id="agreementPrivacy" required> 개인정보처리방침 <span>(필수)</span><a href="#"><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:80px"></a></li>
+                    <li><input type="checkbox" class="required" id="agreementAge" required>본인은 만 14세 이상입니다. <span>(필수)</span><a href="#"><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:7px;position:relative;margin-left:36px"></a></li>
+                    <li><input type="checkbox" id="mkt_agree" >마케팅 수신동의 <span>(선택)</span><input type="checkbox" id="mkt_email">이메일<input type="checkbox" id="mkt_sms">문자<img class="leftarrow" src="./images/downarrow_ico_main.png" alt="화살표" style="width:10px;height:10px;position:relative;margin-left:-5px;top:8px"><a href="#"></a></li>
                 </ul>
             </div>
 
