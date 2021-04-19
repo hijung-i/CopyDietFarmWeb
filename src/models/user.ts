@@ -8,6 +8,8 @@ export type User = {
     userEmail?: string
     regDate?: string
     authId?: string
+    postalCode?: string
+    address?: string
     registrationtokens?: string
     dupInfo?: string
     serviceAlert?: string

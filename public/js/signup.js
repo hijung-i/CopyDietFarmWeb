@@ -2,6 +2,7 @@
 
 /*변수 선언*/
 
+var dupCheck = false;
 $(function() {
     
     var id = $('#id');
@@ -13,23 +14,21 @@ $(function() {
     var pwImg2 = document.querySelectorAll('#pswd2_img1');
     var pwMsgArea = document.querySelectorAll('.int_pass');
 
-    var nameInput = $("#userName")[0];
-    var userInfoInput = $("#userInfo")[0];
-    var dupInfoInput = $("#dupInfo")[0];
-    var userCellNoInput = $("#userCellNo")[0];
-    var userGenderInput = $('#userGender')[0];
-    console.log(nameInput, userInfoInput, dupInfoInput, userCellNoInput, userGenderInput)
-
     var emailInput = $('#email');
     var error = document.querySelectorAll('.error_next_box');
 
     /*이벤트 핸들러 연결*/
-    id.focusout(checkId);
+    id.change(checkId)
     pw1.focusout(checkPw);
     pw2.focusout(comparePw);
     emailInput.focusout(isEmailCorrect);
     
     $("#btnJoin").click(function (){
+        if(!dupCheck) {
+            alert('아이디 중복을 확인 해주세요')
+            return;
+        }
+        
         var userId = $("#id").val();
         var password = $("#pswd1").val();
         var passwordCheck = $("#pswd2").val();
@@ -62,6 +61,9 @@ $(function() {
         }
 
         var addr = $("#addr").val();
+        var addr2 = $("#addr2").val();
+        
+        addr = addr + addr2;
         var recommender = $("#recommender").val();
 
         var agreementAge = ($("#agreementAge")[0].checked)?'Y':'N';
@@ -92,7 +94,7 @@ $(function() {
         var params = {
             userId: userId,
             password: password,
-            email: email,
+            userEmail: email,
             address: addr,
             userName: name,
             userInfo: userInfo,
@@ -166,8 +168,7 @@ $(function() {
 
   
     $("#btnCheckIdDuplicate").click(function () {
-        niceIdentifyPopup();
-        
+        duplicationCheck();
     });
     
     
@@ -177,12 +178,13 @@ $(function() {
     }
 
     function checkId() {
+        dupCheck = false;
         var idPattern = /[a-zA-Z0-9_-]{5,20}/;
         if(id.val() === "") {
             error[0].innerHTML = "필수 정보입니다.";
             error[0].style.display = "block";
         } else if(!idPattern.test(id.val())) {
-            errorr[0].style.display = "block";
+            error[0].style.display = "block";
         } else {
             error[0].style.color = "#EFA543";
             error[0].style.display = "block";
@@ -279,7 +281,32 @@ $(function() {
         }
     }
 
+    function duplicationCheck() {
+        var userId = $('#id').val();
+        if(userId == ''){
+            alert('아이디를 입력하세요.');
+            return;
+        }
+        var params = {
+            userId
+        }
 
+        ajaxCall(API_SERVER + '/user/checkDuplicatedId', params, 'POST',
+        function(data) {
+            if(data.message == 'SUCCESS' && (
+                data.result == '중복' || data.result == '탈퇴회원'
+            )) {
+                alert('동일한 아이디가 이미 있습니다.');
+            } else if(data.message == 'SUCCESS' && data.result == '가입가능'){
+                alert('사용 가능한 아이디입니다.');
+                dupCheck = true;
+            } else {
+                alert('알 수 없는 오류가 발생했습니다.');
+            }
+        }, function(err){
+            console.log("err", err);
+        })
+    }
 });
 
 

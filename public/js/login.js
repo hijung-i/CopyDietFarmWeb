@@ -1,6 +1,7 @@
 $(function() {
 
     $("button").click(function() {
+        console.log(this);
         var id = $(this).attr("id");
         switch(id){
             case "btnLogin":
@@ -16,10 +17,12 @@ function loginRequest(){
  
     if(userId == '' || userId == undefined || userId.trim() == ''){
         //TODO: Open alert modal
+        alert('아이디를 입력해주세요');
         return false;
     }   
     if(password == '' || password == undefined || password.trim() == ''){
         //TODO: Open alert modal
+        alert('비밀번호를 입력해주세요');
         return false;
     } 
 

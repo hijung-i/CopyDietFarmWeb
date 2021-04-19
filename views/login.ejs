@@ -88,7 +88,7 @@
                 <input placeholder="비밀번호를 입력해주세요" type="password" style="border: none;	width:340px;height:45px;font-size: 14px;margin-left: 10px;">
             </div>
             <div class="login-button-wrap">
-                <button>로그인</button>
+                <button id="btnLogin">로그인</button>
             </div>
             <section class="Easy-sgin-in-wrap">
                 <ul>
@@ -124,7 +124,7 @@
           <input placeholder="비밀번호를 입력해주세요" type="password" style="border: none;	width:340;height:45px;font-size: 14px;margin-left: 10px;">
         </div>
         <div class="login-button-wrap">
-          <button>로그인</button>
+          <button id="btnLogin">로그인</button>
         </div>
         <section class="Easy-sgin-in-wrap">
           <ul class="tab_wrap">
@@ -180,30 +180,6 @@
 
   </div>
 
-  <!-- 아이디 찾기 실패 -->
-  <!-- <section class="detail_title">
-    <h2>아이디 찾기 실패</h2>
-    <script type="text/javascript">
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-    <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
-    </div>
-</section>
-
-<main id="content" class="content">
-    <div class="idSearchComp">
-        <h3>입력하신 정보와 일치하는 아이디가 없습니다.</h3>
-        <p>다시 한번 회원정보를 정확히 넣어 주세요.</p>
-        <p>아직 다이어트팜 회원이 아니시라면, 회원가입 후 이용해 주세요.</p>
-    </div>
-    <div class="buttons">
-        <button type="button" class="btnpwdSearch">아이디 찾기</button>
-        <button type="button" class="btnSignup">회원가입</button>
-    </div>
-
-</main> -->
 
   <!-- 비밀번호 찾기 완료 -->
   <div id="tab2" class="tab_cont2 active" style="display: none;">
@@ -230,129 +206,6 @@
     </div>
 </main>
   </div>
-
-  <!-- 비밀번호 찾기 실패 -->
-  <!-- <section class="detail_title">
-    <h2>비밀번호 찾기 실패</h2>
-    <script type="text/javascript">
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-    <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
-    </div>
-</section>
-
-<main id="content" class="content">
-    <div class="idSearchComp">
-        <h3>입력하신 정보와 일치하는 회원 정보가 없습니다.</h3>
-        <p>다시 한번 회원정보를 정확히 넣어 주세요.</p>
-        <p style="margin-bottom:78px">아직 다이어트팜 회원이 아니시라면, 회원가입 후 이용해 주세요.</p>
-    </div>
-    <div class="buttons">
-        <button type="button" class="btnpwdSearch">비밀번호 찾기</button>
-        <button type="button" class="btnSignup">회원가입</button>
-    </div>
-
-</main> -->
-
-  <!-- 회원가입 -->
-  <div id="tab3" class="tab_cont3 active" style="display: none;">
-  <section class="detail_title">
-    <h2>회원가입</h2>
-    <!-- <script type="text/javascript">
-        function goBack() {
-            window.history.back();
-        }
-    </script> -->
-    <div class="btnback"><a href="#" value="취소"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
-    </div>
-</section>
-
-<!-- wrapper -->
-<div id="wrapper">
-
-    <!-- content-->
-    <div id="content">
-        <div class="signup_top">
-            <!-- ID -->
-            <div>
-                <h3 class="join_title">
-                    <label for="id"><img src="/images/asterisk.png" style="width:2%">아이디</label>
-                </h3>
-                <span class="box int_id">
-                    <input type="text" id="id" class="int" maxlength="20" placeholder="아이디" required>
-                </span>
-                <button type="button" onclick="id_check()">아이디 중복 확인</button>
-                <span class="error_next_box"></span>
-                <br>- 아이디 중복확인
-            </div>
-
-            <!-- PW1 -->
-            <div>
-                <h3 class="join_title"><label for="pswd1"><img src="/images/asterisk.png" style="width:2%">비밀번호</label></h3>
-                <span class="box int_pass">
-                    <input type="password" id="pswd1" class="int" maxlength="20" placeholder="비밀번호" required>
-                    <span id="alertTxt">사용불가</span>
-                    <img src="/images/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
-                </span>
-                <span class="error_next_box"></span>
-                <p>- 10자 이상 입력</p>
-                <p>- 영문/숫자/특수문자 2개 이상 조합</p>
-            </div>
-
-            <!-- PW2 -->
-            <div>
-                <h3 class="join_title"><label for="pswd2"><img src="/images/asterisk.png" style="width:2%">비밀번호 확인</label></h3>
-                <span class="box int_pass_check">
-                    <input type="password" id="pswd2" class="int" maxlength="20" placeholder="비밀번호 재확인" required>
-                    <img src="/images/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
-                </span>
-                <span class="error_next_box"></span>
-            </div>
-
-            <!-- NAME -->
-            <div>
-                <h3 class="join_title"><label for="name"><img src="/images/asterisk.png" style="width:2%">이메일</label></h3>
-                <span class="box int_name">
-                    <input type="text" id="name" class="int" maxlength="20" required>
-                </span>
-                <span class="/images/error_next_box"></span>
-            </div>
-            <div>
-                <h3 class="join_title"><label for="addr"><img src="/images/asterisk.png" style="width:2%">주소</label></h3>
-                <span class="box int_addr">
-                    <input type="text" id="addr" class="int" maxlength="80">
-                </span>
-                <span class="/images/error_next_box"></span>
-            </div>
-
-            <div style="padding-bottom:34px">
-                <h3 class="join_title"><label for="r_id">추천인 아이디</label></h3>
-                <span class="box int_r_id">
-                    <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
-                </span>
-                <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
-            </div>
-        </div>
-        <div class="terms">
-            <p><img src="/images/asterisk.png" style="width:2%"><span>이용약관동의</span></p>
-            <p><input type="checkbox"><span>전체 동의합니다.</span></p>
-            <p class="gray">선택 항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
-            <ul>
-                <li><input type="checkbox" required>이용약관 <span>(필수)</span><a href="#"><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:2.2%"></a></li>
-                <li><input type="checkbox" required> 개인정보처리방침 <span>(필수)</span><a href="#"><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:2.2%"></a></li>
-                <li><input type="checkbox" required>본인은 만 14세 이상입니다. <span>(필수)</span><a href="#"><img class="leftarrow" src="./images/arrow_ico_join.png" alt="화살표" style="width:2.2%"></a></li>
-                <li><input type="checkbox">마케팅 수신동의 <span>(선택)</span><input type="checkbox">이메일<input type="checkbox">문자<a href="#"><img class="leftarrow" src="./images/downarrow_ico_main.png" alt="화살표" style="width:4%"></a></li>
-            </ul>
-        </div>
-
-        <!-- JOIN BTN-->
-        <div class="btn_area" style="margin-top:20px">
-            <button type="button" id="btnJoin">
-                <span>가입하기</span>
-            </button>
-        </div>
 
 
 

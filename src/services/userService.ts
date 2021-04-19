@@ -51,7 +51,7 @@ class UserService {
 
         return request(options).then((res: any): UserResult => {
             console.log('after request', res)
-            return setUserResult(StatusCode.success, StatusMessage.success, res.result)
+            return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
         }).catch((err: any): UserResult => {
             if (err) {
                 console.log('Error occured while login', err.statusCode, err.error)
