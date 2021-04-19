@@ -45,8 +45,8 @@ function getProductDetail(){
             supplyPrice.find('.con strike').html(numberFormat(product.supplyPrice)+'원');
             discountRate.find('.con strong').html(numberFormat(product.discountRate)+'%');
         } else {
-            $('.infoArea01 .product_price').hide()
-            $('.infoArea01 .discount_rate').hide();
+            $('.v_top_txt_box .p1').hide()
+            $('.v_top_txt_box .p3').hide();
         }
 
         var optionHtml = '';
