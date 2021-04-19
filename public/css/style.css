@@ -1,5 +1,5 @@
 /* none scroll */
-body,html {overflow-x: hidden; overflow-y: auto;width:100%; min-width:360px; width: 100%; /* overflow: hidden; */}
+body,html {width:100%; min-width:360px; width: 100%; /* overflow: hidden; */}
 
 @font-face{ 
 font-family: '나눔고딕'; 
