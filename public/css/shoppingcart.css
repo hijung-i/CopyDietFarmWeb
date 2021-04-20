@@ -115,6 +115,7 @@ border-spacing: 0 20px;}
 
 /*장바구니 웹 */
 @media screen and (min-width:1080px){
+.shoplist_ctn{width:1080px}
 .shoplist_ctn img{position:relative;left:-110px}
 .total_mobile{display:none}
 #content {width:1080px;margin:0 auto;padding-bottom:361px}
