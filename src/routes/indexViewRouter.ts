@@ -16,7 +16,7 @@ router.get('/login-form', (req: Request, res: Response, next: NextFunction) => {
         res.redirect('/')
         return
     }
-    render(res, 'login', {})
+    render(res, 'login-new', {})
 })
 router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -57,6 +57,16 @@ router.get('/products/:category1Code/category/:category2Code', (req: Request, re
 router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'search', {})
 })
+// 
+// router.get('/search-list', (req: Request, res: Response, next: NextFunction) => {
+//     const keyword: string = req.query.keyword
+// 
+//     render(res, 'products', {
+//         category1Code: category1Code,
+//         listType: 'SEARCH'
+//     })
+// })
+
 router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn = req.session.isLoggedIn || false
     console.log('isLoggedIn ->> ', isLoggedIn)

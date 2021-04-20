@@ -8,20 +8,15 @@
     <meta name="format-detection" content="no" />
 
     <title>다이어트 Farm 로그인</title>
+    <%-include('general/head')%>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="css/style02.css">
+    <link rel="stylesheet" href="css/signup.css">
      <style type="text/css">
     @media screen and (min-width:360px)and (max-width:1079px) {.web_login{display:none}}
     @media screen and (min-width:1020px){.mobile_login{display:none} }
     </style>
-     <script src="js/jquery-3.1.1.min.js"></script>
-      <script type="text/javascript" src="js/jquery.bxslider.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" /> 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js">
-   </script>
+     
 </head>
 <body>
      <div class="web_login">
@@ -46,13 +41,13 @@
 
             <section class="login-input-section-wrap">
                 <div class="login-input-wrap">
-                    <input placeholder="아이디를 입력해주세요" type="text">
+                    <input placeholder="아이디를 입력해주세요" id="loginFormUserId" type="text">
                 </div>
                 <div class="login-input-wrap password-wrap">
-                    <input placeholder="비밀번호를 입력해주세요" type="password">
+                    <input placeholder="비밀번호를 입력해주세요" id="loginFormUserPassword" type="password">
                 </div>
                 <div class="login-button-wrap">
-                    <button>로그인</button>
+                    <button id="btnLogin">로그인</button>
                 </div>
                 <section class="Easy-sgin-in-wrap">
                     <ul>
@@ -102,4 +97,5 @@
 		  });
         });
     </script>
+    <script src="/js/login.js"></script>
 </body></html>
