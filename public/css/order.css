@@ -188,7 +188,7 @@ a.button.modal-open{float:right;position:relative;right:20px;top:-20px}
 @media screen and (min-width:1080px){
 
 .order_a_box{border-bottom:none}
-#my_point{padding-left:10px;width:305px;}
+#my_point{padding-left:10px;width:305px;margin-left:10px}
 .delivery_memo{display:none}
  .del_memo_tit{margin-bottom:-80px}
 .coupon_wrap select{width:394px;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-left:14px}

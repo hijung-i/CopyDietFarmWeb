@@ -6,7 +6,7 @@ function getFaqList(){
     var params = {};
     ajaxCall(API_SERVER + '/board/getAllFaq', params, 'POST'
     , function(data) {
-        console.log(data);
+        console.log(data);;
         var result = data.result;
         $('.faq').html('');
 

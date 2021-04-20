@@ -98,9 +98,11 @@ a:hover{text-decoration:none;}
 	font-weight:bold; 
 	padding-left:15px;
   padding-right:15px;
-	overflow-x:hidden;
   float:left;
-}
+
+  position:relative;
+  top:6px
+ }
 @media screen and (min-width:360px) and (max-width:1079px){
 
 }
@@ -132,8 +134,8 @@ width: 700px;
   position: absolute;
   left: 0;
   bottom: 1px;
-  width: 10%;
-  height: 2px;
+  width: 6%;
+  height: 3px;
   background: #F99319;
   transition: all .3s ease-in-out;
   top:72.5px
@@ -142,9 +144,9 @@ width: 700px;
 nav a:nth-child(1).is-current ~ .nav-underline {
   left: 0;
  
-}fffff
+}
 nav a:nth-child(2).is-current ~ .nav-underline {
-  left: 18%;
+  left: 20%;
 }
 nav a:nth-child(3).is-current ~ .nav-underline {
     left: 36%;}
@@ -259,12 +261,15 @@ height:50px;overflow:hidden}
   #content{width:100%;margin-right:15px}
   .m_bestn_mn_box{display:none}
   .banner{display:none}
-  .m_bestn_w {padding-left:10px;padding-right:10px}
-  .m_bestn_w img {width: 50%;
+  .m_bestn_w01, .m_bestn_w02, .m_bestn_w03 {padding-left:10px;padding-right:10px;display:grid;grid-template-columns: repeat(2, 2fr);
+  }
+  .m_bestn_w01 img, .m_bestn_w02 img, .m_bestn_w0103 img {
     height: 250px;
-    object-fit:cover;padding:5px}
-    .s_price .multiple_bxslider img{width:40%;height:160px}
+    object-fit:cover;padding:5px;float:left}
+  .s_price .multiple_bxslider img{width:40%;height:160px}
   .m_bestn_w .thum{float:left}
+  .m_bestn_w ul (:first-child) {float:left}
+  .m_bestn_w .desc .title{margin-left:10px;text-overflow: ellipsis;white-space: nowrap;width: 100px;height: 20px;display:inline-block}
   .m_bestn_w .ul li{float:left;white-space:nowrap;}
   .blank_sec{display:none}
   .m_bestn_tit_w {position:relative; width:100%;margin-bottom:20px;}

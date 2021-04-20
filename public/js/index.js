@@ -47,30 +47,28 @@ function getStandDatas() {
                     html += '<li>'
                     html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'" style="width:100%">';
                     html += '<span class="title">' + product.productName + '</span><br>';
-                    html += '<span class="price">';
                     html += '<ul>';
                     html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
                     html += '<li class="cost">' + numberFormat(product.supplyPrice) + '원</li>';
                     html += '<li class="ratio">' + product.discountRate + '%</li>';
                     html += '</ul>';
-                    html += '</span>';
                     html += '</a>';
                     html += '</li>';
                 }
 
                 $('.s_price .multiple_bxslider').html(html);
                 $('.multiple_bxslider').bxSlider({
-                    mode: 'horizontal',
-                    auto: true,
-                    slideWidth: 1080,
-                    infiniteLoop: true,
-                    controls: true,
-                    pager: false,
-                    minSlides: 3,
-                    maxSlides: 3,
-                    slideMargin:3,
-                    touchEnabled: true
-                });
+                        mode: 'horizontal',
+                        auto: true,
+                        slideWidth: 400,
+                        infiniteLoop: true,
+                        controls: true,
+                        pager: false,
+                        minSlides: 3,
+                        maxSlides: 3,
+                        slideMargin: 7,
+                        touchEnabled: true
+                    });
                 break;
             case 2:
                 // 위클리 베스트
@@ -79,18 +77,18 @@ function getStandDatas() {
                 break;
             case 3:
                 // 단백질이 필요할 때!
-                $('m_bestn_w ul').html(generateHtmlForProductList(products));
-                $('.m_bestn_w h2').html(salesName);
+                $('m_bestn_w01 ul').html(generateHtmlForProductList(products));
+                $('.m_bestn_w01 h2').html(salesName);
                 break;
             case 4:
                 // 당충전이 필요할 떄!
-                $('.m_bestn_w ul').html(generateHtmlForProductList(products));
-                $('.m_bestn_w h2').html(salesName);
+                $('.m_bestn_w02 ul').html(generateHtmlForProductList(products));
+                $('.m_bestn_w02 h2').html(salesName);
                 break;
             case 5:
                 // 수분이 필요할 떄!
-                $('.m_bestn_w ul').html(generateHtmlForProductList(products));
-                $('.m_bestn_w h2').html(salesName);
+                $('.m_bestn_w03 ul').html(generateHtmlForProductList(products));
+                $('.m_bestn_w03 h2').html(salesName);
                 break;
             case 6:
                 // 위클리 베스트 웹
@@ -109,17 +107,6 @@ function getStandDatas() {
             easing: 'swing',
             pager: false,
             touchEnabled: true,
-        });
-        $('.multiple_bxslider').bxSlider({
-            mode: 'horizontal',
-            auto: true,
-            slideWidth: 3000,
-            infiniteLoop: true,
-            controls: false,
-            pager: false,
-            minSlides: 2.5,
-            maxSlides: 2.5,
-            slideMargin: 10
         });
 
     }, function(err){
