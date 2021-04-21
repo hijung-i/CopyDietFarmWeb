@@ -1,4 +1,8 @@
+var selectedOptions = new Array();
+var 
+
 $(function() {
+
     getProductDetail();
 
     $('ul.tab_wrap li').click(function() {
@@ -71,7 +75,11 @@ function getProductDetail(){
 
         $('.view_top_box .bxslider').html(representative);
         $('.products_ex').html(detailHtml);
-        console.log("productDetail success", data);
+
+        // v_n_top_info
+        $(".v_n_top_info .point .ex").html()
+        $(".v_n_top_info .courier .ex").html(product.deliveryCompany);
+
     }, function (err) {
         console.log("productDetail error", err);
     }, {
