@@ -126,7 +126,7 @@ body,html {font-family: Noto Sans KR, sans-serif;}
     padding: 12px 0;
     font-weight: 800;
 }
-    .main_contents .left h3{font-size:18px;font-weight:bold;position:relative;top:-17px}
+.main_contents .left h3{font-size:18px;font-weight:bold;position:relative;top:-17px}
 .main_contents .left .left_ctn { 
     width: 137px; height: 147px;
     background: #fff;
@@ -178,7 +178,7 @@ width: 400px; height: 147px;color: #000; background: #fff;margin: 44px 40px 0 0p
 .order_list_box_w{float:left;position:relative;left:220px;top:-320px}
 .order_list_box_w h3{font-size:20px;font-weight:bold;margin-bottom:20px}
 .order_list_box_w .cell {width:300px;border: 2px solid #32845B}
-.order_list_box_w th {background: #32845B;    color: #fff;padding: 10px 10px;font-size: 14px; font-weight: 500;letter-spacing: 0.6px}
+.order_list_box_w th {background: #32845B;color: #fff;padding: 10px 10px;font-size: 14px; font-weight: 500;letter-spacing: 0.6px}
 .order_list_box_w tr > td {text-align: left;
 padding: 12px 16px;font-size: 12px; font-weight: 700;color: #000}
 .order_list_box_w table.cell td {text-align: center;padding: 12px 16px;font-size: 25px; font-weight: 700;color: #000}
@@ -1390,6 +1390,7 @@ delivery_manage_list .customer_info {
     border: 1px solid #BBBBBB;
     border-radius: 5px;
     margin-bottom: 14px;
+
 }
 .deliver_mag_modal p {
     font-weight: 700;
@@ -2270,8 +2271,6 @@ h3 {font-size: 14px;font-weight:700;}
 .int {display: block;position: relative;
     width: 100%;height: 29px;border: none;
     background: #fff;font-size: 15px;}
-
-input {font-family: Dotum,'나눔돋움',Helvetica,sans-serif;}
 
 .join_title01{margin-top:32px}
 

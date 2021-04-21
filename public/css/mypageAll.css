@@ -37,9 +37,7 @@
     }
     .detail_title {display: block !important;} 
    
-
-
-    /* 주문 상세 컨텐트 */
+   /* 주문 상세 컨텐트 */
 
 .orderDetails{border-bottom:8px solid #F1F1F1}
 .buttons{width:100%;margin: 0 auto;display: flex;
