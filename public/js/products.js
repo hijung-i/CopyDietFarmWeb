@@ -87,6 +87,28 @@ function getCategoryList(){
     });
 }
 
+function productSearch(keyword) {
+    var params = {
+        keyword
+    }
+
+    var keywordDesc = "<span style=\"color: red;\">\""+keyword + "\"</span>에 대한 검색 결과";
+    $('.main_sub h2').html(keywordDesc);
+
+    ajaxCallWithLogin(API_SERVER + '/product/productSearchBar', params, 'POST',
+    function(data) {
+
+        var html = generateHtmlForProductList(data.result);
+        $('.sub_items ul').html(html);
+        console.log("search success", data);
+    }, function(err) {
+        console.log("searchKeyword", err);
+    }, {
+        isRequired: false,
+        userId: true
+    })
+}
+
 $(function () {
     var listType = $('#listType').val();
 
@@ -97,6 +119,13 @@ $(function () {
         case 'CATEGORY':
             getCategoryList();
             getProductListByCategory();
+            break;
+        case 'SEARCH':
+            if($('#keyword').length > 0){
+                var keyword = $("#keyword").val();
+                $('#search-form [name=keyword]').val(keyword);
+                productSearch(keyword);
+            }
             break;
     }
 

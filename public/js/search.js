@@ -2,7 +2,6 @@ $(function() {
     $(".result_wrap").hide();
     $('.instant-search__input').keyup(function() {
         var keyword = $(this).val();
-        console.log(keyword);
         if(keyword.trim().length > 0 ){
             $(".result_wrap").show();
             searchProduct(keyword);
@@ -14,8 +13,7 @@ $(function() {
     })
 
     $(".search_box_ico").click(function() {
-        var keyword = $('.instant-search__input').val();
-        goSearchResult(keyword);
+        goSearchResult();
     })
     
     getHotKeyowrds();
@@ -79,6 +77,9 @@ function searchProduct(keyword) {
     })
 }
 
-function goSearchResult(keyword) {
-    location.href = '/search/'+ keyword+'/keyword';
+function goSearchResult() {
+    var keyword = $('#mobileSearchKeyword').val();
+    
+    $("#mobileSearchForm input[name=keyword]").val(keyword);
+    $("#mobileSearchForm").submit();
 }

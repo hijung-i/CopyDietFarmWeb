@@ -16,7 +16,7 @@ router.get('/login-form', (req: Request, res: Response, next: NextFunction) => {
         res.redirect('/')
         return
     }
-    render(res, 'login-new', {})
+    render(res, 'login_new', {})
 })
 router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -142,9 +142,7 @@ router.get('/point', (req: Request, res: Response, next: NextFunction) => {
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'login_fail', {})
 })
-router.get('/cart', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'cart', {})
-})
+
 router.get('/mem-with', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'membership_withdrawal', {})
 })
@@ -157,9 +155,7 @@ router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) =
 router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'myinfoUserCheck', {})
 })
-router.get('/login-new', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'login_new', {})
-})
+
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }
