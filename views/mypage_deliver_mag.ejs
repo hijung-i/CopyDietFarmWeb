@@ -28,6 +28,23 @@
     <!-- bxslider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
     <script src="./js/main.js"></script>
+    <script type="text/javascript">
+        
+        function button_event(){
+        
+        if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+        
+            document.form.submit();
+        
+        }else{   //취소
+        
+            return;
+        
+        }
+        
+        }
+        
+        </script>
 </head>
 
 <body>
@@ -55,19 +72,19 @@
                     <ul>
                         <li><img src="/images/basket_ico.png"></li>
                         <li><span>김수아님</span></li>
-                        <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
+                        <li><a href="/myinfo-usercheck">내정보 <span><i class="fas fa-chevron-right"></i></span></a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="center">
                 <h3>포인트<img src="/images/point.png"></h3>
-                <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
+                <p><a href="/point">1000 원 <span><i class="fas fa-chevron-right"></i></span></a></p>
             </div>
 
             <div class="right">
                 <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
-                <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
+                <p><a href="/coupon">3개 <span><i class="fas fa-chevron-right"></i></span></a></p>
             </div>
        </div>
         </div>
@@ -102,7 +119,7 @@
                                 <ul class="edit_remove">
                                     <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
                                     <li class="small_line"><img src="/images/l_icon_category.png"></li>
-                                    <li class="edit_second"><a>삭제</a></li>
+                                    <li class="edit_second"><a onclick="button_event();">삭제</a></li>
                                 </ul>
                             </div>
                             <div class="web_del_mag_list_info">
@@ -129,7 +146,7 @@
                                     <li class="small_line"><img src="/images/l_icon_category.png"></li>
                                     <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
                                     <li class="small_line"><img src="/images/l_icon_category.png"></li>
-                                    <li class="edit_second"><a>삭제</a></li>
+                                    <li class="edit_second" onclick="button_event();"><a>삭제</a></li>
                                 </ul>
                             </div>
                             <div class="web_del_mag_list_info">
@@ -156,7 +173,7 @@
                                     <li class="small_line"><img src="/images/l_icon_category.png"></li>
                                     <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
                                     <li class="small_line"><img src="/images/l_icon_category.png"></li>
-                                    <li class="edit_second"><a>삭제</a></li>
+                                    <li class="edit_second"><a onclick="button_event();">삭제</a></li>
                                 </ul>
                             </div>
                             <div class="web_del_mag_list_info">

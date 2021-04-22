@@ -29,7 +29,7 @@ function getStandDatas() {
 
                 $('.main_img .bxslider').html(html);
 
-                $('.bxslider').bxSlider({
+                $('.bxslider li').bxSlider({
                     mode: 'horizontal',
                     auto: true,
                     pause: 4000,
@@ -46,7 +46,7 @@ function getStandDatas() {
                     var product = products[j];
                     html += '<li>'
                     html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'" style="width:100%">';
-                    html += '<span class="title">' + product.productName + '</span><br>';
+                    html += '<p class="title">' + product.productName + '</span><br>';
                     html += '<ul>';
                     html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
                     html += '<li class="cost">' + numberFormat(product.supplyPrice) + '원</li>';
@@ -56,7 +56,7 @@ function getStandDatas() {
                     html += '</li>';
                 }
 
-                $('.s_price .multiple_bxslider').html(html);
+                $('.sp_wrap .multiple_bxslider').html(html);
                 $('.multiple_bxslider').bxSlider({
                         mode: 'horizontal',
                         auto: true,

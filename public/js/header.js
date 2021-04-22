@@ -96,29 +96,3 @@ $("#btnGnbOpen").click(function(){
     $("#gnbAllMenu").slideToggle("fast");
 });
 });
-	   $(document).ready(function() {
-            // 모든 서브메뉴 숨기기
-            $(".m_slides_sub").hide();
-            $(".m_ba_slides_n_w li").hover(function(){
-                $("ul:not(:animated)",this).slideDown("fast");
-
-                // 현재 선택된 메뉴 off
-                $(".m_ba_slides_n_w li a").removeClass("active");
-            },
-           
-            });
-
-		    $("#memberMenu").bind("moseover mouseenter",function(){
-				$("#memMenu").show();
-		  });
-		   $("#memMenu").bind("",function(){
-				$("#memMenu").hide();
-		  });
-
-		    $("#NotmemberMenu").bind("moseover mouseenter",function(){
-				$("#NotmemMenu").show();
-		  });
-		   $("#NotmemMenu").bind("moseout mouseleave",function(){
-				$("#NotmemMenu").hide();
-		  });
-        });

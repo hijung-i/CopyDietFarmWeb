@@ -112,7 +112,6 @@ a:hover{text-decoration:none;}
 #wHeader .top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap}
 #wHeader .top_util .menu_list > li strong {font-weight:700}
 #wHeader .top_util .menu_list > li strong+a {margin-left:4px}
-#wHeader .top_util .menu_list > li a > span {color:#f27370;font-weight:700}
 #wHeader .top_util .cart img {width:18px;height:18px;margin-top:8px}
 #wHeader .top_util .mypage img{margin-top:8px}
 #wHeader .top_util .pick img{width:20px;margin-top:8px}
