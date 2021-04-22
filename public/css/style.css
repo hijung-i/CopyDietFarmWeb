@@ -261,33 +261,31 @@ height:50px;overflow:hidden}
   #content{width:100%;margin-right:15px}
   .m_bestn_mn_box{display:none}
   .banner{display:none}
-  .m_bestn_w01, .m_bestn_w02, .m_bestn_w03 {padding-left:10px;padding-right:10px;display:grid;grid-template-columns: repeat(2, 2fr);
+  .m_bestn_w01, .m_bestn_w02, .m_bestn_w03 {padding-left:10px;padding-right:10px;
   }
-  .m_bestn_w01 img, .m_bestn_w02 img, .m_bestn_w0103 img {
-    height: 250px;
-    object-fit:cover;padding:5px;float:left}
+  .m_bestn_w01 img, .m_bestn_w02 img, .m_bestn_w03 img {
+    height:50%;
+    object-fit:cover;width:50%;padding:5px;float:left}
   .s_price .multiple_bxslider img{width:40%;height:160px}
   .m_bestn_w .thum{float:left}
   .m_bestn_w ul (:first-child) {float:left}
+  .m_bestn_w01, .m_bestn_w02, .m_bestn_w03{clear:both;border-top:8px solid #f1f1f1}
   .m_bestn_w .desc .title{margin-left:10px;text-overflow: ellipsis;white-space: nowrap;width: 100px;height: 20px;display:inline-block}
   .m_bestn_w .ul li{float:left;white-space:nowrap;}
   .blank_sec{display:none}
+  .m_bestn_w02 .desc ul{}
   .m_bestn_tit_w {position:relative; width:100%;margin-bottom:20px;}
   .m_bestn_tit_box img{ display:inline-block;width:200px;}
   .m_bestn_list{border-bottom:8px solid #f1f1f1;padding-top:10px}
   .m_bestn_mn_box {float:left;}
-   .m_bestn_w .desc{clear:both}
   .m_bestn_w .decs .title{font-size:12px;margin-left:10px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100px;height: 20px;display:inline-block}
   .m_bestn_w .desc ul li{float:left;}
   .m_bestn_img img {border-radius:5px;vertical-align:top;width:100%;padding:5.5px}
   .m_bestn_mn_img{width:100%}
   .m_bestn_list ul {width:100%;margin:0 auto; position:relative;}
   .m_bestn_list{height:auto}
-  .m_bestn_list ul:first-child{width:100%;margin:0 auto;display:grid;grid-template-columns: repeat(2, 3fr);
-  ;align-items:center;
-  justify-self:center;
-  padding-left:15px;padding-right:15px }
-  .m_bestn_nlst li {position:relative;display:block;float:left}
+   .m_bestn_nlst li {position:relative;display:block;float:left}
+   .tb_mw_wrap{display:block}
   .tb_mw_wrap .desc .title{margin-left:10px;margin-bottom:7px;margin-top:8px}
   .tb_mw_wrap .desc ul li{font-weight:bold;margin-bottom:20px}
   .tb_mw_wrap .desc .cost{margin-left:7px;color:#909090;text-decoration:line-through;font-weight:normal}
