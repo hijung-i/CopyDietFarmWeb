@@ -19,9 +19,8 @@ function addItemToCart(title, price, imageSrc) {
             return
         }
     }
-    var cartRowContents = `
-    <div class="shoplist_info">
-    <div class="shoplist_ctn">
+    var cartRowContents = '<div class="shoplist_info">';
+    cartRowContents += '<div class="shoplist_ctn">';
         <input type="radio" id="shoplist_part_selt">
         <div class="shopcart_thum">
             <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
