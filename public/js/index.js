@@ -77,18 +77,18 @@ function getStandDatas() {
                 break;
             case 3:
                 // 단백질이 필요할 때!
-                $('m_bestn_w01 ul').html(generateHtmlForProductList(products));
-                $('.m_bestn_w01 h2').html(salesName);
+                $('m_bestn_w ul').html(generateHtmlForProductList(products));
+                $('.m_bestn_w h2').html(salesName);
                 break;
             case 4:
                 // 당충전이 필요할 떄!
-                $('.m_bestn_w02 ul').html(generateHtmlForProductList(products));
-                $('.m_bestn_w02 h2').html(salesName);
+                $('.m_bestn_w ul').html(generateHtmlForProductList(products));
+                $('.m_bestn_w h2').html(salesName);
                 break;
             case 5:
                 // 수분이 필요할 떄!
-                $('.m_bestn_w03 ul').html(generateHtmlForProductList(products));
-                $('.m_bestn_w03 h2').html(salesName);
+                $('.m_bestn_w ul').html(generateHtmlForProductList(products));
+                $('.m_bestn_w h2').html(salesName);
                 break;
             case 6:
                 // 위클리 베스트 웹

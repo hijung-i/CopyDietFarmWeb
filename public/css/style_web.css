@@ -1671,7 +1671,7 @@ delivery_manage_list .customer_info {
 .web_prod_info_ctn .order001 li {font-size: 12px;}
 .web_prod_info_ctn .order001 li.web_brandName,
 .web_prod_opt {color: #878787;}
-.review_complete .web_prod_info_ctn img {margin: 0; margin-left: 0 !important;}
+.review_complete .web_prod_info_ctn img {margin: 0;}
 
 
 .tabMenu_review {
@@ -2204,6 +2204,8 @@ input#secret[type="checkbox"]:checked + .secret::before {
 }
 
 @media screen and (min-width:1080px){
+    .main_ontents .center p a{color:#F99319}
+
     .main-wrap .p1{margin-left:-46px;font-size:18px;font-weight:bold;}
     .main-wrap .p2{margin-left:-46px;margin-top:15px;margin-bottom:30px}
     .main-wrap h4{position:relative;top:35px;left:-260px}
