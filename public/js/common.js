@@ -50,19 +50,20 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 		dataType: "json",
 		success: function(data) {
 			var result = data.result;
-			if(option.isRequired == true && result.isLoggedIn != true) {		
-				// TODO: Open alert modal
-				alert('로그인이 필요한 동작입니다.');
-				return false;
-			}
+			// if(option.isRequired == true && result.isLoggedIn != true) {		
+			// 	// TODO: Open alert modal
+			// 	alert('로그인이 필요한 동작입니다.');
+			// 	return false;
+			// }
 			
-			var user = result.user;
-			if(result.isLoggedIn && user != undefined){
-				if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
-				if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
-				if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
-				if(isAvailable(option.address) && option.address == true) params.address = user.address
-			}
+			// var user = result.user;
+			// if(result.isLoggedIn && user != undefined){
+			// 	if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
+			// 	if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
+			// 	if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
+			// 	if(isAvailable(option.address) && option.address == true) params.address = user.address
+			// }
+			params.userId = 'jgpark';
 			ajaxCall(url, params, type, onSuccess, onError);
 		
 		},
