@@ -52,7 +52,7 @@ function getProductDetail(){
             $('.v_top_txt_box .p1').hide()
             $('.v_top_txt_box .p3').hide();
         }
-
+     
         var optionHtml = '';
         for(var i = 0; i < product.options.length; i++){
             var option = product.options[i];
@@ -78,7 +78,7 @@ function getProductDetail(){
 
         // v_n_top_info
         $(".v_n_top_info .point .ex").html()
-        $(".v_n_top_info .courier .ex").html(product.deliveryCompany);
+        $(".v_n_top_info .delivery-type .ex").html(product.deliveryCompany);
 
     }, function (err) {
         console.log("productDetail error", err);
@@ -87,3 +87,65 @@ function getProductDetail(){
         userId : true
     })
 }
+
+function Show_hidden(e) {
+    var menu = new Array("test_1", "test_2", "test_3", "test_4", "test_5"); // 객체 배열로 지정
+    for (var i = 0; i < menu.length; i++) {
+        if ("test_" + e == menu[i]) {
+            document.all[menu[i]].style.display = "block";
+        } else {
+            document.all[menu[i]].style.display = "none";
+        }
+    }
+}
+
+
+$(document).ready(function() {
+$('.bxslider').bxSlider({
+            mode: 'horizontal',
+            auto: false,
+            pause: 2000,
+            controls: false,
+            easing: '',
+            pager: false,
+            touchEnabled: true,
+        });
+$('.multiple_bxslider').bxSlider({
+    mode: 'horizontal',
+    mode: 'horizontal',
+    auto: true,
+    slideWidth: 3000,
+    infiniteLoop: true,
+    controls:true,
+    pager: false,
+    minSlides:4,
+    maxSlides:4,
+    slideMargin: 10
+});
+
+});
+$(function() {
+$('ul.tab_wrap#tab_mobile li').click(function() {
+    var activeTab = $(this).attr('data-tab');
+    $('.tab_wrap li').removeClass('active');
+    
+    
+    $('.tab_cont').removeClass('active');
+    
+    $(this).addClass('active');
+    $('#' + activeTab).addClass('active');
+})
+
+$('ul.tab_wrap#tab_pc li').click(function() {
+    var activeTab = $(this).attr('data-tab');
+    $('.tab_wrap li').removeClass('active');
+    
+    $('.tab_cont').removeClass('active');
+    
+    $(this).addClass('active');
+    $('#' + activeTab).addClass('active');
+    
+    $('#tab1_mobile').addClass('active');
+})
+});
+
