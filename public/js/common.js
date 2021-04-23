@@ -49,13 +49,15 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 		url: '/user/login',
 		dataType: "json",
 		success: function(data) {
-			if(option.isRequired == true && data.isLoggedIn != true) {		
+			var result = data.result;
+			if(option.isRequired == true && result.isLoggedIn != true) {		
 				// TODO: Open alert modal
+				alert('로그인이 필요한 동작입니다.');
 				return false;
 			}
 			
-			var user = data.user;
-			if(data.isLoggedIn && user != undefined){
+			var user = result.user;
+			if(result.isLoggedIn && user != undefined){
 				if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
 				if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
 				if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail

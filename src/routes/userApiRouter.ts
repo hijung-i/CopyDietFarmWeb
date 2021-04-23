@@ -13,7 +13,8 @@ const router = Router()
  */
 router.get('/login', (req: Request, res: Response, next: NextFunction) => {
     let isLoggedIn: boolean | undefined = req.session.isLoggedIn
-    isLoggedIn = (isLoggedIn) ? isLoggedIn : false
+    console.log('get /user/login,  isLoggedIn=> ', isLoggedIn)
+    isLoggedIn = (isLoggedIn === undefined) ? false : isLoggedIn
 
     res.status(StatusCode.success).send({
         result: {
