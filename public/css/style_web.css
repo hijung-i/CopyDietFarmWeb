@@ -1359,7 +1359,6 @@ delivery_manage_list .customer_info {
 /* web_mypage_deliver_mag modal */
 
 .modal a.close-modal {display: none !important;}
-#ex1 {font-family: 'Nanum Gothic', sans-serif;}
 .deliver_mag_modal {width: 380px;}
 .deliver_magHeader {padding: 12px 0;}
 .deliver_mag_modal > header > ul {
@@ -1772,7 +1771,7 @@ delivery_manage_list .customer_info {
     width: 100%;
     margin: 0 auto;
 }
-
+.modal deliver_mag_modal{width:350px}
 .review_line {
     width: 100%; height: 1px;
     margin: 0 auto;
