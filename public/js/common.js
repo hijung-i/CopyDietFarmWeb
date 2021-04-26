@@ -336,11 +336,6 @@ $(document).ready(function() {
 		$('.gnb').show();
 	});
 
-	$("#gnbAllMenu").hide();
-	$("#btnGnbOpen").click(function(){
-		$("#gnbAllMenu").slideToggle("");
-	});
-
 	$("#memberMenu").bind("moseover mouseenter",function(){
 		$("#memMenu").show();
 	});

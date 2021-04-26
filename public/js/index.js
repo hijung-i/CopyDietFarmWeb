@@ -45,7 +45,7 @@ function getStandDatas() {
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
                     html += '<li>'
-                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'" style="width:100%">';
+                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'" style="width:50%">';
                     html += '<p class="title">' + product.productName + '</span><br>';
                     html += '<ul>';
                     html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
@@ -77,8 +77,8 @@ function getStandDatas() {
                 break;
             case 3:
                 // 단백질이 필요할 때!
-                $('m_bestn_w ul').html(generateHtmlForProductList(products));
-                $('.m_bestn_w h2').html(salesName);
+                $('').html(generateHtmlForProductList(products));
+                $('').html(salesName);
                 break;
             case 4:
                 // 당충전이 필요할 떄!
@@ -95,8 +95,8 @@ function getStandDatas() {
                 $('.m_bestn_w').html(generateHtmlForProductList(products));
                 $('.m_bestn_w h2').html(salesName);
                 break;
-            }
-        }
+            };
+        };
         
         $('.slider').bxSlider();
         $('.bxslider').bxSlider({

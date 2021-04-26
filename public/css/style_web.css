@@ -72,7 +72,7 @@ appearance: none;}
 @media screen and (min-width:1080px){
 .inquiryBox{margin-left:-20px}
 .inquiryBox h3{font-size:12px!important;font-weight:bold;margin-bottom:-20px!important}
-.inquiryBox select{width:330px!important;height:36px;border-radius:5px;border: 1px solid #BBBBBB;font-size:12px;padding:3px}
+.inquiryBox select{width:330px!important;height:36px;border-radius:5px;border: 1px solid #BBBBBB;font-size:12px;padding:5px}
 .inquiryBox .filebox label{width:330px;height:45px;}
 #btnModify{position:relative;left:-15px}
 }
@@ -644,6 +644,9 @@ ul.result {text-align: right; color: #000;}
 
 
 /*주문하기*/
+@media screen and (min-width:1080px){
+.dateNo .date{margin-left:20px}
+}
 .order{margin-top:20px;width:100%;}
 .order p{font-size:14px;padding-left:15px;padding-right:15px}
 .downArrow{position:absolute;right:20px;}
@@ -810,11 +813,17 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .buttons{
     width:100%;margin: 0 auto;
     justify-content: space-between;
-    padding: 0 15px 14px 15px;
-    height: 60px;
+   /* padding: 0 15px 14px 15px;
+    height: 60px;*/
   }
+@media screen and (min-width:1080px){
+.btnConfirm, .btnTracking{width:116px;height:30px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
+ color:#000;font-size:12px;background-color:#F1F1F1}
+}
+@media screen and (min-width:360px) and (max-width:1079px){
 .btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
 color:#000;font-size:14px;background-color:#F1F1F1;}
+}
 .dateNo{border-bottom:8px solid #F1F1F1; /* margin-top: */}
 .date{margin-bottom:3px;color:#878787}
 .no{margin-bottom:14px}
@@ -1963,7 +1972,14 @@ delivery_manage_list .customer_info {
 .inquiry_top{margin-top:34px;margin-left:15px;}
 .inquiry_top ul{float:left;display:flex; justify-content:space-between;}
 .order001 li{width:100%;white-space:nowrap}
-.order_a_box {display: flex;margin-bottom:20px;margin-left:-24px}
+@media screen and (min-width:360px) and (max-width:1079px){
+.order_a_box {display: flex;margin-bottom:20px;margin-left:20px}
+.review_conplete{padding-left:20px}
+}
+@media screen and (max-width:1080px){
+.order_a_box {display: flex;margin-bottom:20px}
+}
+
 .order_a_box > .web_prod_info_ctn{margin-top:14px;padding-left:15px; display: flex;}
 .order_a_box .edit_del_icon {position: absolute; right: 10px; cursor: pointer; text-align: right;}
 .order_a_box a img {margin-bottom:18px;width:50px;height:90px;margin-right:20px}

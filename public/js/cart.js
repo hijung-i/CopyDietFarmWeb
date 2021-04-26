@@ -109,6 +109,8 @@ function drawCartItemList() {
             cartItemHtml += '</div>';
         }
 
+        $('section#shplist').html(cartItemHtml);
+
         cartItemHtml += '<div>';
         cartItemHtml +=     '<table class="detail_price">';
         cartItemHtml +=         '<tr>';
@@ -139,6 +141,7 @@ function drawCartItemList() {
 
         changeOptionCount(false, pIdx, oIdx);
     })
+
     $("button.plus").click(function() {
         var idxes = getSelectedOptionIndexes($(this).parent().parent().parent().parent().parent().parent());
         var pIdx = idxes[0];

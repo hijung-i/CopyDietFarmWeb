@@ -348,12 +348,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                 </div>
                 <!--//타이틀-->
                 <!--카테고리 이미지 및 우측 리스트-->
-                <ul>
-                    <li class="m_bestn_mn_box">
-                        <div class="m_bestn_mn_img"><a href="#"><img src="images/side.jpg"></a></div>
-                    </li>
-                    <li>
-                        <!--리스트-->
+                                       <!--리스트-->
                         <div class="m_bestn_list">
                             <ul class="m_bestn_nlst">
   
@@ -507,8 +502,6 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                </ul>
                 <!--//카테고리 이미지 및 우측 리스트-->
             </div>
         </div>
@@ -704,24 +697,24 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                             <div class="m_bestn_list">
                                 <ul class="m_bestn_nlst">
       
-                                    <li class="tb_mw_wrap " \>
-                                        <a href="#" onclick="">
-                                            <div class="mbestn_zzim_img tb_mw">
-      
-                                                <p class="m_bestn_img tb_mw">
-                                                    <img src="images/dietfarmbread.jpg" class="tb_m">
-                                                </p>
-                                                <div class="desc">
-                                                    <p class="title">제품이름</p>
-                                                    <ul>
-                                                        <li class="sale">23,400원</li>
-                                                        <li class="cost">26,000원</li>
-                                                        <li class="ratio">10%</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
+    <li class="tb_mw_wrap " \>
+        <a href="#" onclick="">
+            <div class="mbestn_zzim_img tb_mw"></div>
+
+                <p class="m_bestn_img tb_mw">
+                    <img src="images/dietfarmbread.jpg" class="tb_m">
+                </p>
+                <div class="desc">
+                    <p class="title">제품이름</p>
+                    <ul>
+                        <li class="sale">23,400원</li>
+                        <li class="cost">26,000원</li>
+                        <li class="ratio">10%</li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+    </li>
       
                                     <li class="tb_mw_wrap ">
                                         <a href="#" onclick="">
@@ -1036,77 +1029,6 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
             </div>
         </div>
     </main>
-
     <%-include('general/footer') %>
-
     <script src="/js/index.js"></script>
-    <script>
-        // 햄버거 메뉴
-        $(document).ready(function() {
-
-            $('.btnMenu>a').on('click', function() {
-                $('.sideMenu').show().animate({
-                    left: 0
-                });
-            });
-            $('.slideMenu_close>a').on('click', function() {
-                $('.sideMenu').animate({
-                    left: -100 + '%'
-                }, function() {
-                    $('.sideMenu').hide();
-                });
-            });
-        });
-
-
-        // 햄버거 2단계 메뉴
-        $(document).ready(function() {
-            $("dt.faq_q").click(function() {
-                if ($(this).next('dd').css("display") != "none") {
-                    $(this).next('dd').hide();
-                    $(this).removeClass("current");
-                } else {
-                    $("dd.faq_a").css('display', 'none');
-                    $("dt.faq_q").removeClass("current");
-                    $(this).next('dd').show();
-                    $(this).addClass("current");
-                }
-            });
-        });
-
-         $(document).ready(function() {
-
-            $('.btnMenu>a').on('click', function() {
-                $('.gnb').hide();
-            });
-        });
-        $('.slideMenu_close>a').on('click', function() {
-            $('.gnb').show();
-        });
-    </script>
-      <script>
-     	$(document).ready(function(){
-		$("#gnbAllMenu").hide();
-		$("#btnGnbOpen").click(function(){
-			$("#gnbAllMenu").slideToggle("");
-		});
-	});
-
-	   $(document).ready(function() {
-              $("#memberMenu").bind("moseover mouseenter",function(){
-				$("#memMenu").show();
-		  });
-		   $("#memMenu").bind("moseout mouseleave",function(){
-				$("#memMenu").hide();
-		  });
-
-		    $("#NotmemberMenu").bind("moseover mouseenter",function(){
-				$("#NotmemMenu").show();
-		  });
-		   $("#NotmemMenu").bind("moseout mouseleave",function(){
-				$("#NotmemMenu").hide();
-		  });
-        });
-    </script>
-   
 </body></html>
