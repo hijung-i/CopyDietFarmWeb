@@ -23,11 +23,10 @@ function addItemToCart(title, price, imageSrc) {
     cartRowContents += '<div class="shoplist_ctn">';
         <input type="radio" id="shoplist_part_selt">
         <div class="shopcart_thum">
-            <!--<img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일"> -->
+           <img src="./images/shopcart_thum.jpg" alt="쇼핑썸네일">
         </div>
         <p class="product_name"></p>
         <a href="#"><img src="/images/x_icon_login.png" style="width:12px" class="delete_btn"></a>
-    </div>
     <div class="shoplist_price_web">
         <div class="shoplinst_count">
             <p>라이트밀 도시락 5종</p>
