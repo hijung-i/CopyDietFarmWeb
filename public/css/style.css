@@ -278,7 +278,7 @@ height:50px;overflow:hidden}
   .m_bestn_list ul:first-child{width:100%;margin:0 auto;display:grid;grid-template-columns: repeat(2, 3fr);
   align-items:center;
   justify-self:center}
-  .m_bestn_nlst li {position:relative;display:block;float:left;vertical-align:top;}
+  .m_bestn_nlst li {position:relative;display:block;float:left; vertical-align:top;}
   .tb_mw_wrap .desc .title{margin-left:10px;margin-bottom:7px;margin-top:8px}
   .tb_mw_wrap .desc ul li{margin-left:5px;font-weight:bold;margin-bottom:20px}
   .tb_mw_wrap .desc .cost{color:#909090;text-decoration:line-through;font-weight:normal}

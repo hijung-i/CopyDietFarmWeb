@@ -1,0 +1,3 @@
+function ProductDTO() {
+    this.options = {}
+}
