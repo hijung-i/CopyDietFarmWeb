@@ -9,6 +9,12 @@ $(function() {
                 break;
         }
     })
+
+    $("#loginFormUserId, #loginFormUserPassword").keypress(function(event) {
+        if(event.keyCode == 13){
+            loginRequest();
+        }
+    })
 })
 
 function loginRequest(){

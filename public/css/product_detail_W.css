@@ -518,8 +518,7 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .page_nation .next {background:#f8f8f8 url('images/page_next.png') no-repeat center center;margin-left:7px;}
 .page_nation .nnext {background:#f8f8f8 url('images/page_nnext.png') no-repeat center center;margin-right:0;}
 .page_nation a.active {background-color:#fff;color:#F99319;}
-    
-  }
+}
 
 @media screen and (min-width:1080px){
   .v_floating_wrap .common_btn_wrap{margin-left:20px}

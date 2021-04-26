@@ -1972,7 +1972,14 @@ delivery_manage_list .customer_info {
 .inquiry_top{margin-top:34px;margin-left:15px;}
 .inquiry_top ul{float:left;display:flex; justify-content:space-between;}
 .order001 li{width:100%;white-space:nowrap}
-.order_a_box {display: flex;margin-bottom:20px;margin-left:-24px}
+@media screen and (min-width:360px) and (max-width:1079px){
+.order_a_box {display: flex;margin-bottom:20px;margin-left:20px}
+.review_conplete{padding-left:20px}
+}
+@media screen and (max-width:1080px){
+.order_a_box {display: flex;margin-bottom:20px}
+}
+
 .order_a_box > .web_prod_info_ctn{margin-top:14px;padding-left:15px; display: flex;}
 .order_a_box .edit_del_icon {position: absolute; right: 10px; cursor: pointer; text-align: right;}
 .order_a_box a img {margin-bottom:18px;width:50px;height:90px;margin-right:20px}

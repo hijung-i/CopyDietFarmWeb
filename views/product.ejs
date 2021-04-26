@@ -22,26 +22,7 @@
     <link rel="stylesheet" href="/css/product_detail_W.css">
     <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/product_details.css">
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js">
-    </script>
-     <script src="js/jquery.bpopup-0.1.1.min.js"></script>
-    <script type="text/javascript">
-        function Show_hidden(e) {
-            var menu = new Array("test_1", "test_2", "test_3", "test_4", "test_5"); // 객체 배열로 지정
-            for (var i = 0; i < menu.length; i++) {
-                if ("test_" + e == menu[i]) {
-                    document.all[menu[i]].style.display = "block";
-                } else {
-                    document.all[menu[i]].style.display = "none";
-                }
-            }
-        }
-    </script>
+    
 </head>
 
 <script>
@@ -56,7 +37,6 @@
                     touchEnabled: true,
                 });
         $('.multiple_bxslider').bxSlider({
-            mode: 'horizontal',
             mode: 'horizontal',
             auto: true,
             slideWidth: 3000,
@@ -96,217 +76,322 @@
 </script>
 
 <body>
-<div class="web_product_details">
-    <%-include('general/header_web') %>
- </div>
+    <div class="web_product_details">
+        <%-include('general/header_web') %>
+    </div>
 
-<div class="mobile_product_details">
-    <section class="detail_title">
-        <h2 class="title">(아임월) 다이어트 굿 밀도시락어쩌구저쩌구</h2>
-        <script type="text/javascript">
-            function goBack() {
-                window.history.back();
-            }
-        </script>
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style=""> </a>
-        </div>
+    <div class="mobile_product_details">
+        <section class="detail_title">
+            <h2 class="title"><!-- 상품명 --></h2>
+            <script type="text/javascript">
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style=""> </a>
+            </div>
 
-        <div class="btncart"><a href="#" onclick="mCart('on');"><img src="/images/cart_ico_main.png" alt="" style="width:22px;height:23px;left:20px"></a>
-        </div>
-    </section>
-</div><!--//모바일 헤더 끝-->
-
-
+            <div class="btncart"><a href="#" onclick="mCart('on');"><img src="/images/cart_ico_main.png" alt="" style="width:22px;height:23px;left:20px"></a>
+            </div>
+        </section>
+    </div><!--//모바일 헤더 끝-->
 
 	<!-- contents-wrap // -->
 	<main id="content">
-    <input type="hidden" id="productCode" value="<%=productCode %>">
-	<div id="contents_wrap">
-		<div id="container">		
-			<!-- contents -->
-			<div class="contents">	
-			<div class="tabMenu">
-            <ul class="tab_wrap" id="tab_mobile">
-                <li class="active" data-tab="tab1_mobile"><a href="javascript:void(0);">상품설명</a></li>
-                <li data-tab="tab2"><a href="javascript:void(0);">상세정보</a></li>
-                <li data-tab="tab3"><a href="javascript:void(0);">리뷰</a></li>
-                <li data-tab="tab4"><a href="javascript:void(0);">문의</a></li>
-            </ul>
-        </div>			
-        <div id="tab1_mobile" class="tab_cont active">
-				<div class="view_wrap">
-					<!-- 상품navi -->
-					<div class="view_navi_box">	
-					<span>도시락/샐러드 <img src="/images/arrow_ico_join.png" style="width:11px;position:relative;top:0px"> 도시락</span>
-						
-					</div>
-					<!-- //상품navi -->
-					
-					<!-- 상품설명 -->
-					<div class="view_top_box clearfix">
-						<div class="view_top_img">
-							
-						<ul class="bxslider">
-                            <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
-                            <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
-                            <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
-                            <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+        <input type="hidden" id="productCode" value="<%=productCode %>">
+        <div id="contents_wrap">
+            <div id="container">		
+                <!-- contents -->
+                <div class="contents">	
+                    <div class="tabMenu">
+                        <ul class="tab_wrap" id="tab_mobile">
+                            <li class="active" data-tab="tab1_mobile"><a href="javascript:void(0);">상품설명</a></li>
+                            <li data-tab="tab2"><a href="javascript:void(0);">상세정보</a></li>
+                            <li data-tab="tab3"><a href="javascript:void(0);">리뷰</a></li>
+                            <li data-tab="tab4"><a href="javascript:void(0);">문의</a></li>
                         </ul>
-                   </div>
-                      		<div class="v_top_txt_box">
-				
-							<h1 class="v_top_name">든든한 한끼 오늘은 현미밥 7종</h1>
-							<p class="v_top_txt">다른 반찬 필요없이 4분만에 완성하는 균형잡힌 현미밥 식단!</p>
-                           <div class="price_mobile">
-                            <p class="p1">23,400원</p>
-                            <p class="p2">26,000원</p>
-                            <p class="p3">5%</p>
-				          </div> 
-        
-                <div class="v_n_top_info">
-                    <table>
-                        <tr class="point">
-                            <td><span>포인트</span></td>
-                            <td class="ex">로그인, 옵션 선택 후 확인 가능합니다.</td>
-                        </tr>
-                        <tr class="delivery-type">
-                            <td><span>배송방법</span></td>
-                            <td class="ex">업체 택배배송</td>
-                        </tr>
-                        <tr class="delivery-cost">
-                            <td><span>배송비</span></td>
-                            <td class="ex">30,000원 이상 구매시 무료배송</td>
-                        </tr>
-                        <tr class="packing-type">
-                            <td><span>포장타입</span></td>
-                            <td class="ex">냉동/종이포장</td>
-                        </tr>
-                        <tr class="courier-name">
-                            <td><span>택배사</span></td>
-                            <td class="ex">롯데택배, 한진택배</td>
-                        </tr>
-                    </table>
-                </div>
-                <!--//v_n_top_info2-->
-    	
-            <div class="option_wrap">
-                <h3><img src="/images/star_icon_join.png">옵션선택(필수)</h3>
-                <table class="product_option">
-                    <tr>
-                        <th scope="row"></th>
-                        <td>
-                            <select name="products" id="products" onchange="Show_hidden(this.value);" style="border-color:#BBBBBB">
-                                <option value="1" selected>선택</option>
-                                <option value="2">현미밥 랜덤 10종</option>
-                                <option value="3">현미밥 랜덤 10종</option>
-                                <option value="4">현미밥 랜덤 4종</option>
-                                <option value="5">현미밥 랜덤 10종</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-
-
-
-                <div id="test_1" style="display:block;"></div>
-                <div id="test_2" style="display:none;">
-
-                    <div class="product_count">
-                        <div class="product_title">
-                            <h4>1. 제품이름</h4>
-                            <ul>
-                                <ii><a href="#"> <img src="/images/x_icon_login.png" style="width:8px"></a></ii>
-                            </ul>
-                        </div>
-                        <div class="number_price">
-                            <div class="number-input">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                <button onclick="#" class="plus"></button>
+                    </div>			
+                    <div id="tab1_mobile" class="tab_cont active">
+                        <div class="view_wrap">
+                            <!-- 상품navi -->
+                            <div class="view_navi_box">	
+                                <span>도시락/샐러드 <img src="/images/arrow_ico_join.png" style="width:11px;position:relative;top:0px"> 도시락</span>
                             </div>
-                            <p>8,500원</p>
-                      <div class="t_price">
-                    <ul>
-                        <li class="total">총 금액</li>
-                        <li>8,500원</li>
-                    </ul>
-                </div>
+                            <!-- //상품navi -->
+                            
+                            <!-- 상품설명 -->
+                            <div class="view_top_box clearfix">
+                                <div class="view_top_img">
+                                    
+                                <ul class="bxslider">
+                                    <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                                    <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                                    <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                                    <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                                </ul>
+                        </div>
+                            <div class="v_top_txt_box">
+                                <h1 class="v_top_name">든든한 한끼 오늘은 현미밥 7종</h1>
+                                <p class="v_top_txt">다른 반찬 필요없이 4분만에 완성하는 균형잡힌 현미밥 식단!</p>
+                                <div class="price_mobile">
+                                    <p class="p1">23,400원</p>
+                                    <p class="p2">26,000원</p>
+                                    <p class="p3">5%</p>
+                                </div> 
+                
+                                <div class="v_n_top_info">
+                                    <table>
+                                        <tr class="point">
+                                            <td><span>포인트</span></td>
+                                            <td class="ex">로그인, 옵션 선택 후 확인 가능합니다.</td>
+                                        </tr>
+                                        <tr class="delivery-type">
+                                            <td><span>배송방법</span></td>
+                                            <td class="ex">업체 택배배송</td>
+                                        </tr>
+                                        <tr class="delivery-cost">
+                                            <td><span>배송비</span></td>
+                                            <td class="ex"></td>
+                                        </tr>
+                                        <tr class="packing-type">
+                                            <td><span>포장타입</span></td>
+                                            <td class="ex"></td>
+                                        </tr>
+                                        <tr class="courier-name">
+                                            <td><span>택배사</span></td>
+                                            <td class="ex"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!--//v_n_top_info2-->
+                
+                                <div class="option_wrap">
+                                    <h3><img src="/images/star_icon_join.png">옵션선택(필수)</h3>
+                                    <table class="product_option">
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>
+                                                <select name="products" id="products" style="border-color:#BBBBBB">
+                                                    <option value="1" selected>선택</option>
+                                                    <option value="2">현미밥 랜덤 10종</option>
+                                                    <option value="3">현미밥 랜덤 10종</option>
+                                                    <option value="4">현미밥 랜덤 4종</option>
+                                                    <option value="5">현미밥 랜덤 10종</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <div id="selectedOptionDiv"> 
+                                        <!-- <div>
+                                            <div class="product_count">
+                                                <div class="product_title">
+                                                    <h4>옵션명<h4>
+                                                    <ul>
+                                                        <ii><a href="#"> <img src="/images/x_icon_login.png" style="width:8px"></a></ii>
+                                                    </ul>
+                                                </div>
+                                                <div class="number_price">
+                                                    <div class="number-input">
+                                                        <button class="minus"></button>
+                                                        <input class="quantity" min="1" name="quantity" value="1" type="number">
+                                                        <button class="plus"></button>
+                                                    </div>
+                                                    <p>옵션 가격</p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="line_w"></div>
+                                        <div class="total_price">
+                                            <p>총 상품금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>8,500원</span></p>
+                                        </div>
+                                        <div class="common_btn_wrap">
+                                            <div class="option_btns">
+                                                <button type="button" class="h_btn">
+                                                <img src="/images/heart_icon_menu.png" ></button>
+                                                <button type="button" class="c_btn">장바구니</button>
+                                                <button type="button" class="p_btn">구매하기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="test_3" style="display:none;">
-                    <div class="product_count">
-                        <div class="product_title">
-                            <h4>1. 제품이름</h4>
-                            <ul>
-                                <ii><a href="#"><img src="/images/x_icon_login.png" style="width:8px"></a></ii>
-                            </ul>
-                        </div>
-                        <div class="number_price">
-                            <div class="number-input">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                <button onclick="" class="plus"></button>
-                            </div>
-                            <p>17,500원</p>
-                <div class="t_price">
-                    <ul>
-                        <li class="total">총 금액</li>
-                        <li>8,500원</li>
-                    </ul>
+
+                <div class="pp_wrap" >
+                    <section class="purchased_products">
+                        <h3>이 상품과 같이 구매한 상품들</h3>
+                        <ul class="multiple_bxslider">
+                            <li>
+                                <a href="#">
+                                    <img src="/images/dietfarmbread.jpg" >
+                                    <span class="price">
+                                        <p class="title">제품이름</p>
+                                        <ul>
+                                            <li class="sale">23,400원</li>
+                                            <li class="cost">26,000원</li>
+                                            <li class="ratio">10%</li>
+                                        </ul>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/images/dietfarmbread.jpg" >
+                                    <span class="price">
+                                        <p class="title">제품이름</p>
+                                        <ul>
+                                            <li class="sale">23,400원</li>
+                                            <li class="cost">26,000원</li>
+                                            <li class="ratio">10%</li>
+                                        </ul>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/images/dietfarmbread.jpg" >
+                                    <span class="price">
+                                        <p class="title">제품이름</p>
+                                        <ul>
+                                            <li class="sale">23,400원</li>
+                                            <li class="cost">26,000원</li>
+                                            <li class="ratio">10%</li>
+                                        </ul>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/images/dietfarmbread.jpg" >
+                                    <span class="price">
+                                        <p class="title">제품이름</p>
+                                        <ul>
+                                            <li class="sale">23,400원</li>
+                                            <li class="cost">26,000원</li>
+                                            <li class="ratio">10%</li>
+                                        </ul>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
                 </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="test_4" style="display:none;">
-                    <div class="product_count">
-                        <div class="product_title">
-                            <h4>1. 제품이름</h4>
-                            <ul>
-                                <ii><a href="#"> <img src="/images/x_icon_login.png" style="width:8px"></a></ii>
-                            </ul>
-                        </div>
-                        <div class="number_price">
-                            <div class="number-input">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                            </div>
-                            <p>20,500원</p>
-                                  <div class="t_price">
-                    <ul>
-                        <li class="total">총 금액</li>
-                        <li>8,500원</li>
-                    </ul>
-                </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="test_5" style="display:none;">
-                    <div class="product_count">
-                        <div class="product_title">
-                            <h4>1. 제품이름</h4>
-                            <ul>
-                                <ii><a href="#"> <img src="/images/x_icon_login.png" style="width:8px"></a></ii>
-                            </ul>
-                        </div>
-                        <div class="number_price">
-                            <div class="number-input">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                            </div>
-                            <p>76,500원</p>
-                                  <div class="t_price">
-                    <ul>
-                        <li class="total">총 금액</li>
-                        <li>8,500원</li>
-                    </ul>
-                </div>
-                        </div>
-                    </div>
-                </div>
-            <div class="line_w"></div>
+                <div class="v_floating_wrap">
+                    <div class="v_floating_opt" id="v_floating_opt">
+                        <ul id="v_floating_optul">
+                            <!--상세옵션-->
+                            <li>
+                                <div class="viw_option_w">
+                                    <p class="viw_option_tit">옵션선택</p>
+                                    <dl class="viw_option_info">
+                                        <dd>
+                                            <div class="p_v_option_wrap">
+                                                <div class="p_v_opt_listbox">
+                        
+                                                    <div id="roptcl">
+                                                    <p class="p_v_optionmn">선택<span class="ico_select_arrow"><img src="/images/downarrow_icon_category.png"></span></p>
+                                                    <ul id="roptop" class="p_v_optlist1" style="display:none;z-index:170;position:absolute;width:258px;">
+                                                                <li id="v3opt1">
+                                                                    <a data-idx="17626" class="p_o_list_w2"> 
+                                                                        <div class="p_o_list_won">
+                                                                            <p class="p_o_list_img"><img src="https://data.0app0.com/diet/shop/goods/20210408/20210408161917_5238214314.jpg"></p>
+                                                                            <ul class="p_o_list_w_box">                                                              
+                                                                                
+                                                                                <li>01. *주간핫딜* 1개</li>  
+                                                                                
+                                                                                <li class="mt7"><strong>990원</strong></li>  
+                                                                            </ul>    
+                                                                        </div>                       
+                                                                    </a>
+                                                                </li>
+                                                        
+                                                                <li id="v3opt2">
+                                                                    <a data-idx="17627" class="p_o_list_w2"> 
+                                                                        <div class="p_o_list_won">
+                                                                            <p class="p_o_list_img"><img src="https://data.0app0.com/diet/shop/goods/20210408/20210408161922_6063584199.jpg"></p>
+                                                                            <ul class="p_o_list_w_box">                                                              
+                                                                                
+                                                                                <li>02. *주간핫딜* 5+1 (총6개)</li>  
+                                                                                
+                                                                                <li class="mt7"><strong>4,950원</strong></li>  
+                                                                            </ul>    
+                                                                        </div>                       
+                                                                    </a>
+                                                                </li>
+                                                        
+
+                                                    </ul>
+                                                    </div>
+                                                <div style="height:493px;">
+                                                    <ul class="p_v_optlist2 mt10">
+                                                        <!-- -->
+                                                        
+                                                        <li id="ad3op17626" data-optidx="17626" data-activeyn="N"  data-mlgflg="N" style="display:none;">
+                                                            <div class="p_v_opt_mn">
+                                                            <a>    
+                                                                
+                                                                <span class="num">01. </span><span class="txt">*주간핫딜* 1개</span>
+                                                                
+                                                                <div class="v_opt_box">
+                                                                    <a onclick="$.optDel(17626);" style="cursor:pointer;">
+                                                                    <p class="del"><img src="/img/ico/ico_del.png"></p>
+                                                                    </a>
+                                                                    <ul class="v_option1">
+                                                                        <li class="price">
+                                                                            <span class="price_input" id="curcnt"><input type="number" value="1" class="price_input inputno2" style="outline: none;" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="4" data-idx="17626" data-uc="1"/></span>                       
+                                                                        </li>
+                                                                        <p class="plus" id="plsbtn" onclick="$.plsGoods(17626);"><a><img src="/img/ico/ico_plus.gif"></a></p>
+                                                                        <p class="mius" id="minbtn" onclick="$.mnsGoods(17626);"><a><img src="/img/ico/ico_mius.gif"></a></p>
+                                                                    </ul>
+                                                                    <div class="v_opt_price"><span id="option_price" data-price="990" >990</span>원</div>	
+                                                                </div>
+                                                            </a>
+                                                            </div>
+                                                        </li>
+
+                                                        
+                                                        <li id="ad3op17627" data-optidx="17627" data-activeyn="N"  data-mlgflg="N" style="display:none;">
+                                                            <div class="p_v_opt_mn">
+                                                            <a>    
+                                                                
+                                                                <span class="num">02. </span><span class="txt">*주간핫딜* 5+1 (총6개)</span>
+                                                                
+                                                                <div class="v_opt_box">
+                                                                    <a onclick="$.optDel(17627);" style="cursor:pointer;">
+                                                                    <p class="del"><img src="/img/ico/ico_del.png"></p>
+                                                                    </a>
+                                                                    <ul class="v_option1">
+                                                                        <li class="price">
+                                                                            <span class="price_input" id="curcnt"><input type="number" value="1" class="price_input inputno2" style="outline: none;" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="4" data-idx="17627" data-uc="1"/></span>                       
+                                                                        </li>
+                                                                        <p class="plus" id="plsbtn" onclick="$.plsGoods(17627);"><a><img src="/img/ico/ico_plus.gif"></a></p>
+                                                                        <p class="mius" id="minbtn" onclick="$.mnsGoods(17627);"><a><img src="/img/ico/ico_mius.gif"></a></p>
+                                                                    </ul>
+                                                                    <div class="v_opt_price"><span id="option_price" data-price="4950" >4,950</span>원</div>	
+                                                                </div>
+                                                            </a>
+                                                            </div>
+                                                        </li>
+
+                                                                
+                                                        <!-- -->
+                                                    </ul>
+                                                    </div>
+                                                    <!--//필수옵션 선택후-->
+                                                </div>
+                                            </div>
+
+                                        </dd>
+                                    </dl>
+
+                                    <!--구매하기, 장바구니담기 영역-->
+                                    <div class="v_opt_btn_w">
+                                    <div class="line_w"></div>
                 <div class="total_price">
                     <p>총 상품금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>8,500원</span></p>
                 </div>
@@ -314,179 +399,10 @@
                     <div class="option_btns">
                         <button type="button" class="h_btn">
                         <img src="/images/heart_icon_menu.png" ></button>
-                        <button type="button" class="c_btn">장바구니</button>
-                        <button type="button" class="p_btn">구매하기</button>
+                        <button type="button" class="c_btn" style="margin-left:4px">장바구니</button>
+                        <button type="button" class="p_btn" style="margin-left:4px">구매하기</button>
                     </div>
-                </div>
-            </div>
-         </div>
-
-            <div class="pp_wrap" >
-                <section class="purchased_products">
-                    <h3>이 상품과 같이 구매한 상품들</h3>
-                    <ul class="multiple_bxslider">
-                    <li><a href="#"><img src="/images/dietfarmbread.jpg" >
-                            <span class="price">
-                               <p class="title">제품이름</p>
-                                <ul>
-                                    <li class="sale">23,400원</li>
-                                    <li class="cost">26,000원</li>
-                                    <li class="ratio">10%</li>
-                                </ul>
-                            </span></a></li>
-                    <li><a href="#"><img src="/images/dietfarmbread.jpg" >
-                            <span class="price" >
-                               <p class="title">제품이름</p>
-                                <ul>
-                                    <li class="sale">23,400원</li>
-                                    <li class="cost">26,000원</li>
-                                    <li class="ratio">10%</li>
-                                </ul>
-                            </span></a></li>
-                    <li><a href="#"><img src="/images/dietfarmbread.jpg" >
-                            <span class="price">
-                               <p class="title">제품이름</p>
-                                <ul>
-                                    <li class="sale">23,400원</li>
-                                    <li class="cost">26,000원</li>
-                                    <li class="ratio">10%</li>
-                                </ul>
-                            </span></a></li>
-                    <li><a href="#"><img src="/images/dietfarmbread.jpg" >
-                            <span class="price">
-                               <p class="title">제품이름</p>
-                                <ul>
-                                    <li class="sale">23,400원</li>
-                                    <li class="cost">26,000원</li>
-                                    <li class="ratio">10%</li>
-                                </ul>
-                            </span></a></li>
-                       </ul>
-                </section>
-              </div>
-            <div class="v_floating_wrap">
-        
-                <div class="v_floating_opt" id="v_floating_opt">
-                     <ul id="v_floating_optul">
-                        <!--상세옵션-->
-                        <li>
-                            <div class="viw_option_w">
-                                <p class="viw_option_tit">옵션선택</p>
-                                <dl class="viw_option_info">
-                                    <dd>
-                                        <div class="p_v_option_wrap">
-                                            <div class="p_v_opt_listbox">
-                       
-                                                <div id="roptcl">
-                                                <p class="p_v_optionmn">선택<span class="ico_select_arrow"><img src="/images/downarrow_icon_category.png"></span></p>
-                                                <ul id="roptop" class="p_v_optlist1" style="display:none;z-index:170;position:absolute;width:258px;">
-                                                            <li id="v3opt1">
-                                                                <a data-idx="17626" class="p_o_list_w2"> 
-                                                                    <div class="p_o_list_won">
-                                                                        <p class="p_o_list_img"><img src="https://data.0app0.com/diet/shop/goods/20210408/20210408161917_5238214314.jpg"></p>
-                                                                        <ul class="p_o_list_w_box">                                                              
-                                                                              
-                                                                            <li>01. *주간핫딜* 1개</li>  
-                                                                            
-                                                                            <li class="mt7"><strong>990원</strong></li>  
-                                                                        </ul>    
-                                                                    </div>                       
-                                                                </a>
-                                                            </li>
-                                                    
-                                                            <li id="v3opt2">
-                                                                <a data-idx="17627" class="p_o_list_w2"> 
-                                                                    <div class="p_o_list_won">
-                                                                        <p class="p_o_list_img"><img src="https://data.0app0.com/diet/shop/goods/20210408/20210408161922_6063584199.jpg"></p>
-                                                                        <ul class="p_o_list_w_box">                                                              
-                                                                              
-                                                                            <li>02. *주간핫딜* 5+1 (총6개)</li>  
-                                                                            
-                                                                            <li class="mt7"><strong>4,950원</strong></li>  
-                                                                        </ul>    
-                                                                    </div>                       
-                                                                </a>
-                                                            </li>
-                                                    
-
-                                                </ul>
-                                                </div>
-                                            <div style="height:493px;">
-                                                <ul class="p_v_optlist2 mt10">
-                                                    <!-- -->
-                                                    
-                                                    <li id="ad3op17626" data-optidx="17626" data-activeyn="N"  data-mlgflg="N" style="display:none;">
-                                                        <div class="p_v_opt_mn">
-                                                        <a>    
-                                                              
-                                                            <span class="num">01. </span><span class="txt">*주간핫딜* 1개</span>
-                                                            
-                                                            <div class="v_opt_box">
-                                                                <a onclick="$.optDel(17626);" style="cursor:pointer;">
-                                                                <p class="del"><img src="/img/ico/ico_del.png"></p>
-                                                                </a>
-                                                                <ul class="v_option1">
-                                                                    <li class="price">
-                                                                        <span class="price_input" id="curcnt"><input type="number" value="1" class="price_input inputno2" style="outline: none;" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="4" data-idx="17626" data-uc="1"/></span>                       
-                                                                    </li>
-                                                                    <p class="plus" id="plsbtn" onclick="$.plsGoods(17626);"><a><img src="/img/ico/ico_plus.gif"></a></p>
-                                                                    <p class="mius" id="minbtn" onclick="$.mnsGoods(17626);"><a><img src="/img/ico/ico_mius.gif"></a></p>
-                                                                </ul>
-                                                                <div class="v_opt_price"><span id="option_price" data-price="990" >990</span>원</div>	
-                                                            </div>
-                                                        </a>
-                                                        </div>
-                                                    </li>
-
-                                                    
-                                                    <li id="ad3op17627" data-optidx="17627" data-activeyn="N"  data-mlgflg="N" style="display:none;">
-                                                        <div class="p_v_opt_mn">
-                                                        <a>    
-                                                              
-                                                            <span class="num">02. </span><span class="txt">*주간핫딜* 5+1 (총6개)</span>
-                                                            
-                                                            <div class="v_opt_box">
-                                                                <a onclick="$.optDel(17627);" style="cursor:pointer;">
-                                                                <p class="del"><img src="/img/ico/ico_del.png"></p>
-                                                                </a>
-                                                                <ul class="v_option1">
-                                                                    <li class="price">
-                                                                        <span class="price_input" id="curcnt"><input type="number" value="1" class="price_input inputno2" style="outline: none;" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="4" data-idx="17627" data-uc="1"/></span>                       
-                                                                    </li>
-                                                                    <p class="plus" id="plsbtn" onclick="$.plsGoods(17627);"><a><img src="/img/ico/ico_plus.gif"></a></p>
-                                                                    <p class="mius" id="minbtn" onclick="$.mnsGoods(17627);"><a><img src="/img/ico/ico_mius.gif"></a></p>
-                                                                </ul>
-                                                                <div class="v_opt_price"><span id="option_price" data-price="4950" >4,950</span>원</div>	
-                                                            </div>
-                                                        </a>
-                                                        </div>
-                                                    </li>
-
-                                                            
-                                                    <!-- -->
-                                                </ul>
-                                                </div>
-                                                <!--//필수옵션 선택후-->
-                                            </div>
-                                        </div>
-
-                                    </dd>
-                                </dl>
-
-                                <!--구매하기, 장바구니담기 영역-->
-                                <div class="v_opt_btn_w">
-                                <div class="line_w"></div>
-            <div class="total_price">
-                <p>총 상품금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>8,500원</span></p>
-            </div>
-            <div class="common_btn_wrap">
-                <div class="option_btns">
-                    <button type="button" class="h_btn">
-                    <img src="/images/heart_icon_menu.png" ></button>
-                    <button type="button" class="c_btn" style="margin-left:4px">장바구니</button>
-                    <button type="button" class="p_btn" style="margin-left:4px">구매하기</button>
-                </div>
-            </div>	
+                </div>	
            </div>
                                
 
@@ -1270,84 +1186,6 @@
 	</div>
 	</div>
 </main>
-	<script>	
-  // 햄버거 메뉴
-        $(document).ready(function() {
-
-            $('.btnMenu>a').on('click', function() {
-                $('.sideMenu').show().animate({
-                    left: 0
-                });
-            });
-            $('.slideMenu_close>a').on('click', function() {
-                $('.sideMenu').animate({
-                    left: -100 + '%'
-                }, function() {
-                    $('.sideMenu').hide();
-                });
-            });
-        });
-
-
-        // 햄버거 2단계 메뉴
-        $(document).ready(function() {
-            $("dt.faq_q").click(function() {
-                if ($(this).next('dd').css("display") != "none") {
-                    $(this).next('dd').hide();
-                    $(this).removeClass("current");
-                } else {
-                    $("dd.faq_a").css('display', 'none');
-                    $("dt.faq_q").removeClass("current");
-                    $(this).next('dd').show();
-                    $(this).addClass("current");
-                }
-            });
-        });
-
-         $(document).ready(function() {
-
-            $('.btnMenu>a').on('click', function() {
-                $('.gnb').hide();
-            });
-        });
-        $('.slideMenu_close>a').on('click', function() {
-            $('.gnb').show();
-        });
-    </script>
-      <script>
-     	$(document).ready(function(){
-		$("#gnbAllMenu").hide();
-		$("#btnGnbOpen").click(function(){
-			$("#gnbAllMenu").slideToggle("fast");
-		});
-	});
-
-	   $(document).ready(function() {
-            $(".m_slides_sub").hide();
-            $(".m_ba_slides_n_w li").hover(function(){
-                $("ul:not(:animated)",this).slideDown("700");
-
-                $(".m_ba_slides_n_w li a").removeClass("active");
-            },
-            function() {
-                $("ul",this).slideUp("700");
-               });
-
-		    $("#memberMenu").bind("moseover mouseenter",function(){
-				$("#memMenu").show();
-		  });
-		   $("#memMenu").bind("moseout mouseleave",function(){
-				$("#memMenu").hide();
-		  });
-
-		    $("#NotmemberMenu").bind("moseover mouseenter",function(){
-				$("#NotmemMenu").show();
-		  });
-		   $("#NotmemMenu").bind("moseout mouseleave",function(){
-				$("#NotmemMenu").hide();
-		  });
-        });
-    </script>
     <script type="text/javascript" src="/js/product.js"></script>
 
 </body></html>
