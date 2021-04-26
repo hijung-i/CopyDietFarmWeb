@@ -1,12 +1,3 @@
-var orderDTO = {
-    delivery: {},
-    deliveryCost: 0,
-    totalDeliveryCost: 0,
-    products: [{
-        options: []
-    }]
-}
-
 var isJeju = false, isExtra = false;
 
 var deliveryGroupList = new Array();
@@ -25,7 +16,10 @@ function getCartItemList() {
         console.log("get cartInfo success", data);
         cartList = data.result;
         
-        drawCartItemList()
+        drawCartItemList();
+
+        
+        updateOrderInfo();
 
     }, function(err) {
         console.log("error while get cartinfo", err);
@@ -72,7 +66,6 @@ function drawCartItemList() {
             
             var option = cartItem.options[j];
             cartItem.optionTotalPrice += (option.optionDiscountPrice * option.optionCount);
-            cartItem.totalDeliveryCost += 
 
             cartItemHtml += '<div class="shoplist_ctn" id="prd_'+ i +'-opt_'+ j +'">';
             cartItemHtml += '<div>';
@@ -150,16 +143,28 @@ function drawCartItemList() {
         changeOptionCount(true, pIdx, oIdx);
     })
 
-    $("[name=optionSelect]").change(function() {
-        console.log("change");
+    $("input[name=optionSelect]").click(function() {
         var id = getSelectedOptionIndexes($(this).parent().parent());
         var pIdx = id[0], oIdx = id[1];
         
-        orderDTO.products[pIdx].options[oIdx].isSelected = $(this).checked;
-        console.log(orderDTO.products);
+        cartList[pIdx].options[oIdx].isSelected = $(this)[0].checked;
+        updateOrderInfo();
     })
 
-    
+    $("input#checkAll").click(function() {
+        var checkBoxes = $('input[name=optionSelect]');
+        for(var i = 0; i < checkBoxes.length; i++) {
+            checkBoxes[i].checked = $(this)[0].checked;
+        }
+
+        for (var i = 0; i < cartList.length; i++) {
+            for( var j = 0; j < cartList[i].options.length; j++) {
+                cartList[i].options[j].isSelected = $(this)[0].checked;
+            }
+        }
+        updateOrderInfo();
+    })
+
 }
 
 function getSelectedOptionIndexes(ele) {
@@ -183,5 +188,56 @@ function changeOptionCount(plus, pIdx, oIdx) {
     }
 
     drawCartItemList();
+    updateOrderInfo();
 }
 
+function updateOrderInfo() {
+    orderDTO = new OrderDTO();
+    deliveryGroupList = new Array();
+
+    for(var i = 0; i < cartList.length; i++) {
+        var product = cartList[i];
+        var isSameGroup = false;
+        for(var j = 0; j < deliveryGroupList.length; j++) {
+            var deliveryGroup = deliveryGroupList[j];
+            if(product.loadingPlace == deliveryGroup.loadingPlace && product.brandCode == deliveryGroup.brandCode) {
+                deliveryGroup.products.push(product);
+                deliveryGroup.setDeliveryCost();
+                isSameGroup = true
+                break
+            }
+            
+        }
+        
+        if(!isSameGroup) {
+            var deliveryGroup = new DeliveryGroupDTO();
+            deliveryGroup.products.push(product);
+            deliveryGroup.loadingPlace = product.loadingPlace;
+            deliveryGroup.brandCode = product.brandCode;
+            deliveryGroup.compnayName = product.companyName;
+            deliveryGroup.brandName = product.brandName;
+            deliveryGroup.setDeliveryCost();
+            
+            deliveryGroupList.push(deliveryGroup);
+        }
+    }
+
+    for (var i = 0; i < deliveryGroupList.length; i++) {
+        var it = deliveryGroupList[i];
+        console.log(it);
+        orderDTO.paymentTotalAmount += it.groupPrice;
+        orderDTO.deliveryCost += it.deliveryCost;
+        if (isJeju) {
+            orderDTO.deliveryCost2 += it.deliveryCost2;
+        }
+        if (isExtra) {
+            orderDTO.deliveryCost3 += it.deliveryCost3;
+        }
+        orderDTO.totalDeliveryCost = orderDTO.deliveryCost + orderDTO.deliveryCost2 + orderDTO.deliveryCost3;
+    }
+
+    console.log(orderDTO);
+    $(".product-total-price").html(numberFormat(orderDTO.paymentTotalAmount)+"원");
+    $(".total-delivery-cost").html(numberFormat(orderDTO.totalDeliveryCost)+"원");
+    $(".payment-total-amount").html(numberFormat(orderDTO));
+}

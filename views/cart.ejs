@@ -10,7 +10,6 @@
     <title>다이어트 Farm</title>
     
     <%-include('general/head') %>
-    <script src="/js/cart.js"></script>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/shoppingcart.css">
     <link rel="stylesheet" href="/css/style02.css" />
@@ -32,11 +31,11 @@
         <h2>장바구니</h2>
           <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
             </div>
-       </section>
+    </section>
         <main id="content" class="content">
           <section id="shpcart_select">
            <div class="group" style="margin-top:13px">
-            <input type="checkbox" id="secret">
+            <input type="checkbox" id="checkAll">
             <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
                         </div>
             <div class="shpcart_select_del_web">
@@ -89,15 +88,15 @@
                     <table class="detail_price">
                         <tr>
                             <td><span>상품금액</span></td>
-                            <td class="price">9,900원</td>
+                            <td class="product-total-price">9,900원</td>
                         </tr>
                         <tr>
                             <td><span>배송비</span></td>
-                            <td class="price">4,000원</td>
+                            <td class="total-delivery-cost">4,000원</td>
                         </tr>
                         <tr>
                             <td><span>주문금액</span></td>
-                            <td class="price">13,900원</td>
+                            <td class="payment-total-amount">13,900원</td>
                         </tr>
                     </table>
                 </div>
@@ -188,19 +187,19 @@
                <table class="final">
                    <tr>
                        <td class="t1">상품 금액</td>
-                       <td class="price">223,600원</td>
+                       <td class="price product-total-price">223,600원</td>
                    </tr>
                     <tr>
                        <td class="t1">상품 할인 금액</td>
-                       <td class="price">-76,400원</td>
+                       <td class="price ">-76,400원</td>
                    </tr>
                     <tr>
                        <td class="t1">배송비</td>
-                       <td class="price">+0원</td>
+                       <td class="price total-delivery-cost">+0원</td>
                    </tr>
                     <tr class="total">
                        <td class="t1">총 결제 금액</td>
-                       <td class="price">147,200원</td>
+                       <td class="price payment-total-amount">147,200원</td>
                    </tr>
                </table>
            </div>
@@ -216,6 +215,10 @@
         <button type="button" class="purchaseBtn" style="border:none">구매하기</button>
         </div>
     </main>
+
+    <script src="/js/orderDTO/OrderDTO.js"></script>
+    <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
+    <script src="/js/cart.js"></script>
     <script>
         //웹 햄버거 버튼 
              $(document).ready(function(){
