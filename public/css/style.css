@@ -255,6 +255,50 @@ height:50px;overflow:hidden}
 
 /*content*/
 /*메인 페이지 모바일*/
+@media screen and (min-width:360px)and (max-width:1079px) {.web_index{display:none}
+.body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px;padding-bottom:19px}
+.protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
+.body_bottom .thum img{width:100%;padding:10px}
+.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(2, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+.body_bottom .desc .sale{font-weight:bold}
+.body_bottom .desc .cost{color:red;text-decoration:line-through;}
+.body_bottom .desc .ratio{font-weight:bold}
+.body_bottom .desc .title{margin-left:10px}
+.body_bottom .desc ul{margin-left:5px}
+.body_bottom .desc ul li{margin-left:6px;float:left;}
+.side{display:none}
+}
+@media screen and (min-width:1080px){.mobile_index{display:none}
+.body_bottom{width:1080px;margin:0 auto;}
+.body_bottom h3{font-size:25px;font-weight:bold;margin-bottom:60px}
+.body_bottom .desc ul li{margin-right:30px;float:left;}
+.w_best h2{margin-bottom:60px}
+.w_best .side{float:left;margin-bottom:77px}
+.w_best .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
+.w_best ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}h2{font-size:25px;font-weight:bold;margin-bottom:60px;margin-top:75px}
+.w_best .desc ul li{margin-right:20px;float:left;}
+.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+.body_bottom .thum img{width:184px;height:184px;border-radius:6px}
+.body_bottom .desc ul li{margin-right:20px;float:left;}
+.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+.w_best .desc .sale{font-weight:bold}
+.w_best .desc .cost{color:red;text-decoration:line-through;margin-left:-12px}
+.w_best .desc .ratio{font-weight:bold;margin-left:-17px}
+.body_bottom .desc .sale{font-weight:bold}
+.body_bottom .desc .cost{color:red;text-decoration:line-through;margin-left:-12px}
+.body_bottom .desc .ratio{font-weight:bold;margin-left:-17px}
+.body_bottom .side{float:left;}
+.body_bottom .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
+.body_bottom .thum{padding-bottom:13px}
+.body_bottom .title{margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
+.w_best .title{margin-top:13px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
+.body_bottom .desc{padding-bottom:40px}                                                                                         
+.protein, .sweet, .water{margin-top:35px;clear:both}
+.blank_sec ul li{float:left;margin-right:20px;margin-bottom:75px}
+.catgor_wrap{display:none}
+.w_best .thum img{width:184px;height:184px;border-radius:6px}
+
+}
 @media screen and (min-width:360px) and (max-width:1079px){
   #web_only{display:none}
   .m_best h2{margin-top:24px;margin-bottom:15px;margin-left:15px;font-size:14px}
@@ -271,15 +315,7 @@ height:50px;overflow:hidden}
   .m_bestn_mn_box {float:left;}
   #content .desc ul{margin-left:-50px}
   #content .desc ul li{float:left;margin-left:10px}
-  .m_bestn_img img {border-radius:5px;vertical-align:top;width:100%;padding:5.5px}
-  .m_bestn_mn_img{width:100%}
-  .m_bestn_list ul {width:100%;margin:0 auto; position:relative;}
-  .m_bestn_list{height:auto}
-  .m_bestn_nlst li {position:relative;display:block;float:left}
-  .tb_mw_wrap .desc .title{margin-left:10px;margin-bottom:7px;margin-top:8px}
-  .tb_mw_wrap .desc ul li{margin-left:5px;font-weight:bold;margin-bottom:20px}
-  .tb_mw_wrap .desc .cost{color:#909090;text-decoration:line-through;font-weight:normal}
-  .tb_mw_wrap .desc .ratio{color:#f70e0e;}
+
   #content{position:relative;width:100%;z-index:1;margin-top:27px}
   #content .main_img{z-index:1;width:100%;}
   #content .catgor_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:-60px}
@@ -302,7 +338,7 @@ height:50px;overflow:hidden}
   #content .s_price .sale{font-weight:bold;margin-left:10px}
   #content .s_price .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:5px;margin-top:1px}
   #content .s_price .ratio{color:red;font-size:11px;margin-left:5px}
-  #content .best_wrap{width:100%;border-top:8px solid #f1f1f1;border-bottom:8px solid #f1f1f1; margin: 0 auto;}
+  #content .best_wrap{width:100%;border-top:8px solid #f1f1f1; margin: 0 auto;}
   
   #content .w_best{ overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
   #content .w_best h2{font-size:14px; margin-bottom:20px;margin-top:24px}
@@ -317,9 +353,14 @@ height:50px;overflow:hidden}
   #content .pages ul li{float:left;margin-left:40px}
   #content .pages ul li img{width:60%;}
   }
-  
-  
-  /* 서브제품페이지 0325수정해야함 */
+  /*메인페이지 컨텐츠 수정 210426*/
+  @media screen and (min-width:360px) and (max-width:1079px){
+  .sweet h3{clear:both;font-size:14px;font-weight:bold;padding-left:15px}
+  .sweet ul li:first-child{display:grid;grid-template-columns: repeat(2, 2fr);
+    ;align-items: center;
+    justify-self: center;width:50%}
+}
+
   /* 서브메뉴 */	
   
   #content .main_sub img{width: 100%;background-repeat: no-repeat;background-size: cover;background-position: center}
@@ -339,7 +380,6 @@ height:50px;overflow:hidden}
   #content .main_sub_wrap .desc .ratio{color:red;font-weight:bold;font-size:11px;margin-left:7px}		
   #content .main_sub_wrap .main_sub h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}	
   .n_sort{position:relative;margin-top:15px;text-align:left;margin-bottom:30px;}	
-  #content .main_sub_wrap .sub_items{margin-top:-38px}	
   }
     /*중간사이즈*/
     @media screen and (min-width:601px) and (max-width:1079px) 
@@ -429,8 +469,8 @@ height:50px;overflow:hidden}
   #content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
   #content .desc ul{margin-left:5px;margin-bottom:44px}
   #content .desc .sale{color:#000;font-size:16px;font-weight:bold}
-  #content .desc .cost{margin-left:-48px;font-size:16px;color:#6B6B6B;text-decoration:line-through;font-weight:bold}
-  #content .desc .ratio{margin-left:-98px;color:#F32525;font-size:16px;font-weight:bold}
+  #content .desc .cost{/*margin-left:-48px;*/font-size:16px;color:#6B6B6B;text-decoration:line-through;font-weight:bold}
+  #content .desc .ratio{/*margin-left:-98px;*/color:#F32525;font-size:16px;font-weight:bold}
   #footer{clear:both} }
 /*찜 내역 없을때*/
 .pick_list_null{width:70%; text-align:center; margin:197px auto;}

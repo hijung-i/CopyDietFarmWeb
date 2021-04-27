@@ -222,7 +222,6 @@ a:hover{text-decoration:none;}
 .m_slid_2dep_brand{height:350px;overflow-x:scroll}
 .brand{width:100%;margin-top:30px;}
 .categ{border-bottom:8px solid #F1F1F1;padding-bottom:20px;margin-top:-12px;margin-bottom:-10px}
-.categ ul{}
 .categ ul li{float:left;margin-right:10px;}
 .categ .all a{font-weight:bold;color:#31845B}
 .categ ul li img{position:relative;top:-10px}
@@ -231,53 +230,6 @@ a:hover{text-decoration:none;}
 .categ ul li{font-size:14px;position:relative;top:-18px;left:14px;background-color:transparent}
 .categ ul li img{position:relative;top:20px;left:2px}
 
-@media screen and (min-width:1080px){
-.best_wrap{display:none}
-#content .catgor_wrap{display:none}
-#content .s_price{width:1080px;margin-bottom:-50px;margin:0 auto;;overflow:visible}
-#content .s_price h2{font-size:25px;margin-bottom:65px;margin-left:5px;color:#000}
-#content .s_price li .title{font-size:14px;padding-left:10px;width:144px;white-space: nowrap;
-overflow:hidden;text-overflow: ellipsis;margin:0 auto}
-#content .s_price .multiple_bxslider img{margin-bottom:14px}
-#content .s_price li .price{font-size:14px;font-weight:bold;margin-top:14px;float:left;}
-#content .s_price ul li img{margin-bottom:10px;width:350px;height:350px;border-radius:5px;}
-#content .s_price ul li ul li{float:left;}
-#content .s_price .sale{font-size:14px;font-weight:bold;margin-left:10px}
-#content .s_price .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:5px;margin-top:1px;font-size:12px}
-#content .s_price .ratio{color:red;font-size:13px;margin-left:5px;font-weight:bold}
-#content .blank_sec{width:1080px;margin:0 auto}
-#content .blank_sec ul{margin-left:-12px}
-#content .blank_sec ul li{float:left;margin-bottom:40px}
-#content .blank_sec ul li img{width:490px;margin-left:20px;border-radius:5px}
-#content .m_best{width:1080px;margin:0 auto;clear:both;padding-top:20px}
-#content .m_best h2{font-size:25px; margin-bottom:60px;margin-top:24px;margin-left:10px;color:#000}
-#content .tb_m{width:172px;height:172px}
-#content .tb_mw_wrap .desc ul li{float:left}
-#content .m_best li .title{font-size:14px;padding:5px;padding-top:15px}
-#content .m_best li .desc ul{margin-left:-5px}
-#content .m_best li .desc ul li{margin-left:10px;margin-bottom:25px}
-
-.m_bestn_n_w {overflow:hidden;position:relative;padding-bottom:80px;}
-.m_bestn_w {position:relative; width:1020px;}
-
-.m_bestn_tit_w {position:relative; width:1020px;margin-bottom:20px;}
-.m_bestn_tit_box img{ display:inline-block;width:200px;}
-
-.m_bestn_mn_box {float:left;}
-.m_bestn_mn_img {float:left; width:210px;border-top:0px solid #ededed;font-family: 'Noto Sans',sans-serif;}
-.m_bestn_mn_img img {border-radius:5px;vertical-align:top;width:262px;height:507px;margin-left:10px}
-
-.m_bestn_list {position:relative;left:95px}
-.m_bestn_nlst{}
-.m_bestn_nlst li {position:relative;display:block;margin:0px 20px 20px 0px;float:left;vertical-align:top;}
-
-
-.m_bestn_img img {width:184px;height:1 84px;border:none; border-radius:5px;}
-.tb_mw_wrap .desc ul li{margin-right:-1px;font-weight:bold}
-.tb_mw_wrap .desc .cost{color:#909090;text-decoration:line-through;font-weight:normal}
-.tb_mw_wrap .desc .ratio{color:#f70e0e;}
-#content .banner img {width:100%;height:300px;background-color:#424242;position:relative;margin-top:77px;margin-bottom:55px;margin:0 auto;}
-}
 
 
 
@@ -290,57 +242,6 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 
 
-
-/*footer*/
-/*
-#footer {
-    width: 100%; height: 300px;
-    background: rgba(189, 189, 189, 0.966);
-    padding-top: 30px;
-}
-.footer_top {
-    width: 1080px; margin: 0 auto;
-    display: flex;
-    color: #000;
-    font-weight: 700;
-    padding: 12px 0;
-}
-.footer_top > li img {vertical-align: middle; padding: 0 12px;}
-#footer > .footer_btm {
-    width: 1080px; margin: 0 auto; 
-    display: flex;
-}
-#footer > .footer_btm ul {
-    padding-right: 50px;
-}
-
-
-.footer_btm li:nth-child(1) {
-    font-size: 16px;
-    font-weight: 700;
-    padding-bottom: 10px;
-}
-.dietFarm_info li span {
-    color: #EFA543;
-}
-.dietFarm_info li:nth-child(10) {
-    padding-top: 10px;
-}
-
-.account li:nth-child(2), .customer_center li:nth-child(2) {
-    font-size: 14px;
-    font-weight: 700;
-    padding-bottom: 10px;
-    color: #000;
-}
-.account li:nth-child(3) {
-    padding-bottom: 10px;
-}
-.account li:nth-child(4) {
-    font-size: 16px; font-weight: 700;
-    padding-bottom: 10px;
-}
-*/
 
 /*페이징 버튼*/
 .page_wrap {text-align:center;font-size:0;}
