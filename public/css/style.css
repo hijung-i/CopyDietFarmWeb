@@ -109,63 +109,27 @@ a:hover{text-decoration:none;}
 @media screen and (min-width:360px)  and (max-width:1079px){
 #header .gnb{position:fixed;width:100%;background-color:#fff}
 }
-/*new gnb*/
-nav {
-position: relative;
-display: flex;
-width: 700px;
-/*margin: 4em auto;*/
-  
+@media screen and (min-width:360px) and (max-width:1079px){
+  .comp_logo{width:100%;margin:0 auto;text-align:center;margin-top:39px}
+  .comp_logo img{width:55.26px;height:28px}
+  .btnMenu img{width:19.44px;height:13.67px;position:relative;top:-25px;left:10px}
+  .btnCart img{width:21px;height:21px;float:right;position:relative;bottom:45px;right    :10px}
+  #nav{width:100%;margin-left:15px; overflow:scroll;white-space:nowrap;-ms-overflow-style:none;position:relative;top:-20px}
+  #nav::-webkit-scrollbar{ display:none; }
+  #nav a{font-family:'나눔고딕';float:left;height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;margin-right:32px;display:inline-block}
+  .top_util, .searchbox, #nav .web_cate{display:none}
 }
-#header nav a {
-  display: block;
-  padding: .75em 0;
-  color:#878787;
-  text-decoration: none;
-  text-align: center;
-  z-index:1;
-  font-weight:bolder;
-  margin-top:32px;
-  white-space: nowrap;
-  overflow:visible
+@media screen and (min-width:1080px){
+  #header{width:1080px;margin:0 auto;text-align:center}
+  .comp_logo{width:1080px;margin:0 auto;text-align:center;margin-top:35px}
+  .comp_logo img{width:157.89px;height:80px}
+  #nav{margin-top:42px;margin-left:-350px}
+  #nav .home{display:none}
+  #nav a{display:inline-block;width:124px;height:54px;font-size:16px;line-height:24px;padding:14px;margin-right:-4px}
+  #nav a:hover{background-color:#F99319;color:#fff}
+  #nav .web_cate img{width:19.44px;position:relative;top:5px;left:-4px}
+  #nav .web_cate{width:160px;height:54px;white-space:nowrap}
 }
-
-.nav-underline {
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  width: 6%;
-  height: 3px;
-  background: #F99319;
-  transition: all .3s ease-in-out;
-  top:72.5px
-}
-
-nav a:nth-child(1).is-current ~ .nav-underline {
-  left: 0;
- 
-}
-nav a:nth-child(2).is-current ~ .nav-underline {
-  left: 20%;
-}
-nav a:nth-child(3).is-current ~ .nav-underline {
-    left: 36%;}
-nav a:nth-child(4).is-current ~ .nav-underline {
-  left: 34.5%;
-}
-nav a:nth-child(5).is-current ~ .nav-underline {
-  left: 45.5%;
-}
-
-#header h1{display:none;}
-#mHeader{position:absolute;left:0;top:0;width:100%;height:44px;z-index:100;background:#fff;}
-#mHeader h1{padding:40px 10px;text-align:center; height: 20px;}
-#mHeader h1 img{width:55.26px;height:28px}
-#mHeader .btnMenu{position:absolute;left:15px;top:17px;padding:30px 0}
-#mHeader .btnCart{position:absolute;right:15px;top:17px;padding:25px 0}
-#mHeader .btnMenu img, #mHeader .btnCart img{height:20px;}
-#mHeader .side_back{position:absolute;left:0;top:0;width:100%;height:100%;background:#000;opacity:0.7;z-index:9; display: none;}
-
 
 .slideMenu_top {
 	background: #FFFFFF;

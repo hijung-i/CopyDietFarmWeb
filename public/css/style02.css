@@ -102,20 +102,19 @@ a:hover{text-decoration:none;}
 #skip_navi a:focus {height:40px;line-height:40px;color:#fff;font-weight:700}
 
 
-#wHeader {width:1020px;margin:0 auto}
 
-#wHeader .top_util {position:relative;width:100%;height:30px;letter-spacing:-0.005em;margin-top:10px;}
-#wHeader .top_util .menu_list {overflow:hidden;position:absolute;top:0;right:13px}
-#wHeader .top_util .menu_list .join{color:#F99319}
-#wHeader .top_util .menu_list > li {float:left;padding:0 10px 0 10px;line-height:30px;white-space:nowrap;}
-#wHeader .top_util .menu_list  .bar{position:relative;top:10px}
-#wHeader .top_util .menu_list > li:last-child {padding-right:0}
-#wHeader .top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap}
-#wHeader .top_util .menu_list > li strong {font-weight:700}
-#wHeader .top_util .menu_list > li strong+a {margin-left:4px}
-#wHeader .top_util .cart img {width:18px;height:18px;margin-top:8px}
-#wHeader .top_util .mypage img{margin-top:8px}
-#wHeader .top_util .pick img{width:20px;margin-top:8px}
+.top_util {position:relative;width:100%;height:30px;letter-spacing:-0.005em;margin-top:10px;}
+.top_util .menu_list {overflow:hidden;position:absolute;top:0;right:13px}
+.top_util .menu_list .join{color:#F99319}
+.top_util .menu_list > li {float:left;padding:0 10px 0 10px;line-height:30px;white-space:nowrap;}
+.top_util .menu_list  .bar{position:relative;top:10px}
+.top_util .menu_list > li:last-child {padding-right:0}
+.top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap}
+.top_util .menu_list > li strong {font-weight:700}
+.top_util .menu_list > li strong+a {margin-left:4px}
+.top_util .cart img {width:18px;height:18px;margin-top:8px}
+.top_util .mypage img{margin-top:8px}
+.top_util .pick img{width:20px;margin-top:8px}
 .header_inner {position:relative;top:0;width:100%;margin-bottom:27px;z-index:100;}
 
 .header_inner h1 {margin-top:20px;text-align:center;}
@@ -126,11 +125,11 @@ a:hover{text-decoration:none;}
 #wHeader .header_design_area:after {content:'';position:absolute;display:block;left:0;width:50%;height:119px;margin-left:-510px;}
 
 /*검색창*/
-.round {width:358px;height:44px;border-radius:20px;
+.round {width:358px;height:36px;border-radius:20px;
     border:none;background-color:#ededed;
     padding: 8px 8px 8px 25px;position:relative;z-index: 5;
 }
-.searchbox{float:left;margin-left:60px;margin-top:4px}
+.searchbox{position:relative;top:-45px;left:700px}
 .search {position: relative;width: 190px; height: 30px;}
 .search img{width:18px;position:absolute;top:12px;left:325px;z-index:10}
         .m_slid_2dep_brand{display:block}
@@ -319,3 +318,4 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
     z-index: 99;
   }
   
+
