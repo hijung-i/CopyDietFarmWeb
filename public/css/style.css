@@ -120,6 +120,7 @@ a:hover{text-decoration:none;}
   .top_util, .searchbox, #nav .web_cate{display:none}
 }
 @media screen and (min-width:1080px){
+  .content_main{padding-top:200px}
   #header{width:1080px;margin:0 auto;text-align:center}
   .comp_logo{width:1080px;margin:0 auto;text-align:center;margin-top:35px}
   .comp_logo img{width:157.89px;height:80px}

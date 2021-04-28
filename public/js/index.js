@@ -27,7 +27,7 @@ function getStandDatas() {
                     html += '<li><img src="' + RESOURCE_SERVER + product.url+'"></li>';
                 }
 
-                $('.main_img .bxslider').html(html);
+                $('.bxslider').html(html);
 
                 $('.bxslider li').bxSlider({
                     mode: 'horizontal',
@@ -56,7 +56,7 @@ function getStandDatas() {
                     html += '</li>';
                 }
 
-                $('.sp_wrap .multiple_bxslider').html(html);
+                $('multiple_bxslider').html(html);
                 $('.multiple_bxslider').bxSlider({
                         mode: 'horizontal',
                         auto: true,
@@ -77,18 +77,18 @@ function getStandDatas() {
                 break;
             case 3:
                 // 단백질이 필요할 때!
-                $('').html(generateHtmlForProductList(products));
-                $('').html(salesName);
+                $('.protein ul').html(generateHtmlForProductList(products));
+                $('.protein h3').html(salesName);
                 break;
             case 4:
                 // 당충전이 필요할 떄!
-                $('.m_bestn_w ul').html(generateHtmlForProductList(products));
-                $('.m_bestn_w h2').html(salesName);
+                $('.sweet ul').html(generateHtmlForProductList(products));
+                $('.sweet h3').html(salesName);
                 break;
             case 5:
                 // 수분이 필요할 떄!
-                $('.m_bestn_w ul').html(generateHtmlForProductList(products));
-                $('.m_bestn_w h2').html(salesName);
+                $('.water ul').html(generateHtmlForProductList(products));
+                $('.water h3').html(salesName);
                 break;
             case 6:
                 // 위클리 베스트 웹

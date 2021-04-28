@@ -84,7 +84,7 @@
 </head>
 <body>
     <%-include('general/header') %>
-    <main id="content" class="content">
+    <main id="content" class="content_main">
         <section class="main_img">
             <ul class="bxslider">
                 <li><img src="/images/dietfarmbread.jpg"></li>
@@ -94,33 +94,6 @@
             </ul>
         </section>
         <!--//메인 이미지-->
-        <script>
-            $(document).ready(function() {
-                $('.slider').bxSlider();
-                $('.bxslider').bxSlider({
-                    mode: 'horizontal',
-                    auto: true,
-                    pause: 4000,
-                    controls: false,
-                    easing: '',
-                    pager: false,
-                    touchEnabled: true,
-                });
-                $('.multiple_bxslider').bxSlider({
-                    mode: 'horizontal',
-                    auto: true,
-                    slideWidth: 1080,
-                    infiniteLoop: true,
-                    controls: true,
-                    pager: false,
-                    minSlides: 3,
-                    maxSlides: 3,
-                    slideMargin: 7,
-                    touchEnabled: true
-                });
-  
-            });
-        </script>
         <div class="catgor_wrap">
             <div class="category">
                 <ul>
@@ -235,31 +208,7 @@
                     <img src="images/side.jpg">
                 </div>
                 <ul>
-                    <li>
-                        <a href="#">
-                            <div class="thum">
-                                <img src="/images/wheat_bread.jpg" alt="위클리 베스트1">
-                                <!-- 찜하기 -->
-                                <div class="ico_zzim">
-                                    <div class="btn_zzim_sty">
-                                        <a class="btn_zzim_check" href="#">
-                                            <span class="blind"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-  
-                            <div class="desc">
-                                <p class="title">제품이름</p>
-                                <ul>
-                                    <li class="sale">23,400원</li>
-                                    <li class="cost">26,000원</li>
-                                    <li class="ratio">10%</li>
-                                </ul>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
+                     <li>
                         <a href="#">
                             <div class="thum"><img src="/images/greek_yogurt.jpg" alt="위클리 베스트1">
                                 <div class="ico_zzim">
