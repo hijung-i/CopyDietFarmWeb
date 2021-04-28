@@ -354,9 +354,9 @@ $(document).ready(function() {
 
 	
 });
-function niceIdentifyPopup() {
+function niceIdentifyPopup(nextMethod) {
 	var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';
-	open('/nice/identifying-page?nextMethod=register', '다이어트팜 본인 인증', options);
+	open('/nice/identifying-page?nextMethod='+ nextMethod , '다이어트팜 본인 인증', options);
 }
 
 function onIdentifyingSuccess(data, nextMethod) {

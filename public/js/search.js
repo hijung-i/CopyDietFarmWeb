@@ -30,9 +30,9 @@ function getHotKeyowrds() {
         for(var i = 0; i < result.length; i++){
             var keyword = result[i];
             if( i < 5 ){
-                five += '<li><a href="#"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
+                five += '<li><a href="/search-list?keyword='+keyword.keyword+'"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
             } else if ( i >= 5){
-                ten += '<li><a href="#"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
+                ten += '<li><a href="/search-list?keyword='+keyword.keyword+'"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
             }
         }
         $('.search_list ul.five').html(five);
