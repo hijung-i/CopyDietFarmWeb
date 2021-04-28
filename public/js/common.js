@@ -83,7 +83,7 @@ function getEventStands() {
     ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
     , function(data) {
 
-		$("#header .gnb").html('');
+		$("#header #nav").html('');
 		var html = '';
 		
 		console.log(data);
@@ -94,7 +94,7 @@ function getEventStands() {
 			}
 			console.log(currentStandCode, stand.salesStandCode);
 			if( currentStandCode == stand.salesStandCode){
-				$('#header .gnb a').removeClass("is-current");
+				$('#header #nav a').removeClass("is-current");
 				html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
 			} else {
 				html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
@@ -103,7 +103,7 @@ function getEventStands() {
 
 		html += '<div class="nav-underline"></div>';
 		console.log(html);
-		$('#header .gnb').html(html);
+		$('#header #nav').html(html);
 				
     }, function(err) {
         console.log("eventStands err", err);
