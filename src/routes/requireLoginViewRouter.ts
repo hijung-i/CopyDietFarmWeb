@@ -35,6 +35,12 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'order_info', { deliveryGroupList, orderDTO })
 })
 
+router.get('/delivery-management', (req: Request, res: Response, next: NextFunction) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
+        res.redirect('/delivery-management/' + sessionUser.userId)
+    })
+})
+
 router.get('/delivery-management/:userId', (req: Request, res: Response, next: NextFunction) => {
     const userId = req.params.userId
     render(res, 'mypage_deliver_mag', { userId })
