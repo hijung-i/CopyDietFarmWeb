@@ -56,7 +56,7 @@ function getStandDatas() {
                     html += '</li>';
                 }
 
-                $('multiple_bxslider').html(html);
+                $('.multiple_bxslider').html(html);
                 $('.multiple_bxslider').bxSlider({
                         mode: 'horizontal',
                         auto: true,
@@ -64,9 +64,9 @@ function getStandDatas() {
                         infiniteLoop: true,
                         controls: true,
                         pager: false,
-                        minSlides: 3,
-                        maxSlides: 3,
-                        slideMargin: 7,
+                        minSlides: 6,
+                        maxSlides: 5,
+                        slideMargin: 3,
                         touchEnabled: true
                     });
                 break;
