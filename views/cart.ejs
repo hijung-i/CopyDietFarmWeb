@@ -18,6 +18,7 @@
         @media screen and (min-width:360px)and (max-width:1079px) {.web_shoppingcart{display:none}}
         @media screen and (min-width:1080px){.mobile_shoppingcart{display:none} }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
     <script src="/js/jquery.bpopup-0.1.1.min.js"></script>
 
@@ -35,11 +36,11 @@
         <main id="content" class="content">
           <section id="shpcart_select">
            <div class="group" style="margin-top:13px">
-            <input type="checkbox" id="checkAll">
-            <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
+            <input type="checkbox" id="checkAll" v-model="checkAll" v-on:change="onCheckAllChange()">
+            <label for="checkAll" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
                         </div>
             <div class="shpcart_select_del_web">
-                <button>선택삭제</button>
+                <button v-on:click="deleteSelectedItems">선택삭제</button>
             </div>
         </section>
         <div class="line"></div>
@@ -49,60 +50,68 @@
      <div class="shop_active">
         <section id="shplist">
             <!-- brand 1 -->
-            <div class="brand_1">
-                <h3>아임월</h3>
-                <div class="shoplist_info flow-column">
-                    <div class="shoplist_ctn">
-                        <div>
-                            <input type="checkbox" name="optionSelect">
-                        </div>
-                        <div class="flow-column">     
-                            <div class="shopcart_info">
-                                <div class="shopcart_thum">
+            <template v-for="(dGroup, i) in deliveryGroupList">
+                
+                <div class="brand_1">
+                    <h3 v-if="dGroup.brandName != ''">{{ dGroup.brandName }}</h3>
+                    <h3 v-if="dGroup.brandName == ''">{{ dGroup.companyName }}</h3>
+                        
+                    <template v-for="(product, j) in dGroup.products">
+                        <div class="shoplist_info flow-column" v-for="(option, k) in product.options">
+                            <div class="shoplist_ctn">
+                                <div>
+                                    <input type="checkbox" name="optionSelect" v-model="option.isSelected" v-on:change="updateOrderInfo()" v-bind:checked="option.isSelected">
                                 </div>
-                                <div class="shopcart_product flow-column">
-                                    <div class="flow-column">
-                                        <p class="product_name">(아임월) 굿밸런스 라이트밀 도시락</p>
-                                        <p class="option_desc">라이트밀 도시락 5종</p>
-                                        <p class="price_web">60,720원</p>
-                                        <a href="#"><img src="/images/x_icon_login.png" style="width:12px" class="delete_btn"></a>
+                                <div class="flow-column">     
+                                    <div class="shopcart_info">
+                                        <div class="shopcart_thum">
+                                            <a v-bind:href="'/product/' + product.productCode" style="position: relative"><img v-bind:src="RESOURCE_SERVER + product.url"></a>
+                                        </div>
+                                        <div class="shopcart_product flow-column">
+                                            <div class="flow-column">
+                                                <p class="product_name">{{ product.productName }}</p>
+                                                <p class="option_desc">{{ option.optionDesc }}</p>
+                                                <p class="price_web">{{ numberFormat(option.optionDiscountPrice) }}원</p>
+                                                <a href="#"><img src="/images/x_icon_login.png" style="width:12px" class="delete_btn"></a>
+                                            </div>
+                                            <div class="shoplist_count">
+                                                <div class="number-input">
+                                                    <button class="minus" v-on:click="changeOptionCount(false, i, k)" style="top:-10px"></button>
+                                                    <input class="quantity" min="0" name="quantity" value="1" v-model="option.optionCount" type="number">
+                                                    <button class="plus" v-on:click="changeOptionCount(true, i, k)"></button>
+                                                </div>                                        
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="shoplist_count">
-                                        <div class="number-input">
-                                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" style="top:-10px"></button>
-                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                                        </div>                                        
+                                    <div class="p_price">
+                                        <p class="product_p">상품금액 </p>
+                                        <p>{{ numberFormat( option.optionDiscountPrice * option.optionCount ) }}원</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="p_price">
-                                <p class="product_p">상품금액 </p>
-                                <p>9,900원</p>
-                            </div>
                         </div>
+                    </template>
+                    <div v-if="dGroup.groupPrice != 0 ">
+                        <table class="detail_price">
+                            <tr>
+                                <td><span>상품금액</span></td>
+                                <td class="price product-total-price">{{ numberFormat(dGroup.groupPrice) }}원</td>
+                            </tr>
+                            <tr>
+                                <td><span>배송비</span></td>
+                                <td class="price total-delivery-cost">{{ numberFormat(dGroup.totalDeliveryCost) }}원</td>
+                            </tr>
+                            <tr>
+                                <td><span>주문금액</span></td>
+                                <td class="price payment-total-amount">{{ numberFormat(dGroup.groupPrice + dGroup.totalDeliveryCost) }}원</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
+        
                 
-                <div>
-                    <table class="detail_price">
-                        <tr>
-                            <td><span>상품금액</span></td>
-                            <td class="product-total-price">9,900원</td>
-                        </tr>
-                        <tr>
-                            <td><span>배송비</span></td>
-                            <td class="total-delivery-cost">4,000원</td>
-                        </tr>
-                        <tr>
-                            <td><span>주문금액</span></td>
-                            <td class="payment-total-amount">13,900원</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-    
-            <div class="line"></div>
+                <div class="line"></div>
+            </template>
         </section>
         </div>
     
@@ -187,32 +196,32 @@
                <table class="final">
                    <tr>
                        <td class="t1">상품 금액</td>
-                       <td class="price product-total-price">223,600원</td>
+                       <td class="price product-total-price">{{ numberFormat(orderDTO.paymentTotalAmount) }}</td>
                    </tr>
                     <tr>
                        <td class="t1">상품 할인 금액</td>
-                       <td class="price ">-76,400원</td>
+                       <td class="price ">- 0원</td>
                    </tr>
                     <tr>
                        <td class="t1">배송비</td>
-                       <td class="price total-delivery-cost">+0원</td>
+                       <td class="price total-delivery-cost">{{ numberFormat(orderDTO.totalDeliveryCost) }}</td>
                    </tr>
                     <tr class="total">
                        <td class="t1">총 결제 금액</td>
-                       <td class="price payment-total-amount">147,200원</td>
+                       <td class="price payment-total-amount">{{ numberFormat(orderDTO.paymentTotalAmount + orderDTO.totalDeliveryCost) }}원</td>
                    </tr>
                </table>
            </div>
            <div class="total_mobile">
                <ul>
             <li class="t1">총 결제 금액</td>
-            <li class="price">147,200원</td>
+            <li class="price payment-total-amount">{{ numberFormat(orderDTO.paymentTotalAmount + orderDTO.totalDeliveryCost) }}원</td>
             </ul>
            </div>
         </section>
      
         <div class="btn_area_web">
-        <button type="button" class="purchaseBtn" style="border:none">구매하기</button>
+        <button type="button" class="purchaseBtn" v-on:click="onSubmit()" style="border:none">구매하기</button>
         </div>
     </main>
 

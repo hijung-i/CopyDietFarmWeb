@@ -173,6 +173,7 @@ function changeOptionCount(plus, index) {
         }
     }
     selectedOptions[index].optionCount = optionCount;
+    console.log(selectedOptions[index]);
     drawSelectedOptions();
 }
 
@@ -202,7 +203,7 @@ function drawSelectedOptions() {
         optionHtml +=                '<input class="quantity" min="1" name="quantity" value="'+ option.optionCount +'" type="number">';
         optionHtml +=                '<button class="plus"></button>';
         optionHtml +=           ' </div>';
-        optionHtml +=            '<p>'+ numberFormat(option.optionDiscountPrice) +'원</p>';
+        optionHtml +=            '<p>'+ numberFormat(option.optionDiscountPrice * option.optionCount) +'원</p>';
 
         // 총 금액은 여기서 안보여줌
         // optionHtml +=            '<div class="t_price">';
