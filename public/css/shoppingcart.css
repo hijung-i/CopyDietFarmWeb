@@ -38,6 +38,11 @@ background-size: cover;background-position: center;}
   border-bottom:1px solid #BBBBBB;
 
 }
+.shoplist-null{
+  width: 100%;
+  padding: 50px 0px;
+  text-align: center;
+}
 
 .shoplist_ctn div{display: flex; }
 .shoplist_ctn>div:first-child {

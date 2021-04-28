@@ -4,6 +4,7 @@
 
 var dupCheck = false;
 $(function() {
+    niceDuplicationCheck();
     
     var id = $('#id');
     var pw1 = $('#pswd1');
@@ -279,6 +280,42 @@ $(function() {
         } else {
             checkAge();
         }
+    }
+
+    function niceDuplicationCheck() {
+        var dupInfo = $("#dupInfo").val();
+        if(dupInfo == undefined || dupInfo == '') {
+            alert('잘못된 접근입니다.');
+            location.href="/";
+        }
+
+        var params = {
+            dupInfo
+        }
+
+        ajaxCall(API_SERVER + '/user/checkDuplicated', params, 'POST',
+        function(data) {
+            var result = data.result;
+            switch(result) {
+                case '중복':
+                    alert('동일한 명의로 이미 가입되어 있습니다.');
+                    location.href = '/';
+                    return false;
+                case '탈퇴회원':
+                    alert('해당 명의는 탈퇴한 지 30일이 지나지 않아 가입할 수 없습니다.');
+                    location.href = '/';
+                    return false;
+                case '정보존재':
+                    alert('알 수 없는 에러가 발생했습니다.')
+                    location.href = '/';
+                    return false;
+                case '가입가능':
+                    break;
+            }
+            console.log(data);
+        }, function(err){
+            console.log("error", err);
+        })
     }
 
     function duplicationCheck() {

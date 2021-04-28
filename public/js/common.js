@@ -114,11 +114,13 @@ function numberFormat(number) {
 	return (number+"").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function generateHtmlForProductList(products){
+function generateHtmlForProductList(products, maxSize){
     var html = '';
     for(var j = 0; j < products.length; j++){
-        var product = products[j];
+        if(maxSize != undefined && j > maxSize -1) break;
+		var product = products[j];
         html += generateHtmlForProduct(product);
+		
     }
     return html;
 }1
