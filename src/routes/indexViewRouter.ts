@@ -103,9 +103,7 @@ router.get('/pwdReset', (req: Request, res: Response, next: NextFunction) => {
 router.get('/order-comp', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'order_complete', {})
 })
-router.get('/order-info', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'order_info', {})
-})
+
 router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'alarm', {})
 })
@@ -124,9 +122,7 @@ router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
 router.get('/ol_detail', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_orderList_detail', {})
 })
-router.get('/delivermag', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_deliver_mag', {})
-})
+
 router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_productReview', {})
 })
