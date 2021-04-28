@@ -10,6 +10,7 @@ var app = new Vue({
         API_SERVER,
         checkAll: true,
         orderDTO: {},
+        requestDeliveryGroupList: [],
         cartList,
         deliveryGroupList
     },
@@ -27,8 +28,10 @@ var app = new Vue({
             }
             this.updateOrderInfo();
         },
-        updateOrderInfo: function () {
-
+        updateOrderInfo: function (option) {
+            if(option != undefined && !option.isSelected) {
+                $('#checkAll')[0].checked = false;
+            }
             this.orderDTO = new OrderDTO();
             this.deliveryGroupList = [];
         
@@ -72,15 +75,15 @@ var app = new Vue({
             }
 
         },
-        changeOptionCount: function (plus, pIdx, oIdx) {
+        changeOptionCount: function (plus, gIdx, pIdx, oIdx) {
             if(plus) {
-                cartList[pIdx].options[oIdx].optionCount += 1
+                this.deliveryGroupList[gIdx].products[pIdx].options[oIdx].optionCount += 1
             } else {
-                if(cartList[pIdx].options[oIdx].optionCount <= 1) {
+                if(this.deliveryGroupList[gIdx].products[pIdx].options[oIdx].optionCount <= 1) {
                     alert('최소 수량은 1개입니다.');
                     return;
                 }
-                cartList[pIdx].options[oIdx].optionCount -= 1;   
+                this.deliveryGroupList[gIdx].products[pIdx].options[oIdx].optionCount -= 1;   
             }
         
             app.updateOrderInfo();
@@ -108,15 +111,24 @@ var app = new Vue({
         },
         onSubmit: function() {
             var requestDeliveryGroupList = new Array();
-            
             for(var i = 0; i < this.deliveryGroupList.length; i++) {
                 var deliveryGroup = this.deliveryGroupList[i];
                 var requestDeliveryGroup = deliveryGroup.cloneObject();
                 requestDeliveryGroup.deleteNoneSelectedProduct();
 
-                requestDeliveryGroupList.push(requestDeliveryGroup);  
+                if(requestDeliveryGroup.products.length > 0) {
+                    requestDeliveryGroupList.push(requestDeliveryGroup);  
+                }
             }
-        
+
+            this.requestDeliveryGroupList = requestDeliveryGroupList;
+            if(requestDeliveryGroupList.length < 1) {
+                alert('상품을 선택해주세요.')
+                return false;
+            }
+
+            $("#orderForm").submit();
+            
         },
         deleteSelectedItems: function() {
             var products = new Array();
@@ -134,7 +146,7 @@ var app = new Vue({
             var params = {
                 products
             }
-            
+
             ajaxCallWithLogin(API_SERVER + '/order/deleteCart', params, 'POST', 
             function(data) {
                 console.log('success', data);

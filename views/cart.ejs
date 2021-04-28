@@ -60,7 +60,7 @@
                         <div class="shoplist_info flow-column" v-for="(option, k) in product.options">
                             <div class="shoplist_ctn">
                                 <div>
-                                    <input type="checkbox" name="optionSelect" v-model="option.isSelected" v-on:change="updateOrderInfo()" v-bind:checked="option.isSelected">
+                                    <input type="checkbox" name="optionSelect" v-model="option.isSelected" v-on:change="updateOrderInfo(option)" v-bind:checked="option.isSelected">
                                 </div>
                                 <div class="flow-column">     
                                     <div class="shopcart_info">
@@ -76,9 +76,9 @@
                                             </div>
                                             <div class="shoplist_count">
                                                 <div class="number-input">
-                                                    <button class="minus" v-on:click="changeOptionCount(false, i, k)" style="top:-10px"></button>
+                                                    <button class="minus" v-on:click="changeOptionCount(false, i, j, k)" style="top:-7px"></button>
                                                     <input class="quantity" min="0" name="quantity" value="1" v-model="option.optionCount" type="number">
-                                                    <button class="plus" v-on:click="changeOptionCount(true, i, k)"></button>
+                                                    <button class="plus" v-on:click="changeOptionCount(true, i, j, k)"></button>
                                                 </div>                                        
                                             </div>
                                         </div>
@@ -221,7 +221,12 @@
         </section>
      
         <div class="btn_area_web">
-        <button type="button" class="purchaseBtn" v-on:click="onSubmit()" style="border:none">구매하기</button>
+            <form id="orderForm" action="/order" method="GET">
+                <input type="hidden" name="deliveryGroupList" v-bind:value="JSON.stringify(requestDeliveryGroupList)">
+                <input type="hidden" name="orderDTO" v-bind:value="JSON.stringify(orderDTO)">
+            </form>
+
+            <button type="button" class="purchaseBtn" v-on:click="onSubmit()" style="border:none">구매하기</button>
         </div>
     </main>
 

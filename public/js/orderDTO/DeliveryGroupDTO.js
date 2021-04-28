@@ -89,22 +89,27 @@ function DeliveryGroupDTO() {
     }
 
     this.deleteNoneSelectedProduct = function() {
+        var selectedProducts = new Array();
+        
         for(var i = 0; i < this.products.length; i++) {
             var product = this.products[i];
-            isSelect = false;
+            var selectedOptions = new Array();
+        
             for(var j = 0; j < product.options.length; j++){
                 var option = product.options[j];
                 if(option.isSelected) {
-                    isSelect = true
-                } else {
-                    product.options.splice(j, 1);
+                    selectedOptions.push(option);
                 }
             }
-    
-            if(!isSelect) {
-                this.products.splice(i, 1);
+            
+            if(selectedOptions.length > 0) {
+                product.options = selectedOptions;
+                selectedProducts.push(product);
+
             }
+            
         }
+        this.products = selectedProducts;
     }
 
     this.cloneObject = function () {
