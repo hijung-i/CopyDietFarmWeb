@@ -130,7 +130,7 @@ body{min-width:360px}
   width:100%; margin: 15px 15px auto;
   margin-top: 24px;
 }
-.popular{/* margin:40px 20px 40px; */ width:100%;}
+.popular{/* margin:40px 20px 40px; */ width:100%;margin-top:50px}
 
 .popular h2{
   font-size:12px;
@@ -142,9 +142,6 @@ body{min-width:360px}
   display: flex;
 }
 .popular ul{
-  /* display:grid;
-  grid-template-columns: repeat(1, 5fr);
-  vertical-align:baseline; */
   align-items: center;
   justify-self: center;
   width: 100%;

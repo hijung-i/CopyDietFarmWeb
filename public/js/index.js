@@ -32,7 +32,7 @@ function getStandDatas() {
                 $('.bxslider li').bxSlider({
                     mode: 'horizontal',
                     auto: true,
-                    pause: 4000,
+                    pause: 6000,
                     controls: false,
                     easing: '',
                     pager: false,
@@ -45,7 +45,7 @@ function getStandDatas() {
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
                     html += '<li>'
-                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'" style="width:50%">';
+                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'">';
                     html += '<p class="title">' + product.productName + '</span><br>';
                     html += '<ul>';
                     html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
@@ -64,7 +64,7 @@ function getStandDatas() {
                         infiniteLoop: true,
                         controls: true,
                         pager: false,
-                        minSlides: 6,
+                        minSlides: 4,
                         maxSlides: 5,
                         slideMargin: 3,
                         touchEnabled: true

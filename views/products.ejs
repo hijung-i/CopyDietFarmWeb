@@ -29,10 +29,7 @@
         nav a:nth-child(2).is-current~.nav-underline {
             left: 20%;}
      
-    @media screen and (min-width:360px) and (max-width:1079px) {.web_sub{display:none}}
-            
-    @media screen and (min-width:1080px){.mobile_sub{display:none} }
-    </style>
+      </style>
     <%-include('general/head') %>
     <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -43,17 +40,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
 </head>
 
 <body>
-<div class="web_sub">
-    <%-include('general/header_web') %>
-</div>
-<div class="mobile_sub">
-    <article class="skip_menu">
-        <a href="#"><span>바로가기1</span></a>
-        <a href="#"><span>바로가기2</span></a>
-        <a href="#"><span>바로가기3</span></a>
-    </article>
     <%-include('general/header') %>
-</div>
     <input type="hidden" id="listType" value="<%=listType %>">
     <% if(listType == 'CATEGORY') { %>
         <input type="hidden" id="category1Code" value="<%=category1Code %>">

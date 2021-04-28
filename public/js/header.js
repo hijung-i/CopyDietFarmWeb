@@ -47,9 +47,25 @@ $(function() {
         }
     })
 
-     // 햄버거 메뉴
-     $(document).ready(function() {
+    // 햄버거 메뉴
+    $(document).ready(function() {
+
         $('.btnMenu>a').on('click', function() {
+            $('.sideMenu').show().animate({
+                left: 0
+            });
+        });
+        $('.slideMenu_close>a').on('click', function() {
+            $('.sideMenu').animate({
+                left: -100 + '%'
+            }, function() {
+                $('.sideMenu').hide();
+            });
+        });
+    });
+    $(document).ready(function() {
+
+        $('.web_cate').on('click', function() {
             $('.sideMenu').show().animate({
                 left: 0
             });
