@@ -151,6 +151,9 @@ router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) =
 router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'myinfoUserCheck', {})
 })
+router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'order_details', {})
+})
 
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
