@@ -18,19 +18,23 @@
     <link rel="stylesheet" href="./css/order.css">
     <link rel="stylesheet" href="/css/style02.css">
     <%-include('general/head') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
-   <div class="web_order_info">
-    <%-include('general/header_web') %>
-   </div>
-   <section class="detail_title">
-    <h2>주문하기</h2>
-<a href="#"><img src="/images/leftarrow_ico_my.png" style="width:17px" class="btnback"></a>
-</section>
+    <div class="web_order_info">
+        <%-include('general/header_web') %>
+    </div>
+    <section class="detail_title">
+        <h2>주문하기</h2>
+        <a href="#"><img src="/images/leftarrow_ico_my.png" style="width:17px" class="btnback"></a>
+    </section>
 
 <main id="contents" class="content">
-<div class="order">
+    <input type="hidden" value="<%=deliveryGroupList %>" id="deliveryGroupList">
+    <input type="hidden" value="<%=orderDTO %>" id="orderDTO">
+    <div class="order">
 <div class="orderBox">
 <div class="order01">
 <div class="innerbox">
@@ -262,7 +266,7 @@
                 <p class="del_memo_tit">배송 메모</p>
                 <p>
                 <select name="delivery_memo" class="delivery_memo">
-                   <option value="#">-</option>
+                    <option value="#">-</option>
                     <option value="#">조심히 와주세요.</option>
                     <option value="#">조심히 와주세요.</option>
                     <option value="#">조심히 와주세요.</option>
@@ -396,7 +400,8 @@
 
 </div>
 <!--//order-->
-</main>    
+</main>
+<script src="/js/order.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function () {
 $("tr.order_q").click(function () {
