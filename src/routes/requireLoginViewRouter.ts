@@ -23,6 +23,7 @@ router.get('/cart/:userId', (req: Request, res: Response, next: NextFunction) =>
 
 router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     const deliveryGroupList = req.query.deliveryGroupList
+    console.log(deliveryGroupList)
     const orderDTO = req.query.orderDTO
 
     // checkLogin(req, res, (sessionUser: SessionUser) => {

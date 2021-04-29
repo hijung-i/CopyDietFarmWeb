@@ -126,7 +126,7 @@ var app = new Vue({
                 alert('상품을 선택해주세요.')
                 return false;
             }
-
+            console.log($("input[name=deliveryGroupList]").val());
             $("#orderForm").submit();
             
         },
