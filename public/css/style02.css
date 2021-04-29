@@ -161,7 +161,7 @@ a:hover{text-decoration:none;}
 
 /* 메인카테고리 레이어 메뉴 */
 .web_content{width:1080px;margin:0 auto}
-.main_img{width:1080px}
+.main_img{width:auto;height:auto!important}
 .m_slides_n_w {position:relative; display:block;width:1110px;text-align:center;margin:0 auto;z-index:500;}
 .m_ba_slides_n_w {position:absolute;top:0px;left:5px;width:168px;height:378px;display:table; font-weight:400;margin-top:40px}
 .m_ba_slides_n_w_sub {position:absolute;top:51px;left:0px;width:160px;height:400px;display:table; font-weight:400;}

@@ -13,7 +13,7 @@ body{min-width:360px}
   position:relative;
   width:100%;
   margin:10px auto;
-  padding-top:30px;
+  padding-top:140px;
   padding-left:15px;
   padding-right:15px
 }
@@ -128,9 +128,9 @@ body{min-width:360px}
 /*인기 검색어*/
 .popular_wrap{
   width:100%; margin: 15px 15px auto;
-  margin-top: 24px;
+  margin-top: 14px;
 }
-.popular{/* margin:40px 20px 40px; */ width:100%;margin-top:50px}
+.popular{/* margin:40px 20px 40px; */ width:100%;margin-top:40px}
 
 .popular h2{
   font-size:12px;

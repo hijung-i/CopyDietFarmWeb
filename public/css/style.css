@@ -123,9 +123,9 @@ a:hover{text-decoration:none;}
     #header{position:fixed;width:100%;top:0px;background-color:#fff;z-index:9999}
 }
 @media screen and (min-width:1080px){
-  .multiple_bxslider li img{width:350px;height:350px}
+  .multiple_bxslider li img{width:auto;height:auto}
   .content_main{padding-top:200px}
-  #header{width:1080px;margin:0 auto;text-align:center}
+  #header{width:1080px;margin:0 auto;text-align:center;height:54px}
   .comp_logo{width:1080px;margin:0 auto;text-align:center;margin-top:35px}
   .comp_logo img{width:157.89px;height:80px}
   #nav{margin-top:42px;margin-left:-400px}
