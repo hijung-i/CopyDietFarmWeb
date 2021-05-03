@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <style type="text/css">
  
-@media screen and (min-width:360px) and (max-width:1079px){
+ @media screen and (min-width:360px) and (max-width:1079px){
+     .web_order_info{display:none}
      .non_members{display:none}
      .detail_title h2{font-size:16px;text-align:center;margin-top:42px} 
      .btnback img{width:17px;position:relative;top:-18px;left:5px}
@@ -69,9 +70,9 @@
  }
 /*주문하기 웹*/
 @media screen and (min-width:1080px){
-.detail_title{width:1080px;margin:0 auto}
+.detail_title{width:1080px;margin:0 auto;padding-top:200px}
  .detail_title .btnback{display:none}
-    .detail_title h2{text-align:center;margin-top:55px;margin-bottom:40px}
+ .detail_title h2{text-align:center;margin-top:55px;margin-bottom:40px}
  .order{width:1080px;margin: 0 auto}
     .order_title{width:1080px;font-size:18px;font-weight:bold;border-bottom:8px solid #f1f1f1;padding-bottom:20px}
     .order_title .web_num{color:#F99319;font-size:14px;margin-left:3px;position:relative;top:-4px}
@@ -87,7 +88,6 @@
      .members tr td{padding-bottom:18px}
      .deliver_info .members{margin-bottom:20px}
      .deliver_info select{width:394px!important}
-    .deliver_info input{}
      .members .addr{padding-bottom:18px;font-size:14px;}
      .members .name, .members .num{font-size:12px;color:#6B6B6B}
     .orderer_info h4, .deliver_info h4{font-size:14px;font-weight:bold;margin-bottom:4px}
@@ -122,20 +122,13 @@
      #orderBtn{width:330px;height:45px;color:#fff;border:0;background-color:#EFA543;border-radius:5px;}
 }
     </style>
-<<<<<<< HEAD
-     <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
-     <%-include('general/head') %>
-=======
-    <link rel="stylesheet" href="./css/order.css">
-    <link rel="stylesheet" href="/css/style02.css">
     <%-include('general/head') %>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
->>>>>>> 0a301bcafb7220abf3e4175b5394719b48572028
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 </head>
 <body>
-<<<<<<< HEAD
-    <%-include('general/header') %>
+    <div class="web_order_info">
+        <%-include('general/header') %>
+    </div>
      <section class="detail_title">
         <h2>주문하기</h2>
         <script type="text/javascript">
@@ -146,7 +139,7 @@
         <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt=""> </a>
         </div>
     </section>
-    <main id= "content" class="order">
+    <main id= "content" class="order_info_content">
         <h3 class="order_title">주문상품<span class="web_num">(3)</span></h3>
         <div class="order_product">
         <h4>파프리카푸드</h4>
@@ -157,219 +150,6 @@
             <li>60,720원</li>
             <li><span>수량 : 2개</span></li>
             <li><span>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</span></li>
-=======
-    <div class="web_order_info">
-        <%-include('general/header_web') %>
-    </div>
-    <section class="detail_title">
-        <h2>주문하기</h2>
-        <a href="#"><img src="/images/leftarrow_ico_my.png" style="width:17px" class="btnback"></a>
-    </section>
-
-<main id="contents" class="content">
-    <input type="hidden" value="<%=deliveryGroupList %>" id="deliveryGroupList">
-    <input type="hidden" value="<%=orderDTO %>" id="orderDTO">
-    <div class="order">
-<div class="orderBox">
-<div class="order01">
-<div class="innerbox">
-    <table>
-        <tbody>
-            <tr class="order_q">
-                <td class="title">
-                    주문상품<span>(3)</span>
-                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표"
-                    style="width:14px;height:14px;">
-                </td>
-            </tr>
-            <div class="thick_line"></div>
-            <tr class="order_a">
-                <td>
-                <div class="company_product">
-                <div class="title">
-                <h3>아임월</h3>
-                </div>
-                <div class="product_info">
-                <div class="info01">
-                <img src="/images/dietfarmbread.jpg" style="width:56.25px;height:62px">
-                 <ul>
-                     <li>(아임월)굿밸런스 라이트밀 도시락</li>
-                     <li>라이트밀 도시락 5종</li>
-                     <li class="mobile">1개</li>
-                     <li class="mobile">60,720원</li>
-                 </ul>  
-                 </div>
-                  <div class="info02">
-                      <ul>
-                          <li>1개</li>
-                          <li>60,720원</li>
-                          <li><a href="#"><img src="/images/x_icon_login.png"></a></li>
-                      </ul>
-                  </div>
-                   
-                 </div>   
-                  <div class="product_info">
-                <div class="info01">
-                <img src="/images/dietfarmbread.jpg" style="width:56.25px;height:62px">
-                 <ul>
-                    <li>(아임월)굿밸런스 라이트밀 도시락</li>
-                     <li>라이트밀 도시락 5종</li>
-                     <li class="mobile">1개</li>
-                     <li class="mobile">60,720원</li>
-                 </ul>  
-                 </div>
-                  <div class="info02">
-                      <ul>
-                          <li>1개</li>
-                          <li>60,720원</li>
-                          <li><a href="#"><img src="/images/x_icon_login.png"></a></li>
-                      </ul>
-                  </div>
-                   
-                 </div>    
-                </div><!--//같은 회사끼리 묶음-->
-       
-            <div class="company_product">
-               <div class="title">
-                <h3 style="margin-top:15.5px">바디나인</h3>
-                </div>
-                <div class="product_info">
-                <div class="info01">
-                <img src="/images/dietfarmbread.jpg" style="width:56.25px;height:62px">
-                 <ul>
-                     <li>(아임월)굿밸런스 라이트밀 도시락</li>
-                     <li>라이트밀 도시락 5종</li>
-                     <li class="mobile">1개</li>
-                     <li class="mobile">60,720원</li>
-                 </ul>  
-                 </div>
-                  <div class="info02">
-                      <ul>
-                          <li>1개</li>
-                          <li>60,720원</li>
-                          <li><a href="#"><img src="/images/x_icon_login.png"></a></li>
-                      </ul>
-                  </div>
-                   
-                 </div>   
-                  <div class="product_info">
-                <div class="info01">
-                <img src="/images/dietfarmbread.jpg" style="width:56.25px;height:62px">
-                 <ul>
-                     <li>(아임월)굿밸런스 라이트밀 도시락</li>
-                     <li>라이트밀 도시락 5종</li>
-                     <li class="mobile">1개</li>
-                     <li class="mobile">60,720원</li>
-                 </ul>  
-                 </div>
-                  <div class="info02">
-                      <ul>
-                          <li>1개</li>
-                          <li>60,720원</li>
-                          <li><a href="#"><img src="/images/x_icon_login.png"></a></li>
-                      </ul>
-                  </div>
-                   
-                 </div>    
-                </div><!--//같은 회사끼리 묶음-->
-                
-                </td>
-
-
-            </tr>
-        </tbody>
-      
-    </table>
-    
-    <table>
-        <tbody>
-            <div class="order_customer">
-                <p><img src="/images/asterisk.png" style="width:10px">주문자</p>
-            </div>
-            <tr class="order_a">
-                <td>
-                    <div class="order_a_box" >
-                        <table class="order_cust_info" style="border:none;">
-                            <tr>
-                                <td><span>보내는분</span></td>
-                                <td>박민지</td>
-                            </tr>
-                            <tr>
-                                <td><span>휴대폰</span></td>
-                                <td>010-1234-5678</td>
-                            </tr>
-                            <tr>
-                                <td><span>이메일</span></td>
-                                <td>minji777@dataflow.co.kr</td>
-                            </tr>
-                        </table>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table class="change_place_ctn">
-        <tbody class="ord_info_del_place">
-            <div class="change_place">
-                <p><img src="/images/asterisk.png" style="width:10px">배송지</p>
-   <div id="wrap">
-    <a href="javascript:openModal('modal1');" class="button modal-open">변경</a>
-    </div>             
-<div id="modal"></div>
-<div class="modal-con modal1">
-<a href="javascript:;" class="close"><img src="/images/x_icon_login.png"></a>
-<div class="title">
-  <h2>배송지 관리</h2>
-   </div>
-  <h3>배송지 변경</h3>
-
-<section class="delivery_manage_list">
-   
-<input id="check" type="checkbox">
-
-    <div class="del_mng_list_top">
-        <ul class="del_mng_type">
-            <li class="type_first">회사</li>
-            <li class="type_second"><span class="tema">기본배송지</span></li>
-        </ul>
-        <ul class="edit_remove">
-            <li class="edit_first"><a>수정</a></li>
-            <li><img src="/images/l_icon_category@2x.png"></li>
-            <li class="edit_second"><a>삭제</a></li>
-        </ul>
-    </div>
-    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-</section>
-
-<div class="del_line_thick"></div>
-<section class="delivery_manage_list">
-   <input id="check" type="checkbox">
-    <div class="del_mng_list_top">
-        <ul class="del_mng_type">
-            <li class="type_first">회사</li>
-        </ul>
-        <ul class="edit_remove">
-            <li class="basic"><a>기본배송지로 설정</a><img src="/images/l_icon_category@2x.png"></li>
-            <li class="edit_first"><a>수정</a>
-                <img src="/images/l_icon_category@2x.png">
-            </li>
-            <li class="edit_second"><a>삭제</a></li>
-        </ul>
-    </div>
-    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-</section>
-
-<div class="del_line_thick"></div>
-
-<section class="delivery_manage_list">
-    <input id="check" type="checkbox">
-    <div class="del_mng_list_top">
-        <ul class="del_mng_type">
-            <li class="type_first">회사</li>
->>>>>>> 0a301bcafb7220abf3e4175b5394719b48572028
         </ul>
         </div>
              <div class="item">
@@ -400,7 +180,6 @@
                         </tr>
                      </table>
             </div>
-<<<<<<< HEAD
             <div class="non_members">
             <h4>이름</h4>
             <input type="text" placeholder="이름을 입력해주세요">
@@ -408,24 +187,6 @@
             <input type="number" placeholder="연락처를 입력해주세요">
               <h4>이메일</h4>
             <input type="email" placeholder="이메일을 입력해주세요">
-=======
-
-            <div class="del_memo_wrap">
-                <p class="del_memo_tit">배송 메모</p>
-                <p>
-                <select name="delivery_memo" class="delivery_memo">
-                    <option value="#">-</option>
-                    <option value="#">조심히 와주세요.</option>
-                    <option value="#">조심히 와주세요.</option>
-                    <option value="#">조심히 와주세요.</option>
-                    <option value="#">조심히 와주세요.</option>
-                </select>
-                </p>
-                <p>
-                    <label for="del_memo_ctn"></label>
-                    <input type="text" id="del_memo_ctn">
-                </p>
->>>>>>> 0a301bcafb7220abf3e4175b5394719b48572028
             </div>
         </div>
         <div class="deliver_info">
@@ -516,7 +277,6 @@
                     </ul>
 
                 </div>
-<<<<<<< HEAD
             </div><!--//결제 수단-->
             <div class="agreement">
                 <h3><img src="images/beforecheck_icon_join.png">위 구매조건 확인 및 결제진행 동의</h3>
@@ -526,97 +286,6 @@
                 <button type="button" id="orderBtn">결제하기</button>
             </div>
     </main>
-    <%-include('general/footer') %>
-=======
-            </td>
-        </tbody>
-    </table>
-    <div class="order_confirm">
-    <div class="group">
-    <input type="checkbox" id="secret">
-    <label for="secret" class="secret" style="font-size:16px;font-weight:bold;">&nbsp;&nbsp;&nbsp;위 구매조건 확인 및 결제진행 동의</label>
-    </div>
-       <p class="words">주문하는 상품의 품목, 가격, 배송정보 등을 전부 확인, 개인정보 제3자 동의에 관한 내용을 이해하였으며, 이에 동의합니다.</p>
-        <div class="agree">
-            <p class="agree01">개인정보 수집이용 및 위탁 동의 <span>(필수)</span></p>
-            <p class="agree02"><a href="#">약관보기 <img src="/images/arrow_ico_join.png" width="7px" style="position:relative;top:3px"></a></p>
-        </div>
-        <div class="btn_area">
-            <button type="button" id="btnOrder">결제하기</button>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-
-</div>
-<!--//order-->
-</main>
-<script src="/js/order.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function () {
-$("tr.order_q").click(function () {
-if ($(this).next('tr').css("display") != "none") {
-    $(this).next('tr').hide();
-    $(this).removeClass("current");
-} else {
-    $("tr.order_a").css('display', 'current');
-    $("tr.order_q").removeClass("current");
-    $(this).next('tr').show();
-    $(this).addClass("none");
-}
-});
-});
-</script>
-<script>
-    //웹 햄버거 버튼 
-     	$(document).ready(function(){
-		$("#gnbAllMenu").hide();
-		$("#btnGnbOpen").click(function(){
-			$("#gnbAllMenu").slideToggle("fast");
-		});
-	});
-
-	   $(document).ready(function() {
-            $(".m_slides_sub").hide();
-            $(".m_ba_slides_n_w li").hover(function(){
-                $("ul:not(:animated)",this).slideDown("700");
-
-                $(".m_ba_slides_n_w li a").removeClass("active");
-            },
-            function() {
-                $("ul",this).slideUp("700");
-               });
-
-		    $("#memberMenu").bind("moseover mouseenter",function(){
-				$("#memMenu").show();
-		  });
-		   $("#memMenu").bind("moseout mouseleave",function(){
-				$("#memMenu").hide();
-		  });
-
-		    $("#NotmemberMenu").bind("moseover mouseenter",function(){
-				$("#NotmemMenu").show();
-		  });
-		   $("#NotmemMenu").bind("moseout mouseleave",function(){
-				$("#NotmemMenu").hide();
-		  });
-        });
-    </script>
-         <script>
-   //배송지 변경 모달창
-function openModal(modalname){
-  document.get
-  $("#modal").fadeIn(300);
-  $("."+modalname).fadeIn(300);
-}
-
-$("#modal, .close").on('click',function(){
-  $("#modal").fadeOut(300);
-  $(".modal-con").fadeOut(300);
-});
-        </script>
-
->>>>>>> 0a301bcafb7220abf3e4175b5394719b48572028
+            <%-include('general/footer') %>
 </body>
 </html> 

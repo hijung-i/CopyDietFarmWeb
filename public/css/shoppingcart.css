@@ -166,11 +166,6 @@ border-spacing: 0 20px;}
 .total_mobile .price{float:right;padding-right:15px}
 }
 
-@media screen and (min-width: 545px) {
-  .shopcart_info>div:last-child p {
-    width: 100%;
-  }
-}
 /*장바구니 웹 */
 @media screen and (min-width:1080px){
 .shoplist_ctn{max-width:1080px; position: relative}
