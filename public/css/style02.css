@@ -76,6 +76,7 @@ body, select, input, textarea, a[href^="tel:"]:link {
 	font-size:12px;
 	font-family:'나눔고딕';
 	letter-spacing:-0.5px;
+  overflow: visible;
 }
 
 
@@ -103,11 +104,12 @@ a:hover{text-decoration:none;}
 
 
 
-.top_util {position:relative;width:100%;height:30px;letter-spacing:-0.005em;margin-top:10px;}
-.top_util .menu_list {overflow:hidden;position:absolute;top:0;right:13px}
+.top_util {position:relative; width:100%; height:55px; letter-spacing:-0.005em;}
+.top_util .menu_list { display: flex; float: right; height: 55px; line-height: 55px;}
 .top_util .menu_list .join{color:#F99319}
-.top_util .menu_list > li {float:left;padding:0 10px 0 10px;line-height:30px;white-space:nowrap;}
-.top_util .menu_list  .bar{position:relative;top:10px}
+.top_util .menu_list > li { padding:0 10px; white-space:nowrap;}
+.top_util .menu_list  .bar{position:relative; top:22px}
+.top_util .menu_list li.cart, .top_util .menu_list li.mypage, .top_util .menu_list li.pick {position: relative; top: 12px;}
 .top_util .menu_list > li:last-child {padding-right:0}
 .top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap}
 .top_util .menu_list > li strong {font-weight:700}
@@ -127,16 +129,17 @@ a:hover{text-decoration:none;}
 /*검색창*/
 .round {width:358px;height:36px;border-radius:20px;
     border:none;background-color:#ededed;
-    padding: 8px 8px 8px 25px;position:relative;z-index: 5;
+    padding: 8px 8px 8px 25px; z-index: 5;
 }
-.searchbox{position:relative;top:-45px;left:700px}
-.search {position: relative;width: 190px; height: 30px;}
-.search img{width:18px;position:absolute;top:10px;left:325px;z-index:10}
+.searchbox {position: relative; width: 358px; height: 54px; right: -60px;}
+.search {vertical-align: middle;}
+.search a {position: absolute; width: 16px; height: 16px; top: 18px; right: 15px;}
+.search img{width:16px; height: 16px; z-index:10}
         .m_slid_2dep_brand{display:block}
 
 /* GNB */
 #wheader #Gnb {position:relative;width:100%;min-width:1020px;height:51px;background:#fff;border-bottom:2px solid #f1f1f1;z-index:1000}
-#wheader #gnbWrap {position:relative;width:1080px;margin:0 auto}
+#wheader #gnbWrap {position:relative; width:1080px; margin:0 auto; }
 #wheader #Gnb .gnb_menu_list {top:0px;left:-40px}
 #wheader #Gnb .gnb_menu_list > li{float:left;margin-top:5px;width:124px;height:44px;text-align:center}
 #wheader #Gnb .gnb_menu_list > li:hover{background-color:#F99319;color:#FFF}

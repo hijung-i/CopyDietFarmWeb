@@ -69,6 +69,7 @@ $(function() {
             $('.sideMenu').show().animate({
                 left: 0
             });
+            console.log('dd');
         });
         $('.slideMenu_close>a').on('click', function() {
             $('.sideMenu').animate({

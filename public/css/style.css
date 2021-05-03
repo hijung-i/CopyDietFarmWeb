@@ -1,5 +1,5 @@
 /* none scroll */
-body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-y:auto; /* overflow: hidden; */}
+body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-y:auto; }
 
 @font-face{ 
   font-family: '나눔고딕'; 
@@ -121,7 +121,7 @@ a:hover{text-decoration:none;}
   .btnCart img{width:21px;height:21px;float:right;position:relative;bottom:45px;right:10px}
   #nav{width:100%;height:44px;padding-left:15px; overflow:scroll;white-space:nowrap;-ms-overflow-style:none;position:relative;top:-21px;background-color:#fff;bottom:20px}
   #nav::-webkit-scrollbar{ display:none; }
-  #nav a{font-family:'나눔고딕';float:left;height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;margin-right:32px;display:inline-block}
+  #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;margin-right:32px;display:inline-block}
   .top_util, .searchbox, #nav .web_cate{display:none}
     #header{position:fixed;width:100%;top:0px;background-color:#fff;z-index:9999}
 }
@@ -132,16 +132,22 @@ a:hover{text-decoration:none;}
   #content .s_price .sale{font-weight:bold;margin-left:10px}
   #content .s_price .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:5px;margin-top:1px}
   #content .s_price .ratio{color:red;font-size:11px;margin-left:5px}
-  .content_main{padding-top:200px}
   #header{width:1080px;margin:0 auto;text-align:center;height:242px}
-  .comp_logo{width:1080px;margin:0 auto;text-align:center;margin-top:35px}
-  .comp_logo img{width:157.89px;height:80px}
-  #nav{width: 1080px; height: 54px; margin: 0 auto;}
+  .comp_logo{width:1080px; height: 132px; line-height: 132px; margin:0 auto; text-align:center;}
+  .comp_logo img{width:158px;height:80px; vertical-align: middle;}
+  .navbar_wrap {width: 100%; height: 54px; line-height: 54px; display: flex; margin: 0 auto; border-top: 2px  solid #F5F5F5;}
+  #nav {width: 664px; display: flex;}
   #nav .home{display:none}
-  #nav a{font-family:Noto Sans KR;font-weight:bold;display:inline-block;width:270px;height:54px;font-size:16px;line-height:24px;padding:14px;margin-right:-4px}
+  #nav a {
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-weight:bold;
+    width:124px; height:54px; 
+    font-size:16px; font-weight: 500;
+    line-height:54px; 
+  }
   #nav a:hover{background-color:#F99319;color:#fff}
-  #nav .web_cate img{width:19.44px;position:relative;top:6.5px;left:-7px}
-  #nav .web_cate{width:160px;height:54px;white-space:nowrap}
+  #nav .web_cate img{width:19.44px; margin: 20px 12px;}
+  #nav .web_cate{width:168px;height:54px;white-space:nowrap}
   .tabMenu{display:none}
  .sideMenu{display:none} 
   #tab2{display:none}
