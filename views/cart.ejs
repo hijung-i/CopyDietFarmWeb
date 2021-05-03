@@ -226,10 +226,6 @@
         </section>
      
         <div class="btn_area_web">
-            <form id="orderForm" action="/order" method="GET">
-                <input type="hidden" name="deliveryGroupList" v-bind:value="JSON.stringify(requestDeliveryGroupList)">
-                <input type="hidden" name="orderDTO" v-bind:value="JSON.stringify(orderDTO)">
-            </form>
 
             <button type="button" class="purchaseBtn" v-on:click="onSubmit()" style="border:none">구매하기</button>
         </div>
