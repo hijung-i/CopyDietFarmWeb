@@ -90,7 +90,7 @@
             <div class="thick_line one"></div>
 
                 <div class="order_list_ctn">
-                    <template v-for="item in deliveryList">
+                    <template v-for="(item, i) in deliveryList">
                         <section class="web_delivery_manage_list">
                             <div class="del_mng_list_top">
                                 <ul class="del_mng_type">
@@ -99,12 +99,12 @@
                                 </ul>
                                 <ul class="edit_remove">
                                     <template v-if="item.mainAddressYn == 'N'">
-                                        <li class="basic"><a>기본배송지로 설정</a></li>
+                                        <li class="basic" v-on:click="changeMainAddress(i)"><a>기본배송지로 설정</a></li>
                                         <li class="small_line"><img src="/images/l_icon_category.png"></li>
                                     </template>
-                                    <li class="edit_first"><a v-on:click="modalDisplay(true, '배송지 등록')">수정</a></li>
+                                    <li class="edit_first"><a v-on:click="modalDisplay(true, '배송지 수정', i)">수정</a></li>
                                     <li class="small_line"><img src="/images/l_icon_category.png"></li>
-                                    <li class="edit_second"><a onclick="button_event();">삭제</a></li>
+                                    <li class="edit_second"><a v-on:click="deleteDelivery(i)">삭제</a></li>
                                 </ul>
                             </div>
                             <div class="web_del_mag_list_info">
@@ -159,21 +159,23 @@
                 <li>
                     <h2>배송지 관리</h2>
                 </li>
-                <li class="clsWindow" v-on:click="modalDisplay(false)"><i class="fal fa-times"></i></li>
+                <li class="clsWindow"><i onclick="modalDisplay(false)" class="fal fa-times"></i></li>
             </ul>
             <h3>배송지 수정</h3>
         </header>
 
         <div class="deliver_mag_modal_ctt">
+            <input type="hidden" id="selectedDeliveryNo" value="">
+            <input type="hidden" id="mainAddressYn" value="">
             <p>배송지 이름</p>
-            <input type="text" name="deliveryName" placeholder="배송지 이름을 입력해주세요">
+            <input type="text" id="deliveryName" name="deliveryName" placeholder="배송지 이름을 입력해주세요">
             <p>받으시는 분</p>
-            <input type="text" name="receiverName" placeholder="받으시는 분 이름을 입력해주세요">
+            <input type="text" id="receiverName" name="receiverName" placeholder="받으시는 분 이름을 입력해주세요">
             <p>주소</p>
             <input type="text" id="addr" name="address" placeholder="도로명, 지번, 건물명 검색">
             <input type="text" id="addr2" name="address2">
             <p>휴대폰</p>
-            <input type="text" placeholder="숫자만 입력해주세요">
+            <input type="text" id="userCellNo" placeholder="숫자만 입력해주세요">
 
             <div class="btn_area_modal">
                 <button type="button" id="btnRegister_modal">저장</button>

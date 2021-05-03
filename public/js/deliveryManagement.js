@@ -4,7 +4,9 @@ var app = new Vue({
         deliveryList: new Array()
     },
     methods: {
-        modalDisplay
+        modalDisplay,
+        deleteDelivery,
+        changeMainAddress
     }
 })
 
@@ -33,40 +35,167 @@ $(function() {
             height: height + bottomUlHeight
         })
     })
+
+    $('#btnRegister_modal').click(function() {
+        var modalName = $('.deliver_magHeader h3').html();
+        switch(modalName) {
+            case '배송지 수정':
+                updateDelivery();
+                break;
+            case '배송지 등록':
+                addDelivery();
+                break;
+        }
+    })
 })
-function modalDisplay(display) {
+function modalDisplay(display, modalName, i) {
+    console.log("click", display, modalName)
     if(display) { 
-        $('#ex1').show();
+        $('.deliver_magHeader h3').html(modalName);
+        if(i != undefined) {
+            var deliveryInfo = app.deliveryList[i];
+            $('#selectedDeliveryNo').val(deliveryInfo.deliveryNo);
+            $('#mainAddressYn').val(deliveryInfo.mainAddressYn);
+            $('#deliveryName').val(deliveryInfo.addressName);
+            $('#receiverName').val(deliveryInfo.userName);
+            $('#addr').val('');
+            $('#userCellNo').val(deliveryInfo.userCellNo);
+        }
+
+        $('.modal-background').addClass("on");
+        $('.deliver_mag_modal').addClass("on");
+
     } else {
-        $('#ex1').hide();
+        $('.modal-background').removeClass("on");
+        $('.deliver_mag_modal').removeClass("on");
+        
+        $('#deliveryName').val('');
+        $('#receiverName').val('');
+        $('#addr').val('');
+        $('#addr2').val('');
+        $('#userCellNo').val('');
+
     } 
 }
 
 function addDelivery() {
-    var deliveryName = $('name')
+    var deliveryName = $('#deliveryName').val();
+    var receiverName = $('#receiverName').val();
+    var address = $('#addr').val();
+    var address2 = $('#addr2').val();
+    var userCellNo = $('#userCellNo').val();
+
+    console.log(address, address2);
+    address = address + address2;
     var newDeliveryInfo = {
-        
+        userName: receiverName,
+        address,
+        userCellNo,
+        addressName: deliveryName,
+        mainAddressYn: 'N'
     }
 
-    var params = {
-
-    };
     
-    ajaxCallWithLogin(API_SEVER + '/user/insertDeliveryInfo', params, 'POST',
+    ajaxCallWithLogin(API_SERVER + '/user/insertDeliveryInfo', newDeliveryInfo, 'POST',
     function(data) {
+        alert('배송지 추가에 성공했습니다.');
         console.log("success ", data);
+        modalDisplay(false);
+        
+        getDeliveryInfoList();
     }, function(err) {
         console.log("err", err);
     }, {
-        isRequired: true
+        isRequired: true,
+        userId: true
     })
 }
+
+function updateDelivery() {
+    
+    var selectedDeliveryNo = $('#selectedDeliveryNo').val();
+    var mainAddressYn = $('#mainAddressYn').val();
+    var deliveryName = $('#deliveryName').val();
+    var receiverName = $('#receiverName').val();
+    var address = $('#addr').val();
+    var address2 = $('#addr2').val();
+    var userCellNo = $('#userCellNo').val();
+
+    console.log(address, address2);
+    address = address + address2;
+    var newDeliveryInfo = {
+        deliveryNo: selectedDeliveryNo,
+        userName: receiverName,
+        address,
+        userCellNo,
+        addressName: deliveryName,
+        mainAddressYn: mainAddressYn
+    }
+    
+    ajaxCallWithLogin(API_SERVER + '/user/updateDelivery', newDeliveryInfo, 'POST',
+    function(data) {
+        alert('배송지 수정에 성공했습니다.');
+        console.log("success ", data);
+        modalDisplay(false);
+        
+        getDeliveryInfoList();
+    }, function(err) {
+        console.log("err", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
+function deleteDelivery(index) {
+    var selectedDeliveryNo = app.deliveryList[index].deliveryNo;
+
+    var params = {
+        deliveryNo: selectedDeliveryNo
+    }
+    
+    ajaxCallWithLogin(API_SERVER + '/user/deleteDelivery', params, 'POST',
+    function(data) {
+        alert('배송지 삭제에 성공했습니다.');
+        console.log("success ", data);
+        modalDisplay(false);
+        
+        getDeliveryInfoList();
+    }, function(err) {
+        console.log("err", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
+function changeMainAddress(index) {
+    var selectedDeliveryNo = app.deliveryList[index].deliveryNo;
+
+    var params = {
+        deliveryNo: selectedDeliveryNo
+    }
+    
+    ajaxCallWithLogin(API_SERVER + '/user/updateDeliveryMainAddress', params, 'POST',
+    function(data) {
+        alert('기본 배송지 변경에 성공했습니다.');
+        console.log("success ", data);
+        modalDisplay(false);
+        
+        getDeliveryInfoList();
+    }, function(err) {
+        console.log("err", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
 
 function getDeliveryInfoList() {
     var params = {};
     ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', params, 'POST',
     function(data) {
-        console.log("succes", data);
         app.deliveryList = data.result;
     }, function(err) {
         console.log("err", err);

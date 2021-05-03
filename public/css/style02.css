@@ -306,21 +306,29 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
   }
   
  
-  .modal-background {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: #000000;
-    opacity: 0.5;
-    display: none;
-  }
+.modal-background {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.5;
+  display: none;
+}
 
-  .modal-background section{
-    opacity: 1;
-  }
+.modal-background.on {
+  display: block;
+}
+  
+  
+.deliver_mag_modal.on {
+  position: fixed;
+  margin: auto;
+  display: block;
+  left: 0;
+  top: 0;
+  transform: translate(4%, 4%);
 
-  .deliver_mag_modal {
-    position: fixed;
+}
 
-  }
+  
