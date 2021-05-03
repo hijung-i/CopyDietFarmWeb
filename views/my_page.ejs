@@ -21,6 +21,8 @@
             width: 100%
         }
         #header .gnb{display:none}
+        @media screen and (min-width:360px) and (max-width:1079px){}
+        @media screen and (min-width:1080px){.mobile_myinfo{display:none}}
     </style>
     <link rel="stylesheet" href="/css/myPage.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -35,8 +37,21 @@
         <a href="#"><span>바로가기2</span></a>
         <a href="#"><span>바로가기3</span></a>
     </article>
-    <%-include('general/header') %>
+    <div class="mobile_myinfo">
+        <section class="detail_title">
+            <h2 class="title">마이페이지</h2>
+            <script type="text/javascript">
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
+            </div>
 
+            <div class="btncart"><a href="#" onclick="mCart('on');"><img src="/images/cart_ico_main.png" alt="" style="width:21px;left:15px"></a>
+            </div>
+        </section>
+    </div><!--//모바일 헤더 끝-->
     <main id="content" class="content">
         <div class="myPage">
             <div class="myPage01">

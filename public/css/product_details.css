@@ -2,7 +2,7 @@
 
 body{min-width:360px;}
 html, body {max-width: 100%}
- td, tr, h1, h2,{padding-left:20px;}
+/* td, tr, h1, h2{padding-left:20px;} */
 .detail_title{overflow:hidden;margin-bottom:-20px;width:100%;}
 .detail_title{margin-top:20px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
@@ -49,7 +49,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .pp_wrap{margin-bottom:-50px;padding-top:40px}
 
 @media screen and (min-width:360px) and (max-width:1079px){
-    .products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
+.products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:20px;}
 }
 .purchased_products{clear:both;width:100%;margin-left:5px}
@@ -177,7 +177,6 @@ input[type="number"] {
 
 /*리뷰 없을 때*/
 .review_list_null{width:70%; text-align:center; margin:180px auto;}
-.review_list_null img{}
 .no_review{font-size:16px;color:#878787;margin-top:21px}
 
 /*문의*/
@@ -258,7 +257,7 @@ width:100%;height:45px;background-color:#F1F1F1;border-radius:0px;border:0;borde
 }
 .common_btn_wrap > .option_btns > button {
 font-size: 14px;
-position:fixed
+/*position:fixed;*/
 top: 20px;
 }
 .common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #EFA543;position:relative;top:-1px}

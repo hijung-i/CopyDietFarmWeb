@@ -186,12 +186,12 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 .review_img02 img{width:100px;height:60px;margin-left:13px}
 .review_summ{clear:both;font-size:14px;line-height:18px;margin-top:10px}
 .review_info02{border-bottom:8px solid #F1F1F1;padding-bottom:20px}
-#btn_mobile{}
  #toc-toggle{display:none}
 }
 
 /*products_web*/
 @media screen and (min-width:1080px){
+#container{margin-top:240px}
 #tab_mobile{display:none}
 #btn_mobile{display:none}
 .products_ex_mobile{display:none}
@@ -270,7 +270,8 @@ box-shadow: none !important}
 .pp_wrap h3{font-size:18px;font-weight:bold;}
 .pp_wrap .multiple_bxslider img{width:294px}
 .pp_wrap{overflow:visible}
-.pp_wrap .price .title{font-size:16px;margin-top:20px;margin-bottom:5px;}
+.purchased_products ul{margin-left:10px}
+.pp_wrap .price .title{font-size:16px;margin-bottom:5px;margin-left:10px}
 .pp_wrap .price .sale{font-size:16px;}
 .pp_wrap .price .cost{margin-left:7px;color:#BBBBBB;text-decoration:line-through;font-size:14px}
 .pp_wrap .price .ratio{color:red;margin-left:7px;font-size:15px}
