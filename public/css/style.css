@@ -1,6 +1,7 @@
 /* none scroll */
 body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-y:auto; }
 
+
 @font-face{ 
   font-family: '나눔고딕'; 
   font-weight: normal; 
@@ -103,9 +104,6 @@ a:hover{text-decoration:none;}
   position:relative;
   top:6px
  }
-
-
-
 @media screen and (min-width:360px) and (max-width:1079px){
 
 }
@@ -145,6 +143,7 @@ a:hover{text-decoration:none;}
     font-size:16px; font-weight: 500;
     line-height:54px; 
   }
+  #nav a{font-family:Noto Sans KR;font-weight:bold;display:inline-block;width:400px;height:54px;font-size:16px;line-height:24px;padding:14px;margin-right:-4px}
   #nav a:hover{background-color:#F99319;color:#fff}
   #nav .web_cate img{width:19.44px; margin: 20px 12px;}
   #nav .web_cate{width:168px;height:54px;white-space:nowrap}
@@ -358,13 +357,13 @@ height:50px;overflow:hidden}
   /* 서브메뉴 */	
   
   #content .main_sub img{width: 100%;background-repeat: no-repeat;background-size: cover;background-position: center}
-  #content .main_sub{width:100%;margin:-10px auto}	
-  #content .sort select{border:0;margin-left:15px;;margin-top:50px}
+  #content .main_sub{width:100%;margin:-10px auto;margin-top:40px}	
+  #content .sort select{border:0;margin-left:15px;margin-bottom:10px;margin-top:5px}
   
   @media screen and (min-width:360px) and (max-width:600px){
   #mobile_sub{position:fixed;height:90px;background-color:#fff}
   #content .main_sub_wrap{	
-  width:100%;border-top:2px solid #f1f1f1;margin-top:34px}
+  width:100%;border-top:2px solid #f1f1f1;margin-top:34px;margin-top:100px}
   #content .main_sub img{padding:7px}
   #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
   #content .main_sub .desc ul li{float:left;white-space:nowrap;margin-left:-4px}
@@ -373,7 +372,7 @@ height:50px;overflow:hidden}
   #content .main_sub_wrap .desc .cost{color:#bbbbbb;text-decoration:line-through;margin-left:7px;}	
   #content .main_sub_wrap .desc .ratio{color:red;font-weight:bold;font-size:11px;margin-left:7px}		
   #content .main_sub_wrap .main_sub h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}	
-  .n_sort{position:relative;margin-top:70px;text-align:left;margin-bottom:10px;}	
+  .n_sort{position:relative;margin-top:15px;text-align:left}	
   }
     /*중간사이즈*/
     @media screen and (min-width:601px) and (max-width:1079px) 
@@ -686,4 +685,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
   z-index: 99;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1d63a8070f0427e8c0b9aee2c17e931f76d46c76

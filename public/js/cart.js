@@ -121,14 +121,11 @@ var app = new Vue({
                 }
             }
 
-            this.requestDeliveryGroupList = requestDeliveryGroupList;
             if(requestDeliveryGroupList.length < 1) {
                 alert('상품을 선택해주세요.')
                 return false;
             }
-            console.log($("input[name=deliveryGroupList]").val());
-            $("#orderForm").submit();
-            
+            location.href="/order?deliveryGroupList=" + JSON.stringify(requestDeliveryGroupList)+'&orderDTO='+ JSON.stringify(this.orderDTO);
         },
         deleteSelectedItems: function() {
             var products = new Array();
