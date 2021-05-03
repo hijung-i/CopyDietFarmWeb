@@ -104,19 +104,6 @@
                     </span>
                     <span class="/images/error_next_box"></span>
                 </div>
-                <script>
-
-                function openZipSearch() {
-                    new daum.Postcode({
-                        oncomplete: function(data) {
-                            var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
-                            $('#addr').val(address);
-                            console.log(data);
-                        }
-                    }).open();
-                }
-
-                </script>
                 <div style="padding-bottom:34px">
                     <h3 class="join_title"><label for="r_id">추천인 아이디</label></h3>
                     <span class="box int_r_id">

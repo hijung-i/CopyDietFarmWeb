@@ -103,6 +103,9 @@ a:hover{text-decoration:none;}
   position:relative;
   top:6px
  }
+
+
+
 @media screen and (min-width:360px) and (max-width:1079px){
 
 }
@@ -671,4 +674,3 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
   bottom: 60px; right: 20px;
   z-index: 99;
 }
-

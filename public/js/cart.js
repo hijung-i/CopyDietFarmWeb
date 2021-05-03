@@ -164,7 +164,6 @@ var app = new Vue({
 
 $(function() {
     checkDeliveryAddress();
-    
     app.getCartItemList();
 
 })
