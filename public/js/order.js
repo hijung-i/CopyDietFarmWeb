@@ -5,8 +5,8 @@ var app = new Vue({
         RESOURCE_SERVER,
         numberFormat,
         deliveryGroupList: '',
-        orderDTO: ''
-        
+        orderDTO: '',
+        paymentNo: 0
     }
 })
 
@@ -14,7 +14,9 @@ $(function() {
     app.deliveryGroupList = JSON.parse($('#deliveryGroupList').val());
     app.orderDTO = JSON.parse($('#orderDTO').val());
 
-    
+    if(app.orderDTO.userId !== '비회원주문')
+        getDefaultDeliveryInfo();
+
 })
 
 function paymentAction() {
@@ -125,5 +127,30 @@ function paymentConfirm() {
         addOrder();
     }, function(err){
         console.log("error", err);
+    })
+}
+
+function getDefaultDeliveryInfo() {
+    var params = {
+
+    };
+
+    ajaxCallWithLogin(API_SERVER + '/user/getDefaultDevlieryInfo', params, 'POST',
+    function(data) {
+        var result = data.result;
+        var delivery = {
+            address: result.address,
+            addressName: result.addressName,
+            deliveryNo: result.deliveryNo,
+            userCellNo: result.userCellNo,
+            userName: result.userName
+        }
+        orderDTO.delivery = delivery
+        console.log("defaultDeliveryInfo success", data);
+    }, function(err) {
+        console.log("error", err);
+    }, {
+        isRequired: true,
+        userId: true
     })
 }
