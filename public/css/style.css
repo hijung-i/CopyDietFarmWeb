@@ -1,5 +1,5 @@
 /* none scroll */
-body,html {width:100%; min-width:360px; width: 100%; /* overflow: hidden; */}
+body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-y:auto;/* overflow: hidden; */}
 
 @font-face{ 
   font-family: '나눔고딕'; 
@@ -349,13 +349,13 @@ height:50px;overflow:hidden}
   /* 서브메뉴 */	
   
   #content .main_sub img{width: 100%;background-repeat: no-repeat;background-size: cover;background-position: center}
-  #content .main_sub{width:100%;margin:-10px auto}	
+  #content .main_sub{width:100%;margin:-10px auto;margin-top:40px}	
   #content .sort select{border:0;margin-left:15px;margin-bottom:10px;margin-top:5px}
   
   @media screen and (min-width:360px) and (max-width:600px){
   #mobile_sub{position:fixed;height:90px;background-color:#fff}
   #content .main_sub_wrap{	
-  width:100%;border-top:2px solid #f1f1f1;margin-top:34px}
+  width:100%;border-top:2px solid #f1f1f1;margin-top:34px;margin-top:100px}
   #content .main_sub img{padding:7px}
   #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
   #content .main_sub .desc ul li{float:left;white-space:nowrap;margin-left:-4px}
@@ -364,7 +364,7 @@ height:50px;overflow:hidden}
   #content .main_sub_wrap .desc .cost{color:#bbbbbb;text-decoration:line-through;margin-left:7px;}	
   #content .main_sub_wrap .desc .ratio{color:red;font-weight:bold;font-size:11px;margin-left:7px}		
   #content .main_sub_wrap .main_sub h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}	
-  .n_sort{position:relative;margin-top:15px;text-align:left;margin-bottom:30px;}	
+  .n_sort{position:relative;margin-top:15px;text-align:left}	
   }
     /*중간사이즈*/
     @media screen and (min-width:601px) and (max-width:1079px) 
