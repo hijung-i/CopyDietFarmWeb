@@ -4,7 +4,7 @@
 
 var dupCheck = false;
 $(function() {
-    niceDuplicationCheck();
+    // niceDuplicationCheck();
     
     var id = $('#id');
     var pw1 = $('#pswd1');
@@ -347,3 +347,12 @@ $(function() {
 });
 
 
+function openZipSearch() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
+            $('#addr').val(address);
+            console.log(data);
+        }
+    }).open();
+}

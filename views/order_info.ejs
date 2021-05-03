@@ -210,20 +210,7 @@
                 <option>배송메모를 선택해주세요</option>
             </select>
             <input type="text" style="width:95%;height:80px;margin-top:8px">
-          
-            <script>
 
-                function openZipSearch() {
-                    new daum.Postcode({
-                        oncomplete: function(data) {
-                            var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
-                            $('#addr').val(address);
-                            console.log(data);
-                        }
-                    }).open();
-                }
-
-                </script>
           </div><!--//배송지 정보-->
           <div class="coup_point">
               <div class="members">

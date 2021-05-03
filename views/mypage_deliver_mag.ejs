@@ -25,6 +25,9 @@
     <!-- bxslider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+
 </head>
 
 <body>
@@ -99,7 +102,7 @@
                                         <li class="basic"><a>기본배송지로 설정</a></li>
                                         <li class="small_line"><img src="/images/l_icon_category.png"></li>
                                     </template>
-                                    <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
+                                    <li class="edit_first"><a v-on:click="modalDisplay(true, '배송지 등록')">수정</a></li>
                                     <li class="small_line"><img src="/images/l_icon_category.png"></li>
                                     <li class="edit_second"><a onclick="button_event();">삭제</a></li>
                                 </ul>
@@ -139,43 +142,44 @@
                         </div>
                     </div>
                     <div class="btn_area_d">
-                        <button type="button" id="btnRegister" v-on:click="modalDisplay(true)">배송지 등록</button>
+                        <button type="button" id="btnRegister" v-on:click="modalDisplay(true, '배송지 등록')">배송지 등록</button>
                     </div>
                 </div> <!-- order_list_ctn -->
             </div> <!-- body_contents -->
         <!-- modal window -->
-        <section id="ex1" class="modal deliver_mag_modal" style="margin:auto;">
-            <header class="deliver_magHeader">
-                <ul>
-                    <li>
-                        <h2>배송지 관리</h2>
-                    </li>
-                    <li class="clsWindow" v-on:click="modalDisplay(false)"><i class="fal fa-times"></i></li>
-                </ul>
-                <h3>배송지 수정</h3>
-            </header>
-
-            <div class="deliver_mag_modal_ctt">
-                <p>배송지 이름</p>
-                <input type="text" placeholder="배송지 이름을 입력해주세요">
-                <p>받으시는 분</p>
-                <input type="text" placeholder="받으시는 분 이름을 입력해주세요">
-                <p>주소</p>
-                <input type="text" placeholder="도로명, 지번, 건물명 검색">
-                <input type="text">
-                <p>휴대폰</p>
-                <input type="text" placeholder="숫자만 입력해주세요">
-
-                <div class="btn_area_modal">
-                    <button type="button" id="btnRegister_modal">저장</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- modal window end -->
         <%-include('general/footer') %>
         
     </div>
+    <div class="modal-background">
+        
+    </div>
+    <section id="ex1" class="modal deliver_mag_modal" style="margin:auto;">
+        <header class="deliver_magHeader">
+            <ul>
+                <li>
+                    <h2>배송지 관리</h2>
+                </li>
+                <li class="clsWindow" v-on:click="modalDisplay(false)"><i class="fal fa-times"></i></li>
+            </ul>
+            <h3>배송지 수정</h3>
+        </header>
+
+        <div class="deliver_mag_modal_ctt">
+            <p>배송지 이름</p>
+            <input type="text" name="deliveryName" placeholder="배송지 이름을 입력해주세요">
+            <p>받으시는 분</p>
+            <input type="text" name="receiverName" placeholder="받으시는 분 이름을 입력해주세요">
+            <p>주소</p>
+            <input type="text" id="addr" name="address" placeholder="도로명, 지번, 건물명 검색">
+            <input type="text" id="addr2" name="address2">
+            <p>휴대폰</p>
+            <input type="text" placeholder="숫자만 입력해주세요">
+
+            <div class="btn_area_modal">
+                <button type="button" id="btnRegister_modal">저장</button>
+            </div>
+        </div>
+    </section>
     <script src="/js/deliveryManagement.js"></script>
 </body>
 
