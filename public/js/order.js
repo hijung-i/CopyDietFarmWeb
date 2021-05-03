@@ -11,12 +11,13 @@ var app = new Vue({
 })
 
 $(function() {
-    app.deliveryGroupList = JSON.parse($('#deliveryGroupList').val());
-    app.orderDTO = JSON.parse($('#orderDTO').val());
+    app.deliveryGroupList = JSON.parse((($('#deliveryGroupList').val() != undefined)?$('#deliveryGroupList').val():'{}'));
+    app.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
 
-    if(app.orderDTO.userId !== '비회원주문')
-        getDefaultDeliveryInfo();
+    // if(app.orderDTO.userId !== '비회원주문')
+    getDefaultDeliveryInfo();
 
+    onPointAmountChange();
 })
 
 function paymentAction() {
@@ -145,7 +146,7 @@ function getDefaultDeliveryInfo() {
             userCellNo: result.userCellNo,
             userName: result.userName
         }
-        orderDTO.delivery = delivery
+        app.orderDTO.delivery = delivery
         console.log("defaultDeliveryInfo success", data);
     }, function(err) {
         console.log("error", err);
@@ -153,4 +154,26 @@ function getDefaultDeliveryInfo() {
         isRequired: true,
         userId: true
     })
+}
+
+function onPointAmountChange() {
+    app.orderDTO.paidRealAmount = app.orderDTO.paymentTotalAmount - app.orderDTO.paidCouponAmount - app.orderDTO.paidPointAmount + app.orderDTO.totalDeliveryCost;
+
+    app.orderDTO.accumulatePoint = 0;
+    for(var i = 0; i < app.deliveryGroupList.length; i++) {
+        var dGroup = app.deliveryGroupList[i];
+        for(var j = 0; j < dGroup.products.length; j++) {
+            var product = dGroup.products[j];
+
+            product.optionTotalPrice = 0;
+            for(var k = 0; k < product.options.length; k++){
+                var option = product.options[k];
+                product.optionTotalPrice += option.optionTotalPrice;
+            }
+
+            product.accumulatePoint = Math.round((app.orderDTO.paidRealAmount * (product.optionTotalPrice / app.orderDTO.paymentTotalAmount)) * 0.03)
+            app.orderDTO.accumulatePoint += product.accumulatePoint;    
+        }
+
+    }
 }

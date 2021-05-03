@@ -1,5 +1,5 @@
 import { NextFunction, request, Request, Response, Router } from 'express'
-import { User } from '../models/user'
+import { DeliveryInfo, User } from '../models/user'
 const router = Router()
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -121,16 +121,28 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     const deliveryGroupList = req.query.deliveryGroupList
     const orderDTO = JSON.parse(req.query.orderDTO as string)
 
+    const deliveryInfo: DeliveryInfo = {
+        userId: '',
+        userName: '',
+        userCellNo: '',
+        addressName: '',
+        address: '',
+        mainAddressYn: ''
+    }
+
     if (req.session.isLoggedIn === true) {
         orderDTO.userId = 'jgpark'
         orderDTO.userName = '박진국'
         orderDTO.email = 'jgpark@data-flow.co.kr'
         orderDTO.userCellNo = '01055431787'
-        orderDTO.address = '01129, 서울시 강북구 덕릉로 30길 9-20(미아동)2층 ( 계단 한 번)'
-
     } else {
         orderDTO.userId = '비회원주문'
     }
+
+    orderDTO.delivery = deliveryInfo
+    orderDTO.deliveryDesc = ''
+    orderDTO.paidPointAmount = 0
+    orderDTO.paidCouponAmount = 0
 
     render(res, 'order_info', { deliveryGroupList, orderDTO: JSON.stringify(orderDTO) })
 })
