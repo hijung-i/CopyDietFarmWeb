@@ -233,20 +233,21 @@ box-shadow: none !important}
 .purchased_products img{border-radius:5px}
 .view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif}
 .view_top_img {float:left}
-.bxslider img{width:auto;height:694px}
+.bxslider img{width:auto!important;height:694px}
 
 .ico_v_dsd_box {padding:0px 0 10px}
 .ico_v_dsd {padding:3px 8px 4px;background:#aaacaf;color:#fff;font-size:12px;letter-spacing:-0.05em}
 
 
 /* 제품상세 우측 설명박스*/
-.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:62px 29px 147px;float:left} 
+.v_top_txt_box {position:relative;width:350px;height:694px;background:#F8F8F8;padding:62px 29px 147px;float:left} 
 .v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em;font-family:'나눔고딕'}
 .v_top_txt {color:#333;font-size:12px;line-height:1.6em;padding:15px 0 18px;border-bottom:1px solid #e1e1e1} 
 
 .v_n_top_info table
 {  border-collapse: separate;
   border-spacing: 0 10px;}
+.v_n_top_info .ex{margin-left:20px}
 .option_wrap h3{margin-left:-15px}
 .option_wrap #products{border:1px solid #424242;margin-left:-15px;width:305px;height:36px}
 .product_detail_content {position:relative;margin-top:54px;font-family:'Noto sans',sans-serif}
@@ -357,7 +358,7 @@ box-shadow: none !important}
 .no_review{font-size:16px;color:#878787;margin-top:21px}
 #btnRW_null{margin-top:238px;margin-left:660px;width:168px;height:45px;color:#fff;background-color:#F99319;border:0;border-radius:5px}
 .reviews .num{font-size:18px;font-weight:bold}
-.wrap_qna{float:right}
+#wrap_qna{float:right}
 a.button{padding: 12px 48px; text-decoration:none;color:#fff;background-color:#F99319;border-radius:5px;font-size:18px;font-weight:bold}
 #modal{display:none;position:fixed;width:100%;height:100%;top:0; left:0; background:rgba(0,0,0,0.3); z-index:1000}
 .modal-con{width:1068px;height:auto;display:none;
