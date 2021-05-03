@@ -1,11 +1,18 @@
 $(function() {
 
     $("button").click(function() {
+        console.log(this);
         var id = $(this).attr("id");
         switch(id){
             case "btnLogin":
                 loginRequest();
                 break;
+        }
+    })
+
+    $("#loginFormUserId, #loginFormUserPassword").keypress(function(event) {
+        if(event.keyCode == 13){
+            loginRequest();
         }
     })
 })
@@ -16,10 +23,12 @@ function loginRequest(){
  
     if(userId == '' || userId == undefined || userId.trim() == ''){
         //TODO: Open alert modal
+        alert('아이디를 입력해주세요');
         return false;
     }   
     if(password == '' || password == undefined || password.trim() == ''){
         //TODO: Open alert modal
+        alert('비밀번호를 입력해주세요');
         return false;
     } 
 

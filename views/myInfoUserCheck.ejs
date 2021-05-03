@@ -8,25 +8,86 @@
     <meta name="format-detection" content="no" />
 
     <title>다이어트 Farm 로그인</title>
-    <link rel="stylesheet" href="/css/myInfo.css">
-    <%-include('general/head') %>
+    <style type="text/css">
+    @media screen and (max-width:1079px) {.web_usercheck{display:none}}
+    @media screen and (min-width:1080px){.mobile_usercheck{display:none} }
+        </style>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style_web.css">
+    <link rel="stylesheet" href="/css/style02.css">
+    <%-include('general/head') %> 
 </head>
 
 <body>
+   <div class="mobile_usercheck">
     <section class="detail_title">
         <h2>내정보</h2>
+        <script type="text/javascript">
+            function goBack() {
+                window.history.back();
+            }
+        </script>
         <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
         </div>
     </section>
+    </div>
+    <div class="web_usercheck">
+        <%-include('general/header_web') %>
+    </div>
+    
+       <div class="main_contents">
+               <div class="web_contents">
+                <div class="left">
+                    <h3>마이팜</h3>
+                    <div class="left_ctn">
+                        <ul>
+                            <li><img src="/images/basket_ico.png"></li>
+                            <li><span>김수아님</span></li>
+                            <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="center">
+                    <h3>포인트<img src="/images/point.png"></h3>
+                    <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
+                </div>
+    
+                <div class="right">
+                    <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                    <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
+                </div>
+           </div>
+            </div>
+                <nav class="content_lnb">
+                    <ul>
+                        <li class="on"><a href="http://localhost:3000/orderlist">주문내역</a></li>
+                        <li style="white-space:nowrap"><a href="javascript:void(0);">배송지 관리</a></li>
+                        <li><a href="http://localhost:3000/mypageproductreview">상품 리뷰</a></li>
+                        <li><a href="http://localhost:3000/mypageproductinquiry">상품 문의</a></li>
+                        <li><a href="http://localhost:3000/mypagesellerinquiry">판매자 문의</a></li>
+                        <li><a href="http://localhost:3000/mypageorderlistpoint">포인트</a></li>
+                        <li><a href="javascript:void(0);">쿠폰</a></li>
+                    </ul>
+                </nav>
+    
+    
+    
+    
+    
+    <div class="contents">
+    <h2 style="font-size:20px">내정보</h2>
     <div class="main-container">
         <div class="main-wrap">
-            <p style="font-weight:bold;margin-bottom:10px">비밀번호 확인</p>
-            <p>회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인해주세요.</p>
+            <p class="p1">비밀번호 확인</p>
+            <p class="p2">회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인해주세요.</p>
             <section class="login-input-section-wrap">
-
+               
+                <h4>아이디</h4>
                 <div class="login-input-wrap">
                     <input placeholder="아이디를 입력해주세요" type="text">
                 </div>
+                <h4>비밀번호</h4>
                 <div class="login-input-wrap password-wrap">
                     <input placeholder="비밀번호를 입력해주세요" type="password">
                 </div>
@@ -34,7 +95,9 @@
                     <button>로그인</button>
                 </div>
             </section>
-
-
+        </div>
+    </div>
+    </div>
+    <script src="./js/main.js"></script>
 </body></html>
 

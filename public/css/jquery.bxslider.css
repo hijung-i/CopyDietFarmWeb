@@ -11,6 +11,7 @@
   touch-action: pan-y;
 
 }
+
 .bx-wrapper img {
   max-width: 100%;
   display: block;
@@ -19,12 +20,9 @@
   margin: 0;
   padding: 0;
 }
+.bxslider img{ max-width:100%!important}
 ul.bxslider {
   list-style: none;
-}
-.bx-viewport {
-  /*fix other elements on the page moving (on Chrome)*/
-  -webkit-transform: translatez(0);
 }
 /** THEME
 ===================================*/

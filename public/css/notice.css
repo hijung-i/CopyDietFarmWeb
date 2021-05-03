@@ -45,3 +45,13 @@
 .nv_list td{padding:10px}
 .nv_list td img{position:relative;top:6px;margin-right:9px}
 .nv_list td span{color:#878787;font-size:12px;margin-left:5px} }
+
+/*개인정보처리방침*/
+@media screen and (min-width:1080px){
+.web_PrivacyPolicy{width:1080px;margin:0 auto}
+.web_TermsOfService{width:1080px;margin:0 auto}
+.web_TermsOfService h2{width:1080px;font-size:20px;font-weight:bold;border-bottom:1px solid #000;padding-bottom:20px;padding-top:55px}
+.web_PrivacyPolicy h2{width:1080px;font-size:20px;font-weight:bold;border-bottom:1px solid #000;padding-bottom:20px;padding-top:55px}
+.term_contents{margin-top:20px}
+.term_contents{font-size:20px}
+}

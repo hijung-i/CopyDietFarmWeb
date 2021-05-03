@@ -27,12 +27,12 @@ function getStandDatas() {
                     html += '<li><img src="' + RESOURCE_SERVER + product.url+'"></li>';
                 }
 
-                $('.main_img .bxslider').html(html);
+                $('.bxslider').html(html);
 
-                $('.main_img .bxslider').bxSlider({
+                $('.bxslider li').bxSlider({
                     mode: 'horizontal',
-                    auto: false,
-                    pause: 2000,
+                    auto: true,
+                    pause: 6000,
                     controls: false,
                     easing: '',
                     pager: false,
@@ -45,54 +45,59 @@ function getStandDatas() {
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
                     html += '<li>'
-                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'" style="width:100%">';
-                    html += '<span class="title">' + product.productName + '</span><br>';
-                    html += '<span class="price">';
+                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'">';
+                    html += '<p class="title">' + product.productName + '</span><br>';
                     html += '<ul>';
                     html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
                     html += '<li class="cost">' + numberFormat(product.supplyPrice) + '원</li>';
                     html += '<li class="ratio">' + product.discountRate + '%</li>';
                     html += '</ul>';
-                    html += '</span>';
                     html += '</a>';
                     html += '</li>';
+                   
                 }
 
-                $('.s_price .multiple_bxslider').html(html);
+                $('.multiple_bxslider').html(html);
                 $('.multiple_bxslider').bxSlider({
-                    mode: 'horizontal',
-                    auto: true,
-                    slideWidth: 3000,
-                    infiniteLoop: false,
-                    controls: false,
-                    pager: false,
-                    minSlides: 2.5,
-                    maxSlides: 2.5,
-                    slideMargin: 10
-                });
+                        mode: 'horizontal',
+                        auto: true,
+                        slideWidth: 400,
+                        infiniteLoop: true,
+                        controls: true,
+                        pager: false,
+                        minSlides: 4,
+                        maxSlides: 5,
+                        slideMargin: 3,
+                        touchEnabled: true
+                    });
                 break;
             case 2:
                 // 위클리 베스트
-                $('.w_best ul').html(generateHtmlForProductList(products));
+                $('.w_best ul').html(generateHtmlForProductList(products, 8));
                 $('.w_best h2').html(salesName);
                 break;
             case 3:
                 // 단백질이 필요할 때!
-                $('.protein ul').html(generateHtmlForProductList(products));
-                $('.protein h2').html(salesName);
+                $('.protein ul').html(generateHtmlForProductList(products, 8));
+                $('.protein h3').html(salesName);
                 break;
             case 4:
                 // 당충전이 필요할 떄!
-                $('.sweets ul').html(generateHtmlForProductList(products));
-                $('.sweets h2').html(salesName);
+                $('.sweet ul').html(generateHtmlForProductList(products, 8));
+                $('.sweet h3').html(salesName);
                 break;
             case 5:
                 // 수분이 필요할 떄!
-                $('.water ul').html(generateHtmlForProductList(products));
-                $('.water h2').html(salesName);
+                $('.water ul').html(generateHtmlForProductList(products, 8));
+                $('.water h3').html(salesName);
                 break;
-            }
-        }
+            case 6:
+                // 위클리 베스트 웹
+                $('.m_bestn_w').html(generateHtmlForProductList(products, 8));
+                $('.m_bestn_w h2').html(salesName);
+                break;
+            };
+        };
         
         $('.slider').bxSlider();
         $('.bxslider').bxSlider({
@@ -103,17 +108,6 @@ function getStandDatas() {
             easing: 'swing',
             pager: false,
             touchEnabled: true,
-        });
-        $('.multiple_bxslider').bxSlider({
-            mode: 'horizontal',
-            auto: true,
-            slideWidth: 3000,
-            infiniteLoop: true,
-            controls: false,
-            pager: false,
-            minSlides: 2.5,
-            maxSlides: 2.5,
-            slideMargin: 10
         });
 
     }, function(err){

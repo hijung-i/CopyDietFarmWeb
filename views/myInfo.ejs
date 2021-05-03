@@ -7,27 +7,76 @@
 	<meta name="format-detection" content="telephone=no, address=no, email=no" />
 	<meta name="format-detection" content="no" />
    
-        <title>다이어트 Farm 회원가입</title>
-        <link rel="stylesheet" href="/css/myInfo.css">
-        
-        <%-include('general/head') %>
-        <script src="/js/signup.js"></script>
-        
+        <title>정보수정</title>
+        <style type="text/css">
+    @media screen and (max-width:1079px) {.web_myinfo{display:none}}
+    @media screen and (min-width:1080px){.mobile_myinfo{display:none} }
+        </style>
+       <link rel="stylesheet" href="./css/style02.css">
+   <link rel="stylesheet" href="./css/mypageAll.css">
+        <link rel="stylesheet" href="/css/style_web.css">
+        <%-include('general/head') %> 
     </head>
     <body>
-<section class="detail_title">
+    <div class="mobile_myinfo">
+    <section class="detail_title">
     <h2>내정보</h2>
+    <script type="text/javascript">
+    function goBack() {
+    window.history.back();
+     }
+   </script>
     <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
     </div>
      </section>
-
+    </div>
+    <div class="web_myinfo">
+        <%-include('general/header_web') %>      
+    </div> 
+    <div class="main_contents">
+               <div class="web_contents">
+                <div class="left">
+                    <h3>마이팜</h3>
+                    <div class="left_ctn">
+                        <ul>
+                            <li><img src="/images/basket_ico.png"></li>
+                            <li><span>김수아님</span></li>
+                            <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="center">
+                    <h3>포인트<img src="/images/point.png"></h3>
+                    <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
+                </div>
+    
+                <div class="right">
+                    <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                    <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
+                </div>
+           </div>
+            </div>
+                <nav class="content_lnb">
+                    <ul>
+                        <li class="on"><a href="/orderlist">주문내역</a></li>
+                        <li style="white-space:nowrap"><a href="/delivery-management">배송지 관리</a></li>
+                        <li><a href="/p_reveiw">상품 리뷰</a></li>
+                        <li><a href="/p_inquiry">상품 문의</a></li>
+                        <li><a href="/s_inquiry">판매자 문의</a></li>
+                        <li><a href="/point">포인트</a></li>
+                        <li><a href="javascript:void(0);">쿠폰</a></li>
+                    </ul>
+                </nav>
+    
         <!-- wrapper -->
+     <div class="contents">
+       <h2 class="info_title">내 정보</h2>
         <div id="wrapper">
-
-            <!-- content-->
+          <!-- content-->
             <div id="content">
                 <!-- ID -->
-                <div>
+                <div style="margin-top:20px">
                     <h3 class="join_title">
                         <label for="id">아이디</label>
                     </h3>
@@ -116,6 +165,7 @@
 
         </div> 
         <!-- wrapper -->
-    <script src="signup.js"></script>
+        </div>
+    <script src="./js/main.js"></script>
     </body>
 </html>

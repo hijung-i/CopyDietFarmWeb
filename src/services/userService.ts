@@ -1,7 +1,8 @@
 import { User } from '../models/user'
 import * as request from 'request-promise-native'
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
-const serverUrl = 'http://192.168.0.3:9090'
+// const serverUrl = 'http://192.168.0.3:9090'
+const serverUrl = 'http://13.209.123.102:9090'
 
 type Option = {
     uri: string,
@@ -27,6 +28,30 @@ class UserService {
 
         return request(options).then((res: any): UserResult => {
             return setUserResult(StatusCode.success, StatusMessage.success, res.result)
+        }).catch((err: any): UserResult => {
+            if (err) {
+                console.log('Error occured while login', err.statusCode, err.error)
+            }
+            return setUserResult(StatusCode.error, err.error, null)
+        })
+    }
+
+    register = async (user: User): Promise<UserResult> => {
+        let options: Option = {
+            uri: `${serverUrl}/user/register`,
+            method: 'POST',
+            headers: {
+                'Accept-Charset': 'application/json;charset=UTF-8',
+                'Content-Type': 'application/json'
+            },
+            json: true,
+            body: user
+        }
+        user.password = this.SHA256(user.password!)
+
+        return request(options).then((res: any): UserResult => {
+            console.log('after request', res)
+            return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
         }).catch((err: any): UserResult => {
             if (err) {
                 console.log('Error occured while login', err.statusCode, err.error)

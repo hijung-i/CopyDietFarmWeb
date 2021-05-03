@@ -6,24 +6,31 @@
             <div class="top_util">
                 <ul class="menu_list" id="menu_list_header">
 
-                    <li class="join"><a href="#">회원가입</a></li>
+                    <li class="join" style="color:#F99319"><a onclick="niceIdentifyPopup('register')">회원가입</a></li>
                     <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
-                    <li class="login_top"><a href="#">로그인</a></li>
+                    <li class="login_top"><a href="/login-form">로그인</a></li>
                     <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
-                    <li class="cs_center"><a href="#">고객센터</a></li>
-                    <li class="cart"><a href="#"><img src="/images/cart_ico_main.png" alt="장바구니"></a></li>
-                    <li class="mypage"><a href="#"><img src="/images/my_icon_menu.png" alt="마이페이지"></a></li>
-                    <li class="pick"><a href="#"><img src="/images/afterheart_ico_main.png" alt="찜한 메뉴"></a></li>
+                    <li class="cs_center"><a href="/cs-center">고객센터</a></li>
+                    <li class="cart"><a href="/cart"><img src="/images/cart_icon_main@2x.png" alt="장바구니"></a></li>
+                    <li class="mypage"><a href="/mypage"><img src="/images/dietfarm_mypage.png" alt="마이페이지" style="width:15px"></a></li>
+                    <li class="pick"><a href="/pick-product"><img src="/images/afterheart_ico_main.png" alt="찜한 메뉴"></a></li>
                </ul>
             </div>
             <div class="header_inner">
-                <h1><a href="javascript:common.link.moveMainHome();"><img src="/images/diet_farm_logo.png" alt="다이어트팜" /></a></h1>
+                <h1><a href="/"><img src="/images/diet_farm_logo.png" alt="다이어트팜" /></a></h1>
                 </div>
 
             <div class="header_design_area"></div>
-
+            <form action="/sign-up-form" method="GET" id="infoForm">
+                <input type="hidden" name="userName" id="formUserName">
+                <input type="hidden" name="userInfo" id="formUserInfo">
+                <input type="hidden" name="dupInfo" id="formDupInfo">
+                <input type="hidden" name="userCellNo" id="formUserCellNo">
+                <input type="hidden" name="userGender" id="formUserGender">
+                <input type="hidden" name="mobileCo" id="formMobileCo">
+                
+            </form>
         </div>
-
 
         <div id="Gnb" class="main gen1">
             <div id="gnbWrap">
@@ -31,12 +38,12 @@
                 <!-- 전체 카테고리 레이어 -->
                 <div class="layer_all_menu" id="gnbAllMenu">
              
-           <div class="m_slides_n_w"> 
+                    <div class="m_slides_n_w"> 
         	<!--메인배너 좌측 버튼-->
-            <div class="m_ba_slides_n_w font_ng" style="top:0px">
-                <ul class="m_ba_slides_n">                  <li class="m_ba_slides_n_li             m_ba_line_n" style="border-top:none;"><a href="#"><img                                               src="images/salad_icon_category.png">도시락/샐러드</a>
+            <div class="m_ba_slides_n_w" style="top:0px">
+                <ul class="m_ba_slides_n">                  <li class="m_ba_slides_n_li m_ba_line_n" style="border-top:none;"><a href="#"><img                                               src="/images/salad_icon_category.png">도시락/샐러드</a>
 						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
-                            <div class="m_slid_2dep_txt font_ng">
+                            <div class="m_slid_2dep_txt">
                             	<ul class="mn2dep">
 									<li><a href="#">전체보기</a></li>
 									<li><a href="#">바/쿠키</a></li>
@@ -49,7 +56,7 @@
 					</li>
                          <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="/images/meal_icon_category.png">간편식</a>
 						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
-                            <div class="m_slid_2dep_txt font_ng">
+                            <div class="m_slid_2dep_txt">
                             	<ul class="mn2dep">
 									<li><a href="#">전체보기</a></li>
 									<li><a href="#">빵/떡/면</a></li>
@@ -61,7 +68,7 @@
 					</li>
 					    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="/images/chicken_icon_category.png">닭가슴살</a>
 						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
-                            <div class="m_slid_2dep_txt font_ng">
+                            <div class="m_slid_2dep_txt">
                             	<ul class="mn2dep">
 									<li><a href="#">전체보기</a></li>
 									<li><a href="#">닭가슴살</a></li>
@@ -73,7 +80,7 @@
 					</li>
 					    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="/images/snack_icon_category.png">건강간식</a>
 						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
-                            <div class="m_slid_2dep_txt font_ng">
+                            <div class="m_slid_2dep_txt">
                             	<ul class="mn2dep">
 									<li><a href="#">전체보기</a></li>
 									<li><a href="#">바/쿠키</a></li>
@@ -87,7 +94,7 @@
 					</li>
 					    <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="/images/drink_icon_category.png">음료/소스</a>
 						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
-                            <div class="m_slid_2dep_txt font_ng">
+                            <div class="m_slid_2dep_txt">
                             	<ul class="mn2dep">
 									<li><a href="#">전체보기</a></li>
 									<li><a href="#">티/분말</a></li>
@@ -99,7 +106,7 @@
 					</li>
 					     <li class="m_ba_slides_n_li m_ba_line_n"><a href="#"><img src="/images/fruit_icon_category.png">신선식품</a>
 						<ul class="m_slides_sub sub01"  id="sub01" style="display:none">
-                            <div class="m_slid_2dep_txt font_ng">
+                            <div class="m_slid_2dep_txt">
                             	<ul class="mn2dep">
 									<li><a href="#">정육</a></li>
 									<li><a href="#">수산</a></li>
@@ -126,9 +133,9 @@
                         <ul>
                             <li class="all"><a hreef="#">전체</a></li>
                             <li><img src="/images/l_icon_category.png"></li>
-                            <li><a href="#">인기순</a></li>
+                            <li class="pop"><a href="#">인기순</a></li>
                             <li><img src="/images/l_icon_category.png"></li>
-                            <li><a href="#">좋아요</a></li>
+                            <li class="like"><a href="#">좋아요</a></li>
                         </ul>
                     </div>
                     <ul>
@@ -188,32 +195,25 @@
                 </ul>
             </div>
             <!--//메인배너 좌측 버튼-->
-        </div>   
-     </div>
+                    </div>   
+                </div>
                 <!--// 전체 카테고리 레이어 -->
-
                 <ul class="gnb_menu_list">
                    
                      <li><a href="new.html">신상</a></li>
-
-
                     <li><a href="best.html">베스트</a></li>
-
-
                     <li><a href="s_price.html">특가</a></li>
-
-
                     <li><a href="d_delivery.html">매일배송</a></li>
                 </ul>
-            
             </div>
             <div class="searchbox">
-            <form id="search-form">
-                <div class="search">
-              <input type="text" name="search" class="round" placeholder="검색해보세요.">
-           <img src="/images/search_ico_join.png">              </div>
-         </form>
+                <form id="search-form" action="search-list">
+                    <div class="search">
+                        <input type="text" name="keyword" class="round" placeholder="검색해보세요.">
+                        <a href="#"><img src="/images/search_icon_menu.png"></a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-  </header>
+</header>

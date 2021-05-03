@@ -122,13 +122,12 @@ border: 1px solid #BBBBBB;border-radius:5px;}
 .clicked_menu{background-color:#F99319;color:#fff}
 .content .faq{float:left;width:831px;margin-left:81px;margin-bottom:360px;margin-top:33px}
 .content .faq h3{font-size:20px;font-weight:bold;color:#000;padding-bottom:24px;border-bottom:2px solid #6B6B6B}
-.content .faq_q .title img{position:relative;left:470px}
 .faq_q .title{padding-top:15px}
 .faq p{font-size:14px;padding-left:15px;padding-right:15px}
-.downArrow{position:relative;margin-left:170px;margin-top:5px;width:11px;height:11px}
+.faq .downArrow{display:flex;margin-top:5px;width:11px;height:11px;justify-content:space-between;position:relative;left:780px}
 .faq ul li{float:left;}
 .faq_title {width:831px;display:flex;justify-content: space-between;margin-top:30px;padding-right:20px;margin-bottom:20px;}
-.faq_title p span{font-size:15px;font-weight:bold}
+.faq_title p span{font-size:15px;font-weight:bold;position:relative;top:10px}
 .review_edit ul li{font-size:12px;margin-left:20px;line-height:14px;}
 .Faq01 table{width:831px;}
 .Faq01 td{padding:10px 15px 15px;font-size:14px;line-height:22px;min-height:51px}
@@ -138,7 +137,7 @@ border: 1px solid #BBBBBB;border-radius:5px;}
 .faq_a_box p{line-height:20px;font-size:12px}
 .faq_a01{background-color:#F6F8F9;border-bottom:1px solid #e6e6e6}
 .Faq01 tr.faq_a .faq_a faq_a01{width:100%;clear:both;border-bottom:2px solid #E6E6E6;}
-  .page_wrap{margin-top:30px}}
+.page_wrap{margin-top:30px}}
 
 
 

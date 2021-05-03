@@ -10,9 +10,6 @@
 }
 
 /* 모바일 화면 대응 orderdelist */
-@media screen and (min-width:1080px){
-    main#content {display: none;}
-}
 @media screen and (min-width:360px) and (max-width:1079px) {
     .wide_line {display: none;}
     header#wheader {display: none;}
@@ -26,10 +23,7 @@
     #header {
         display: none;
     }
-    #web_contents {
-        display: none;
-    }
-    .content_lnb {
+        .content_lnb {
         display: none;
     }
     .order_detail_top {
@@ -39,13 +33,9 @@
         padding-top: 0; min-width: 360px;
     }
     .detail_title {display: block !important;} 
-    #main, #web_contents, #footer, .footer_top {display: none !important;}
+   
+   /* 주문 상세 컨텐트 */
 
-
-    /* 주문 상세 컨텐트 */
-.orderList_detail {
-    text-align: left; outline: 2px solid red !important;
-}
 .orderDetails{border-bottom:8px solid #F1F1F1}
 .buttons{width:100%;margin: 0 auto;display: flex;
 justify-content: space-between;padding-bottom:14px;padding-left:15px;padding-right:15px}
@@ -72,17 +62,18 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .detail_title a img{position:absolute;top:42px;width:17px}
 }
 
-@media screen and (min-width:1080px) {
-    .innerbox {display: none;}
-}
-
 /* 모바일 화면 대응 deliverymanage */
 @media screen and (min-width:1080px) {
-        section.detail_title, section.delivery_manage_list {display: none;}
-        div.del_line_thick{display: none;}
-        .delivery_manage_list p img{margin-left:10px;margin-right:10px}
-        .delivery_manage_list .edit_remove li {
-        font-size: 12px;
-        padding: 2px;
-    }
+section.detail_title, section.delivery_manage_list {display: none;}
+div.del_line_thick{display: none;}
+.delivery_manage_list p img{margin-left:10px;margin-right:10px}
+.delivery_manage_list .edit_remove li {
+font-size: 12px;
+padding: 2px;
+}
+}
+
+/*상품 문의*/
+@media screen and (min-width:360px) and (max-width:1079px){
+
 }

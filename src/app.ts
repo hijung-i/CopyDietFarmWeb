@@ -4,24 +4,31 @@ import * as logger from 'morgan'
 import * as session from 'express-session'
 import Err from './error/error'
 
-import indexViewRouter from './routes/indexViewRouter'
-import requireLoginViewRouter from './routes/requireLoginViewRouter'
-
-import userApiRouter from './routes/userApiRouter'
-
 import * as path from 'path'
-import { SessionUser } from './models/user'
+import { NiceUser, SessionUser } from './models/user'
 
 declare module 'express-session' {
     interface SessionData {
         user: SessionUser | undefined
+        niceUserData: NiceUser
         isLoggedIn: boolean
     }
 }
 
 const app = Express()
 const __baseDir = path.join(__dirname, '../')
-console.log(__baseDir)
+
+export namespace globalData {
+    export const getBaseDir = () => {
+        return __baseDir
+    }
+}
+
+import indexViewRouter from './routes/indexViewRouter'
+import requireLoginViewRouter from './routes/requireLoginViewRouter'
+
+import niceIdentifierRouter from './routes/niceIdentifierRouter'
+import userApiRouter from './routes/userApiRouter'
 
 app.use(session({
     secret: 'dataflow0327!@',
@@ -38,6 +45,7 @@ app.use(logger('dev'))
 app.use('/', indexViewRouter)
 app.use('/', requireLoginViewRouter)
 app.use('/user', userApiRouter)
+app.use('/nice', niceIdentifierRouter)
 
 app.set('views', path.join(__baseDir, 'views'))
 app.set('view engine', 'ejs')

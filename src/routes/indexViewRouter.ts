@@ -1,4 +1,5 @@
 import { NextFunction, request, Request, Response, Router } from 'express'
+import { User } from '../models/user'
 const router = Router()
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -15,7 +16,7 @@ router.get('/login-form', (req: Request, res: Response, next: NextFunction) => {
         res.redirect('/')
         return
     }
-    render(res, 'login', {})
+    render(res, 'login_new', {})
 })
 router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -24,7 +25,10 @@ router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) =>
         res.redirect('/')
         return
     }
-    render(res, 'sign_up', {})
+
+    const userData: User = req.query
+
+    render(res, 'sign_up', { userData })
 })
 
 router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {
@@ -53,6 +57,16 @@ router.get('/products/:category1Code/category/:category2Code', (req: Request, re
 router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'search', {})
 })
+
+router.get('/search-list', (req: Request, res: Response, next: NextFunction) => {
+    const keyword = req.query.keyword
+
+    render(res, 'products', {
+        keyword: keyword,
+        listType: 'SEARCH'
+    })
+})
+
 router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn = req.session.isLoggedIn || false
     console.log('isLoggedIn ->> ', isLoggedIn)
@@ -71,8 +85,8 @@ router.get('/notice/:boardNo', (req: Request, res: Response, next: NextFunction)
 router.get('/cs-center', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'cs_center', {})
 })
-router.get('/privacyPolicy', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'PrivacyPolicy', {})
+router.get('/privacypolicy', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'privacy_policy', {})
 })
 router.get('/invite', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'invite', {})
@@ -89,14 +103,12 @@ router.get('/pwdReset', (req: Request, res: Response, next: NextFunction) => {
 router.get('/order-comp', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'order_complete', {})
 })
-router.get('/order-info', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'order_info', {})
-})
+
 router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'alarm', {})
 })
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'TermsOfService', {})
+    render(res, 'terms_of_service', {})
 })
 router.get('/products', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'products', {})
@@ -107,30 +119,42 @@ router.get('/product', (req: Request, res: Response, next: NextFunction) => {
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_orderList', {})
 })
-router.get('/mypageorderlistdetail', (req: Request, res: Response, next: NextFunction) => {
+router.get('/ol_detail', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_orderList_detail', {})
 })
-router.get('/mypagedelivermag', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_deliver_mag', {})
-})
-router.get('/mypageproductreview', (req: Request, res: Response, next: NextFunction) => {
+
+router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_productReview', {})
 })
-router.get('/mypageproductinquiry', (req: Request, res: Response, next: NextFunction) => {
+router.get('/p_inquiry', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_productInquiry', {})
 })
-router.get('/mypagesellerinquiry', (req: Request, res: Response, next: NextFunction) => {
+router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'web_seller_inquiry', {})
 })
-router.get('/mypageorderlistpoint', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_orderList_point', {})
+router.get('/point', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'mypage_point', {})
 })
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'login_fail', {})
 })
-router.get('/cart', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'cart', {})
+
+router.get('/mem-with', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'membership_withdrawal', {})
 })
+router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'myinfo', {})
+})
+router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'myinfo', {})
+})
+router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'myinfoUserCheck', {})
+})
+router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'order_details', {})
+})
+
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
 }

@@ -1,13 +1,13 @@
 /* 장바구니 헤더 */
 *{font-family:'나눔고딕';font-weight:400}
-html, body {max-width: 100%;overflow-x: hidden;}
+html, body {max-width: 100%;overflow-x: hidden}
 
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
 .detail_title a img{position:absolute;top:42px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 #shpcart_header {display: flex;background: #fff;justify-content: space-between;   padding: 8px 12px;margin-top: 20px;align-items: center;}
-.shoplinst_count p{margin-left:15px}
+
 .shpcart_cancel {font-size: 14px;padding: 0 14px;}
 .shpcart_title > h1 {font-size: 16px;}
 .line {width: 100%; height: 8px;background: #F1F1F1;}
@@ -22,28 +22,77 @@ background: #fff;padding: 4px 6px;}
 .shpcart_select input[type="radio"] + label {  display: inline-block;position: relative;   padding-left: 30px;cursor: pointer;-webkit-user-select: none; -moz-user-select: none;   -ms-user-select: none;}
 .shpcart_select input[type="radio"] + label:before {content: '';position: absolute; left: 0; top: -4px;width: 21px; height: 21px; text-align: center;background: #fff;border: 1px solid #cacece;border-radius: 100%;}
 
-.brand_1 .shoplist_info .shopcart_thum {width: 50px; height: 62px;background: #abc;background-image:url(../images/dietfarmbread.jpg);
+.shoplist_info {
+  flex-flow: column;
+}
+.brand_1 .shoplist_info .shopcart_thum {min-width: 62px; background: #abc;background-image:url(../images/dietfarmbread.jpg);
 background-size: cover;background-position: center;}
 
 
 /* 장바구니 목록 */
-.brand_1 {margin: 0 20px 0 20px;}
+.brand_1 {margin: 0 15px 0 15px;}
 .brand_1 > h3 {width: 100%;float: left;   padding: 12px 12px;border-bottom: 1px solid #BBBBBB;font-weight: 700; font-size: 14px;}
-.shoplist_ctn {padding: 20px 0 0 0;}
-.shoplist_ctn .shopcart_thum {width: 50px; height: 62px;background-image: url(../images/shopcart_thum.jpg);    background-size: cover;background-position: center;}
+.shoplist_ctn {
+  padding: 20px 0 20px 0;
+  position:relative;
+  border-bottom:1px solid #BBBBBB;
 
-.shoplist_ctn {width: 100%;display: flex;    font-size: 14px;letter-spacing: 0.8px;}
-input#shoplist_part_selt {margin-right: 20px;}
-.shopcart_thum {margin-right: 20px;}
-.shoplist_ctn p {margin-right: 24%;}
+}
+.shoplist-null{
+  width: 100%;
+  padding: 50px 0px;
+  text-align: center;
+}
+
+.shoplist_ctn div{display: flex; }
+.shoplist_ctn>div:first-child {
+  width: 8.78%;
+  max-width: 29px;
+}
+
+.shoplist_ctn>div:last-child{
+  width: 100%;
+}
+
+.shoplist_ctn .shopcart_info {
+  width: 100%;
+}
+
+.flow-column {
+  flex-flow: column;
+}
+
+.shopcart_info>div:last-child p {
+  width: 208px;
+}
+.shopcart_product {
+  width: 100%;
+}
+.shopcart_product>div:first-child{
+  padding-right: 20px;
+}
+
+.shopcart_product .price_web{
+  margin-top: 12px;
+}
+
+.shoplist_ctn .shopcart_thum {width: 62px; height: 62px;background-image: url(../images/shopcart_thum.jpg);margin-right: 12px; background-size: cover;background-position: center;}
+.shoplist_ctn .shopcart_thum img{width: 100%}
+
+.shoplist_ctn {width: 100%;display: flex;  font-size: 14px;letter-spacing: 0.8px;}
+input#shoplist_part_selt {margin-right: 10px;}
+
 .shoplist_price {margin-bottom: 20px;}
-.shoplinst_count {position: relative;top: -35px; display: flex;justify-content: space-between;margin-left: 94px;font-size: 14px;}
-.shoplist_ctn a {position: absolute;right: 0;
- margin-right: 20px;}
+.shoplist_count {
+  display: flex; justify-content: space-between; font-size: 14px;
+  position:relative; left: 0px;
+}
+.shoplist_ctn a {position: absolute;right: 0;}
+
 .price_info {display: flex;justify-content: space-between;margin-left: 40px;font-size: 14px;}
 .price_info > p:last-child {font-weight: 700;}
 
-.line_2 {width: 100%; height: 0.6px;   padding: 0 20px 0 20px;background: #BBBBBB;
+.line_2 {width: 100%; height: 0.6px;   padding: 0 15px 0 15px;background: #864848;
 opacity: 0.8;}
 /* 총 결제 금액 섹션 */
 #shoplist_total_price {width: 90%; margin: 0 auto;font-size: 14px;}
@@ -59,8 +108,12 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
   
   input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;}
   
-  .number-input {border: 1px solid #BBBBBB;   background: #F5F5F5;display: inline-flex;
-    border-radius: 5px;}
+  .number-input {
+    border: 1px solid #BBBBBB;   background: #F5F5F5;display: inline-flex;
+    border-radius: 5px;
+    margin-right: 0px;
+    margin-left: auto;
+  }
   
   .number-input,
   .number-input * {box-sizing: border-box;}
@@ -88,15 +141,16 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
     background-color: #EFA543;font-size: 14px;
     font-weight: 400;border-radius:5px;}
 
-/*장바구니 모바일*/
-@media screen and (min-width:360px) and (max-width:1079px){
-#content{width:100%;}
-.price_web{position:absolute;top:24px;left:16px}
-.number-input{position:relative;top:20px}
- .product_name{text-overflow: ellipsis;white-space:nowrap;width:200px;overflow:hidden}
-.p_price {display:flex;justify-content:space-between;border-bottom:1px solid #BBBBBB;padding-bottom:10px}
+.p_price {display:flex;justify-content:space-between; padding-top:10px}
 .p_price p{color:#000;font-weight:bold}
-.product_p{margin-left:35px}
+
+.final .price{float:right}
+/*장바구니 모바일*/
+@media screen and (max-width:1079px){
+#content{width:100%;}
+
+ .product_name{text-overflow: ellipsis;white-space:nowrap;overflow:hidden}
+ .option_desc { margin-top: 6px;}
 .detail_price{width:100%;}
 .detail_price .price{float:right}
 .detail_price{border-collapse: separate;
@@ -106,16 +160,22 @@ border-spacing: 0 10px;}
 border-spacing: 0 20px;}
 .final{width:100%;padding-left:15px;padding-right:15px;border-bottom:1px solid #bbbbbb}
 .final .total{display:none}
-.final .price{float:right}
 .btn_area_web .total{display:flex;justify-content:space-between;padding-left:15px;padding-right:15px;font-size:14px;font-weight:bold;padding-top:20px;padding-bottom:20px}
 .purchaseBtn{width:96%;margin:0 auto;margin-left:10px;height:45px;color:#fff;background-color:#F99319;border-radius:5px;margin-bottom:20px;}
-
+.total_mobile ul li {font-size:16px;font-weight:bold;float:left;padding-left:15px;padding-top:20px;padding-bottom:20px}
+.total_mobile .price{float:right;padding-right:15px}
 }
 
-
-
+@media screen and (min-width: 545px) {
+  .shopcart_info>div:last-child p {
+    width: 100%;
+  }
+}
 /*장바구니 웹 */
 @media screen and (min-width:1080px){
+.shoplist_ctn{max-width:1080px; position: relative}
+.shoplist_ctn img{position:relative;}
+.total_mobile{display:none}
 #content {width:1080px;margin:0 auto;padding-bottom:361px}
 .detail_price{display:none}
 .p_price{display:none}
@@ -123,7 +183,7 @@ border-spacing: 0 20px;}
 .btn_area_web .total{display:none}
 .detail_title h2{margin-left:-15px;margin-bottom:44px;margin-top:55px;font-size:30px;color:#000;}
 .shpcart_select_del_web button{margin-left:-930px;margin-top:14px;border:1px solid #BBBBBB;font-size:12px;font-weight:normal;border-radius:2px}
-.price_web{margin-left:-540px}
+
 #shoplist_t_price_web{margin-top:25.5px}
 .shopBox01, .shopBox02{float:left;width:540px;height:177px;border:1px solid #BBBBBB;border-radius:5px}
 .shopBox01 h3{font-size:16px;font-weight:bold;padding-top:18px;padding-left:15.5px;color:#000}
@@ -154,7 +214,7 @@ right:25px;top:25.8px;}
 .delivery_manage_list .del_mng_type {align-items: center;}
 .delivery_manage_list .del_mng_type,
 .delivery_manage_list .edit_remove {
-    display: flex;
+display: flex;
 }
 .customer_info img{position:relative;top:4px}
 .edit_remove li img{position:relative;top:4px;left:2px}
@@ -213,44 +273,9 @@ right:25px;top:25.8px;}
 #btnRegister{width:100%;margin:0 auto;padding: 15px 0 15px;border:0;cursor: pointer;color:#fff;background-color:#EFA543;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
 #check{position:relative;top:70px;right:30px}
 
-/*전체선택 checkbox 디자인*/
-input[type="checkbox"] {
-  display: none;
-}
-
-.secret{
-  position: relative;margin-left:15px;
-}
-
-.secret::before {
-  content: "";
-  background: url("../images/aftercheck_icon_join@2x.png");
-  background-position: center;
-  background-size: contain;
-  width: 19px;
-  height: 19px;
-  position: absolute;
-  left: -12px;
-  top: -1px;
-  
-
-  transform: scale(0) rotateZ(180deg);
- 
-}
 
 input#secret[type="checkbox"]:checked + .secret::before {
   transform: scale(1) rotateZ(0deg);
-}
-
-.secret::after {
-  content: "";
-  border: 2px solid #BBBBBB;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  left: -12px;
-  top: -1px;
-  border-radius: 50%;
 }
 
 }

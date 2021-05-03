@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <style>
+        @media screen and (min-width:360px)and (max-width:1079px) {.web_orderlist{display:none}}
+        @media screen and (min-width:1080px){.mobile_orderlist{display:none} }    
+    </style>
+        <link rel="stylesheet" href="/css/style02.css">
+        <link rel="stylesheet" href="/css/mypageAll.css">
+        <link rel="stylesheet" href="/css/style_web.css">
+        <script type="text/javascript" src="/js/jquery.bxslider.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/jquery.bxslider.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <!-- modal -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <!-- select tag design plugin -->
+        <link rel="stylesheet" href="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/css/nice-select.css">
+        <script src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.js"></script> 
+        <script src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
+        <!-- bxslider -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+        <script src="./js/main.js"></script>
+   
+</head>
+
+<body>
+    <div class="web_orderlist">
+    <%-include('general/header_web') %> 
+    </div>
+
+    <div class="mobile_orderlist">
+        <section class="detail_title">
+           <h2>주문내역</h2>
+           <a href="#"><img src="/images/leftarrow_ico_my.png" style="width:17px"></a>
+       </section>
+   </div>
+       <main id="content" class="content">
+          <div class="mypage_web_side">
+           <div class="main_contents">
+              <div class="web_contents">
+               <div class="left">
+                   <h3>마이팜</h3>
+                   <div class="left_ctn">
+                       <ul>
+                           <li><img src="/images/basket_ico.png"></li>
+                           <li><span>김수아님</span></li>
+                           <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
+                       </ul>
+                   </div>
+               </div>
+   
+               <div class="center">
+                   <h3>포인트<img src="/images/point.png"></h3>
+                   <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
+               </div>
+   
+               <div class="right">
+                   <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                   <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
+               </div>
+          </div>
+           </div>
+          <div class="web_body">
+           <nav class="content_lnb">
+                   <ul>
+                       <li class="on"><a href="javascript:void(0);">주문내역</a></li>
+                       <li><a href="http://localhost:3000/mypagedelivery-management">배송지 관리</a></li>
+                       <li><a href="http://localhost:3000/mypageproductreview">상품 리뷰</a></li>
+                       <li><a href="http://localhost:3000/mypageproductinquiry">상품 문의</a></li>
+                       <li><a href="http://localhost:3000/mypagesellerinquiry">판매자 문의</a></li>
+                       <li><a href="http://localhost:3000/mypageorderlistpoint">포인트</a></li>
+                       <li><a href="javascript:void(0);">쿠폰</a></li>
+                   </ul>
+               </nav>
+                    <div class="order">
+                    <div class="orderBox">
+                    <div class="order01">
+                    <div class="innerbox">
+                    
+                    <div class="dateNo">
+                    <p class="date">2020.10.13</p>
+                    <p class="no">2020101920201019</p>
+                    </div>
+                    <div class="orderDetails">
+                    <div class="order_title">
+                    <p><span>아임월<img src="./images/call_icon_order.png" style="width:20%;margin-left:10px"></span></p>
+                    <ul>
+                    <li><a href="seller_inquiry.html">문의하기<img src="./images/arrow_ico_join.png" style="width:7px;position:relative;left:4px;top:1px"></a></li>
+                    </ul>
+                    </div>
+                    <!--//order_title-->
+                    <div class="buttons">
+                    <button type="button" class="btnConfirm">구매확정</button>
+                    <button type="button" class="btnTracking" style="margin-left:10px">배송조회</button>
+                    </div>
+                    <!--//buttons-->
+                    <div class="orderBox02">
+                    <a href="product_details.html"><img src="./images/dietfarmbread.jpg" align="left" style="width:60px;height:100px;margin-right:20px"></a>
+                    <ul class="order00">
+                    <li class="ship_state">배송중</li>
+                    <li class="product">굿밸런스 라이트밀 도시락</li>
+                    <li class="price">60,720원</li>
+                    <li class="quantitiy">수량 : 2개</li>
+                    <li class="option">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                    </ul>
+                    </div>
+                    <div class="orderBox02">
+                    <a href="#"><img src="./images/dietfarmbread.jpg" align="left" style="width:60px;height:100px;margin-right:20px"></a>
+                    <ul class="order00">
+                    <li class="ship_state">배송중</li>
+                    <li class="product">굿밸런스 라이트밀 도시락</li>
+                    <li class="price">60,720원</li>
+                    <li class="quantity">수량 : 2개</li>
+                    <li class="option" style="margin-bottom:23px">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                    </ul>
+                    </div>
+                    </div>
+                    <!--//orderDetails-->
+                    
+                    <div class="orderDetails">
+                    <div class="order_title">
+                    <p><span>다신샵<img src="./images/call_icon_order.png" style="width:20%;margin-left:10px"></span></p>
+                    <ul>
+                    <li><a href="seller_inquiry.html">문의하기<img src="./images/arrow_ico_join.png" style="width:7px;position:relative;left:4px;top:1px"></a></li>
+                    </ul>
+                    </div>
+                    <!--//order_title-->
+                    <div class="buttons">
+                    <button type="button" class="btnConfirm">구매확정</button>
+                    <button type="button" class="btnTracking" style="margin-left:10px">배송조회</button>
+                    </div>
+                    <!--//buttons-->
+                    <div class="orderBox02">
+                    <a href="product_details.html"><img src="./images/dietfarmbread.jpg" align="left" style="width:60px;height:100px;margin-right:20px"></a>
+                    <ul class="order00">
+                    <li class="ship_state">배송중</li>
+                    <li class="product">굿밸런스 라이트밀 도시락</li>
+                    <li class="price">60,720원</li>
+                    <li class="quantitiy">수량 : 2개</li>
+                    <li class="option">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                    </ul>
+                    </div>
+                    <div class="orderBox02">
+                    <a href="#"><img src="./images/dietfarmbread.jpg" align="left" style="width:60px;height:100px;margin-right:20px"></a>
+                    <ul class="order00">
+                    <li class="ship_state">배송중</li>
+                    <li class="product">굿밸런스 라이트밀 도시락</li>
+                    <li class="price">60,720원</li>
+                    <li class="quantity">수량 : 2개</li>
+                    <li class="option" style="margin-bottom:23px">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                    </ul>
+                    </div>
+                    </div>
+                    
+                    <table>
+                    <tbody>
+                    <tr class="order_q">
+                    <td class="title00">
+                        주문자 정보
+                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표" style="width:14px;height:14px;">
+                    </td>
+                    </tr>
+                    <tr class="order_a">
+                    <td>
+                        <div class="order_a_box">
+                            <table style="border:none;">
+                                <tr>
+                                    <td><span>주문자</span></td>
+                                    <td>박민지</td>
+                                </tr>
+                                <tr>
+                                    <td><span>연락처</span></td>
+                                    <td>010-1234-5678</td>
+                                </tr>
+                                <tr>
+                                    <td><span>이메일</span></td>
+                                    <td>minji777@dataflow.co.kr</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <table>
+                    <tbody>
+                    <tr class="order_q">
+                    <td class="title00">
+                        배송지 정보
+                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표" style="width:14px;height:14px;">
+                    </td>
+                    </tr>
+                    <tr class="order_a">
+                    <td>
+                        <div class="order_a_box">
+                            <table style="border:none;">
+                                <tr>
+                                    <td><span>받는분</span></td>
+                                    <td>박민지</td>
+                                </tr>
+                                <tr>
+                                    <td><span>주소</span></td>
+                                    <td>서울 강남구 테헤란로8길 11-4, 2층</td>
+                                </tr>
+                                <tr>
+                                    <td><span>연락처</span></td>
+                                    <td>010-1234-5678</td>
+                                </tr>
+                                <tr>
+                                    <td><span>배송 메모</span></td>
+                                    <td>항상 안전운전 하세요~</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    
+                    <div class="paymentInfo">
+                    <table>
+                    <tbody>
+                    <tr class="order_q">
+                        <td class="title00">
+                            결제 정보
+                            <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표" style="width:14px;height:14px;">
+                        </td>
+                    </tr>
+                    <tr class="order_a">
+                        <td>
+                            <div class="order_a_box">
+                                <table style="border:none;">
+                                    <tr>
+                                        <td><span>결제 방법</span></td>
+                                        <td style="width:90px">카드 결제</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>총 상품금액</span></td>
+                                        <td>80,400원</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>쿠폰 할인</span></td>
+                                        <td>-3,210원</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>포인트 할인</span></td>
+                                        <td>0원</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>배송비 할인</span></td>
+                                        <td>0원</td>
+                                    </tr>
+                                    <tr>
+                                        <td>총 결제 금액</td>
+                                        <td>77,190원</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    <table>
+                    <tbody>
+                    <tr class="order_q">
+                    <td class="title00">
+                        포인트 혜택
+                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표" style="width:14px;height:14px;">
+                    </td>
+                    </tr>
+                    <tr class="order_a">
+                    <td>
+                        <div class="order_a_box">
+                            <table style="border:none;">
+                                <tr>
+                                    <td><span>구매적립</span></td>
+                                    <td style="width:75px">888원</td>
+                                </tr>
+                                <tr>
+                                    <td><span>리뷰적립</span></td>
+                                    <td>300원</td>
+                                </tr>
+                                <tr>
+                                    <td>총 적립 금액</td>
+                                    <td>1188원</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <div class="btn_area">
+                    <button type="button" id="btnReorder">전체 재구매</button>
+                    </div>
+                    </div> <!-- inner box -->
+                    
+                    </div>
+                    </div>
+                    
+                    </div>
+           </div>
+           <div class="grayLine"></div>
+           <div class="page_wrap">
+                   <div class="page_nation" >
+                     <a class="arrow pprev" href="#"></a>
+                     <a class="arrow prev" href="#"></a>
+                     <a href="#" class="active">1</a>
+                     <a href="#">2</a>
+                     <a href="#">3</a>
+                     <a href="#">4</a>
+                     <a href="#">5</a>
+                     <a href="#">6</a>
+                     <a href="#">7</a>
+                     <a href="#">8</a>
+                     <a href="#">9</a>
+                     <a href="#">10</a>
+                     <a class="arrow next" href="#"></a>
+                     <a class="arrow nnext" href="#"></a>
+                   </div>
+                   </div>
+         </div>
+            </div>
+       </main>
+         
+               <!-- modal window -->
+               <div id="ex1" class="modal">
+   
+                   <header class="detail_title01 orderlistModal">
+                       <ul>
+                           <li><h2>배송조회</h2></li>
+                           <li class="ordlist_clsWindow"><i class="fal fa-times"></i></li>
+                       </ul>
+                       <h2 class="title">(아임월) 다이어트 굿 밀도시락어쩌구저쩌구</h2>
+                   </header>
+   
+                   <div class="circle_line">
+                       <div class="line2">
+                       </div>
+                       <ul>
+                           <li><img src="/images/one_icon_order.png"></li>
+                           <li><img src="/images/one_icon_order.png"></li>
+                           <li><img src="/images/one_icon_order.png"></li>
+                           <li><img src="/images/one_icon_order.png"></li>
+                           <li><img src="/images/one_icon_order.png"></li>
+                       </ul>
+                   </div>
+                   <div class="d_state">
+                       <ul>
+                           <li>상품인수</li>
+                           <li>상품이동중</li>
+                           <li>배송지도착</li>
+                           <li>배송출발</li>
+                           <li>배송도착</li>
+                       </ul>
+                   </div>
+                   <div class="d_date">
+                       <ul>
+                           <li>2.23</li>
+                           <li>2.23</li>
+                           <li>2.23</li>
+                           <li>2.23</li>
+                           <li>2.23</li>
+                       </ul>
+                   </div>
+   
+                   <div class="addr">
+                       <div class="addr01">
+                           <ul>
+                               <li class="p">보내는분</li>
+                               <li class="a">용산</li>
+                           </ul>
+                       </div>
+                       <div class="addr02">
+                           <ul>
+                               <li class="p">받는분</li>
+                               <li class="a">역삼(대)</li>
+                           </ul>
+                       </div>
+                   </div>
+                   <div class="d_num">
+                       <ul>
+                           <li class="d">운송장번호</li>
+                           <li class="num">롯데택배 236308075290</li>
+                       </ul>
+                   </div>
+   
+                   <div class="delivery_list_null">
+                       <img src="/images/cart_icon_order.png">
+                       <p class="no_list">배송 준비 중입니다.</p>
+                   </div>
+               </div> <!-- modal -->
+         <!-- body_contents tab3 -->
+   
+
+</body>
+
+</html>

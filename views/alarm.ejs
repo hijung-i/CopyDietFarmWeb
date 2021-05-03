@@ -12,8 +12,8 @@
         @media screen and (min-width:360px)and (max-width:1079px) {.web_alarm{display:none}}
         @media screen and (min-width:1080px){.mobile_alarm{display:none} }
         </style>
-    <link rel="stylesheet" href="css/cs.css">
-    <link rel="stylesheet" href="css/style02.css">
+    <link rel="stylesheet" href="/css/cs.css">
+    <link rel="stylesheet" href="/css/style02.css">
     <%-include('general/head') %>
 </head>
 
@@ -30,7 +30,7 @@
                 window.history.back();
             }
         </script>
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt=""> </a>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
         </div>
     </section>
   </div>
@@ -62,38 +62,5 @@
         </div>
         <p class="alarmS">신규 서비스 및 고객 맞춤 혜택 정보를 받을 수 있습니다.</p>
     </main>
-<script>
-    $(document).ready(function(){
-   $("#gnbAllMenu").hide();
-   $("#btnGnbOpen").click(function(){
-       $("#gnbAllMenu").slideToggle("fast");
-   });
-});
-
-  $(document).ready(function() {
-       $(".m_slides_sub").hide();
-       $(".m_ba_slides_n_w li").hover(function(){
-           $("ul:not(:animated)",this).slideDown("700");
-
-           $(".m_ba_slides_n_w li a").removeClass("active");
-       },
-       function() {
-           $("ul",this).slideUp("700");
-          });
-
-       $("#memberMenu").bind("moseover mouseenter",function(){
-           $("#memMenu").show();
-     });
-      $("#memMenu").bind("moseout mouseleave",function(){
-           $("#memMenu").hide();
-     });
-
-       $("#NotmemberMenu").bind("moseover mouseenter",function(){
-           $("#NotmemMenu").show();
-     });
-      $("#NotmemMenu").bind("moseout mouseleave",function(){
-           $("#NotmemMenu").hide();
-     });
-   });
-</script>
+    <script type="text/javascript" src="/js/header.js"></script>
 </body></html>

@@ -2,7 +2,8 @@
 //var API_SERVER = "http://192.168.0.3:9090";
 //var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
-var API_SERVER = "http://13.209.123.102:9090";
+ var API_SERVER = "http://13.209.123.102:9090";
+
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
 function ajaxCall(url, params, type, onSuccess, onError){
@@ -23,6 +24,23 @@ function ajaxCall(url, params, type, onSuccess, onError){
 	})
 }
 
+function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError){
+	var param = JSON.stringify(params);
+	$.ajax({
+		type : type,
+		cache : false,
+		data : param,
+		url : url,
+		contentType : "application/json;charset=UTF-8",
+		beforeSend : function(xmlHttpRequest){
+			xmlHttpRequest.setRequestHeader("AJAX", "true")
+			xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
+		},
+		success : onSuccess,
+		error : onError
+	})
+}
+
 // option -> require user data as parameter
 function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 	$.ajax({
@@ -31,18 +49,21 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 		url: '/user/login',
 		dataType: "json",
 		success: function(data) {
-			if(option.isRequired == true && data.isLoggedIn != true) {		
-				// TODO: Open alert modal
-				return false;
-			}
+			var result = data.result;
+			// if(option.isRequired == true && result.isLoggedIn != true) {		
+			// 	// TODO: Open alert modal
+			// 	alert('로그인이 필요한 동작입니다.');
+			// 	return false;
+			// }
 			
-			var user = data.user;
-			if(data.isLoggedIn && user != undefined){
-				if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
-				if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
-				if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
-				if(isAvailable(option.address) && option.address == true) params.address = user.address
-			}
+			// var user = result.user;
+			// if(result.isLoggedIn && user != undefined){
+			// 	if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
+			// 	if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
+			// 	if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
+			// 	if(isAvailable(option.address) && option.address == true) params.address = user.address
+			// }
+			params.userId = 'jgpark';
 			ajaxCall(url, params, type, onSuccess, onError);
 		
 		},
@@ -62,7 +83,7 @@ function getEventStands() {
     ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
     , function(data) {
 
-		$("#header .gnb").html('');
+		$("#header #nav").html('');
 		var html = '';
 		
 		console.log(data);
@@ -73,7 +94,7 @@ function getEventStands() {
 			}
 			console.log(currentStandCode, stand.salesStandCode);
 			if( currentStandCode == stand.salesStandCode){
-				$('#header .gnb a').removeClass("is-current");
+				$('#header #nav a').removeClass("is-current");
 				html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
 			} else {
 				html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
@@ -82,7 +103,7 @@ function getEventStands() {
 
 		html += '<div class="nav-underline"></div>';
 		console.log(html);
-		$('#header .gnb').html(html);
+		$('#header #nav').html(html);
 				
     }, function(err) {
         console.log("eventStands err", err);
@@ -90,14 +111,16 @@ function getEventStands() {
 }
 
 function numberFormat(number) {
-	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	return (number+"").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function generateHtmlForProductList(products){
+function generateHtmlForProductList(products, maxSize){
     var html = '';
     for(var j = 0; j < products.length; j++){
-        var product = products[j];
+        if(maxSize != undefined && j > maxSize -1) break;
+		var product = products[j];
         html += generateHtmlForProduct(product);
+		
     }
     return html;
 }1
@@ -119,9 +142,9 @@ function generateHtmlForProduct(product){
 	html += '<p class="title">' +product.productName + '</p>';
 	html += '<ul>';
 	html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
-	if(product.discountPrice != product.supplyPrice){
-		html += '<li class="cost">' + numberFormat(product.supplyPrice) + '원</li>';
-		html += '<li class="ratio">' + product.discountRate + '%</li>';
+	if(product.discountPrice != product.retailPrice){
+		html += '<li class="cost">' + numberFormat(product.retailPrice) + '원</li>';
+		html += '<li class="ratio">' + Math.round(product.discountRate, 0) + '%</li>';
 	}
 	html += '</ul>';
 	html += '</div>';
@@ -219,13 +242,13 @@ function onLayerPop(layerId, seq, lang) {
 	if (layerId == 'offLayer'){
 		$(".pop_layer").hide();
 	} else {
-	var h = $("#"+layerId).height();
-	if(document.body.scrollHeight <= document.body.Height){
-		var allHeight = document.body.Height;
-	} else {
-		var allHeight = document.body.scrollHeight;
+		var h = $("#"+layerId).height();
+		if(document.body.scrollHeight <= document.body.Height){
+			var allHeight = document.body.Height;
+		} else {
+			var allHeight = document.body.scrollHeight;
+		}
 	}
-
 }
 
 function onLayerPop02(layerId, seq) {
@@ -271,4 +294,88 @@ function changeMyTab(opt) {
 	$('#myTab8').hide();
 	$('#myTab' + opt).show();
 }
+
+// 햄버거 메뉴
+$(document).ready(function() {
+
+	$('.btnMenu>a').on('click', function() {
+		$('.sideMenu').show().animate({
+			left: 0
+		});
+	});
+	$('.slideMenu_close>a').on('click', function() {
+		$('.sideMenu').animate({
+			left: -100 + '%'
+		}, function() {
+			$('.sideMenu').hide();
+		});
+	});
+});
+
+
+// 햄버거 2단계 메뉴
+$(document).ready(function() {
+	$("dt.faq_q").click(function() {
+		if ($(this).next('dd').css("display") != "none") {
+			$(this).next('dd').hide();
+			$(this).removeClass("current");
+		} else {
+			$("dd.faq_a").css('display', 'none');
+			$("dt.faq_q").removeClass("current");
+			$(this).next('dd').show();
+			$(this).addClass("current");
+		}
+	});
+});
+
+ $(document).ready(function() {
+
+	$('.btnMenu>a').on('click', function() {
+		$('.gnb').hide();
+	});
+
+	$('.slideMenu_close>a').on('click', function() {
+		$('.gnb').show();
+	});
+
+	$("#memberMenu").bind("moseover mouseenter",function(){
+		$("#memMenu").show();
+	});
+
+	$("#memMenu").bind("moseout mouseleave",function(){
+		$("#memMenu").hide();
+	});
+
+	$("#NotmemberMenu").bind("moseover mouseenter",function(){
+		$("#NotmemMenu").show();
+	});
+
+	$("#NotmemMenu").bind("moseout mouseleave",function(){
+		$("#NotmemMenu").hide();
+	});
+
+	
+});
+function niceIdentifyPopup(nextMethod) {
+	var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';
+	open('/nice/identifying-page?nextMethod='+ nextMethod , '다이어트팜 본인 인증', options);
 }
+
+function onIdentifyingSuccess(data, nextMethod) {
+	console.log(data);
+	$("#formUserName").val(data.userName);
+	$("#formUserInfo").val(data.userInfo);
+	$("#formDupInfo").val(data.dupInfo);
+	$("#formUserGender").val(data.userGender);
+	$("#formUserCellNo").val(data.userCellNo);
+	switch(nextMethod) {
+		case 'register':
+			$("#infoForm").attr("action", "/sign-up-form");
+			break;
+	}
+
+	$("#infoForm").submit();
+	
+}
+
+

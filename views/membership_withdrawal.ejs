@@ -7,19 +7,30 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no" />
     <meta name="format-detection" content="no" />
 
-    <title>다이어트 Farm</title>
+    <title>다이어트 Farm - 회원탈퇴</title>
+    <style type="text/css">
+        @media screen and (min-width:360px)and (max-width:1079px) {.web_with{display:none}}
+       @media screen and (min-width:1080px){.mobile_with{display:none} }    
+           </style>
     <%-include('general/head') %>
-</head>
+    <link rel="stylesheet" href="./css/style02.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/signup.css">
 
 <body>
-    <main id="content">
-
-        <section class="detail_title">
-            <h2>회원탈퇴</h2>
-            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="position:relative;top:-40px"> </a>
-            </div>
-        </section>
-        <div class="delete">
+ <div class="mobile_with">
+    <section class="detail_title">
+        <h2>회원탈퇴</h2>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="position:relative;top:-40px"> </a>
+        </div>
+    </section>
+ </div>
+ <div class="web_with">
+    <%-include('general/header_web') %>   
+ </div>
+    <div class="contents">
+           <div class="delete">
+            <h3 class="web_title">회원탈퇴</h3>
             <p>회원탈퇴 전 유의사항을 확인해주세요.</p>
             <ul>
                 <h3>[회원탈퇴 안내]</h3>
@@ -33,4 +44,5 @@
             </div>
         </div>
     </main>
+    <script type="text/javascript" src="/js/header.js"></script>
 </body></html>

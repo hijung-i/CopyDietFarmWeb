@@ -10,10 +10,10 @@
     <title>다이어트 Farm</title>
     <style type="text/css">
         @media screen and (min-width:360px)and (max-width:1079px) {.web_cs_center{display:none}}
-        @media screen and (min-width:1020px){.mobile_cs_center{display:none} }
+        @media screen and (min-width:1080px){.mobile_cs_center{display:none} }
     </style>
     <link rel="stylesheet" href="/css/cs.css">
-    <link rel="stylesheet" href="css/style02.css">
+    <link rel="stylesheet" href="/css/style02.css">
     <%-include('general/head') %>
 
 </head>
@@ -21,14 +21,22 @@
 <body>
     <div class="web_cs_center">
     <%-include('general/header_web') %>
-    <main id="w_content" class="content">
+    </div>
+    <div class="mobile_cs_center">
+        <section class="detail_title">
+            <h2>고객센터</h2>
+            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""></a>
+            </div>
+        </section>
+       </div>
+    <main id="content" class="content">
         <h2>고객센터</h2>
        <div class="contents">
        <div class="w_sidemenu">
            <ul>
                <a href="notice"><li>공지사항</li></a>
                <a href="faq"><li>fAQ</li></a>
-               <a href="cs_center"><li class="active">고객센터</li></a>
+               <a href="cs-center"><li class="clicked_menu">고객센터</li></a>
                <a href="alarm"><li>알림설정</li></a>
            </ul>
        </div>
@@ -36,23 +44,38 @@
             <ul>
                 <li>
                     <h3>전화문의</h3>
+                    <div class="info_mob">
+                        <p><span>070-4366-3299</span></p>
+                        <ul>
+                        <li>월~금 10:00~17:00</li>
+                        <li><img src="/images/l_icon_category@2x.png"></li>
+                        <li>토, 일, 공휴일 휴무</li>
+                        </ul>
+                    </div>
                     <div class="innerbox">
-                    <button type="button" class="csBtn01" onclick="location.href='tel:070-4366-3299'"><img src="images/call_icon_help@2x.png">문의하기</button>
-                    <p>070-4366-3299</p>
+                    <button type="button" class="csBtn01" onclick="location.href='tel:070-4366-3299'"><img src="/images/call_icon_help@2x.png">문의하기</button>
+                    <p class="num">070-4366-3299</p>
                     <ul class="i_info01">
                         <li>월~금 10:00~17:00</li>
-                        <li><img src="images/l_icon_category@2x.png"></li>
+                        <li><img src="/images/l_icon_category@2x.png"></li>
                         <li>토, 일, 공휴일 휴무</li>
                     </ul>
                     </div>
                 </li>
                 <li>
                     <h3>채널톡 문의</h3>
+                    <div class="info_mob">
+                         <ul>
+                        <li>월~금 10:00~17:00</li>
+                        <li><img src="/images/l_icon_category@2x.png"></li>
+                        <li>토, 일, 공휴일 휴무</li>
+                        </ul>
+                    </div>
                     <div class="innerbox">
-                    <button type="button" class="csBtn01"><img src="images/chat_ico2_footer@2x.png">문의하기</button>
+                    <button type="button" class="csBtn01"><img src="/images/chat_ico2_footer@2x.png">문의하기</button>
                     <ul class="i_info02">
                         <li>월~금 10:00~17:00</li>
-                        <li><img src="images/l_icon_category@2x.png"></li>
+                        <li><img src="/images/l_icon_category@2x.png"></li>
                         <li>토, 일, 공휴일 휴무</li>
                     </ul>
                     </div>
@@ -60,80 +83,6 @@
             </ul>
         </div>
          </div>
-           </main>
-     </div>
-     <div class="mobile_cs_center">
-    <section class="detail_title">
-        <h2>고객센터</h2>
-       
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""></a>
-        </div>
-    </section>
-
-    <main id="content" class="content">
-        <div class="csBox">
-            <div class="tel_q">
-                <h3>전화문의</h3>
-                <p><span>070-4366-3299</span></p>
-                <ul>
-                    <p>
-                        <li class="cs01">월~금 10:00~17:00</li>
-                        <li class="cs02">토, 일, 공휴일 휴무</li>
-                    </p>
-
-                </ul>
-                <div class="btn_area">
-                    <button type="button" id="btnCS"><a href="tel:010-1111-2222"><img src="/images/call_icon_help.png">문의하기</a></button>
-                </div>
-            </div>
-            <div class="chat_q">
-                <h3>채널톡 문의</h3>
-                <ul>
-                    <p>
-                        <li class="cs01">월~금 10:00~17:00</li>
-                        <li class="cs02">토, 일, 공휴일 휴무</li>
-                    </p>
-
-                </ul>
-                <div class="btn_area">
-                    <button type="button" id="btnCS"><a href="sms:010-1111-2222"><img src="/images/chat_ico2_footer.png">문의하기</a></button>
-                </div>
-            </div>
-        </div>
-    </main>
-</div>
-<script>
-    $(document).ready(function(){
-   $("#gnbAllMenu").hide();
-   $("#btnGnbOpen").click(function(){
-       $("#gnbAllMenu").slideToggle("fast");
-   });
-});
-
-  $(document).ready(function() {
-       $(".m_slides_sub").hide();
-       $(".m_ba_slides_n_w li").hover(function(){
-           $("ul:not(:animated)",this).slideDown("700");
-
-           $(".m_ba_slides_n_w li a").removeClass("active");
-       },
-       function() {
-           $("ul",this).slideUp("700");
-          });
-
-       $("#memberMenu").bind("moseover mouseenter",function(){
-           $("#memMenu").show();
-     });
-      $("#memMenu").bind("moseout mouseleave",function(){
-           $("#memMenu").hide();
-     });
-
-       $("#NotmemberMenu").bind("moseover mouseenter",function(){
-           $("#NotmemMenu").show();
-     });
-      $("#NotmemMenu").bind("moseout mouseleave",function(){
-           $("#NotmemMenu").hide();
-     });
-   });
-</script>
+           </main>  
+           <script type="text/javascript" src="/js/header.js"></script>
 </body></html>

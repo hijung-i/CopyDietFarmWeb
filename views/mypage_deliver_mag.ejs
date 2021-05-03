@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>배송지 관리</title>
-    <link rel="stylesheet" href="./css/style02.css">
-    <link rel="stylesheet" href="./css/style03.css">
-    <link rel="stylesheet" href="./css/mypageAll.css">
-    <link rel="stylesheet" href="./css/style_web.css">
-    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+      <style>
+        @media screen and (min-width:360px)and (max-width:1079px) {.web_deliv{display:none}}
+        @media screen and (min-width:1080px){.mobile_deliv{display:none} }    
+    </style>
+    <link rel="stylesheet" href="/css/style02.css">
+    <link rel="stylesheet" href="/css/mypageAll.css">
+    <link rel="stylesheet" href="/css/style_web.css">
+   
+    <%-include('general/head') %>
     <!-- font awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -26,164 +24,87 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <!-- bxslider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+
 </head>
 
 <body>
-    <!-- 모바일 섹션 deliverymanage-->
-    <section class="detail_title">
-        <h2>배송지 관리</h2>
-        <script type="text/javascript">
-            function goBack() {
-                window.history.back();
-            }
-        </script>
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
+    <div id="app">
+        <div class="mobile_deliv">
+            <section class="detail_title">
+                <h2>배송지 관리</h2>
+
+                <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <section class="delivery_manage_list">
-        <div class="del_mng_list_top">
-            <ul class="del_mng_type">
-                <li class="type_first">회사</li>
-                <li class="type_second"><span class="tema">기본배송지</span></li>
-            </ul>
-            <ul class="edit_remove">
-                <li class="edit_first"><a>수정</a></li>
-                <li class="small_line"><img src="images/l_icon_category.png"></li>
-                <li class="edit_second"><a>삭제</a></li>
-            </ul>
+        <div class="web_deliv">
+            <%-include('general/header_web') %>
         </div>
-        <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-        <p class="customer_info">박민지<img src="images/l_icon_category.png">010-3288-0568</p>
-    </section>
-
-    <div class="del_line_thick"></div>
-
-    <section class="delivery_manage_list">
-        <div class="del_mng_list_top">
-            <ul class="del_mng_type">
-                <li class="type_first">회사</li>
-            </ul>
-            <ul class="edit_remove">
-                <li class="basic small_line"><a>기본배송지로 설정</a><img src="images/l_icon_category.png"></li>
-                <li class="edit_first small_line"><a>수정</a>
-                    <img src="images/l_icon_category.png">
-                </li>
-                <li class="edit_second"><a>삭제</a></li>
-            </ul>
-        </div>
-        <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-        <p class="customer_info">박민지<img src="images/l_icon_category.png">010-3288-0568</p>
-    </section>
-
-    <div class="del_line_thick"></div>
-
-    <section class="delivery_manage_list">
-        <div class="del_mng_list_top">
-            <ul class="del_mng_type">
-                <li class="type_first">회사</li>
-            </ul>
-            <ul class="edit_remove">
-                <li class="basic small_line"><a>기본배송지로 설정</a><img src="images/l_icon_category.png"></li>
-                <li class="edit_first"><a>수정</a></li>
-                <li class="small_line"><img src="images/l_icon_category.png"></li>
-                <li class="edit_second"><a>삭제</a></li>
-            </ul>
-        </div>
-        <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-        <p class="customer_info">박민지<img src="images/l_icon_category.png">010-3288-0568</p>
-    </section>
-
-    <div class="del_line_thick"></div>
-
-    <section class="delivery_manage_list">
-        <div class="del_mng_list_top">
-            <ul class="del_mng_type">
-                <li class="type_first">회사</li>
-            </ul>
-            <ul class="edit_remove">
-                <li class="basic small_line"><a>기본배송지로 설정</a><img src="images/l_icon_category.png"></li>
-                <li class="edit_first small_line"><a>수정</a>
-                    <img src="images/l_icon_category.png">
-                </li>
-                <li class="edit_second"><a>삭제</a></li>
-            </ul>
-        </div>
-
-        <div class="btn_area .mBtnArea">
-            <button type="button" id="btnRegister">배송지 등록</button>
-        </div>
-        <!--//btnJoin-->
-    </section>
-    <!-- 모바일 섹션 deliverymanage end -->
-
-
-    <%-include('general/header_web') %>
-
-    <!-- web main -->
-    <main id="main">
+        <!-- web main -->
         <div class="main_contents">
+            <div class="web_contents">
+                <div class="left">
+                    <h3>마이팜</h3>
+                    <div class="left_ctn">
+                        <ul>
+                            <li><img src="/images/basket_ico.png"></li>
+                            <li><span>김수아님</span></li>
+                            <li><a href="/myinfo-usercheck">내정보 <span><i class="fas fa-chevron-right"></i></span></a></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <div class="left">
-                <h3>마이팜</h3>
-                <div class="left_ctn">
-                    <ul>
-                        <li><i class="fas fa-shopping-basket"></i></li>
-                        <li><span>김수아님</span></li>
-                        <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
-                    </ul>
+                <div class="center">
+                    <h3>포인트<img src="/images/point.png"></h3>
+                    <p><a href="/point">1000 원 <span><i class="fas fa-chevron-right"></i></span></a></p>
+                </div>
+
+                <div class="right">
+                    <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                    <p><a href="/coupon">3개 <span><i class="fas fa-chevron-right"></i></span></a></p>
                 </div>
             </div>
-
-            <div class="center">
-                <h3>포인트</h3>
-                <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
-            </div>
-
-            <div class="right">
-                <h3>쿠폰</h3>
-                <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
-            </div>
-
         </div>
-    </main>
+        <nav class="content_lnb">
+            <ul>
+                <li><a href="javascript:location.href='/orderlist';">주문내역</a></li>
+                <li class="on" style="white-space:nowrap"><a href="javascript:location.href='/delivery-management">배송지 관리</a></li>
+                <li><a href="javascript:location.href='/p_review'';">상품 리뷰</a></li>
+                <li><a href="javascript:location.href='/p_inquiry';">상품 문의</a></li>
+                <li><a href="javascript:location.href='/s_inquiry';">판매자 문의</a></li>
+                <li><a href="javascript:location.href='/point';">포인트</a></li>
+                <li><a href="javascript:void(0);">쿠폰</a></li>
+            </ul>
+        </nav>
 
-    <section id="web_contents">
-        <div class="contents_ctn">
+        <div class="contents">
+            <h3 class="del_web_title">배송지 관리</h3>
+            <div class="top_checkBox">
+                <input type="checkbox" name="list" id="selectAll1" value="selectAll" onclick='selectAll(this)'>
+                <label for="selectAll1">전체 선택</label>
+                <button>선택 삭제</button>
+            </div>
+            <div class="thick_line one"></div>
 
-            <nav class="content_lnb">
-                <ul>
-                    <li><a href="http://localhost:3000/orderlist">주문내역</a></li>
-                    <li class="on"><a href="javascript:void(0);">배송지 관리</a></li>
-                    <li><a href="http://localhost:3000/mypageproductreview">상품 리뷰</a></li>
-                    <li><a href="http://localhost:3000/mypageproductinquiry">상품 문의</a></li>
-                    <li><a href="http://localhost:3000/mypagesellerinquiry">판매자 문의</a></li>
-                    <li><a href="http://localhost:3000/mypageorderlistpoint">포인트</a></li>
-                    <li><a href="javascript:void(0);">쿠폰</a></li>
-                </ul>
-            </nav>
-
-                <div class="body_contents">
-                    <h3>배송지 관리</h3>
-                    <div class="top_checkBox">
-                        <input type="checkbox" name="list" id="selectAll1" value="selectAll" onclick='selectAll(this)'>
-                        <label for="selectAll1">전체 선택</label>
-                        <button>선택 삭제</button>
-                    </div>
-                    <div class="thick_line one"></div>
-
-                    <div class="order_list_ctn">
+                <div class="order_list_ctn">
+                    <template v-for="item in deliveryList">
                         <section class="web_delivery_manage_list">
                             <div class="del_mng_list_top">
                                 <ul class="del_mng_type">
-                                    <li class="type_first">회사</li>
-                                    <li class="type_second"><span class="tema">기본배송지</span></li>
+                                    <li class="type_first">{{ item.addressName }}</li>
+                                    <li class="type_second" v-if="item.mainAddressYn == 'Y'"><span class="tema">기본배송지</span></li>
                                 </ul>
                                 <ul class="edit_remove">
-                                    <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
-                                    <li class="small_line"><img src="images/l_icon_category.png"></li>
-                                    <li class="edit_second"><a>삭제</a></li>
+                                    <template v-if="item.mainAddressYn == 'N'">
+                                        <li class="basic"><a>기본배송지로 설정</a></li>
+                                        <li class="small_line"><img src="/images/l_icon_category.png"></li>
+                                    </template>
+                                    <li class="edit_first"><a v-on:click="modalDisplay(true, '배송지 등록')">수정</a></li>
+                                    <li class="small_line"><img src="/images/l_icon_category.png"></li>
+                                    <li class="edit_second"><a onclick="button_event();">삭제</a></li>
                                 </ul>
                             </div>
                             <div class="web_del_mag_list_info">
@@ -192,112 +113,65 @@
                                     <label for="selectAll2"></label>
                                 </div>
                                 <ul>
-                                    <li><p class="address">서울 강남구 테헤란로 8길 11-4 202호</p></li>
-                                    <li><p class="customer_info">박민지<span class="small_line"><img src="images/l_icon_category.png"></span>010-3288-0568</p></li>
+                                    <li><p class="address">{{ item.address }}</p></li>
+                                    <li><p class="customer_info">{{ item.userName }}<span class="small_line"><img src="/images/l_icon_category.png"></span>{{ item.userCellNo }}</p></li>
                                 </ul>
                             </div>
                         </section>
 
                         <div class="thick_line"></div>
 
-                        <section class="web_delivery_manage_list">
-                            <div class="del_mng_list_top">
-                                <ul class="del_mng_type">
-                                    <li class="type_first">회사</li>
-                                </ul>
-                                <ul class="edit_remove">
-                                    <li class="basic"><a>기본배송지로 설정</a></li>
-                                    <li class="small_line"><img src="images/l_icon_category.png"></li>
-                                    <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
-                                    <li class="small_line"><img src="images/l_icon_category.png"></li>
-                                    <li class="edit_second"><a>삭제</a></li>
-                                </ul>
-                            </div>
-                            <div class="web_del_mag_list_info">
-                                <div class="top_checkBox_piece">
-                                    <input type="checkbox" name="list" id="selectAll3" value="t">
-                                    <label for="selectAll3"></label>
-                                </div>
-                                <ul>
-                                    <li><p class="address">서울 강남구 테헤란로 8길 11-4 202호</p></li>
-                                    <li><p class="customer_info">박민지<span class="small_line"><img src="images/l_icon_category.png"></span>010-3288-0568</p></li>
-                                </ul>
-                            </div>
-                        </section>
+                    </template>
 
-                        <div class="thick_line"></div>
-
-                        <section class="web_delivery_manage_list">
-                            <div class="del_mng_list_top">
-                                <ul class="del_mng_type">
-                                    <li class="type_first">회사</li>
-                                </ul>
-                                <ul class="edit_remove">
-                                    <li class="basic"><a>기본배송지로 설정</a></li>
-                                    <li class="small_line"><img src="images/l_icon_category.png"></li>
-                                    <li class="edit_first"><a href="#ex1" rel="modal:open">수정</a></li>
-                                    <li class="small_line"><img src="images/l_icon_category.png"></li>
-                                    <li class="edit_second"><a>삭제</a></li>
-                                </ul>
-                            </div>
-                            <div class="web_del_mag_list_info">
-                                <div class="top_checkBox_piece">
-                                    <input type="checkbox" name="list" id="selectAll4" value="f">
-                                    <label for="selectAll4"></label>
-                                </div>
-                                <ul>
-                                    <li><p class="address">서울 강남구 테헤란로 8길 11-4 202호</p></li>
-                                    <li><p class="customer_info">박민지<span class="small_line"><img src="images/l_icon_category.png"></span>010-3288-0568</p></li>
-                                </ul>
-                            </div>
-                        </section>
-
-
-                        <div class="thick_line"></div>
-
-                        <ul class="pager">
-                            <li><i class="fas fa-chevron-left"></i></li>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li>10</li>
-                            <li><i class="fas fa-chevron-right"></i></li>
-                        </ul>
-
-                        <div class="btn_area" style="width: 330px; margin: 0 auto; margin-left: 290px;">
-                            <button type="button" id="btnRegister">배송지 등록</button>
+                    <div class="page_wrap" style="position:relative;top:300px;margin-right:200px;">
+                        <div class="page_nation" >
+                            <a class="arrow pprev" href="#"></a>
+                            <a class="arrow prev" href="#"></a>
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a class="arrow next" href="#"></a>
+                            <a class="arrow nnext" href="#"></a>
                         </div>
-                    </div> <!-- order_list_ctn -->
-                </div> <!-- body_contents -->
-        </div> <!-- contents_ctn -->
-    </section> <!-- content -->
-
-    <!-- modal window -->
-    <section id="ex1" class="modal deliver_mag_modal">
+                    </div>
+                    <div class="btn_area_d">
+                        <button type="button" id="btnRegister" v-on:click="modalDisplay(true, '배송지 등록')">배송지 등록</button>
+                    </div>
+                </div> <!-- order_list_ctn -->
+            </div> <!-- body_contents -->
+        <!-- modal window -->
+        <%-include('general/footer') %>
+        
+    </div>
+    <div class="modal-background">
+        
+    </div>
+    <section id="ex1" class="modal deliver_mag_modal" style="margin:auto;">
         <header class="deliver_magHeader">
             <ul>
                 <li>
                     <h2>배송지 관리</h2>
                 </li>
-                <li class="clsWindow"><i class="fal fa-times"></i></li>
+                <li class="clsWindow" v-on:click="modalDisplay(false)"><i class="fal fa-times"></i></li>
             </ul>
             <h3>배송지 수정</h3>
         </header>
 
         <div class="deliver_mag_modal_ctt">
             <p>배송지 이름</p>
-            <input type="text" placeholder="배송지 이름을 입력해주세요">
+            <input type="text" name="deliveryName" placeholder="배송지 이름을 입력해주세요">
             <p>받으시는 분</p>
-            <input type="text" placeholder="받으시는 분 이름을 입력해주세요">
+            <input type="text" name="receiverName" placeholder="받으시는 분 이름을 입력해주세요">
             <p>주소</p>
-            <input type="text" placeholder="도로명, 지번, 건물명 검색">
-            <input type="text">
+            <input type="text" id="addr" name="address" placeholder="도로명, 지번, 건물명 검색">
+            <input type="text" id="addr2" name="address2">
             <p>휴대폰</p>
             <input type="text" placeholder="숫자만 입력해주세요">
 
@@ -306,10 +180,7 @@
             </div>
         </div>
     </section>
-
-    <!-- modal window end -->
-
-    <%-include('general/footer_web') %>
+    <script src="/js/deliveryManagement.js"></script>
 </body>
 
 </html>

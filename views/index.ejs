@@ -9,8 +9,7 @@
     <meta name="format-detection" content="no" />
     <title>다이어트 Farm</title>
     <%-include('general/head') %>
-    <link rel="stylesheet" href="/css/style02.css">
-</head>
+
 <style type="text/css">
     nav a:nth-child(1) {
         color: #F99319;
@@ -50,10 +49,10 @@
 
     #mHeader .tab_wrap {
         width: 100%;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
         border-bottom: 2px solid #E6E6E6;
         background: #fff;
-        z-index: 99;
+        z-index: 99
     }
 
     #mHeader .tab_cont {
@@ -67,15 +66,10 @@
         position: absolute;
         width: 100%;
     }
-@media screen and (min-width:360px)and (max-width:1079px) {.web_index{display:none}}
-@media screen and (min-width:1080px){.mobile_index{display:none} }
 </style>
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/style02.css">
-<!-- font awesome -->
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style02.css">
 <script>
     $(function() {
         $('ul.tab_wrap li').click(function() {
@@ -87,78 +81,41 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
         })
     });
 </script>
+</head>
 <body>
-    <div class="web_index">
-        <%-include('general/header_web') %>
-     </div><!--//web_index-->
-     
-    <div class="mobile_index">
-     <article class="skip_menu">
-        <a href="#"><span>바로가기1</span></a>
-        <a href="#"><span>바로가기2</span></a>
-        <a href="#"><span>바로가기3</span></a>
-    </article>
     <%-include('general/header') %>
-    </div>
-    <main id="content" class="content">
+    <main id="content" class="content_main">
         <section class="main_img">
             <ul class="bxslider">
-                <li><img src="images/dietfarmbread.jpg"></li>
-                <li><img src="images/dietfarmbread.jpg"></li>
-                <li><img src="images/dietfarmbread.jpg"></li>
-                <li><img src="images/dietfarmbread.jpg"></li>
+                <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
+                <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
             </ul>
         </section>
         <!--//메인 이미지-->
-        <script>
-            $(document).ready(function() {
-                $('.slider').bxSlider();
-                $('.bxslider').bxSlider({
-                    mode: 'horizontal',
-                    auto: true,
-                    pause: 4000,
-                    controls: false,
-                    easing: '',
-                    pager: false,
-                    touchEnabled: true,
-                });
-                $('.multiple_bxslider').bxSlider({
-                    mode: 'horizontal',
-                    auto: true,
-                    slideWidth: 1080,
-                    infiniteLoop: true,
-                    controls: true,
-                    pager: false,
-                    minSlides: 3,
-                    maxSlides: 3,
-                    slideMargin: 7,
-                    touchEnabled: true
-                });
-  
-            });
-        </script>
         <div class="catgor_wrap">
             <div class="category">
                 <ul>
-                    <li class="cate01"><a href="#"><span><img src="/images/chicken_icon_category.png"></span></a>
+                    <li><a href="#"><span><img src="/images/salad_icon_category@2x.png"></span><p>도시락/샐러드</p></a>
                     </li>
-                    <li><a href="#"><span><img src="/images/meal_icon_category.png"></span></a>
+                    <li><a href="#"><span><img src="/images/meal_icon_category@2x.png"></span><p>간편식</p></a>
                     </li>
-                    <li><a href="#"><span><img src="/images/chicken_icon_category.png"></span></a>
+                    <li class="cate01"><a href="#"><span><img src="/images/chicken_icon_category@2x.png"></span><p>닭가슴살</p></a>
                     </li>
-                    <li><a href="#"><span><img src="/images/drink_icon_category.png"></span></a>
+                    <li><a href="#"><span><img src="/images/snack_icon_category@2x.png"></span><p>건강간식</p></a>
                     </li>
-                    <li><a href="#"><span><img src="/images/drink_icon_category.png"></span></a>
+                    <li><a href="#"><span><img src="/images/drink_icon_category@2x.png"></span><p>음료/소스</p></a>
                     </li>
-                    <li><a href="#"><span><img src="/images/meal_icon_category.png"></span></a>
+                    <li><a href="#"><span><img src="/images/fruit_icon_category@2x.png"></span><p>신선식품</p></a>
                     </li>
-                    <li><a href="#"><span><img src="/images/meal_icon_category.png"></span></a>
+                    <li><a href="#"><span><img src="/images/vegan_icon_category@2x.png"></span><p>비건</p></a>
                     </li>
-                    <li><a href="#"><span><img src="/images/meal_icon_category.png"></span></a>
+                    <li><a href="#"><span><img src="/images/baby_icon_category@2x.png"></span><p>베이비/키즈</p></a>
                     </li>
-                    <li><a href="#"><span><img src="/images/meal_icon_category.png"></span></a>
+                    <li><a href="#"><span><img src="/images/pet_icon_category@2x.png"></span><p>나의반려</p></a>
                     </li>
-                    <li><a href="#"><span><img src="/images/meal_icon_category.png"></span></a>
+                    <li><a href="#"><span><img src="/images/all_icon_category@2x.png"></span><p>전체보기</p></a>
                     </li>
                 </ul>
             </div>
@@ -169,7 +126,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
             <section class="s_price">
                 <h2>2월 특가</h2>
                 <ul class="multiple_bxslider">
-                    <li><a href="#"><img src="images/dietfarmbread.jpg">
+                    <li><a href="#"><img src="/images/dietfarmbread.jpg" style="width:100%">
                             <span class="title">제품이름</span><br><span class="price">
                                 <ul>
                                     <li class="sale">23,400원</li>
@@ -177,7 +134,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                                     <li class="ratio">10%</li>
                                 </ul>
                             </span></a></li>
-                    <li><a href="#"><img src="images/dietfarmbread.jpg">
+                    <li><a href="#"><img src="/images/dietfarmbread.jpg">
                             <span class="title">제품이름맛있는 도시락한개</span><br><span class="price">
                                 <ul>
                                     <li class="sale">23,400원</li>
@@ -185,7 +142,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                                     <li class="ratio">10%</li>
                                 </ul>
                             </span></a></li>
-                    <li><a href="#"><img src="images/dietfarmbread.jpg">
+                    <li><a href="#"><img src="/images/dietfarmbread.jpg">
                             <span class="title">제품이름맛있는 도시락한개</span><br><span class="price">
                                 <ul>
                                     <li class="sale">23,400원</li>
@@ -193,7 +150,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                                     <li class="ratio">10%</li>
                                 </ul>
                             </span></a></li>
-                    <li><a href="#"><img src="images/dietfarmbread.jpg">
+                    <li><a href="#"><img src="/images/dietfarmbread.jpg">
                             <span class="title">제품이름맛있는 도시락한개</span><br><span class="price">
                                 <ul>
                                     <li class="sale">23,400원</li>
@@ -201,7 +158,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                                     <li class="ratio">10%</li>
                                 </ul>
                             </span></a></li>
-                    <li><a href="#"><img src="images/dietfarmbread.jpg">
+                    <li><a href="#"><img src="/images/dietfarmbread.jpg">
                             <span class="title">제품이름맛있는 도시락한개</span><br><span class="price">
                                 <ul>
                                     <li class="sale">23,400원</li>
@@ -209,7 +166,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                                     <li class="ratio">10%</li>
                                 </ul>
                             </span></a></li>
-                    <li><a href="#"><img src="images/dietfarmbread.jpg">
+                    <li><a href="#"><img src="/images/dietfarmbread.jpg">
                             <span class="title">제품이름</span><br><span class="price">
                                 <ul>
                                     <li class="sale">23,400원</li>
@@ -217,7 +174,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                                     <li class="ratio">10%</li>
                                 </ul>
                             </span></a></li>
-                    <li><a href="#"><img src="images/dietfarmbread.jpg">
+                    <li><a href="#"><img src="/images/dietfarmbread.jpg">
                             <span class="title">제품이름</span><br><span class="price">
                                 <ul>
                                     <li class="sale">23,400원</li>
@@ -225,7 +182,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                                     <li class="ratio">10%</li>
                                 </ul>
                             </span></a></li>
-                    <li><a href="#"><img src="images/dietfarmbread.jpg">
+                    <li><a href="#"><img src="/images/dietfarmbread.jpg">
                             <span class="title">제품이름</span><br><span class="price">
                                 <ul>
                                     <li class="sale">23,400원</li>
@@ -240,39 +197,18 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
   
         <div class="blank_sec">
             <ul>
-                <li><a href="#"><img src="images/blank1.jpg" style="width:520px;height:520px"></a></li>
-                <li><a href="#"><img src="images/blank2.jpg" style="width:520px;height:520px"></a></li>
+                <li><a href="#"><img src="/images/blank1.jpg" style="width:520px;height:520px"></a></li>
+                <li><a href="#"><img src="/images/blank2.jpg" style="width:520px;height:520px"></a></li>
             </ul>
         </div>
         <div class="best_wrap">
             <section class="w_best">
                 <h2>위클리 베스트</h2>
+                <div class="side">
+                    <img src="images/side.jpg">
+                </div>
                 <ul>
-                    <li>
-                        <a href="#">
-                            <div class="thum">
-                                <img src="/images/wheat_bread.jpg" alt="위클리 베스트1">
-                                <!-- 찜하기 -->
-                                <div class="ico_zzim">
-                                    <div class="btn_zzim_sty">
-                                        <a class="btn_zzim_check" href="#">
-                                            <span class="blind"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-  
-                            <div class="desc">
-                                <p class="title">제품이름</p>
-                                <ul>
-                                    <li class="sale">23,400원</li>
-                                    <li class="cost">26,000원</li>
-                                    <li class="ratio">10%</li>
-                                </ul>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
+                     <li>
                         <a href="#">
                             <div class="thum"><img src="/images/greek_yogurt.jpg" alt="위클리 베스트1">
                                 <div class="ico_zzim">
@@ -293,833 +229,86 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <div class="thum"><img src="/images/spoon_salad.jpg" alt="위클리 베스트1">
-                                <div class="ico_zzim">
-                                    <div class="btn_zzim_sty">
-                                        <a href="#">
-                                            <span class="blind"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desc">
-                                <p class="title">제품이름</p>
-                                <ul>
-                                    <li class="sale">23,400원</li>
-                                    <li class="cost">26,000원</li>
-                                    <li class="ratio">10%</li>
-                                </ul>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="thum"><img src="/images/wheat_bread.jpg" alt="위클리 베스트1">
-                                <div class="ico_zzim">
-                                    <div class="btn_zzim_sty">
-                                        <a href="#">
-                                            <span class="blind"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desc">
-                                <p class="title">제품이름</p>
-                                <ul>
-                                    <li class="sale">23,400원</li>
-                                    <li class="cost">26,000원</li>
-                                    <li class="ratio">10%</li>
-                                </ul>
-                            </div>
-                        </a>
-                    </li>
+                    
                 </ul>
             </section>
         </div>
         <!--//best_wrap-->
-  
-  
-  
-        <div class="m_best" id="web_only">
-            <div class="m_bestn_w">
-                <h2>위클리 베스트</h2>
-                <div class="w_bestn_tit_w">
-  
+        <div class="body_bottom">
+            <div class="protein">
+                <h3>단백질이 필요할 때!</h3>
+                <div class="side">
+                    <img src="images/side.jpg">
                 </div>
-                <!--//타이틀-->
-                <!--카테고리 이미지 및 우측 리스트-->
                 <ul>
-                    <li class="m_bestn_mn_box">
-                        <div class="m_bestn_mn_img"><a href="#"><img src="images/side.jpg"></a></div>
+                    <li>    
+                        <a href="#">
+                            <div class="thum">
+                                <img src="/images/dietfarmbread.jpg" alt="">
+                            </div>
+                            <div class="desc">
+                                <p class="title">제품이름</p>
+                                <ul>
+                                    <li class="sale">23,400원</li>
+                                    <li class="cost">26,000원</li>
+                                    <li class="ratio">10%</li>
+                                </ul>
+                            </div>
+                        </a>
                     </li>
-                    <li>
-                        <!--리스트-->
-                        <div class="m_bestn_list">
-                            <ul class="m_bestn_nlst">
-  
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    
                 </ul>
-                <!--//카테고리 이미지 및 우측 리스트-->
+            </div>
+            <div class="sweet">
+                <h3>당충전이 필요할 때!</h3>
+                <div class="side">
+                    <img src="images/side3.jpg">
+                </div>
+                <ul>
+                    <li>    
+                        <a href="#">
+                            <div class="thum">
+                                <img src="/images/dietfarmbread.jpg" alt="">
+                            </div>
+                            <div class="desc">
+                                <p class="title">제품이름</p>
+                                <ul>
+                                    <li class="sale">23,400원</li>
+                                    <li class="cost">26,000원</li>
+                                    <li class="ratio">10%</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>   
+                </ul>
+            </div>
+            <div class="water">
+                <h3>수분이 필요할 때!</h3>
+                <div class="side">
+                    <img src="images/side3.jpg">
+                </div>
+                <ul>
+                    <li>    
+                        <a href="#">
+                            <div class="thum">
+                                <img src="/images/dietfarmbread.jpg" alt="">
+                            </div>
+                            <div class="desc">
+                                <p class="title">제품이름</p>
+                                <ul>
+                                    <li class="sale">23,400원</li>
+                                    <li class="cost">26,000원</li>
+                                    <li class="ratio">10%</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+                        
+                </ul>
             </div>
         </div>
-        <div class="m_best">
-            <div class="m_bestn_w">
-                <h2>단백질이 필요할 때!</h2>
-                <div class="w_bestn_tit_w">
-  
-                </div>
-                <!--//타이틀-->
-                <!--카테고리 이미지 및 우측 리스트-->
-                <ul>
-                    <li class="m_bestn_mn_box">
-                        <div class="m_bestn_mn_img"><a href="#"><img src="images/side2.jpg"></a></div>
-                    </li>
-                    <li>
-                        <!--리스트-->
-                        <div class="m_bestn_list">
-                            <ul class="m_bestn_nlst">
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                <!--//카테고리 이미지 및 우측 리스트-->
-            </div>
-        </div>
-  
-  
-        <div class="banner">
-            <img src="images/banner01.PNG">
-        </div>
-  
-        <div class="m_best">
-            <div class="m_bestn_w">
-                <h2>당충전이 필요할 때!</h2>
-                <div class="w_bestn_tit_w">
-  
-                </div>
-                <!--//타이틀-->
-                <!--카테고리 이미지 및 우측 리스트-->
-                <ul>
-                    <li class="m_bestn_mn_box">
-                        <div class="m_bestn_mn_img"><a href="#"><img src="images/side3.jpg"></a></div>
-                    </li>
-                    <li>
-                        <!--리스트-->
-                        <div class="m_bestn_list">
-                            <ul class="m_bestn_nlst">
-  
-                                <li class="tb_mw_wrap " \>
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                <!--//카테고리 이미지 및 우측 리스트-->
-            </div>
-        </div>
-        <div class="m_best">
-            <div class="m_bestn_w">
-                <h2>수분이 필요할 때!</h2>
-                <div class="w_bestn_tit_w">
-  
-                </div>
-                <!--//타이틀-->
-                <!--카테고리 이미지 및 우측 리스트-->
-                <ul>
-                    <li class="m_bestn_mn_box">
-                        <div class="m_bestn_mn_img"><a href="#"><img src="images/side3.jpg"></a></div>
-                    </li>
-                    <li>
-                        <!--리스트-->
-                        <div class="m_bestn_list">
-                            <ul class="m_bestn_nlst">
-  
-                                <li class="tb_mw_wrap " \>
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap ">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-  
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="tb_mw_wrap">
-                                    <a href="#" onclick="#">
-                                        <div class="mbestn_zzim_img tb_mw">
-  
-                                            <p class="m_bestn_img tb_mw">
-                                                <img src="images/dietfarmbread.jpg" class="tb_m">
-                                            </p>
-                                            <div class="desc">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                <!--//카테고리 이미지 및 우측 리스트-->
-            </div>
-        </div>
+     
     </main>
-
     <%-include('general/footer') %>
-
     <script src="/js/index.js"></script>
-    <script>
-        // 햄버거 메뉴
-        $(document).ready(function() {
-
-            $('.btnMenu>a').on('click', function() {
-                $('.sideMenu').show().animate({
-                    left: 0
-                });
-            });
-            $('.slideMenu_close>a').on('click', function() {
-                $('.sideMenu').animate({
-                    left: -100 + '%'
-                }, function() {
-                    $('.sideMenu').hide();
-                });
-            });
-        });
-
-
-        // 햄버거 2단계 메뉴
-        $(document).ready(function() {
-            $("dt.faq_q").click(function() {
-                if ($(this).next('dd').css("display") != "none") {
-                    $(this).next('dd').hide();
-                    $(this).removeClass("current");
-                } else {
-                    $("dd.faq_a").css('display', 'none');
-                    $("dt.faq_q").removeClass("current");
-                    $(this).next('dd').show();
-                    $(this).addClass("current");
-                }
-            });
-        });
-
-         $(document).ready(function() {
-
-            $('.btnMenu>a').on('click', function() {
-                $('.gnb').hide();
-            });
-        });
-        $('.slideMenu_close>a').on('click', function() {
-            $('.gnb').show();
-        });
-    </script>
-      <script>
-     	$(document).ready(function(){
-		$("#gnbAllMenu").hide();
-		$("#btnGnbOpen").click(function(){
-			$("#gnbAllMenu").slideToggle("fast");
-		});
-	});
-
-	   $(document).ready(function() {
-            $(".m_slides_sub").hide();
-            $(".m_ba_slides_n_w li").hover(function(){
-                $("ul:not(:animated)",this).slideDown("700");
-
-                $(".m_ba_slides_n_w li a").removeClass("active");
-            },
-            function() {
-                $("ul",this).slideUp("700");
-               });
-
-		    $("#memberMenu").bind("moseover mouseenter",function(){
-				$("#memMenu").show();
-		  });
-		   $("#memMenu").bind("moseout mouseleave",function(){
-				$("#memMenu").hide();
-		  });
-
-		    $("#NotmemberMenu").bind("moseover mouseenter",function(){
-				$("#NotmemMenu").show();
-		  });
-		   $("#NotmemMenu").bind("moseout mouseleave",function(){
-				$("#NotmemMenu").hide();
-		  });
-        });
-    </script>
-    
-   
 </body></html>
