@@ -123,14 +123,19 @@ a:hover{text-decoration:none;}
     #header{position:fixed;width:100%;top:0px;background-color:#fff;z-index:9999}
 }
 @media screen and (min-width:1080px){
-  .multiple_bxslider li img{width:auto;height:auto}
+  .multiple_bxslider li img{width:auto;height:auto;padding:10px;border-radius:5px}
+  .multiple_bxslider ul{margin-left:-10px}
+  .multiple_bxslider ul li{float:left}
+  #content .s_price .sale{font-weight:bold;margin-left:10px}
+  #content .s_price .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:5px;margin-top:1px}
+  #content .s_price .ratio{color:red;font-size:11px;margin-left:5px}
   .content_main{padding-top:200px}
   #header{width:1080px;margin:0 auto;text-align:center;height:54px}
   .comp_logo{width:1080px;margin:0 auto;text-align:center;margin-top:35px}
   .comp_logo img{width:157.89px;height:80px}
   #nav{margin-top:42px;margin-left:-400px}
   #nav .home{display:none}
-  #nav a{font-family:Noto Sans KR;font-weight:bold;display:inline-block;width:124px;height:54px;font-size:16px;line-height:24px;padding:14px;margin-right:-4px}
+  #nav a{font-family:Noto Sans KR;font-weight:bold;display:inline-block;width:270px;height:54px;font-size:16px;line-height:24px;padding:14px;margin-right:-4px}
   #nav a:hover{background-color:#F99319;color:#fff}
   #nav .web_cate img{width:19.44px;position:relative;top:6.5px;left:-7px}
   #nav .web_cate{width:160px;height:54px;white-space:nowrap}
