@@ -66,7 +66,14 @@
         position: absolute;
         width: 100%;
     }
-</style>
+    #slider_main{width:100%;position:relative;margin-bottom:200px}
+    .slider_item{width:100%;height:auto;display:flex;justify-content:center;
+    align-items:center;color:#fff;position:absolute;top:0;z-index:999;opacity:0;
+    transition:opacity 1s ease-in-out}
+    .slider_item img{width:100%;}
+    .showing{z-index:9999;opacity:1}
+    .catgor_wrap{position:relative;}
+    </style>
 
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/style02.css">
@@ -74,14 +81,32 @@
 <body>
     <%-include('general/header') %>
     <main id="content" class="content_main">
-        <section class="main_img">
-            <ul class="bxslider">
-                <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
-                <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
-                <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
-                <li><a href="#"><img src="/images/dietfarmbread.jpg"></a></li>
-            </ul>
-        </section>
+        <div id="slider_main">
+            <div class="slider_item"><img src="/images/dietfarmbread.jpg"></div>
+            <div class="slider_item"><img src="/images/dietfarmbread.jpg"></div>
+            <div class="slider_item"><img src="/images/dietfarmbread.jpg"></div>
+            <div class="slider_item"><img src="/images/dietfarmbread.jpg"></div>
+            <div class="slider_item"><img src="/images/dietfarmbread.jpg"></div>
+        </div>
+        <script>
+            const SHOWING_CLASS = "showing";
+            const firstSlide = document.querySelector(".slider_item:first-child");
+            function slide(){
+               const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
+               if(currentSlide){
+               currentSlide.classList.remove(SHOWING_CLASS);
+               const nextSlide = currentSlide.nextElementSibling;
+               if(nextSlide){
+                   nextSlide.classList.add(SHOWING_CLASS);
+               } else {
+                   firstSlide.classList.add(SHOWING_CLASS);
+               }
+               } else {firstSlide.classList.add(SHOWING_CLASS);
+               }
+            }
+               slide();
+               setInterval(slide, 4000);
+           </script>
         <!--//메인 이미지-->
         <div class="catgor_wrap">
             <div class="category">
