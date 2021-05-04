@@ -5,16 +5,24 @@ var app = new Vue({
         RESOURCE_SERVER,
         numberFormat,
         deliveryGroupList: '',
+<<<<<<< HEAD
         orderDTO: ''
                   
+=======
+        orderDTO: '',
+        paymentNo: 0
+>>>>>>> d49f369b8080818c353271a6d963aad1f9c3bb83
     }
 })
 
 $(function() {
-    app.deliveryGroupList = JSON.parse($('#deliveryGroupList').val());
-    app.orderDTO = JSON.parse($('#orderDTO').val());
+    app.deliveryGroupList = JSON.parse((($('#deliveryGroupList').val() != undefined)?$('#deliveryGroupList').val():'{}'));
+    app.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
 
-    
+    // if(app.orderDTO.userId !== '비회원주문')
+    getDefaultDeliveryInfo();
+
+    onPointAmountChange();
 })
 
 function paymentAction() {
@@ -126,4 +134,51 @@ function paymentConfirm() {
     }, function(err){
         console.log("error", err);
     })
+}
+
+function getDefaultDeliveryInfo() {
+    var params = {
+
+    };
+
+    ajaxCallWithLogin(API_SERVER + '/user/getDefaultDevlieryInfo', params, 'POST',
+    function(data) {
+        var result = data.result;
+        var delivery = {
+            address: result.address,
+            addressName: result.addressName,
+            deliveryNo: result.deliveryNo,
+            userCellNo: result.userCellNo,
+            userName: result.userName
+        }
+        app.orderDTO.delivery = delivery
+        console.log("defaultDeliveryInfo success", data);
+    }, function(err) {
+        console.log("error", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
+function onPointAmountChange() {
+    app.orderDTO.paidRealAmount = app.orderDTO.paymentTotalAmount - app.orderDTO.paidCouponAmount - app.orderDTO.paidPointAmount + app.orderDTO.totalDeliveryCost;
+
+    app.orderDTO.accumulatePoint = 0;
+    for(var i = 0; i < app.deliveryGroupList.length; i++) {
+        var dGroup = app.deliveryGroupList[i];
+        for(var j = 0; j < dGroup.products.length; j++) {
+            var product = dGroup.products[j];
+
+            product.optionTotalPrice = 0;
+            for(var k = 0; k < product.options.length; k++){
+                var option = product.options[k];
+                product.optionTotalPrice += option.optionTotalPrice;
+            }
+
+            product.accumulatePoint = Math.round((app.orderDTO.paidRealAmount * (product.optionTotalPrice / app.orderDTO.paymentTotalAmount)) * 0.03)
+            app.orderDTO.accumulatePoint += product.accumulatePoint;    
+        }
+
+    }
 }
