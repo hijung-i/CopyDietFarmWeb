@@ -150,12 +150,13 @@ a:hover{text-decoration:none;}
  .sideMenu{display:none} 
   #tab2{display:none}
   .downArrow{display:none}
-  .mDepth01{position:absolute;margin-top:-28px;margin-left:34px;border:1px solid #f5f5f5}
+  .mDepth01{position:absolute; margin-top:141px; margin-left:172px; width: 157px; border:1px solid #f5f5f5;}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
   .gnb_depth02{position:absolute;left:170px;margin-top:-45px;display:inline-block;width:372px;height:378px;text-align:left}
 }
-
+.slideMenu {display: none !important;}
+.sp_wrap {position: relative;}
 .slideMenu_top {
 	background: #FFFFFF;
 	font-size: 16px;
@@ -167,7 +168,7 @@ a:hover{text-decoration:none;}
 .sid_menu .mDepth01 dt .downArrow {
 	width:11px;height:11px
 }
-.mDepth01 {height:100vh;  overflow-y: hidden;}
+.mDepth01 {height:100vh;  overflow-y: hidden; z-index: 999;}
 
 
 .sideMenu .mDepth01{padding-bottom:150px;font-size:16px;line-height:32px; background: #fff;}
