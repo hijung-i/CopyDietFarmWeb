@@ -80,7 +80,7 @@ function isAvailable(data){
 function getEventStands() {
 	var currentStandCode = $('#currentStandCode').val();
     var param = {}
-    ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
+    /*ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
     , function(data) {
 
 		$("#header #nav").html('');
@@ -107,8 +107,8 @@ function getEventStands() {
 				
     }, function(err) {
         console.log("eventStands err", err);
-    })
-}
+    }) */
+} 
 
 function numberFormat(number) {
 	return (number+"").replace(/\B(?=(\d{3})+(?!\d))/g, ",");

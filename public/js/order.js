@@ -5,8 +5,13 @@ var app = new Vue({
         RESOURCE_SERVER,
         numberFormat,
         deliveryGroupList: '',
+<<<<<<< HEAD
+        orderDTO: ''
+                  
+=======
         orderDTO: '',
         paymentNo: 0
+>>>>>>> d49f369b8080818c353271a6d963aad1f9c3bb83
     }
 })
 
