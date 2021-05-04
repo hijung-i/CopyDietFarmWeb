@@ -6,7 +6,8 @@ var app = new Vue({
         numberFormat,
         deliveryGroupList: '',
         orderDTO: '',
-        paymentNo: 0
+        paymentNo: 0,
+        usablePoint: 0
     }
 })
 
@@ -16,9 +17,25 @@ $(function() {
 
     // if(app.orderDTO.userId !== '비회원주문')
     getDefaultDeliveryInfo();
-
+    getUsablePointAmount();
     onPointAmountChange();
+
 })
+
+function getUsablePointAmount() {
+    var params = {};
+    ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
+    function(data) {
+        app.orderDTO.usablePoint = data.result;
+        console.log("success usablePoint", data);
+    }, function(err) {
+        console.log("error", err)
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
+}
 
 function paymentAction() {
     var bootpayParams = {
