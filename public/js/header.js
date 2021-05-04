@@ -247,3 +247,12 @@ $(document).ready(function(){
         $("#ex1,.blocker").hide();
     })
 });
+
+// 사이드메뉴 offset
+var x = $('.web_cate').offset().left;
+var y = $('.web_cate').offset().top;
+var height = $('.web_cate').height();
+$('mDepth01').css ({
+    'left':x,
+    'top':y + height
+});
