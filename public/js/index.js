@@ -24,28 +24,32 @@ function getStandDatas() {
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
-                    html += '<div class="slider_item"><img src="' + RESOURCE_SERVER + product.url+'"></div>';
+                    html += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'"></a></div>';
                 }
-   /*
-                $('.bxslider').html(html);
-
-                $('.bxslider li').bxSlider({
-                    mode: 'horizontal',
-                    auto: true,
-                    pause: 4000,
-                    controls: false,
-                    easing: '',
-                    pager: false,
-                    touchEnabled: true,
-                });
-              */  
+                const SHOWING_CLASS = "showing";
+                const firstSlide = document.querySelector(".slider_item:first-child");
+                function slide(){
+                   const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
+                   if(currentSlide){
+                   currentSlide.classList.remove(SHOWING_CLASS);
+                   const nextSlide = currentSlide.nextElementSibling;
+                   if(nextSlide){
+                       nextSlide.classList.add(SHOWING_CLASS);
+                   } else {
+                       firstSlide.classList.add(SHOWING_CLASS);
+                   }
+                   } else {firstSlide.classList.add(SHOWING_CLASS);
+                   }
+                }
+                   slide();
+                   setInterval(slide, 4000);
                 break;
             case 1:
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
                     html += '<li>'
-                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'" style="width:50%">';
+                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'">';
                     html += '<p class="title">' + product.productName + '</span><br>';
                     html += '<ul>';
                     html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
@@ -60,13 +64,13 @@ function getStandDatas() {
                 $('.multiple_bxslider').bxSlider({
                         mode: 'horizontal',
                         auto: true,
-                        slideWidth: 400,
+                        slideWidth: 4000,
                         infiniteLoop: true,
                         controls: true,
                         pager: false,
-                        minSlides: 5,
-                        maxSlides: 4,
-                        slideMargin: 3,
+                        minSlides: 3,
+                        maxSlides: 6,
+                        slideMargin: 4,
                         touchEnabled: true
                     });
                 break;
@@ -98,18 +102,7 @@ function getStandDatas() {
             };
         };
         
-        $('.slider').bxSlider();
-        $('.bxslider').bxSlider({
-            mode: 'fade',
-            auto: true,
-            pause: 2000,
-            controls: false,
-            easing: 'swing',
-            pager: false,
-            touchEnabled: true,
-        });
-
-    }, function(err){
+      }, function(err){
         console.log("onError", err);
     }, option);
 };
