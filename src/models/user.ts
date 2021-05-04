@@ -33,3 +33,13 @@ export type SessionUser = {
     userCellNo: string,
     userEmail: string
 }
+
+export type DeliveryInfo = {
+    deliveryNo?: number,
+    userId: string,
+    userName: string,
+    userCellNo: string,
+    addressName: string,
+    address: string,
+    mainAddressYn: string
+}

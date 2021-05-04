@@ -1,5 +1,5 @@
 import { NextFunction, request, Request, Response, Router } from 'express'
-import { User } from '../models/user'
+import { DeliveryInfo, User } from '../models/user'
 const router = Router()
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -116,6 +116,37 @@ router.get('/products', (req: Request, res: Response, next: NextFunction) => {
 router.get('/product', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'product', {})
 })
+
+router.get('/order', (req: Request, res: Response, next: NextFunction) => {
+    const deliveryGroupList = req.query.deliveryGroupList
+    const orderDTO = JSON.parse(req.query.orderDTO as string)
+
+    const deliveryInfo: DeliveryInfo = {
+        userId: '',
+        userName: '',
+        userCellNo: '',
+        addressName: '',
+        address: '',
+        mainAddressYn: ''
+    }
+
+    if (req.session.isLoggedIn === true) {
+        orderDTO.userId = 'jgpark'
+        orderDTO.userName = '박진국'
+        orderDTO.email = 'jgpark@data-flow.co.kr'
+        orderDTO.userCellNo = '01055431787'
+    } else {
+        orderDTO.userId = '비회원주문'
+    }
+
+    orderDTO.delivery = deliveryInfo
+    orderDTO.deliveryDesc = ''
+    orderDTO.paidPointAmount = 0
+    orderDTO.paidCouponAmount = 0
+
+    render(res, 'order_info', { deliveryGroupList, orderDTO: JSON.stringify(orderDTO) })
+})
+
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'mypage_orderList', {})
 })

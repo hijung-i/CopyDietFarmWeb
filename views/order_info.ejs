@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/style.css">
     <style type="text/css">
- 
- @media screen and (min-width:360px) and (max-width:1079px){
+ .orderer_info input, .deliver_info input, .coup_point input{width:100%;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
+     .orderer_info select, .deliver_info select, .coup_point select{width:100%; height:40px;border-radius:5px;border-color:#BBBBBB;padding:10px}
+     
+ @media screen and (max-width:1079px){
      .web_order_info{display:none}
-     .non_members{display:none}
      .detail_title h2{font-size:16px;text-align:center;margin-top:42px} 
      .btnback img{width:17px;position:relative;top:-18px;left:5px}
      .order_title {font-size:14px;font-weight:bold;padding-left:15px}
@@ -25,7 +26,7 @@
      .order_product ul li span{color:#878787}
      .item{border-top:1px solid #BBBBBB;padding-left:15px; padding-right: 15px}
      .item{display:flex;padding-top:15px;padding-bottom:13px}
-     .orderer_info, .deliver_info{padding-left:15px;border-bottom:8px solid #f1f1f1}
+     .orderer_info, .deliver_info, .coup_point{padding:0px 15px;border-bottom:8px solid #f1f1f1}
      .orderer_info img{width:8px;position:relative;top:-2px}
      .deliver_info h3 img{width:8px;position:relative;top:-2px}
      .deliver_info p{float:right;position:relative;top:-35px;left:-20px;font-size:14px;font-weight:bold}
@@ -38,15 +39,11 @@
      .members .addr{padding-bottom:18px;font-size:14px;}
      .members .name, .members .num{font-size:12px;color:#6B6B6B}
      .orderer_info h4, .deliver_info h4{font-size:14px;font-weight:bold;margin-bottom:4px}
-     .orderer_info input, .deliver_info input{width:95%;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
-     .orderer_info select{width:95%;height:30px}
-     .coup_point h3{font-size:14px;font-weight:bold;margin-top:23px;padding-left:15px;margin-bottom:10px}
-     .coup_point select{margin-left:15px}
+     .coup_point h3{font-size:14px;font-weight:bold;margin-top:23px;margin-bottom:10px}
      .coup_point p{font-size:12px;padding-left:15px;margin-top:10px}
      .coup_point input{width:70%;height:45px;border-radius:5px;border:none;border:1px solid #BBBBBB;margin-left:15px}
      .coup_point #btnUse{width:20%;height:45px;border:0;border:1px solid #EFA543;color:#EFA543;background-color:#fff;border-radius:5px}
      .final_price{border-bottom:8px solid #f1f1f1;padding-bottom:20px}
-     .final_price h3, .payment_method h3{padding-left:15px}
      .final_price table{width:100%;}
      .final_price td{margin-top:15px}
       .final01 tr, .final02 tr{display:flex;justify-content:space-between;padding-left:15px;padding-right:15px;margin-bottom:4px;font-size:14px}
@@ -112,7 +109,7 @@
      .payment_method h3{font-size:16px;font-weight:bold;margin-top:24px;margin-bottom:10px}
      .order_payment{border-bottom:8px solid #f1f1f1;padding-bottom:18px}
      .order_payment ul{display:grid;grid-template-columns: repeat(5, 1fr);align-items: center;justify-self: center;margin:0 auto;}
-     .order_payment ul li{width:95%;height:45px;border:1px solid #BBBBBB;border-radius:5px;padding:5px;margin-bottom:10px}
+     .order_payment ul li{width:95%;height:45px;border:1px solid #BBBBBB;border-radius:5px;padding:5px;margin-left: 2.5%;margin-bottom:10px}
      .order_payment img 
      {width:55px;height:22px;position:relative;left:65px;top:6px}
      .agreement h3{font-size:14px;font-weight:bold;margin-top:25px;padding-left:15px}
@@ -168,15 +165,15 @@
         </template>
         <div class="orderer_info">
             <h3><img src="images/asterisk.png"> 주문자 정보 </h3>
-            <div class="members">
+            <div class="members" v-if="orderDTO.userId != '비회원주문'">
                 <table>
                     <tr>
                         <td><span>보내는 분</span></td>
-                        <td>{{ orderDTO.userId }}</td>
+                        <td>{{ orderDTO.userName }}</td>
                     </tr>
                     <tr>
                         <td><span>휴대폰</span></td>
-                        <td>{{ orderDTO.userName }}</td>
+                        <td>{{ orderDTO.userCellNo }}</td>
                     </tr>
                         <tr>
                         <td><span>이메일</span></td>
@@ -184,42 +181,49 @@
                     </tr>
                 </table>
             </div>
-            <div class="non_members">
-            <h4>이름</h4>
-            <input type="text" placeholder="이름을 입력해주세요">
-              <h4>휴대폰</h4>
-            <input type="number" placeholder="연락처를 입력해주세요">
-              <h4>이메일</h4>
-            <input type="email" placeholder="이메일을 입력해주세요">
+            <div class="non_members" v-if="orderDTO.userId == '비회원주문'">
+                <h4>이름</h4>
+                <input type="text" placeholder="이름을 입력해주세요">
+                <h4>휴대폰</h4>
+                <input type="number" placeholder="연락처를 입력해주세요">
+                <h4>이메일</h4>
+                <input type="email" placeholder="이메일을 입력해주세요">
             </div>
         </div>
         <div class="deliver_info">
             <h3><img src="images/asterisk.png"> 배송지 정보 </h3>
-            <div class="members">
-                <span class="addr">서울 강남구 테헤란로8길 11-4, 2층</span><br>
-                <span class="name">박민지&nbsp;&nbsp;&nbsp;</span><span class="num">010-1234-5679</span>
+            <div class="members"  v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
+                <span class="addr">{{ orderDTO.delivery.address }}</span><br>
+                <span class="name">{{ orderDTO.delivery.userName }}</span>
+                <span class="num">{{ orderDTO.delivery.userCellNo }}</span>
             </div>
-            <div class="non_members">
-            <p><img src="images/beforecheck_icon_join.png">주문자 정보와 동일</p>
-            <h4>이름</h4>
-            <input type="text" placeholder="이름을 입력해주세요">
-              <h4>주소</h4>
-             <input type="text" id="addr" class="int" maxlength="80" placeholder="도로명, 지번, 건물명 검색">
-             <input type="text" id="addr2" class="int" maxlength="80" placeholder="상세주소">
-              <h4>휴대폰</h4>
-            <input type="tel" placeholder="연락처를 입력해주세요">
-             </div>
-             <h4>배송메모</h4>
-            <select style="width:95%;height:40px;border-radius:5px;border-color:#BBBBBB;padding:10px">
-                <option>배송메모를 선택해주세요</option>
+            <div class="non_members" v-if="orderDTO.userId == '비회원주문'">
+                <p><img src="images/beforecheck_icon_join.png">주문자 정보와 동일</p>
+                <h4>이름</h4>
+                <input type="text" placeholder="이름을 입력해주세요">
+                <h4>주소</h4>
+                <input type="text" id="addr" class="int" maxlength="80" placeholder="도로명, 지번, 건물명 검색">
+                <input type="text" id="addr2" class="int" maxlength="80" placeholder="상세주소">
+                <h4>휴대폰</h4>
+                <input type="tel" placeholder="연락처를 입력해주세요">
+            </div>
+            <h4>배송메모</h4>
+            <select id="selectDeliveryDesc">
+                <option value="" selected>배송메모를 선택해주세요</option>
+                <option value="직접입력">직접입력합니다.</option>
+                <option value="배송 전 미리 연락 바랍니다.">배송 전 미리 연락 바랍니다.</option>
+                <option value="부재시 경비실에 맡겨주세요.">부재시 경비실에 맡겨주세요.</option>
+                <option value="부재시 전화 또는 문자 주세요.">부재시 전화 또는 문자 주세요.</option>
+                <option value="빠른 배송 부탁드립니다.">빠른 배송 부탁드립니다.</option>
+                
             </select>
-            <input type="text" style="width:95%;height:80px;margin-top:8px">
+            <input type="text" v-model="orderDTO.deliveryDesc">
 
-          </div><!--//배송지 정보-->
+        </div><!--//배송지 정보-->
           <div class="coup_point">
               <div class="members">
                   <h3>쿠폰</h3>
-                  <select style="width:93%;height:40px;border-radius:5px;border-color:#BBBBBB;padding:10px">
+                  <select>
                 <option>쿠폰을 선택해 주세요</option>
                   </select>
                   <p>사용 가능 쿠폰 0장 / 전체 2장</p>
@@ -234,33 +238,33 @@
                   <table class="final01">
                         <tr>
                             <td><span>상품 금액</span></td>
-                            <td>223,600</td>
+                            <td>{{ numberFormat(orderDTO.paymentTotalAmount) }}</td>
                         </tr>
                         <tr>
                             <td><span>상품 할인 금액</span></td>
-                            <td>-76,400</td>
+                            <td>0원</td>
                         </tr>
                         <tr>
                             <td><span>배송비</span></td>
-                            <td>+0원</td>
+                            <td>{{ numberFormat(orderDTO.totalDeliveryCost) }}</td>
                         </tr>
                         <tr>
                             <td><span>쿠폰 할인</span></td>
-                            <td>0원</td>
+                            <td>{{ numberFormat(orderDTO.paidCouponAmount) }}원</td>
                         </tr>
                         <tr>
                             <td><span>포인트 사용</span></td>
-                            <td>0원</td>
+                            <td>{{ numberFormat(orderDTO.paidPointAmount) }}원</td>
                         </tr>
                     </table>
                        <table class="final02">
                         <tr class="total_price">
                             <td class="total"><span>총 결제 금액</span></td>
-                            <td class="order_info_prc">147,200</td>
+                            <td class="order_info_prc">{{ numberFormat(orderDTO.paidRealAmount) }}</td>
                         </tr>
                         <tr class="predict">
                             <td><span>예상 적립금</span></td>
-                            <td>&nbsp;700원</td>
+                            <td>&nbsp;{{ numberFormat(orderDTO.accumulatePoint) }}원</td>
                         </tr>
                      </table>
             </div><!--//최종 결제 금액-->
@@ -268,15 +272,15 @@
                <h3>결제 수단</h3>
                 <div class="order_payment">
                     <ul>
-                        <li><a href="#"><img src="/images/npay_ico_pay.png"></a>
+                        <li><label><img src="/images/npay_ico_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="1"></label>
                         </li>
-                        <li><a href="#"><img src="/images/cash_ico2_pay.png"></a>
+                        <li><label><img src="/images/cash_ico2_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="2"></label>
                         </li>
-                        <li><a href="#"><img src="/images/kpay_ico_pay.png"></a>
+                        <li><label><img src="/images/kpay_ico_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="3"></label>
                         </li>
-                        <li><a href="#"><img src="/images/card_ico2_pay.png"></a>
+                        <li><label><img src="/images/card_ico2_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="4"></label>
                         </li>
-                        <li><a href="#"><img src="/images/phone_ico2_pay.png"></a>
+                        <li><label><img src="/images/phone_ico2_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="5"></label>
                         </li>
                     </ul>
 
