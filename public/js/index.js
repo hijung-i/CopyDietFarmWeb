@@ -24,21 +24,25 @@ function getStandDatas() {
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
-                    html += '<li><img src="' + RESOURCE_SERVER + product.url+'"></li>';
+                    html += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'"></a></div>';
                 }
-
-                $('.bxslider').html(html);
-
-                $('.bxslider li').bxSlider({
-                    mode: 'horizontal',
-                    auto: true,
-                    pause: 6000,
-                    controls: false,
-                    easing: '',
-                    pager: false,
-                    touchEnabled: true,
-                });
-                
+                const SHOWING_CLASS = "showing";
+                const firstSlide = document.querySelector(".slider_item:first-child");
+                function slide(){
+                   const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
+                   if(currentSlide){
+                   currentSlide.classList.remove(SHOWING_CLASS);
+                   const nextSlide = currentSlide.nextElementSibling;
+                   if(nextSlide){
+                       nextSlide.classList.add(SHOWING_CLASS);
+                   } else {
+                       firstSlide.classList.add(SHOWING_CLASS);
+                   }
+                   } else {firstSlide.classList.add(SHOWING_CLASS);
+                   }
+                }
+                   slide();
+                   setInterval(slide, 4000);
                 break;
             case 1:
                 var html = '';
@@ -54,63 +58,51 @@ function getStandDatas() {
                     html += '</ul>';
                     html += '</a>';
                     html += '</li>';
-                   
                 }
 
                 $('.multiple_bxslider').html(html);
                 $('.multiple_bxslider').bxSlider({
                         mode: 'horizontal',
                         auto: true,
-                        slideWidth: 400,
+                        slideWidth: 4000,
                         infiniteLoop: true,
                         controls: true,
                         pager: false,
-                        minSlides: 4,
-                        maxSlides: 5,
-                        slideMargin: 3,
+                        minSlides: 3,
+                        maxSlides: 6,
+                        slideMargin: 4,
                         touchEnabled: true
                     });
                 break;
             case 2:
                 // 위클리 베스트
-                $('.w_best ul').html(generateHtmlForProductList(products, 8));
+                $('.w_best ul').html(generateHtmlForProductList(products));
                 $('.w_best h2').html(salesName);
                 break;
             case 3:
                 // 단백질이 필요할 때!
-                $('.protein ul').html(generateHtmlForProductList(products, 8));
+                $('.protein ul').html(generateHtmlForProductList(products));
                 $('.protein h3').html(salesName);
                 break;
             case 4:
                 // 당충전이 필요할 떄!
-                $('.sweet ul').html(generateHtmlForProductList(products, 8));
+                $('.sweet ul').html(generateHtmlForProductList(products));
                 $('.sweet h3').html(salesName);
                 break;
             case 5:
                 // 수분이 필요할 떄!
-                $('.water ul').html(generateHtmlForProductList(products, 8));
+                $('.water ul').html(generateHtmlForProductList(products));
                 $('.water h3').html(salesName);
                 break;
             case 6:
                 // 위클리 베스트 웹
-                $('.m_bestn_w').html(generateHtmlForProductList(products, 8));
+                $('.m_bestn_w').html(generateHtmlForProductList(products));
                 $('.m_bestn_w h2').html(salesName);
                 break;
             };
         };
         
-        $('.slider').bxSlider();
-        $('.bxslider').bxSlider({
-            mode: 'fade',
-            auto: true,
-            pause: 2000,
-            controls: false,
-            easing: 'swing',
-            pager: false,
-            touchEnabled: true,
-        });
-
-    }, function(err){
+      }, function(err){
         console.log("onError", err);
     }, option);
 };

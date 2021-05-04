@@ -69,6 +69,7 @@ function modalDisplay(display, modalName, i) {
         $('.modal-background').removeClass("on");
         $('.deliver_mag_modal').removeClass("on");
         
+        $('#selectedDeliveryNo').val('');
         $('#deliveryName').val('');
         $('#receiverName').val('');
         $('#addr').val('');

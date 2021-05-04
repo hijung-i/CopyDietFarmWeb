@@ -5,7 +5,6 @@ var app = new Vue({
         RESOURCE_SERVER,
         numberFormat,
         deliveryGroupList: '',
-        orderDTO: '',
         paymentNo: 0,
         usablePoint: 0
     }

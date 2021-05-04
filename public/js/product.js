@@ -100,11 +100,12 @@ function getProductDetail(){
         console.log(product.representative);
         for(var i = 0; i < product.representative.length; i++){
             var image = product.representative[i];
-            representative += '<li><a href="#"><img src="'+ RESOURCE_SERVER + image.url+'"></a></li>';
+            representative += '<div class="slider_item"><a href="#"><img src="'+ RESOURCE_SERVER + image.url+'"></a></div>';
         }
-
-        $('.view_top_box .bxslider').html(representative);
+   
+        $('.view_top_box #slider_main').html(representative);
         $('.products_ex').html(detailHtml);
+        $('.products_ex_mobile').html(detailHtml);
 
         
     }, function (err) {
