@@ -105,6 +105,7 @@ function getProductDetail(){
    
         $('.view_top_box #slider_main').html(representative);
         $('.products_ex').html(detailHtml);
+        $('.products_ex_mobile').html(detailHtml);
 
         
     }, function (err) {

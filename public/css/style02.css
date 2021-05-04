@@ -328,10 +328,10 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
   position: fixed;
   margin: auto;
   display: block;
-  left: 0;
-  top: 0;
+  left: 365px;
+  top: 200px;
   transform: translate(4%, 4%);
-
+  z-index:99999
 }
 
   
