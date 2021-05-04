@@ -145,7 +145,7 @@ a:hover{text-decoration:none;}
   }
   #nav a{font-family:Noto Sans KR;font-weight:bold;display:inline-block;width:400px;height:54px;font-size:16px;line-height:24px;padding:14px;margin-right:-4px}
   #nav a:hover{background-color:#F99319;color:#fff}
-  #nav .web_cate img{width:19.44px; margin: 20px 12px;}
+  #nav .web_cate img{width:19.44px; margin: 5px 11px;}
   #nav .web_cate{width:168px;height:54px;white-space:nowrap}
   .tabMenu{display:none}
  .sideMenu{display:none} 

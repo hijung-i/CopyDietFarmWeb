@@ -69,7 +69,6 @@ $(function() {
             $('.sideMenu').show().animate({
                 left: 0
             });
-            console.log('dd');
         });
         $('.slideMenu_close>a').on('click', function() {
             $('.sideMenu').animate({
@@ -247,4 +246,13 @@ $(document).ready(function(){
     $(".ordlist_clsWindow>i").click(function(){
         $("#ex1,.blocker").hide();
     })
+});
+
+// 사이드메뉴 offset
+var x = $('.web_cate').offset().left;
+var y = $('.web_cate').offset().top;
+var height = $('.web_cate').height();
+$('mDepth01').css ({
+    'left':x,
+    'top':y + height
 });

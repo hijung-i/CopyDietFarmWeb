@@ -6,7 +6,7 @@ var app = new Vue({
         numberFormat,
         deliveryGroupList: '',
         orderDTO: ''
-        
+                  
     }
 })
 
