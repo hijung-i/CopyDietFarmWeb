@@ -305,9 +305,8 @@ height:50px;overflow:hidden}
   .m_bestn_tit_w {position:relative; width:100%;margin-bottom:20px;}
   .m_bestn_tit_box img{ display:inline-block;width:200px;}
   .m_bestn_list{border-bottom:8px solid #f1f1f1;padding-top:10px}
-  .m_bestn_mn_box {float:left;}
-  #content .desc ul{margin-left:-10px}
-  #content .desc ul li{float:left;margin-left:10px}
+  .m_bestn_mn_box {float:left}
+   #content .desc ul li{float:left}
 
   #content{position:relative;width:100%;z-index:1;margin-top:27px}
   #content .main_img{z-index:1;width:100%;}

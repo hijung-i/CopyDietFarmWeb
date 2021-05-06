@@ -103,7 +103,7 @@ function getProductDetail(){
             representative += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'" style="width:100%;"></a></div>';
         }
    
-        $('.view_top_box #slider_main').html(representative);
+        $('.view_top_img #slider_product').html(representative);
         $('.products_ex').html(detailHtml);
         $('.products_ex_mobile').html(detailHtml);
 
@@ -209,7 +209,7 @@ function drawSelectedOptions() {
         // 총 금액은 여기서 안보여줌
         // optionHtml +=            '<div class="t_price">';
         // optionHtml +=                '<ul>';\
-         CDVFJ;       // optionHtml +=                    '<li class="total">총 금액</li>';
+        // optionHtml +=                    '<li class="total">총 금액</li>';
         // optionHtml +=                    '<li>8,500원</li>';
         // optionHtml +=               ' </ul>';
         // optionHtml +=            '</div>';
