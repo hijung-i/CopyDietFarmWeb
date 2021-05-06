@@ -50,9 +50,9 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 @media screen and (min-width:360px) and (max-width:1079px){
 .products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
-.purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:20px;}
+.purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:15px;padding-right:15px}
 }
-.purchased_products{clear:both;width:100%;margin-left:5px}
+.purchased_products{clear:both;width:100%}
 .purchased_products h3{margin-top:20px;margin-bottom:10px}
 .purchased_products .title{font-size:12px}
 .purchased_products .price{font-size:12px;font-weight:bold}

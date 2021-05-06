@@ -44,9 +44,9 @@ function getProductDetail(){
 
         // 가격 정보
         var productDesc = $('.v_top_txt')
-        var discountPrice = $('.v_top_txt_box .p1')
-        var retailPrice = $('.v_top_txt_box .p2')
-        var discountRate = $('.v_top_txt_box .p3')
+        var discountPrice = $('.v_top_txt_box .price_mobile .p1')
+        var retailPrice = $('.v_top_txt_box .price_mobile .p2')
+        var discountRate = $('.v_top_txt_box .price_mobile .p3')
         productDesc.html(product.productDesc);
         discountPrice.html(numberFormat(product.discountPrice)+'원');
         
