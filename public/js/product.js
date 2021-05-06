@@ -100,7 +100,7 @@ function getProductDetail(){
         console.log(product.representative);
         for(var i = 0; i < product.representative.length; i++){
             var image = product.representative[i];
-            representative += '<div class="slider_item"><a href="#"><img src="'+ RESOURCE_SERVER + image.url+'"></a></div>';
+            representative += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'" style="width:100%"></a></div>';
         }
    
         $('.view_top_box #slider_main').html(representative);
@@ -239,6 +239,7 @@ function drawSelectedOptions() {
         selectedOptions.splice(seq, 1);
 
         drawSelectedOptions();
-    })
+    });
+
 
 }
