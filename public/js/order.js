@@ -5,13 +5,8 @@ var app = new Vue({
         RESOURCE_SERVER,
         numberFormat,
         deliveryGroupList: '',
-<<<<<<< HEAD
-        orderDTO: ''
-                  
-=======
-        orderDTO: '',
-        paymentNo: 0
->>>>>>> d49f369b8080818c353271a6d963aad1f9c3bb83
+        paymentNo: 0,
+        usablePoint: 0
     }
 })
 
@@ -21,9 +16,25 @@ $(function() {
 
     // if(app.orderDTO.userId !== '비회원주문')
     getDefaultDeliveryInfo();
-
+    getUsablePointAmount();
     onPointAmountChange();
+
 })
+
+function getUsablePointAmount() {
+    var params = {};
+    ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
+    function(data) {
+        app.orderDTO.usablePoint = data.result;
+        console.log("success usablePoint", data);
+    }, function(err) {
+        console.log("error", err)
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
+}
 
 function paymentAction() {
     var bootpayParams = {
