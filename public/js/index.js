@@ -85,12 +85,12 @@ function getStandDatas() {
                 $('.protein h3').html(salesName);
                 break;
             case 4:
-                // 당충전이 필요할 떄!
+                // 당충전이 필요할 때!
                 $('.sweet ul').html(generateHtmlForProductList(products));
                 $('.sweet h3').html(salesName);
                 break;
             case 5:
-                // 수분이 필요할 떄!
+                // 수분이 필요할 때!
                 $('.water ul').html(generateHtmlForProductList(products));
                 $('.water h3').html(salesName);
                 break;
@@ -102,7 +102,7 @@ function getStandDatas() {
             };
         };
         
-      }, function(err){
+     }, function(err){
         console.log("onError", err);
     }, option);
 };

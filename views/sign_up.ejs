@@ -9,7 +9,8 @@
 
     <title>다이어트 Farm 로그인</title>
     <style type="text/css">
-        @media screen and (min-width:360px)and (max-width:1079px) {.web_signup{display:none}}
+        @media screen and (min-width:360px)and (max-width:1079px) {.web_signup{display:none}
+    #signup_title_web{display:none}}
         @media screen and (min-width:1080px){.mobile_signup{display:none} }
         
         </style>
@@ -22,8 +23,8 @@
 <body>
     <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
     <div class="web_signup"> 
-        <%-include('general/header_web') %>
-        <section class="detail_title">
+        <%-include('general/header') %>
+        <section class="detail_title" id="signup_title_web">
             <h2 style="width:441px;margin:0 auto;font-size:25px;color:#000;margin-top:55px;padding-bottom:35px;border-bottom:3px solid #F1F1F1">회원가입</h2>
         </section>
     </div>
@@ -46,20 +47,21 @@
                     <input type="hidden" id="dupInfo" value="<%=userData.dupInfo %>">
                     <input type="hidden" id="userCellNo" value="<%=userData.userCellNo %>">
                     <input type="hidden" id="userGender" value="<%=userData.userGender %>">
-                    <h3 class="join_title">
-                        <label for="id"><img src="/images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px">아이디</label>
-                    </h3>
+                </div>
                     <div class="id_place">
+                        <h3 class="join_title">
+                            <label for="id"><img src="/images/asterisk.png" style="width:8px;position:relative;top:5px;margin-right:2px">아이디</label>
+                        </h3>
                         <div class="box int_id">
                             <input type="text" id="id" class="int" maxlength="20" placeholder="아이디를 입력해주세요" required style="width:160px">
                         </div>
                         <div class="btn_wrap">
                         <button type="button" id="btnCheckIdDuplicate">중복 확인</button>
                         </div>
-                    </div>
-                    <span class="error_next_box"></span>
-                    <p style="clear:both;">- 아이디 중복확인 </p>
+                      <span class="error_next_box"></span>
+                     <p class="confirm_mag">- 아이디 중복확인 </p>
                 </div>
+              
 
                 <!-- PW1 -->
                 <div>

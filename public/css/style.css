@@ -251,14 +251,14 @@ height:50px;overflow:hidden}
 .web_index{display:none}
 .body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px;padding-bottom:19px}
 .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
-.body_bottom .thum img{width:100%;padding:10px}
-.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(2, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+.body_bottom .thum img{width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
+.body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
 .body_bottom .desc .ratio{font-weight:bold}
 .body_bottom .desc .title{margin-left:10px}
 .body_bottom .desc ul{margin-left:5px}
-.body_bottom .desc ul li{margin-left:6px;float:left;}
+.body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
 }
 @media screen and (min-width:1080px){.mobile_index{display:none}
@@ -319,10 +319,10 @@ height:50px;overflow:hidden}
   #content .category ul li{height:100%;text-align:center; margin-top:10px; /* outline: 2px solid red; */}
   #content .category li{float:left}
   #content .category img{width:60px;height:60px}
-  
+  #content .category p{margin-top:7.89px}
   #content .s_wrap{margin-bottom:-50px}
   #content .s_price{margin:20px 10px 20px;width:100%;margin-bottom:-50px;}
-  #content .s_price h2{font-size:14px;margin-bottom:10px;margin-left:5px}
+  #content .s_price h2{font-size:14px;margin-bottom:10px;margin-left:10px}
   #content .s_price li .title{font-size:12px;margin-left:10px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100px;height: 20px;display:inline-block}
   #content .s_price li .price{font-size:12px;font-weight:bold;margin-top:12px;overflow:visible;}
   #content .s_price ul li img{margin-bottom:10px}
@@ -332,7 +332,7 @@ height:50px;overflow:hidden}
   #content .s_price .ratio{color:red;font-size:11px;margin-left:5px}
   #content .best_wrap{width:100%;border-top:8px solid #f1f1f1; margin: 0 auto;}
   
-  #content .w_best{ overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
+  #content .w_best{overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
   #content .w_best h2{font-size:14px; margin-bottom:20px;margin-top:24px}
   #content .w_best li .thum img{width:100%;height:auto;}
   #content .w_best li .title{font-size:12px;padding:5px;padding-top:15px}
@@ -348,9 +348,6 @@ height:50px;overflow:hidden}
   /*메인페이지 컨텐츠 수정 210426*/
   @media screen and (min-width:360px) and (max-width:1079px){
   .sweet h3{clear:both;font-size:14px;font-weight:bold;padding-left:15px}
-  /*.sweet ul li:first-child{display:grid;grid-template-columns: repeat(2, 2fr);
-    ;align-items: center;
-    justify-self: center;width:50%}*/
 }
 
   /* 서브메뉴 */	
@@ -438,7 +435,7 @@ height:50px;overflow:hidden}
   #content .pick_product ul li .desc p{font-size:12px;padding:5px;text-overflow: ellipsis;white-space:nowrap;}
   #content .pick_product ul li .desc 
   #content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
-  #content .desc ul{margin-left:10px;margin-bottom:10px}
+  #content .desc ul{margin-left:10px;margin-bottom:10px;margin-top:7px}
   #content .desc .sale{color:#000}
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
   #content .desc .ratio{color:#F32525}
