@@ -77,39 +77,6 @@ function isAvailable(data){
 	return (data != null && data != undefined && data != '')
 }
 
-function getEventStands() {
-	var currentStandCode = $('#currentStandCode').val();
-    var param = {}
-    ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
-    , function(data) {
-
-		$("#header #nav").html('');
-		var html = '';
-		
-		console.log(data);
-		for(var i = 0; i < data.result.length; i++){
-			var stand = data.result[i];
-			if(i == 0){
-				html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'>홈</a>';
-			}
-			console.log(currentStandCode, stand.salesStandCode);
-			if( currentStandCode == stand.salesStandCode){
-				$('#header #nav a').removeClass("is-current");
-				html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
-			} else {
-				html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
-			}
-		}
-
-		html += '<div class="nav-underline"></div>';
-		console.log(html);
-		$('#header #nav').html(html);
-				
-    }, function(err) {
-        console.log("eventStands err", err);
-    }) 
-} 
-
 function numberFormat(number) {
 	return (number+"").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

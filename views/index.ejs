@@ -66,7 +66,7 @@
         position: absolute;
         width: 100%;
     }
-    #slider_main{width:100%;position:relative;margin-bottom:200px;margin-top:200px}
+    #slider_main{width:100%;position:relative; z-index: -1;}
     .slider_item{width:100%;height:auto;display:flex;justify-content:center;
     align-items:center;color:#fff;position:absolute;top:0;z-index:999;opacity:0;
     transition:opacity 1s ease-in-out}
@@ -331,5 +331,5 @@
     </main>
     <%-include('general/footer') %>
     <script src="/js/index.js"></script>
-    <script src=""></script>
-</body></html>
+</body>
+</html>

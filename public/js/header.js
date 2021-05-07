@@ -1,3 +1,69 @@
+
+function getEventStands() {
+	var currentStandCode = $('#currentStandCode').val();
+    var param = {}
+    ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
+    , function(data) {
+
+		$("#header #nav").html('');
+		var html = '';
+		html += '<a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';		
+		console.log(data);
+		for(var i = 0; i < data.result.length; i++){
+
+			// TODO: 화면 너비가 pc버전일때 break;
+			if(i == 4) break;
+
+			var stand = data.result[i];
+			if(i == 0){
+				html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'>홈</a>';
+			}
+			console.log(currentStandCode, stand.salesStandCode);
+			if( currentStandCode == stand.salesStandCode){
+				$('#header #nav a').removeClass("is-current");
+				html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
+			} else {
+				html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
+			}
+		}
+
+		html += '<div class="nav-underline"></div>';
+		console.log(html);
+		$('#header #nav').html(html);
+
+		$('.web_cate').click(function() {
+			sideTabOpen();
+			var x = $('.web_cate').offset().left;
+			var y = $('.web_cate').offset().top;
+			var height = $('.web_cate').outerHeight();
+            console.log(y, height);
+
+            $('.sideMenu').css({
+                'position': 'absolute',
+                'left':x,
+				'top':y + height
+                // width:100% disabled
+			});
+		})
+
+		// $('')
+    }, function(err) {
+        console.log("eventStands err", err);
+    }) 
+} 
+
+function sideTabOpen() {
+    $('.sideMenu').show().animate({
+        left: 0
+    });
+}
+function sideTabClose() {
+    $('.sideMenu').animate({
+        left: -100 + '%'
+    }, function() {
+        $('.sideMenu').hide();
+    });
+}
 $(function() {
     getEventStands();
 
@@ -46,37 +112,12 @@ $(function() {
             $('.gnb_depth02>li.current').addClass("on");
         }
     })
-
+   
     // 햄버거 메뉴
     $(document).ready(function() {
-
-        $('.btnMenu>a').on('click', function() {
-            $('.sideMenu').show().animate({
-                left: 0
-            });
-        });
-        $('.slideMenu_close>a').on('click', function() {
-            $('.sideMenu').animate({
-                left: -100 + '%'
-            }, function() {
-                $('.sideMenu').hide();
-            });
-        });
-    });
-    $(document).ready(function() {
-
-        $('.web_cate').on('click', function() {
-            $('.sideMenu').show().animate({
-                left: 0
-            });
-        });
-        $('.slideMenu_close>a').on('click', function() {
-            $('.sideMenu').animate({
-                left: -100 + '%'
-            }, function() {
-                $('.sideMenu').hide();
-            });
-        });
+        $('.btnMenu>a').click( sideTabOpen );
+        
+        $('.slideMenu_close>a').click( sideTabClose );
     });
 
 
@@ -159,7 +200,7 @@ function selectAll(selectAll)  {
 
 
 /* 주문 내역 > 주문 상세 > 리뷰 lnb 화면전환 */
-$(document).ready(function(){
+$(function(){
     $("ul.tab_wrap #possible").click(function(){
         $("div#tab1").hide();
         $("div#tab2").show();
@@ -246,13 +287,5 @@ $(document).ready(function(){
     $(".ordlist_clsWindow>i").click(function(){
         $("#ex1,.blocker").hide();
     })
-});
 
-// 사이드메뉴 offset
-var x = $('.web_cate').offset().left;
-var y = $('.web_cate').offset().top;
-var height = $('.web_cate').height();
-$('mDepth01').css ({
-    'left':x,
-    'top':y + height
 });
