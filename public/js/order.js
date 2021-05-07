@@ -27,8 +27,14 @@ var app = new Vue({
             $('#deliveryDesc').val(value);
         },
         useAllPoint: function() {
-            this.orderDTO.paidPointAmount = this.usablePoint;
-            this.remainingPoint = 0;
+
+            if(this.usablePoint <= this.orderDTO.paymentTotalAmount) {
+                this.orderDTO.paidPointAmount = this.usablePoint;
+                this.remainingPoint = 0;
+            } else if (this.usablePoint > this.orderDTO.paymentTotalAmount) {
+                this.orderDTO.paidPointAmount = this.orderDTO.paymentTotalAmount;
+            }
+
         }
     },
     computed: {
@@ -96,6 +102,8 @@ function getUsablePointAmount() {
 
 function paymentAction() {
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
+    var methods = ['npay', 'vbank', 'kakao', 'card', 'phone'];
+    var method = methods[app.paymentNo -1];
 
     var items = new Array();
     var count = 0;
@@ -128,7 +136,7 @@ function paymentAction() {
         application_id: "5feae25e2fa5c2001d0391b9",
         name: app.orderDTO.orderTitle,
         pg: 'nicepay',
-        method: 'npay',
+        method: method,
         show_agree_window: 0, // 부트페이 정보 동의 창 보이기 여부
         items: [],
         user_info: {
@@ -146,7 +154,7 @@ function paymentAction() {
             start_at: '2019-05-10', // 정기 결제 시작일 - 시작일을 지정하지 않으면 그 날 당일로부터 결제가 가능한 Billing key 지급
             end_at: '2022-05-10', // 정기결제 만료일 -  기간 없음 - 무제한
             vbank_result: 1, // 가상계좌 사용시 사용, 가상계좌 결과창을 볼지(1), 말지(0), 미설정시 봄(1)
-            quota: '0,2,3', // 결제금액이 5만원 이상시 할부개월 허용범위를 설정할 수 있음, [0(일시불), 2개월, 3개월] 허용, 미설정시 12개월까지 허용,
+            quota: '[0,2,3]', // 결제금액이 5만원 이상시 할부개월 허용범위를 설정할 수 있음, [0(일시불), 2개월, 3개월] 허용, 미설정시 12개월까지 허용,
             theme: 'purple', // [ red, purple(기본), custom ]
             custom_background: '#00a086', // [ theme가 custom 일 때 background 색상 지정 가능 ]
             custom_font_color: '#ffffff' // [ theme가 custom 일 때 font color 색상 지정 가능 ]
