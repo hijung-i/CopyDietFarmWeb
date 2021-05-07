@@ -105,10 +105,10 @@ a:hover{text-decoration:none;}
   position:relative;
   top:6px
  }
-@media screen and (min-width:360px)  and (max-width:1079px){
+@media screen and (max-width:1079px){
 #header .gnb{position:fixed;width:100%;background-color:#fff}
 }
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
   .content_main .main_img{padding-top:100px}
   .content_main .bxslider li img{width:auto;height:419px!important;}
   #header{margin-bottom:20px}
@@ -147,9 +147,7 @@ a:hover{text-decoration:none;}
   #nav a:hover{background-color:#F99319;color:#fff}
   #nav .web_cate img{width:19.44px; margin: 5px 11px;}
   #nav .web_cate{width:168px;height:54px;white-space:nowrap; position: relative;}
-  .tabMenu{display:none}
- .sideMenu{display:none} 
-  #tab2{display:none}
+  .sideMenu{display:none} 
   .downArrow{display:none}
   .mDepth01{position:absolute; border:1px solid #f5f5f5}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
@@ -254,7 +252,7 @@ height:50px;overflow:hidden}
 
 /*content*/
 /*메인 페이지 모바일*/
-@media screen and (min-width:360px)and (max-width:1079px) {
+@media screen and (max-width:1079px) {
 .web_index{display:none}
 .body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px;padding-bottom:19px}
 .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
@@ -299,7 +297,7 @@ height:50px;overflow:hidden}
 .w_best .thum img{width:184px;height:184px;border-radius:6px}
 
 }
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
   #web_only{display:none}
   .m_best h2{margin-top:24px;margin-bottom:15px;margin-left:15px;font-size:14px}
   #content{width:100%;margin-right:15px}
@@ -353,7 +351,7 @@ height:50px;overflow:hidden}
   #content .pages ul li img{width:60%;}
   }
   /*메인페이지 컨텐츠 수정 210426*/
-  @media screen and (min-width:360px) and (max-width:1079px){
+  @media screen and (max-width:1079px){
   .sweet h3{clear:both;font-size:14px;font-weight:bold;padding-left:15px}
 }
 
@@ -363,7 +361,7 @@ height:50px;overflow:hidden}
   #content .main_sub{width:100%;margin:-10px auto;margin-top:40px}	
   #content .sort select{border:0;margin-left:15px;margin-bottom:10px;margin-top:5px}
   
-  @media screen and (min-width:360px) and (max-width:600px){
+  @media screen and (max-width:600px){
   #mobile_sub{position:fixed;height:90px;background-color:#fff}
   #content .main_sub_wrap{	
   width:100%;border-top:2px solid #f1f1f1;margin-top:34px;margin-top:100px}
@@ -427,7 +425,7 @@ height:50px;overflow:hidden}
   
   /*찜한 메뉴 모바일*/
   
-  @media screen and (min-width:360px)and (max-width:1079px){
+  @media screen and (max-width:1079px){
   #mHeader{position:fixed;height:90px;background-color:#fff}
   .btnCart{position:relative;margin-right:10px}
   #content .pick_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:80px}
@@ -474,7 +472,7 @@ height:50px;overflow:hidden}
 .no_list{font-size:16px;color:#878787;margin-top:15px}
 
 /*회원 탈퇴*/
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
 .contents .web_title{display:none}
 .contents .delete a img{position:absolute;top:-1px}
 .contents .delete p{margin:32px 15px 45px ;font-size:14px;font-weight:bold}

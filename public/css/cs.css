@@ -11,7 +11,7 @@ body{min-width:360px}
 .detail_title a img{position:absolute;top:42px;width:17px}
 
 /*cs-center모바일*/
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
 #content{padding-left:15px;padding-right:15px}
 .content h2{display:none}
 .w_sidemenu{display:none}
@@ -81,7 +81,7 @@ label:after {
 
 /*알림 받기*/
 
-@media screen and (min-width:360px)and (max-width:1079px) 
+@media screen and (max-width:1079px) 
 {
 .alarm_web_title{display:none}
 .alarmBox{margin-top:31px}

@@ -4,7 +4,7 @@
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 /*공지사항- 모바일*/
-@media screen and (min-width:360px)and (max-width:1079px) 
+@media screen and (max-width:1079px) 
 {
 .page_wrap{display:none}
 .noticeBox h4{display:none}

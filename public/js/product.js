@@ -20,33 +20,21 @@ $(function() {
     $("button.c_btn").click(addCart);
 
     $(document).ready(function() {
-        $('.bxslider').bxSlider({
-                    mode: 'horizontal',
-                    auto: false,
-                    pause: 2000,
-                    controls: false,
-                    easing: '',
-                    pager: false,
-                    touchEnabled: true,
-                });
-        $('.multiple_bxslider').bxSlider({
+           $('.multiple_bxslider').bxSlider({
             mode: 'horizontal',
             auto: true,
             slideWidth: 4000,
             infiniteLoop: true,
             controls:true,
             pager: false,
-            minSlides:3,
-            maxSlides:4,
-            slideMargin:10
+            minSlides:4,
+            maxSlides:5,
+            slideMargin:4
         });
   
-        $('#tab3', '.pp_wrap').click(function(){
-         $('.products_ex_mobile').css('display','none')
-        });
-    });
+     });
        $(function() {
-        $('ul.tab_wrap #tab_mobile li').click(function() {
+        $('ul.tab_wrap #tab li').click(function() {
             var activeTab = $(this).attr('data-tab');
             $('.tab_wrap li').removeClass('active');
             
@@ -57,7 +45,7 @@ $(function() {
             $('#' + activeTab).addClass('active');
         })
         
-        $('ul.tab_wrap #tab_pc li').click(function() {
+        $('ul.tab_wrap #tab li').click(function() {
             var activeTab = $(this).attr('data-tab');
             $('.tab_wrap li').removeClass('active');
             
@@ -66,10 +54,10 @@ $(function() {
             $(this).addClass('active');
             $('#' + activeTab).addClass('active');
             
-            $('#tab1_mobile').addClass('active');
+            $('#tab1').addClass('active');
         })
     });
-    
+
 })
 
 function getProductDetail(){

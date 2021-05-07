@@ -16,6 +16,11 @@ em,address{font-style:normal}
 
 a{text-decoration:none;color:inherit;*color:#383838}
 table{border-collapse:collapse;border-spacing:0}
+.bx-wrapper {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
 
 /* 수량 선택 버튼 */
 
@@ -77,10 +82,10 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
     text-align: center;
     /* outline: 2px solid red; */
   }
-
+#tab ul li{cursor: pointer;}
 /*products_mobile*/
-@media screen and (min-width:360px) and (max-width:1079px){.view_navi_box{display:none}
-
+@media screen and (max-width:1079px){
+.view_navi_box{display:none}
 /* 토글 버튼 디자인 */
 .myReview input {position: absolute; left: -9999px;}
 .myReview label {
@@ -191,8 +196,11 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 
 /*products_web*/
 @media screen and (min-width:1080px){
+.tabMenu ul{border-top:1px solid #F5F5F5;border-bottom:1px solid #F5F5F5}
+.tabMenu ul li{width:267px;height:68px;font-size:18px;color:#707070}
+.tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
+.product_top{display:flex;flex-flow:column-reverse}
 #container{margin-top:240px}
-#tab_mobile{display:none}
 #btn_mobile{display:none}
 .products_ex_mobile{display:none}
 .myReview{padding-top:66px}
@@ -209,7 +217,6 @@ border-radius: 5px;
 -moz-appearance: none;
 appearance: none;
 border-color:#BBBBBB}
-.tabMenu{display:none}
 .price_mobile{display:none}
 .view_navi_box {display:block;position:relative;background:none;padding-top:30px;text-align:left;color:#4d4d4d;font-weight:600;letter-spacing:-0.05em;}
 .view_navi_tit {display:inline;padding-bottom:30px;text-align:left;color:#4d4d4d;font-size:18px}
@@ -291,9 +298,8 @@ box-shadow: none !important}
 
 .p_option_lisbox {position:relative;padding:0px;margin:0;background:#fff}
 .p_option_list_on {display:block;padding:10px 14px;background:fff;border:1px solid #c8c8c8;border-top:none;font-size:1em;color:#000;}
-.p_option_list_on:hover {color:#fe696c}
+
 .p_option_list {display:block;padding:10px 14px;background:fff;border:1px solid #c8c8c8;border-top:none;font-size:1em;color:#555;cursor:pointer}
-.p_option_list:hover {color:#fe696c}
 .ico_money_op {display:inline;background:#f1f1f1;position:relative;top:-1px;margin-left:10px;padding:0px 8px;text-align:center;border:1px solid #d1d1d1;color:#666;vertical-align:middle;font-size:11px;letter-spacing:-0.05em}
 
 .opt_p_box {position:relative;display:block;margin:20px 0 0px;font-family: Verdana, "NanumBold", "Malgun Gothic", sans-serif;}
