@@ -395,7 +395,7 @@ height:50px;overflow:hidden}
       
    /*서브제품페이지 웹*/
   @media screen and (min-width:1080px){
-  #content .main_sub{margin:200px auto;}
+  #content .main_sub{margin:240px auto;}
   #content{width:1080px;margin:0 auto}
   .pages {display:none;}
   .btnMenu, .btnCart{display:none;}
