@@ -8,6 +8,7 @@ var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
 function ajaxCall(url, params, type, onSuccess, onError){
 	var param = JSON.stringify(params);
+
 	$.ajax({
 		type : type,
 		cache : false,
