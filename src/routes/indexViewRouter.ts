@@ -185,6 +185,9 @@ router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction
 router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'order_details', {})
 })
+router.get('/login002', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'login_tracking', {})
+})
 
 const render = (res: Response, view: any, data: any | null) => {
     res.render(view, data || null)
