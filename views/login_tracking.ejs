@@ -73,22 +73,33 @@
 
 <body>
   <div class="web_login">
-    <%-include('general/header_web') %>
-  <section class="detail_title" style="width:1080px;margin:0 auto">
-    <h2 style="margin-top:55px;font-size:18px;color:#000">로그인</h2>
- </section>
+    <%-include('general/header') %>
+    <section class="detail_title" style="width:1080px;margin:0 auto">
+        <h2 style="margin-top:55px;font-size:18px;color:#000">로그인</h2>
+     </section>
+   </div>
+   <div class="mobile_login">
+    <section class="detail_title">
+        <h2>로그인</h2>
+        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
+        </div>
+    </section>
+</div>
 <div class="main-container">
     <div class="main-wrap">
 
         <section class="login-input-section-wrap">
             <div class="login-input-wrap">
-                <input placeholder="아이디를 입력해주세요" type="text" style="border: none;	width:340px;height:45px;font-size: 14px;margin-left: 10px;">
+                <input placeholder="아이디를 입력해주세요" type="text" style="border: none;height:45px;font-size: 14px;margin-left: 10px;">
             </div>
             <div class="login-input-wrap password-wrap">
-                <input placeholder="비밀번호를 입력해주세요" type="password" style="border: none;	width:340px;height:45px;font-size: 14px;margin-left: 10px;">
+                <input placeholder="비밀번호를 입력해주세요" type="password" style="border: none;height:45px;font-size: 14px;margin-left: 10px;">
             </div>
             <div class="login-button-wrap">
-                <button id="btnLogin">로그인</button>
+                <button type ="button" id="btnLogin">로그인</button>
+            </div>
+            <div class="non-member-button-wrap">
+                <button type ="button" id="btnNonMem">비회원 주문 조회</button>
             </div>
             <section class="Easy-sgin-in-wrap">
                 <ul>
@@ -100,119 +111,20 @@
                     <li class="login03"><a href="/sign-up-form">회원가입</a>
                 </ul>
             </section>
+            <section class="sns_login">
+                <p>SNS계정으로 간편 로그인하세요.</p>
+                <ul>
+                    <li><img src=""></li>
+                    <li><img src=""></li>
+                </ul>
+            </section>
         </section>
     </div>
 </div>
-</div>
-<div class="mobile_login">
-  <div class="logIn_ctt"><!-- 로그인 -->
-  <section class="detail_title">
-    <h2>로그인</h2>
-    <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="뒤로 가기"
-          style="width:17px"> </a>
-    </div>
-
-  </section>
-  <div class="main-container">
-    <div class="main-wrap">
-
-      <section class="login-input-section-wrap">
-        <div class="login-input-wrap">
-          <input placeholder="아이디를 입력해주세요" type="text" style="border: none;	width:340;height:45px;font-size: 14px;margin-left: 10px;">
-        </div>
-        <div class="login-input-wrap password-wrap">
-          <input placeholder="비밀번호를 입력해주세요" type="password" style="border: none;	width:340;height:45px;font-size: 14px;margin-left: 10px;">
-        </div>
-        <div class="login-button-wrap">
-          <button id="btnLogin">로그인</button>
-        </div>
-        <section class="Easy-sgin-in-wrap">
-          <ul class="tab_wrap">
-            <li class="login01 active" data-tab="tab1"><a href="javascript:void(0);">아이디 찾기</a></li>
-            <li><img src="/images/l_icon_category@2x.png"></li>
-            <li class="login02" data-tab="tab2"><a href="javascript:void(0);">비밀번호 찾기 </a>
-            <li><img src="/images/l_icon_category@2x.png"></li>
-            <li class="login03" data-tab="tab3"><a href="javascript:void(0);">회원가입</a>
-          </ul>
-        </section>
-      </section>
-    </div>
-  </div>
-</div>
-</div>
-  <!-- 아이디 찾기 완료 -->
-  <div id="tab1" class="tab_cont active" style="display: none;"> 
-    <section class="detail_title">
-      <h2>아이디 찾기 완료</h2>
-      <!-- <script type="text/javascript">
-        function goBack() {
-          window.history.back();
-        } --> 
-      </script>
-      <div class="btnback"><a href="#" value="취소"><img src="/images/leftarrow_ico_my.png" alt="뒤로 가기"
-            style="width:4%"></a>
-      </div>
-    </section>
-    
-    <main id="content" class="content">
-      <div class="idSearchComp">
-        <ul>
-          <li>
-            <h3>입력하신 정보와 일치하는 아이디입니다</h3>
-          </li>
-          <li style="color:#6B6B6B">아이디 확인 후, 로그인 또는 비밀번호 찾기를 해주세요.</li>
-        </ul>
-        <ul class="id_info">
-          <li style="font-weight:bold;font-size:14px;color:#31845B">dataflow</li>
-          <li style="font-weight:bold;font-size:14px;color:#878787">가입일 : 2021-02-09</li>
-        </ul>
-      </div>
-      <div class="buttons">
-        <button type="button" class="btnpwdSearch">비밀번호 찾기</button>
-        <button type="button" class="btnSignup">회원가입</button>
-      </div>
-
-    </main>
-        </section>
-
-      </div>
-    </footer>
-
-  </div>
 
 
-  <!-- 비밀번호 찾기 완료 -->
-  <div id="tab2" class="tab_cont2 active" style="display: none;">
-  <section class="detail_title">
-    <h2>비밀번호 찾기 완료</h2>
-    <!-- <script type="text/javascript">
-        function goBack() {
-            window.history.back();
-        } -->
-    </script>
-    <div class="btnback"><a href="#" value="취소"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
-    </div>
-</section>
-
-<main id="content" class="content">
-    <div class="idSearchComp">
-        <h3>입력하신 정보와 일치하는 회원 정보가 없습니다.</h3>
-        <p>다시 한번 회원정보를 정확히 넣어 주세요.</p>
-        <p style="margin-bottom:78px">아직 다이어트팜 회원이 아니시라면, 회원가입 후 이용해 주세요.</p>
-    </div>
-    <div class="buttons">
-        <button type="button" class="btnpwdSearch">비밀번호 찾기</button>
-        <button type="button" class="btnSignup">회원가입</button>
-    </div>
-</main>
-  </div>
-
-
-
-    </div>
-    <script src="/js/login.js"></script>
-
-</div>
+ 
+<script src="/js/login.js"></script>
 <script type="text/javascript" src="/js/header.js"></script>
 </body>
 

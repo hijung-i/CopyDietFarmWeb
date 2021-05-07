@@ -31,17 +31,18 @@
 
 .login a{left:20px;margin-top:-20px}
 
-.login-input-section-wrap{padding-top: 20px;display: flex;}
-
+.login-input-section-wrap{padding-top:20px;display: flex;}
 .login-input-wrap{width:border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
-.login-input-wrap input{border: none;	width:330px;height:45px;font-size: 14px;margin-left: 10px;}
+.login-input-wrap input{border: none;width:330px;height:45px;font-size: 14px;margin-left: 10px;}
 .login-button-wrap {padding-top: 13px;}
-.login-button-wrap button{
+.login-button-wrap button{color:#fff;width: 340px;height :45px;
+	font-size: 14px;font-weight:bold;background: var(--yello-color);border: solid 1px var(--yello-border-color);border-radius:5px}
+.non-member-button-wrap button{background-color:#fff;
 	width: 340px;height :45px;
-	font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;margin-top:50px
-}
+	font-size: 14px;color:#6B6B6B;font-weight:bold;border:1px solid #6B6B6B;border-radius:5px
+    ;margin-top:10px}
 .login-stay-sign-in{width: 330px;height: 52px;display: flex;font-size: 15px;	color: #4e4e4e;align-items: center;	justify-content: flex-start;border-bottom: solid 1px var(--border-gray-color);
 }
 .login-stay-sign-in i{font-size: 25px;color: #9ba1a3;
@@ -64,7 +65,7 @@ padding-bottom: 10px;}
 .Easy-sgin-in-wrap ul li a{float:left;font-size:14px;color:#6B6B6B}
 .Easy-sgin-in-wrap ul li img{position:relative;top:4px}
 .fail-button-wrap button{	width: 340px;height :45px;font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;} 
-
+.sns_login p{margin-top:72px;font-size:14px;color:#6B6B6B;line-height:14px}
 /*아이디 찾기 완료*/
 .idSearchComp, .btnIdSearchComp{width:100%;padding-left:15px;padding-right:15px;margin-bottom:75px;}
 .idSearchComp .words li{color:#6B6B6B}
@@ -161,6 +162,8 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 .btnback{display:none}
 .red_sign{width:336px}
 }
+
+/*로그인*/
 
 
 

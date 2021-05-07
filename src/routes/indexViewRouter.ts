@@ -185,8 +185,12 @@ router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction
 router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'order_details', {})
 })
+/* 새 화면 추가 보기용 (파일명 임시)*/
 router.get('/login002', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'login_tracking', {})
+})
+router.get('/order002', (req: Request, res: Response, next: NextFunction) => {
+    render(res, 'order_info_point', {})
 })
 
 const render = (res: Response, view: any, data: any | null) => {
