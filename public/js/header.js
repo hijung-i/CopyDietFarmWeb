@@ -249,10 +249,21 @@ $(document).ready(function(){
 });
 
 // 사이드메뉴 offset
+
 var x = $('.web_cate').offset().left;
 var y = $('.web_cate').offset().top;
 var height = $('.web_cate').height();
-$('mDepth01').css ({
+$('.mDepth01').css ({
     'left':x,
     'top':y + height
 });
+
+/* 
+    var x = $('.web_cate').offset({left:180}).left;
+    var y = $('.web_cate').offset({top:189}).top;
+    var height = $('.web_cate').height();
+    $('.mDepth01').css ({
+        'left':x,
+        'top':y + height
+    });
+*/

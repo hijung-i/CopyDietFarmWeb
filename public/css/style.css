@@ -142,21 +142,20 @@ a:hover{text-decoration:none;}
     font-size:16px; font-weight: 500;
     line-height:54px; 
   }
-  #nav a{font-family:Noto Sans KR;font-weight:bold;display:inline-block;width:400px;height:54px;font-size:16px;line-height:24px;padding:14px;margin-right:-4px}
+  #nav a{font-family: 'Noto Sans KR', sans-serif; font-weight:bold;display:inline-block;width:400px;height:54px;font-size:16px;line-height:24px;padding:14px;margin-right:-4px}
   #nav a:hover{background-color:#F99319;color:#fff}
   #nav .web_cate img{width:19.44px; margin: 5px 11px;}
-  #nav .web_cate{width:168px;height:54px;white-space:nowrap}
+  #nav .web_cate{width:168px;height:54px;white-space:nowrap; position: relative;}
   .tabMenu{display:none}
  .sideMenu{display:none} 
   #tab2{display:none}
   .downArrow{display:none}
-  .mDepth01{position:absolute; margin-top:141px; margin-left:172px; width: 157px; border:1px solid #f5f5f5;}
+  .mDepth01{position:absolute; border:1px solid #f5f5f5}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
   .gnb_depth02{position:absolute;left:170px;margin-top:-45px;display:inline-block;width:372px;height:378px;text-align:left}
 }
-.slideMenu {display: none !important;}
-.sp_wrap {position: relative;}
+
 .slideMenu_top {
 	background: #FFFFFF;
 	font-size: 16px;
@@ -168,11 +167,12 @@ a:hover{text-decoration:none;}
 .sid_menu .mDepth01 dt .downArrow {
 	width:11px;height:11px
 }
-.mDepth01 {height:100vh;  overflow-y: hidden; z-index: 999;}
+.mDepth01 {height:1000px; width: 168px;  overflow-y: hidden; position: relative;}
 
 
 .sideMenu .mDepth01{padding-bottom:150px;font-size:16px;line-height:32px; background: #fff;}
-.sideMenu .mDepth01 dt{padding:8px 24px 9px;color:#333;cursor:pointer;border-bottom:1px solid #e0e4e7; font-size: 14px; font-weight: 400; display: flex;}
+.sideMenu .mDepth01 dl {height: 54px;}
+.sideMenu .mDepth01 dt{height: 54px; padding:8px 24px 9px;color:#333;cursor:pointer;border-bottom:1px solid #e0e4e7; font-size: 14px; font-weight: 400; display: flex;}
 .sideMenu .mDepth01 dt img{width: 32px;height:32px;margin-right:15px;vertical-align:middle;}
 .downArrow{width:11px;height:11px}
  .sideMenu .mDepth01 dd{display:none; background:#f3f5f6; position: relative;}
@@ -184,6 +184,11 @@ a:hover{text-decoration:none;}
 /* slideMenu */
 .slideMenu_content {
 	display: none;
+}
+@media screen and (min-width:1080px) {
+  div.slideMenu_top {
+    display: none;
+  }
 }
 .slideMenu_top {
 	display: flex;
@@ -450,7 +455,7 @@ height:50px;overflow:hidden}
   
   /*찜한 메뉴 웹*/
   @media screen and (min-width:1080px){
-  #content{width:100%;max-width:1080px;margin:0 auto;margin-top:-180px}
+  #content{width:100%;max-width:1080px;margin:0 auto;}
   #content .pick_wrap{width:1080px;}
   #content .pick_wrap{margin:10px 10px;width:100%;}
   #content .pick_product h2{margin-top:40px;margin-bottom:20px;font-size:18px;color:#000;}
