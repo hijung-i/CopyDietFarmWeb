@@ -139,7 +139,7 @@ function getProductDetail(){
         console.log(product.representative);
         for(var i = 0; i < product.representative.length; i++){
             var image = product.representative[i];
-            representative += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'" style="width:100%;"></a></div>';
+            representative += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'" style="width:640px;"></a></div>';
         }
    
         $('.view_top_img #slider_product').html(representative);

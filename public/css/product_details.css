@@ -16,7 +16,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title a img{position:absolute;top:44px;width:17px;margin-left:5px}
 
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
-#content .tabMenu ul{padding-left:25px;padding-right:25px;padding-bottom:10px;padding-top:10px}
+#content .tabMenu li{padding-left:25px;padding-right:25px;padding-bottom:10px;padding-top:10px}
 #content .tabMenu li{width:100%;float:left;width:25%;height:auto;font-size:14px;line-height:18px;text-align:center;font-weight:bold;padding:10px}
 #content .tabMenu li a{color:#878787;}
 #content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}

@@ -128,8 +128,8 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
 #content .tabMenu ul{padding-left:25px;padding-right:25px}
 #content .tabMenu li{width:100%;float:left;width:25%;height:auto;font-size:14px;line-height:18px;text-align:center;font-weight:bold;padding:10px}
-#content .tabMenu li a{color:#878787;}
-#content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
+#content .tabMenu li{color:#878787;}
+#content .tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
 #content .v_top_txt_box{margin-top:-80px;}
 .v_top_name{font-size:16px;font-weight:bold;margin-bottom:7px;padding-left:15px}
 .v_top_txt{font-size:12px;color:#6B6B6B;line-height:normal;padding-left:15px}
