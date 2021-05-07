@@ -2,29 +2,24 @@
 
 
 .detail_title{margin:42px 10px 32px 0px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
 .detail_title a img{position:absolute;top:50px;width:17px;}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
-@media screen and (max-width:430px){
-.confirm_mag{clear:both}
-}
-@media screen and (min-width:360px) and (max-width:480px){
-.signup_top{width:100%;margin:0 auto}
-.id_place .box int_id{width:20px}
-#content{padding-left:15px;padding-right:15px;width:370px}
-.id_place .box{float:left;width:240px}
-.box int_id #id {width:130px}
-.id_place .btn_wrap{float:right;position:relative;left:85px;}
-.btn_wrap button{width:83px;height:49px;background-color:#F99319;color:#fff;border-radius:5px;border:0
-}
-#btnCheckIdDuplicate{position:relative;left:-100px;top:50px}
-}
+#btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
 
+@media screen and (min-width:360px) and (max-width:430px){
+.box{width:90%}
+}
 @media screen and (min-width:360px) and (max-width:1079px){
 .web_login_title{display:none}
+.box{width:100%}
+.confirm_mag{clear:both}
+.signup_wrap{width:441px;margin:0 auto}
 }
 
 @media screen and (min-width:1080px){
+    .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
+    .signup_wrap{width:441px;margin:0 auto}
+    .box{width:100%}
     .id_place{margin-top:200px}
     .web_login_title{text-align:center;margin-top:55px;font-size:16px;font-weight:bold}
     .fail-wrap-web p{width:279px;height:52px;background-color:#707070;color:#fff;margin-top:22px;text-align:center;font-size:14px;padding-top:18px}
@@ -36,17 +31,18 @@
 
 .login a{left:20px;margin-top:-20px}
 
-.login-input-section-wrap{padding-top: 20px;display: flex;}
-
+.login-input-section-wrap{padding-top:20px;display: flex;}
 .login-input-wrap{width:border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
-.login-input-wrap input{border: none;	width:330px;height:45px;font-size: 14px;margin-left: 10px;}
+.login-input-wrap input{border: none;width:330px;height:45px;font-size: 14px;margin-left: 10px;}
 .login-button-wrap {padding-top: 13px;}
-.login-button-wrap button{
+.login-button-wrap button{color:#fff;width: 340px;height :45px;
+	font-size: 14px;font-weight:bold;background: var(--yello-color);border: solid 1px var(--yello-border-color);border-radius:5px}
+.non-member-button-wrap button{background-color:#fff;
 	width: 340px;height :45px;
-	font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;margin-top:50px
-}
+	font-size: 14px;color:#6B6B6B;font-weight:bold;border:1px solid #6B6B6B;border-radius:5px
+    ;margin-top:10px}
 .login-stay-sign-in{width: 330px;height: 52px;display: flex;font-size: 15px;	color: #4e4e4e;align-items: center;	justify-content: flex-start;border-bottom: solid 1px var(--border-gray-color);
 }
 .login-stay-sign-in i{font-size: 25px;color: #9ba1a3;
@@ -69,7 +65,7 @@ padding-bottom: 10px;}
 .Easy-sgin-in-wrap ul li a{float:left;font-size:14px;color:#6B6B6B}
 .Easy-sgin-in-wrap ul li img{position:relative;top:4px}
 .fail-button-wrap button{	width: 340px;height :45px;font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;} 
-
+.sns_login p{margin-top:72px;font-size:14px;color:#6B6B6B;line-height:14px}
 /*아이디 찾기 완료*/
 .idSearchComp, .btnIdSearchComp{width:100%;padding-left:15px;padding-right:15px;margin-bottom:75px;}
 .idSearchComp .words li{color:#6B6B6B}
@@ -99,7 +95,7 @@ color:#fff;font-size:14px;font-weight:bold}
 /* 입력폼(배송지 등록, - ) */
 input:focus {outline: none;}
 #content h3{margin: 19px 0 8px;font-size: 14px;font-weight:bold;}
-.box {display: block;width: 100%;height: 51px;
+.box {display: block;height: 51px;
 border: solid 1px #dadada;padding: 10px 14px 10px 14px;box-sizing: border-box;background: #fff;position: relative;border-radius:8px;}
 .int {display: block;position: relative;width: 100%;height: 29px;border: none;background:#fff; font-size: 15px;}
 input {font-family: '나눔고딕'}
@@ -166,6 +162,8 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 .btnback{display:none}
 .red_sign{width:336px}
 }
+
+/*로그인*/
 
 
 
