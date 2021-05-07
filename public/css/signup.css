@@ -5,7 +5,9 @@
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
 .detail_title a img{position:absolute;top:50px;width:17px;}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
-
+@media screen and (max-width:430px){
+.confirm_mag{clear:both}
+}
 @media screen and (min-width:360px) and (max-width:480px){
 .signup_top{width:100%;margin:0 auto}
 .id_place .box int_id{width:20px}
@@ -23,6 +25,7 @@
 }
 
 @media screen and (min-width:1080px){
+    .id_place{margin-top:200px}
     .web_login_title{text-align:center;margin-top:55px;font-size:16px;font-weight:bold}
     .fail-wrap-web p{width:279px;height:52px;background-color:#707070;color:#fff;margin-top:22px;text-align:center;font-size:14px;padding-top:18px}
 }      

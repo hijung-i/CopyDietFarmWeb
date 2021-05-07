@@ -125,7 +125,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 #content .tabMenu li{width:100%;float:left;width:25%;height:auto;font-size:14px;line-height:18px;text-align:center;font-weight:bold;padding:10px}
 #content .tabMenu li a{color:#878787;}
 #content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
-#content .v_top_txt_box{margin-top:-50px;}
+#content .v_top_txt_box{margin-top:-80px;}
 .v_top_name{font-size:16px;font-weight:bold;margin-bottom:7px;padding-left:15px}
 .v_top_txt{font-size:12px;color:#6B6B6B;line-height:normal;padding-left:15px}
 .price_mobile .p1{font-size:16px;font-weight:bold;margin-top:12px;margin-bottom:6px;padding-left:15px}
@@ -240,7 +240,7 @@ box-shadow: none !important}
 
 
 /* 제품상세 우측 설명박스*/
-.v_top_txt_box {position:relative;width:350px;height:694px;background:#F8F8F8;padding:62px 29px 147px;float:left} 
+.v_top_txt_box {position:relative;width:350px;height:694px;background:#F8F8F8;padding:62px 29px 147px;float:right;display:l} 
 .v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em;font-family:'나눔고딕'}
 .v_top_txt {color:#333;font-size:12px;line-height:1.6em;padding:15px 0 18px;border-bottom:1px solid #e1e1e1} 
 

@@ -3,15 +3,68 @@ var app = new Vue({
     el: 'main',
     data: {
         RESOURCE_SERVER,
-        numberFormat,
         deliveryGroupList: '',
-<<<<<<< HEAD
-        orderDTO: ''
-                  
-=======
+        paymentNo: 0,
+        usablePoint: 0,
         orderDTO: '',
-        paymentNo: 0
->>>>>>> d49f369b8080818c353271a6d963aad1f9c3bb83
+        deliveryDescType: 0
+    }, methods: {
+        numberFormat,
+        paymentAction,
+        descTypeChange: function() {
+            var type = $("#selectDeliveryDesc")[0].options.selectedIndex;
+            var value = $("#selectDeliveryDesc").val();
+
+            if(type == 1) {
+                $("#deliveryDesc").removeAttr("disabled");
+                $("#deliveryDesc").removeAttr("readonly");
+            } else if( type > 1){
+                $("#deliveryDesc").removeAttr("disabled");
+                $("#deliveryDesc").attr("readonly", "");
+            } else if( type == 0) {
+                $("#deliveryDesc").attr("disabled", "");
+            }
+            $('#deliveryDesc').val(value);
+        },
+        useAllPoint: function() {
+            this.orderDTO.paidPointAmount = this.usablePoint;
+            this.remainingPoint = 0;
+        }
+    },
+    computed: {
+        remainingPoint: {
+                get: function() {
+                    var remainingPoint = this.usablePoint - this.orderDTO.paidPointAmount;
+                    if(remainingPoint < 0) {
+                        this.orderDTO.paidPointAmount = this.usablePoint;
+                        remainingPoint = 0;
+                    }
+                    
+                    this.orderDTO.paidRealAmount = this.orderDTO.paymentTotalAmount - this.orderDTO.paidCouponAmount - this.orderDTO.paidPointAmount + this.orderDTO.totalDeliveryCost;
+                    this.orderDTO.accumulatePoint = 0;
+                    
+                    for(var i = 0; i < this.deliveryGroupList.length; i++) {
+                        var dGroup = this.deliveryGroupList[i];
+                        for(var j = 0; j < dGroup.products.length; j++) {
+                            var product = dGroup.products[j];
+
+                            product.optionTotalPrice = 0;
+                            for(var k = 0; k < product.options.length; k++){
+                                var option = product.options[k];
+                                product.optionTotalPrice += option.optionTotalPrice;
+                            }
+
+                            product.accumulatePoint = Math.round((this.orderDTO.paidRealAmount * (product.optionTotalPrice / this.orderDTO.paymentTotalAmount)) * 0.03)
+                            this.orderDTO.accumulatePoint += product.accumulatePoint;    
+                        }
+
+                    }
+                    return remainingPoint;
+                },
+                set: function(x) {
+                    return x;
+                }
+        }
     }
 })
 
@@ -21,11 +74,55 @@ $(function() {
 
     // if(app.orderDTO.userId !== '비회원주문')
     getDefaultDeliveryInfo();
+    getUsablePointAmount();
 
-    onPointAmountChange();
 })
 
+function getUsablePointAmount() {
+    var params = {};
+    ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
+    function(data) {
+        app.usablePoint = data.result;
+
+        console.log("success usablePoint", data);
+    }, function(err) {
+        console.log("error", err)
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
+}
+
 function paymentAction() {
+    var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
+
+    var items = new Array();
+    var count = 0;
+    for(var i = 0; i < this.deliveryGroupList.length; i++) {
+        var dGroup = this.deliveryGroupList[i];
+        console.log("dgroup -> ", this.deliveryGroupList.length, dGroup)
+        for(var j = 0; j < dGroup.products.length; j++) {
+            var product = dGroup.products[j];
+            for(var k = 0; k < product.options.length; k++) {
+                var option = product.options[k];
+
+                var item = {
+                    item_name: option.optionDesc,
+                    qty: option.optionCount,
+                    unique: option.optionCode,
+                    price: option.optionTotalPrice
+                }
+                count++;
+                items.push(item);
+            }
+        }
+    }
+    if(count > 1){
+        orderTitle += ' 외 '+ count + '건';
+    }
+    app.orderDTO.orderTitle = orderTitle;
+
     var bootpayParams = {
         price: app.orderDTO.paidRealAmount,
         application_id: "5feae25e2fa5c2001d0391b9",
@@ -55,24 +152,7 @@ function paymentAction() {
             custom_font_color: '#ffffff' // [ theme가 custom 일 때 font color 색상 지정 가능 ]
         }
     }
-    for(var i = 0; app.deliveryGroupList.length; i++) {
-        var dGroup = app.deliveryGroupList[i];
-        for(var j = 0; j < dGroup.length; j++) {
-            var product = dGroup.products[j];
-            for(var k = 0; k < product.options.length; k++) {
-                var option = product.options[k];
-
-                var item = {
-                    item_name: option.optionDesc,
-                    qty: option.optionCount,
-                    unique: option.optionCode,
-                    price: option.optionTotalPrice
-                }
-
-                bootpayParams.items.push(item);
-            }
-        }
-    }
+    
 
     BootPay.request(
         bootpayParams
@@ -159,26 +239,4 @@ function getDefaultDeliveryInfo() {
         isRequired: true,
         userId: true
     })
-}
-
-function onPointAmountChange() {
-    app.orderDTO.paidRealAmount = app.orderDTO.paymentTotalAmount - app.orderDTO.paidCouponAmount - app.orderDTO.paidPointAmount + app.orderDTO.totalDeliveryCost;
-
-    app.orderDTO.accumulatePoint = 0;
-    for(var i = 0; i < app.deliveryGroupList.length; i++) {
-        var dGroup = app.deliveryGroupList[i];
-        for(var j = 0; j < dGroup.products.length; j++) {
-            var product = dGroup.products[j];
-
-            product.optionTotalPrice = 0;
-            for(var k = 0; k < product.options.length; k++){
-                var option = product.options[k];
-                product.optionTotalPrice += option.optionTotalPrice;
-            }
-
-            product.accumulatePoint = Math.round((app.orderDTO.paidRealAmount * (product.optionTotalPrice / app.orderDTO.paymentTotalAmount)) * 0.03)
-            app.orderDTO.accumulatePoint += product.accumulatePoint;    
-        }
-
-    }
 }

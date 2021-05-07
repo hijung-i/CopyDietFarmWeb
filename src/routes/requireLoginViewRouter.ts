@@ -11,13 +11,13 @@ router.get('/cart', (req: Request, res: Response, next: NextFunction) => {
 router.get('/cart/:userId', (req: Request, res: Response, next: NextFunction) => {
     const userId = req.params.userId
 
-    // checkLogin(req, res, (sessionUser: SessionUser) => {
-    //     if (userId !== sessionUser.userId) {
-    //         res.send('<script>alert("잘못된 접근입니다.");location.href = "/";</script>')
-    //     } else {
-    //         render(res, 'cart', { userId: userId })
-    //     }
-    // })
+    checkLogin(req, res, (sessionUser: SessionUser) => {
+        if (userId !== sessionUser.userId) {
+            res.send('<script>alert("잘못된 접근입니다.");location.href = "/";</script>')
+        } else {
+            render(res, 'cart', { userId: userId })
+        }
+    })
     render(res, 'cart', { userId: userId })
 })
 

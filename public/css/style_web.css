@@ -1978,6 +1978,7 @@ delivery_manage_list .customer_info {
 }
 @media screen and (max-width:1080px){
 .order_a_box {display: flex;margin-bottom:20px}
+
 }
 
 .order_a_box > .web_prod_info_ctn{margin-top:14px;padding-left:15px; display: flex;}

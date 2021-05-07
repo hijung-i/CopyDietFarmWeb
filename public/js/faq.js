@@ -56,7 +56,17 @@ function getFaqList(){
                 }
             });
         });
+        const modal = document.getElementById('modal')
+
+        //Show modal
+        open.addEventListener('click', () => {
+          modal.classList.add('modal')
+        })
         
+        //Hide modal
+        close.addEventListener('click', () => {
+          modal.classList.remove('modal')
+        })    
 
     }, function(err) {
         console.log(err);

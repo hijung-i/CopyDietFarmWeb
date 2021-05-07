@@ -8,6 +8,7 @@ var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
 function ajaxCall(url, params, type, onSuccess, onError){
 	var param = JSON.stringify(params);
+
 	$.ajax({
 		type : type,
 		cache : false,
@@ -50,20 +51,19 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 		dataType: "json",
 		success: function(data) {
 			var result = data.result;
-			// if(option.isRequired == true && result.isLoggedIn != true) {		
-			// 	// TODO: Open alert modal
-			// 	alert('로그인이 필요한 동작입니다.');
-			// 	return false;
-			// }
+			if(option.isRequired == true && result.isLoggedIn != true) {		
+				// TODO: Open alert modal
+				alert('로그인이 필요한 동작입니다.');
+				return false;
+			}
 			
-			// var user = result.user;
-			// if(result.isLoggedIn && user != undefined){
-			// 	if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
-			// 	if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
-			// 	if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
-			// 	if(isAvailable(option.address) && option.address == true) params.address = user.address
-			// }
-			params.userId = 'jgpark';
+			var user = result.user;
+			if(result.isLoggedIn && user != undefined){
+				if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
+				if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
+				if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
+				if(isAvailable(option.address) && option.address == true) params.address = user.address
+			}
 			ajaxCall(url, params, type, onSuccess, onError);
 		
 		},
@@ -76,39 +76,6 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 function isAvailable(data){
 	return (data != null && data != undefined && data != '')
 }
-
-function getEventStands() {
-	var currentStandCode = $('#currentStandCode').val();
-    var param = {}
-    /*ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
-    , function(data) {
-
-		$("#header #nav").html('');
-		var html = '';
-		
-		console.log(data);
-		for(var i = 0; i < data.result.length; i++){
-			var stand = data.result[i];
-			if(i == 0){
-				html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'>홈</a>';
-			}
-			console.log(currentStandCode, stand.salesStandCode);
-			if( currentStandCode == stand.salesStandCode){
-				$('#header #nav a').removeClass("is-current");
-				html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
-			} else {
-				html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
-			}
-		}
-
-		html += '<div class="nav-underline"></div>';
-		console.log(html);
-		$('#header #nav').html(html);
-				
-    }, function(err) {
-        console.log("eventStands err", err);
-    }) */
-} 
 
 function numberFormat(number) {
 	return (number+"").replace(/\B(?=(\d{3})+(?!\d))/g, ",");

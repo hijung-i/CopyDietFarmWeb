@@ -44,9 +44,9 @@ function getProductDetail(){
 
         // 가격 정보
         var productDesc = $('.v_top_txt')
-        var discountPrice = $('.v_top_txt_box .p1')
-        var retailPrice = $('.v_top_txt_box .p2')
-        var discountRate = $('.v_top_txt_box .p3')
+        var discountPrice = $('.v_top_txt_box .price_mobile .p1')
+        var retailPrice = $('.v_top_txt_box .price_mobile .p2')
+        var discountRate = $('.v_top_txt_box .price_mobile .p3')
         productDesc.html(product.productDesc);
         discountPrice.html(numberFormat(product.discountPrice)+'원');
         
@@ -100,11 +100,12 @@ function getProductDetail(){
         console.log(product.representative);
         for(var i = 0; i < product.representative.length; i++){
             var image = product.representative[i];
-            representative += '<li><a href="#"><img src="'+ RESOURCE_SERVER + image.url+'"></a></li>';
+            representative += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'" style="width:100%;"></a></div>';
         }
-
-        $('.view_top_box .bxslider').html(representative);
+   
+        $('.view_top_img #slider_product').html(representative);
         $('.products_ex').html(detailHtml);
+        $('.products_ex_mobile').html(detailHtml);
 
         
     }, function (err) {
@@ -207,7 +208,7 @@ function drawSelectedOptions() {
 
         // 총 금액은 여기서 안보여줌
         // optionHtml +=            '<div class="t_price">';
-        // optionHtml +=                '<ul>';
+        // optionHtml +=                '<ul>';\
         // optionHtml +=                    '<li class="total">총 금액</li>';
         // optionHtml +=                    '<li>8,500원</li>';
         // optionHtml +=               ' </ul>';
@@ -238,6 +239,7 @@ function drawSelectedOptions() {
         selectedOptions.splice(seq, 1);
 
         drawSelectedOptions();
-    })
+    });
+
 
 }
