@@ -1,6 +1,20 @@
 var product = {};
 var selectedOptions = new Array();
 
+var app = new Vue({
+    el: 'main',
+    data: {
+        RESOURCE_SERVER,
+        selectedOptions,
+        product: product,
+        optionTotalPrice: 0
+    }, methods: {
+        numberFormat,
+        deleteFromArray,
+        changeOptionCount
+        
+    }
+});
 $(function() {
 
     getProductDetail();
@@ -70,6 +84,7 @@ function getProductDetail(){
     ajaxCallWithLogin(API_SERVER + '/product/getProductDetail', params, 'POST'
     , function (data) {
         product = data.result;
+        app.product = product;
         if(product == undefined || product.length == 0){
             // TODO: Open alert modal
             return false;
@@ -119,34 +134,6 @@ function getProductDetail(){
         else if (product.packingType == 'B') packingTypeHtml = '냉장 (아이스박스)';
         $('.v_n_top_info .packing-type .ex').html(packingTypeHtml);
 
-
-        var optionHtml = '';
-        for(var i = 0; i < product.options.length; i++){
-            var option = product.options[i];
-            optionHtml += '<option value="' + i +'" '+ ((i==0)?'selected':'')+'>'+ option.optionDesc;
-            optionHtml += '</option>';
-        }
-        $('select#products').html(optionHtml);
-        $('select#products').trigger("change");
-
-        var detailHtml = '';
-        for(var i = 0; i < product.detail.length; i++){
-            var image = product.detail[i];
-            detailHtml += '<img src="'+ RESOURCE_SERVER + image.url +'" style="width:100%;height:100%">';
-        }
-        
-        var representative = '';
-        console.log(product.representative);
-        for(var i = 0; i < product.representative.length; i++){
-            var image = product.representative[i];
-            representative += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'" style="width:694px;height:694px"></a></div>';
-        }
-   
-        $('.view_top_img #slider_product').html(representative);
-        $('.products_ex').html(detailHtml);
-        $('.products_ex_mobile').html(detailHtml);
-
-        
     }, function (err) {
         console.log("productDetail error", err);
     }, {
@@ -179,7 +166,7 @@ function addCart() {
 }
 
 function onOptionSelected(element) {
-    var selectedIndex = $(element)[0].options.selectedIndex;
+    var selectedIndex = $(element)[0].options.selectedIndex -1;
     var selectedOption = product.options[selectedIndex];
 
     // 깊은 복사
@@ -201,7 +188,7 @@ function isExistsInArray(option) {
 }
 
 function changeOptionCount(plus, index) {
-    var optionCount = selectedOptions[index].optionCount;
+    var optionCount = app.selectedOptions[index].optionCount;
     if(plus) {
         optionCount ++;
     } else {
@@ -212,8 +199,7 @@ function changeOptionCount(plus, index) {
             optionCount -= 1;
         }
     }
-    selectedOptions[index].optionCount = optionCount;
-    console.log(selectedOptions[index]);
+    app.selectedOptions[index].optionCount = optionCount;
     drawSelectedOptions();
 }
 
@@ -225,53 +211,13 @@ function getSelectedOptionIndex(ele) {
 
 function drawSelectedOptions() {
 
-    var html = '';
+    var totalPrice = 0;
     for(var i = 0; i < selectedOptions.length; i++) {
         var option = selectedOptions[i];
-        var optionHtml = '';
-        optionHtml += '<div>';
-        optionHtml += '<div class="product_count">';
-        optionHtml +=        '<div class="product_title" id="seq_'+ i +'">';
-        optionHtml +=            '<h4>'+ option.optionDesc +'</h4>';
-        optionHtml +=            '<ul>';
-        optionHtml +=                '<ii><img src="/images/x_icon_login.png" style="width:8px;cursor:pointer"></ii>';
-        optionHtml +=            '</ul>';
-        optionHtml +=        '</div>';
-        optionHtml +=        '<div class="number_price">';
-        optionHtml +=            '<div class="number-input">';
-        optionHtml +=                '<button class="minus"></button>';
-        optionHtml +=                '<input class="quantity" min="1" name="quantity" value="'+ option.optionCount +'" type="number">';
-        optionHtml +=                '<button class="plus"></button>';
-        optionHtml +=           ' </div>';
-        optionHtml +=            '<p>'+ numberFormat(option.optionDiscountPrice * option.optionCount) +'원</p>';
-
-        // 총 금액은 여기서 안보여줌
-        // optionHtml +=            '<div class="t_price">';
-        // optionHtml +=                '<ul>';\
-        // optionHtml +=                    '<li class="total">총 금액</li>';
-        // optionHtml +=                    '<li>8,500원</li>';
-        // optionHtml +=               ' </ul>';
-        // optionHtml +=            '</div>';
-
-        optionHtml +=       ' </div>';
-        optionHtml +=   ' </div>';
-        optionHtml += '</div>';
-
-        html += optionHtml;
+        totalPrice += option.optionDiscountPrice * option.optionCount;
     }
-
-    $('#selectedOptionDiv').html(html);
-
-    $('.number-input .minus').click(function() {
-        var seq = getSelectedOptionIndex($(this));
-
-        changeOptionCount(false, seq);
-    })
-    $('.number-input .plus').click(function() {
-        var seq = getSelectedOptionIndex($(this));
-
-        changeOptionCount(true, seq);
-    })
+    app.optionTotalPrice = totalPrice;
+    
 
     $('.product_title img').click(function() {
         var seq = getSelectedOptionIndex($(this));
@@ -279,6 +225,8 @@ function drawSelectedOptions() {
 
         drawSelectedOptions();
     });
+}
 
-
+function deleteFromArray(seq) {
+    selectedOptions.splice(seq, 1);
 }
