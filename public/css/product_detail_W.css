@@ -85,6 +85,7 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
 #tab ul li{cursor: pointer;}
 /*products_mobile*/
 @media screen and (max-width:1079px){
+
 .view_navi_box{display:none}
 /* 토글 버튼 디자인 */
 .myReview input {position: absolute; left: -9999px;}
@@ -200,10 +201,8 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 .tabMenu ul li{width:267px;height:68px;font-size:18px;color:#707070}
 .tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
 .product_top{display:flex;flex-flow:column-reverse}
-#container{margin-top:240px}
 #btn_mobile{display:none}
 .products_ex_mobile{display:none}
-.myReview{padding-top:66px}
 .review_btn button{display:none}
 .common_btn_wrap{margin-left:-10px}
 button.h_btn {width:51px;height:45px;background-color:#fff;border:1px solid #F99319;border-radius:5px;position:relative;top:-1px}
@@ -211,12 +210,14 @@ button.h_btn img{width:21px}
 button.c_btn{width:120px;height:45px;border-radius:5px}
 button.p_btn{width:120px;height:45px;border:0;border-radius:5px}
 .product_option select{padding:5px 10px;
-background: url('/images/images/downarrow_icon_category.png') no-repeat 96% 50%;
+background: url('/images/downarrow_icon_category.png') no-repeat 96% 50%;
 border-radius: 5px;
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
-border-color:#BBBBBB}
+border-color:#BBBBBB;
+cursor:pointer
+}
 .price_mobile{display:none}
 .view_navi_box {display:block;position:relative;background:none;padding-top:30px;text-align:left;color:#4d4d4d;font-weight:600;letter-spacing:-0.05em;}
 .view_navi_tit {display:inline;padding-bottom:30px;text-align:left;color:#4d4d4d;font-size:18px}
@@ -235,7 +236,6 @@ border-color:#BBBBBB}
 -moz-box-shadow: none !important;
 -webkit-box-shadow: none !important;
 box-shadow: none !important}
-.purchased_products {}
 .purchased_products ul li{float:left}
 .purchased_products img{border-radius:5px}
 .view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif}
@@ -247,14 +247,14 @@ box-shadow: none !important}
 
 
 /* 제품상세 우측 설명박스*/
-.v_top_txt_box {position:relative;width:350px;height:694px;background:#F8F8F8;padding:62px 29px 147px;float:right;display:l} 
-.v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em;font-family:'나눔고딕'}
-.v_top_txt {color:#333;font-size:12px;line-height:1.6em;padding:15px 0 18px;border-bottom:1px solid #e1e1e1} 
+.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:58px 29px 147px;float:right;display:l} 
+.v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em;font-family:'나눔고딕';line-height:24px}
+.v_top_txt {color:#6B6B6B;font-size:12px;line-height:14px;padding:10px 0 15px;border-bottom:1px solid #e1e1e1} 
 
 .v_n_top_info table
 {  border-collapse: separate;
-  border-spacing: 0 10px;}
-.v_n_top_info .ex{margin-left:20px}
+  border-spacing: 0 24px;}
+.v_n_top_info .ex{padding-left:20px}
 .option_wrap h3{margin-left:-15px}
 .option_wrap #products{border:1px solid #424242;margin-left:-15px;width:305px;height:36px}
 .product_detail_content {position:relative;margin-top:54px;font-family:'Noto sans',sans-serif}
@@ -275,7 +275,7 @@ box-shadow: none !important}
 .pdt_detail_title {display: block;height:61px; line-height:63px;color:#000;font-size:2em;text-align:left; letter-spacing:-0.01em;-webkit-text-stroke-width:0.001em;font-family:'Noto sans',sans-serif}
 
 /* 연관 상품 bxslider */
-.pp_wrap h3{font-size:18px;font-weight:bold;}
+.pp_wrap h3{font-size:18px;font-weight:bold;margin-left:20px}
 .pp_wrap .multiple_bxslider img{width:294px}
 .pp_wrap{overflow:visible}
 .purchased_products ul{margin-left:10px}
@@ -317,8 +317,6 @@ box-shadow: none !important}
 .pdt_details li {float:left;}
 .pdt_details li img {width:1080px}
 
-
-.v_floating_opt {position:absolute; right:0px; top:0px; z-index:1}
 .viw_option_w {position:relative;float:left;width:383px; margin:0px 0 0 3px; padding:37px; height:930px; border:1px solid #BBBBBB; vertical-align:top; font-family:'나눔고딕',sans-serif;}
 .viw_option_tit {display:block; height:43px; line-height:40px; color:#4d4d4d; font-size:14px; font-weight:normal; letter-spacing:-0.01em;font-family:'Noto sans',sans-serif;}
 .viw_option_box {background:#fbfbfb;font-family: '나눔고딕', "NanumBold", "Malgun Gothic", sans-serif;}
@@ -328,7 +326,6 @@ box-shadow: none !important}
 .viw_option_info dt {clear:both;position:relative;padding:3px 0 0 0;float:left;color:#999;font-size:13px}
 .viw_option_info dd {position:relative;float:right;width:100%;font-size:14px;color:#555}
 .purchased_products{border:0;}
-.purchased_products h3{font-size:18px}
 .product_detai_c_vn {position:relative;margin-top:54px;font-family:'Noto sans',sans-serif}
 .pdt_detai_tab_vn {position:relative;background:#fff; width:1068px;z-index:10; }
 .pdt_detai_tabinner_vn {display:inline;float:left;height:61px;width:1068px;border-top:1px solid #E4E4E4; border-bottom:1px solid #E4E4E4;background-color:#fff;}
@@ -417,7 +414,7 @@ border: 1px solid #BBBBBB;border-radius:5px;}
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px;}
 .reviews .option{margin-top:-20px}
 .reviews{width:100%;}
-.reviews .num{width:100%;font-size:18px;font-weight:bold;border-bottom:2px solid #E6E6E6;clear:both;font-weight:bold;color:#000;padding-top:60px}
+.reviews .num{width:100%;font-size:18px;font-weight:bold;border-bottom:2px solid #E6E6E6;clear:both;font-weight:bold;color:#000}
 .reviews p{padding:20px 15px 20px 10px}
 .product_review01{width:100%;clear:both;}
 
@@ -533,7 +530,6 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
   .v_floating_wrap .total_price p{margin-right:25px}
   .v_floating_box { overflow:hidden;display:inline-table;height:100%; position:fixed; top:0; width: 1100px; margin:0 auto; z-index: 1000;}
   .v_floating_boxa {width: 100%; height:100%;text-align:center; display:inline-table; vertical-align:top;width:100%;height:100%; border:1px solid #0000}
-  .v_floating_opt {position:absolute; right:0px; top:0px; z-index:1}
   .viw_option_w {position:relative;float:left;width:383px; margin:0px 0 0 3px; padding:13px; height:930px; border:1px solid #e5e5e5; border-top:1px solid #BBBBBB; vertical-align:top;top:1505px;left:372px}
   .viw_option_box {background:#fbfbfb}
   .viw_option_info { overflow:hidden;position:relative}

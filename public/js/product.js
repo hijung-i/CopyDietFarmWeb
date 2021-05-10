@@ -139,7 +139,7 @@ function getProductDetail(){
         console.log(product.representative);
         for(var i = 0; i < product.representative.length; i++){
             var image = product.representative[i];
-            representative += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'" style="width:640px;"></a></div>';
+            representative += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'" style="width:694px;height:694px"></a></div>';
         }
    
         $('.view_top_img #slider_product').html(representative);
@@ -234,7 +234,7 @@ function drawSelectedOptions() {
         optionHtml +=        '<div class="product_title" id="seq_'+ i +'">';
         optionHtml +=            '<h4>'+ option.optionDesc +'</h4>';
         optionHtml +=            '<ul>';
-        optionHtml +=                '<ii><img src="/images/x_icon_login.png" style="width:8px"></ii>';
+        optionHtml +=                '<ii><img src="/images/x_icon_login.png" style="width:8px;cursor:pointer"></ii>';
         optionHtml +=            '</ul>';
         optionHtml +=        '</div>';
         optionHtml +=        '<div class="number_price">';
