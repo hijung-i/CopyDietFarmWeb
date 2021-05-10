@@ -75,11 +75,11 @@
             </div>
             <div class="non_members" v-if="orderDTO.userId == '비회원주문'">
                 <h4>이름</h4>
-                <input type="text" placeholder="이름을 입력해주세요">
+                <input type="text" id="unName" placeholder="이름을 입력해주세요">
                 <h4>휴대폰</h4>
-                <input type="number" placeholder="연락처를 입력해주세요">
+                <input type="number" id="unCellNo" placeholder="연락처를 입력해주세요">
                 <h4>이메일</h4>
-                <input type="email" placeholder="이메일을 입력해주세요">
+                <input type="email" id="unEmail" placeholder="이메일을 입력해주세요">
             </div>
         </div>
         <div class="deliver_info">
@@ -92,12 +92,12 @@
             <div class="non_members" v-if="orderDTO.userId == '비회원주문'">
                 <p><img src="images/beforecheck_icon_join.png">주문자 정보와 동일</p>
                 <h4>이름</h4>
-                <input type="text" placeholder="이름을 입력해주세요">
+                <input type="text" id="unReceiverName" placeholder="이름을 입력해주세요">
                 <h4>주소</h4>
-                <input type="text" id="addr" class="int" maxlength="80" placeholder="도로명, 지번, 건물명 검색">
-                <input type="text" id="addr2" class="int" maxlength="80" placeholder="상세주소">
+                <input type="text" id="unAddr" class="int" maxlength="80" placeholder="도로명, 지번, 건물명 검색">
+                <input type="text" id="unAddr2" class="int" maxlength="80" placeholder="상세주소">
                 <h4>휴대폰</h4>
-                <input type="tel" placeholder="연락처를 입력해주세요">
+                <input type="tel" id="unDeliveryUserCellNo" placeholder="연락처를 입력해주세요">
             </div>
             <h4>배송메모</h4>
             <select id="selectDeliveryDesc" v-on:change="descTypeChange()">
@@ -171,15 +171,15 @@
 
                 <div class="order_payment" v-if="orderDTO.paidRealAmount != 0">
                     <ul>
-                        <li><label><img src="/images/npay_ico_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="1"></label>
+                        <li><label><img src="/images/npay_ico_pay.png" style="width:55px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="1"></label>
                         </li>
-                        <li><label><img src="/images/cash_ico2_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="2"></label>
+                        <li><label><img src="/images/cash_ico2_pay.png" style="width:62px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="2"></label>
                         </li>
-                        <li><label><img src="/images/kpay_ico_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="3"></label>
+                        <li><label><img src="/images/kpay_ico_pay.png" style="width:62px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="3"></label>
                         </li>
-                        <li><label><img src="/images/card_ico2_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="4"></label>
+                        <li><label><img src="/images/card_ico2_pay.png" style="width:62px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="4"></label>
                         </li>
-                        <li><label><img src="/images/phone_ico2_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="5"></label>
+                        <li><label><img src="/images/phone_ico2_pay.png" style="width:62px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="5"></label>
                         </li>
                     </ul>
 

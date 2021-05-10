@@ -2,14 +2,17 @@
 
 
 .detail_title{margin:42px 10px 32px 0px;width:100%;}
-.detail_title a img{position:absolute;top:50px;width:17px;}
+.detail_title a img{position:absolute;top: 44px;width:17px;left:10px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 #btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
-
+/*
 @media screen and (max-width:430px){
 .box{width:90%}
-}
+} */
 @media screen and (max-width:1079px){
+p.confirm_mag{margin-top:10px}
+div.box.int_id{width:350px}
+.detail_title h2{font-size:16px;text-align:center;margin-top:42px;font-weight:bold} 
 .web_login_title{display:none}
 .box{width:100%}
 .confirm_mag{clear:both}
@@ -17,10 +20,10 @@
 }
 
 @media screen and (min-width:1080px){
+    div.box.int_id{width:350px}
     .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
     .signup_wrap{width:441px;margin:0 auto}
     .box{width:100%}
-    .id_place{margin-top:200px}
     .web_login_title{text-align:center;margin-top:55px;font-size:16px;font-weight:bold}
     .fail-wrap-web p{width:279px;height:52px;background-color:#707070;color:#fff;margin-top:22px;text-align:center;font-size:14px;padding-top:18px}
 }      
@@ -32,7 +35,7 @@
 .login a{left:20px;margin-top:-20px}
 
 .login-input-section-wrap{padding-top:20px;display: flex;}
-.login-input-wrap{width:border: solid 1px var(--border-gray-color );background: white;border-radius:5px;}
+.login-input-wrap{width:border solid 1px var(--border-gray-color );background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
 .login-input-wrap input{border: none;width:330px;height:45px;font-size: 14px;margin-left: 10px;}
@@ -66,6 +69,7 @@ padding-bottom: 10px;}
 .Easy-sgin-in-wrap ul li img{position:relative;top:4px}
 .fail-button-wrap button{	width: 340px;height :45px;font-size: 14px;font-weight:bold;background: var(--yello-color);color: white;border: solid 1px var(--yello-border-color);border-radius:5px;} 
 .sns_login p{margin-top:72px;font-size:14px;color:#6B6B6B;line-height:14px}
+
 /*아이디 찾기 완료*/
 .idSearchComp, .btnIdSearchComp{width:100%;padding-left:15px;padding-right:15px;margin-bottom:75px;}
 .idSearchComp .words li{color:#6B6B6B}

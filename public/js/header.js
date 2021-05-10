@@ -135,20 +135,11 @@ $(function() {
         });
     });
 
-    $('.btnMenu>a').on('click', function() {
-        $('.gnb').hide();
+    $(".sideMenu").hide();
+    $(".web_cate > a").click(function(){
+        $(".sideMenu").slideToggle("fast");
     });
 
-    $('.slideMenu_close>a').on('click', function() {
-        $('.gnb').show();
-    });
-
-    $("#gnbAllMenu").hide();
-    $("#btnGnbOpen").click(function(){
-        $("#gnbAllMenu").slideToggle("fast");
-    });
-
-    $(".m_slides_sub").hide();
 
     /* web side menu controll */
     $(".m_ba_slides_n_li a").hover(function () {

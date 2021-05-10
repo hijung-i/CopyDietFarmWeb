@@ -366,7 +366,7 @@ height:50px;overflow:hidden}
   @media screen and (max-width:600px){
   #mobile_sub{position:fixed;height:90px;background-color:#fff}
   #content .main_sub_wrap{	
-  width:100%;border-top:2px solid #f1f1f1;margin-top:34px;margin-top:100px}
+  width:100%;border-top:2px solid #f1f1f1;margin-top:90px}
   #content .main_sub img{padding:7px}
   #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
   #content .main_sub .desc ul li{float:left;white-space:nowrap;margin-left:-4px}
@@ -416,8 +416,8 @@ height:50px;overflow:hidden}
   .main_sub .sort{float:right;position:relative;right:22px}
   #content .sort select{border:0;}
   .sub_items .desc{margin-bottom:24px}
-  .sub_items .title{margin-left:4px;margin-bottom:5px;font-size:14px;overflow: hidden;text-overflow: ellipsis;
-  white-space: nowrap;width:200px;height:20px}
+  .sub_items .title{margin-left:4px;margin-bottom:5px;font-size:14px;/*overflow: hidden;text-overflow: ellipsis;
+  white-space: nowrap;width:200px;height:20px*/}
   #content .main_sub_wrap .desc ul li{float:left}	
   #content .main_sub_wrap .desc ul{margin-left:-2px;margin-bottom:-10px}
   #content .main_sub_wrap .desc .sale{font-size:16px;margin-left:5px}	
