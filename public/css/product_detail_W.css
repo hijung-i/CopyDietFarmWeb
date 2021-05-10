@@ -85,6 +85,7 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
 #tab ul li{cursor: pointer;}
 /*products_mobile*/
 @media screen and (max-width:1079px){
+.view_top_img img{width:100%!important;height:100%!important}
 
 .view_navi_box{display:none}
 /* 토글 버튼 디자인 */
@@ -128,7 +129,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
 #content .tabMenu ul{padding-left:25px;padding-right:25px}
-#content .tabMenu li{width:100%;float:left;width:25%;height:auto;font-size:14px;line-height:18px;text-align:center;font-weight:bold;padding:10px}
+#content .tabMenu li{width:100%;float:left;width:25%;height:auto;font-size:14px;line-height:18px;text-align:center;padding:10px}
 #content .tabMenu li{color:#878787;}
 #content .tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
 #content .v_top_txt_box{margin-top:-80px;}
@@ -240,7 +241,7 @@ box-shadow: none !important}
 .purchased_products img{border-radius:5px}
 .view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif}
 .view_top_img {float:left}
-.bxslider img{width:auto!important;height:694px}
+
 
 .ico_v_dsd_box {padding:0px 0 10px}
 .ico_v_dsd {padding:3px 8px 4px;background:#aaacaf;color:#fff;font-size:12px;letter-spacing:-0.05em}

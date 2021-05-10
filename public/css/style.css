@@ -348,9 +348,9 @@ height:50px;overflow:hidden}
   #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
 
   
-  #content .pages ul{display:flex;padding-left:20px;padding-bottom:20px;padding-top:10px}
-  #content .pages ul li{float:left;margin-left:40px}
-  #content .pages ul li img{width:60%;}
+ .pages ul{display:flex;padding-left:20px;padding-bottom:20px;padding-top:10px}
+ .pages ul li{float:left;margin-left:40px}
+ .pages ul li img{width:60%;}
   }
   /*메인페이지 컨텐츠 수정 210426*/
   @media screen and (max-width:1079px){

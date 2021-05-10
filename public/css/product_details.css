@@ -17,9 +17,9 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
 #content .tabMenu li{padding-left:25px;padding-right:25px;padding-bottom:10px;padding-top:10px}
-#content .tabMenu li{width:100%;float:left;width:25%;height:auto;font-size:14px;line-height:18px;text-align:center;font-weight:bold;padding:10px}
-#content .tabMenu li a{color:#878787;}
-#content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
+#content .tabMenu li{width:100%;float:left;width:25%;height:44px;font-size:14px;line-height:18px;text-align:center;padding:10px;margin-bottom:1px}
+#content .tabMenu li a{color:#878787;font-weight:normal}
+#content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319;}
 
 /*상품설명*/
 #content .product_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:-41px}
@@ -32,8 +32,15 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 #content .infoArea02 tr td span{color:#878787}
 
 #content .infoArea02 tr td{font-size:13.4px;padding-bottom:20px;font-weight:bold;}
-
+@media screen and (max-width:1079px){
+.share_img img{float:right;position:relative;top:50px;left:-24px}
 .option_wrap{padding-top:20px;margin-bottom:40px;padding-left:15px;padding-right:15px}
+}
+@media screen and (min-width:1080px){
+.share_img img{ float:right;position:relative;top:-40px;left:4px}
+.option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
+}
+
 .option_wrap h3{margin-bottom:8px;font-size:12px;}
 .product_option{width:100%;margin:0 auto;}
 .product_count{border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;background-color:#fff;}
