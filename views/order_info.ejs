@@ -6,6 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
     <meta name="format-detection" content="telephone=no, address=no, email=no" />
     <meta name="format-detection" content="no" />
+
     <title>주문하기</title>
     <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -163,17 +164,22 @@
             </div><!--//최종 결제 금액-->
             <div class="payment_method">
                <h3>결제 수단</h3>
-                <div class="order_payment">
+                <div class="order_payment_point" v-if="orderDTO.paidRealAmount == 0">
+                    <p>포인트 사용으로 남은 결제 금액이 0원입니다.</p>
+                    <p><span>다른 결제 수단을 이용하시려면 포인트 금액을 수정해주세요.</span></p>
+                </div>
+
+                <div class="order_payment" v-if="orderDTO.paidRealAmount != 0">
                     <ul>
-                        <li><label><img src="/images/npay_ico_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="1"></label>
+                        <li><label><img src="/images/npay_ico_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="1"></label>
                         </li>
-                        <li><label><img src="/images/cash_ico2_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="2"></label>
+                        <li><label><img src="/images/cash_ico2_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="2"></label>
                         </li>
-                        <li><label><img src="/images/kpay_ico_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="3"></label>
+                        <li><label><img src="/images/kpay_ico_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="3"></label>
                         </li>
-                        <li><label><img src="/images/card_ico2_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="4"></label>
+                        <li><label><img src="/images/card_ico2_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="4"></label>
                         </li>
-                        <li><label><img src="/images/phone_ico2_pay.png"><input type="checkbox" style="display: none;" v-model="paymentNo" value="5"></label>
+                        <li><label><img src="/images/phone_ico2_pay.png"><input type="radio" style="display: none;" v-model="paymentNo" value="5"></label>
                         </li>
                     </ul>
 

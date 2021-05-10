@@ -10,7 +10,7 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .page_nation a.active {background-color:#fff;color:#F99319;}
 
 /*coupon web*/
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
 .contents h2{display:none} 
 .coupon_code{display:none}
 }

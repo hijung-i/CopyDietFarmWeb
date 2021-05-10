@@ -16,7 +16,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title a img{position:absolute;top:44px;width:17px;margin-left:5px}
 
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
-#content .tabMenu ul{padding-left:25px;padding-right:25px;padding-bottom:10px}
+#content .tabMenu li{padding-left:25px;padding-right:25px;padding-bottom:10px;padding-top:10px}
 #content .tabMenu li{width:100%;float:left;width:25%;height:auto;font-size:14px;line-height:18px;text-align:center;font-weight:bold;padding:10px}
 #content .tabMenu li a{color:#878787;}
 #content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
@@ -48,7 +48,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 .pp_wrap{margin-bottom:-50px;padding-top:40px}
 
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
 .products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:15px;padding-right:15px}
 }
@@ -133,7 +133,7 @@ input[type="number"] {
 .infoDetails .title{font-weight:bold;}
 .footer_bottom ul li{font-size:12px;text-align:left;}
 
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
     .review_btn{display:flex;justify-content:center; padding-bottom:21px;border-bottom:8px solid #f1f1f1;border-top:2px solid #E6E6E6;padding-top:18px}
     .review_btn button{border:2px solid #EFA543;background-color:#fff;color:#EFA543;font-weight:bold;border-radius:5px}
     .v_floating_wrap{display:none}

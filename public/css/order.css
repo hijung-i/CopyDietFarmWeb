@@ -151,7 +151,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .btn_area{width:400px;margin:0 auto}
 }
 /*주문하기 모바일*/
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
 .detail_title h2{margin:40px 10px 20px 10px;width:100%;text-align:center;}
 .detail_title a img{position:absolute;top:42px;width:17px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
@@ -303,7 +303,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
 }
 }
 /*주문 완료*/
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
 .warn{background-color:#F5F5F5;padding-top:20px;padding-bottom:20px}
 .warn p{padding-left:15px;padding-right:15px;line-height:20px;margin-bottom:10px}
 }

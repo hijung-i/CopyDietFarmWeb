@@ -10,13 +10,13 @@
 }
 
 /* 모바일 화면 대응 orderdelist */
-@media screen and (min-width:360px) and (max-width:1079px) {
+@media screen  and (max-width:1079px) {
     .wide_line {display: none;}
     header#wheader {display: none;}
     .order_a:not(:last-child){border-bottom: 1px solid #ccc;}
 }
 /* 모바일 화면 대응 orderdetail */
-@media screen and (min-width:360px) and (max-width:1079px) {
+@media screen  and (max-width:1079px) {
     body {
         min-width: 360px;
     }
@@ -74,6 +74,6 @@ padding: 2px;
 }
 
 /*상품 문의*/
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
 
 }
