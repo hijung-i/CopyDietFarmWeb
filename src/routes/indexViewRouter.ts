@@ -1,5 +1,5 @@
 import { NextFunction, request, Request, Response, Router } from 'express'
-import { DeliveryInfo, User } from '../models/user'
+import { DeliveryInfo, SessionUser, User } from '../models/user'
 const router = Router()
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -69,8 +69,10 @@ router.get('/search-list', (req: Request, res: Response, next: NextFunction) => 
 
 router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn = req.session.isLoggedIn || false
-    console.log('isLoggedIn ->> ', isLoggedIn)
-    render(res, 'my_page', { isLoggedIn: isLoggedIn })
+    const sessionUser = req.session.user || {}
+    console.log('isLoggedIn ->> ', isLoggedIn, sessionUser)
+
+    render(res, 'my_page', { isLoggedIn: isLoggedIn, sessionUser })
 })
 router.get('/faq', (req: Request, res: Response, next: NextFunction) => {
     render(res, 'faq', {})
@@ -118,6 +120,7 @@ router.get('/product', (req: Request, res: Response, next: NextFunction) => {
 })
 
 router.get('/order', (req: Request, res: Response, next: NextFunction) => {
+    const sessionUser: SessionUser | undefined = req.session.user
     const deliveryGroupList = req.query.deliveryGroupList
     const orderDTO = JSON.parse(req.query.orderDTO as string)
 
@@ -129,14 +132,18 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
         address: '',
         mainAddressYn: ''
     }
+    try {
 
-    if (req.session.isLoggedIn === true) {
-        orderDTO.userId = 'jgpark'
-        orderDTO.userName = '박진국'
-        orderDTO.email = 'jgpark@data-flow.co.kr'
-        orderDTO.userCellNo = '01055431787'
-    } else {
-        orderDTO.userId = '비회원주문'
+        if (req.session.isLoggedIn === true) {
+            orderDTO.userId = sessionUser!.userId
+            orderDTO.userName = sessionUser!.userName
+            orderDTO.userEmail = sessionUser!.userEmail
+            orderDTO.userCellNo = sessionUser!.userCellNo
+        } else {
+            orderDTO.userId = '비회원주문'
+        }
+    } catch (err) {
+        console.log('GET /order >> error', err)
     }
 
     orderDTO.delivery = deliveryInfo

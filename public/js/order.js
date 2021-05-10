@@ -1,4 +1,3 @@
-
 var app = new Vue({
     el: 'main',
     data: {
@@ -78,11 +77,29 @@ $(function() {
     app.deliveryGroupList = JSON.parse((($('#deliveryGroupList').val() != undefined)?$('#deliveryGroupList').val():'{}'));
     app.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
 
-    // if(app.orderDTO.userId !== '비회원주문')
-    getDefaultDeliveryInfo();
-    getUsablePointAmount();
+    
 
+    app.orderDTO.products = new Array();
+    for(var i = 0; i < app.deliveryGroupList.length; i++) {
+        var dGroup = app.deliveryGroupList[i];
+        app.orderDTO.products = dGroup.products;
+    }
+    getLogin();
 })
+
+function getLogin() {
+    ajaxCall('/user/login', '', 'GET', function(data){
+        var isLoggedIn = data.result.isLoggedIn;
+
+        if(isLoggedIn) {
+            getDefaultDeliveryInfo();
+            getUsablePointAmount();
+        }
+        console.log("data", data);
+    }, function(err){
+        console.log("err", err);
+    })
+}
 
 function getUsablePointAmount() {
     var params = {};
@@ -104,6 +121,25 @@ function paymentAction() {
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
     var methods = ['npay', 'vbank', 'kakao', 'card', 'phone'];
     var method = methods[app.paymentNo -1];
+    
+    if(app.orderDTO.userId == '비회원주문') {
+        app.orderDTO.userName = $('#unName').val();
+        app.orderDTO.userCellNo = $('#unCellNo').val();
+        app.orderDTO.userEmail = $('#unEmail').val();
+
+        var delivery = {
+            userName: $('#unReceiverName').val(),
+            address: $('#unAddr').val() + $('#unAddr2').val(),
+            userCellNo: $('#unDeliveryUserCellNo').val()
+        }
+        app.orderDTO.delivery = delivery;
+        console.log()
+    }
+    
+    if(app.orderDTO.userCellNo == '' || app.orderDTO.userCellNo == undefined) {
+        alert('수령인 전화번호를 입력해주세요');
+        return;
+    }
 
     var items = new Array();
     var count = 0;
@@ -131,6 +167,14 @@ function paymentAction() {
     }
     app.orderDTO.orderTitle = orderTitle;
 
+    var nowDate = new Date();
+    var expireDate = new Date(nowDate.getTime() + (60 * 60 * 24 * 1000 * 3));
+
+    var month = ((((expireDate.getMonth() + 1) / 10) >= 1)?expireDate.getMonth() + 1: '0'+(expireDate.getMonth() +1));
+    var date = (((expireDate.getDate()) / 10) > 0)?expireDate.getDate(): '0'+(expireDate.getDate())
+    
+    var accountExpireAt = expireDate.getFullYear() + '-' + month +'-' + date  
+    console.log(accountExpireAt);
     var bootpayParams = {
         price: app.orderDTO.paidRealAmount,
         application_id: "5feae25e2fa5c2001d0391b9",
@@ -141,7 +185,7 @@ function paymentAction() {
         items: [],
         user_info: {
             username: app.orderDTO.userId,
-            email: app.orderDTO.email,
+            email: app.orderDTO.userEmail,
             addr: app.orderDTO.address,
             phone: app.orderDTO.userCellNo
         },
@@ -149,12 +193,10 @@ function paymentAction() {
         params: {
 
         },
-        account_expire_at: '2020-10-25', // 가상계좌 입금기간 제한 ( yyyy-mm-dd 포멧으로 입력해주세요. 가상계좌만 적용됩니다. )
+        account_expire_at: accountExpireAt, // 가상계좌 입금기간 제한 ( yyyy-mm-dd 포멧으로 입력해주세요. 가상계좌만 적용됩니다. )
         extra: {
-            start_at: '2019-05-10', // 정기 결제 시작일 - 시작일을 지정하지 않으면 그 날 당일로부터 결제가 가능한 Billing key 지급
-            end_at: '2022-05-10', // 정기결제 만료일 -  기간 없음 - 무제한
             vbank_result: 1, // 가상계좌 사용시 사용, 가상계좌 결과창을 볼지(1), 말지(0), 미설정시 봄(1)
-            quota: '[0,2,3]', // 결제금액이 5만원 이상시 할부개월 허용범위를 설정할 수 있음, [0(일시불), 2개월, 3개월] 허용, 미설정시 12개월까지 허용,
+            quota: [0,2,3], // 결제금액이 5만원 이상시 할부개월 허용범위를 설정할 수 있음, [0(일시불), 2개월, 3개월] 허용, 미설정시 12개월까지 허용,
             theme: 'purple', // [ red, purple(기본), custom ]
             custom_background: '#00a086', // [ theme가 custom 일 때 background 색상 지정 가능 ]
             custom_font_color: '#ffffff' // [ theme가 custom 일 때 font color 색상 지정 가능 ]
@@ -193,15 +235,17 @@ function paymentAction() {
         app.orderDTO.paymentDate = data.purchased_at;
         app.orderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
         app.orderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
-        app.orderdTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
+        app.orderDTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
 
         app.orderDTO.receiptId = data.receipt_id;
+
+        paymentConfirm();
     });
 }
 
 function paymentConfirm() {
-    var parmas = {
-        applicationId: '5feae25e2fa5c2001d0391b9',
+    var params = {
+        applicationId: '5feae25e2fa5c2001d0391bc',
         privateKey: '#x1fCHsPFCxs#L#j#J#SsNpN7YPnyMF#0mk#6NCh0kVMub2sH#g='.replace(/#/gi, ''),
         receiptId: app.orderDTO.receiptId,
         paidRealAmount: app.orderDTO.paidRealAmount
@@ -215,19 +259,52 @@ function paymentConfirm() {
                 addOrder();
                 break;
             case 'NOT_MATCHED':
-                paymentCancel();
+                paymentCancel('paymentConfirm 실패');
                 break;
         }
-        addOrder();
+    }, function(err){
+        console.log("error", err);
+    })
+}
+
+function paymentCancel(reason) {
+    var params = {
+        applicationId: '5feae25e2fa5c2001d0391bc',
+        privateKey: '#x1fCHsPFCxs#L#j#J#SsNpN7YPnyMF#0mk#6NCh0kVMub2sH#g='.replace(/#/gi, ''),
+        receiptId: app.orderDTO.receiptId,
+        paidRealAmount: app.orderDTO.paidRealAmount,
+        name: app.orderDTO.userName,
+        reason: reason,
+        cancel_id: Math.floor(new Date().getTime() + (Math.random() * 1000 + 1))
+    }
+    ajaxCall('https://api.bootpay.co.kr/cancel', params, 'POST', 
+    function(data){
+        console.log("payment canceled", data, 'params => ', params);
+    }, function( err) {
+        console.log("error while payment canceling", err, 'params = > ', params);
+    })
+}
+
+function addOrder() {
+    ajaxCall(API_SERVER + '/order/addOrder', app.orderDTO, 'POST',
+    function(data) {
+        console.log("success", data);
+        switch(data.message) {
+            case 'SUCCESS':
+                alert('상품을 성공적으로 주문했습니다.');
+                location.href="/cart";
+                break;
+            case 'NOT_MATCHED':
+                paymentCancel('addOrder 실패');
+                break;
+        }
     }, function(err){
         console.log("error", err);
     })
 }
 
 function getDefaultDeliveryInfo() {
-    var params = {
-
-    };
+    var params = {};
 
     ajaxCallWithLogin(API_SERVER + '/user/getDefaultDevlieryInfo', params, 'POST',
     function(data) {

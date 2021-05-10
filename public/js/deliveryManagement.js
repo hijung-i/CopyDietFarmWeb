@@ -11,7 +11,6 @@ var app = new Vue({
 })
 
 $(function() {
-    getDeliveryInfoList();
 
     $("#addr").click(function() {
         openZipSearch();
@@ -38,6 +37,7 @@ $(function() {
 
     $('#btnRegister_modal').click(function() {
         var modalName = $('.deliver_magHeader h3').html();
+        console.log(modalName);
         switch(modalName) {
             case '배송지 수정':
                 updateDelivery();
@@ -47,6 +47,8 @@ $(function() {
                 break;
         }
     })
+    getDeliveryInfoList();
+
 })
 function modalDisplay(display, modalName, i) {
     console.log("click", display, modalName)

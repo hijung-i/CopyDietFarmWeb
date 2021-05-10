@@ -11,6 +11,14 @@
             <li class="pick"><a href="/pick-product"><img src="/images/afterheart_ico_main.png" alt="찜한 메뉴"></a></li>
        </ul>
     </div>
+    <form action="/sign-up-form" method="GET" id="infoForm">
+        <input type="hidden" name="userName" id="formUserName">
+        <input type="hidden" name="userInfo" id="formUserInfo">
+        <input type="hidden" name="dupInfo" id="formDupInfo">
+        <input type="hidden" name="userCellNo" id="formUserCellNo">
+        <input type="hidden" name="userGender" id="formUserGender">
+        <input type="hidden" name="mobileCo" id="formMobileCo">
+    </form>
     <div class="comp_logo">
         <a href="/"><img src="/images/diet_farm_logo.png"></a>    
     </div>
@@ -36,7 +44,7 @@
        <a href="#">매일배송</a>
         </nav>
         <div class="searchbox">
-        <form id="search-form" action="search-list">
+        <form id="search-form" action="/search-list">
             <div class="search">
                 <input type="text" name="keyword" class="round" placeholder="검색해보세요.">
                 <a href="#"><img src="/images/search_icon_menu.png"></a>
