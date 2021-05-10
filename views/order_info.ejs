@@ -120,7 +120,7 @@
                     </select>
                     <p>사용 가능 쿠폰 0장 / 전체 0장</p>
                     <h3>포인트</h3>
-                    <div style="display: flex;justify-content: space-between; margin-bottom: 10px;">
+                    <div class="point_order">
                         <input v-model.number="orderDTO.paidPointAmount" min="0" value="0">
                         <button type="button" id="btnUse" v-on:click="useAllPoint()">모두 사용</button>
                     </div>
@@ -195,6 +195,7 @@
     </main>
 
     <script src="/js/order.js"></script>
+    <script src="/js/index.js"></script>
             <%-include('general/footer') %>
 </body>
 </html> 
