@@ -868,7 +868,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .t1{font-size:14px;font-weight:bold;letter-spacing:0.1px}
 .t1 span{font-size:12px;color:#BBBBBB;font-weight:normal}
 .t2{font-size:12px;line-height:14px;margin-top:5px;}
-.order_list_box{display:flex;justify-content:flex-start}
+.order_list_box{display:flex;justify-content:flex-start;margin-bottom:10px}
 .order ul li{white-space:nowrap}
 .order0{margin-top:-10px}
 .order_list_btn{width: 58px; float:right;padding-right: 0;}

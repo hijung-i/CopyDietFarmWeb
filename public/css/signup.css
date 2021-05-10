@@ -34,7 +34,7 @@ div.box.int_id{width:350px}
 
 .login a{left:20px;margin-top:-20px}
 
-.login-input-section-wrap{padding-top:20px;display: flex;}
+.login-input-section-wrap{padding-top:20px}
 .login-input-wrap{width:border solid 1px var(--border-gray-color );background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
