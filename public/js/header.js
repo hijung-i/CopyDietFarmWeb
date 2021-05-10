@@ -31,13 +31,13 @@ function getEventStands() {
 		console.log(html);
 		$('#header #nav').html(html);
 
+        // web size side menu set
 		$('.web_cate').click(function() {
 			sideTabOpen();
 			var x = $('.web_cate').offset().left;
 			var y = $('.web_cate').offset().top;
 			var height = $('.web_cate').outerHeight();
             console.log(y, height);
-
             $('.sideMenu').css({
                 'position': 'absolute',
                 'left':x,
@@ -150,6 +150,8 @@ $(function() {
     });
 
     $(".m_slides_sub").hide();
+
+    /* web side menu controll */
     $(".m_ba_slides_n_li a").hover(function () {
         console.log($(this).find("ul"));
         $(this).find("ul").slideDown("700");
