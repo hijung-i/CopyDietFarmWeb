@@ -235,7 +235,7 @@ border-color:#BBBBBB}
 -moz-box-shadow: none !important;
 -webkit-box-shadow: none !important;
 box-shadow: none !important}
-.purchased_products {margin-left:-20px}
+.purchased_products {}
 .purchased_products ul li{float:left}
 .purchased_products img{border-radius:5px}
 .view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif}

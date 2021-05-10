@@ -101,14 +101,11 @@ a:hover{text-decoration:none;}
 	padding-left:15px;
   padding-right:15px;
   float:left;
-
   position:relative;
   top:6px
  }
 @media screen and (max-width:1079px){
-#header .gnb{position:fixed;width:100%;background-color:#fff}
-}
-@media screen and (max-width:1079px){
+  #header .gnb{position:fixed;width:100%;background-color:#fff}
   .content_main .main_img{padding-top:100px}
   .content_main .bxslider li img{width:auto;height:419px!important;}
   #header{margin-bottom:20px}
@@ -121,7 +118,11 @@ a:hover{text-decoration:none;}
   #nav::-webkit-scrollbar{ display:none; }
   #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;margin-right:32px;display:inline-block}
   .top_util, .searchbox, #nav .web_cate{display:none}
-    #header{position:fixed;width:100%;top:0px;background-color:#fff;z-index:9999}
+  #header{position:fixed;width:100%;top:0px;background-color:#fff;z-index:9999}
+  .body_sub_tit{display:flex;justify-content:space-between;}
+  .body_sub_tit p{margin-top:26px;margin-right:15px}
+  .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
+
 }
 @media screen and (min-width:1080px){
   .multiple_bxslider li img{width:auto;height:auto;padding:10px;border-radius:5px}
@@ -254,9 +255,9 @@ height:50px;overflow:hidden}
 /*메인 페이지 모바일*/
 @media screen and (max-width:1079px) {
 .web_index{display:none}
-.body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px;padding-bottom:19px}
+.body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
 .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
-.body_bottom .thum img{width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
+.body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
 .body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
@@ -282,13 +283,13 @@ height:50px;overflow:hidden}
 .w_best .desc .sale{font-weight:bold}
 .w_best .desc .cost{color:red;text-decoration:line-through;margin-left:-12px}
 .w_best .desc .ratio{font-weight:bold;margin-left:-17px}
-.body_bottom .desc .sale{font-weight:bold}
-.body_bottom .desc .cost{color:red;text-decoration:line-through;margin-left:-12px}
-.body_bottom .desc .ratio{font-weight:bold;margin-left:-17px}
+.body_bottom .desc .sale{font-size:16px}
+.body_bottom .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
+.body_bottom .desc .ratio{font-size:16px;font-weight:bold;margin-left:-14px;color:#F32525}
 .body_bottom .side{float:left;}
 .body_bottom .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
 .body_bottom .thum{padding-bottom:13px}
-.body_bottom .title{margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
+.body_bottom .title{font-size:14px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 .w_best .title{margin-top:13px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 .body_bottom .desc{padding-bottom:40px}                                                                                         
 .protein, .sweet, .water{margin-top:35px;clear:both}
@@ -324,17 +325,17 @@ height:50px;overflow:hidden}
   #content .category ul li{height:100%;text-align:center; margin-top:10px; /* outline: 2px solid red; */}
   #content .category li{float:left}
   #content .category img{width:60px;height:60px}
-  #content .category p{margin-top:7.89px}
+  #content .category p{margin-top:7.89px;font-size:13px}
   #content .s_wrap{margin-bottom:-50px}
   #content .s_price{margin:20px 10px 20px;width:100%;margin-bottom:-50px;}
   #content .s_price h2{font-size:14px;margin-bottom:10px;margin-left:10px}
-  #content .s_price li .title{font-size:12px;margin-left:10px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100px;height: 20px;display:inline-block}
+  #content .s_price li .title{font-size:12px;/*overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100px;height: 20px;display:inline-block*/}
   #content .s_price li .price{font-size:12px;font-weight:bold;margin-top:12px;overflow:visible;}
   #content .s_price ul li img{margin-bottom:10px}
   #content .s_price ul li ul li{float:left;}
-  #content .s_price .sale{font-weight:bold;margin-left:10px}
-  #content .s_price .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:5px;margin-top:1px}
-  #content .s_price .ratio{color:red;font-size:11px;margin-left:5px}
+  #content .s_price .sale{font-weight:bold}
+  #content .s_price .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:5px;margin-top:1px;font-weight:normal;}
+  #content .s_price .ratio{color:#F32525;font-size:11px;margin-left:5px}
   #content .best_wrap{width:100%;border-top:8px solid #f1f1f1; margin: 0 auto;}
   
   #content .w_best{overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
@@ -342,8 +343,8 @@ height:50px;overflow:hidden}
   #content .w_best li .thum img{width:100%;height:auto;}
   #content .w_best li .title{font-size:12px;padding:5px;padding-top:15px}
   #content .w_best li .desc ul{margin-left:-1px}
-  #content .w_best li .desc ul li{margin-left:10px;margin-bottom:20px;float:left;}
-  
+  #content .w_best li .desc ul li{margin-left:7px;margin-bottom:20px;float:left}
+  #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
 
   
   #content .pages ul{display:flex;padding-left:20px;padding-bottom:20px;padding-top:10px}
@@ -371,7 +372,7 @@ height:50px;overflow:hidden}
   #content .main_sub_wrap .desc .title{margin-left:5px;margin-bottom:7px}
   #content .main_sub_wrap .desc .sale{font-weight:bold;}	
   #content .main_sub_wrap .desc .cost{color:#bbbbbb;text-decoration:line-through;margin-left:7px;}	
-  #content .main_sub_wrap .desc .ratio{color:red;font-weight:bold;font-size:11px;margin-left:7px}		
+  #content .main_sub_wrap .desc .ratio{color:#F32525;font-weight:bold;font-size:11px;margin-left:7px}		
   #content .main_sub_wrap .main_sub h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}	
   .n_sort{position:relative;margin-top:15px;text-align:left}	
   }
@@ -394,7 +395,7 @@ height:50px;overflow:hidden}
     #content .main_sub_wrap .desc ul li{float:left;}	
     #content .main_sub_wrap .desc .sale{font-weight:bold}	
     #content .main_sub_wrap .desc .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:10px;margin-top:3px}	
-    #content .main_sub_wrap .desc .ratio{color:red;font-weight:bold;font-size:11px;margin-left:10px}	
+    #content .main_sub_wrap .desc .ratio{color:#F32525;font-weight:bold;font-size:11px;margin-left:10px}	
     #content .sort select{border:0;margin-left:-10px;margin-top:15px}
   }	
       
@@ -418,9 +419,9 @@ height:50px;overflow:hidden}
   white-space: nowrap;width:200px;height:20px}
   #content .main_sub_wrap .desc ul li{float:left}	
   #content .main_sub_wrap .desc ul{margin-left:-2px;margin-bottom:-10px}
-  #content .main_sub_wrap .desc .sale{font-size:16px;font-weight:bold;margin-left:5px}	
-  #content .main_sub_wrap .desc .cost{font-size:16px;color:#bbbbbb;text-decoration:line-through;margin-left:10px;font-weight:bold;}	
-  #content .main_sub_wrap .desc .ratio{font-size:16px;color:red;font-weight:bold;margin-left:10px}	
+  #content .main_sub_wrap .desc .sale{font-size:16px;margin-left:5px}	
+  #content .main_sub_wrap .desc .cost{font-size:16px;color:#bbbbbb;text-decoration:line-through;margin-left:10px}	
+  #content .main_sub_wrap .desc .ratio{font-size:16px;font-weight:bold;color:#F32525;margin-left:10px}	
   }
   
   /*찜한 메뉴 모바일*/
@@ -462,10 +463,10 @@ height:50px;overflow:hidden}
   #content .pick_product ul li img{width:330px;border-radius:5px}
   #content .pick_product ul li .desc p{font-size:16px;padding:5px;margin-top:10px;overflow:visible;text-overflow: ellipsis;white-space: nowrap;width:200px;height: 20px;display:inline-block;margin-bottom:10px}
   #content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
-  #content .desc ul{margin-left:5px;margin-bottom:44px}
-  #content .desc .sale{color:#000;font-size:16px;font-weight:bold}
-  #content .desc .cost{/*margin-left:-48px;*/font-size:16px;color:#6B6B6B;text-decoration:line-through;font-weight:bold}
-  #content .desc .ratio{/*margin-left:-98px;*/color:#F32525;font-size:16px;font-weight:bold}
+  #content .pick_product .desc ul{margin-left:5px;margin-bottom:44px}
+  #content .pick_product .desc .sale{color:#000;font-size:16px;font-weight:bold}
+  #content .pick_product .desc .cost{/*margin-left:-48px;*/font-size:16px;color:#6B6B6B;text-decoration:line-through;font-weight:bold}
+  #content .pick_product .desc .ratio{/*margin-left:-98px;*/color:#F32525;font-size:16px;font-weight:bold}
 /*찜 내역 없을때*/
 .pick_list_null{width:70%; text-align:center; margin:197px auto;}
 .pick_list_null img{width:100px;height:75px}
