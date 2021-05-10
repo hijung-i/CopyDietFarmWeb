@@ -4,7 +4,7 @@
 
 var dupCheck = false;
 $(function() {
-    // niceDuplicationCheck();
+    niceDuplicationCheck();
     
     var id = $('#id');
     var pw1 = $('#pswd1');
@@ -116,6 +116,7 @@ $(function() {
         function(data) {
             console.log("register success", data);
             alert("회원가입에 성공했습니다.");
+            location.href = "/login-form";
         }, 
         function(err) {
             console.log(err);
