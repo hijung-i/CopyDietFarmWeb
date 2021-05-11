@@ -15,12 +15,13 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title h2{position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
 .detail_title a img{position:absolute;top:44px;width:17px;margin-left:5px}
 
+/*
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
 #content .tabMenu li{padding-left:25px;padding-right:25px;padding-bottom:10px;padding-top:10px}
 #content .tabMenu li{width:100%;float:left;width:25%;height:44px;font-size:14px;line-height:18px;text-align:center;padding:10px;margin-bottom:1px}
 #content .tabMenu li a{color:#878787;font-weight:normal}
 #content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319;}
-
+*/
 /*상품설명*/
 #content .product_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:-41px}
 #content .product{overflow:hidden;margin:0 auto ;width:100%;}

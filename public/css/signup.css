@@ -167,9 +167,9 @@ font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
 .red_sign{width:336px}
 }
 
-/*로그인*/
-
-
+/*로그인 추가 부분(sns로그인)*/
+.sns_login ul li{float:left;padding:25px;cursor:pointer}
+.sns_login ul li img{width:46px;height:46px}
 
 
 

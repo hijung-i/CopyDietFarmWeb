@@ -64,14 +64,7 @@ button::-moz-focus-inner {
 
 img{vertical-align:top;margin:0;font-size:0;line-height:0;}
 
-body, select, input, textarea, a[href^="tel:"]:link {
-    color: #383838;
-    font-weight: normal;
-	font-size:12px;
-	font-family:'나눔고딕';
-	letter-spacing:-0.5px;
-  overflow: visible;
-}
+
 
 
 a{color:#383838;text-decoration:none;cursor:pointer}
@@ -114,7 +107,7 @@ a:hover{text-decoration:none;}
   .menu_btns{background-color:#fff}
   .btnMenu img{width:19.44px;height:13.67px;position:relative;top:-25px;left:15px}
   .btnCart img{width:21px;height:21px;float:right;position:relative;bottom:45px;right:10px}
-  #nav{width:100%;height:44px;padding-left:15px; overflow:scroll;white-space:nowrap;-ms-overflow-style:none;position:relative;top:-21px;background-color:#fff;bottom:20px}
+  #nav{width:100%;height:34px;padding-left:15px; overflow:scroll;white-space:nowrap;background-color:#fff;bottom:20px}
   #nav::-webkit-scrollbar{ display:none; }
   #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;margin-right:32px;display:inline-block}
   .top_util, .searchbox, #nav .web_cate{display:none}
@@ -363,12 +356,12 @@ height:50px;overflow:hidden}
   #content .main_sub{width:100%;margin:-10px auto;margin-top:40px}	
   #content .sort select{border:0;margin-left:15px;margin-bottom:10px;margin-top:5px}
   
-  @media screen and (max-width:600px){
+  @media screen and (max-width:1079px){
   #mobile_sub{position:fixed;height:90px;background-color:#fff}
   #content .main_sub_wrap{	
   width:100%;border-top:2px solid #f1f1f1;margin-top:90px}
   #content .main_sub img{padding:7px}
-  #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
+  #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
   #content .main_sub .desc ul li{float:left;white-space:nowrap;margin-left:-4px}
   #content .main_sub_wrap .desc .title{margin-left:5px;margin-bottom:7px}
   #content .main_sub_wrap .desc .sale{font-weight:bold;}	
@@ -377,17 +370,17 @@ height:50px;overflow:hidden}
   #content .main_sub_wrap .main_sub h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}	
   .n_sort{position:relative;margin-top:15px;text-align:left}	
   }
-    /*중간사이즈*/
+    /*중간사이즈
     @media screen and (min-width:601px) and (max-width:1079px) 
     {
     #mobile_sub{position:fixed;height:90px;background-color:#fff}
     #content .main_sub_wrap{	
     width:100%;border-top:2px solid #f1f1f1;;margin-top:34px}
     #content .main_sub_wrap{padding-left:35px;padding-right:15px;margin-top:34px;padding-bottom:10px}
-    #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(3, 2fr);	
+    #content .main_sub ul:first-child{padding-top:100px;display:grid;grid-template-columns: repeat(3, 2fr);	
     ;align-items: center;	
     justify-self: center;margin: 0 auto;margin-left:-20px;padding-left:15px;padding-right:15px}
-    #content .sort select{margin-top:20px;margin-bottom:-10px}
+    #content .sort {margin-top:20px;margin-bottom:-10px}
     #content .main_sub h2{display:none}
     #content .main_sub ul li{float:left;}	
     #content .main_sub ul li img{width:100%;padding:10px}	
@@ -397,8 +390,8 @@ height:50px;overflow:hidden}
     #content .main_sub_wrap .desc .sale{font-weight:bold}	
     #content .main_sub_wrap .desc .cost{font-size:10px;color:#bbbbbb;text-decoration:line-through;margin-left:10px;margin-top:3px}	
     #content .main_sub_wrap .desc .ratio{color:#F32525;font-weight:bold;font-size:11px;margin-left:10px}	
-    #content .sort select{border:0;margin-left:-10px;margin-top:15px}
-  }	
+
+  }	*/
       
    /*서브제품페이지 웹*/
   @media screen and (min-width:1080px){
@@ -424,7 +417,7 @@ height:50px;overflow:hidden}
   #content .main_sub_wrap .desc .cost{font-size:16px;color:#bbbbbb;text-decoration:line-through;margin-left:10px}	
   #content .main_sub_wrap .desc .ratio{font-size:16px;font-weight:bold;color:#F32525;margin-left:10px}	
   }
-  
+
   /*찜한 메뉴 모바일*/
   
   @media screen and (max-width:1079px){
@@ -449,7 +442,7 @@ height:50px;overflow:hidden}
   .page_wrap{display:none}
   #footer{border-top:8px solid #f1f1f1;margin-top:40px}
   }
-  
+
   /*찜한 메뉴 웹*/
   @media screen and (min-width:1080px){
   #content{width:100%;max-width:1080px;margin:0 auto;}
@@ -472,7 +465,7 @@ height:50px;overflow:hidden}
 .pick_list_null{width:70%; text-align:center; margin:197px auto;}
 .pick_list_null img{width:100px;height:75px}
 .no_list{font-size:16px;color:#878787;margin-top:15px}
-
+}
 /*회원 탈퇴*/
 @media screen and (max-width:1079px){
 .contents .web_title{display:none}
@@ -632,5 +625,4 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
   position: fixed;
   bottom: 60px; right: 20px;
   z-index: 99;
-}
 }

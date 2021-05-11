@@ -27,8 +27,8 @@ $(function() {
             infiniteLoop: true,
             controls:true,
             pager: false,
-            minSlides:4,
-            maxSlides:5,
+            minSlides:2.5,
+            maxSlides:2.5,
             slideMargin:4
         });
   
