@@ -253,8 +253,17 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
   .footer_top > ul {display: flex;}
   .footer_ctt_wrapper {width: 100%; height: 269px; background: #f4f4f4;}
   .footer_ctt {width: 1080px; margin: 0 auto; display: flex;}
-  .footer_ctt div {padding: 60px 30px 0 0;}
-  .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px;}
+  .footer_ctt div {padding: 25px 50px 0 0;}
+  .footer_ctt div li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; color: #878787;}
+  .footer_ctt div li.padding10 {padding-bottom: 10px;}
+  .footer_ctt div li.padding12 {padding-bottom: 12px;}
+  .footer_ctt div li.import_txt {color: #000; font-size: 14px; font-weight: 700; padding-bottom: 12px;}
+  .footer_ctt div li span {color: #F99319;}
+  li.topSpace {padding-top: 15px;}
+  .accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
+  .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
+  li.footer_ctt_tit > h3 {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; color: #6B6B6B;}
+
 
 
 
