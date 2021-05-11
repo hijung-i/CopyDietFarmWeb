@@ -105,20 +105,20 @@ a:hover{text-decoration:none;}
   top:6px
  }
 @media screen and (max-width:1079px){
+  .main_banner {height: 42px; background: #ccc; margin-top: 24px;}
   #header .gnb{position:fixed;width:100%;background-color:#fff}
   .content_main .main_img{padding-top:100px}
   .content_main .bxslider li img{width:auto;height:419px!important;}
-  #header{margin-bottom:20px}
-  .comp_logo{width:100%;margin:0 auto;text-align:center;margin-top:39px;background-color:#fff}
-  .comp_logo img{width:55.26px;height:28px}
-  .menu_btns{background-color:#fff}
-  .btnMenu img{width:19.44px;height:13.67px;position:relative;top:-25px;left:15px}
-  .btnCart img{width:21px;height:21px;float:right;position:relative;bottom:45px;right:10px}
-  #nav{width:100%;height:44px;padding-left:15px; overflow:scroll;white-space:nowrap;-ms-overflow-style:none;position:relative;top:-21px;background-color:#fff;bottom:20px}
+  .comp_logo{width:55px; height: 28px; text-align:center;}
+  .comp_logo img {height: 21px;}
+  .menu_btns{background-color:#fff; width: 329px; height: 28px; margin: 0 auto; display: flex; margin-top: 15px; justify-content: space-between; align-items: center;}
+  .btnMenu {width:19.44px;height:13.67px;}
+  #nav{position: absolute; width:360px; height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none;}
+  .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin-top: 15px; overflow: auto;}
   #nav::-webkit-scrollbar{ display:none; }
-  #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;margin-right:32px;display:inline-block}
+  #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
   .top_util, .searchbox, #nav .web_cate{display:none}
-  #header{position:fixed;width:100%;top:0px;background-color:#fff;z-index:9999}
+  #header{position:fixed; min-width:360px; height: 151px; top:0px;background-color:#fff;z-index:9999}
   .body_sub_tit{display:flex;justify-content:space-between;}
   .body_sub_tit p{margin-top:26px;margin-right:15px}
   .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
@@ -136,6 +136,7 @@ a:hover{text-decoration:none;}
   .comp_logo img{width:158px;height:80px; vertical-align: middle;}
   .navbar_wrap {width: 100%; height: 54px; line-height: 54px; display: flex; margin: 0 auto; border-top: 2px  solid #F5F5F5;}
   #nav {width: 664px; display: flex;}
+  .nav_wrap {position: relative; display: flex; width: 1080px; height: 54px; margin: 0 auto;}
   #nav .home{display:none}
   #nav a {
     font-family: 'Noto Sans KR', sans-serif; 
@@ -151,11 +152,32 @@ a:hover{text-decoration:none;}
   .sideMenu{display:none} 
   .downArrow{display:none}
   .mDepth01{position:absolute; border:1px solid #f5f5f5}
-  .mDepth01>li {width: 168px; height: 54px; position: relative;}
+  .mDepth01 > li {width: 168px; height: 54px; position: relative;}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
-  .gnb_depth02{display:inline-block;width:372px;height:488px;text-align:left}
+  .gnb_depth02{ display:inline-block; width:372px; height:488px; text-align:left}
   #tab2, .tab_wrap {display: none;}
+
+  /* footer web */
+  #footer {width:100%;min-width:1080px;}
+  /* footer_web */
+  .footer_top_wrapper {width: 100%; height: 47px; border-top: 1px solid #f5f5f5; margin-top: 83px;}
+  .footer_top {width: 1080px; margin: 0 auto; line-height: 47px;}
+  .footer_top li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
+  .footer_top li.sortationBar > img {vertical-align: middle; padding: 0 10px;}
+  .footer_top > ul {display: flex;}
+  .footer_ctt_wrapper {width: 100%; height: 269px; background: #f4f4f4;}
+  .footer_ctt {width: 1080px; margin: 0 auto; display: flex;}
+  .footer_ctt div {padding: 25px 50px 0 0;}
+  .footer_ctt div li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; color: #878787;}
+  .footer_ctt div li.padding10 {padding-bottom: 10px;}
+  .footer_ctt div li.padding12 {padding-bottom: 12px;}
+  .footer_ctt div li.import_txt {color: #000; font-size: 14px; font-weight: 700; padding-bottom: 12px;}
+  .footer_ctt div li span {color: #F99319;}
+  li.topSpace {padding-top: 15px;}
+  .accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
+  .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
+  li.footer_ctt_tit > h3 {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; color: #6B6B6B;}
 }
 
 .slideMenu_top {
@@ -173,11 +195,12 @@ a:hover{text-decoration:none;}
 
 .sideMenu .mDepth01{font-size:16px;line-height:32px; background: #fff; z-index: 1;}
 .sideMenu .mDepth01 dl {height: 54px;}
-.sideMenu .mDepth01 dt{height: 54px; padding:8px;color:#333;cursor:pointer;border-bottom:1px solid #e0e4e7; font-size: 14px; font-weight: 400; display: flex;}
+.sideMenu .mDepth01 dl > dt.sideMenu_detail a {padding-left: 12px;}
+.sideMenu .mDepth01 dt{height: 54px; padding:8px; color:#333; cursor:pointer; border-bottom:1px solid #e0e4e7; font-size: 14px; font-weight: 400; display: flex;}
 .sideMenu .mDepth01 dt img{width: 32px;height:32px;margin-right:15px;vertical-align:middle;}
 .downArrow{width:11px;height:11px}
- .sideMenu .mDepth01 dd{display:none; background:#f3f5f6; position: absolute;}
- .sideMenu .mDepth01 dd li{padding:8px 69px 9px;color:#666;border-bottom:1px solid #e0e4e7;}
+.sideMenu .mDepth01 dd {display:none; background:#f3f5f6; position: absolute; left: 168px;}
+.sideMenu .mDepth01 dd li{padding:15px 0 0 15px; color:#666;}
 .sideMenu .mDepth01 dd li a{color:#666;}
 #m_cart{display:none;position:absolute;left:0;top:54px;width:100%;padding:10px 50px 10px 10px;z-index:120;}
 
@@ -314,8 +337,8 @@ height:50px;overflow:hidden}
   .m_bestn_list{border-bottom:8px solid #f1f1f1;padding-top:10px}
   .m_bestn_mn_box {float:left}
    #content .desc ul li{float:left}
-
-  #content{position:relative;width:100%;z-index:1;margin-top:27px}
+  #slider_main {display: none;}
+  #content{position:relative;width:100%;z-index:1;margin-top:27px;}
   #content .main_img{z-index:1;width:100%;}
   #content .catgor_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:-60px}
   #content .category{width:100%;border-top:8px solid #f1f1f1;}
@@ -346,11 +369,8 @@ height:50px;overflow:hidden}
   #content .w_best li .desc ul{margin-left:-1px}
   #content .w_best li .desc ul li{margin-left:7px;margin-bottom:20px;float:left}
   #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
-
-  
- .pages ul{display:flex;padding-left:20px;padding-bottom:20px;padding-top:10px}
- .pages ul li{float:left;margin-left:40px}
- .pages ul li img{width:60%;}
+  .pages {position: fixed; bottom: 0; min-width: 360px; height: 45px; z-index: 9999; background: #fff;}
+  .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
   }
   /*메인페이지 컨텐츠 수정 210426*/
   @media screen and (max-width:1079px){
@@ -429,7 +449,7 @@ height:50px;overflow:hidden}
   
   @media screen and (max-width:1079px){
   #mHeader{position:fixed;height:90px;background-color:#fff}
-  .btnCart{position:relative;margin-right:10px}
+  .btnCart{width: 21px; height: 21px;}
   #content .pick_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:80px}
   #content .pick_wrap{padding-left:15px;padding-right:15px}
   #content .pick_product h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}
@@ -447,9 +467,13 @@ height:50px;overflow:hidden}
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
   #content .desc .ratio{color:#F32525}
   .page_wrap{display:none}
-  #footer{border-top:8px solid #f1f1f1;margin-top:40px}
+  #footer{ width: 100%; min-width: 360px; height: 506px; margin: 45px 0; background: #F4F4F4;
   }
-  
+  .footer_top > ul {display: flex;}
+  .footer_top li {padding-right:10px;}
+  .footer_top li > a {color: #878787;  font-weight: 700;}
+  .footer_top_wrapper {padding: 25px 26px;}
+}
   /*찜한 메뉴 웹*/
   @media screen and (min-width:1080px){
   #content{width:100%;max-width:1080px;margin:0 auto;}
@@ -632,5 +656,4 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
   position: fixed;
   bottom: 60px; right: 20px;
   z-index: 99;
-}
 }

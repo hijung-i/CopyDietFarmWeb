@@ -92,7 +92,7 @@ a:hover{text-decoration:none;}
 #Wrapper,
 #Header,
 #Container,
-#footer {width:100%;min-width:1080px;}
+
 
 #Contents {width:1080px;height:100%;margin:0 auto;}
 
@@ -125,7 +125,6 @@ a:hover{text-decoration:none;}
 
 #wHeader .header_design_area {position:absolute;top:0;left:50%;width:100%;height:119px;margin-left:-50%;z-index:-1}
 #wHeader .header_design_area:after {content:'';position:absolute;display:block;left:0;width:50%;height:119px;margin-left:-510px;}
-.nav_wrap {display: flex;}
 
 /*검색창*/
 .round {width:358px;height:36px;border-radius:20px;
@@ -245,24 +244,7 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .page_nation .nnext {background:url('../images/page_nnext.png') no-repeat center center;margin-right:0;}
 .page_nation a.active {background-color:#fff;color:#F99319;}
 
-/* footer */
-  .footer_top_wrapper {width: 100%; height: 47px; border-top: 1px solid #f5f5f5;}
-  .footer_top {width: 1080px; margin: 0 auto; line-height: 47px;}
-  .footer_top li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
-  .footer_top li.sortationBar > img {vertical-align: middle; padding: 0 10px;}
-  .footer_top > ul {display: flex;}
-  .footer_ctt_wrapper {width: 100%; height: 269px; background: #f4f4f4;}
-  .footer_ctt {width: 1080px; margin: 0 auto; display: flex;}
-  .footer_ctt div {padding: 25px 50px 0 0;}
-  .footer_ctt div li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; color: #878787;}
-  .footer_ctt div li.padding10 {padding-bottom: 10px;}
-  .footer_ctt div li.padding12 {padding-bottom: 12px;}
-  .footer_ctt div li.import_txt {color: #000; font-size: 14px; font-weight: 700; padding-bottom: 12px;}
-  .footer_ctt div li span {color: #F99319;}
-  li.topSpace {padding-top: 15px;}
-  .accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
-  .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
-  li.footer_ctt_tit > h3 {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; color: #6B6B6B;}
+
 
 
 
