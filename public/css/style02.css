@@ -107,7 +107,7 @@ a:hover{text-decoration:none;}
 .top_util {position:relative; width:100%; height:55px; letter-spacing:-0.005em;}
 .top_util .menu_list { display: flex; float: right; height: 55px; line-height: 55px;}
 .top_util .menu_list .join{color:#F99319}
-.top_util .menu_list > li { padding:0 10px; white-space:nowrap;}
+.top_util .menu_list > li { padding:0 13.5px; white-space:nowrap;}
 .top_util .menu_list  .bar{position:relative; top:21.5px}
 .top_util .menu_list li.cart, .top_util .menu_list li.mypage, .top_util .menu_list li.pick {position: relative; top: 10px;}
 .top_util .menu_list > li:last-child {padding-right:0}
