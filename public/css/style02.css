@@ -108,7 +108,7 @@ a:hover{text-decoration:none;}
 .top_util .menu_list { display: flex; float: right; height: 55px; line-height: 55px;}
 .top_util .menu_list .join{color:#F99319}
 .top_util .menu_list > li { padding:0 10px; white-space:nowrap;}
-.top_util .menu_list  .bar{position:relative; top:22px}
+.top_util .menu_list  .bar{position:relative; top:21.5px}
 .top_util .menu_list li.cart, .top_util .menu_list li.mypage, .top_util .menu_list li.pick {position: relative; top: 10px;}
 .top_util .menu_list > li:last-child {padding-right:0}
 .top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap}
