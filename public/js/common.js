@@ -2,7 +2,11 @@
 //var API_SERVER = "http://192.168.0.3:9090";
 //var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
+<<<<<<< HEAD
 var API_SERVER = "http://13.209.123.102:9090";
+=======
+ var API_SERVER = "http://13.209.123.102:9090";
+>>>>>>> da2f76879c0fee2d50d91a11c973c7e98b5af1cb
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
@@ -329,19 +333,20 @@ function niceIdentifyPopup(nextMethod) {
 }
 
 function onIdentifyingSuccess(data, nextMethod) {
-	console.log(data, nextMethod);
+	console.log(data);
 	$("#formUserName").val(data.userName);
 	$("#formUserInfo").val(data.userInfo);
 	$("#formDupInfo").val(data.dupInfo);
 	$("#formUserGender").val(data.userGender);
 	$("#formUserCellNo").val(data.userCellNo);
 	switch(nextMethod) {
-	case 'register':
-		$("#infoForm").attr("action", "/sign-up-form");
-		break;
+		case 'register':
+			$("#infoForm").attr("action", "/sign-up-form");
+			break;
 	}
-		
+
 	$("#infoForm").submit();
+	
 }
 
 
