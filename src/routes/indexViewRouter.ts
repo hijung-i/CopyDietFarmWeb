@@ -41,7 +41,8 @@ router.get('/products/:salesStandCode/event', (req: Request, res: Response, next
 
     render(req, res, 'products', {
         standCode: standCode,
-        listType: 'EVENT'
+        listType: 'EVENT',
+        listTitle: ''
     })
 })
 router.get('/products/:category1Code/category/:category2Code', (req: Request, res: Response, next: NextFunction) => {
@@ -51,7 +52,8 @@ router.get('/products/:category1Code/category/:category2Code', (req: Request, re
     render(req, res, 'products', {
         category1Code: category1Code,
         category2Code: category2Code,
-        listType: 'CATEGORY'
+        listType: 'CATEGORY',
+        listTitle: ''
     })
 })
 router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {
@@ -63,7 +65,8 @@ router.get('/search-list', (req: Request, res: Response, next: NextFunction) => 
 
     render(req, res, 'products', {
         keyword: keyword,
-        listType: 'SEARCH'
+        listType: 'SEARCH',
+        listTitle: ''
     })
 })
 
@@ -96,9 +99,7 @@ router.get('/invite', (req: Request, res: Response, next: NextFunction) => {
 router.get('/delivery-info', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'delivery_info', {})
 })
-router.get('/pick-product', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'pick_product', {})
-})
+
 router.get('/pwdReset', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'pwdReset', {})
 })

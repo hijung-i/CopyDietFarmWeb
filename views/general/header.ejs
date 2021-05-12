@@ -1,10 +1,12 @@
 <header id="header">
     <div class="top_util">
         <ul class="menu_list" id="menu_list_header">
+            <% if(isLoggedIn != true) { %> 
             <li class="join" style="color:#F99319"><a onclick="niceIdentifyPopup('register')">회원가입</a></li>
             <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
             <li class="login_top"><a href="/login-form">로그인</a></li>
             <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
+            <% } %>
             <li class="cs_center"><a href="/cs-center">고객센터</a></li>
             <li class="cart"><a href="/cart"><img src="/images/cart_icon_main@2x.png" alt="장바구니"></a></li>
             <li class="mypage"><a href="/mypage"><img src="/images/dietfarm_mypage.png" alt="마이페이지" style="width:15px"></a></li>

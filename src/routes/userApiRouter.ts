@@ -24,6 +24,19 @@ router.get('/login', (req: Request, res: Response, next: NextFunction) => {
     })
 })
 
+router.post('/login/kakao', async (req: Request, res: Response, next: NextFunction) => {
+    console.log('POST /user/login/kakao  request.body -> ', req.body)
+    console.log('POST /user/login/kakao  request.params -> ', req.params)
+    console.log('POST /user/login/kakao  request.query -> ', req.query)
+    res.status(200).send('')
+})
+router.get('/login/kakao', async (req: Request, res: Response, next: NextFunction) => {
+    console.log('GET /user/login/kakao  request.body -> ', req.body)
+    console.log('GET /user/login/kakao  request.params -> ', req.params)
+    console.log('GET /user/login/kakao  request.query -> ', req.query)
+    res.status(200).send('')
+})
+
 router.post('/login', async (req: Request, res: Response, next: NextFunction) => {
     const user = req.body as User
     const loginResult: UserResult = await userService.login(user)

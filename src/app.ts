@@ -33,7 +33,10 @@ import userApiRouter from './routes/userApiRouter'
 app.use(session({
     secret: 'dataflow0327!@',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 1000 * 60 * 60
+    }
 }))
 app.use(Express.json({ limit: '16MB' }))
 app.use(Express.urlencoded({ extended: false, limit: '16MB' }))
