@@ -325,7 +325,7 @@ box-shadow: none !important}
 .viw_option_info dd {padding:3px 0 0 0;}
 .viw_option_info dt {clear:both;position:relative;padding:3px 0 0 0;float:left;color:#999;font-size:13px}
 .viw_option_info dd {position:relative;float:right;width:100%;font-size:14px;color:#555}
-.purchased_products{border:0;}
+.purchased_products{border:0;margin-top:-80px}
 .product_detai_c_vn {position:relative;margin-top:54px;font-family:'Noto sans',sans-serif}
 .pdt_detai_tab_vn {position:relative;background:#fff; width:1068px;z-index:10; }
 .pdt_detai_tabinner_vn {display:inline;float:left;height:61px;width:1068px;border-top:1px solid #E4E4E4; border-bottom:1px solid #E4E4E4;background-color:#fff;}
