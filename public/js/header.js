@@ -44,11 +44,11 @@ function getEventStands() {
 				'top':y + height
                 // width:100% disabled
 			});
-		})
+		});
     }, function(err) {
         sideTabClose();
         console.log("eventStands err", err);
-    }) 
+    })
 } 
 
 function sideTabOpen() {

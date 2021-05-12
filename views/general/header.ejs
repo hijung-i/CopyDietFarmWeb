@@ -1,8 +1,12 @@
 <header id="header">
     <div class="top_util">
         <ul class="menu_list" id="menu_list_header">
+<<<<<<< HEAD
             <% if(isLoggedIn == undefined && isLoggedIn != true) { %>
             <li class="join"><a onclick="niceIdentifyPopup('register')">회원가입</a></li>
+=======
+            <li class="join" style="color:#F99319"><a onclick="niceIdentifyPopup('register')">회원가입</a></li>
+>>>>>>> 6548fe01f21e7a4ea6143e2b433a672844546f6a
             <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
             <li class="login_top"><a href="/login-form">로그인</a></li>
             <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
@@ -13,6 +17,7 @@
             <li class="pick"><a href="/pick-product"><img src="/images/afterheart_ico_main.png" alt="찜한 메뉴"></a></li>
        </ul>
     </div>
+<<<<<<< HEAD
     <form action="/sign-up-form" method="GET" id="infoForm">
         <input type="hidden" name="userName" id="formUserName">
         <input type="hidden" name="userInfo" id="formUserInfo">
@@ -28,25 +33,42 @@
         <div class="btnMenu">
             <a href="">
                 <img src="/images/category_ico_main.png" alt="메뉴 아이콘">
+=======
+    <div class="main_banner"></div>
+    <div class="menu_btns">
+        <div class="btnMenu">
+            <a href="#">
+                <img src="/images/category_ico_main.png" alt="메뉴 아이콘" style="width: 19px; height: 14px;">
+>>>>>>> 6548fe01f21e7a4ea6143e2b433a672844546f6a
             </a>
         </div>
-
-       <div class="btnCart">
+        <div class="comp_logo">
+            <a href="/"><img src="/images/diet_farm_logo.png"></a>    
+        </div>
+        <div class="btnCart">
             <a href="/cart" onclick="mCart('on');">
-                <img src="/images/cart_ico_main.png" alt="장바구니 아이콘">
+                <img src="/images/cart_ico_main.png" alt="장바구니 아이콘" style="width: 21px; height: 21px;">
             </a>
         </div>
     </div>
     <div class="nav_wrap">
         <nav id="nav">
+<<<<<<< HEAD
       <div class="web_cate"><a href="#"><img src="/images/category_ico_main.png">전체카테고리</a></div>
        <a href="">신상</a>
        <a href="">베스트</a>
        <a href="">특가</a>
        <a href="">매일배송</a>
+=======
+            <a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>
+            <a href="#">신상</a>
+            <a href="#">베스트</a>
+            <a href="#">특가</a>
+            <a href="#">매일배송</a>
+>>>>>>> 6548fe01f21e7a4ea6143e2b433a672844546f6a
         </nav>
         <div class="searchbox">
-        <form id="search-form" action="/search-list">
+        <form id="search-form" action="search-list">
             <div class="search">
                 <input type="text" name="keyword" class="round" placeholder="검색해보세요.">
                 <a href=""><img src="/images/search_icon_menu.png"></a>
@@ -54,7 +76,7 @@
         </form>
         </div>
     </div>
-        <div class="sideMenu">
+    <div class="sideMenu">
         <div class="slideMenu_top">
             <div class="slideMenu_close">
                 <a href=""><img src="./images/category_ico_main.png" alt="메뉴 아이콘"></a>
@@ -85,20 +107,20 @@
                      <dt class="sideMenu_detail faq_q"><a href="#"><img src="/images/salad_icon_category.png" alt="#" />도시락/샐러드
                          </a><a href="#"><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a>
                      </dt>
-                     <dd class="subMenu faq_a" style="display: block; top: 0; left: 168px;">
-                        <ul class="gnb_depth02">
-                            <li>
-                                <a href="#">전체보기</a>
-                            </li>
-                            <li><a href="#">
-                                </a>다이어트도시락</a>
-                            </li>
-                             <li>    
-                                <a href="#">건강도시락</a>
-                            </li>      
-                            <li>
-                                <a href="#">샐러드</a>
-                            </li>     
+                     <dd class="subMenu faq_a" style="top: 0;">
+                         <ul class="gnb_depth02">
+                             <a href="#">
+                                 <li>전체보기</li>
+                             </a>
+                             <a href="#">
+                                 <li>다이어트도시락</li>
+                             </a>
+                             <a href="#">
+                                 <li>건강도시락</li>
+                             </a>
+                             <a href="#">
+                                 <li>샐러드</li>
+                             </a>
                          </ul>
                      </dd>
                  </dl>
@@ -108,7 +130,7 @@
                      <dt class="sideMenu_detail faq_q"><a href="#"><img src="/images/meal_icon_category.png" alt="#" />간편식
                          </a><a href=""><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a>
                      </dt>
-                     <dd class="subMenu faq_a" style="display: block; top: -54px; left: 168px;">
+                     <dd class="subMenu faq_a" style="top: -54px;">
                          <ul class="gnb_depth02">
                              <a href="">
                                  <li>전체보기</li>
@@ -131,7 +153,7 @@
                      <dt class="sideMenu_detail faq_q"><a href="#"><img src="/images/chicken_icon_category.png" alt="#" />닭가슴살 
                         </a><a href=""><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a>
                      </dt>
-                     <dd class="subMenu faq_a" style="display: block; top: -108px; left: 168px;">
+                     <dd class="subMenu faq_a" style="top: -108px;">
                          <ul class="gnb_depth02">
                              <a href="">
                                  <li>전체보기</li>
@@ -154,7 +176,7 @@
                      <dt class="sideMenu_detail faq_q"><a href="#"><img src="/images/snack_icon_category.png" alt="#">건강간식
                          </a><a href=""><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a>
                      </dt>
-                     <dd class="subMenu faq_a" style="display: block; top: -162px; left: 168px;">
+                     <dd class="subMenu faq_a" style="top: -162px;">
                          <ul class="gnb_depth02">
                              <a href="">
                                  <li>전체보기</li>
@@ -178,8 +200,13 @@
                     <li>
                  <dl>
                      <dt class="sideMenu_detail faq_q"><a href="#"><img src="/images/drink_icon_category.png" alt="#" />음료/소스 
+<<<<<<< HEAD
                         </a><a href=""><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a></dt>
                      <dd class="subMenu faq_a" style="display: block; top: -216px; left: 168px;">
+=======
+                        </a><a href="#"><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a></dt>
+                     <dd class="subMenu faq_a" style="top: -216px;">
+>>>>>>> 6548fe01f21e7a4ea6143e2b433a672844546f6a
                          <ul class="gnb_depth02">
                              <a href="">
                                  <li>전체보기</li>
@@ -201,7 +228,7 @@
                  <dl>
                      <dt class="sideMenu_detail faq_q"><a href="#"><img src="/images/fruit_icon_category.png" alt="#" />신선식품 </a><a href="#"><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a>
                      </dt>
-                     <dd class="subMenu faq_a" style="display: block; top: -270px; left: 168px;">
+                     <dd class="subMenu faq_a" style="top: -270px;">
                          <ul class="gnb_depth02">
                              <a href="">
                                  <li>정육</li>
@@ -223,7 +250,7 @@
                  <dl>
                      <dt class="sideMenu_detail faq_q"><a href="#"><img src="/images/vegan_icon_category.png" alt="#" />비건</a><a href="#"><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a>
                      </dt>
-                     <dd class="subMenu faq_a" style="display: block; top: -324px; left: 168px;">
+                     <dd class="subMenu faq_a"  style="top: -324px;">
                          <ul class="gnb_depth02">
                              <a href="">
                                  <li>전체보기</li>
@@ -245,7 +272,7 @@
                  <dl>
                      <dt class="sideMenu_detail faq_q"><a href="#"><img src="/images/baby_icon_category.png" alt="#" />베이비/키즈</a><a href="#"><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a>
                      </dt>
-                     <dd class="subMenu faq_a" style="display: block; top: -378px; left: 168px;">
+                     <dd class="subMenu faq_a" style="top: -378px;">
                          <ul class="gnb_depth02">
                              <a href="">
                                  <li>전체보기</li>
@@ -267,7 +294,7 @@
                  <dl>
                      <dt class="sideMenu_detail faq_q"><a href="#"><img src="/images/pet_icon_category.png" alt="#" />나의 반려</a><a href="#"><img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표" style="width:11px;height:11px"></a>
                      </dt>
-                     <dd class="subMenu faq_a" style="display: block; top: -432px; left: 168px;">
+                     <dd class="subMenu faq_a"  style="top: -432px;">
                          <ul class="gnb_depth02">
                              <a href="">
                                  <li>전체보기</li>
