@@ -156,7 +156,7 @@ a:hover{text-decoration:none;}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
   .gnb_depth02{ display:inline-block; width:372px; height:488px; text-align:left}
-  #tab2, .tab_wrap {display: none;}
+  /*#header #tab2,   #header .tab_wrap {display: none;}*/
 
   /* footer web */
   #footer {width:100%;min-width:1080px;}
