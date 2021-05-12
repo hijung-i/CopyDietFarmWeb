@@ -114,7 +114,6 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
     left: calc(100% - 18px); right: 2px; background: #EFA543;
 }
 .myReview label > span {display: none;}
-.tabMenu_wrap{margin-top:-30px}
 .tabMenu{margin-bottom:-4px}
 .detail_title{overflow:hidden;margin-bottom:-20px;width:100%;}
 .detail_title{margin-top:20px;width:100%;}
