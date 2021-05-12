@@ -2,8 +2,8 @@
 .orderer_info select, .deliver_info select, .coup_point select{width:100%; height:45px;border-radius:5px;border-color:#BBBBBB;padding:10px;margin-bottom: 10px;}
 
 @media screen and (max-width:1079px){
-.deliver_info input{width:100%;height:80px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
-.web_order_info{display:none}
+.deliver_info input{width:100%;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
+.delivery_masg input{width:100%;height: 80px !important;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
 .detail_title h2{font-size:16px;text-align:center;margin-top:42px} 
 .btnback img{width:17px;position:relative;top:-18px;left:5px}
 .order_title {font-size:14px;font-weight:bold;padding-left:15px}
@@ -16,9 +16,7 @@
 .item{border-top:1px solid #BBBBBB;padding-left:15px; padding-right: 15px}
 .item{display:flex;padding-top:15px;padding-bottom:13px}
 .orderer_info, .deliver_info, .coup_point, .final_price, .payment_method{
-    padding:0px 15px;border-bottom:8px solid #f1f1f1;
-    position: relative;
-    
+padding:0px 15px;border-bottom:8px solid #f1f1f1;position: relative;
 }
 .orderer_info img{width:8px;position:relative;top:4px}
 .deliver_info h3 img{width:8px;position:relative;top:4px}
@@ -51,9 +49,9 @@
 .payment_method h3{font-size:16px;font-weight:bold;margin-top:24px;margin-bottom:10px}
 .order_payment{padding-bottom:18px}
 .order_payment ul{display:grid;grid-template-columns: repeat(2, 2fr);align-items: center;justify-self: center;margin:0 auto;padding-left:15px;padding-right:15px}
-.order_payment ul li{width:95%;height:45px;border:1px solid #BBBBBB;border-radius:5px;padding:5px;margin-bottom:10px}
+.order_payment ul li{width:95%;height:45px;border:1px solid #BBBBBB;border-radius:5px;padding:5px;margin-bottom:10px;text-align:center;}
 .order_payment img 
-{width:55px;height:22px;position:relative;margin:0 auto;top:6px}
+{width:55px;height:22px;position:relative;top:6px}
 .agreement h3{font-size:14px;font-weight:bold;margin-top:25px;padding-left:15px}
 .agreement h3 img{position:relative;top:4px;padding-right:10px}
 .agreement p{margin-left:44px;margin-right:44px;font-weight:normal;color:#6B6B6B;line-height:18px;font-size:12px;margin-top:11px;margin-bottom:25px}
@@ -69,7 +67,8 @@
 /*주문하기 웹*/
 @media screen and (min-width:1080px){
 .deliver_info h3 img, .orderer_info h3 img{width:8px;position:relative;top:7px}
-.deliver_info input{width:100%;height:80px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
+.deliver_info input{width:100%;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
+.delivery_masg input{width:100%;height: 80px !important;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
 .detail_title{width:1080px;margin:0 auto}
 .detail_title .btnback{display:none}
 .detail_title h2{text-align:center;margin-top:55px;margin-bottom:40px}

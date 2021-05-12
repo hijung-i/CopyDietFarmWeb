@@ -126,7 +126,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title{margin:40px 10px 10px 10px;width:100%;}
  .detail_title h2{position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
 .detail_title a img{position:absolute;top:44px;width:17px;margin-left:5px}
-
+.product_top{display:flex;flex-flow:column-reverse;}
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
 #content .tabMenu ul{padding-left:25px;padding-right:25px}
 #content .tabMenu li{float:left;width:25%;height:35px;font-size:14px;line-height:18px;text-align:center;padding:10px}
@@ -203,7 +203,6 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 .tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:13px;}
 .product_top{display:flex;flex-flow:column-reverse}
 #btn_mobile{display:none}
-.products_ex_mobile{display:none}
 .review_btn button{display:none}
 .common_btn_wrap{margin-left:-10px}
 button.h_btn {width:51px;height:45px;background-color:#fff;border:1px solid #F99319;border-radius:5px;position:relative;top:-1px}
