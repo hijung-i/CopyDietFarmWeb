@@ -31,8 +31,8 @@ time, mark, audio, video {
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
-	margin:0;
-	padding:0;
+   margin:0;
+   padding:0;
 }
 
 table {
@@ -40,11 +40,11 @@ table {
     border-spacing: 0;
 }
 ol,ul,li {
-	list-style:none;
+   list-style:none;
 }
 
 i,em,address{
-	font-style:normal
+   font-style:normal
 }
 
 /* Hand cursor on clickable input elements */
@@ -64,7 +64,14 @@ button::-moz-focus-inner {
 
 img{vertical-align:top;margin:0;font-size:0;line-height:0;}
 
-
+body, select, input, textarea, a[href^="tel:"]:link {
+    color: #383838;
+    font-weight: normal;
+   font-size:12px;
+   font-family:'나눔고딕';
+   letter-spacing:-0.5px;
+  overflow: visible;
+}
 
 
 a{color:#383838;text-decoration:none;cursor:pointer}
@@ -88,10 +95,10 @@ a:hover{text-decoration:none;}
 #header .gnb{position:relative;top:40px; z-index: 11}
 
 #header .gnb a{
-	font-family:'나눔고딕';
-	font-size:16px; 
-	font-weight:bold; 
-	padding-left:15px;
+   font-family:'나눔고딕';
+   font-size:16px; 
+   font-weight:bold; 
+   padding-left:15px;
   padding-right:15px;
   float:left;
   position:relative;
@@ -102,22 +109,12 @@ a:hover{text-decoration:none;}
   #header .gnb{position:fixed;width:100%;background-color:#fff}
   .content_main .main_img{padding-top:100px}
   .content_main .bxslider li img{width:auto;height:419px!important;}
-<<<<<<< HEAD
-  #header{margin-bottom:20px}
-  .comp_logo{width:100%;margin:0 auto;text-align:center;margin-top:39px;background-color:#fff}
-  .comp_logo img{width:55.26px;height:28px}
-  .menu_btns{background-color:#fff}
-  .btnMenu img{width:19.44px;height:13.67px;position:relative;top:-25px;left:15px}
-  .btnCart img{width:21px;height:21px;float:right;position:relative;bottom:45px;right:10px}
-  #nav{width:100%;height:34px;padding-left:15px; overflow:scroll;white-space:nowrap;background-color:#fff;bottom:20px}
-=======
   .comp_logo{width:55px; height: 28px; text-align:center;}
   .comp_logo img {height: 21px;}
   .menu_btns{background-color:#fff; width: 329px; height: 28px; margin: 0 auto; display: flex; margin-top: 15px; justify-content: space-between; align-items: center;}
   .btnMenu {width:19.44px;height:13.67px;}
   #nav{position: absolute; width:360px; height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none;}
   .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin-top: 15px; overflow: auto;}
->>>>>>> 6548fe01f21e7a4ea6143e2b433a672844546f6a
   #nav::-webkit-scrollbar{ display:none; }
   #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
   .top_util, .searchbox, #nav .web_cate{display:none}
@@ -184,15 +181,15 @@ a:hover{text-decoration:none;}
 }
 
 .slideMenu_top {
-	background: #FFFFFF;
-	font-size: 16px;
-	align-items: center;
+   background: #FFFFFF;
+   font-size: 16px;
+   align-items: center;
 }
 .slideMenu_top > .slideMenu_close img{height: 20px;}
 .slideMenu_top > .slideMenu_cart img{height: 26px;}
 
 .sid_menu .mDepth01 dt .downArrow {
-	width:11px;height:11px
+   width:11px;height:11px
 }
 
 
@@ -210,7 +207,7 @@ a:hover{text-decoration:none;}
 
 /* slideMenu */
 .slideMenu_content {
-	display: none;
+   display: none;
 }
 @media screen and (min-width:1080px) {
   div.slideMenu_top {
@@ -218,20 +215,20 @@ a:hover{text-decoration:none;}
   }
 }
 .slideMenu_top {
-	display: flex;
-	justify-content: space-between;
-	padding: 32px 16px 0 16px;
-	align-items: center;
+   display: flex;
+   justify-content: space-between;
+   padding: 32px 16px 0 16px;
+   align-items: center;
   padding-bottom:20px;
  background-color:#fff;
  z-index:99999
 }
 .slideMenu_title > h2 {
-	font-size: 16px;
-	font-weight: 700;
+   font-size: 16px;
+   font-weight: 700;
 }
 .mDepth01 dt {
-	justify-content: space-between;
+   justify-content: space-between;
 }
 
 .tabMenu{width:100%;z-index:300}
