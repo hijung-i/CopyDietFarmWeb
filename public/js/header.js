@@ -114,9 +114,21 @@ $(function() {
    
     // 햄버거 메뉴
     $(document).ready(function() {
-        $('.btnMenu>a').click( sideTabOpen );
-        
-        $('.slideMenu_close>a').click( sideTabClose );
+        $('.btnMenu>a').click(function() {
+            sideTabOpen();
+            $('body').css ({
+                position:'fixed',
+                overflow:'hidden'
+            });
+        });
+
+        $('.slideMenu_close>a').click(function() {
+            sideTabClose();
+            $('body').css ({
+                position:'relative',
+                overflow:'scroll'
+            });
+        });
     });
 
 
