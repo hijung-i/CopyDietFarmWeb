@@ -32,7 +32,7 @@ function getEventStands() {
 		$('#header #nav').html(html);
 
         // web size side menu set
-		$('.web_cate').toggle(function() {
+		$('.web_cate').click(function() {
 			sideTabOpen();
 			var x = $('.web_cate').offset().left;
 			var y = $('.web_cate').offset().top;
@@ -44,13 +44,7 @@ function getEventStands() {
 				'top':y + height
                 // width:100% disabled
 			});
-		}, function() {
-            sideTabClose();
-            $('.sideMenu').css({
-                'position': 'absolute',
-                'left':x -100
-            })
-        })
+		});
     }, function(err) {
         sideTabClose();
         console.log("eventStands err", err);
