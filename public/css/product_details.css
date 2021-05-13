@@ -57,6 +57,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .pp_wrap{margin-bottom:-50px;padding-top:40px}
 
 @media screen and (max-width:1079px){
+.v_top_txt_box .modal p{text-align:center}
 .products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:15px;padding-right:15px}
 }

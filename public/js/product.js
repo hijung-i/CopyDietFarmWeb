@@ -28,7 +28,7 @@ $(function() {
             controls:true,
             pager: false,
             minSlides:2.5,
-            maxSlides:2.5,
+            maxSlides:4.5,
             slideMargin:4
         });
   
@@ -145,7 +145,7 @@ function getProductDetail(){
         $('.view_top_img #slider_product').html(representative);
         $('.products_ex').html(detailHtml);
         $('.products_ex_mobile').html(detailHtml);
-
+      
         
     }, function (err) {
         console.log("productDetail error", err);

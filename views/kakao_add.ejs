@@ -11,21 +11,22 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/myPage.css">
+
     <style type="text/css">
-        @media screen and (max-width:1079px) {.web_invite{display:none}}
-        @media screen and (min-width:1080px)and (max-width:5000px){.mobile_invite{display:none} }
-        
+        @media screen and (max-width:1079px) {.web_kakao{display:none}}
+        @media screen and (min-width:1080px){.mobile_kakao{display:none} }
+        .kakao_event img{width:100%;height:auto}
         </style>
     <%-include('general/head') %>
 </head>
 
 <body>
-    <div class="web_invite">
+    <div class="web_kakao">
      <%-include('general/header') %>
     </div><!--//web_invite-->
-    <div class="mobile_invite">
+    <div class="mobile_kakao">
         <section class="detail_title">
-            <h2>친구 초대</h2>
+            <h2>카카오 채널 친구 추가 이벤트</h2>
             <script type="text/javascript">
                 function goBack() {
                     window.history.back();
@@ -36,23 +37,9 @@
         </section>
     </div>
         <main id="content" class="content">
-           <div class="invite_img">
-               <img src="/images/coins_icon_event.png" width="100%">
-           </div>
-            <div class="f_recommd">
-               <h3>참여방법</h3>
-               <h4>STEP 1</h4>
-               <p><span>친구에게</span> 다이어트팜 앱을 <span>공유</span>한다.</p>
-               <h4>STEP 2</h4>
-               <p>초대받은 친구가 가입시 <span>추천인 ID에 나의 ID를 </span>쓴다.</p>
-               <h4>STEP 3</h4>
-               <p>친구가 회원가입을 완료하면 <br><span> 친구도 나도 1,000P를</span>지급 받는다.</p>
-            
-            <div class="buttons">
-          <button type="button" id="btnKakao"><img src="/images/kakao_icon_event.png">초대하기</button>
-          <button type="button" id="btnURL"><img src="/images/url_icon_friend.png">복사하기</button>
-           </div>
-           </div>
+        <div class="kakao_event">
+           <img src="/images/kakao_event.png">
+        </div>
          </main>
          <%-include('general/footer') %>
          <script type="text/javascript" src="/js/header.js"></script>

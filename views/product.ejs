@@ -28,7 +28,12 @@
     <link rel="stylesheet" href="/css/product_detail_W.css">
     <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/product_details.css">
-    
+ <!-- Remember to include jQuery :) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />   
 </head>
 
 <body>
@@ -99,9 +104,19 @@
                                             </script>
                                 </div>
                                     <div class="v_top_txt_box">
+                                        <div id="ex1" class="modal">
+                                            <p>공유하기</p>
+                                            <ul>
+                                                <li><a href=""><img src="/images/url_icon_friend@2x.png"></a>카카오톡</li>
+                                                <li><a href=""><img src="/images/url_icon_friend@2x.png"></a>문자</li>
+                                                <li><a href=""><img src="/images/url_icon_friend@2x.png"></a>URL 복사</li>
+                                            </ul>
+                                            <a href="#" rel="modal:close"></a>
+                                          </div>
                                         <div class="share_img">
-                                            <a href=""><img src="/images/share_icon_detail.png"></a>
+                                            <p><a href="#ex1" rel="modal:open"><img src="/images/share_icon_detail.png"></a></p>
                                         </div>
+
                                         <h1 class="v_top_name">든든한 한끼 오늘은 현미밥 7종</h1>
                                         <p class="v_top_txt">다른 반찬 필요없이 4분만에 완성하는 균형잡힌 현미밥 식단!</p>
                                         <div class="price_mobile">
@@ -250,6 +265,9 @@
                                     </li>
                                 </ul>
                             </section>
+                        </div>
+                        <div class="products_ex_mobile">
+                            <img src="">
                         </div>
                     </div>
                 </div>
@@ -478,7 +496,7 @@
                 --> 
    <div class="review_btn">
 
-                <button type="button" style="width:90%;height: 45px;">리뷰쓰기</button>
+                <button type="button" style="width:90%;height:45px;">리뷰쓰기</button>
             </div>
                    <div class="review_list_null" style="display:none">
                 <img src="/images/note_icon_review.png">

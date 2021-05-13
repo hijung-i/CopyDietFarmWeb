@@ -109,7 +109,10 @@ a:hover{text-decoration:none;}
   .content_main .main_img{padding-top:100px}
   .content_main .bxslider li img{width:auto;height:419px!important;}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 4a19d3a4cefc50d4594a720f1879932756ea0570
   #header{margin-bottom:20px}
   .comp_logo{width:100%;margin:0 auto;text-align:center;margin-top:39px;background-color:#fff}
   .comp_logo img{width:55.26px;height:28px}
@@ -117,7 +120,10 @@ a:hover{text-decoration:none;}
   .btnMenu img{width:19.44px;height:13.67px;position:relative;top:-25px;left:15px}
   .btnCart img{width:21px;height:21px;float:right;position:relative;bottom:45px;right:10px}
   #nav{width:100%;height:34px;padding-left:15px; overflow:scroll;white-space:nowrap;background-color:#fff;bottom:20px}
+<<<<<<< HEAD
 >>>>>>> d8e75e1481c5b92d065eea6e72514a01b48b0fb4
+=======
+>>>>>>> 4a19d3a4cefc50d4594a720f1879932756ea0570
   .comp_logo{width:55px; height: 28px; text-align:center;}
   .comp_logo img {width: 55px; height: 28px;}
   .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top: 15px; justify-content: space-between; align-items: center;}
@@ -167,8 +173,7 @@ a:hover{text-decoration:none;}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
   .gnb_depth02{ display:inline-block; width:372px; height:488px; text-align:left}
-  #tab2, .tab_wrap {display: none;}
-
+ .etc{position:relative;left:240px;top:-80px}
   /* footer web */
   #footer {width:100%;min-width:1080px;}
   /* footer_web */
@@ -306,6 +311,9 @@ height:50px;overflow:hidden}
 .body_bottom{width:1080px;margin:0 auto;}
 .body_bottom h3{font-size:25px;font-weight:bold;margin-bottom:60px}
 .body_bottom .desc ul li{margin-right:30px;float:left;}
+.w_best .desc .sale{font-size:16px}
+.w_best .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
+.w_best .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10-px;color:#F32525}
 .w_best h2{margin-bottom:60px}
 .w_best .side{float:left;margin-bottom:77px}
 .w_best .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
@@ -314,13 +322,9 @@ height:50px;overflow:hidden}
 .body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .thum img{width:184px;height:184px;border-radius:6px}
 .body_bottom .desc ul li{margin-right:20px;float:left;}
-.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
-.w_best .desc .sale{font-weight:bold}
-.w_best .desc .cost{color:red;text-decoration:line-through;margin-left:-12px}
-.w_best .desc .ratio{font-weight:bold;margin-left:-17px}
-.body_bottom .desc .sale{font-size:16px}
+.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}.body_bottom .desc .sale{font-size:16px}
 .body_bottom .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
-.body_bottom .desc .ratio{font-size:16px;font-weight:bold;margin-left:-14px;color:#F32525}
+.body_bottom .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10px;color:#F32525}
 .body_bottom .side{float:left;}
 .body_bottom .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
 .body_bottom .thum{padding-bottom:13px}
