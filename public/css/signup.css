@@ -5,20 +5,18 @@ body{min-width:360px}
 .detail_title a img{position:absolute;top: 44px;width:17px;left:10px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 #btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
-
+.detail_title h2{text-align:center;position:relative;font-weight:700;font-size:16px;margin-right:10px;padding-bottom: 20px}
 @media screen and (max-width:460px){
 .signup_top .box{width:90%;margin:0 auto}
 .signup_top p, .signup_top h3, .signup_top span{padding-left:15px;padding-right:15px}
+.signup_top p{margin-top:10px}
 .terms{padding-left:15px;padding-right:15px}
 .btn_area #btnJoin{width:90%;margin-left:20px}
+.id_check{margin-left:15px}
+.id_check .box.int_id {width:73%!important}
 } 
-@media screen and (max-width:350px){
-    .signup_top .box{width:70%;margin:0 auto}
-    .signup_top p, .signup_top h3, .signup_top span{padding-left:15px;padding-right:15px}
-    .terms{padding-left:15px;padding-right:15px}
-    .btn_area #btnJoin{width:90%;margin-left:20px}
-    } 
-@media screen and (max-width:1079px){
+
+@media screen and (min-width:461px) and (max-width:1079px){
 p.confirm_mag{margin-top:10px}
 div.box.int_id{width:350px}
 .detail_title h2{font-size:16px;text-align:center;margin-top:42px;font-weight:bold} 
