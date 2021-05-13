@@ -24,7 +24,7 @@ $(function() {
     pw2.focusout(comparePw);
     emailInput.focusout(isEmailCorrect);
     
-    $("#btnJoin").click(function (){
+    $("#btnCheckIdDuplicate").click(function (){
         if(!dupCheck) {
             alert('아이디 중복을 확인 해주세요')
             return;
@@ -283,12 +283,12 @@ $(function() {
         }
     }
 
-    /*function niceDuplicationCheck() {
+   function niceDuplicationCheck() {
         var dupInfo = $("#dupInfo").val();
         if(dupInfo == undefined || dupInfo == '') {
             alert('잘못된 접근입니다.');
             location.href="/";
-        }*/
+        }
 
         var params = {
             dupInfo
