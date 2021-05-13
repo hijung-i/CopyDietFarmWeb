@@ -86,9 +86,35 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
 /*products_mobile*/
 @media screen and (max-width:1079px){
 .view_top_img img{width:100%!important;height:100%!important}
-
 .view_navi_box{display:none}
+
 /* 토글 버튼 디자인 */
+
+.myReview input {position: absolute; left: -9999px;}
+.myReview  label{
+    position: relative;
+    display: block; 
+    width: 33px; height: 20px;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 13px;
+    transition: ease-in .1s;
+}
+label:after {
+    content: ""; 
+    position: absolute; 
+    left: 2px; top: 50%;
+    width: 16px; height: 16px;
+    border-radius: 100%;
+    background: #bbb;
+    transform: translateY(-50%);
+    transition: all .4s;
+}
+
+.myReview input:checked + label {background: #fff; border: 1px solid #EFA543; }
+.myReview input:checked + label:after { left: calc(100% - 18px); right: 2px; background: #EFA543;}
+.myReview label > span {display: none;}
+
 .myReview input {position: absolute; left: -9999px;}
 .myReview label {
     position: relative;
@@ -114,6 +140,7 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
     left: calc(100% - 18px); right: 2px; background: #EFA543;
 }
 .myReview label > span {display: none;}
+.tabMenu_wrap{padding-bottom:4px}
 .tabMenu{margin-bottom:-4px}
 .detail_title{overflow:hidden;margin-bottom:-20px;width:100%;}
 .detail_title{margin-top:20px;width:100%;}
@@ -129,7 +156,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .product_top{display:flex;flex-flow:column-reverse;}
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
 #content .tabMenu ul{padding-left:25px;padding-right:25px}
-#content .tabMenu li{float:left;width:25%;height:35px;font-size:14px;line-height:18px;text-align:center;padding:10px}
+#content .tabMenu li{float:left;width:25%;height:35px;font-size:14px;text-align:center;padding:10px}
 #content .tabMenu li{color:#878787;}
 #content .tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:11px;}
 #content .v_top_txt_box{margin-top:-80px;}
@@ -197,9 +224,61 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 
 /*products_web*/
 @media screen and (min-width:1080px){
+/* 토글 버튼 디자인 */
+
+.myReview input {position: absolute; left: -9999px;}
+.myReview  label{
+    position: relative;
+    display: block; 
+    width: 33px; height: 20px;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 13px;
+    transition: ease-in .1s;
+}
+label:after {
+    content: ""; 
+    position: absolute; 
+    left: 2px; top: 50%;
+    width: 16px; height: 16px;
+    border-radius: 100%;
+    background: #bbb;
+    transform: translateY(-50%);
+    transition: all .4s;
+}
+
+.myReview input:checked + label {background: #fff; border: 1px solid #EFA543; }
+.myReview input:checked + label:after { left: calc(100% - 18px); right: 2px; background: #EFA543;}
+.myReview label > span {display: none;}
+
+.myReview input {position: absolute; left: -9999px;}
+.myReview label {
+    position: relative;
+    display: block; 
+    width: 33px; height: 20px;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 13px;
+    transition: ease-in .1s;
+}
+.myReview label label:after {
+    content: ""; 
+    position: absolute; 
+    left: 2px; top: 50%;
+    width: 16px; height: 16px;
+    border-radius: 100%;
+    background: #bbb;
+    transform: translateY(-50%);
+    transition: all .4s;
+}
+.myReview input:checked + label {background: #fff; border: 1px solid #EFA543; }
+.myReview input:checked + label:after {
+    left: calc(100% - 18px); right: 2px; background: #EFA543;
+}
+.myReview label > span {display: none;}
 .products_ex_mobile{display:none}
 .tabMenu ul{border-top:1px solid #F5F5F5;border-bottom:1px solid #F5F5F5}
-.tabMenu ul li{text-align:center;position:relative;top:24px;width:267px;height:68px;font-size:18px;color:#707070}
+.tabMenu ul li{text-align:center;position:relative;width:267px;height:68px;font-size:18px;color:#707070}
 .tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:2px;}
 #btn_mobile{display:none}
 .review_btn button{display:none}
