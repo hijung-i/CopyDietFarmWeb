@@ -89,8 +89,7 @@ padding-bottom: 10px;}
 .idSearchComp .id_info{margin-top:32px}
 .idSearchComp .id_info li{float:left;}
 
-.buttons{width:95%;margin: 0 auto;display: flex;
-    justify-content: space-between;}
+.buttons{width:95%;margin: 0 auto;display: flex;justify-content: space-between;}
 .btnidSearch, .btnpwdSearch{width: 48%;height:45px;text-align:center; border:1px solid #F99319;display:inline-block;border-radius:5px;
 color:#F99319;font-size:14px;font-weight:bold;background-color:#FFF}
 .btnSignup{width:48%;height:45px;text-align:center;border:0;display:inline-block;
