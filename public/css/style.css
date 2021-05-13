@@ -274,20 +274,17 @@ height:50px;overflow:hidden}
         
       
 /*검색창*/
-.instant-search {position:relative;width:94%;margin:10px auto}
+.instant-search {position:relative;width:94%;margin:10px auto;}
 .instant-search,
 .instant-search * {transition: background 0.15s, box-shadow 0.15s;}
-.instant-search:focus-within {box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
 .instant-search--loading::after {content: "";position: absolute;top: 0;
   left: 0;height: 2px;border-radius: 5px;animation: searchIndicator 0.5s infinite ease-in-out}
 .instant-search,.instant-search__input-container {border-radius: 5px}
 .instant-search__input-container {display: inline-flex;box-sizing: border-box;
   width: 90%;padding: 9px;background: #eeeeee}
 .instant-search__input-container img {padding: 6px}
-.instant-search__input-container:focus-within {background: #ffffff}
 .instant-search__input {flex-grow: 1;border: none;outline: none;width: 100%;
-  padding: 0 6px;background: transparent}
+  padding: 0 6px}
 .instant-search__results-container {max-height: 250px;overflow-y: auto;
  visibility: hidden;opacity: 0;transition: visibility 0.1s, opacity 0.1s}
 .instant-search__results-container--visible {visibility: visible;opacity: 1}
