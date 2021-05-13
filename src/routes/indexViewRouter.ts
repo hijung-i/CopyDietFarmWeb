@@ -203,6 +203,9 @@ router.get('/order002', (req: Request, res: Response, next: NextFunction) => {
 router.get('/kakao-event', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'kakao_add', {})
 })
+router.get('/benefits', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'benefits', {})
+})
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn
