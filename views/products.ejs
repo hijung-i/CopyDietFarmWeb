@@ -48,12 +48,15 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
     <% } else if (listType == 'EVENT') { %>
         <input type="hidden" id="currentStandCode" value="<%=standCode %>">
     <% } else if (listType == 'SEARCH') { %>
-        <input type="hidden" id="keyword" value="<%=keyword %>"> 
+        <input type="hidden" id="keyword" value="<%=keyword %>">
     <% } %>
     <main id="content" class="content">
         <div class="main_sub_wrap">
             <section class="main_sub">
-                <h2>신상</h2>
+
+                <% if( listTitle != '' ) { %>
+                <h2><%=listTitle %></h2>
+                <% } %>
                 <form name="#" id="#" method="get" action="#">
                     <div class="n_sort">
                         <div class="sort">

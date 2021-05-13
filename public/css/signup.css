@@ -5,20 +5,18 @@ body{min-width:360px}
 .detail_title a img{position:absolute;top: 44px;width:17px;left:10px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 #btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
-
+.detail_title h2{text-align:center;position:relative;font-weight:700;font-size:16px;margin-right:10px;padding-bottom: 20px}
 @media screen and (max-width:460px){
 .signup_top .box{width:90%;margin:0 auto}
 .signup_top p, .signup_top h3, .signup_top span{padding-left:15px;padding-right:15px}
+.signup_top p{margin-top:10px}
 .terms{padding-left:15px;padding-right:15px}
 .btn_area #btnJoin{width:90%;margin-left:20px}
+.id_check{margin-left:15px}
+.id_check .box.int_id {width:73%!important}
 } 
-@media screen and (max-width:350px){
-    .signup_top .box{width:70%;margin:0 auto}
-    .signup_top p, .signup_top h3, .signup_top span{padding-left:15px;padding-right:15px}
-    .terms{padding-left:15px;padding-right:15px}
-    .btn_area #btnJoin{width:90%;margin-left:20px}
-    } 
-@media screen and (max-width:1079px){
+
+@media screen and (min-width:461px) and (max-width:1079px){
 p.confirm_mag{margin-top:10px}
 div.box.int_id{width:350px}
 .detail_title h2{font-size:16px;text-align:center;margin-top:42px;font-weight:bold} 
@@ -38,20 +36,15 @@ div.box.int_id{width:350px}
     .fail-wrap-web p{width:279px;height:52px;background-color:#707070;color:#fff;margin-top:22px;text-align:center;font-size:14px;padding-top:18px}
 }      
 /*로그인*/
-
-  :root{--font-color: #4e4e4e;--border-gray-color : #dadada;--yello-color: #F99319;--yello-border-color: #EFA543;
-}
-
 .login a{left:20px;margin-top:-20px}
-
 .login-input-section-wrap{padding-top:20px}
-.login-input-wrap{width:border solid 1px var(--border-gray-color );background: white;border-radius:5px;}
+.login-input-wrap{width:border solid 1px  #dadada;background: white;border-radius:5px;}
 .password-wrap{margin-top: 13px;}
 .login-input-section-wrap h3{text-align:left}
 .login-input-wrap input{border: none;width:330px;height:45px;font-size: 14px;margin-left: 10px;}
 .login-button-wrap {padding-top: 13px;}
 .login-button-wrap button{color:#fff;width: 340px;height :48px;
-	font-size: 14px;font-weight:bold;background: var(--yello-color);border: solid 1px var(--yello-border-color);border-radius:5px}
+	font-size: 14px;font-weight:bold;background:#F99319;border: solid 1px #F99319;border-radius:5px}
 .non-member-button-wrap button{background-color:#fff;
 	width: 340px;height :45px;
 	font-size: 14px;color:#6B6B6B;font-weight:bold;border:1px solid #6B6B6B;border-radius:5px
@@ -69,7 +62,7 @@ div.box.int_id{width:350px}
 width: 320px;display: flex;flex-direction: column;align-items: center;}
 .Easy-sgin-in-wrap .sign-button-list li{
 padding-bottom: 10px;}
-.Easy-sgin-in-wrap .sign-button-list li button{width: 320px;height:56px;border: solid 1px var(--border-gray-color);text-align: left;background: white;}
+.Easy-sgin-in-wrap .sign-button-list li button{width: 320px;height:56px;border: solid 1px var #dadada;text-align: left;background: white;}
 .Easy-sgin-in-wrap .sign-button-list li button i{font-size: 16px; }
 
 .Easy-sgin-in-wrap .sign-button-list li button span{padding-left:0;font-size: 14px;}
@@ -91,8 +84,7 @@ padding-bottom: 10px;}
 .idSearchComp .id_info{margin-top:32px}
 .idSearchComp .id_info li{float:left;}
 
-.buttons{width:95%;margin: 0 auto;display: flex;
-    justify-content: space-between;}
+.buttons{width:95%;margin: 0 auto;display: flex;justify-content: space-between;}
 .btnidSearch, .btnpwdSearch{width: 48%;height:45px;text-align:center; border:1px solid #F99319;display:inline-block;border-radius:5px;
 color:#F99319;font-size:14px;font-weight:bold;background-color:#FFF}
 .btnSignup{width:48%;height:45px;text-align:center;border:0;display:inline-block;
