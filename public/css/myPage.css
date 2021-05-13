@@ -140,5 +140,7 @@ ul, li, p{list-style:none}
 
 /*상품문의*/
 
-
+/*이벤트*/
+.benefits img{width:100%}
+.benefits p{font-size:14px;font-weight:bold;margin-top:10px;margin-bottom:18px;margin-left:15px}
 
