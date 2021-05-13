@@ -133,6 +133,7 @@ a:hover{text-decoration:none;}
 
 }
 @media screen and (min-width:1080px){
+  .top_banner{display:none}
   section.brand, div#tab2 {display: none;}
   .sideMenu .tabMenu {display: none;}
   .multiple_bxslider li img{width:auto;height:auto;padding:10px;border-radius:5px}

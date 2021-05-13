@@ -7,6 +7,7 @@ body{min-width:360px}
 #btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
 .detail_title h2{text-align:center;position:relative;font-weight:700;font-size:16px;margin-right:10px;padding-bottom: 20px}
 @media screen and (max-width:460px){
+.web_login_title{display:none}
 .signup_top .box{width:90%;margin:0 auto}
 .signup_top p{margin-top:10px}
 .terms{padding-left:15px;padding-right:15px}
