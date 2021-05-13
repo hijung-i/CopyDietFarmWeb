@@ -1,4 +1,4 @@
-import { NextFunction, request, Request, Response, Router } from 'express'
+import { NextFunction, Request, Response, Router } from 'express'
 import { SessionUser } from '../models/user'
 const router = Router()
 
@@ -18,7 +18,6 @@ router.get('/cart/:userId', (req: Request, res: Response, next: NextFunction) =>
             render(req, res, 'cart', { userId: userId })
         }
     })
-    render(req, res, 'cart', { userId: userId })
 })
 
 router.get('/delivery-management', (req: Request, res: Response, next: NextFunction) => {
@@ -32,8 +31,18 @@ router.get('/delivery-management/:userId', (req: Request, res: Response, next: N
     render(req, res, 'mypage_deliver_mag', { userId })
 })
 
+router.get('/pick-product', (req: Request, res: Response, next: NextFunction) => {
+    checkLogin(req, res, () => {
+        render(req, res, 'products', {
+            listTitle: '찜한 상품',
+            listType: 'ZZIM'
+        })
+    })
+})
+
 router.get('/product-inquiry-form', (req: Request, res: Response, next: NextFunction) => {
     checkLogin(req, res, (sessionUser: SessionUser) => {
+
         render(req, res, 'product_inquiry', {})
     })
 })
