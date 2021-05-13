@@ -99,6 +99,7 @@ ul, li, p{list-style:none}
     .detail_title{width:100%;}
     .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;top:10px;padding-bottom:12px}
     .detail_title a img{position:absolute;top:42px}
+    .myPage01_2 ul li img{width:18px;height:18px;margin-right:13.5px}
     .f_recommd{width:100%;height:330px;background-color:#FFF4E8;text-align:center;margin-bottom:27px;padding-top:21px}
     .f_recommd h3{width:80px;height:24px;margin:0 auto;padding-top:3px;color:#6A3F0B;font-size:14px;font-weight:bolder;background-color:#00000014;border-radius:10px;}
     .f_recommd h4{margin-top:19px;font-size:14px;color:#F99319;font-weight:bold}

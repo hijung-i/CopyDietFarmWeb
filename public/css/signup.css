@@ -8,12 +8,12 @@ body{min-width:360px}
 .detail_title h2{text-align:center;position:relative;font-weight:700;font-size:16px;margin-right:10px;padding-bottom: 20px}
 @media screen and (max-width:460px){
 .signup_top .box{width:90%;margin:0 auto}
-.signup_top p, .signup_top h3, .signup_top span{padding-left:15px;padding-right:15px}
 .signup_top p{margin-top:10px}
 .terms{padding-left:15px;padding-right:15px}
 .btn_area #btnJoin{width:90%;margin-left:20px}
 .id_check{margin-left:15px}
 .id_check .box.int_id {width:73%!important}
+.web_login_title{display:none}
 } 
 
 @media screen and (min-width:461px) and (max-width:1079px){
