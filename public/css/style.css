@@ -114,9 +114,10 @@ a:hover{text-decoration:none;}
 =======
 >>>>>>> 4a19d3a4cefc50d4594a720f1879932756ea0570
   #header{margin-bottom:20px}
-  .comp_logo{width:100%;margin:0 auto;text-align:center;margin-top:39px;background-color:#fff}
+  .comp_logo{width:100%;margin:0 auto;text-align:center; background-color:#fff}
   .comp_logo img{width:55.26px;height:28px}
   .menu_btns{background-color:#fff}
+<<<<<<< HEAD
   .btnMenu img{width:19.44px;height:13.67px;position:relative;top:-25px;left:15px}
   .btnCart img{width:21px;height:21px;float:right;position:relative;bottom:45px;right:10px}
   #nav{width:100%;height:34px;padding-left:15px; overflow:scroll;white-space:nowrap;background-color:#fff;bottom:20px}
@@ -124,6 +125,11 @@ a:hover{text-decoration:none;}
 >>>>>>> d8e75e1481c5b92d065eea6e72514a01b48b0fb4
 =======
 >>>>>>> 4a19d3a4cefc50d4594a720f1879932756ea0570
+=======
+  .btnMenu img{width:19.44px;height:13.67px;}
+  .btnCart img{width:21px;height:21px;float:right;}
+  #nav{width:100%;height:34px;padding-left:15px; overflow:scroll;white-space:nowrap;background-color:#fff}
+>>>>>>> ec6a52e0718a4e2de841f1c922c153ab44677cb4
   .comp_logo{width:55px; height: 28px; text-align:center;}
   .comp_logo img {width: 55px; height: 28px;}
   .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top: 15px; justify-content: space-between; align-items: center;}
@@ -142,6 +148,8 @@ a:hover{text-decoration:none;}
 
 }
 @media screen and (min-width:1080px){
+  section.brand, div#tab2 {display: none;}
+  .sideMenu .tabMenu {display: none;}
   .multiple_bxslider li img{width:auto;height:auto;padding:10px;border-radius:5px}
   .multiple_bxslider ul{margin-left:-10px}
   .multiple_bxslider ul li{float:left}
@@ -307,7 +315,9 @@ height:50px;overflow:hidden}
 .body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
 }
-@media screen and (min-width:1080px){.mobile_index{display:none}
+@media screen and (min-width:1080px){
+.mobile_index{display:none}
+.banner01 img{display:none}
 .body_bottom{width:1080px;margin:0 auto;}
 .body_bottom h3{font-size:25px;font-weight:bold;margin-bottom:60px}
 .body_bottom .desc ul li{margin-right:30px;float:left;}
@@ -352,7 +362,7 @@ height:50px;overflow:hidden}
   .m_bestn_list{border-bottom:8px solid #f1f1f1;padding-top:10px}
   .m_bestn_mn_box {float:left}
    #content .desc ul li{float:left}
-  #slider_main {/* display: none; */ position: relative; width: 100%; min-width: 360px; margin: 0 auto; overflow: hidden;}
+  #slider_main {/* display: none; */ position: relative; width: 100%; min-width: 360px; margin: 0 auto; margin-top: 151px; overflow: hidden;}
   .slider_main_wrap {position: relative; min-width: 360px; width: 100%; height: 212px; background: #ccc; z-index: 0;}
   .slider_main_wrap div {position: absolute; top: 0; left: 0;}
   .slider_main_wrap img { min-width: 360px; width: 100%; height: 212px;}
