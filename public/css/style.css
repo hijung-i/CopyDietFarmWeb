@@ -224,13 +224,13 @@ a:hover{text-decoration:none;}
   }
 }
 .slideMenu_top {
-   display: flex;
-   justify-content: space-between;
-   padding: 32px 16px 0 16px;
-   align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 16px 20px;
+  align-items: center;
   padding-bottom:20px;
- background-color:#fff;
- z-index:99999
+  background-color:#fff;
+  z-index:99999
 }
 .slideMenu_title > h2 {
    font-size: 16px;
@@ -239,21 +239,36 @@ a:hover{text-decoration:none;}
 .mDepth01 dt {
    justify-content: space-between;
 }
-
-.tabMenu{width:100%;z-index:300}
-.tab_wrap{width:100%;border-bottom: none;}
- .sideMenu .tabMenu{padding-bottom:0px}
- .sideMenu .tabMenu ul{padding-left:40px;padding-right:20px;background-color:#fff}
- .sideMenu .tabMenu li{display:inline-block;margin:-1px;width:50%;height:auto;font-size:14px;line-height:18px;text-align:center;font-family:'나눔고딕';font-weight:bold;padding: 10px 20;}
- .sideMenu .tabMenu li a{color:#878787;}
- .sideMenu .tabMenu li a:hover{color:#F99319;padding-bottom:13px;border-bottom:3px solid #F99319}
-
-
+/* 사이드 메뉴 gnb 애니메이션 */
+.sideMenu .tabMenu {width:100%; position: relative; top: 0; left: 0;}
+.tab_wrap{width:100%;border-bottom: none; display: flex; width: 100%; margin: 0 auto; position: relative; background: #fff;}
+.tab_wrap li {
+  flex: 1;
+  display: block;
+  height: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  color: #878787;
+}
+.tabMenu > .tab_wrap > span {
+  position: absolute; left: 0; bottom: 0; height: 3px;
+  background: #FF8B00;
+  width: 50%; margin: -12px 0;
+  opacity: 0;
+  transition: all .3s;
+  z-index: 99;
+}
+.tabMenu > .tab_wrap li.on > span {color: #FF8B00; font-weight: 700;}
+.tabMenu .tab_wrap > li.on {font-weight: 700;}
+.tabMenu .tab_wrap > li:nth-child(1).on ~ span {left: 0; opacity: 1;}
+.tabMenu .tab_wrap > li:nth-child(2).on ~ span {left: 50%; opacity: 1;}
+.tabMenu > .tab_wrap li span {color: #878787; font-weight: 400;}
 /* 메뉴 아이콘 */
 
 .btn_ctn {width: 100%; height: auto;background: #ccc}
-/* #mHeader */.sideMenu{display:none; position:fixed; left:-100%; top:0; width:100%}
-.sideMenu > .sideMenu_ctt {width: 100%;}
+/* #mHeader */ .sideMenu{display:none; position:relative; left:-100%; top:6px; width:100%; min-width: 360px; height: 100vh; background: #fff;}
 .sideMenu h2{padding:15px 10px;text-align:left;position:relative;
 height:50px;overflow:hidden}
         
@@ -299,6 +314,8 @@ height:50px;overflow:hidden}
 .body_bottom .desc ul{margin-left:5px}
 .body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
+.sideMenu_Header { position: fixed; min-width: 360px; width: 100%;  height: 158px; background: #fff; top: 0;}
+.sideMenu #tab1 {width: 100%; min-width: 360px; position: absolute; top: -27px;}
 }
 @media screen and (min-width:1080px){
 .mobile_index{display:none}

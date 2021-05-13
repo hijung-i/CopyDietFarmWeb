@@ -204,7 +204,6 @@ a:hover{text-decoration:none;}
 
 
 .instant-search,.instant-search * { transition: background 0.15s, box-shadow 0.15s;}
-.instant-search img{position:relative;top:12px}
 .instant-search:focus-within {box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);}
 
 .instant-search--loading::after {content: "";
@@ -213,8 +212,8 @@ a:hover{text-decoration:none;}
 
 .instant-search,.instant-search__input-container {border-radius: 5px;}
 
-.instant-search__input-container {display: inline-flex;box-sizing: border-box;width: 90%;padding: 2px;background: #eeeeee;}
-.instant-search__input-container img {padding: 2px;margin-left:-20px;}
+.instant-search__input-container {display: inline-flex; box-sizing: border-box; width: 90%;padding: 2px;background: #eeeeee; height: 45px;}
+.instant-search__input-container img {position: absolute; right: 65px; top: 8px;}
 
 .instant-search__input-container:focus-within {
   background: #ffffff;}
@@ -225,19 +224,15 @@ a:hover{text-decoration:none;}
 
 .instant-search__result {display: block;color: #333333;text-decoration: none;padding: 10px;
   font-size: 0.8em;cursor: pointer;}
-.search_box_ico{margin-top:-10px}
-
-#searchUsers {display:flex;}
+#searchUsers {display:flex; align-items: center;}
 .m_slid_2dep_brand{height:350px;overflow-x:scroll}
 .brand{width:100%;margin-top:30px;}
-.categ{border-bottom:8px solid #F1F1F1;padding-bottom:20px;margin-top:-12px;margin-bottom:-10px}
-.categ ul li{float:left;margin-right:10px;}
+.categ{border-bottom:8px solid #F1F1F1; padding-bottom:20px;}
+.categ > ul {display: flex; padding: 0 16px;}
 .categ .all a{font-weight:bold;color:#31845B}
-.categ ul li img{position:relative;top:-10px}
 .brand ul li ul{height:45px;width:100%;display: flex;justify-content: space-between;padding-right:25px;font-size:14px;padding-top:5px;padding-bottom:5px;border-bottom:0.5px solid #BBBBBB;}
-.brand ul li ul li a{margin-left:20px;position:relative}
-.categ ul li{font-size:14px;position:relative;top:-18px;left:14px;background-color:transparent}
-.categ ul li img{position:relative;top:20px;left:2px}
+.brand ul li ul li a{margin-left:20px;position:relative; line-height: 36px;}
+.categ ul li{font-size:14px; background-color:transparent; padding-right: 14px; line-height: 14px;}
 
 /*페이징 버튼*/
 .page_wrap {text-align:center;font-size:0;}
