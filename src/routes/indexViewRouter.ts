@@ -208,7 +208,7 @@ router.get('/benefits', (req: Request, res: Response, next: NextFunction) => {
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {
-    res.locals.isLoggedIn = req.session.isLoggedIn
+    res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
 
     res.render(view, data || null)
