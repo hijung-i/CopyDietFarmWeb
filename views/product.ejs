@@ -240,13 +240,13 @@
                             </section>
                         </div>
                         <div class="products_ex_mobile">
-                            <img src="">
+                            <img v-for="image in product.detail" v-bind:src="RESOURCE_SERVER + image.url" style="width:100%; height:100%">
                         </div>
                     </div>
                 </div>
        
 				<div class="products_ex_mobile" style="padding:0">
-                    <img v-for="image in product.detail" v-bind:src="RESOURCE_SERVER + image.url" style="width:100%; height:100%">
+                    <img v-for="image in product.representative" v-bind:src="RESOURCE_SERVER + image.url" style="width:100%; height:100%">
                 </div>
                 </div>
             </div>
