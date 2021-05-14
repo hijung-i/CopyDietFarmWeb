@@ -104,17 +104,20 @@ a:hover{text-decoration:none;}
   top:6px
  }
 @media screen and (max-width:1079px){
-  .main_banner {height: 42px; background: #ccc; margin-top: 24px;}
+  .top_banner img {width:100%}
   #header .gnb{position:fixed;width:100%;background-color:#fff}
   .content_main .main_img{padding-top:100px}
   .content_main .bxslider li img{width:auto;height:419px!important;}
+
   #header{margin-bottom:20px}
   .comp_logo{width:100%;margin:0 auto;text-align:center; background-color:#fff}
   .comp_logo img{width:55.26px;height:28px}
   .menu_btns{background-color:#fff}
+
   .btnMenu img{width:19.44px;height:13.67px;}
   .btnCart img{width:21px;height:21px;float:right;}
   #nav{width:100%;height:34px;padding-left:15px; overflow:scroll;white-space:nowrap;background-color:#fff}
+
   .comp_logo{width:55px; height: 28px; text-align:center;}
   .comp_logo img {width: 55px; height: 28px;}
   .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top: 15px; justify-content: space-between; align-items: center;}
@@ -126,13 +129,14 @@ a:hover{text-decoration:none;}
   .nav_wrap::-webkit-scrollbar {display:none;}
   #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
   .top_util, .searchbox, #nav .web_cate{display:none}
-  #header{position:fixed; min-width:360px; height: 151px; top:0px;background-color:#fff;z-index:9999}
+  #header{position:fixed; min-width:360px;height: 140px; top:0px;background-color:#fff;z-index:9999}
   .body_sub_tit{display:flex;justify-content:space-between;}
   .body_sub_tit p{margin-top:26px;margin-right:15px}
   .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
 
 }
 @media screen and (min-width:1080px){
+  .top_banner{display:none}
   section.brand, div#tab2 {display: none;}
   .sideMenu .tabMenu {display: none;}
   .multiple_bxslider li img{width:auto;height:auto;padding:10px;border-radius:5px}
@@ -274,20 +278,17 @@ height:50px;overflow:hidden}
         
       
 /*검색창*/
-.instant-search {position:relative;width:94%;margin:10px auto}
+.instant-search {position:relative;width:94%;margin:10px auto;}
 .instant-search,
 .instant-search * {transition: background 0.15s, box-shadow 0.15s;}
-.instant-search:focus-within {box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
 .instant-search--loading::after {content: "";position: absolute;top: 0;
   left: 0;height: 2px;border-radius: 5px;animation: searchIndicator 0.5s infinite ease-in-out}
 .instant-search,.instant-search__input-container {border-radius: 5px}
 .instant-search__input-container {display: inline-flex;box-sizing: border-box;
   width: 90%;padding: 9px;background: #eeeeee}
 .instant-search__input-container img {padding: 6px}
-.instant-search__input-container:focus-within {background: #ffffff}
 .instant-search__input {flex-grow: 1;border: none;outline: none;width: 100%;
-  padding: 0 6px;background: transparent}
+  padding: 0 6px}
 .instant-search__results-container {max-height: 250px;overflow-y: auto;
  visibility: hidden;opacity: 0;transition: visibility 0.1s, opacity 0.1s}
 .instant-search__results-container--visible {visibility: visible;opacity: 1}
@@ -381,7 +382,7 @@ height:50px;overflow:hidden}
   #content .category ul li{height:100%;text-align:center; margin-top:10px; /* outline: 2px solid red; */}
   #content .category li{float:left}
   #content .category img{width:60px;height:60px}
-  #content .category p{margin-top:7.89px;font-size:13px}
+  #content .category p{margin-top:7.89px;font-size:13px;white-space:nowrap;}
   #content .s_wrap{margin-bottom:-50px}
   #content .s_price{margin:20px 10px 20px;width:100%;margin-bottom:-50px;}
   #content .s_price h2{font-size:14px;margin-bottom:10px;margin-left:10px}
@@ -416,6 +417,8 @@ height:50px;overflow:hidden}
   }
   .gnb_depth02 li {background: #F5F5F5;}
   }
+  .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;padding-top:4px} 
+  .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3) inset}
   /*메인페이지 컨텐츠 수정 210426*/
   @media screen and (max-width:1079px){
   .sweet h3{clear:both;font-size:14px;font-weight:bold;padding-left:15px}

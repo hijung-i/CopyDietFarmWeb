@@ -3,10 +3,12 @@ body{min-width:360px}
 
 .detail_title{margin:42px 10px 32px 0px;width:100%;}
 .detail_title a img{position:absolute;top: 44px;width:17px;left:10px}
+.btndelete{position:absolute;top:4px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 #btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
 .detail_title h2{text-align:center;position:relative;font-weight:700;font-size:16px;margin-right:10px;padding-bottom: 20px}
 @media screen and (max-width:460px){
+.web_login_title{display:none}
 .signup_top .box{width:90%;margin:0 auto}
 .signup_top p, .signup_top h3, .signup_top span{padding-left:15px;padding-right:15px}
 .signup_top p{margin-top:10px}
@@ -14,6 +16,7 @@ body{min-width:360px}
 .btn_area #btnJoin{width:90%;margin-left:20px}
 .id_check{margin-left:15px}
 .id_check .box.int_id {width:73%!important}
+.web_login_title{display:none}
 } 
 
 @media screen and (min-width:461px) and (max-width:1079px){
@@ -36,6 +39,9 @@ div.box.int_id{width:350px}
     .fail-wrap-web p{width:279px;height:52px;background-color:#707070;color:#fff;margin-top:22px;text-align:center;font-size:14px;padding-top:18px}
 }      
 /*로그인*/
+@media screen and (min-width:1080px){
+    .login-input-section-wrap{padding-top: 50px !important;}
+}
 .login a{left:20px;margin-top:-20px}
 .login-input-section-wrap{padding-top:20px}
 .login-input-wrap{width:border solid 1px  #dadada;background: white;border-radius:5px;}
