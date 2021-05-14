@@ -39,6 +39,9 @@ div.box.int_id{width:350px}
     .fail-wrap-web p{width:279px;height:52px;background-color:#707070;color:#fff;margin-top:22px;text-align:center;font-size:14px;padding-top:18px}
 }      
 /*로그인*/
+@media screen and (min-width:1080px){
+    .login-input-section-wrap{padding-top: 50px !important;}
+}
 .login a{left:20px;margin-top:-20px}
 .login-input-section-wrap{padding-top:20px}
 .login-input-wrap{width:border solid 1px  #dadada;background: white;border-radius:5px;}

@@ -281,7 +281,7 @@ label:after {
 .myReview label > span {display: none;}
 .products_ex_mobile{display:none}
 .tabMenu ul{border-top:1px solid #F5F5F5;border-bottom:1px solid #F5F5F5}
-.tabMenu ul li{text-align:center;position:relative;width:267px;height:68px;font-size:18px;color:#707070}
+.tabMenu ul li{text-align:center;padding-top:21px;width:267px;height:60px;font-size:18px;color:#707070}
 .tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:2px;}
 #btn_mobile{display:none}
 .review_btn button{display:none}
