@@ -150,37 +150,6 @@ function getProductDetail(){
         else if (product.packingType == 'B') packingTypeHtml = '냉장 (아이스박스)';
         $('.v_n_top_info .packing-type .ex').html(packingTypeHtml);
 
-<<<<<<< HEAD
-=======
-
-        var optionHtml = '';
-        for(var i = 0; i < product.options.length; i++){
-            var option = product.options[i];
-            optionHtml += '<option value="' + i +'" '+ ((i==0)?'selected':'')+'>'+ option.optionDesc;
-            optionHtml += '</option>';
-        }
-        $('select#products').html(optionHtml);
-        $('select#products').trigger("change");
-
-        var detailHtml = '';
-        for(var i = 0; i < product.detail.length; i++){
-            var image = product.detail[i];
-            detailHtml += '<img src="'+ RESOURCE_SERVER + image.url +'" style="width:100%;height:100%">';
-        }
-        
-        var representative = '';
-        console.log(product.representative);
-        for(var i = 0; i < product.representative.length; i++){
-            var image = product.representative[i];
-            representative += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'" style="width:694px;height:694px"></a></div>';
-        }
-   
-        $('.view_top_img #slider_product').html(representative);
-        $('.products_ex').html(detailHtml);
-        $('.products_ex_mobile').html(detailHtml);
-      
-        
->>>>>>> 8728a284055fa3e941b956a00a495cb1695f9354
     }, function (err) {
         console.log("productDetail error", err);
     }, {
