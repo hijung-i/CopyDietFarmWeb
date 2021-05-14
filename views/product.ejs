@@ -78,9 +78,9 @@
                                     <div class="view_top_box">
                                         <div class="view_top_img">
                                             <div id="slider_product" class="slider">
-                                                <div class="slider_item" >
+                                                <!-- <div class="slider_item" >
                                                     <img v-for="(image, index) in product.representative" v-bind:src="RESOURCE_SERVER + image.url">
-                                                </div>
+                                                </div> -->
                                         
                                             </div>
                                             
@@ -174,7 +174,7 @@
                                                         <button type="button" class="h_btn">
                                                         <img src="/images/heart_icon_menu.png" ></button>
                                                         <button type="button" class="c_btn">장바구니</button>
-                                                        <button type="button" class="p_btn">구매하기</button>
+                                                        <button type="button" class="p_btn" v-on:click="onSubmit()">구매하기</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1178,6 +1178,7 @@
             preview.appendChild(image);
         })
     </script>
+    <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
     <script type="text/javascript" src="/js/product.js"></script>
 
 </body></html>

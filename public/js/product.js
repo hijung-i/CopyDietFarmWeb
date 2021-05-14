@@ -1,5 +1,6 @@
 var product = {};
 var selectedOptions = new Array();
+var isExtra = false, isJeju = false;
 
 var app = new Vue({
     el: 'main',
@@ -7,12 +8,16 @@ var app = new Vue({
         RESOURCE_SERVER,
         selectedOptions,
         product: product,
-        optionTotalPrice: 0
+        optionTotalPrice: 0,
+        orderDTO: {},
+        deliveryGroupList: []
     }, methods: {
         numberFormat,
         deleteFromArray,
-        changeOptionCount
-        
+        changeOptionCount,
+        onSubmit: function() {
+            location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
+        }
     }
 });
 $(function() {
@@ -72,6 +77,16 @@ $(function() {
         })
     });
 
+    ajaxCall('/user/login', {}, 'GET', 
+    function( data ){
+        console.log("data", data);
+        if(data.result.isLoggedIn == true) {
+            checkDeliveryAddress();
+        }
+    }, function(err) {
+        console.log("error", err);
+    })
+
 })
 
 function getProductDetail(){
@@ -91,6 +106,7 @@ function getProductDetail(){
         }
         console.log(product);
         
+        app.product.discountRate = Math.round(product.discountRate);
         // 상품명
         $('.detail_title h2').html(product.productName);
         $('.v_top_name').html(product.productName);
@@ -173,8 +189,11 @@ function onOptionSelected(element) {
     var option = JSON.parse(JSON.stringify(selectedOption));
     option.optionCount = 1;
 
-    if(!isExistsInArray(option)) selectedOptions.push(option);
-
+    if(!isExistsInArray(option)) {
+        option.isSelected = true;
+        selectedOptions.push(option);
+        
+    }
     drawSelectedOptions();
 }
 
@@ -212,21 +231,62 @@ function getSelectedOptionIndex(ele) {
 function drawSelectedOptions() {
 
     var totalPrice = 0;
-    for(var i = 0; i < selectedOptions.length; i++) {
-        var option = selectedOptions[i];
+    for(var i = 0; i < app.selectedOptions.length; i++) {
+        var option = app.selectedOptions[i];
         totalPrice += option.optionDiscountPrice * option.optionCount;
     }
     app.optionTotalPrice = totalPrice;
     
+    var requestDeliveryGroupList = new Array();
+    var deliveryGroup = new DeliveryGroupDTO();
 
-    $('.product_title img').click(function() {
-        var seq = getSelectedOptionIndex($(this));
-        selectedOptions.splice(seq, 1);
+    var product = JSON.parse(JSON.stringify(app.product));
+    product.options = selectedOptions;
+    
+    deliveryGroup.products.push(product);
+    deliveryGroup.loadingPlace = product.loadingPlace;
+    deliveryGroup.brandCode = product.brandCode;
+    deliveryGroup.companyName = product.companyName;
+    deliveryGroup.brandName = product.brandName;
+    deliveryGroup.setDeliveryCost(isJeju, isExtra);
 
-        drawSelectedOptions();
-    });
+    console.log(deliveryGroup.totalDeliveryCost);
+    if(selectedOptions.length < 1) {
+        alert('상품을 선택해주세요.')
+        return false;
+    }
+
+    requestDeliveryGroupList.push(deliveryGroup);
+
+    app.orderDTO = {
+        paymentTotalAmount: deliveryGroup.groupPrice,
+        totalDeliveryCost: deliveryGroup.totalDeliveryCost
+    }
+    app.deliveryGroupList = requestDeliveryGroupList;
 }
 
 function deleteFromArray(seq) {
     selectedOptions.splice(seq, 1);
+    drawSelectedOptions();
+}
+
+function checkDeliveryAddress() {
+    var params = {};
+    
+    ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
+    function(data) {
+        var result = data.result;
+
+        if(result.address.includes('제주특별자치도')) {
+            isJeju = true;
+        } 
+        if(result.count > 0) {
+            isExtra = true;
+        }
+    }, function(err) {
+        console.log("error", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
 }

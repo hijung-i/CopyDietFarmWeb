@@ -133,7 +133,7 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
         mainAddressYn: ''
     }
     try {
-
+        console.log(sessionUser)
         if (req.session.isLoggedIn === true) {
             orderDTO.userId = sessionUser!.userId
             orderDTO.userName = sessionUser!.userName

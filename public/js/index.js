@@ -54,7 +54,7 @@ function getStandDatas() {
                     html += '<ul>';
                     html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
                     html += '<li class="cost">' + numberFormat(product.supplyPrice) + '원</li>';
-                    html += '<li class="ratio">' + product.discountRate + '%</li>';
+                    html += '<li class="ratio">' + Math.round(product.discountRate, 0) + '%</li>';
                     html += '</ul>';
                     html += '</a>';
                     html += '</li>';

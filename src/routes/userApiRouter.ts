@@ -36,7 +36,7 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
             userCellNo: loginResult.data?.userCellNo!,
             userEmail: loginResult.data?.userEmail!,
             userInfo: loginResult.data?.userInfo!,
-            userName: loginResult.data?.userName!
+            userName: loginResult.data?.name!
         }
 
         req.session.user = sessionUser
