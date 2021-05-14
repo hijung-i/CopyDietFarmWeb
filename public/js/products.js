@@ -127,9 +127,27 @@ $(function () {
                 productSearch(keyword);
             }
             break;
+        case 'ZZIM':
+            getPickProduct();
+            break;
+            
     }
 
     $('#sortOption').change(function() {
         getProductByStandCode();
     })
 });
+
+function getPickProduct() {
+    ajaxCallWithLogin(API_SERVER + '/order/getZzimInfoByUserID', {}, 'POST',
+    function(data) {
+        var html = generateHtmlForProductList(data.result);
+        $('.sub_items ul').html(html);
+        console.log("loading zzim list", data);
+    }, function(err) {
+        console.log("error while load zzim", err);
+    }, {
+        isRequire: true,
+        userId: true
+    })
+}

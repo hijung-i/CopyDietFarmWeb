@@ -10,11 +10,11 @@
         @media screen and (max-width:1079px) {.web_ol_detail{display:none}}
         @media screen and (min-width:1080px){.mobile_ol_detail{display:none} }    
     </style>
+<link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/style02.css">
 <link rel="stylesheet" href="./css/mypageAll.css">
 <link rel="stylesheet" href="./css/style_web.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -29,15 +29,16 @@
 </head>
 
 <body>
+    <div class="web_ol_detail">
+        <%-include('general/header') %>
+    </div>
     <div class="mobile_ol_detail">
     <section class="detail_title">
         <h2>주문상세</h2>
         <a href="#"><img src="./images/leftarrow_ico_my.png"></a>
     </section>
     </div>
-    <div class="web_ol_detail">
-        <%-include('general/header_web') %>
-    </div>
+  
     <div class="main_contents">
            <div class="web_contents">
             <div class="left">

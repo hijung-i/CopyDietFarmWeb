@@ -7,13 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문상세</title>
     <link rel="stylesheet" href="./css/style02.css">
-    <link rel="stylesheet" href="./css/style03.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/mypageAll.css">
-    <link rel="stylesheet" href="./css/style_web.css">
-    <script type="text/javascript" src="/js/jquery.bxslider.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/jquery.bxslider.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
@@ -24,13 +20,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    <!-- bxslider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
     <script src="./js/main.js"></script>
+    <style>
+        @media screen and (max-width:1079px) {.web_point{display:none}}
+        @media screen and (min-width:1080px){.mobile_point{display:none} }    
+    </style>
 </head>
 
 <body>
     <!-- 모바일 섹션 point -->
+    <div class="mobile_point">
     <section class="detail_title">
         <h2>포인트</h2>
         <script type="text/javascript">
@@ -48,95 +47,13 @@
                 </h2>
             </div>
     </section>
-    <main id="content" class="content">
-    <div class="point_line"></div>
-
-    <section class="point_history">
-        <div class="point_history_left">
-            <ul>
-                <li class="save">적립</li>
-                <li class="amount">+500원</li>
-            </ul>
-        </div>
-        <div class="point_history_right">
-            <ul>
-                <li class="date">2020.11.09</li>
-                <li class="type">구매 적립</li>
-                <li class="brand">바디나인</li>
-            </ul>
-        </div>
-    </section>
-    <div class="point_history_line"></div>
-    <section class="point_history">
-        <div class="point_history_left">
-            <ul>
-                <li class="save">적립</li>
-                <li class="amount">+500원</li>
-            </ul>
-        </div>
-        <div class="point_history_right">
-            <ul>
-                <li class="date">2020.11.09</li>
-                <li class="type">구매 적립</li>
-                <li class="brand">바디나인</li>
-            </ul>
-        </div>
-    </section>
-    <div class="point_history_line"></div>
-    <section class="point_history">
-        <div class="point_history_left">
-            <ul>
-                <li class="save">적립</li>
-                <li class="amount">+500원</li>
-            </ul>
-        </div>
-        <div class="point_history_right">
-            <ul>
-                <li class="date">2020.11.09</li>
-                <li class="type">구매 적립</li>
-                <li class="brand">바디나인</li>
-            </ul>
-        </div>
-    </section>
-    <div class="point_history_line"></div>
-    <section class="point_history">
-        <div class="point_history_left">
-            <ul>
-                <li class="save">적립</li>
-                <li class="amount">+500원</li>
-            </ul>
-        </div>
-        <div class="point_history_right">
-            <ul>
-                <li class="date">2020.11.09</li>
-                <li class="type">구매 적립</li>
-                <li class="brand">바디나인</li>
-            </ul>
-        </div>
-    </section>
-    <div class="point_history_line"></div>
-    <section class="point_history">
-        <div class="point_history_left">
-            <ul>
-                <li class="save">적립</li>
-                <li class="amount">+500원</li>
-            </ul>
-        </div>
-        <div class="point_history_right">
-            <ul>
-                <li class="date">2020.11.09</li>
-                <li class="type">구매 적립</li>
-                <li class="brand">바디나인</li>
-            </ul>
-        </div>
-    </section>
-    <div class="point_history_line"></div>
-    </main>
-    <!-- 모바일 섹션 end -->
-
-    <%-include('general/header_web') %>
-
+</div>
+       <!-- 모바일 섹션 end -->
         <!-- web main -->
+        
+    <div class="web_point">
+        <%-include('general/header') %>
+    </div>
         <main id="main">
             <div class="main_contents">
     

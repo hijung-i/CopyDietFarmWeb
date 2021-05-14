@@ -12,15 +12,20 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style02.css">
     <link rel="stylesheet" href="css/signup.css">
-     <style type="text/css">
-    @media screen and (max-width:1079px) {.web_login{display:none}}
-    @media screen and (min-width:1020px){.mobile_login{display:none} }
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('ed5593bb84a351edac6197d384fd3e1e');
+        console.log(Kakao.isInitialized());
+    </script>
+    <style type="text/css">
+        @media screen and (max-width:1079px) {.web_login{display:none}}
+        @media screen and (min-width:1080px){.mobile_login{display:none} }
     </style>
      
 </head>
 <body>
      <div class="web_login">
-        <%-include('general/header_web') %>
+        <%-include('general/header') %>
    </div><!--//웹 로그인헤더-->
  <div class="mobile_login">
     <section class="detail_title">
@@ -30,14 +35,14 @@
                 window.history.back();
             }
         </script>
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
+        <div class="btndelete"><a href="#" value="취소" onclick="javascript:history.onclick=closeWin();"><img src="images/x_icon_login@2x.png" alt="" style="width:13.95px"> </a>
         </div>
     </section>
     </div> <!--//모바일 로그인헤더-->
     <div class="contents">
     <h2 class="web_login_title">로그인</h2>
     <div class="main-container">
-        <div class="main-wrap">
+        <div class="main-wrap" style="margin-top:-45px">
 
             <section class="login-input-section-wrap">
                 <div class="login-input-wrap">
@@ -56,7 +61,14 @@
                         <li><a href="images/l_icon_category.png"></a></li>
                         <li class="login02"><a href="#">비밀번호 찾기 </a>
                         <li><img src="images/l_icon_category@2x.png"></li>
-                        <li class="login03"><a href="#">회원가입</a>
+                        <li class="login03"><a href="/sign-up-form">회원가입</a>
+                    </ul>
+                </section>
+                <section class="sns_login">
+                    <p>SNS계정으로 간편 로그인하세요.</p>
+                    <ul>
+                        <li><img src="/images/kakao_login@2x.png"></li>
+                        <li><img src="/images/naver_login.png"></li>
                     </ul>
                 </section>
             </section>

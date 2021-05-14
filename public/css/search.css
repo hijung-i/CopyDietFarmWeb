@@ -67,9 +67,6 @@ body{min-width:360px}
   padding: 6px;
 }
 
-.instant-search__input-container:focus-within {
-  background: #ffffff;
-}
 
 
 .instant-search__input {
@@ -154,7 +151,7 @@ body{min-width:360px}
 .recommend_wrap{width:100%; /* border-bottom:1px solid #bbbbbb */}
 .recommend{margin:0 auto;padding-top:30px;width:90%;}
 .recommend h2{font-size:12px;font-weight:bold;margin-bottom:10px}
-.recommend ul{display:grid;grid-template-columns: repeat(4, 2fr);width: 100%;margin:auto;}
+.recommend ul{display:grid;grid-template-columns: repeat(4, 2fr);width: 100%;margin:auto;margin-bottom:45px}
 .recommend ul li{border:1px solid #BBBBBB;border-radius:20px;padding:8px;text-align:center;margin-right:7px;margin-top:10px;font-weight:bold}
 
 /*검색 결과*/

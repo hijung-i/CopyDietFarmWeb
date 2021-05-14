@@ -1,20 +1,25 @@
 *{font-family:'나눔고딕';font-weight:400}
 
 body{min-width:360px;max-width:100%}
-.detail_title{margin:40px 10px 20px 10px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-top:-10px}
-.detail_title a img{position:absolute;top:42px}
+.mypage_title{margin:40px 10px 20px 10px;width:100%;}
+.detail_title{margin:35px 10px 32px 0px;width:100%;}
+.detail_title a img{position:absolute;top: 44px;width:17px;left:10px}
+.btnback{position:absolute;top:4px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 /*마이페이지*/
-
+#header{height: 60px !important;padding-top:10px !important;}
+.myPage{letter-spacing:0.2px;margin-bottom:-42px;padding-top:90px}
+.myPage_title h2{font-weight:bold;font-size:16px}
+.mypage a{display:block}
 .myPage01{width:100%;padding-top:10px;padding-bottom:12px}
 .myPage01 h3{font-size:16px}
-.myPage01_2 a{color:#fff;background-color:#F99319;border:1px solid #F99319;border-radius:20px;padding:5px}
+.myPage01_2 .invite a{color:#fff;background-color:#F99319;border:1px solid #F99319;border-radius:30px;width:88px;height:22px;padding:2px 11px 2px 11px;letter-spacing:1px;}
+.myPage01_2 .benefits a{color:#fff;background-color:#FF475E;border:1px solid #FF475E;border-radius:30px;width:88px;height:22px;padding:2px;padding:2px 11px 2px 11px;letter-spacing:1px;}
 .myPage01,.myPage01_2, .myPage02, .myPage03, .myPage04, myPage05{width:100%;border-bottom:8px solid #F1F1F1}
 .myPage ul{width:100%;padding:0;clear:both;display:flex;
 justify-content: space-between;border-bottom:0.5px solid #bbbbbb}
-.myPage ul li{float:left;font-size:14px;justify-content:space-between;padding:20px 15px 17px 15px;display:flex}
+.myPage ul li{float:left;font-size:14px;justify-content:space-between;padding:20px 15px 17px 15px}
 .myPage06 li, .myPage06 li a{color:#6B6B6B;}
 .myPage06 ul{background-color:#F5F5F5;padding-top:10px;padding-bottom:10px}
 
@@ -24,7 +29,7 @@ justify-content: space-between;border-bottom:0.5px solid #bbbbbb}
 .buttons{padding-left:15px;padding-right:15px;width:100%;margin: 0 auto;display: flex;justify-content: space-between;}
 .btnLogin, .btnSignup{width: 48%;height:45px;text-align:center;border:0;display:inline-block;
 background-color:#F99319;border-radius:5px;
-;font-size:14px;font-weight:bold;color:#fff}
+;font-size:14px;font-weight:bold;color:#fff;padding-top:4px}
 
 /*포인트*/
 ul, li, p{list-style:none}
@@ -98,6 +103,7 @@ ul, li, p{list-style:none}
     .detail_title{width:100%;}
     .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;top:10px;padding-bottom:12px}
     .detail_title a img{position:absolute;top:42px}
+    .myPage01_2 ul li img{width:18px;height:18px;margin-right:13.5px}
     .f_recommd{width:100%;height:330px;background-color:#FFF4E8;text-align:center;margin-bottom:27px;padding-top:21px}
     .f_recommd h3{width:80px;height:24px;margin:0 auto;padding-top:3px;color:#6A3F0B;font-size:14px;font-weight:bolder;background-color:#00000014;border-radius:10px;}
     .f_recommd h4{margin-top:19px;font-size:14px;color:#F99319;font-weight:bold}
@@ -137,5 +143,7 @@ ul, li, p{list-style:none}
 
 /*상품문의*/
 
-
+/*이벤트*/
+.benefits img{width:100%}
+.benefits p{font-size:14px;font-weight:bold;margin-top:10px;margin-bottom:18px;margin-left:15px}
 

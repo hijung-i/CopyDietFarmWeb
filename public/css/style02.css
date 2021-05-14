@@ -8,7 +8,14 @@ font-weight: normal;
 font-style: normal; 
 src:url('../font/NanumGothic.woff') format('woff'); 
 }
-
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 100;
+  src: url(/fonts/NotoSansKr/NotoSansKR-Thin.woff2) format('woff2'),
+       url(/fonts/NotoSansKr/NotoSansKR-Thin.woff) format('woff'),
+       url(/fonts/NotoSansKr/NotoSansKR-Thin.otf) format('opentype');
+}
 .skip_menu{position:absolute}
 .skip_menu a{position:absolute;top:-90px;left:0;width:138px;border:1px solid #4ec53d;background:#333;text-align:center}
 .skip_menu a:active, .skip_menu a:focus{top:0;z-index:1000;text-decoration:none}
@@ -92,7 +99,7 @@ a:hover{text-decoration:none;}
 #Wrapper,
 #Header,
 #Container,
-#footer {width:100%;min-width:1080px;}
+
 
 #Contents {width:1080px;height:100%;margin:0 auto;}
 
@@ -108,10 +115,10 @@ a:hover{text-decoration:none;}
 .top_util .menu_list { display: flex; float: right; height: 55px; line-height: 55px;}
 .top_util .menu_list .join{color:#F99319}
 .top_util .menu_list > li { padding:0 10px; white-space:nowrap;}
-.top_util .menu_list  .bar{position:relative; top:22px}
-.top_util .menu_list li.cart, .top_util .menu_list li.mypage, .top_util .menu_list li.pick {position: relative; top: 12px;}
+.top_util .menu_list  .bar{position:relative; top:21.5px}
+.top_util .menu_list li.cart, .top_util .menu_list li.mypage, .top_util .menu_list li.pick {position: relative; top: 10px;}
 .top_util .menu_list > li:last-child {padding-right:0}
-.top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap}
+.top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap;font-family:Noto Sans KR;}
 .top_util .menu_list > li strong {font-weight:700}
 .top_util .menu_list > li strong+a {margin-left:4px}
 .top_util .cart img {width:18px;height:18px;margin-top:8px}
@@ -125,7 +132,6 @@ a:hover{text-decoration:none;}
 
 #wHeader .header_design_area {position:absolute;top:0;left:50%;width:100%;height:119px;margin-left:-50%;z-index:-1}
 #wHeader .header_design_area:after {content:'';position:absolute;display:block;left:0;width:50%;height:119px;margin-left:-510px;}
-.nav_wrap {display: flex;}
 
 /*검색창*/
 .round {width:358px;height:36px;border-radius:20px;
@@ -198,7 +204,6 @@ a:hover{text-decoration:none;}
 
 
 .instant-search,.instant-search * { transition: background 0.15s, box-shadow 0.15s;}
-.instant-search img{position:relative;top:12px}
 .instant-search:focus-within {box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);}
 
 .instant-search--loading::after {content: "";
@@ -207,8 +212,8 @@ a:hover{text-decoration:none;}
 
 .instant-search,.instant-search__input-container {border-radius: 5px;}
 
-.instant-search__input-container {display: inline-flex;box-sizing: border-box;width: 90%;padding: 2px;background: #eeeeee;}
-.instant-search__input-container img {padding: 2px;margin-left:-20px;}
+.instant-search__input-container {display: inline-flex; box-sizing: border-box; width: 90%;padding: 2px;background: #eeeeee; height: 45px;}
+.instant-search__input-container img {position: absolute; right: 65px; top: 8px;}
 
 .instant-search__input-container:focus-within {
   background: #ffffff;}
@@ -219,19 +224,15 @@ a:hover{text-decoration:none;}
 
 .instant-search__result {display: block;color: #333333;text-decoration: none;padding: 10px;
   font-size: 0.8em;cursor: pointer;}
-.search_box_ico{margin-top:-10px}
-
-#searchUsers {display:flex;}
+#searchUsers {display:flex; align-items: center;}
 .m_slid_2dep_brand{height:350px;overflow-x:scroll}
-.brand{width:100%;margin-top:30px;}
-.categ{border-bottom:8px solid #F1F1F1;padding-bottom:20px;margin-top:-12px;margin-bottom:-10px}
-.categ ul li{float:left;margin-right:10px;}
+.brand{width:100%;}
+.categ{border-bottom:8px solid #F1F1F1; padding-bottom:20px;}
+.categ > ul {display: flex; padding: 20px 16px 0;}
 .categ .all a{font-weight:bold;color:#31845B}
-.categ ul li img{position:relative;top:-10px}
 .brand ul li ul{height:45px;width:100%;display: flex;justify-content: space-between;padding-right:25px;font-size:14px;padding-top:5px;padding-bottom:5px;border-bottom:0.5px solid #BBBBBB;}
-.brand ul li ul li a{margin-left:20px;position:relative}
-.categ ul li{font-size:14px;position:relative;top:-18px;left:14px;background-color:transparent}
-.categ ul li img{position:relative;top:20px;left:2px}
+.brand ul li ul li a{margin-left:20px;position:relative; line-height: 36px;}
+.categ ul li{font-size:14px; background-color:transparent; padding-right: 14px; line-height: 14px;}
 
 /*페이징 버튼*/
 .page_wrap {text-align:center;font-size:0;}
@@ -245,16 +246,8 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .page_nation .nnext {background:url('../images/page_nnext.png') no-repeat center center;margin-right:0;}
 .page_nation a.active {background-color:#fff;color:#F99319;}
 
-/* footer */
-  .footer_top_wrapper {width: 100%; height: 47px; border-top: 1px solid #f5f5f5;}
-  .footer_top {width: 1080px; margin: 0 auto; line-height: 47px;}
-  .footer_top li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
-  .footer_top li.sortationBar > img {vertical-align: middle; padding: 0 10px;}
-  .footer_top > ul {display: flex;}
-  .footer_ctt_wrapper {width: 100%; height: 269px; background: #f4f4f4;}
-  .footer_ctt {width: 1080px; margin: 0 auto; display: flex;}
-  .footer_ctt div {padding: 60px 30px 0 0;}
-  .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px;}
+
+
 
 
 

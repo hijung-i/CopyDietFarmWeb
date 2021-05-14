@@ -15,12 +15,13 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title h2{position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
 .detail_title a img{position:absolute;top:44px;width:17px;margin-left:5px}
 
+/*
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
 #content .tabMenu li{padding-left:25px;padding-right:25px;padding-bottom:10px;padding-top:10px}
 #content .tabMenu li{width:100%;float:left;width:25%;height:44px;font-size:14px;line-height:18px;text-align:center;padding:10px;margin-bottom:1px}
 #content .tabMenu li a{color:#878787;font-weight:normal}
 #content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319;}
-
+*/
 /*상품설명*/
 #content .product_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:-41px}
 #content .product{overflow:hidden;margin:0 auto ;width:100%;}
@@ -33,7 +34,9 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 #content .infoArea02 tr td{font-size:13.4px;padding-bottom:20px;font-weight:bold;}
 @media screen and (max-width:1079px){
-.share_img img{float:right;position:relative;top:50px;left:-24px}
+div #ex1.modal p{text-align:center;}
+div #ex1.modal ul li {float:left}
+.share_img img{float:right;position:relative;top:55px;left:-24px}
 .option_wrap{padding-top:20px;margin-bottom:40px;padding-left:15px;padding-right:15px}
 }
 @media screen and (min-width:1080px){
@@ -49,13 +52,14 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .product_count .result{padding:2px 21px 2px 20px;border:1px solid #BBBBBB;font-size:14px;font-weight:normal}
 .number_price p{float:right;position:relative;left:-15px;top:20px;font-size:14px}
 .t_price ul{display:flex;justify-content:space-between;margin-left:15px;margin-right:15px;margin-top:20px;margin-bottom:4px}
-.t_price li{font-size:14px;;position:relative;top:-10px}
+.t_price li{font-size:14px;position:relative;top:-10px}
 .t_price p{float:right;margin-right:15px;margin-top:20px;margin-bottom:10px}
 .total{font-weight:normal}
 
 .pp_wrap{margin-bottom:-50px;padding-top:40px}
 
 @media screen and (max-width:1079px){
+.v_top_txt_box .modal p{text-align:center}
 .products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:15px;padding-right:15px}
 }

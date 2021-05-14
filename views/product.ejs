@@ -29,6 +29,10 @@
     <link rel="stylesheet" href="/css/product_detail_W.css">
     <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/product_details.css">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8728a284055fa3e941b956a00a495cb1695f9354
 </head>
 
 <body>
@@ -51,22 +55,10 @@
 	<main id="content">
         <input type="hidden" id="productCode" value="<%=productCode %>">
         <div id="contents_wrap">
-            <div id="container">		
-                <!-- contents -->
-                <div class="product_top">
-                    <div>
-                        <div class="tabMenu">
-                            <ul class="tab_wrap" id="tab" style="cursor:pointer">
-                                <li class="active" data-tab="tab1">상품설명</li>
-                                <li data-tab="tab2">상세정보</li>
-                                <li data-tab="tab3">리뷰</li>
-                                <li data-tab="tab4">문의</li>
-                            </ul>
-                        </div>	
-                    </div>
-                    <div>
+                                      
+                    <div class="product_top">
                         <div class="contents">	
-                                    
+                            
                             <div id="tab1_mobile" class="tab_cont active">
                                 <div class="view_wrap">
                                     <!-- 상품navi -->
@@ -86,8 +78,17 @@
                                             
                                 </div>
                                     <div class="v_top_txt_box">
+                                        <div id="ex1" class="modal">
+                                            <p>공유하기</p>
+                                            <ul>
+                                                <li><a href=""><img src="/images/url_icon_friend@2x.png">카카오톡</a></li>
+                                                <li><a href=""><img src="/images/url_icon_friend@2x.png">문자</a></li>
+                                                <li><a href=""><img src="/images/url_icon_friend@2x.png">URL 복사</a></li>
+                                            </ul>
+                                            <a href="#" rel="modal:close"></a>
+                                          </div>
                                         <div class="share_img">
-                                            <a href=""><img src="/images/share_icon_detail.png"></a>
+                                            <p><a href="#ex1" rel="modal:open"><img src="/images/share_icon_detail.png"></a></p>
                                         </div>
                                         <h1 class="v_top_name">{{ product.productName }}</h1>
                                         <p class="v_top_txt">{{ product.productDesc }}</p>
@@ -181,8 +182,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                   
 
                         <div class="pp_wrap">
                             <section class="purchased_products">
@@ -243,6 +243,9 @@
                                 </ul>
                             </section>
                         </div>
+                        <div class="products_ex_mobile">
+                            <img src="">
+                        </div>
                     </div>
                 </div>
        
@@ -267,8 +270,10 @@
                     </div>
                     </div>
                   </div>-->
-                    </div>
-                    <!-- <div class="v_floating_wrap">
+                   </div>
+
+
+                   <div class="v_floating_wrap">
                     <div class="v_floating_opt" id="v_floating_opt">
                         <ul id="v_floating_optul">
                             상세옵션
@@ -462,7 +467,7 @@
                 --> 
    <div class="review_btn">
 
-                <button type="button" style="width:90%;height: 45px;">리뷰쓰기</button>
+                <button type="button" style="width:90%;height:45px;">리뷰쓰기</button>
             </div>
                    <div class="review_list_null" style="display:none">
                 <img src="/images/note_icon_review.png">
@@ -824,7 +829,7 @@
             <div class="qna">
                 <div class="myReview">
                     <p>내 문의 보기</p>
-                     <input type="checkbox" id="prod_detail_toggle"><label for="prod_detail_toggle"><span>아이콘</span></label>
+                    <input type="checkbox" id="prod_detail_toggle"><label for="prod_detail_toggle"><span>아이콘</span></label>
                 </div>
                 <div class="reveiw01">
                     <div class="review_edit">

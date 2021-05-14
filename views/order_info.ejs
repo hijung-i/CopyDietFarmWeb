@@ -8,6 +8,10 @@
     <meta name="format-detection" content="no" />
 
     <title>주문하기</title>
+    <style type="text/css">
+    @media screen and (max-width:1079px){.web_order_info{display:none}
+    }
+    </style>
     <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/orderInfo.css">
@@ -109,8 +113,9 @@
                 <option value="빠른 배송 부탁드립니다.">빠른 배송 부탁드립니다.</option>
                 
             </select>
-            <input type="text" id="deliveryDesc" disabled v-model="orderDTO.deliveryDesc">
-
+         <div class="delivery_masg">
+            <input type="text" id="deliveryDesc" disabled v-model="orderDTO.deliveryDesc" style="vertical-align:top">
+         </div>
         </div><!--//배송지 정보-->
           <div class="coup_point">
                 <div class="members">
@@ -120,7 +125,7 @@
                     </select>
                     <p>사용 가능 쿠폰 0장 / 전체 0장</p>
                     <h3>포인트</h3>
-                    <div style="display: flex;justify-content: space-between; margin-bottom: 10px;">
+                    <div class="point_order">
                         <input v-model.number="orderDTO.paidPointAmount" min="0" value="0">
                         <button type="button" id="btnUse" v-on:click="useAllPoint()">모두 사용</button>
                     </div>
@@ -195,6 +200,7 @@
     </main>
 
     <script src="/js/order.js"></script>
+    <script src="/js/index.js"></script>
             <%-include('general/footer') %>
 </body>
 </html> 

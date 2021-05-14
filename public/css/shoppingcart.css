@@ -29,15 +29,13 @@ background: #fff;padding: 4px 6px;}
 background-size: cover;background-position: center;}
 
 
-/* 장바구니 목록 */
+/* 장바구니 목록S */
 .brand_1 {margin: 0 15px 0 15px;}
 .brand_1 > h3 {width: 100%;float: left;   padding: 12px 12px;border-bottom: 1px solid #BBBBBB;font-weight: 700; font-size: 14px;}
 .shoplist_ctn {
   padding: 20px 0 20px 0;
   position:relative;
-  border-bottom:1px solid #BBBBBB;
-
-}
+ }
 .shoplist-null{
   width: 100%;
   padding: 50px 0px;
@@ -79,8 +77,6 @@ background-size: cover;background-position: center;}
 .shoplist_ctn .shopcart_thum {width: 62px; height: 62px;background-image: url(../images/shopcart_thum.jpg);margin-right: 12px; background-size: cover;background-position: center;}
 .shoplist_ctn .shopcart_thum img{width: 100%}
 
-.shoplist_ctn {width: 100%;display: flex;  font-size: 14px;letter-spacing: 0.8px;}
-input#shoplist_part_selt {margin-right: 10px;}
 
 .shoplist_price {margin-bottom: 20px;}
 .shoplist_count {
@@ -147,17 +143,20 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
 .final .price{float:right}
 /*장바구니 모바일*/
 @media screen and (max-width:1079px){
+  
+.shoplist_ctn {width: 100%;display: flex;  font-size: 14px;letter-spacing: 0.8px;border-bottom:1px solid #BBBBBB }
+input#shoplist_part_selt {margin-right: 10px;}
 #content{width:100%;}
-
+.deleteselectBtn{border-radius:5px;border:1px solid #BBBBBB;background-color:#fff;padding:5px}
  .product_name{text-overflow: ellipsis;white-space:nowrap;overflow:hidden}
  .option_desc { margin-top: 6px;}
 .detail_price{width:100%;}
 .detail_price .price{float:right}
 .detail_price{border-collapse: separate;
-border-spacing: 0 10px;}
+border-spacing: 0 10px;font-size:14px}
 .shopBox01{display:none}
 .shopBox02 table{border-collapse: separate;
-border-spacing: 0 20px;}
+border-spacing: 0 20px;font-size:14px}
 .final{width:100%;padding-left:15px;padding-right:15px;border-bottom:1px solid #bbbbbb}
 .final .total{display:none}
 .btn_area_web .total{display:flex;justify-content:space-between;padding-left:15px;padding-right:15px;font-size:14px;font-weight:bold;padding-top:20px;padding-bottom:20px}
@@ -168,6 +167,9 @@ border-spacing: 0 20px;}
 
 /*장바구니 웹 */
 @media screen and (min-width:1080px){
+
+  .shoplist_ctn {width: 100%;display: flex;  font-size: 14px;letter-spacing: 0.8px;}
+  input#shoplist_part_selt {margin-right: 10px;}
 .shoplist_ctn{max-width:1080px; position: relative}
 .shoplist_ctn img{position:relative;}
 .total_mobile{display:none}

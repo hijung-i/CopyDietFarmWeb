@@ -7,7 +7,7 @@ router.get('/', (req: Request, res: Response, next: NextFunction) => {
         console.log('session', req.session)
         console.log('sessionId', req.sessionID)
     }
-    render(res, 'index', {})
+    render(req, res, 'index', {})
 })
 router.get('/login-form', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -16,7 +16,7 @@ router.get('/login-form', (req: Request, res: Response, next: NextFunction) => {
         res.redirect('/')
         return
     }
-    render(res, 'login_new', {})
+    render(req, res, 'login_new', {})
 })
 router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -28,42 +28,45 @@ router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) =>
 
     const userData: User = req.query
 
-    render(res, 'sign_up', { userData })
+    render(req, res, 'sign_up', { userData })
 })
 
 router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {
     const productCode = req.params.productCode
-    render(res, 'product', { productCode: productCode })
+    render(req, res, 'product', { productCode: productCode })
 })
 router.get('/products/:salesStandCode/event', (req: Request, res: Response, next: NextFunction) => {
     const standCode = req.params.salesStandCode
     console.log(standCode)
 
-    render(res, 'products', {
+    render(req, res, 'products', {
         standCode: standCode,
-        listType: 'EVENT'
+        listType: 'EVENT',
+        listTitle: ''
     })
 })
 router.get('/products/:category1Code/category/:category2Code', (req: Request, res: Response, next: NextFunction) => {
     const category1Code = req.params.category1Code
     const category2Code = req.params.category2Code
 
-    render(res, 'products', {
+    render(req, res, 'products', {
         category1Code: category1Code,
         category2Code: category2Code,
-        listType: 'CATEGORY'
+        listType: 'CATEGORY',
+        listTitle: ''
     })
 })
 router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'search', {})
+    render(req, res, 'search', {})
 })
 
 router.get('/search-list', (req: Request, res: Response, next: NextFunction) => {
     const keyword = req.query.keyword
 
-    render(res, 'products', {
+    render(req, res, 'products', {
         keyword: keyword,
-        listType: 'SEARCH'
+        listType: 'SEARCH',
+        listTitle: ''
     })
 })
 
@@ -72,51 +75,49 @@ router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
     const sessionUser = req.session.user || {}
     console.log('isLoggedIn ->> ', isLoggedIn, sessionUser)
 
-    render(res, 'my_page', { isLoggedIn: isLoggedIn, sessionUser })
+    render(req, res, 'my_page', { isLoggedIn: isLoggedIn, sessionUser })
 })
 router.get('/faq', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'faq', {})
+    render(req, res, 'faq', {})
 })
 router.get('/notice', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'notice', {})
+    render(req, res, 'notice', {})
 })
 router.get('/notice/:boardNo', (req: Request, res: Response, next: NextFunction) => {
     const boardNo = req.params.boardNo
-    render(res, 'notice_detail', { boardNo: boardNo })
+    render(req, res, 'notice_detail', { boardNo: boardNo })
 })
 router.get('/cs-center', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'cs_center', {})
+    render(req, res, 'cs_center', {})
 })
 router.get('/privacypolicy', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'privacy_policy', {})
+    render(req, res, 'privacy_policy', {})
 })
 router.get('/invite', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'invite', {})
+    render(req, res, 'invite', {})
 })
 router.get('/delivery-info', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'delivery_info', {})
+    render(req, res, 'delivery_info', {})
 })
-router.get('/pick-product', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'pick_product', {})
-})
+
 router.get('/pwdReset', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'pwdReset', {})
+    render(req, res, 'pwdReset', {})
 })
 router.get('/order-comp', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'order_complete', {})
+    render(req, res, 'order_complete', {})
 })
 
 router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'alarm', {})
+    render(req, res, 'alarm', {})
 })
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'terms_of_service', {})
+    render(req, res, 'terms_of_service', {})
 })
 router.get('/products', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'products', {})
+    render(req, res, 'products', {})
 })
 router.get('/product', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'product', {})
+    render(req, res, 'product', {})
 })
 
 router.get('/order', (req: Request, res: Response, next: NextFunction) => {
@@ -151,56 +152,65 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     orderDTO.paidPointAmount = 0
     orderDTO.paidCouponAmount = 0
 
-    render(res, 'order_info', { deliveryGroupList, orderDTO: JSON.stringify(orderDTO) })
+    render(req, res, 'order_info', { deliveryGroupList, orderDTO: JSON.stringify(orderDTO) })
 })
 
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_orderList', {})
+    render(req, res, 'mypage_orderList', {})
 })
 router.get('/ol_detail', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_orderList_detail', {})
+    render(req, res, 'mypage_orderList_detail', {})
 })
 
 router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_productReview', {})
+    render(req, res, 'mypage_productReview', {})
 })
 router.get('/p_inquiry', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_productInquiry', {})
+    render(req, res, 'mypage_productInquiry', {})
 })
 router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'web_seller_inquiry', {})
+    render(req, res, 'web_seller_inquiry', {})
 })
 router.get('/point', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'mypage_point', {})
+    render(req, res, 'mypage_point', {})
 })
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'login_fail', {})
+    render(req, res, 'login_fail', {})
 })
 
 router.get('/mem-with', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'membership_withdrawal', {})
+    render(req, res, 'membership_withdrawal', {})
 })
 router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'myinfo', {})
+    render(req, res, 'myinfo', {})
 })
 router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'myinfo', {})
+    render(req, res, 'myinfo', {})
 })
 router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'myinfoUserCheck', {})
+    render(req, res, 'myinfoUserCheck', {})
 })
 router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'order_details', {})
+    render(req, res, 'order_details', {})
 })
 /* 새 화면 추가 보기용 (파일명 임시)*/
 router.get('/login002', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'login_tracking', {})
+    render(req, res, 'login_tracking', {})
 })
 router.get('/order002', (req: Request, res: Response, next: NextFunction) => {
-    render(res, 'order_info_point', {})
+    render(req, res, 'order_info_point', {})
+})
+router.get('/kakao-event', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'kakao_add', {})
+})
+router.get('/benefits', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'benefits', {})
 })
 
-const render = (res: Response, view: any, data: any | null) => {
+const render = (req: Request, res: Response, view: any, data: any | null) => {
+    res.locals.isLoggedIn = req.session.isLoggedIn
+    res.locals.user = req.session.user
+
     res.render(view, data || null)
 }
 
