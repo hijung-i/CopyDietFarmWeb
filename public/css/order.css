@@ -1,6 +1,6 @@
-td, tr, h1, h2,{padding-left:20px;}
+td, tr, h1, h2{padding-left:20px;}
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
-.detail_title a img{position:absolute;top:42px;width:17px}
+.detail_title a img{position:relative;margin-top:-50px;width:17px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 
@@ -153,8 +153,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 /*주문하기 모바일*/
 @media screen and (max-width:1079px){
 .detail_title h2{margin:40px 10px 20px 10px;width:100%;text-align:center;}
-.detail_title a img{position:absolute;top:42px;width:17px}
-.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+.detail_title a img{position:absolute;top:42px;width:17px}.detail_title a img{position:relative;margin-top:-50px;width:17px}.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 .order{width:100%;margin:0 auto}
 .order_q .title span{display:none}
 .order_q .title{border:none}
