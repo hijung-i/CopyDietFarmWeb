@@ -267,32 +267,7 @@
                     </div>
                   </div>-->
                    </div>
-                   <script type="text/javascript">
-                    jQuery(window).scroll(function() {
-                    
-                    
-                    
-                        // 브라우저 화면 스크롤의 현재 높이가 플로팅 배너의 높이보다 클경우
-                    
-                        if(jQuery(window).scrollTop() > jQuery(".floating").offset().top) {
-                    
-                    
-                    
-                            jQuery(".option_wrap").css("position", "fixed");
-                    
-                        }
-                                  
-                    
-                        // 브라우저 화면 스크롤 현재 높이가 플로팅 배너의 높이보다 작을경우
-                    
-                        else if((jQuery(window).scrollTop() < jQuery(".floating").offset().top)) {
-                    
-                    
-                            jQuery(".option_wrap").css("position", "static");
-                    
-                        }
-                    }); 
-                    </script>
+                   
                    <div class="floating"> 
                     <div class="option_wrap">
                                                <h3><img src="/images/star_icon_join.png">옵션선택(필수)</h3>
@@ -1137,6 +1112,20 @@
             preview.appendChild(image);
         })
     </script>
+    <script type="text/javascript">
+        jQuery(window).scroll(function() {
+            // 브라우저 화면 스크롤의 현재 높이가 플로팅 배너의 높이보다 클경우
+            if(jQuery(window).scrollTop() > jQuery(".floating").offset().top) {
+        
+                jQuery(".option_wrap").css("position", "fixed");
+            }
+            // 브라우저 화면 스크롤 현재 높이가 플로팅 배너의 높이보다 작을경우
+            else if((jQuery(window).scrollTop() < jQuery(".floating").offset().top)) {
+                jQuery(".option_wrap").css("position", "static");
+        
+            }
+        }); 
+        </script>
     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
     <script type="text/javascript" src="/js/product.js"></script>
 

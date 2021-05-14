@@ -38,7 +38,7 @@
         <input type="hidden" id="deliveryGroupList" value="<%=deliveryGroupList %>">
         <input type="hidden" id="orderDTO" value="<%=orderDTO %>">
         
-        <h3 class="order_title">주문상품<span class="web_num">(3)</span></h3>
+        <h3 class="order_title">주문상품<span class="web_num"></span></h3>
         <template v-for="(item, index) in deliveryGroupList">
             <div class="order_product">
                 <h4 v-if="item.brandName != ''">{{ item.brandName }}</h4>

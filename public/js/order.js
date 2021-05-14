@@ -75,8 +75,8 @@ var app = new Vue({
 
 $(function() {
     var deliveryGroupList = $('#deliveryGroupList').val();
-
-    console.log(JSON.parse(deliveryGroupList));
+    
+    app.deliveryGroupList = JSON.parse(deliveryGroupList);
     app.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
 
     app.orderDTO.products = new Array();

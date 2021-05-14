@@ -1,5 +1,7 @@
 import { NextFunction, request, Request, Response, Router } from 'express'
 import { DeliveryInfo, SessionUser, User } from '../models/user'
+const qs = require('querystring')
+
 const router = Router()
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
@@ -122,9 +124,12 @@ router.get('/product', (req: Request, res: Response, next: NextFunction) => {
 
 router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     const sessionUser: SessionUser | undefined = req.session.user
-    const deliveryGroupList = JSON.parse(req.query.deliveryGroupList as string)
-    const orderDTO = JSON.parse(req.query.orderDTO as string)
-    console.log(deliveryGroupList, orderDTO)
+
+    const deliveryGroupListStr = req.query.deliveryGroupList as string
+    const orderDTOStr = req.query.orderDTO as string
+
+    const deliveryGroupList = JSON.parse(qs.unescape(deliveryGroupListStr))
+    const orderDTO = JSON.parse(orderDTOStr)
     const deliveryInfo: DeliveryInfo = {
         userId: '',
         userName: '',
