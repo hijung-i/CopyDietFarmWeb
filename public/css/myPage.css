@@ -1,16 +1,15 @@
 *{font-family:'나눔고딕';font-weight:400}
 
 body{min-width:360px;max-width:100%}
-.detail_title{margin:40px 10px 20px 10px;width:100%;}
+.mypage_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-top:-10px}
 .detail_title a img{position:absolute;top:42px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 
 /*마이페이지*/
-#header{height: 60px !important;}
-.nav_wrap{display:none}
-.top_banner{display:none}
-.myPage{letter-spacing:0.2px;margin-bottom:-42px;margin-top:80px}
+#header{height: 60px !important;padding-top:10px !important;}
+.myPage{letter-spacing:0.2px;margin-bottom:-42px}
+.myPage_title h2{font-weight:bold;font-size:16px}
 .mypage a{display:block}
 .myPage01{width:100%;padding-top:10px;padding-bottom:12px}
 .myPage01 h3{font-size:16px}
