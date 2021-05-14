@@ -152,7 +152,7 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     orderDTO.paidPointAmount = 0
     orderDTO.paidCouponAmount = 0
 
-    render(req, res, 'order_info', { deliveryGroupList, orderDTO: JSON.stringify(orderDTO) })
+    render(req, res, 'order_info', { deliveryGroupList: JSON.stringify(deliveryGroupList), orderDTO: JSON.stringify(orderDTO) })
 })
 
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {

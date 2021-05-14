@@ -74,10 +74,9 @@ var app = new Vue({
 })
 
 $(function() {
-    app.deliveryGroupList = JSON.parse((($('#deliveryGroupList').val() != undefined)?$('#deliveryGroupList').val():'{}'));
+    console.log($('#deliveryGroupList').val());    
+    app.deliveryGroupList = JSON.parse((($('#deliveryGroupList').val() != undefined|| $('#deliveryGroupList').val() != '')?$('#deliveryGroupList').val():'{}'));
     app.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
-
-    
 
     app.orderDTO.products = new Array();
     for(var i = 0; i < app.deliveryGroupList.length; i++) {
