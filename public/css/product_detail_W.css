@@ -140,7 +140,10 @@ label:after {
     left: calc(100% - 18px); right: 2px; background: #EFA543;
 }
 .myReview label > span {display: none;}
+<<<<<<< HEAD
+=======
 .tabMenu_wrap{padding-bottom:4px}
+>>>>>>> ec6a52e0718a4e2de841f1c922c153ab44677cb4
 .tabMenu{margin-bottom:-4px}
 .detail_title{overflow:hidden;margin-bottom:-20px;width:100%;}
 .detail_title{margin-top:20px;width:100%;}
