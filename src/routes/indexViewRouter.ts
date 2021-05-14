@@ -122,9 +122,9 @@ router.get('/product', (req: Request, res: Response, next: NextFunction) => {
 
 router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     const sessionUser: SessionUser | undefined = req.session.user
-    const deliveryGroupList = req.query.deliveryGroupList
+    const deliveryGroupList = JSON.parse(req.query.deliveryGroupList as string)
     const orderDTO = JSON.parse(req.query.orderDTO as string)
-
+    console.log(deliveryGroupList, orderDTO)
     const deliveryInfo: DeliveryInfo = {
         userId: '',
         userName: '',
@@ -152,7 +152,7 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     orderDTO.paidPointAmount = 0
     orderDTO.paidCouponAmount = 0
 
-    render(req, res, 'order_info', { deliveryGroupList, orderDTO: JSON.stringify(orderDTO) })
+    render(req, res, 'order_info', { deliveryGroupList: JSON.stringify(deliveryGroupList), orderDTO: JSON.stringify(orderDTO) })
 })
 
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
