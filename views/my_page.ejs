@@ -9,18 +9,6 @@
 
     <title>다이어트 Farm</title>
     <style type="text/css">
-        #mHeader .tab_cont {
-            display: none;
-            min-height: 360px;
-        }
-
-        #mHeader .tab_cont.active {
-            display: block;
-            background: #fff;
-            position: absolute;
-            width: 100%
-        }
-        #header .gnb{display:none}
         @media screen and (max-width:1079px){}
         @media screen and (min-width:1080px){.mobile_myinfo{display:none}}
     </style>
@@ -38,8 +26,10 @@
         <a href="#"><span>바로가기3</span></a>
     </article>
     <div class="mobile_myinfo">
-        <section class="detail_title">
-            <h2 class="title">마이페이지</h2>
+        
+        <%-include('general/header_mypage') %>
+        <!--//
+       
             <script type="text/javascript">
                 function goBack() {
                     window.history.back();
@@ -50,11 +40,12 @@
 
             <div class="btncart"><a href="#" onclick="mCart('on');"><img src="/images/cart_icon_main@2x.png" alt="" style="width:21px;left:15px"></a>
             </div>
-        </section>
+        -->
+
     </div><!--//모바일 헤더 끝-->
     <main id="content" class="content">
         <div class="myPage">
-            <div class="myPage01">
+           <div class="myPage01">
             <% if (!isLoggedIn) { %>
                 <h3>로그인 해주세요.</h3>
                 <h4>신규 회원가입시 5,000P 적립금 지급!</h4>
@@ -164,7 +155,7 @@
             </div>
 
         </div>
+    </div>
     </main>
-  <%-include('general/footer') %>
 
 </body></html>

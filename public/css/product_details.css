@@ -34,6 +34,8 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 #content .infoArea02 tr td{font-size:13.4px;padding-bottom:20px;font-weight:bold;}
 @media screen and (max-width:1079px){
+div #ex1.modal p{text-align:center;}
+div #ex1.modal ul li {float:left}
 .share_img img{float:right;position:relative;top:55px;left:-24px}
 .option_wrap{padding-top:20px;margin-bottom:40px;padding-left:15px;padding-right:15px}
 }
