@@ -33,18 +33,14 @@ function getEventStands() {
 
         // web size side menu set
 		$('.web_cate').click(function() {
-			sideTabOpen();
-			var x = $('.web_cate').offset().left;
-			var y = $('.web_cate').offset().top;
-			var height = $('.web_cate').outerHeight();
-            console.log(y, height);
-            $('.sideMenu').css({
-                'position': 'absolute',
-                'left':x,
-				'top':y + height
-                // width:100% disabled
-			});
+            var isActive = $('.web_cate').hasClass("active");
+            if( isActive ){
+                sideTabClose();
+            } else {
+                sideTabOpen();
+            }
 		});
+
     }, function(err) {
         sideTabClose();
         console.log("eventStands err", err);
@@ -52,11 +48,24 @@ function getEventStands() {
 } 
 
 function sideTabOpen() {
+
+    var x = $('.web_cate').offset().left;
+    var y = $('.web_cate').offset().top;
+    var height = $('.web_cate').outerHeight();
+
     $('.sideMenu').show().animate({
         left: 0
     });
+    $('.sideMenu').css({
+        //'position': 'absolute',
+        'top':y + height
+        // width:100% disabled
+    });
+    
+    $('.web_cate').addClass('active');
 }
 function sideTabClose() {
+    $('.web_cate').removeClass('active');
     $('.sideMenu').animate({
         left: -100 + '%'
     }, function() {

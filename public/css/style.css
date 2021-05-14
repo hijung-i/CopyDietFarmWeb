@@ -125,7 +125,7 @@ a:hover{text-decoration:none;}
   #nav{position: absolute; width:360px; height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none;}
   .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin-top: 15px; overflow: auto;}
   #nav::-webkit-scrollbar{ display:none; }
-  .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin-top: 15px; overflow: auto; -ms-overflow-style: none;}
+  .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin: 15px 0 20px 0; overflow: auto; -ms-overflow-style: none;}
   .nav_wrap::-webkit-scrollbar {display:none;}
   #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
   .top_util, .searchbox, #nav .web_cate{display:none}
@@ -207,12 +207,11 @@ a:hover{text-decoration:none;}
 
 
 .sideMenu .mDepth01{font-size:16px;line-height:32px; background: #fff; z-index: 1;}
-.sideMenu .mDepth01 dl {height: 54px;}
 .sideMenu .mDepth01 dl > dt.sideMenu_detail a {padding-left: 12px;}
 .sideMenu .mDepth01 dt{height: 54px; padding:8px; color:#333; cursor:pointer; border-bottom:1px solid #e0e4e7; font-size: 14px; font-weight: 400; display: flex;}
 .sideMenu .mDepth01 dt img{width: 32px;height:32px;margin-right:15px;vertical-align:middle;}
 .downArrow{width:11px;height:11px}
-.sideMenu .mDepth01 dd {display:none; background:#f3f5f6; position: absolute; left: 168px;}
+.sideMenu .mDepth01 dd {display:none; background:#f3f5f6;}
 .sideMenu .mDepth01 dd li{padding:15px 0 0 15px; color:#666;}
 .sideMenu .mDepth01 dd li a{color:#666;}
 #m_cart{display:none;position:absolute;left:0;top:54px;width:100%;padding:10px 50px 10px 10px;z-index:120;}
@@ -410,8 +409,6 @@ height:50px;overflow:hidden}
   .mDepth01 {height: 500px; overflow: auto;}
   .mDepth01 li {position: relative; background: #fff;}
   .mDepth01 dd {
-    position: absolute;
-    top: 54px !important; left: 0 !important;
     min-width: 360px; width: 100%;
     z-index: 1;
   }
