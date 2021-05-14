@@ -226,9 +226,9 @@ a:hover{text-decoration:none;}
   font-size: 0.8em;cursor: pointer;}
 #searchUsers {display:flex; align-items: center;}
 .m_slid_2dep_brand{height:350px;overflow-x:scroll}
-.brand{width:100%;margin-top:30px;}
+.brand{width:100%;}
 .categ{border-bottom:8px solid #F1F1F1; padding-bottom:20px;}
-.categ > ul {display: flex; padding: 0 16px;}
+.categ > ul {display: flex; padding: 20px 16px 0;}
 .categ .all a{font-weight:bold;color:#31845B}
 .brand ul li ul{height:45px;width:100%;display: flex;justify-content: space-between;padding-right:25px;font-size:14px;padding-top:5px;padding-bottom:5px;border-bottom:0.5px solid #BBBBBB;}
 .brand ul li ul li a{margin-left:20px;position:relative; line-height: 36px;}

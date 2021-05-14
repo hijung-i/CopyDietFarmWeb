@@ -120,20 +120,23 @@ $(function() {
                 position:'fixed',
                 overflow:'hidden'
             });
+            $('.sideMenu').css ({
+                position
+            })
         });
 
         $('.slideMenu_close>a').click(function() {
             sideTabClose();
             $('body').css ({
                 position:'relative',
-                overflow:'scroll'
+                overflow:'visible'
             });
         });
     });
 
 
         // 햄버거 2단계 메뉴
-    $(document).ready(function() {
+    /* $(document).ready(function() {
         $("dt.faq_q").click(function() {
             if ($(this).next('dd').css("display") != "none") {
                 $(this).next('dd').hide();
@@ -145,7 +148,7 @@ $(function() {
                 $(this).addClass("current");
             }
         });
-    });
+    }); */
 
     $(".sideMenu").hide();
     $(".web_cate > a").click(function(){
@@ -220,7 +223,7 @@ $(function(){
         $(this).siblings().removeClass('on');
     });
 
-    $("tr.faq_q").click(function() {
+    /* $("tr.faq_q").click(function() {
         if ($(this).next('tr').css("display") != "none") {
             $(this).next('tr').hide();
             $(this).removeClass("current");
@@ -230,7 +233,7 @@ $(function(){
             $(this).next('tr').show();
             $(this).addClass("current");
         }
-    });
+    }); */
 
     $(".start1").click(function () {
         $(".fade1").toggle();
