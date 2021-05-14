@@ -23,12 +23,16 @@
     transition:opacity 1s ease-in-out}
     .showing{z-index:1;opacity:1}
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <%-include('general/head') %>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/product_detail_W.css">
     <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/product_details.css">
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8728a284055fa3e941b956a00a495cb1695f9354
 </head>
 
 <body>
@@ -38,16 +42,11 @@
 
     <div class="mobile_product_details">
         <section class="detail_title">
-            <h2 class="title"><!-- 상품명 --></h2>
-            <script type="text/javascript">
-                function goBack() {
-                    window.history.back();
-                }
-            </script>
+            <h2 class="title">{{ product.productName }}</h2>
             <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
             </div>
 
-            <div class="btncart"> <a href="/cart" onclick="mCart('on');"><img src="/images/cart_icon_main@2x.png" alt="" style="width:22px;height:23px;left:20px"></a>
+            <div class="btncart"><a href="/cart"><img src="/images/cart_ico_main.png" alt="" style="width:22px;height:23px;left:20px"></a>
             </div>
         </section>
     </div><!--//모바일 헤더 끝-->
@@ -71,32 +70,12 @@
                                     <div class="view_top_box">
                                         <div class="view_top_img">
                                             <div id="slider_product" class="slider">
-                                                <div class="slider_item"><a href=""><img src="/images/dietfarmbread.jpg"></a></div>
-                                          <!--//<div class="slider_item"><a href=""><img src="/images/dietfarmbread.jpg"></a></div>
-                                                <div class="slider_item"><a href=""><img src="/images/dietfarmbread.jpg"></a></div>
-                                                <div class="slider_item"><a href=""><img src="/images/dietfarmbread.jpg"></a></div>
-                                                <div class="slider_item"><a href=""><img src="/images/dietfarmbread.jpg"></a></div>
-                                           -->     
+                                                <!-- <div class="slider_item" >
+                                                    <img v-for="(image, index) in product.representative" v-bind:src="RESOURCE_SERVER + image.url">
+                                                </div> -->
+                                        
                                             </div>
-                                            <script>
-                                                const SHOWING_CLASS = "showing";
-                                                const firstSlide = document.querySelector(".slider_item:first-child");
-                                                function slide(){
-                                                const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
-                                                if(currentSlide){
-                                                currentSlide.classList.remove(SHOWING_CLASS);
-                                                const nextSlide = currentSlide.nextElementSibling;
-                                                if(nextSlide){
-                                                    nextSlide.classList.add(SHOWING_CLASS);
-                                                } else {
-                                                    firstSlide.classList.add(SHOWING_CLASS);
-                                                }
-                                                } else {firstSlide.classList.add(SHOWING_CLASS);
-                                                }
-                                                }
-                                                slide();
-                                                setInterval(slide, 4000);
-                                            </script>
+                                            
                                 </div>
                                     <div class="v_top_txt_box">
                                         <div id="ex1" class="modal">
@@ -111,13 +90,12 @@
                                         <div class="share_img">
                                             <p><a href="#ex1" rel="modal:open"><img src="/images/share_icon_detail.png"></a></p>
                                         </div>
-
-                                        <h1 class="v_top_name">든든한 한끼 오늘은 현미밥 7종</h1>
-                                        <p class="v_top_txt">다른 반찬 필요없이 4분만에 완성하는 균형잡힌 현미밥 식단!</p>
+                                        <h1 class="v_top_name">{{ product.productName }}</h1>
+                                        <p class="v_top_txt">{{ product.productDesc }}</p>
                                         <div class="price_mobile">
-                                            <p class="p1">23,400원</p>
-                                            <p class="p2">26,000원</p>
-                                            <p class="p3">5%</p>
+                                            <p class="p1">{{ numberFormat(product.discountPrice) }}원</p>
+                                            <p class="p2" v-if="product.discountPrice != product.retailPrice">{{ numberFormat(product.retailPrice) }}원</p>
+                                            <p class="p3" v-if="product.discountPrice != product.retailPrice">{{ numberFormat(product.discountRate) }}%</p>
                                         </div> 
                         
                                         <div class="v_n_top_info">
@@ -132,15 +110,21 @@
                                                 </tr>
                                                 <tr class="delivery-cost">
                                                     <td><span>배송비</span></td>
-                                                    <td class="ex"></td>
+                                                    <td class="ex">
+                                                        <template>{{ product.deliveryCostHtml }}</template>
+                                                    </td>
                                                 </tr>
                                                 <tr class="packing-type">
                                                     <td><span>포장타입</span></td>
-                                                    <td class="ex"></td>
+                                                    <td class="ex">
+                                                        <template v-if="product.packingType == 'A'">상온 (종이박스)</template>
+                                                        <template v-if="product.packingType == 'B'">냉장 (아이스박스)</template>
+                                                    
+                                                    </td>
                                                 </tr>
                                                 <tr class="courier-name">
                                                     <td><span>택배사</span></td>
-                                                    <td class="ex"></td>
+                                                    <td class="ex">{{ product.deliveryCompany }}</td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -153,47 +137,45 @@
                                                     <th scope="row"></th>
                                                     <td>
                                                         <select name="products" id="products" style="border-color:#BBBBBB">
-                                                            <option value="1" selected>선택</option>
-                                                            <option value="2">현미밥 랜덤 10종</option>
-                                                            <option value="3">현미밥 랜덤 10종</option>
-                                                            <option value="4">현미밥 랜덤 4종</option>
-                                                            <option value="5">현미밥 랜덤 10종</option>
+                                                            <option value="-1" selected>선택</option>
+                                                            <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
+
                                                         </select>
                                                     </td>
                                                 </tr>
                                             </table>
 
                                             <div id="selectedOptionDiv"> 
-                                                <!-- <div>
+                                                <div v-for="(item, index) in selectedOptions">
                                                     <div class="product_count">
                                                         <div class="product_title">
-                                                            <h4>옵션명<h4>
+                                                            <h4>{{ item.optionDesc }}<h4>
                                                             <ul>
-                                                                <ii><a href="#"> <img src="/images/x_icon_login.png" style="width:8px"></a></ii>
+                                                                <li><img src="/images/x_icon_login.png" v-on:click="deleteFromArray(index)" style="width:8px"></li>
                                                             </ul>
                                                         </div>
                                                         <div class="number_price">
                                                             <div class="number-input">
-                                                                <button class="minus"></button>
-                                                                <input class="quantity" min="1" name="quantity" value="1" type="number">
-                                                                <button class="plus"></button>
+                                                                <button class="minus" v-on:click="changeOptionCount(false, index)"></button>
+                                                                <input class="quantity" min="1" name="quantity" v-model="item.optionCount" value="1" type="number">
+                                                                <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
                                                             </div>
-                                                            <p>옵션 가격</p>
+                                                            <p> {{ numberFormat(item.optionDiscountPrice * item.optionCount) }} 원</p>
                                                             
                                                         </div>
                                                     </div>
-                                                </div> -->
+                                                </div>
                                             </div>
                                             <div class="line_w"></div>
                                                 <div class="total_price">
-                                                    <p>총 상품금액 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>8,500원</span></p>
+                                                    <p>총 상품금액 <span>{{ numberFormat(optionTotalPrice) }}원 </span></p>
                                                 </div>
                                                 <div class="common_btn_wrap">
                                                     <div class="option_btns">
                                                         <button type="button" class="h_btn">
                                                         <img src="/images/heart_icon_menu.png" ></button>
                                                         <button type="button" class="c_btn">장바구니</button>
-                                                        <button type="button" class="p_btn">구매하기</button>
+                                                        <button type="button" class="p_btn" v-on:click="onSubmit()">구매하기</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -266,20 +248,15 @@
                         </div>
                     </div>
                 </div>
-           			
-            
-            				<!-- 상품상세정보 -->
-				<div class="tabMenu_wrap">
-                                           <div class="tabMenu">
-                            <ul class="tab_wrap" id="tab" style="cursor:pointer">
-                                <li class="active" data-tab="tab1_mobile">상품설명</li>
-                                <li data-tab="tab2">상세정보</li>
-                                <li data-tab="tab3">리뷰</li>
-                                <li data-tab="tab4">문의</li>
-                            </ul>
-                        </div>	
-                    </div>
-                    </div>
+       
+				<div class="products_ex_mobile" style="padding:0">
+                    <img v-for="image in product.detail" v-bind:src="RESOURCE_SERVER + image.url" style="width:100%; height:100%">
+                </div>
+                </div>
+            </div>
+                </div>
+				<!-- 상품상세정보 -->
+				<div class="product_detail_content">
                     <!--//
 			       <div class="w_tabMenu">
                    <div id="detail_info" class="pdt_detai_tab_vn">
@@ -299,7 +276,7 @@
                    <div class="v_floating_wrap">
                     <div class="v_floating_opt" id="v_floating_opt">
                         <ul id="v_floating_optul">
-                            <!--상세옵션-->
+                            상세옵션
                             <li>
                                 <div class="viw_option_w">
                                     <p class="viw_option_tit">옵션선택</p>
@@ -344,7 +321,7 @@
                                                     </div>
                                                 <div style="height:493px;">
                                                     <ul class="p_v_optlist2 mt10">
-                                                        <!-- -->
+                                                     
                                                         
                                                         <li id="ad3op17626" data-optidx="17626" data-activeyn="N"  data-mlgflg="N" style="display:none;">
                                                             <div class="p_v_opt_mn">
@@ -393,18 +370,17 @@
                                                             </div>
                                                         </li>
 
-                                                                
-                                                        <!-- -->
+
                                                     </ul>
                                                     </div>
-                                                    <!--//필수옵션 선택후-->
+                                                필수옵션 선택후
                                                 </div>
                                             </div>
 
                                         </dd>
                                     </dl>
 
-                                    <!--구매하기, 장바구니담기 영역-->
+                                    구매하기, 장바구니담기 영역
                                     <div class="v_opt_btn_w">
                                     <div class="line_w"></div>
                 <div class="total_price">
@@ -418,7 +394,7 @@
                         <button type="button" class="p_btn" style="margin-left:4px">구매하기</button>
                     </div>
                 </div>	
-           </div>
+           </div> -->
                                
 
                             </div>
@@ -431,7 +407,7 @@
                 </div>
                   <div id="tab1" class="tab_cont active">
                     <div class="products_ex">
-                <img src="">
+                        <img v-for="image in product.detail" v-bind:src="RESOURCE_SERVER + image.url" style="width:100%; height:100%">
                  </div>
                    </div>
                                      
@@ -565,34 +541,7 @@
                     <!-- 미리보기 공간 -->
                 </div>
 
-                <script>
-                    var upload = document.querySelector('#upload');
-                    var preview = document.querySelector('#preview');
-
-                    upload.addEventListener('change', function(e) {
-                        var get_file = e.target.files;
-
-                        var image = document.createElement('img');
-
-                        var reader = new FileReader();
-
-                        reader.onload = (function(aImg) {
-                            console.log(1);
-
-                            return function(e) {
-                                console.log(3);
-                                aImg.src = e.target.result
-                            }
-                        })(image)
-
-                        if (get_file) {                  
-                            reader.readAsDataURL(get_file[0]);
-                            console.log(2);
-                        }
-
-                        preview.appendChild(image);
-                    })
-                </script>
+               
                 <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
             </div>
         </div>
@@ -834,34 +783,7 @@
                     <!-- 미리보기 공간 -->
                 </div>
 
-                <script>
-                    var upload = document.querySelector('#upload');
-                    var preview = document.querySelector('#preview');
-
-                    upload.addEventListener('change', function(e) {
-                        var get_file = e.target.files;
-
-                        var image = document.createElement('img');
-
-                        var reader = new FileReader();
-
-                        reader.onload = (function(aImg) {
-                            console.log(1);
-
-                            return function(e) {
-                                console.log(3);
-                                aImg.src = e.target.result
-                            }
-                        })(image)
-
-                        if (get_file) {                  
-                            reader.readAsDataURL(get_file[0]);
-                            console.log(2);
-                        }
-
-                        preview.appendChild(image);
-                    })
-                </script>
+                
                 <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
             </div>
         </div>
@@ -1185,6 +1107,83 @@
 	</div>
 	</div>
 </main>
+    <script>
+        const SHOWING_CLASS = "showing";
+        const firstSlide = document.querySelector(".slider_item:first-child");
+        function slide(){
+            const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
+            if(currentSlide){
+                currentSlide.classList.remove(SHOWING_CLASS);
+                const nextSlide = currentSlide.nextElementSibling;
+                if(nextSlide){
+                    nextSlide.classList.add(SHOWING_CLASS);
+                } else {
+                    firstSlide.classList.add(SHOWING_CLASS);
+                }
+            } else {
+                firstSlide.classList.add(SHOWING_CLASS);
+            }
+        }
+        slide();
+        setInterval(slide, 4000);
+    </script>
+     <script>
+        var upload = document.querySelector('#upload');
+        var preview = document.querySelector('#preview');
+
+        upload.addEventListener('change', function(e) {
+            var get_file = e.target.files;
+
+            var image = document.createElement('img');
+
+            var reader = new FileReader();
+
+            reader.onload = (function(aImg) {
+                console.log(1);
+
+                return function(e) {
+                    console.log(3);
+                    aImg.src = e.target.result
+                }
+            })(image)
+
+            if (get_file) {                  
+                reader.readAsDataURL(get_file[0]);
+                console.log(2);
+            }
+
+            preview.appendChild(image);
+        })
+    </script>
+    <script>
+        var upload = document.querySelector('#upload');
+        var preview = document.querySelector('#preview');
+
+        upload.addEventListener('change', function(e) {
+            var get_file = e.target.files;
+
+            var image = document.createElement('img');
+
+            var reader = new FileReader();
+
+            reader.onload = (function(aImg) {
+                console.log(1);
+
+                return function(e) {
+                    console.log(3);
+                    aImg.src = e.target.result
+                }
+            })(image)
+
+            if (get_file) {                  
+                reader.readAsDataURL(get_file[0]);
+                console.log(2);
+            }
+
+            preview.appendChild(image);
+        })
+    </script>
+    <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
     <script type="text/javascript" src="/js/product.js"></script>
 
 </body></html>

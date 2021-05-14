@@ -3,6 +3,7 @@ export type User = {
     userId?: string
     password?: string
     userName?: string
+    name?: string
     userInfo?: string
     userCellNo?: string
     userEmail?: string

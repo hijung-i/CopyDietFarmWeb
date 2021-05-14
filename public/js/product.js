@@ -1,6 +1,25 @@
 var product = {};
 var selectedOptions = new Array();
+var isExtra = false, isJeju = false;
 
+var app = new Vue({
+    el: 'main',
+    data: {
+        RESOURCE_SERVER,
+        selectedOptions,
+        product: product,
+        optionTotalPrice: 0,
+        orderDTO: {},
+        deliveryGroupList: []
+    }, methods: {
+        numberFormat,
+        deleteFromArray,
+        changeOptionCount,
+        onSubmit: function() {
+            location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
+        }
+    }
+});
 $(function() {
 
     getProductDetail();
@@ -58,6 +77,16 @@ $(function() {
         })
     });
 
+    ajaxCall('/user/login', {}, 'GET', 
+    function( data ){
+        console.log("data", data);
+        if(data.result.isLoggedIn == true) {
+            checkDeliveryAddress();
+        }
+    }, function(err) {
+        console.log("error", err);
+    })
+
 })
 
 function getProductDetail(){
@@ -70,12 +99,14 @@ function getProductDetail(){
     ajaxCallWithLogin(API_SERVER + '/product/getProductDetail', params, 'POST'
     , function (data) {
         product = data.result;
+        app.product = product;
         if(product == undefined || product.length == 0){
             // TODO: Open alert modal
             return false;
         }
         console.log(product);
         
+        app.product.discountRate = Math.round(product.discountRate);
         // 상품명
         $('.detail_title h2').html(product.productName);
         $('.v_top_name').html(product.productName);
@@ -119,6 +150,8 @@ function getProductDetail(){
         else if (product.packingType == 'B') packingTypeHtml = '냉장 (아이스박스)';
         $('.v_n_top_info .packing-type .ex').html(packingTypeHtml);
 
+<<<<<<< HEAD
+=======
 
         var optionHtml = '';
         for(var i = 0; i < product.options.length; i++){
@@ -147,6 +180,7 @@ function getProductDetail(){
         $('.products_ex_mobile').html(detailHtml);
       
         
+>>>>>>> 8728a284055fa3e941b956a00a495cb1695f9354
     }, function (err) {
         console.log("productDetail error", err);
     }, {
@@ -179,15 +213,18 @@ function addCart() {
 }
 
 function onOptionSelected(element) {
-    var selectedIndex = $(element)[0].options.selectedIndex;
+    var selectedIndex = $(element)[0].options.selectedIndex -1;
     var selectedOption = product.options[selectedIndex];
 
     // 깊은 복사
     var option = JSON.parse(JSON.stringify(selectedOption));
     option.optionCount = 1;
 
-    if(!isExistsInArray(option)) selectedOptions.push(option);
-
+    if(!isExistsInArray(option)) {
+        option.isSelected = true;
+        selectedOptions.push(option);
+        
+    }
     drawSelectedOptions();
 }
 
@@ -201,7 +238,7 @@ function isExistsInArray(option) {
 }
 
 function changeOptionCount(plus, index) {
-    var optionCount = selectedOptions[index].optionCount;
+    var optionCount = app.selectedOptions[index].optionCount;
     if(plus) {
         optionCount ++;
     } else {
@@ -212,8 +249,7 @@ function changeOptionCount(plus, index) {
             optionCount -= 1;
         }
     }
-    selectedOptions[index].optionCount = optionCount;
-    console.log(selectedOptions[index]);
+    app.selectedOptions[index].optionCount = optionCount;
     drawSelectedOptions();
 }
 
@@ -225,60 +261,63 @@ function getSelectedOptionIndex(ele) {
 
 function drawSelectedOptions() {
 
-    var html = '';
-    for(var i = 0; i < selectedOptions.length; i++) {
-        var option = selectedOptions[i];
-        var optionHtml = '';
-        optionHtml += '<div>';
-        optionHtml += '<div class="product_count">';
-        optionHtml +=        '<div class="product_title" id="seq_'+ i +'">';
-        optionHtml +=            '<h4>'+ option.optionDesc +'</h4>';
-        optionHtml +=            '<ul>';
-        optionHtml +=                '<ii><img src="/images/x_icon_login.png" style="width:8px;cursor:pointer"></ii>';
-        optionHtml +=            '</ul>';
-        optionHtml +=        '</div>';
-        optionHtml +=        '<div class="number_price">';
-        optionHtml +=            '<div class="number-input">';
-        optionHtml +=                '<button class="minus"></button>';
-        optionHtml +=                '<input class="quantity" min="1" name="quantity" value="'+ option.optionCount +'" type="number">';
-        optionHtml +=                '<button class="plus"></button>';
-        optionHtml +=           ' </div>';
-        optionHtml +=            '<p>'+ numberFormat(option.optionDiscountPrice * option.optionCount) +'원</p>';
+    var totalPrice = 0;
+    for(var i = 0; i < app.selectedOptions.length; i++) {
+        var option = app.selectedOptions[i];
+        totalPrice += option.optionDiscountPrice * option.optionCount;
+    }
+    app.optionTotalPrice = totalPrice;
+    
+    var requestDeliveryGroupList = new Array();
+    var deliveryGroup = new DeliveryGroupDTO();
 
-        // 총 금액은 여기서 안보여줌
-        // optionHtml +=            '<div class="t_price">';
-        // optionHtml +=                '<ul>';\
-        // optionHtml +=                    '<li class="total">총 금액</li>';
-        // optionHtml +=                    '<li>8,500원</li>';
-        // optionHtml +=               ' </ul>';
-        // optionHtml +=            '</div>';
+    var product = JSON.parse(JSON.stringify(app.product));
+    product.options = selectedOptions;
+    
+    deliveryGroup.products.push(product);
+    deliveryGroup.loadingPlace = product.loadingPlace;
+    deliveryGroup.brandCode = product.brandCode;
+    deliveryGroup.companyName = product.companyName;
+    deliveryGroup.brandName = product.brandName;
+    deliveryGroup.setDeliveryCost(isJeju, isExtra);
 
-        optionHtml +=       ' </div>';
-        optionHtml +=   ' </div>';
-        optionHtml += '</div>';
-
-        html += optionHtml;
+    console.log(deliveryGroup.totalDeliveryCost);
+    if(selectedOptions.length < 1) {
+        alert('상품을 선택해주세요.')
+        return false;
     }
 
-    $('#selectedOptionDiv').html(html);
+    requestDeliveryGroupList.push(deliveryGroup);
 
-    $('.number-input .minus').click(function() {
-        var seq = getSelectedOptionIndex($(this));
+    app.orderDTO = {
+        paymentTotalAmount: deliveryGroup.groupPrice,
+        totalDeliveryCost: deliveryGroup.totalDeliveryCost
+    }
+    app.deliveryGroupList = requestDeliveryGroupList;
+}
 
-        changeOptionCount(false, seq);
+function deleteFromArray(seq) {
+    selectedOptions.splice(seq, 1);
+    drawSelectedOptions();
+}
+
+function checkDeliveryAddress() {
+    var params = {};
+    
+    ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
+    function(data) {
+        var result = data.result;
+
+        if(result.address.includes('제주특별자치도')) {
+            isJeju = true;
+        } 
+        if(result.count > 0) {
+            isExtra = true;
+        }
+    }, function(err) {
+        console.log("error", err);
+    }, {
+        isRequired: true,
+        userId: true
     })
-    $('.number-input .plus').click(function() {
-        var seq = getSelectedOptionIndex($(this));
-
-        changeOptionCount(true, seq);
-    })
-
-    $('.product_title img').click(function() {
-        var seq = getSelectedOptionIndex($(this));
-        selectedOptions.splice(seq, 1);
-
-        drawSelectedOptions();
-    });
-
-
 }
