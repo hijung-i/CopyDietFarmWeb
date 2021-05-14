@@ -140,22 +140,16 @@ label:after {
     left: calc(100% - 18px); right: 2px; background: #EFA543;
 }
 .myReview label > span {display: none;}
-<<<<<<< HEAD
-=======
-.tabMenu_wrap{padding-bottom:4px}
->>>>>>> ec6a52e0718a4e2de841f1c922c153ab44677cb4
 .tabMenu{margin-bottom:-4px}
 .detail_title{overflow:hidden;margin-bottom:-20px;width:100%;}
 .detail_title{margin-top:20px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 .detail_title .title{width:200px;white-space: nowrap;
 overflow:hidden;text-overflow: ellipsis;margin:0 auto}
-.detail_title a img{position:absolute;top:42px;width:17px}
 .btncart{position:absolute;right:65px;top:-3px;padding:10px 0}
 .detail_title{overflow:hidden;width:100%;}
 .detail_title{margin:40px 10px 10px 10px;width:100%;}
 .detail_title h2{position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
-.detail_title a img{position:absolute;top:44px;width:17px;margin-left:5px}
 .product_top{display:flex;flex-flow:column-reverse;}
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
 #content .tabMenu ul{padding-left:25px;padding-right:25px}
@@ -223,6 +217,7 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 .review_summ{clear:both;font-size:14px;line-height:18px;margin-top:10px}
 .review_info02{border-bottom:8px solid #F1F1F1;padding-bottom:20px}
  #toc-toggle{display:none}
+.floating{display:none}
 }
 
 /*products_web*/
@@ -423,14 +418,27 @@ box-shadow: none !important}
 
 .product_count{width:305px;height:85px;border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;margin-left:-15px}
 .product_count h4{font-size:14px;margin-left:15px;}
+.product_count li img {
+  cursor: pointer;
+}
+.floating {width:383px;height:930px;
+  background-color:#FFFFFF; border:1px solid #BBBBBB;/*right:10%; top: 980px*/;float:right;position:absolute;left:776px}
+.floating .option_wrap #products{border:1px solid #424242;margin-left:10px;width:305px;height:36px}
+  .option_wrap{ overflow:hidden;margin-bottom:40px;padding-left:39px;padding-right:15px;margin-top:33px}
+  }
+  .floating .total_price p{margin-right:27px}
+  .floating .option_wrap h3{margin-bottom:8px;font-size:14px;margin-left:19px}
+  .floating .product_option select{width:305px;height:36px;border-radius:5px;margin-top:20px}
+  .floating .common_btn_wrap{margin-left:14px}
 .product_title{display:flex;justify-content:space-between;padding-right:15px;padding-top:10px;}
 .t_price{border-top:1px solid #F1F1F1;padding-top:5px;}
 .t_price ul{display:flex;justify-content:space-between;margin-left:15px;margin-right:15px;padding-bottom:14px}
 .t_price li{font-size:14px;}
-.line_w{width:305.44px;border-bottom:1px solid #E4E4E4;padding-top:30px;margin-bottom:-30px;margin-left:-15px}
+.floating #selectedOptionDiv{margin-left:24px}
+.floating .line_w{width:305.44px;border-bottom:1px solid #E4E4E4;padding-top:30px;margin-bottom:-30px;margin-left:10px}
 .total_price{float:right;margin-top:50px}
 .total_price p{font-size:14px;font-weight:bold}
-.total_price p span{color:#F99319;font-weight:'나눔고딕'}
+.total_price p span{margin-left: 20px;}
 .review_img ul li img{float:right}
 
 #tab4 .inquiry{font-size:18px;font-weight:bold;clear:both;padding-top:60px;margin-bottom:-40px}

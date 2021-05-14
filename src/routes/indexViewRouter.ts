@@ -134,7 +134,7 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
         mainAddressYn: ''
     }
     try {
-
+        console.log(sessionUser)
         if (req.session.isLoggedIn === true) {
             orderDTO.userId = sessionUser!.userId
             orderDTO.userName = sessionUser!.userName
@@ -208,7 +208,7 @@ router.get('/benefits', (req: Request, res: Response, next: NextFunction) => {
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {
-    res.locals.isLoggedIn = req.session.isLoggedIn
+    res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
 
     res.render(view, data || null)
