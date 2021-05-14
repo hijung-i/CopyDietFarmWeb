@@ -2,7 +2,7 @@
 body{min-width:360px}
 
 .detail_title{margin:42px 10px 32px 0px;width:100%;}
-.detail_title a img{position:absolute;top: 44px;width:17px;left:10px}
+.detail_title a img{position:relative;margin-top:-50px;width:17px}
 .btndelete{position:absolute;top:4px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 #btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}

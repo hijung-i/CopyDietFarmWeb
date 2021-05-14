@@ -88,9 +88,9 @@
         </div>
         <div class="deliver_info">
             <h3><img src="images/asterisk.png"> 배송지 정보 </h3>
-            <div class="members"  v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
-                <span class="addr">{{ orderDTO.delivery.address }}</span><br>
-                <span class="name">{{ orderDTO.delivery.userName }}</span>
+            <div class="members"  v-if="orderDTO.userId != '비회` 원주문' && orderDTO.delivery != undefined">
+                <span class="addr" style="margin-bottom:13px">{{ orderDTO.delivery.address }}</span><br>
+                <span class="name" style="margin-right:18px">{{ orderDTO.delivery.userName }}</span>
                 <span class="num">{{ orderDTO.delivery.userCellNo }}</span>
             </div>
             <div class="non_members" v-if="orderDTO.userId == '비회원주문'">

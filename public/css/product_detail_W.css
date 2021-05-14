@@ -140,22 +140,17 @@ label:after {
     left: calc(100% - 18px); right: 2px; background: #EFA543;
 }
 .myReview label > span {display: none;}
-<<<<<<< HEAD
-=======
-.tabMenu_wrap{padding-bottom:4px}
->>>>>>> ec6a52e0718a4e2de841f1c922c153ab44677cb4
 .tabMenu{margin-bottom:-4px}
 .detail_title{overflow:hidden;margin-bottom:-20px;width:100%;}
 .detail_title{margin-top:20px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 .detail_title .title{width:200px;white-space: nowrap;
 overflow:hidden;text-overflow: ellipsis;margin:0 auto}
-.detail_title a img{position:absolute;top:42px;width:17px}
+.detail_title a img{position:relative;margin-top:-50px;width:17px}
 .btncart{position:absolute;right:65px;top:-3px;padding:10px 0}
 .detail_title{overflow:hidden;width:100%;}
 .detail_title{margin:40px 10px 10px 10px;width:100%;}
 .detail_title h2{position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
-.detail_title a img{position:absolute;top:44px;width:17px;margin-left:5px}
 .product_top{display:flex;flex-flow:column-reverse;}
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
 #content .tabMenu ul{padding-left:25px;padding-right:25px}

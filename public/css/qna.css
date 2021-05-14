@@ -36,7 +36,7 @@ html, body {max-width: 100%;overflow-x: hidden;
 .detail_title{overflow:hidden;width:100%;}
 .detail_title{margin:40px 10px 10px 10px;width:100%;}
  .detail_title h2{position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
-.detail_title a img{position:absolute;top:44px;width:17px;margin-left:5px}
+ .detail_title a img{position:relative;margin-top:-50px;width:17px}
 
 .review_edit ul li{float:left;}
 .inquiry{width:100%;}
