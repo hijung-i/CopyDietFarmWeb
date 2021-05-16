@@ -16,7 +16,8 @@ var app = new Vue({
         deleteFromArray,
         changeOptionCount,
         onSubmit: function() {
-            location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
+            console.log(app.deliveryGroupList, app.orderDTO); 
+            // location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
         }
     }
 });
@@ -152,6 +153,8 @@ function getProductDetail(){
 
     }, function (err) {
         console.log("productDetail error", err);
+        alert('상품 정보를 불러오지 못했습니다.');
+        location.href = '/';
     }, {
         isRequired: false,
         userId : true
