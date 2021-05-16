@@ -213,7 +213,7 @@ a:hover{text-decoration:none;}
 .instant-search,.instant-search__input-container {border-radius: 5px;}
 
 .instant-search__input-container {display: inline-flex; box-sizing: border-box; width: 90%;padding: 2px;background: #eeeeee; height: 45px;}
-.instant-search__input-container img {position: absolute; right: 65px; top: 8px;}
+.instant-search__input-container img {position: relative; right: 0; top: 6px;}
 
 .instant-search__input-container:focus-within {
   background: #ffffff;}
@@ -226,7 +226,8 @@ a:hover{text-decoration:none;}
   font-size: 0.8em;cursor: pointer;}
 #searchUsers {display:flex; align-items: center;}
 .m_slid_2dep_brand{height:350px;overflow-x:scroll}
-.brand{width:100%;}
+.brand{width:100%; height: 500px; overflow-y: auto;}
+.brand >ul {height: 700px;}
 .categ{border-bottom:8px solid #F1F1F1; padding-bottom:20px;}
 .categ > ul {display: flex; padding: 20px 16px 0;}
 .categ .all a{font-weight:bold;color:#31845B}

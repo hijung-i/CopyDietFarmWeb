@@ -54,7 +54,7 @@ function sideTabOpen() {
     var height = $('.web_cate').outerHeight();
 
     $('.sideMenu').show().animate({
-        left: 0
+        left: x
     });
     $('.sideMenu').css({
         //'position': 'absolute',
@@ -130,7 +130,7 @@ $(function() {
                 overflow:'hidden'
             });
             $('.sideMenu').css ({
-                position
+                
             })
         });
 

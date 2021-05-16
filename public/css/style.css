@@ -105,6 +105,7 @@ a:hover{text-decoration:none;}
  }
 @media screen and (max-width:1079px){
   .top_banner img {width:100%}
+  .sideMenu {z-index: 9999; position: relative; top: 0 !important;}
   #header .gnb{position:fixed;width:100%;background-color:#fff}
   .content_main .main_img{padding-top:100px}
   .content_main .bxslider li img{width:auto;height:419px!important;}
@@ -125,7 +126,7 @@ a:hover{text-decoration:none;}
   #nav{position: absolute; width:360px; height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none;}
   .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin-top: 15px; overflow: auto;}
   #nav::-webkit-scrollbar{ display:none; }
-  .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin: 15px 0 20px 0; overflow: auto; -ms-overflow-style: none;}
+  .nav_wrap {position: relative; width: 310px; height: 27px; overflow-x: auto; -ms-overflow-style: none;}
   .nav_wrap::-webkit-scrollbar {display:none;}
   #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
   .top_util, .searchbox, #nav .web_cate{display:none}
@@ -137,6 +138,7 @@ a:hover{text-decoration:none;}
 }
 @media screen and (min-width:1080px){
   .top_banner{display:none}
+  .main_banner{display: none;}
   section.brand, div#tab2 {display: none;}
   .sideMenu .tabMenu {display: none;}
   .multiple_bxslider li img{width:auto;height:auto;padding:10px;border-radius:5px}
@@ -163,13 +165,13 @@ a:hover{text-decoration:none;}
   #nav a:hover{background-color:#F99319;color:#fff}
   #nav .web_cate img{width:19.44px; margin: 5px 11px;}
   #nav .web_cate{width:168px;height:54px;white-space:nowrap; position: relative;}
-  .sideMenu{display:none} 
+  .sideMenu{display:none; position: absolute !important;} 
   .downArrow{display:none}
   .mDepth01{position:absolute; border:1px solid #f5f5f5}
   .mDepth01 > li {width: 168px; height: 54px; position: relative;}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
-  .gnb_depth02{ display:inline-block; width:372px; height:488px; text-align:left}
+  .gnb_depth02{ display:inline-block; width:372px; height:542px; text-align:left}
  .etc{position:relative;left:240px;top:-80px}
   /* footer web */
   #footer {width:100%;min-width:1080px;}
@@ -191,6 +193,7 @@ a:hover{text-decoration:none;}
   .accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
   .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
   li.footer_ctt_tit > h3 {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; color: #6B6B6B;}
+  .sideMenu .mDepth01 dd {position: absolute; left: 168px;}
 }
 
 .slideMenu_top {
@@ -243,7 +246,7 @@ a:hover{text-decoration:none;}
    justify-content: space-between;
 }
 /* 사이드 메뉴 gnb 애니메이션 */
-.sideMenu .tabMenu {width:100%; position: relative; top: 0; left: 0;}
+.sideMenu .tabMenu {width:100%; position: relative; top: 0; left: 0; height: 30px;}
 .tab_wrap{width:100%;border-bottom: none; display: flex; width: 100%; margin: 0 auto; position: relative; background: #fff;}
 .tab_wrap li {
   flex: 1;
@@ -271,7 +274,7 @@ a:hover{text-decoration:none;}
 /* 메뉴 아이콘 */
 
 .btn_ctn {width: 100%; height: auto;background: #ccc}
-/* #mHeader */ .sideMenu{display:none; position:relative; left:-100%; top:6px; width:100%; min-width: 360px; height: 100vh; background: #fff;}
+/* #mHeader */ .sideMenu{display:none; width:100%; min-width: 360px; height: 100vh; background: #fff;}
 .sideMenu h2{padding:15px 10px;text-align:left;position:relative;
 height:50px;overflow:hidden}
         
@@ -315,8 +318,8 @@ height:50px;overflow:hidden}
 .body_bottom .desc ul{margin-left:5px}
 .body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
-.sideMenu_Header { position: fixed; min-width: 360px; width: 100%;  height: 158px; background: #fff; top: 0;}
-.sideMenu #tab1 {width: 100%; min-width: 360px; position: absolute; top: -27px;}
+.sideMenu_Header { min-width: 360px; width: 100%;  height: 134px; z-index: 999; background: #fff;}
+.sideMenu #tab1 {width: 100%; min-width: 360px;}
 }
 @media screen and (min-width:1080px){
 .mobile_index{display:none}
@@ -401,7 +404,7 @@ height:50px;overflow:hidden}
   #content .w_best li .desc ul{margin-left:-1px}
   #content .w_best li .desc ul li{margin-left:7px;margin-bottom:20px;float:left}
   #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
-  .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 9999; background: #fff;}
+  .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 999; background: #fff;}
   .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
 
   /*  모바일 depth02 */
