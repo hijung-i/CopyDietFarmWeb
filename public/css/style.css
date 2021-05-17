@@ -299,6 +299,7 @@ height:50px;overflow:hidden}
 @media screen and (max-width:1079px){
   /*헤더*/
   .top_banner img {width:100%}
+  .sideMenu {z-index: 9999; position: relative; top: 0 !important;}
   #header .gnb{position:fixed;width:100%;background-color:#fff}
   .content_main .main_img{padding-top:100px}
    #header{margin-bottom:20px}
@@ -315,7 +316,7 @@ height:50px;overflow:hidden}
   #nav{position: absolute; width:360px; height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none;}
   .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin-top: 15px; overflow: auto;}
   #nav::-webkit-scrollbar{ display:none; }
-  .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin-top: 15px; overflow: auto; -ms-overflow-style: none;}
+  .nav_wrap {position: relative; width: 310px; height: 27px; overflow-x: auto; -ms-overflow-style: none;}
   .nav_wrap::-webkit-scrollbar {display:none;}
   #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
   .top_util, .searchbox, #nav .web_cate{display:none}
@@ -493,6 +494,7 @@ font-weight:bold;border-radius:5px;font-family:'나눔고딕';margin-top:15px}
 @media screen and (min-width:1080px){
   /*헤더*/
   .top_banner{display:none}
+  .main_banner{display: none;}
   section.brand, div#tab2 {display: none;}
   .sideMenu .tabMenu {display: none;}
   .multiple_bxslider li img{width:auto;height:auto;padding:10px;border-radius:5px}
@@ -519,13 +521,13 @@ font-weight:bold;border-radius:5px;font-family:'나눔고딕';margin-top:15px}
   #nav a:hover{background-color:#F99319;color:#fff}
   #nav .web_cate img{width:19.44px; margin: 5px 11px;}
   #nav .web_cate{width:168px;height:54px;white-space:nowrap; position: relative;}
-  .sideMenu{display:none} 
+  .sideMenu{display:none; position: absolute !important;} 
   .downArrow{display:none}
   .mDepth01{position:absolute; border:1px solid #f5f5f5}
   .mDepth01 > li {width: 168px; height: 54px; position: relative;}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
-  .gnb_depth02{ display:inline-block; width:372px; height:488px; text-align:left}
+  .gnb_depth02{ display:inline-block; width:372px; height:542px; text-align:left}
  .etc{position:relative;left:240px;top:-80px}
 
  /*메인페이지-컨텐츠*/

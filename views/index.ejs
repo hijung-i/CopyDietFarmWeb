@@ -8,6 +8,8 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no" />
     <meta name="format-detection" content="no" />
     <title>다이어트 Farm</title>
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <%-include('general/head') %>
 
 <style type="text/css">
@@ -74,7 +76,7 @@
     .sp_wrap{padding-top:65px}
 
     /* 웹 메인 슬라이더  */
-    #slider_main {position: relative; width: 100%; margin: 0 auto; overflow: hidden;} 
+    /* #slider_main {width: 100%; margin: 0 auto; overflow: hidden;} 
     .slider_main_wrap {
         position: relative;
         width: 1080px; height: 370px;
@@ -92,13 +94,49 @@
         letter-spacing: 3px;
         line-height: 26px; 
     }
-    .slider_main_wrap div {
-        position: absolute;
-        top: 0; left: 0;
-        display: none;
+    .slider_main_wrap img {width: 1080px; height: 370px;} */
     }
-    .slider_main_wrap img {width: 1080px; height: 370px;}
-    }
+
+    /* swiper bundle */
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper-pagination {
+        width: 64px; height: 26px; 
+        border-radius: 13px; 
+        background: #fff; 
+        line-height: 26px; 
+        left: 1000px; bottom: 25px;
+      }
     </style>
 
 <link rel="stylesheet" href="/css/style.css">
@@ -107,15 +145,15 @@
 <body>
     <%-include('general/header') %>
     <main id="content" class="content_main">
-        <div id="slider_main">
-            <div class="slider_main_wrap" val="1" mx="4">
-                <div class="slider_item1"><img src="/images/m_img1.jpg" alt="슬라이더1"></div>
-                <div class="slider_item2"><img src="/images/m_img2.jpg" alt="슬라이더1"></div>
-                <div class="slider_item3"><img src="/images/m_img3.jpg" alt="슬라이더1"></div>
-                <div class="slider_item4"><img src="/images/m_img4.jpg" alt="슬라이더1"></div>
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="/images/m_img1.jpg" alt="1/7"></div>
+              <div class="swiper-slide"><img src="/images/m_img2.jpg" alt="2/7"></div>
+              <div class="swiper-slide"><img src="/images/m_img3.jpg" alt="3/7"></div>
+              <div class="swiper-slide"><img src="/images/m_img4.jpg" alt="4/7"></div>
             </div>
-            <div class="main_slide_pager">1/7</div>
-        </div>
+            <div class="swiper-pagination"></div>
+          </div>
         <!--//메인 이미지-->
         <div class="catgor_wrap">
             <div class="category">
@@ -345,7 +383,7 @@
      
     </main>
     <%-include('general/footer') %>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         imgslide(); //페이지가 로딩될 때 함수 실행
         function imgslide(){
             $val = $(".slider_main_wrap").attr("val"); // 현재 이미지 번호 가져오기
@@ -357,7 +395,22 @@
             $(".slider_main_wrap").attr('val',$val); //변경된 이미지영역의 번호를 부여합니다.
             setTimeout('imgslide()',3000); //1초 뒤에 다시 함수를 호출합니다.(숫자값 1000당 1초)
         }
-    </script>
+    </script> -->
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/js/index.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
 </body>
 </html>
