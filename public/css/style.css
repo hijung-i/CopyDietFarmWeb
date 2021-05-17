@@ -104,6 +104,9 @@ a:hover{text-decoration:none;}
   top:6px
  }
 @media screen and (max-width:1079px){
+  /* 상단 롤링 배너 */
+  .main_banner{height: 42px; min-width: 360px; width: 100%; position: absolute; overflow: hidden; margin-top: 24px;}
+  .main_banner img {position: absolute;}
   .top_banner img {width:100%}
   .sideMenu {z-index: 9999; position: relative; top: 0 !important;}
   #header .gnb{position:fixed;width:100%;background-color:#fff}
@@ -119,7 +122,7 @@ a:hover{text-decoration:none;}
 
   .comp_logo{width:55px; height: 28px; text-align:center;}
   .comp_logo img {width: 55px; height: 28px;}
-  .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top: 15px; justify-content: space-between; align-items: center;}
+  .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top: 15px; justify-content: space-between; align-items: center; margin-top: 81px;}
   .btnMenu {width:19.44px;height:13.67px;}
   #nav{position: absolute; width:360px; height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none;}
   .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin-top: 15px; overflow: auto;}
@@ -132,7 +135,6 @@ a:hover{text-decoration:none;}
   .body_sub_tit{display:flex;justify-content:space-between;}
   .body_sub_tit p{margin-top:26px;margin-right:15px}
   .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
-
 }
 @media screen and (min-width:1080px){
   .top_banner{display:none}
@@ -173,7 +175,6 @@ a:hover{text-decoration:none;}
  .etc{position:relative;left:240px;top:-80px}
   /* footer web */
   #footer {width:100%;min-width:1080px;}
-  /* footer_web */
   .footer_top_wrapper {width: 100%; height: 47px; border-top: 1px solid #f5f5f5; margin-top: 83px;}
   .footer_top {width: 1080px; margin: 0 auto; line-height: 47px;}
   .footer_top li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
@@ -187,6 +188,7 @@ a:hover{text-decoration:none;}
   .footer_ctt div li.padding12 {padding-bottom: 12px;}
   .footer_ctt div li.import_txt {color: #000; font-size: 14px; font-weight: 700; padding-bottom: 12px;}
   .footer_ctt div li span {color: #F99319;}
+  .footer_ctt .mobileCtn_wrap {display: flex; padding-top: 0;}
   li.topSpace {padding-top: 15px;}
   .accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
   .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
@@ -356,8 +358,10 @@ height:50px;overflow:hidden}
   .swiper-container {margin-top: 151px; position: relative;}
   .swiper-wrapper {min-width: 360px; width: 100%; height: 212px;}
   .swiper-slide img {min-width: 360px; height: 212px;}
-  .swiper-pagination {position: absolute; width: 56px; height: 20px; line-height: 20px; left: 82% !important; bottom: 25px;}
-  /* 메인 이미지 슬라이더 */
+  .swiper-pagination {position: absolute; width: 56px; height: 20px; line-height: 20px; left: 82% !important; bottom: 10px;}
+  .swiper-pagination {font-size: 12px; font-weight: 700; font-family: 'Noto Sans KR', sans-serif;}
+  .swiper-pagination-total {font-weight: 400;}
+  /* 메인 이미지 슬라이더 end */
 
   #web_only{display:none}
   .m_best h2{margin-top:24px;margin-bottom:15px;margin-left:15px;font-size:14px}
@@ -514,12 +518,27 @@ height:50px;overflow:hidden}
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
   #content .desc .ratio{color:#F32525}
   .page_wrap{display:none}
-  #footer{ width: 100%; min-width: 360px; height: 506px; margin: 45px 0; background: #F4F4F4;
+  #footer{ position: relative; bottom: 0; width: 100%; min-width: 360px; height: 547px; border-top: 8px solid #f4f4f4; margin-top: 10px;
   }
+  .footer_top {position: absolute; top: 234px; padding-top: 25px;}
   .footer_top > ul {display: flex;}
   .footer_top li {padding-right:10px;}
   .footer_top li > a {color: #878787;  font-weight: 700;}
-  .footer_top_wrapper {padding: 25px 26px;}
+  .footer_ctt_wrapper, .footer_top_wrapper {padding: 25px 26px 0;}
+  .dietFarm_info {position: absolute; top: 279px;}
+  .mobileCtn_wrap {position: absolute; top: 31px; display: flex; justify-content: space-between; text-align: center; color: #6B6B6B;}
+  .accountNumver_notice{padding-right: 8px;}
+  .accountNumver_notice .notice {font-size: 12px; font-weight: 700; color: #6B6B6B; padding: 30px 0 15px;}
+  .footer_ctt_tit > h3 {font-size: 12px; padding-bottom: 15px;}
+  .import_txt {font-size: 15px; font-weight: 700; padding-bottom: 15px;}
+  .padding10, .padding12 {font-size: 12px; font-weight: 700; color: #878787;}
+  .mobileNone {display: none;}
+  .customer_center > ul button {width: 144px; height: 27px; font-size: 10px;}
+  .mobile_footer_bottom_ctn {width: 100%; height: 301px; position: relative; bottom: -246px; background: #f4f4f4; z-index: 0; float: left;}
+  .dietFarm_info .data_flow_comp >span {font-weight: 700; padding-right: 14px; color: #000;}
+  .dietFarm_info li {color: #6B6B6B; padding-bottom: 6px;}
+  .data_flow_comp {padding-top: 15px;}
+  .dietFarm_info li > span {color: #EFA543;}
 }
   /*찜한 메뉴 웹*/
   @media screen and (min-width:1080px){
