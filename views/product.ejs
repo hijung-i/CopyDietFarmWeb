@@ -14,20 +14,16 @@
     align-items:center;color:#fff;position:absolute;top:0;z-index:999;opacity:0;
     transition:opacity 1s ease-in-out}
     .slider{width:100%;height:auto;position:relative;margin-bottom:100px}
-    .slider_item img{width:100%;height:100%;background-image:no-repeat}
+    #slider_product img{width:100%;height:100%;background-image:no-repeat}
     .web_product_details{display:none}}
     @media screen and (min-width:1080px){.mobile_product_details{display:none}
-    .slider{width:100%;position:relative;margin-bottom:100px} }
-    .slider_item{width:694px!important;height:694px!important;display:flex;justify-content:center;
-    align-items:center;color:#fff;position:absolute;top:0;z-index:0;opacity:0;
-    transition:opacity 1s ease-in-out}
-    .showing{z-index:1;opacity:1}
+    #slider_product img{width:694px;height:694px}
+    .showing{z-index:1;opacity:1} }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <%-include('general/head') %>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/product_detail_W.css">
-    <link rel="stylesheet" href="/css/style02.css">
     <link rel="stylesheet" href="/css/product_details.css">
 </head>
 
@@ -49,12 +45,21 @@
 
 	<!-- contents-wrap // -->
 	<main id="content">
-        <input type="hidden" id="productCode" value="<%=productCode %>">
-        <div id="contents_wrap">
-                                      
-                    <div class="product_top">
-                        <div class="contents">	
-                            
+        <div class="product_top">
+       <div class="tabMenu">
+            <div id="detail_info" class="pdt_detai_tab_vn">
+                <div class="pdt_detai_tabinner_vn">
+             <ul class="tab_wrap" id="tab">
+                 <li class="active" data-tab="tab1"><a href="javascript:void(0);">상품설명</a></li>
+                 <li data-tab="tab2"><a href="javascript:void(0);">상세정보</a></li>
+                 <li data-tab="tab3"><a href="javascript:void(0);">리뷰<span class="v_n_numb">(282)</span></a></li>
+                 <li data-tab="tab4"><a href="javascript:void(0);">문의<span class="tab_detail_qna_count  v_n_numb">(0)</span></a></li>
+             </ul>
+             </div>
+             </div>
+           </div>
+                   <div class="contents">	
+                        <input type="hidden" id="productCode" value="<%=productCode %>">  
                             <div id="tab1_mobile" class="tab_cont active">
                                 <div class="view_wrap">
                                     <!-- 상품navi -->
@@ -66,12 +71,14 @@
                                     <div class="view_top_box">
                                         <div class="view_top_img">
                                             <div id="slider_product" class="slider">
-                                                <!-- <div class="slider_item" >
+                                                <img src="/images/dietfarmbread.jpg">
+                                                <!--//
+                                             <div class="slider_item" >
                                                     <img v-for="(image, index) in product.representative" v-bind:src="RESOURCE_SERVER + image.url">
-                                                </div> -->
-                                        
-                                            </div>
+                                         </div> -->
+                                     </div>
                                             
+                                </div>
                                 </div>
                                     <div class="v_top_txt_box">
                                         <div id="ex1" class="modal">
@@ -177,118 +184,79 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="pp_wrap">
+                                        <section class="purchased_products">
+                                            <h3>이 상품과 같이 구매한 상품들</h3>
+                                            <ul class="multiple_bxslider">
+                                                <li>
+                                                    <a href="#">
+                                                        <img src="/images/dietfarmbread.jpg" >
+                                                        <span class="price">
+                                                            <p class="title">제품이름</p>
+                                                            <ul>
+                                                                <li class="sale">23,400원</li>
+                                                                <li class="cost">26,000원</li>
+                                                                <li class="ratio">10%</li>
+                                                            </ul>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img src="/images/dietfarmbread.jpg" >
+                                                        <span class="price">
+                                                            <p class="title">제품이름</p>
+                                                            <ul>
+                                                                <li class="sale">23,400원</li>
+                                                                <li class="cost">26,000원</li>
+                                                                <li class="ratio">10%</li>
+                                                            </ul>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img src="/images/dietfarmbread.jpg" >
+                                                        <span class="price">
+                                                            <p class="title">제품이름</p>
+                                                            <ul>
+                                                                <li class="sale">23,400원</li>
+                                                                <li class="cost">26,000원</li>
+                                                                <li class="ratio">10%</li>
+                                                            </ul>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img src="/images/dietfarmbread.jpg" >
+                                                        <span class="price">
+                                                            <p class="title">제품이름</p>
+                                                            <ul>
+                                                                <li class="sale">23,400원</li>
+                                                                <li class="cost">26,000원</li>
+                                                                <li class="ratio">10%</li>
+                                                            </ul>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                      </section>
                                 </div>
-                   
+                                <div class="products_ex_mobile" style="padding:0">
+                                    <img v-for="image in product.detail" v-bind:src="RESOURCE_SERVER + image.url" style="width:100%; height:100%">
+                                </div>
 
-                        <div class="pp_wrap">
-                            <section class="purchased_products">
-                                <h3>이 상품과 같이 구매한 상품들</h3>
-                                <ul class="multiple_bxslider">
-                                    <li>
-                                        <a href="#">
-                                            <img src="/images/dietfarmbread.jpg" >
-                                            <span class="price">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="/images/dietfarmbread.jpg" >
-                                            <span class="price">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="/images/dietfarmbread.jpg" >
-                                            <span class="price">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="/images/dietfarmbread.jpg" >
-                                            <span class="price">
-                                                <p class="title">제품이름</p>
-                                                <ul>
-                                                    <li class="sale">23,400원</li>
-                                                    <li class="cost">26,000원</li>
-                                                    <li class="ratio">10%</li>
-                                                </ul>
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </section>
+
+                       
+                   
                         </div>
-                     </div>
-                </div>
-       
-				
-                </div>
-            </div>
-                </div>
-				<!-- 상품상세정보 -->
-				<div class="product_detail_content">
-                    <!--//
-			       <div class="w_tabMenu">
-                   <div id="detail_info" class="pdt_detai_tab_vn">
-                       <div class="pdt_detai_tabinner_vn">
-                    <ul class="tab_wrap" id="tab_pc">
-                        <li class="active" data-tab="tab1"><a href="javascript:void(0);">상품설명</a></li>
-                        <li data-tab="tab2"><a href="javascript:void(0);">상세정보</a></li>
-                        <li data-tab="tab3"><a href="javascript:void(0);">리뷰<span class="v_n_numb">(282)</span></a></li>
-                        <li data-tab="tab4"><a href="javascript:void(0);">문의<span class="tab_detail_qna_count  v_n_numb">(0)</span></a></li>
-                    </ul>
                     </div>
-                    </div>
-                  </div>-->
-                   </div>
-                   <script type="text/javascript">
-                    jQuery(window).scroll(function() {
-                    
-                    
-                    
-                        // 브라우저 화면 스크롤의 현재 높이가 플로팅 배너의 높이보다 클경우
-                    
-                        if(jQuery(window).scrollTop() > jQuery(".floating").offset().top) {
-                    
-                    
-                    
-                            jQuery(".option_wrap").css("position", "fixed");
-                    
-                        }
-                                  
-                    
-                        // 브라우저 화면 스크롤 현재 높이가 플로팅 배너의 높이보다 작을경우
-                    
-                        else if((jQuery(window).scrollTop() < jQuery(".floating").offset().top)) {
-                    
-                    
-                            jQuery(".option_wrap").css("position", "static");
-                    
-                        }
-                    }); 
-                    </script>
-                   <div class="floating"> 
+                 </div><!--//product_top-->
+
+
+                           
+                  <div class="floating"> 
                     <div class="option_wrap">
                                                <h3><img src="/images/star_icon_join.png">옵션선택(필수)</h3>
                                                <table class="product_option">
@@ -341,19 +309,12 @@
                        </div>
              </div>
        </div>                                    
-                               
-
-                  
-                     
-
-                        <!--//상세옵션-->
+                 <!--//상세옵션-->
                     </ul>
                 </div>             
 
-                </div>
-                <div class="products_ex_mobile" style="padding:0">
-                    <img v-for="image in product.detail" v-bind:src="RESOURCE_SERVER + image.url" style="width:100%; height:100%">
-                </div>
+             
+              
                   <div id="tab1" class="tab_cont active">
                     <div class="products_ex">
                         <img v-for="image in product.detail" v-bind:src="RESOURCE_SERVER + image.url" style="width:100%; height:100%">
@@ -1050,11 +1011,6 @@
                 </div>  
                </div>
 			   </div>
-
-
-	<!-- // contents-wrap  -->
-	</div>
-	</div>
 </main>
     <script>
         const SHOWING_CLASS = "showing";

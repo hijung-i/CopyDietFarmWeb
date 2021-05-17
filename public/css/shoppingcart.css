@@ -2,10 +2,6 @@
 *{font-family:'나눔고딕';font-weight:400}
 html, body {max-width: 100%;overflow-x: hidden}
 
-.detail_title{margin:40px 10px 20px 10px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.detail_title a img{position:relative;margin-top:-50px;width:17px}
-.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
 #shpcart_header {display: flex;background: #fff;justify-content: space-between;   padding: 8px 12px;margin-top: 20px;align-items: center;}
 
 .shpcart_cancel {font-size: 14px;padding: 0 14px;}

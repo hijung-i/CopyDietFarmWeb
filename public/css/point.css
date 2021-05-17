@@ -9,27 +9,6 @@ body {
 li {list-style-type: none;}
 a {text-decoration: none;}
 *{font-family:"Nanum Gothic";font-weight:400}
-.detail_title{
-    overflow:hidden;
-    margin:50px 10px 10px 10px;
-    width:100%;
-    justify-content: space-between;
-}
-.detail_title h2{
-    text-align:center;
-    position:relative;
-    font-weight:700;
-    font-size:16px; 
-    margin-right:10px;
-    padding-bottom: 20px;
-}
-.detail_title a img{position:relative;margin-top:-50px;width:17px}
-
-/* 뒤로가기 */
-.btnback img {
-    width: 17px; height: 17px;
-
-}
 
 /* 현재 포인트 */
 .current_point > p {

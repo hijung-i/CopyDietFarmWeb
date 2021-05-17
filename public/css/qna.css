@@ -32,12 +32,6 @@ html, body {max-width: 100%;overflow-x: hidden;
 .bbsFaq01 tr.faq_a .faq_a faq_a01{width:100%;clear:both;border-bottom:2px solid #E6E6E6;}
 
 /*판매자 문의(주문건)*/
-
-.detail_title{overflow:hidden;width:100%;}
-.detail_title{margin:40px 10px 10px 10px;width:100%;}
- .detail_title h2{position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
- .detail_title a img{position:relative;margin-top:-50px;width:17px}
-
 .review_edit ul li{float:left;}
 .inquiry{width:100%;}
 .myInquiry{width:100%;border-bottom:2px solid #E6E6E6;padding-bottom:20px}
