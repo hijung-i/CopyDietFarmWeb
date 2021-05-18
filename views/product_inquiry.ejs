@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <link rel="stylesheet" href="/css/faq.css">
-    <%-include('general/head') %>
+        <title>다이어트 Farm</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <%-include('general/head') %>
 
-</head>
+        </head>
 
-<body>
+        <body>
 
-    <section class="detail_title">
-        <h2>상품 문의</h2>
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
-        </div>
-    </section>
+            <section class="detail_title">
+                <h2>상품 문의</h2>
+                <div class="btnback">
+                    <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="">
+                    </a>
+                </div>
+            </section>
 
-    <main id="content" class="content">
-        <div class="productInquiryBox">
-            <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
-            <form>
-                <p><textarea style="border-radius:5px;width:100%;height:153px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
+            <main id="content" class="content">
+                <div class="productInquiryBox">
+                    <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
+                    <form>
+                        <p>
+                            <textarea
+                                style="border-radius:5px;width:100%;height:153px"
+                                placeholder="문의하실 내용을 입력해주세요"></textarea>
+                        </p>
 
-            </form>
-            <div class="group">
-                <input type="checkbox" id="secret">
-                <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
-            </div>
-        </div>
-        <div class="btn_area">
-            <button type="button" id="btnInquiry">등록</button>
-        </div>
-    </main>
+                    </form>
+                    <div class="group">
+                        <input type="checkbox" id="secret">
+                        <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <button type="button" id="btnInquiry">등록</button>
+                </div>
+            </main>
 
-</body></html>
+        </body>
+    </html>

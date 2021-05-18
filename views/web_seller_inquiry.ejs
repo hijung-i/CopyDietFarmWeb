@@ -1,228 +1,279 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE html > <html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주문내역</title>
- <style>
-        @media screen and (max-width:1079px) {.web_s_inquiry{display:none}}
-        @media screen and (min-width:1080px){.mobile_s_inquiry{display:none} }    
-    </style>
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/mypageAll.css">
-<link rel="stylesheet" href="/css/style_web.css">
-    <!-- select tag design plugin -->
-    <link rel="stylesheet" href="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/css/nice-select.css">
-    <script src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.js"></script> 
-    <script src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
-    <!-- modal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    <!-- main.js -->
-    <script src="/js/main.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>주문내역</title>
+                    <style>
+                        @media screen and (max-width:1079px) {
+                            .web_s_inquiry {
+                                display: none;
+                            }
+                        }
+                        @media screen and (min-width:1080px) {
+                            .mobile_s_inquiry {
+                                display: none;
+                            }
+                        }
+                    </style>
+                    <link rel="stylesheet" href="/css/style.css">
+                        <link rel="stylesheet" href="/css/mypageAll.css">
+                            <link rel="stylesheet" href="/css/style_web.css">
+                                <!-- select tag design plugin -->
+                                <link
+                                    rel="stylesheet"
+                                    href="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/css/nice-select.css">
+                                    <script src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.js"></script>
+                                    <script
+                                        src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
+                                    <!-- modal -->
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+                                    <script
+                                        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+                                    <link
+                                        rel="stylesheet"
+                                        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+                                    <!-- main.js -->
+                                    <script src="/js/main.js"></script>
+                                </head>
 
-<body>
-    
-     <script>
-         $(document).ready(function () {
-    $("#gnbAllMenu").hide();
-    $("#btnGnbOpen").click(function () {
-        $("#gnbAllMenu").slideToggle("fast");
-    });
-});
-     </script>
+                                <body>
 
-  <div class="mobile_s_inquiry">
-    <section class="detail_title">
-        <h2>판매자 문의하기 (주문건)</h2>
-        <a href="#"><img src="./images/leftarrow_ico_my.png"></a>
-    </section>
-   </div>
-   <div class="web_s_inquiry">
-    <%-include('general/header_web') %>
-   </div>
-        <div class="main_contents">
-           <div class="web_contents">
-            <div class="left">
-                <h3>마이팜</h3>
-                <div class="left_ctn">
-                    <ul>
-                        <li><img src="/images/basket_ico.png"></li>
-                        <li><span>김수아님</span></li>
-                        <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
-                    </ul>
-                </div>
-            </div>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $("#gnbAllMenu").hide();
+                                            $("#btnGnbOpen").click(function () {
+                                                $("#gnbAllMenu").slideToggle("fast");
+                                            });
+                                        });
+                                    </script>
 
-            <div class="center">
-                <h3>포인트<img src="/images/point.png"></h3>
-                <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
-            </div>
+                                    <div class="mobile_s_inquiry">
+                                        <section class="detail_title">
+                                            <h2>판매자 문의하기 (주문건)</h2>
+                                            <a href="#">
+                                                <img src="./images/leftarrow_ico_my.png"></a>
+                                            </section>
+                                        </div>
+                                        <div class="web_s_inquiry">
+                                            <%-include('general/header_web') %>
+                                            </div>
+                                            <div class="main_contents">
+                                                <div class="web_contents">
+                                                    <div class="left">
+                                                        <h3>마이팜</h3>
+                                                        <div class="left_ctn">
+                                                            <ul>
+                                                                <li>
+                                                                    <img src="/images/basket_ico.png"></li>
+                                                                    <li>
+                                                                        <span>김수아님</span>
+                                                                    </li>
+                                                                    <li>내정보
+                                                                        <span>
+                                                                            <i class="fas fa-chevron-right"></i>
+                                                                        </span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
 
-            <div class="right">
-                <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
-                <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
-            </div>
-       </div>
-        </div>
-            <nav class="content_lnb">
-                <ul>
-                    <li><a href="/orderlist">주문내역</a></li>
-                    <li style="white-space:nowrap"><a href="/delivery-management">배송지 관리</a></li>
-                    <li><a href="/p_review">상품 리뷰</a></li>
-                    <li><a href="/p_inquiry">상품 문의</a></li>
-                    <li class="on" style="white-space:nowrap;"><a href="/s_inquiry">판매자 문의</a></li>
-                    <li><a href="/point">포인트</a></li>
-                    <li><a href="/coupon">쿠폰</a></li>
-                </ul>
-            </nav>
-                <div class="contents">
-                <h3 class="web_title">판매자 문의(주문건)</h3>
-                           <div class="inquiryBox">
-            <ul>
-                <li>
-                    <h3>주문번호</h3>
-                    <ul>
-                        <li>2020101920201019</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>상품</h3>
-                    <ul>
-                        <li>(아임월)굿밸런스 라이트밀 도시락</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>옵션</h3>
-                    <ul>
-                        <li>1번 바질 닭가슴살 + 구운야채 도시락</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>문의유형</h3>
-                    <ul>
-                        <li>
-                            <select>
-                                <option value="*">선택</option>
-                                <option value="01">상품</option>
-                                <option value="02">배송</option>
-                                <option value="03">반품</option>
-                                <option value="04">교환</option>
-                                <option value="05">기타</option>
-                            </select>
-                        </li>
-                    </ul>
-                </li>
-                <li class="words">
-                    <h3>내용</h3>
-                    <ul>
-                        <li>
-                            <form>
-                                <p><textarea style="border-radius:5px;width:100%;height:153px;border:1px solid #BBBBBB;padding:15px;font-size:14px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
-                            </form>
-                        </li>
-                    </ul>
-                </li>
-                <div class="filebox">
-                    <label for="upload">사진</label>
-                    <input type="file" id="upload" name="upload">
-                    <div id="preview">
-                        <div class="previewBox">
-                            <ul>
-                                <li></li>
-                                <li class="p2"></li>
-                            </ul>
-                        </div>
-                        <!-- 미리보기 공간 -->
-                    </div>
-                    <script>
-                        var upload = document.querySelector('#upload');
-                        var preview = document.querySelector('#preview');
+                                                        <div class="center">
+                                                            <h3>포인트<img src="/images/point.png"></h3>
+                                                                <p>1000 원
+                                                                    <span>
+                                                                        <i class="fas fa-chevron-right"></i>
+                                                                    </span>
+                                                                </p>
+                                                            </div>
 
-                        upload.addEventListener('change', function(e) {
-                            var get_file = e.target.files;
+                                                            <div class="right">
+                                                                <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                                                                    <p>3개
+                                                                        <span>
+                                                                            <i class="fas fa-chevron-right"></i>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <nav class="content_lnb">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="/orderlist">주문내역</a>
+                                                                </li>
+                                                                <li style="white-space:nowrap">
+                                                                    <a href="/delivery-management">배송지 관리</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/p_review">상품 리뷰</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/p_inquiry">상품 문의</a>
+                                                                </li>
+                                                                <li class="on" style="white-space:nowrap;">
+                                                                    <a href="/s_inquiry">판매자 문의</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/point">포인트</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/coupon">쿠폰</a>
+                                                                </li>
+                                                            </ul>
+                                                        </nav>
+                                                        <div class="contents">
+                                                            <h3 class="web_title">판매자 문의(주문건)</h3>
+                                                            <div class="inquiryBox">
+                                                                <ul>
+                                                                    <li>
+                                                                        <h3>주문번호</h3>
+                                                                        <ul>
+                                                                            <li>2020101920201019</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h3>상품</h3>
+                                                                        <ul>
+                                                                            <li>(아임월)굿밸런스 라이트밀 도시락</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h3>옵션</h3>
+                                                                        <ul>
+                                                                            <li>1번 바질 닭가슴살 + 구운야채 도시락</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h3>문의유형</h3>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <select>
+                                                                                    <option value="*">선택</option>
+                                                                                    <option value="01">상품</option>
+                                                                                    <option value="02">배송</option>
+                                                                                    <option value="03">반품</option>
+                                                                                    <option value="04">교환</option>
+                                                                                    <option value="05">기타</option>
+                                                                                </select>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="words">
+                                                                        <h3>내용</h3>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <form>
+                                                                                    <p>
+                                                                                        <textarea
+                                                                                            style="border-radius:5px;width:100%;height:153px;border:1px solid #BBBBBB;padding:15px;font-size:14px"
+                                                                                            placeholder="문의하실 내용을 입력해주세요"></textarea>
+                                                                                    </p>
+                                                                                </form>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <div class="filebox">
+                                                                        <label for="upload">사진</label>
+                                                                        <input type="file" id="upload" name="upload">
+                                                                            <div id="preview">
+                                                                                <div class="previewBox">
+                                                                                    <ul>
+                                                                                        <li></li>
+                                                                                        <li class="p2"></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <!-- 미리보기 공간 -->
+                                                                            </div>
+                                                                            <script>
+                                                                                var upload = document.querySelector('#upload');
+                                                                                var preview = document.querySelector('#preview');
 
-                            var image = document.createElement('img');
+                                                                                upload.addEventListener('change', function (e) {
+                                                                                    var get_file = e.target.files;
 
-                            /* FileReader 객체 생성 */
-                            var reader = new FileReader();
+                                                                                    var image = document.createElement('img');
 
-                            /* reader 시작시 함수 구현 */
-                            reader.onload = (function(aImg) {
-                                console.log(1);
+                                                                                    /* FileReader 객체 생성 */
+                                                                                    var reader = new FileReader();
 
-                                return function(e) {
-                                    console.log(3);
-                                    /* base64 인코딩 된 스트링 데이터 */
-                                    aImg.src = e.target.result
-                                }
-                            })(image)
+                                                                                    /* reader 시작시 함수 구현 */
+                                                                                    reader.onload = (function (aImg) {
+                                                                                        console.log(1);
 
-                            if (get_file) {
-                                /* 
-                                    get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
+                                                                                        return function (e) {
+                                                                                            console.log(3);
+                                                                                            /* base64 인코딩 된 스트링 데이터 */
+                                                                                            aImg.src = e.target.result
+                                                                                        }
+                                                                                    })(image)
+
+                                                                       a             if (get_file) {
+                                                                                        /*
+                                    get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고
                                     onload 에 설정했던 return 으로 넘어간다.
                                     이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
                                 */
-                                reader.readAsDataURL(get_file[0]);
-                                console.log(2);
-                            }
+                                                                                        reader.readAsDataURL(get_file[0]);
+                                                                                        console.log(2);
+                                                                                    }
 
-                            preview.appendChild(image);
-                        })
-                    </script>
+                                                                                    preview.appendChild(image);
+                                                                                })
+                                                                            </script>
 
-                    <p>문의하신 내용에 대한 답변은 <span>마이>판매자문의</span>에서 확인하실 수 있습니다.</p>
-                </div>
-            </ul>
-        </div>
-        <div class="thick_line"></div>
-        <div class="btn_area sellerInq_regist">
-            <button type="button" id="btnModify" style="margin: 0;">등록</button>
-        </div>
-                </div>
-        <!--//order-->
+                                                                            <p>문의하신 내용에 대한 답변은
+                                                                                <span>마이>판매자문의</span>에서 확인하실 수 있습니다.</p>
+                                                                        </div>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="thick_line"></div>
+                                                                <div class="btn_area sellerInq_regist">
+                                                                    <button type="button" id="btnModify" style="margin: 0;">등록</button>
+                                                                </div>
+                                                            </div>
+                                                            <!--//order-->
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".open_close").click(function () {
-                $(".toggle").toggle();
-            });
-        });
-        $(document).ready(function () {
-            $(".open_close2").click(function () {
-                $(".toggle2").toggle();
-            });
-        });
-        $(document).ready(function () {
-            $(".open_close3").click(function () {
-                $(".toggle3").toggle();
-            });
-        });
+                                                            <script type="text/javascript">
+                                                                $(document).ready(function () {
+                                                                    $(".open_close").click(function () {
+                                                                        $(".toggle").toggle();
+                                                                    });
+                                                                });
+                                                                $(document).ready(function () {
+                                                                    $(".open_close2").click(function () {
+                                                                        $(".toggle2").toggle();
+                                                                    });
+                                                                });
+                                                                $(document).ready(function () {
+                                                                    $(".open_close3").click(function () {
+                                                                        $(".toggle3").toggle();
+                                                                    });
+                                                                });
+                                                            </script>
 
-    </script>
+                                                            <script type="text/javascript">
+                                                                jQuery(document).ready(function () {
+                                                                    $("tr.order_q").click(function () {
+                                                                        if ($(this).next('tr').css("display") != "none") {
+                                                                            $(this)
+                                                                                .next('tr')
+                                                                                .hide();
+                                                                            $(this).removeClass("current");
+                                                                        } else {
+                                                                            $("tr.order_a").css('display', 'current');
+                                                                            $("tr.order_q").removeClass("current");
+                                                                            $(this)
+                                                                                .next('tr')
+                                                                                .show();
+                                                                            $(this).addClass("none");
+                                                                        }
+                                                                    });
+                                                                });
+                                                            </script>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            $("tr.order_q").click(function () {
-                if ($(this).next('tr').css("display") != "none") {
-                    $(this).next('tr').hide();
-                    $(this).removeClass("current");
-                } else {
-                    $("tr.order_a").css('display', 'current');
-                    $("tr.order_q").removeClass("current");
-                    $(this).next('tr').show();
-                    $(this).addClass("none");
-                }
-            });
-        });
-    </script>
+                                                        </body>
 
-</body>
-
-</html>
-<script src="/js/main.js"></script>
+                                                    </html>
+                                                    <script src="/js/main.js"></script>

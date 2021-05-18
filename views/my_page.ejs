@@ -1,161 +1,180 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <style type="text/css">
-        @media screen and (max-width:1079px){}
-        @media screen and (min-width:1080px){.mobile_myinfo{display:none}}
-    </style>
-    <link rel="stylesheet" href="/css/myPage.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <%-include('general/head') %>
-
-    </script>
-</head>
-
-<body>
-    <article class="skip_menu">
-        <a href="#"><span>바로가기1</span></a>
-        <a href="#"><span>바로가기2</span></a>
-        <a href="#"><span>바로가기3</span></a>
-    </article>
-    <div class="mobile_myinfo">
-        
-        <%-include('general/header_mypage') %>
-        <!--//
-       
-            <script type="text/javascript">
-                function goBack() {
-                    window.history.back();
+        <title>다이어트 Farm</title>
+        <style type="text/css">
+            @media screen and (max-width:1079px) {}
+            @media screen and (min-width:1080px) {
+                .mobile_myinfo {
+                    display: none;
                 }
-            </script>
-            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
-            </div>
+            }
+        </style>
+        <link rel="stylesheet" href="/css/myPage.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <%-include('general/head') %>
 
-            <div class="btncart"><a href="#" onclick="mCart('on');"><img src="/images/cart_icon_main@2x.png" alt="" style="width:21px;left:15px"></a>
-            </div>
-        -->
+        </script>
+    </head>
 
-    </div><!--//모바일 헤더 끝-->
-    <main id="content" class="content">
-        <div class="myPage">
-           <div class="myPage01">
-            <% if (!isLoggedIn) { %>
-                <h3>로그인 해주세요.</h3>
-                <h4>신규 회원가입시 5,000P 적립금 지급!</h4>
-                <div class="buttons">
-                    <button type="button" class="btnLogin" onClick="javascript:location.href='/login-form';"><img src="/images/login_icon_my@2x.png" style="position:relative;margin-right:7px;width:20px;height:20px">로그인</button>
-                    <button type="button" class="btnSignup" onClick="javascript:location.href='/sign-up-form';"><img src="/images/join_icon_my@2x.png" style="position:relative;margin-right:7px;width:20px;height:20px">회원가입</button>
+    <body>
+        <article class="skip_menu">
+            <a href="#">
+                <span>바로가기1</span></a>
+            <a href="#">
+                <span>바로가기2</span></a>
+            <a href="#">
+                <span>바로가기3</span></a>
+        </article>
+        <div class="mobile_myinfo">
+
+            <%-include('general/header_mypage') %>
+                <!--// <script type="text/javascript"> function goBack() {
+                window.history.back(); } </script> <div class="btnback"><a href="#" value="취소"
+                onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""
+                style="width:17px"> </a> </div> <div class="btncart"><a href="#"
+                onclick="mCart('on');"><img src="/images/cart_icon_main@2x.png" alt=""
+                style="width:21px;left:15px"></a> </div> -->
+
+            </div>
+            <!--//모바일 헤더 끝-->
+            <main id="content" class="content">
+                <div class="myPage">
+                    <div class="myPage01">
+                        <% if (!isLoggedIn) { %>
+                            <h3>로그인 해주세요.</h3>
+                            <h4>신규 회원가입시 5,000P 적립금 지급!</h4>
+                            <div class="buttons">
+                                <button
+                                    type="button"
+                                    class="btnLogin"
+                                    onclick="javascript:location.href='/login-form';"><img
+                                    src="/images/login_icon_my@2x.png"
+                                    style="position:relative;margin-right:7px;width:20px;height:20px">로그인</button>
+                                <button
+                                    type="button"
+                                    class="btnSignup"
+                                    onclick="javascript:location.href='/sign-up-form';"><img
+                                    src="/images/join_icon_my@2x.png"
+                                    style="position:relative;margin-right:7px;width:20px;height:20px">회원가입</button>
+                            </div>
+                            <% } else if (isLoggedIn) { %>
+                                <ul style="border:none;">
+                                    <li style="font-size:16px;font-weight:bold;"><%=sessionUser.userName %>님</li>
+                                    <li>
+                                        <a href="javascript:location.href='/myinfo-usercheck';">내정보&nbsp;&nbsp;<img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></a>
+                                    </li>
+                                </ul>
+                            <% } %>
+                        </div>
+                        <div class="myPage01_2">
+                            <ul class="invite">
+                                <li><img src="/images/gift_icon@2x.png">친구 초대</li>
+                                <li>
+                                    <a href="/invite">2,000P 받기</a>
+                                </li>
+                            </ul>
+                            <ul style="border:none" class="benefits">
+                                <li><img src="/images/gift_icon@2x.png">이벤트</li>
+                                <li>
+                                    <a href="/benefits">혜택받기</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="myPage02">
+                            <a href="javascript:location.href='/point';">
+                                <ul>
+                                    <li>포인트</li>
+                                    <li>300원&nbsp;&nbsp;<img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                            <a href="javascript:location.href='/coupon';">
+                                <ul style="border:none">
+                                    <li>쿠폰</li>
+                                    <li>2장&nbsp;&nbsp;<img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="myPage03">
+                            <a href="javascript:location.href='/orderlist';">
+                                <ul>
+                                    <li>주문내역</li>
+                                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                            <a href="/delivery-management">
+                                <ul>
+                                    <li>배송지 관리</li>
+                                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                            <a href="javascript:location.href='/p_review';">
+                                <ul>
+                                    <li>상품 리뷰</li>
+                                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                            <a href="javascript:location.href='/p_inquiry';">
+                                <ul>
+                                    <li>상품 문의</li>
+                                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                            <a href="javascript:location.href='/s_inquiry';">
+                                <ul style="border:none">
+                                    <li>판매자 문의 (주문건)</li>
+                                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="myPage04">
+                            <a href="javascript:location.href='/notice';">
+                                <ul>
+                                    <li>공지사항</li>
+                                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                            <a href="javascript:location.href='/faq';">
+                                <ul>
+                                    <li>FAQ</li>
+                                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                            <a href="javascript:location.href='/cs-center';">
+                                <ul>
+                                    <li>고객센터</li>
+                                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                            <a href="javascript:location.href='/alarm';">
+                                <ul style="border:none">
+                                    <li>알림설정</li>
+                                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
+                                </ul>
+                            </a>
+                        </div>
+                        <!--// <div class="myPage05"> <ul style="border:none"> <li><a
+                        href="#">로그아웃</a></li> </ul> </div>-->
+                        <div class="myPage06">
+                            <ul style="border:none">
+                                <li>버전정보 1.00.0</li>
+                                <li>
+                                    <a href="">업데이트</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
-            <% } else if (isLoggedIn) { %>
-                <ul style="border:none;">
-                    <li style="font-size:16px;font-weight:bold;"><%=sessionUser.userName %>님</li>
-                    <li><a href="javascript:location.href='/myinfo-usercheck';">내정보&nbsp;&nbsp;<img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></a></li>
-                </ul>
-            <% } %>
-            </div>
-            <div class="myPage01_2">
-                <ul class="invite">
-                    <li><img src="/images/gift_icon@2x.png">친구 초대</li>
-                    <li><a href="/invite">2,000P 받기</a></li>
-                </ul>
-                <ul style="border:none" class="benefits">
-                    <li><img src="/images/gift_icon@2x.png">이벤트</li>
-                    <li><a href="/benefits">혜택받기</a></li>
-                </ul>
-            </div>
-            <div class="myPage02">
-                <a href="javascript:location.href='/point';">
-                 <ul>
-                    <li>포인트</li>
-                    <li>300원&nbsp;&nbsp;<img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-              </a>
-             <a href="javascript:location.href='/coupon';">
-                <ul style="border:none">
-                    <li>쿠폰</li>
-                    <li>2장&nbsp;&nbsp;<img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-               </a>
-                </div>
-             <div class="myPage03">
-           <a href="javascript:location.href='/orderlist';">
-                <ul>
-                    <li>주문내역</li>
-                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-            </a>
-            <a href="/delivery-management">
-                <ul>
-                    <li>배송지 관리</li>
-                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-            </a>
-            <a href="javascript:location.href='/p_review';">
-                <ul>
-                    <li>상품 리뷰</li>
-                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-            </a>
-            <a href="javascript:location.href='/p_inquiry';">
-                <ul>
-                    <li>상품 문의</li>
-                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-            </a>
-            <a href="javascript:location.href='/s_inquiry';">
-                <ul style="border:none">
-                    <li>판매자 문의 (주문건)</li>
-                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-            </a>
-            </div>
-            <div class="myPage04">
-                <a href="javascript:location.href='/notice';">
-                <ul>
-                    <li>공지사항</li>
-                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-                </a>
-                <a href="javascript:location.href='/faq';">
-                <ul>
-                    <li>FAQ</li>
-                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-             </a>
-             <a href="javascript:location.href='/cs-center';">
-                <ul>
-                    <li>고객센터</li>
-                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-            </a>
-            <a href="javascript:location.href='/alarm';">
-                <ul style="border:none">
-                    <li>알림설정</li>
-                    <li><img src="/images/arrow_ico_join.png" style="width:11px;height:18px"></li>
-                </ul>
-            </a>
-            </div>
-        <!--//   <div class="myPage05">
-                <ul style="border:none">
-                    <li><a href="#">로그아웃</a></li>
-                </ul>
-            </div>--> 
-            <div class="myPage06">
-                <ul style="border:none">
-                    <li>버전정보 1.00.0</li>
-                    <li><a href="">업데이트</a></li>
-                </ul>
-            </div>
+            </main>
 
-        </div>
-    </div>
-    </main>
-
-</body></html>
+        </body>
+    </html>

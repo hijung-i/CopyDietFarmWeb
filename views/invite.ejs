@@ -1,58 +1,80 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/myPage.css">
-    <style type="text/css">
-        @media screen and (max-width:1079px) {.web_invite{display:none}}
-        @media screen and (min-width:1080px)and (max-width:5000px){.mobile_invite{display:none} }
-        
-        </style>
-    <%-include('general/head') %>
-</head>
-
-<body>
-    <div class="web_invite">
-     <%-include('general/header') %>
-    </div><!--//web_invite-->
-    <div class="mobile_invite">
-        <section class="detail_title">
-            <h2>친구 초대</h2>
-            <script type="text/javascript">
-                function goBack() {
-                    window.history.back();
+        <title>다이어트 Farm</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/myPage.css">
+        <style type="text/css">
+            @media screen and (max-width:1079px) {
+                .web_invite {
+                    display: none;
                 }
-            </script>
-            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
-            </div>
-        </section>
-    </div>
-        <main id="content" class="content">
-           <div class="invite_img">
-               <img src="/images/coins_icon_event.png" width="100%">
-           </div>
-            <div class="f_recommd">
-               <h3>참여방법</h3>
-               <h4>STEP 1</h4>
-               <p><span>친구에게</span> 다이어트팜 앱을 <span>공유</span>한다.</p>
-               <h4>STEP 2</h4>
-               <p>초대받은 친구가 가입시 <span>추천인 ID에 나의 ID를 </span>쓴다.</p>
-               <h4>STEP 3</h4>
-               <p>친구가 회원가입을 완료하면 <br><span> 친구도 나도 1,000P를</span>지급 받는다.</p>
-            
-            <div class="buttons">
-          <button type="button" id="btnKakao"><img src="/images/kakao_icon_event.png">초대하기</button>
-          <button type="button" id="btnURL"><img src="/images/url_icon_friend.png">복사하기</button>
-           </div>
-           </div>
-         </main>
-         <%-include('general/footer') %>
-         <script type="text/javascript" src="/js/header.js"></script>
-</body></html>
+            }
+            @media screen and (min-width:1080px)and (max-width:5000px) {
+                .mobile_invite {
+                    display: none;
+                }
+            }
+        </style>
+        <%-include('general/head') %>
+        </head>
+
+        <body>
+            <div class="web_invite">
+                <%-include('general/header') %>
+                </div>
+                <!--//web_invite-->
+                <div class="mobile_invite">
+                    <section class="detail_title">
+                        <h2>친구 초대</h2>
+                        <script type="text/javascript">
+                            function goBack() {
+                                window
+                                    .history
+                                    .back();
+                            }
+                        </script>
+                        <div class="btnback">
+                            <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
+                        </div>
+                    </section>
+                </div>
+                <main id="content" class="content">
+                    <div class="invite_img">
+                        <img src="/images/coins_icon_event.png" width="100%">
+                    </div>
+                    <div class="f_recommd">
+                        <h3>참여방법</h3>
+                        <h4>STEP 1</h4>
+                        <p>
+                            <span>친구에게</span>
+                            다이어트팜 앱을
+                            <span>공유</span>한다.</p>
+                        <h4>STEP 2</h4>
+                        <p>초대받은 친구가 가입시
+                            <span>추천인 ID에 나의 ID를
+                            </span>쓴다.</p>
+                        <h4>STEP 3</h4>
+                        <p>친구가 회원가입을 완료하면
+                            <br>
+                            <span>
+                                친구도 나도 1,000P를</span>지급 받는다.</p>
+
+                        <div class="buttons">
+                            <button type="button" id="btnKakao"><img src="/images/kakao_icon_event.png">초대하기</button>
+                            <button type="button" id="btnURL"><img src="/images/url_icon_friend.png">복사하기</button>
+                        </div>
+                    </div>
+                </main>
+                <%-include('general/footer') %>
+                    <script type="text/javascript" src="/js/header.js"></script>
+                </body>
+            </html>

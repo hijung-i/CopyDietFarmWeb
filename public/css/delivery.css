@@ -1,13 +1,3 @@
-/* 리뷰쓰기 헤더 */
-.detail_title{margin:40px 10px 20px 10px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-bottom:20px;margin-top:2px}
-.detail_title a img{position:absolute;top:42px;width:17px}
-
-/* 뒤로가기 */
-.btnback img {
-    width: 17px; height: 17px;
-}
-
 .review_title p {
     font-size: 14px;
     color: #878787;
@@ -169,7 +159,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 @media screen and (min-width:1080px){
 .del_info_content{width:350px;margin:0 auto}
-.delivery_list_null{}
+
 .btnback{display:none}}
 
 
