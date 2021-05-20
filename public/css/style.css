@@ -2064,7 +2064,7 @@ display: flex;
 .btn_area {margin-top:25px;width:100%;padding-right:15px}
 /*검색*/
 
-.instant-search {position:relative;width:100%;margin:0px auto} 
+.instant-search {position:relative;width:100%;margin:0px auto;padding-top:160px} 
 .instant-search {position:relative; width:100%;margin:10px auto;padding-left:15px;
 padding-right:15px}
 
@@ -2112,5 +2112,5 @@ padding-right:15px}
 
 /* 슬림 라인 */
 .search_line {width: 90%; height: 0.5px;background: #BBBBBB;margin: 0 auto;margin-top: 14px}
-.result-area{position: relative}
+.result-area{position: relative;}
 .search_result{background-color: #FFFFFF;position: absolute;z-index: 9999}
