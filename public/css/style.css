@@ -595,6 +595,7 @@ border-spacing: 0 20px;font-size:14px}
   .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
   li.footer_ctt_tit > h3 {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; color: #6B6B6B;}
   .sideMenu .mDepth01 dd {position: absolute; left: 168px;}
+  .shadow {display: none;}
 }
 
 .slideMenu_top {
@@ -2096,4 +2097,3 @@ padding-right:15px}
 .search_line {width: 90%; height: 0.5px;background: #BBBBBB;margin: 0 auto;margin-top: 14px}
 .result-area{position: relative}
 .search_result{background-color: #FFFFFF;position: absolute;z-index: 9999}
-}
