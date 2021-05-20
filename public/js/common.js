@@ -321,7 +321,13 @@ $(document).ready(function() {
 		$("#NotmemMenu").hide();
 	});
 
-	
+	$('ul.tab_wrap li').click(function() {
+        var activeTab = $(this).attr('data-tab');
+        $('.tab_wrap li').removeClass('active');
+        $('.tab_cont').removeClass('active');
+        $(this).addClass('active');
+        $('#' + activeTab).addClass('active');
+    })	
 });
 function niceIdentifyPopup(nextMethod) {
 	var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';

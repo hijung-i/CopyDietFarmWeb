@@ -21,8 +21,11 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/mypageAll.css">
         <link rel="stylesheet" href="/css/style_web.css">
+        <link rel="stylesheet" href="/css/product_details.css">
         <!-- main.js -->
-        <script src="./js/main.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/header.js"></script>
+        <%-include('general/head') %>
     </head>
 
     <body>
@@ -112,7 +115,7 @@
                             <ul class="tab_wrap">
                                 <li class="active on" data-tab="tab1">
                                     <span>진행중인 문의</span></li>
-                                <li data-tab="tab2" class="" id="possible">
+                                <li data-tab="tab2" id="possible">
                                     <span>완료된 문의</span></li>
                                 <span></span>
                             </ul>
@@ -358,10 +361,7 @@
             </div>
 
             <!-- modal window -->
-            <section
-                id="ex1"
-                class="modal deliver_mag_modal"
-                style="max-width: 100%; width: auto; display: none;">
+            <section id="ex1" class="modal deliver_mag_modal" style="max-width: 100%;display: none;">
                 <header class="deliver_magHeader">
                     <ul style="font-size: 18px;">
                         <li>
@@ -377,7 +377,7 @@
                     <input
                         type="text"
                         placeholder="문의하실 내용을 입력해주세요"
-                        style="width: 1018px; height: 200px;">
+                        style="padding-bottom:120px;padding-top:20px">
 
                     <div class="btn_area_modal" style="width: 330px; margin: 0 auto;">
                         <button type="button" id="btnRegister_modal">수정</button>

@@ -76,7 +76,7 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
     border-radius: 13px;
     transition: ease-in .1s;
 }
-label:after {
+.myReview label:after {
     content: ""; 
     position: absolute; 
     left: 2px; top: 50%;

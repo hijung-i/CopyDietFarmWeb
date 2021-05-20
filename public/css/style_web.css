@@ -1039,7 +1039,7 @@ delivery_manage_list .customer_info {
     align-items: center;
 }
 .deliver_mag_modal > header li > h2 {
-    font-size: 18px; font-weight: 700;
+    font-size: 14px; font-weight: 700;
     color: #000;
     padding: 0;
 }
@@ -1863,7 +1863,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
 }
 
 .detail_title{overflow:hidden;margin:40px 10px 10px 10px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px}
+.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10px;margin-bottom:20px}
 
 
 /*정보 확인하기 위한 비밀번호 입력란*/
