@@ -1,80 +1,96 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <link rel="stylesheet" href="/css/style02.css">
-    <link rel="stylesheet" href="/css/notice.css">
-    <style type="text/css">
-        @media screen and (max-width:1079px) {.web_PrivacyPolicy{display:none}}
-        @media screen and (min-width:1020px){.mobile_PrivacyPolicy{display:none} }
+        <title>다이어트 Farm</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <style type="text/css">
+            @media screen and (max-width:1079px) {
+                .web_PrivacyPolicy {
+                    display: none;
+                }
+            }
+            @media screen and (min-width:1020px) {
+                .mobile_PrivacyPolicy {
+                    display: none;
+                }
+            }
         </style>
-    <%-include('general/head') %>
-    </head>
-    <body>
-        <div class="web_PrivacyPolicy">
-        <%-include('general/header') %>
-        <main id="w_content" class="content">
-            <h2>개인정보처리방침</h2>
-            <div class="term_contents">
-                <p>㈜데이터플로는 서비스이용자의 원활한 서비스 이용을 도모하기 위하여 본 서비스와 함께 약관을 제공합니다. ㈜데이터플로는  서비스이용자에게 약관을 검토할 수 있는 합리적인 기회를 제공하였으며 회원은 본 약관에 동의하였음을 확인합니다.</p><br>
-                 <p>제1장 총칙 제 1조 (목적)</p>
-                 <br>
-                 <p> 본 약관은 ㈜데이터플로(이하 “회사”)가 제공하는 다양한 인터넷 서비스, 모바일 서비스, 앱 서비스를 이용함에 있어 상품 또는  용역을 거래하는 자 간의 권리, 의무 등 기타 필요사항,</p><br>
-                 <p>회원과 회사간의 권리, 의무, 책임사항 및 회원의 서비스 이용절차 등에  관한 사항을 규정함을 목적으로 합니다.</p><br>
-                 
-                 <p>제2조(약관의 명시, 효력 및 개정)</p><br>
-                 <p>1. 이 약관은 서비스를 통하여 이를 공지하거나 전자우편, 기타의 방법으로 회원에게 통지함으로써 효력을 발생합니다.</p><br>
-                 <p>2. 회사는 이 약관의 내용을 변경할 수 있으며, 변경된 약관은 제1항과 같은 방법으로 공지 또는 통지함으로써 효력을 발생합니다.</p><br>
-                 <p>3. 회사가 약관을 개정할 경우 적용일자 및 개정사유를 명시하여 현행 약관과 함께 제1항의 방식에 따라 개정약관의 적용일자 30일 전부터 적용일자 전까지 공지합니다.</p><br>
-                 <p> 다만, 회원의 권리 또는 의무에 관한 중요한 규정의 변경일 경우에는 최소한 30일 전에  공지하고 개정약관을 회원이 등록한 이메일로 발송하여 통지합니다.</p><br>
-                 
-                 <p>4. 회사가 전항에 따라 개정약관을 공지 또는 통지하면서 약관  변경 적용일까지 거부의사를 표시하지 않으면 의사표시가 표명된다는 내용을 알렸음에도 불구하고 </p><br>
-                 <p>회원이 명시적으로 거부의사를  표시하지 아니하는 경우, 신설 또는 변경된 약관의 효력발생일 이후에도 서비스를 계속 사용할 경우 회원이 개정약관에 동의한 것 으로 간주합니다.</p><br>
-                 <p>5. 회원은 신설 또는 변경된 약관에 동의하지 않을 경우 회원탈퇴를 요청할 수 있습니다.</p><br>
-                 
-                      
-                </div> 
-        </main>
-        </div>
-    <script>
-             $(document).ready(function(){
-            $("#gnbAllMenu").hide();
-            $("#btnGnbOpen").click(function(){
-                $("#gnbAllMenu").slideToggle("fast");
-            });
-        });
-    
-           $(document).ready(function() {
-                $(".m_slides_sub").hide();
-                $(".m_ba_slides_n_w li").hover(function(){
-                    $("ul:not(:animated)",this).slideDown("700");
-    
-                    $(".m_ba_slides_n_w li a").removeClass("active");
-                },
-                function() {
-                    $("ul",this).slideUp("700");
-                   });
-    
-                $("#memberMenu").bind("moseover mouseenter",function(){
-                    $("#memMenu").show();
-              });
-               $("#memMenu").bind("moseout mouseleave",function(){
-                    $("#memMenu").hide();
-              });
-    
-                $("#NotmemberMenu").bind("moseover mouseenter",function(){
-                    $("#NotmemMenu").show();
-              });
-               $("#NotmemMenu").bind("moseout mouseleave",function(){
-                    $("#NotmemMenu").hide();
-              });
-            });
-        </script>
-    </body>
-    </html>
+        <%-include('general/head') %>
+        </head>
+        <body>
+            <div class="web_PrivacyPolicy">
+                <%-include('general/header') %>
+                    <main id="w_content" class="content">
+                        <h2>개인정보처리방침</h2>
+                        <div class="term_contents">
+                            <p>㈜데이터플로는 서비스이용자의 원활한 서비스 이용을 도모하기 위하여 본 서비스와 함께 약관을 제공합니다. ㈜데이터플로는 서비스이용자에게
+                                약관을 검토할 수 있는 합리적인 기회를 제공하였으며 회원은 본 약관에 동의하였음을 확인합니다.</p><br>
+                            <p>제1장 총칙 제 1조 (목적)</p>
+                            <br>
+                            <p>
+                                본 약관은 ㈜데이터플로(이하 “회사”)가 제공하는 다양한 인터넷 서비스, 모바일 서비스, 앱 서비스를 이용함에 있어 상품 또는 용역을 거래하는
+                                자 간의 권리, 의무 등 기타 필요사항,</p><br>
+                            <p>회원과 회사간의 권리, 의무, 책임사항 및 회원의 서비스 이용절차 등에 관한 사항을 규정함을 목적으로 합니다.</p><br>
+
+                            <p>제2조(약관의 명시, 효력 및 개정)</p><br>
+                            <p>1. 이 약관은 서비스를 통하여 이를 공지하거나 전자우편, 기타의 방법으로 회원에게 통지함으로써 효력을 발생합니다.</p><br>
+                            <p>2. 회사는 이 약관의 내용을 변경할 수 있으며, 변경된 약관은 제1항과 같은 방법으로 공지 또는 통지함으로써 효력을 발생합니다.</p><br>
+                            <p>3. 회사가 약관을 개정할 경우 적용일자 및 개정사유를 명시하여 현행 약관과 함께 제1항의 방식에 따라 개정약관의 적용일자 30일 전부터
+                                적용일자 전까지 공지합니다.</p><br>
+                            <p>
+                                다만, 회원의 권리 또는 의무에 관한 중요한 규정의 변경일 경우에는 최소한 30일 전에 공지하고 개정약관을 회원이 등록한 이메일로 발송하여
+                                통지합니다.</p><br>
+
+                            <p>4. 회사가 전항에 따라 개정약관을 공지 또는 통지하면서 약관 변경 적용일까지 거부의사를 표시하지 않으면 의사표시가 표명된다는 내용을
+                                알렸음에도 불구하고
+                            </p><br>
+                            <p>회원이 명시적으로 거부의사를 표시하지 아니하는 경우, 신설 또는 변경된 약관의 효력발생일 이후에도 서비스를 계속 사용할 경우 회원이
+                                개정약관에 동의한 것 으로 간주합니다.</p><br>
+                            <p>5. 회원은 신설 또는 변경된 약관에 동의하지 않을 경우 회원탈퇴를 요청할 수 있습니다.</p><br>
+
+                        </div>
+                    </main>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $("#gnbAllMenu").hide();
+                        $("#btnGnbOpen").click(function () {
+                            $("#gnbAllMenu").slideToggle("fast");
+                        });
+                    });
+
+                    $(document).ready(function () {
+                        $(".m_slides_sub").hide();
+                        $(".m_ba_slides_n_w li").hover(function () {
+                            $("ul:not(:animated)", this).slideDown("700");
+
+                            $(".m_ba_slides_n_w li a").removeClass("active");
+                        }, function () {
+                            $("ul", this).slideUp("700");
+                        });
+
+                        $("#memberMenu").bind("moseover mouseenter", function () {
+                            $("#memMenu").show();
+                        });
+                        $("#memMenu").bind("moseout mouseleave", function () {
+                            $("#memMenu").hide();
+                        });
+
+                        $("#NotmemberMenu").bind("moseover mouseenter", function () {
+                            $("#NotmemMenu").show();
+                        });
+                        $("#NotmemMenu").bind("moseout mouseleave", function () {
+                            $("#NotmemMenu").hide();
+                        });
+                    });
+                </script>
+            </body>
+        </html>

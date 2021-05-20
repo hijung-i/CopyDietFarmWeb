@@ -59,7 +59,6 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 /* 주문 상세 타이틀 */
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.detail_title a img{position:relative;margin-top:-50px;width:17px}
 }
 
 /* 모바일 화면 대응 deliverymanage */

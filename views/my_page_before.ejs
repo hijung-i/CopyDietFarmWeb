@@ -1,114 +1,145 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <style>
-        #mHeader .tab_cont {
-            display: none;
-            min-height: 360px;
-        }
+        <title>다이어트 Farm</title>
+        <style>
+            #mHeader .tab_cont {
+                display: none;
+                min-height: 360px;
+            }
 
-        #mHeader .tab_cont.active {
-            display: block;
-            background: #fff;
-            position: absolute;
-            width: 100%
-        }
-    </style>
-    <link rel="stylesheet" href="/css/myPage.css">
-    <%-include('general/head') %>
+            #mHeader .tab_cont.active {
+                display: block;
+                background: #fff;
+                position: absolute;
+                width: 100%;
+            }
+        </style>
+        <link rel="stylesheet" href="/css/myPage.css">
+        <%-include('general/head') %>
 
-</head>
+        </head>
 
-<body>
-    <article class="skip_menu">
-        <a href="#"><span>바로가기1</span></a>
-        <a href="#"><span>바로가기2</span></a>
-        <a href="#"><span>바로가기3</span></a>
-    </article>
-    <%-include('general/header') %>
-    <main id="content" class="content">
-        <div class="myPage">
-            <div class="myPage01">
-                <h3>로그인 해주세요.</h3>
-                <h4>신규 회원가입시 1,000P 적립금 지급!</h4>
-                <div class="buttons">
-                    <button type="button" class="btnLogin" onClick="location.href='login.html'"><img src="/images/login_icon_my.png" style="position:relative;margin-right:7px">로그인</button>
-                    <button type="button" class="btnSignup" onClick="location.href='signup.html'"><img src="/images/join_icon_my.png" style="position:relative;margin-right:7px">회원가입</button>
-                </div>
-            </div>
-           
-            <div class="myPage02">
-                <ul>
-                    <li>포인트</li>
-                    <li><a href="#">300원&nbsp;&nbsp;<img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-                <ul style="border:none">
-                    <li>쿠폰</li>
-                    <li><a href="">2장&nbsp;&nbsp;<img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-            </div>
-            <div class="myPage03">
-                <ul>
-                    <li>주문내역</li>
-                    <li><a href="order_list.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-                <ul>
-                    <li>배송지 관리</li>
-                    <li><a href="addr_modify.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-                <ul>
-                    <li>상품 리뷰</li>
-                    <li><a href="product_review.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-                <ul>
-                    <li>상품 문의</li>
-                    <li><a href="product_inquiry.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-                <ul style="border:none">
-                    <li>판매자 문의</li>
-                    <li><a href="seller_inquiry.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-            </div>
-            <div class="myPage04">
-                <ul>
-                    <li>공지사항</li>
-                    <li><a href="notice.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-                <ul>
-                    <li>FAQ</li>
-                    <li><a href="faq.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-                <ul>
-                    <li>고객센터</li>
-                    <li><a href="cs_center.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-                <ul style="border:none">
-                    <li>알림설정</li>
-                    <li><a href="alarm.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a></li>
-                </ul>
-            </div>
-            <div class="myPage05">
-                <ul style="border:none">
-                    <li><a href="#">로그아웃</a></li>
-                </ul>
-            </div>
-            <div class="myPage06">
-                <ul style="border:none">
-                    <li>버전정보 1.00.0</li>
-                    <li><a href="#">업데이트</a></li>
-                </ul>
-            </div>
+        <body>
+            <article class="skip_menu">
+                <a href="#">
+                    <span>바로가기1</span></a>
+                <a href="#">
+                    <span>바로가기2</span></a>
+                <a href="#">
+                    <span>바로가기3</span></a>
+            </article>
+            <%-include('general/header') %>
+                <main id="content" class="content">
+                    <div class="myPage">
+                        <div class="myPage01">
+                            <h3>로그인 해주세요.</h3>
+                            <h4>신규 회원가입시 1,000P 적립금 지급!</h4>
+                            <div class="buttons">
+                                <button type="button" class="btnLogin" onclick="location.href='login.html'"><img src="/images/login_icon_my.png" style="position:relative;margin-right:7px">로그인</button>
+                                <button type="button" class="btnSignup" onclick="location.href='signup.html'"><img src="/images/join_icon_my.png" style="position:relative;margin-right:7px">회원가입</button>
+                            </div>
+                        </div>
 
-        </div>
-    </main>
+                        <div class="myPage02">
+                            <ul>
+                                <li>포인트</li>
+                                <li>
+                                    <a href="#">300원&nbsp;&nbsp;<img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                            <ul style="border:none">
+                                <li>쿠폰</li>
+                                <li>
+                                    <a href="">2장&nbsp;&nbsp;<img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="myPage03">
+                            <ul>
+                                <li>주문내역</li>
+                                <li>
+                                    <a href="order_list.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>배송지 관리</li>
+                                <li>
+                                    <a href="addr_modify.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>상품 리뷰</li>
+                                <li>
+                                    <a href="product_review.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>상품 문의</li>
+                                <li>
+                                    <a href="product_inquiry.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                            <ul style="border:none">
+                                <li>판매자 문의</li>
+                                <li>
+                                    <a href="seller_inquiry.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="myPage04">
+                            <ul>
+                                <li>공지사항</li>
+                                <li>
+                                    <a href="notice.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>FAQ</li>
+                                <li>
+                                    <a href="faq.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>고객센터</li>
+                                <li>
+                                    <a href="cs_center.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                            <ul style="border:none">
+                                <li>알림설정</li>
+                                <li>
+                                    <a href="alarm.html"><img src="/images/arrow_icon_order.png" style="width:11px;height:18px"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="myPage05">
+                            <ul style="border:none">
+                                <li>
+                                    <a href="#">로그아웃</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="myPage06">
+                            <ul style="border:none">
+                                <li>버전정보 1.00.0</li>
+                                <li>
+                                    <a href="#">업데이트</a>
+                                </li>
+                            </ul>
+                        </div>
 
-    <%-include('general/footer');
+                    </div>
+                </main>
+
+                <%-include('general/footer');
     
 </body></html>

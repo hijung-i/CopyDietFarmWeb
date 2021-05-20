@@ -1,149 +1,35 @@
-.detail_title{margin:50px 10px 20px 10px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:700;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.detail_title a img{position:relative;margin-top:-50px;width:17px}
-.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
-body{min-width:360px}
-.instant-search {
-  position:relative;
-  width:100%;
-  margin:0px auto;
-} 
+/*검색*/
 
-.instant-search {
-  position:relative;
-  width:100%;
-  margin:10px auto;
-  padding-top:140px;
-  padding-left:15px;
-  padding-right:15px
-}
-
-
+.instant-search {position:relative;width:100%;margin:0px auto} 
+.instant-search {position:relative; width:100%;margin:10px auto;padding-top:140px;padding-left:15px;
+padding-right:15px}
 .instant-search,
-.instant-search * {
-  transition: background 0.15s, box-shadow 0.15s;
-}
-
-.instant-search:focus-within {
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-
-.instant-search--loading::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2px;
-  background: #009578;
-  border-radius: 5px;
-  animation: searchIndicator 0.5s infinite ease-in-out;
-}
-
-@keyframes searchIndicator {
-  0% {
-    width: 20%;
-  }
-  50% {
-    width: 100%;
-  }
-  100% {
-    width: 15%;
-  }
-}
-
-.instant-search,
-.instant-search__input-container {
-  border-radius: 5px;
-}
-
-.instant-search__input-container {
-  display: inline-flex;
-  box-sizing: border-box;
-  width: 90%;
-  padding: 9px;
-  background: #eeeeee;
-}
-.instant-search__input-container img {
-  padding: 6px;
-}
-
-
-
-.instant-search__input {
-  flex-grow: 1;
-  border: none;
-  outline: none;
-  width: 100%;
-  padding: 0 6px;
-  background: transparent;
-}
-
-.instant-search__results-container {
-  max-height: 250px;
-  overflow-y: auto;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.1s, opacity 0.1s;
-}
-
-.instant-search__results-container--visible {
-  visibility: visible;
-  opacity: 1;
-}
-
-.instant-search__result {
-  display: block;
-  color: #333333;
-  text-decoration: none;
-  padding: 10px;
-  font-size: 0.8em;
-  cursor: pointer;
-}
-
-.instant-search__result:hover {
-  background: #eeeeee;
-}
-
-.instant-search__result:not(:last-of-type) {
-  border-bottom: 1px solid #eeeeee;
-}
-
-.instant-search__title {
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-.instant-search__paragraph {
-  line-height: 1.5;
-  margin: 8px 0;
-}
-#searchUsers {
-  display: flex;
-}
+.instant-search * {transition: background 0.15s, box-shadow 0.15s}
+.instant-search:focus-within {box-shadow: 0 0 3px rgba(0, 0, 0, 0.2)}
+.instant-search,.instant-search__input-container {border-radius: 5px}
+.instant-search__input-container {display: inline-flex;box-sizing: border-box;width: 90%;
+  padding: 9px;background: #eeeeee}
+.instant-search__input-container img {padding: 6px}
+.instant-search__input {flex-grow: 1;border: none;outline: none;width: 100%;padding: 0 6px;
+  background: transparent}
+.instant-search__results-container {max-height: 250px;overflow-y: auto;visibility: hidden;
+  opacity: 0;transition: visibility 0.1s, opacity 0.1s}
+.instant-search__results-container--visible {visibility: visible;opacity: 1}
+.instant-search__result {display: block;color: #333333;text-decoration: none;padding: 10px;
+  font-size: 0.8em;cursor: pointer}
+.instant-search__result:hover {background: #eeeeee}
+.instant-search__result:not(:last-of-type) {border-bottom: 1px solid #eeeeee}
+.instant-search__title {font-size: 1.1em;font-weight: bold}
+.instant-search__paragraph {line-height: 1.5;margin: 8px 0}
+#searchUsers {display: flex}
 
 
 /*인기 검색어*/
-.popular_wrap{
-  width:100%; margin: 15px 15px auto;
-  margin-top: 14px;
-}
+.popular_wrap{width:100%; margin: 15px 15px auto;margin-top: 14px}
 .popular{/* margin:40px 20px 40px; */ width:100%;margin-top:40px}
-
-.popular h2{
-  font-size:12px;
-  font-weight:bold;
-  margin-bottom:10px;
-  margin-left: 8px;
-}
-.popular .search_list {
-  display: flex;
-}
-.popular ul{
-  align-items: center;
-  justify-self: center;
-  width: 100%;
-  margin: 0 auto; 
-}
+.popular h2{font-size:12px;font-weight:bold;margin-bottom:10px;margin-left: 8px}
+.popular .search_list {display: flex}
+.popular ul{align-items: center;justify-self: center;width: 100%;margin: 0 auto}
 .popular ul li{padding:10px;font-size:14px;}
 .popular ul li span{color:#31845B;font-weight:bold;}
 
@@ -170,22 +56,9 @@ body{min-width:360px}
 
 
 /* 슬림 라인 */
-.search_line {
-  width: 90%; height: 0.5px;
-  background: #BBBBBB; 
-  margin: 0 auto;
-  margin-top: 14px;
-}
-
-.result-area{
-  position: relative;
-}
-
-.search_result{
-  background-color: #FFFFFF;
-  position: absolute;
-  z-index: 9999;
-}
+.search_line {width: 90%; height: 0.5px;background: #BBBBBB;margin: 0 auto;margin-top: 14px}
+.result-area{position: relative}
+.search_result{background-color: #FFFFFF;position: absolute;z-index: 9999}
 
 
 

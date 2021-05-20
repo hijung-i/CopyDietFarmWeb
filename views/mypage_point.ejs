@@ -1,199 +1,236 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포인트</title>
-     <style>
-        @media screen and (max-width:1079px) {.web_point{display:none}}
-        @media screen and (min-width:1080px){.mobile_point{display:none} }    
-    </style>
-<link rel="stylesheet" href="/css/style02.css">
-<link rel="stylesheet" href="/css/myPage.css">
-<link rel="stylesheet" href="/css/mypageAll.css">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/style_web.css">
-<%-include('general/head') %>
-<script src="/js/main.js"></script>
-
-<body>
-   <div class="mobile_point">
-    <section class="detail_title">
-        <h2>포인트</h2>
-        <script type="text/javascript">
-            function goBack() {
-                window.history.back();
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>포인트</title>
+        <style>
+            @media screen and (max-width:1079px) {
+                .web_point {
+                    display: none;
+                }
             }
-        </script>
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="뒤로가기" style="width:17px"> </a>
-        </div>
-     
-        <div id="cp" class="current_point">
-            <p>현재 포인트</p>
-            <h2><img src="./images/point_iocn_my.png" style="width:16px;position:relative;top:3px" alt=""> 3,000원</h2>
-        </div>
-    </section>
-      </div>
-      <div class="web_point">
-        <%-include('general/header') %>   
-      </div>
-      
-           <div class="main_contents">
-               <div class="web_contents">
-                <div class="left">
-                    <h3>마이팜</h3>
-                    <div class="left_ctn">
-                        <ul>
-                            <li><img src="/images/basket_ico.png"></li>
-                            <li><span>김수아님</span></li>
-                            <li>내정보 <span><i class="fas fa-chevron-right"></i></span></li>
-                        </ul>
-                    </div>
-                </div>
-    
-                <div class="center">
-                    <h3>포인트<img src="/images/point.png"></h3>
-                    <p>1000 원 <span><i class="fas fa-chevron-right"></i></span></p>
-                </div>
-    
-                <div class="right">
-                    <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
-                    <p>3개 <span><i class="fas fa-chevron-right"></i></span></p>
-                </div>
-           </div>
-            </div>
-            <div>
-                <nav class="content_lnb">
-                    <ul>
-                        <li><a href="/orderlist">주문내역</a></li>
-                        <li style="white-space:nowrap"><a href="/delivery-management">배송지 관리</a></li>
-                        <li><a href="/p_review">상품 리뷰</a></li>
-                        <li><a href="/p_inquiry">상품 문의</a></li>
-                        <li><a href="/s_inquiry">판매자 문의</a></li>
-                        <li class="on"><a href="/point">포인트</a></li>
-                        <li><a href="/coupon">쿠폰</a></li>
-                    </ul>
-                </nav>
-                <div class="contents">
-                    <h2 class="point_title_web">포인트</h2>
-                
-                  <div class="point_history_web">
-                      <ul>
-                          <li>날짜</li>
-                          <li>내용</li>
-                          <li>유효기간</li>
-                          <li>금액</li>
-                      </ul>
-                  </div>
-                    <section class="point_history">
-                        <div class="point_history_left">
-                            <ul>
-                                <li class="save">적립</li>
-                                <li class="due">2021.14.12</li>
-                                <li class="amount">+500원</li>
-                            </ul>
-                        </div>
-                        <div class="point_history_right">
-                            <ul>
-                                <li class="date">2020.11.09</li>
-                                <li class="type">구매 적립</li>
-                                <li class="brand">바디나인</li>
-                            </ul>
-                        </div>
-                    </section>
-                    <div class="point_history_line"></div>
-                    <section class="point_history">
-                        <div class="point_history_left">
-                            <ul>
-                                <li class="save">적립</li>
-                                <li class="due">2021.14.12</li>
-                                <li class="amount">+500원</li>
-                            </ul>
-                        </div>
-                        <div class="point_history_right">
-                            <ul>
-                                <li class="date">2020.11.09</li>
-                                <li class="type">구매 적립</li>
-                                <li class="brand">바디나인</li>
-                            </ul>
-                        </div>
-                    </section>
-                    <div class="point_history_line"></div>
-                    <section class="point_history">
-                        <div class="point_history_left">
-                            <ul>
-                                <li class="save">적립</li>
-                                <li class="due">2021.14.12</li>
-                                <li class="amount">+500원</li>
-                            </ul>
-                        </div>
-                        <div class="point_history_right">
-                            <ul>
-                                <li class="date">2020.11.09</li>
-                                <li class="type">구매 적립</li>
-                                <li class="brand">바디나인</li>
-                            </ul>
-                        </div>
-                    </section>
-                    <div class="point_history_line"></div>
-                    <section class="point_history">
-                        <div class="point_history_left">
-                            <ul>
-                                <li class="save">적립</li>
-                                <li class="due">2021.14.12</li>
-                                <li class="amount">+500원</li>
-                            </ul>
-                        </div>
-                        <div class="point_history_right">
-                            <ul>
-                                <li class="date">2020.11.09</li>
-                                <li class="type">구매 적립</li>
-                                <li class="brand">바디나인</li>
-                            </ul>
-                        </div>
-                    </section>
-                    <div class="point_history_line"></div>
-                    <section class="point_history">
-                        <div class="point_history_left">
-                            <ul>
-                                <li class="save">적립</li>
-                                <li class="due">2021.14.12</li>
-                                <li class="amount">+500원</li>
-                            </ul>
-                        </div>
-                        <div class="point_history_right">
-                            <ul>
-                                <li class="date">2020.11.09</li>
-                                <li class="type">구매 적립</li>
-                                <li class="brand">바디나인</li>
-                            </ul>
-                        </div>
-                    </section>
-                    <div class="point_history_line"></div>
-                    <div class="page_wrap">
-                        <div class="page_nation">
-                          <a class="arrow pprev" href="#"></a>
-                          <a class="arrow prev" href="#"></a>
-                          <a href="#" class="active">1</a>
-                          <a href="#">2</a>
-                          <a href="#">3</a>
-                          <a href="#">4</a>
-                          <a href="#">5</a>
-                          <a href="#">6</a>
-                          <a href="#">7</a>
-                          <a href="#">8</a>
-                          <a href="#">9</a>
-                          <a href="#">10</a>
-                          <a class="arrow next" href="#"></a>
-                          <a class="arrow nnext" href="#"></a>
-                        </div>
-                     </div>
-                </div>
+            @media screen and (min-width:1080px) {
+                .mobile_point {
+                    display: none;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="/css/myPage.css">
+        <link rel="stylesheet" href="/css/mypageAll.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style_web.css">
+        <%-include('general/head') %>
+            <script src="/js/main.js"></script>
 
-            </div>
-    <script src="./js/common.js"></script>
-    <script src="./js/header.js"></script>
-    <%-include('general/footer') %>
-</body></html>
+            <body>
+                <div class="mobile_point">
+                    <section class="detail_title">
+                        <h2>포인트</h2>
+                        <script type="text/javascript">
+                            function goBack() {
+                                window
+                                    .history
+                                    .back();
+                            }
+                        </script>
+                        <div class="btnback">
+                            <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="뒤로가기" style="width:17px">
+                            </a>
+                        </div>
+
+                        <div id="cp" class="current_point">
+                            <p>현재 포인트</p>
+                            <h2><img
+                                src="/images/point_iocn_my.png"
+                                style="width:16px;position:relative;top:3px"
+                                alt="">
+                                3,000원</h2>
+                        </div>
+                    </section>
+                </div>
+                <div class="web_point">
+                    <%-include('general/header') %>
+                    </div>
+
+                    <div class="main_contents">
+                        <div class="web_contents">
+                            <div class="left">
+                                <h3>마이팜</h3>
+                                <div class="left_ctn">
+                                    <ul>
+                                        <li><img src="/images/basket_ico.png"></li>
+                                        <li>
+                                            <span>김수아님</span></li>
+                                        <li>내정보
+                                            <span>
+                                                <i class="fas fa-chevron-right"></i></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="center">
+                                <h3>포인트<img src="/images/point.png"></h3>
+                                <p>1000 원
+                                    <span>
+                                        <i class="fas fa-chevron-right"></i></span></p>
+                            </div>
+
+                            <div class="right">
+                                <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                                <p>3개
+                                    <span>
+                                        <i class="fas fa-chevron-right"></i></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <nav class="content_lnb">
+                            <ul>
+                                <li>
+                                    <a href="/orderlist">주문내역</a>
+                                </li>
+                                <li style="white-space:nowrap">
+                                    <a href="/delivery-management">배송지 관리</a>
+                                </li>
+                                <li>
+                                    <a href="/p_review">상품 리뷰</a>
+                                </li>
+                                <li>
+                                    <a href="/p_inquiry">상품 문의</a>
+                                </li>
+                                <li>
+                                    <a href="/s_inquiry">판매자 문의</a>
+                                </li>
+                                <li class="on">
+                                    <a href="/point">포인트</a>
+                                </li>
+                                <li>
+                                    <a href="/coupon">쿠폰</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="contents">
+                            <h2 class="point_title_web">포인트</h2>
+
+                            <div class="point_history_web">
+                                <ul>
+                                    <li>날짜</li>
+                                    <li>내용</li>
+                                    <li>유효기간</li>
+                                    <li>금액</li>
+                                </ul>
+                            </div>
+                            <section class="point_history">
+                                <div class="point_history_left">
+                                    <ul>
+                                        <li class="save">적립</li>
+                                        <li class="due">2021.14.12</li>
+                                        <li class="amount">+500원</li>
+                                    </ul>
+                                </div>
+                                <div class="point_history_right">
+                                    <ul>
+                                        <li class="date">2020.11.09</li>
+                                        <li class="type">구매 적립</li>
+                                        <li class="brand">바디나인</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <div class="point_history_line"></div>
+                            <section class="point_history">
+                                <div class="point_history_left">
+                                    <ul>
+                                        <li class="save">적립</li>
+                                        <li class="due">2021.14.12</li>
+                                        <li class="amount">+500원</li>
+                                    </ul>
+                                </div>
+                                <div class="point_history_right">
+                                    <ul>
+                                        <li class="date">2020.11.09</li>
+                                        <li class="type">구매 적립</li>
+                                        <li class="brand">바디나인</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <div class="point_history_line"></div>
+                            <section class="point_history">
+                                <div class="point_history_left">
+                                    <ul>
+                                        <li class="save">적립</li>
+                                        <li class="due">2021.14.12</li>
+                                        <li class="amount">+500원</li>
+                                    </ul>
+                                </div>
+                                <div class="point_history_right">
+                                    <ul>
+                                        <li class="date">2020.11.09</li>
+                                        <li class="type">구매 적립</li>
+                                        <li class="brand">바디나인</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <div class="point_history_line"></div>
+                            <section class="point_history">
+                                <div class="point_history_left">
+                                    <ul>
+                                        <li class="save">적립</li>
+                                        <li class="due">2021.14.12</li>
+                                        <li class="amount">+500원</li>
+                                    </ul>
+                                </div>
+                                <div class="point_history_right">
+                                    <ul>
+                                        <li class="date">2020.11.09</li>
+                                        <li class="type">구매 적립</li>
+                                        <li class="brand">바디나인</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <div class="point_history_line"></div>
+                            <section class="point_history">
+                                <div class="point_history_left">
+                                    <ul>
+                                        <li class="save">적립</li>
+                                        <li class="due">2021.14.12</li>
+                                        <li class="amount">+500원</li>
+                                    </ul>
+                                </div>
+                                <div class="point_history_right">
+                                    <ul>
+                                        <li class="date">2020.11.09</li>
+                                        <li class="type">구매 적립</li>
+                                        <li class="brand">바디나인</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <div class="point_history_line"></div>
+                            <div class="page_wrap">
+                                <div class="page_nation">
+                                    <a class="arrow pprev" href="#"></a>
+                                    <a class="arrow prev" href="#"></a>
+                                    <a href="#" class="active">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#">5</a>
+                                    <a href="#">6</a>
+                                    <a href="#">7</a>
+                                    <a href="#">8</a>
+                                    <a href="#">9</a>
+                                    <a href="#">10</a>
+                                    <a class="arrow next" href="#"></a>
+                                    <a class="arrow nnext" href="#"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <script src="./js/common.js"></script>
+                    <script src="./js/header.js"></script>
+                    <%-include('general/footer') %>
+                    </body>
+                </html>

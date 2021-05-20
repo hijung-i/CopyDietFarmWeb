@@ -1,289 +1,336 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    
-    <%-include('general/head') %>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/shoppingcart.css">
-    <link rel="stylesheet" href="/css/style02.css" />
+        <title>다이어트 Farm</title>
 
-    <style type="text/css">
-        @media screen and (max-width:1079px) {.web_shoppingcart{display:none}}
-        @media screen and (min-width:1080px){.mobile_shoppingcart{display:none} }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
-    <script src="/js/jquery.bpopup-0.1.1.min.js"></script>
+        <%-include('general/head') %>
+            <link rel="stylesheet" href="/css/style.css">
 
-</head>
-<body>
-    <div class="web_shoppingcart">
-    <%-include('general/header') %>
-    </div>
-   
-    <section class="detail_title">
-        <h2>장바구니</h2>
-          <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"> </a>
-            </div>
-    </section>
-        <main id="content" class="content">
-          <section id="shpcart_select">
-           <div class="group" style="margin-top:13px">
-            <input type="checkbox" id="checkAll" v-model="checkAll" v-on:change="onCheckAllChange()">
-            <label for="checkAll" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
+            <style type="text/css">
+                @media screen and (max-width:1079px) {
+                    .web_shoppingcart {
+                        display: none;
+                    }
+                }
+                @media screen and (min-width:1080px) {
+                    .mobile_shoppingcart {
+                        display: none;
+                    }
+                }
+            </style>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script
+                type="text/javascript"
+                src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+            <script src="/js/jquery.bpopup-0.1.1.min.js"></script>
+
+        </head>
+        <body>
+            <div class="web_shoppingcart">
+                <%-include('general/header') %>
+                </div>
+
+                <section class="detail_title">
+                    <h2>장바구니</h2>
+                    <div class="btnback">
+                        <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px">
+                        </a>
+                    </div>
+                </section>
+                <main id="content" class="content">
+                    <section id="shpcart_select">
+                        <div class="group" style="margin-top:13px">
+                            <input
+                                type="checkbox"
+                                id="checkAll"
+                                v-model="checkAll"
+                                v-on:change="onCheckAllChange()">
+                            <label for="checkAll" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
                         </div>
-            <div class="shpcart_select_del_web">
-                <button v-on:click="deleteSelectedItems" class="deleteselectBtn">선택삭제</button>
-            </div>
-        </section>
-        <div class="line"></div>
-        <div class="shop_null" style="display:none">
-            <p>장바구니에 담긴 상품이 없습니다</p>
-        </div>
-     <div class="shop_active">
-        <section id="shplist">
-            <!-- brand 1 -->
-            <template v-for="(dGroup, i) in deliveryGroupList">
-                
-                <div class="brand_1">
-                    <h3 v-if="dGroup.brandName != ''">{{ dGroup.brandName }}</h3>
-                    <h3 v-if="dGroup.brandName == ''">{{ dGroup.companyName }}</h3>
-                        
-                    <template v-for="(product, j) in dGroup.products">
-                        <div class="shoplist_info flow-column" v-for="(option, k) in product.options">
-                            <div class="shoplist_ctn">
-                                <div>
-                                    <input type="checkbox" name="optionSelect" v-model="option.isSelected" v-on:change="updateOrderInfo(option)" v-bind:checked="option.isSelected">
-                                </div>
-                                <div class="flow-column">     
-                                    <div class="shopcart_info">
-                                        <div class="shopcart_thum">
-                                            <a v-bind:href="'/product/' + product.productCode" style="position: relative"><img v-bind:src="RESOURCE_SERVER + product.url"></a>
-                                        </div>
-                                        <div class="shopcart_product flow-column">
-                                            <div class="flow-column">
-                                                <p class="product_name">{{ product.productName }}</p>
-                                                <p class="option_desc">{{ option.optionDesc }}</p>
-                                                <p class="price_web">{{ numberFormat(option.optionDiscountPrice) }}원</p>
-                                                <a href="#"><img src="/images/x_icon_login.png" style="width:12px" class="delete_btn"></a>
+                        <div class="shpcart_select_del_web">
+                            <button v-on:click="deleteSelectedItems" class="deleteselectBtn">선택삭제</button>
+                        </div>
+                    </section>
+                    <div class="line"></div>
+                    <div class="shop_null" style="display:none">
+                        <p>장바구니에 담긴 상품이 없습니다</p>
+                    </div>
+                    <div class="shop_active">
+                        <section id="shplist">
+                            <!-- brand 1 -->
+                            <template v-for="(dGroup, i) in deliveryGroupList">
+
+                                <div class="brand_1">
+                                    <h3 v-if="dGroup.brandName != ''">{{ dGroup.brandName }}</h3>
+                                    <h3 v-if="dGroup.brandName == ''">{{ dGroup.companyName }}</h3>
+
+                                    <template v-for="(product, j) in dGroup.products">
+                                        <div class="shoplist_info flow-column" v-for="(option, k) in product.options">
+                                            <div class="shoplist_ctn">
+                                                <div>
+                                                    <input
+                                                        type="checkbox"
+                                                        name="optionSelect"
+                                                        v-model="option.isSelected"
+                                                        v-on:change="updateOrderInfo(option)"
+                                                        v-bind:checked="option.isSelected">
+                                                </div>
+                                                <div class="flow-column">
+                                                    <div class="shopcart_info">
+                                                        <div class="shopcart_thum">
+                                                            <a v-bind:href="'/product/' + product.productCode" style="position: relative"><img v-bind:src="RESOURCE_SERVER + product.url"></a>
+                                                        </div>
+                                                        <div class="shopcart_product flow-column">
+                                                            <div class="flow-column">
+                                                                <p class="product_name">{{ product.productName }}</p>
+                                                                <p class="option_desc">{{ option.optionDesc }}</p>
+                                                                <p class="price_web">{{ numberFormat(option.optionDiscountPrice) }}원</p>
+                                                                <a href="#"><img src="/images/x_icon_login.png" style="width:12px" class="delete_btn"></a>
+                                                            </div>
+                                                            <div class="shoplist_count">
+                                                                <div class="number-input">
+                                                                    <button
+                                                                        class="minus"
+                                                                        v-on:click="changeOptionCount(false, i, j, k)"
+                                                                        style="top:-7px"></button>
+                                                                    <input
+                                                                        class="quantity"
+                                                                        min="0"
+                                                                        name="quantity"
+                                                                        value="1"
+                                                                        v-model="option.optionCount"
+                                                                        type="number">
+                                                                    <button class="plus" v-on:click="changeOptionCount(true, i, j, k)"></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="p_price">
+                                                        <p class="product_p">상품금액
+                                                        </p>
+                                                        <p>{{ numberFormat( option.optionDiscountPrice * option.optionCount ) }}원</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="shoplist_count">
-                                                <div class="number-input">
-                                                    <button class="minus" v-on:click="changeOptionCount(false, i, j, k)" style="top:-7px"></button>
-                                                    <input class="quantity" min="0" name="quantity" value="1" v-model="option.optionCount" type="number">
-                                                    <button class="plus" v-on:click="changeOptionCount(true, i, j, k)"></button>
-                                                </div>                                        
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="p_price">
-                                        <p class="product_p">상품금액 </p>
-                                        <p>{{ numberFormat( option.optionDiscountPrice * option.optionCount ) }}원</p>
+                                    </template>
+                                    <div v-if="dGroup.groupPrice != 0 ">
+                                        <table class="detail_price">
+                                            <tr>
+                                                <td>
+                                                    <span>상품금액</span></td>
+                                                <td class="price product-total-price">{{ numberFormat(dGroup.groupPrice) }}원</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span>배송비</span></td>
+                                                <td class="price total-delivery-cost">{{ numberFormat(dGroup.totalDeliveryCost) }}원</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span>주문금액</span></td>
+                                                <td class="price payment-total-amount">{{ numberFormat(dGroup.groupPrice + dGroup.totalDeliveryCost) }}원</td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
+
+                                <div class="line"></div>
+                            </template>
+                            <template v-if="deliveryGroupList.length == 0">
+                                <p class="shoplist-null">
+                                    장바구니에 담긴 상품이 없습니다
+                                </p>
+                                <div class="line"></div>
+                            </template>
+                        </section>
+                    </div>
+
+                    <section id="shoplist_t_price_web">
+                        <div class="shopBox01">
+                            <h3>배송지</h3>
+                            <p>서울 강남구 테헤란로 8길 11-4 202호</p>
+                            <p>
+                                <span>박민지 &nbsp;&nbsp;&nbsp;010-3288-0568</span></p>
+                            <button type="button" class="shopBtn01" id="my-button">배송지 변경</button>
+                            <div id="element_to_pop_up">
+                                <a class="b-close"><img src="/images/x_icon_login.png"></a>
+
+                                <h2>배송지 관리</h2>
+                                <h3>배송지 변경</h3>
+
+                                <section class="delivery_manage_list">
+
+                                    <input id="check" type="checkbox">
+                                    <div class="del_mng_list_top">
+                                        <ul class="del_mng_type">
+                                            <li class="type_first">회사</li>
+                                            <li class="type_second">
+                                                <span class="tema">기본배송지</span></li>
+                                        </ul>
+                                        <ul class="edit_remove">
+                                            <li class="edit_first">
+                                                <a>수정</a>
+                                            </li>
+                                            <li><img src="/images/l_icon_category@2x.png"></li>
+                                            <li class="edit_second">
+                                                <a>삭제</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
+                                    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
+                                </section>
+
+                                <div class="del_line_thick"></div>
+                                <section class="delivery_manage_list">
+                                    <input id="check" type="checkbox">
+                                    <div class="del_mng_list_top">
+                                        <ul class="del_mng_type">
+                                            <li class="type_first">회사</li>
+                                        </ul>
+                                        <ul class="edit_remove">
+                                            <li class="basic">
+                                                <a>기본배송지로 설정</a><img src="/images/l_icon_category@2x.png"></li>
+                                            <li class="edit_first">
+                                                <a>수정</a>
+                                                <img src="/images/l_icon_category@2x.png">
+                                            </li>
+                                            <li class="edit_second">
+                                                <a>삭제</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
+                                    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
+                                </section>
+
+                                <div class="del_line_thick"></div>
+
+                                <section class="delivery_manage_list">
+                                    <input id="check" type="checkbox">
+                                    <div class="del_mng_list_top">
+                                        <ul class="del_mng_type">
+                                            <li class="type_first">회사</li>
+                                        </ul>
+                                        <ul class="edit_remove">
+                                            <li class="basic">
+                                                <a>기본배송지로 설정</a><img src="/images/l_icon_category@2x.png"></li>
+                                            <li class="edit_first">
+                                                <a>수정</a>
+                                            </li>
+                                            <li><img src="/images/l_icon_category@2x.png"></li>
+                                            <li class="edit_second">
+                                                <a>삭제</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
+                                    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
+                                </section>
+
+                                <div class="del_line_thick"></div>
+
+                                <div class="btn_area">
+                                    <button type="button" id="btnRegister">확인</button>
+                                </div>
+                                <!--//btnJoin-->
                             </div>
                         </div>
-                    </template>
-                    <div v-if="dGroup.groupPrice != 0 ">
-                        <table class="detail_price">
-                            <tr>
-                                <td><span>상품금액</span></td>
-                                <td class="price product-total-price">{{ numberFormat(dGroup.groupPrice) }}원</td>
-                            </tr>
-                            <tr>
-                                <td><span>배송비</span></td>
-                                <td class="price total-delivery-cost">{{ numberFormat(dGroup.totalDeliveryCost) }}원</td>
-                            </tr>
-                            <tr>
-                                <td><span>주문금액</span></td>
-                                <td class="price payment-total-amount">{{ numberFormat(dGroup.groupPrice + dGroup.totalDeliveryCost) }}원</td>
-                            </tr>
-                        </table>
+                        <div class="shopBox02">
+                            <table class="final">
+                                <tr>
+                                    <td class="t1">상품 금액</td>
+                                    <td class="price product-total-price">{{ numberFormat(orderDTO.paymentTotalAmount) }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="t1">상품 할인 금액</td>
+                                    <td class="price ">- 0원</td>
+                                </tr>
+                                <tr>
+                                    <td class="t1">배송비</td>
+                                    <td class="price total-delivery-cost">{{ numberFormat(orderDTO.totalDeliveryCost) }}</td>
+                                </tr>
+                                <tr class="total">
+                                    <td class="t1">총 결제 금액</td>
+                                    <td class="price payment-total-amount">{{ numberFormat(orderDTO.paymentTotalAmount + orderDTO.totalDeliveryCost) }}원</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="total_mobile">
+                            <ul>
+                                <li class="t1">총 결제 금액</td>
+                                <li class="price payment-total-amount">{{ numberFormat(orderDTO.paymentTotalAmount + orderDTO.totalDeliveryCost) }}원</td>
+                        </ul>
                     </div>
+                </section>
+
+                <div class="btn_area_web">
+
+                    <button
+                        type="button"
+                        class="purchaseBtn"
+                        v-on:click="onSubmit()"
+                        style="border:none">구매하기</button>
                 </div>
-        
-                
-                <div class="line"></div>
-            </template>
-            <template v-if="deliveryGroupList.length == 0">
-                <p class="shoplist-null">
-                    장바구니에 담긴 상품이 없습니다
-                </p>
-                <div class="line"></div>
-            </template>
-        </section>
-        </div>
-    
-        <section id="shoplist_t_price_web">
-           <div class="shopBox01">
-               <h3>배송지</h3>
-               <p>서울 강남구 테헤란로 8길 11-4 202호</p>
-               <p><span>박민지 &nbsp;&nbsp;&nbsp;010-3288-0568</span></p>
-               <button type="button" class="shopBtn01" id="my-button">배송지 변경</button>
-               <div id="element_to_pop_up">
-               <a class="b-close"><img src="/images/x_icon_login.png"></a>
-     
-            <h2>배송지 관리</h2>
-          <h3>배송지 변경</h3>
-    
-        <section class="delivery_manage_list">
-           
-            <input id="check" type="checkbox">
-            <div class="del_mng_list_top">
-                <ul class="del_mng_type">
-                    <li class="type_first">회사</li>
-                    <li class="type_second"><span class="tema">기본배송지</span></li>
-                </ul>
-                <ul class="edit_remove">
-                    <li class="edit_first"><a>수정</a></li>
-                    <li><img src="/images/l_icon_category@2x.png"></li>
-                    <li class="edit_second"><a>삭제</a></li>
-                </ul>
-            </div>
-            <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-            <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-        </section>
-    
-        <div class="del_line_thick"></div>
-        <section class="delivery_manage_list">
-           <input id="check" type="checkbox">
-            <div class="del_mng_list_top">
-                <ul class="del_mng_type">
-                    <li class="type_first">회사</li>
-                </ul>
-                <ul class="edit_remove">
-                    <li class="basic"><a>기본배송지로 설정</a><img src="/images/l_icon_category@2x.png"></li>
-                    <li class="edit_first"><a>수정</a>
-                        <img src="/images/l_icon_category@2x.png">
-                    </li>
-                    <li class="edit_second"><a>삭제</a></li>
-                </ul>
-            </div>
-            <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-            <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-        </section>
-    
-        <div class="del_line_thick"></div>
-    
-        <section class="delivery_manage_list">
-            <input id="check" type="checkbox">
-            <div class="del_mng_list_top">
-                <ul class="del_mng_type">
-                    <li class="type_first">회사</li>
-                </ul>
-                <ul class="edit_remove">
-                    <li class="basic"><a>기본배송지로 설정</a><img src="/images/l_icon_category@2x.png"></li>
-                    <li class="edit_first"><a>수정</a></li>
-                    <li><img src="/images/l_icon_category@2x.png"></li>
-                    <li class="edit_second"><a>삭제</a></li>
-                </ul>
-            </div>
-            <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-            <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-        </section>
-    
-        <div class="del_line_thick"></div>
-    
-       <div class="btn_area">
-            <button type="button" id="btnRegister">확인</button>
-            </div>
-            <!--//btnJoin-->
-                </div>
-           </div>
-               <div class="shopBox02">
-               <table class="final">
-                   <tr>
-                       <td class="t1">상품 금액</td>
-                       <td class="price product-total-price">{{ numberFormat(orderDTO.paymentTotalAmount) }}</td>
-                   </tr>
-                    <tr>
-                       <td class="t1">상품 할인 금액</td>
-                       <td class="price ">- 0원</td>
-                   </tr>
-                    <tr>
-                       <td class="t1">배송비</td>
-                       <td class="price total-delivery-cost">{{ numberFormat(orderDTO.totalDeliveryCost) }}</td>
-                   </tr>
-                    <tr class="total">
-                       <td class="t1">총 결제 금액</td>
-                       <td class="price payment-total-amount">{{ numberFormat(orderDTO.paymentTotalAmount + orderDTO.totalDeliveryCost) }}원</td>
-                   </tr>
-               </table>
-           </div>
-           <div class="total_mobile">
-               <ul>
-            <li class="t1">총 결제 금액</td>
-            <li class="price payment-total-amount">{{ numberFormat(orderDTO.paymentTotalAmount + orderDTO.totalDeliveryCost) }}원</td>
-            </ul>
-           </div>
-        </section>
-     
-        <div class="btn_area_web">
+            </main>
 
-            <button type="button" class="purchaseBtn" v-on:click="onSubmit()" style="border:none">구매하기</button>
-        </div>
-    </main>
-
-    <script src="/js/orderDTO/OrderDTO.js"></script>
-    <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
-    <script src="/js/cart.js"></script>
-    <script>
-        //웹 햄버거 버튼 
-             $(document).ready(function(){
-                $("#gnbAllMenu").hide();
-                $("#btnGnbOpen").click(function(){
-                    $("#gnbAllMenu").slideToggle("fast");
-                });
-            });
-    
-            $(document).ready(function() {
-                $(".m_slides_sub").hide();
-                $(".m_ba_slides_n_w li").hover(function(){
-                    $("ul:not(:animated)",this).slideDown("700");
-    
-                    $(".m_ba_slides_n_w li a").removeClass("active");
-                }, function() {
-                    $("ul",this).slideUp("700");
-                });
-
-                $("#memberMenu").bind("moseover mouseenter",function(){
-                    $("#memMenu").show();
-                });
-                $("#memMenu").bind("moseout mouseleave",function(){
-                    $("#memMenu").hide();
-                });
-        
-                $("#NotmemberMenu").bind("moseover mouseenter",function(){
-                    $("#NotmemMenu").show();
-                });
-                $("#NotmemMenu").bind("moseout mouseleave",function(){
-                    $("#NotmemMenu").hide();
-                });
-            
-                $('#my-button').bind('click', function(e) {
-                    e.preventDefault();
-                    $('#element_to_pop_up').bPopup({
-                        modalColor:'gray'
+            <script src="/js/orderDTO/OrderDTO.js"></script>
+            <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
+            <script src="/js/cart.js"></script>
+            <script>
+                //웹 햄버거 버튼
+                $(document).ready(function () {
+                    $("#gnbAllMenu").hide();
+                    $("#btnGnbOpen").click(function () {
+                        $("#gnbAllMenu").slideToggle("fast");
                     });
                 });
-                
-                $('#my-button2').bind('click', function(e) {
-                    e.preventDefault();
-                    $('#element_to_pop_up').bPopup({
-                    
-                    });
-                });
-                
-            })
 
-       </script>
-       
-</body>
-</html>
+                $(document).ready(function () {
+                    $(".m_slides_sub").hide();
+                    $(".m_ba_slides_n_w li").hover(function () {
+                        $("ul:not(:animated)", this).slideDown("700");
+
+                        $(".m_ba_slides_n_w li a").removeClass("active");
+                    }, function () {
+                        $("ul", this).slideUp("700");
+                    });
+
+                    $("#memberMenu").bind("moseover mouseenter", function () {
+                        $("#memMenu").show();
+                    });
+                    $("#memMenu").bind("moseout mouseleave", function () {
+                        $("#memMenu").hide();
+                    });
+
+                    $("#NotmemberMenu").bind("moseover mouseenter", function () {
+                        $("#NotmemMenu").show();
+                    });
+                    $("#NotmemMenu").bind("moseout mouseleave", function () {
+                        $("#NotmemMenu").hide();
+                    });
+
+                    $('#my-button').bind('click', function (e) {
+                        e.preventDefault();
+                        $('#element_to_pop_up').bPopup({modalColor: 'gray'});
+                    });
+
+                    $('#my-button2').bind('click', function (e) {
+                        e.preventDefault();
+                        $('#element_to_pop_up').bPopup({});
+                    });
+
+                })
+            </script>
+
+        </body>
+    </html>

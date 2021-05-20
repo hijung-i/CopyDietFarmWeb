@@ -1,77 +1,95 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style02.css">
-    <link rel="stylesheet" href="/css/myPage.css">
+        <title>다이어트 Farm</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style02.css">
+        <link rel="stylesheet" href="/css/myPage.css">
 
-    <style type="text/css">
-        @media screen and (max-width:1079px) {.web_benefits{display:none}}
-        @media screen and (min-width:1080px){.mobile_benefits{display:none} }
-        .kakao_event img{width:100%;height:auto}
-        </style>
-    <%-include('general/head') %>
-</head>
-
-<body>
-    <div class="web_benefits">
-     <%-include('general/header') %>
-    </div><!--//web_invite-->
-    <div class="mobile_benefits">
-        <section class="detail_title">
-            <h2>이벤트</h2>
-            <script type="text/javascript">
-                function goBack() {
-                    window.history.back();
+        <style type="text/css">
+            @media screen and (max-width:1079px) {
+                .web_benefits {
+                    display: none;
                 }
-            </script>
-            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
-            </div>
-        </section>
-    </div>
-        <main id="content" class="content">
-    <div class="benefits">
-        <div class="event01">
-           <img src="/images/membership_icon_banner@2x.png">
-           <p>꼭 확인하세요</p>
-        </div>
-        <div class="event02">
-            <img src="/images/new_icon_banner@2x.png">
-            <p>꼭 확인하세요</p>
-         </div>
-         <div class="event03">
-            <img src="/images/invite_icon_banner@2x.png">
-            <p>꼭 확인하세요</p>
-         </div>
-         <div class="event04">
-            <img src="/images/first_icon_banner@2x.png">
-            <p>꼭 확인하세요</p>
-         </div>
-         <div class="event05">
-            <img src="/images/3_event_banner@2x.png">
-            <p>꼭 확인하세요</p>
-         </div>
-         <div class="event06">
-            <img src="/images/kakao_icon_banner@2x.png">
-            <p>꼭 확인하세요</p>
-         </div>
-         <div class="event07">
-            <img src="/images/birthday_icon_banner@2x.png">
-            <p>꼭 확인하세요</p>
-         </div>
-         <div class="event08">
-            <img src="/images/review_icon_banner@2x.png">
-            <p>꼭 확인하세요</p>
-         </div>
-    </div>
-         </main>
-         <%-include('general/footer') %>
-         <script type="text/javascript" src="/js/header.js"></script>
-</body></html>
+            }
+            @media screen and (min-width:1080px) {
+                .mobile_benefits {
+                    display: none;
+                }
+            }
+            .kakao_event img {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+        <%-include('general/head') %>
+        </head>
+
+        <body>
+            <div class="web_benefits">
+                <%-include('general/header') %>
+                </div>
+                <!--//web_invite-->
+                <div class="mobile_benefits">
+                    <section class="detail_title">
+                        <h2>이벤트</h2>
+                        <script type="text/javascript">
+                            function goBack() {
+                                window
+                                    .history
+                                    .back();
+                            }
+                        </script>
+                        <div class="btnback">
+                            <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
+                        </div>
+                    </section>
+                </div>
+                <main id="content" class="content">
+                    <div class="benefits">
+                        <div class="event01">
+                            <img src="/images/membership_icon_banner@2x.png">
+                            <p>꼭 확인하세요</p>
+                        </div>
+                        <div class="event02">
+                            <img src="/images/new_icon_banner@2x.png">
+                            <p>꼭 확인하세요</p>
+                        </div>
+                        <div class="event03">
+                            <img src="/images/invite_icon_banner@2x.png">
+                            <p>꼭 확인하세요</p>
+                        </div>
+                        <div class="event04">
+                            <img src="/images/first_icon_banner@2x.png">
+                            <p>꼭 확인하세요</p>
+                        </div>
+                        <div class="event05">
+                            <img src="/images/3_event_banner@2x.png">
+                            <p>꼭 확인하세요</p>
+                        </div>
+                        <div class="event06">
+                            <img src="/images/kakao_icon_banner@2x.png">
+                            <p>꼭 확인하세요</p>
+                        </div>
+                        <div class="event07">
+                            <img src="/images/birthday_icon_banner@2x.png">
+                            <p>꼭 확인하세요</p>
+                        </div>
+                        <div class="event08">
+                            <img src="/images/review_icon_banner@2x.png">
+                            <p>꼭 확인하세요</p>
+                        </div>
+                    </div>
+                </main>
+                <%-include('general/footer') %>
+                    <script type="text/javascript" src="/js/header.js"></script>
+                </body>
+            </html>

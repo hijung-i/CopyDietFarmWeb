@@ -2,26 +2,7 @@
 
 body{min-width:360px;}
 html, body {max-width: 100%}
-/* td, tr, h1, h2{padding-left:20px;} */
-.detail_title{overflow:hidden;margin-bottom:-20px;width:100%;}
-.detail_title{margin-top:20px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
-.detail_title .title{width:200px;white-space: nowrap;
-overflow:hidden;text-overflow: ellipsis;margin:0 auto}
-.detail_title a img{position:absolute;top:42px;width:17px}
-.btncart{position:absolute;right:65px;top:-3px;padding:10px 0}
-.detail_title{overflow:hidden;width:100%;}
-.detail_title{margin:40px 10px 10px 10px;width:100%;}
-.detail_title h2{position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:32px;margin-top:2px}
-.detail_title a img{position:absolute;top:44px;width:17px;margin-left:5px}
 
-/*
-#content .tabMenu{margin-top:22px;width:100%;text-align:center}
-#content .tabMenu li{padding-left:25px;padding-right:25px;padding-bottom:10px;padding-top:10px}
-#content .tabMenu li{width:100%;float:left;width:25%;height:44px;font-size:14px;line-height:18px;text-align:center;padding:10px;margin-bottom:1px}
-#content .tabMenu li a{color:#878787;font-weight:normal}
-#content .tabMenu li a:hover{color:#F99319;border-bottom:3px solid #F99319;}
-*/
 /*상품설명*/
 #content .product_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:-41px}
 #content .product{overflow:hidden;margin:0 auto ;width:100%;}
@@ -33,11 +14,13 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 #content .infoArea02 tr td span{color:#878787}
 
 #content .infoArea02 tr td{font-size:13.4px;padding-bottom:20px;font-weight:bold;}
+
 @media screen and (max-width:1079px){
 div #ex1.modal p{text-align:center;}
 div #ex1.modal ul li {float:left}
 .share_img img{float:right;position:relative;top:55px;left:-24px}
-.option_wrap{padding-top:20px;margin-bottom:40px;padding-left:15px;padding-right:15px}
+.option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
+.option_wrap h3{font-size:12px;font-weight:bold;margin-top:21px}
 }
 @media screen and (min-width:1080px){
 .share_img img{ float:right;position:relative;top:-40px;left:4px}
@@ -62,94 +45,26 @@ div #ex1.modal ul li {float:left}
 .v_top_txt_box .modal p{text-align:center}
 .products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:15px;padding-right:15px}
-}
+
 .purchased_products{clear:both;width:100%}
-.purchased_products h3{margin-top:20px;margin-bottom:10px}
 .purchased_products .title{font-size:12px}
 .purchased_products .price{font-size:12px;font-weight:bold}
 
 
-
-/* 수량 선택 버튼 */
-
-input[type="number"] {
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    appearance: textfield;
-  }
-  
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-  }
-  
-  .number-input {
-    border: 1px solid #BBBBBB;
-    background: #F5F5F5;
-    display: inline-flex;
-    border-radius: 5px;
-    margin-left:15px;
-    margin-top:11.5px;
-    margin-bottom:15px;
-  }
-  
-  .number-input,
-  .number-input * {
-    box-sizing: border-box;
-  }
-  
-  .number-input button {
-    outline:none;
-    -webkit-appearance: none;
-    background-color: transparent;
-    border: none;
-    align-items: center;
-    justify-content: center;
-    width: 29px;
-    height: 25px;
-    cursor: pointer;
-    margin: 0;
-    position: relative;
-  }
-  
-  .number-input button:after {
-    display: inline-block;
-    position: absolute;
-    font-weight: 900;
-    content: '\002D';
-    transform: translate(-50%, -50%) rotate(180deg);
-  }
-  .number-input button.plus:after {
-    content: '\002B';
-    transform: translate(-50%, -50%) rotate(180deg);
-  }
-  
-  .number-input input[type=number] {
-    max-width: 5rem;
-    padding: .5rem;
-    border: 1px solid #BBBBBB;
-    /* border-width: 0 2px; */
-    font-size: 14px;
-    height: 27px;
-    text-align: center;
-    /* outline: 2px solid red; */
-  }
-
-
-/*상세정보*/
+/*상세정보
 .infoDetails{width:100%;clear:both;border-top:2px solid #E6E6E6;padding-top:40px;padding-bottom:20px;border-bottom:8px solid #f1f1f1;padding-left:20px;padding-right:20px;margin-top:-4px}
 .infoDetails h3{padding-bottom:10px;font-size:14px}
 .infoDetails ul{margin-bottom:20px}
 .infoDetails ul li{font-size:12px;line-height:20px}
 .infoDetails .title{font-weight:bold;}
-.footer_bottom ul li{font-size:12px;text-align:left;}
-
+.footer_bottom ul li{font-size:12px;text-align:left;}*/
+}
 @media screen and (max-width:1079px){
     .review_btn{display:flex;justify-content:center; padding-bottom:21px;border-bottom:8px solid #f1f1f1;border-top:2px solid #E6E6E6;padding-top:18px}
     .review_btn button{border:2px solid #EFA543;background-color:#fff;color:#EFA543;font-weight:bold;border-radius:5px}
     .v_floating_wrap{display:none}
 }
-/*리뷰*/
+    /*리뷰*/
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}
 .reviews .num{width:100%;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:10px;padding-bottom:18px}
@@ -182,7 +97,7 @@ input[type="number"] {
 .starR2.on{background-position:-15px 0;}
 .review_info02 ul li{float:left;font-size:13px;padding-left:15px}
 /*.review_img{border-bottom:8px solid #E6E6E6;padding-bottom:90px}*/
-.line{position:relative;margin-top:7px}
+.line{position:relative;margin-top:9px}
 
 /*리뷰 없을 때*/
 .review_list_null{width:70%; text-align:center; margin:180px auto;}
@@ -299,10 +214,10 @@ top: 20px;
 /*상품리뷰*/
 .reviews{width:100%}
 .reviews table{padding-left:15px;padding-right:15px}
-.order_a_box{padding-top:18px;;margin:0;border-bottom:2px solid #E6E6E6;padding-bottom:10px}
+.order_a_box{padding-top:18px;margin:0;border-bottom:2px solid #E6E6E6;padding-bottom:10px}
 .order001 {margin-top:10px}
 .order001 li{font-size:12px;margin-bottom:13px;font-weight:normal;color:#878787}
-.tab_wrap{overflow:hidden;}
+.tab_wrap{overflow:hidden;margin-bottom:4px}
 .tab_wrap li{float:left}
 .tab_cont{display:none;/*min-height:360px;*/}
 .tab_cont.active{display:block;}
@@ -364,6 +279,8 @@ color: #878787; font-size: 12px;}
 .review_prod > .review_img {width: 50px; height: 62px;background: #ccc;background-image: url(../images/dietfarmbread.jpg);background-size: cover; background-position: center;}
 
 .review_prod .review_option {color: #878787;}
+
+
 
 
 

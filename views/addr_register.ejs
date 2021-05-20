@@ -1,161 +1,216 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <link rel="stylesheet" href="/css/signup.css">
-    <%-icnlude('general/head') %>
-</head>
+        <title>다이어트 Farm</title>
+        <link rel="stylesheet" href="/css/signup.css">
+        <%-icnlude('general/head') %>
+        </head>
 
-<body>
+        <body>
 
-    <section class="detail_title">
-        <h2>배송지 등록</h2>
-        <a href="index.html"><img src="/images/leftarrow_ico_my.png"></a>
-    </section>
-
-    <main id="content" class="content">
-        <!-- wrapper -->
-        <div id="wrapper">
-            <!-- content-->
-            <div id="content">
-
-                <!-- ID -->
-                <div>
-                    <h3 class="addr_title">
-                        <label for="addr_name">배송지 이름</label>
-                    </h3>
-                    <span class="box int_id">
-                        <input type="text" id="id" class="int" maxlength="20" placeholder="배송지 이름을 입력해주세요">
-                    </span>
-                </div>
-
-                <div>
-                    <h3 class="join_title"><label for="receiv">받으시는 분</label></h3>
-                    <span class="box int_pass">
-                        <input type="password" id="pswd1" class="int" maxlength="20" placeholder="받으시는 분 이름을 입력해주세요">
-                    </span>
-                </div>
-                <div>
-                    <h3 class="join_title"><label for="addr">주소</label></h3>
-                    <span class="box int_pass_check">
-                        <input type="text" id="addr1" class="int" maxlength="200" placeholder="도로명, 지번, 건물명 검색">
-                        <a href="#" class="src_icon">
-                            <img src="/images/search_ico_join.png">
-                        </a>
-                    </span>
-                    <span class="box int_pass_check" style="margin-top:10px">
-                        <input type="text" id="addr2" class="int" maxlength="200">
-                    </span>
-                    <span class="error_next_box"></span>
-                </div>
-
-                <!-- NAME -->
-                <div>
-                    <h3 class="join_title"><label for="mobile">휴대폰</label></h3>
-                    <span class="box int_name" style="margin-bottom:60px">
-                        <input type="num" id="mobile" class="int" maxlength="20" placeholder="숫자만 입력해주세요">
-                    </span>
-                </div>
-                <div class="btn_area">
-                    <button type="button" id="save">
-                        <span>저장</span>
-                    </button>
-                </div>
-
-
-
-            </div>
-            <!-- content-->
-
-        </div>
-        <!-- wrapper -->
-    </main>
-    <footer id="footer">
-
-        <div class="footer_container">
-            <div class="footer_links">
-                <div class="footer_link--wrapper">
-                    <div class="footer_link--items1">
-                        <h2>고객센터</h2>
-                        <span>&nbsp;&nbsp;&nbsp;&nbsp;070-4366-3299</span>
-                        <p class="p1">&nbsp;&nbsp;월~금 10:00~17:00</p>
-                        <p>점심시간 12:00~13:00</p>
-                        <p>&nbsp;&nbsp;토,일,공휴일 휴무</p>
-                    </div>
-                    <div class="footer_link--items">
-                        <a href="#"><img src="/images/talk_ico_footer.png" style="width:55%;margin-left:15px;margin-top:50px"></a>
-                    </div>
-                </div>
-                <div class="footer_link--wrapper">
-                    <div class="footer_link--items2">
-                        <h2>계좌번호</h2>
-                        <span>&nbsp;예금주 (주)데이터플로</span>
-                        <p>농협 317-0021-9321-31</p>
-                        <p>우리 333-3333-3333-33</p>
-                        <p>국민 333-3333-3333-33</p>
-                        <p>신한 333-3333-3333-33</p>
-                        <p>기업 333-3333-3333-33</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;토,일,공휴일 휴무</p>
-                    </div>
-                    <div class="footer_link--items3">
-                        <h2>공지사항</h2>
-                        <p><a href="#">&nbsp;&nbsp;1월 연휴 배송안내</a> </p>
-                        <p><a href="#">&nbsp;추석 연휴 배송안내</a></p>
-                    </div>
-                </div>
-            </div>
-            <section class="footer_bottom">
-                <ul class="menu">
-                    <li><a href="">사업자정보확인</a></li>
-                    <li><a href="">이용약관</a></li>
-                    <li><a href="">개인정보처리방침</a></li>
-                </ul>
-                <ul class="addr">
-                    <li>(주)데이터플로 대표 : 유승열</li>
-                    <li>사업자등록번호 : 509-81-05501</li>
-                    <li>통신판매업 신고번호 : </li>
-                    <li>건강기능식품 판매업 : 제 2021-0105159 호</li>
-                    <li>개인정보보호책임자 : 유승열</li>
-                    <li class="addr01">주소 : 서울시 강남구 테헤란로8길 11-4 신도빌딩, 2층 202호</li>
-                    <li>팩스 : 070-7500-7691</li>
-                    <li>이메일 : <span>dietfarm119@gmail.com</span></li>
-                    <li>입점문의 : <span>입점문의하기</span></li>
-                    <li>제휴문의 : <span>dietfarm119@gmail.com</span></li>
-
-                </ul>
-
-                <article class="pages">
-                    <ul>
-                        <li><a href="#"><img src="/images/home_ico_menu.png"></a></li>
-                        <li><a href="#"><img src="/images/search_ico_menu.png"></a></li>
-                        <li><a href="#"><img src="/images/heart_ico_menu.png"></a></li>
-                        <li><a href="#"><img src="/images/my_ico_menu.png"></a></li>
-                    </ul>
-                </article>
+            <section class="detail_title">
+                <h2>배송지 등록</h2>
+                <a href="index.html"><img src="/images/leftarrow_ico_my.png"></a>
             </section>
 
-        </div>
-    </footer>
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            $("tr.faq_q").click(function() {
-                if ($(this).next('tr').css("display") != "none") {
-                    $(this).next('tr').hide();
-                    $(this).removeClass("current");
-                } else {
-                    $("tr.faq_a").css('display', 'none');
-                    $("tr.faq_q").removeClass("current");
-                    $(this).next('tr').show();
-                    $(this).addClass("current");
-                }
-            });
-        });
-    </script>
+            <main id="content" class="content">
+                <!-- wrapper -->
+                <div id="wrapper">
+                    <!-- content-->
+                    <div id="content">
 
-</body></html>
+                        <!-- ID -->
+                        <div>
+                            <h3 class="addr_title">
+                                <label for="addr_name">배송지 이름</label>
+                            </h3>
+                            <span class="box int_id">
+                                <input
+                                    type="text"
+                                    id="id"
+                                    class="int"
+                                    maxlength="20"
+                                    placeholder="배송지 이름을 입력해주세요">
+                            </span>
+                        </div>
+
+                        <div>
+                            <h3 class="join_title">
+                                <label for="receiv">받으시는 분</label>
+                            </h3>
+                            <span class="box int_pass">
+                                <input
+                                    type="password"
+                                    id="pswd1"
+                                    class="int"
+                                    maxlength="20"
+                                    placeholder="받으시는 분 이름을 입력해주세요">
+                            </span>
+                        </div>
+                        <div>
+                            <h3 class="join_title">
+                                <label for="addr">주소</label>
+                            </h3>
+                            <span class="box int_pass_check">
+                                <input
+                                    type="text"
+                                    id="addr1"
+                                    class="int"
+                                    maxlength="200"
+                                    placeholder="도로명, 지번, 건물명 검색">
+                                <a href="#" class="src_icon">
+                                    <img src="/images/search_ico_join.png">
+                                </a>
+                            </span>
+                            <span class="box int_pass_check" style="margin-top:10px">
+                                <input type="text" id="addr2" class="int" maxlength="200">
+                            </span>
+                            <span class="error_next_box"></span>
+                        </div>
+
+                        <!-- NAME -->
+                        <div>
+                            <h3 class="join_title">
+                                <label for="mobile">휴대폰</label>
+                            </h3>
+                            <span class="box int_name" style="margin-bottom:60px">
+                                <input
+                                    type="num"
+                                    id="mobile"
+                                    class="int"
+                                    maxlength="20"
+                                    placeholder="숫자만 입력해주세요">
+                            </span>
+                        </div>
+                        <div class="btn_area">
+                            <button type="button" id="save">
+                                <span>저장</span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <!-- content-->
+
+                </div>
+                <!-- wrapper -->
+            </main>
+            <footer id="footer">
+
+                <div class="footer_container">
+                    <div class="footer_links">
+                        <div class="footer_link--wrapper">
+                            <div class="footer_link--items1">
+                                <h2>고객센터</h2>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;070-4366-3299</span>
+                                <p class="p1">&nbsp;&nbsp;월~금 10:00~17:00</p>
+                                <p>점심시간 12:00~13:00</p>
+                                <p>&nbsp;&nbsp;토,일,공휴일 휴무</p>
+                            </div>
+                            <div class="footer_link--items">
+                                <a href="#"><img
+                                    src="/images/talk_ico_footer.png"
+                                    style="width:55%;margin-left:15px;margin-top:50px"></a>
+                            </div>
+                        </div>
+                        <div class="footer_link--wrapper">
+                            <div class="footer_link--items2">
+                                <h2>계좌번호</h2>
+                                <span>&nbsp;예금주 (주)데이터플로</span>
+                                <p>농협 317-0021-9321-31</p>
+                                <p>우리 333-3333-3333-33</p>
+                                <p>국민 333-3333-3333-33</p>
+                                <p>신한 333-3333-3333-33</p>
+                                <p>기업 333-3333-3333-33</p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;토,일,공휴일 휴무</p>
+                            </div>
+                            <div class="footer_link--items3">
+                                <h2>공지사항</h2>
+                                <p>
+                                    <a href="#">&nbsp;&nbsp;1월 연휴 배송안내</a>
+                                </p>
+                                <p>
+                                    <a href="#">&nbsp;추석 연휴 배송안내</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="footer_bottom">
+                        <ul class="menu">
+                            <li>
+                                <a href="">사업자정보확인</a>
+                            </li>
+                            <li>
+                                <a href="">이용약관</a>
+                            </li>
+                            <li>
+                                <a href="">개인정보처리방침</a>
+                            </li>
+                        </ul>
+                        <ul class="addr">
+                            <li>(주)데이터플로 대표 : 유승열</li>
+                            <li>사업자등록번호 : 509-81-05501</li>
+                            <li>통신판매업 신고번호 :
+                            </li>
+                            <li>건강기능식품 판매업 : 제 2021-0105159 호</li>
+                            <li>개인정보보호책임자 : 유승열</li>
+                            <li class="addr01">주소 : 서울시 강남구 테헤란로8길 11-4 신도빌딩, 2층 202호</li>
+                            <li>팩스 : 070-7500-7691</li>
+                            <li>이메일 :
+                                <span>dietfarm119@gmail.com</span></li>
+                            <li>입점문의 :
+                                <span>입점문의하기</span></li>
+                            <li>제휴문의 :
+                                <span>dietfarm119@gmail.com</span></li>
+
+                        </ul>
+
+                        <article class="pages">
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="/images/home_ico_menu.png"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/images/search_ico_menu.png"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/images/heart_ico_menu.png"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/images/my_ico_menu.png"></a>
+                                </li>
+                            </ul>
+                        </article>
+                    </section>
+
+                </div>
+            </footer>
+            <script type="text/javascript">
+                jQuery(document).ready(function () {
+                    $("tr.faq_q").click(function () {
+                        if ($(this).next('tr').css("display") != "none") {
+                            $(this)
+                                .next('tr')
+                                .hide();
+                            $(this).removeClass("current");
+                        } else {
+                            $("tr.faq_a").css('display', 'none');
+                            $("tr.faq_q").removeClass("current");
+                            $(this)
+                                .next('tr')
+                                .show();
+                            $(this).addClass("current");
+                        }
+                    });
+                });
+            </script>
+
+        </body>
+    </html>
