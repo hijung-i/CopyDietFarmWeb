@@ -415,7 +415,7 @@ width:100%;border-top:2px solid #f1f1f1;margin-top:90px}
 #content .main_sub_wrap .desc .cost{color:#bbbbbb;text-decoration:line-through;margin-left:7px;}   
 #content .main_sub_wrap .desc .ratio{color:#F32525;font-weight:bold;font-size:11px;margin-left:7px}      
 #content .main_sub_wrap .main_sub h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}   
-.n_sort{position:relative;margin-top:55px;text-align:left}
+.n_sort{position:relative;margin-top:65px;text-align:left}
 
 /*찜한 상품*/
 #mHeader{position:fixed;height:90px;background-color:#fff}
@@ -1763,7 +1763,7 @@ background-size: cover;background-position: center;}
 .shoplist_ctn {padding: 20px 0 20px 0;position:relative }
 .shoplist-null{width: 100%;padding: 50px 0px;text-align: center}
 .shoplist_ctn div{display: flex }
-.shoplist_ctn>div:first-child {width: 8.78%;max-width: 29px}
+.shoplist_ctn>div:first-child {max-width: 29px}
 .shoplist_ctn>div:last-child{width: 100%}
 .shoplist_ctn .shopcart_info {width: 100%}
 .flow-column {flex-flow: column}

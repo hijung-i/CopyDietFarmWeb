@@ -5,7 +5,7 @@ function getEventStands() {
     ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
     , function(data) {
 
-		$("#header #nav").html('');
+		$("#header_common #nav").html('');
 		var html = '';
 		html += '<a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';		
 		console.log(data);
@@ -20,7 +20,7 @@ function getEventStands() {
 			}
 			console.log(currentStandCode, stand.salesStandCode);
 			if( currentStandCode == stand.salesStandCode){
-				$('#header #nav a').removeClass("is-current");
+				$('#heade_common #nav a').removeClass("is-current");
 				html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
 			} else {
 				html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
@@ -29,7 +29,7 @@ function getEventStands() {
 
 		html += '<div class="nav-underline"></div>';
 		console.log(html);
-		$('#header #nav').html(html);
+		$('#header_common #nav').html(html);
 
         // web size side menu set
 		$('.web_cate').click(function() {
