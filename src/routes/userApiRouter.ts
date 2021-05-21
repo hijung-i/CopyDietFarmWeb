@@ -24,17 +24,30 @@ router.get('/login', (req: Request, res: Response, next: NextFunction) => {
     })
 })
 
-router.post('/login/kakao', async (req: Request, res: Response, next: NextFunction) => {
-    console.log('POST /user/login/kakao  request.body -> ', req.body)
-    console.log('POST /user/login/kakao  request.params -> ', req.params)
-    console.log('POST /user/login/kakao  request.query -> ', req.query)
-    res.status(200).send('')
+router.post('/login/naver', async (req: Request, res: Response, next: NextFunction) => {
+    const user = req.body as User
+    const loginResult: UserResult = await userService.loginNaver(user)
+
+    if (loginResult.message === StatusMessage.success) {
+        console.log('loginSuccess -> ', loginResult.data)
+        userToSession(req, user)
+
+        console.log('save user on session', req.session.user)
+    }
+    res.status(loginResult.statusCode).send(loginResult.data || loginResult.message)
 })
-router.get('/login/kakao', async (req: Request, res: Response, next: NextFunction) => {
-    console.log('GET /user/login/kakao  request.body -> ', req.body)
-    console.log('GET /user/login/kakao  request.params -> ', req.params)
-    console.log('GET /user/login/kakao  request.query -> ', req.query)
-    res.status(200).send('')
+
+router.post('/login/kakao', async (req: Request, res: Response, next: NextFunction) => {
+    const user = req.body as User
+    const loginResult: UserResult = await userService.loginKakao(user)
+
+    if (loginResult.message === StatusMessage.success) {
+        console.log('loginSuccess -> ', loginResult.data)
+        userToSession(req, user)
+
+        console.log('save user on session', req.session.user)
+    }
+    res.status(loginResult.statusCode).send(loginResult.data || loginResult.message)
 })
 
 router.post('/login', async (req: Request, res: Response, next: NextFunction) => {
@@ -43,18 +56,7 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
 
     if (loginResult.message === StatusMessage.success) {
         console.log('loginSuccess -> ', loginResult.data)
-
-        const sessionUser: SessionUser = {
-            userId: loginResult.data?.userId!,
-            userCellNo: loginResult.data?.userCellNo!,
-            userEmail: loginResult.data?.userEmail!,
-            userInfo: loginResult.data?.userInfo!,
-            userName: loginResult.data?.name!
-        }
-
-        req.session.user = sessionUser
-        req.session.isLoggedIn = true
-        req.session.save()
+        userToSession(req, user)
 
         console.log('save user on session', req.session.user)
     }
@@ -86,5 +88,19 @@ router.post('/register', async (req: Request, res: Response, next: NextFunction)
     }
     res.status(registerResult.statusCode).send(registerResult.data || registerResult.message)
 })
+
+const userToSession = (req: Request, user: User) => {
+    const sessionUser: SessionUser = {
+        userId: user?.userId!,
+        userCellNo: user?.userCellNo!,
+        userEmail: user?.userEmail!,
+        userInfo: user?.userInfo!,
+        userName: user?.name!
+    }
+
+    req.session.user = sessionUser
+    req.session.isLoggedIn = true
+    req.session.save()
+}
 
 export default router

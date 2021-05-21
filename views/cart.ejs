@@ -55,49 +55,6 @@
                                 v-on:change="onCheckAllChange()">
                             <label for="checkAll" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
                         </div>
-<<<<<<< HEAD
-            <div class="shpcart_select_del_web">
-                <button v-on:click="deleteSelectedItems" class="deleteselectBtn">선택삭제</button>
-            </div>
-        </section>
-        <div class="line"></div>
-        <div class="shop_null" style="display:none">
-            <p>장바구니에 담긴 상품이 없습니다</p>
-        </div>
-     <div class="shop_active">
-        <section id="shplist">
-            <!-- brand 1 -->
-            <template v-for="(dGroup, i) in deliveryGroupList">
-                
-                <div class="brand_1">
-                    <h3 v-if="dGroup.brandName != ''">{{ dGroup.brandName }}</h3>
-                    <h3 v-if="dGroup.brandName == ''">{{ dGroup.companyName }}</h3>
-                        
-                    <template v-for="(product, j) in dGroup.products">
-                        <div class="shoplist_info flow-column" v-for="(option, k) in product.options">
-                            <div class="shoplist_ctn">
-                                <div>
-                                    <input type="checkbox" name="optionSelect" v-model="option.isSelected" v-on:change="updateOrderInfo(option)" v-bind:checked="option.isSelected">
-                                </div>
-                                <div class="flow-column">     
-                                    <div class="shopcart_info">
-                                        <div class="shopcart_thum">
-                                            <a v-bind:href="'/product/' + product.productCode" style="position: relative"><img v-bind:src="RESOURCE_SERVER + product.url"></a>
-                                        </div>
-                                        <div class="shopcart_product flow-column">
-                                            <div class="flow-column">
-                                                <p class="product_name">{{ product.productName }}</p>
-                                                <p class="option_desc">{{ option.optionDesc }}</p>
-                                                <p class="price_web">{{ numberFormat(option.optionDiscountPrice) }}원</p>
-                                                <a><img src="/images/x_icon_login.png" @click="deleteItem(i, j, k)" style="width:12px" class="delete_btn"></a>
-                                            </div>
-                                            <div class="shoplist_count">
-                                                <div class="number-input">
-                                                    <button class="minus" v-on:click="changeOptionCount(false, i, j, k)" style="top:-7px"></button>
-                                                    <input class="quantity" min="0" name="quantity" value="1" v-model="option.optionCount" type="number">
-                                                    <button class="plus" v-on:click="changeOptionCount(true, i, j, k)"></button>
-                                                </div>                                        
-=======
                         <div class="shpcart_select_del_web">
                             <button v-on:click="deleteSelectedItems" class="deleteselectBtn">선택삭제</button>
                         </div>
@@ -162,7 +119,6 @@
                                                         <p>{{ numberFormat( option.optionDiscountPrice * option.optionCount ) }}원</p>
                                                     </div>
                                                 </div>
->>>>>>> 29d1fea24a867d6ed7ad3ef91cbf36f73628cc4c
                                             </div>
                                         </div>
                                     </template>

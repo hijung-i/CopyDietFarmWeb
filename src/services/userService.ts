@@ -36,6 +36,50 @@ class UserService {
         })
     }
 
+    loginKakao = async (user: User): Promise<UserResult> => {
+        let options: Option = {
+            uri: `${serverUrl}/user/loginKakaoUser`,
+            method: 'POST',
+            headers: {
+                'Accept-Charset': 'application/json;charset=UTF-8',
+                'Content-Type': 'application/json'
+            },
+            json: true,
+            body: user
+        }
+
+        return request(options).then((res: any): UserResult => {
+            return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
+        }).catch((err: any): UserResult => {
+            if (err) {
+                console.log('Error occured while login', err.statusCode, err.error)
+            }
+            return setUserResult(StatusCode.error, err.error, null)
+        })
+    }
+
+    loginNaver = async (user: User): Promise<UserResult> => {
+        let options: Option = {
+            uri: `${serverUrl}/user/loginNaverUser`,
+            method: 'POST',
+            headers: {
+                'Accept-Charset': 'application/json;charset=UTF-8',
+                'Content-Type': 'application/json'
+            },
+            json: true,
+            body: user
+        }
+
+        return request(options).then((res: any): UserResult => {
+            return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
+        }).catch((err: any): UserResult => {
+            if (err) {
+                console.log('Error occured while login', err.statusCode, err.error)
+            }
+            return setUserResult(StatusCode.error, err.error, null)
+        })
+    }
+
     register = async (user: User): Promise<UserResult> => {
         let options: Option = {
             uri: `${serverUrl}/user/register`,
