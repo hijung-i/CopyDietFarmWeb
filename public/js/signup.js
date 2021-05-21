@@ -4,7 +4,7 @@
 
 var dupCheck = false;
 $(function() {
-    niceDuplicationCheck();
+    //niceDuplicationCheck();
     
     var id = $('#id');
     var pw1 = $('#pswd1');
@@ -289,7 +289,7 @@ $(function() {
             alert('잘못된 접근입니다.');
             location.href="/";
         }
-*/
+
         var params = {
             dupInfo
         }
@@ -318,7 +318,7 @@ $(function() {
             console.log("error", err);
         })
     }
-
+*/
     function duplicationCheck() {
         var userId = $('#id').val();
         if(userId == ''){
