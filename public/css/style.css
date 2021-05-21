@@ -2052,8 +2052,7 @@ display: flex;
 padding-right:15px}
 
 .instant-search,.instant-search__input-container {border-radius: 5px}
-.instant-search__input-container {display: inline-flex;box-sizing: border-box;width: 90%;
-  padding: 9px}
+.instant-search__input-container {display: inline-flex;box-sizing: border-box;width: 90%;}
 
 .instant-search__result {display: block;color: #333333;text-decoration: none;padding: 10px;
   font-size: 0.8em;cursor: pointer}
