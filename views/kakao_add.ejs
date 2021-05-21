@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style02.css">
-    <link rel="stylesheet" href="/css/myPage.css">
+        <title>다이어트 Farm</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style02.css">
+        <link rel="stylesheet" href="/css/myPage.css">
 
-    <style type="text/css">
-        @media screen and (max-width:1079px) {.web_kakao{display:none}}
-        @media screen and (min-width:1080px){.mobile_kakao{display:none} }
-        .kakao_event img{width:100%;height:auto}
-        </style>
-    <%-include('general/head') %>
-</head>
-
-<body>
-    <div class="web_kakao">
-     <%-include('general/header') %>
-    </div><!--//web_invite-->
-    <div class="mobile_kakao">
-        <section class="detail_title">
-            <h2>카카오 채널 친구 추가 이벤트</h2>
-            <script type="text/javascript">
-                function goBack() {
-                    window.history.back();
+        <style type="text/css">
+            @media screen and (max-width:1079px) {
+                .web_kakao {
+                    display: none;
                 }
-            </script>
-            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
-            </div>
-        </section>
-    </div>
-        <main id="content" class="content">
-        <div class="kakao_event">
-           <img src="/images/kakao_event.png">
-        </div>
-         </main>
-         <%-include('general/footer') %>
-         <script type="text/javascript" src="/js/header.js"></script>
-</body></html>
+            }
+            @media screen and (min-width:1080px) {
+                .mobile_kakao {
+                    display: none;
+                }
+            }
+            .kakao_event img {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+        <%-include('general/head') %>
+        </head>
+
+        <body>
+            <div class="web_kakao">
+                <%-include('general/header') %>
+                </div>
+                <!--//web_invite-->
+                <div class="mobile_kakao">
+                    <section class="detail_title">
+                        <h2>카카오 채널 친구 추가 이벤트</h2>
+                        <script type="text/javascript">
+                            function goBack() {
+                                window
+                                    .history
+                                    .back();
+                            }
+                        </script>
+                        <div class="btnback">
+                            <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
+                        </div>
+                    </section>
+                </div>
+                <main id="content" class="content">
+                    <div class="kakao_event">
+                        <img src="/images/kakao_event.png">
+                    </div>
+                </main>
+                <%-include('general/footer') %>
+                    <script type="text/javascript" src="/js/header.js"></script>
+                </body>
+            </html>

@@ -1,0 +1,60 @@
+*{margin: 0; padding: 0; font-family: "TmoneyRound";}
+a{text-decoration: none; color: inherit;}
+body::-webkit-scrollbar{display: none;}
+#fixed>*{position: fixed;}
+.center{width: 1120px; margin: 0 auto;}
+
+#warp{width: 100%; height: 100vh; overflow: hidden;}
+#scroll{width: 100%; height: calc(100% * 5 + 400px); transition: .5s;}
+
+#warp .full{width: 100%; height: 100vh; background: #f99319; color: #fff; overflow: hidden;}
+#warp .sub{width: 100%; height: 400px; background: #f99319; color: #fff;}
+
+#warp #visual-page{background: none; position: relative;}
+#background-img{filter: brightness(.6); position: absolute; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;}
+.full .logo{padding-top: 60px;}
+.full .text-image-group{display: flex; justify-content: space-between; height: calc(100vh - 110px);}
+.full .column{flex-direction: column; justify-content: flex-start;}
+.full .text-area{width: 710px;}
+.full .image-area{width: 510px;}
+.full .image-area img{height: 490px; padding-top: 265px;}
+.full h2{font-size: 80px; margin-top: 100px; line-height: 110px;}
+.full h3{font-size: 45px; padding-top: 30px;}
+
+.column .text-area{width: 100%; height: 315px;}
+.column .image-area{display: flex; justify-content: flex-end; width: 100%;}
+.full .column img{height: 345px; padding-top: 95px;}
+
+#sns{width: 300px; height: 75px; position: absolute; display: flex; z-index: 10; top: 45px; right: 190px; background: #00000073; border-radius: 10px; justify-content: space-around; align-items: center; padding: 5px 10px 0; box-sizing: border-box;}
+
+.sub h3{font-size: 50px; padding-top: 190px; text-align: center;}
+.sub h3 span{margin-left: 40px;}
+
+#download{width: 208px; height: 286px; background: #fff; border-radius: 35px; box-shadow: 0 10px 20px #00000029; right: 190px; z-index: 20; top: 555px; text-align: center; color: #343434; display: flex; justify-content: flex-end; align-items: center; flex-direction: column;}
+#img-box{width: 95px; height: 95px; background: #f99319; border-radius: 15px; position: absolute; left: 50%; bottom: 190px; transform: translate(-50%, -22px); transition: .5s; overflow: hidden; box-shadow: 0 3px 6px #00000029;}
+#img-box img{object-fit: cover; width: 95px; height: 95px;}
+#download h4{font-size: 22px; padding-bottom: 9px;}
+#download>p{font-size: 16px; color: #f99319; padding-bottom: 15px; line-height: 23px;}
+#download-buttons{width: 182px; height: 90px; padding-bottom: 13px; display: flex; justify-content: center; align-items: center;}
+#download-buttons>a{width: 182px; height: 90px; border-radius: 25px; box-shadow: 0 10px 20px #00000029; display: block; font-size: 12px; position: relative; background: #fff; transition: .2s;}
+#download-buttons p{padding-top: 24px;}
+
+#download-buttons span{display: block; position: absolute; background: #343434; border-radius: 5px; transition: .2s;}
+
+#download-buttons .download-icon-bar{width: 28px; height: 4px; left: 50%; bottom: 17px; transform: translateX(-50%);}
+#download-buttons .download-icon-arrow{width: 4px; height: 14px; left: 50%; bottom: 25px; transform: translateX(-50%);}
+#download-buttons .download-icon-arrow::before,
+#download-buttons .download-icon-arrow::after{content: ""; display: block; width: 4px; height: 11px; border-radius: 5px; background: #343434; position: absolute; left: 0; bottom: 0; transform-origin: 2px 9.5px; transition: .2s;}
+#download-buttons .download-icon-arrow::before{transform: rotate(-45deg);}
+#download-buttons .download-icon-arrow::after{transform: rotate(45deg);}
+
+#download-buttons>a:hover{color: #fff; background: #343434;}
+#download-buttons>a:hover span{background: #fff;}
+#download-buttons>a:hover span::before{background: #fff;}
+#download-buttons>a:hover span::after{background: #fff;}
+
+#nav-box{width: 20px; height: 145px; display: flex; justify-content: space-between; align-items: center; flex-direction: column; top: 50%; right: 120px; transform: translateY(-50%); z-index: 20;}
+.nav-button{width: 20px; height: 20px; background: #fff; border-radius: 50%; cursor: pointer; transition: .2s; opacity: .55;}
+
+#scroll-alert{position: absolute; left: 50%; bottom: 57px; transform: translateX(-50%); display: flex; justify-content: space-between; align-items: center;}
+#scroll-alert p{font-family: "TJSArirang"; font-size: 47px; padding: 0 0 30px 10px;}

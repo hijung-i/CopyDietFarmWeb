@@ -1,340 +1,363 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <style type="text/css">
-        @media screen and (max-width:1079px) {.web_faq{display:none}}
-        @media screen and (min-width:1080px){.mobile_faq{display:none} }
+        <title>다이어트 Farm</title>
+        <style type="text/css">
+            @media screen and (max-width:1079px) {
+                .web_faq {
+                    display: none;
+                }
+            }
+            @media screen and (min-width:1080px) {
+                .mobile_faq {
+                    display: none;
+                }
+            }
         </style>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/faq.css">
-    <link rel="stylesheet" href="/css/style02.css">
-    <%-include('general/head') %>
+        <link rel="stylesheet" href="/css/style.css">
+        <%-include('general/head') %>
 
-</head>
+        </head>
 
-<body>
-   <div class="web_faq">
-    <%-include('general/header') %>
-   </div>
-   
-   <div class="mobile_faq">
-    <section class="detail_title">
-        <h2>FAQ</h2>
+        <body>
+            <div class="web_faq">
+                <%-include('general/header') %>
+                </div>
 
-        <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""> </a>
-        </div>
-    </section>
-    </div>
-    <main id="content" class="content">
-        <div class="faq_web_title">
-         <h2>고객센터</h2>
-       <div class="w_sidemenu">
-          <ul>
-               <a href="notice"><li>공지사항</li></a>
-               <a href="faq"><li class="clicked_menu">fAQ</li></a>
-               <a href="cs-center"><li>고객센터</li></a>
-               <a href="alarm"><li>알림설정</li></a>
-           </ul>
-       </div>
-       </div>
-        <div class="faq">
-            <h3>FAQ</h3>
-            <div class="faqBox">
-                <div class="Faq01">
-                    <div class="innerbox">
-                        <div class="faq_title">
-                            <p><span>주문/결제</span></p>
+                <div class="mobile_faq">
+                    <section class="detail_title">
+                        <h2>FAQ</h2>
+
+                        <div class="btnback">
+                            <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="">
+                            </a>
                         </div>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
+                    </section>
                 </div>
-            </div>
-            <div class="faqBox">
-                <div class="Faq01">
-                    <div class="innerbox">
-                        <div class="faq_title">
-                            <p><span>주문/결제</span></p>
+                <main id="content" class="faq_content">
+                    <div class="faq_web_title">
+                        <h2>고객센터</h2>
+                        <div class="w_sidemenu">
+                            <ul>
+                                <a href="notice">
+                                    <li>공지사항</li>
+                                </a>
+                                <a href="faq">
+                                    <li class="clicked_menu">fAQ</li>
+                                </a>
+                                <a href="cs-center">
+                                    <li>고객센터</li>
+                                </a>
+                                <a href="alarm">
+                                    <li>알림설정</li>
+                                </a>
+                            </ul>
                         </div>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
                     </div>
-                </div>
-            </div>
-            <div class="faqBox">
-                <div class="Faq01">
-                    <div class="innerbox">
-                        <div class="faq_title">
-                            <p><span>주문/결제</span></p>
+                    <div class="faq">
+                        <h3>FAQ</h3>
+                        <div class="faqBox">
+                            <div class="Faq01">
+                                <div class="innerbox">
+                                    <div class="faq_title">
+                                        <p>
+                                            <span>주문/결제</span></p>
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
                         </div>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="faqBox">
+                            <div class="Faq01">
+                                <div class="innerbox">
+                                    <div class="faq_title">
+                                        <p>
+                                            <span>주문/결제</span></p>
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 
-                    </div>
-                </div>
-            </div>
-            <div class="faqBox">
-                <div class="Faq01">
-                    <div class="innerbox">
-                        <div class="faq_title">
-                            <p><span>주문/결제</span></p>
+                                </div>
+                            </div>
                         </div>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <tbody>
-                                <tr class="faq_q">
-                                    <td class="title">
-                                        결제 실패 상태가 뭔가요?
-                                        <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
-                                    </td>
-                                </tr>
-                                <tr class="faq_a faq_a01">
-                                    <td>
-                                        <div class="faq_a_box">
-                                            <p>안녕하세요&nbsp;</p>
-                                            <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                            <p></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="faqBox">
+                            <div class="Faq01">
+                                <div class="innerbox">
+                                    <div class="faq_title">
+                                        <p>
+                                            <span>주문/결제</span></p>
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faqBox">
+                            <div class="Faq01">
+                                <div class="innerbox">
+                                    <div class="faq_title">
+                                        <p>
+                                            <span>주문/결제</span></p>
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                            <tr class="faq_q">
+                                                <td class="title">
+                                                    결제 실패 상태가 뭔가요?
+                                                    <img class="downArrow" src="./images/downarrow_ico_main.png" alt="화살표">
+                                                </td>
+                                            </tr>
+                                            <tr class="faq_a faq_a01">
+                                                <td>
+                                                    <div class="faq_a_box">
+                                                        <p>안녕하세요&nbsp;</p>
+                                                        <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
+                                                        <p></p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page_wrap" style="clear:both;margin-top:30px">
+                            <div class="page_nation">
+                                <a class="arrow pprev" href="#"></a>
+                                <a class="arrow prev" href="#"></a>
+                                <a href="#" class="active">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">6</a>
+                                <a href="#">7</a>
+                                <a href="#">8</a>
+                                <a href="#">9</a>
+                                <a href="#">10</a>
+                                <a class="arrow next" href="#"></a>
+                                <a class="arrow nnext" href="#"></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="page_wrap" style="clear:both;margin-top:30px">
-                <div class="page_nation">
-                   <a class="arrow pprev" href="#"></a>
-                   <a class="arrow prev" href="#"></a>
-                   <a href="#" class="active">1</a>
-                   <a href="#">2</a>
-                   <a href="#">3</a>
-                   <a href="#">4</a>
-                   <a href="#">5</a>
-                   <a href="#">6</a>
-                   <a href="#">7</a>
-                   <a href="#">8</a>
-                   <a href="#">9</a>
-                   <a href="#">10</a>
-                   <a class="arrow next" href="#"></a>
-                   <a class="arrow nnext" href="#"></a>
-                </div>
-             </div>
-        </div>
-        <!--//faq-->
-     </main>
-     <script src="/js/faq.js"></script>
-     <script type="text/javascript" src="/js/header.js"></script>
-</body></html>
+                    <!--//faq-->
+                </main>
+                <script src="/js/faq.js"></script>
+                <script type="text/javascript" src="/js/header.js"></script>
+            </body>
+        </html>

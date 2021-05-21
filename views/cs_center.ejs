@@ -1,89 +1,111 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
-    <meta name="format-detection" content="telephone=no, address=no, email=no" />
-    <meta name="format-detection" content="no" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
 
-    <title>다이어트 Farm</title>
-    <style type="text/css">
-        @media screen and (max-width:1079px) {.web_cs_center{display:none}}
-        @media screen and (min-width:1080px){.mobile_cs_center{display:none} }
-    </style>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/cs.css">
-    <link rel="stylesheet" href="/css/style02.css">
-    <%-include('general/head') %>
+        <title>다이어트 Farm</title>
+        <style type="text/css">
+            @media screen and (max-width:1079px) {
+                .web_cs_center {
+                    display: none;
+                }
+            }
+            @media screen and (min-width:1080px) {
+                .mobile_cs_center {
+                    display: none;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="/css/style.css">
+        <%-include('general/head') %>
 
-</head>
+        </head>
 
-<body>
-    <div class="web_cs_center">
-    <%-include('general/header') %>
-    </div>
-    <div class="mobile_cs_center">
-        <section class="detail_title">
-            <h2>고객센터</h2>
-            <div class="btnback"><a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""></a>
-            </div>
-        </section>
-       </div>
-    <main id="content" class="content">
-        <h2>고객센터</h2>
-       <div class="contents">
-       <div class="w_sidemenu">
-           <ul>
-               <a href="notice"><li>공지사항</li></a>
-               <a href="faq"><li>fAQ</li></a>
-               <a href="cs-center"><li class="clicked_menu">고객센터</li></a>
-               <a href="alarm"><li>알림설정</li></a>
-           </ul>
-       </div>
-        <div class="csBox_web">
-            <ul>
-                <li>
-                    <h3>전화문의</h3>
-                    <div class="info_mob">
-                        <p><span>070-4366-3299</span></p>
-                        <ul>
-                        <li>월~금 10:00~17:00</li>
-                        <li><img src="/images/l_icon_category@2x.png"></li>
-                        <li>토, 일, 공휴일 휴무</li>
-                        </ul>
+        <body>
+            <div class="web_cs_center">
+                <%-include('general/header') %>
+                </div>
+                <div class="mobile_cs_center">
+                    <section class="detail_title">
+                        <h2>고객센터</h2>
+                        <div class="btnback">
+                            <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""></a>
+                        </div>
+                    </section>
+                </div>
+                <main id="content" class="cs_content">
+                    <h2>고객센터</h2>
+                    <div class="contents">
+                        <div class="w_sidemenu">
+                            <ul>
+                                <a href="notice">
+                                    <li>공지사항</li>
+                                </a>
+                                <a href="faq">
+                                    <li>fAQ</li>
+                                </a>
+                                <a href="cs-center">
+                                    <li class="clicked_menu">고객센터</li>
+                                </a>
+                                <a href="alarm">
+                                    <li>알림설정</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="csBox_web">
+                            <ul>
+                                <li>
+                                    <h3>전화문의</h3>
+                                    <div class="info_mob">
+                                        <p>
+                                            <span>070-4366-3299</span></p>
+                                        <ul>
+                                            <li>월~금 10:00~17:00</li>
+                                            <li><img src="/images/l_icon_category@2x.png"></li>
+                                            <li>토, 일, 공휴일 휴무</li>
+                                        </ul>
+                                    </div>
+                                    <div class="innerbox">
+                                        <button
+                                            type="button"
+                                            class="csBtn01"
+                                            onclick="location.href='tel:070-4366-3299'"><img src="/images/call_icon_help@2x.png">문의하기</button>
+                                        <p class="num">070-4366-3299</p>
+                                        <ul class="i_info01">
+                                            <li>월~금 10:00~17:00</li>
+                                            <li><img src="/images/l_icon_category@2x.png"></li>
+                                            <li>토, 일, 공휴일 휴무</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3>채널톡 문의</h3>
+                                    <div class="info_mob">
+                                        <ul>
+                                            <li>월~금 10:00~17:00</li>
+                                            <li><img src="/images/l_icon_category@2x.png"></li>
+                                            <li>토, 일, 공휴일 휴무</li>
+                                        </ul>
+                                    </div>
+                                    <div class="innerbox">
+                                        <button type="button" class="csBtn01"><img src="/images/chat_ico2_footer@2x.png">문의하기</button>
+                                        <ul class="i_info02">
+                                            <li>월~금 10:00~17:00</li>
+                                            <li><img src="/images/l_icon_category@2x.png"></li>
+                                            <li>토, 일, 공휴일 휴무</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="innerbox">
-                    <button type="button" class="csBtn01" onclick="location.href='tel:070-4366-3299'"><img src="/images/call_icon_help@2x.png">문의하기</button>
-                    <p class="num">070-4366-3299</p>
-                    <ul class="i_info01">
-                        <li>월~금 10:00~17:00</li>
-                        <li><img src="/images/l_icon_category@2x.png"></li>
-                        <li>토, 일, 공휴일 휴무</li>
-                    </ul>
-                    </div>
-                </li>
-                <li>
-                    <h3>채널톡 문의</h3>
-                    <div class="info_mob">
-                         <ul>
-                        <li>월~금 10:00~17:00</li>
-                        <li><img src="/images/l_icon_category@2x.png"></li>
-                        <li>토, 일, 공휴일 휴무</li>
-                        </ul>
-                    </div>
-                    <div class="innerbox">
-                    <button type="button" class="csBtn01"><img src="/images/chat_ico2_footer@2x.png">문의하기</button>
-                    <ul class="i_info02">
-                        <li>월~금 10:00~17:00</li>
-                        <li><img src="/images/l_icon_category@2x.png"></li>
-                        <li>토, 일, 공휴일 휴무</li>
-                    </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-         </div>
-           </main>  
-           <script type="text/javascript" src="/js/header.js"></script>
-</body></html>
+                </main>
+                <script type="text/javascript" src="/js/header.js"></script>
+            </body>
+        </html>

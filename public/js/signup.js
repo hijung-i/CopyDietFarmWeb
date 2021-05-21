@@ -4,7 +4,7 @@
 
 var dupCheck = false;
 $(function() {
-    niceDuplicationCheck();
+    //niceDuplicationCheck();
     
     var id = $('#id');
     var pw1 = $('#pswd1');
@@ -318,7 +318,7 @@ $(function() {
             console.log("error", err);
         })
     }
-
+*/
     function duplicationCheck() {
         var userId = $('#id').val();
         if(userId == ''){

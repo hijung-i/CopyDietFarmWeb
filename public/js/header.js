@@ -5,7 +5,7 @@ function getEventStands() {
     ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
     , function(data) {
 
-		$("#header #nav").html('');
+		$("#header_common #nav").html('');
 		var html = '';
 		html += '<a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';		
 		console.log(data);
@@ -20,7 +20,7 @@ function getEventStands() {
 			}
 			console.log(currentStandCode, stand.salesStandCode);
 			if( currentStandCode == stand.salesStandCode){
-				$('#header #nav a').removeClass("is-current");
+				$('#heade_common #nav a').removeClass("is-current");
 				html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
 			} else {
 				html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
@@ -29,7 +29,7 @@ function getEventStands() {
 
 		html += '<div class="nav-underline"></div>';
 		console.log(html);
-		$('#header #nav').html(html);
+		$('#header_common #nav').html(html);
 
         // web size side menu set
 		$('.web_cate').click(function() {
@@ -305,3 +305,48 @@ $(function(){
     })
 
 });
+
+/* 롤링 배너 */
+//client rolling banner
+   window.onload = function() {
+            var bannerLeft=0;
+            var first=1;
+            var last;
+            var imgCnt=0;
+            var $img = $(".main_banner img");
+            var $first;
+            var $last;
+
+            $img.each(function(){   // 1px 간격으로 배너 처음 위치 시킴
+                $(this).css("left",bannerLeft);
+                bannerLeft += $(this).width()+0;
+                $(this).attr("id", "banner"+(++imgCnt));  // img에 id 속성 추가
+            });
+
+            
+            if( imgCnt > 1){                //배너 9개 이상이면 이동시킴
+
+
+
+                last = imgCnt;
+
+                setInterval(function() {
+                    $img.each(function(){
+                        $(this).css("left", $(this).position().left-2); // 2px씩 왼쪽으로 이동
+                    });
+                    $first = $("#banner"+first);
+                    $last = $("#banner"+last);
+                    if($first.position().left < -360) {    // 제일 앞에 배너 제일 뒤로 옮김
+                        $first.css("left", $last.position().left + $last.width()+5 );
+                        first++;
+                        last++;
+                        if(last > imgCnt) { last=1; }   
+                        if(first > imgCnt) { first=1; }
+                    }
+                }, 40);   //여기 값을 조정하면 속도를 조정할 수 있다.(위에 1px 이동하는 부분도 조정하면 
+
+//깔끔하게 변경가능하다           
+
+ }
+
+};
