@@ -324,7 +324,7 @@ height:50px;overflow:hidden}
   #nav::-webkit-scrollbar{ display:none; }
   .nav_wrap {position: relative; width: 310px; height: 27px; overflow-x: auto; -ms-overflow-style: none;}
   .nav_wrap::-webkit-scrollbar {display:none;}
-  #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
+  #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap; text-align: center;}
   .top_util, .searchbox, #nav .web_cate{display:none}
   #header{position:fixed; min-width:360px;height: 151px; top:0px;background-color:#fff;z-index:9999}
   .body_sub_tit{display:flex;justify-content:space-between;}
@@ -1820,9 +1820,6 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
 .filebox p span{text-decoration:underline
 }
-.tab_cont{display:none;min-height:360px;}
-.tab_cont.active{display:block;}
-
 
 /*문의하기(상품문의)*/
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
