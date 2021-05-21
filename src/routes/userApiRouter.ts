@@ -43,7 +43,7 @@ router.post('/login/kakao', async (req: Request, res: Response, next: NextFuncti
 
     if (loginResult.message === StatusMessage.success) {
         console.log('loginSuccess -> ', loginResult.data)
-        userToSession(req, user)
+        userToSession(req, loginResult.data!)
 
         console.log('save user on session', req.session.user)
     }

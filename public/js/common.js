@@ -359,9 +359,7 @@ function loginWithKakaoApi() {
 				requestKaKaoUserInfo();
 			} else {
 				alert('KAKAO 계정으로 로그인에 실패했습니다.');
-
 			}
-			
 		},
 		fail: function(err) {
 			console.log("err", err);
