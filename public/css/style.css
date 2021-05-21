@@ -303,28 +303,27 @@ height:50px;overflow:hidden}
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
    /* 상단 롤링 배너 */
-   .main_banner{height: 42px; min-width: 360px; width: 100%; position: absolute; overflow: hidden; margin-top: 24px;}
+   .main_banner{height: 42px; min-width: 360px; width: 100%; position: absolute; overflow: hidden}
    .main_banner img {position: absolute;}
    .top_banner img {width:100%}
    .sideMenu {z-index: 9999; position: relative; top: 0 !important;}
    #header_common .gnb{position:fixed;width:100%;background-color:#fff}
    .content_main .main_img{padding-top:100px}
     #header_common{margin-bottom:20px}
-   .comp_logo{width:100%;margin:0 auto;text-align:center; background-color:#fff}
-   .comp_logo img{width:55.26px;height:28px}
+   .comp_logo{width:100%;margin-right:24px;background-color:#fff}
+   .comp_logo img{width:108.45px;height:21px}
    .menu_btns{background-color:#fff}
    .btnMenu img{width:19.44px;height:13.67px;}
    .btnCart img{width:21px;height:21px;float:right;}
-   #nav{width:100%;height:34px;padding-left:15px; overflow:scroll;white-space:nowrap;background-color:#fff}
+   #nav{width:100%;height:34px;overflow:scroll;white-space:nowrap;background-color:#fff}
    .comp_logo{width:55px; height: 28px; text-align:center;}
-   .comp_logo img {width: 55px; height: 28px;}
-   .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top: 15px; justify-content: space-between; align-items: center; margin-top: 81px;}
+   .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top: 15px; justify-content: space-between; align-items: center; margin-top: 61px;}
    #header_mypage .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top:30px; justify-content: space-between; align-items: center}
    .btnMenu {width:19.44px;height:13.67px;}
-   #nav{position: absolute;/*width:360px;*/ height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none;}
-   .nav_wrap {position: relative; width: 310px; height: 27px; margin: 0 auto; margin-top: 15px; overflow: auto;}
+   #nav{position: absolute;/*width:360px;*/;margin-top:10px;height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none;}
+   .nav_wrap {position: relative; width: 310px; height:auto; margin: 0 auto; margin-top: 15px; overflow:visible;}
    #nav::-webkit-scrollbar{ display:none; }
-   .nav_wrap {position: relative; width: 310px; height: 27px; overflow-x: auto; -ms-overflow-style: none;}
+   .nav_wrap {position: relative; width: 310px; height: 27px;-ms-overflow-style: none;}
    .nav_wrap::-webkit-scrollbar {display:none;}
    #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
    .top_util, .searchbox, #nav .web_cate{display:none}
@@ -398,7 +397,7 @@ height:50px;overflow:hidden}
  .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
  
  /*  모바일 depth02 */
- .mDepth01 {height: 500px; overflow: auto;}
+ .mDepth01 {height: 500px}
  .mDepth01 li {position: relative; background: #fff;}
  .gnb_depth02 li {background: #F5F5F5;}
  
@@ -554,7 +553,7 @@ border-spacing: 0 20px;font-size:14px}
   #content .s_price .ratio{color:red;font-size:11px;margin-left:5px}
   #header{width:1080px;margin:0 auto;text-align:center;height:242px}
   .comp_logo{width:1080px; height: 132px; line-height: 132px; margin:0 auto; text-align:center;}
-  .comp_logo img{width:158px;height:80px; vertical-align: middle;}
+  .comp_logo img{width:200px;height:auto;vertical-align: middle;}
   .navbar_wrap {width: 100%; height: 54px; line-height: 54px; display: flex; margin: 0 auto; border-top: 2px  solid #F5F5F5;}
   #nav {width: 664px; display: flex;}
   .nav_wrap {position: relative; display: flex; width: 1080px; height: 54px; margin: 0 auto;}
@@ -1205,7 +1204,7 @@ div.slideMenu_top {display: none}
   .signup_top p, .signup_top h3, .signup_top span{padding-left:15px;padding-right:15px}
   .signup_top p{margin-top:10px}
   .terms{padding-left:15px;padding-right:15px}
-  .btn_area #btnJoin{width:90%;margin-left:20px}
+  .btn_area #btnJoin{width:90%;margin-left:10px}
   .id_check{margin-left:15px}
   .id_check .box.int_id {width:73%!important}
   .web_login_title{display:none}

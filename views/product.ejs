@@ -13,11 +13,7 @@
                 .web_product_details {
                     display: none;
                 }
-                .swiper-slide {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
+                         }
             @media screen and (min-width:1080px) {
                 .mobile_product_details {
                     display: none;
@@ -55,20 +51,10 @@
                     align-items: center;
                 }
                 .swiper-slide img {
-                    display: block;
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
-                }
-                .swiper-pagination {
-                    width: 64px;
-                    height: 26px;
-                    border-radius: 13px;
-                    background: #fff;
-                    line-height: 26px;
-                    left: 1000px;
-                    bottom: 25px;
-                }
+                  }
+               
             }
         </style>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -140,14 +126,15 @@
                                     <!-- 상품설명 -->
                                     <div class="view_top_box">
                                         <div class="view_top_img">
-                                            <div class="swiper-container mySwiper">
+                                         <!--//  <div class="swiper-container mySwiper">
                                                 <div class="swiper-wrapper">
                                                     <div class="swiper-slide">
-                                                        <img
-                                                            v-for="(image, index) in product.representative"
-                                                            v-bind:src="RESOURCE_SERVER + image.url"></div>
+                                                      
                                                 </div>
-                                            </div>
+                                            </div>--> 
+                                            <img
+                                            v-for="(image, index) in product.representative"
+                                            v-bind:src="RESOURCE_SERVER + image.url"></div>
                                         </div>
                                     </div>
                                     <div class="v_top_txt_box">
@@ -350,8 +337,7 @@
 
                                     </div>
                                 </div>
-                            </div>
-                            <!--//product_top-->
+                              <!--//product_top-->   
 
                             <div class="floating">
                                 <div class="option_wrap">
@@ -911,6 +897,7 @@
                             <div class="review_btn">
                                 <button type="button" style="width:90%;height: 45px;">문의하기</button>
                             </div>
+
                                  <!-- modal window -->
                                  <section id="ex1" class="modal review_write_modal" style="max-width: 100%;display: none;">
                                     <div class="product_modal04">

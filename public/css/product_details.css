@@ -10,7 +10,7 @@
 @media screen and (max-width:1079px){
 /*div #ex1.modal p{text-align:center;}*/
 div #ex1.modal ul li {float:left}
-.share_img img{float:right;position:relative;top:55px;left:-24px}
+.share_img img{float:right;position:relative;top:180px;left:-24px}
 .option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
 .option_wrap h3{font-size:12px;font-weight:bold;margin-top:21px}
 
