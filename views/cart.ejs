@@ -72,7 +72,7 @@
                                                 <p class="product_name">{{ product.productName }}</p>
                                                 <p class="option_desc">{{ option.optionDesc }}</p>
                                                 <p class="price_web">{{ numberFormat(option.optionDiscountPrice) }}원</p>
-                                                <a href="#"><img src="/images/x_icon_login.png" style="width:12px" class="delete_btn"></a>
+                                                <a><img src="/images/x_icon_login.png" @click="deleteItem(i, j, k)" style="width:12px" class="delete_btn"></a>
                                             </div>
                                             <div class="shoplist_count">
                                                 <div class="number-input">
