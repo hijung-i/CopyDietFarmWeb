@@ -991,7 +991,7 @@ color: #878787; font-size: 12px;}
 /* Modal Content/Box */
 .productReview_modal .modal-content {
     background-color: #fefefe;
-    margin:15% auto; /* 15% from the top and centered */
+    margin:4% auto; /* 15% from the top and centered */
     height:auto;
     width:90%;
     padding:10px
