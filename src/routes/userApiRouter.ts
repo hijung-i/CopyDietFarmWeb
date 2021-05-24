@@ -7,8 +7,8 @@ import userService from '../services/userService'
 const router = Router()
 const client_id = 'Kaft2327QoUkggPhMChf'
 const client_secret = 'qojmNfIAbA'
-const state = "RANDOM_STATE"
-const redirectURI = encodeURI("http://data-flow.co.kr:3000/user/callback/naver")
+const state = 'RANDOM_STATE'
+const redirectURI = encodeURI('http://data-flow.co.kr:3000/user/callback/naver')
 
 /****************************
  * api명: login
@@ -105,12 +105,12 @@ router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) 
     const request = require('request')
     const options = {
         url: api_url,
-        headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
+        headers: { 'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret }
     }
     request.get(options, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-            console.log(response, body)
-            res.writeHead(200, {'Content-Type': 'text/jsoncharset=utf-8'})
+      if (!error && response.statusCode === 200) {
+            res.writeHead(200, { 'Content-Type': 'text/jsoncharset=utf-8' })
+            console.log(body)
             res.end(body)
         } else {
             res.status(response.statusCode).end()
@@ -118,10 +118,7 @@ router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) 
         }
     })
 
-    res.status(200).send('')
 })
-
-
 
 const userToSession = (req: Request, user: User) => {
     const sessionUser: SessionUser = {
