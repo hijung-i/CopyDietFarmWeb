@@ -370,6 +370,27 @@ $(function(){
 	}else {
 		document.getElementById("popup_layer").style.display = "none"; 
 	}
+	
+	var modal = document.getElementById('myModal');
+	var btn = document.getElementById('myBtn');
+	var span = document.getElementsByClassName('close')[0];
+
+	btn.addEventListener('click', showModal());
+	span.addEventListener('click', hideModal());
+
+	function showModal() {
+	modal.style.display = 'block';
+	};
+
+	function hideModal() {
+	modal.style.display = 'none';
+	};
+
+	window.addEventListener('click', function(event) {
+	if (event.target != modal) { // needs to be anything but the modal, from what i can understand
+		hideModal();
+	}
+	});
 });
 
 	
