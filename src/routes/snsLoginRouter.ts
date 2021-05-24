@@ -9,17 +9,42 @@ const client_secret = 'qojmNfIAbA'
 const state = 'RANDOM_STATE'
 const redirectURI = encodeURI('http://data-flow.co.kr:3000/user/callback/naver')
 
-router.get('/naverlogin', function (req: Request, res: Response) {
+router.get('/naverLoginBtn', function (req: Request, res: Response) {
     const api_url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirectURI + '&state=' + state
     res.writeHead(200, { 'Content-Type': 'text/html;charset=utf-8' })
     res.end("<a href='" + api_url + "' onclick=\"window.open(this.href, 'naverloginpop', 'titlebar=1, resizable=1, scrollbars=yes, width=600, height=550'); return false\"'><img height='50' src='/images/naver_login@2x.png'/></a>")
 })
 
-router.get('/kakaoLogin', function (req: Request, res: Response) {
+router.get('/kakaoLogin', async (req: Request, res: Response) => {
     console.log('body >>>>', req.body)
     console.log('body >>>>', req.query)
     console.log('body >>>>', req.params)
+
     res.send('')
+})
+
+router.get('/callback/kakao', async (req: Request, res: Response, next: NextFunction) => {
+    console.log('GET /callback/kakao req.query >> ', req.query)
+    const result = await userService.requestKakaoToken(req.query.code)
+
+    const callback = {
+        type: 'K',
+        code: req.query.code,
+        token: result.access_token,
+        refreshToken: result.refresh_token,
+        kakaoNo: '',
+        userId: '',
+        password: '',
+        userEmail: '',
+        userGender: '',
+        userCellNo: '',
+        userInfo: '',
+        userName: ''
+    }
+
+    res.locals.callback = callback
+
+    res.render('loginCallback')
 })
 
 router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) => {
@@ -43,24 +68,8 @@ router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) 
             let result = await userService.getNaverUserInfo(obj.access_token)
             console.log('result >>>>', result)
             if (result !== null) {
-                const userId = result.id + '@n'
-                const userCellNo = result.mobile_e164.replace('+82 ', '0').replace('+1', '')
-                let userGender = result.gender
-                switch (result.gender) {
-                    case 'F':
-                        userGender = 'W'
-                        break
-                    case 'U':
-                        userGender = ''
-                        break
-                }
-
-                const userInfo = result.birthyear + result.birthday.replace('-', '')
-                const userEmail = result.email
-                const userName = result.name
-
-                let redirectUrl = `/sign-up-form?userId=${userId}&userEmail=${userEmail}&userCellNo=${userCellNo}&userInfo=${userInfo}&userName=${userName}&password=${userId}&tokenNaver=${obj.token}`
-                res.redirect(redirectUrl)
+                res.locals.callback = result
+                res.render('loginCallback')
             }
             res.send('<script>alert("네이버 로그인에 실패했습니다.");location.href="/";</script>')
         } else {

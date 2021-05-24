@@ -38,6 +38,7 @@ router.post('/login/naver', async (req: Request, res: Response, next: NextFuncti
 })
 
 router.post('/login/kakao', async (req: Request, res: Response, next: NextFunction) => {
+    console.log('POST /user/login/kakao >>', req.body)
     const user = req.body as User
     const loginResult: UserResult = await userService.loginKakao(user)
 
@@ -47,6 +48,7 @@ router.post('/login/kakao', async (req: Request, res: Response, next: NextFuncti
 
         console.log('save user on session', req.session.user)
     }
+
     res.status(loginResult.statusCode).send(loginResult.data || loginResult.message)
 })
 

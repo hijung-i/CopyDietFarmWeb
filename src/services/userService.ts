@@ -4,6 +4,8 @@ import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/
 const serverUrl = 'http://192.168.0.3:9090'
 // const serverUrl = 'http://13.209.123.102:9090'
 
+const KAKAO_SERVER = 'https://kauth.kakao.com'
+
 type Option = {
     uri: string,
     method: string,
@@ -95,7 +97,25 @@ class UserService {
             const obj = JSON.parse(decodeURIComponent(res))
             console.log('success getNaverUserData', res, obj)
 
-            return obj
+            const userId = obj.id + '@n'
+                const userCellNo = obj.mobile_e164.replace('+82 ', '0').replace('+1', '')
+                let userGender = obj.gender
+                switch (obj.gender) {
+                    case 'F':
+                        userGender = 'W'
+                        break
+                    case 'U':
+                        userGender = ''
+                        break
+                }
+
+                const userInfo = obj.birthyear + obj.birthday.replace('-', '')
+                const userEmail = obj.email
+                const userName = obj.name
+
+            return {
+                userId, userCellNo, userGender, userInfo, userEmail, userName, password: userId
+            }
         }).catch((err: any) => {
             console.log('error while getNaverUserData', err.statusCode, err.err, err.body)
             return null
@@ -124,6 +144,104 @@ class UserService {
             }
             return setUserResult(StatusCode.error, err.error, null)
         })
+    }
+    requestKakaoToken = async (code) => {
+        const CALLBACK_SERVER = 'http://data-flow.co.kr:3000'
+        const options = {
+            uri: KAKAO_SERVER + '/oauth/token',
+            method: 'POST',
+            headers: {
+                'Host': 'kauth.kakao.com',
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+            },
+            json: false,
+            form: {
+                grant_type: 'authorization_code',
+                redirect_uri: CALLBACK_SERVER + '/user/callback/kakao',
+                code: code,
+                client_id: '23424519967349f9a1d006b09f81bb98',
+                client_secret: 'Sv5VpQchcPw81uP51LZkxsaHpi4KOWjM'
+            }
+        }
+
+        return request.post(options).then((res: any) => {
+            console.log('GET /user/me result >>', res)
+            const result = JSON.parse(res)
+            return result
+        }).catch((err: any) => {
+            console.error('GET /user/me error >>', err.statusCode, err.error)
+        })
+    }
+
+    requestKakaoUserInfo = async () => {
+        const url = KAKAO_SERVER + '/v2/user/me'
+
+        const options = {
+            uri: url,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+            }
+        }
+
+        request(options).then((res: any) => {
+            console.log('GET /user/me result >>', res)
+
+        }).catch((err: any) => {
+            console.error('GET /user/me error >>', err.statusCode, err.error)
+        })
+		// function(res) {
+		// 	console.log(res)
+		// 	var account = res.kakao_account;
+
+		// 	var agreement = false;
+		// 	if (account.birthday_needs_agreement == true ) {
+		// 		agreement = true;
+		// 	}
+		// 	if (account.birthyear_needs_agreement == true ) {
+		// 		agreement = true;
+		// 	}
+		// 	if (account.gender_needs_agreement == true ) {
+		// 		agreement = true;
+		// 	}
+
+		// 	if(agreement) {
+		// 		alert('선택 정보에 동의해주셔야 회원가입이 가능합니다.');
+		// 		kakaoUnlink();
+		// 		return;
+		// 	}
+
+		// 	var params = {
+		// 		kakaoNo: res.id,
+		// 		userEmail: account.email,
+		// 		userName: account.profile.nickname,
+		// 		userCellNo: account.phone_number.replace(/-/gi, '').replace('+82 ', '0').replace('+1 ', ''),
+		// 		userInfo: account.birthyear + account.birthday
+		// 	}
+
+		// 	switch(account.gender) {
+		// 		case 'male':
+		// 			params.userGender = 'M'
+		// 			break;
+		// 		case 'female':
+		// 			params.userGender = 'W'
+		// 			break;
+		// 		default:
+		// 			params.userGender = 'X'
+		// 			break;
+		// 	}
+
+		// 	params.userId = params.kakaoNo + '@K';
+		// 	params.password = params.kakaoNo + '@K';
+
+		// 	checkKakaoRegistration(params);
+		// },
+		// fail: function(error) {
+		// 	console.log(
+		// 		'login success, but failed to request user information: '
+		// 		,error
+		// 	)
+		// },
     }
 
     SHA256 = (s: string): string => {
