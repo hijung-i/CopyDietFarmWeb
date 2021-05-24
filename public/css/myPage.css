@@ -26,7 +26,7 @@ justify-content: space-between;border-bottom:0.5px solid #bbbbbb}
 .myPage01 h3{padding-left:20px;text-align:left;margin-bottom:20px;font-size:16px;font-weight:normal;margin-top:-10px}
 .myPage01 h4{padding-left:20px;}
 .buttons{padding-left:15px;padding-right:15px;width:100%;margin: 0 auto;display: flex;justify-content: space-between;}
-.btnLogin, .btnSignup{width: 48%;height:45px;text-align:center;border:0;display:inline-block;
+.btnLogin, .btnSignup{width:100%;height:45px;text-align:center;border:0;display:inline-block;
 background-color:#F99319;border-radius:5px;
 ;font-size:14px;font-weight:bold;color:#fff;padding-top:4px}
 

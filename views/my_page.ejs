@@ -26,6 +26,8 @@
     </head>
 
     <body>
+      
+        
         <article class="skip_menu">
             <a href="#">
                 <span>바로가기1</span></a>
@@ -37,13 +39,6 @@
         <div class="mobile_myinfo">
 
             <%-include('general/header_mypage') %>
-                <!--// <script type="text/javascript"> function goBack() {
-                window.history.back(); } </script> <div class="btnback"><a href="#" value="취소"
-                onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt=""
-                style="width:17px"> </a> </div> <div class="btncart"><a href="#"
-                onclick="mCart('on');"><img src="/images/cart_icon_main@2x.png" alt=""
-                style="width:21px;left:15px"></a> </div> -->
-
             </div>
             <!--//모바일 헤더 끝-->
             <main id="content" class="content">
@@ -59,13 +54,14 @@
                                     onclick="javascript:location.href='/login-form';"><img
                                     src="/images/login_icon_my@2x.png"
                                     style="position:relative;margin-right:7px;width:20px;height:20px">로그인</button>
-                                <button
+                           <!--//     <button
                                     type="button"
                                     class="btnSignup"
                                     onclick="javascript:location.href='/sign-up-form';"><img
                                     src="/images/join_icon_my@2x.png"
                                     style="position:relative;margin-right:7px;width:20px;height:20px">회원가입</button>
-                            </div>
+                           -->
+                                </div>
                             <% } else if (isLoggedIn) { %>
                                 <ul style="border:none;">
                                     <li style="font-size:16px;font-weight:bold;"><%=sessionUser.userName %>님</li>

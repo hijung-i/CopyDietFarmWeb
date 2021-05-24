@@ -90,7 +90,7 @@ function generateHtmlForProductList(products, maxSize){
 		
     }
     return html;
-}1
+}
 
 function generateHtmlForProduct(product){
 	
@@ -351,7 +351,6 @@ function onIdentifyingSuccess(data, nextMethod) {
 	
 }
 
-<<<<<<< HEAD
 // 쿠키 생성
 function setCookie( name, value, expiredays ) {  // 쿠키저장
 	var todayDate = new Date();  //date객체 생성 후 변수에 저장
@@ -397,7 +396,6 @@ function closePop() {
 
 
 
-=======
 function loginWithKakaoApi() {
     Kakao.Auth.login({
 		success: function(authObj) {
@@ -523,7 +521,6 @@ function loginKakao(params) {
 	}, function(err) {
 		console.log("error while loginKakao", err);
 	});
->>>>>>> 51f6e5e7bfa744c392b794ba34dee15098e7c327
 
 }
 
