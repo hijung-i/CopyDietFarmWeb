@@ -84,16 +84,7 @@ $(function() {
     })
     
     $(".mDepth01>li>dl>dt").click(function() {
-        var objA = $(this).next("dd");
-        /*if(objA.css("display") != "none"){
-            objA.prev('dt').removeClass("on");
-            objA.hide();
-        } else {*/
-            jQuery('.mDepth01>li>dl>dd').css('display','none');
-            jQuery('.mDepth01>li>dl>dt').removeClass("on");
-            objA.prev('dt').addClass("on");
-            objA.slideDown();
-    // }
+        
     });
 
     jQuery('.side_back').bind("touchend click", function(){

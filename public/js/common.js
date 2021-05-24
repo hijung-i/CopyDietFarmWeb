@@ -90,7 +90,7 @@ function generateHtmlForProductList(products, maxSize){
 		
     }
     return html;
-}1
+}
 
 function generateHtmlForProduct(product){
 	
@@ -173,7 +173,7 @@ function sideMenu(key) {
 		jQuery('#m_search').hide();
 		jQuery('.mDepth01>li>dl>dd').css('display','none');
 		jQuery('.mDepth01>li>dl>dt').removeClass("on");
-		$(".mDepth01>li.current").each(function() {
+		$(".mDepth01>li.current").each(function() { 
 			$(this).addClass("on");
 			$(this).children('dl').children('dt').addClass("on");
 			$(this).children('dl').children('dd').show();
@@ -350,6 +350,51 @@ function onIdentifyingSuccess(data, nextMethod) {
 	$("#infoForm").submit();
 	
 }
+
+// 쿠키 생성
+function setCookie( name, value, expiredays ) {  // 쿠키저장
+	var todayDate = new Date();  //date객체 생성 후 변수에 저장
+	todayDate.setDate( todayDate.getDate() + expiredays ); 
+		// 시간지정(현재시간 + 지정시간)
+	document.cookie = name + "=" + value + "; path=/; expires=" + todayDate.toUTCString() + ";"
+	//위 정보를 쿠키에 굽는다
+} 
+  
+
+$(function(){
+	$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
+	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
+				
+	if(document.cookie.indexOf("popToday=close") < 0 ){      // 쿠키 저장여부 체크
+		document.getElementById("popup_layer").style.display = "block";
+		}else {
+		document.getElementById("popup_layer").style.display = "none"; 
+		}
+	});
+			 
+//오늘하루만보기 닫기버튼 스크립트
+function closeToday() { 
+	setCookie( "popToday", "close" , 1  ); 
+	$("#popup_layer").css("display", "none");
+	document.getElementById("popup_layer").style.display = "none";
+}
+//그냥 닫기버튼 스크립트
+function closePop() { 
+	document.getElementById("popup_layer").style.display = "none";
+}
+
+
+// 7일동안 닫기버튼 스크립트는 아래 스크립트로 교체
+function closeToday() { 
+	setCookie( "popToday", "close" , 7 ); 
+	$("#popup_layer" ).css("display", "none");
+	document.getElementById("popup_layer").style.display = "none";
+}
+function closePop() { 
+	document.getElementById("popup_layer").style.display = "none";
+}    
+
+
 
 function loginWithKakaoApi() {
     Kakao.Auth.login({
