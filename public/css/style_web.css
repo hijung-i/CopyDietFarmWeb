@@ -1,5 +1,6 @@
 /*coupon web*/
 @media screen and (max-width:1079px){
+
 .contents h2{display:none} 
 .coupon_code{display:none}
 }
@@ -25,7 +26,7 @@
 .amount{position:relative;left:325px;color:#fff}
 }
 
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
 .point_history_web{display:none}
 .point_title_web{display:none}
 .due{display:none}
