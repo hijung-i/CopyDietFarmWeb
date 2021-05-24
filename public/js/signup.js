@@ -1,8 +1,6 @@
 
 
 /*변수 선언*/
-
-var dupCheck = false;
 $(function() {
     //niceDuplicationCheck();
     
@@ -24,26 +22,13 @@ $(function() {
     pw2.focusout(comparePw);
     emailInput.focusout(isEmailCorrect);
     
-    $("#btnCheckIdDuplicate").click(function (){
-        if(!dupCheck) {
-            alert('아이디 중복을 확인 해주세요')
-            return;
-        }
-        
-        var userId = $("#id").val();
-        var password = $("#pswd1").val();
-        var email = emailInput.val();
+    $("#btnJoin").click(function (){
         
         var kakaoNo = $('#kakaoNo').val();
         var tokenNaver = $('#tokenNaver').val();
         
         var name = $("#userName").val();
         if(name === '') {
-            alert('본인인증 정보가 없습니다.')
-            return;
-        }
-        var userInfo = $("#userInfo").val();
-        if(userInfo === '') {
             alert('본인인증 정보가 없습니다.')
             return;
         }
@@ -57,6 +42,10 @@ $(function() {
             alert('본인인증 정보가 없습니다.')
             return;
         }
+
+        var password = $('#password').val();
+        var userId = $('#userId').val();
+        var email = $('#userEmail').val();
 
         var recommender = $("#recommender").val();
 
@@ -79,6 +68,8 @@ $(function() {
         var marketingAlert = ($("#mkt_agree")[0].checked)?'Y':'N';
         var agreementEmail = ($("#mkt_email")[0].checked)?'Y':'N';
         var agreementSms = ($("#mkt_sms")[0].checked)?'Y':'N';
+
+        var userInfo = $('#userInfo').val();
 
         var params = {
             userId: userId,
@@ -111,7 +102,7 @@ $(function() {
         function(data) {
             console.log("register success", data);
             alert("회원가입에 성공했습니다.");
-            location.href = "/login-form";
+            location.href = "/";
         }, 
         function(err) {
             console.log(err);

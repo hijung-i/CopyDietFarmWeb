@@ -1,8 +1,13 @@
-//var API_SERVER = "http://localhost:9090";
-// var API_SERVER = "http://192.168.0.3:9090";
+// var API_SERVER = "http://localhost:9090";
+// var SERVER_IP = '192.168.0.3';
+var SERVER_IP = 'data-flow.co.kr';
+
+var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
+var API_SERVER = "http://"+ SERVER_IP +":9090";
+
 //var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
-var API_SERVER = "http://13.209.123.102:9090";
+// var API_SERVER = "http://13.209.123.102:9090";
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
@@ -365,6 +370,15 @@ $(function(){
 	//$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
 
+	if ($('#naver_id_login').length > 0) {
+		ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+		 function(data) {
+			$('#naver_id_login').html(data);
+		}, function (err) {
+			console.log("error login button", err);
+		})
+	}
+
 	var modal = document.getElementById('myModal');
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
@@ -452,4 +466,25 @@ function closeToday() {
 }
 function closePop() {
 	document.getElementById("popup_layer").style.display = "none";
+}
+
+// kakao 계정 로그인 순서1번
+function loginWithKakaoApi() {
+	Kakao.Auth.authorize({
+        redirectUri: CALLBACK_SERVER + '/user/result/kakao',
+		scope: 'profile,plusfriends,account_email,gender,birthday,birthyear,phone_number'
+	})
+}
+
+function naverCallback(success, paramStr) {
+	if(success) {
+
+		var params = JSON.parse(paramStr);
+		
+		location.href = '/user/result/naver?tokenNaver='+params.tokenNaver+'&userId='+params.userId+'&userCellNo='+params.userCellNo
+		+ '&userInfo='+params.userInfo+'&userEmail='+params.userEmail+'&userName='+params.userName+'&password='+params.password+'&userGender='+params.userGender
+	} else  {
+		alert('네이버 아이디로 로그인에 실패했습니다.')
+		location.href = '/'
+	}
 }
