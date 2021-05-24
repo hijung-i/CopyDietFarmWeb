@@ -365,10 +365,10 @@ $(function(){
 	//$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
 				
-
 	var modal = document.getElementById('myModal');
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
+
 	if(btn != null) {
 		btn.addEventListener('click', showModal());
 	}
