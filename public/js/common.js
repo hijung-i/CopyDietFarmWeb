@@ -368,7 +368,7 @@ $(function(){
 	var modal = document.getElementById('myModal');
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
-
+    var funcs = [];
 	//if(btn != null) {
 	//	btn.addEventListener('click', showModal());
 	//}
