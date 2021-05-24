@@ -34,14 +34,16 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script>
     $(function() {
-        var naverLoginBtn = new naver_id_login("Kaft2327QoUkggPhMChf", "https://openapi.naver.com/v1/nid/me");
-        var state = naverLoginBtn.getUniqState();
-        naverLoginBtn.setDomain("http://dietfarm.co.kr");
-        naverLoginBtn.setState(state);
-        naverLoginBtn.setPopup();
-        naverLoginBtn.init_naver_id_login();
-        
-        $('#naver_id_login img').attr("src", "/images/naver_login@2x.png");
+        if($('#naver_id_login').length > 0) {
+            var naverLoginBtn = new naver_id_login("Kaft2327QoUkggPhMChf", "https://openapi.naver.com/v1/nid/me");
+            var state = naverLoginBtn.getUniqState();
+            naverLoginBtn.setDomain("http://data-flow.co.kr");
+            naverLoginBtn.setState(state);
+            naverLoginBtn.setPopup();
+            naverLoginBtn.init_naver_id_login();
+            
+            $('#naver_id_login img').attr("src", "/images/naver_login@2x.png");
+        }
     })
 </script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
