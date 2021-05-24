@@ -1,26 +1,30 @@
 // kakao 계정 로그인 순서1번
-function loginWithKakaoApi() {
-    Kakao.Auth.login({
-		success: function(authObj) {
-			console.log("success", authObj)
-			if(authObj != undefined) {
-				requestKaKaoUserInfo();
-			} else {
-				alert('KAKAO 계정으로 로그인에 실패했습니다.');
-			}
-		},
-		fail: function(err) {
-			console.log("err", err);
-			if(err) {
-				alert('KAKAO 계정으로 로그인에 실패했습니다.');
-				return;
-			}
-		},
-    })
-}
+// function loginWithKakaoApi() {
+    // Kakao.Auth.authorize({
+	// 	success: function(authObj) {
+	// 		console.log("success", authObj)
+	// 		if(authObj != undefined) {
+    //             alert('로그인')
+	// 			requestKaKaoUserInfo();
+	// 		} else {
+    //             alert('실패', err);
+	// 			alert('KAKAO 계정으로 로그인에 실패했습니다.');
+	// 		}
+	// 	},
+	// 	fail: function(err) {
+	// 		console.log("err", err);
+    //         alert('로그인 실패', err)
+	// 		if(err) {
+	// 			alert('KAKAO 계정으로 로그인에 실패했습니다.');
+	// 			return;
+	// 		}
+	// 	},
+    // })
+// }
 
 // 카카오계정 로그인 이후 유저 정보 요청
 function requestKaKaoUserInfo() {
+    alert('requestKakaoUserInfo')
 	Kakao.API.request({
 		url: '/v2/user/me',
 		success: function(res) {
@@ -82,11 +86,13 @@ function requestKaKaoUserInfo() {
 
 // 카카오 연동 여부 조회
 function checkKakaoRegistration(params) {
+    alert('checkKakaoRegistration')
 	console.log("check kakao Registration", params);
 	ajaxCall(API_SERVER + '/user/findUserKakao', params, 'POST',
 	function(data) {
 		console.log("checkKakaoRegistraiton", data);
 		var result = data.result;
+        alert(result)
 		switch(result) {
 			case '연동 진행':
 				params.userId = result.userId
@@ -134,8 +140,10 @@ function linkKakaoUser(params) {
 
 // 카카오 계정으로 로그인 진행
 function loginKakao(params) {
+    alert('loginKakao')
 	ajaxCall('/user/login/kakao', params, 'POST', 
 	function(data) {
+        alert('로그인 완료')
 		console.log("success loginKakao", data);
 		location.reload();
 	}, function(err) {
