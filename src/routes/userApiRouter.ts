@@ -25,12 +25,12 @@ router.get('/login', (req: Request, res: Response, next: NextFunction) => {
 })
 
 router.post('/login/naver', async (req: Request, res: Response, next: NextFunction) => {
-    const user = req.body as User
-    const loginResult: UserResult = await userService.loginNaver(user)
+    const tokenNaver = req.body.tokenNaver as string
+    const loginResult: UserResult = await userService.loginNaver(tokenNaver)
 
     if (loginResult.message === StatusMessage.success) {
         console.log('loginSuccess -> ', loginResult.data)
-        userToSession(req, user)
+        userToSession(req, loginResult.data!)
 
         console.log('save user on session', req.session.user)
     }

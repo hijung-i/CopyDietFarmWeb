@@ -15,8 +15,8 @@ router.get('/naverLoginBtn', function (req: Request, res: Response) {
     res.end("<a href='" + api_url + "' onclick=\"window.open(this.href, 'naverloginpop', 'titlebar=1, resizable=1, scrollbars=yes, width=600, height=550'); return false\"'><img height='50' src='/images/naver_login@2x.png'/></a>")
 })
 
-router.get('/callback/kakao', async (req: Request, res: Response, next: NextFunction) => {
-    console.log('GET /callback/kakao req.query >> ', req.query)
+router.get('/result/kakao', async (req: Request, res: Response, next: NextFunction) => {
+    console.log('GET /result/kakao req.query >> ', req.query)
     const result = await userService.requestKakaoToken(req.query.code)
 
     const callback = {
@@ -32,6 +32,51 @@ router.get('/callback/kakao', async (req: Request, res: Response, next: NextFunc
         userCellNo: '',
         userInfo: '',
         userName: ''
+    }
+
+    res.locals.callback = callback
+
+    res.render('loginCallback')
+})
+
+router.get('/result/kakao', async (req: Request, res: Response, next: NextFunction) => {
+    console.log('GET /result/kakao req.query >> ', req.query)
+    const result = await userService.requestKakaoToken(req.query.code)
+
+    const callback = {
+        type: 'K',
+        code: req.query.code,
+        token: result.access_token,
+        refreshToken: result.refresh_token,
+        kakaoNo: '',
+        userId: '',
+        password: '',
+        userEmail: '',
+        userGender: '',
+        userCellNo: '',
+        userInfo: '',
+        userName: ''
+    }
+
+    res.locals.callback = callback
+
+    res.render('loginCallback')
+})
+
+router.get('/result/naver', async (req: Request, res: Response, next: NextFunction) => {
+    console.log('GET /result/naver req.query >> ', req.query)
+
+    const callback = {
+        type: 'N',
+        code: req.query.code,
+        tokenNaver: req.query.tokenNaver,
+        userId: req.query.userId,
+        password: req.query.password,
+        userEmail: req.query.userEmail,
+        userGender: req.query.userGender,
+        userCellNo: req.query.userCellNo,
+        userInfo: req.query.userInfo,
+        userName: req.query.userName
     }
 
     res.locals.callback = callback
@@ -55,17 +100,17 @@ router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) 
     request.get(options, async function (error, response, body) {
         if (!error && response.statusCode === 200) {
             const obj = JSON.parse(body)
-            console.log('body >>>', obj)
 
             let result = await userService.getNaverUserInfo(obj.access_token)
             console.log('result >>>>', result)
             if (result !== null) {
-                res.locals.callback = result
-                res.render('loginCallback')
+                res.send('<script>opener.naverCallback(true, \'' + JSON.stringify(result) + '\');window.close();</script>')
+                return
             }
-            res.send('<script>alert("네이버 로그인에 실패했습니다.");location.href="/";</script>')
+
+            res.send('<script>opener.naverCallback(false)</script>')
         } else {
-            res.send('<script>alert("네이버 로그인에 실패했습니다.");location.href="/";</script>')
+            res.send('<script>opener.naverCallback(false)</script>')
             console.log('error = ' + response.statusCode)
         }
     })

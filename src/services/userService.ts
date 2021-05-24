@@ -65,7 +65,7 @@ class UserService {
         })
     }
 
-    loginNaver = async (user: User): Promise<UserResult> => {
+    loginNaver = async (tokenNaver: string): Promise<UserResult> => {
         let options: Option = {
             uri: `${SERVER_URL}/user/loginNaverUser`,
             method: 'POST',
@@ -74,14 +74,17 @@ class UserService {
                 'Content-Type': 'application/json'
             },
             json: true,
-            body: user
+            body: {
+                tokenNaver
+            }
         }
+        console.log(options)
 
         return request(options).then((res: any): UserResult => {
             return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
         }).catch((err: any): UserResult => {
             if (err) {
-                console.log('Error occured while login', err.statusCode, err.error)
+                console.log('Error occured while loginNaver', err.statusCode, err.error)
             }
             return setUserResult(StatusCode.error, err.error, null)
         })
@@ -99,30 +102,32 @@ class UserService {
         }
 
         return request(options).then((res: any) => {
-            const obj = JSON.parse(decodeURIComponent(res))
-            console.log('success getNaverUserData', res, obj)
+            const result = JSON.parse(decodeURIComponent(res))
+            const obj = result.response
 
             const userId = obj.id + '@n'
-                const userCellNo = obj.mobile_e164.replace('+82 ', '0').replace('+1', '')
-                let userGender = obj.gender
-                switch (obj.gender) {
-                    case 'F':
-                        userGender = 'W'
-                        break
-                    case 'U':
-                        userGender = ''
-                        break
-                }
+            const userCellNo = obj.mobile.replace(/-/gi, '')
+            let userGender = obj.gender
+            switch (obj.gender) {
+                case 'F':
+                    userGender = 'W'
+                    break
+                default:
+                    userGender = 'X'
+            }
+            let userInfo = ''
+            if (obj.birthyear !== undefined && obj.birthday !== undefined) {
+                userInfo = obj.birthyear + obj.birthday.replace('-', '')
+            }
 
-                const userInfo = obj.birthyear + obj.birthday.replace('-', '')
-                const userEmail = obj.email
-                const userName = obj.name
+            const userEmail = obj.email
+            const userName = obj.name
 
             return {
-                userId, userCellNo, userGender, userInfo, userEmail, userName, password: userId
+                tokenNaver: obj.id, userId, userCellNo, userGender, userInfo, userEmail, userName, password: userId
             }
         }).catch((err: any) => {
-            console.log('error while getNaverUserData', err.statusCode, err.err, err.body)
+            console.log('error while getNaverUserData', err)
             return null
         })
     }
@@ -162,7 +167,7 @@ class UserService {
             json: false,
             form: {
                 grant_type: 'authorization_code',
-                redirect_uri: CALLBACK_SERVER + '/user/callback/kakao',
+                redirect_uri: CALLBACK_SERVER + '/user/result/kakao',
                 code: code,
                 client_id: '23424519967349f9a1d006b09f81bb98',
                 client_secret: 'Sv5VpQchcPw81uP51LZkxsaHpi4KOWjM'
@@ -170,11 +175,11 @@ class UserService {
         }
 
         return request.post(options).then((res: any) => {
-            console.log('GET /user/me result >>', res)
+            console.log('GET /request/token > request result >>', res)
             const result = JSON.parse(res)
             return result
         }).catch((err: any) => {
-            console.error('GET /user/me error >>', err.statusCode, err.error)
+            console.error('GET /request/token > request error >>', err.statusCode, err.error)
         })
     }
 

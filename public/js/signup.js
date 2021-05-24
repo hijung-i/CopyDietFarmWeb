@@ -32,11 +32,6 @@ $(function() {
             alert('본인인증 정보가 없습니다.')
             return;
         }
-        var userInfo = $("#userInfo").val();
-        if(userInfo === '') {
-            alert('본인인증 정보가 없습니다.')
-            return;
-        }
         var userCellNo = $("#userCellNo").val();
         if(userCellNo === '') {
             alert('본인인증 정보가 없습니다.')
@@ -74,6 +69,8 @@ $(function() {
         var agreementEmail = ($("#mkt_email")[0].checked)?'Y':'N';
         var agreementSms = ($("#mkt_sms")[0].checked)?'Y':'N';
 
+        var userInfo = $('#userInfo').val();
+
         var params = {
             userId: userId,
             password: password,
@@ -105,7 +102,7 @@ $(function() {
         function(data) {
             console.log("register success", data);
             alert("회원가입에 성공했습니다.");
-            location.href = "/login-form";
+            location.href = "/";
         }, 
         function(err) {
             console.log(err);

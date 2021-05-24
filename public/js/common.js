@@ -471,7 +471,20 @@ function closePop() {
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
 	Kakao.Auth.authorize({
-        redirectUri: CALLBACK_SERVER + '/user/callback/kakao',
+        redirectUri: CALLBACK_SERVER + '/user/result/kakao',
 		scope: 'profile,plusfriends,account_email,gender,birthday,birthyear,phone_number'
 	})
+}
+
+function naverCallback(success, paramStr) {
+	if(success) {
+
+		var params = JSON.parse(paramStr);
+		
+		location.href = '/user/result/naver?tokenNaver='+params.tokenNaver+'&userId='+params.userId+'&userCellNo='+params.userCellNo
+		+ '&userInfo='+params.userInfo+'&userEmail='+params.userEmail+'&userName='+params.userName+'&password='+params.password+'&userGender='+params.userGender
+	} else  {
+		alert('네이버 아이디로 로그인에 실패했습니다.')
+		location.href = '/'
+	}
 }
