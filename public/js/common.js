@@ -370,7 +370,7 @@ $(function(){
 	var span = document.getElementsByClassName('close')[0];
 
 	//if(btn != null) {
-		btn.addEventListener('click', showModal());
+	//	btn.addEventListener('click', showModal());
 	//}
 	//if( span != null) {
 	//	span.addEventListener('click', hideModal());
