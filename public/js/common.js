@@ -369,12 +369,12 @@ $(function(){
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
 
-	if(btn != null) {
+	//if(btn != null) {
 		btn.addEventListener('click', showModal());
-	}
-	if( span != null) {
-		span.addEventListener('click', hideModal());
-	}
+	//}
+	//if( span != null) {
+	//	span.addEventListener('click', hideModal());
+	//}
 
 	// When the user clicks on the button, open the modal 
 	btn.onclick = function() {
