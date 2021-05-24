@@ -1,8 +1,8 @@
-//var API_SERVER = "http://localhost:9090";
-//var API_SERVER = "http://192.168.0.3:9090";
+var API_SERVER = "http://localhost:9090";
+// var API_SERVER = "http://192.168.0.3:9090";
 //var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
-var API_SERVER = "http://13.209.123.102:9090";
+// var API_SERVER = "http://13.209.123.102:9090";
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
@@ -232,7 +232,7 @@ function onLayerPop02(layerId, seq) {
 		}
 
 		$(".pop_layer").hide();
-		$(".pop_layer_back").css("height",allHeight).show(); //�ㅽ겕濡ㅻ븣臾몄뿉 �꾩껜 height媛믪쓣 援ы빐 諛곌꼍�� 吏곸젒height媛� �곸슜
+		$(".pop_layer_back").css("height",allHeight).show();
 		$("#"+layerId).show();
 		$("#"+layerId+">.popContainer").show();
 
@@ -435,7 +435,7 @@ function checkKakaoRegistration(params) {
 	console.log("check kakao Registration", params);
 	ajaxCall(API_SERVER + '/user/findUserKakao', params, 'POST',
 	function(data) {
-		console.log("parameter", params);
+		console.log("checkKakaoRegistraiton", data);
 		var result = data.result;
 		switch(result) {
 			case '연동 진행':
@@ -448,9 +448,22 @@ function checkKakaoRegistration(params) {
 				break;
 			case '기존 회원 아님 회원가입 진행':
 				// 회원가입 화면으로 연결
+				var html = '';
+				html += '<form id="registerForm" action="sign-up-form" method="GET">';
+				html += '<input type="hidden" name="kakaoNo" value='+ params.kakaoNo +'>';
+				html += '<input type="hidden" name="userId" value='+ params.userId +'>';
+				html += '<input type="hidden" name="password" value='+ params.password +'>';
+				html += '<input type="hidden" name="userEmail" value='+ params.userEmail +'>';
+				html += '<input type="hidden" name="userGender" value='+ params.userGender +'>';
+				html += '<input type="hidden" name="userCellNo" value='+ params.userCellNo +'>';
+				html += '<input type="hidden" name="userInfo" value='+ params.userInfo +'>';
+				html += '<input type="hidden" name="userName" value='+ params.userName +'>';
+				html += '</form>'
+
+				$('body').append(html);
+				$('#registerForm').submit();
 				break;
 		}
-		console.log("checkKakaoRegistraiton", data);
 	}, function(err) {
 		console.log("error while check kakao registraition", err);
 	})

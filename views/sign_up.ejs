@@ -53,98 +53,18 @@
                         <div class="signup_top">
                             <!-- ID -->
                             <div>
+                                
+                                <input type="hidden" id="kakaoNo" value="<%=userData.kakaoNo %>">
+                                <input type="hidden" id="naverNo" value="<%=userData.naverNo %>">
+                                <input type="hidden" id="userId" value="<%=userData.userId %>">
+                                <input type="hidden" id="password" value="<%=userData.password %>">
                                 <input type="hidden" id="userName" value="<%=userData.userName %>">
                                 <input type="hidden" id="userInfo" value="<%=userData.userInfo %>">
-                                <input type="hidden" id="dupInfo" value="<%=userData.dupInfo %>">
                                 <input type="hidden" id="userCellNo" value="<%=userData.userCellNo %>">
                                 <input type="hidden" id="userGender" value="<%=userData.userGender %>">
                             </div>
-                            <div class="id_place">
-                                <h3 class="join_title">
-                                    <label for="id"><img
-                                        src="/images/asterisk.png"
-                                        style="width:8px;position:relative;top:5px;margin-right:2px">아이디</label>
-                                </h3>
-                                <div class="id_check">
-                                    <div class="box int_id">
-                                        <input
-                                            type="text"
-                                            id="id"
-                                            class="int"
-                                            maxlength="20"
-                                            placeholder="아이디를 입력해주세요"
-                                            required="required"
-                                            style="width:220px">
-                                    </div>
-                                    <div class="btn_wrap_id">
-                                        <button type="button" id="btnCheckIdDuplicate">중복 확인</button>
-                                    </div>
-                                </div>
-                                <span class="error_next_box"></span>
-                                <p class="confirm_mag">- 아이디 중복확인
-                                </p>
-                            </div>
-
-                            <!-- PW1 -->
-                            <div>
-                                <h3 class="join_title">
-                                    <label for="pswd1"><img
-                                        src="/images/asterisk.png"
-                                        style="width:8px;position:relative;top:5px;margin-right:2px">비밀번호</label>
-                                </h3>
-                                <span class="box int_pass">
-                                    <input
-                                        type="password"
-                                        id="pswd1"
-                                        class="int"
-                                        maxlength="20"
-                                        placeholder="비밀번호를 입력해주세요"
-                                        required="required">
-                                    <span id="alertTxt">사용불가</span>
-                                  </span>
-                                <span class="error_next_box"></span>
-                                <p style="margin-top:10px">- 10자 이상 입력</p>
-                                <p style="margin-top:5px">- 영문/숫자/특수문자 2개 이상 조합</p>
-                            </div>
-
-                            <!-- PW2 -->
-                            <div>
-                                <h3 class="join_title">
-                                    <label for="pswd2"><img
-                                        src="/images/asterisk.png"
-                                        style="width:8px;position:relative;top:5px;margin-right:2px">비밀번호 확인</label>
-                                </h3>
-                                <span class="box int_pass_check">
-                                    <input
-                                        type="password"
-                                        id="pswd2"
-                                        class="int"
-                                        maxlength="20"
-                                        placeholder="비밀번호를 한번 더 입력해주세요"
-                                        required="required">        
-                                </span>
-                                <span class="error_next_box"></span>
-                            </div>
-
-                            <!-- NAME -->
-                            <div>
-                                <h3 class="join_title">
-                                    <label for="name"><img
-                                        src="/images/asterisk.png"
-                                        style="width:8px;position:relative;top:5px;margin-right:2px">이메일</label>
-                                </h3>
-                                <span class="box int_name">
-                                    <input
-                                        type="text"
-                                        placeholder="이메일을 입력해주세요"
-                                        id="email"
-                                        class="int"
-                                        maxlength="64"
-                                        required="required">
-                                </span>
-                                <span class="/images/error_next_box"></span>
-                            </div>
-                           <div style="padding-bottom:34px">
+                            
+                            <div style="padding-bottom:34px">
                                 <h3 class="join_title">
                                     <label for="r_id">추천인 아이디</label>
                                 </h3>
