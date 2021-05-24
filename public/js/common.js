@@ -369,16 +369,19 @@ $(function(){
 	var modal = document.getElementById('myModal');
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
-
-	btn.addEventListener('click', showModal());
-	span.addEventListener('click', hideModal());
+	if(btn != null) {
+		btn.addEventListener('click', showModal());
+	}
+	if( span != null) {
+		span.addEventListener('click', hideModal());
+	}
 
 	function showModal() {
-	modal.style.display = 'block';
+		modal.style.display = 'block';
 	};
 
 	function hideModal() {
-	modal.style.display = 'none';
+		modal.style.display = 'none';
 	};
 
 	window.addEventListener('click', function(event) {
