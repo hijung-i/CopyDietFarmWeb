@@ -1,8 +1,6 @@
 
 
 /*변수 선언*/
-
-var dupCheck = false;
 $(function() {
     //niceDuplicationCheck();
     
@@ -24,15 +22,7 @@ $(function() {
     pw2.focusout(comparePw);
     emailInput.focusout(isEmailCorrect);
     
-    $("#btnCheckIdDuplicate").click(function (){
-        if(!dupCheck) {
-            alert('아이디 중복을 확인 해주세요')
-            return;
-        }
-        
-        var userId = $("#id").val();
-        var password = $("#pswd1").val();
-        var email = emailInput.val();
+    $("#btnJoin").click(function (){
         
         var kakaoNo = $('#kakaoNo').val();
         var tokenNaver = $('#tokenNaver').val();
@@ -57,6 +47,10 @@ $(function() {
             alert('본인인증 정보가 없습니다.')
             return;
         }
+
+        var password = $('#password').val();
+        var userId = $('#userId').val();
+        var email = $('#userEmail').val();
 
         var recommender = $("#recommender").val();
 

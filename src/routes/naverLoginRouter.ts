@@ -7,7 +7,7 @@ const router = Router()
 const client_id = 'Kaft2327QoUkggPhMChf'
 const client_secret = 'qojmNfIAbA'
 const state = 'RANDOM_STATE'
-const redirectURI = encodeURI('http://127.0.0.1/user/callback/naver')
+const redirectURI = encodeURI('http://192.168.0.3/user/callback/naver')
 
 router.get('/naverlogin', function (req: Request, res: Response) {
     const api_url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirectURI + '&state=' + state
