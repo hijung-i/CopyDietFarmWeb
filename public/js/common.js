@@ -425,3 +425,7 @@ function closeToday() {
 function closePop() { 
 	document.getElementById("popup_layer").style.display = "none";
 }    
+
+function register(obj) {
+	
+}

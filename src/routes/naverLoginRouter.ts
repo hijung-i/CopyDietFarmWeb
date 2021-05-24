@@ -7,7 +7,7 @@ const router = Router()
 const client_id = 'Kaft2327QoUkggPhMChf'
 const client_secret = 'qojmNfIAbA'
 const state = 'RANDOM_STATE'
-const redirectURI = encodeURI('http://192.168.0.3/user/callback/naver')
+const redirectURI = encodeURI('http://data-flow.co.kr:3000/user/callback/naver')
 
 router.get('/naverlogin', function (req: Request, res: Response) {
     const api_url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirectURI + '&state=' + state
@@ -28,13 +28,36 @@ router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) 
         url: api_url,
         headers: { 'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret }
     }
-    request.get(options, function (error, response, body) {
-      if (!error && response.statusCode === 200) {
-            res.writeHead(200, { 'Content-Type': 'text/jsoncharset=utf-8' })
-            console.log(body)
-            res.end(body)
+    request.get(options, async function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+            const obj = JSON.parse(body)
+            console.log('body >>>', obj)
+
+            let result = await userService.getNaverUserInfo(obj.access_token)
+            console.log('result >>>>', result)
+            if (result !== null) {
+                const userId = result.id + '@n'
+                const userCellNo = result.mobile_e164.replace('+82 ', '0').replace('+1', '')
+                let userGender = result.gender
+                switch (result.gender) {
+                    case 'F':
+                        userGender = 'W'
+                        break
+                    case 'U':
+                        userGender = ''
+                        break
+                }
+
+                const userInfo = result.birthyear + result.birthday.replace('-', '')
+                const userEmail = result.email
+                const userName = result.name
+
+                let redirectUrl = `/sign-up-form?userId=${userId}&userEmail=${userEmail}&userCellNo=${userCellNo}&userInfo=${userInfo}&userName=${userName}&password=${userId}&tokenNaver=${obj.token}`
+                res.redirect(redirectUrl)
+            }
+            res.send('<script>alert("네이버 로그인에 실패했습니다.");location.href="/";</script>')
         } else {
-            res.status(response.statusCode).end()
+            res.send('<script>alert("네이버 로그인에 실패했습니다.");location.href="/";</script>')
             console.log('error = ' + response.statusCode)
         }
     })

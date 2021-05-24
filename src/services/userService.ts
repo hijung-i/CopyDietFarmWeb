@@ -2,7 +2,7 @@ import { User } from '../models/user'
 import * as request from 'request-promise-native'
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
 const serverUrl = 'http://192.168.0.3:9090'
-//const serverUrl = 'http://13.209.123.102:9090'
+// const serverUrl = 'http://13.209.123.102:9090'
 
 type Option = {
     uri: string,
@@ -77,6 +77,28 @@ class UserService {
                 console.log('Error occured while login', err.statusCode, err.error)
             }
             return setUserResult(StatusCode.error, err.error, null)
+        })
+    }
+
+    getNaverUserInfo = async (token: string) => {
+        const apiUrl = 'https://openapi.naver.com/v1/nid/me'
+
+        const options = {
+            uri: `${apiUrl}`,
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }
+
+        return request(options).then((res: any) => {
+            const obj = JSON.parse(decodeURIComponent(res))
+            console.log('success getNaverUserData', res, obj)
+
+            return obj
+        }).catch((err: any) => {
+            console.log('error while getNaverUserData', err.statusCode, err.err, err.body)
+            return null
         })
     }
 
