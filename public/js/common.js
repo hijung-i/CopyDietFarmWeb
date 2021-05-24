@@ -364,7 +364,17 @@ function setCookie( name, value, expiredays ) {  // 쿠키저장
 $(function(){
 	//$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
-				
+
+	if ($('#naver_id_login').length > 0) {
+		ajaxCallDataTypeHtml('/user/naverlogin', {}, 'GET',
+		 function(data) {
+			console.log("success login data ", data);
+			$('#naver_id_login').html(data);
+		}, function (err) {
+			console.log("error login button", err);
+		})
+	}
+
 	var modal = document.getElementById('myModal');
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
