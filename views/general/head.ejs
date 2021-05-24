@@ -25,12 +25,26 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick.css" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
     Kakao.init('ed5593bb84a351edac6197d384fd3e1e');
     console.log(Kakao.isInitialized());
 </script>
 
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script>
+    $(function() {
+        var naverLoginBtn = new naver_id_login("Kaft2327QoUkggPhMChf", "https://openapi.naver.com/v1/nid/me");
+        var state = naverLoginBtn.getUniqState();
+        naverLoginBtn.setButton("white", 2,40);
+        naverLoginBtn.setDomain("http://dietfarm.co.kr:3000");
+        naverLoginBtn.setState(state);
+        naverLoginBtn.setPopup();
+        naverLoginBtn.init_naver_id_login();
+    })
+</script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
+<script src="/js/naverLogin.js"></script>
+<script src="/js/kakaoLogin.js"></script>
 <script type="text/javascript" src="/js/common.js"></script>
