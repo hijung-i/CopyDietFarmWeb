@@ -351,6 +351,7 @@ function onIdentifyingSuccess(data, nextMethod) {
 	
 }
 
+<<<<<<< HEAD
 // 쿠키 생성
 function setCookie( name, value, expiredays ) {  // 쿠키저장
 	var todayDate = new Date();  //date객체 생성 후 변수에 저장
@@ -396,4 +397,144 @@ function closePop() {
 
 
 
+=======
+function loginWithKakaoApi() {
+    Kakao.Auth.login({
+		success: function(authObj) {
+			console.log("success", authObj)
+			if(authObj != undefined) {
+				requestKaKaoUserInfo();
+			} else {
+				alert('KAKAO 계정으로 로그인에 실패했습니다.');
+			}
+		},
+		fail: function(err) {
+			console.log("err", err);
+			if(err) {
+				alert('KAKAO 계정으로 로그인에 실패했습니다.');
+				return;
+			}
+		},
+    })
+}
 
+function requestKaKaoUserInfo() {
+	Kakao.API.request({
+		url: '/v2/user/me',
+		success: function(res) {
+			console.log(res)
+			var account = res.kakao_account;
+
+			var agreement = false;
+			if (account.birthday_needs_agreement == true ) {
+				agreement = true;
+			}
+			if (account.birthyear_needs_agreement == true ) {
+				agreement = true;
+			}
+			if (account.gender_needs_agreement == true ) {
+				agreement = true;
+			}
+
+			if(agreement) {
+				alert('선택 정보에 동의해주셔야 회원가입이 가능합니다.');
+				kakaoUnlink();
+				return;
+			}
+
+			var params = {
+				kakaoNo: res.id,
+				userEmail: account.email,
+				userName: account.profile.nickname,
+				userCellNo: account.phone_number.replace(/-/gi, '').replace('+82 ', '0').replace('+1 ', ''),
+				userInfo: account.birthyear + account.birthday
+			
+			}
+
+			switch(account.gender) {
+				case 'male':
+					params.userGender = 'M'
+					break;
+				case 'female':
+					params.userGender = 'W'
+					break;
+				default:
+					params.userGender = 'X'
+					break;
+			}
+
+			params.userId = params.kakaoNo + '@K';
+			params.password = params.kakaoNo + '@K';
+
+			checkKakaoRegistration(params);
+			
+		},
+		fail: function(error) {
+			console.log(
+				'login success, but failed to request user information: '
+				,error
+			)
+		},
+	});
+}
+
+function checkKakaoRegistration(params) {
+	console.log("check kakao Registration", params);
+	ajaxCall(API_SERVER + '/user/findUserKakao', params, 'POST',
+	function(data) {
+		console.log("parameter", params);
+		var result = data.result;
+		switch(result) {
+			case '연동 진행':
+				params.userId = result.userId
+				linkKakaoUser(params);
+
+				break;
+			case '로그인 진행':
+				loginKakao(params);
+				break;
+			case '기존 회원 아님 회원가입 진행':
+				// 회원가입 화면으로 연결
+				break;
+		}
+		console.log("checkKakaoRegistraiton", data);
+	}, function(err) {
+		console.log("error while check kakao registraition", err);
+	})
+}
+
+function linkKakaoUser(params) {
+	ajaxCall(API_SERVER + '/user/linkKakaoUser', params, 'POST',
+	function(data) {
+		console.log("kakao account link success", data);
+		if(data.message == 'SUCCESS') {
+			loginKakao(params);
+		}
+	}, function(err) {
+		console.log("error while kakao link", err);
+	})
+}
+
+function loginKakao(params) {
+	ajaxCall('/user/login/kakao', params, 'POST', 
+	function(data) {
+		console.log("success loginKakao", data);
+		location.reload();
+	}, function(err) {
+		console.log("error while loginKakao", err);
+	});
+>>>>>>> 51f6e5e7bfa744c392b794ba34dee15098e7c327
+
+}
+
+function kakaoUnlink() {
+	Kakao.API.request({
+		url: '/v1/user/unlink',
+		success: function(response) {
+		  console.log(response);
+		},
+		fail: function(error) {
+		  console.log(error);
+		},
+	});
+}

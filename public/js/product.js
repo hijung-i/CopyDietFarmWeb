@@ -10,7 +10,9 @@ var app = new Vue({
         product: product,
         optionTotalPrice: 0,
         orderDTO: {},
-        deliveryGroupList: []
+        deliveryGroupList: [],
+        reviewList: [],
+        questionList: []
     }, methods: {
         numberFormat,
         deleteFromArray,
@@ -24,6 +26,8 @@ var app = new Vue({
 $(function() {
 
     getProductDetail();
+    getReviewList();
+    getProductQuestionList();
 
     $('ul.tab_wrap li').click(function() {
         var activeTab = $(this).attr('data-tab');
@@ -291,5 +295,31 @@ function checkDeliveryAddress() {
     }, {
         isRequired: true,
         userId: true
+    })
+}
+
+function getReviewList() {
+    var params = {
+        productCode: app.product.productCode
+    };
+
+    ajaxCall(API_SERVER + '/product/getReview', params, 'POST', 
+    function (data) {
+        console.log("success", data);
+    }, function (err){
+        console.log("error while getReview", err);
+    })
+}
+
+function getProductQuestionList() {
+    var params = {
+        productCode: app.product.productCode
+    };
+
+    ajaxCall(API_SERVER + '/product/getReview', params, 'POST', 
+    function (data) {
+        console.log("success", data);
+    }, function (err){
+        console.log("error while getReview", err);
     })
 }
