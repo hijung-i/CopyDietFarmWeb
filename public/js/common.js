@@ -1,4 +1,5 @@
 var API_SERVER = "http://localhost:9090";
+var CALLBACK_SERVER = "http://localhost:3000";
 // var API_SERVER = "http://192.168.0.3:9090";
 //var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
@@ -425,3 +426,13 @@ function closeToday() {
 function closePop() { 
 	document.getElementById("popup_layer").style.display = "none";
 }    
+
+// kakao 계정 로그인 순서1번
+function loginWithKakaoApi() {
+    alert('카톡 로그인')
+	console.log(CALLBACK_SERVER)
+    Kakao.Auth.authorize({
+        redirectUri: CALLBACK_SERVER + '/user/kakaoLogin'
+    })
+
+}
