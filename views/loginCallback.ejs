@@ -8,7 +8,7 @@
     <%-include('general/head') %>
 </head>
 <body>
-    <form id="registerForm" action="sign-up-form" method="GET">
+    <form id="registerForm" action="/sign-up-form" method="GET">
         <input type="hidden" id="type" value="<%=callback.type %>"></inpu>
         <% if(callback.type == 'K') { %>
             <input type="hidden" name="code" value="<%=callback.code %>">

@@ -1,8 +1,13 @@
 import { User } from '../models/user'
 import * as request from 'request-promise-native'
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
-const serverUrl = 'http://192.168.0.3:9090'
-// const serverUrl = 'http://13.209.123.102:9090'
+
+// const SERVER_IP = '192.168.0.3'
+const SERVER_IP = 'data-flow.co.kr'
+
+const SERVER_URL = 'http://' + SERVER_IP + ':9090'
+// const SERVER_URL = 'http://13.209.123.102:9090'
+const CALLBACK_SERVER = 'http://' + SERVER_IP + ':3000'
 
 const KAKAO_SERVER = 'https://kauth.kakao.com'
 
@@ -17,7 +22,7 @@ type Option = {
 class UserService {
     login = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${serverUrl}/user/login`,
+            uri: `${SERVER_URL}/user/login`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -40,7 +45,7 @@ class UserService {
 
     loginKakao = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${serverUrl}/user/loginKakaoUser`,
+            uri: `${SERVER_URL}/user/loginKakaoUser`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -62,7 +67,7 @@ class UserService {
 
     loginNaver = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${serverUrl}/user/loginNaverUser`,
+            uri: `${SERVER_URL}/user/loginNaverUser`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -124,7 +129,7 @@ class UserService {
 
     register = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${serverUrl}/user/register`,
+            uri: `${SERVER_URL}/user/register`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -146,7 +151,7 @@ class UserService {
         })
     }
     requestKakaoToken = async (code) => {
-        const CALLBACK_SERVER = 'http://data-flow.co.kr:3000'
+
         const options = {
             uri: KAKAO_SERVER + '/oauth/token',
             method: 'POST',

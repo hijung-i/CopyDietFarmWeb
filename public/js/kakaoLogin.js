@@ -23,7 +23,6 @@
 
 // 카카오계정 로그인 이후 유저 정보 요청
 function requestKaKaoUserInfo() {
-    alert('requestKakaoUserInfo 진입')
 	Kakao.API.request({
 		url: '/v2/user/me',
 		success: function(res) {
@@ -90,7 +89,6 @@ function requestKaKaoUserInfo() {
 
 // 카카오 연동 여부 조회
 function checkKakaoRegistration(params) {
-    alert('checkKakaoRegistration')
 	console.log("check kakao Registration", params);
 	ajaxCall(API_SERVER + '/user/findUserKakao', params, 'POST',
 	function(data) {
@@ -107,6 +105,7 @@ function checkKakaoRegistration(params) {
 				break;
 			case '기존 회원 아님 회원가입 진행':
 				// 회원가입 화면으로 연결
+                $('input[name=kakaoNo]').val(params.kakaoNo)
 				$('input[name=userId]').val(params.userId)
 				$('input[name=password]').val(params.password)
 				$('input[name=userEmail]').val(params.userEmail)
@@ -138,15 +137,11 @@ function linkKakaoUser(params) {
 
 // 카카오 계정으로 로그인 진행
 function loginKakao(params) {
-    alert('loginKakao 쏜다쏜다')
-	alert(JSON.stringify(params))
 	ajaxCall('/user/login/kakao', params, 'POST', 
 	function(data) {
-        alert('로그인 완료')
 		console.log("success loginKakao", data);
 		location.href='/';
 	}, function(err) {
-		alert(JSON.stringify(err))
 		console.log("error while loginKakao", err);
 	});
 
