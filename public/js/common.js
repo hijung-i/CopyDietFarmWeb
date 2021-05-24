@@ -51,12 +51,12 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 		dataType: "json",
 		success: function(data) {
 			var result = data.result;
-			if(option.isRequired == true && result.isLoggedIn != true) {		
+			if(option.isRequired == true && result.isLoggedIn != true) {
 				// TODO: Open alert modal
 				alert('로그인이 필요한 동작입니다.');
 				return false;
 			}
-			
+
 			var user = result.user;
 			if(result.isLoggedIn && user != undefined){
 				if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
@@ -65,7 +65,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 				if(isAvailable(option.address) && option.address == true) params.address = user.address
 			}
 			ajaxCall(url, params, type, onSuccess, onError);
-		
+
 		},
 		error: function(err){
 			console.log("err", err);
@@ -87,13 +87,13 @@ function generateHtmlForProductList(products, maxSize){
         if(maxSize != undefined && j > maxSize -1) break;
 		var product = products[j];
         html += generateHtmlForProduct(product);
-		
+
     }
     return html;
 }
 
 function generateHtmlForProduct(product){
-	
+
     var html = '<li>';
 	html += '<a href="/product/'+ product.productCode +'">';
 	html += '<div class="thum"><img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';
@@ -173,7 +173,7 @@ function sideMenu(key) {
 		jQuery('#m_search').hide();
 		jQuery('.mDepth01>li>dl>dd').css('display','none');
 		jQuery('.mDepth01>li>dl>dt').removeClass("on");
-		$(".mDepth01>li.current").each(function() { 
+		$(".mDepth01>li.current").each(function() {
 			$(this).addClass("on");
 			$(this).children('dl').children('dt').addClass("on");
 			$(this).children('dl').children('dd').show();
@@ -327,7 +327,7 @@ $(document).ready(function() {
         $('.tab_cont').removeClass('active');
         $(this).addClass('active');
         $('#' + activeTab).addClass('active');
-    })	
+    })
 });
 function niceIdentifyPopup(nextMethod) {
 	var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';
@@ -348,23 +348,23 @@ function onIdentifyingSuccess(data, nextMethod) {
 	}
 
 	$("#infoForm").submit();
-	
+
 }
 
 // 쿠키 생성
 function setCookie( name, value, expiredays ) {  // 쿠키저장
 	var todayDate = new Date();  //date객체 생성 후 변수에 저장
-	todayDate.setDate( todayDate.getDate() + expiredays ); 
+	todayDate.setDate( todayDate.getDate() + expiredays );
 		// 시간지정(현재시간 + 지정시간)
 	document.cookie = name + "=" + value + "; path=/; expires=" + todayDate.toUTCString() + ";"
 	//위 정보를 쿠키에 굽는다
-} 
-  
+}
+
 
 $(function(){
 	//$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
-				
+
 	var modal = document.getElementById('myModal');
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
@@ -376,44 +376,44 @@ $(function(){
 	//	span.addEventListener('click', hideModal());
 	//}
 
-	// When the user clicks on the button, open the modal 
-	btn.onclick = function() {
-		modal.style.display = "block";
-	}
+	// When the user clicks on the button, open the modal
+	// btn.onclick = function() {
+	// 	modal.style.display = "block";
+	// }
 
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
+	// // When the user clicks on <span> (x), close the modal
+	// span.onclick = function() {
+	// 	modal.style.display = "none";
+	// }
 
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
+	// // When the user clicks anywhere outside of the modal, close it
+	// window.onclick = function(event) {
+	// 	if (event.target == modal) {
+	// 		modal.style.display = "none";
+	// 	}
+	// }
 });
 
-	
-			 
+
+
 //오늘하루만보기 닫기버튼 스크립트
-function closeToday() { 
-	setCookie( "popToday", "close" , 1  ); 
+function closeToday() {
+	setCookie( "popToday", "close" , 1  );
 	$("#popup_layer").css("display", "none");
 	document.getElementById("popup_layer").style.display = "none";
 }
 //그냥 닫기버튼 스크립트
-function closePop() { 
+function closePop() {
 	document.getElementById("popup_layer").style.display = "none";
 }
 
 
 // 7일동안 닫기버튼 스크립트는 아래 스크립트로 교체
-function closeToday() { 
-	setCookie( "popToday", "close" , 7 ); 
+function closeToday() {
+	setCookie( "popToday", "close" , 7 );
 	$("#popup_layer" ).css("display", "none");
 	document.getElementById("popup_layer").style.display = "none";
 }
-function closePop() { 
+function closePop() {
 	document.getElementById("popup_layer").style.display = "none";
-}    
+}
