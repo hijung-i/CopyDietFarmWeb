@@ -217,8 +217,10 @@ router.get('/intro', (req: Request, res: Response, next: NextFunction) => {
 
 router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) => {
     console.log('GET /callback/naver req.body >> ', req.body)
-    console.log('GET /callback/naver req.query >> ', req.body)
-    console.log('GET /callback/naver req.params >> ', req.body)
+    console.log('GET /callback/naver req.query >> ', req.query)
+    console.log('GET /callback/naver req.params >> ', req.params)
+
+    res.status(200).send('')
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {

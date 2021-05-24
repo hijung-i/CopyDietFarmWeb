@@ -366,12 +366,15 @@ $(function(){
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
 				
 	var modal = document.getElementById('myModal');
- 
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
+	var btn = document.getElementById('myBtn');
+	var span = document.getElementsByClassName('close')[0];
 
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];                                          
+	if(btn != null) {
+		btn.addEventListener('click', showModal());
+	}
+	if( span != null) {
+		span.addEventListener('click', hideModal());
+	}
 
 	// When the user clicks on the button, open the modal 
 	btn.onclick = function() {
