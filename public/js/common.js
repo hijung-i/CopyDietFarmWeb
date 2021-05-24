@@ -173,7 +173,7 @@ function sideMenu(key) {
 		jQuery('#m_search').hide();
 		jQuery('.mDepth01>li>dl>dd').css('display','none');
 		jQuery('.mDepth01>li>dl>dt').removeClass("on");
-		$(".mDepth01>li.current").each(function() {
+		$(".mDepth01>li.current").each(function() { 
 			$(this).addClass("on");
 			$(this).children('dl').children('dt').addClass("on");
 			$(this).children('dl').children('dd').show();

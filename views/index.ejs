@@ -4,9 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta
-            name="viewport"
-            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="viewport"
+         content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
         <title>다이어트 Farm</title>
@@ -33,10 +32,6 @@
                     width: 60px;
                     height: auto;
                     text-align: center;
-                    /* display: flex; */
-                    /*  
-        justify-content: space-between;
-        align-items: center; */
                     background: #fff;
                     border-radius: 20px;
                     padding: 6px;
@@ -154,6 +149,10 @@
             <link rel="stylesheet" href="/css/style.css">
         </head>
         <body>
+      <!--//로그인 모달 창-->
+
+
+
             <%-include('general/header') %>
                 <main id="content" class="content_main">
                     <div class="swiper-container mySwiper">
@@ -237,115 +236,26 @@
                     </div>
                     <!--//catgor_wrap-->
                     <!-- multiple slide -->
-                    <div class="sp_wrap">
-                        <section class="s_price">
-                            <h2>오픈 특가</h2>
-                            <ul class="multiple_bxslider">
-                                <li>
-                                    <a href="#"><img src="/images/dietfarmbread.jpg" style="width:100%">
-                                        <span class="title">제품이름</span><br>
-                                        <span class="price">
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="/images/dietfarmbread.jpg">
-                                        <span class="title">제품이름맛있는 도시락한개</span><br>
-                                        <span class="price">
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="/images/dietfarmbread.jpg">
-                                        <span class="title">제품이름맛있는 도시락한개</span><br>
-                                        <span class="price">
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="/images/dietfarmbread.jpg">
-                                        <span class="title">제품이름맛있는 도시락한개</span><br>
-                                        <span class="price">
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="/images/dietfarmbread.jpg">
-                                        <span class="title">제품이름맛있는 도시락한개</span><br>
-                                        <span class="price">
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="/images/dietfarmbread.jpg">
-                                        <span class="title">제품이름</span><br>
-                                        <span class="price">
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="/images/dietfarmbread.jpg">
-                                        <span class="title">제품이름</span><br>
-                                        <span class="price">
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="/images/dietfarmbread.jpg">
-                                        <span class="title">제품이름</span><br>
-                                        <span class="price">
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </section>
+                    <h2 style="margin-top: 65px;">오픈특가</h2>
+                    <div class="multiple_slider_wraper">
+                        <ul class="multiple_slides">
+                            <li><img src="/images/m_img1.jpg" alt="" style="width: 350px; height: 350px;"></li>
+                            <li><img src="/images/m_img2.jpg" alt="" style="width: 350px; height: 350px;"></li>
+                            <li><img src="/images/m_img3.jpg" alt="" style="width: 350px; height: 350px;"></li>
+                            <li><img src="/images/m_img4.jpg" alt="" style="width: 350px; height: 350px;"></li>
+                        </ul>
+                        <p class="controlls" style="cursor: pointer;">
+                            <span class="prev"><img src="/images/one_icon_coupon.png" alt=""></span>
+                            <span class="next"><img src="/images/one_icon_coupon.png" alt=""></span>
+                        </p>
                     </div>
+
                     <!--//sp_wrap(2월 특가)-->
 
                     <div class="blank_sec">
                         <ul>
                             <li>
-                                <a href="#"><img src="/images/blank1.jpg" style="width:520px;height:520px"></a>
+                                <a href="#"><img src="/images/blank1.jpg" style="width:520px;height:520px" style="outline: 60px solid red;"></a>
                             </li>
                             <li>
                                 <a href="#"><img src="/images/blank2.jpg" style="width:520px;height:520px"></a>

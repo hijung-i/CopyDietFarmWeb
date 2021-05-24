@@ -134,3 +134,36 @@ $(function(){
         $('html,body').animate({scrollTop:0},600);
     });
   });
+
+  // 멀티플 슬라이드 
+  var slides = document.querySelector('.multiple_slides'),
+        slide = document.querySelectorAll('.multiple_slides li'),
+        currentIdx = 0,
+        slideCount = slide.length,
+        prevBtn = document.querySelector('.prev'),
+        slideWidth = 350,
+        slideMargin = 15,
+        nextBtn = document.querySelector('.next');
+
+        slides.style.width = (slideWidth + slideMargin)*slideCount - slideMargin + 'px';
+
+        function moveSlide(num) {
+            slides.style.left = -num * 365 + 'px';
+            currentIdx = num;
+        }
+        nextBtn.addEventListener('click', function() {
+            if(currentIdx < slideCount - 3) {
+                moveSlide(currentIdx + 1);
+                console.log(currnetIdx);
+            } else {
+                moveSlide(0);
+            }
+        });
+        prevBtn.addEventListener('click', function() {
+            if(currentIdx > 0) {
+                moveSlide(currentIdx - 1);
+                console.log(currnetIdx);
+            } else {
+                moveSlide(slideCount - 3);
+            }
+        });
