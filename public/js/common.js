@@ -369,26 +369,29 @@ $(function(){
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
 
-	if(btn != null) {
-		btn.addEventListener('click', showModal());
-	}
-	if( span != null) {
-		span.addEventListener('click', hideModal());
+	//if(btn != null) {
+	//	btn.addEventListener('click', showModal());
+	//}
+	//if( span != null) {
+	//	span.addEventListener('click', hideModal());
+	//}
+
+	// When the user clicks on the button, open the modal 
+	btn.onclick = function() {
+		modal.style.display = "block";
 	}
 
-	function showModal() {
-		modal.style.display = 'block';
-	};
-
-	function hideModal() {
-		modal.style.display = 'none';
-	};
-
-	window.addEventListener('click', function(event) {
-	if (event.target != modal) { // needs to be anything but the modal, from what i can understand
-		hideModal();
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+		modal.style.display = "none";
 	}
-	});
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
 });
 
 	
