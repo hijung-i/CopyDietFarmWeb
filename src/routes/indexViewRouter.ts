@@ -215,14 +215,6 @@ router.get('/intro', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'landing', {})
 })
 
-router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) => {
-    console.log('GET /callback/naver req.body >> ', req.body)
-    console.log('GET /callback/naver req.query >> ', req.query)
-    console.log('GET /callback/naver req.params >> ', req.params)
-
-    res.status(200).send('')
-})
-
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
