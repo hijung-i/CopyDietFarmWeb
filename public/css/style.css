@@ -659,7 +659,7 @@ height:400px}
 .controlls span.prev {right: calc(100% - 100px);}
 .controlls span.next {left: calc(100% - 50px);}
 /* 1초 회원가입 */
-#popup_layer {display: none;}
+#popup_layer {display: none !important;}
 }
 
 .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center}
