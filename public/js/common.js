@@ -3,7 +3,7 @@ var CALLBACK_SERVER = "http://localhost:3000";
 // var API_SERVER = "http://192.168.0.3:9090";
 //var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
-// var API_SERVER = "http://13.209.123.102:9090";
+var API_SERVER = "http://13.209.123.102:9090";
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
@@ -361,7 +361,7 @@ function setCookie( name, value, expiredays ) {  // 쿠키저장
 	//위 정보를 쿠키에 굽는다
 } 
   
-
+//마이페이지 로그인 모달 js
 $(function(){
 	//$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
@@ -379,7 +379,7 @@ $(function(){
 	var modal = document.getElementById('myModal');
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
-
+    var funcs = [];
 	//if(btn != null) {
 	//	btn.addEventListener('click', showModal());
 	//}

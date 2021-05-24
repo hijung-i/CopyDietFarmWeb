@@ -2,7 +2,7 @@ import { User } from '../models/user'
 import * as request from 'request-promise-native'
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
 const serverUrl = 'http://192.168.0.3:9090'
-// const serverUrl = 'http://13.209.123.102:9090'
+//const serverUrl = 'http://13.209.123.102:9090'
 
 type Option = {
     uri: string,
