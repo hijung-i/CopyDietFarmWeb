@@ -35,7 +35,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
 <script>
     $(function() {
         if($('#naver_id_login').length > 0) {
-            var naverLoginBtn = new naver_id_login("Kaft2327QoUkggPhMChf", "http://data-flow.co.kr:3000/callback/naver");
+            var naverLoginBtn = new naver_id_login("Kaft2327QoUkggPhMChf", "http://data-flow.co.kr:3000/user/callback/naver");
             var state = naverLoginBtn.getUniqState();
             naverLoginBtn.setDomain("http://data-flow.co.kr:3000");
             naverLoginBtn.setState(state);

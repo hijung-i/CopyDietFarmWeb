@@ -8,7 +8,7 @@ const router = Router()
 const client_id = 'Kaft2327QoUkggPhMChf'
 const client_secret = 'qojmNfIAbA'
 const state = "RANDOM_STATE"
-const redirectURI = encodeURI("http://data-flow.co.kr:3000/callback/naver")
+const redirectURI = encodeURI("http://data-flow.co.kr:3000/user/callback/naver")
 
 /****************************
  * api명: login
