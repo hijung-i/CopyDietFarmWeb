@@ -15,14 +15,6 @@ router.get('/naverLoginBtn', function (req: Request, res: Response) {
     res.end("<a href='" + api_url + "' onclick=\"window.open(this.href, 'naverloginpop', 'titlebar=1, resizable=1, scrollbars=yes, width=600, height=550'); return false\"'><img height='50' src='/images/naver_login@2x.png'/></a>")
 })
 
-router.get('/kakaoLogin', async (req: Request, res: Response) => {
-    console.log('body >>>>', req.body)
-    console.log('body >>>>', req.query)
-    console.log('body >>>>', req.params)
-
-    res.send('')
-})
-
 router.get('/callback/kakao', async (req: Request, res: Response, next: NextFunction) => {
     console.log('GET /callback/kakao req.query >> ', req.query)
     const result = await userService.requestKakaoToken(req.query.code)
