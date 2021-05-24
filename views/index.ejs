@@ -150,9 +150,34 @@
         </head>
         <body>
       <!--//로그인 모달 창-->
-
-
-
+      <div id="popup_layer">
+        <div class="popup_box">
+            <!--팝업 컨텐츠 영역-->
+            <div class="popup_cont">
+                          
+                <div class="index-modal">
+               <h2>SNS 1초 회원가입!</h2>
+               <p class="second">1초 간편 회원가입 후,</p>
+               <p><span>5000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>
+               <ul>
+                   <li class="kakao" onclick=""><img src="/images/kakao_login@2x.png"></li>
+                   <li class="naver" onclick=""><img src="/images/naver_login@2x.png"></li>
+               </ul>
+               <a href=""><p class="id-login">아이디 로그인</p></a>
+             </div>
+         
+            </div>
+            <!--팝업 버튼 영역-->
+            <div class="popup_btn">
+                <!--하루동안 보지않기-->
+                <a id="chk_today" href="javascript:closeToday();" class="close_day">오늘 하루 보지 않기</a> 
+                <!--7일간 보지않기-->
+                <!-- <a id="chk_today" href="javascript:closeToday();" class="close_day">Do not open for 7 days</a>-->
+                <a href="javascript:closePop();">닫기</a>
+            </div>
+        </div>
+        </div>
+      
             <%-include('general/header') %>
                 <main id="content" class="content_main">
                     <div class="swiper-container mySwiper">
@@ -487,6 +512,7 @@
                     <!-- Swiper JS -->
                     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
                     <script src="/js/index.js"></script>
+                    <script src="/js/common.js"></script>
 
                     <script>
                         var swiper = new Swiper(".mySwiper", {
