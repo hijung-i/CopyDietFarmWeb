@@ -282,7 +282,7 @@ $(function() {
             checkAge();
         }
     }
-/*
+
    function niceDuplicationCheck() {
         var dupInfo = $("#dupInfo").val();
         if(dupInfo == undefined || dupInfo == '') {

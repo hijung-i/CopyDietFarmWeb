@@ -43,5 +43,13 @@ function loginRequest(){
         location.reload();
     }, function(err) {
         console.log("login failed", err);
+        var message = err.responseText;
+        switch(message) {
+        case 'NOT_MATCHED':
+            alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+            break;
+        case 'ERROR_SERVER':
+            alert('알 수 없는 에러가 발생했습니다.');
+        };
     })
 }

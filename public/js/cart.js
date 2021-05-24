@@ -155,6 +155,35 @@ var app = new Vue({
                 isRequired: true,
                 userId: true
             })
+        }, deleteItem: function(dIdx, pIdx, oIdx) {
+            var products = new Array();
+            var requestDeliveryGroup = this.deliveryGroupList[dIdx].cloneObject();
+
+            var currentProduct = requestDeliveryGroup.products[pIdx];
+
+            for(var i = 0; i < currentProduct.options.length; i++) {
+                if(i == oIdx) {
+                    continue;
+                }
+                currentProduct.options[i].isSelected =false;
+            }
+            requestDeliveryGroup.deleteNoneSelectedProduct();
+            products = requestDeliveryGroup.products;
+
+            var params = {
+                products
+            }
+            ajaxCallWithLogin(API_SERVER + '/order/deleteCart', params, 'POST', 
+            function(data) {
+                console.log('success', data);
+                app.checkAll = false;
+                app.getCartItemList();
+            }, function (err){
+                console.log("err", err);
+            }, {
+                isRequired: true,
+                userId: true
+            })
         }
     }
 });
