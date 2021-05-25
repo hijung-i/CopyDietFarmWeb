@@ -26,7 +26,7 @@ export namespace globalData {
 
 import indexViewRouter from './routes/indexViewRouter'
 import requireLoginViewRouter from './routes/requireLoginViewRouter'
-
+import snsLoginRouter from './routes/snsLoginRouter'
 import niceIdentifierRouter from './routes/niceIdentifierRouter'
 import userApiRouter from './routes/userApiRouter'
 
@@ -48,6 +48,7 @@ app.use(logger('dev'))
 app.use('/', indexViewRouter)
 app.use('/', requireLoginViewRouter)
 app.use('/user', userApiRouter)
+app.use('/user', snsLoginRouter)
 app.use('/nice', niceIdentifierRouter)
 
 app.set('views', path.join(__baseDir, 'views'))

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%-include('general/head') %>
+</head>
+<body>
+    <form id="registerForm" action="/sign-up-form" method="GET">
+        <input type="hidden" id="type" value="<%=callback.type %>"></inpu>
+        <% if(callback.type == 'K') { %>
+            <input type="hidden" name="code" value="<%=callback.code %>">
+            <input type="hidden" name="tokenKakao" value='<%=callback.token %>'>
+            <input type="hidden" name="kakaoNo" value='<%=callback.kakaoNo %>'>
+        <% } else if (callback.type == 'N') { %>
+            <input type="hidden" name="tokenNaver" value='<%=callback.tokenNaver %>'>
+        <% } %>
+        <input type="hidden" name="userId" value='<%=callback.userId %>'>
+        <input type="hidden" name="password" value='<%=callback.password %>'>
+        <input type="hidden" name="userEmail" value='<%=callback.userEmail %>'>
+        <input type="hidden" name="userGender" value='<%=callback.userGender %>'>
+        <input type="hidden" name="userCellNo" value='<%=callback.userCellNo %>'>
+        <input type="hidden" name="userInfo" value='<%=callback.userInfo %>'>
+        <input type="hidden" name="userName" value='<%=callback.userName %>'>
+    </form>
+    
+    <script src="/js/kakaoLogin.js"></script>
+
+</body>
+</html>

@@ -25,12 +25,12 @@ router.get('/login', (req: Request, res: Response, next: NextFunction) => {
 })
 
 router.post('/login/naver', async (req: Request, res: Response, next: NextFunction) => {
-    const user = req.body as User
-    const loginResult: UserResult = await userService.loginNaver(user)
+    const tokenNaver = req.body.tokenNaver as string
+    const loginResult: UserResult = await userService.loginNaver(tokenNaver)
 
     if (loginResult.message === StatusMessage.success) {
         console.log('loginSuccess -> ', loginResult.data)
-        userToSession(req, user)
+        userToSession(req, loginResult.data!)
 
         console.log('save user on session', req.session.user)
     }
@@ -38,6 +38,7 @@ router.post('/login/naver', async (req: Request, res: Response, next: NextFuncti
 })
 
 router.post('/login/kakao', async (req: Request, res: Response, next: NextFunction) => {
+    console.log('POST /user/login/kakao >>', req.body)
     const user = req.body as User
     const loginResult: UserResult = await userService.loginKakao(user)
 
@@ -47,6 +48,7 @@ router.post('/login/kakao', async (req: Request, res: Response, next: NextFuncti
 
         console.log('save user on session', req.session.user)
     }
+
     res.status(loginResult.statusCode).send(loginResult.data || loginResult.message)
 })
 
@@ -65,16 +67,14 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
 
 router.post('/register', async (req: Request, res: Response, next: NextFunction) => {
     const user = req.body as User
-    const niceUser: NiceUser | undefined = req.session.niceUserData
     let registerResult: UserResult
-    console.log(user, niceUser)
-
-    if (niceUser === undefined || (user.userName !== niceUser.userName
-        || user.dupInfo !== niceUser.dupInfo
-        || user.userInfo !== niceUser.userInfo
-        || user.userCellNo !== niceUser.userCellNo)) {
+    console.log(user)
+    if (user.userInfo === undefined
+        || user.userCellNo === undefined
+        || user.userId === undefined
+        || user.userGender === undefined
+        || user.password === undefined) {
         registerResult = setUserResult(StatusCode.error, StatusMessage.forbidden, {})
-
         res.status(registerResult.statusCode).send(registerResult.data || registerResult.message)
         return
     }
@@ -84,7 +84,6 @@ router.post('/register', async (req: Request, res: Response, next: NextFunction)
 
     if (registerResult.message === StatusMessage.success) {
         console.log('registerSuccess -> ', registerResult)
-
     }
     res.status(registerResult.statusCode).send(registerResult.data || registerResult.message)
 })
