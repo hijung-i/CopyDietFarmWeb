@@ -1,8 +1,13 @@
-//var API_SERVER = "http://localhost:9090";
-//var API_SERVER = "http://192.168.0.3:9090";
+// var API_SERVER = "http://localhost:9090";
+// var SERVER_IP = '192.168.0.3';
+var SERVER_IP = 'data-flow.co.kr';
+
+var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
+var API_SERVER = "http://"+ SERVER_IP +":9090";
+
 //var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
-var API_SERVER = "http://13.209.123.102:9090";
+// var API_SERVER = "http://13.209.123.102:9090";
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
@@ -51,12 +56,12 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 		dataType: "json",
 		success: function(data) {
 			var result = data.result;
-			if(option.isRequired == true && result.isLoggedIn != true) {		
+			if(option.isRequired == true && result.isLoggedIn != true) {
 				// TODO: Open alert modal
 				alert('로그인이 필요한 동작입니다.');
 				return false;
 			}
-			
+
 			var user = result.user;
 			if(result.isLoggedIn && user != undefined){
 				if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
@@ -65,7 +70,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
 				if(isAvailable(option.address) && option.address == true) params.address = user.address
 			}
 			ajaxCall(url, params, type, onSuccess, onError);
-		
+
 		},
 		error: function(err){
 			console.log("err", err);
@@ -87,13 +92,13 @@ function generateHtmlForProductList(products, maxSize){
         if(maxSize != undefined && j > maxSize -1) break;
 		var product = products[j];
         html += generateHtmlForProduct(product);
-		
+
     }
     return html;
 }
 
 function generateHtmlForProduct(product){
-	
+
     var html = '<li>';
 	html += '<a href="/product/'+ product.productCode +'">';
 	html += '<div class="thum"><img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';
@@ -173,7 +178,7 @@ function sideMenu(key) {
 		jQuery('#m_search').hide();
 		jQuery('.mDepth01>li>dl>dd').css('display','none');
 		jQuery('.mDepth01>li>dl>dt').removeClass("on");
-		$(".mDepth01>li.current").each(function() { 
+		$(".mDepth01>li.current").each(function() {
 			$(this).addClass("on");
 			$(this).children('dl').children('dt').addClass("on");
 			$(this).children('dl').children('dd').show();
@@ -232,7 +237,7 @@ function onLayerPop02(layerId, seq) {
 		}
 
 		$(".pop_layer").hide();
-		$(".pop_layer_back").css("height",allHeight).show(); //�ㅽ겕濡ㅻ븣臾몄뿉 �꾩껜 height媛믪쓣 援ы빐 諛곌꼍�� 吏곸젒height媛� �곸슜
+		$(".pop_layer_back").css("height",allHeight).show();
 		$("#"+layerId).show();
 		$("#"+layerId+">.popContainer").show();
 
@@ -327,7 +332,7 @@ $(document).ready(function() {
         $('.tab_cont').removeClass('active');
         $(this).addClass('active');
         $('#' + activeTab).addClass('active');
-    })	
+    })
 });
 function niceIdentifyPopup(nextMethod) {
 	var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';
@@ -348,190 +353,139 @@ function onIdentifyingSuccess(data, nextMethod) {
 	}
 
 	$("#infoForm").submit();
-	
+
 }
 
 // 쿠키 생성
 function setCookie( name, value, expiredays ) {  // 쿠키저장
 	var todayDate = new Date();  //date객체 생성 후 변수에 저장
-	todayDate.setDate( todayDate.getDate() + expiredays ); 
+	todayDate.setDate( todayDate.getDate() + expiredays );
 		// 시간지정(현재시간 + 지정시간)
 	document.cookie = name + "=" + value + "; path=/; expires=" + todayDate.toUTCString() + ";"
 	//위 정보를 쿠키에 굽는다
 } 
   
-
+//마이페이지 로그인 모달 js
 $(function(){
-	$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
+	//$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
-				
-	if(document.cookie.indexOf("popToday=close") < 0 ){      // 쿠키 저장여부 체크
-		document.getElementById("popup_layer").style.display = "block";
-		}else {
-		document.getElementById("popup_layer").style.display = "none"; 
+
+	if ($('#naver_id_login').length > 0) {
+		ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+		 function(data) {
+			$('#naver_id_login').html(data);
+		}, function (err) {
+			console.log("error login button", err);
+		})
+	}
+
+	var modal = document.getElementById('myModal');
+	var btn = document.getElementById('myBtn');
+	var span = document.getElementsByClassName('close')[0];
+    var funcs = [];
+	//if(btn != null) {
+	//	btn.addEventListener('click', showModal());
+	//}
+	//if( span != null) {
+	//	span.addEventListener('click', hideModal());
+	//}
+
+	// When the user clicks on the button, open the modal 
+	//btn.onclick = function() {
+	//	modal.style.display = "block";
+	//}
+
+	// When the user clicks on <span> (x), close the modal
+	//span.onclick = function() {
+	//	modal.style.display = "none";
+	//}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
 		}
-	});
-			 
+	}
+	
+});
+var modals = document.getElementsByClassName("modal");
+// Modal을 띄우는 클래스 이름을 가져옵니다.
+var btns = document.getElementsByClassName("btn");
+// Modal을 닫는 close 클래스를 가져옵니다.
+var spanes = document.getElementsByClassName("close");
+var funcs = [];
+ 
+// Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
+function Modal(num) {
+  // 해당 클래스의 내용을 클릭하면 Modal을 띄웁니다.
+    btns[num].onclick =  function() {
+        modals[num].style.display = "block";
+        console.log(num);
+    };
+ 
+    // <span> 태그(X 버튼)를 클릭하면 Modal이 닫습니다.
+    spanes[num].onclick = function() {
+        modals[num].style.display = "none";
+    };
+  };
+
+// 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의합니다.
+for(var i = 0; i < btns.length; i++) {
+  funcs[i] = Modal(i);
+}
+ 
+// 원하는 Modal 수만큼 funcs 함수를 호출합니다.
+for(var j = 0; j < btns.length; j++) {
+  funcs[j]();
+}
+ 
+// Modal 영역 밖을 클릭하면 Modal을 닫습니다.
+window.onclick = function(event) {
+  if (event.target.className == "modal") {
+      event.target.style.display = "none";
+  }
+};
+	
+//메인페이지 index 로그인 모달 js			 
 //오늘하루만보기 닫기버튼 스크립트
-function closeToday() { 
-	setCookie( "popToday", "close" , 1  ); 
+function closeToday() {
+	setCookie( "popToday", "close" , 1  );
 	$("#popup_layer").css("display", "none");
 	document.getElementById("popup_layer").style.display = "none";
 }
 //그냥 닫기버튼 스크립트
-function closePop() { 
+function closePop() {
 	document.getElementById("popup_layer").style.display = "none";
 }
 
 
 // 7일동안 닫기버튼 스크립트는 아래 스크립트로 교체
-function closeToday() { 
-	setCookie( "popToday", "close" , 7 ); 
+function closeToday() {
+	setCookie( "popToday", "close" , 7 );
 	$("#popup_layer" ).css("display", "none");
 	document.getElementById("popup_layer").style.display = "none";
 }
-function closePop() { 
+function closePop() {
 	document.getElementById("popup_layer").style.display = "none";
-}    
+}
 
-
-
+// kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
-    Kakao.Auth.login({
-		success: function(authObj) {
-			console.log("success", authObj)
-			if(authObj != undefined) {
-				requestKaKaoUserInfo();
-			} else {
-				alert('KAKAO 계정으로 로그인에 실패했습니다.');
-			}
-		},
-		fail: function(err) {
-			console.log("err", err);
-			if(err) {
-				alert('KAKAO 계정으로 로그인에 실패했습니다.');
-				return;
-			}
-		},
-    })
-}
-
-function requestKaKaoUserInfo() {
-	Kakao.API.request({
-		url: '/v2/user/me',
-		success: function(res) {
-			console.log(res)
-			var account = res.kakao_account;
-
-			var agreement = false;
-			if (account.birthday_needs_agreement == true ) {
-				agreement = true;
-			}
-			if (account.birthyear_needs_agreement == true ) {
-				agreement = true;
-			}
-			if (account.gender_needs_agreement == true ) {
-				agreement = true;
-			}
-
-			if(agreement) {
-				alert('선택 정보에 동의해주셔야 회원가입이 가능합니다.');
-				kakaoUnlink();
-				return;
-			}
-
-			var params = {
-				kakaoNo: res.id,
-				userEmail: account.email,
-				userName: account.profile.nickname,
-				userCellNo: account.phone_number.replace(/-/gi, '').replace('+82 ', '0').replace('+1 ', ''),
-				userInfo: account.birthyear + account.birthday
-			
-			}
-
-			switch(account.gender) {
-				case 'male':
-					params.userGender = 'M'
-					break;
-				case 'female':
-					params.userGender = 'W'
-					break;
-				default:
-					params.userGender = 'X'
-					break;
-			}
-
-			params.userId = params.kakaoNo + '@K';
-			params.password = params.kakaoNo + '@K';
-
-			checkKakaoRegistration(params);
-			
-		},
-		fail: function(error) {
-			console.log(
-				'login success, but failed to request user information: '
-				,error
-			)
-		},
-	});
-}
-
-function checkKakaoRegistration(params) {
-	console.log("check kakao Registration", params);
-	ajaxCall(API_SERVER + '/user/findUserKakao', params, 'POST',
-	function(data) {
-		console.log("parameter", params);
-		var result = data.result;
-		switch(result) {
-			case '연동 진행':
-				params.userId = result.userId
-				linkKakaoUser(params);
-
-				break;
-			case '로그인 진행':
-				loginKakao(params);
-				break;
-			case '기존 회원 아님 회원가입 진행':
-				// 회원가입 화면으로 연결
-				break;
-		}
-		console.log("checkKakaoRegistraiton", data);
-	}, function(err) {
-		console.log("error while check kakao registraition", err);
+	Kakao.Auth.authorize({
+        redirectUri: CALLBACK_SERVER + '/user/result/kakao',
+		scope: 'profile,plusfriends,account_email,gender,birthday,birthyear,phone_number'
 	})
 }
 
-function linkKakaoUser(params) {
-	ajaxCall(API_SERVER + '/user/linkKakaoUser', params, 'POST',
-	function(data) {
-		console.log("kakao account link success", data);
-		if(data.message == 'SUCCESS') {
-			loginKakao(params);
-		}
-	}, function(err) {
-		console.log("error while kakao link", err);
-	})
-}
+function naverCallback(success, paramStr) {
+	if(success) {
 
-function loginKakao(params) {
-	ajaxCall('/user/login/kakao', params, 'POST', 
-	function(data) {
-		console.log("success loginKakao", data);
-		location.reload();
-	}, function(err) {
-		console.log("error while loginKakao", err);
-	});
-
-}
-
-function kakaoUnlink() {
-	Kakao.API.request({
-		url: '/v1/user/unlink',
-		success: function(response) {
-		  console.log(response);
-		},
-		fail: function(error) {
-		  console.log(error);
-		},
-	});
+		var params = JSON.parse(paramStr);
+		
+		location.href = '/user/result/naver?tokenNaver='+params.tokenNaver+'&userId='+params.userId+'&userCellNo='+params.userCellNo
+		+ '&userInfo='+params.userInfo+'&userEmail='+params.userEmail+'&userName='+params.userName+'&password='+params.password+'&userGender='+params.userGender
+	} else  {
+		alert('네이버 아이디로 로그인에 실패했습니다.')
+		location.href = '/'
+	}
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naver Login Callback</title>
+
+    <%- include('general/head') %>
+</head>
+<body>
+    <script type="text/javascript">
+        var naverIdLogin;
+
+        $(function() {
+
+            naverIdLogin = new naver_id_login("Kaft2327QoUkggPhMChf", "http://data-flow.co.kr:3000/callback/naver");
+            // 접근 토큰 값 출력
+            alert(naverIdLogin.oauthParams.access_token);
+            // 네이버 사용자 프로필 조회
+            naverIdLogin.get_naver_userprofile("naverSignInCallback()");
+            // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+
+        })
+
+        function naverSignInCallback() {
+                console.log('naver callback');
+                alert(naverIdLogin.getProfileData('email'));
+                alert(naverIdLogin.getProfileData('email'));
+                alert(naverIdLogin.getProfileData('email'));
+                alert(naverIdLogin.getProfileData('email'));
+                alert(naverIdLogin.getProfileData('email'));
+                alert(naverIdLogin.getProfileData('nickname'));
+            }
+    </script>
+</body>
+</html>

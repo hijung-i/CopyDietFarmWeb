@@ -1,8 +1,6 @@
 
 
 /*변수 선언*/
-
-var dupCheck = false;
 $(function() {
     //niceDuplicationCheck();
     
@@ -24,29 +22,13 @@ $(function() {
     pw2.focusout(comparePw);
     emailInput.focusout(isEmailCorrect);
     
-    $("#btnCheckIdDuplicate").click(function (){
-        if(!dupCheck) {
-            alert('아이디 중복을 확인 해주세요')
-            return;
-        }
+    $("#btnJoin").click(function (){
         
-        var userId = $("#id").val();
-        var password = $("#pswd1").val();
-        var passwordCheck = $("#pswd2").val();
-        var email = emailInput.val();
+        var kakaoNo = $('#kakaoNo').val();
+        var tokenNaver = $('#tokenNaver').val();
         
         var name = $("#userName").val();
         if(name === '') {
-            alert('본인인증 정보가 없습니다.')
-            return;
-        }
-        var userInfo = $("#userInfo").val();
-        if(userInfo === '') {
-            alert('본인인증 정보가 없습니다.')
-            return;
-        }
-        var dupInfo = $("#dupInfo").val();
-        if(dupInfo === '') {
             alert('본인인증 정보가 없습니다.')
             return;
         }
@@ -61,10 +43,10 @@ $(function() {
             return;
         }
 
-        var addr = $("#addr").val();
-        var addr2 = $("#addr2").val();
-        
-        addr = addr + addr2;
+        var password = $('#password').val();
+        var userId = $('#userId').val();
+        var email = $('#userEmail').val();
+
         var recommender = $("#recommender").val();
 
         var agreementAge = ($("#agreementAge")[0].checked)?'Y':'N';
@@ -87,20 +69,15 @@ $(function() {
         var agreementEmail = ($("#mkt_email")[0].checked)?'Y':'N';
         var agreementSms = ($("#mkt_sms")[0].checked)?'Y':'N';
 
-        if( password != passwordCheck ) {
-            alert("비밀번호 확인이 일치하지 않습니다.");
-            return;
-        }
+        var userInfo = $('#userInfo').val();
 
         var params = {
             userId: userId,
             password: password,
             userEmail: email,
-            address: addr,
             userName: name,
             userInfo: userInfo,
             userGender: userGender,
-            dupInfo: dupInfo,
             userCellNo: userCellNo,
             recommender: recommender,
             agreementTos: agreementTos,
@@ -112,27 +89,25 @@ $(function() {
         }
         console.log(params);
 
+        if(kakaoNo != undefined && kakaoNo != '') {
+            params.kakaoNo = kakaoNo;
+        } else if(tokenNaver != undefined && tokenNaver != '') {
+            params.tokenNaver = tokenNaver;
+        } else {
+            alert('잘못된 접근입니다.');
+            location.href = '/';
+        }
+
         ajaxCall('/user/register', params, 'POST', 
         function(data) {
             console.log("register success", data);
             alert("회원가입에 성공했습니다.");
-            location.href = "/login-form";
+            location.href = "/";
         }, 
         function(err) {
             console.log(err);
             alert("회원가입에 실패했습니다.");
         });
-        
-    })
-
-    $("#addr").click(function() {
-        openZipSearch();
-    })
-
-    $("#addr").keydown(function() {
-        openZipSearch();
-        
-        $(this).val('');
     })
 
     $("input[type=checkbox]#all").click(function() {
@@ -318,7 +293,7 @@ $(function() {
             console.log("error", err);
         })
     }
-*/
+
     function duplicationCheck() {
         var userId = $('#id').val();
         if(userId == ''){
@@ -346,14 +321,3 @@ $(function() {
         })
     }
 });
-
-
-function openZipSearch() {
-    new daum.Postcode({
-        oncomplete: function(data) {
-            var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
-            $('#addr').val(address);
-            console.log(data);
-        }
-    }).open();
-}

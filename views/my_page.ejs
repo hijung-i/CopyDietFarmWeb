@@ -22,13 +22,28 @@
         <link rel="stylesheet" href="/css/style.css">
         <%-include('general/head') %>
 
-        </script>
+  
     </head>
 
     <body>
-      
-        
-        <article class="skip_menu">
+
+ <!-- //마이페이지 로그인 모달 시작 -->
+ <div id="myModal" class="mypage_modal">
+
+   <!-- Modal content -->
+   <div class="modal-content">
+     <span class="close">&times;</span>                                                           <div class="login-list">
+         <ul>
+             <li><button class="naver">네이버로 로그인</button></li>
+             <li><button class="kakao">카카오로 로그인/가입</button></li>
+             <li><button class="id_comp">아이디로 로그인</button></li>
+         </ul>
+     </div>    
+    
+   </div>
+
+ </div>
+         <article class="skip_menu">
             <a href="#">
                 <span>바로가기1</span></a>
             <a href="#">
@@ -48,10 +63,7 @@
                             <h3>로그인 해주세요.</h3>
                             <h4>신규 회원가입시 5,000P 적립금 지급!</h4>
                             <div class="buttons">
-                                <button
-                                    type="button"
-                                    class="btnLogin"
-                                    onclick="javascript:location.href='/login-form';"><img
+                                <button id="myBtn" class="btnLogin"><img
                                     src="/images/login_icon_my@2x.png"
                                     style="position:relative;margin-right:7px;width:20px;height:20px">로그인</button>
                            <!--//     <button
