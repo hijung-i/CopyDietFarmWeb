@@ -18,11 +18,16 @@ var app = new Vue({
         deleteFromArray,
         changeOptionCount,
         onSubmit: function() {
-            console.log(app.deliveryGroupList, app.orderDTO); 
-            // location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
+            // console.log(app.deliveryGroupList, app.orderDTO); 
+            if(app.deliveryGroupList.length > 0) {
+                location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
+            } else {
+                alert('상품을 선택해주세요');
+            }
         }
     }
 });
+
 $(function() {
 
     getProductDetail();
@@ -167,6 +172,13 @@ function getProductDetail(){
 
 function addCart() {
     console.log(selectedOptions);
+    if(app.deliveryGroupList.length > 0) {
+        // location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
+    } else {
+        alert('상품을 선택해주세요');
+        return
+    }
+
     var params = {
         options: selectedOptions
     }

@@ -54,7 +54,7 @@
         .fixed { position: fixed; top:0; left:0; }
         .sidebar{width:264px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
                 margin-top:-70px;position:sticky;top:0}
-}
+        
         </style>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <%-include('general/head') %>
@@ -525,9 +525,7 @@
             </div>
             
            
-                          <script>
-                 var sidebar = new StickySidebar('.sidebar', {stickyClass: 'is-affixed'});
-                          </script>
+                          
                                     
                                        
                                        
@@ -1184,6 +1182,10 @@
                             </div>
                         </div>
                     </main>
+                    <script>
+                        var sidebar = new StickySidebar('.sidebar', {stickyClass: 'is-affixed'});
+                    </script>
+                    
                     <script>
                         const SHOWING_CLASS = "showing";
                         const firstSlide = document.querySelector(".slider_item:first-child");

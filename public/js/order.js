@@ -84,6 +84,17 @@ $(function() {
         var dGroup = app.deliveryGroupList[i];
         app.orderDTO.products = dGroup.products;
     }
+
+    $("#unAddr").click(function() {
+        openZipSearch();
+    })
+
+    $("#unAddr").keydown(function() {
+        openZipSearch();
+        
+        $(this).val('');
+    })
+
     getLogin();
 })
 
@@ -324,4 +335,14 @@ function getDefaultDeliveryInfo() {
         isRequired: true,
         userId: true
     })
+}
+
+function openZipSearch() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
+            $('#addr').val(address);
+            console.log(data);
+        }
+    }).open();
 }
