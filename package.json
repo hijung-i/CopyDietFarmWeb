@@ -1,7 +1,6 @@
 {
   "name": "dietfarmweb",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "npm run lint && nodemon dist/server",
@@ -45,5 +44,17 @@
       "tests/*"
     ],
     "delay": 2500
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dataflow0901/DietFarmWeb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dataflow0901/DietFarmWeb/issues"
+  },
+  "homepage": "https://github.com/dataflow0901/DietFarmWeb#readme",
+  "description": ""
 }

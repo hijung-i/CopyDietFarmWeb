@@ -81,6 +81,7 @@
                         margin-top: 65px;
                     }
 
+
                     /* 웹 메인 슬라이더  */
                     /* #slider_main {width: 100%; margin: 0 auto; overflow: hidden;} 
     .slider_main_wrap {
@@ -144,39 +145,15 @@
         left: 1000px; bottom: 25px;
       }
       .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
-    </style>
+
+
+  </style>
 
       <link rel="stylesheet" href="/css/style.css">
         </head>
         <body>
       <!--//로그인 모달영역시작-->
-      <div id="popup_layer">
-        <div class="popup_box">
-            <!--팝업 컨텐츠 영역-->
-            <div class="popup_cont">
-                          
-                <div class="index-modal">
-               <h2>SNS 1초 회원가입!</h2>
-               <p class="second">1초 간편 회원가입 후,</p>
-               <p><span>5000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>
-               <ul>
-                   <li class="kakao" onclick=""><img src="/images/kakao_login@2x.png"></li>
-                   <li class="naver" id="naver_id_login" onclick=""><img src="/images/naver_login@2x.png"></li>
-               </ul>
-               <a href="/login"><p class="id-login">아이디 로그인</p></a>
-             </div>
-         
-            </div>
-            <!--팝업 버튼 영역-->
-            <div class="popup_btn">
-                <!--하루동안 보지않기-->
-                <a id="chk_today" href="javascript:closeToday();" class="close_day">오늘 하루 보지 않기</a> 
-                <!--7일간 보지않기-->
-                <!-- <a id="chk_today" href="javascript:closeToday();" class="close_day">Do not open for 7 days</a>-->
-                <a href="javascript:closePop();">닫기</a>
-            </div>
-        </div>
-        </div>
+      <div id="popup_layer"></div>
           <!--//로그인 모달영역끝-->
 
             <%-include('general/header') %>
@@ -319,15 +296,9 @@
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <div class="thum"><img src="/images/greek_yogurt.jpg" alt="위클리 베스트1">
-                                            <div class="ico_zzim">
-                                                <div class="btn_zzim_sty">
-                                                    <a href="#">
-                                                        <span class="blind"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                      <div class="thum"><img src="/images/greek_yogurt.jpg" alt="위클리 베스트1">
+                                         </div>
+                                        <div class="like"></div>
                                         <div class="desc">
                                             <p class="title">제품이름</p>
                                             <ul>
@@ -360,6 +331,7 @@
                                         <div class="thum">
                                             <img src="/images/dietfarmbread.jpg" alt="">
                                         </div>
+                                        <div class="like"></div>
                                         <div class="desc">
                                             <p class="title">제품이름</p>
                                             <ul>
@@ -389,6 +361,7 @@
                                         <div class="thum">
                                             <img src="/images/dietfarmbread.jpg" alt="">
                                         </div>
+                                        <div class="like"></div>
                                         <div class="desc">
                                             <p class="title">제품이름</p>
                                             <ul>
@@ -417,6 +390,7 @@
                                         <div class="thum">
                                             <img src="/images/dietfarmbread.jpg" alt="">
                                         </div>
+                                        <div class="like"></div>
                                         <div class="desc">
                                             <p class="title">제품이름</p>
                                             <ul>

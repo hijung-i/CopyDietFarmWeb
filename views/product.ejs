@@ -77,104 +77,86 @@
   <!-- 첫 번째 Modal을 여는 클래스 -->
 
   <!-- 첫 번째 Modal -->
-  <div class="modal" style="display:none">
-
-    <!-- 첫 번째 Modal의 내용 -->
-    <div class="modal-content">
-      <span class="close">&times;</span>                         
-              <div class="product_review_modal">
-            <div class="review_write_modal_header">
-              <h2 style="font-size:16px;margin-top:18px">리뷰쓰기</h2>
+  <div id="modal-review" class="modal" style="display:none">
+     <!-- 첫 번째 Modal의 내용 -->
+     <div class="modal-content">
+        <span class="close">&times;</span>                         
+                <div class="product_review_modal">
+              <div class="review_write_modal_header">
+                <h2 style="font-size:16px;margin-top:18px">리뷰쓰기</h2>
+                </div>
+             <div class="reviewWriteBox">
+                  <div class="review01">
+                      <table style="clear:both">
+                          <tbody>
+                              <tr class="reviewProduct_modal">
+                                  <td>
+                                      <div class="detailBox">
+                                          <a href="#"><img
+                                              src="/images/dietfarmbread.jpg"
+                                              align="left"
+                                              style="width:90px;margin-right:15px"></a>
+                                          <ul class="reviewProductInfo">
+                                              <li><span>(아임월)</span></li>
+                                              <li>굿밸런스 라이트밀 도시락</li>
+                                              <li><span>옵션 : 한입닭&큐브닭 9종 혼합 36팩</span></li>
+                                          </ul>
+                                      </div>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <div id="star_grade" class="star_grade">
+                      <p>별점으로 만족도를 알려주세요</p>
+  
+                      <div class="starRev">
+                          <span class="starR1 on">별1_왼쪽</span>
+                          <span class="starR2">별1_오른쪽</span>
+                          <span class="starR1">별2_왼쪽</span>
+                          <span class="starR2">별2_오른쪽</span>
+                          <span class="starR1">별3_왼쪽</span>
+                          <span class="starR2">별3_오른쪽</span>
+                          <span class="starR1">별4_왼쪽</span>
+                          <span class="starR2">별4_오른쪽</span>
+                          <span class="starR1">별5_왼쪽</span>
+                          <span class="starR2">별5_오른쪽</span>
+                      </div>
+                  </div>
+  
+                      <form>
+                              <p>
+                                  <textarea
+                                      style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px;margin-top:20px"></textarea>
+                              </p>
+                          </form>
+                     <div class="filebox">
+                      <label for="upload">사진 (선택)</label>
+                      <input type="file" id="upload" name="upload">
+                      <div id="preview">
+                          <div class="previewBox">
+                              <ul>
+                                  <li></li>
+                                  <li class="p2"></li>
+                              </ul>
+                          </div>
+                          <!-- 미리보기 공간 -->
+                      </div>
+  
+                      <p class="red" style="clear:both">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
+                  </div>
               </div>
-           <div class="reviewWriteBox">
-                <div class="review01">
-                    <table style="clear:both">
-                        <tbody>
-                            <tr class="reviewProduct_modal">
-                                <td>
-                                    <div class="detailBox">
-                                        <a href="#"><img
-                                            src="/images/dietfarmbread.jpg"
-                                            align="left"
-                                            style="width:90px;margin-right:15px"></a>
-                                        <ul class="reviewProductInfo">
-                                            <li><span>(아임월)</span></li>
-                                            <li>굿밸런스 라이트밀 도시락</li>
-                                            <li><span>옵션 : 한입닭&큐브닭 9종 혼합 36팩</span></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="star_grade" class="star_grade">
-                    <p>별점으로 만족도를 알려주세요</p>
-
-                    <div class="starRev">
-                        <span class="starR1 on">별1_왼쪽</span>
-                        <span class="starR2">별1_오른쪽</span>
-                        <span class="starR1">별2_왼쪽</span>
-                        <span class="starR2">별2_오른쪽</span>
-                        <span class="starR1">별3_왼쪽</span>
-                        <span class="starR2">별3_오른쪽</span>
-                        <span class="starR1">별4_왼쪽</span>
-                        <span class="starR2">별4_오른쪽</span>
-                        <span class="starR1">별5_왼쪽</span>
-                        <span class="starR2">별5_오른쪽</span>
-                    </div>
-                </div>
-
-                    <form>
-                            <p>
-                                <textarea
-                                    style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px;margin-top:20px"></textarea>
-                            </p>
-                        </form>
-                   <div class="filebox">
-                    <label for="upload">사진 (선택)</label>
-                    <input type="file" id="upload" name="upload">
-                    <div id="preview">
-                        <div class="previewBox">
-                            <ul>
-                                <li></li>
-                                <li class="p2"></li>
-                            </ul>
-                        </div>
-                        <!-- 미리보기 공간 -->
-                    </div>
-
-                    <p class="red" style="clear:both">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
-                </div>
-            </div>
-         <div class="modal_line"></div>
-            <div class="btn_area">
-                <button type="button" id="btnEnroll">등록</button>
-            </div>
-        </div>
-    </div>
+           <div class="modal_line"></div>
+              <div class="btn_area">
+                  <button type="button" id="btnEnroll">등록</button>
+              </div>
+          </div>
+      </div>
   </div>
    <!-- 두 번째 Modal -->
-  <div class="modal" style="display:none">
+  <div class="modal" style="display:none" id="modal-inquiry">
 
-    <!-- 두 번째 Modal의 내용 -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="productInquiryBox">
-                  <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
-                  <form>
-                      <p><textarea style="border-radius:5px;width:100%;height:153px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
-
-                  </form>
-                  <div class="group">
-                      <input type="checkbox" id="secret">
-                      <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
-              </div>
-              </div>
-              <div class="btn_area">
-                  <button type="button" id="btnInquiry">등록</button>
-              </div>
-    </div>
+   
   </div>
 <!--//모달 끝-->
 
