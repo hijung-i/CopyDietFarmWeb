@@ -331,6 +331,10 @@ function getDefaultDeliveryInfo() {
         console.log("defaultDeliveryInfo success", data);
     }, function(err) {
         console.log("error", err);
+        var responseText = err.responseText;
+        if(responseText == 'NOT_FOUND') {
+            app.orderDTO.delivery = undefined
+        }
     }, {
         isRequired: true,
         userId: true
