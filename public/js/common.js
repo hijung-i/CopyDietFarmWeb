@@ -3,9 +3,9 @@ var SERVER_IP = 'localhost';
 // var SERVER_IP = 'data-flow.co.kr';
 
 var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
-var API_SERVER = "http://"+ SERVER_IP +":9090";
+// var API_SERVER = "http://"+ SERVER_IP +":9090";
 
-//var API_SERVER = "http://112.217.209.162:9090";
+var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
 // var API_SERVER = "http://13.209.123.102:9090";
 
@@ -468,85 +468,63 @@ function closePop() {
 //메인화면 진입 시 팝업 창 
 
 $(function(){
-var popup = 
-'<div id="popup_layer">' +
-'<div class="popup_box">' +
-'<div class="popup_cont">' +
-'<div class="index-modal">' +
-'<h2>SNS 1초 회원가입!</h2>' +
-'<p class="second">1초 간편 회원가입 후,</p>' +
-'<p><span>5000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
-'<ul>' +
-'<li class="kakao" onclick=""><img src="/images/kakao_login@2x.png"></li>' +
-'<li class="naver" id="naver_id_login" onclick=""><img src="/images/naver_login@2x.png"></li>' +
-'</ul>' +
-'<a href="/login"><p class="id-login">아이디 로그인</p></a>' +
-'</div>' +
-'</div>'+
-'<div class="popup_btn">' +
-'<a id="chk_today" href="javascript:closeToday();" class="close_day">오늘 하루 보지 않기</a> ' +
-'<a href="javascript:closePop();">닫기</a>' +
-'</div>' +
-'</div>' +
-'</div>' 
-;
+	var popup = 
+	'<div class="popup_box">' +
+	'<div class="popup_cont">' +
+	'<div class="index-modal">' +
+	'<h2>SNS 1초 회원가입!</h2>' +
+	'<p class="second">1초 간편 회원가입 후,</p>' +
+	'<p><span>5000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
+	'<ul>' +
+	'<li class="kakao" onclick=""><img src="/images/kakao_login@2x.png"></li>' +
+	'<li class="naver" id="naver_id_login" onclick=""><img src="/images/naver_login@2x.png"></li>' +
+	'</ul>' +
+	'<a href="/login"><p class="id-login">아이디 로그인</p></a>' +
+	'</div>' +
+	'</div>'+
+	'<div class="popup_btn">' +
+	'<a id="chk_today" href="javascript:closeToday();" class="close_day">오늘 하루 보지 않기</a> ' +
+	'<a href="javascript:closePop();">닫기</a>' +
+	'</div>' +
+	'</div>';
 
-var myPageModal = 
-'<div class="modal-content">' +
-'<span class="close">&times;</span>' +
-'<div class="login-list">' + 
-'<ul>' +
-'<li><button class="naver">네이버로 로그인</button></li>' +
-'<li><button class="kakao">카카오로 로그인/가입</button></li>' +
-'<li><button class="id_comp">아이디로 로그인</button></li>' +
-'</ul>' +
-'</div>' +
-'</div>' 
-;
-         
-var inquiryModal = 
-'<div class="modal-content">' +
-'<span class="close">&times;</span>' +
-'<div class="productInquiryBox">' +
-'<h3>(아임월) 굿밸런스 라이트밀 도시락</h3>' +
-'<form>' +
-'<p><textarea style="border-radius:5px;width:100%;height:153px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>' +
-'</form>' +
-'<div class="group">' +
-'<input type="checkbox" id="secret">' +
-'<label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>' +
-'</div>' +
-'</div>' +
-'<div class="btn_area">' +
-'<button type="button" id="btnInquiry">등록</button>' +
-'</div>' +
-'</div>'
-;
+	var myPageModal = 
+	'<div class="modal-content">' +
+	'<span class="close">&times;</span>' +
+	'<div class="login-list">' + 
+	'<ul>' +
+	'<li><button class="naver">네이버로 로그인</button></li>' +
+	'<li><button class="kakao">카카오로 로그인/가입</button></li>' +
+	'<li><button class="id_comp">아이디로 로그인</button></li>' +
+	'</ul>' +
+	'</div>' +
+	'</div>' 
+	;
+			
+	var inquiryModal = 
+	'<div class="modal-content">' +
+	'<span class="close">&times;</span>' +
+	'<div class="productInquiryBox">' +
+	'<h3>(아임월) 굿밸런스 라이트밀 도시락</h3>' +
+	'<form>' +
+	'<p><textarea style="border-radius:5px;width:100%;height:153px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>' +
+	'</form>' +
+	'<div class="group">' +
+	'<input type="checkbox" id="secret">' +
+	'<label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>' +
+	'</div>' +
+	'</div>' +
+	'<div class="btn_area">' +
+	'<button type="button" id="btnInquiry">등록</button>' +
+	'</div>' +
+	'</div>';
 
 
-document.getElementById("popup_layer").innerHTML = popup ;
-//document.getElementById("myModal").innerHTML = myPageModal ;
-//document.getElementById("modal-inquiry").innerHTML = inquiryModal;
-
+	$("#popup_layer").html(popup) ;
+	$("#myModal").html(myPageModal) ;
+	$("#modal-inquiry").html(inquiryModal) ;
+	
 });
-
-
- 
-  
-			  
-			  
-				  
-
-			  
-			  
-				  
-				  
-		  
-		  
-		  
-			  
-		  
-}
 
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {

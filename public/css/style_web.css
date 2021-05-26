@@ -212,7 +212,7 @@ header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: poi
 .d_state ul, .d_date ul{display:flex;justify-content:space-around;}
 .d_state ul li, .d_date ul li{font-size:10px;float:left;color:#6B6B6B}
 
-.addr{margin-top:28px;border-top:0.5px solid #BBBBBB}
+.addr{margin-top:28px}
 .addr ul{float:left;padding-bottom:10px;padding-top:10px;}
 .addr01 ul{margin-right:75px;}
 .addr01 ul li, .addr02 ul li{float:left;}

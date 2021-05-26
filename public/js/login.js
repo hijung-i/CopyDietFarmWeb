@@ -1,7 +1,6 @@
 $(function() {
 
     $("button").click(function() {
-        console.log(this);
         var id = $(this).attr("id");
         switch(id){
             case "btnLogin":
@@ -18,6 +17,7 @@ $(function() {
 })
 
 function loginRequest(){
+    console.log("login")
     var userId = $("#loginFormUserId").val();
     var password = $("#loginFormUserPassword").val();
  
