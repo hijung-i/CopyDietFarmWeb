@@ -451,8 +451,6 @@ box-shadow: none !important}
 .order_a_box a img {margin-bottom:18px;width:50px;height:90px;margin-right:20px}
 .title p img{margin-bottom:18px;width:50px;height:90px;margin-right:20px;margin-top:10px}
 .order_a_box ul li{margin-bottom:2px; font-size: 12px;}
-.tab_cont{display:none;min-height:360px;}
-.tab_cont.active{display:block;}
 
 .web_innerbox > p {
     padding:6px 0 0 15px;

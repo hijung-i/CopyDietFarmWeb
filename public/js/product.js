@@ -34,14 +34,6 @@ $(function() {
     getReviewList();
     getProductQuestionList();
 
-    $('ul.tab_wrap li').click(function() {
-        var activeTab = $(this).attr('data-tab');
-        $('.tab_wrap li').removeClass('active');
-        $('.tab_cont').removeClass('active');
-        $(this).addClass('active');
-        $('#' + activeTab).addClass('active');
-    })
-
     $("select#products").change(function() {
         onOptionSelected($(this));
     });
@@ -62,30 +54,16 @@ $(function() {
         });
   
      });
-       $(function() {
-        $('ul.tab_wrap #tab li').click(function() {
-            var activeTab = $(this).attr('data-tab');
-            $('.tab_wrap li').removeClass('active');
-            
-            
-            $('.tab_cont').removeClass('active');
-            
-            $(this).addClass('active');
-            $('#' + activeTab).addClass('active');
-        })
+    $('ul.tab_wrap#tab li').click(function() {
+        var activeTab = $(this).attr('data-tab');
+
+        $('.tab_wrap li').removeClass('active');
+        $('.tab_cont').removeClass('active');
         
-        $('ul.tab_wrap #tab li').click(function() {
-            var activeTab = $(this).attr('data-tab');
-            $('.tab_wrap li').removeClass('active');
-            
-            $('.tab_cont').removeClass('active');
-            
-            $(this).addClass('active');
-            $('#' + activeTab).addClass('active');
-            
-            $('#tab1').addClass('active');
-        })
+        $(this).addClass('active');
+        $('#content #' + activeTab).addClass('active');
     });
+        
 
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
@@ -114,8 +92,7 @@ function getProductDetail(){
             // TODO: Open alert modal
             return false;
         }
-        console.log(product);
-        
+
         app.product.discountRate = Math.round(product.discountRate);
         // 상품명
         $('.detail_title h2').html(product.productName);
