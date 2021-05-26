@@ -130,9 +130,22 @@ function getCategory() {
         var sideTabHtml = '';
         var result = data.result;
         for(var i = 0; i < result.length; i++) {
-            buttonHtml += ''
-            sideTabHtml
+            var category = result[i];
+            buttonHtml += '<li>';
+            buttonHtml += '<a href="/products/'+ category.category1Code +'/category">';
+            buttonHtml += '<span><img src="'+ imgList[i] +'"></span>';
+            buttonHtml += '<p>'+ category.category1Name +'</p>';
+            buttonHtml += '</a>';
+            buttonHtml += '</li>';
         }
+        buttonHtml += '<li>';
+        buttonHtml += '<a href="/products/ALL/category">';
+        buttonHtml += '<span><img src="'+ imgList[9] +'"></span>';
+        buttonHtml += '<p>전체보기</p>';
+        buttonHtml += '</a>';
+        buttonHtml += '</li>';
+
+        $('.categor_wrap .category').html(buttonHtml)
 
         console.log("getCategory => ", data);
     }, function (err){
