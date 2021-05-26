@@ -113,6 +113,27 @@ function getCategory() {
     var param = {};
     ajaxCall(API_SERVER + "/product/getCategoryList", param, 'post'
     , function (data) {
+        var imgList = [
+            '/images/salad_icon_category@2x.png',
+            '/images/meal_icon_category@2x.png',
+            '/images/chicken_icon_category@2x.png',
+            '/images/snack_icon_category@2x.png',
+            '/images/drink_icon_category@2x.png',
+            '/images/fruit_icon_category@2x.png',
+            '/images/vegan_icon_category@2x.png',
+            '/images/baby_icon_category@2x.png',
+            '/images/pet_icon_category@2x.png',
+            '/images/all_icon_category@2x.png',    
+        ];
+
+        var buttonHtml = '';
+        var sideTabHtml = '';
+        var result = data.result;
+        for(var i = 0; i < result.length; i++) {
+            buttonHtml += ''
+            sideTabHtml
+        }
+
         console.log("getCategory => ", data);
     }, function (err){
         console.log("onError", err);
