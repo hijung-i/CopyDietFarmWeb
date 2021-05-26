@@ -472,7 +472,7 @@ $(function(){
 	'<li class="kakao" onclick=""><img src="/images/kakao_login@2x.png"></li>' +
 	'<li class="naver" id="naver_id_login" onclick=""><img src="/images/naver_login@2x.png"></li>' +
 	'</ul>' +
-	'<a href="/login"><p class="id-login">아이디 로그인</p></a>' +
+	'<a href="/login-form"><p class="id-login">아이디 로그인</p></a>' +
 	'</div>' +
 	'</div>'+
 	'<div class="popup_btn">' +

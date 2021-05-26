@@ -374,7 +374,7 @@ box-shadow: none !important}
 .floating .option_wrap{margin-bottom:40px;padding-right:15px;margin-top:33px}
   
 
-.floating .option_wrap h3{margin-bottom:8px;font-size:14px;margin-left:19px}
+.floating .option_wrap h3{margin-bottom:8px;font-size:14px;margin-left:4px}
 .floating .product_option select{width:305px;height:36px;border-radius:5px;margin-top:20px}
 .floating .common_btn_wrap{margin-left:14px}
 .product_title{display:flex;justify-content:space-between;padding-right:15px;padding-top:10px;}
@@ -385,12 +385,12 @@ box-shadow: none !important}
 .floating .line_w{width:224px;border-bottom:1px solid #E4E4E4;margin-top:200px;margin-bottom:-30px;margin-left:10px}
 .total_price{float:right}
 .total_price p{font-size:14px;font-weight:bold;margin-top:40px;margin-bottom:20px}
-.total_price p span{margin-left: 20px;}
+.total_price p span{margin-left: 20px;margin-right:10px}
 .review_img ul li img{float:right}
 .float_btns ul li{margin-bottom:15px}
 .float_btns .cart{width:224px;height:45px;border:1px solid #F99319;border-radius:5px;background-color:#fff
-;color:#F99319;font-size:14px;font-weight:bold}
-.float_btns .buy{width:224px;height:45px;background-color:#F99319;border-radius:5px;border:1px solid #F99319;color:#fff;font-size:14px;font-weight:bold}
+;color:#F99319;font-size:14px;font-weight:bold;margin-left:5px}
+.float_btns .buy{width:224px;height:45px;background-color:#F99319;border-radius:5px;border:1px solid #F99319;color:#fff;font-size:14px;font-weight:bold;margin-left:5px}
 #tab4 .inquiry{font-size:18px;font-weight:bold;padding-top:60px;margin-bottom:-40px}
 
 * 상품문의 */
