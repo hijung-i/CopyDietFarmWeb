@@ -1,10 +1,54 @@
-*{font-family:'나눔고딕';font-weight:400}
-
-body{min-width:360px;max-width:100%}
 .mypage_title{margin:40px 10px 20px 10px;width:100%;}
 .detail_title{margin:35px 10px 32px 0px;width:100%;}
 .btnback{position:absolute;top:4px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+
+/*마이페이지 로그인 버튼 모달창*/
+ /* The Modal (background) */
+ .mypage_modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.mypage_modal .modal-content {
+    background-color: #fefefe;
+    margin: 45% auto; /* 15% from the top and centered */
+    height:358px;
+    width:80%;
+    
+                       
+}
+/* The Close Button */
+.mypage_modal .modal-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    left:280px;
+    margin-top:10px;
+    margin-right:20px
+
+}
+.mypage_modal .modal-content .close:hover,
+.mypage_modal .modal-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.mypage_modal .modal-content .login-list{text-align:center;padding-top:131px}
+.mypage_modal .modal-content .login-list ul li{margin-bottom:13px}
+.mypage_modal .modal-content .login-list ul li button{width:90%;height:40px;border:none;border-radius:5px}
+.mypage_modal .modal-content .login-list .naver{color:#fff;background-color:#1FBE02}
+.mypage_modal .modal-content .login-list .kakao{color:#000;background-color:#F9E50C}
+.mypage_modal .modal-content .login-list .id_comp{color:#fff;background-color:#B4B4B4}
+
 
 /*마이페이지*/
 #header{height: 60px !important;padding-top:10px !important;}
@@ -145,3 +189,76 @@ ul, li, p{list-style:none}
 .benefits img{width:100%}
 .benefits p{font-size:14px;font-weight:bold;margin-top:10px;margin-bottom:18px;margin-left:15px}
 
+@media screen and (min-width:1000px) {
+    .del_inq_info {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        padding: 18px 0 14px 0;
+        font-size: 14px; 
+        justify-content: space-evenly;
+    }
+}
+
+/* 모바일 화면 대응 orderdelist */
+@media screen  and (max-width:1079px) {
+    .wide_line {display: none;}
+    header#wheader {display: none;}
+    .order_a:not(:last-child){border-bottom: 1px solid #ccc;}
+}
+/* 모바일 화면 대응 orderdetail */
+@media screen  and (max-width:1079px) {
+    body {
+        min-width: 360px;
+    }
+    #header {
+        display: none;
+    }
+        .content_lnb {
+        display: none;
+    }
+    .order_detail_top {
+        padding: 8px 12px;
+    }
+    #web_contents {
+        padding-top: 0; min-width: 360px;
+    }
+    .detail_title {display: block !important;} 
+   
+   /* 주문 상세 컨텐트 */
+
+.orderDetails{border-bottom:8px solid #F1F1F1}
+.buttons{width:100%;margin: 0 auto;display: flex;
+justify-content: space-between;padding-bottom:14px;padding-left:15px;padding-right:15px}
+.btnConfirm, .btnTracking{width:50%;    height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
+color:#000;font-size:14px;background-color:#F1F1F1;}
+.dateNo{border-bottom:8px solid #F1F1F1;}
+.date{margin-bottom:3px;color:#878787}
+.no{margin-bottom:14px}
+.ship_state{color:#EFA543;font-weight:bold}
+.quantity, .option{color:#878787}
+.order_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;margin-bottom:20px;padding-right:15px}
+.order_title p span{font-size:14px;font-weight:bold}
+.orderDetails{padding-left:15px;padding-right:15px;}
+.orderBox02{margin-top:19px;padding-top:18px;border-top:1px solid #BBBBBB;}
+.order00 li{margin-bottom:5px;}
+.order_q .title00{padding-top:20px;padding-left:26px;font-size:16px;font-weight:bold;}
+.order_a_box td span{color:#878787}
+.btn_area {margin:20px 15px}
+#btnReorder{width:100%;margin:auto;padding: 21px 0 17px;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
+
+/* 주문 상세 타이틀 */
+.detail_title{margin:40px 10px 20px 10px;width:100%;}
+.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
+}
+
+/* 모바일 화면 대응 deliverymanage */
+@media screen and (min-width:1080px) {
+section.detail_title, section.delivery_manage_list {display: none;}
+div.del_line_thick{display: none;}
+.delivery_manage_list p img{margin-left:10px;margin-right:10px}
+.delivery_manage_list .edit_remove li {
+font-size: 12px;
+padding: 2px;
+}
+}

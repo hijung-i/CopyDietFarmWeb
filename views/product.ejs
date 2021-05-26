@@ -13,58 +13,173 @@
                 .web_product_details {
                     display: none;
                 }
+                .sidebar{display:none}
                          }
             @media screen and (min-width:1080px) {
-                .mobile_product_details {
-                    display: none;
-                }
-                .swiper-slide {
-                    width: 694px;
-                    height: 694px;
-                }
-                .showing {
-                    z-index: 1;
-                    opacity: 1;
-                }
-                /* swiper bundle */
-                .swiper-container {
-                    width: 100%;
-                    height: 100%;
-                    z-index: 0;
-                }
-                .swiper-slide {
-                    text-align: center;
-                    font-size: 18px;
-                    background: #fff;
-                    /* Center slide text vertically */
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: -webkit-flex;
-                    display: flex;
-                    -webkit-box-pack: center;
-                    -ms-flex-pack: center;
-                    -webkit-justify-content: center;
-                    justify-content: center;
-                    -webkit-box-align: center;
-                    -ms-flex-align: center;
-                    -webkit-align-items: center;
-                    align-items: center;
-                }
-                .swiper-slide img {
-                    width: 100%;
-                    height: 100%;
-                  }
-               
+                .mobile_product_details { display: none}                       
             }
+            /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 10000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%; /* Could be more or less, depending on screen size */
+        }
+        /* The Close Button */
+        .product_close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .product_close:hover,
+        .product_close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }  
+        .fixed { position: fixed; top:0; left:0; }
+        .sidebar{width:264px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
+                margin-top:-70px;position:sticky;top:0}
+        
         </style>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <%-include('general/head') %>
             <link rel="stylesheet" href="/css/style.css">
-            <link rel="stylesheet" href="/css/product_detail_W.css">
-            <link rel="stylesheet" href="/css/product_details.css">
-        </head>
+            <link rel="stylesheet" href="/css/product.css">
+            <script type="text/javascript" src="/js/sticky-sidebar.js"></script>
+
+            <script type="text/javascript">
+               
+                $('#sidebar').stickySidebar({
+                    topSpacing: 60,
+                    bottomSpacing: 60
+                });
+
+            </script>
+              </head>
 
         <body>
+
+<!--// 모달창-->
+  <!-- 첫 번째 Modal을 여는 클래스 -->
+
+  <!-- 첫 번째 Modal -->
+  <div class="modal" style="display:none">
+
+    <!-- 첫 번째 Modal의 내용 -->
+    <div class="modal-content">
+      <span class="close">&times;</span>                         
+              <div class="product_review_modal">
+            <div class="review_write_modal_header">
+              <h2 style="font-size:16px;margin-top:18px">리뷰쓰기</h2>
+              </div>
+           <div class="reviewWriteBox">
+                <div class="review01">
+                    <table style="clear:both">
+                        <tbody>
+                            <tr class="reviewProduct_modal">
+                                <td>
+                                    <div class="detailBox">
+                                        <a href="#"><img
+                                            src="/images/dietfarmbread.jpg"
+                                            align="left"
+                                            style="width:90px;margin-right:15px"></a>
+                                        <ul class="reviewProductInfo">
+                                            <li><span>(아임월)</span></li>
+                                            <li>굿밸런스 라이트밀 도시락</li>
+                                            <li><span>옵션 : 한입닭&큐브닭 9종 혼합 36팩</span></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="star_grade" class="star_grade">
+                    <p>별점으로 만족도를 알려주세요</p>
+
+                    <div class="starRev">
+                        <span class="starR1 on">별1_왼쪽</span>
+                        <span class="starR2">별1_오른쪽</span>
+                        <span class="starR1">별2_왼쪽</span>
+                        <span class="starR2">별2_오른쪽</span>
+                        <span class="starR1">별3_왼쪽</span>
+                        <span class="starR2">별3_오른쪽</span>
+                        <span class="starR1">별4_왼쪽</span>
+                        <span class="starR2">별4_오른쪽</span>
+                        <span class="starR1">별5_왼쪽</span>
+                        <span class="starR2">별5_오른쪽</span>
+                    </div>
+                </div>
+
+                    <form>
+                            <p>
+                                <textarea
+                                    style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px;margin-top:20px"></textarea>
+                            </p>
+                        </form>
+                   <div class="filebox">
+                    <label for="upload">사진 (선택)</label>
+                    <input type="file" id="upload" name="upload">
+                    <div id="preview">
+                        <div class="previewBox">
+                            <ul>
+                                <li></li>
+                                <li class="p2"></li>
+                            </ul>
+                        </div>
+                        <!-- 미리보기 공간 -->
+                    </div>
+
+                    <p class="red" style="clear:both">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
+                </div>
+            </div>
+         <div class="modal_line"></div>
+            <div class="btn_area">
+                <button type="button" id="btnEnroll">등록</button>
+            </div>
+        </div>
+    </div>
+  </div>
+   <!-- 두 번째 Modal -->
+  <div class="modal" style="display:none">
+
+    <!-- 두 번째 Modal의 내용 -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="productInquiryBox">
+                  <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
+                  <form>
+                      <p><textarea style="border-radius:5px;width:100%;height:153px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
+
+                  </form>
+                  <div class="group">
+                      <input type="checkbox" id="secret">
+                      <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
+              </div>
+              </div>
+              <div class="btn_area">
+                  <button type="button" id="btnInquiry">등록</button>
+              </div>
+    </div>
+  </div>
+<!--//모달 끝-->
+
+
             <div class="web_product_details">
                 <%-include('general/header') %>
                 </div>
@@ -101,7 +216,7 @@
                                             <a href="javascript:void(0);">상세정보</a>
                                         </li>
                                         <li data-tab="tab3">
-                                            <a href="javascript:void(0);">리뷰<span class="v_n_numb">(282)</span></a>
+                                            <a href="javascript:void(0);">리뷰<span class="v_n_numb"></span></a>
                                         </li>
                                         <li data-tab="tab4">
                                             <a href="javascript:void(0);">문의<span class="tab_detail_qna_count  v_n_numb">(0)</span></a>
@@ -120,7 +235,7 @@
                                             <img
                                                 src="/images/rightarrow_icon_join@2x.png"
                                                 style="width:9px;position:relative;top:3px">
-                                            도시락</span>
+                                    도시락</span>
                                         <!-- //상품navi -->
                                     </div>
                                     <!-- 상품설명 -->
@@ -134,7 +249,7 @@
                                             </div>--> 
                                             <img
                                             v-for="(image, index) in product.representative"
-                                            v-bind:src="RESOURCE_SERVER + image.url"></div>
+                                            v-bind:src="RESOURCE_SERVER + image.url" style="width:694px"></div>
                                         </div>
                                     </div>
                                     <div class="v_top_txt_box">
@@ -338,83 +453,90 @@
                                     </div>
                                 </div>
                               <!--//product_top-->   
+                              
+            <div id="sidebar" class="sidebar">
+                <div class="sidebar__inner">
+                    <div class="floating">
+                        <div class="option_wrap">
+                            <h3><img src="/images/star_icon_join.png">옵션선택(필수)</h3>
+                            <table class="product_option">
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td>
+                                        <select name="products" id="products" style="border-color:#BBBBBB">
+                                            <option value="-1" selected="selected">선택</option>
+                                            <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
 
-                            <div class="floating">
-                                <div class="option_wrap">
-                                    <h3><img src="/images/star_icon_join.png">옵션선택(필수)</h3>
-                                    <table class="product_option">
-                                        <tr>
-                                            <th scope="row"></th>
-                                            <td>
-                                                <select name="products" id="products" style="border-color:#BBBBBB">
-                                                    <option value="-1" selected="selected">선택</option>
-                                                    <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
 
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                    <div id="selectedOptionDiv">
-                                        <div v-for="(item, index) in selectedOptions">
-                                            <div class="product_count">
-                                                <div class="product_title">
-                                                    <h4>{{ item.optionDesc }}
-                                                        <h4>
-                                                            <ul>
-                                                                <li><img
-                                                                    src="/images/x_icon_login.png"
-                                                                    v-on:click="deleteFromArray(index)"
-                                                                    style="width:8px"></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="number_price">
-                                                            <div class="number-input">
-                                                                <button class="minus" v-on:click="changeOptionCount(false, index)"></button>
-                                                                <input
-                                                                    class="quantity"
-                                                                    min="1"
-                                                                    name="quantity"
-                                                                    v-model="item.optionCount"
-                                                                    value="1"
-                                                                    type="number">
-                                                                <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
-                                                            </div>
-                                                            <p>
-                                                                {{ numberFormat(item.optionDiscountPrice * item.optionCount) }}
-                                                                원</p>
-
-                                                        </div>
-                                                    </div>
+                            <div id="selectedOptionDiv">
+                                <div v-for="(item, index) in selectedOptions">
+                                    <div class="product_count">
+                                        <div class="product_title">
+                                            <h4>{{ item.optionDesc }}
+                                                <h4>
+                                                    <ul>
+                                                        <li><img
+                                                            src="/images/x_icon_login.png"
+                                                            v-on:click="deleteFromArray(index)"
+                                                            style="width:8px"></li>
+                                                    </ul>
                                                 </div>
-                                            </div>
-                                            <div class="v_opt_btn_w">
-                                                <div class="line_w"></div>
-                                                <div class="total_price">
-                                                    <p>총 상품금액
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>8,500원</span></p>
-                                                </div>
-                                                <div class="common_btn_wrap">
-                                                    <div class="option_btns">
-                                                        <button type="button" class="h_btn">
-                                                            <img src="/images/heart_icon_menu.png"></button>
-                                                        <button type="button" class="c_btn" style="margin-left:4px">장바구니</button>
-                                                        <button type="button" class="p_btn" style="margin-left:4px">구매하기</button>
+                                                <div class="number_price">
+                                                    <div class="number-input">
+                                                        <button class="minus" v-on:click="changeOptionCount(false, index)"></button>
+                                                        <input
+                                                            class="quantity"
+                                                            min="1"
+                                                            name="quantity"
+                                                            v-model="item.optionCount"
+                                                            value="1"
+                                                            type="number">
+                                                        <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
                                                     </div>
+                                                    <p>
+                                                        {{ numberFormat(item.optionDiscountPrice * item.optionCount) }}
+                                                        원</p>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--//상세옵션-->
-                            </ul>
-                        </div>
+                                    <div class="v_opt_btn_w">
+                                        <div class="line_w"></div>
+                                        <div class="total_price">
+                                            <p>총 상품금액
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>8,500원</span></p>
+                                        </div>
+                                        <div class="float_btns">
+                                            <ul>
+                                                <li><button class="cart">장바구니</button></li>
+                                                <li><button class="buy">구매하기</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                </div>
+            </div>
+            
+           
+                          
+                                    
+                                       
+                                       
+                                       <!--//플로팅 박스-->
+                     
                         <div id="tab1" class="tab_cont active">
                             <div class="products_ex">
                                 <img
                                     v-for="image in product.detail"
                                     v-bind:src="RESOURCE_SERVER + image.url"
-                                    style="width:100%; height:100%">
+                                    style="width:75%; height:100%">
                             </div>
                         </div>
 
@@ -486,8 +608,7 @@
                             document.getElementById(".products_ex_mobile").style = "display:none"; }
                             </script> -->
                             <div class="review_btn">
-
-                                <button type="button" style="width:90%;height:45px;"> <a href="#ex1" rel="modal:open" style="color:#EFA543">리뷰쓰기</a></button>
+                              <button class="btn" style="width:90%;height:45px;">리뷰쓰기</button>
                             </div>
                             <div class="review_list_null" style="display:none">
                                 <img src="/images/note_icon_review.png">
@@ -499,81 +620,7 @@
                                     <a href="#ex1" rel="modal:open"
                                      style="float:right;margin-left:200px;position:relative;left:50px;top:30px;margin-bottom:30px;width:168px;height:45px;border-radius:5px;background-color:#F99319;color:#fff;font-size:18px;font-weight:bold;text-align:center;padding-top:10px">리뷰쓰기</a>
                                 </div>
-                                 <!-- modal window -->
-            <section id="ex1" class="modal review_write_modal" style="max-width: 100%;display: none;">
-                <div class="product_modal03">
-                <div class="review_write_modal_header">
-                  <h2 style="font-size:16px;margin-top:18px">리뷰쓰기</h2>
-                  </div>
-               <div class="reviewWriteBox">
-                    <div class="review01">
-                        <table style="clear:both">
-                            <tbody>
-                                <tr class="reviewProduct_modal">
-                                    <td>
-                                        <div class="detailBox">
-                                            <a href="#"><img
-                                                src="/images/dietfarmbread.jpg"
-                                                align="left"
-                                                style="width:90px;margin-right:15px"></a>
-                                            <ul class="reviewProductInfo">
-                                                <li><span>(아임월)</span></li>
-                                                <li>굿밸런스 라이트밀 도시락</li>
-                                                <li><span>옵션 : 한입닭&큐브닭 9종 혼합 36팩</span></li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div id="star_grade" class="star_grade">
-                        <p>별점으로 만족도를 알려주세요</p>
-
-                        <div class="starRev">
-                            <span class="starR1 on">별1_왼쪽</span>
-                            <span class="starR2">별1_오른쪽</span>
-                            <span class="starR1">별2_왼쪽</span>
-                            <span class="starR2">별2_오른쪽</span>
-                            <span class="starR1">별3_왼쪽</span>
-                            <span class="starR2">별3_오른쪽</span>
-                            <span class="starR1">별4_왼쪽</span>
-                            <span class="starR2">별4_오른쪽</span>
-                            <span class="starR1">별5_왼쪽</span>
-                            <span class="starR2">별5_오른쪽</span>
-                        </div>
-                    </div>
-
-                        <form>
-                                <p>
-                                    <textarea
-                                        style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px;margin-top:20px"></textarea>
-                                </p>
-                            </form>
-                       <div class="filebox">
-                        <label for="upload">사진 (선택)</label>
-                        <input type="file" id="upload" name="upload">
-                        <div id="preview">
-                            <div class="previewBox">
-                                <ul>
-                                    <li></li>
-                                    <li class="p2"></li>
-                                </ul>
-                            </div>
-                            <!-- 미리보기 공간 -->
-                        </div>
-
-                        <p class="red" style="clear:both">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
-                    </div>
-                </div>
-             <div class="modal_line"></div>
-                <div class="btn_area">
-                    <button type="button" id="btnEnroll">등록</button>
-                </div>
-            </div>
-            </section>
-
-            <!-- modal window end -->
+                               
                             </div>
 
                             <div class="reviews">
@@ -772,96 +819,7 @@
                                     <a href="#ex1" rel="modal:open"
                                      style="float:right;margin-left:200px;position:relative;left:50px;top:30px;margin-bottom:30px;width:168px;height:45px;border-radius:5px;background-color:#F99319;color:#fff;font-size:18px;font-weight:bold;text-align:center;padding-top:10px">리뷰쓰기</a>
                                 </div>
-                                 <!-- modal window -->
-            <section id="ex1" class="modal review_write_modal" style="max-width: 100%;display: none;">
-                <header class="deliver_magHeader">
-                    <ul style="font-size: 18px;">
-                        <li>
-                            <h2>문의 수정하기 > (아임월) 굿밸런스 라이트밀 도시락</h2>
-                        </li>
-                        <li class="clsWindow">
-                            <i class="fal fa-times"></i>
-                        </li>
-                    </ul>
-                </header>
-
-                <div class="title">
-                    <h2>리뷰쓰기</h2>
-                </div>
-                <div class="reviewModifyBox">
-                    <div class="review01">
-                        <table>
-                            <tbody>
-                                <tr class="reviewProduct">
-                                    <td>
-                                        <div class="detailBox">
-                                            <a href="#"><img
-                                                src="/images/dietfarmbread.jpg"
-                                                align="left"
-                                                style="width:90px;margin-right:15px"></a>
-                                            <ul class="reviewProductInfo">
-                                                <li>
-                                                    <span>디어썸라이프</span></li>
-                                                <li>[디어썸1]간편하고 든든한 고구마스틱 300g</li>
-                                                <li>
-                                                    <span>간편하고 든든한 고구마스틱 300g (20g*15개입)</span></li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div id="star_grade" class="star_grade">
-                        <p>별점으로 만족도를 알려주세요</p>
-
-                        <div class="starRev">
-                            <span class="starR1 on">별1_왼쪽</span>
-                            <span class="starR2">별1_오른쪽</span>
-                            <span class="starR1">별2_왼쪽</span>
-                            <span class="starR2">별2_오른쪽</span>
-                            <span class="starR1">별3_왼쪽</span>
-                            <span class="starR2">별3_오른쪽</span>
-                            <span class="starR1">별4_왼쪽</span>
-                            <span class="starR2">별4_오른쪽</span>
-                            <span class="starR1">별5_왼쪽</span>
-                            <span class="starR2">별5_오른쪽</span>
-                        </div>
-                    </div>
-
-                    <ul>
-                        <li>
-                            <form>
-                                <p>
-                                    <textarea
-                                        style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px;margin-top:20px"></textarea>
-                                </p>
-                            </form>
-                        </li>
-                    </ul>
-                    <div class="filebox">
-                        <label for="upload">사진 (선택)</label>
-                        <input type="file" id="upload" name="upload">
-                        <div id="preview">
-                            <div class="previewBox">
-                                <ul>
-                                    <li></li>
-                                    <li class="p2"></li>
-                                </ul>
-                            </div>
-                            <!-- 미리보기 공간 -->
-                        </div>
-
-                        <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
-                    </div>
-                </div>
-
-                <div class="btn_area">
-                    <button type="button" id="btnModify">확인</button>
-                </div>
-            </section>
-
-            <!-- modal window end -->
+                       
                                 <div class="page_wrap">
                                     <div class="page_nation">
                                         <a class="arrow pprev" href="#"></a>
@@ -895,33 +853,10 @@
                         <div id="tab4" class="tab_cont">
                             <!--//review_btn-->
                             <div class="review_btn">
-                                <button type="button" style="width:90%;height: 45px;">문의하기</button>
+                                <button class="btn" style="width:90%;height: 45px;">문의하기</button>
                             </div>
 
-                                 <!-- modal window -->
-                                 <section id="ex1" class="modal review_write_modal" style="max-width: 100%;display: none;">
-                                    <div class="product_modal04">
-                                        <div class="productInquiryBox">
-                                            <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
-                                            <form>
-                                                <p><textarea style="border-radius:5px;width:100%;height:153px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
-                                
-                                            </form>
-                                            <div class="group">
-                                                <input type="checkbox" id="secret">
-                                                <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
-                                            </div>
-                                        </div>
-                                        <div class="btn_area">
-                                            <button type="button" id="btnInquiry">등록</button>
-                                        </div>
-                                 </div>
-                                </section>
-                    
-                                <!-- modal window end -->
-    
-
-
+                      
                             <p class="inquiry">문의 571개</p>
                             <div class="qna">
                                 <div class="myReview">
@@ -1248,6 +1183,10 @@
                         </div>
                     </main>
                     <script>
+                        var sidebar = new StickySidebar('.sidebar', {stickyClass: 'is-affixed'});
+                    </script>
+                    
+                    <script>
                         const SHOWING_CLASS = "showing";
                         const firstSlide = document.querySelector(".slider_item:first-child");
                         function slide() {
@@ -1331,21 +1270,7 @@
                             preview.appendChild(image);
                         })
                     </script>
-                    <script type="text/javascript">
-                        jQuery(window).scroll(function () {
-                            // 브라우저 화면 스크롤의 현재 높이가 플로팅 배너의 높이보다 클경우
-                            if (jQuery(window).scrollTop() > jQuery(".floating").offset().top) {
-
-                                jQuery(".option_wrap").css(
-                                    "position",
-                                    "fixed"// 브라우저 화면 스크롤 현재 높이가 플로팅 배너의 높이보다 작을경우
-                                );
-                            } else if ((jQuery(window).scrollTop() < jQuery(".floating").offset().top)) {
-                                jQuery(".option_wrap").css("position", "static");
-
-                            }
-                        });
-                    </script>
+                    
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
                     <script type="text/javascript" src="/js/product.js"></script>
 

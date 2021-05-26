@@ -113,6 +113,40 @@ function getCategory() {
     var param = {};
     ajaxCall(API_SERVER + "/product/getCategoryList", param, 'post'
     , function (data) {
+        var imgList = [
+            '/images/salad_icon_category@2x.png',
+            '/images/meal_icon_category@2x.png',
+            '/images/chicken_icon_category@2x.png',
+            '/images/snack_icon_category@2x.png',
+            '/images/drink_icon_category@2x.png',
+            '/images/fruit_icon_category@2x.png',
+            '/images/vegan_icon_category@2x.png',
+            '/images/baby_icon_category@2x.png',
+            '/images/pet_icon_category@2x.png',
+            '/images/all_icon_category@2x.png',    
+        ];
+
+        var buttonHtml = '';
+        var sideTabHtml = '';
+        var result = data.result;
+        for(var i = 0; i < result.length; i++) {
+            var category = result[i];
+            buttonHtml += '<li>';
+            buttonHtml += '<a href="/products/'+ category.category1Code +'/category/ALL">';
+            buttonHtml += '<span><img src="'+ imgList[i] +'"></span>';
+            buttonHtml += '<p>'+ category.category1Name +'</p>';
+            buttonHtml += '</a>';
+            buttonHtml += '</li>';
+        }
+        buttonHtml += '<li>';
+        buttonHtml += '<a >';
+        buttonHtml += '<span><img src="'+ imgList[9] +'"></span>';
+        buttonHtml += '<p>전체보기</p>';
+        buttonHtml += '</a>';
+        buttonHtml += '</li>';
+
+        $('.category ul').html(buttonHtml);
+
         console.log("getCategory => ", data);
     }, function (err){
         console.log("onError", err);
@@ -152,7 +186,7 @@ $(function(){
             currentIdx = num;
         }
         nextBtn.addEventListener('click', function() {
-            if(currentIdx < slideCount - 3) {
+            if(currentIdx < slideCount - 11) {
                 moveSlide(currentIdx + 1);
                 console.log(currnetIdx);
             } else {
@@ -164,6 +198,6 @@ $(function(){
                 moveSlide(currentIdx - 1);
                 console.log(currnetIdx);
             } else {
-                moveSlide(slideCount - 3);
+                moveSlide(slideCount - 11);
             }
         });

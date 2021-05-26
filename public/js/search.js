@@ -49,7 +49,7 @@ function getCFKeywords() {
         var html = '';
         for(var i = 0; i < result.length; i++){
             var keyword = result[i];
-            html += '<li><a href="#">'+ keyword.keyword +'</a></li>';
+            html += '<li><a href="/search-list?keyword='+ keyword.keyword + '">'+ keyword.keyword +'</a></li>';
         }
         $('.recommend ul').html(html);
 
