@@ -3,9 +3,9 @@ var SERVER_IP = 'localhost';
 // var SERVER_IP = 'data-flow.co.kr';
 
 var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
-var API_SERVER = "http://"+ SERVER_IP +":9090";
+// var API_SERVER = "http://"+ SERVER_IP +":9090";
 
-//var API_SERVER = "http://112.217.209.162:9090";
+var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
 // var API_SERVER = "http://13.209.123.102:9090";
 
@@ -326,13 +326,6 @@ $(document).ready(function() {
 		$("#NotmemMenu").hide();
 	});
 
-	$('ul.tab_wrap li').click(function() {
-        var activeTab = $(this).attr('data-tab');
-        $('.tab_wrap li').removeClass('active');
-        $('.tab_cont').removeClass('active');
-        $(this).addClass('active');
-        $('#' + activeTab).addClass('active');
-    })
 });
 function niceIdentifyPopup(nextMethod) {
 	var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';

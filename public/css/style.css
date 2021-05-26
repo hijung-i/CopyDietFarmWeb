@@ -2220,6 +2220,6 @@ padding-right:15px}
 
 
 /* 슬림 라인 */
-.search_line {width: 90%; height: 0.5px;background: #BBBBBB;margin: 0 auto;margin-top: 14px}
+.search_line {width: 90%; height: 0.5px;background: BBBBB;margin: 0 auto;margin-top: 14px}
 .result-area{position: relative;}
 .search_result{background-color: #FFFFFF;position: absolute;z-index: 9999}
