@@ -1,8 +1,20 @@
 import { User } from '../models/user'
 import * as request from 'request-promise-native'
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
+<<<<<<< HEAD
 const serverUrl = 'http://192.168.0.3:9090'
  // const serverUrl = 'http://13.209.123.102:9090'
+=======
+
+const SERVER_IP = 'localhost'
+// const SERVER_IP = 'data-flow.co.kr'
+
+const SERVER_URL = 'http://' + SERVER_IP + ':9090'
+// const SERVER_URL = 'http://13.209.123.102:9090'
+const CALLBACK_SERVER = 'http://' + SERVER_IP + ':3000'
+
+const KAKAO_SERVER = 'https://kauth.kakao.com'
+>>>>>>> d5dbf33700f6f7f6aeb8176cb2f2f57212eb5efd
 
 type Option = {
     uri: string,
@@ -15,7 +27,7 @@ type Option = {
 class UserService {
     login = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${serverUrl}/user/login`,
+            uri: `${SERVER_URL}/user/login`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -38,7 +50,7 @@ class UserService {
 
     loginKakao = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${serverUrl}/user/loginKakaoUser`,
+            uri: `${SERVER_URL}/user/loginKakaoUser`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -58,31 +70,76 @@ class UserService {
         })
     }
 
-    loginNaver = async (user: User): Promise<UserResult> => {
+    loginNaver = async (tokenNaver: string): Promise<UserResult> => {
         let options: Option = {
-            uri: `${serverUrl}/user/loginNaverUser`,
+            uri: `${SERVER_URL}/user/loginNaverUser`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
                 'Content-Type': 'application/json'
             },
             json: true,
-            body: user
+            body: {
+                tokenNaver
+            }
         }
+        console.log(options)
 
         return request(options).then((res: any): UserResult => {
             return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
         }).catch((err: any): UserResult => {
             if (err) {
-                console.log('Error occured while login', err.statusCode, err.error)
+                console.log('Error occured while loginNaver', err.statusCode, err.error)
             }
             return setUserResult(StatusCode.error, err.error, null)
+        })
+    }
+
+    getNaverUserInfo = async (token: string) => {
+        const apiUrl = 'https://openapi.naver.com/v1/nid/me'
+
+        const options = {
+            uri: `${apiUrl}`,
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }
+
+        return request(options).then((res: any) => {
+            const result = JSON.parse(decodeURIComponent(res))
+            const obj = result.response
+
+            const userId = obj.id + '@n'
+            const userCellNo = obj.mobile.replace(/-/gi, '')
+            let userGender = obj.gender
+            switch (obj.gender) {
+                case 'F':
+                    userGender = 'W'
+                    break
+                default:
+                    userGender = 'X'
+            }
+            let userInfo = ''
+            if (obj.birthyear !== undefined && obj.birthday !== undefined) {
+                userInfo = obj.birthyear + obj.birthday.replace('-', '')
+            }
+
+            const userEmail = obj.email
+            const userName = obj.name
+
+            return {
+                tokenNaver: obj.id, userId, userCellNo, userGender, userInfo, userEmail, userName, password: userId
+            }
+        }).catch((err: any) => {
+            console.log('error while getNaverUserData', err)
+            return null
         })
     }
 
     register = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${serverUrl}/user/register`,
+            uri: `${SERVER_URL}/user/register`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -102,6 +159,104 @@ class UserService {
             }
             return setUserResult(StatusCode.error, err.error, null)
         })
+    }
+    requestKakaoToken = async (code) => {
+
+        const options = {
+            uri: KAKAO_SERVER + '/oauth/token',
+            method: 'POST',
+            headers: {
+                'Host': 'kauth.kakao.com',
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+            },
+            json: false,
+            form: {
+                grant_type: 'authorization_code',
+                redirect_uri: CALLBACK_SERVER + '/user/result/kakao',
+                code: code,
+                client_id: '23424519967349f9a1d006b09f81bb98',
+                client_secret: 'Sv5VpQchcPw81uP51LZkxsaHpi4KOWjM'
+            }
+        }
+
+        return request.post(options).then((res: any) => {
+            console.log('GET /request/token > request result >>', res)
+            const result = JSON.parse(res)
+            return result
+        }).catch((err: any) => {
+            console.error('GET /request/token > request error >>', err.statusCode, err.error)
+        })
+    }
+
+    requestKakaoUserInfo = async () => {
+        const url = KAKAO_SERVER + '/v2/user/me'
+
+        const options = {
+            uri: url,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+            }
+        }
+
+        request(options).then((res: any) => {
+            console.log('GET /user/me result >>', res)
+
+        }).catch((err: any) => {
+            console.error('GET /user/me error >>', err.statusCode, err.error)
+        })
+		// function(res) {
+		// 	console.log(res)
+		// 	var account = res.kakao_account;
+
+		// 	var agreement = false;
+		// 	if (account.birthday_needs_agreement == true ) {
+		// 		agreement = true;
+		// 	}
+		// 	if (account.birthyear_needs_agreement == true ) {
+		// 		agreement = true;
+		// 	}
+		// 	if (account.gender_needs_agreement == true ) {
+		// 		agreement = true;
+		// 	}
+
+		// 	if(agreement) {
+		// 		alert('선택 정보에 동의해주셔야 회원가입이 가능합니다.');
+		// 		kakaoUnlink();
+		// 		return;
+		// 	}
+
+		// 	var params = {
+		// 		kakaoNo: res.id,
+		// 		userEmail: account.email,
+		// 		userName: account.profile.nickname,
+		// 		userCellNo: account.phone_number.replace(/-/gi, '').replace('+82 ', '0').replace('+1 ', ''),
+		// 		userInfo: account.birthyear + account.birthday
+		// 	}
+
+		// 	switch(account.gender) {
+		// 		case 'male':
+		// 			params.userGender = 'M'
+		// 			break;
+		// 		case 'female':
+		// 			params.userGender = 'W'
+		// 			break;
+		// 		default:
+		// 			params.userGender = 'X'
+		// 			break;
+		// 	}
+
+		// 	params.userId = params.kakaoNo + '@K';
+		// 	params.password = params.kakaoNo + '@K';
+
+		// 	checkKakaoRegistration(params);
+		// },
+		// fail: function(error) {
+		// 	console.log(
+		// 		'login success, but failed to request user information: '
+		// 		,error
+		// 	)
+		// },
     }
 
     SHA256 = (s: string): string => {

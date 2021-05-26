@@ -482,10 +482,10 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .btnConfirm, .btnTracking{width:116px;height:30px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
  color:#000;font-size:12px;background-color:#F1F1F1}
 }
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
 .btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
 color:#000;font-size:14px;background-color:#F1F1F1;}
-}
+
 .dateNo{border-bottom:8px solid #F1F1F1; /* margin-top: */}
 .date{margin-bottom:3px;color:#878787}
 .no{margin-bottom:14px}
@@ -546,7 +546,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .order_list_null{width:70%; text-align:center; margin:197px auto;}
 .order_list_null img{width:100px;height:75px}
 .no_list{font-size:16px;color:#878787;margin-top:15px}
-
+}
 
 /* 마이 페이지 > 정보 > 비밀번호 확인 */
 

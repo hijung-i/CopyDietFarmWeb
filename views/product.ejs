@@ -13,6 +13,7 @@
                 .web_product_details {
                     display: none;
                 }
+                .sidebar{display:none}
                          }
             @media screen and (min-width:1080px) {
                 .mobile_product_details { display: none}                       
@@ -53,7 +54,7 @@
         .fixed { position: fixed; top:0; left:0; }
         .sidebar{width:264px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
                 margin-top:-70px;position:sticky;top:0}
-}
+        
         </style>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <%-include('general/head') %>
@@ -197,7 +198,7 @@
                                             <a href="javascript:void(0);">상세정보</a>
                                         </li>
                                         <li data-tab="tab3">
-                                            <a href="javascript:void(0);">리뷰<span class="v_n_numb">(282)</span></a>
+                                            <a href="javascript:void(0);">리뷰<span class="v_n_numb"></span></a>
                                         </li>
                                         <li data-tab="tab4">
                                             <a href="javascript:void(0);">문의<span class="tab_detail_qna_count  v_n_numb">(0)</span></a>
@@ -216,7 +217,7 @@
                                             <img
                                                 src="/images/rightarrow_icon_join@2x.png"
                                                 style="width:9px;position:relative;top:3px">
-                                            도시락</span>
+                                    도시락</span>
                                         <!-- //상품navi -->
                                     </div>
                                     <!-- 상품설명 -->
@@ -506,9 +507,7 @@
             </div>
             
            
-                          <script>
-                 var sidebar = new StickySidebar('.sidebar', {stickyClass: 'is-affixed'});
-                          </script>
+                          
                                     
                                        
                                        
@@ -1165,6 +1164,10 @@
                             </div>
                         </div>
                     </main>
+                    <script>
+                        var sidebar = new StickySidebar('.sidebar', {stickyClass: 'is-affixed'});
+                    </script>
+                    
                     <script>
                         const SHOWING_CLASS = "showing";
                         const firstSlide = document.querySelector(".slider_item:first-child");

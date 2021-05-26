@@ -11,6 +11,15 @@ router.get('/', (req: Request, res: Response, next: NextFunction) => {
     }
     render(req, res, 'index', {})
 })
+
+router.get('/logout', (req: Request, res: Response, next: NextFunction) => {
+    req.session.isLoggedIn = false
+    req.session.user = undefined
+    req.session.destroy(function() {
+        res.redirect('/')
+    })
+})
+
 router.get('/login-form', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn: boolean | undefined = req.session.isLoggedIn
     console.log(isLoggedIn)
@@ -213,14 +222,6 @@ router.get('/benefits', (req: Request, res: Response, next: NextFunction) => {
 })
 router.get('/intro', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'landing', {})
-})
-
-router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) => {
-    console.log('GET /callback/naver req.body >> ', req.body)
-    console.log('GET /callback/naver req.query >> ', req.query)
-    console.log('GET /callback/naver req.params >> ', req.params)
-
-    res.status(200).send('')
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {

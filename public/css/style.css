@@ -560,7 +560,7 @@ border-spacing: 0 20px;font-size:14px}
 .faq .page_wrap{display:none}
 
 /*메인 팝업창*/
-#popup_layer {position:fixed;top:0;left:0;z-index: 10000; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4);} 
+#popup_layer {position:fixed;top:0;left:0;z-index: 10000; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); display: none !important;} 
 /*팝업 박스*/
 .popup_box{position: relative;top:75%;left:50%;transform:translate(-50%, -50%);background:#fff;box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);-webkit-box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);-moz-box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);}
 /*컨텐츠 영역*/
@@ -803,18 +803,19 @@ height:400px}
   /* 멀티플 슬라이드 */
 .multiple_slider_wraper {
   position: relative;
-  width: 1080px;
+  max-width: 1080px;
   margin: 0 auto;
   height: 350px;
-  overflow: hidden;
   margin-top: 65px;
   margin-bottom: 79px;
 }
+.multiple_slides_wrapper {position: relative; height: 380px; overflow: hidden;}
 .multiple_slides {
   position: absolute;
   left: 0; top: 0;
   transition: left 0.5s ease-out;
 }
+.multiple_slides li > img {width: 350px; height: 350px;}
 .multiple_slides li:not(:last-child) {
   float: left;
   margin-right: 15px;
@@ -826,6 +827,24 @@ height:400px}
 }
 .controlls span.prev {right: calc(100% - 100px);}
 .controlls span.next {left: calc(100% - 50px);}
+/* 1초 회원가입 */
+#popup_layer {display: none !important;}
+
+/* 멀티플 슬라이드 웹 */
+.responsive img {
+  width: 350px; height: 350px;
+}
+.responsive {margin-bottom: 132px;}
+}
+
+.slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center}
+#header_mypage .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center;margin-top:-50px}
+.slideMenu_top > .slideMenu_close img{width:19.44px;height:13.67px}
+.slideMenu_top > .slideMenu_cart img{height: 21px;}
+
+.sid_menu .mDepth01 dt .downArrow {
+   width:11px;height:11px
+}
 
  
 /*포인트웹*/
@@ -846,6 +865,36 @@ height:400px}
 /* 1초 회원가입 */
 #popup_layer {display: none !important;}
 
+/*content*/
+/*메인 페이지 모바일*/
+@media screen and (max-width:1079px) {
+.web_index{display:none}
+.body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
+.protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
+.body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
+.body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+.body_bottom .desc .sale{font-weight:bold}
+.body_bottom .desc .cost{color:red;text-decoration:line-through;}
+.body_bottom .desc .ratio{font-weight:bold}
+.body_bottom .desc .title{margin-left:10px}
+.body_bottom .desc ul{margin-left:5px}
+.body_bottom .desc ul li{float:left;margin-right:5px}
+.side{display:none}
+.sideMenu_Header { min-width: 360px; width: 100%;  height: 134px; z-index: 999; background: #fff;}
+.sideMenu #tab1 {width: 100%; min-width: 360px;}
+  /* 멀티플 슬라이드 */
+  .multiple_slider_wraper {
+    position: relative;
+    max-width: 360px;
+    margin: 0 auto;
+    height: 212px;
+  }
+  .multiple_slides_wrapper {position: relative; height: 212px; overflow: hidden;}
+  .multiple_slides li {float: left;}
+  .multiple_slides li > img {width: 136px; height: 162px;}
+  .prev, .next {display: none;}
+}
+@media screen and (min-width:1080px){
 .btnMenu, .btnCart{display:none;}
 .mobile_index{display:none}
 .banner01 img{display:none}
@@ -1224,7 +1273,7 @@ div.slideMenu_top {display: none}
   position: absolute; left: 0; bottom: 0; height: 3px;
   background: #FF8B00;
   width: 50%; margin: -12px 0;
-  opacity: 0;S
+  opacity: 0;
   transition: all .3s;
   z-index: 99;
 }
@@ -2019,7 +2068,7 @@ justify-content: space-evenly}
 .title p img{margin-bottom:18px;width:50px;height:90px;margin-right:20px;margin-top:10px}
 .order_a_box ul{padding-top:13px}
 .order_a_box ul li{margin-bottom:5px}
-.tab_cont{display:none;min-height:360px;}
+.tab_cont{min-height:360px;}
 .tab_cont.active{display:block;}
 /* 하단 버튼 세 개 */
 .common_btn_wrap{width:100%}
