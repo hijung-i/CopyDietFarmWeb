@@ -805,7 +805,6 @@ height:400px}
     .orderer_info h4, .deliver_info h4{font-size:14px;font-weight:bold;margin-bottom:4px}
      .orderer_info input, .deliver_info input{width:400px;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
      .orderer_info select{width:200px;height:30px}
-    .non_members{display:none}
     .coup_point h3{font-size:14px;font-weight:bold;margin-top:20px;margin-bottom:10px;}
     .coup_point{padding-bottom:20px}
      .coup_point select{width:394px!important}
@@ -1338,6 +1337,11 @@ div.slideMenu_top {display: none}
 .sideMenu .mDepth01 dl > dt.sideMenu_detail a {padding-left: 12px;}
 .sideMenu .mDepth01 dt{height: 54px; padding:8px; color:#333; cursor:pointer; border-bottom:1px solid #e0e4e7; font-size: 14px; font-weight: 400; display: flex; align-items: center;}
 .sideMenu .mDepth01 dt img{vertical-align:middle;}
+.sideMenu .mDepth01 dt span img {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+}
 .downArrow{width:11px;height:11px}
 .sideMenu .mDepth01 dd {display:none; background:#f3f5f6;}
 .sideMenu .mDepth01 dd li{padding:10px 0 10px 15px; color:#666;}

@@ -74,10 +74,6 @@ function sideTabClose() {
 }
 $(function() {
     getEventStands();
-    
-    $(".mDepth01>li>dl>dt").click(function() {
-        
-    });
 
     jQuery('.side_back').bind("touchend click", function(){
         sideMenu('off');
@@ -333,3 +329,78 @@ $(function(){
  }
 
 };
+
+function getCategory() {
+    var param = {};
+    ajaxCall(API_SERVER + "/product/getCategoryList", param, 'post'
+    , function (data) {
+        var imgList = [
+            '/images/salad_icon_category@2x.png',
+            '/images/meal_icon_category@2x.png',
+            '/images/chicken_icon_category@2x.png',
+            '/images/snack_icon_category@2x.png',
+            '/images/drink_icon_category@2x.png',
+            '/images/fruit_icon_category@2x.png',
+            '/images/vegan_icon_category@2x.png',
+            '/images/baby_icon_category@2x.png',
+            '/images/pet_icon_category@2x.png',
+            '/images/all_icon_category@2x.png',    
+        ];
+
+        var buttonHtml = '';
+        var sideTabHtml = '';
+        var result = data.result;
+
+        for(var i = 0; i < result.length; i++) {
+            var category = result[i];
+            buttonHtml += '<li>';
+            buttonHtml += '<a href="/products/'+ category.category1Code +'/category/ALL">';
+            buttonHtml += '<span><img src="'+ imgList[i] +'"></span>';
+            buttonHtml += '<p>'+ category.category1Name +'</p>';
+            buttonHtml += '</a>';
+            buttonHtml += '</li>';
+
+            sideTabHtml += '<li>';
+            sideTabHtml += '    <dl>';
+            sideTabHtml += '        <dt class="sideMenu_detail faq_q">';
+            sideTabHtml += '            <span><img src="'+ imgList[i]+'" alt="#"/>'+ category.category1Name+'</span>';
+            sideTabHtml += '            <img class="downArrow" src="images/downarrow_ico_main.png"';
+            sideTabHtml += '            alt="화살표" style="width:11px;height:11px">';
+            sideTabHtml += '        </dt>';
+            sideTabHtml += '        <dd class="subMenu faq_a" style="top: 0;">';
+            sideTabHtml += '            <ul class="gnb_depth02">';
+            
+            sideTabHtml += '                <a href="/products/'+ category.category1Code+'/category/ALL">';
+            sideTabHtml += '                    <li>전체보기</li>';
+            sideTabHtml += '                </a>';
+            for(var j = 0; j < category.category2.length; j++) {
+                var category2 = category.category2[j];
+                sideTabHtml += '            <a href="/products/'+ category2.category2Code+'">';
+                sideTabHtml += '                <li>'+ category2.category2Name+'</li>';
+                sideTabHtml += '            </a>';
+            }
+
+            sideTabHtml += '            </ul>';
+            sideTabHtml += '        </dd>';
+            sideTabHtml += '    </dl>';
+            sideTabHtml += '</li>';
+
+
+        }
+
+        buttonHtml += '<li>';
+        buttonHtml += '<a >';
+        buttonHtml += '<span><img src="'+ imgList[9] +'"></span>';
+        buttonHtml += '<p>전체보기</p>';
+        buttonHtml += '</a>';
+        buttonHtml += '</li>';
+
+          
+        $('.category ul').html(buttonHtml);
+        $('.sideMenu_ctt ul.mDepth01').html(sideTabHtml);
+            
+        console.log("getCategory => ", data);
+    }, function (err){
+        console.log("onError", err);
+    })
+}

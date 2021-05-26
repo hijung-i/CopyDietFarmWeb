@@ -168,6 +168,7 @@ function mSearch(key) {
 		return false
 	}
 }
+
 function sideMenu(key) {
 	if(key=="on") {
 		jQuery('#m_search').hide();
@@ -203,7 +204,7 @@ function sideMenu(key) {
 		return false
 	}
 }
- // �덉씠�� �앹뾽
+
 function onLayerPop(layerId, seq, lang) {
 
 	if (layerId == 'offLayer'){
