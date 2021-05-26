@@ -102,12 +102,7 @@ function generateHtmlForProduct(product){
     var html = '<li>';
 	html += '<a href="/product/'+ product.productCode +'">';
 	html += '<div class="thum"><img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';
-	html += '<div class="ico_zzim">';
-	html += '<div class="btn_zzim_sty">';
-	html += '<a href="#">';
-	html += '<span class="blind"></span>';
-	html += '</a>';
-	html += '</div>';
+	html += '<div class="like">'
 	html += '</div>';
 	html += '</div>';
 	html += '<div class="desc">';
@@ -362,6 +357,7 @@ function setCookie( name, value, expiredays ) {  // 쿠키저장
 $(function(){
 	//$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
+    var modal = document.getElementById('myModal');
 
 	if ($('#naver_id_login').length > 0) {
 		ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
@@ -376,22 +372,22 @@ $(function(){
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
     var funcs = [];
-	//if(btn != null) {
+	if(btn != null) {
 	//	btn.addEventListener('click', showModal());
 	//}
 	//if( span != null) {
 	//	span.addEventListener('click', hideModal());
-	//}
+}
 
 	// When the user clicks on the button, open the modal 
-	//btn.onclick = function() {
-	//	modal.style.display = "block";
-	//}
+	// btn.onclick = function() {
+	// modal.style.display = "block";
+	// }
 
 	// When the user clicks on <span> (x), close the modal
-	//span.onclick = function() {
-	//	modal.style.display = "none";
-	//}
+	// span.onclick = function() {
+	// modal.style.display = "none";
+	// }
 
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
@@ -460,7 +456,72 @@ function closeToday() {
 }
 function closePop() {
 	document.getElementById("popup_layer").style.display = "none";
-}
+}    
+
+//메인화면 진입 시 팝업 창 
+
+$(function(){
+var popup = 
+'<div id="popup_layer">' +
+'<div class="popup_box">' +
+'<div class="popup_cont">' +
+'<div class="index-modal">' +
+'<h2>SNS 1초 회원가입!</h2>' +
+'<p class="second">1초 간편 회원가입 후,</p>' +
+'<p><span>5000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
+'<ul>' +
+'<li class="kakao" onclick=""><img src="/images/kakao_login@2x.png"></li>' +
+'<li class="naver" id="naver_id_login" onclick=""><img src="/images/naver_login@2x.png"></li>' +
+'</ul>' +
+'<a href="/login"><p class="id-login">아이디 로그인</p></a>' +
+'</div>' +
+'</div>'+
+'<div class="popup_btn">' +
+'<a id="chk_today" href="javascript:closeToday();" class="close_day">오늘 하루 보지 않기</a> ' +
+'<a href="javascript:closePop();">닫기</a>' +
+'</div>' +
+'</div>' +
+'</div>' 
+;
+
+var myPageModal = 
+'<div class="modal-content">' +
+'<span class="close">&times;</span>' +
+'<div class="login-list">' + 
+'<ul>' +
+'<li><button class="naver">네이버로 로그인</button></li>' +
+'<li><button class="kakao">카카오로 로그인/가입</button></li>' +
+'<li><button class="id_comp">아이디로 로그인</button></li>' +
+'</ul>' +
+'</div>' +
+'</div>' 
+;
+         
+var inquiryModal = 
+'<div class="modal-content">' +
+'<span class="close">&times;</span>' +
+'<div class="productInquiryBox">' +
+'<h3>(아임월) 굿밸런스 라이트밀 도시락</h3>' +
+'<form>' +
+'<p><textarea style="border-radius:5px;width:100%;height:153px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>' +
+'</form>' +
+'<div class="group">' +
+'<input type="checkbox" id="secret">' +
+'<label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>' +
+'</div>' +
+'</div>' +
+'<div class="btn_area">' +
+'<button type="button" id="btnInquiry">등록</button>' +
+'</div>' +
+'</div>'
+;
+
+
+// document.getElementById("popup_layer").innerHTML = popup ;
+//document.getElementById("myModal").innerHTML = myPageModal ;
+//document.getElementById("modal-inquiry").innerHTML = inquiryModal;
+
+});
 
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {

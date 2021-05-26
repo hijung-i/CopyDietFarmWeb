@@ -1,15 +1,32 @@
 $(function () {
     getStandDatas();
     getCategory();
+    listenForLikes();
 });
 
-
+function listenForLikes (){
+    var like = document.querySelectorAll("like");
+    like.forEach(like => {
+     like.addEventListener("click", (event) => {
+       event.target.classList.toggle("like-no");
+       event.target.classList.toggle("like-yes");
+       if (event.target.classList.contains("like-yes")) {
+        console.log("✅💾 Saving Favorite...");
+        getFaveData(event.target);
+      } else {
+        console.log("❌ Removing Favorite...");
+        getFaveData(event.target);
+      }
+    })
+   });
+  }
+  
 function getStandDatas() {
     var param = {};
     var option = {
         isRequired: false,
         userId: true
-    }
+    };
 
     ajaxCallWithLogin(API_SERVER + "/product/getSalesStands", param, 'post'
     , function(data){
@@ -24,35 +41,17 @@ function getStandDatas() {
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
+                    html += '<div class="like">' + listenForLikes() + '</div>';
                     html += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'"></a></div>';
                 }
-                const SHOWING_CLASS = "showing";
-                const firstSlide = document.querySelector(".slider_item:first-child");
-                function slide(){
-                   const currentSlide = document.querySelector('.showing');
-                    if(currentSlide){
-                        currentSlide.classList.remove(SHOWING_CLASS);
-                        const nextSlide = currentSlide.nextElementSibling;
-                        if(nextSlide){
-                            nextSlide.classList.add(SHOWING_CLASS);
-                        } else {
-                            firstSlide.classList.add(SHOWING_CLASS);
-                        }
-                    } else {
-                        $(firstSlide).addClass(SHOWING_CLASS);
-                    }
-                }
-                   slide();
-                   setInterval(slide, 4000);
                 break;
             case 1:
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
-                    html += '<li>'
+                    html += '<li>'                  
                     html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'">';
                     html += '<p class="title">' + product.productName + '</span><br>';
-                    html += '<ul>';
                     html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
                     html += '<li class="cost">' + numberFormat(product.supplyPrice) + '원</li>';
                     html += '<li class="ratio">' + Math.round(product.discountRate, 0) + '%</li>';
@@ -60,7 +59,6 @@ function getStandDatas() {
                     html += '</a>';
                     html += '</li>';
                 }
-
                 $('.multiple_bxslider').html(html);
                 $('.multiple_bxslider').bxSlider({
                         mode: 'horizontal',
@@ -201,3 +199,4 @@ $(function(){
                 moveSlide(slideCount - 11);
             }
         });
+        
