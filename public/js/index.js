@@ -152,7 +152,7 @@ $(function(){
             currentIdx = num;
         }
         nextBtn.addEventListener('click', function() {
-            if(currentIdx < slideCount - 3) {
+            if(currentIdx < slideCount - 11) {
                 moveSlide(currentIdx + 1);
                 console.log(currnetIdx);
             } else {
@@ -164,6 +164,6 @@ $(function(){
                 moveSlide(currentIdx - 1);
                 console.log(currnetIdx);
             } else {
-                moveSlide(slideCount - 3);
+                moveSlide(slideCount - 11);
             }
         });
