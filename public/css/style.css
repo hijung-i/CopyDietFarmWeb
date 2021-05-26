@@ -562,6 +562,11 @@ height:400px}
 /*오버레이 뒷배경*/
 .popup_overlay{position:fixed;top:0px;right:0;left:0;bottom:0;z-index:1001;background:rgba(0,0,0,0.5);}  
 
+/* 멀티플 슬라이드 모바일 */
+.responsive img {
+  width: 136px; height: 162px;
+}
+ 
 
 
 
@@ -660,6 +665,12 @@ height:400px}
 .controlls span.next {left: calc(100% - 50px);}
 /* 1초 회원가입 */
 #popup_layer {display: none !important;}
+
+/* 멀티플 슬라이드 웹 */
+.responsive img {
+  width: 350px; height: 350px;
+}
+.responsive {margin-bottom: 132px;}
 }
 
 .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center}
@@ -2173,3 +2184,4 @@ padding-right:15px}
 .search_line {width: 90%; height: 0.5px;background: #BBBBBB;margin: 0 auto;margin-top: 14px}
 .result-area{position: relative;}
 .search_result{background-color: #FFFFFF;position: absolute;z-index: 9999}
+
