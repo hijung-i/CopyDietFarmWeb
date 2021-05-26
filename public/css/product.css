@@ -64,7 +64,7 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
 .view_top_img img{width:100%!important;height:100%!important}
 .view_navi_box{display:none}
 .v_top_txt_box{margin-top:13px}
-.
+.qna, .reviews{width: 100% !important;}
 
 /* 토글 버튼 디자인 */
 
@@ -249,7 +249,6 @@ label:after {
 }
 .myReview label > span {display: none;}
 .products_ex_mobile{display:none}
-.tabMenu ul{}
 .tabMenu ul li{
 border-top:1px solid #BBBBBB;border-bottom:1px solid #BBBBBB;border-left:1px solid #BBBBBB;
 text-align:center;padding-top:24px;width:204px;height:68px;font-size:18px;color: #707070 !important;font-weight:bold}

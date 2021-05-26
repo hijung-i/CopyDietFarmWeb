@@ -11,6 +11,9 @@
         <title>다이어트 Farm</title>
         <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+        <!-- bulma css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
         <%-include('general/head') %>
 
             <style type="text/css">
@@ -262,42 +265,55 @@
                     </div>
                     <!--//catgor_wrap-->
                     <!-- multiple slide -->
-                    <h2 class="carosuel_tit">오픈특가</h2>
+                    <h2 style="margin-top: 65px;">오픈특가</h2>
+                    <!--<div class="multiple_slider_wraper">
+                        <span class="prev" style="position: absolute; z-index: 999; left: -40px; top: 50%; transform: translateY(-50%); cursor: pointer;"><img src="/images/group 5044.png" alt=""></span>
+                        <span class="next" style="position: absolute; z-index: 999; right: -40px; top: 50%; transform: translateY(-50%); cursor: pointer;"><img src="/images/group 5045.png" alt=""></span>
+                        <div class="multiple_slides_wrapper">
+                            <ul class="multiple_slides">
+                                <li><img src="/images/m_img1.jpg" alt="">
+                                    <ul>
+                                        <li style="display: block;">제품이름</li><br>
+                                        <li>19,000원 <span>21,000원</span><span>10%</span></li>
+                                    </ul>
+                                </li>
+                                <li><img src="/images/m_img2.jpg" alt="">
+                                    <ul>
+                                        <li style="display: block;">제품이름</li><br>
+                                        <li>19,000원 <span>21,000원</span><span>10%</span></li>
+                                    </ul>
+                                </li>
+                                <li><img src="/images/m_img3.jpg" alt="">
+                                    <ul>
+                                        <li style="display: block;">제품이름</li><br>
+                                        <li>19,000원 <span>21,000원</span><span>10%</span></li>
+                                    </ul>
+                                </li>
+                                <li><img src="/images/m_img4.jpg" alt="">
+                                    <ul>
+                                        <li style="display: block;">제품이름</li><br>
+                                        <li>19,000원 <span>21,000원</span><span>10%</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
                     <section class="section">
                         <div class="container">
                             <div id="carousel-demo" class="carousel">
                                 <div class="item-1">
-                                    <img src="/images/dietfarmbread.jpg" alt="">
+                                    <img src="/images/m_img1.jpg" alt="">
                                 </div>
                                 <div class="item-2">
-                                    <img src="/images/dietfarmbread.jpg" alt="">
+                                    <img src="/images/m_img2.jpg" alt="">
                                 </div>
                                 <div class="item-3">
-                                    <img src="/images/dietfarmbread.jpg" alt="">
-                                </div>
-                                <div class="item-4">
-                                    <img src="/images/dietfarmbread.jpg" alt="">
-                                </div>
-                                <div class="item-5">
-                                    <img src="/images/dietfarmbread.jpg" alt="">
+                                    <img src="/images/m_img3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <!--//
-                    <div class="multiple_slider_wraper">
-                        <ul class="multiple_slides">
-                            <li><img src="/images/m_img1.jpg" alt="" style="width: 350px; height: 350px;"></li>
-                            <li><img src="/images/m_img2.jpg" alt="" style="width: 350px; height: 350px;"></li>
-                            <li><img src="/images/m_img3.jpg" alt="" style="width: 350px; height: 350px;"></li>
-                            <li><img src="/images/m_img4.jpg" alt="" style="width: 350px; height: 350px;"></li>
-                        </ul>
-                        <p class="controlls" style="cursor: pointer;">
-                            <span class="prev"><img src="/images/one_icon_coupon.png" alt=""></span>
-                            <span class="next"><img src="/images/one_icon_coupon.png" alt=""></span>
-                        </p>
-                    </div>
-                       -->
+            
                     <!--//sp_wrap(2월 특가)-->
 
                     <div class="blank_sec">
@@ -358,6 +374,7 @@
                                 <li>
                                     <a href="#">
                                         <div class="thum">
+                                            <img src="/images/heart_icon_menu.png" alt="">
                                             <img src="/images/dietfarmbread.jpg" alt="">
                                         </div>
                                         <div class="desc">
@@ -444,6 +461,14 @@
                     setTimeout('imgslide()',3000); //1초 뒤에 다시 함수를 호출합니다.(숫자값 1000당 1초) } </script>
                     -->
                     <!-- Swiper JS -->
+                    <!-- bulma js -->
+                    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+                    <script>
+                    bulmaCarousel.attach('#carousel-demo', {
+                        slidesToScroll: 1,
+                        slidesToShow: 1
+                    });
+                    </script>
                     <script src="/js/index.js"></script>
                     <script src="/js/common.js"></script>
 
