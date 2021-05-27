@@ -990,16 +990,19 @@ height:400px}
 .sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
   /* 멀티플 슬라이드 */
+  .mtpSlideTit {margin: 24px 0 21px 0;}
   .multiple_slider_wraper {
     position: relative;
     max-width: 360px;
     margin: 0 auto;
     height: 212px;
   }
-  .multiple_slides_wrapper {position: relative; height: 212px; overflow: hidden;}
-  .multiple_slides li {float: left;}
-  .multiple_slides li > img {width: 136px; height: 162px;}
+
   .prev, .next {display: none;}
+    /* 멀티슬라이드 모바일 */
+    .responsive button {display: none !important;}
+    .responsive img { width: 136px; height: 162px;}
+
 }
 @media screen and (min-width:1080px){
 .btnMenu, .btnCart{display:none;}
@@ -1453,6 +1456,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
   .id_check{margin-left:15px}
   .id_check .box.int_id {width:73%!important}
   .web_login_title{display:none}
+
   } 
   
   @media screen and (min-width:461px) and (max-width:1079px){

@@ -66,6 +66,8 @@ input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;a
 .v_top_txt_box{margin-top:13px}
 .qna, .reviews{width: 100% !important;}
 
+.infoDetails {}
+
 /* 토글 버튼 디자인 */
 
 .myReview input {position: absolute; left: -9999px;}
@@ -165,7 +167,17 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 .purchased_products .price ul li{float:left;margin-left:4px}
 .purchased_products .cost{color:#BBBBBB;text-decoration:line-through}
 .purchased_products .ratio{color:#F32525}
-.infoDetails{width:100%;margin-top:100px;clear:both;border-top:2px solid #E6E6E6;padding-top:48px;padding-bottom:20px;border-bottom:8px solid #f1f1f1;padding-left:20px;padding-right:20px;}
+.infoDetails{
+    width:100%;
+    margin-top:100px;
+    clear:both;
+    border-top:2px solid #E6E6E6;
+    padding-top:48px;
+    padding-bottom:20px;
+    border-bottom:8px solid #f1f1f1;
+    padding-left:20px;
+    padding-right:20px;
+}
 .infoDetails h3{padding-bottom:10px;font-size:14px;font-weight:bold}
 .infoDetails ul{margin-bottom:20px}
 .infoDetails ul li{font-size:12px;line-height:20px}
@@ -177,7 +189,7 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 .inquiry{display:none}
 .modal-open{display:none}
 .option{font-size:12px;color:#878787;}
-.line img{position:relative;top:-6px}
+.line img{position:relative; top:-6px}
 .star_grade{margin-bottom:-10px}
 
 .review_img01 img{width:100px;height:60px;margin-left:13px}
@@ -544,8 +556,13 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
 .filebox p span{text-decoration:underline
 }
-.tab_cont{display:none;min-height:360px;}
+.tab_cont{display:none; min-height:360px;}
 .tab_cont.active{display:block;}
+.tab_wrap li.active a {
+    font-weight: 700; color: #F99319;
+}
+
+
 .filebox label {
     display: inline-block;
     color: #999;
