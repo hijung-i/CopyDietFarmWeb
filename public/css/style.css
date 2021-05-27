@@ -505,10 +505,9 @@ font-weight:bold;border-radius:5px;font-family:'나눔고딕';margin-top:15px}
 /*알림*/
 .alarm_web_title{display:none}
 .alarmBox{margin-top:31px}
-.alarmBox *:not(ul){padding-left:15px;padding-right:20px;}
+.alarmBox *:not(ul){padding-right:20px;}
 .alarmBox h3{font-size:14px;margin-bottom:10px;margin-top:19px}
-.alarmS{border-bottom:2px solid #E6E6E6;
- padding-bottom:20px;padding-left:15px}
+.alarmS{border-bottom:2px solid #E6E6E6;padding-bottom:20px}
 .alarmBox{width:100%; margin: 0 auto;padding-right:5px;
  display: flex;justify-content:space-between;   margin-top: 20px;align-items: center;padding-right:15px}
 
@@ -553,7 +552,7 @@ border-spacing: 0 20px;font-size:14px}
 .faq .downArrow{position:absolute;right:20px;margin-top:5px;width:11px;height:11px}
 .faq ul li{float:left;}
 .faq_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;padding-right:20px;margin-bottom:20px;}
-.faq_title p span{font-size:15px;font-weight:bold}
+.faq_title p span{font-size:15px;font-weight:bold;padding-left:15px}
 .review_edit ul li{font-size:12px;margin-left:20px;line-height:14px;}
 .Faq01 table{width:100%;}
 .Faq01 td{padding:10px 15px 15px;font-size:14px;line-height:22px;min-height:51px}
@@ -1198,8 +1197,7 @@ transform: scale(1) rotateZ(0deg);
 .faq_content .faq{float:left;width:831px;margin-left:81px;margin-bottom:360px;margin-top:33px}
 .faq_content .faq h3{font-size:20px;font-weight:bold;color:#000;padding-bottom:24px;border-bottom:2px solid #6B6B6B}
 .faq_q .title{padding-top:15px}
-.faq p{font-size:14px;padding-left:15px;padding-right:15px}
-.faq .downArrow{display:flex;margin-top:5px;width:11px;height:11px;justify-content:space-between;position:relative;left:780px}
+.faq .downArrow{display:flex;margin-top:5px;width:11px;height:11px;justify-content:space-between;position:relative;left:800px;top:-12px}
 .faq ul li{float:left;}
 .faq_title {width:831px;display:flex;justify-content: space-between;margin-top:30px;padding-right:20px;margin-bottom:20px;}
 .faq_title p span{font-size:15px;font-weight:bold;position:relative;top:10px}
@@ -1209,7 +1207,7 @@ transform: scale(1) rotateZ(0deg);
 .Faq01 tr.faq_q td{cursor:pointer;border-bottom:2px solid #E6E6E6}
 .Faq01 tr.faq_a{display:none;}
 .faq_a_box{padding-top:5px}
-.faq_a_box p{line-height:20px;font-size:12px}
+.faq_a_box p{line-height:20px;font-size:12px;padding:10px 10px 4px}
 .faq_a01{background-color:#F6F8F9;border-bottom:1px solid #e6e6e6}
 .Faq01 tr.faq_a .faq_a faq_a01{width:100%;clear:both;border-bottom:2px solid #E6E6E6;}
 .faq .page_wrap{margin-top:30px}
@@ -2119,7 +2117,7 @@ justify-content: space-evenly}
 .inquiry_edit p span{font-size:12px;color:#EFA543;font-weight:bold;padding-left:15px}
 .inquiry_edit ul li{font-size:12px;margin-left:14px;line-height:14px;}
 .inquiry_edit ul li img{position:relative;top:4px}
-.faq_title {width:100%;display:flex;justify-content:space-between;margin-top:30px;padding-right:20px;margin-bottom:20px;padding-left:15px}
+.faq_title {width:100%;display:flex;justify-content:space-between;margin-top:30px;padding-right:20px;margin-bottom:20px}
 .faq_title span{font-weight:bold}
 .inquiry_top{margin-top:34px;margin-left:15px;}
 .inquiry_top ul{float:left;display:flex; justify-content:space-between;}
