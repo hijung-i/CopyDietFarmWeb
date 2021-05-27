@@ -64,7 +64,9 @@ $(function() {
         $(this).addClass('active');
         $('#content #' + activeTab).addClass('active');
     });
-        
+
+    /* 상품상세 모바일 탭메뉴 */
+
 
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){

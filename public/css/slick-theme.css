@@ -21,28 +21,24 @@
 {
     font-size: 0;
     line-height: 0;
-
     position: absolute;
     top: 50%;
-
     display: block;
-
-    width: 20px;
-    height: 20px;
+    width: 82px;
+    height: 82px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-
     cursor: pointer;
-
-    color: transparent;
     border: none;
-    outline: none;
-    background: transparent;
-    background-image: url(/images/one_icon_coupon.png);
+    border-radius: 100%;
+    overflow: hidden;
+    z-index: 9;
 }
-.slick-prev:hover,
+.slick-prev {background-image: url("/images/group_5044.png");}
+.slick-next {background-image: url("/images/group_5045.png");}
+/* .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus
@@ -76,7 +72,7 @@
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 .slick-prev
 {
@@ -87,14 +83,14 @@
     right: -25px;
     left: auto;
 }
-.slick-prev:before
+/* .slick-prev:before
 {
     content: '←';
 }
 [dir='rtl'] .slick-prev:before
 {
     content: '→';
-}
+} */
 
 .slick-next
 {
@@ -105,14 +101,15 @@
     right: auto;
     left: -25px;
 }
-.slick-next:before
+/* .slick-next:before
 {
     content: '→';
+    background-image: url("/images/group_5044.png");
 }
 [dir='rtl'] .slick-next:before
 {
     content: '←';
-}
+} */
 
 /* Dots */
 .slick-dotted.slick-slider
@@ -202,4 +199,9 @@
 {
     opacity: .75;
     color: black;
+}
+
+@media screen and (max-width:1079px) {
+    .slick-slide {width: 136px !important; height: 162px !important; margin-right: 10px !important;}
+    .slick-list { height: 162px !important;}
 }

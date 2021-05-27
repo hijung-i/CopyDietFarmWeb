@@ -222,7 +222,6 @@ padding-right:15px;float:left;position:relative;top:6px}
   background: transparent;}
 .instant-search__result {display: block;color: #333333;text-decoration: none;padding: 10px;
   font-size: 0.8em;cursor: pointer;}
-#searchUsers {display:flex; align-items: center;}
 
 /*카테고리/브랜드 탭부분 */
 .m_slid_2dep_brand{height:350px;overflow-x:scroll}
@@ -304,8 +303,6 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .tabMenu .tab_wrap > li:nth-child(1).on ~ span {left: 0; opacity: 1;}
 .tabMenu .tab_wrap > li:nth-child(2).on ~ span {left: 50%; opacity: 1;}
 .tabMenu > .tab_wrap li span {color: #878787; font-weight: 400;}
-
- .sideMenu{display:none; position:relative; left:-100%; top:6px; width:100%; min-width: 360px; height: 100vh; background: #fff;}
 .sideMenu h2{padding:15px 10px;text-align:left;position:relative;
 height:50px;overflow:hidden}
  .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;padding-top:4px} 
@@ -337,6 +334,7 @@ height:50px;overflow:hidden}
 @media screen and (max-width:1079px){
    #content .main_sub .thum{margin-bottom:-20px}
    #content .main_sub .sub_items ul li{margin-bottom:6px}
+
   
    /* 상단 롤링 배너 */
    .main_banner{height: 42px; min-width: 360px; width: 100%; position: absolute; overflow: hidden}
@@ -369,7 +367,6 @@ height:50px;overflow:hidden}
    .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
  .body_sub_tit p{margin-top:26px;margin-right:15px}
  .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
- #searchUsers {display: none;}
  .web_index{display:none}
  .body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
  .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
@@ -610,7 +607,6 @@ height:400px}
 .body_bottom .desc ul{margin-left:5px}
 .body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
-.sideMenu_Header { min-width: 360px; width: 100%;/*height: 134px;*/z-index: 999; background: #fff;padding-top:20px;margin-top:100px}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
   /* 멀티플 슬라이드 */
   .multiple_slider_wraper {display: none;}
@@ -901,8 +897,6 @@ height:400px}
 }
 .responsive {margin-bottom: 132px;}
 }
-
-.slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center}
 #header_mypage .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center;margin-top:-50px}
 .slideMenu_top > .slideMenu_close img{width:19.44px;height:13.67px}
 .slideMenu_top > .slideMenu_cart img{height: 21px;}
@@ -945,16 +939,19 @@ height:400px}
 .sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
   /* 멀티플 슬라이드 */
+  .mtpSlideTit {margin: 24px 0 21px 0;}
   .multiple_slider_wraper {
     position: relative;
     max-width: 360px;
     margin: 0 auto;
     height: 212px;
   }
-  .multiple_slides_wrapper {position: relative; height: 212px; overflow: hidden;}
-  .multiple_slides li {float: left;}
-  .multiple_slides li > img {width: 136px; height: 162px;}
+
   .prev, .next {display: none;}
+    /* 멀티슬라이드 모바일 */
+    .responsive button {display: none !important;}
+    .responsive img { width: 136px; height: 162px;}
+
 }
 @media screen and (min-width:1080px){
 .btnMenu, .btnCart{display:none;}
@@ -1306,10 +1303,6 @@ div.slideMenu_top {display: none}
    display: none;
 }
 
-  div.slideMenu_top {
-    display: none;
-  }
-
 .slideMenu_title > h2 {
    font-size: 16px;
    font-weight: 700;
@@ -1320,7 +1313,7 @@ div.slideMenu_top {display: none}
 /*
 /* 사이드 메뉴 gnb 애니메이션 */
 .sideMenu .tabMenu {width:100%; position: relative; top: 0; left: 0; height: 30px;}
-.tab_wrap{width:100%;border-bottom: none; display: flex; width: 100%; /*margin: 0 auto;*/position: relative; background: #fff;}
+.tab_wrap{width:100%;border-bottom: none; display: flex; width: 100%; /*margin: 0 auto; */ position: relative; background: #fff;}
 .tab_wrap li {
   flex: 1;
   display: block;
@@ -1408,6 +1401,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
   .id_check{margin-left:15px}
   .id_check .box.int_id {width:73%!important}
   .web_login_title{display:none}
+
   } 
   
   @media screen and (min-width:461px) and (max-width:1079px){
@@ -2218,15 +2212,11 @@ display: flex;
 .btn_area {margin-top:25px;width:100%;padding-right:15px}
 
 @media screen and (max-width:1079px){
-  .instant-search {position:relative;width:100%;margin:0px auto} 
-  .instant-search {position:relative; width:100%;margin:10px auto;padding-left:15px;
-  padding-right:15px}
-  .search_box_ico{margin-top:150px}
+  .instant-search {position:relative; width:100%;margin:0 auto; padding-left:15px; padding-right:15px; margin-top: 15px;}
   .instant-search__input-container img{position:relative;top:14px;right:10px}
   
   .instant-search,.instant-search__input-container {border-radius: 5px}
-  .instant-search__input-container {display: inline-flex;box-sizing: border-box;width: 90%;
-  margin-top:150px}
+  .instant-search__input-container {display: inline-flex;box-sizing: border-box;width: 90%;}
   
 }
 @media screen and (min-width:1080px){
@@ -2245,7 +2235,7 @@ display: flex;
   font-size: 0.8em;cursor: pointer}
 .instant-search__title {font-size: 1.1em;font-weight: bold}
 .instant-search__paragraph {line-height: 1.5;margin: 8px 0}
-#searchUsers {display: flex}
+#searchUsers {display: flex; height: 45px;}
 
 
 /*인기 검색어*/
