@@ -1223,16 +1223,16 @@ transform: scale(1) rotateZ(0deg);
 .order_product h4{font-size:14px;font-weight:bold;margin-top:15px;padding-bottom:15px}
 .order_product img{width:56.25px;height:62px;margin-top:16px;margin-left:10px;margin-bottom:15px}
 .item{display:flex;font-size:14px;margin-bottom:10px;border-top:1px solid #f5f5f5}
-.order_product ul{margin-top:20px;margin-left:13.5px}
+.order_product ul{margin-top:10px;margin-left:13.5px}
 .orderer_info h3, .deliver_info h3{font-size:18px;font-weight:bold;margin-top:15px;padding-bottom:15px}
 .orderer_info, .deliver_info, .coup_point{border-bottom:8px solid #f1f1f1}
 .orderer_info .members table{font-size:14px}
 .members table{width:70%;}
 .members tr td{padding-bottom:18px}
-.deliver_info .members{margin-bottom:20px}
-.deliver_info select{width:394px!important;border:1px solid #BBBBBB;border-radius:5px;width:394px;height:45px;margin-bottom:10px}
+.deliver_info select{font-size:14px;padding-left:15px;border:1px solid #BBBBBB;border-radius:5px;width:394px;height:45px;margin-bottom:10px}
 .members .addr{padding-bottom:18px;font-size:14px;}
 .members .name, .members .num{font-size:12px;color:#6B6B6B}
+.non_members p{float:right;margin-top:-70px;margin-right:690px}
 .orderer_info h4, .deliver_info h4{font-size:14px;font-weight:bold;margin-bottom:10px}
 .orderer_info input /*, .deliver_info input*/{width:400px;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
 .orderer_info select{width:200px;height:30px}
@@ -1256,7 +1256,7 @@ transform: scale(1) rotateZ(0deg);
 .order_payment ul{display:grid;grid-template-columns: repeat(5, 1fr);align-items: center;justify-self: center;margin:0 auto;}
 .order_payment ul li{width:95%;height:45px;border:1px solid #BBBBBB;border-radius:5px;padding:5px;margin-left: 2.5%;margin-bottom:10px}
 .order_payment img 
-{width:55px;height:22px;position:relative;left:65px;top:6px}
+{width:55px;height:22px;position:relative;top:6px}
 .agreement h3{font-size:14px;font-weight:bold;margin-top:25px;padding-left:15px}
 .agreement h3 img{position:relative;top:4px;padding-right:10px}
 .agreement p{margin-left:44px;margin-right:44px;font-weight:normal;color:#6B6B6B;line-height:18px;font-size:12px;margin-top:11px;margin-bottom:25px}
