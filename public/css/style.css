@@ -240,7 +240,7 @@ padding-right:15px;float:left;position:relative;top:6px}
 
 /*페이징 버튼*/
 .page_wrap {text-align:center;font-size:0;}
-.page_nation {display:inline-block;}
+.page_nation {display:inline-block;margin-top:60px}
 .page_nation .none {display:none;}
 .page_nation a {display:block;margin:0 3px;float:left;width:28px;
 height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:13px;color:#000;text-decoration:none;}
