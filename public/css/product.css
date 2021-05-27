@@ -382,18 +382,74 @@ box-shadow: none !important}
 .t_price ul{display:flex;justify-content:space-between;margin-left:15px;margin-right:15px;padding-bottom:14px}
 .t_price li{font-size:14px;}
 .floating #selectedOptionDiv{margin-left:24px}
-.floating .line_w{width:224px;border-bottom:1px solid #E4E4E4;margin-top:200px;margin-bottom:-30px;margin-left:10px}
-.total_price{float:right}
-.total_price p{font-size:14px;font-weight:bold;margin-top:40px;margin-bottom:20px}
-.total_price p span{margin-left: 20px;margin-right:10px}
-.review_img ul li img{float:right}
-.float_btns ul li{margin-bottom:15px}
-.float_btns .cart{width:224px;height:45px;border:1px solid #F99319;border-radius:5px;background-color:#fff
-;color:#F99319;font-size:14px;font-weight:bold;margin-left:5px}
-.float_btns .buy{width:224px;height:45px;background-color:#F99319;border-radius:5px;border:1px solid #F99319;color:#fff;font-size:14px;font-weight:bold;margin-left:5px}
-#tab4 .inquiry{font-size:18px;font-weight:bold;padding-top:60px;margin-bottom:-40px}
+.floating .line_w{
+    width:100%; 
+    border-bottom:1px solid #E4E4E4;
+    min-height: 220px;
+}
 
-* 상품문의 */
+/* floating tab bottom jgpark 작업 */
+
+.total_price {
+    margin-top: 9px;
+    display: flex;
+    
+}
+.total_price button.h_btn {
+    margin-right: 11px;
+}
+.total_price div {
+    width: fill-available;
+    width: -moz-available;
+    width: -webkit-fill-available;  
+}
+
+.total_price div p, 
+.total_price div span{
+    font-size: 14px;
+    font-weight: normal;
+    display: inline-block;
+}
+
+.total_price div {
+    margin-top: 8px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.total_price div span.price {
+    font-size: 20px;
+    font-weight: bold;
+}
+.total_price div span.price span {
+    
+    margin-left: 5px;
+}
+
+
+.float_btns {
+    margin-top: 9px;
+}
+.float_btns button {
+    width: 100%;
+    height: 45px;
+    
+    border-radius: 5px;
+}
+
+.float_btns button.cart {
+    background-color: #FFF;
+    color: #F99319;
+    border: 1px solid #F99319;
+    margin-bottom: 15px;
+}
+
+.float_btns button.buy {
+    background-color: #F99319;
+    border: 1px solid #F99319;
+    color: #FFFFFF;
+}
 
 #content .tabMenu_qna{width:75%;}
 #content .tabMenu_sInquiry ul, #content .tabMenu_qna ul{padding-left:40px;padding-right:20px;margin-top:12px}

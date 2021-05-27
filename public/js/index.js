@@ -106,51 +106,6 @@ function getStandDatas() {
     }, option);
 };
 
-
-function getCategory() {
-    var param = {};
-    ajaxCall(API_SERVER + "/product/getCategoryList", param, 'post'
-    , function (data) {
-        var imgList = [
-            '/images/salad_icon_category@2x.png',
-            '/images/meal_icon_category@2x.png',
-            '/images/chicken_icon_category@2x.png',
-            '/images/snack_icon_category@2x.png',
-            '/images/drink_icon_category@2x.png',
-            '/images/fruit_icon_category@2x.png',
-            '/images/vegan_icon_category@2x.png',
-            '/images/baby_icon_category@2x.png',
-            '/images/pet_icon_category@2x.png',
-            '/images/all_icon_category@2x.png',    
-        ];
-
-        var buttonHtml = '';
-        var sideTabHtml = '';
-        var result = data.result;
-        for(var i = 0; i < result.length; i++) {
-            var category = result[i];
-            buttonHtml += '<li>';
-            buttonHtml += '<a href="/products/'+ category.category1Code +'/category/ALL">';
-            buttonHtml += '<span><img src="'+ imgList[i] +'"></span>';
-            buttonHtml += '<p>'+ category.category1Name +'</p>';
-            buttonHtml += '</a>';
-            buttonHtml += '</li>';
-        }
-        buttonHtml += '<li>';
-        buttonHtml += '<a >';
-        buttonHtml += '<span><img src="'+ imgList[9] +'"></span>';
-        buttonHtml += '<p>전체보기</p>';
-        buttonHtml += '</a>';
-        buttonHtml += '</li>';
-
-        $('.category ul').html(buttonHtml);
-
-        console.log("getCategory => ", data);
-    }, function (err){
-        console.log("onError", err);
-    })
-}
-
 /* 모바일 메인페이지 슬라이드 메뉴 카테고리 lnb 언더바 애니메이션 */
 $(document).ready(function(){
     $('.tabMenu li').on('click',function(){
