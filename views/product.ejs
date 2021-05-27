@@ -208,9 +208,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="contents">
+                        <div class="contents other_con">
                             <input type="hidden" id="productCode" value="<%=productCode %>">
-                            <div id="tab1_mobile" class="tab_cont active">
+                            <div id="tab1_mobile">
                                 <div class="view_wrap">
                                     <!-- 상품navi -->
                                     <div class="view_navi_box">
@@ -224,16 +224,11 @@
                                     <!-- 상품설명 -->
                                     <div class="view_top_box">
                                         <div class="view_top_img">
-                                         <!--//  <div class="swiper-container mySwiper">
-                                                <div class="swiper-wrapper">
-                                                    <div class="swiper-slide">
-                                                      
-                                                </div>
-                                            </div>--> 
                                             <img
                                             v-for="(image, index) in product.representative"
-                                            v-bind:src="RESOURCE_SERVER + image.url" style="width:694px"></div>
+                                            v-bind:src="RESOURCE_SERVER + image.url" style="width:694px">
                                         </div>
+                                    </div>
                                     </div>
                                     <div class="v_top_txt_box">
                                         <div class="modal" id="ex">
@@ -432,7 +427,7 @@
                                                 v-bind:src="RESOURCE_SERVER + image.url"
                                                 style="width:100%; height:100%">
                                         </div>
-
+                                    <!-- 모바일 제품상세 끝나는 자리 -->
                                     </div>
                                 </div>
                               <!--//product_top-->   
@@ -524,7 +519,7 @@
                         </div>
                     </div>
 
-                        <div id="tab2" class="tab_cont">
+                        <div id="tab2" class="tab_cont Mtab_cont">
                             <div class="infoDetails">
                                 <ul>
                                     <li>
@@ -587,7 +582,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div id="tab3" class="tab_cont">
+                        <div id="tab3" class="tab_cont Mtab_cont">
                             <!--// <script> function myFunction() {
                             document.getElementById(".products_ex_mobile").style = "display:none"; }
                             </script> -->
@@ -834,7 +829,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="tab4" class="tab_cont">
+                        <div id="tab4" class="tab_cont Mtab_cont">
                             <!--//review_btn-->
                             <div class="review_btn">
                                 <button class="btn" style="width:90%;height: 45px;">문의하기</button>
