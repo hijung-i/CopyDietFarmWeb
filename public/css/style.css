@@ -721,7 +721,7 @@ height:400px}
   /*장바구니 후 결제하기*/
   .non_members{display:none}
   .btnback img{width:17px;position:relative;top:-18px;left:5px}
-  .order_title {font-size:14px;font-weight:bold;padding-left:15px}
+  .order_title {font-size:14px;font-weight:bold}
   .order_product{border-bottom:8px solid #f1f1f1;}
   .order_product h4{font-size:14px;margin-top:20px;padding-bottom:10px;padding-left:15px;font-weight:normal}
   .order_product img{width:50px;height:62px;margin-right:15px}
@@ -1174,7 +1174,7 @@ margin-left: 3px;
 .del_mng_list_top a {cursor: pointer;}
 
 /*버튼 색상 설정*/
-:root{--font-color: #4e4e4e;--border-gray-color : #dadada;--yello-color: #EFA543;--yello-border-color: #EFA543;}
+:root{--font-color: #4e4e4e;--yello-color: #EFA543;--yello-border-color: #EFA543;}
 #btnRegister{width:100%;margin:0 auto;padding: 15px 0 15px;border:0;cursor: pointer;color:#fff;background-color:#EFA543;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
 #check{position:relative;top:70px;right:30px}
 
@@ -1615,12 +1615,12 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 
 /*주문하기*/
 .order{margin-top:20px;width:100%;}
-.order p{font-size:14px;padding-left:15px;padding-right:15px}
+/*.order p{font-size:14px;padding-left:15px;padding-right:15px}*/
 .downArrow{position:absolute;right:20px;}
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01 table{width:100%;margin-top:5px;padding:0}
 .order01_1{width:100%;border-top:8px solid #E6E6E6}
-.order01 td{padding:10px 15px 15px;font-size:14px;line-height:22px}
+.order01 td{/*padding:10px 15px 15px;*/font-size:14px;line-height:22px}
 .order01 tr.order_q td{cursor:pointer;}
 .order01 tr.faq_a{display:none;}
 .ship_list p{font-size:14px;font-weight:bold;;display:flex;position:relative;left:-100px}
@@ -1706,22 +1706,19 @@ justify-self: center;width: 100%;margin: 0 auto;}
 
 /*주문 상세*/
 .orderDetails{border-bottom:8px solid #F1F1F1}
-.buttons{width:100%;margin: 0 auto;display: flex;justify-content: space-between;padding-bottom:14px;padding-left:15px;padding-right:15px}
-.btnConfirm, .btnTracking{width:50%;    height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
+.btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
 color:#000;font-size:14px;background-color:#F1F1F1;}
 .dateNo{border-bottom:8px solid #F1F1F1;}
 .date{margin-bottom:3px;color:#878787}
 .no{margin-bottom:14px}
 .ship_state{color:#EFA543;font-weight:bold}
-.quantity, .option{color:#878787}
+.option{color:#878787;margin-top:-10px;margin-left:4px}
 .order_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;margin-bottom:20px;padding-right:15px}
 .order_title p span{font-size:14px;font-weight:bold}
 .orderDetails{padding-left:15px;padding-right:15px;}
 .orderBox02{margin-top:19px;padding-top:18px;}
 .order00 li{margin-bottom:5px;}
-.order_q .title00{padding-top:20px;padding-left:26px;font-size:16px;font-weight:bold;}
 .order_a_box td span{color:#878787}
-.btn_area {margin:20px 15px}
 #btnReorder{width:100%;margin:auto;padding: 21px 0 17px;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
 
 /*주문 내역*/

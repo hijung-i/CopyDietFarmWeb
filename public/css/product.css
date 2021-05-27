@@ -384,7 +384,7 @@ box-shadow: none !important}
 #detail_purchase_info{margin-top:100px}
 
 
-.product_count{border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;margin-left:-20px}
+.product_count{border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;margin-left:-18px;margin-right:10px}
 .product_count h4{font-size:14px;margin-left:15px;}
 .product_count li img {
   cursor: pointer;
