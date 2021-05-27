@@ -469,8 +469,8 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
 color:#000;font-size:14px;background-color:#F1F1F1;}
 
-.dateNo{border-bottom:8px solid #F1F1F1; /* margin-top: */}
-.date{margin-bottom:3px;color:#878787}
+.dateNo{border-bottom:8px solid #F1F1F1}
+.date{margin-bottom:3px;color:#878787;margin-left:20px}
 .no{margin-bottom:14px}
 .ship_state{color:#F99319;font-weight:bold}
 .quantity, .option{color:#878787}
@@ -479,8 +479,8 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .orderDetails{padding-left:15px;padding-right:15px;}
 .orderBox02{margin-top:19px;padding-top:18px;border-top:1px solid #BBBBBB;}
 .order00 li{margin-bottom:5px;}
-.order_q .title00{padding-top:20px;padding-left:15px;padding-bottom:15px;font-size:16px;font-weight:bold;}
-    .order_a_box td{padding-bottom:5px}
+.order_q .title00{padding-top:10px;padding-bottom:10px;padding-left:15px;font-size:16px;font-weight:bold;}
+.order_a_box td{padding-bottom:5px}
 .order_a_box td span{color:#878787}
 .btn_area {margin:20px 15px;}
 #btnReorder{
