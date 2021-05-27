@@ -168,6 +168,7 @@ function mSearch(key) {
 		return false
 	}
 }
+
 function sideMenu(key) {
 	if(key=="on") {
 		jQuery('#m_search').hide();
@@ -203,7 +204,7 @@ function sideMenu(key) {
 		return false
 	}
 }
- // �덉씠�� �앹뾽
+
 function onLayerPop(layerId, seq, lang) {
 
 	if (layerId == 'offLayer'){
@@ -469,8 +470,8 @@ $(function(){
 	'<p class="second">1초 간편 회원가입 후,</p>' +
 	'<p><span>5000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
 	'<ul>' +
-	'<li class="kakao" onclick=""><img src="/images/kakao_login@2x.png"></li>' +
-	'<li class="naver" id="naver_id_login" onclick=""><img src="/images/naver_login@2x.png"></li>' +
+	'<li class="kakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>' +
+	'<li class="naver" id="naver_id_login"><img src="/images/naver_login@2x.png"></li>' +
 	'</ul>' +
 	'<a href="/login-form"><p class="id-login">아이디 로그인</p></a>' +
 	'</div>' +
@@ -513,9 +514,9 @@ $(function(){
 	'</div>';
 
 
-	$("#popup_layer").html(popup) ;
-	$("#myModal").html(myPageModal) ;
-	$("#modal-inquiry").html(inquiryModal) ;
+	$("#popup_layer").html(popup);
+	$("#myModal").html(myPageModal);
+	$("#modal-inquiry").html(inquiryModal);
 	
 });
 

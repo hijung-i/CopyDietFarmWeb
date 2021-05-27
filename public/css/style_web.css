@@ -212,7 +212,6 @@ header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: poi
 .d_state ul, .d_date ul{display:flex;justify-content:space-around;}
 .d_state ul li, .d_date ul li{font-size:10px;float:left;color:#6B6B6B}
 
-.addr{margin-top:28px}
 .addr ul{float:left;padding-bottom:10px;padding-top:10px;}
 .addr01 ul{margin-right:75px;}
 .addr01 ul li, .addr02 ul li{float:left;}
@@ -288,22 +287,6 @@ padding: 4px 0;}
     border: 1px solid #BBBBBB;
     border-radius: 5px;
 }
-
-
-/* 주문상세 모바일 css */
- td, tr, h1, h2{padding-left:20px;}
-.detail_title{margin:40px 10px 20px 10px;width:100%;}
-.detail_title h2{text-align:center;
-    position:relative;
-    font-weight:700;
-    font-size:16px;
-    margin-right:10px;
-    margin-bottom:20px;
-    margin-top:2px;
-}
-
-.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
-
 
 /*주문하기*/
 @media screen and (min-width:1080px){
@@ -1861,12 +1844,9 @@ input#secret[type="checkbox"]:checked + .secret::before {
   border-radius: 50%;
 }
 
-.detail_title{overflow:hidden;margin:40px 10px 10px 10px;width:100%;}
-.detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10px;margin-bottom:20px}
-
 
 /*정보 확인하기 위한 비밀번호 입력란*/
-@media screen and (min-width:360px) and (max-width:1079px){
+@media screen and (max-width:1079px){
     .main-wrap{width:100%;text-align:left}
     .main-wrap .p1{font-size:14px;font-weight:bold;margin-bottom:10px;margin-left:220px} 
     .main-wrap .p2{width:330px;font-size:14px;margin-left:220px}

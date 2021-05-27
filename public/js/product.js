@@ -39,6 +39,7 @@ $(function() {
     });
 
     $("button.c_btn").click(addCart);
+    $('button.cart').click(addCart);
 
     $(document).ready(function() {
            $('.multiple_bxslider').bxSlider({
