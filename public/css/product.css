@@ -1,10 +1,9 @@
 /* 수량 선택 버튼 */
 
 input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;appearance: textfield;  }
-  
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
   }
   
   .number-input {
@@ -279,7 +278,8 @@ cursor:pointer
 .view_navi li a{float:left;color:#777;font-family: 'Noto sans',sans-serif;font-size:14px;font-weight:600}
 .view_navi_box{margin-bottom:21px;margin-top:44px}
 .view_navi_box span{font-size:18px;font-weight:bold;}
-.infoDetails ul li h3{font-size:18px;font-weight:bold}
+.infoDetails{width:74%;margin-top:40px}
+.infoDetails ul li h3{font-size:18px;font-weight:bold;margin-bottom:10px}
 .infoDetails ul li ul li{font-size:18px;line-height:30px}
 .infoDetails ul li ul{margin-bottom:33px}   
 
@@ -481,8 +481,8 @@ box-shadow: none !important}
 
 /*판매자 문의(주문건)*/
 .review_edit ul li{float:left;}
-.inquiry{width:100%;}
 .seller_content .myInquiry{width:100%;border-bottom:2px solid #E6E6E6;padding-bottom:20px}
+.inquiry_product{font-size:18px;font-weight:bold;position:relative;top:40px}
 .inquiry01 ul li{float:left;}
 .inquiry_edit {width:100%;display: flex;justify-content: space-between;margin-top:20px;padding-right:20px}
 .inquiry_edit p span{font-size:12px;color:#EFA543;font-weight:bold;padding-left:15px}
@@ -495,7 +495,7 @@ box-shadow: none !important}
 .order001 li{width:100%;white-space:nowrap}
 @media screen and (min-width:360px) and (max-width:1079px){
 .order_a_box {display: flex;margin-bottom:20px;margin-left:20px}
-.review_conplete{padding-left:20px}
+.review_complete{padding-left:20px}
 }
 @media screen and (max-width:1080px){
 .order_a_box {display: flex;margin-bottom:20px}
@@ -748,7 +748,7 @@ div #ex1.modal ul li {float:left}
 .purchased_products .price{font-size:12px;font-weight:bold}
 
 
-상세정보
+/*상세정보*/
 .infoDetails{width:100%;clear:both;border-top:2px solid #E6E6E6;padding-top:40px;padding-bottom:20px;border-bottom:8px solid #f1f1f1;padding-left:20px;padding-right:20px;margin-top:-4px}
 .infoDetails h3{padding-bottom:10px;font-size:14px}
 .infoDetails ul{margin-bottom:20px}
@@ -798,7 +798,7 @@ div #ex1.modal ul li {float:left}
     /*리뷰*/
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}
-.reviews .num{width:100%;font-weight:bold;font-size:18px;border-bottom:2px solid #E6E6E6;margin-top:60px;padding-bottom:18px}
+.reviews .num{width:100%;font-weight:bold;font-size:18px;border-bottom:2px solid #E6E6E6;margin-top:40px;padding-bottom:18px}
 .reviews p{padding:10px 10px 10px 10px}
 .product_review01{width:100%;}
 .review_info01 ul li{float:left;font-size:13px;padding-left:15px}
