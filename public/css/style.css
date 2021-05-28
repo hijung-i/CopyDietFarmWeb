@@ -25,7 +25,7 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
   .like-yes { background: url("/images/afterheart_icon_main@2x.png") no-repeat}
 }
 @media screen and (min-width:1080px){
-.like {width:25px;height:25px;position:relative;top:-51px;left:84%;background: url("/images/beforeheart_icon_main.png") no-repeat;}
+.like {width:25px;height:25px;position:relative;top:-51px;left:80%;background: url("/images/beforeheart_icon_main.png") no-repeat;}
 .like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}
 .like-yes { background: url("/images/afterheart_icon_main@2x.png") no-repeat}
 }
@@ -132,7 +132,7 @@ padding-right:15px;float:left;position:relative;top:6px}
 .top_util .menu_list > li strong+a {margin-left:4px}
 .top_util .cart img {width:18px;height:18px;margin-top:8px}
 .top_util .mypage img{margin-top:8px}
-.top_util .pick img{width:20px;margin-top:8px}
+.top_util .pick img{width:20px;margin-top:6px}
 .header_inner {position:relative;top:0;width:100%;margin-bottom:27px;z-index:100;}
 
 .header_inner h1 {margin-top:20px;text-align:center;}
@@ -206,8 +206,6 @@ padding-right:15px;float:left;position:relative;top:6px}
 .search a {position: absolute; width: 16px; height: 16px; top: 10px; right: 15px;}
 .search img{width:16px; height: 16px; z-index:10}
  .m_slid_2dep_brand{display:block}
-.instant-search {position:relative;width:100%;
-  margin:0 auto;margin-top:20px;padding-left:15px;padding-right:15px}
 .instant-search,.instant-search * { transition: background 0.15s, box-shadow 0.15s;}
 .instant-search:focus-within {box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);}
 .instant-search--loading::after {content: "";
@@ -1620,7 +1618,8 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01 table{width:100%;margin-top:5px;padding:0}
 .order01_1{width:100%;border-top:8px solid #E6E6E6}
-.order01 td{/*padding:10px 15px 15px;*/font-size:14px;line-height:22px}
+.order01 td{font-size:14px;line-height:22px}
+.orderHistory .order01 td{padding:10px 15px 15px;font-size:14px;line-height:22px}
 .order01 tr.order_q td{cursor:pointer;}
 .order01 tr.faq_a{display:none;}
 .ship_list p{font-size:14px;font-weight:bold;;display:flex;position:relative;left:-100px}
@@ -2236,7 +2235,7 @@ display: flex;
 
 
 /*인기 검색어*/
-.popular_wrap{width:100%; margin: 15px 15px auto;margin-top: 14px}
+.popular_wrap{width:100%; margin: 15px 15px auto;padding-top: 14px}
 .popular{/* margin:40px 20px 40px; */ width:100%;margin-top:40px}
 .popular h2{font-size:12px;font-weight:bold;margin-bottom:10px;margin-left: 8px}
 .popular .search_list {display: flex}
