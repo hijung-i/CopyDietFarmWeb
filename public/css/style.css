@@ -2118,7 +2118,7 @@ justify-content: space-evenly}
 .order_a_box ul{padding-top:13px}
 .order_a_box ul li{margin-bottom:5px}
 .tab_cont{min-height:360px;}
-.tab_cont.active{display:block;}
+.tab_cont.active{display:block !important;}
 
 /* style02 */
 

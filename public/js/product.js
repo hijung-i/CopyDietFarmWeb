@@ -55,26 +55,20 @@ $(function() {
         });
   
      });
+
     $('ul.tab_wrap#tab li').click(function() {
         var activeTab = $(this).attr('data-tab');
 
         $('.tab_wrap li').removeClass('active');
         $('.tab_cont').removeClass('active');
-        
+        $('.other_cont').removeClass("active");
+
         $(this).addClass('active');
+        if(activeTab == 'tab1') {
+            $('.other_cont').addClass("active");
+        }
         $('#content #' + activeTab).addClass('active');
     });
-
-    /* 상품상세 모바일 탭메뉴 */
-    /* $('li.mobile_tab').click(function() {
-        if($("div.other_cont").hasClass("active") === true) {
-            console.log('dd');
-            $(".other_cont").removeClass("active")
-        } else {
-            $(".other_cont").addClass("active")
-        }
-
-    }); */
 
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
