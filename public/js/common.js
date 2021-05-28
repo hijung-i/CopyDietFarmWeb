@@ -421,12 +421,12 @@ function Modal(num) {
 
 // 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의합니다.
 for(var i = 0; i < btns.length; i++) {
-  funcs[i] = Modal(i);
+  funcs[i] = Modal;
 }
  
 // 원하는 Modal 수만큼 funcs 함수를 호출합니다.
 for(var j = 0; j < btns.length; j++) {
-  funcs[j]();
+  funcs[j](j);
 }
  
 // Modal 영역 밖을 클릭하면 Modal을 닫습니다.
@@ -492,8 +492,8 @@ $(function(){
 	'<li><button class="id_comp">아이디로 로그인</button></li>' +
 	'</ul>' +
 	'</div>' +
-	'</div>' 
-	;
+	'</div>' ;
+
 			
 	var inquiryModal = 
 	'<div class="modal-content">' +

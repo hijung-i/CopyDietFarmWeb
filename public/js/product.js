@@ -1,4 +1,4 @@
-var product = {};
+
 var selectedOptions = new Array();
 var isExtra = false, isJeju = false;
 
@@ -7,7 +7,7 @@ var app = new Vue({
     data: {
         RESOURCE_SERVER,
         selectedOptions,
-        product: product,
+        product: {},
         optionTotalPrice: 0,
         orderDTO: {},
         deliveryGroupList: [],
@@ -29,10 +29,10 @@ var app = new Vue({
 });
 
 $(function() {
-
+    console.log($('#productCode').val())
     getProductDetail();
-    getReviewList();
-    getProductQuestionList();
+    // getReviewList();
+    // getProductQuestionList();
 
     $("select#products").change(function() {
         onOptionSelected($(this));
@@ -94,12 +94,19 @@ function getProductDetail(){
     var params = {
         productCode: productCode
     }
-
+    console.log(productCode);
+    if(productCode == undefined ) {
+        // setTimeout(getProductDetail, 100);
+        return;
+    }
     ajaxCallWithLogin(API_SERVER + '/product/getProductDetail', params, 'POST'
     , function (data) {
-        product = data.result;
+        var product = data.result;
         app.product = product;
-        if(product == undefined || product.length == 0){
+
+        console.log(data);
+        // app.product = product;
+        if(app.product == undefined || app.product == 0){
             // TODO: Open alert modal
             return false;
         }
@@ -148,6 +155,7 @@ function getProductDetail(){
         else if (product.packingType == 'B') packingTypeHtml = '냉장 (아이스박스)';
         $('.v_n_top_info .packing-type .ex').html(packingTypeHtml);
 
+        console.log(app.product)
     }, function (err) {
         console.log("productDetail error", err);
         alert('상품 정보를 불러오지 못했습니다.');

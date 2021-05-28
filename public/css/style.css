@@ -444,7 +444,7 @@ width:100%;border-top:2px solid #f1f1f1;margin-top:90px}
 #content .main_sub_wrap .desc .cost{color:#bbbbbb;text-decoration:line-through;margin-left:7px;}   
 #content .main_sub_wrap .desc .ratio{color:#F32525;font-weight:bold;font-size:11px;margin-left:7px}      
 #content .main_sub_wrap .main_sub h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}   
-.n_sort{position:relative;margin-top:65px;text-align:left}
+
 
 /*찜한 상품*/
 #mHeader{position:fixed;height:90px;background-color:#fff}
@@ -534,7 +534,7 @@ border-spacing: 0 20px;font-size:14px}
 .final{width:100%;padding-left:15px;padding-right:15px;border-bottom:1px solid #bbbbbb}
 .final .total{display:none}
 .btn_area_web .total{display:flex;justify-content:space-between;padding-left:15px;padding-right:15px;font-size:14px;font-weight:bold;padding-top:20px;padding-bottom:20px}
-.purchaseBtn{width:95%;margin:0 auto;margin-left:10px;height:45px;color:#fff;background-color:#F99319;border-radius:5px;margin-bottom:20px}
+.purchaseBtn{width:98%;margin:0 auto;margin-left:10px;height:45px;color:#fff;background-color:#F99319;border-radius:5px;margin-bottom:20px}
 .total_mobile ul li {font-size:16px;font-weight:bold;float:left;padding-left:15px;padding-top:20px;padding-bottom:20px}
 .total_mobile .price{float:right;padding-right:15px}
 
@@ -1230,7 +1230,7 @@ transform: scale(1) rotateZ(0deg);
 .members .addr{padding-bottom:18px;font-size:14px;}
 .members .name, .members .num{font-size:12px;color:#6B6B6B}
 .non_members p{float:right;margin-top:-70px;margin-right:690px}
-.orderer_info h4, .deliver_info h4{font-size:14px;font-weight:bold;margin-bottom:10px}
+.orderer_info h4, .deliver_info h4{font-size:14px;font-weight:bold;margin-bottom:10px;margin-top:20px}
 .orderer_info input /*, .deliver_info input*/{width:400px;height:45px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
 .orderer_info select{width:200px;height:30px}
 .coup_point h3{font-size:14px;font-weight:bold;margin-top:20px;margin-bottom:10px;}

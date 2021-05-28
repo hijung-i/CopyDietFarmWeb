@@ -54,7 +54,7 @@
         .fixed { position: fixed; top:0; left:0; }
 
         .sidebar{width:270px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
-                margin-top:-68px;position:sticky;top:0;padding-left:15px}
+                margin-top:-68px;position:sticky;top:0}
         
         </style>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -179,7 +179,7 @@
                             <a href="/cart"><img
                                 src="/images/cart_ico_main.png"
                                 alt=""
-                                style="width:22px;height:23px;left:18px"></a>
+                                style="width:22px;height:23px;left:20px"></a>
                         </div>
                     </section>
                 </div>
@@ -208,7 +208,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="contents other_cont">
+                        <div class="contents other_cont active">
                             <input type="hidden" id="productCode" value="<%=productCode %>">
                             <div id="tab1_mobile">
                                 <div class="view_wrap">
@@ -365,45 +365,60 @@
                                         <div class="pp_wrap">
                                             <section class="purchased_products">
                                                 <h3>이 상품과 같이 구매한 상품들</h3>
-                                               <div class="responsive">
-                                                    <div><a href=""><img src="/images/m_img1.jpg" alt="">
-                                                        <span class="price">
-                                                            <p class="title">제품이름</p>
-                                                            <ul>
-                                                                <li class="sale">23,400원</li>
-                                                                <li class="cost">26,000원</li>
-                                                                <li class="ratio">10%</li>
-                                                            </ul>
-                                                        </span>
-                                                    </a></div>
-                                                    <div><a href=""><img src="/images/m_img2.jpg" alt="">
-                                                        <span class="price">
-                                                            <p class="title">제품이름</p>
-                                                            <ul>
-                                                                <li class="sale">23,400원</li>
-                                                                <li class="cost">26,000원</li>
-                                                                <li class="ratio">10%</li>
-                                                            </ul>
-                                                        </span></a></div>
-                                                    <div><a href=""><img src="/images/m_img3.jpg" alt="">
-                                                        <span class="price">
-                                                            <p class="title">제품이름</p>
-                                                            <ul>
-                                                                <li class="sale">23,400원</li>
-                                                                <li class="cost">26,000원</li>
-                                                                <li class="ratio">10%</li>
-                                                            </ul>
-                                                        </span></a></div>
-                                                    <div><a href=""><img src="/images/m_img4.jpg" alt="">
-                                                        <span class="price">
-                                                            <p class="title">제품이름</p>
-                                                            <ul>
-                                                                <li class="sale">23,400원</li>
-                                                                <li class="cost">26,000원</li>
-                                                                <li class="ratio">10%</li>
-                                                            </ul>
-                                                        </span></a></div>
-                                                </div>
+                                                <ul class="multiple_bxslider">
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="/images/dietfarmbread.jpg">
+                                                            <span class="price">
+                                                                <p class="title">제품이름</p>
+                                                                <ul>
+                                                                    <li class="sale">23,400원</li>
+                                                                    <li class="cost">26,000원</li>
+                                                                    <li class="ratio">10%</li>
+                                                                </ul>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="/images/dietfarmbread.jpg">
+                                                            <span class="price">
+                                                                <p class="title">제품이름</p>
+                                                                <ul>
+                                                                    <li class="sale">23,400원</li>
+                                                                    <li class="cost">26,000원</li>
+                                                                    <li class="ratio">10%</li>
+                                                                </ul>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="/images/dietfarmbread.jpg">
+                                                            <span class="price">
+                                                                <p class="title">제품이름</p>
+                                                                <ul>
+                                                                    <li class="sale">23,400원</li>
+                                                                    <li class="cost">26,000원</li>
+                                                                    <li class="ratio">10%</li>
+                                                                </ul>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img src="/images/dietfarmbread.jpg">
+                                                            <span class="price">
+                                                                <p class="title">제품이름</p>
+                                                                <ul>
+                                                                    <li class="sale">23,400원</li>
+                                                                    <li class="cost">26,000원</li>
+                                                                    <li class="ratio">10%</li>
+                                                                </ul>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
                                             </section>
                                         </div>
                                         <div class="products_ex_mobile" style="padding:0">
@@ -1236,42 +1251,6 @@
                     </script>
                     
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
-                    <script src="/js/product.js"></script>
-                    <script src="/js/common.js"></script>
-                     <!-- slick js -->
-        <script type="text/javascript" src="/js/slick.min.js"></script>
-        <script type="text/javascript">
-            $('.responsive').slick({
-                dots: false,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                responsive: [
-                {
-                    breakpoint: 1079,
-                    settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false
-                    }
-                },
-                {
-                    breakpoint: 360,
-                    settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    }
-                }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-                ]
-            });
-            </script>
-        
                     <script type="text/javascript" src="/js/product.js"></script>
 
                 </body>
