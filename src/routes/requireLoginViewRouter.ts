@@ -56,11 +56,22 @@ router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
 })
 
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_orderList', {})
+
+    checkLogin(req, res, (sessionUser) => {
+        render(req, res, 'mypage_orderList', {})
+    })
 })
 
-router.get('/ol_detail', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_orderList_detail', {})
+router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFunction) => {
+    const orderNumber: string = req.params.orderNumber
+
+    checkLogin(req, res, (sessionUser) => {
+        if (orderNumber.length > 15 || orderNumber.length < 14) {
+            res.send('<script>alert("올바르지 않은 주문번호입니다.");location.href = "/orderlist";</script>')
+        } else {
+            render(req, res, 'mypage_orderList_detail', { orderNumber })
+        }
+    })
 })
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
@@ -76,6 +87,8 @@ function checkLogin(req: Request, res: Response, next: Function) {
     } else {
         next(req.session.user)
     }
+
+
 }
 
 export default router

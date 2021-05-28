@@ -21,8 +21,7 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <link rel="stylesheet" href="/css/style_web.css">
-
-        <script src="./js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <%-include('general/head') %>
         </head>
 
@@ -33,10 +32,11 @@
                 <div class="mobile_ol_detail">
                     <section class="detail_title">
                         <h2>주문상세</h2>
-                        <a href="#"><img src="./images/leftarrow_ico_my.png"></a>
+                        <a href="#"><img src="/images/leftarrow_ico_my.png"></a>
                     </section>
                 </div>
-
+                <input type="hidden" id="orderNumber" value="<%=orderNumber%>">
+                <main>
                 <div class="main_contents">
                     <div class="web_contents">
                         <div class="left">
@@ -100,104 +100,47 @@
                                 <div class="innerbox">
 
                                     <div class="dateNo">
-                                        <p class="date">2020.10.13</p>
-                                        <p class="no">2020101920201019</p>
+                                        <p class="date">{{ formatDate(order.paymentDate) }}</p>
+                                        <p class="no">{{ order.orderNumber }}</p>
                                     </div>
-                                    <div class="orderDetails">
-                                        <div class="order_title">
-                                            <p>
-                                                <span>아임월<img src="./images/call_icon_order.png" style="width:20%;margin-left:10px"></span></p>
-                                            <ul>
-                                                <li>
-                                                    <a href="/s_inquiry">문의하기<img
-                                                        src="./images/arrow_ico_join.png"
-                                                        style="width:7px;position:relative;left:4px;top:1px"></a>
-                                                </li>
-                                            </ul>
+                                    <template v-for="product in order.products">
+                                        <div class="orderDetails">
+                                            <div class="order_title">
+                                                <p>
+                                                    <span>{{ product.companyName}}<img src="/images/call_icon_order.png" style="width:20%;margin-left:10px"></span></p>
+                                                <ul>
+                                                    <li>
+                                                        <a href="/s_inquiry">문의하기<img
+                                                            src="/images/arrow_ico_join.png"
+                                                            style="width:7px;position:relative;left:4px;top:1px"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!--//order_title-->
+                                            <div class="buttons">
+                                                <button type="button" class="btnConfirm">구매확정</button>
+                                                <button type="button" class="btnTracking" style="margin-left:10px">배송조회</button>
+                                            </div>
+                                            <!--//buttons-->
+                                            <template v-for="(option, oIdx) in product.options"> 
+                                                
+                                                <div class="orderBox02">
+                                                    <a href="product_details.html">
+                                                        <img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:50px;height:62px;margin-right:20px">
+                                                    </a>
+                                                    <ul class="order00">
+                                                        <li class="ship_state">{{ convertOrderStatus(product.orderStatus) }}</li>
+                                                        <li class="product">{{ product.productName }}</li>
+                                                        <li class="price">{{ product.optionTotalPrice }}원</li>
+                                                        <li class="quantitiy">수량 : {{ option.opitonCount}}개</li>
+                                                        <li class="option">옵션 : {{ option.optionDesc }}</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                            </template>
                                         </div>
-                                        <!--//order_title-->
-                                        <div class="buttons">
-                                            <button type="button" class="btnConfirm">구매확정</button>
-                                            <button type="button" class="btnTracking" style="margin-left:10px">배송조회</button>
-                                        </div>
-                                        <!--//buttons-->
-                                        <div class="orderBox02">
-                                            <a href="product_details.html"><img
-                                                src="./images/dietfarmbread.jpg"
-                                                align="left"
-                                                style="width:50px;height:62px;margin-right:20px"></a>
-                                            <ul class="order00">
-                                                <li class="ship_state">배송중</li>
-                                                <li class="product">굿밸런스 라이트밀 도시락</li>
-                                                <li class="price">60,720원</li>
-                                                <li class="quantitiy">수량 : 2개</li>
-                                                <li class="option">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                                            </ul>
-                                        </div>
-                                        <div class="orderBox02">
-                                            <a href="#"><img
-                                                src="./images/dietfarmbread.jpg"
-                                                align="left"
-                                                style="width:50px;height:62px;margin-right:20px"></a>
-                                            <ul class="order00">
-                                                <li class="ship_state">배송중</li>
-                                                <li class="product">굿밸런스 라이트밀 도시락</li>
-                                                <li class="price">60,720원</li>
-                                                <li class="quantity">수량 : 2개</li>
-                                                <li class="option" style="margin-bottom:23px">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!--//orderDetails-->
-
-                                    <div class="orderDetails">
-                                        <div class="order_title">
-                                            <p>
-                                                <span>다신샵<img src="./images/call_icon_order.png" style="width:20%;margin-left:10px"></span></p>
-                                            <ul>
-                                                <li>
-                                                    <a href="/s_inquiry">문의하기<img
-                                                        src="./images/arrow_ico_join.png"
-                                                        style="width:7px;position:relative;left:4px;top:1px"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <!--//order_title-->
-                                        <div class="buttons">
-                                            <button type="button" class="btnConfirm">구매확정</button>
-                                            <button type="button" class="btnTracking" style="margin-left:10px">배송조회</button>
-                                        </div>
-                                        <!--//buttons-->
-                                        <div class="orderBox02">
-                                            <a href="product_details.html"><img
-                                                src="./images/dietfarmbread.jpg"
-                                                align="left"
-                                                style="width:50px;height:62px;margin-right:20px"></a>
-                                            <ul class="order00">
-                                                <li class="ship_state">배송중</li>
-                                                <li class="product">굿밸런스 라이트밀 도시락</li>
-                                                <li class="price">60,720원</li>
-                                                <li class="quantitiy">수량 : 2개</li>
-                                                <li class="option">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                                            </ul>
-                                        </div>
-                                        <div class="orderBox02">
-                                            <a href="#"><img
-                                                src="./images/dietfarmbread.jpg"
-                                                align="left"
-                                                style="width:50px;height:62px;margin-right:20px"></a>
-                                            <ul class="order00">
-                                                <li class="ship_state">배송중</li>
-                                                <li class="product">굿밸런스 라이트밀 도시락</li>
-                                                <li class="price">60,720원</li>
-                                                <li class="quantity">수량 : 2개</li>
-                                                <li class="option" style="margin-bottom:23px">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!--//orderDetails-->
-
-                                    <!-- -->
+                                    </template>
+                                  
                                     <table>
                                         <tbody>
                                             <tr class="order_q">
@@ -205,7 +148,7 @@
                                                     주문자 정보
                                                     <img
                                                         class="downArrow"
-                                                        src="./images/downarrow_ico_main.png"
+                                                        src="/images/downarrow_ico_main.png"
                                                         alt="화살표"
                                                         style="width:14px;height:14px;">
                                                 </td>
@@ -214,20 +157,21 @@
                                                 <td>
                                                     <div class="order_a_box">
                                                         <table style="border:none;">
+                                                            
                                                             <tr>
                                                                 <td>
                                                                     <span>주문자</span></td>
-                                                                <td>박민지</td>
+                                                                <td><template v-if="order.userName != undefined">{{ order.userName }}</template></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <span>연락처</span></td>
-                                                                <td>010-1234-5678</td>
+                                                                <td>{{ order.userCellNo }}</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <span>이메일</span></td>
-                                                                <td>minji777@dataflow.co.kr</td>
+                                                                <td>{{ order.userEmail }}</td>
                                                             </tr>
                                                         </table>
                                                     </div>
@@ -240,36 +184,33 @@
                                             <tr class="order_q">
                                                 <td class="title00">
                                                     배송지 정보
-                                                    <img
-                                                        class="downArrow"
-                                                        src="./images/downarrow_ico_main.png"
-                                                        alt="화살표"
-                                                        style="width:14px;height:14px;">
+                                                    <img class="downArrow" src="/images/downarrow_ico_main.png"
+                                                        alt="화살표" style="width:14px;height:14px;">
                                                 </td>
                                             </tr>
                                             <tr class="order_a">
                                                 <td>
                                                     <div class="order_a_box">
-                                                        <table style="border:none;">
+                                                        <table style="border:none;" v-if="order.delivery != undefined">
                                                             <tr>
                                                                 <td>
                                                                     <span>받는분</span></td>
-                                                                <td>박민지</td>
+                                                                <td>{{ order.delivery.userName }}</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <span>주소</span></td>
-                                                                <td>서울 강남구 테헤란로8길 11-4, 2층</td>
+                                                                <td>{{ order.delivery.address }}</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <span>연락처</span></td>
-                                                                <td>010-1234-5678</td>
+                                                                <td>{{ order.delivery.userCellNo }}</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <span>배송 메모</span></td>
-                                                                <td>항상 안전운전 하세요~</td>
+                                                                <td>{{ order.deliveryDesc }}</td>
                                                             </tr>
                                                         </table>
                                                     </div>
@@ -286,7 +227,7 @@
                                                         결제 정보
                                                         <img
                                                             class="downArrow"
-                                                            src="./images/downarrow_ico_main.png"
+                                                            src="/images/downarrow_ico_main.png"
                                                             alt="화살표"
                                                             style="width:14px;height:14px;">
                                                     </td>
@@ -338,7 +279,7 @@
                                                     포인트 혜택
                                                     <img
                                                         class="downArrow"
-                                                        src="./images/downarrow_ico_main.png"
+                                                        src="/images/downarrow_ico_main.png"
                                                         alt="화살표"
                                                         style="width:14px;height:14px;">
                                                 </td>
@@ -377,28 +318,30 @@
                         </div>
 
                     </div>
+                </main>
                     <!--//order-->
                 </div>
-                <%-include('general/footer') %>
-                    <script type="text/javascript">
-                        jQuery(document).ready(function () {
-                            $("tr.order_q").click(function () {
-                                if ($(this).next('tr').css("display") != "none") {
-                                    $(this)
-                                        .next('tr')
-                                        .hide();
-                                    $(this).removeClass("current");
-                                } else {
-                                    $("tr.order_a").css('display', 'current');
-                                    $("tr.order_q").removeClass("current");
-                                    $(this)
-                                        .next('tr')
-                                        .show();
-                                    $(this).addClass("none");
-                                }
-                            });
-                        });
-                    </script>
+    <%-include('general/footer') %>
+    <script src="/js/orderDetail.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $("tr.order_q").click(function () {
+                if ($(this).next('tr').css("display") != "none") {
+                    $(this)
+                        .next('tr')
+                        .hide();
+                    $(this).removeClass("current");
+                } else {
+                    $("tr.order_a").css('display', 'current');
+                    $("tr.order_q").removeClass("current");
+                    $(this)
+                        .next('tr')
+                        .show();
+                    $(this).addClass("none");
+                }
+            });
+        });
+    </script>
 
-                </body>
-            </html>
+</body>
+</html>

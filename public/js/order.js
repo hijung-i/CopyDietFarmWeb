@@ -1,3 +1,4 @@
+
 var app = new Vue({
     el: 'main',
     data: {
@@ -26,7 +27,6 @@ var app = new Vue({
             $('#deliveryDesc').val(value);
         },
         useAllPoint: function() {
-
             if(this.usablePoint <= ( this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost)) {
                 this.orderDTO.paidPointAmount = this.usablePoint;
                 this.remainingPoint = 0;
@@ -34,16 +34,29 @@ var app = new Vue({
                 this.orderDTO.paidPointAmount = ( this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost);
             }
 
+        },
+        pointChange: function() {
+            var pointStr = new String(this.orderDTO.paidPointAmount).replace(/^[0~9]/gi, '');
+            this.orderDTO.paidPointAmount = parseInt((pointStr == "")?'0':pointStr);
+            
         }
     },
     computed: {
         remainingPoint: {
                 get: function() {
+                    var totalAmount = this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost - this.orderDTO.paidCouponAmount
+
                     var remainingPoint = this.usablePoint - this.orderDTO.paidPointAmount;
-                    if(remainingPoint < 0) {
+                    console.log(totalAmount, this.orderDTO.paidPointAmount)
+                    if (totalAmount < this.orderDTO.paidPointAmount) {
+                        console.log("greater than")
+                        this.orderDTO.paidPointAmount = ( this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost);
+                        remainingPoint = this.usablePoint - this.orderDTO.paidPointAmount;
+                    } else if(remainingPoint < 0) {
                         this.orderDTO.paidPointAmount = this.usablePoint;
                         remainingPoint = 0;
                     }
+                    
                     
                     this.orderDTO.paidRealAmount = this.orderDTO.paymentTotalAmount - this.orderDTO.paidCouponAmount - this.orderDTO.paidPointAmount + this.orderDTO.totalDeliveryCost;
                     this.orderDTO.accumulatePoint = 0;
@@ -132,46 +145,31 @@ function paymentAction() {
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
     var methods = ['npay', 'vbank', 'kakao', 'card', 'phone'];
     var method = methods[app.paymentNo -1];
-
-    var requestOrderDTO = {};
-
-    requestOrderDTO.paymentNo = app.paymentNo;
-
-    requestOrderDTO.userId = app.orderDTO.userId;
-    requestOrderDTO.userName = app.orderDTO.userName;
-    requestOrderDTO.useEmail = app.orderDTO.userEmail;
-    requestOrderDTO.userCellNo = app.orderDTO.userCellNo;
-
+    
     if(app.orderDTO.userId == '비회원주문') {
-        requestOrderDTO.userName = $('#unName').val();
-        requestOrderDTO.userCellNo = $('#unCellNo').val();
-        requestOrderDTO.userEmail = $('#unEmail').val();
-    }
+        app.orderDTO.userName = $('#unName').val();
+        app.orderDTO.userCellNo = $('#unCellNo').val();
+        app.orderDTO.userEmail = $('#unEmail').val();
 
-    if(app.orderDTO.delivery == undefined) {
         var delivery = {
             userName: $('#unReceiverName').val(),
             address: $('#unAddr').val() + $('#unAddr2').val(),
             userCellNo: $('#unDeliveryUserCellNo').val()
         }
-        requestOrderDTO.delivery = delivery;
+        app.orderDTO.delivery = delivery;
+        console.log()
     }
-    requestOrderDTO.deliveryDesc = $("#selectDeliveryDesc").val();
-    
-    if($("#selectDeliveryDesc").val() == "") {
-        requestOrderDTO.deliveryDesc = $('#deliveryDesc').val()
-    }
-    
+
     if(app.orderDTO.userCellNo == '' || app.orderDTO.userCellNo == undefined) {
         alert('수령인 전화번호를 입력해주세요');
         return;
     }
- 
+
     var items = new Array();
     var count = 0;
-
     for(var i = 0; i < this.deliveryGroupList.length; i++) {
         var dGroup = this.deliveryGroupList[i];
+        console.log("dgroup -> ", this.deliveryGroupList.length, dGroup)
         for(var j = 0; j < dGroup.products.length; j++) {
             var product = dGroup.products[j];
             for(var k = 0; k < product.options.length; k++) {
@@ -191,7 +189,7 @@ function paymentAction() {
     if(count > 1){
         orderTitle += ' 외 '+ count + '건';
     }
-    requestOrderDTO.orderTitle = orderTitle;
+    app.orderDTO.orderTitle = orderTitle;
 
     var nowDate = new Date();
     var expireDate = new Date(nowDate.getTime() + (60 * 60 * 24 * 1000 * 3));
@@ -200,22 +198,20 @@ function paymentAction() {
     var date = (((expireDate.getDate()) / 10) > 0)?expireDate.getDate(): '0'+(expireDate.getDate())
     
     var accountExpireAt = expireDate.getFullYear() + '-' + month +'-' + date  
-
-    requestOrderDTO.paidRealAmount = app.orderDTO.paidRealAmount;
-
+    console.log(accountExpireAt);
     var bootpayParams = {
-        price: requestOrderDTO.paidRealAmount,
+        price: app.orderDTO.paidRealAmount,
         application_id: "5feae25e2fa5c2001d0391b9",
-        name: requestOrderDTO.orderTitle,
+        name: app.orderDTO.orderTitle,
         pg: 'nicepay',
         method: method,
         show_agree_window: 0, // 부트페이 정보 동의 창 보이기 여부
-        items: items,
+        items: [],
         user_info: {
-            username: requestOrderDTO.userId,
-            email: requestOrderDTO.userEmail,
-            addr: requestOrderDTO.address,
-            phone: requestOrderDTO.userCellNo
+            username: app.orderDTO.userId,
+            email: app.orderDTO.userEmail,
+            addr: app.orderDTO.address,
+            phone: app.orderDTO.userCellNo
         },
         order_id: 'ORDER_WEB', //고유 주문번호로, 생성하신 값을 보내주셔야 합니다.
         params: {
@@ -231,7 +227,6 @@ function paymentAction() {
         }
     }
     
-    console.log(requestOrderDTO, bootpayParams)
 
     BootPay.request(
         bootpayParams
@@ -259,27 +254,25 @@ function paymentAction() {
         //결제가 정상적으로 완료되면 수행됩니다
         //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
         console.log(data);
-        
-        
-        requestOrderDTO.paymentName = data.payment_name;
-        requestOrderDTO.paidRealAmount = data.price;
-        requestOrderDTO.paymentDate = data.purchased_at;
-        requestOrderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
-        requestOrderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
-        requestOrderDTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
+        app.orderDTO.paymentName = data.payment_name;
+        app.orderDTO.paidRealAmount = data.price;
+        app.orderDTO.paymentDate = data.purchased_at;
+        app.orderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
+        app.orderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
+        app.orderDTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
 
-        requestOrderDTO.receiptId = data.receipt_id;
+        app.orderDTO.receiptId = data.receipt_id;
 
-        paymentConfirm(requestOrderDTO);
+        paymentConfirm();
     });
 }
 
-function paymentConfirm(requestOrderDTO) {
+function paymentConfirm() {
     var params = {
         applicationId: '5feae25e2fa5c2001d0391bc',
         privateKey: '#x1fCHsPFCxs#L#j#J#SsNpN7YPnyMF#0mk#6NCh0kVMub2sH#g='.replace(/#/gi, ''),
-        receiptId: requestOrderDTO.receiptId,
-        paidRealAmount: requestOrderDTO.paidRealAmount
+        receiptId: app.orderDTO.receiptId,
+        paidRealAmount: app.orderDTO.paidRealAmount
     }
 
     ajaxCall(API_SERVER + '/order/paymentConfirm', params, 'POST',
@@ -287,10 +280,10 @@ function paymentConfirm(requestOrderDTO) {
         console.log("success", data);
         switch(data.message) {
             case 'SUCCESS':
-                addOrder(requestOrderDTO);
+                addOrder();
                 break;
             case 'NOT_MATCHED':
-                paymentCancel('paymentConfirm 실패', requestOrderDTO);
+                paymentCancel('paymentConfirm 실패');
                 break;
         }
     }, function(err){
@@ -298,13 +291,13 @@ function paymentConfirm(requestOrderDTO) {
     })
 }
 
-function paymentCancel(reason, requestOrderDTO) {
+function paymentCancel(reason) {
     var params = {
         applicationId: '5feae25e2fa5c2001d0391bc',
         privateKey: '#x1fCHsPFCxs#L#j#J#SsNpN7YPnyMF#0mk#6NCh0kVMub2sH#g='.replace(/#/gi, ''),
-        receiptId: requestOrderDTO.receiptId,
-        paidRealAmount: requestOrderDTO.paidRealAmount,
-        name: requestOrderDTO.userName,
+        receiptId: app.orderDTO.receiptId,
+        paidRealAmount: app.orderDTO.paidRealAmount,
+        name: app.orderDTO.userName,
         reason: reason,
         cancel_id: Math.floor(new Date().getTime() + (Math.random() * 1000 + 1))
     }
@@ -316,8 +309,9 @@ function paymentCancel(reason, requestOrderDTO) {
     })
 }
 
-function addOrder(requestOrderDTO) {
-    ajaxCall(API_SERVER + '/order/addOrder', requestOrderDTO, 'POST',
+function addOrder() {
+    
+    ajaxCall(API_SERVER + '/order/addOrder', app.orderDTO, 'POST',
     function(data) {
         console.log("success", data);
         switch(data.message) {
@@ -326,13 +320,10 @@ function addOrder(requestOrderDTO) {
                 location.href="/cart";
                 break;
             case 'NOT_MATCHED':
-                alert('주문 실패, 취소 진행')
-                paymentCancel('addOrder 실패', requestOrderDTO);
+                paymentCancel('addOrder 실패');
                 break;
         }
     }, function(err){
-        alert('주문 실패(err), 취소 진행')
-        paymentCancel('addOrder 실패', requestOrderDTO);
         console.log("error", err);
     })
 }
