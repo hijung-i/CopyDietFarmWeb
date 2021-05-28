@@ -20,7 +20,7 @@ function listenForLikes (){
     })
    });
   }
-  
+
 function getStandDatas() {
     var param = {};
     var option = {
@@ -59,19 +59,6 @@ function getStandDatas() {
                     html += '</a>';
                     html += '</li>';
                 }
-                $('.multiple_bxslider').html(html);
-                $('.multiple_bxslider').bxSlider({
-                        mode: 'horizontal',
-                        auto: true,
-                        slideWidth: 4000,
-                        infiniteLoop: true,
-                        controls: true,
-                        pager: false,
-                        minSlides: 3,
-                        maxSlides: 6,
-                        slideMargin: 4,
-                        touchEnabled: true
-                    });
                 break;
             case 2:
                 // 위클리 베스트

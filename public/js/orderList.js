@@ -53,6 +53,12 @@ function convertOrderStatus(orderStatus) {
             return '결제 완료';
         case 'D':
             return '배송중';
+        case 'R':
+            return '리뷰작성';
+        case 'L':
+            return '리뷰작성';
+        case 'O':
+            return '재주문';
     }
     
 }

@@ -2109,7 +2109,7 @@ justify-content: space-evenly}
 .faq_title span{font-weight:bold}
 .inquiry_top{margin-top:34px;margin-left:15px;}
 .inquiry_top ul{float:left;display:flex; justify-content:space-between;}
-.order_a{border-bottom:1px solid #E6E6E6}
+/*.order_a{border-bottom:1px solid #E6E6E6}*/
 .order001 li{width:100%;white-space:nowrap}
 .order_a_box{margin-top:14px;padding-left:15px}
 .order_a_box a img {margin-bottom:18px;width:50px;height:90px;margin-right:20px}
@@ -2117,7 +2117,7 @@ justify-content: space-evenly}
 .order_a_box ul{padding-top:13px}
 .order_a_box ul li{margin-bottom:5px}
 .tab_cont{min-height:360px;}
-.tab_cont.active{display:block;}
+.tab_cont.active{display:block !important;}
 
 /* style02 */
 

@@ -79,6 +79,18 @@ $(function() {
         sideMenu('off');
     });
     
+    $("tr.faq_q").click(function() {
+        if ($(this).next('tr').css("display") != "none") {
+            $(this).next('tr').hide();
+            $(this).removeClass("current");
+        } else {
+            $("tr.faq_a").css('display', 'none');
+            $("tr.faq_q").removeClass("current");
+            $(this).next('tr').show();
+            $(this).addClass("current");
+        }
+    });
+    
     $(window).resize(function(){
         var winW = $(window).width();
         if (winW > 1080) {
@@ -144,6 +156,16 @@ $(function() {
     });
 
 
+    $(".mTabBtnMenu").on("click",function() {
+        console.log('clear');
+        sideTabOpen();
+        $('body').css ({
+            position:'fixed',
+            overflow:'hidden'
+        });
+    })
+    
+    
     /* web side menu controll */
     $(".m_ba_slides_n_li a").hover(function () {
         console.log($(this).find("ul"));
@@ -211,17 +233,7 @@ $(function(){
         $(this).siblings().removeClass('on');
     });
 
-    /* $("tr.faq_q").click(function() {
-        if ($(this).next('tr').css("display") != "none") {
-            $(this).next('tr').hide();
-            $(this).removeClass("current");
-        } else {
-            $("tr.faq_a").css('display', 'none');
-            $("tr.faq_q").removeClass("current");
-            $(this).next('tr').show();
-            $(this).addClass("current");
-        }
-    }); */
+    
 
     $(".start1").click(function () {
         $(".fade1").toggle();
@@ -286,6 +298,44 @@ $(function(){
 });
 
 /* 롤링 배너 */
+<<<<<<< HEAD
+   window.onload = function() {
+            var bannerLeft=0;
+            var first=1;
+            var last;
+            var imgCnt=0;
+            var $img = $(".main_banner img");
+            var $first;
+            var $last;
+
+            $img.each(function(){   // 1px 간격으로 배너 처음 위치 시킴
+                $(this).css("left",bannerLeft);
+                bannerLeft += $(this).width()+0;
+                $(this).attr("id", "banner"+(++imgCnt));  // img에 id 속성 추가
+            });
+
+            
+            if( imgCnt > 1){                //배너 9개 이상이면 이동시킴
+
+
+
+                last = imgCnt;
+
+                setInterval(function() {
+                    $img.each(function(){
+                        $(this).css("left", $(this).position().left-2); // 2px씩 왼쪽으로 이동
+                    });
+                    $first = $("#banner"+first);
+                    $last = $("#banner"+last);
+                    if($first.position().left < -360) {    // 제일 앞에 배너 제일 뒤로 옮김
+                        $first.css("left", $last.position().left + $last.width()+5 );
+                        first++;
+                        last++;
+                        if(last > imgCnt) { last=1; }   
+                        if(first > imgCnt) { first=1; }
+                    }
+                }, 40);        
+=======
 //client rolling banner
 window.onload = function() {
     var bannerLeft=0;
@@ -301,6 +351,7 @@ window.onload = function() {
         bannerLeft += $(this).width()+0;
         $(this).attr("id", "banner"+(++imgCnt));  // img에 id 속성 추가
     });
+>>>>>>> f471a91f0e3cf9acf0e616ad038cdbaa97d04bfb
 
     if( imgCnt > 1){                //배너 9개 이상이면 이동시킴
         last = imgCnt;
@@ -339,7 +390,7 @@ function getCategory() {
             '/images/pet_icon_category@2x.png',
             '/images/all_icon_category@2x.png',    
         ];
-
+        
         var buttonHtml = '';
         var sideTabHtml = '';
         var result = data.result;
@@ -357,7 +408,7 @@ function getCategory() {
             sideTabHtml += '    <dl>';
             sideTabHtml += '        <dt class="sideMenu_detail faq_q">';
             sideTabHtml += '            <span><img src="'+ imgList[i]+'" alt="#"/>'+ category.category1Name+'</span>';
-            sideTabHtml += '            <img class="downArrow" src="images/downarrow_ico_main.png"';
+            sideTabHtml += '            <img class="downArrow" src="/images/downarrow_ico_main.png"';
             sideTabHtml += '            alt="화살표" style="width:11px;height:11px">';
             sideTabHtml += '        </dt>';
             sideTabHtml += '        <dd class="subMenu faq_a" style="top: 0;">';
@@ -381,19 +432,33 @@ function getCategory() {
 
         }
 
-        buttonHtml += '<li>';
+        buttonHtml += '<li class = "mTabBtnMenu">';
         buttonHtml += '<a >';
         buttonHtml += '<span><img src="'+ imgList[9] +'"></span>';
         buttonHtml += '<p>전체보기</p>';
         buttonHtml += '</a>';
         buttonHtml += '</li>';
-
-          
+        
         $('.category ul').html(buttonHtml);
         $('.sideMenu_ctt ul.mDepth01').html(sideTabHtml);
-            
+        $("dt.faq_q").click(function() {
+            if ($(this).next('dd').css("display") != "none") {
+                $(this).next('dd').hide();
+                $(this).removeClass("current");
+            } else {
+                $("dd.faq_a").css('display', 'none');
+                $("dt.faq_q").removeClass("current");
+                $(this).next('dd').show();
+                $(this).addClass("current");
+            }
+        });
+
         console.log("getCategory => ", data);
     }, function (err){
         console.log("onError", err);
     })
+
 }
+
+
+
