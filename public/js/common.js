@@ -282,19 +282,6 @@ $(document).ready(function() {
 
 
 // 햄버거 2단계 메뉴
-$(document).ready(function() {
-	$("dt.faq_q").click(function() {
-		if ($(this).next('dd').css("display") != "none") {
-			$(this).next('dd').hide();
-			$(this).removeClass("current");
-		} else {
-			$("dd.faq_a").css('display', 'none');
-			$("dt.faq_q").removeClass("current");
-			$(this).next('dd').show();
-			$(this).addClass("current");
-		}
-	});
-});
 
  $(document).ready(function() {
 

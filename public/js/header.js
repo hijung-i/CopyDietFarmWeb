@@ -79,6 +79,18 @@ $(function() {
         sideMenu('off');
     });
     
+    $("tr.faq_q").click(function() {
+        if ($(this).next('tr').css("display") != "none") {
+            $(this).next('tr').hide();
+            $(this).removeClass("current");
+        } else {
+            $("tr.faq_a").css('display', 'none');
+            $("tr.faq_q").removeClass("current");
+            $(this).next('tr').show();
+            $(this).addClass("current");
+        }
+    });
+    
     $(window).resize(function(){
         var winW = $(window).width();
         if (winW > 1080) {
@@ -144,6 +156,16 @@ $(function() {
     });
 
 
+    $(".mTabBtnMenu").on("click",function() {
+        console.log('clear');
+        sideTabOpen();
+        $('body').css ({
+            position:'fixed',
+            overflow:'hidden'
+        });
+    })
+    
+    
     /* web side menu controll */
     $(".m_ba_slides_n_li a").hover(function () {
         console.log($(this).find("ul"));
@@ -211,17 +233,7 @@ $(function(){
         $(this).siblings().removeClass('on');
     });
 
-    /* $("tr.faq_q").click(function() {
-        if ($(this).next('tr').css("display") != "none") {
-            $(this).next('tr').hide();
-            $(this).removeClass("current");
-        } else {
-            $("tr.faq_a").css('display', 'none');
-            $("tr.faq_q").removeClass("current");
-            $(this).next('tr').show();
-            $(this).addClass("current");
-        }
-    }); */
+    
 
     $(".start1").click(function () {
         $(".fade1").toggle();
@@ -286,7 +298,6 @@ $(function(){
 });
 
 /* 롤링 배너 */
-//client rolling banner
    window.onload = function() {
             var bannerLeft=0;
             var first=1;
@@ -322,9 +333,7 @@ $(function(){
                         if(last > imgCnt) { last=1; }   
                         if(first > imgCnt) { first=1; }
                     }
-                }, 40);   //여기 값을 조정하면 속도를 조정할 수 있다.(위에 1px 이동하는 부분도 조정하면 
-
-//깔끔하게 변경가능하다           
+                }, 40);        
 
  }
 
@@ -346,7 +355,7 @@ function getCategory() {
             '/images/pet_icon_category@2x.png',
             '/images/all_icon_category@2x.png',    
         ];
-
+        
         var buttonHtml = '';
         var sideTabHtml = '';
         var result = data.result;
@@ -364,7 +373,7 @@ function getCategory() {
             sideTabHtml += '    <dl>';
             sideTabHtml += '        <dt class="sideMenu_detail faq_q">';
             sideTabHtml += '            <span><img src="'+ imgList[i]+'" alt="#"/>'+ category.category1Name+'</span>';
-            sideTabHtml += '            <img class="downArrow" src="images/downarrow_ico_main.png"';
+            sideTabHtml += '            <img class="downArrow" src="/images/downarrow_ico_main.png"';
             sideTabHtml += '            alt="화살표" style="width:11px;height:11px">';
             sideTabHtml += '        </dt>';
             sideTabHtml += '        <dd class="subMenu faq_a" style="top: 0;">';
@@ -388,19 +397,33 @@ function getCategory() {
 
         }
 
-        buttonHtml += '<li>';
+        buttonHtml += '<li class = "mTabBtnMenu">';
         buttonHtml += '<a >';
         buttonHtml += '<span><img src="'+ imgList[9] +'"></span>';
         buttonHtml += '<p>전체보기</p>';
         buttonHtml += '</a>';
         buttonHtml += '</li>';
-
-          
+        
         $('.category ul').html(buttonHtml);
         $('.sideMenu_ctt ul.mDepth01').html(sideTabHtml);
-            
+        $("dt.faq_q").click(function() {
+            if ($(this).next('dd').css("display") != "none") {
+                $(this).next('dd').hide();
+                $(this).removeClass("current");
+            } else {
+                $("dd.faq_a").css('display', 'none');
+                $("dt.faq_q").removeClass("current");
+                $(this).next('dd').show();
+                $(this).addClass("current");
+            }
+        });
+
         console.log("getCategory => ", data);
     }, function (err){
         console.log("onError", err);
     })
+
 }
+
+
+
