@@ -131,7 +131,7 @@
                                 <table style="border:0">
                                     <tbody>
                                         <tr class="order_a" V-for="(product, pIdx) in order.products">
-                                            <td style="padding: 5px 0;">
+                                            <td style="padding: 15px 0;">
                                                 <div class="order_list_box">
                                                     <div class="order_img">
                                                         <a href="#">
@@ -155,11 +155,20 @@
                                             <td>
                                                 <div class="order_list_btn">
                                                     <ul>
-                                                        <li>
+                                                        <li v-if="product.orderStatus == 'P'">
+                                                            <button type="button" class="btnA">취소신청</button>
+                                                        </li>
+                                                        <li v-if="product.orderStatus == 'R'">
+                                                            <button type="button" class="btnA">리뷰작성</button>
+                                                        </li>
+                                                        <li v-if="product.orderStatus == 'C'">
                                                             <button type="button" class="btnA">구매확정</button>
                                                         </li>
-                                                        <li>
+                                                        <li v-if="product.orderStatus == 'L'">
                                                             <button type="button" class="btnB">배송조회</button>
+                                                        </li>
+                                                        <li v-if="product.orderStatus == 'O'">
+                                                            <button type="button" class="btnB">재주문</button>
                                                         </li>
                                                     </ul>
                                                 </div>
