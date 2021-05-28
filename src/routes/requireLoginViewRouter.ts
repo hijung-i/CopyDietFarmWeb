@@ -47,6 +47,21 @@ router.get('/product-inquiry-form', (req: Request, res: Response, next: NextFunc
     })
 })
 
+router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
+
+        render(req, res, 'alarm', {})
+    })
+    
+})
+
+router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'mypage_orderList', {})
+})
+
+router.get('/ol_detail', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'mypage_orderList_detail', {})
+})
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user

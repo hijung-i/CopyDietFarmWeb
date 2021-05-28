@@ -66,7 +66,15 @@ $(function() {
     });
 
     /* 상품상세 모바일 탭메뉴 */
+    /* $('li.mobile_tab').click(function() {
+        if($("div.other_cont").hasClass("active") === true) {
+            console.log('dd');
+            $(".other_cont").removeClass("active")
+        } else {
+            $(".other_cont").addClass("active")
+        }
 
+    }); */
 
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){

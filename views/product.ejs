@@ -192,23 +192,23 @@
                             <div id="detail_info" class="pdt_detai_tab_vn">
                                 <div class="pdt_detai_tabinner_vn">
                                     <ul class="tab_wrap" id="tab">
-                                        <li class="active" data-tab="tab1">
+                                        <li class="active mobile_tab" data-tab="tab1">
                                             <a href="javascript:void(0);">상품설명</a>
                                         </li>
-                                        <li data-tab="tab2">
+                                        <li class="mobile_tab" data-tab="tab2">
                                             <a href="javascript:void(0);">상세정보</a>
                                         </li>
-                                        <li data-tab="tab3">
+                                        <li class="mobile_tab" data-tab="tab3">
                                             <a href="javascript:void(0);">리뷰<span class="v_n_numb"></span></a>
                                         </li>
-                                        <li data-tab="tab4">
+                                        <li class="mobile_tab" data-tab="tab4">
                                             <a href="javascript:void(0);">문의<span class="tab_detail_qna_count  v_n_numb">(0)</span></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="contents other_con">
+                        <div class="contents other_cont">
                             <input type="hidden" id="productCode" value="<%=productCode %>">
                             <div id="tab1_mobile">
                                 <div class="view_wrap">
@@ -489,6 +489,9 @@
             </div>
             
            
+                          
+                                    
+                                       
                                        
                                        <!--//플로팅 박스-->
                      
@@ -622,7 +625,7 @@
                                             <p class="review_summ" style="font-size:14px;">배송 빠르게 받아봤고 혼합100팩으로 시켰는데
                                                 전라인이기본적으로 훈제향이 베이스라 부담없이 맛나고 먹기도 간편하네요. 해동 후 전자렌지 30초면 딱 부드럽게 먹기 좋습니다. 같이 보내주신
                                                 곤약젤리와 스파클링도 맛있네요!</p>
-                                            <div class="review_img">
+                                            <div class="review_img01">
                                                 <img src="/images/dietfarmbread.jpg" style="width:104px;height:104px">
                                             </div>
 
@@ -671,7 +674,7 @@
                                         <p class="review_summ" style="font-size:14px;">배송 빠르게 받아봤고 혼합100팩으로 시켰는데
                                             전라인이기본적으로 훈제향이 베이스라 부담없이 맛나고 먹기도 간편하네요. 해동 후 전자렌지 30초면 딱 부드럽게 먹기 좋습니다. 같이 보내주신
                                             곤약젤리와 스파클링도 맛있네요!</p>
-                                        <div class="review_img">
+                                        <div class="review_img02">
                                             <img src="/images/dietfarmbread.jpg" style="width:104px;height:104px">
                                         </div>
                                         <span id="toc-toggle" onclick="openCloseToc()">더보기<img
@@ -717,7 +720,7 @@
                                         <p class="review_summ" style="font-size:14px;">배송 빠르게 받아봤고 혼합100팩으로 시켰는데
                                             전라인이기본적으로 훈제향이 베이스라 부담없이 맛나고 먹기도 간편하네요. 해동 후 전자렌지 30초면 딱 부드럽게 먹기 좋습니다. 같이 보내주신
                                             곤약젤리와 스파클링도 맛있네요!</p>
-                                        <div class="review_img">
+                                        <div class="review_img02">
                                             <img src="/images/dietfarmbread.jpg" style="width:104px;height:104px">
                                         </div>
                                         <span id="toc-toggle" onclick="openCloseToc()">더보기<img
@@ -763,7 +766,7 @@
                                         <p class="review_summ" style="font-size:14px;">배송 빠르게 받아봤고 혼합100팩으로 시켰는데
                                             전라인이기본적으로 훈제향이 베이스라 부담없이 맛나고 먹기도 간편하네요. 해동 후 전자렌지 30초면 딱 부드럽게 먹기 좋습니다. 같이 보내주신
                                             곤약젤리와 스파클링도 맛있네요!</p>
-                                        <div class="review_img">
+                                        <div class="review_img02">
                                             <img src="/images/dietfarmbread.jpg" style="width:104px;height:104px">
                                         </div>
                                         <span id="toc-toggle" onclick="openCloseToc()">더보기<img
@@ -777,7 +780,8 @@
                                     <div class="line_review"></div>
                                 </div>
                                 <div id="wrap">
-                                    <a href="#ex1" rel="modal:open" id="modalReview">리뷰쓰기</a>
+                                    <a href="#ex1" rel="modal:open"
+                                     style="float:right;margin-left:200px;position:relative;left:50px;top:30px;margin-bottom:30px;width:168px;height:45px;border-radius:5px;background-color:#F99319;color:#fff;font-size:18px;font-weight:bold;text-align:center;padding-top:10px">리뷰쓰기</a>
                                 </div>
                        
                                 <div class="page_wrap">
@@ -817,7 +821,7 @@
                             </div>
 
                       
-                            <p class="inquiry_product">문의 571개</p>
+                            <p class="inquiry">문의 571개</p>
                             <div class="qna">
                                 <div class="myReview">
                                     <p>내 문의 보기</p>
@@ -1071,7 +1075,7 @@
                                     </div>
                                 </div>
                                 <div id="wrap_qna">
-                                    <a href="javascript:openModal('modal1');" class="button modal-open" id="modalInquiry">문의하기</a>
+                                    <a href="javascript:openModal('modal1');" class="button modal-open">문의하기</a>
                                 </div>
                                 <!--//모달 안 내용 시작 -->
                                 <div id="modal"></div>
@@ -1230,17 +1234,7 @@
                             preview.appendChild(image);
                         })
                     </script>
-                    <script>
-                        function openCloseToc() {
-                          if(document.getElementById('toc-content').style.display === 'block') {
-                            document.getElementById('toc-content').style.display = 'none';
-                            document.getElementById('toc-toggle').textContent = '더보기';
-                          } else {
-                            document.getElementById('toc-content').style.display = 'block';
-                            document.getElementById('toc-toggle').textContent = '숨기기';
-                          }
-                        }
-                      </script>
+                    
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
                     <script src="/js/product.js"></script>
                     <script src="/js/common.js"></script>
@@ -1278,5 +1272,7 @@
             });
             </script>
         
+                    <script type="text/javascript" src="/js/product.js"></script>
+
                 </body>
             </html>

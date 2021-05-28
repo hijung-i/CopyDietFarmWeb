@@ -118,9 +118,6 @@ router.get('/order-comp', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'order_complete', {})
 })
 
-router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'alarm', {})
-})
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'terms_of_service', {})
 })
@@ -167,13 +164,6 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     orderDTO.paidCouponAmount = 0
 
     render(req, res, 'order_info', { deliveryGroupList: JSON.stringify(deliveryGroupList), orderDTO: JSON.stringify(orderDTO) })
-})
-
-router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_orderList', {})
-})
-router.get('/ol_detail', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_orderList_detail', {})
 })
 
 router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
