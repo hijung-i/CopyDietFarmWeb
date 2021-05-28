@@ -52,7 +52,7 @@ router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
 
         render(req, res, 'alarm', {})
     })
-    
+
 })
 
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
