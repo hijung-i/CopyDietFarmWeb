@@ -69,10 +69,9 @@ justify-content: space-between;border-bottom:0.5px solid #bbbbbb}
 /*마이페이지(로그인전)*/
 .myPage01 h3{padding-left:20px;text-align:left;margin-bottom:20px;font-size:16px;font-weight:normal;margin-top:-10px}
 .myPage01 h4{padding-left:20px;}
-.buttons{padding-left:15px;padding-right:15px;width:100%;margin: 0 auto;display: flex;justify-content: space-between;}
 .btnLogin, .btnSignup{width:100%;height:45px;text-align:center;border:0;display:inline-block;
 background-color:#F99319;border-radius:5px;
-;font-size:14px;font-weight:bold;color:#fff;padding-top:4px}
+;font-size:14px;font-weight:bold;color:#fff;padding-top:4px;margin-top:14px}
 
 /*포인트*/
 ul, li, p{list-style:none}
@@ -152,7 +151,7 @@ ul, li, p{list-style:none}
     .f_recommd p{font-size:14px;line-height:20px}
     .f_recommd p span{font-weight:bold}
     #btnKakao{width:80%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#000;background-color:#FFEB3B;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
-    .buttons{padding-top:27px;}
+    .f_recommd .buttons{padding-top:27px;}
     #btnURL{width:80%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#fff;background-color:#6A6A6A;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-left:11px;}
     #btnURL img, #btnKakao img{position:relative;right:17px}}
     
@@ -227,25 +226,6 @@ ul, li, p{list-style:none}
    
    /* 주문 상세 컨텐트 */
 
-.orderDetails{border-bottom:8px solid #F1F1F1}
-.buttons{width:100%;margin: 0 auto;display: flex;
-justify-content: space-between;padding-bottom:14px;padding-left:15px;padding-right:15px}
-.btnConfirm, .btnTracking{width:50%;    height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
-color:#000;font-size:14px;background-color:#F1F1F1;}
-.dateNo{border-bottom:8px solid #F1F1F1;}
-.date{margin-bottom:3px;color:#878787}
-.no{margin-bottom:14px}
-.ship_state{color:#EFA543;font-weight:bold}
-.quantity, .option{color:#878787}
-.order_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;margin-bottom:20px;padding-right:15px}
-.order_title p span{font-size:14px;font-weight:bold}
-.orderDetails{padding-left:15px;padding-right:15px;}
-.orderBox02{margin-top:19px;padding-top:18px;border-top:1px solid #BBBBBB;}
-.order00 li{margin-bottom:5px;}
-.order_q .title00{padding-top:20px;padding-left:26px;font-size:16px;font-weight:bold;}
-.order_a_box td span{color:#878787}
-.btn_area {margin:20px 15px}
-#btnReorder{width:100%;margin:auto;padding: 21px 0 17px;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
 
 /* 주문 상세 타이틀 */
 .detail_title{margin:40px 10px 20px 10px;width:100%;}
