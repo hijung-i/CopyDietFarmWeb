@@ -2,8 +2,8 @@ import { User } from '../models/user'
 import * as request from 'request-promise-native'
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
 
-const SERVER_IP = 'localhost'
-// const SERVER_IP = 'data-flow.co.kr'
+// const SERVER_IP = 'localhost'
+const SERVER_IP = 'data-flow.co.kr'
 
 // const SERVER_URL = 'http://' + SERVER_IP + ':9090'
 // const SERVER_URL = 'http://13.209.123.102:9090'

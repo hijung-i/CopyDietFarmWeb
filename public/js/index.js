@@ -42,7 +42,7 @@ function getStandDatas() {
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
                     html += '<div class="like">' + listenForLikes() + '</div>';
-                    html += '<div><a href="/product/"><img src="' + RESOURCE_SERVER + product.url+'"></a></div>';
+                    html += '<div><a href="/product/'+ product.productCode +'"><img src="' + RESOURCE_SERVER + product.url+'"></a></div>';
                 }
                 break;
             case 1:

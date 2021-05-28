@@ -16,74 +16,30 @@
   
             <style type="text/css">
                #footer{padding-top:100px}
-                nav a:nth-child(1) {
-                    color: #F99319;
-                }
+                nav a:nth-child(1) {color:#F99319}                
+                .bx-wrapper {-moz-box-shadow: none !important;-webkit-box-shadow: none !important;
+                box-shadow: none !important}
 
-                .bx-wrapper {
-                    -moz-box-shadow: none !important;
-                    -webkit-box-shadow: none !important;
-                    box-shadow: none !important;
-                }
+                .main_pager_wrapper {position: absolute;right: 10%;top: 6.6%;z-index: 777;width: 60px;
+                    height: auto;text-align: center;background: #fff;border-radius: 20px;padding: 6px;
+                    font-size: 12px}
 
-                .main_pager_wrapper {
-                    position: absolute;
-                    right: 10%;
-                    top: 6.6%;
-                    z-index: 777;
-                    width: 60px;
-                    height: auto;
-                    text-align: center;
-                    background: #fff;
-                    border-radius: 20px;
-                    padding: 6px;
-                    font-size: 12px;
-                }
+                .main_pager_wrapper span {font-weight: 700}
 
-                .main_pager_wrapper span {
-                    font-weight: 700;
-                }
+                .main_pager_wrapper > .mr10 {letter-spacing: 2px}
 
-                .main_pager_wrapper > .mr10 {
-                    letter-spacing: 2px;
-                }
+                #mHeader .tab_wrap {width: 100%;padding-bottom: 20px;border-bottom: 2px solid #E6E6E6;
+                    background: #fff;z-index: 99}
 
-                #mHeader .tab_wrap {
-                    width: 100%;
-                    padding-bottom: 20px;
-                    border-bottom: 2px solid #E6E6E6;
-                    background: #fff;
-                    z-index: 99;
-                }
+                #mHeader .tab_cont {display: none;min-height: 360px}
 
-                #mHeader .tab_cont {
-                    display: none;
-                    min-height: 360px;
-                }
-
-                #mHeader .tab_cont.active {
-                    display: block;
-                    background: #fff;
-                    position: absolute;
-                    width: 100%;
-                }
+                #mHeader .tab_cont.active {display: block;background: #fff;position: absolute;
+                    width: 100%}
                 @media screen and (max-width:1079px) {
-                    .slider_item img {
-                        width: 100%;
-                        height: 450px;
-                        object-fit: cover;
-                    }
-                }
-                .showing {
-                    z-index: 9999;
-                    opacity: 1;
-                }
+                    .slider_item img {width: 100%;height: 450px;object-fit: cover}                }
+                .showing {z-index: 9999;opacity: 1}
                 @media screen and (min-width:1080px) {
-                    .sp_wrap {
-                        margin-top: 65px;
-                    }
-
-
+                    .sp_wrap {margin-top: 65px}
                     /* 웹 메인 슬라이더  */
                     /* #slider_main {width: 100%; margin: 0 auto; overflow: hidden;} 
     .slider_main_wrap {
@@ -106,46 +62,19 @@
     .slider_main_wrap img {width: 1080px; height: 370px;} */
                 }
 
-                /* swiper bundle */
-                .swiper-container {
-                    width: 100%;
-                    height: 100%;
-                    z-index: 0;
-                }
+    /* swiper bundle */
+    .swiper-container { width: 100%;height: 100%;z-index: 0}
 
-                .swiper-slide {
-                    text-align: center;
-                    font-size: 18px;
-                    background: #fff;
+    .swiper-slide {text-align: center;font-size: 18px;background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+        -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
+        justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
+        align-items: center}
 
-                    /* Center slide text vertically */
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: -webkit-flex;
-                    display: flex;
-                    -webkit-box-pack: center;
-                    -ms-flex-pack: center;
-                    -webkit-justify-content: center;
-                    justify-content: center;
-                    -webkit-box-align: center;
-                    -ms-flex-align: center;
-                    -webkit-align-items: center;
-                    align-items: center;
-                }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .swiper-pagination {
-        width: 64px; height: 26px; 
-        border-radius: 13px; 
-        background: #fff; 
-        line-height: 26px; 
-        left: 1000px; bottom: 25px;
-      }
+      .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover}
+      .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
+        left: 1000px; bottom: 25px}
       .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
 
 
@@ -165,10 +94,10 @@
                 <main id="content" class="content_main">
                     <div class="swiper-container mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/images/m_img1.jpg" alt="1/7"></div>
-                            <div class="swiper-slide"><img src="/images/m_img2.jpg" alt="2/7"></div>
-                            <div class="swiper-slide"><img src="/images/m_img3.jpg" alt="3/7"></div>
-                            <div class="swiper-slide"><img src="/images/m_img4.jpg" alt="4/7"></div>
+                            <div class="swiper-slide"><a href=""><img src="/images/m_img1.jpg" alt="1/7"></a></div>
+                            <div class="swiper-slide"><a href=""><img src="/images/m_img2.jpg" alt="2/7"></a></div>
+                            <div class="swiper-slide"><a href=""><img src="/images/m_img3.jpg" alt="3/7"></a></div>
+                            <div class="swiper-slide"><a href=""><img src="/images/m_img4.jpg" alt="4/7"></a></div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -244,7 +173,7 @@
                     </div>
                     <!--//catgor_wrap-->
                     <!-- multiple slide -->
-                    <h2 class="mtpSlideTit" style="margin-top: 65px;">오픈특가</h2>
+                    <h2 class="mtpSlideTit">오픈특가</h2>
                     <!-- <div class="multiple_slider_wraper">
                         <ul class="multiple_slides">
                             <li><img src="/images/m_img1.jpg" alt="" style="width: 350px; height: 350px;"></li>
@@ -258,10 +187,10 @@
                         </p>
                     </div> -->
                     <div class="responsive">
-                        <div><img src="/images/m_img1.jpg" alt=""></div>
-                        <div><img src="/images/m_img2.jpg" alt=""></div>
-                        <div><img src="/images/m_img3.jpg" alt=""></div>
-                        <div><img src="/images/m_img4.jpg" alt=""></div>
+                        <div><a href=""><img src="/images/m_img1.jpg" alt=""></a></div>
+                        <div><a href=""><img src="/images/m_img2.jpg" alt=""></a></div>
+                        <div><a href=""><img src="/images/m_img3.jpg" alt=""></a></div>
+                        <div><a href=""><img src="/images/m_img4.jpg" alt=""></a></div>
                     </div>
 
                     <!--//sp_wrap(2월 특가)-->
