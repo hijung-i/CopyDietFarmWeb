@@ -25,7 +25,14 @@ function getOrderDetail() {
     ajaxCallWithLogin(API_SERVER + '/order/getPurchaseOrderDetail', params, 'POST',
     function(data) {
         app.order = data.result;
+        var products = app.order.products;
+        
+        app.order.accumulatePoint = 0;
+        for(var i = 0; i < products.length; i++){
+            app.order.accumulatePoint += products[i].accumulatePoint;
+        }
         console.log(data);
+
     }, function(err) {
         var responseText = err.responseText;
 

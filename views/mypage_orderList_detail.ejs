@@ -244,17 +244,17 @@
                                                                 <tr>
                                                                     <td>
                                                                         <span>총 상품금액</span></td>
-                                                                    <td>80,400원</td>
+                                                                    <td>{{numberFormat(order.paymentTotalAmount)}}원</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <span>쿠폰 할인</span></td>
-                                                                    <td>-3,210원</td>
+                                                                    <td>-{{numberFormat(order.paidCouponAmount)}}원</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <span>포인트 할인</span></td>
-                                                                    <td>0원</td>
+                                                                    <td>{{numberFormat(order.paidPointAmount)}}원</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
@@ -263,7 +263,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>총 결제 금액</td>
-                                                                    <td>77,190원</td>
+                                                                    <td>{{ numberFormat(order.paidRealAmount) }}원</td>
                                                                 </tr>
                                                             </table>
                                                         </div>
@@ -291,7 +291,7 @@
                                                             <tr>
                                                                 <td>
                                                                     <span>구매적립</span></td>
-                                                                <td style="width:75px">888원</td>
+                                                                <td style="width:75px">{{ order.accumulatePoint }} 원</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
@@ -300,7 +300,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>총 적립 금액</td>
-                                                                <td>1188원</td>
+                                                                <td>{{ }}원</td>
                                                             </tr>
                                                         </table>
                                                     </div>

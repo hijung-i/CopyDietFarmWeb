@@ -100,11 +100,13 @@ function generateHtmlForProductList(products, maxSize){
 function generateHtmlForProduct(product){
 
     var html = '<li>';
+	html += '<div class="thum">';
 	html += '<a href="/product/'+ product.productCode +'">';
-	html += '<div class="thum"><img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';
-	html += '<div class="like">'
+	html += '<img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';
+	html += '</a>';
+	html += '<div class="like" onclick="zzimAction()"></div>';
 	html += '</div>';
-	html += '</div>';
+	html += '<a href="/product/'+ product.productCode +'">';
 	html += '<div class="desc">';
 	html += '<p class="title">' +product.productName + '</p>';
 	html += '<ul>';
@@ -115,7 +117,7 @@ function generateHtmlForProduct(product){
 	}
 	html += '</ul>';
 	html += '</div>';
-	html += '<a>';
+	html += '</a>';
 	html += '</li>';
     return html;
 }
@@ -517,7 +519,6 @@ function loginWithKakaoApi() {
 
 function naverCallback(success, paramStr) {
 	if(success) {
-
 		var params = JSON.parse(paramStr);
 		
 		location.href = '/user/result/naver?tokenNaver='+params.tokenNaver+'&userId='+params.userId+'&userCellNo='+params.userCellNo
@@ -526,4 +527,26 @@ function naverCallback(success, paramStr) {
 		alert('네이버 아이디로 로그인에 실패했습니다.')
 		location.href = '/'
 	}
+}
+
+function zzimAction(add, option) {
+	var url = '';
+	var params = {}
+	if(add) {
+		url = API_SERVER + '/order/addZzim';
+		params.productCode = option.produceCode;
+	} else if(!add) {
+		url = API_SERVER + '/order/deleteZzim';
+		params.zzimNo = option.zzimNo;
+	}
+
+	ajaxCallWithLogin(url, params, 'POST',
+	function(data) {
+		console.log('zzimaction', add, params, data);
+	}, function(err) {
+		console.error(err)
+	}, {
+		isRequired: true,
+		userId: true
+	})
 }
