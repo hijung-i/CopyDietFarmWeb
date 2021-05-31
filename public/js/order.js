@@ -1,4 +1,4 @@
-const { request } = require("express");
+const { request } = require("node:http");
 
 var app = new Vue({
     el: 'main',
@@ -78,6 +78,7 @@ var app = new Vue({
                         }
 
                     }
+
                     return remainingPoint;
                 },
                 set: function(x) {
@@ -119,6 +120,7 @@ function getLogin() {
         if(isLoggedIn) {
             getDefaultDeliveryInfo();
             getUsablePointAmount();
+            getUsableCouponList();
         }
         console.log("data", data);
     }, function(err){
@@ -152,7 +154,7 @@ function paymentAction() {
 
     requestOrderDTO.userId = app.orderDTO.userId;
     requestOrderDTO.userName = app.orderDTO.userName;
-    requestOrderDTO.useEmail = app.orderDTO.userEmail;
+    requestOrderDTO.userEmail = app.orderDTO.userEmail;
     requestOrderDTO.userCellNo = app.orderDTO.userCellNo;
 
     if(app.orderDTO.userId == '비회원주문') {
@@ -243,8 +245,10 @@ function paymentAction() {
             custom_font_color: '#ffffff' // [ theme가 custom 일 때 font color 색상 지정 가능 ]
         }
     }
-    
+    requestOrderDTO.products = app.orderDTO.products;
+    requestOrderDTO.paymentTotalAmount = app.orderDTO.paymentTotalAmount;
     console.log(requestOrderDTO, bootpayParams)
+    
 
     BootPay.request(
         bootpayParams
@@ -273,9 +277,12 @@ function paymentAction() {
         //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
         console.log(data);
         
-        
         requestOrderDTO.paymentName = data.payment_name;
         requestOrderDTO.paidRealAmount = data.price;
+        requestOrderDTO.paidCouponAmount = app.orderDTO.paidCouponAmount;
+        requestOrderDTO.paidPointAmount = app.orderDTO.paidPointAmount;
+        requestOrderDTO.accumulatePoint = app.orderDTO.accumulatePoint;
+        
         requestOrderDTO.paymentDate = data.purchased_at;
         requestOrderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
         requestOrderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
@@ -336,7 +343,7 @@ function addOrder(requestOrderDTO) {
         switch(data.message) {
             case 'SUCCESS':
                 alert('상품을 성공적으로 주문했습니다.');
-                location.href="/cart";
+                // location.href="/cart";
                 break;
             case 'NOT_MATCHED':
                 alert('주문 실패, 취소 진행')
@@ -385,4 +392,17 @@ function openZipSearch() {
             console.log(data);
         }
     }).open();
+}
+
+function getUsableCouponList() {
+    
+    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST', 
+    function(data) {
+        console.log("get usableCouponList", data);
+    }, function(err) {
+        console.error("get usable coupon list ", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
 }
