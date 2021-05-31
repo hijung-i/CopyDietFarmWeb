@@ -5,9 +5,9 @@ import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/
 const SERVER_IP = 'localhost'
 // const SERVER_IP = 'data-flow.co.kr'
 
-const SERVER_URL = 'http://' + SERVER_IP + ':9090'
+// const SERVER_URL = 'http://' + SERVER_IP + ':9090'
 // const SERVER_URL = 'http://13.209.123.102:9090'
-// const SERVER_URL = 'http://112.217.209.162:9090'
+const SERVER_URL = 'http://112.217.209.162:9090'
 const CALLBACK_SERVER = 'http://' + SERVER_IP + ':3000'
 
 const KAKAO_SERVER = 'https://kauth.kakao.com'

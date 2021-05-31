@@ -142,8 +142,9 @@ ul, li, p{list-style:none}
     font-size: 12px;
 }
 
-/*친구 추천*/
+
 @media screen and (max-width:1079px){
+/*친구 추천*/
     .myPage01_2 ul li img{width:18px;height:18px;margin-right:13.5px}
     .f_recommd{width:100%;height:330px;background-color:#FFF4E8;text-align:center;margin-bottom:27px;padding-top:21px}
     .f_recommd h3{width:80px;height:24px;margin:0 auto;padding-top:3px;color:#6A3F0B;font-size:14px;font-weight:bolder;background-color:#00000014;border-radius:10px;}
@@ -153,10 +154,95 @@ ul, li, p{list-style:none}
     #btnKakao{width:80%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#000;background-color:#FFEB3B;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
     .f_recommd .buttons{padding-top:27px;display:flex;padding-right:15px;padding-left:15px}
     #btnURL{width:80%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#fff;background-color:#6A6A6A;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-left:11px;}
-    #btnURL img, #btnKakao img{position:relative;right:17px}}
-    
+    #btnURL img, #btnKakao img{position:relative;right:17px}
+/*쿠폰*/
+
+.coupon_list p span{padding-bottom:10px;color:#000000;}
+.coupon_list img{width:38px;height:38px;margin-bottom:7px;margin-top:10px}
+.coupon_list p{color:#878787}
+.coupon_list{padding-left:15px;padding-right:15px}
+.coupon_list ul li{display:flex;margin-bottom:15px}
+.y_coupon .couponBox01{width:70%;border-right:1.5px dashed #F99319!important;border:1.5px solid #F99319;padding-top:13px;padding-left:14px;padding-bottom:13px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.y_coupon h3{color:#F99319;font-size:20px;font-weight:bolder;}
+.y_coupon .couponBox01 .sale{margin-bottom:10px;margin-top:6px}
+.y_coupon .couponBox02{width:30%;border-left:0!important;border:1.5px solid #F99319;background-color:#EFA543;padding-top:18px
+;border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;}
+.y_coupon .couponBox02{text-align:center}
+.y_coupon .couponBox02 .download{color:#fff}
+
+.g_coupon .couponBox01{width:70%;border-right:1.5px dashed #31845B!important;border:1.5px solid #31845B;padding-top:13px;padding-left:14px;padding-bottom:13px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+.g_coupon h3{color:#31845B;font-size:20px;font-weight:bolder;}
+.g_coupon .couponBox01 .sale{margin-bottom:10px;margin-top:6px}
+.g_coupon .couponBox02{width:30%;border-left:0!important;border:1.5px solid #31845B;background-color:#389667;padding-top:18px
+;border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;}
+.g_coupon .couponBox02{text-align:center}
+.g_coupon .couponBox02 .download{color:#fff}
+.couponBtn{margin-left:15px;margin-right:15px;margin-top:6px}
+.couponBtn button{width:100%;height:45px;background-color:#EFA543;text-align:center;border:0;border-radius:5px;color:#fff;}
+.coupon h2{display:none}
+.coupon_web_top, .coupon_table_top{display:none}
+.modal_wrap{
+    display: none;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    background:#eee;
+    z-index: 2;
+}
+.black_bg{
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0,0, 0.5);
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+.modal_close{
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: -30px;
+    right: 0;
+}
+.modal_close> a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background:url(https://img.icons8.com/metro/26/000000/close-window.png);
+    text-indent: -9999px;
+}
+#cBtn{border: 1px solid #BBBBBB;
+    width: 96%;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #fff;
+    height: 45px;
+    border-radius: 5px;}
+}
+
     @media screen and (min-width:1080px){
     #content{width:1080px;margin:0 auto}
+    #cBtn{border: 1px solid #BBBBBB;
+        width:330px;
+        background-color: #fff;
+        height: 45px;
+        border-radius: 5px;}
+    }
+    .modal_wrap{display:none}
     .f_recommd{width:1080px;height:330px;background-color:#FFF4E8;text-align:center;margin-bottom:27px;padding-top:21px}
     .f_recommd h3{width:80px;height:24px;margin:0 auto;padding-top:3px;color:#6A3F0B;font-size:14px;font-weight:bolder;background-color:#00000014;border-radius:10px;}
     .f_recommd h4{margin-top:19px;font-size:14px;color:#F99319;font-weight:bold}
@@ -165,23 +251,30 @@ ul, li, p{list-style:none}
     #btnKakao{width:80%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#000;background-color:#FFEB3B;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
     .buttons{padding-top:27px;}
     #btnURL{width:80%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#fff;background-color:#6A6A6A;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-left:11px;}
-    #btnURL img, #btnKakao img{position:relative;right:17px}}
-
+    #btnURL img, #btnKakao img{position:relative;right:17px}
 /*쿠폰*/
-.coupons_y, .coupons_g{padding-left:15px;padding-right:15px;margin-top:35px}
-.coupons_y h3, .coupons_g h3{font-size:16px;font-weight:bold;margin-bottom:10px}
-.coupons_y ul{border:1.5px solid #EFA543;border-radius:5px;padding-bottom:14px;padding-top:12px;padding-left:14px;}
-.coupons_g ul{border:1.5px solid #31845B;border-radius:5px;padding-bottom:14px;padding-top:12px;padding-left:14px;}
-.coupons_y .title , .coupons_g .title{margin-bottom:10px}
-.coupons_y p span, .coupons_g p span{color:#878787;}
-.download{float:right}
-.download img{position:relative;top:20px;right:14px}
-.download p{position:relative;top:30px;right:22px;color:#EFA543;font-weight:bold}
-.download .y_line{height:111px;border-left:1px solid #EFA543;position:relative;top:-52px;right:50px}
-.download .g_line{height:111px;border-left:1.5px solid #31845B;position:relative;top:-52px;right:50px}
-.btn_area_c{padding-left:15px;padding-right:15px;}
-#btnCoupon{width:100%;height:45px;text-align:center; border:0;cursor: pointer;color:#fff;background-color:#EFA543;font-size:14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-bottom:15px}
-
+.coupon{width:1060px}
+.coupon_web_top input{width:271px;height:45px;border-radius:5px;border:1px solid #BBBBBB}
+.coupon_web_top button{width:91px;height:45px;color:#fff;background-color:#F99319;border:0;border-radius:5px}
+.coupon_web_top{margin-top:-40px;margin-bottom:26px}
+.couponBtn{display:none}
+.coupon_table_top ul{display: flex;
+    justify-content: space-between;
+    padding-left: 54px;
+    padding-right: 54px;
+    border-top: 1px solid #000;
+    padding-top: 17px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 17px;}
+.coupon_list ul{flex-flow:row-reverse}
+.coupon_list .sale{position:absolute;left:150px}
+.coupon_list h3{font-size: 12px !important;font-weight:normal!important;position:absolute;left:600px}
+.coupon_list .range{margin-bottom:20px;margin-top:20px;padding-bottom:20px;border-bottom:1px solid #BBBBBB}
+.coupon_list .condition{position:absolute;left:380px}
+.coupon_list img{width:20px;position:relative;right:60px;top:-54px}
+.coupon_list .couponBox02{position:absolute;left:800px}
+.coupon_list .download{position:relative;top:-75px;right:20px}
+}
 /*상품문의*/
 
 /*이벤트*/
