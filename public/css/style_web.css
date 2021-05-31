@@ -319,7 +319,15 @@ padding: 4px 0;}
 .order_payment ul{display:grid;grid-template-columns: repeat(2, 3fr);
 ;align-items: center;
 justify-self: center;width: 100%;margin: 0 auto;}
-.order_payment ul li{border:1px solid #E6E6E6;padding:5px;border-radius:10px;text-align:center;margin:5px}
+.order_payment ul li{border:1px solid #E6E6E6;border-radius:10px;text-align:center;margin:5px}
+.order_payment ul li.border-orange{
+    border: 1px solid orange;
+}
+.order_payment ul li label {
+    display: block;
+    height: 100%;
+}
+
 .order_confirm{width:100%;margin:auto;padding:20px 15px 15px;}
 .agree ul{float:left;width:100%;display: flex;justify-content: space-between;}
 .order_confirm ul li{font-size:12px;margin-left:5px;color:#6B6B6B;margin-top:10px;margin-bottom:20px;}

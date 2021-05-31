@@ -241,7 +241,7 @@ border-bottom-right-radius: 10px;}
         background-color: #fff;
         height: 45px;
         border-radius: 5px;}
-    }
+    
     .modal_wrap{display:none}
     .f_recommd{width:1080px;height:330px;background-color:#FFF4E8;text-align:center;margin-bottom:27px;padding-top:21px}
     .f_recommd h3{width:80px;height:24px;margin:0 auto;padding-top:3px;color:#6A3F0B;font-size:14px;font-weight:bolder;background-color:#00000014;border-radius:10px;}
@@ -327,11 +327,11 @@ border-bottom-right-radius: 10px;}
 
 /* 모바일 화면 대응 deliverymanage */
 @media screen and (min-width:1080px) {
-section.detail_title, section.delivery_manage_list {display: none;}
-div.del_line_thick{display: none;}
-.delivery_manage_list p img{margin-left:10px;margin-right:10px}
-.delivery_manage_list .edit_remove li {
-font-size: 12px;
-padding: 2px;
-}
+    section.detail_title, section.delivery_manage_list {display: none;}
+    div.del_line_thick{display: none;}
+    .delivery_manage_list p img{margin-left:10px;margin-right:10px}
+    .delivery_manage_list .edit_remove li {
+        font-size: 12px;
+        padding: 2px;
+        }
 }

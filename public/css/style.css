@@ -430,9 +430,26 @@ height:50px;overflow:hidden}
  /*  모바일 depth02 */
  .mDepth01 {height: 500px; overflow: auto;}
  .mDepth01 li {position: relative; background: #fff;}
+
  .gnb_depth02 li {background: #F5F5F5;}
  
- 
+ .sideMenu #tab2 .mDepth01 li{
+   height: 49px;
+   display: flex;
+   justify-content: space-between;
+ }
+.sideMenu #tab2 .mDepth01 li a {
+  padding-top: 19px;
+  padding-left: 15px;
+  padding-bottom: 14px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.sideMenu #tab2 .mDepth01 li .like {
+  
+}
+
 /*서브메뉴 (신상, 베스트 등등)*/
 /*#mobile_sub{position:fixed;height:90px;background-color:#fff}*/
 #content .main_sub_wrap{   
@@ -2420,6 +2437,10 @@ display: flex;
 
 .orange {
   color: #EFA543;
+}
+
+.border-orange{
+  border: 1px solid orange;
 }
 @media screen and (max-width:1079px) {
     .only-pc {

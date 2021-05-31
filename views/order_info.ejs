@@ -353,20 +353,20 @@
 
                 <div class="order_payment" v-if="orderDTO.paidRealAmount != 0">
                     <ul>
-                        <li>
-                            <label><img src="/images/npay_ico_pay.png" style="width:55px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="1"></label>
+                        <li >
+                            <label><img src="/images/npay_ico_pay.png" ><input type="radio" style="display: none;" v-model="paymentNo" @change="selectPayment" value="1"></label>
                         </li>
                         <li>
-                            <label><img src="/images/cash_ico2_pay.png" style="width:62px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="2"></label>
+                            <label><img src="/images/cash_ico2_pay.png" ><input type="radio" style="display: none;" v-model="paymentNo" @change="selectPayment" value="2"></label>
                         </li>
                         <li>
-                            <label><img src="/images/kpay_ico_pay.png" style="width:62px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="3"></label>
+                            <label><img src="/images/kpay_ico_pay.png" ><input type="radio" style="display: none;" v-model="paymentNo" @change="selectPayment" value="3"></label>
                         </li>
                         <li>
-                            <label><img src="/images/card_ico2_pay.png" style="width:62px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="4"></label>
+                            <label><img src="/images/card_ico2_pay.png" ><input type="radio" style="display: none;" v-model="paymentNo" @change="selectPayment" value="4"></label>
                         </li>
                         <li>
-                            <label><img src="/images/phone_ico2_pay.png" style="width:62px;height:22px"><input type="radio" style="display: none;" v-model="paymentNo" value="5"></label>
+                            <label><img src="/images/phone_ico2_pay.png" ><input type="radio" style="display: none;" v-model="paymentNo" @change="selectPayment" value="5"></label>
                         </li>
                     </ul>
 
