@@ -233,7 +233,9 @@ padding-right:15px;float:left;position:relative;top:6px}
 .m_slid_2dep_brand .brand{width:100%; height: 500px; overflow-y: auto}
 /*.brand {height: 500px; overflow: auto;}*/
 .brand{background-color:#fff}
-.brand >ul {height:3000px}
+.brand ul {
+  height: 100%;
+}
 .categ{border-bottom:8px solid #F1F1F1; padding-bottom:20px;}
 .categ > ul {display: flex; padding: 20px 16px 0;}
 .categ .all a{font-weight:bold;color:#31845B}
@@ -2519,6 +2521,31 @@ display: flex;
 .border-orange{
   border: 1px solid orange;
 }
+.favorite-btn{
+  border: none;
+  background-color: #FFFFFF;
+}
+.brand .like{
+  position: relative;
+  padding-top: 19px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 14px;
+  top: 5px;
+  right: 0px;
+}
+
+.brand ul li {
+  border-top: 1px solid #BBBBBB;
+}
+
+.brand ul li:first-child{
+  border-top: none;
+}
+.brand ul li:last-child{
+  padding-right: 15px;
+}
+
 @media screen and (max-width:1079px) {
     .only-pc {
       display: none;

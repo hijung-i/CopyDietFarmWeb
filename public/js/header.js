@@ -221,6 +221,11 @@ $(function(){
     $("ul.tab_wrap #possible").click(function(){
         $("div#tab1").hide();
         $("div#tab2").show();
+        var y = $('.brand').offset().top;
+        var innerHeight = $(window).height();
+        $('.brand ul').css({
+            'max-height': (innerHeight - y) + 'px'
+        });
     });
 
     $("ul.tab_wrap .on").click(function(){
@@ -432,6 +437,18 @@ function getCategory() {
 function getBrandList() {
     ajaxCallWithLogin(API_SERVER + '/product/getBrandList', {}, 'POST',
     function(data) {
+        var html = '';
+        var result = data.result;
+
+        for(var i = 0; i < result.length; i++) {
+            html += '<li>';
+            html += '    <a href="">'+ result[i].brandName +'</a>';
+            html += '    <button class="favorite-btn"><img class="like like-no"></button>';
+            html += '</li>';
+        }
+
+        $('.brand ul').html(html);
+
         console.log(data);
     }, function(err) {
         console.error(err);

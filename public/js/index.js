@@ -33,10 +33,10 @@ function getStandDatas() {
     , function(data){
         
         var result = data.result;
+        console.log(result);
         for(var i = 0; i < result.salesStands.length; i++){
             var products = result.products[i];
             var salesName = result.salesStands[i];
-            
             switch(i){
             case 0:
                 var html = '';

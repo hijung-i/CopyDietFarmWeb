@@ -12,7 +12,8 @@ var app = new Vue({
         orderDTO: {},
         deliveryGroupList: [],
         reviewList: [],
-        questionList: []
+        questionList: [],
+        recmdList: []
     }, methods: {
         numberFormat,
         deleteFromArray,
@@ -378,7 +379,37 @@ function getRecommendedProducts() {
 
     ajaxCallWithLogin(API_SERVER + '/product/getRecmdProducts', params, 'POST',
     function(data) {
+        var result = data.result;
+
+        if(result.length == 0) {
+            getProductList();
+        }
+
+        app.recmdList = result;
+    }, function(err) {
+        console.error(err);
+    }, {
+        isRequired: false,
+        userId: true
+    })
+}
+
+function getProductList() {
+    var params = {
+        category1Code: app.product.category1Code
+    }
+    ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'POST',
+    function(data) {
         console.log(data);
+        app.recmdList = [];
+        var result = data.result
+        for(var i = 0; result.length; i++) {
+            app.recmdList.push(result[i]);
+            if(i > 9) {
+                break;
+            }
+        }
+
     }, function(err) {
         console.error(err);
     }, {
