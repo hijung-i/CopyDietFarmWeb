@@ -5,7 +5,7 @@
 .coupon_code{display:none}
 }
 @media screen and (min-width:1080px){
-/*.contents h2{margin-left:-20px}*/
+.contents h2{margin-left:-20px}
 .coupon-input-wrap{width:271px;height:45px;border:1px solid #BBBBBB;margin-bottom:25px;margin-top:20px;border-radius:5px}
 .coupon-input-wrap input{padding:10px;margin-top:4px;width:251px;border:0;font-size:14px}
 #btnCoupon{width:91px;height:45px;background-color:#F99319;border:0;color:#FFF;position:relative;left:272px;top:-41px;border-radius:5px}
@@ -60,10 +60,12 @@ appearance: none;}
 
 /*마이페이지 공통영역*/
 /*모바일*/
-@media screen and (min-width:360px)  and (max-width:1079px){
+@media screen and (max-width:1079px){
 .main_contents{display:none}
 .page_nation{display:none}
 .order_list_box h3, .order_list_box table{display:none}
+div.dateNo{padding-left:15px}
+div.dateNo p.no{margin-top:7px}
 }
 /*PC*/
 @media screen and (min-width:1080px){
@@ -95,8 +97,13 @@ width: 400px; height: 147px;color: #000; background: #fff;margin: 44px 40px 0 0p
 
 /* contents */
 .main_contents {width:100%;height:218px}
+<<<<<<< HEAD
 .web_contents{width: 1080px; margin:0 auto;display:flex; padding-top: 30px}
 .content_lnb {width:1080px;text-align: center;position:relative;padding-top:30px;margin:0 auto}
+=======
+.web_contents{width: 1080px; margin:0 auto;    display:flex; padding-top: 30px}
+.content_lnb {width:1080px;text-align: center;position:relative;top:30px;margin:0 auto}
+>>>>>>> 4980859133b998350338d68458e1f300a2cb1456
 .content_lnb a {color:#000}
 .content_lnb li {width:138px;padding: 16px 0;    border: 1px solid #F5F5F5;height: 50px}
 .content_lnb li.on {background: #F99319}
@@ -150,8 +157,8 @@ top: 130%; transform: translateY(-130%);text-align: center}
 
 .order_list {display: flex;justify-content: space-between}
 
-.buttons li > button, .buttons li {width: 58px; height: 26px;border-radius: 5px;text-align: center;
-line-height: 26px;margin-bottom: 8px}
+/*.buttons li > button, .buttons li {width: 58px; height: 26px;border-radius: 5px;text-align: center;
+line-height: 26px;margin-bottom: 8px}*/
 .buttons .buy {background: #F99319;color: #fff;font-size: 12px;font-weight: 500;
 font-family: 'Nanum Gothic', sans-serif;}
 .buttons .inquiry {color: rgb(128, 128, 128);border-radius: 5px;font-weight: 500;}
@@ -201,7 +208,7 @@ opacity: 1}
 .detail_title01{overflow:hidden; width:100%;}
 .detail_title01{margin: 0 auto; margin: 16px 0; width:100%;}
 .detail_title01 h2:first-child {text-align: left;}
- .detail_title01 h2{text-align:center; font-weight: 700; font-size:16px; padding: 4px;}
+    .detail_title01 h2{text-align:center; font-weight: 700; font-size:16px; padding: 4px;}
 .detail_title01 .title{width:200px;white-space: nowrap;
 overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title01 a img{position:absolute;top:53px;width:17px}
@@ -263,15 +270,15 @@ header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: poi
 .first_subtitle, .second_subtitle {float: left; width: 85px;margin-right: 40px;
     text-align: left;color: #878787}
 .info_customer_third .third_subtitle_ctn, .info_customer_fourth .fourth_subtitle_ctn {
- display: flex;justify-content: space-between}
+    display: flex;justify-content: space-between}
 ul.result {text-align: right; color: #000;}
 .first_subtitle_cts {text-align: left;}
 .sub_title_cts {text-align: left;}
 .second_subtitle, .third_subtitle, .fourth_subtitle {text-align: left;}
 .first_subtitle_cts, .second_subtitle_cts, .third_subtitle_cts, .fourth_subtitle_cts {
- color: #000;}
+    color: #000;}
 .first_subtitle_ctn, .second_subtitle_ctn, .third_subtitle_ctn, .fourth_subtitle_ctn {
- padding: 8px 0;}
+    padding: 8px 0;}
 .first_subtitle_ctn li, .second_subtitle_ctn li, .third_subtitle_ctn li, .fourth_subtitle_ctn li {
 padding: 4px 0;}
 .third_subtitle, .fourth_subtitle {color: #878787;}
@@ -292,9 +299,14 @@ padding: 4px 0;}
 /*주문하기*/
 @media screen and (min-width:1080px){
 .dateNo .date{margin-left:20px}
+#order_detail .order01 tr.order_q td{padding-top:15px;font-weight:bold;font-size:16px}
 }
 .order{margin-top:20px;width:100%;}
+<<<<<<< HEAD
 .order p{font-size:14px}
+=======
+.order p{font-size:14px;padding-right:15px}
+>>>>>>> 4980859133b998350338d68458e1f300a2cb1456
 .downArrow{position:absolute;right:20px;}
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01 table{width:100%;border-bottom:1px solid #E6E6E6;margin-top:5px;padding:0}
@@ -316,7 +328,15 @@ padding: 4px 0;}
 .order_payment ul{display:grid;grid-template-columns: repeat(2, 3fr);
 ;align-items: center;
 justify-self: center;width: 100%;margin: 0 auto;}
-.order_payment ul li{border:1px solid #E6E6E6;padding:5px;border-radius:10px;text-align:center;margin:5px}
+.order_payment ul li{border:1px solid #E6E6E6;border-radius:10px;text-align:center;margin:5px}
+.order_payment ul li.border-orange{
+    border: 1px solid orange;
+}
+.order_payment ul li label {
+    display: block;
+    height: 100%;
+}
+
 .order_confirm{width:100%;margin:auto;padding:20px 15px 15px;}
 .agree ul{float:left;width:100%;display: flex;justify-content: space-between;}
 .order_confirm ul li{font-size:12px;margin-left:5px;color:#6B6B6B;margin-top:10px;margin-bottom:20px;}
@@ -455,9 +475,9 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .buttons{
     width:100%;margin: 0 auto;
     justify-content: space-between;
-   /* padding: 0 15px 14px 15px;
+    /* padding: 0 15px 14px 15px;
     height: 60px;*/
-  }
+    }
 @media screen and (min-width:1080px){
 .btnConfirm, .btnTracking{width:116px;height:30px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
  color:#000;font-size:12px;background-color:#F1F1F1}
@@ -467,6 +487,12 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .btnConfirm, .btnTracking{width:100%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
 color:#000;font-size:14px;background-color:#F1F1F1;}
 .order_detail_btn:first-child{margin-right:10px}
+    color:#000;font-size:12px;background-color:#F1F1F1;margin-right:10px}
+}
+@media screen and (max-width:1079px){
+div.order_detail_btn ul{display:flex;}
+.btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
+color:#000;font-size:14px;background-color:#F1F1F1;margin-right:10px}
 
 .dateNo{border-bottom:8px solid #F1F1F1}
 .date{margin-bottom:3px;color:#878787;margin-left:20px}
@@ -483,7 +509,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .order_a_box td span{color:#878787}
 .btn_area {margin:20px 15px;}
 #btnReorder{
-     width:100%; height: 45px; 
+        width:100%; height: 45px; 
     line-height: 0px; 
     margin:auto;
     padding: 21px 0 17px;
@@ -518,7 +544,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .order_list_btn{width: 58px; float:right;padding-right: 0;}
 .btnA{width:100%;height:26px;background-color:#EFA543;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:8px;white-space:nowrap;}
 .btnB{width:100%;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:12px;white-space:nowrap;padding:1px}
-.grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;padding:0;}
+.grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;margin-top:20px}
 
 /*주문 내역 없을때*/
 .body_contents > .orderList_none_tit {
@@ -1101,12 +1127,12 @@ delivery_manage_list .customer_info {
     margin:50px 10px 10px 10px;
     width:90%;
 }
- .review_title h2{
-     text-align:center;
-     position:relative;
-     font-weight:700;
-     font-size:16px;
-     margin-right:10px
+    .review_title h2{
+        text-align:center;
+        position:relative;
+        font-weight:700;
+        font-size:16px;
+        margin-right:10px
 }
 .review_title a img{
     position:absolute;
@@ -1358,12 +1384,12 @@ delivery_manage_list .customer_info {
     margin:50px 10px 10px 10px;
     width:90%;
 }
- .review_title h2{
-     text-align:center;
-     position:relative;
-     font-weight:700;
-     font-size:16px;
-     margin-right:10px
+    .review_title h2{
+        text-align:center;
+        position:relative;
+        font-weight:700;
+        font-size:16px;
+        margin-right:10px
 }
 .review_title a img{
     position:absolute;
@@ -1417,7 +1443,7 @@ delivery_manage_list .customer_info {
 .review_line {
     width: 100%; height: 1px;
     margin: 0 auto;
-    background: #E6E6E6;
+    background: #E6E6sE6;
     margin-top: 14px;
 }
 .review_prod {
@@ -1797,39 +1823,39 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .productInquiryBox form{margin-bottom:18px;}
 
 input[type="checkbox"] {
-  display: none;
+    display: none;
 }
 
 .secret{
-  position: relative;margin-left:15px;
+    position: relative;margin-left:15px;
 }
 
 .secret::before {
-  content: "";
-  background: url("../images/aftercheck_icon_join@2x.png");
-  background-position: center;
-  background-size: contain;
-  width: 19px;
-  height: 19px;
-  position: absolute;
-  left: -12px;
-  top: -2px;
-  transform: scale(0) rotateZ(180deg);
-  }
+    content: "";
+    background: url("../images/aftercheck_icon_join@2x.png");
+    background-position: center;
+    background-size: contain;
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    left: -12px;
+    top: -2px;
+    transform: scale(0) rotateZ(180deg);
+    }
 
 input#secret[type="checkbox"]:checked + .secret::before {
-  transform: scale(1) rotateZ(0deg);
+    transform: scale(1) rotateZ(0deg);
 }
 
 .secret::after {
-  content: "";
-  border: 2px solid #EFA543;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  left: -12px;
-  top: -3px;
-  border-radius: 50%;
+    content: "";
+    border: 2px solid #EFA543;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: -12px;
+    top: -3px;
+    border-radius: 50%;
 }
 
 
@@ -1922,11 +1948,11 @@ right: 38px;font-size: 12px;color: red;display: none;}
 
 /* 버튼 */
 
-.btn_area {margin-bottom:20px;margin-top:30px}
+.btn_area {margin-bottom:20px;margin-top:30px;text-align:center}
 
 #btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
 font-weight: 400;border-radius:5px;}
-
+    
 @media screen and (min-width:1080px){
     #btnModify{width:330px;height:45px;border:0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
     font-weight:400;border-radius:5px;margin-top:-10px}

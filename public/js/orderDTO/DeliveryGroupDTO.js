@@ -51,7 +51,6 @@ function DeliveryGroupDTO() {
             if (isSelect) {
                 var boxCount = 1;
 
-                console.log(product);
                 if (product.countPerDelivery != 0 ){
                     boxCount = this.bundleDeliveryCost(product.countPerDelivery);
                 }
