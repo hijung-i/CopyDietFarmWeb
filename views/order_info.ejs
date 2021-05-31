@@ -16,9 +16,49 @@
                     display: none;
                 }
             }
+              /* The Modal (background) */
+        .coupon_modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+    
+        /* Modal Content/Box */
+        .coupon_modal .modal-content {
+            background-color: #fefefe;
+            margin: 45% auto; /* 15% from the top and centered */
+            height:auto;
+            width:80%;
+            
+                               
+        }
+        /* The Close Button */
+        .coupon_modal .modal-content .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            position:absolute;
+            left:370px;
+          
+        }
+        .coupon_modal .modal-content .close:hover,
+        .coupon_modal .modal-content .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         </style>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/style_web.css">
+        <link rel="stylesheet" href="/css/myPage.css">
         <%-include('general/head') %>
         <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
         <script
@@ -153,9 +193,103 @@
             <div class="coup_point">
                 <div class="members">
                     <h3>쿠폰</h3>
-                    <select>
-                        <option>쿠폰을 선택해 주세요</option> 
-                    </select>
+                    <button id="cBtn">쿠폰을 선택해 주세요.</button>
+                    <!--//모달창 시작-->
+                    <div id="c_Modal" class="coupon_modal">
+ 
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                          <span class="close">&times;</span>                                                             <!-- modal window -->
+                           <h2>쿠폰</h2>
+                            <div class="coupon_web_top">
+                                <input type="text" placeholder="쿠폰 코드를 입력해주세요">
+                                <button type="button" class="coupon_enroll">쿠폰 등록</button>
+                            </div>
+                            <div class="coupon_table_top">
+                                <ul>
+                                    <li>날짜</li>
+                                    <li>내용</li>
+                                    <li>최소 사용금액</li>
+                                    <li>할인</li>
+                                    <li>상태</li>
+                                </ul>
+                            </div>
+                                <div class=coupon_list>
+                                    <ul>
+                                        <li class="y_coupon">
+                                            <div class="couponBox01">
+                                                <h3>10% 할인</h3>
+                                                <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
+                                                <p class="condition">1만원 이상 결제 시</p>
+                                                <p class="range">2020-11-11 ~ 2020-12-11</p>
+                                            </div>
+                                            <div class="couponBox02">
+                                                <a href="">
+                                                    <img src="/images/c_icon_coupon@2x.png">
+                                                    <p class="download">다운로드</p>
+                                                  </a>
+                                            </div>
+                                        </li>
+                                        <li class="y_coupon">
+                                            <div class="couponBox01">
+                                                <h3>10% 할인</h3>
+                                                <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
+                                                <p class="condition">1만원 이상 결제 시</p>
+                                                <p class="range">2020-11-11 ~ 2020-12-11</p>
+                                            </div>
+                                            <div class="couponBox02">
+                                                <a href="">
+                                                    <img src="/images/c_icon_coupon@2x.png">
+                                                    <p class="download">다운로드</p>
+                                                  </a>
+                                            </div>
+                                        </li>
+                                        <li class="g_coupon">
+                                            <div class="couponBox01">
+                                                <h3>10% 할인</h3>
+                                                <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
+                                                <p class="condition">1만원 이상 결제 시</p>
+                                                <p class="range">2020-11-11 ~ 2020-12-11</p>
+                                            </div>
+                                            <div class="couponBox02">
+                                                <a href="">
+                                                    <img src="/images/c_icon_coupon@2x.png">
+                                                    <p class="download">다운로드</p>
+                                                  </a>
+                                            </div>
+                                        </li>
+                                        <li class="g_coupon">
+                                            <div class="couponBox01">
+                                                <h3>10% 할인</h3>
+                                                <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
+                                                <p class="condition">1만원 이상 결제 시</p>
+                                                <p class="range">2020-11-11 ~ 2020-12-11</p>
+                                            </div>
+                                            <div class="couponBox02">
+                                              <a href="">
+                                                <img src="/images/c_icon_coupon@2x.png">
+                                                <p class="download">다운로드</p>
+                                              </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="couponBtn">
+                                    <button type="button" id="modal_btn" class="cBtn">쿠폰 등록</button>
+                                </div>
+                                <div class="black_bg"></div>
+                                <div class="modal_wrap">
+                                    <div class="modal_close"><a href="#">close</a></div>
+                                    <div>
+                                        <h2>쿠폰 등록</h2>
+                                        <input tpye="text">
+                                        <button type="button" class="btn_enroll">등록</button>
+                                    </div>
+                                  </div>
+                               </div>
+                   
+                      </div>
+                    <!--//모달창 끝-->
                     <p>사용 가능 쿠폰 0장 / 전체 0장</p>
                     <h3>포인트</h3>
                     <div class="point_order">
@@ -250,6 +384,33 @@
         </main>
 
         <script src="/js/order.js"></script>
+        <script>
+            // Get the modal
+         var modal = document.getElementById('c_Modal');
+  
+         // Get the button that opens the modal
+         var btn = document.getElementById("cBtn");
+  
+         // Get the <span> element that closes the modal
+         var span = document.getElementsByClassName("close")[0];                                          
+  
+         // When the user clicks on the button, open the modal 
+         btn.onclick = function() {
+             modal.style.display = "block";
+         }
+  
+         // When the user clicks on <span> (x), close the modal
+         span.onclick = function() {
+             modal.style.display = "none";
+         }
+  
+         // When the user clicks anywhere outside of the modal, close it
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+     </script>
         <%-include('general/footer') %>
     </body>
 </html>
