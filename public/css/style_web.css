@@ -97,13 +97,8 @@ width: 400px; height: 147px;color: #000; background: #fff;margin: 44px 40px 0 0p
 
 /* contents */
 .main_contents {width:100%;height:218px}
-<<<<<<< HEAD
 .web_contents{width: 1080px; margin:0 auto;display:flex; padding-top: 30px}
 .content_lnb {width:1080px;text-align: center;position:relative;padding-top:30px;margin:0 auto}
-=======
-.web_contents{width: 1080px; margin:0 auto;    display:flex; padding-top: 30px}
-.content_lnb {width:1080px;text-align: center;position:relative;top:30px;margin:0 auto}
->>>>>>> 4980859133b998350338d68458e1f300a2cb1456
 .content_lnb a {color:#000}
 .content_lnb li {width:138px;padding: 16px 0;    border: 1px solid #F5F5F5;height: 50px}
 .content_lnb li.on {background: #F99319}
@@ -302,11 +297,7 @@ padding: 4px 0;}
 #order_detail .order01 tr.order_q td{padding-top:15px;font-weight:bold;font-size:16px}
 }
 .order{margin-top:20px;width:100%;}
-<<<<<<< HEAD
 .order p{font-size:14px}
-=======
-.order p{font-size:14px;padding-right:15px}
->>>>>>> 4980859133b998350338d68458e1f300a2cb1456
 .downArrow{position:absolute;right:20px;}
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01 table{width:100%;border-bottom:1px solid #E6E6E6;margin-top:5px;padding:0}
@@ -471,7 +462,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .orderDetails .orderBox02 li.price {color: #000;}
 .orderDetails .orderBox02 li.quantitiy,
 .orderDetails .orderBox02 li.option {color: #878787;}
-.orderDetails{border-bottom:8px solid #F1F1F1}
+.orderDetails{border-bottom:8px solid #F1F1F1;padding-left:15px;padding-right:15px}
 .buttons{
     width:100%;margin: 0 auto;
     justify-content: space-between;
