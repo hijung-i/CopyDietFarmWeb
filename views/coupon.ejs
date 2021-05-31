@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
+
+        <title>다이어트 Farm</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/myPage.css">
+        <style type="text/css">
+            @media screen and (max-width:1079px) {
+                .web_coupon {
+                    display: none;
+                }
+            }
+            @media screen and (min-width:1080px) {
+                .mobile_coupon{
+                    display: none;
+                }
+            }
+        </style>
+        <%-include('general/head') %>
+        </head>
+
+        <body>
+            <div class="web_coupon">
+                <%-include('general/header') %>
+                </div>
+                <!--//web_invite-->
+                <div class="mobile_coupon">
+                    <section class="detail_title">
+                        <h2>쿠폰</h2>
+                        <script type="text/javascript">
+                            function goBack() {
+                                window
+                                    .history
+                                    .back();
+                            }
+                        </script>
+                        <div class="btnback">
+                            <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
+                        </div>
+                    </section>
+                </div>
+                <main id="content" class="coupon">
+                    <div class=coupon_list>
+                        <ul>
+                            <li>
+                                <div class="couponBox01">
+                                    <h3>10% 할인</h3>
+                                    <p><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
+                                    <p>1만원 이상 결제 시</p>
+                                    <p>2020-11-11 ~ 2020-12-11</p>
+                                </div>
+                                <div class="couponBox02">
+                                    <img src="/images/download_icon_coupon@2x.png">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </main>
+                <%-include('general/footer') %>
+                    <script type="text/javascript" src="/js/header.js"></script>
+                </body>
+            </html>

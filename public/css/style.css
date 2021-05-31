@@ -26,7 +26,7 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
 }
 @media screen and (min-width:1080px){
 .like {width:25px;height:25px;position:relative;top:-51px;left:80%;background: url("/images/beforeheart_icon_main.png") no-repeat;}
-.like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}
+/*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
 .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
 
@@ -358,6 +358,7 @@ height:50px;overflow:hidden}
    .nav_wrap {position: relative; width: 310px; height: 27px;-ms-overflow-style: none;}
    .nav_wrap::-webkit-scrollbar {display:none;}
    #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
+   #nav a:hover{border-bottom:3px solid #F99319;padding-bottom:24px;color: #F99319}
    .top_util, .searchbox, #nav .web_cate{display:none}
    #header_common{position:fixed; min-width:360px;height: 151px; top:0px;background-color:#fff;z-index:9999}
    .body_sub_tit{display:flex;justify-content:space-between;}
@@ -994,7 +995,8 @@ height:400px}
 .body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .thum img{width:184px;height:184px;border-radius:6px}
 .body_bottom .desc ul li{margin-right:20px;float:left;}
-.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}.body_bottom .desc .sale{font-size:16px}
+.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+.body_bottom .desc .sale{font-size:16px;font-weight:bold}
 .body_bottom .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
 .body_bottom .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10px;color:#F32525}
 .body_bottom .side{float:left;}
@@ -1636,12 +1638,12 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 .alarmBox_web label > span{display:none}
 
 /*주문하기*/
-.order{margin-top:20px;width:100%;}s
+.order{margin-top:20px;width:100%;}
 /*.order p{font-size:14px;padding-left:15px;padding-right:15px}*/
 .downArrow{position:absolute;right:20px;}
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01_1{width:100%;border-top:8px solid #E6E6E6}
-.order01 td{font-size:14px;line-height:22px;padding-bottom:10px}
+.order01 td{font-size:14px;line-height:22px;/*padding-bottom:10px*/}
 .orderHistory .order01 td{font-size:14px;line-height:22px}
 .order01 tr.order_q td{cursor:pointer;}
 .order01 tr.faq_a{display:none;}
