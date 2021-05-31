@@ -986,7 +986,7 @@ height:400px}
 .w_best .thum ul{margin-top:-20px}
 .w_best .desc .sale{font-size:16px}
 .w_best .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
-.w_best .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10-px;color:#F32525}
+.w_best .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10px;color:#F32525}
 .w_best h2{margin-bottom:60px}
 .w_best .side{float:left;margin-bottom:77px}
 .w_best .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
@@ -1006,7 +1006,14 @@ height:400px}
 .w_best .title{margin-top:13px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 .body_bottom .desc{padding-bottom:40px;margin-top:-20px}                                                                                         
 .protein, .sweet, .water{margin-top:35px;clear:both}
-.blank_sec ul li{float:left;margin-right:20px;margin-bottom:75px}
+/* 메인화면 웹 썸네일 */
+.blank_sec {width: 100%; min-width: 1080px; height: 520px; display: flex;}
+.blank_sec div.thum {width: 520px; height: 520px; border-radius: 10px; overflow: hidden;}
+.blank_sec li {width: 520px; height: 520px;}
+.blank_sec li:not(:last-child) {margin-right: 40px;}
+.blank_sec img {width: 520px; height: 520px;}
+/* 메인화면 메인슬라이드 썸네일 */
+.swiper-slide div.thum img {width: 1080px; height: 370px;}
 .catgor_wrap{display:none}
 .w_best .thum img{width:184px;height:184px;border-radius:6px}
 

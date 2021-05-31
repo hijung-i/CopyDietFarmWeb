@@ -97,6 +97,10 @@ function generateHtmlForProductList(products, maxSize){
     return html;
 }
 
+function goBack() {
+	window.history.back();
+}
+
 function generateHtmlForProduct(product){
 
     var html = '<li>';

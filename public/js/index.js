@@ -27,7 +27,8 @@ function getStandDatas() {
         isRequired: false,
         userId: true
     };
-
+    
+    
     ajaxCallWithLogin(API_SERVER + "/product/getSalesStands", param, 'post'
     , function(data){
 
@@ -41,8 +42,14 @@ function getStandDatas() {
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
-                    html += '<div class="like">' + listenForLikes() + '</div>';
-                    html += '<div><a href="/product/'+ product.productCode +'"><img src="' + RESOURCE_SERVER + product.url+'"></a></div>';
+
+                    // 메인 슬라이드
+                    $('.main_slider a').html(generateHtmlForProductList(products, 1));
+                    
+                    // 멀티플 슬라이드
+                    $('.responsive a').html(generateHtmlForProductList(products, 1));
+
+                    break;
                 }
                 break;
             case 1:
@@ -58,6 +65,9 @@ function getStandDatas() {
                     html += '</ul>';
                     html += '</a>';
                     html += '</li>';
+                     // 상단 큰 메뉴 두 개
+                $('.blank_sec').html(generateHtmlForProductList(products, 2));
+                break;
                 }
                 break;
             case 2:
