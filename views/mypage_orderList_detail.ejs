@@ -71,10 +71,10 @@
                 </div>
                 <nav class="content_lnb">
                     <ul>
-                        <li>
+                        <li class="on">
                             <a href="/orderlist">주문내역</a>
                         </li>
-                        <li class="on" style="white-space:nowrap">
+                        <li style="white-space:nowrap">
                             <a href="/delivery-management">배송지 관리</a>
                         </li>
                         <li>
@@ -94,12 +94,11 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="contents">
+                <div class="contents" id="order_detail">
                     <div class="order">
                         <div class="orderBox">
                             <div class="order01">
                                 <div class="innerbox">
-
                                     <div class="dateNo">
                                         <p class="date">{{ formatDate(order.paymentDate) }}</p>
                                         <p class="no">{{ order.orderNumber }}</p>
@@ -108,7 +107,7 @@
                                         <div class="orderDetails">
                                             <div class="order_title">
                                                 <p>
-                                                    <span>{{ product.companyName}}<img src="/images/call_icon_order.png" style="width:15px;margin-left:10px;margin-top:2px"></span></p>
+                                                    <span>{{ product.companyName}}<a href=""><img src="/images/call_icon_order.png" style="width:15px;margin-left:10px;margin-top:2px"></a></span></p>
                                                 <ul>
                                                     <li>
                                                         <a href="/s_inquiry">문의하기<img
@@ -118,37 +117,29 @@
                                                 </ul>
                                             </div>
                                             <!--//order_title-->
-                                            <div class="order_datail_btn">
-                                                <ul>
-                                                    <template v-if="product.orderStatus == 'P'" >
-                                                        <li>
+                                            <div class="order_datail_btn" style="display:flex">
+                                                     <template v-if="product.orderStatus == 'P'" >
+                                                        
                                                             <button type="button" class="btnConfirm">취소신청</button>
-                                                        </li>
-                                                        <li>
+                                                    
                                                             <button type="button" class="btnConfirm" onclick="location.href='/s_inquiry'">판매자문의</button>
-                                                        </li>
+                                                      
                                                     </template>
                                                     <template v-if="product.orderStatus == 'X'" >
-                                                        <li>
+                                                       
                                                             <button type="button" class="btnConfirm">취소신청철회</button>
-                                                        </li>
+                                                      
                                                     </template>
                                                     <template v-if="'SDF'.includes(product.orderStatus)">
-                                                        <li>
+                                                        
                                                             <button type="button" class="btnConfirm">구매확정</button>
-                                                        </li>
-                                                        <li>
                                                             <button type="button" class="btnConfirm">배송조회</button>
-                                                        </li>
+                                                      
                                                     </template>
                                                     <template v-if="'AC'.includes(product.orderStatus)">
-                                                        <li>
+                                                
                                                             <button type="button" class="btnConfirm">리뷰작성</button>
-                                                        </li>
-                                                        <li>
                                                             <button type="button" class="btnConfirm">재주문</button>
-                                                        </li>
-                                                        
                                                     </template>
                                                 </ul>
                                             </div>

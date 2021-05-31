@@ -1636,12 +1636,12 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 .alarmBox_web label > span{display:none}
 
 /*주문하기*/
-.order{margin-top:20px;width:100%;}
+.order{margin-top:20px;width:100%;}s
 /*.order p{font-size:14px;padding-left:15px;padding-right:15px}*/
 .downArrow{position:absolute;right:20px;}
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01_1{width:100%;border-top:8px solid #E6E6E6}
-.order01 td{font-size:14px;line-height:22px}
+.order01 td{font-size:14px;line-height:22px;padding-bottom:10px}
 .orderHistory .order01 td{font-size:14px;line-height:22px}
 .order01 tr.order_q td{cursor:pointer;}
 .order01 tr.faq_a{display:none;}
@@ -1732,17 +1732,17 @@ justify-self: center;width: 100%;margin: 0 auto;}
 color:#000;font-size:14px;background-color:#F1F1F1;}
 .dateNo{border-bottom:8px solid #F1F1F1;}
 .date{margin-bottom:3px;color:#878787}
-.no{margin-bottom:14px}
+.no{margin-bottom:14px;margin-top:7px}
 .ship_state{color:#EFA543;font-weight:bold}
-.order_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;margin-bottom:20px;padding-right:15px}
+.order_title {width:100%;display:flex;justify-content: space-between;margin-top:25px;margin-bottom:20px}
 .order_title p span{font-size:14px;font-weight:bold}
-.orderDetails{padding-left:15px;padding-right:15px;}
-.orderBox02{margin-top:19px;padding-top:18px;}
+.orderBox02{margin-top:19px;margin-bottom:25px}
 .order00 li{margin-bottom:5px;}
 .order_a_box td span{color:#878787}
-#btnReorder{width:100%;margin:auto;padding: 21px 0 17px;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
+#btnReorder{width:330px;margin:0 auto;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
 
 /*주문 내역*/
+.order_title ul li{font-size:12px}
 .order_list_btn{margin-top:-10px}
 .order_list_title {width:100%;display:flex;justify-content:space-between;margin-top:20px}
 /*.order_a{border-top:0.5px solid #BBBBBB;margin-bottom:-25px;}*/
@@ -1761,7 +1761,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .order_list_btn{float:right;}
 .btnA{width:58px;height:26px;background-color:#EFA543;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:10px;}
 .btnB{width:58px;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:11px}
-.grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6}
+.grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;padding:0;padding-top:10px}
 
 /*주문 내역 없을때*/
 .order_list_null{width:70%; text-align:center; margin:197px auto;}
@@ -1813,7 +1813,7 @@ div.orderBox02{padding-bottom:10px}
 }
 /*주문하기 웹*/
 @media screen and (min-width:1080px){
-.option{color:#878787;margin-top:-10px;margin-left:4px}
+.order_a_box .option{color:#878787;margin-top:-10px;margin-left:4px}
 .order_a_box{border-bottom:none}
 #my_point{padding-left:10px;width:305px;margin-left:10px}
 .delivery_memo{display:none}
@@ -2037,7 +2037,7 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
 .filebox p span{text-decoration:underline
 }
-
+#order_detail .order_a_box{margin-top:14px;padding: 0 !important;}
 /*문의하기(상품문의)*/
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
 .productInquiryBox h3{font-size:14px;font-weight:bold;margin-bottom:16px}
