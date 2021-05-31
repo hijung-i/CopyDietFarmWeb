@@ -1,45 +1,45 @@
 
 function getEventStands() {
-	var currentStandCode = $('#currentStandCode').val();
+   var currentStandCode = $('#currentStandCode').val();
     var param = {}
     ajaxCall(API_SERVER + "/product/getEventStands", param, 'post'
     , function(data) {
 
-		$("#header_common #nav").html('');
-		var html = '';
-		html += '<a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';		
-		console.log(data);
-		for(var i = 0; i < data.result.length; i++){
+      $("#header_common #nav").html('');
+      var html = '';
+      html += '<a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';      
+      console.log(data);
+      for(var i = 0; i < data.result.length; i++){
 
-			// TODO: 화면 너비가 pc버전일때 break;
-			if(i == 4) break;
+         // TODO: 화면 너비가 pc버전일때 break;
+         if(i == 4) break;
 
-			var stand = data.result[i];
-			if(i == 0){
-				html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'>홈</a>';
-			}
-			console.log(currentStandCode, stand.salesStandCode);
-			if( currentStandCode == stand.salesStandCode){
-				$('#heade_common #nav a').removeClass("is-current");
-				html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
-			} else {
-				html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
-			}
-		}
+         var stand = data.result[i];
+         if(i == 0){
+            html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'>홈</a>';
+         }
+         console.log(currentStandCode, stand.salesStandCode);
+         if( currentStandCode == stand.salesStandCode){
+            $('#heade_common #nav a').removeClass("is-current");
+            html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
+         } else {
+            html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
+         }
+      }
 
-		html += '<div class="nav-underline"></div>';
-		console.log(html);
-		$('#header_common #nav').html(html);
+      html += '<div class="nav-underline"></div>';
+      console.log(html);
+      $('#header_common #nav').html(html);
 
         // web size side menu set
-		$('.web_cate').click(function() {
+      $('.web_cate').click(function() {
             var isActive = $('.web_cate').hasClass("active");
             if( isActive ){
                 sideTabClose();
             } else {
                 sideTabOpen();
             }
-		});
+      });
 
     }, function(err) {
         sideTabClose();

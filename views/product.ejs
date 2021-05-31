@@ -186,6 +186,7 @@
                 <!--//모바일 헤더 끝-->
 
                 <!-- contents-wrap // -->
+                <input type="hidden" id="productCode" value="<%=productCode %>">
                 <main id="content">
                     <div class="product_top">
                         <div class="tabMenu">
@@ -210,7 +211,6 @@
                             </div>
                         </div>
                         <div class="contents other_cont active">
-                            <input type="hidden" id="productCode" value="<%=productCode %>">
                             <div id="tab1_mobile">
                                 <div class="view_wrap">
                                     <!-- 상품navi -->
@@ -303,11 +303,17 @@
                                                 <tr>
                                                     <th scope="row"></th>
                                                     <td>
-                                                        <select name="products" id="products" style="border-color:#BBBBBB">
-                                                            <option value="-1" selected="selected">선택</option>
-                                                            <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
-
-                                                        </select>
+                                                        <template v-if="product.options.length > 1">
+                                                            <select name="products" id="products" onchange="onOptionSelected(this)" style="border-color:#BBBBBB">
+                                                                <option value="-1" selected="selected">선택</option>
+                                                                <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
+                                                            </select>
+                                                        </template>
+                                                        <template v-if="product.options.length == 1">
+                                                            <select name="products" id="product" style="border-color:#BBBBBB" readonly="readonly">
+                                                                <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
+                                                            </select>
+                                                        </template>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -318,7 +324,7 @@
                                                         <div class="product_title">
                                                             <h4>{{ item.optionDesc }}
                                                                 <h4>
-                                                                    <ul>
+                                                                    <ul v-if="product.options.length > 1">
                                                                         <li><img
                                                                             src="/images/x_icon_login.png"
                                                                             v-on:click="deleteFromArray(index)"
@@ -354,8 +360,10 @@
                                                     </div>
                                                     <div class="common_btn_wrap">
                                                         <div class="option_btns">
-                                                            <button type="button" class="h_btn">
-                                                                <img src="/images/heart_icon_menu.png"></button>
+                                                            <button type="button" class="h_btn" v-on:click="zzimProduct()">
+                                                                <img v-if="product.zzimYn == 'Y'" class="like like-yes">
+                                                                <img v-if="product.zzimYn == 'N'" class="like like-no">
+                                                            </button>
                                                             <button type="button" class="c_btn">장바구니</button>
                                                             <button type="button" class="p_btn" v-on:click="onSubmit()">구매하기</button>
                                                         </div>
@@ -442,7 +450,7 @@
                                 <tr>
                                     <th scope="row"></th>
                                     <td>
-                                        <select name="products" id="products" style="border-color:#BBBBBB">
+                                        <select name="products" id="products" onchange="onOptionSelected(this)" style="border-color:#BBBBBB">
                                             <option value="-1" selected="selected">선택</option>
                                             <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
 
@@ -487,8 +495,10 @@
                                     <div class="v_opt_btn_w">
                                         <div class="line_w"></div>
                                         <div class="total_price">
-                                            <button type="button" class="h_btn"><img src="/images/heart_icon_menu.png"></button>
-
+                                            <button type="button" class="h_btn" v-on:click="zzimProduct()">
+                                                <img v-if="product.zzimYn == 'Y'" class="like like-yes">
+                                                <img v-if="product.zzimYn == 'N'" class="like like-no">
+                                            </button>
                                             <div>
                                                 <p class="left">총 금액</p> <span class="price">{{ numberFormat(optionTotalPrice) }}<span>원</span></span>
                                             </div>

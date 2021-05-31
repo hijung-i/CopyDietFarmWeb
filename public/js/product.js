@@ -356,19 +356,19 @@ function zzimProduct() {
     }
 
     ajaxCallWithLogin(url, params, 'POST',
-	function(data) {
+   function(data) {
         if(app.product.zzimYn == 'Y') {
             app.product.zzimYn = 'N';
         } else if ( app.product.zzimYn == 'N') {
             app.product.zzimYn = 'Y';
         }
-		console.log('zzimaction', params, data);
-	}, function(err) {
-		console.error(err)
-	}, {
-		isRequired: true,
-		userId: true
-	})
+      console.log('zzimaction', params, data);
+   }, function(err) {
+      console.error(err)
+   }, {
+      isRequired: true,
+      userId: true
+   })
 }
 
 function getRecommendedProducts() {
