@@ -104,7 +104,16 @@ function generateHtmlForProduct(product){
 	html += '<a href="/product/'+ product.productCode +'">';
 	html += '<img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';
 	html += '</a>';
-	html += '<div class="like" onclick="zzimAction()"></div>';
+	html += '<input type="hidden" name="productNo" value="'+ product.productNo +'">';
+	html += '<input type="hidden" name="productCode" value="'+ product.productCode +'">';
+	html += '<input type="hidden" name="zzimYn" value="'+ product.zzimYn +'">';
+
+	if(product.zzimYn == 'Y') {
+		html += '<div class="like like-yes" onclick="zzimAction(this)"></div>';
+	}
+	else if(product.zzimYn == 'N') {
+		html += '<div class="like like-no" onclick="zzimAction(this)"></div>';
+	}
 	html += '</div>';
 	html += '<a href="/product/'+ product.productCode +'">';
 	html += '<div class="desc">';
@@ -529,20 +538,37 @@ function naverCallback(success, paramStr) {
 	}
 }
 
-function zzimAction(add, option) {
+function zzimAction(button) {
 	var url = '';
 	var params = {}
-	if(add) {
+	
+	var zzim = $(button).parent();
+
+	var zzimYn = $(zzim).find('input[name=zzimYn]').val();
+	var productNo = $(zzim).find('input[name=productNo]').val();
+	var productCode = $(zzim).find('input[name=productCode]').val();
+
+	console.log(zzimYn);
+	var params = {
+		productNo,
+		productCode
+	}
+	
+	if(zzimYn == 'N') {
 		url = API_SERVER + '/order/addZzim';
-		params.productCode = option.produceCode;
-	} else if(!add) {
+		$(zzim).find('input[name=zzimYn]').val('Y');
+		$(zzim).find('div.like').removeClass('like-no');
+		$(zzim).find('div.like').addClass('like-yes');
+	} else if(zzimYn == 'Y') {
 		url = API_SERVER + '/order/deleteZzim';
-		params.zzimNo = option.zzimNo;
+		$(zzim).find('input[name=zzimYn]').val('N');
+		$(zzim).find('div.like').removeClass('like-yes');
+		$(zzim).find('div.like').addClass('like-no');
 	}
 
 	ajaxCallWithLogin(url, params, 'POST',
 	function(data) {
-		console.log('zzimaction', add, params, data);
+		console.log('zzimaction', params, data);
 	}, function(err) {
 		console.error(err)
 	}, {
