@@ -502,7 +502,8 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 /*주문 내역*/
 .orderHistory{width:100%;margin-bottom:10px;padding-left:15px;padding-right:15px}
 .order_list_title {width:100%;display:flex;justify-content:space-between;margin-top:20px}
-.order_a{margin-bottom:-25px;}
+.order_a{margin-bottom:-25px}
+.orderBox tr {padding-top:10px}
 .order_a .order_add{font-size:14px;font-weight:bold}
 .order_a ul li{float:left}
 .orderDetail{padding-top:10px;}

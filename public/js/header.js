@@ -298,6 +298,7 @@ $(function(){
 });
 
 /* 롤링 배너 */
+<<<<<<< HEAD
    window.onload = function() {
             var bannerLeft=0;
             var first=1;
@@ -334,6 +335,23 @@ $(function(){
                         if(first > imgCnt) { first=1; }
                     }
                 }, 40);        
+=======
+//client rolling banner
+window.onload = function() {
+    var bannerLeft=0;
+    var first=1;
+    var last;
+    var imgCnt=0;
+    var $img = $(".main_banner img");
+    var $first;
+    var $last;
+
+    $img.each(function(){   // 1px 간격으로 배너 처음 위치 시킴
+        $(this).css("left",bannerLeft);
+        bannerLeft += $(this).width()+0;
+        $(this).attr("id", "banner"+(++imgCnt));  // img에 id 속성 추가
+    });
+>>>>>>> 75292383a22482394da1b39b108ddc9451507c40
 
     if( imgCnt > 1){                //배너 9개 이상이면 이동시킴
         last = imgCnt;

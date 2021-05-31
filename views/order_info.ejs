@@ -110,12 +110,12 @@
                 </h3>
                 <div
                     class="members"
-                    v-if="orderDTO.userId != '비회` 원주문' && orderDTO.delivery != undefined">
+                    v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
                     <span class="addr" style="margin-bottom:13px">{{ orderDTO.delivery.address }}</span><br>
                     <span class="name" style="margin-right:18px">{{ orderDTO.delivery.userName }}</span>
                     <span class="num">{{ orderDTO.delivery.userCellNo }}</span>
                 </div>
-                <div class="non_members" v-if="orderDTO.userId == '비회원주문'">
+                <div class="non_members" v-if="orderDTO.userId == '비회원주문' && orderDTO.delivery == undefined">
                     <p><img src="images/beforecheck_icon_join.png">주문자 정보와 동일</p>
                     <h4>이름</h4>
                     <input type="text" id="unReceiverName" placeholder="이름을 입력해주세요">
@@ -154,12 +154,12 @@
                 <div class="members">
                     <h3>쿠폰</h3>
                     <select>
-                        <option>쿠폰을 선택해 주세요</option>
+                        <option>쿠폰을 선택해 주세요</option> 
                     </select>
                     <p>사용 가능 쿠폰 0장 / 전체 0장</p>
                     <h3>포인트</h3>
                     <div class="point_order">
-                        <input v-model.number="orderDTO.paidPointAmount" min="0" value="0">
+                        <input type="number" v-model.number="orderDTO.paidPointAmount" v-on:keyup="pointChange()" v-on:focusout="pointChange()" min="0" value="0">
                         <button type="button" id="btnUse" v-on:click="useAllPoint()">모두 사용</button>
                     </div>
                     <p>사용 가능 포인트

@@ -1,3 +1,5 @@
+const { request } = require("express");
+
 var app = new Vue({
     el: 'main',
     data: {
@@ -26,7 +28,6 @@ var app = new Vue({
             $('#deliveryDesc').val(value);
         },
         useAllPoint: function() {
-
             if(this.usablePoint <= ( this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost)) {
                 this.orderDTO.paidPointAmount = this.usablePoint;
                 this.remainingPoint = 0;
@@ -34,16 +35,29 @@ var app = new Vue({
                 this.orderDTO.paidPointAmount = ( this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost);
             }
 
+        },
+        pointChange: function() {
+            var pointStr = new String(this.orderDTO.paidPointAmount).replace(/^[0~9]/gi, '');
+            this.orderDTO.paidPointAmount = parseInt((pointStr == "")?'0':pointStr);
+            
         }
     },
     computed: {
         remainingPoint: {
                 get: function() {
+                    var totalAmount = this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost - this.orderDTO.paidCouponAmount
+
                     var remainingPoint = this.usablePoint - this.orderDTO.paidPointAmount;
-                    if(remainingPoint < 0) {
+                    console.log(totalAmount, this.orderDTO.paidPointAmount)
+                    if (totalAmount < this.orderDTO.paidPointAmount) {
+                        console.log("greater than")
+                        this.orderDTO.paidPointAmount = ( this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost);
+                        remainingPoint = this.usablePoint - this.orderDTO.paidPointAmount;
+                    } else if(remainingPoint < 0) {
                         this.orderDTO.paidPointAmount = this.usablePoint;
                         remainingPoint = 0;
                     }
+                    
                     
                     this.orderDTO.paidRealAmount = this.orderDTO.paymentTotalAmount - this.orderDTO.paidCouponAmount - this.orderDTO.paidPointAmount + this.orderDTO.totalDeliveryCost;
                     this.orderDTO.accumulatePoint = 0;
@@ -128,11 +142,10 @@ function getUsablePointAmount() {
     })
 }
 
-function paymentAction() {
+function paymentAction() {   
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
     var methods = ['npay', 'vbank', 'kakao', 'card', 'phone'];
     var method = methods[app.paymentNo -1];
-
     var requestOrderDTO = {};
 
     requestOrderDTO.paymentNo = app.paymentNo;
