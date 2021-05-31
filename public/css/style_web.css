@@ -60,10 +60,12 @@ appearance: none;}
 
 /*마이페이지 공통영역*/
 /*모바일*/
-@media screen and (min-width:360px)  and (max-width:1079px){
+@media screen and (max-width:1079px){
 .main_contents{display:none}
 .page_nation{display:none}
 .order_list_box h3, .order_list_box table{display:none}
+div.dateNo{padding-left:15px}
+div.dateNo p.no{margin-top:7px}
 }
 /*PC*/
 @media screen and (min-width:1080px){
@@ -150,8 +152,8 @@ top: 130%; transform: translateY(-130%);text-align: center}
 
 .order_list {display: flex;justify-content: space-between}
 
-.buttons li > button, .buttons li {width: 58px; height: 26px;border-radius: 5px;text-align: center;
-line-height: 26px;margin-bottom: 8px}
+/*.buttons li > button, .buttons li {width: 58px; height: 26px;border-radius: 5px;text-align: center;
+line-height: 26px;margin-bottom: 8px}*/
 .buttons .buy {background: #F99319;color: #fff;font-size: 12px;font-weight: 500;
 font-family: 'Nanum Gothic', sans-serif;}
 .buttons .inquiry {color: rgb(128, 128, 128);border-radius: 5px;font-weight: 500;}
@@ -294,7 +296,7 @@ padding: 4px 0;}
 .dateNo .date{margin-left:20px}
 }
 .order{margin-top:20px;width:100%;}
-.order p{font-size:14px;padding-left:15px;padding-right:15px}
+.order p{font-size:14px;padding-right:15px}
 .downArrow{position:absolute;right:20px;}
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01 table{width:100%;border-bottom:1px solid #E6E6E6;margin-top:5px;padding:0}
@@ -515,7 +517,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .order_list_btn{width: 58px; float:right;padding-right: 0;}
 .btnA{width:100%;height:26px;background-color:#EFA543;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:8px;white-space:nowrap;}
 .btnB{width:100%;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:12px;white-space:nowrap;padding:1px}
-.grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;padding:0;}
+.grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;margin-top:20px}
 
 /*주문 내역 없을때*/
 .body_contents > .orderList_none_tit {
