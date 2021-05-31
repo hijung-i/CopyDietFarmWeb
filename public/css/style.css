@@ -720,27 +720,10 @@ height:400px}
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
   #content .desc .ratio{color:#F32525}
   .page_wrap{display:none}
-  #footer{ position: relative; bottom: 0; width: 100%; min-width: 360px; height: 547px; border-top: 8px solid #f4f4f4; margin-top: 10px;
+  #footer{ position: relative; bottom: 0; width: 100%; min-width: 360px; border-top: 8px solid #f4f4f4; margin-top: 10px;
   }
-  .footer_top {position: absolute; top: 234px; padding-top: 25px;}
-  .footer_top > ul {display: flex;}
-  .footer_top li {padding-right:10px;}
-  .footer_top li > a {color: #878787;  font-weight: 700;}
-  .footer_ctt_wrapper, .footer_top_wrapper {padding: 25px 26px 0;}
-  .dietFarm_info {position: absolute; top: 279px;}
-  .mobileCtn_wrap {position: absolute; top: 6px; display: flex; justify-content: space-between; text-align: center; color: #6B6B6B;}
-  .accountNumver_notice{padding-right: 8px;}
-  .accountNumver_notice .notice {font-size: 12px; font-weight: 700; color: #6B6B6B; padding: 30px 0 15px;}
-  .footer_ctt_tit > h3 {font-size: 12px; padding-bottom: 15px;}
-  .import_txt {font-size: 15px; font-weight: 700; padding-bottom: 15px;}
-  .padding10, .padding12 {font-size: 12px; font-weight: 700; color: #878787;}
-  .mobileNone {display: none;}
-  .customer_center > ul button {width: 144px; height: 27px; font-size: 10px;}
-  .mobile_footer_bottom_ctn {width: 100%; height: 301px; position: relative; bottom: -246px; background: #f4f4f4; z-index: 0; float: left;}
-  .dietFarm_info .data_flow_comp >span {font-weight: 700; padding-right: 14px; color: #000;}
-  .dietFarm_info li {color: #6B6B6B; padding-bottom: 6px;}
-  .data_flow_comp {padding-top: 15px;}
-  .dietFarm_info li > span {color: #EFA543;}
+
+
  
   /*장바구니 후 결제하기*/
   .btnback img{width:17px;position:relative;top:-18px;left:5px}
@@ -866,23 +849,7 @@ height:400px}
  .etc{position:relative;left:240px;top:-80px}
   /* footer web */
   #footer {width:100%;min-width:1080px;}
-  .footer_top {width: 1080px; margin: 0 auto; line-height: 47px;}
-  .footer_top li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
-  .footer_top li.sortationBar > img {vertical-align: middle; padding: 0 10px;}
-  .footer_top > ul {display: flex;}
-  .footer_ctt_wrapper {width: 100%; height: 269px; background: #f4f4f4;}
-  .footer_ctt {width: 1080px; margin: 0 auto; display: flex;}
-  .footer_ctt div {padding: 25px 50px 0 0;}
-  .footer_ctt div li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; color: #878787;}
-  .footer_ctt div li.padding10 {padding-bottom: 10px;}
-  .footer_ctt div li.padding12 {padding-bottom: 12px;}
-  .footer_ctt div li.import_txt {color: #000; font-size: 14px; font-weight: 700; padding-bottom: 12px;}
-  .footer_ctt div li span {color: #F99319;}
-  .footer_ctt .mobileCtn_wrap {display: flex;left:100px}
   li.topSpace {padding-top: 15px;}
-  .accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
-  .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
-  li.footer_ctt_tit > h3 {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; color: #6B6B6B;}
   .sideMenu .mDepth01 dd {position: absolute; left: 168px;}
   .shadow {display: none;}
 
@@ -985,7 +952,7 @@ height:400px}
 .w_best .thum ul{margin-top:-20px}
 .w_best .desc .sale{font-size:16px}
 .w_best .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
-.w_best .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10px;color:#F32525}
+.w_best .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10-px;color:#F32525}
 .w_best h2{margin-bottom:60px}
 .w_best .side{float:left;margin-bottom:77px}
 .w_best .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
@@ -1004,14 +971,7 @@ height:400px}
 .w_best .title{margin-top:13px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 .body_bottom .desc{padding-bottom:40px;margin-top:-20px}                                                                                         
 .protein, .sweet, .water{margin-top:35px;clear:both}
-/* 메인화면 웹 썸네일 */
-.blank_sec {width: 100%; min-width: 1080px; height: 520px; display: flex;}
-.blank_sec div.thum {width: 520px; height: 520px; border-radius: 10px; overflow: hidden;}
-.blank_sec li {width: 520px; height: 520px;}
-.blank_sec li:not(:last-child) {margin-right: 40px;}
-.blank_sec img {width: 520px; height: 520px;}
-/* 메인화면 메인슬라이드 썸네일 */
-.swiper-slide div.thum img {width: 1080px; height: 370px;}
+.blank_sec ul li{float:left;margin-right:20px;margin-bottom:75px}
 .catgor_wrap{display:none}
 .w_best .thum img{width:184px;height:184px;border-radius:6px}
 
@@ -1376,29 +1336,6 @@ div.slideMenu_top {display: none}
 .sideMenu h2{padding:15px 10px;text-align:left;position:relative;
 height:50px;overflow:hidden}
         
-
-
-
-
-
-/* 푸터 */
-.footer_top_wrapper {width: 100%; height: 47px; border-top: 1px solid #f5f5f5;}
-.footer_top {width: 1080px; margin: 0 auto;}
-.footer_top li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
-.footer_top li.sortationBar > img {vertical-align: middle; padding: 0 10px;}
-.footer_top > ul {display: flex;}
-.footer_ctt_wrapper {width: 100%; height: 269px;}
-.footer_ctt {width: 1080px; margin: 0 auto; display: flex;}
-.footer_ctt div li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; color: #878787;}
-.footer_ctt div li.padding10 {padding-bottom: 10px;}
-.footer_ctt div li.padding12 {padding-bottom: 12px;}
-.footer_ctt div li.import_txt {color: #000; font-size: 14px; font-weight: 700; padding-bottom: 12px;}
-.footer_ctt div li span {color: #F99319;}
-li.topSpace {padding-top: 15px;}
-.accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
-.customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
-li.footer_ctt_tit > h3 {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; color: #6B6B6B;}
-
 /*찜한 메뉴*/
 #content{width:100%;max-width:1080px;margin:0 auto;}
 #content .pick_wrap{width:1080px;}
@@ -1530,19 +1467,20 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  .idSearchComp .id_info{margin-top:32px}
  .idSearchComp .id_info li{float:left;}
  
- .idSearchComp .buttons{width:95%;margin: 0 auto;justify-content: space-between;}
+ .buttons{width:95%;margin: 0 auto;display: flex;justify-content: space-between;}
  .btnidSearch, .btnpwdSearch{width: 48%;height:45px;text-align:center; border:1px solid #F99319;display:inline-block;border-radius:5px;
  color:#F99319;font-size:14px;font-weight:bold;background-color:#FFF}
  .btnSignup{width:48%;height:45px;text-align:center;border:0;display:inline-block;
  background-color:#F99319;border-radius:5px;
  color:#fff;font-size:14px;font-weight:bold}
  
+ /* 회원가입_웹 */
  .id_place .box{float:left;}
  .id_place .btn_wrap{float:right;position:relative;left:85px;top:-50px}
  .btn_wrap button{width:83px;height:49px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
  .terms_web li img{width:7px}
  
- .buttons ul{display:flex}
+ 
  /* 입력폼(배송지 등록, - ) */
  input:focus {outline: none;}
  .box {display: block;width:440px;height: 51px;
@@ -1643,12 +1581,12 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 .alarmBox_web label > span{display:none}
 
 /*주문하기*/
-.order{margin-top:20px;width:100%;}s
+.order{margin-top:20px;width:100%;}
 /*.order p{font-size:14px;padding-left:15px;padding-right:15px}*/
 .downArrow{position:absolute;right:20px;}
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01_1{width:100%;border-top:8px solid #E6E6E6}
-.order01 td{font-size:14px;line-height:22px;padding-bottom:10px}
+.order01 td{font-size:14px;line-height:22px}
 .orderHistory .order01 td{font-size:14px;line-height:22px}
 .order01 tr.order_q td{cursor:pointer;}
 .order01 tr.faq_a{display:none;}
@@ -1739,17 +1677,17 @@ justify-self: center;width: 100%;margin: 0 auto;}
 color:#000;font-size:14px;background-color:#F1F1F1;}
 .dateNo{border-bottom:8px solid #F1F1F1;}
 .date{margin-bottom:3px;color:#878787}
-.no{margin-bottom:14px;margin-top:7px}
+.no{margin-bottom:14px}
 .ship_state{color:#EFA543;font-weight:bold}
-.order_title {width:100%;display:flex;justify-content: space-between;margin-top:25px;margin-bottom:20px}
+.order_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;margin-bottom:20px;padding-right:15px;padding-left: 15px;}
 .order_title p span{font-size:14px;font-weight:bold}
-.orderBox02{margin-top:19px;margin-bottom:25px}
+.orderDetails{padding-left:15px;padding-right:15px;}
+.orderBox02{margin-top:19px;padding-top:18px;}
 .order00 li{margin-bottom:5px;}
 .order_a_box td span{color:#878787}
-#btnReorder{width:330px;margin:0 auto;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
+#btnReorder{width:100%;margin:auto;padding: 21px 0 17px;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
 
 /*주문 내역*/
-.order_title ul li{font-size:12px}
 .order_list_btn{margin-top:-10px}
 .order_list_title {width:100%;display:flex;justify-content:space-between;margin-top:20px}
 /*.order_a{border-top:0.5px solid #BBBBBB;margin-bottom:-25px;}*/
@@ -1768,7 +1706,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 .order_list_btn{float:right;}
 .btnA{width:58px;height:26px;background-color:#EFA543;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:10px;}
 .btnB{width:58px;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:11px}
-.grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;padding:0;padding-top:10px}
+.grayLine{width:100%;margin-top:-10px;margin-bottom:10px;border-top:8px solid #E6E6E6;padding:0;}
 
 /*주문 내역 없을때*/
 .order_list_null{width:70%; text-align:center; margin:197px auto;}
@@ -1809,18 +1747,17 @@ a.button.modal-open{float:right;position:relative;right:20px;top:-20px}
 .coupon_wrap select{width:100%;height:45px;border-radius:5px;border-color:#BBBBBB}
 .coupon_section{border-bottom:8px solid #f1f1f1}
 .final_price p{font-size:16px;font-weight:bold;border-bottom:1px solid #BBBBBB;padding-bottom:20px}
-.total_price{border-top:0.5px solid #BBBBBB}
-.final_price_web{border-bottom:8px solid#f1f1f1}
+ .total_price{border-top:0.5px solid #BBBBBB}
+ .final_price_web{border-bottom:8px solid#f1f1f1}
 .payment_method{padding-top:24px}
 .payment_method p{font-size:16px;font-weight:bold}
-.agree{display:none}
-.order_confirm p{margin-top:11px;margin-bottom:25px;margin-left:25px;margin-right:45px}
-.order_confirm .option{color:#878787;margin-top:-10px;margin-left:15px}
-div.orderBox02{padding-bottom:10px}
+    .agree{display:none}
+    .order_confirm p{margin-top:11px;margin-bottom:25px;margin-left:25px;margin-right:45px}
+    .option{color:#878787;margin-top:-10px;margin-left:15px}
 }
 /*주문하기 웹*/
 @media screen and (min-width:1080px){
-.order_a_box .option{color:#878787;margin-top:-10px;margin-left:4px}
+  .option{color:#878787;margin-top:-10px;margin-left:4px}
 .order_a_box{border-bottom:none}
 #my_point{padding-left:10px;width:305px;margin-left:10px}
 .delivery_memo{display:none}
@@ -2044,7 +1981,7 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
 .filebox p span{text-decoration:underline
 }
-#order_detail .order_a_box{margin-top:14px;padding: 0 !important;}
+
 /*문의하기(상품문의)*/
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
 .productInquiryBox h3{font-size:14px;font-weight:bold;margin-bottom:16px}
@@ -2144,14 +2081,11 @@ justify-content: space-evenly}
 .inquiry_top ul{float:left;display:flex; justify-content:space-between;}
 /*.order_a{border-bottom:1px solid #E6E6E6}*/
 .order001 li{width:100%;white-space:nowrap}
-.order_a_box{padding: 0px 15px;}
-.order_a_box td:first-child{
-  min-width: 78px;
-}
+.order_a_box{margin-top:14px;padding-left:15px}
 .order_a_box a img {margin-bottom:18px;width:50px;height:90px;margin-right:20px}
-
 .title p img{margin-bottom:18px;width:50px;height:90px;margin-right:20px;margin-top:10px}
-
+.order_a_box ul{padding-top:13px}
+.order_a_box ul li{margin-bottom:5px}
 .tab_cont{min-height:360px;}
 .tab_cont.active{display:block !important;}
 
@@ -2303,3 +2237,231 @@ display: flex;
 .search_line {width: 90%; height: 0.5px;background: BBBBB;margin: 0 auto;margin-top: 14px}
 .result-area{position: relative;}
 .search_result{background-color: #FFFFFF;position: absolute;z-index: 9999}
+
+.footer {
+  margin-bottom: 45px;
+}
+
+.footer-top-area,
+.footer-bottom-area,
+.footer-top-area div,
+.footer-bottom-area div{
+  display: flex;
+}
+
+.footer-top-area {
+  width: 100%;
+  justify-content: space-evenly;
+  
+  padding: 24px 0px;
+}
+
+.footer-top-area>div {
+  flex-flow: column;
+}
+
+.footer-item {
+  flex-flow: column;
+}
+.customer-center{
+  margin-bottom: 30px;
+}
+.accounts {
+  margin-bottom: 44px;
+}
+
+.footer-item:last-child {
+  margin-bottom: 0px;
+}
+
+.footer-item.align-center{
+  text-align: center;
+  align-items: center;
+}
+.footer-item p.title{
+  font-weight: bold;
+  color: #6B6B6B;
+}
+.footer-item p {
+  font-size: 12px;
+  line-height: 17px;
+  margin-bottom: 15px;
+  color: #6B6B6B;
+}
+
+.footer-item p.text-regular {
+  font-size: 15px;
+  line-height: 20px;
+}
+.footer-item p:last-child{
+  margin-bottom: 0px;
+}
+
+.text-regular {
+  font-size: 15px;
+  color: #000000;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.footer-notice ul{  
+  list-style: none;
+}
+
+.footer-notice ul li {
+  margin-bottom: 5px;
+}
+
+.footer-notice a{
+  color: #6B6B6B;
+  text-decoration: none;
+}
+
+.ask-buttons button{
+  width: 100%;
+  max-width: 144px;
+  height: 27px;
+  font-size: 10px;
+  
+  margin-bottom: 6px;
+  background-color: #FFFFFF;
+
+  border: 1px solid #878787;
+  border-radius: 5px;
+}
+
+.ask-buttons button img{
+  margin-right: 5px;
+}
+
+.ask-buttons button:last-child{
+  margin-bottom: 0px;
+}
+
+.footer-bottom-area {
+  background-color: #F4F4F4;
+  padding: 25px 24px;
+
+}
+
+.black {
+  color: black;
+}
+.footer-buttons {
+  color: #878787;
+}
+.footer-buttons li.divider{
+  border-right: 1px solid #E2E2E2;
+  height: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer-buttons li{
+  display: inline-block;
+}
+.footer-bottom-area{
+  flex-flow: column;
+}
+.footer-bottom-area .footer-buttons {
+  margin-bottom: 25px;
+}
+
+.dietfarm-info div p{
+  line-height: 20px;
+}
+
+.dietfarm-info div{
+  flex-flow: column;
+  margin-bottom: 20px;
+}
+
+.dietfarm-info div p {
+  margin-bottom: 0px;
+}
+.company-name{
+  margin-bottom: 10px;
+}
+.company-name span {
+  margin-right: 14px;
+}
+
+.orange {
+  color: #EFA543;
+}
+@media screen and (max-width:1079px) {
+    .only-pc {
+      display: none;
+    }
+    .only-mobile {
+      display: block;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+  .only-pc{ 
+    display: block !important;
+  }
+
+  .only-mobile{
+      display: none !important;
+  }
+
+  .footer {
+      background-color: #F4F4F4;
+      margin-bottom: 0px;
+  }
+  .footer>div {
+    width: 100%;
+  }
+
+  .footer>div:last-child{
+    width: 100%;
+    display: flex;
+    max-width: 1080px ;
+    margin: auto;
+    flex-flow: row-reverse;
+    justify-content: flex-end;
+  }
+  
+  .footer-top-buttons {
+    width: 100%;
+    background-color: #FFFFFF;
+  }
+  
+  .footer-top-area,
+  .footer-bottom-area{
+    display: flex;
+    width: fit-content;
+    display: inline-flex;
+  }
+
+  .footer-top-area {
+    flex-flow: row-reverse;
+  }
+
+  .footer-top-area>div:last-child{
+    margin-right: 62px;
+  }
+  
+  .footer-bottom-area {
+    margin-right: 46px;
+    padding: 25px 0px;
+  }
+  .footer-buttons {
+    width: 100%;
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  .footer-top-buttons {
+    height: 47px;
+    padding: 15px 0px;
+    border-top: 2px solid #F5F5F5;  
+    color: #000000;
+  }
+  
+
+}

@@ -202,7 +202,7 @@
                                             <a href="javascript:void(0);">리뷰<span class="v_n_numb"></span></a>
                                         </li>
                                         <li class="mobile_tab" data-tab="tab4">
-                                            <a href="javascript:void(0);">문의<span class="tab_detail_qna_count  v_n_numb">(0)</span></a>
+                                            <a href="javascript:void(0);">문의<span class="tab_detail_qna_count  v_n_numb">({{questionList.length}})</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -705,7 +705,7 @@
                             </div>
 
                       
-                            <p class="inquiry">문의 571개</p>
+                            <p class="inquiry">문의 {{questionList.length}}개</p>
                             <div class="qna">
                                 <div class="myReview">
                                     <p>내 문의 보기</p>
@@ -713,15 +713,17 @@
                                     <label for="prod_detail_toggle">
                                         <span>아이콘</span></label>
                                 </div>
-                                <div class="reveiw01">
+                                <div class="reveiw01" v-for="(question, index) in questionList" v-bind:key="index">
                                     <div class="review_edit">
                                         <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
+                                            <span v-if="question.answerState == 'N'">미답변</span>
+                                            <span v-if="question.answerState == 'Y'">답변완료</span>
+                                        </p>
+                                        <ul v-if="question.updateYn == 'Y'">
                                             <li class="myInquiry">
                                                 <span>내글</span>
                                                 <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
+                                            <li>{{formatDate(question.createDate)}}
                                                 <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
                                             <li>
                                                 <a href="#">수정</a>
@@ -738,19 +740,17 @@
                                                 <tbody>
                                                     <tr class="faq_q">
                                                         <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
+                                                            {{question.content}}
                                                         </td>
                                                     </tr>
-                                                    <tr class="faq_a faq_a01">
+                                                    <tr class="faq_a faq_a01" v-if="question.answerState == 'Y'">
                                                         <td>
                                                             <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
+                                                                <p v-html="question.answer"></p>
                                                                 <ul>
                                                                     <li>판매자</li>
                                                                     <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
+                                                                    <li>{{formatDate(question.updateDate)}}</li>
                                                                     <li><img src="/images/l_icon_category.png"></li>
                                                                     <li>신고</li>
                                                                 </ul>
@@ -762,202 +762,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="reveiw01">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="reveiw01">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="reveiw01">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="reveiw01">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <div id="wrap_qna">
                                     <a href="javascript:openModal('modal1');" class="button modal-open">문의하기</a>
                                 </div>

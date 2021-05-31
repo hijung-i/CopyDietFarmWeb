@@ -148,7 +148,7 @@ function getProductDetail(){
         console.log(app.product)
         getReviewList();
         getProductQuestionList();
-        
+
     }, function (err) {
         console.log("productDetail error", err);
         alert('상품 정보를 불러오지 못했습니다.');
@@ -303,7 +303,6 @@ function getReviewList() {
     var params = {
         productCode: app.product.productCode
     };
-    console.log(params);
 
     ajaxCall(API_SERVER + '/board/getReview', params, 'POST', 
     function (data) {
@@ -319,7 +318,8 @@ function getProductQuestionList() {
     var params = {
         productCode: app.product.productCode
     };
-
+    
+    console.log(params);
     ajaxCall(API_SERVER + '/product/getQAByProduct', params, 'POST', 
     function (data) {
         app.questionList = data.result;
