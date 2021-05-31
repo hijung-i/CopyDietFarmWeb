@@ -333,7 +333,7 @@ height:50px;overflow:hidden}
    #content .main_sub .thum{margin-bottom:-20px}
    #content .main_sub .sub_items ul li{margin-bottom:6px}
   .responsive{padding-left:15px;padding-right:15px;padding-bottom:20px}
-  
+
    /* 상단 롤링 배너 */
    .main_banner{height: 42px; min-width: 360px; width: 100%; position: absolute; overflow: hidden}
    .main_banner img {position: absolute;}
@@ -886,6 +886,9 @@ height:400px}
 .responsive img {
   width: 350px; height: 350px;
 }
+.responsive div{
+  display: inline-block;
+}
 .responsive {margin-bottom: 132px;}
 }
 #header_mypage .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center;margin-top:-50px}
@@ -902,7 +905,7 @@ height:400px}
 .point_history_web ul{display:flex;justify-content:space-between;padding-left:54px;padding-right:54px;border-top:1px solid #000;padding-top:17px;border-bottom:1px solid #000;padding-bottom:17px}
 .point_history_web ul li{float:left;font-size:14px;font-weight:bold;}
 .point_history{flex-direction:row-reverse}
-.save, .brand{display:none}
+.save {display:none}
 .point_history_right ul li{float:left;}
 .point_history_left ul li{float:left;}
 .date{position:relative;left:-20px;top:5px}
@@ -957,7 +960,7 @@ height:400px}
 .w_best h2{margin-bottom:60px}
 .w_best .side{float:left;margin-bottom:77px}
 .w_best .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
-.w_best ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}h2{font-size:25px;font-weight:bold;margin-bottom:60px;margin-top:75px}
+.w_best ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}h2{font-size:25px;font-weight:bold;margin-bottom:60px}
 .w_best .desc ul li{margin-right:20px;float:left;}
 .body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .thum img{width:184px;height:184px;border-radius:6px}
@@ -973,7 +976,15 @@ height:400px}
 .w_best .title{margin-top:13px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
 .body_bottom .desc{padding-bottom:40px;margin-top:-20px}                                                                                         
 .protein, .sweet, .water{margin-top:35px;clear:both}
-.blank_sec ul li{float:left;margin-right:20px;margin-bottom:75px}
+/* 메인화면 웹 썸네일 */
+.blank_sec {width: 100%; min-width: 1080px; height: 520px; display: flex;}
+.blank_sec > ul {display: flex;}
+.blank_sec div.thum {width: 520px; height: 520px; border-radius: 10px; overflow: hidden;}
+.blank_sec li {width: 520px;}
+.blank_sec li:not(:last-child) {margin-right: 40px;}
+.blank_sec img {width: 520px; height: 520px;}
+/* 메인화면 메인슬라이드 썸네일 */
+.swiper-slide div.thum img {width: 1080px; height: 370px;}
 .catgor_wrap{display:none}
 .w_best .thum img{width:184px;height:184px;border-radius:6px}
 
@@ -2089,7 +2100,7 @@ justify-content: space-evenly}
 .order_a_box ul{padding-top:13px}
 .order_a_box ul li{margin-bottom:5px}
 .tab_cont{min-height:360px;}
-.tab_cont.active{display:block !important;}
+/* .tab_cont.active{display:block !important;} */
 
 /* style02 */
 
