@@ -1,5 +1,3 @@
-const { request } = require("node:http");
-
 var app = new Vue({
     el: 'main',
     data: {
@@ -157,12 +155,14 @@ function paymentAction() {
     requestOrderDTO.userEmail = app.orderDTO.userEmail;
     requestOrderDTO.userCellNo = app.orderDTO.userCellNo;
 
+    
     if(app.orderDTO.userId == '비회원주문') {
         requestOrderDTO.userName = $('#unName').val();
         requestOrderDTO.userCellNo = $('#unCellNo').val();
         requestOrderDTO.userEmail = $('#unEmail').val();
     }
-
+    
+    requestOrderDTO.delivery = app.orderDTO.delivery
     if(app.orderDTO.delivery == undefined) {
         var delivery = {
             userName: $('#unReceiverName').val(),
@@ -282,7 +282,7 @@ function paymentAction() {
         requestOrderDTO.paidCouponAmount = app.orderDTO.paidCouponAmount;
         requestOrderDTO.paidPointAmount = app.orderDTO.paidPointAmount;
         requestOrderDTO.accumulatePoint = app.orderDTO.accumulatePoint;
-        
+
         requestOrderDTO.paymentDate = data.purchased_at;
         requestOrderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
         requestOrderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;

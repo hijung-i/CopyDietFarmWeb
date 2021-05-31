@@ -141,6 +141,10 @@ $(function () {
 function getPickProduct() {
     ajaxCallWithLogin(API_SERVER + '/order/getZzimInfoByUserID', {}, 'POST',
     function(data) {
+        for(var i = 0; i < data.result.length; i++) {
+            data.result[i].zzimYn = 'Y'; 
+        }
+        
         var html = generateHtmlForProductList(data.result);
         $('.sub_items ul').html(html);
         console.log("loading zzim list", data);

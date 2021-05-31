@@ -17,6 +17,7 @@ var app = new Vue({
         numberFormat,
         deleteFromArray,
         changeOptionCount,
+        formatDate,
         onSubmit: function() {
             // console.log(app.deliveryGroupList, app.orderDTO); 
             if(app.deliveryGroupList.length > 0) {
@@ -29,10 +30,8 @@ var app = new Vue({
 });
 
 $(function() {
-    console.log($('#productCode').val())
     getProductDetail();
-    // getReviewList();
-    // getProductQuestionList();
+
 
     $("select#products").change(function() {
         onOptionSelected($(this));
@@ -88,7 +87,6 @@ function getProductDetail(){
     var params = {
         productCode: productCode
     }
-    console.log(productCode);
     if(productCode == undefined ) {
         // setTimeout(getProductDetail, 100);
         return;
@@ -98,8 +96,6 @@ function getProductDetail(){
         var product = data.result;
         app.product = product;
 
-        console.log(data);
-        // app.product = product;
         if(app.product == undefined || app.product == 0){
             // TODO: Open alert modal
             return false;
@@ -150,6 +146,9 @@ function getProductDetail(){
         $('.v_n_top_info .packing-type .ex').html(packingTypeHtml);
 
         console.log(app.product)
+        getReviewList();
+        getProductQuestionList();
+        
     }, function (err) {
         console.log("productDetail error", err);
         alert('상품 정보를 불러오지 못했습니다.');
@@ -304,9 +303,12 @@ function getReviewList() {
     var params = {
         productCode: app.product.productCode
     };
+    console.log(params);
 
-    ajaxCall(API_SERVER + '/product/getReview', params, 'POST', 
+    ajaxCall(API_SERVER + '/board/getReview', params, 'POST', 
     function (data) {
+    
+        app.reviewList = data.result;
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);
@@ -318,10 +320,18 @@ function getProductQuestionList() {
         productCode: app.product.productCode
     };
 
-    ajaxCall(API_SERVER + '/product/getReview', params, 'POST', 
+    ajaxCall(API_SERVER + '/product/getQAByProduct', params, 'POST', 
     function (data) {
+        app.questionList = data.result;
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);
     })
+}
+
+function formatDate(strDate) {
+    if(strDate != undefined && typeof(strDate) == typeof('')) {
+        return strDate.substr(0, 10);
+    }
+    return ''
 }

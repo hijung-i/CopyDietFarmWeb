@@ -28,7 +28,9 @@ function getOrderDetail() {
         var products = app.order.products;
         
         app.order.accumulatePoint = 0;
+        app.order.totalDeliveryCost = 0;
         for(var i = 0; i < products.length; i++){
+            app.order.totalDeliveryCost += products[i].deliveryCost;
             app.order.accumulatePoint += products[i].accumulatePoint;
         }
         console.log(data);
@@ -38,7 +40,7 @@ function getOrderDetail() {
 
         if(responseText == 'NOT_FOUND') {
             alert('주문 상세 내역을 불러오지 못했습니다.');
-            // location.href="/orderlist";
+            location.href="/orderlist";
         }
         console.error(err);
     }, {

@@ -254,12 +254,12 @@
                                                                 <tr>
                                                                     <td>
                                                                         <span>포인트 할인</span></td>
-                                                                    <td>{{numberFormat(order.paidPointAmount)}}원</td>
+                                                                    <td>-{{numberFormat(order.paidPointAmount)}}원</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <span>배송비 할인</span></td>
-                                                                    <td>0원</td>
+                                                                        <span>배송비</span></td>
+                                                                    <td>{{ numberFormat(order.totalDeliveryCost)}}원</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>총 결제 금액</td>
