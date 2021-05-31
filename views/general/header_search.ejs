@@ -1,0 +1,256 @@
+<header id="header_common">
+    <div class="top_util">
+        <ul class="menu_list" id="menu_list_header">
+            <% if(isLoggedIn != true) { %>
+                <li class="join" style="color:#F99319">
+                    <a href="#">회원가입</a>
+                </li>
+                <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
+                <li class="login_top">
+                    <a href="/login-form">로그인</a>
+                </li>
+                <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
+            <% } %>
+            <li class="cs_center">
+                <a href="/cs-center">고객센터</a>
+            </li>
+            <li class="cart">
+                <a href="/cart"><img src="/images/cart_icon_main@2x.png" alt="장바구니"></a>
+            </li>
+            <li class="mypage">
+                <a href="/orderlist"><img src="/images/dietfarm_mypage.png" alt="마이페이지" style="width:15px"></a>
+            </li>
+            <li class="pick">
+                <a href="/pick-product"><img src="/images/afterheart_ico_main.png" alt="찜한 메뉴"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="main_banner">
+        <img src="/images/family_icon_banner@2x.png" alt="배너" style="width:100%;height:42px">
+        <img src="/images/spring_icon_banner@2x.png" alt="배너" style="width:100%;height:42px">
+    </div>
+    <div class="menu_btns">
+        <div class="btnMenu">
+            <a href="#">
+                <img
+                    src="/images/category_ico_main.png"
+                    alt="메뉴 아이콘"
+                    style="width: 19px; height: 14px;">
+            </a>
+        </div>
+        <div class="myPage_title">
+            <h2>검색</h2>
+        </div>
+        <div class="btnCart">
+            <a href="/cart" onclick="mCart('on');">
+                <img
+                    src="/images/cart_icon_main@2x.png"
+                    alt="장바구니 아이콘"
+                    style="width: 21px; height: 21px;">
+            </a>
+        </div>
+    </div>
+ </header>
+<div class="sideMenu">
+    <div class="sideMenu_Header">
+        <div class="slideMenu_top">
+            <div class="slideMenu_close">
+                <a href="#"><img src="/images/category_ico_main.png" alt="메뉴 아이콘"></a>
+            </div>
+            <div class="slideMenu_title">
+                <h2>카테고리</h2>
+            </div>
+            <div class="slideMenu_cart">
+                <a href="#"><img src="/images/cart_ico_main.png" alt="카트 아이콘"></a>
+            </div>
+        </div>
+        <div class="tabMenu">
+            <ul class="tab_wrap">
+                <li class="active on" data-tab="tab1">
+                    <span>품목</span></li>
+                <li data-tab="tab2" class="" id="possible">
+                    <span>브랜드</span></li>
+                <span></span>
+            </ul>
+        </div>
+    </div>
+    <div class="sideMenu_ctt">
+        <div id="tab1" class="tab_cont active">
+            <ul class="mDepth01">
+                <li>
+                    <dl>
+                        <dt class="sideMenu_detail faq_q">
+                            <span><img src="/images/salad_icon_category.png" alt="#"/>도시락/샐러드</span>
+                            <img class="downArrow" src="/images/downarrow_ico_main.png"
+                                alt="화살표" style="width:11px;height:11px">
+                        </dt>
+                        <dd class="subMenu faq_a" style="top: 0;">
+                            <ul class="gnb_depth02">
+                                <a href="#">
+                                    <li>전체보기</li>
+                                </a>
+                                <a href="#">
+                                    <li>다이어트도시락</li>
+                                </a>
+                                <a href="#">
+                                    <li>건강도시락</li>
+                                </a>
+                                <a href="#">
+                                    <li>샐러드</li>
+                                </a>
+                            </ul>
+                        </dd>
+                    </dl>
+                </li>
+                
+            </ul>
+        </div>
+        <div id="tab2" class="tab_cont" style="display: none">
+            <div class="brandCate_top">
+                <div id="searchUsers" class="instant-search">
+                    <div class="instant-search__input-container">
+                        <input
+                            class="instant-search__input"
+                            type="text"
+                            spellcheck="false"
+                            placeholder="브랜드명을 검색해보세요."
+                            style="font-size:14px;width:90%">
+                        <a href="#"><img src="/images/grayx_icon_login.png" alt="취소"></a>
+                    </div>
+                    <div class="search_box_ico">
+                        <a href="#"><img src="/images/searchbox_icon_category.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="categ">
+                    <ul>
+                        <li class="all">
+                            <a hreef="#">전체</a>
+                        </li>
+                        <li><img src="/images/l_icon_category@2x.png"></li>
+                        <li>
+                            <a href="#">인기순</a>
+                        </li>
+                        <li><img src="/images/l_icon_category@2x.png"></li>
+                        <li>
+                            <a href="#">좋아요</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <section class="brand">
+                <ul class="mDepth01">
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">해담은</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">파프리카푸드</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">해담은2</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">파프리카푸드2</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">해담은</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">파프리카푸드</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">해담은2</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">파프리카푸드2</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">파프리카푸드2</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">파프리카푸드2</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">파프리카푸드2</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#">파프리카푸드2</a>
+                            <li>
+                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- //sideMenu -->
+<script src="/js/header.js"></script>

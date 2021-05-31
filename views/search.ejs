@@ -11,6 +11,8 @@
     <meta name="format-detection" content="no"/>
 
     <title>Document</title>
+    <style type="text/css">
+    </style>
     <link rel="stylesheet" href="/css/style.css">
     <%-include('general/head') %>
 </head>
@@ -23,13 +25,13 @@
         <a href="#">
             <span>바로가기3</span></a>
     </article>
-    <%-include('general/header') %>
+    <%-include('general/header_search') %>
 
     <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
 
-    <div id="searchUsers" class="instant-search" style="padding-top:140px">
+    <div id="searchUsers" class="instant-search" style="margin-top:120px">
         <form action="/search-list" method="GET" id="mobileSearchForm">
             <input type="hidden" name="keyword">
         </form>
