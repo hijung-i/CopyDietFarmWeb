@@ -5,9 +5,9 @@ var SERVER_IP = 'localhost';
 var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
 // var API_SERVER = "http://"+ SERVER_IP +":9090";
 
-var API_SERVER = "http://112.217.209.162:9090";
+//var API_SERVER = "http://112.217.209.162:9090";
 //var RESOURCE_SERVER = "http://112.217.209.162:8000";
-// var API_SERVER = "http://13.209.123.102:9090";
+var API_SERVER = "http://13.209.123.102:9090";
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
@@ -92,7 +92,7 @@ function generateHtmlForProductList(products, maxSize){
         if(maxSize != undefined && j > maxSize -1) break;
 		var product = products[j];
         html += generateHtmlForProduct(product);
-
+		
     }
     return html;
 }
@@ -108,16 +108,7 @@ function generateHtmlForProduct(product){
 	html += '<a href="/product/'+ product.productCode +'">';
 	html += '<img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';
 	html += '</a>';
-	html += '<input type="hidden" name="productNo" value="'+ product.productNo +'">';
-	html += '<input type="hidden" name="productCode" value="'+ product.productCode +'">';
-	html += '<input type="hidden" name="zzimYn" value="'+ product.zzimYn +'">';
-
-	if(product.zzimYn == 'Y') {
-		html += '<div class="like like-yes" onclick="zzimAction(this)"></div>';
-	}
-	else if(product.zzimYn == 'N') {
-		html += '<div class="like like-no" onclick="zzimAction(this)"></div>';
-	}
+	html += '<div class="like" onclick="zzimAction()"></div>';
 	html += '</div>';
 	html += '<a href="/product/'+ product.productCode +'">';
 	html += '<div class="desc">';
@@ -542,37 +533,20 @@ function naverCallback(success, paramStr) {
 	}
 }
 
-function zzimAction(button) {
+function zzimAction(add, option) {
 	var url = '';
 	var params = {}
-	
-	var zzim = $(button).parent();
-
-	var zzimYn = $(zzim).find('input[name=zzimYn]').val();
-	var productNo = $(zzim).find('input[name=productNo]').val();
-	var productCode = $(zzim).find('input[name=productCode]').val();
-
-	console.log(zzimYn);
-	var params = {
-		productNo,
-		productCode
-	}
-	
-	if(zzimYn == 'N') {
+	if(add) {
 		url = API_SERVER + '/order/addZzim';
-		$(zzim).find('input[name=zzimYn]').val('Y');
-		$(zzim).find('div.like').removeClass('like-no');
-		$(zzim).find('div.like').addClass('like-yes');
-	} else if(zzimYn == 'Y') {
+		params.productCode = option.produceCode;
+	} else if(!add) {
 		url = API_SERVER + '/order/deleteZzim';
-		$(zzim).find('input[name=zzimYn]').val('N');
-		$(zzim).find('div.like').removeClass('like-yes');
-		$(zzim).find('div.like').addClass('like-no');
+		params.zzimNo = option.zzimNo;
 	}
 
 	ajaxCallWithLogin(url, params, 'POST',
 	function(data) {
-		console.log('zzimaction', params, data);
+		console.log('zzimaction', add, params, data);
 	}, function(err) {
 		console.error(err)
 	}, {

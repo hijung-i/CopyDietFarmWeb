@@ -31,44 +31,36 @@ function getStandDatas() {
     
     ajaxCallWithLogin(API_SERVER + "/product/getSalesStands", param, 'post'
     , function(data){
-
+        
         var result = data.result;
         for(var i = 0; i < result.salesStands.length; i++){
             var products = result.products[i];
             var salesName = result.salesStands[i];
-
+            
             switch(i){
             case 0:
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
-
+                    console.log(product);
+                    html += '<div class="swiper-slide"><a href="/product/'+ product.productCode +'""><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>';
                     // 메인 슬라이드
-                    $('.main_slider a').html(generateHtmlForProductList(products, 1));
-                    
-                    // 멀티플 슬라이드
-                    $('.responsive a').html(generateHtmlForProductList(products, 1));
-
-                    break;
+                
                 }
+                $('.main_slider').html(html);
+                
                 break;
             case 1:
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
-                    html += '<li>'                  
-                    html += '<a href="/product/'+ product.productCode +'"><img src="'+RESOURCE_SERVER + product.url+'">';
-                    html += '<p class="title">' + product.productName + '</span><br>';
-                    html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
-                    html += '<li class="cost">' + numberFormat(product.supplyPrice) + '원</li>';
-                    html += '<li class="ratio">' + Math.round(product.discountRate, 0) + '%</li>';
-                    html += '</ul>';
-                    html += '</a>';
-                    html += '</li>';
-                     // 상단 큰 메뉴 두 개
-                $('.blank_sec').html(generateHtmlForProductList(products, 2));
-                break;
+                    
+
+                    html += '<div><a href="/product/' + product.productCode +'"><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>'
+                    
+
                 }
+                $('.responsive').html(html);
                 break;
             case 2:
                 // 위클리 베스트
@@ -106,6 +98,7 @@ function getStandDatas() {
 /* 모바일 메인페이지 슬라이드 메뉴 카테고리 lnb 언더바 애니메이션 */
 $(document).ready(function(){
     $('.tabMenu li').on('click',function(){
+        console.log('clear')
         $(this).addClass('on');
         $(this).siblings().removeClass('on');
     });
@@ -117,38 +110,40 @@ $(function(){
         e.preventDefault();
         $('html,body').animate({scrollTop:0},600);
     });
-  });
 
-  // 멀티플 슬라이드 
-  var slides = document.querySelector('.multiple_slides'),
-        slide = document.querySelectorAll('.multiple_slides li'),
-        currentIdx = 0,
-        slideCount = slide.length,
-        prevBtn = document.querySelector('.prev'),
-        slideWidth = 350,
-        slideMargin = 15,
-        nextBtn = document.querySelector('.next');
+    // // 멀티플 슬라이드 
+    // var slides = document.querySelector('.multiple_slides'),
+    // slide = document.querySelectorAll('.multiple_slides li'),
+    // currentIdx = 0,
+    // slideCount = slide.length,
+    // prevBtn = document.querySelector('.prev'),
+    // slideWidth = 350,
+    // slideMargin = 15,
+    // nextBtn = document.querySelector('.next');
 
-        slides.style.width = (slideWidth + slideMargin)*slideCount - slideMargin + 'px';
 
-        function moveSlide(num) {
-            slides.style.left = -num * 365 + 'px';
-            currentIdx = num;
-        }
-        nextBtn.addEventListener('click', function() {
-            if(currentIdx < slideCount - 11) {
-                moveSlide(currentIdx + 1);
-                console.log(currnetIdx);
-            } else {
-                moveSlide(0);
-            }
-        });
-        prevBtn.addEventListener('click', function() {
-            if(currentIdx > 0) {
-                moveSlide(currentIdx - 1);
-                console.log(currnetIdx);
-            } else {
-                moveSlide(slideCount - 11);
-            }
-        });
-        
+    // function moveSlide(num) {
+    //     slides.style.left = -num * 365 + 'px';
+    //     currentIdx = num;
+    // }
+
+    // nextBtn.addEventListener('click', function() {
+    //     if(currentIdx < slideCount - 11) {
+    //         moveSlide(currentIdx + 1);
+    //         console.log(currnetIdx);
+    //     } else {
+    //         moveSlide(0);
+    //     }
+    // });
+    // prevBtn.addEventListener('click', function() {
+    //     if(currentIdx > 0) {
+    //         moveSlide(currentIdx - 1);
+    //         console.log(currnetIdx);
+    //     } else {
+    //         moveSlide(slideCount - 11);
+    //     }
+    // });
+
+
+});
+
