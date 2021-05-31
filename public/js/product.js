@@ -25,17 +25,14 @@ var app = new Vue({
             } else {
                 alert('상품을 선택해주세요');
             }
-        }
+        },
+        onOptionSelected,
+        zzimProduct
     }
 });
 
 $(function() {
     getProductDetail();
-
-
-    $("select#products").change(function() {
-        onOptionSelected($(this));
-    });
 
     $("button.c_btn").click(addCart);
     $('button.cart').click(addCart);
@@ -101,6 +98,13 @@ function getProductDetail(){
             return false;
         }
 
+        if(product.options.length == 1) {
+            app.selectedOptions = JSON.parse(JSON.stringify(product.options));
+            app.selectedOptions[0].optionCount = 1;
+            app.selectedOptions[0].isSelected = true;
+            drawSelectedOptions();
+        }
+
         app.product.discountRate = Math.round(product.discountRate);
         // 상품명
         $('.detail_title h2').html(product.productName);
@@ -148,6 +152,7 @@ function getProductDetail(){
         console.log(app.product)
         getReviewList();
         getProductQuestionList();
+        getRecommendedProducts();
 
     }, function (err) {
         console.log("productDetail error", err);
@@ -190,6 +195,7 @@ function addCart() {
 }
 
 function onOptionSelected(element) {
+    console.log($(element));
     var selectedIndex = $(element)[0].options.selectedIndex -1;
     var selectedOption = app.product.options[selectedIndex];
 
@@ -200,7 +206,6 @@ function onOptionSelected(element) {
     if(!isExistsInArray(option)) {
         option.isSelected = true;
         selectedOptions.push(option);
-        
     }
     drawSelectedOptions();
 }
@@ -249,7 +254,7 @@ function drawSelectedOptions() {
     var deliveryGroup = new DeliveryGroupDTO();
 
     var product = JSON.parse(JSON.stringify(app.product));
-    product.options = selectedOptions;
+    product.options = app.selectedOptions;
     
     deliveryGroup.products.push(product);
     deliveryGroup.loadingPlace = product.loadingPlace;
@@ -258,8 +263,7 @@ function drawSelectedOptions() {
     deliveryGroup.brandName = product.brandName;
     deliveryGroup.setDeliveryCost(isJeju, isExtra);
 
-    console.log(deliveryGroup.totalDeliveryCost);
-    if(selectedOptions.length < 1) {
+    if(app.selectedOptions.length < 1) {
         alert('상품을 선택해주세요.')
         return false;
     }
@@ -334,4 +338,51 @@ function formatDate(strDate) {
         return strDate.substr(0, 10);
     }
     return ''
+}
+
+function zzimProduct() {
+    
+    var url = API_SERVER;
+
+    if(app.product.zzimYn == 'Y') {
+        url += '/order/deleteZzim';
+    } else if(app.product.zzimYn == 'N') {
+        url += '/order/addZzim';
+    }
+
+    var params = {
+        productNo: app.product.productNo,
+        productCode: app.product.productCode
+    }
+
+    ajaxCallWithLogin(url, params, 'POST',
+	function(data) {
+        if(app.product.zzimYn == 'Y') {
+            app.product.zzimYn = 'N';
+        } else if ( app.product.zzimYn == 'N') {
+            app.product.zzimYn = 'Y';
+        }
+		console.log('zzimaction', params, data);
+	}, function(err) {
+		console.error(err)
+	}, {
+		isRequired: true,
+		userId: true
+	})
+}
+
+function getRecommendedProducts() {
+    var params = {
+        productCode: app.product.productCode
+    };
+
+    ajaxCallWithLogin(API_SERVER + '/product/getRecmdProducts', params, 'POST',
+    function(data) {
+        console.log(data);
+    }, function(err) {
+        console.error(err);
+    }, {
+        isRequired: false,
+        userId: true
+    })
 }

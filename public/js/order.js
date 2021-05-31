@@ -38,6 +38,11 @@ var app = new Vue({
             var pointStr = new String(this.orderDTO.paidPointAmount).replace(/^[0~9]/gi, '');
             this.orderDTO.paidPointAmount = parseInt((pointStr == "")?'0':pointStr);
             
+        },
+        selectPayment: function() {
+
+            $('.order_payment li').removeClass('border-orange')
+            $('.order_payment li:nth-child('+ app.paymentNo +')').addClass('border-orange')
         }
     },
     computed: {
@@ -143,6 +148,18 @@ function getUsablePointAmount() {
 }
 
 function paymentAction() {   
+    var agreementPay = $('#agreementPay')[0].checked;
+
+    if(agreementPay != true) {
+        alert('구매 조건 및 결제 진행에 동의해야합니다.')
+        return;
+    }
+
+    if(app.paymentNo == undefined || app.paymentNo == 0) {
+        alert('결제 수단을 선택해주세요');
+        return;
+    }
+
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
     var methods = ['npay', 'vbank', 'kakao', 'card', 'phone'];
     var method = methods[app.paymentNo -1];

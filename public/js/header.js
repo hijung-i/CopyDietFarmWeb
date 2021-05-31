@@ -74,7 +74,8 @@ function sideTabClose() {
 }
 $(function() {
     getEventStands();
-
+    getBrandList();
+    
     jQuery('.side_back').bind("touchend click", function(){
         sideMenu('off');
     });
@@ -155,15 +156,6 @@ $(function() {
         $(".sideMenu").slideToggle("fast");
     });
 
-
-    $(".mTabBtnMenu").on("click",function() {
-        console.log('clear');
-        sideTabOpen();
-        $('body').css ({
-            position:'fixed',
-            overflow:'hidden'
-        });
-    })
     
     
     /* web side menu controll */
@@ -216,7 +208,7 @@ function selectAll(selectAll)  {
 
 /* 모바일 메인페이지 슬라이드 메뉴 카테고리 lnb 언더바 애니메이션 */
 $(document).ready(function(){
-    $('div.tabMenu li').on('click',function(){
+    $('.sideMenu div.tabMenu li').on('click',function(){
         console.log('clear');
         $(this).addClass('on');
         $(this).siblings().removeClass('on');
@@ -408,7 +400,7 @@ function getCategory() {
         buttonHtml += '</li>';
         
         $('.category ul').html(buttonHtml);
-        $('.sideMenu_ctt ul.mDepth01').html(sideTabHtml);
+        $('.sideMenu_ctt #tab1 ul.mDepth01').html(sideTabHtml);
         $("dt.faq_q").click(function() {
             if ($(this).next('dd').css("display") != "none") {
                 $(this).next('dd').hide();
@@ -421,6 +413,15 @@ function getCategory() {
             }
         });
 
+        $(".mTabBtnMenu").on("click",function() {
+            console.log('clear');
+            sideTabOpen();
+            $('body').css ({
+                position:'fixed',
+                overflow:'hidden'
+            });
+        })
+
         console.log("getCategory => ", data);
     }, function (err){
         console.log("onError", err);
@@ -428,3 +429,14 @@ function getCategory() {
 
 }
 
+function getBrandList() {
+    ajaxCallWithLogin(API_SERVER + '/product/getBrandList', {}, 'POST',
+    function(data) {
+        console.log(data);
+    }, function(err) {
+        console.error(err);
+    }, {
+        isRequired: false,
+        userId: true
+    })
+}
