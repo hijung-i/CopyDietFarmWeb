@@ -5,7 +5,7 @@
 .coupon_code{display:none}
 }
 @media screen and (min-width:1080px){
-.contents h2{margin-left:-20px}
+/*.contents h2{margin-left:-20px}*/
 .coupon-input-wrap{width:271px;height:45px;border:1px solid #BBBBBB;margin-bottom:25px;margin-top:20px;border-radius:5px}
 .coupon-input-wrap input{padding:10px;margin-top:4px;width:251px;border:0;font-size:14px}
 #btnCoupon{width:91px;height:45px;background-color:#F99319;border:0;color:#FFF;position:relative;left:272px;top:-41px;border-radius:5px}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
+
+        <title>다이어트 Farm</title>
+        <link rel="stylesheet" href="/css/myPage.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style_web.css">
+        <style type="text/css">
+            @media screen and (max-width:1079px) {
+                .web_coupon {
+                    display: none;
+                }
+            }
+            @media screen and (min-width:1080px) {
+                .mobile_coupon{
+                    display: none;
+                }
+            }
+        </style>
+        <%-include('general/head') %>
+        </head>
+
+        <body>
+            <div class="mobile_coupon">
+                <section class="detail_title">
+                    <h2>쿠폰</h2>
+                    <script type="text/javascript">
+                        function goBack() {
+                            window
+                                .history
+                                .back();
+                        }
+                    </script>
+                    <div class="btnback">
+                        <a href="#" value="취소" onclick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
+                    </div>
+                </section>
+            </div>
+            <div class="web_coupon">
+                <%-include('general/header') %>
+                <div class="main_contents">
+                    <div class="web_contents">
+                        <div class="left">
+                            <h3>마이팜</h3>
+                            <div class="left_ctn">
+                                <ul>
+                                    <li><img src="/images/basket_ico.png"></li>
+                                    <li>
+                                        <span>김수아님</span></li>
+                                    <li>내정보
+                                        <span>
+                                            <i class="fas fa-chevron-right"></i></span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="center">
+                            <h3>포인트<img src="/images/point.png"></h3>
+                            <p>1000 원
+                                <span>
+                                    <i class="fas fa-chevron-right"></i></span></p>
+                        </div>
+
+                        <div class="right">
+                            <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                            <p>3개
+                                <span>
+                                    <i class="fas fa-chevron-right"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <nav class="content_lnb">
+                    <ul>
+                        <li>
+                            <a href="/orderlist">주문내역</a>
+                        </li>
+                        <li style="white-space:nowrap">
+                            <a href="/delivery-management">배송지 관리</a>
+                        </li>
+                        <li>
+                            <a href="/p_review">상품 리뷰</a>
+                        </li>
+                        <li>
+                            <a href="/p_inquiry">상품 문의</a>
+                        </li>
+                        <li>
+                            <a href="/s_inquiry">판매자 문의</a>
+                        </li>
+                        <li class="on">
+                            <a href="/point">포인트</a>
+                        </li>
+                        <li>
+                            <a href="/coupon">쿠폰</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+</div>
+                <main id="content" class="coupon">
+                    <div class="contents">
+                <h2>쿠폰</h2>
+                <div class="coupon_web_top">
+                    <input type="text" placeholder="쿠폰 코드를 입력해주세요">
+                    <button type="button" class="coupon_enroll">쿠폰 등록</button>
+                </div>
+                <div class="coupon_table_top">
+                    <ul>
+                        <li>날짜</li>
+                        <li>내용</li>
+                        <li>최소 사용금액</li>
+                        <li>할인</li>
+                        <li>상태</li>
+                    </ul>
+                </div>
+                    <div class=coupon_list>
+                        <ul>
+                            <li class="y_coupon">
+                                <div class="couponBox01">
+                                    <h3>10% 할인</h3>
+                                    <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
+                                    <p class="condition">1만원 이상 결제 시</p>
+                                    <p class="range">2020-11-11 ~ 2020-12-11</p>
+                                </div>
+                                <div class="couponBox02">
+                                    <a href="">
+                                        <img src="/images/c_icon_coupon@2x.png">
+                                        <p class="download">다운로드</p>
+                                      </a>
+                                </div>
+                            </li>
+                            <li class="y_coupon">
+                                <div class="couponBox01">
+                                    <h3>10% 할인</h3>
+                                    <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
+                                    <p class="condition">1만원 이상 결제 시</p>
+                                    <p class="range">2020-11-11 ~ 2020-12-11</p>
+                                </div>
+                                <div class="couponBox02">
+                                    <a href="">
+                                        <img src="/images/c_icon_coupon@2x.png">
+                                        <p class="download">다운로드</p>
+                                      </a>
+                                </div>
+                            </li>
+                            <li class="g_coupon">
+                                <div class="couponBox01">
+                                    <h3>10% 할인</h3>
+                                    <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
+                                    <p class="condition">1만원 이상 결제 시</p>
+                                    <p class="range">2020-11-11 ~ 2020-12-11</p>
+                                </div>
+                                <div class="couponBox02">
+                                    <a href="">
+                                        <img src="/images/c_icon_coupon@2x.png">
+                                        <p class="download">다운로드</p>
+                                      </a>
+                                </div>
+                            </li>
+                            <li class="g_coupon">
+                                <div class="couponBox01">
+                                    <h3>10% 할인</h3>
+                                    <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
+                                    <p class="condition">1만원 이상 결제 시</p>
+                                    <p class="range">2020-11-11 ~ 2020-12-11</p>
+                                </div>
+                                <div class="couponBox02">
+                                  <a href="">
+                                    <img src="/images/c_icon_coupon@2x.png">
+                                    <p class="download">다운로드</p>
+                                  </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="couponBtn">
+                        <button type="button" id="modal_btn" class="cBtn">쿠폰 등록</button>
+                    </div>
+                    <div class="black_bg"></div>
+                    <div class="modal_wrap">
+                        <div class="modal_close"><a href="#">close</a></div>
+                        <div>
+                            <h2>쿠폰 등록</h2>
+                            <input tpye="text">
+                            <button type="button" class="btn_enroll">등록</button>
+                        </div>
+                      </div>
+                      </div>
+                <script>
+                    window.onload = function() {
+                 
+                    function onClick() {
+                        document.querySelector('.modal_wrap').style.display ='block';
+                        document.querySelector('.black_bg').style.display ='block';
+                    }   
+                    function offClick() {
+                        document.querySelector('.modal_wrap').style.display ='none';
+                        document.querySelector('.black_bg').style.display ='none';
+                    }
+                 
+                    document.getElementById('modal_btn').addEventListener('click', onClick);
+                    document.querySelector('.modal_close').addEventListener('click', offClick);
+                 
+                };
+                </script>
+                  </main>
+                <%-include('general/footer') %>
+                    <script type="text/javascript" src="/js/header.js"></script>
+                </body>
+            </html>
