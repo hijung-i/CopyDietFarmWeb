@@ -56,7 +56,7 @@ $(function() {
   
      });
 
-    $('ul.tab_wrap#tab li').click(function() {
+    $('ul.tab_wrap #tab li').click(function() {
         var activeTab = $(this).attr('data-tab');
 
         $('.tab_wrap li').removeClass('active');

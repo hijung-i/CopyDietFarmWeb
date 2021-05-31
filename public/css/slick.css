@@ -17,7 +17,14 @@
         touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
 }
-
+@media screen and (min-width:1080px) {
+    .responsive {
+        min-width: 1080px;
+        height: 350px;
+        display: inline-block;
+        overflow: hidden;
+    }
+}
 .slick-list
 {
     position: relative;

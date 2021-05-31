@@ -333,7 +333,7 @@ height:50px;overflow:hidden}
    #content .main_sub .thum{margin-bottom:-20px}
    #content .main_sub .sub_items ul li{margin-bottom:6px}
   .responsive{padding-left:15px;padding-right:15px;padding-bottom:20px}
-  
+
    /* 상단 롤링 배너 */
    .main_banner{height: 42px; min-width: 360px; width: 100%; position: absolute; overflow: hidden}
    .main_banner img {position: absolute;}
@@ -878,7 +878,6 @@ height:400px}
   .footer_ctt div li.padding10 {padding-bottom: 10px;}
   .footer_ctt div li.padding12 {padding-bottom: 12px;}
   .footer_ctt div li.import_txt {color: #000; font-size: 14px; font-weight: 700; padding-bottom: 12px;}
-  .footer_ctt div li span {color: #F99319;}
   .footer_ctt .mobileCtn_wrap {display: flex;left:100px}
   li.topSpace {padding-top: 15px;}
   .accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
@@ -919,6 +918,9 @@ height:400px}
 .responsive img {
   width: 350px; height: 350px;
 }
+.responsive div{
+  display: inline-block;
+}
 .responsive {margin-bottom: 132px;}
 }
 #header_mypage .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center;margin-top:-50px}
@@ -935,7 +937,7 @@ height:400px}
 .point_history_web ul{display:flex;justify-content:space-between;padding-left:54px;padding-right:54px;border-top:1px solid #000;padding-top:17px;border-bottom:1px solid #000;padding-bottom:17px}
 .point_history_web ul li{float:left;font-size:14px;font-weight:bold;}
 .point_history{flex-direction:row-reverse}
-.save, .brand{display:none}
+.save {display:none}
 .point_history_right ul li{float:left;}
 .point_history_left ul li{float:left;}
 .date{position:relative;left:-20px;top:5px}
@@ -1008,8 +1010,9 @@ height:400px}
 .protein, .sweet, .water{margin-top:35px;clear:both}
 /* 메인화면 웹 썸네일 */
 .blank_sec {width: 100%; min-width: 1080px; height: 520px; display: flex;}
+.blank_sec > ul {display: flex;}
 .blank_sec div.thum {width: 520px; height: 520px; border-radius: 10px; overflow: hidden;}
-.blank_sec li {width: 520px; height: 520px;}
+.blank_sec li {width: 520px;}
 .blank_sec li:not(:last-child) {margin-right: 40px;}
 .blank_sec img {width: 520px; height: 520px;}
 /* 메인화면 메인슬라이드 썸네일 */
@@ -1396,6 +1399,7 @@ height:50px;overflow:hidden}
 .footer_ctt div li.padding12 {padding-bottom: 12px;}
 .footer_ctt div li.import_txt {color: #000; font-size: 14px; font-weight: 700; padding-bottom: 12px;}
 .footer_ctt div li span {color: #F99319;}
+.footer_ctt div li span a {color: #F99319;}
 li.topSpace {padding-top: 15px;}
 .accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
 .customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
@@ -2152,7 +2156,7 @@ justify-content: space-evenly}
 .order_a_box ul{padding-top:13px}
 .order_a_box ul li{margin-bottom:5px}
 .tab_cont{min-height:360px;}
-.tab_cont.active{display:block !important;}
+/* .tab_cont.active{display:block !important;} */
 
 /* style02 */
 
