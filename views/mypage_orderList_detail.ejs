@@ -11,6 +11,7 @@
                 .web_ol_detail {
                     display: none;
                 }
+                .orderDetails p span img{width:15px;margin-left:10px}
             }
             @media screen and (min-width:1080px) {
                 .mobile_ol_detail {
@@ -70,10 +71,10 @@
                 </div>
                 <nav class="content_lnb">
                     <ul>
-                        <li>
+                        <li class="on">
                             <a href="/orderlist">주문내역</a>
                         </li>
-                        <li class="on" style="white-space:nowrap">
+                        <li style="white-space:nowrap">
                             <a href="/delivery-management">배송지 관리</a>
                         </li>
                         <li>
@@ -93,12 +94,11 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="contents">
+                <div class="contents" id="order_detail">
                     <div class="order">
                         <div class="orderBox">
                             <div class="order01">
                                 <div class="innerbox">
-
                                     <div class="dateNo">
                                         <p class="date">{{ formatDate(order.paymentDate) }}</p>
                                         <p class="no">{{ order.orderNumber }}</p>
@@ -107,7 +107,7 @@
                                         <div class="orderDetails">
                                             <div class="order_title">
                                                 <p>
-                                                    <span>{{ product.companyName}}<img src="/images/call_icon_order.png" style="width:20%;margin-left:10px"></span></p>
+                                                    <span>{{ product.companyName}}<a href=""><img src="/images/call_icon_order.png" style="width:15px;margin-left:10px;margin-top:2px"></a></span></p>
                                                 <ul>
                                                     <li>
                                                         <a href="/s_inquiry">문의하기<img
@@ -117,16 +117,44 @@
                                                 </ul>
                                             </div>
                                             <!--//order_title-->
+                                            <div class="order_datail_btn" style="display:flex">
+                                                     <template v-if="product.orderStatus == 'P'" >
+                                                        
+                                                            <button type="button" class="btnConfirm">취소신청</button>
+                                                    
+                                                            <button type="button" class="btnConfirm" onclick="location.href='/s_inquiry'">판매자문의</button>
+                                                      
+                                                    </template>
+                                                    <template v-if="product.orderStatus == 'X'" >
+                                                       
+                                                            <button type="button" class="btnConfirm">취소신청철회</button>
+                                                      
+                                                    </template>
+                                                    <template v-if="'SDF'.includes(product.orderStatus)">
+                                                        
+                                                            <button type="button" class="btnConfirm">구매확정</button>
+                                                            <button type="button" class="btnConfirm">배송조회</button>
+                                                      
+                                                    </template>
+                                                    <template v-if="'AC'.includes(product.orderStatus)">
+                                                
+                                                            <button type="button" class="btnConfirm">리뷰작성</button>
+                                                            <button type="button" class="btnConfirm">재주문</button>
+                                                    </template>
+                                                </ul>
+                                            </div>
+                                            <!--//
                                             <div class="buttons">
                                                 <button type="button" class="btnConfirm">구매확정</button>
                                                 <button type="button" class="btnTracking" style="margin-left:10px">배송조회</button>
                                             </div>
+                                            -->
                                             <!--//buttons-->
                                             <template v-for="(option, oIdx) in product.options"> 
                                                 
                                                 <div class="orderBox02">
                                                     <a href="product_details.html">
-                                                        <img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:50px;height:62px;margin-right:20px">
+                                                        <img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:50px;height:62px;margin-right:20px;margin-top:10px">
                                                     </a>
                                                     <ul class="order00">
                                                         <li class="ship_state">{{ convertOrderStatus(product.orderStatus) }}</li>

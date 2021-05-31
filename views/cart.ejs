@@ -48,13 +48,10 @@
                 <main id="content" class="content">
                     <section id="shpcart_select">
                         <div class="group" style="margin-top:13px">
-                            <input
-                                type="checkbox"
-                                id="checkAll"
-                                v-model="checkAll"
-                                v-on:change="onCheckAllChange()">
-                            <label for="checkAll" class="secret">&nbsp;&nbsp;&nbsp;전체선택</label>
-                        </div>
+                            <input type="checkbox" class="required"  required="required" id="checkAll"
+                            v-model="checkAll" v-on:change="onCheckAllChange()">
+                                <label for="checkAll"><span>전체선택</span></label>
+                     </div>
                         <div class="shpcart_select_del_web">
                             <button v-on:click="deleteSelectedItems" class="deleteselectBtn">선택삭제</button>
                         </div>
@@ -76,12 +73,12 @@
                                         <div class="shoplist_info flow-column" v-for="(option, k) in product.options">
                                             <div class="shoplist_ctn">
                                                 <div>
-                                                    <input
-                                                        type="checkbox"
-                                                        name="optionSelect"
-                                                        v-model="option.isSelected"
-                                                        v-on:change="updateOrderInfo(option)"
-                                                        v-bind:checked="option.isSelected">
+                                                    <input type="checkbox" class="required"  required="required" id="checkAll"
+                                                    name="optionSelect"
+                                                    v-model="option.isSelected"
+                                                    v-on:change="updateOrderInfo(option)"
+                                                    v-bind:checked="option.isSelected">
+                                                        <label for="checkAll"><span></span></label>
                                                 </div>
                                                 <div class="flow-column">
                                                     <div class="shopcart_info">
