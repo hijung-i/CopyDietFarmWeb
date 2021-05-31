@@ -398,9 +398,23 @@ height:50px;overflow:hidden}
  /*  모바일 depth02 */
  .mDepth01 {height: 500px; overflow: auto;}
  .mDepth01 li {position: relative; background: #fff;}
+
  .gnb_depth02 li {background: #F5F5F5;}
  
- 
+ .sideMenu #tab2 .mDepth01 li{
+   height: 49px;
+   display: flex;
+   justify-content: space-between;
+ }
+.sideMenu #tab2 .mDepth01 li a {
+  padding-top: 19px;
+  padding-left: 15px;
+  padding-bottom: 14px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+
 /*서브메뉴 (신상, 베스트 등등)*/
 /*#mobile_sub{position:fixed;height:90px;background-color:#fff}*/
 #content .main_sub_wrap{   
@@ -2340,3 +2354,235 @@ display: flex;
 .search_line {width: 90%; height: 0.5px;background: BBBBB;margin: 0 auto;margin-top: 14px}
 .result-area{position: relative;}
 .search_result{background-color: #FFFFFF;position: absolute;z-index: 9999}
+
+.footer {
+  margin-bottom: 45px;
+}
+
+.footer-top-area,
+.footer-bottom-area,
+.footer-top-area div,
+.footer-bottom-area div{
+  display: flex;
+}
+
+.footer-top-area {
+  width: 100%;
+  justify-content: space-evenly;
+  
+  padding: 24px 0px;
+}
+
+.footer-top-area>div {
+  flex-flow: column;
+}
+
+.footer-item {
+  flex-flow: column;
+}
+.customer-center{
+  margin-bottom: 30px;
+}
+.accounts {
+  margin-bottom: 44px;
+}
+
+.footer-item:last-child {
+  margin-bottom: 0px;
+}
+
+.footer-item.align-center{
+  text-align: center;
+  align-items: center;
+}
+.footer-item p.title{
+  font-weight: bold;
+  color: #6B6B6B;
+}
+.footer-item p {
+  font-size: 12px;
+  line-height: 17px;
+  margin-bottom: 15px;
+  color: #6B6B6B;
+}
+
+.footer-item p.text-regular {
+  font-size: 15px;
+  line-height: 20px;
+}
+.footer-item p:last-child{
+  margin-bottom: 0px;
+}
+
+.text-regular {
+  font-size: 15px;
+  color: #000000;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.footer-notice ul{  
+  list-style: none;
+}
+
+.footer-notice ul li {
+  margin-bottom: 5px;
+}
+
+.footer-notice a{
+  color: #6B6B6B;
+  text-decoration: none;
+}
+
+.ask-buttons button{
+  width: 100%;
+  max-width: 144px;
+  height: 27px;
+  font-size: 10px;
+  
+  margin-bottom: 6px;
+  background-color: #FFFFFF;
+
+  border: 1px solid #878787;
+  border-radius: 5px;
+}
+
+.ask-buttons button img{
+  margin-right: 5px;
+}
+
+.ask-buttons button:last-child{
+  margin-bottom: 0px;
+}
+
+.footer-bottom-area {
+  background-color: #F4F4F4;
+  padding: 25px 24px;
+
+}
+
+.black {
+  color: black;
+}
+.footer-buttons {
+  color: #878787;
+}
+.footer-buttons li.divider{
+  border-right: 1px solid #E2E2E2;
+  height: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer-buttons li{
+  display: inline-block;
+}
+.footer-bottom-area{
+  flex-flow: column;
+}
+.footer-bottom-area .footer-buttons {
+  margin-bottom: 25px;
+}
+
+.dietfarm-info div p{
+  line-height: 20px;
+}
+
+.dietfarm-info div{
+  flex-flow: column;
+  margin-bottom: 20px;
+}
+
+.dietfarm-info div p {
+  margin-bottom: 0px;
+}
+.company-name{
+  margin-bottom: 10px;
+}
+.company-name span {
+  margin-right: 14px;
+}
+
+.orange {
+  color: #EFA543;
+}
+
+.border-orange{
+  border: 1px solid orange;
+}
+@media screen and (max-width:1079px) {
+    .only-pc {
+      display: none;
+    }
+    .only-mobile {
+      display: block;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+  .only-pc{ 
+    display: block !important;
+  }
+
+  .only-mobile{
+      display: none !important;
+  }
+
+  .footer {
+      background-color: #F4F4F4;
+      margin-bottom: 0px;
+  }
+  .footer>div {
+    width: 100%;
+  }
+
+  .footer>div:last-child{
+    width: 100%;
+    display: flex;
+    max-width: 1080px ;
+    margin: auto;
+    flex-flow: row-reverse;
+    justify-content: flex-end;
+  }
+  
+  .footer-top-buttons {
+    width: 100%;
+    background-color: #FFFFFF;
+  }
+  
+  .footer-top-area,
+  .footer-bottom-area{
+    display: flex;
+    width: fit-content;
+    display: inline-flex;
+  }
+
+  .footer-top-area {
+    flex-flow: row-reverse;
+  }
+
+  .footer-top-area>div:last-child{
+    margin-right: 62px;
+  }
+  
+  .footer-bottom-area {
+    margin-right: 46px;
+    padding: 25px 0px;
+  }
+  .footer-buttons {
+    width: 100%;
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  .footer-top-buttons {
+    height: 47px;
+    padding: 15px 0px;
+    border-top: 2px solid #F5F5F5;  
+    color: #000000;
+  }
+  
+
+}
