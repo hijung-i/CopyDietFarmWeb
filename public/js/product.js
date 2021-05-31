@@ -101,6 +101,8 @@ function getProductDetail(){
         if(product.options.length == 1) {
             app.selectedOptions = JSON.parse(JSON.stringify(product.options));
             app.selectedOptions[0].optionCount = 1;
+            app.selectedOptions[0].isSelected = true;
+            drawSelectedOptions();
         }
 
         app.product.discountRate = Math.round(product.discountRate);
@@ -204,7 +206,6 @@ function onOptionSelected(element) {
     if(!isExistsInArray(option)) {
         option.isSelected = true;
         selectedOptions.push(option);
-        
     }
     drawSelectedOptions();
 }
