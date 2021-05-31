@@ -17,17 +17,17 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
 @media screen and (max-width:499px){
 .like {width:25px;height:25px;position:relative;top:-50px;left:74%;background: url("/images/beforeheart_icon_main.png") no-repeat;}
 .like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}
-.like-yes { background: url("/images/afterheart_icon_main@2x.png") no-repeat}
+.like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
 @media screen and (min-width:500px) and (max-width:1079px){
   .like {width:25px;height:25px;position:relative;top:-50px;left:82%;background: url("/images/beforeheart_icon_main.png") no-repeat;}
   .like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}
-  .like-yes { background: url("/images/afterheart_icon_main@2x.png") no-repeat}
+  .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
 @media screen and (min-width:1080px){
 .like {width:25px;height:25px;position:relative;top:-51px;left:80%;background: url("/images/beforeheart_icon_main.png") no-repeat;}
 .like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}
-.like-yes { background: url("/images/afterheart_icon_main@2x.png") no-repeat}
+.like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
 
 *{box-sizing:border-box;}
