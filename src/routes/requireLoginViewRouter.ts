@@ -88,7 +88,6 @@ function checkLogin(req: Request, res: Response, next: Function) {
         next(req.session.user)
     }
 
-
 }
 
 export default router

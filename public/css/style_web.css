@@ -299,7 +299,6 @@ padding: 4px 0;}
 .order01 table{width:100%;border-bottom:1px solid #E6E6E6;margin-top:5px;padding:0}
 .order01_1{width:100%;border-top:8px solid #E6E6E6}
 .order01 td{font-size:14px;line-height:22px;}
-.order01 td:nth-child(2) {padding-right: -10px;}
 .order01 tr.order_q td{cursor:pointer;}
 .order01 tr.faq_a{display:none;}
 .ship_list p{font-size:14px;font-weight:bold;;display:flex;position:relative;left:-100px}
@@ -444,10 +443,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 }
 
 /*주문 상세*/
-@media screen and (min-width:1080px){
-    
-    
-}
+
 .orderDetails .orderBox02 {display: flex;}
 .orderDetails .orderBox02 li {font-size: 12px;}
 .orderDetails .orderBox02 li.product,
@@ -498,23 +494,22 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
     margin-top: 20px;
     padding-bottom: 20px;
 }
-      
+    
 /*주문 내역*/
-.orderHistory{width:100%;margin-bottom:10px;padding-left:15px;padding-right:15px}
+.orderHistory{width:100%;padding-left:15px;padding-right:15px}
 .order_list_title {width:100%;display:flex;justify-content:space-between;margin-top:20px}
 .order_a{margin-bottom:-25px}
 .orderBox tr {padding-top:10px}
 .order_a .order_add{font-size:14px;font-weight:bold}
-.order_a ul li{float:left}
-.orderDetail{padding-top:10px;}
 .orderDetail li {font-size: 12px;}
 .orderDetail a img{margin-left:-14px}
-.orderDetail ul li{width:100%;font-size:11px;}
+.orderDetail ul li{width:176px;white-space: nowrap;
+    overflow:hidden;text-overflow: ellipsis;font-size:11px;}
 .orderDetail ul li span{color:#EFA543}
 .t1{font-size:14px;font-weight:bold;letter-spacing:0.1px}
 .t1 span{font-size:12px;color:#BBBBBB;font-weight:normal}
 .t2{font-size:12px;line-height:14px;margin-top:5px;}
-.order_list_box{display:flex;justify-content:flex-start;margin-bottom:10px}
+.order_list_box{display:flex;justify-content:flex-start;margin-bottom:10px;margin-top:10px}
 .order ul li{white-space:nowrap}
 .order0{margin-top:-10px}
 .order_list_btn{width: 58px; float:right;padding-right: 0;}
@@ -1430,9 +1425,8 @@ delivery_manage_list .customer_info {
 .review_line {
     width: 100%; height: 1px;
     margin: 0 auto;
-    background: #E6E6E6;
-    margin: 14px 0;
-    /* opacity: 0.4; */
+    background: #E6E6sE6;
+    margin-top: 14px;
 }
 .review_prod {
     width: 90%;
