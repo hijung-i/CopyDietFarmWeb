@@ -124,7 +124,7 @@
                                     </p>
                                     <ul>
                                         <li class="t2">
-                                            <a href="/ol_detail">주문상세보기<img src="/images/arrow_icon_order.png" style="width:7px;margin-left:5px"></a>
+                                            <a v-bind:href="'/ol_detail/' + order.orderNumber">주문상세보기<img src="/images/arrow_icon_order.png" style="width:7px;margin-left:5px"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -160,7 +160,7 @@
                                                                 <button type="button" class="btnA">취소신청</button>
                                                             </li>
                                                             <li>
-                                                                <button type="button" class="btnB">배송조회</button>
+                                                                <button type="button" class="btnB" onclick="location.href='/s_inquiry'">판매자문의</button>
                                                             </li>
                                                         </template>
                                                         <template v-if="product.orderStatus == 'X'" >

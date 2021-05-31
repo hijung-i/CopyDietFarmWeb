@@ -192,7 +192,7 @@ function addCart() {
 
 function onOptionSelected(element) {
     var selectedIndex = $(element)[0].options.selectedIndex -1;
-    var selectedOption = product.options[selectedIndex];
+    var selectedOption = app.product.options[selectedIndex];
 
     // 깊은 복사
     var option = JSON.parse(JSON.stringify(selectedOption));
