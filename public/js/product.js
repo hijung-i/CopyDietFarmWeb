@@ -55,16 +55,16 @@ $(function() {
   
      });
 
-    $('ul.tab_wrap #tab li').click(function() {
+    $('#content ul.tab_wrap#tab li').click(function() {
         var activeTab = $(this).attr('data-tab');
 
-        $('.tab_wrap li').removeClass('active');
-        $('.tab_cont').removeClass('active');
-        $('.other_cont').removeClass("active");
+        $('#content .tab_wrap li').removeClass('active');
+        $('#content .tab_cont').removeClass('active');
+        $('#content .other_cont').removeClass("active");
 
         $(this).addClass('active');
         if(activeTab == 'tab1') {
-            $('.other_cont').addClass("active");
+            $('#content .other_cont').addClass("active");
         }
         $('#content #' + activeTab).addClass('active');
     });

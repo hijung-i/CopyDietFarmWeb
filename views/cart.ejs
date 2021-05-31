@@ -53,7 +53,7 @@
                                 <label for="checkAll"><span>전체선택</span></label>
                      </div>
                         <div class="shpcart_select_del_web">
-                            <button v-on:click="deleteSelectedItems" class="deleteselectBtn">선택삭제</button>
+                            <button v-on:click="deleteSelectedItems" class="deleteSelectBtn">선택삭제</button>
                         </div>
                     </section>
                     <div class="line"></div>
@@ -90,7 +90,7 @@
                                                                 <p class="product_name">{{ product.productName }}</p>
                                                                 <p class="option_desc">{{ option.optionDesc }}</p>
                                                                 <p class="price_web">{{ numberFormat(option.optionDiscountPrice) }}원</p>
-                                                                <a href="#"><img src="/images/x_icon_login.png" style="width:12px" class="delete_btn"></a>
+                                                                <span><img src="/images/x_icon_login.png" @click="deleteItem(i, j, k)" style="width:12px" class="delete_btn"></span>
                                                             </div>
                                                             <div class="shoplist_count">
                                                                 <div class="number-input">

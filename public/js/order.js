@@ -177,8 +177,8 @@ function paymentAction() {
         requestOrderDTO.deliveryDesc = $('#deliveryDesc').val()
     }
     
-    if(app.orderDTO.userCellNo == '' || app.orderDTO.userCellNo == undefined) {
-        alert('수령인 전화번호를 입력해주세요');
+    if(requestOrderDTO.userCellNo == '' || requestOrderDTO.userCellNo == undefined) {
+        alert('주문자 전화번호를 입력해주세요');
         return;
     }
  
