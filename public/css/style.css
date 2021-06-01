@@ -15,7 +15,7 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
 
 /*찜버튼*/
 @media screen and (max-width:499px){
-.like {width:25px;height:25px;position:absolute;top:-10px;right:20px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
+.like {width:25px;height:25px;position:absolute;bottom:20px;right:20px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
 .like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}
 .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
@@ -291,11 +291,24 @@ height:50px;overflow:hidden}
  padding-left:33px;
  padding-bottom:4px
 }
-
 .terms input[type="checkbox"]:checked + label{
   background: url(../images/aftercheck_icon_join.png)no-repeat;
    background-size:19px 19px;}
-
+   .non_members input[type="checkbox"]{display:none;}
+   .non_members input[type="checkbox"] + label{
+     display: inline-block;
+     margin: -2px 10px 0 0;
+     vertical-align: middle;
+     background: url(../images/beforecheck_icon_join.png)left top no-repeat;
+     cursor: pointer;
+     background-size:19px 19px;
+    padding-left:33px;
+    padding-bottom:4px;
+    margin-top:14px
+   }
+   .non_members input[type="checkbox"]:checked + label{
+     background: url(../images/aftercheck_icon_join.png)no-repeat;
+      background-size:19px 19px;}
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
    #content .main_sub .thum{margin-bottom:-20px}
@@ -751,10 +764,10 @@ height:400px}
   .orderer_info h4, .deliver_info h4{font-size:14px;font-weight:bold;margin-bottom:4px}
   .orderer_info input, .deliver_info input{width:95%;height:40px;border-radius:5px;border:1px solid #BBBBBB;margin-bottom:18px;padding:10px}
   .orderer_info select{width:95%;height:30px}
-  .coup_point h3{font-size:14px;font-weight:bold;margin-top:23px;padding-left:15px;margin-bottom:10px}
+  .coup_point h3{font-size:14px;font-weight:bold;margin-bottom:10px;margin-left:15px;margin-top:20px}
   .coup_point select{margin-left:15px;width:94%;height:45px;border:1px solid #bbbbbb;border-radius:5px;padding-left:16px;font-size:14px}
   #selectDeliveryDesc{width:95%;height:45px;border:1px solid #bbbbbb;border-radius:5px;margin-bottom:8px;padding-left:16px;font-size:14px}
-  .coup_point p{font-size:12px;padding-left:15px;margin-top:10px}
+  .coup_point p{font-size:12px;margin-top:10px;margin-left:15px}
   .coup_point input{width:73%;height:45px;border-radius:5px;border:none;border:1px solid #BBBBBB;margin-left:15px;padding-left:16px;font-size:14px}
   .coup_point #btnUse{width:20%;height:45px;border:0;border:1px solid #EFA543;color:#EFA543;background-color:#fff;border-radius:5px}
   .final_price{border-bottom:8px solid #f1f1f1;padding-bottom:20px}

@@ -381,7 +381,7 @@ box-shadow: none !important}
 #detail_purchase_info{margin-top:100px}
 
 
-.product_count{border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;margin-left:-18px;margin-right:10px}
+.product_count{border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;margin-left:-18px;margin-right:-14px}
 .product_count h4{font-size:14px;margin-left:15px;}
 .product_count li img {
   cursor: pointer;
@@ -638,7 +638,8 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 
 /*문의*/
 .qna{width:75%;}
-.myReview{width:100%; margin: 0 auto;padding-right:5px;border-bottom:2px solid #E6E6E6; padding-bottom:20px;display: flex;justify-content: flex-end;margin-top: 20px;align-items: center;padding-right:15px}
+.myReview{width:100%; margin: 0 auto;padding-right:5px;border-bottom:2px solid #E6E6E6; padding-bottom:20px;display: flex;justify-content: flex-end;margin-top: 20px;align-items: center;padding-right:15px
+;position:relative;top:-30px}
 #wrap_qna{margin-top:40px}
 /* 토글 버튼 디자인 */
 .myReview input {position: absolute; left: -9999px;}
@@ -1059,5 +1060,5 @@ color: #878787; font-size: 12px;}
 .share_img img{ float:right;position:relative;top:-40px;left:4px}
 .option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
 .reviews .num{width:100%;font-size:18px;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:14px;padding-bottom:18px}
-#tab4 .inquiry{width:100%;font-size:18px;font-weight:bold;margin-top:10px;padding-bottom:18px}
+#tab4 .inquiry{width:100%;font-size:18px;font-weight:bold;margin-top:10px;position:relative;top:10px}
 }
