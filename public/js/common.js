@@ -484,7 +484,7 @@ $(function(){
 	'<ul>' +
 	'<li><button class="naver" id="naver_id_login">네이버로 로그인</button></li>' +
 	'<li><button class="kakao" onclick="loginWithKakaoApi()">카카오로 로그인/가입</button></li>' +
-	'<li><a class="id_comp" onclick="javascript:location.href=\"/login-form\"">아이디로 로그인</a></li>' +
+	'<li><a class="id_comp" href="/login-form">아이디로 로그인</a></li>' +
 	'</ul>' +
 	'</div>' +
 	'</div>' ;
