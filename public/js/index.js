@@ -42,7 +42,6 @@ function getStandDatas() {
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
-                    console.log(product);
                     html += '<div class="swiper-slide"><a href="/product/'+ product.productCode +'""><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>';
                     // 메인 슬라이드
                 
