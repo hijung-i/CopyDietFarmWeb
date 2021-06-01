@@ -44,7 +44,10 @@
 }
 .mypage_modal .modal-content .login-list{text-align:center;padding-top:131px}
 .mypage_modal .modal-content .login-list ul li{margin-bottom:13px}
-.mypage_modal .modal-content .login-list ul li button{width:90%;height:40px;border:none;border-radius:5px}
+.mypage_modal .modal-content .login-list ul li button,
+.mypage_modal .modal-content .login-list ul li a
+{width:90%;height:40px;border:none;border-radius:5px; text-align: center;display: inline-block;
+line-height: 40px; font-size: 14px;}
 .mypage_modal .modal-content .login-list .naver{color:#fff;background-color:#1FBE02}
 .mypage_modal .modal-content .login-list .kakao{color:#000;background-color:#F9E50C}
 .mypage_modal .modal-content .login-list .id_comp{color:#fff;background-color:#B4B4B4}

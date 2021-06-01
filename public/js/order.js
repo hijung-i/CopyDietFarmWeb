@@ -6,7 +6,8 @@ var app = new Vue({
         paymentNo: 0,
         usablePoint: 0,
         orderDTO: '',
-        deliveryDescType: 0
+        deliveryDescType: 0,
+        couponList: []
     }, methods: {
         numberFormat,
         paymentAction,
