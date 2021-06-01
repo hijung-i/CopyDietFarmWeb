@@ -158,7 +158,7 @@ class UserService {
     requestKakaoToken = async (code) => {
 
         const options = {
-            uri: KAKAO_SERVER + '/oauth/token',
+            uri: this.KAKAO_SERVER + '/oauth/token',
             method: 'POST',
             headers: {
                 'Host': 'kauth.kakao.com',
@@ -167,7 +167,7 @@ class UserService {
             json: false,
             form: {
                 grant_type: 'authorization_code',
-                redirect_uri: CALLBACK_SERVER + '/user/result/kakao',
+                redirect_uri: this.CALLBACK_SERVER + '/user/result/kakao',
                 code: code,
                 client_id: '23424519967349f9a1d006b09f81bb98',
                 client_secret: 'Sv5VpQchcPw81uP51LZkxsaHpi4KOWjM'
@@ -184,7 +184,7 @@ class UserService {
     }
 
     requestKakaoUserInfo = async () => {
-        const url = KAKAO_SERVER + '/v2/user/me'
+        const url = this.KAKAO_SERVER + '/v2/user/me'
 
         const options = {
             uri: url,
