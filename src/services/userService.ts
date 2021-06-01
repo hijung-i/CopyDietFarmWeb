@@ -2,17 +2,6 @@ import { User } from '../models/user'
 import * as request from 'request-promise-native'
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
 
-// const SERVER_IP = '192.168.0.3'
-// const SERVER_IP = 'data-flow.co.kr'
-const SERVER_IP = 'dietfarm.co.kr'
-
-// const SERVER_URL = 'http://' + SERVER_IP + ':9090'
-// const SERVER_URL = 'http://13.209.123.102:9090'
-const SERVER_URL = 'http://112.217.209.162:9090'
-const CALLBACK_SERVER = 'http://' + SERVER_IP + ':3000'
-
-const KAKAO_SERVER = 'https://kauth.kakao.com'
-
 type Option = {
     uri: string,
     method: string,
@@ -22,9 +11,18 @@ type Option = {
 }
 
 class UserService {
+    SERVER_IP = 'dietfarm.co.kr'
+
+    SERVER_URL = 'http://112.217.209.162:9090'
+
+    // CALLBACK_SERVER = 'http://' + this.SERVER_IP + ':3000'
+    CALLBACK_SERVER = 'http://' + this.SERVER_IP
+
+    KAKAO_SERVER = 'https://kauth.kakao.com'
+
     login = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${SERVER_URL}/user/login`,
+            uri: `${this.SERVER_URL}/user/login`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -47,7 +45,7 @@ class UserService {
 
     loginKakao = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${SERVER_URL}/user/loginKakaoUser`,
+            uri: `${this.SERVER_URL}/user/loginKakaoUser`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -69,7 +67,7 @@ class UserService {
 
     loginNaver = async (tokenNaver: string): Promise<UserResult> => {
         let options: Option = {
-            uri: `${SERVER_URL}/user/loginNaverUser`,
+            uri: `${this.SERVER_URL}/user/loginNaverUser`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
@@ -136,7 +134,7 @@ class UserService {
 
     register = async (user: User): Promise<UserResult> => {
         let options: Option = {
-            uri: `${SERVER_URL}/user/register`,
+            uri: `${this.SERVER_URL}/user/register`,
             method: 'POST',
             headers: {
                 'Accept-Charset': 'application/json;charset=UTF-8',
