@@ -1,12 +1,14 @@
 // var API_SERVER = "http://localhost:9090";
-var SERVER_IP = '192.168.0.3';
+// var SERVER_IP = '192.168.0.3';
 // var SERVER_IP = 'data-flow.co.kr';
+var SERVER_IP = 'dietfarm.co.kr';
 
-var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
-var API_SERVER = "http://"+ SERVER_IP +":9090";
+// var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
+var CALLBACK_SERVER = "http://"+ SERVER_IP;
+// var API_SERVER = "http://"+ SERVER_IP +":9090";
 
-//var API_SERVER = "http://112.217.209.162:9090";
-//var RESOURCE_SERVER = "http://112.217.209.162:8000";
+var API_SERVER = "http://112.217.209.162:9090";
+// var RESOURCE_SERVER = "http://112.217.209.162:8000";
 // var API_SERVER = "http://13.209.123.102:9090";
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
@@ -362,25 +364,16 @@ $(function(){
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
     var modal = document.getElementById('myModal');
 
-	if ($('#naver_id_login').length > 0) {
-		ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-		 function(data) {
-			$('#naver_id_login').html(data);
-		}, function (err) {
-			console.log("error login button", err);
-		})
-	}
-
 	var modal = document.getElementById('myModal');
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
     var funcs = [];
 	if(btn != null) {
-	//	btn.addEventListener('click', showModal());
-	//}
-	//if( span != null) {
-	//	span.addEventListener('click', hideModal());
-}
+		//	btn.addEventListener('click', showModal());
+		//}
+		//if( span != null) {
+		//	span.addEventListener('click', hideModal());
+	}
 
 	// When the user clicks on the button, open the modal 
 	// btn.onclick = function() {
@@ -489,9 +482,9 @@ $(function(){
 	'<span class="close">&times;</span>' +
 	'<div class="login-list">' + 
 	'<ul>' +
-	'<li><button class="naver">네이버로 로그인</button></li>' +
-	'<li><button class="kakao">카카오로 로그인/가입</button></li>' +
-	'<li><button class="id_comp">아이디로 로그인</button></li>' +
+	'<li><button class="naver" id="naver_id_login">네이버로 로그인</button></li>' +
+	'<li><button class="kakao" onclick="loginWithKakaoApi()">카카오로 로그인/가입</button></li>' +
+	'<li><a class="id_comp" href="/login-form">아이디로 로그인</a></li>' +
 	'</ul>' +
 	'</div>' +
 	'</div>' ;
@@ -520,6 +513,16 @@ $(function(){
 	$("#myModal").html(myPageModal);
 	$("#modal-inquiry").html(inquiryModal);
 	
+	
+	if ($('#naver_id_login').length > 0) {
+		ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+		 function(data) {
+			$('#naver_id_login').html(data);
+		}, function (err) {
+			console.log("error login button", err);
+		})
+	}
+
 });
 
 // kakao 계정 로그인 순서1번
