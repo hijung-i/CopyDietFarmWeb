@@ -58,7 +58,7 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
 
     if (loginResult.message === StatusMessage.success) {
         console.log('loginSuccess -> ', loginResult.data)
-        userToSession(req, user)
+        userToSession(req, loginResult.data!)
 
         console.log('save user on session', req.session.user)
     }
