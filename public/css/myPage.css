@@ -2,11 +2,11 @@
 .detail_title{margin:35px 10px 32px 0px;width:100%;}
 .btnback{position:absolute;top:4px}
 .btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
-
+button#naver_id_login.naver a img{display:none}
 /*마이페이지 로그인 버튼 모달창*/
  /* The Modal (background) */
  .mypage_modal {
-    /*display: none;  Hidden by default */
+    display: none;
     position: fixed; /* Stay in place */
     z-index: 10000; /* Sit on top */
     left: 0;
@@ -65,20 +65,18 @@ line-height: 40px; font-size: 14px;}
 .myPage01,.myPage01_2, .myPage02, .myPage03, .myPage04, myPage05{width:100%;border-bottom:8px solid #F1F1F1}
 .myPage ul{width:100%;padding:0;clear:both;display:flex;
 justify-content: space-between;border-bottom:0.5px solid #bbbbbb}
-.myPage ul li{float:left;font-size:14px;justify-content:space-between;padding:20px 15px 17px 15px}
+.myPage ul li{float:left;font-size:14px;justify-content:space-between;padding-left:15px;padding-right:15px;padding-top:16.17px;padding-bottom:20px}
 .myPage06 li, .myPage06 li a{color:#6B6B6B;}
 .myPage06 ul{background-color:#F5F5F5;padding-top:10px;padding-bottom:10px}
 
 /*마이페이지(로그인전)*/
 .myPage01 h3{padding-left:20px;text-align:left;margin-bottom:20px;font-size:16px;font-weight:normal;margin-top:-10px}
 .myPage01 h4{padding-left:20px;}
-.btnLogin{width:95%;height:45px;text-align:center;border:0;display:inline-block;
+.btnLogin, .btnSignup{width:50%;height:45px;text-align:center;border:0;display:inline-block;
 background-color:#F99319;border-radius:5px;
-;font-size:14px;font-weight:bold;color:#fff;padding-top:4px;margin-left:15px;margin-right:15px;margin-top:14px}
-
-/*포인트*/
-ul, li, p{list-style:none}
-
+;font-size:14px;font-weight:bold;color:#fff;padding-top:4px;margin-top:14px}
+.myPage .buttons{display:flex;margin-left:15px;margin-right:15px}
+.myPage .btnSignup{margin-left:10px}
 /* 현재 포인트 */
 .current_point > p {
     text-align: center;

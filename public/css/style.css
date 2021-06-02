@@ -359,7 +359,6 @@ height:50px;overflow:hidden}
  .web_index{display:none}
  .body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
  .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
- .body_bottom .thum{margin-bottom:-20px}
  .body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
  .body_bottom .desc .sale{font-weight:bold}
  .body_bottom .desc .cost{color:red;text-decoration:line-through;}
@@ -388,17 +387,9 @@ height:50px;overflow:hidden}
  .main_slide_pager {position: absolute; right: 25px; bottom: 25px; width: 64px; height: 26px; background: #fff; border-radius: 13px; text-align: center; font-size: 12px; font-weight: 500; line-height: 26px;}
  #content{position:relative;width:100%;z-index:1}
  #content .main_img{z-index:1;width:100%;}
- #content .catgor_wrap{width:100%;border-bottom:8px solid #f1f1f1;}
- #content .category{width:100%;border-top:8px solid #f1f1f1;}
- #content .category ul{display:grid;grid-template-columns: repeat(5, 2fr);
- ;align-items: center;justify-self: center;width: 100%;margin: 10px auto;}
- #content .category ul li{height:100%;text-align:center; margin-top:10px; /* outline: 2px solid red; */}
- #content .category li{float:left}
- #content .category img{width:60px;height:60px}
- #content .category p{margin-top:7.89px;font-size:13px;white-space:nowrap;}
  #content .s_wrap{margin-bottom:-50px}
  #content .s_price{margin:20px 10px 20px;width:100%;margin-bottom:-50px;}
- #content .mtpSlideTit{font-size:14px;margin-bottom:10px}
+ #content .mtpSlideTit{font-size:20px;margin-bottom:10px}
  #content .s_price li .title{font-size:12px;/*overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100px;height: 20px;display:inline-block*/}
  #content .s_price li .price{font-size:12px;font-weight:bold;margin-top:12px;overflow:visible;}
  #content .s_price ul li img{margin-bottom:10px}
@@ -471,7 +462,7 @@ justify-self: center;margin: 0 auto;white-space:nowrap}
 #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
 #content .desc .ratio{color:#F32525}
 .page_wrap{display:none}
-
+#content .desc{font-size:14px}
 /*회원 탈퇴*/
 .contents .web_title{display:none}
 .contents .delete a img{position:absolute;top:-1px}
@@ -486,12 +477,11 @@ justify-self: center;margin: 0 auto;white-space:nowrap}
 font-size: 14px;font-weight:bold;color:#fff;background:#EFA543;border-radius:5px;border:1px solid #EFA543}
 
 /*cs_center*/
-.cs_content{padding-left:15px;padding-right:15px}
 .cs_content h2{display:none}
 .w_sidemenu{display:none}
 .i_info01, .i_info02{display:none}
 .cs_content .num{display:none}
-.cs_content h3{margin-top:33px;font-size:16px;font-weight:bold;margin-bottom:15px}
+.cs_content h3{font-size:16px;font-weight:bold;margin-bottom:15px}
 .info_mob p span{color:#31845B;font-size:14px;font-weight:bold}
 .info_mob ul{margin-top:15px}
 .info_mob ul li{float:left;margin-right:10px}
@@ -625,14 +615,14 @@ height:400px}
 .popup_overlay{position:fixed;top:0px;right:0;left:0;bottom:0;z-index:1001;background:rgba(0,0,0,0.5);}  
 
 .web_index{display:none}
-.body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
+.body_bottom h3{font-size:20px;font-weight:bold;padding-left:15px;padding-top:24px}
 .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
 .body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
 .body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
 .body_bottom .desc .ratio{font-weight:bold}
-.body_bottom .desc .title{margin-left:10px}
+.body_bottom .desc .title{margin-left:10px;padding-right:5px}
 .body_bottom .desc ul{margin-left:5px}
 .body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
@@ -668,11 +658,11 @@ height:400px}
     #content .category{width:100%;border-top:8px solid #f1f1f1;}
     #content .category ul{display:grid;grid-template-columns: repeat(5, 2fr);
     ;align-items: center;
-    justify-self: center;width: 100%;margin: 10px auto;
+    justify-self: center;margin: 10px 15px;margin-right:20px
     }
     #content .category ul li{height:100%;text-align:center; margin-top:10px; /* outline: 2px solid red; */}
     #content .category li{float:left}
-    #content .category img{width:60px;height:60px}
+    #content .category img{width:40px;height:40px}
     #content .category p{margin-top:7.89px;font-size:13px;white-space:nowrap;}
     #content .s_wrap{margin-bottom:-50px}
     #content .s_price{margin:20px 10px 20px;width:100%;margin-bottom:-50px;}
@@ -687,9 +677,9 @@ height:400px}
     #content .best_wrap{width:100%;border-top:8px solid #f1f1f1; margin: 0 auto;}
     
     #content .w_best{overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
-    #content .w_best h2{font-size:14px; margin-bottom:20px;margin-top:24px}
+    #content .w_best h2{font-size:20px; margin-bottom:20px;margin-top:24px}
     #content .w_best li .thum img{width:100%;height:auto;}
-    #content .w_best li .title{font-size:12px;padding:5px;margin-top:20px}
+    #content .w_best li .title{font-size:14px;margin-top:20px}
     #content .w_best li .desc ul{margin-left:-1px}
     #content .w_best li .desc ul li{margin-left:7px;margin-bottom:20px;float:left}
     #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
@@ -705,7 +695,7 @@ height:400px}
      
   .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;padding-top:4px} 
   .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
-  .sweet h3{clear:both;font-size:14px;font-weight:bold;padding-left:15px}
+  .sweet h3{clear:both;font-size:20px;font-weight:bold;padding-left:15px}
   #mHeader{position:fixed;height:90px;background-color:#fff}
   .btnCart{width: 21px; height: 21px;}
   #content .pick_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:80px}
@@ -720,7 +710,6 @@ height:400px}
   #content .pick_product ul li .desc p{font-size:12px;padding:5px;text-overflow: ellipsis;white-space:nowrap;}
   #content .pick_product ul li .desc 
   #content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
-  #content .desc ul{margin-left:10px;margin-bottom:10px;margin-top:7px}
   #content .desc .sale{color:#000}
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
   #content .desc .ratio{color:#F32525}
@@ -953,20 +942,6 @@ height:400px}
 /*content*/
 /*메인 페이지 모바일*/
 @media screen and (max-width:1079px) {
-.web_index{display:none}
-.body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
-.protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
-.body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
-.body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
-.body_bottom .desc .sale{font-weight:bold}
-.body_bottom .desc .cost{color:red;text-decoration:line-through;}
-.body_bottom .desc .ratio{font-weight:bold}
-.body_bottom .desc .title{margin-left:10px;margin-top:20px}
-.body_bottom .desc ul{margin-left:5px}
-.body_bottom .desc ul li{float:left;margin-right:5px}
-.side{display:none}
-.sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
-.sideMenu #tab1 {width: 100%; min-width: 360px;}
   /* 멀티플 슬라이드 */
   .mtpSlideTit {margin: 24px 0 21px 0;}
   .multiple_slider_wraper {
@@ -1603,9 +1578,6 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  .idSearchComp .buttons{width:95%;margin: 0 auto;justify-content: space-between;}
  .btnidSearch, .btnpwdSearch{width: 48%;height:45px;text-align:center; border:1px solid #F99319;display:inline-block;border-radius:5px;
  color:#F99319;font-size:14px;font-weight:bold;background-color:#FFF}
- .btnSignup{width:48%;height:45px;text-align:center;border:0;display:inline-block;
- background-color:#F99319;border-radius:5px;
- color:#fff;font-size:14px;font-weight:bold}
  
  .id_place .box{float:left;}
  .id_place .btn_wrap{float:right;position:relative;left:85px;top:-50px}
