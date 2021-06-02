@@ -180,7 +180,7 @@ function paymentAction() {
     }
     
     requestOrderDTO.delivery = app.orderDTO.delivery
-    if(app.orderDTO.delivery == undefined) {
+    if(requestOrderDTO.userCellNo == undefined) {
         var delivery = {
             userName: $('#unReceiverName').val(),
             address: $('#unAddr').val() + $('#unAddr2').val(),

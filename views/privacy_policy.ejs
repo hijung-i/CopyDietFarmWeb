@@ -16,19 +16,38 @@
                 .web_PrivacyPolicy {
                     display: none;
                 }
+                .content h2{display:none}
+                .term_contents{width:100%;padding-left:15px;padding-right:15px;margin-top:40px}
             }
-            @media screen and (min-width:1020px) {
+            @media screen and (min-width:1080px) {
                 .mobile_PrivacyPolicy {
                     display: none;
                 }
+             .content h2{border-bottom:1px solid #424242;padding-bottom:10px}
             }
         </style>
         <%-include('general/head') %>
         </head>
         <body>
+            <div class="mobile_PrivacyPolicy">
+                <section class="detail_title">
+                    <h2>개인정보처리방침</h2>
+                    <script type="text/javascript">
+                        function goBack() {
+                            window
+                                .history
+                                .back();
+                        }
+                    </script>
+                    <div class="btnback">
+                        <a href="#" value="취소" onclick="goBack()"><img src="images/leftarrow_ico_my.png" alt=""></a>
+                    </div>
+                </section>
+            </div>
             <div class="web_PrivacyPolicy">
                 <%-include('general/header') %>
-                    <main id="w_content" class="content">
+            </div>
+                    <main id="content" class="content">
                         <h2>개인정보처리방침</h2>
                         <div class="term_contents">
                             <p>㈜데이터플로는 서비스이용자의 원활한 서비스 이용을 도모하기 위하여 본 서비스와 함께 약관을 제공합니다. ㈜데이터플로는 서비스이용자에게
@@ -58,39 +77,6 @@
 
                         </div>
                     </main>
-                </div>
-                <script>
-                    $(document).ready(function () {
-                        $("#gnbAllMenu").hide();
-                        $("#btnGnbOpen").click(function () {
-                            $("#gnbAllMenu").slideToggle("fast");
-                        });
-                    });
-
-                    $(document).ready(function () {
-                        $(".m_slides_sub").hide();
-                        $(".m_ba_slides_n_w li").hover(function () {
-                            $("ul:not(:animated)", this).slideDown("700");
-
-                            $(".m_ba_slides_n_w li a").removeClass("active");
-                        }, function () {
-                            $("ul", this).slideUp("700");
-                        });
-
-                        $("#memberMenu").bind("moseover mouseenter", function () {
-                            $("#memMenu").show();
-                        });
-                        $("#memMenu").bind("moseout mouseleave", function () {
-                            $("#memMenu").hide();
-                        });
-
-                        $("#NotmemberMenu").bind("moseover mouseenter", function () {
-                            $("#NotmemMenu").show();
-                        });
-                        $("#NotmemMenu").bind("moseout mouseleave", function () {
-                            $("#NotmemMenu").hide();
-                        });
-                    });
-                </script>
-            </body>
+              
+                       </body>
         </html>

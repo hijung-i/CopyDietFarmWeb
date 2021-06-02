@@ -15,9 +15,8 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
 
 /*찜버튼*/
 @media screen and (max-width:499px){
-<<<<<<< HEAD
   .like {width:25px;height:25px;position:absolute;top:-10px;right:20px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
-  .like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}
+  /*.like-no { background: url("/images/beforeheart_ico_main.png") no-rㄴepeat;}*/
   .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 
   .option_btns .like {
@@ -25,16 +24,11 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
     top: 0px;
     right: 0px;    
   }
-=======
-.like {width:25px;height:25px;position:absolute;bottom:20px;right:20px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
-.like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}
-.like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
->>>>>>> 48de0571bed5ae49a4536a5839976d2682446540
 }
 
 @media screen and (min-width:500px) and (max-width:1079px){
-  .like {width:25px;height:25px;position:relative;top:-50px;right:50px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
-  .like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}
+  .like {width:25px;height:25px;position:relative;top:-50px;right:60px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
+  /*.like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
   .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
 @media screen and (min-width:1080px){
