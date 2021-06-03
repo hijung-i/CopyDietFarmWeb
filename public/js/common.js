@@ -1,15 +1,17 @@
 // var API_SERVER = "http://localhost:9090";
-var SERVER_IP = '192.168.0.3';
+// var SERVER_IP = '192.168.0.3';
 // var SERVER_IP = 'data-flow.co.kr';
+var SERVER_IP = 'dietfarm.co.kr';
 
 var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
-var API_SERVER = "http://"+ SERVER_IP +":9090";
+// var API_SERVER = "http://"+ SERVER_IP +":9090";
 
 var API_SERVER = "http://112.217.209.162:9090";
-//var RESOURCE_SERVER = "http://112.217.209.162:8000";
-// var API_SERVER = "http://13.209.123.102:9090";
+//var RESOURCE_SERVER = "http://112.217.209.162:8000"; // 운영
+// var API_SERVER = "http://13.209.123.102:9090";      // 카카오
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
+
 
 function ajaxCall(url, params, type, onSuccess, onError){
 	var param = JSON.stringify(params);
@@ -97,9 +99,25 @@ function generateHtmlForProductList(products, maxSize){
     return html;
 }
 
-function goBack() {
-	window.history.back();
+// function goBack() {
+// 	window.history.back();
+// }
+
+// 뒤로가기 ios 대응
+
+//javascript
+window.onpageshow = function(event) { //BFCache
+	if (event.persisted) {
+		window.location.reload();
+	} else{} //새로운페이지
 }
+
+//jquery
+$(window).bind("pageshow", function(event) {
+	if (event.originalEvent && event.originalEvent.persisted) {// BFCache
+		window.location.reload();
+	}else{}//새로운페이지
+});
 
 function generateHtmlForProduct(product){
 
@@ -133,10 +151,6 @@ function generateHtmlForProduct(product){
 	html += '</a>';
 	html += '</li>';
     return html;
-}
-
-function goBack() {
-	window.history.back();
 }
 
 $(window).bind('orientationchange', function(e) {
