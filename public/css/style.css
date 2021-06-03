@@ -559,7 +559,7 @@ border-spacing: 0 20px;font-size:14px}
 .faq_web_title{display:none}
 .faq{margin-top:20px;width:100%;}
 .faq_q .title{padding-top:15px}
-.faq .downArrow{position:absolute;right:20px;margin-top:5px;width:11px;height:11px}
+.faq .downArrow, .faq .upArrow{position:absolute;right:20px;margin-top:5px;width:11px;height:11px}
 .faq ul li{float:left;}
 .faq_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;padding-right:20px;margin-bottom:20px;}
 .faq_title p span{font-size:15px;font-weight:bold;padding-left:15px}

@@ -480,7 +480,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 @media screen and (max-width:1079px){
 div.order_detail_btn ul{display:flex;}
 .btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
-color:#000;font-size:14px;background-color:#F1F1F1;margin-right:10px}
+color:#000;font-size:14px;background-color:#F1F1F1;margin-right:7px}
 
 .dateNo{border-bottom:8px solid #F1F1F1}
 .date{margin-bottom:3px;color:#878787}
@@ -530,8 +530,8 @@ color:#000;font-size:14px;background-color:#F1F1F1;margin-right:10px}
 .order ul li{white-space:nowrap}
 .order0{margin-top:-10px}
 .order_list_btn{width: 58px; float:right;padding-right: 0;}
-.btnA{width:100%;height:26px;background-color:#F99319;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:8px;white-space:nowrap;}
-.btnB{width:100%;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:12px;white-space:nowrap;padding:1px}
+.btnA{width:100%;height:26px;background-color:#F99319;border:0;color:#fff;border-radius:5px;margin-bottom:8px;white-space:nowrap;}
+.btnB{width:100%;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;white-space:nowrap;padding:1px}
 .grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;margin-top:20px}
 
 /*주문 내역 없을때*/
@@ -898,7 +898,7 @@ delivery_manage_list .customer_info {
 
 .btn_area_modal {margin-top:10px;width:100%;}
 #btnRegister_modal {
-    width: 100%; 
+    width: 90%; 
     margin:0 auto;
     padding: 15px 0 15px;
     border:0;
