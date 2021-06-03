@@ -2322,11 +2322,12 @@ display: flex;
 .footer {
   margin-bottom: 45px;
 }
-
+.footer_sns{width:70%;margin:0 auto;margin-bottom:25px}
+.footer_sns ul{display:flex;justify-content:space-around;}
+.footer_sns ul li img{width:27px;height:27px}
 .footer-top-area,
 .footer-bottom-area,
-.footer-top-area div,
-.footer-bottom-area div{
+.footer-top-area div{
   display: flex;
 }
 

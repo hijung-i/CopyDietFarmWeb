@@ -127,6 +127,37 @@ router.get('/products', (req: Request, res: Response, next: NextFunction) => {
 router.get('/product', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'product', {})
 })
+router.get('/membership', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'membership', {})
+})
+router.get('/n_member', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'new_membership', {})
+})
+
+router.get('/f_invite', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'friend_invite', {})
+})
+
+router.get('/f_purchase', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'first_purchase', {})
+})
+
+router.get('/m_save', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'money_save', {})
+})
+
+router.get('/k_friend', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'kakao_friend', {})
+})
+router.get('/b_event', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'birthday_event', {})
+})
+
+router.get('/r_event', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'review_event', {})
+})
+
+
 
 router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     const sessionUser: SessionUser | undefined = req.session.user

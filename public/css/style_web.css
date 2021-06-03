@@ -1353,7 +1353,7 @@ delivery_manage_list .customer_info {
 .tabMenu_review .tab_wrap > span {
     position: absolute; left: 0; bottom: 0; height: 3px;
     background: #F99319;
-    width: 50%; margin: -12px 0;
+    width: 50%; margin: -16px 0;
     opacity: 0;
     transition: all .3s;
 }

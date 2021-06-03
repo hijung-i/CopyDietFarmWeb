@@ -192,7 +192,6 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 .page_wrap{display:none}
  #wrap{display:none}
 .modal-con{display:none}
-#tab1{display:none}
 /* contents Mtab_cont active 요소에 처음엔 display block, 다른 메뉴 누르면 display none 다시 누르면 display block이 반복돼야함 */
 .inquiry{display:none}
 .modal-open{display:none}
