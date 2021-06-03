@@ -24,7 +24,6 @@
     </style>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/cs.css">
-    <link rel="stylesheet" href="/css/style02.css">
     <%-include('general/head') %>
     </head>
 
@@ -49,7 +48,7 @@
             </div>
         </section>
     </div>
-    <main id="content" class="cs_content">
+    <main id="content" class="alarm_content">
         <div class="alarm_web_title">
             <h2>고객센터</h2>
             <div class="contents">
@@ -74,6 +73,7 @@
                 </div>
             </div>
         </div>
+    <div class="alarm">
         <div class="alarmBox">
 
             <h3>알림 받기</h3>
@@ -83,7 +83,8 @@
         </div>
 
         <p class="alarmS">알림 거절 시 상품배송 및 문의 등의 정보성알림을 포함한 모든 알림을 받아보실 수 없습니다.</p>
-
+    </div>
+    <div class="alarm">
         <div class="alarmBox">
             <h3>광고성 정보 수신 동의</h3>
             <input type="checkbox" id="marketingAlert">
@@ -91,6 +92,7 @@
                 <span>아이콘</span></label>
         </div>
         <p class="alarmS">신규 서비스 및 고객 맞춤 혜택 정보를 받을 수 있습니다.</p>
+    </div>
     </main>
     <script src="/js/alarm.js"></script>
 </body>

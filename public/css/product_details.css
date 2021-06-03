@@ -22,7 +22,7 @@ div #ex1.modal ul li {float:left}
 .product_modal03 .star_grade p{font-size:16px;font-weight:bold}
 .product_modal03 .red{color:#D62828;text-align:left}
 .product_modal03 .modal_line{border-top:8px solid #F1F1F1;margin-top:25px;width:100%}
-.product_modal03 #btnEnroll{width:100%;height:45px;color:#fff;font-size:14px;font-weight:bold;background-color:#EFA543;border-radius:5px;border:none}
+.product_modal03 #btnEnroll{width:100%;height:45px;color:#fff;font-size:14px;font-weight:bold;background-color:#F99319;border-radius:5px;border:none}
 
 
 
@@ -60,7 +60,7 @@ div #ex1.modal ul li {float:left}
 }
 @media screen and (max-width:1079px){
     .review_btn{display:flex;justify-content:center; padding-bottom:21px;border-bottom:8px solid #f1f1f1;border-top:2px solid #E6E6E6;padding-top:18px}
-    .review_btn button{border:2px solid #EFA543;background-color:#fff;color:#EFA543;font-weight:bold;border-radius:5px}
+    .review_btn button{border:2px solid #F99319;background-color:#fff;color:#F99319;font-weight:bold;border-radius:5px}
     .v_floating_wrap{display:none}
 }
     /*리뷰*/
@@ -138,9 +138,9 @@ div #ex1.modal ul li {float:left}
     transform: translateY(-50%);
     transition: all .4s;
 }
-.myReview input:checked + label {background: #fff; border: 1px solid #EFA543; }
+.myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
 .myReview input:checked + label:after {
-    left: calc(100% - 18px); right: 2px; background: #EFA543;
+    left: calc(100% - 18px); right: 2px; background: #F99319;
 }
 .myReview label > span {display: none;}
 
@@ -154,7 +154,7 @@ div #ex1.modal ul li {float:left}
 }
 .qna ul li{float:left;}
 .review_edit {width:100%;display: flex;justify-content: space-between;margin-top:20px;padding-right:20px}
-.review_edit p span{font-size:12px;color:#EFA543;font-weight:bold;}
+.review_edit p span{font-size:12px;color:#F99319;font-weight:bold;}
 .review_edit ul li{font-size:12px;margin-left:20px;line-height:14px;}
 .review_edit .bar{position:relative;left:10px;top:4px}
 .review_q{border-bottom:2px solid #E6E6E6}
@@ -184,15 +184,15 @@ font-size: 14px;
 /*position:fixed;*/
 top: 20px;
 }
-.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #EFA543;position:relative;top:-1px}
+.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #F99319;position:relative;top:-1px}
 .common_btn_wrap > .option_btns button:nth-child(2) {
     background: #fff;
-    border: 1px solid #EFA543;
-    color: #EFA543;
+    border: 1px solid #F99319;
+    color: #F99319;
     font-weight:700
 }
 .common_btn_wrap > .option_btns button:nth-child(3) {
-    background: #EFA543;
+    background: #F99319;
     color: #fff;
     font-weight: 700;
 }
@@ -230,7 +230,7 @@ top: 20px;
     padding-top: 16px;
 }
 .prod_rev_menu > .left {
-    color: #EFA543;
+    color: #F99319;
     font-weight: 700;
     padding-left: 24px;
 }
@@ -244,7 +244,7 @@ top: 20px;
 }
 .nav_underline > .nav_color_underline {
     width: 50%; height: 2px;
-    background-color: #EFA543;
+    background-color: #F99319;
     margin-top: 5px;
 }
 .nav_underline .nav_gray_underline {
