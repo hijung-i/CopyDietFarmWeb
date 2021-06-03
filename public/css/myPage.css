@@ -60,12 +60,12 @@ line-height: 40px; font-size: 14px;}
 .mypage a{display:block}
 .myPage01{width:100%;padding-top:10px;padding-bottom:12px}
 .myPage01 h3{font-size:16px}
-.myPage01_2 .invite a{color:#fff;background-color:#F99319;border:1px solid #F99319;border-radius:30px;width:88px;height:22px;padding:2px 11px 2px 11px;letter-spacing:1px;}
-.myPage01_2 .benefits a{color:#fff;background-color:#FF475E;border:1px solid #FF475E;border-radius:30px;width:88px;height:22px;padding:2px;padding:2px 11px 2px 11px;letter-spacing:1px;}
+.myPage01_2 .invite ul li a:last-child {color:#fff;background-color:#F99319;border:1px solid #F99319;border-radius:30px;width:88px;height:22px;padding:2px 11px 2px 11px;letter-spacing:1px;}
+.myPage01_2 .benefits ul li {color:#fff;background-color:#FF475E;border:1px solid #FF475E;border-radius:30px;width:88px;height:22px;padding:2px;padding:2px 11px 2px 11px;letter-spacing:1px;}
 .myPage01,.myPage01_2, .myPage02, .myPage03, .myPage04, myPage05{width:100%;border-bottom:8px solid #F1F1F1}
 .myPage ul{width:100%;padding:0;clear:both;display:flex;
 justify-content: space-between;border-bottom:0.5px solid #bbbbbb}
-.myPage ul li{float:left;font-size:14px;justify-content:space-between;padding-left:15px;padding-right:15px;padding-top:16.17px;padding-bottom:20px}
+.myPage ul li{float:left;font-size:14px;justify-content:space-between;padding-left:15px;padding-right:15px;padding-top:16.17px;padding-bottom:15px}
 .myPage06 li, .myPage06 li a{color:#6B6B6B;}
 .myPage06 ul{background-color:#F5F5F5;padding-top:10px;padding-bottom:10px}
 
@@ -77,72 +77,9 @@ background-color:#F99319;border-radius:5px;
 ;font-size:14px;font-weight:bold;color:#fff;padding-top:4px;margin-top:14px}
 .myPage .buttons{display:flex;margin-left:15px;margin-right:15px}
 .myPage .btnSignup{margin-left:10px}
-/* 현재 포인트 */
-.current_point > p {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 0 0 4px 0;
-}
-.current_point h2 {
-    font-weight: 800;
-}
+@media screen and (max-width:1079px){
 
-.point_line {
-    width: 100%; height: 4px;
-    background: #F1F1F1;
 }
-
-.point_history {
-    position: relative;
-    right: 18%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.point_history_left {
-    text-align: right;
-    padding: 8px 0 8px 0;
-}
-.point_history_right {
-    text-align: left;
-    padding: 8px 0 8px 0;
-}
-.point_history_line {
-    width: 100%; height: 1px;
-    background: #bbb;
-    opacity: 0.4;
-}
-@media screen and (max-width:1080px){
-.page_wrap{margin-top:30px}
-}
-/* point history design */
-
-.point_history > .point_history_left .save {
-    font-size: 14px;
-    color: #6B6B6B;
-    font-weight: 400;
-}
-.point_history > .point_history_left .amount {
-    font-size: 14px;
-    font-weight: 700;
-    color: #31845B;
-}
-
-.point_history .point_history_right .date {
-    font-size: 12px;
-    color: #878787;
-}
-.point_history .point_history_right .type {
-    font-size: 14px;
-    color: #000000;
-    padding: 4px 0;
-}
-.point_history .point_history_right .brand {
-    font-size: 12px;
-}
-
 
 @media screen and (max-width:1079px){
 /*친구 추천*/
@@ -283,7 +220,7 @@ border-bottom-right-radius: 10px;}
 /*이벤트*/
 .benefits img{width:100%}
 .benefits p{font-size:14px;font-weight:bold;margin-top:10px;margin-bottom:18px}
-
+.event_content img{width:100%}
 @media screen and (min-width:1000px) {
     .del_inq_info {
         display: flex;

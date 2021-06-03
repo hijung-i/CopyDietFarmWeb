@@ -918,18 +918,7 @@ height:400px}
 }
 
  
-/*포인트웹*/
-.contents .point_title_web{margin-bottom:20px}
-.point_history_web ul{display:flex;justify-content:space-between;padding-left:54px;padding-right:54px;border-top:1px solid #000;padding-top:17px;border-bottom:1px solid #000;padding-bottom:17px}
-.point_history_web ul li{float:left;font-size:14px;font-weight:bold;}
-.point_history{flex-direction:row-reverse}
-.save {display:none}
-.point_history_right ul li{float:left;}
-.point_history_left ul li{float:left;}
-.point_history_web .date{position:relative;left:-20px;top:5px}
-.type{position:relative;left:155px}
-.due{position:relative;left:130px}
-.amount{position:relative;left:325px;color:#fff}
+
 
 
 
