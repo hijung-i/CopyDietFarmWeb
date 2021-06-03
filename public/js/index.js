@@ -44,8 +44,9 @@ function getStandDatas() {
                     var product = products[j];
                     html += '<div class="swiper-slide"><a href="/product/'+ product.productCode +'""><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>';
                     // 메인 슬라이드
-                
                 }
+
+                $('')
                 $('.main_slider').html(html);
                 
                 break;

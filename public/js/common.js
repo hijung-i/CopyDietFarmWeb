@@ -508,9 +508,20 @@ $(function(){
 	'</div>' +
 	'</div>';
 
-
-	$("#popup_layer").html(popup);
-	$("#myModal").html(myPageModal);
+	
+	ajaxCall('/user/login', '', 'GET',
+	function(data) {
+		// 로그인 시에만 표시
+		console.log(data);
+		if(data.result.isLoggedIn == false) {
+			$("#popup_layer").html(popup);
+			$("#myModal").html(myPageModal);
+		} else {
+			$('#popup_layer').hide();
+		}
+	}, function(err){
+		console.error(err);
+	})
 	$("#modal-inquiry").html(inquiryModal);
 	
 	

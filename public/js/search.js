@@ -78,7 +78,11 @@ function searchProduct(keyword) {
 }
 
 function goSearchResult() {
-    var keyword = $('#mobileSearchKeyword').val();
+    var keyword = $('#mobileSearchKeyword').val().trim();
+    if(keyword.length == '' || keyword.length < 1) {
+        alert('검색어를 입력해주세요');
+        return;
+    }
     
     $("#mobileSearchForm input[name=keyword]").val(keyword);
     $("#mobileSearchForm").submit();
