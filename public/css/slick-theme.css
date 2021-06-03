@@ -76,7 +76,7 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: 0;
 }
 [dir='rtl'] .slick-prev
 {
@@ -94,7 +94,7 @@
 
 .slick-next
 {
-    right: -25px;
+    left: 999px;
 }
 [dir='rtl'] .slick-next
 {
@@ -204,4 +204,10 @@
 @media screen and (max-width:1079px) {
     .slick-slide {width: 136px !important; height: 162px !important; margin-right: 10px !important;}
     .slick-list { height: 162px !important;}
+}
+
+@media screen and (min-width:1080px){
+    .slick-slide {
+        width: 350px !important;
+    }
 }
