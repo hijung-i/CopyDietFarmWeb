@@ -21,7 +21,7 @@ var app = new Vue({
         formatDate,
         onSubmit: function() {
             // console.log(app.deliveryGroupList, app.orderDTO); 
-            if(app.deliveryGroupList.length > 0) {
+            if(app.deliveryGroupList != undefined || app.deliveryGroupList.length > 0) {
                 location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
             } else {
                 alert('상품을 선택해주세요');
@@ -51,20 +51,6 @@ $(function() {
             slideMargin:4
         });
   
-     });
-
-    $('#content ul.tab_wrap#tab li').click(function() {
-        var activeTab = $(this).attr('data-tab');
-
-        $('#content .tab_wrap li').removeClass('active');
-        $('#content .tab_cont').removeClass('active');
-        $('#content .other_cont').removeClass("active");
-
-        $(this).addClass('active');
-        if(activeTab == 'tab1') {
-            $('#content .other_cont').addClass("active");
-        }
-        $('#content #' + activeTab).addClass('active');
     });
 
     ajaxCall('/user/login', {}, 'GET', 
@@ -154,6 +140,22 @@ function getProductDetail(){
         getReviewList();
         getProductQuestionList();
         getRecommendedProducts();
+
+        console.log($('#content ul.tab_wrap'))
+        $('#content ul.tab_wrap li').click(function() {
+            console.log("click");
+            var activeTab = $(this).attr('data-tab');
+
+            $('#content .tab_wrap li').removeClass('active');
+            $('#content .tab_cont').removeClass('active');
+            $('#content .other_cont').removeClass("active");
+
+            $(this).addClass('active');
+            if(activeTab == 'tab1') {
+                $('#content .other_cont').addClass("active");
+            }
+            $('#content #' + activeTab).addClass('active');
+        });
 
     }, function (err) {
         console.log("productDetail error", err);
@@ -416,4 +418,22 @@ function getProductList() {
         isRequired: false,
         userId: true
     })
+}
+
+function changeTab(activeTab) {
+    
+    $('#content .tab_wrap li').removeClass('active');
+    $('#content .tab_cont').removeClass('active');
+    $('#content .other_cont').removeClass("active");
+
+    $(this).addClass('active');
+    if(activeTab == 'tab1') {
+        $('#content .other_cont').addClass("active");
+    }
+    $('#content #' + activeTab).addClass('active');
+    $('div.pdt_detai_tabinner_vn li').on('click',function(){
+        $(this).addClass('onTab');
+        $(this).siblings().removeClass('onTab');
+    });
+    
 }

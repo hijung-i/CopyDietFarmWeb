@@ -84,7 +84,8 @@ button::-moz-focus-inner {
     border: 0; padding: 0;
 }
 
-img{vertical-align:top;margin:0;font-size:0;line-height:0;}
+img{vertical-align:top;margin:0;font-size:0;line-height:0;
+  max-width: 100%;}
 
 body, select, input, textarea, a[href^="tel:"]:link {
     color: #383838;
@@ -702,7 +703,7 @@ height:400px}
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
   #content .desc .ratio{color:#F32525}
   .page_wrap{display:none}
-  #footer{ position: relative; bottom: 0; width: 100%; min-width: 360px; height: 547px; border-top: 8px solid #f4f4f4; margin-top: 10px;
+  #footer{ position: relative; bottom: 0; width: 100%; min-width: 360px; border-top: 8px solid #f4f4f4; margin-top: 10px;
   }
   .footer_top {position: absolute; top: 234px; padding-top: 25px;}
   .footer_top > ul {display: flex;}
@@ -844,7 +845,7 @@ height:400px}
   .mDepth01 dt img{position:relative;left:-10px}
   .gnb_depth02{ display:inline-block; width:372px; height:486px; text-align:left}
  .etc{position:relative;left:240px;top:-80px}
- .tabMenu {display: none;}
+#header .tabMenu {display: none;}
   /* footer web */
   #footer {width:100%;min-width:1080px;}
   .footer_top {width: 1080px; margin: 0 auto; line-height: 47px;}
@@ -2552,5 +2553,4 @@ display: flex;
     color: #000000;
   }
   
-
 }

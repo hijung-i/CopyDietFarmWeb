@@ -68,23 +68,13 @@
                 margin-top:-68px;position:sticky;top:0}
         
         </style>
-            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-            <%-include('general/head') %>
-            <link rel="stylesheet" href="/css/style.css">
-            <link rel="stylesheet" href="/css/product.css">
-            <script type="text/javascript" src="/js/sticky-sidebar.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <%-include('general/head') %>
+        <link rel="stylesheet" href="/css/product.css">
+    
+</head>
 
-            <script type="text/javascript">
-               
-                $('#sidebar').stickySidebar({
-                    topSpacing: 60,
-                    bottomSpacing: 60
-                });
-
-            </script>
-              </head>
-
-        <body>
+<body>
 
 <!--// 모달창-->
   <!-- 첫 번째 Modal을 여는 클래스 -->
@@ -204,17 +194,17 @@
                             <div id="detail_info" class="pdt_detai_tab_vn">
                                 <div class="pdt_detai_tabinner_vn">
                                     <ul class="tab_wrap" id="tab">
-                                        <li class="active onTab mobile_tab" data-tab="tab1">
-                                            <a href="javascript:void(0);"><span>상품설명</span></a>
+                                        <li class="active onTab mobile_tab" onclick="changeTab('tab1')" data-tab="tab1">
+                                            <span>상품설명</span>
                                         </li>
-                                        <li class="mobile_tab" data-tab="tab2">
-                                            <a href="javascript:void(0);"><span>상세정보</span></a>
+                                        <li class="mobile_tab"  onclick="changeTab('tab2')" data-tab="tab2">
+                                            <span>상세정보</span>
                                         </li>
-                                        <li class="mobile_tab" data-tab="tab3">
-                                            <a href="javascript:void(0);"><span>리뷰</span><span class="v_n_numb"></span></a>
+                                        <li class="mobile_tab"  onclick="changeTab('tab3')" data-tab="tab3">
+                                            <span>리뷰</span><span class="v_n_numb"></span>
                                         </li>
-                                        <li class="mobile_tab" data-tab="tab4">
-                                            <a href="javascript:void(0);"><span>문의</span><span class="tab_detail_qna_count  v_n_numb">(0)</span></a>
+                                        <li class="mobile_tab"  onclick="changeTab('tab4')" data-tab="tab4">
+                                            <span>문의</span><span class="tab_detail_qna_count  v_n_numb">(0)</span>
                                         </li>
                                         <span></span>
                                     </ul>
@@ -493,7 +483,7 @@
                                        
                                        <!--//플로팅 박스-->
                      
-                    <div id="tab1" class="tab_cont active">
+                    <div id="tab1" class="tab_cont Mtab_cont active">
                         <div class="products_ex">
                             <img
                                 v-for="image in product.detail"
@@ -1144,38 +1134,7 @@
                             </div>
                         </div>
                     </main>
-                    <script>
-                        var sidebar = new StickySidebar('.sidebar', {stickyClass: 'is-affixed'});
-                    </script>
-                    
-                    <script>
-                        const SHOWING_CLASS = "showing";
-                        const firstSlide = document.querySelector(".slider_item:first-child");
-                        function slide() {
-                            const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
-                            if (currentSlide) {
-                                currentSlide
-                                    .classList
-                                    .remove(SHOWING_CLASS);
-                                const nextSlide = currentSlide.nextElementSibling;
-                                if (nextSlide) {
-                                    nextSlide
-                                        .classList
-                                        .add(SHOWING_CLASS);
-                                } else {
-                                    firstSlide
-                                        .classList
-                                        .add(SHOWING_CLASS);
-                                }
-                            } else {
-                                firstSlide
-                                    .classList
-                                    .add(SHOWING_CLASS);
-                            }
-                        }
-                        slide();
-                        setInterval(slide, 4000);
-                    </script>
+           
                     <script>
                         var upload = document.querySelector('#upload');
                         var preview = document.querySelector('#preview');
@@ -1242,7 +1201,7 @@
 
                         });
                     </script>
-                    
+                    <script src="/js/orderDTO/OrderDTO.js"></script>
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
                     <script type="text/javascript" src="/js/product.js"></script>
 

@@ -406,33 +406,7 @@ $(function(){
 		})
 	}
 
-	var modal = document.getElementById('myModal');
-	var btn = document.getElementById('myBtn');
-	var span = document.getElementsByClassName('close')[0];
-    var funcs = [];
-	if(btn != null) {
-	//	btn.addEventListener('click', showModal());
-	//}
-	//if( span != null) {
-	//	span.addEventListener('click', hideModal());
-}
-
-	// When the user clicks on the button, open the modal 
-	// btn.onclick = function() {
-	// modal.style.display = "block";
-	// }
-
-	// When the user clicks on <span> (x), close the modal
-	// span.onclick = function() {
-	// modal.style.display = "none";
-	// }
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
+	
 	
 });
 var modals = document.getElementsByClassName("modal");
@@ -521,12 +495,12 @@ $(function(){
 
 	var myPageModal = 
 	'<div class="modal-content">' +
-	'<span class="close">&times;</span>' +
+	'<span class="close" onclick="closeModal()">&times;</span>' +
 	'<div class="login-list">' + 
 	'<ul>' +
-	'<li><button class="naver">네이버로 로그인</button></li>' +
-	'<li><button class="kakao">카카오로 로그인/가입</button></li>' +
-	'<li><button class="id_comp">아이디로 로그인</button></li>' +
+	'<li><button id="naver_id_login" class="naver">네이버로 로그인</button></li>' +
+	'<li><button onclick="loginWithKakaoApi()" class="kakao">카카오로 로그인/가입</button></li>' +
+	'<li><a href="/login-form" class="id_comp">아이디로 로그인</a></li>' +
 	'</ul>' +
 	'</div>' +
 	'</div>' ;
@@ -549,7 +523,6 @@ $(function(){
 	'<button type="button" id="btnInquiry">등록</button>' +
 	'</div>' +
 	'</div>';
-
 	
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
@@ -560,6 +533,35 @@ $(function(){
 			$("#myModal").html(myPageModal);
 		} else {
 			$('#popup_layer').hide();
+		}
+
+		var modal = document.getElementById('myModal');
+		var btn = document.getElementById('myBtn');
+		var span = document.getElementsByClassName('close')[0];
+		var funcs = [];
+		// if(btn != null) {
+		// 	btn.addEventListener('click', openModal());
+		// }
+
+		// if( span != null) {
+		// 	span.addEventListener('click', hideModal());
+		// }
+
+		// // When the user clicks on the button, open the modal 
+		// btn.onclick = function() {
+		// modal.style.display = "block";
+		// }
+
+		// // When the user clicks on <span> (x), close the modal
+		// span.onclick = function() {
+		// modal.style.display = "none";
+		// }
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
 		}
 	}, function(err){
 		console.error(err);
