@@ -99,25 +99,29 @@ function generateHtmlForProductList(products, maxSize){
     return html;
 }
 
-// function goBack() {
-// 	window.history.back();
-// }
-
-// 뒤로가기 ios 대응
-
-//javascript
-window.onpageshow = function(event) { //BFCache
-	if (event.persisted) {
-		window.location.reload();
-	} else{} //새로운페이지
+function goBack() {
+	window.history.back(); return false;
 }
-
-//jquery
-$(window).bind("pageshow", function(event) {
-	if (event.originalEvent && event.originalEvent.persisted) {// BFCache
-		window.location.reload();
-	}else{}//새로운페이지
-});
+// 뒤로가기 ios 대응
+// 
+//  html 
+//  function Inti() {
+//  	window.location.reload();
+//  }
+// 
+// //javascript
+// window.onpageshow = function(event) { //BFCache
+// 	if (event.persisted) {
+// 		window.location.reload();
+// 	} else{} //새로운페이지
+// }
+// 
+// //jquery
+// $(window).bind("pageshow", function(event) {
+// 	if (event.originalEvent && event.originalEvent.persisted) {// BFCache
+// 		window.location.reload();
+// 	}else{}//새로운페이지
+// });
 
 function generateHtmlForProduct(product){
 

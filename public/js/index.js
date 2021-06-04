@@ -57,7 +57,9 @@ function getStandDatas() {
                     var product = products[j];                   
                     html += '<div><a href="/product/' + product.productCode +'"><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>';
                 }
-                $('.responsive').html(html);
+                    $('.responsive').html(salesName);
+                    $('.responsive').html(html);
+                    $('.responsive').slick("refresh");
                 break;
             case 2:
                 // 위클리 베스트
