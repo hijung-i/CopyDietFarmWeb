@@ -30,7 +30,7 @@ function getStandDatas() {
     
     
     ajaxCallWithLogin(API_SERVER + "/product/getSalesStands", param, 'post'
-    , function(data){
+    , function(data) {
         
         var result = data.result;
         console.log(result);
@@ -44,7 +44,7 @@ function getStandDatas() {
                     var product = products[j];
                     html += '<div class="swiper-slide"><a href="/product/'+ product.productCode +'""><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>';
                     // 메인 슬라이드
-                
+                    
                 }
                 $('.main_slider').html(html);
                 
@@ -52,14 +52,12 @@ function getStandDatas() {
             case 1:
                 var html = '';
                 for(var j = 0; j < products.length; j++){
-                    var product = products[j];
-                    
-
-                    html += '<div><a href="/product/' + product.productCode +'"><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>'
-                    
-
+                    var product = products[j];                   
+                    html += '<div><a href="/product/' + product.productCode +'"><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>';
                 }
-                $('.responsive').html(html);
+                    $('.responsive').html(salesName);
+                    $('.responsive').html(html);
+                    $('.responsive').slick("refresh");
                 break;
             case 2:
                 // 위클리 베스트

@@ -11,6 +11,9 @@
         <title>다이어트 Farm</title>
         <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+        <!-- slick.css -->
+        <link rel="stylesheet" type="text/css" href="/css/slick.css">
+        
         
         <%-include('general/head') %>
   
@@ -61,31 +64,30 @@
     }
     .slider_main_wrap img {width: 1080px; height: 370px;} */
                 }
+    
+                /* swiper bundle */
+                .swiper-container { width: 100%;height: 100%;z-index: 0}
 
-    /* swiper bundle */
-    .swiper-container { width: 100%;height: 100%;z-index: 0}
-
-    .swiper-slide {text-align: center;font-size: 18px;background: #fff;
-        /* Center slide text vertically */
-        display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
-        -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
-        justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
-        align-items: center}
-
-      .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover}
-      .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
-        left: 1000px; bottom: 25px}
-      .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
+                .swiper-slide {text-align: center;font-size: 18px;background: #fff;
+                    /* Center slide text vertically */
+                    display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+                    -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
+                    justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
+                    align-items: center
+                }
+                
+                .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover}
+                .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
+                  left: 1000px; bottom: 25px}
+                .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
 
 
-  </style>
+            </style>
 
     <link rel="stylesheet" href="/css/style.css">
-    <!-- slick slider css -->
-    <link rel="stylesheet" href="/css/slick-theme.css">
-    <link rel="stylesheet" href="/css/slick.css">
+            
 </head>
-<body>
+<body onpageshow="Init()">
       <!--//로그인 모달영역시작-->
       <div id="popup_layer"></div>
           <!--//로그인 모달영역끝-->
@@ -175,16 +177,14 @@
                         <a href=""><img src="/images/low_price_banner@2x.png" style="width:100%;border-bottom:8px solid #F1F1F1"></a>
                     </div>
                     <!--//catgor_wrap-->
+
                     <!-- multiple slide -->
+
                     <h2 class="mtpSlideTit">오픈특가</h2>
+
                     <div class="responsive">
-                        <div><a href=""><img src="/images/m_img1.jpg" alt=""></a></div>
-                        <div><a href=""><img src="/images/m_img2.jpg" alt=""></a></div>
-                        <div><a href=""><img src="/images/m_img3.jpg" alt=""></a></div>
+                        <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a></div>
                     </div>
-
-                    <!--//sp_wrap(2월 특가)-->
-
                     <div class="blank_sec">
                         <ul>
                             <li>
@@ -325,6 +325,10 @@
         </main>
 
         <script src="/js/index.js"></script>
+        <!-- slick js -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="/js/slick.min.js"></script>
         <%-include('general/footer') %>
         <!-- <script type="text/javascript"> imgslide(); //페이지가 로딩될 때 함수 실행 function
         imgslide(){ $val = $(".slider_main_wrap").attr("val"); // 현재 이미지 번호 가져오기 $mx =
@@ -335,39 +339,7 @@
         시간을 나타냅니다. $(".slider_main_wrap").attr('val',$val); //변경된 이미지영역의 번호를 부여합니다.
         setTimeout('imgslide()',3000); //1초 뒤에 다시 함수를 호출합니다.(숫자값 1000당 1초) } </script>
         -->
-        <!-- slick js -->
-        <script type="text/javascript" src="/js/slick.min.js"></script>
-        <script type="text/javascript">
-            $('.responsive').slick({
-                dots: false,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                responsive: [
-                {
-                    breakpoint: 1079,
-                    settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false
-                    }
-                },
-                {
-                    breakpoint: 360,
-                    settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    }
-                }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-                ]
-            });
-            </script>
+
         
         <!-- Swiper JS -->
         <script>
@@ -380,6 +352,48 @@
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev"
                 }
+            });
+        </script>
+
+        <script>
+            $('.responsive').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay:true,
+                autoplaySpeed:3000,
+                pauseOnHover:true,
+                arrow:true,
+                responsive: [
+                  {
+                    breakpoint: 1024,
+                    settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 3,
+                      infinite: true,
+                      dots: false
+                    }
+                  },
+                  {
+                    breakpoint: 600,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 2
+                    }
+                  },
+                  {
+                    breakpoint: 360,
+                    settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 1
+                    }
+                  }
+                  // You can unslick at a given breakpoint now by adding:
+                  // settings: "unslick"
+                  // instead of a settings object
+                ]
             });
         </script>
         

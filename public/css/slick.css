@@ -17,14 +17,7 @@
         touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
 }
-@media screen and (min-width:1080px) {
-    .responsive {
-        min-width: 1080px;
-        height: 350px;
-        display: inline-block;
-        overflow: hidden;
-    }
-}
+
 .slick-list
 {
     position: relative;
@@ -123,4 +116,29 @@
 }
 .slick-arrow.slick-hidden {
     display: none;
+}
+.slick-arrow {
+    width: 82px; height: 82px; 
+    border: 0; border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.slick-prev {
+    top: 230px; left: -40px;
+    z-index: 9;
+    background: url(/images/group_5044.png);
+}
+.slick-next {
+    top: -205px; right: -1025px;
+    z-index: 9;
+    background: url(/images/group_5045.png);
+}
+
+
+@media screen and (max-width:1079px) {
+    div.slick-active {width: 146px !important;}
+    .slick-slide img {
+        width: 136px !important; 
+    }
+    .slick-arrow {display: none !important;}
 }

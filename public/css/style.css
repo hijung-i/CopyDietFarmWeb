@@ -317,7 +317,6 @@ height:50px;overflow:hidden}
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
    #content .main_sub .sub_items ul li{margin-bottom:6px}
-  .responsive{padding-left:15px;padding-right:15px;padding-bottom:20px}
 
    /* 상단 롤링 배너 */
    .main_banner{height: 42px; min-width: 360px; width: 100%; position: absolute; overflow: hidden}
@@ -394,9 +393,8 @@ height:50px;overflow:hidden}
  #content .w_best{overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
  #content .w_best li .thum img{width:100%;height:auto;}
  #content .w_best li .title{font-size:12px;padding:5px}
+ #content .w_best .thum{margin-bottom:-20px}
  #content .w_best li .desc ul{margin-left:-1px}
- #content .w_best li .desc ul li{margin-left:7px;margin-bottom:20px;float:left}
- #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
  .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 9999; background: #fff;}
  .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
  
@@ -620,7 +618,6 @@ height:400px}
 .side{display:none}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
   /* 멀티플 슬라이드 */
-  .multiple_slider_wraper {display: none;}
     /* 메인 이미지 슬라이더 */
     .swiper-container {margin-top: 151px; position: relative;}
     .swiper-wrapper {min-width: 360px; width: 100%; height: 212px;}
@@ -673,7 +670,7 @@ height:400px}
     #content .w_best li .thum img{width:100%;height:auto;}
     #content .w_best li .title{font-size:14px}
     #content .w_best li .desc ul{margin-left:-1px}
-    #content .w_best li .desc ul li{margin-left:7px;margin-bottom:20px;float:left}
+    #content .w_best li .desc ul li{ margin-bottom:20px;float:left}
     #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
     .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 999; background: #fff;}
     .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
@@ -792,7 +789,6 @@ height:400px}
 
 @media screen and (min-width:1080px){
 
-
   
 /* 1초 회원가입 */
 #popup_layer {display: none !important;}
@@ -847,8 +843,9 @@ height:400px}
   .mDepth01 > li {width: 168px; height: 54px; position: relative;}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
-  .gnb_depth02{ display:inline-block; width:372px; height:542px; text-align:left}
+  .gnb_depth02{ display:inline-block; width:372px; height:486px; text-align:left}
  .etc{position:relative;left:240px;top:-80px}
+ .tabMenu {display: none;}
   /* footer web */
   #footer {width:100%;min-width:1080px;}
   .footer_top {width: 1080px; margin: 0 auto; line-height: 47px;}
@@ -871,14 +868,7 @@ height:400px}
   .shadow {display: none;}
 
   /* 멀티플 슬라이드 */
-.multiple_slider_wraper {
-  position: relative;
-  max-width: 1080px;
-  margin: 0 auto;
-  height: 350px;
-  margin-top: 65px;
-  margin-bottom: 79px;
-}
+
 .multiple_slides_wrapper {position: relative; height: 380px; overflow: hidden;}
 .multiple_slides {
   position: absolute;
@@ -898,15 +888,9 @@ height:400px}
 .controlls span.prev {right: calc(100% - 100px);}
 .controlls span.next {left: calc(100% - 50px);}
 
-/* 멀티플 슬라이드 웹 */
-.responsive img {
-  width: 350px; height: 350px;
-}
-.responsive div{
-  display: inline-block;
-}
-.responsive {margin-bottom: 132px;}
-}
+/* 슬릭 슬라이드 웹 */
+.responsive div img {width: 350px; height: 350px;}
+
 #header_mypage .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center;margin-top:-50px}
 .slideMenu_top > .slideMenu_close img{width:19.44px;height:13.67px}
 .slideMenu_top > .slideMenu_cart img{height: 21px;}
@@ -923,19 +907,25 @@ height:400px}
 /*content*/
 /*메인 페이지 모바일*/
 @media screen and (max-width:1079px) {
+/* 슬릭 슬라이드 모바일 */
+.responsive div img {width: 136px; height: 162px;}
+
+.web_index{display:none}
+.body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
+.protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
+.body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
+.body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+.body_bottom .desc .sale{font-weight:bold}
+.body_bottom .desc .cost{color:red;text-decoration:line-through;}
+.body_bottom .desc .ratio{font-weight:bold}
+.body_bottom .desc .title{margin-left:10px;margin-top:20px}
+.body_bottom .desc ul{margin-left:5px}
+.body_bottom .desc ul li{float:left;margin-right:5px}
+.side{display:none}
+.sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
+.sideMenu #tab1 {width: 100%; min-width: 360px;}
   /* 멀티플 슬라이드 */
   .mtpSlideTit {margin: 24px 0 21px 0;}
-  .multiple_slider_wraper {
-    position: relative;
-    max-width: 360px;
-    margin: 0 auto;
-    height: 212px;
-  }
-
-  .prev, .next {display: none;}
-    /* 멀티슬라이드 모바일 */
-    .responsive button {display: none !important;}
-    .responsive img { width: 136px; height: 162px;}
 
 }
 @media screen and (min-width:1080px){
