@@ -726,7 +726,7 @@ height:400px}
   .dietFarm_info li > span {color: #F99319;}
  
   /*장바구니 후 결제하기*/
-  .btnback img{width:17px;position:relative;top:-18px;left:5px}
+  .btnback img{width:17px; max-width:17px;position:relative;top:-18px;left:5px}
   .order_title {font-size:14px;font-weight:bold}
   .order_product{border-bottom:8px solid #f1f1f1;}
   .order_product h4{font-size:14px;margin-top:20px;padding-bottom:10px;padding-left:15px;font-weight:normal}
