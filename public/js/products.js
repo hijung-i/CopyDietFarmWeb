@@ -1,4 +1,12 @@
 
+$(function () {
+    getDatas();
+
+    $('#sortOption').change(function() {
+        getDatas();
+    })
+});
+
 function getProductByStandCode() {
     var salesStandCode = $('#currentStandCode').val();
     var sortOption = $('#sortOption').val();
@@ -58,7 +66,12 @@ function getProductListByCategory() {
 
 function getCategoryList(){
     var category1Code = $('#category1Code').val();
-    var params = { category1Code: category1Code };
+    var sortOption = $('#sortOption').val();
+
+    var params = {
+        category1Code: category1Code,
+        sortOption
+    };
 
     ajaxCallWithLogin(API_SERVER + '/product/getCategoryList', params, 'post'
     , function (data) {
@@ -88,11 +101,12 @@ function getCategoryList(){
 }
 
 function productSearch(keyword) {
+    
+    var sortOption = $('#sortOption').val();
     var params = {
-        keyword
+        keyword,
+        sortOption
     }
-
-    var orderField = $('')
 
     var keywordDesc = "<span style=\"color: red;\">\""+keyword + "\"</span>에 대한 검색 결과";
     $('.main_sub h2').html(keywordDesc);
@@ -111,7 +125,25 @@ function productSearch(keyword) {
     })
 }
 
-$(function () {
+function getPickProduct() {
+    ajaxCallWithLogin(API_SERVER + '/order/getZzimInfoByUserID', {}, 'POST',
+    function(data) {
+        for(var i = 0; i < data.result.length; i++) {
+            data.result[i].zzimYn = 'Y'; 
+        }
+        
+        var html = generateHtmlForProductList(data.result);
+        $('.sub_items ul').html(html);
+        console.log("loading zzim list", data);
+    }, function(err) {
+        console.log("error while load zzim", err);
+    }, {
+        isRequire: true,
+        userId: true
+    })
+}
+
+function getDatas() {
     var listType = $('#listType').val();
 
     switch(listType){
@@ -132,28 +164,5 @@ $(function () {
         case 'ZZIM':
             getPickProduct();
             break;
-            
     }
-
-    $('#sortOption').change(function() {
-        getProductByStandCode();
-    })
-});
-
-function getPickProduct() {
-    ajaxCallWithLogin(API_SERVER + '/order/getZzimInfoByUserID', {}, 'POST',
-    function(data) {
-        for(var i = 0; i < data.result.length; i++) {
-            data.result[i].zzimYn = 'Y'; 
-        }
-        
-        var html = generateHtmlForProductList(data.result);
-        $('.sub_items ul').html(html);
-        console.log("loading zzim list", data);
-    }, function(err) {
-        console.log("error while load zzim", err);
-    }, {
-        isRequire: true,
-        userId: true
-    })
 }
