@@ -282,7 +282,10 @@ border-radius: 5px;
 -moz-appearance: none;
 appearance: none;
 border-color:#BBBBBB;
-cursor:pointer
+cursor:pointer;
+width:310px;
+height:40px;
+margin-left:-18px
 }
 .price_mobile{display:none}
 .view_navi_box {display:block;position:relative;background:none;padding-top:30px;text-align:left;color:#4d4d4d;font-weight:600;letter-spacing:-0.05em;}
@@ -929,7 +932,7 @@ font-size: 14px;
 /*position:fixed;*/
 top: 20px;
 }
-.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #F99319;position:relative;top:-3px}
+.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #F99319;position:relative;top:6px}
 .common_btn_wrap > .option_btns button:nth-child(2) {
     background: #fff;
     border: 1px solid #F99319;

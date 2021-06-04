@@ -349,13 +349,29 @@ function onIdentifyingSuccess(data, nextMethod) {
 }
 
 // 쿠키 생성
-function setCookie( name, value, expiredays ) {  // 쿠키저장
-	var todayDate = new Date();  //date객체 생성 후 변수에 저장
-	todayDate.setDate( todayDate.getDate() + expiredays );
-		// 시간지정(현재시간 + 지정시간)
-	document.cookie = name + "=" + value + "; path=/; expires=" + todayDate.toUTCString() + ";"
-	//위 정보를 쿠키에 굽는다
-} 
+function setCookie(cName, cValue, cDay){
+	var expire = new Date();
+	expire.setDate(expire.getDate() + cDay);
+	cookies = cName + '=' + escape(cValue) + '; path=/ ';
+	if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+	document.cookie = cookies;
+}
+
+// 쿠키 가져오기
+function getCookie(cName) {
+	cName = cName + '=';
+	var cookieData = document.cookie;
+	var start = cookieData.indexOf(cName);
+	var cValue = '';
+	if(start != -1){
+		 start += cName.length;
+		 var end = cookieData.indexOf(';', start);
+		 if(end == -1)end = cookieData.length;
+		 cValue = cookieData.substring(start, end);
+	}
+	return unescape(cValue);
+}
+
   
 //마이페이지 로그인 모달 js
 $(function(){
