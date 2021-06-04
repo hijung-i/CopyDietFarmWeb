@@ -2462,7 +2462,9 @@ display: flex;
 .orange {
   color: #F99319;
 }
-
+.orange a{
+  color: #F99319;
+}
 .border-orange{
   border: 1px solid orange;
 }
