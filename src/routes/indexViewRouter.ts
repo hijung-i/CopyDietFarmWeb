@@ -196,6 +196,9 @@ router.get('/p_inquiry', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'mypage_productInquiry', {})
 })
 router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'mypage_seller_inquiry', {})
+})
+router.get('/s_inquiry_more', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'web_seller_inquiry', {})
 })
 router.get('/point', (req: Request, res: Response, next: NextFunction) => {
