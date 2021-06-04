@@ -92,6 +92,8 @@ function productSearch(keyword) {
         keyword
     }
 
+    var orderField = $('')
+
     var keywordDesc = "<span style=\"color: red;\">\""+keyword + "\"</span>에 대한 검색 결과";
     $('.main_sub h2').html(keywordDesc);
 
