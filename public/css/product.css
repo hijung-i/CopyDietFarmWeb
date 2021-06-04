@@ -98,8 +98,8 @@ input[type=number]::-webkit-outer-spin-button {
     transition: all .4s;
 }
 
-.myReview input:checked + label {background: #fff; border: 1px solid #EFA543; }
-.myReview input:checked + label:after { left: calc(100% - 18px); right: 2px; background: #EFA543;}
+.myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
+.myReview input:checked + label:after { left: calc(100% - 18px); right: 2px; background: #F99319;}
 .myReview label > span {display: none;}
 
 .myReview input {position: absolute; left: -9999px;}
@@ -122,9 +122,9 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translateY(-50%);
     transition: all .4s;
 }
-.myReview input:checked + label {background: #fff; border: 1px solid #EFA543; }
+.myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
 .myReview input:checked + label:after {
-    left: calc(100% - 18px); right: 2px; background: #EFA543;
+    left: calc(100% - 18px); right: 2px; background: #F99319;
 }
 .myReview label > span {display: none;}
 .tabMenu{margin-bottom:-4px}
@@ -192,7 +192,6 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 .page_wrap{display:none}
  #wrap{display:none}
 .modal-con{display:none}
-#tab1{display:none}
 /* contents Mtab_cont active 요소에 처음엔 display block, 다른 메뉴 누르면 display none 다시 누르면 display block이 반복돼야함 */
 .inquiry{display:none}
 .modal-open{display:none}
@@ -236,8 +235,8 @@ label:after {
     transition: all .4s;
 }
 
-.myReview input:checked + label {background: #fff; border: 1px solid #EFA543; }
-.myReview input:checked + label:after { left: calc(100% - 18px); right: 2px; background: #EFA543;}
+.myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
+.myReview input:checked + label:after { left: calc(100% - 18px); right: 2px; background: #F99319;}
 .myReview label > span {display: none;}
 
 .myReview input {position: absolute; left: -9999px;}
@@ -260,9 +259,9 @@ label:after {
     transform: translateY(-50%);
     transition: all .4s;
 }
-.myReview input:checked + label {background: #fff; border: 1px solid #EFA543; }
+.myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
 .myReview input:checked + label:after {
-    left: calc(100% - 18px); right: 2px; background: #EFA543;
+    left: calc(100% - 18px); right: 2px; background: #F99319;
 }
 .myReview label > span {display: none;}
 .products_ex_mobile{display:none}
@@ -283,7 +282,10 @@ border-radius: 5px;
 -moz-appearance: none;
 appearance: none;
 border-color:#BBBBBB;
-cursor:pointer
+cursor:pointer;
+width:310px;
+height:40px;
+margin-left:-18px
 }
 .price_mobile{display:none}
 .view_navi_box {display:block;position:relative;background:none;padding-top:30px;text-align:left;color:#4d4d4d;font-weight:600;letter-spacing:-0.05em;}
@@ -481,7 +483,7 @@ box-shadow: none !important}
 .review_edit ul li img{margin-top:4px}
 .qna ul li{float:left;}
 .review_edit {width:100%;display:flex;justify-content: space-between;margin-top:20px;padding-right:20px}
-.review_edit p span{font-size:12px;color:#EFA543;font-weight:bold;}
+.review_edit p span{font-size:12px;color:#F99319;font-weight:bold;}
 .review_edit ul li{font-size:12px;margin-left:8px;line-height:14px;}
 .review_q{border-bottom:2px solid #E6E6E6}
 .review_q p{width:100%;margin-top:18px;line-height:20px;margin-bottom:20px;}
@@ -673,7 +675,7 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 /*문의-모달*/
 .productInquiryBox{width:1068px;height:auto;}
 .btn_area {width:340px;margin:0 auto}
-#btnInquiry{width:330px;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+#btnInquiry{width:330px;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  10px 0px;margin-bottom:25px}
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
 .productInquiryBox h3{font-size:14px;font-weight:bold;margin-bottom:16px}
@@ -733,7 +735,7 @@ div #ex1.modal ul li {float:left}
 .product_modal03 .star_grade p{font-size:16px;font-weight:bold}
 .product_modal03 .red{color:#D62828;text-align:left}
 .product_modal03 .modal_line{border-top:8px solid #F1F1F1;margin-top:25px;width:100%}
-.product_modal03 #btnEnroll{width:100%;height:45px;color:#fff;font-size:14px;font-weight:bold;background-color:#EFA543;border-radius:5px;border:none}
+.product_modal03 #btnEnroll{width:100%;height:45px;color:#fff;font-size:14px;font-weight:bold;background-color:#F99319;border-radius:5px;border:none}
 }
 
 
@@ -766,7 +768,7 @@ div #ex1.modal ul li {float:left}
 
 
 .review_btn{display:flex;justify-content:center; padding-bottom:21px;border-bottom:8px solid #f1f1f1;border-top:2px solid #E6E6E6;padding-top:18px}
-.review_btn button{border:2px solid #EFA543;background-color:#fff;color:#EFA543;font-weight:bold;border-radius:5px}
+.review_btn button{border:2px solid #F99319;background-color:#fff;color:#F99319;font-weight:bold;border-radius:5px}
 .v_floating_wrap{display:none}
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}
@@ -884,9 +886,9 @@ div #ex1.modal ul li {float:left}
     transform: translateY(-50%);
     transition: all .4s;
 }
-.myReview input:checked + label {background: #fff; border: 1px solid #EFA543; }
+.myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
 .myReview input:checked + label:after {
-    left: calc(100% - 18px); right: 2px; background: #EFA543;
+    left: calc(100% - 18px); right: 2px; background: ##F99319;
 }
 .myReview label > span {display: none;}
 
@@ -900,7 +902,7 @@ div #ex1.modal ul li {float:left}
 }
 .qna ul li{float:left;}
 .review_edit {width:100%;display: flex;justify-content: space-between;margin-top:20px;padding-right:20px}
-.review_edit p span{font-size:12px;color:#EFA543;font-weight:bold;}
+.review_edit p span{font-size:12px;color:#F99319;font-weight:bold;}
 .review_edit ul li{font-size:12px;margin-left:20px;line-height:14px;}
 .review_edit .bar{position:relative;left:10px;top:4px}
 .review_q{border-bottom:2px solid #E6E6E6}
@@ -930,15 +932,15 @@ font-size: 14px;
 /*position:fixed;*/
 top: 20px;
 }
-.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #EFA543;position:relative;top:-3px}
+.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #F99319;position:relative;top:6px}
 .common_btn_wrap > .option_btns button:nth-child(2) {
     background: #fff;
-    border: 1px solid #EFA543;
-    color: #EFA543;
+    border: 1px solid #F99319;
+    color: #F99319;
     font-weight:700
 }
 .common_btn_wrap > .option_btns button:nth-child(3) {
-    background: #EFA543;
+    background: #F99319;
     color: #fff;
     font-weight: 700;
 }
@@ -976,7 +978,7 @@ top: 20px;
     padding-top: 16px;
 }
 .prod_rev_menu > .left {
-    color: #EFA543;
+    color: #F99319;
     font-weight: 700;
     padding-left: 24px;
 }
@@ -990,7 +992,7 @@ top: 20px;
 }
 .nav_underline > .nav_color_underline {
     width: 50%; height: 2px;
-    background-color: #EFA543;
+    background-color: #F99319;
     margin-top: 5px;
 }
 .nav_underline .nav_gray_underline {

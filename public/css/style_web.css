@@ -90,7 +90,7 @@ padding-left: 4px}
 .main_contents .center, .main_contents .right {
 width: 400px; height: 147px;color: #000; background: #fff;margin: 44px 40px 0 0px}
 .main_contents .center > h3, .main_contents .right > h3 {padding: 12px 10px;font-weight: 500}
-.main_contents .center p, .main_contents .right p {font-size: 32px; font-weight: 700;text-align: center;margin-top:7px;color: #EFA543}
+.main_contents .center p, .main_contents .right p {font-size: 32px; font-weight: 700;text-align: center;margin-top:7px;color: #F99319}
 .main_contents .center p > span, .main_contents .right p > span {font-size: 20px; font-weight: 100; color: #ccc;padding: 12px 0 0 12px}
 .main_contents .center p, .main_contents .right p {line-height:49px;}
 
@@ -122,7 +122,6 @@ padding: 12px 16px;font-size: 12px; font-weight: 700;color: #000}
 
 
 /* 주문내역 없을 때 */
-.orderHistory .orderBox .order01{padding-left:15px;padding-right:15px;margin-bottom:-10px}
 .body_contents .order_none {position: absolute;left: 36%; transform: translateX(-36%);
 top: 130%; transform: translateY(-130%);text-align: center}
 
@@ -147,7 +146,7 @@ top: 130%; transform: translateY(-130%);text-align: center}
 .order_list > .order_info_ctn {display: flex}
 .order_info_ctn ul {text-align: left}
 .order_list ul > li {font-size: 12px;padding: 1px 0}
-.order_list ul > li:nth-child(3) {color: #EFA543;}
+.order_list ul > li:nth-child(3) {color: #F99319;}
 
 .order_list {display: flex;justify-content: space-between}
 
@@ -196,7 +195,7 @@ opacity: 1}
 
 /* 버튼 */
 .btn_area {margin-top:10px;width:100%}
-#btnRegister{width:100%;margin:auto;padding: 15px 0 15px;border:0;cursor: pointer;color:#fff;background-color:#EFA543;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
+#btnRegister{width:100%;margin:auto;padding: 15px 0 15px;border:0;cursor: pointer;color:#fff;background-color:#F99319;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
 
 /*배송정보*/
 .detail_title01{overflow:hidden; width:100%;}
@@ -308,7 +307,7 @@ padding: 4px 0;}
 .ship_list button{font-size:12px;background-color:transparent;border:0;}
 .ship_list ul li{font-size:12px;float:left;}
 .shipping_box{position:relative;left:-70px}
-.order_title ul li a{font-size:14px;position:relative;top:-10px}
+.order_title ul li a{font-size:14px}
 .order001 li{margin-bottom:11px}
 .src_icon{position:absolute;right:10px;top:15px}
 .order_price{float:right;}
@@ -338,7 +337,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .btn_area {margin:10px 10px}
 
 #btnOrder{width:100%;margin:auto;padding: 21px 0 17px;border: 0;cursor: pointer;color: #fff;
-    background-color: #EFA543;font-size: 14px;
+    background-color: #F99319;font-size: 14px;
     font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
 
 /*주문 완료*/
@@ -436,9 +435,9 @@ justify-self: center;width: 100%;margin: 0 auto;}
 }
 .use_all_point {
     width: 30%; height: 45px;
-    border: 1px solid #EFA543;
+    border: 1px solid #F99319;
     background: #fff;
-    color: #EFA543;
+    color: #F99319;
     border-radius: 5px;
     font-size: 14px; font-weight: 700;
     margin-left: 4%;
@@ -481,14 +480,14 @@ color:#000;font-size:14px;background-color:#F1F1F1;}
 @media screen and (max-width:1079px){
 div.order_detail_btn ul{display:flex;}
 .btnConfirm, .btnTracking{width:50%;height:45px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
-color:#000;font-size:14px;background-color:#F1F1F1;margin-right:10px}
+color:#000;font-size:14px;background-color:#F1F1F1;margin-right:7px}
 
 .dateNo{border-bottom:8px solid #F1F1F1}
-.date{margin-bottom:3px;color:#878787;margin-left:20px}
+.date{margin-bottom:3px;color:#878787}
 .no{margin-bottom:14px}
 .ship_state{color:#F99319;font-weight:bold}
 .quantity, .option{color:#878787}
-.order_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;margin-bottom:20px;padding-left:15px}
+.order_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;margin-bottom:20px}
 .order_title p span{font-size:14px;font-weight:bold}
 .orderDetails{padding-left:15px;padding-right:15px;}
 .orderBox02{margin-top:19px;padding-top:18px;border-top:1px solid #BBBBBB;margin-bottom:14px}
@@ -523,7 +522,7 @@ color:#000;font-size:14px;background-color:#F1F1F1;margin-right:10px}
 .orderDetail a img{margin-left:-14px}
 .orderDetail ul li{width:176px;white-space: nowrap;
     overflow:hidden;text-overflow: ellipsis;font-size:11px;}
-.orderDetail ul li span{color:#EFA543}
+.orderDetail ul li span{color:#F99319}
 .t1{font-size:14px;font-weight:bold;letter-spacing:0.1px}
 .t1 span{font-size:12px;color:#BBBBBB;font-weight:normal}
 .t2{font-size:12px;line-height:14px;margin-top:5px;}
@@ -531,8 +530,8 @@ color:#000;font-size:14px;background-color:#F1F1F1;margin-right:10px}
 .order ul li{white-space:nowrap}
 .order0{margin-top:-10px}
 .order_list_btn{width: 58px; float:right;padding-right: 0;}
-.btnA{width:100%;height:26px;background-color:#EFA543;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:8px;white-space:nowrap;}
-.btnB{width:100%;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:12px;white-space:nowrap;padding:1px}
+.btnA{width:100%;height:26px;background-color:#F99319;border:0;color:#fff;border-radius:5px;margin-bottom:8px;white-space:nowrap;}
+.btnB{width:100%;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;white-space:nowrap;padding:1px}
 .grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;margin-top:20px}
 
 /*주문 내역 없을때*/
@@ -880,13 +879,13 @@ delivery_manage_list .customer_info {
     
 /* 버튼 */
 .btn_area {margin-top:10px;width:100%;}
-.sellerInq_regist > button {border: 0; color: #fff;background: #EFA543; font-size: 14px; letter-spacing: 2px;}
+.sellerInq_regist > button {border: 0; color: #fff;background: #F99319; font-size: 14px; letter-spacing: 2px;}
 .mBtnArea > button {
     padding: 15px 0 15px; outline: 2px solid red;
     border:0;
     cursor: pointer;
     color:#fff;
-    background-color:#EFA543;
+    background-color:#F99319;
     font-size: 14px;
     font-weight: 700;
     border-radius:5px;
@@ -899,13 +898,13 @@ delivery_manage_list .customer_info {
 
 .btn_area_modal {margin-top:10px;width:100%;}
 #btnRegister_modal {
-    width: 100%; 
+    width: 90%; 
     margin:0 auto;
     padding: 15px 0 15px;
     border:0;
     cursor: pointer;
     color:#fff;
-    background-color:#EFA543;
+    background-color:#F99319;
     font-size: 14px;
     font-weight: 700;
     font-family: 'Nanum Gothic', sans-serif;
@@ -950,7 +949,7 @@ delivery_manage_list .customer_info {
 .top_checkBox input[type="checkbox"]:checked + label:before {
     content: '\2713';
     color: #fff;
-    background: #EFA543;
+    background: #F99319;
     border-color: #adb8c0;
 }
 
@@ -1004,7 +1003,7 @@ delivery_manage_list .customer_info {
 .top_checkBox_piece input[type="checkbox"]:checked + label:before {
     content: '\2713';
     color: #fff;
-    background: #EFA543;
+    background: #F99319;
     border-color: #adb8c0;
 }
 
@@ -1096,14 +1095,14 @@ delivery_manage_list .customer_info {
 }
 .tabMenu_review .tab_wrap > span {
     position: absolute; left: 0; bottom: 0; height: 3px;
-    background: #EFA543;
+    background: #F99319;
     width: 50%; margin: -12px 0;
     opacity: 0;
     transition: all .3s;
 }
 
-.tabMenu_review .tab_wrap > li.on {color: #EFA543; font-weight: 700;}
-.tabMenu_review .tab_wrap > li.on > a {color: #EFA543; font-weight: 700;}
+.tabMenu_review .tab_wrap > li.on {color: #F99319; font-weight: 700;}
+.tabMenu_review .tab_wrap > li.on > a {color: #F99319; font-weight: 700;}
 
 .tabMenu_review .tab_wrap > li.on > span {font-weight: 700;}
 .tabMenu_review .tab_wrap > li:nth-child(1).on ~ span {left: 0; opacity: 1;}
@@ -1142,7 +1141,7 @@ delivery_manage_list .customer_info {
     padding-top: 16px;
 }
 .prod_rev_menu > .left {
-    color: #EFA543;
+    color: #F99319;
     font-weight: 700;
     padding-left: 24px;
 }
@@ -1156,7 +1155,7 @@ delivery_manage_list .customer_info {
 }
 .nav_underline > .nav_color_underline {
     width: 50%; height: 2px;
-    background-color: #EFA543;
+    background-color: #F99319;
     margin-top: 5px;
 }
 .nav_underline .nav_gray_underline {
@@ -1222,7 +1221,7 @@ delivery_manage_list .customer_info {
 .btn_area_2 > .btnJoin_2 {
     font-size: 14px;
     color: #fff;
-    background: #EFA543;
+    background: #F99319;
     border: 0;
     cursor: pointer;
     padding: 10px 6px ;
@@ -1353,14 +1352,14 @@ delivery_manage_list .customer_info {
 }
 .tabMenu_review .tab_wrap > span {
     position: absolute; left: 0; bottom: 0; height: 3px;
-    background: #EFA543;
-    width: 50%; margin: -12px 0;
+    background: #F99319;
+    width: 50%; margin: -16px 0;
     opacity: 0;
     transition: all .3s;
 }
 
-.tabMenu_review .tab_wrap > li.on {color: #EFA543; font-weight: 700;}
-.tabMenu_review .tab_wrap > li.on > a {color: #EFA543; font-weight: 700;}
+.tabMenu_review .tab_wrap > li.on {color: #F99319; font-weight: 700;}
+.tabMenu_review .tab_wrap > li.on > a {color: #F99319; font-weight: 700;}
 
 .tabMenu_review .tab_wrap > li.on > span {font-weight: 700;}
 .tabMenu_review .tab_wrap > li:nth-child(1).on ~ span {left: 0; opacity: 1;}
@@ -1399,7 +1398,7 @@ delivery_manage_list .customer_info {
     padding-top: 16px;
 }
 .prod_rev_menu > .left {
-    color: #EFA543;
+    color: #F99319;
     font-weight: 700;
     padding-left: 24px;
 }
@@ -1413,7 +1412,7 @@ delivery_manage_list .customer_info {
 }
 .nav_underline > .nav_color_underline {
     width: 50%; height: 2px;
-    background-color: #EFA543;
+    background-color: #F99319;
     margin-top: 5px;
 }
 .nav_underline .nav_gray_underline {
@@ -1480,7 +1479,7 @@ delivery_manage_list .customer_info {
 .btn_area_2 > .btnJoin_2 {
     font-size: 14px;
     color: #fff;
-    background: #EFA543;
+    background: #F99319;
     border: 0;
     cursor: pointer;
     padding: 10px 6px ;
@@ -1585,7 +1584,7 @@ delivery_manage_list .customer_info {
 .review_edit ul li img{margin-top:4px}
 .qna ul li{float:left;}
 .review_edit {width:100%;display:flex;justify-content: space-between;margin-top:20px;padding-right:20px}
-.review_edit p span{font-size:12px;color:#EFA543;font-weight:bold;}
+.review_edit p span{font-size:12px;color:#F99319;font-weight:bold;}
 .review_edit ul li{font-size:12px;margin-left:8px;line-height:14px;}
 .review_q{border-bottom:2px solid #E6E6E6}
 .review_q p{width:100%;margin-top:18px;line-height:20px;margin-bottom:20px;}
@@ -1605,7 +1604,7 @@ delivery_manage_list .customer_info {
 .seller_content .myInquiry{width:100%;border-bottom:2px solid #E6E6E6;padding-bottom:20px}
 .inquiry01 ul li{float:left;}
 .inquiry_edit {width:100%;display: flex;justify-content: space-between;margin-top:20px;padding-right:20px}
-.inquiry_edit p span{font-size:12px;color:#EFA543;font-weight:bold;padding-left:15px}
+.inquiry_edit p span{font-size:12px;color:#F99319;font-weight:bold;padding-left:15px}
 .inquiry_edit ul li{font-size:12px;margin-left:14px;line-height:14px;}
 .inquiry_edit ul li img{position:relative;top:4px}
 .faq_title {width:100%;display:flex;justify-content: space-between;margin-top:30px;padding-right:20px;margin-bottom:20px;padding-left:15px}
@@ -1706,7 +1705,7 @@ table.web_qna {padding: 12px 0;}
 
 /* 판매자문의모바일 css */
 .btn_area {width:100%;clear:both; padding-right:38px;}
-#btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+#btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
 .inquiryBox > ul {color: #000;}
@@ -1736,75 +1735,20 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
     border: 1px solid #BBBBBB;
     border-radius: .25em;
 }
+@media screen and (min-width:1080px){
 
-/*포인트*/
-
-
-/* 현재 포인트 */
-.current_point > p {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 0 0 4px 0;
-}
-.current_point h2 {
-    font-weight: 800;
-}
-
-.point_line {
-    width: 100%; height: 4px;
-    background: #F1F1F1;
-}
-
-.point_history {
-    position: relative;
-    right: 18%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.point_history_left {
-    text-align: right;
-    padding: 8px 0 8px 0;
-}
-.point_history_right {
-    text-align: left;
-    padding: 8px 0 8px 0;
-}
-.point_history_line {
-    width: 100%; height: 1px;
-    background: #bbb;
-    opacity: 0.4;
-}
-
-/* point history design */
-
-.point_history > .point_history_left .save {
-    font-size: 14px;
-    color: #6B6B6B;
-    font-weight: 400;
-}
-.point_history > .point_history_left .amount {
-    font-size: 14px;
-    font-weight: 700;
-    color: #31845B;
-}
-
-.point_history .point_history_right .date {
-    font-size: 12px;
-    color: #878787;
-}
-.point_history .point_history_right .type {
-    font-size: 14px;
-    color: #000000;
-    padding: 4px 0;
-}
-.point_history .point_history_right .brand {
-    font-size: 12px;
-}
-.point_history_right > ul .brand {
-    margin-top: 0;
+/*포인트웹*/
+.contents .point_title_web{margin-bottom:20px}
+.point_history_web ul{display:flex;justify-content:space-between;padding-left:54px;padding-right:54px;border-top:1px solid #000;padding-top:17px;border-bottom:1px solid #000;padding-bottom:17px}
+.point_history_web ul li{float:left;font-size:14px;font-weight:bold;}
+.point_history{flex-direction:row-reverse}
+.save {display:none}
+.point_history_right ul li{float:left;}
+.point_history_left ul li{float:left;}
+.point_history_web .date{position:relative;left:-20px;top:5px}
+.type{position:relative;left:155px}
+.due{position:relative;left:130px}
+.amount{position:relative;left:325px;color:#fff}
 }
 /*문의하기(상품문의) 모바일 */
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
@@ -1838,7 +1782,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
 
 .secret::after {
     content: "";
-    border: 2px solid #EFA543;
+    border: 2px solid #F99319;
     width: 16px;
     height: 16px;
     position: absolute;
@@ -1939,11 +1883,11 @@ right: 38px;font-size: 12px;color: red;display: none;}
 
 .btn_area {margin-bottom:20px;margin-top:30px;text-align:center}
 
-#btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+#btnModify{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px;}
     
 @media screen and (min-width:1080px){
-    #btnModify{width:330px;height:45px;border:0;cursor: pointer;color: #fff;background-color: #EFA543;font-size: 14px;
+    #btnModify{width:330px;height:45px;border:0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
     font-weight:400;border-radius:5px;margin-top:-10px}
     .join_title label{position:relative;left:-114px;top:35px}
     #gender input{margin-top:15px}

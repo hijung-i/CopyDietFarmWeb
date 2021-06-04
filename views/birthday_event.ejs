@@ -12,29 +12,34 @@
         <title>다이어트 Farm</title>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/myPage.css">
+
         <style type="text/css">
             @media screen and (max-width:1079px) {
-                .web_invite {
+                .web_benefits {
                     display: none;
                 }
             }
             @media screen and (min-width:1080px) {
-                .mobile_invite {
+                .mobile_benefits {
                     display: none;
                 }
+            }
+            .kakao_event img {
+                width: 100%;
+                height: auto;
             }
         </style>
         <%-include('general/head') %>
         </head>
 
         <body>
-            <div class="web_invite">
+            <div class="web_benefits">
                 <%-include('general/header') %>
                 </div>
                 <!--//web_invite-->
-                <div class="mobile_invite">
+                <div class="mobile_benefits">
                     <section class="detail_title">
-                        <h2>친구 초대</h2>
+                        <h2>생일 축하 이벤트</h2>
                         <script type="text/javascript">
                             function goBack() {
                                 window
@@ -47,17 +52,11 @@
                         </div>
                     </section>
                 </div>
-                <main id="content" class="content">
-                    <div class="invite_img">
-                        <img src="/images/friend_invite@2x.png" width="100%">
+                <main id="content" class="event_content">
+                    <div class="membership">
+                        <img src="/images/birthday_event@2x.png">
                     </div>
-                       <div class="buttons" style="display:flex;margin-top:-70px;margin-left:15px;margin-right:15px;margin-bottom:40px">
-                            <button type="button" id="btnKakao"><img src="/images/kakao_icon_event.png">초대하기</button>
-                            <button type="button" id="btnURL"><img src="/images/url_icon_friend.png">복사하기</button>
-                        </div>
-                  
                 </main>
                 <%-include('general/footer') %>
-                    
                 </body>
             </html>

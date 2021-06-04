@@ -163,7 +163,7 @@ $(function() {
         } else if(!idPattern.test(id.val())) {
             error[0].style.display = "block";
         } else {
-            error[0].style.color = "#EFA543";
+            error[0].style.color = "#F99319";
             error[0].style.display = "block";
         }
     }
@@ -184,7 +184,7 @@ $(function() {
             error[1].style.display = "none";
             pwMsg.innerHTML = "안전";
             pwMsg.style.display = "block";
-            pwMsg.style.color = "#EFA543";
+            pwMsg.style.color = "#F99319";
             pwImg1.src = "m_icon_safe.png";
         }
     }

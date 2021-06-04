@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>배송지 관리</title>
         <style>
+            .small_line{position:relative;top:-9px}
             @media screen and (max-width:1079px) {
                 .web_deliv {
                     display: none;
@@ -124,16 +125,7 @@
 
                     <div class="contents">
                         <h3 class="del_web_title">배송지 관리</h3>
-                        <div class="top_checkBox">
-                            <input
-                                type="checkbox"
-                                name="list"
-                                id="selectAll1"
-                                value="selectAll"
-                                onclick='selectAll(this)'>
-                            <label for="selectAll1">전체 선택</label>
-                            <button>선택 삭제</button>
-                        </div>
+                        
                         <div class="thick_line one"></div>
 
                         <div class="order_list_ctn">
@@ -155,18 +147,14 @@
                                             <li class="edit_first">
                                                 <a v-on:click="modalDisplay(true, '배송지 수정', i)">수정</a>
                                             </li>
-                                            <li class="small_line"><img src="/images/l_icon_category.png"></li>
+                                            <li class="small_line"><img src="/images/l_icon_category@2x.png"></li>
                                             <li class="edit_second">
                                                 <a v-on:click="deleteDelivery(i)">삭제</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="web_del_mag_list_info">
-                                        <div class="top_checkBox_piece">
-                                            <input type="checkbox" name="list" id="selectAll2" value="s">
-                                            <label for="selectAll2"></label>
-                                        </div>
-                                        <ul>
+                                          <ul>
                                             <li>
                                                 <p class="address">{{ item.address }}</p>
                                             </li>
@@ -209,7 +197,7 @@
                         </div>
                         <!-- order_list_ctn -->
                     </div>
-                    <!-- body_contents --> i onclick="modalDisplay(false)"
+                    <!-- body_contents -->
                     <!-- modal window -->
                     <%-include('general/footer') %>
 

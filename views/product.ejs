@@ -9,6 +9,17 @@
 
         <title>다이어트 Farm</title>
         <style type="text/css">
+        @media screen and (min-width:500px) and (max-width:1079px){
+  .like {width:25px;height:25px;position:relative;top: 3px !important;right: 10px !important;background: url("/images/beforeheart_icon_main.png") no-repeat;}
+  /*.like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
+  .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
+}
+@media screen and (min-width:1080px){
+.like {width:25px;height:25px;position:relative;top: 3px !important;right: 10px !important;background: url("/images/beforeheart_icon_main.png") no-repeat;}
+/*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
+.like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
+}
+
             @media screen and (max-width:1079px) {
                 .web_product_details {
                     display: none;
@@ -57,8 +68,8 @@
                 margin-top:-68px;position:sticky;top:0}
         
         </style>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <%-include('general/head') %>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <%-include('general/head') %>
             <link rel="stylesheet" href="/css/style.css">
             <link rel="stylesheet" href="/css/product.css">
             <script type="text/javascript" src="/js/sticky-sidebar.js"></script>
@@ -793,7 +804,7 @@
                                     <div class="option_btns">
                                         <button
                                             type="button"
-                                            style="width:18%;background-color:#fff;border:1px solid #EFA543">
+                                            style="width:18%;background-color:#fff;border:1px solid #F99319">
                                             <img src="/images/heart_icon_menu.png"></button>
                                         <button type="button" style="width:39%">장바구니</button>
                                         <button type="button" style="width:39%">구매하기</button>
@@ -1124,7 +1135,7 @@
                                     <div class="option_btns">
                                         <button
                                             type="button"
-                                            style="width:18%;background-color:#fff;border:1px solid #EFA543">
+                                            style="width:18%;background-color:#fff;border:1px solid #F99319">
                                             <img src="/images/heart_icon_menu.png"></button>
                                         <button type="button" style="width:39%">장바구니</button>
                                         <button type="button" style="width:39%">구매하기</button>

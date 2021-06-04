@@ -13,6 +13,7 @@ var RESOURCE_SERVER = "http://112.217.209.162:8000";
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
+
 function ajaxCall(url, params, type, onSuccess, onError){
 	var param = JSON.stringify(params);
 
@@ -100,8 +101,28 @@ function generateHtmlForProductList(products, maxSize){
 }
 
 function goBack() {
-	window.history.back();
+	window.history.back(); return false;
 }
+// 뒤로가기 ios 대응
+// 
+//  html 
+//  function Inti() {
+//  	window.location.reload();
+//  }
+// 
+// //javascript
+// window.onpageshow = function(event) { //BFCache
+// 	if (event.persisted) {
+// 		window.location.reload();
+// 	} else{} //새로운페이지
+// }
+// 
+// //jquery
+// $(window).bind("pageshow", function(event) {
+// 	if (event.originalEvent && event.originalEvent.persisted) {// BFCache
+// 		window.location.reload();
+// 	}else{}//새로운페이지
+// });
 
 function generateHtmlForProduct(product){
 
@@ -135,10 +156,6 @@ function generateHtmlForProduct(product){
 	html += '</a>';
 	html += '</li>';
     return html;
-}
-
-function goBack() {
-	window.history.back();
 }
 
 $(window).bind('orientationchange', function(e) {
@@ -350,13 +367,29 @@ function onIdentifyingSuccess(data, nextMethod) {
 }
 
 // 쿠키 생성
-function setCookie( name, value, expiredays ) {  // 쿠키저장
-	var todayDate = new Date();  //date객체 생성 후 변수에 저장
-	todayDate.setDate( todayDate.getDate() + expiredays );
-		// 시간지정(현재시간 + 지정시간)
-	document.cookie = name + "=" + value + "; path=/; expires=" + todayDate.toUTCString() + ";"
-	//위 정보를 쿠키에 굽는다
-} 
+function setCookie(cName, cValue, cDay){
+	var expire = new Date();
+	expire.setDate(expire.getDate() + cDay);
+	cookies = cName + '=' + escape(cValue) + '; path=/ ';
+	if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+	document.cookie = cookies;
+}
+
+// 쿠키 가져오기
+function getCookie(cName) {
+	cName = cName + '=';
+	var cookieData = document.cookie;
+	var start = cookieData.indexOf(cName);
+	var cValue = '';
+	if(start != -1){
+		 start += cName.length;
+		 var end = cookieData.indexOf(';', start);
+		 if(end == -1)end = cookieData.length;
+		 cValue = cookieData.substring(start, end);
+	}
+	return unescape(cValue);
+}
+
   
 //마이페이지 로그인 모달 js
 $(function(){
@@ -364,16 +397,25 @@ $(function(){
 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
     var modal = document.getElementById('myModal');
 
+	if ($('#naver_id_login').length > 0) {
+		ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+		 function(data) {
+			$('#naver_id_login').html(data);
+		}, function (err) {
+			console.log("error login button", err);
+		})
+	}
+
 	var modal = document.getElementById('myModal');
 	var btn = document.getElementById('myBtn');
 	var span = document.getElementsByClassName('close')[0];
     var funcs = [];
 	if(btn != null) {
-		//	btn.addEventListener('click', showModal());
-		//}
-		//if( span != null) {
-		//	span.addEventListener('click', hideModal());
-	}
+	//	btn.addEventListener('click', showModal());
+	//}
+	//if( span != null) {
+	//	span.addEventListener('click', hideModal());
+}
 
 	// When the user clicks on the button, open the modal 
 	// btn.onclick = function() {
@@ -482,9 +524,9 @@ $(function(){
 	'<span class="close">&times;</span>' +
 	'<div class="login-list">' + 
 	'<ul>' +
-	'<li><button class="naver" id="naver_id_login">네이버로 로그인</button></li>' +
-	'<li><button class="kakao" onclick="loginWithKakaoApi()">카카오로 로그인/가입</button></li>' +
-	'<li><a class="id_comp" href="/login-form">아이디로 로그인</a></li>' +
+	'<li><button class="naver">네이버로 로그인</button></li>' +
+	'<li><button class="kakao">카카오로 로그인/가입</button></li>' +
+	'<li><button class="id_comp">아이디로 로그인</button></li>' +
 	'</ul>' +
 	'</div>' +
 	'</div>' ;
@@ -524,16 +566,6 @@ $(function(){
 	})
 	$("#modal-inquiry").html(inquiryModal);
 	
-	
-	if ($('#naver_id_login').length > 0) {
-		ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-		 function(data) {
-			$('#naver_id_login').html(data);
-		}, function (err) {
-			console.log("error login button", err);
-		})
-	}
-
 });
 
 // kakao 계정 로그인 순서1번
