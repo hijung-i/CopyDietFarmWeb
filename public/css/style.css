@@ -967,7 +967,7 @@ height:400px}
 .swiper-slide div.thum img {width: 1080px; height: 370px;}
 .catgor_wrap{display:none}
 .w_best .thum img{width:184px;height:184px;border-radius:6px}
-}
+
 #content{width:100%;max-width:1080px;margin:0 auto;}
 #content .pick_wrap{width:1080px;}
 #content .pick_wrap{margin:10px 10px;width:100%;}
@@ -1262,7 +1262,7 @@ div.slideMenu_top {display: none}
 .sid_menu .mDepth01 dt .downArrow {
    width:11px;height:11px
 }
-
+}
 
 .sideMenu .mDepth01{font-size:16px;line-height:32px; background: #fff; z-index: 1;}
 .sideMenu .mDepth01 dl > dt.sideMenu_detail a {padding-left: 12px;}
