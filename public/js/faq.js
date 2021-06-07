@@ -27,7 +27,6 @@ function getFaqList(){
                             <td class="title">
                             ${faqContent.title}
                             <img class="downArrow" src="/images/downarrow_ico_main.png" alt="화살표"></td>
-                            <img class="upArrow" src="/images/uparrow_icon.png" alt="화살표">
                             </tr>
                         <tr class="faq_a faq_a01">
                             <td>
@@ -56,29 +55,8 @@ function getFaqList(){
                     $(this).addClass("current");
                 }
             });
-            $(".downArrow").show();
-            $(".upArrow").hide();
- 
-            /*img1을 클릭했을 때 img2를 보여줌*/
-            $("tr.faq_q").click(function(){
-                $(".downArrow").hide();
-                $(".upArrow").show();
-            });
- 
-            /*img2를 클릭했을 때 img1을 보여줌*/
-            $("tr.faq_q").click(function(){
-                $(".downArrow").show();
-                $(".upArrow").hide();
-            });
-            
+             n
         });
-        jQuery('tr.faq_q').click(function () {  
-            if($(".downArrow").css("display") == "none"){   
-                jQuery('.upArrow').css("display", "block");   
-            } else {  
-                jQuery('.downArrow').css("display", "none");   
-            }  
-        }); 
 
         const modal = document.getElementById('modal')
 

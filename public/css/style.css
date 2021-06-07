@@ -106,7 +106,7 @@ a:hover{text-decoration:none;}
 .show{display:block;}
 .hide{display:none;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
-.detail_title{margin:40px 10px 10px 10px;width:100%;overflow:hidden;width:100%;}
+.detail_title{margin:40px 10px 10px 0px;width:100%;overflow:hidden;width:100%;}
 .detail_title a img{position:absolute;top:42px;width:17px}
 .detail_title .title{width:200px;white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
@@ -315,8 +315,10 @@ height:50px;overflow:hidden}
    .non_members input[type="checkbox"]:checked + label{
      background: url(../images/aftercheck_icon_join.png)no-repeat;
       background-size:19px 19px;}
+
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  .noticeBox{padding-top:10px}
    #content .main_sub .sub_items ul li{margin-bottom:6px}
    .deliver_info_top{display:flex;justify-content:space-between;margin-right:15px}
    .deliver_info_top button{background-color:transparent;border:none;}
@@ -394,7 +396,7 @@ height:50px;overflow:hidden}
  #content .best_wrap{width:100%;border-top:8px solid #f1f1f1; margin: 0 auto;}
  #content .w_best{overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
  #content .w_best li .thum img{width:100%;height:auto;}
- #content .w_best li .title{font-size:12px;padding:5px}
+ #content .w_best li .title{font-size:12px;margin-top:10px}
  #content .w_best li .desc ul{margin-left:-1px}
  .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 9999; background: #fff;}
  .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
@@ -670,12 +672,11 @@ height:400px}
     #content .w_best h2{font-size:20px; margin-bottom:20px;margin-top:24px}
     #content .w_best li .thum img{width:100%;height:auto;}
     #content .w_best li .title{font-size:14px}
-    #content .w_best li .desc ul{margin-left:-1px}
-    #content .w_best li .desc ul li{ margin-bottom:20px;float:left}
+    #content .w_best li .desc ul li{ margin-bottom:20px;display:flex;margin-right:7px}
     #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
     .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 999; background: #fff;}
     .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
-  
+   .responsive{margin-bottom:20px}
     /*  모바일 depth02 */
     .mDepth01 dd {
       min-width: 360px; width: 100%;
@@ -727,7 +728,7 @@ height:400px}
   .dietFarm_info li > span {color: #F99319;}
  
   /*장바구니 후 결제하기*/
-  .btnback img{width:17px;position:relative;top:-18px;left:5px}
+  .btnback img{width:17px;position:relative;top:-18px;left:15px}
   .order_title {font-size:14px;font-weight:bold}
   .order_product{border-bottom:8px solid #f1f1f1;}
   .order_product h4{font-size:14px;margin-top:20px;padding-bottom:10px;padding-left:15px;font-weight:normal}
@@ -781,16 +782,16 @@ height:400px}
   .web_num{display:none}
   /* 슬릭 슬라이드 모바일 */
 .responsive div img {width: 136px; height: 162px;}
-
+.event_title{display:none;}
 .web_index{display:none}
-.body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
+.body_bottom h3{font-size:20px;font-weight:bold;padding-left:15px;padding-top:24px}
 .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
 .body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
 .body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
 .body_bottom .desc .ratio{font-weight:bold}
-.body_bottom .desc .title{margin-left:10px;margin-top:20px}
+.body_bottom .desc .title{margin-left:10px/*;margin-top:20px*/}
 .body_bottom .desc ul{margin-left:5px}
 .body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
@@ -2254,12 +2255,12 @@ display: flex;
   font-size: 0.8em;cursor: pointer}
 .instant-search__title {font-size: 1.1em;font-weight: bold}
 .instant-search__paragraph {line-height: 1.5;margin: 8px 0}
-#searchUsers {display: flex;width:90%;margin:0 auto }
+#searchUsers {display: flex;width:94%;margin:0 auto }
 
 
 /*인기 검색어*/
 .popular_wrap{width:100%}
-.popular{ margin:40px 20px 40px; width:100%;margin-top:40px}
+.popular{ margin:40px 10px 40px; width:100%;margin-top:40px}
 .popular h2{font-size:12px;font-weight:bold;margin-bottom:10px;margin-left: 8px}
 .popular .search_list {display: flex}
 .popular ul{align-items: center;justify-self: center;width: 100%;margin: 0 auto}
@@ -2268,7 +2269,7 @@ display: flex;
 
 /*추천 검색어*/
 .recommend_wrap{width:100%; /* border-bottom:1px solid #bbbbbb */}
-.recommend{margin:0 auto;padding-top:30px;width:90%;}
+.recommend{margin-left:15px;padding-top:30px;width:90%;}
 .recommend h2{font-size:12px;font-weight:bold;margin-bottom:10px}
 .recommend ul{display:grid;grid-template-columns: repeat(4, 2fr);width: 100%;margin:auto;margin-bottom:45px}
 .recommend ul li{border:1px solid #BBBBBB;border-radius:20px;padding:8px;text-align:center;margin-right:7px;margin-top:10px;font-weight:bold}

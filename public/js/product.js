@@ -180,7 +180,7 @@ function addCart() {
     var params = {
         options: selectedOptions
     }
-
+    console.log(params);
     ajaxCallWithLogin(API_SERVER + '/order/addCart', params, 'POST',
     function(data) {
         alert("장바구니에 추가되었습니다.");
