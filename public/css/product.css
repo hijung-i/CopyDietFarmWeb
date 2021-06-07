@@ -315,7 +315,7 @@ box-shadow: none !important}
 .ico_v_dsd {padding:3px 8px 4px;background:#aaacaf;color:#fff;font-size:12px;letter-spacing:-0.05em}
 
 /* 제품상세 우측 설명박스*/
-.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:58px 29px 147px;float:right;display:l} 
+.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:58px 29px 147px; left: 704px; top: -694px;} 
 .v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em;font-family:'나눔고딕';line-height:24px}
 .v_top_txt {color:#6B6B6B;font-size:12px;line-height:18px;padding:10px 0 15px;border-bottom:1px solid #e1e1e1} 
 .v_n_top_info .ex{padding-left:20px}

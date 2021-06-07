@@ -929,6 +929,7 @@ height:400px}
 
 }
 @media screen and (min-width:1080px){
+.sideMenu_Header {display: none;}
 .btnMenu, .btnCart{display:none;}
 .mobile_index{display:none}
 .banner01 img{display:none}

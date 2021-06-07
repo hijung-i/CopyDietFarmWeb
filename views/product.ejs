@@ -66,12 +66,51 @@
 
         .sidebar{width:270px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
                 margin-top:-68px;position:sticky;top:0}
+
+        /* swiper bundle */
+        .swiper-container { width: 409px;height: 373px; z-index: 0}
+
+        .swiper-slide {text-align: center; font-size: 18px; background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
+            -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
+            justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
+            align-items: center
+        } 
+
+        .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover}
+        .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
+          left: 1000px; bottom: 25px}
+        .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
+        
+        @media screen and (max-width:1079px) {
+            .swiper-container {
+                margin-top: 11px !important;
+                height: 373px !important;
+            }
+            .swiper-slide {height: 373px !important;}
+            .swiper-slide img {
+                height: 373px !important;
+            }
+            .swiper-wrapper {height: 373px !important;}
+            .swiper-pagination {left: 72% !important;}
+        }
+        @media screen and (min-width:1080px) {
+            .swiper-container {
+                margin-left: 0 !important;
+                position: relative;
+                width: 694px; height: 694px;
+            }
+            .swiper-container {
+                height: 694px;
+            }
+            }
+        
         
         </style>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <%-include('general/head') %>
         <link rel="stylesheet" href="/css/product.css">
-    
 </head>
 
 <body>
@@ -225,11 +264,19 @@
                                     </div>
                                     <!-- 상품설명 -->
                                     <div class="view_top_box">
-                                        <div class="view_top_img">
+                                        <div class="swiper-container productSwiper">
+                                            <div class="swiper-wrapper product_slider">
+                                                <div class="swiper-slide"><img src="/images/blank1.jpg" alt=""></div>
+                                                <div class="swiper-slide"><img src="/images/blank2.jpg" alt=""></div>
+                                                <div class="swiper-slide"><img src="/images/blank1.jpg" alt=""></div>
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                        <!-- <div class="view_top_img">
                                             <img
                                             v-for="(image, index) in product.representative"
                                             v-bind:src="RESOURCE_SERVER + image.url" style="width:694px">
-                                        </div>
+                                        </div> -->
                                     </div>
                                     </div>
                                     <div class="v_top_txt_box">
@@ -375,7 +422,8 @@
                                         <div class="pp_wrap">
                                             <section class="purchased_products">
                                                 <h3>이 상품과 같이 구매한 상품들</h3>
-                                                <ul class="multiple_bxslider">
+                                                <div class="responsive"></div>
+                                                <!-- <ul class="multiple_bxslider">
                                                     <li v-for="(product) in recmdList">
                                                         <a href="#">
                                                             <img v-bind:src="RESOURCE_SERVER + product.url">
@@ -389,7 +437,7 @@
                                                             </span>
                                                         </a>
                                                     </li>
-                                                </ul>
+                                                </ul> -->
                                             </section>
                                         </div>
                                         <div class="products_ex_mobile" style="padding:0">
@@ -1134,7 +1182,20 @@
                             </div>
                         </div>
                     </main>
-           
+                    
+                    <!-- Swiper JS -->
+                    <script>
+                        var swiper = new Swiper(".productSwiper", {
+                            pagination: {
+                                el: ".swiper-pagination",
+                                type: "fraction"
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev"
+                            }
+                        });
+                    </script>
                     <script>
                         var upload = document.querySelector('#upload');
                         var preview = document.querySelector('#preview');
@@ -1201,9 +1262,11 @@
 
                         });
                     </script>
+                    
                     <script src="/js/orderDTO/OrderDTO.js"></script>
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
                     <script type="text/javascript" src="/js/product.js"></script>
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
                 </body>
                 <%-include('general/footer') %>
