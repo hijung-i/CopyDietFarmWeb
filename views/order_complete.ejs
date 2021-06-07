@@ -10,7 +10,6 @@
         <meta name="format-detection" content="no"/>
 
         <title>다이어트 Farm</title>
-        <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/order.css"/>
         <%-include('general/head') %>
             <style type="text/css">
@@ -41,44 +40,67 @@
                         </div>
                     </section>
                 </div>
+
+                <input type="hidden" id="products" value="<%=JSON.stringify(orderDTO.products) %>">
                 <main id="content" class="content">
                     <div class="order_complete_info">
-                        <h3 style="margin-left:14px">주문이 완료되었습니다.</h3>
+                        <h3>주문이 완료되었습니다.</h3>
                         <div class="order_complete_wrap">
                             <table>
+                                <thead>
+
+                                </thead>
                                 <tr class="order_no">
                                     <td>
-                                        <span>주문번호</span></td>
-                                    <td>2020101920201019
+                                        <span class="title">주문번호</span></td>
+                                    <td class="bold">
+                                        <%= orderDTO.orderNumber %>
+                                        <a href="/ol_detail/<%=orderDTO.orderNumber %>"><div class="detail-button">상세보기 ></div>
                                     </td>
+                                    
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span>배송지</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                    <td style="line-height:24px">서울 강남구 테헤란로 8길 11-4 202호<br>박민지 010-1234-5678</td>
+                                        <span class="title address">배송지</span>
+                                    </td>
+                                    <td colspan="2" style="line-height:24px">
+                                        <span class="address bold"><%=orderDTO.delivery.address %></span><br>
+                                        <span class="small"><%=orderDTO.delivery.userName %></span><span class="divider"></span><span class="small"><%=orderDTO.delivery.userCellNo%></span>
+                                    </td>
 
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span>결제정보</span></td>
-                                    <td>
+                                        <span class="title">결제정보</span>
+                                    </td>
+                                    <td colspan="2">
                                         <ul>
-                                            <li>신용카드</li>
-                                            <li>우리카드(1234 **** 8888 567*)</li>
-                                            <li>일시불</li>
-                                            <li>2020-11-12 11:30:39</li>
+                                            <li class="bold"><%=orderDTO.paymentName %></li>
+                                            <li><%=orderDTO.cardName %> <%=orderDTO.cardNo %></li>
+                                            <li>
+                                                <% if( orderDTO.cardQuota == '00' ) { %>
+                                                    일시불
+                                                <% } else { %>
+                                                    <%=orderDTO.cardQuota %>개월
+                                                <% } %>
+                                            </li>
+                                            <li><%=orderDTO.paymentDate %></li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span>결제금액</span></td>
-                                    <td style="color:#31845B">100,0000원</td>
+                                        <span class="title">결제금액</span>
+                                    </td>
+                                    <td class="amount bold" colspan="2"><%=orderDTO.paidRealAmount %>원</td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span>포인트</span></td>
-                                    <td style="color:#31845B;">150p</td>
+                                        <span class="title">포인트</span></td>
+                                    <td class="point" colspan="2">
+                                        <span class="amount bold"><%=orderDTO.accumulatePoint %>p</span><br>
+                                        <span class="small">- 포인트는 구매확정 후 적립됩니다.</span>
+                                    </td>
                                 </tr>
                             </table>
                             <!--// <p style="text-align:center;color:#878787;margin-bottom:38px">- 포인트는 구매확정
@@ -91,45 +113,12 @@
                         <p>- 배송완료 후 영업일 기준, 7일이 지나도 구매확정이 되지 않으면 자동구매확정이 이루어집니다.</p>
                     </div>
                     <div class="btn_area">
-                        <a href="index.html">
+                        <a href="/">
                             <button type="button" id="btnOrder">홈으로</button>
                         </a>
                     </div>
                 </main>
-
-                <script>
-                    $(document).ready(function () {
-                        $("#gnbAllMenu").hide();
-                        $("#btnGnbOpen").click(function () {
-                            $("#gnbAllMenu").slideToggle("fast");
-                        });
-                    });
-
-                    $(document).ready(function () {
-                        $(".m_slides_sub").hide();
-                        $(".m_ba_slides_n_w li").hover(function () {
-                            $("ul:not(:animated)", this).slideDown("700");
-
-                            $(".m_ba_slides_n_w li a").removeClass("active");
-                        }, function () {
-                            $("ul", this).slideUp("700");
-                        });
-
-                        $("#memberMenu").bind("moseover mouseenter", function () {
-                            $("#memMenu").show();
-                        });
-                        $("#memMenu").bind("moseout mouseleave", function () {
-                            $("#memMenu").hide();
-                        });
-
-                        $("#NotmemberMenu").bind("moseover mouseenter", function () {
-                            $("#NotmemMenu").show();
-                        });
-                        $("#NotmemMenu").bind("moseout mouseleave", function () {
-                            $("#NotmemMenu").hide();
-                        });
-                    });
-                </script>
+                <script src="/js/orderComplete.js"></script>
 
             </body>
         </html>

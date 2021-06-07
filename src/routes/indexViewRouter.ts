@@ -115,7 +115,20 @@ router.get('/pwdReset', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'pwdReset', {})
 })
 router.get('/order-comp', (req: Request, res: Response, next: NextFunction) => {
+    res.locals.orderDTO = JSON.parse(req.query.requestOrderDTO as string)
+    console.log(res?.locals.orderDTO)
+
     render(req, res, 'order_complete', {})
+})
+
+router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFunction) => {
+    const orderNumber: string = req.params.orderNumber
+
+    if (orderNumber.length > 15 || orderNumber.length < 14) {
+        res.send('<script>alert("올바르지 않은 주문번호입니다.");location.href = "/orderlist";</script>')
+    } else {
+        render(req, res, 'mypage_orderList_detail', { orderNumber })
+    }
 })
 
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
@@ -200,9 +213,6 @@ router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
 })
 router.get('/s_inquiry_more', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'web_seller_inquiry', {})
-})
-router.get('/point', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_point', {})
 })
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'login_fail', {})

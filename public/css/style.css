@@ -501,7 +501,7 @@ font-weight:bold;border-radius:5px;font-family:'나눔고딕';margin-top:15px}
 .noticeBox ul, .noticeBox p{margin-top:18px;margin-bottom:18px;padding-left:20px;padding-right:20px}
 .nBox_wrap{width:100%;border-bottom:1px solid #E6E6E6}
 .noticeBox ul li{font-size:12px;color:#878787;letter-spacing:0.1px;text-align:left}
-.noticeBox p{line-height:20px;text-indent:-12px;margin-left:15px;}
+.noticeBox p{line-height:20px;}
 .notice_detail_web_bottom{display:none}
 
 /*장바구니*/
@@ -1053,7 +1053,7 @@ display: flex;justify-content:space-between; margin-top: 20px;align-items: cente
 .w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
 .w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
 .clicked_menu{background-color:#F99319;color:#fff}
-.cs_content .noticeBox{float:left;margin-left:200px;margin-top:-200px}
+.cs_content .noticeBox{margin-left:200px;}
 .noticeBox_detail{float:left;margin-left:200px;margin-top:-200px}
 .noticeBox ul, .noticeBox p{margin-top:18px;margin-bottom:18px;padding-right:20px}
 .nBox_wrap{width:831px;border-bottom:1px solid #E6E6E6}
@@ -1694,13 +1694,85 @@ justify-self: center;width: 100%;margin: 0 auto;}
 
 /*주문 완료*/
 #content .order_complete_info{margin-top:20px;}
-#content .order_complete_info h3{width:100%;text-align:center;margin-top:35px;margin-bottom:36px;font-size:16px;font-weight:bold}
+#content .order_complete_info h3{
+  width:100%;text-align:center;
+  margin-top:35px;margin-bottom:36px;font-size:16px;font-weight:bold
+}
 
 .order_complete_wrap{width:100%;border-top:8px solid #F1F1F1;padding-top:38px;margin-bottom:30px}
-.order_complete_wrap table tr td{padding-left:20px}
-#content .order_complete_info tr td span{color:#878787}
+.order_complete_wrap table {
+  margin: 0px 15px;
+  display: block;
+  position: relative;
+}
 
-#content .order_complete_info tr td{font-size:14px;padding-bottom:20px;font-weight:bold;letter-spacing:0.2px}
+#content .order_complete_info tr td span.title{color:#6B6B6B; font-weight: normal}
+#content .order_complete_info tr td span.small{
+  color: #878787;
+  font-size: 12px;
+  font-weight: normal
+}
+
+.bold {
+  font-weight:bold;
+}
+
+.order_complete_info tr td span.divider {
+  border-right: 1px solid #BBBBBB;
+  height: 6px;
+  margin: 0px 10px;
+  display: inline-block
+}
+
+
+#content .order_complete_info tr td:first-child{
+  padding-right: 32px;
+  vertical-align: top;
+}
+
+.order_complete_info ul li{
+  margin-bottom: 7px;
+}
+.order_complete_info ul li:last-child{
+  margin-bottom: 0px;
+}
+
+.order_complete_info td.point .small{
+  margin-top: 10px;
+  display:inline-block
+}
+/* #content .order_complete_info tr td:last-child{
+  width: 1000px;
+} */
+
+#content .order_complete_info tr td{font-size:14px;padding-bottom: 30px;letter-spacing:0.2px}
+
+#content .order_complete_info .amount{
+  color: #31845B;
+}
+
+#content .order_complete_info span.address.title{
+  position: relative;
+  top: 4px;
+}
+
+.order_complete_info div.detail-button {
+  min-width: 70px;
+  height: 20px;
+  color: #FFFFFF;
+
+  display: inline-block;
+  position: absolute;
+  top: -2px;
+  right: 0px;
+
+
+  background-color: #BBBBBB;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+}
 
 /* 적립금 */
 .total_price {font-weight:700}

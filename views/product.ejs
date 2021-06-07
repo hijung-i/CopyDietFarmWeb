@@ -304,16 +304,18 @@
                                                 <tr>
                                                     <th scope="row"></th>
                                                     <td>
-                                                        <template v-if="product.options.length > 1">
-                                                            <select name="products" id="products" onchange="onOptionSelected(this)" style="border-color:#BBBBBB">
-                                                                <option value="-1" selected="selected">선택</option>
-                                                                <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
-                                                            </select>
-                                                        </template>
-                                                        <template v-if="product.options.length == 1">
-                                                            <select name="products" id="product" style="border-color:#BBBBBB" readonly="readonly">
-                                                                <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
-                                                            </select>
+                                                        <template v-if="product.options != undefined">
+                                                            <template v-if="product.options.length > 1">
+                                                                <select name="products" id="products" onchange="onOptionSelected(this)" style="border-color:#BBBBBB">
+                                                                    <option value="-1" selected="selected">선택</option>
+                                                                    <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
+                                                                </select>
+                                                            </template>
+                                                            <template v-if="product.options.length == 1">
+                                                                <select name="products" id="product" style="border-color:#BBBBBB" readonly="readonly">
+                                                                    <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
+                                                                </select>
+                                                            </template>
                                                         </template>
                                                     </td>
                                                 </tr>
@@ -1190,16 +1192,6 @@
 
                             preview.appendChild(image);
                         })
-                    </script>
-                    <script>
-                        /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
-                        $(document).ready(function(){
-                            $('div.pdt_detai_tabinner_vn li').on('click',function(){
-                                $(this).addClass('onTab');
-                                $(this).siblings().removeClass('onTab');
-                            });
-
-                        });
                     </script>
                     <script src="/js/orderDTO/OrderDTO.js"></script>
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>

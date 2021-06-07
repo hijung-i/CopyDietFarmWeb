@@ -110,7 +110,6 @@
         }
 
         </style>
-        <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/style_web.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <%-include('general/head') %>
@@ -281,10 +280,9 @@
                     <input
                         type="text"
                         id="unAddr"
-                        class="int"
                         maxlength="80"
-                        placeholder="도로명, 지번, 건물명 검색">
-                    <input type="text" id="unAddr2" class="int" maxlength="80" placeholder="상세주소">
+                        placeholder="도로명, 지번, 건물명 검색" onclick="openZipSearch()" onkeydown="openZipSearch()">
+                    <input type="text" id="unAddr2" maxlength="80" placeholder="상세주소" >
                     <h4>휴대폰</h4>
                     <input type="tel" id="unDeliveryUserCellNo" placeholder="연락처를 입력해주세요">
                 </div>

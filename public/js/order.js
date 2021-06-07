@@ -104,16 +104,6 @@ $(function() {
         app.orderDTO.products = dGroup.products;
     }
 
-    $("#unAddr").click(function() {
-        openZipSearch();
-    })
-
-    $("#unAddr").keydown(function() {
-        openZipSearch();
-        
-        $(this).val('');
-    })
-
     getLogin();
 })
 
@@ -368,7 +358,8 @@ function addOrder(requestOrderDTO) {
         switch(data.message) {
             case 'SUCCESS':
                 alert('상품을 성공적으로 주문했습니다.');
-                // location.href="/cart";
+                requestOrderDTO.orderNumber = data.result;
+                location.href="/order-comp?requestOrderDTO="+JSON.stringify(requestOrderDTO);
                 break;
             case 'NOT_MATCHED':
                 alert('주문 실패, 취소 진행')
@@ -412,9 +403,9 @@ function getDefaultDeliveryInfo() {
 function openZipSearch() {
     new daum.Postcode({
         oncomplete: function(data) {
+            $('#unAddr').val();
             var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
-            $('#addr').val(address);
-            console.log(data);
+            $('#unAddr').val(address);
         }
     }).open();
 }

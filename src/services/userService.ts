@@ -11,8 +11,8 @@ type Option = {
 }
 
 class UserService {
-    // SERVER_IP = 'dietfarm.co.kr'
-    SERVER_IP = '192.168.0.3'
+    SERVER_IP = 'dietfarm.co.kr'
+    // SERVER_IP = '192.168.0.3'
 
     SERVER_URL = 'http://112.217.209.162:9090'
 
