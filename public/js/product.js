@@ -28,7 +28,8 @@ var app = new Vue({
             }
         },
         onOptionSelected,
-        zzimProduct
+        zzimProduct,
+        addCart
     }
 });
 
@@ -38,7 +39,6 @@ $(function() {
     $("button.c_btn").click(addCart);
     $('button.cart').click(addCart);
 
-    $(document).ready(function() {
            $('.multiple_bxslider').bxSlider({
             mode: 'horizontal',
             auto: true,
@@ -51,8 +51,12 @@ $(function() {
             slideMargin:4
         });
   
-    });
-
+    /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
+        $('div.pdt_detai_tabinner_vn li').on('click',function(){
+            $(this).addClass('onTab');
+            $(this).siblings().removeClass('onTab');
+        });
+        
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
         console.log("data", data);
@@ -100,9 +104,9 @@ function getProductDetail(){
 
         // 가격 정보
         var productDesc = $('.v_top_txt')
-        var discountPrice = $('.v_top_txt_box .price_mobile .p1')
-        var retailPrice = $('.v_top_txt_box .price_mobile .p2')
-        var discountRate = $('.v_top_txt_box .price_mobile .p3')
+        var discountPrice = $('.price_mobile .p1')
+        var retailPrice = $('.price_mobile .p2')
+        var discountRate = $('.price_mobile .p3')
         productDesc.html(product.productDesc);
         discountPrice.html(numberFormat(product.discountPrice)+'원');
         
@@ -110,7 +114,7 @@ function getProductDetail(){
             retailPrice.html(numberFormat(product.retailPrice)+'원');
             discountRate.html(numberFormat(Math.round(product.discountRate, 0))+'%');
         } else {
-            $('.v_top_txt_box .p1').hide()
+            $('.v_top_txt_box .p2').hide()
             $('.v_top_txt_box .p3').hide();
         }
 
@@ -141,22 +145,6 @@ function getProductDetail(){
         getProductQuestionList();
         getRecommendedProducts();
 
-        console.log($('#content ul.tab_wrap'))
-        $('#content ul.tab_wrap li').click(function() {
-            console.log("click");
-            var activeTab = $(this).attr('data-tab');
-
-            $('#content .tab_wrap li').removeClass('active');
-            $('#content .tab_cont').removeClass('active');
-            $('#content .other_cont').removeClass("active");
-
-            $(this).addClass('active');
-            if(activeTab == 'tab1') {
-                $('#content .other_cont').addClass("active");
-            }
-            $('#content #' + activeTab).addClass('active');
-        });
-
     }, function (err) {
         console.log("productDetail error", err);
         alert('상품 정보를 불러오지 못했습니다.');
@@ -179,7 +167,7 @@ function addCart() {
     var params = {
         options: selectedOptions
     }
-
+    console.log(params);
     ajaxCallWithLogin(API_SERVER + '/order/addCart', params, 'POST',
     function(data) {
         alert("장바구니에 추가되었습니다.");
@@ -385,6 +373,7 @@ function getRecommendedProducts() {
 
         if(result.length == 0) {
             getProductList();
+            return;
         }
 
         app.recmdList = result;
@@ -406,10 +395,10 @@ function getProductList() {
         app.recmdList = [];
         var result = data.result
         for(var i = 0; result.length; i++) {
-            app.recmdList.push(result[i]);
             if(i > 9) {
                 break;
             }
+            app.recmdList.push(result[i]);
         }
 
     }, function(err) {

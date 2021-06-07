@@ -41,16 +41,14 @@
                                     <form name="#" id="#" method="get" action="#">
                                         <div class="n_sort">
                                             <div class="sort">
-                                                <select
-                                                    name="#"
-                                                    id="#"
+                                                <select name="#" id="sortOption"
                                                     class="formSelect"
                                                     style="background-color:#fff;border:0;font-size:12px">
-                                                    <option value="gpa">추천순</option>
-                                                    <option value="create_date">신상품순</option>
-                                                    <option value="ranking">인기상품순</option>
-                                                    <option value="discount_price">낮은 가격순</option>
-                                                    <option value="discount_price desc">높은 가격순</option>
+                                                    <option value="RECOMMEND">추천순</option>
+                                                    <option value="NEW">신상품순</option>
+                                                    <option value="POPULAR">인기상품순</option>
+                                                    <option value="LOW_PRICE">낮은 가격순</option>
+                                                    <option value="HIGH_PRICE">높은 가격순</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -180,6 +178,5 @@
                     
                     <%-include('general/footer') %>
                     <script src="/js/products.js"></script>
-                    <script src="/js/index.js"></script>
                 </body>
             </html>

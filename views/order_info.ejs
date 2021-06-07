@@ -15,7 +15,59 @@
                 .web_order_info {
                     display: none;
                 }
+            .i_modal .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            position:absolute;
+            left:410px;
+            margin-top:10px
+          
+        }
+        .modal-content h3{margin-left:15px}
             }
+            @media screen and (min-width:1080px){
+           .i_modal .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            position:absolute;
+            left:740px;
+          
+        }
+            }
+            /* The Modal (background) */
+            .i_modal{
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+    
+        /* Modal Content/Box */
+        .i_modal .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            height:450px;
+            width:380px;
+                                     
+        }
+        /* The Close Button */
+        
+  
+        .i_modal .close:hover,
+        .i_modal .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
               /* The Modal (background) */
         .coupon_modal {
             display: none; /* Hidden by default */
@@ -46,7 +98,7 @@
             float: right;
             font-size: 28px;
             position:absolute;
-            left:485px;
+            left:420px;
             margin-top:-35px
           
         }
@@ -58,7 +110,6 @@
         }
 
         </style>
-        <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/style_web.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <%-include('general/head') %>
@@ -88,7 +139,7 @@
             <input type="hidden" id="deliveryGroupList" value="<%=deliveryGroupList %>">
             <input type="hidden" id="orderDTO" value="<%=orderDTO %>">
 
-            <h3 class="order_title">주문상품<span class="web_num"></span></h3>
+            <h3 class="order_title" style="margin-left:15px">주문상품<span class="web_num"></span></h3>
             <template v-for="(item, index) in deliveryGroupList">
                 <div class="order_product">
                     <h4 v-if="item.brandName != ''">{{ item.brandName }}</h4>
@@ -146,9 +197,74 @@
                 </div>
             </div>
             <div class="deliver_info">
+                <div class="deliver_info_top">
                 <h3><img src="images/asterisk.png">
-                    배송지 정보
+                   배송지
                 </h3>
+                <button type="button" id="myBtn" onclick="openInfoModal()">변경</button>
+                </div>
+                <div class="i_modal" id="iModal" style="display:none">
+                     <div class="modal-content">  
+                        <span class="close" onclick="closeInfoModal()">&times;</span>                                                      <!-- modal window -->
+                               <h3>배송지 관리</h3>
+                                    <div class="top_checkBox">
+                                        <input
+                                            type="checkbox"
+                                            name="list"
+                                            id="selectAll1"
+                                            value="selectAll"
+                                            onclick='selectAll(this)'>
+                                        <label for="selectAll1">전체 선택</label>
+                                        <button>선택 삭제</button>
+                                    </div>
+                                    <div class="thick_line one"></div>
+            
+                                    <div class="order_list_ctn">
+                                        <template v-for="(item, i) in deliveryList">
+                                            <section class="web_delivery_manage_list">
+                                                <div class="del_mng_list_top">
+                                                    <ul class="del_mng_type">
+                                                        <li class="type_first">{{ item.addressName }}</li>
+                                                        <li class="type_second" v-if="item.mainAddressYn == 'Y'">
+                                                            <span class="tema">기본배송지</span></li>
+                                                    </ul>
+                                                    <ul class="edit_remove">
+                                                        <template v-if="item.mainAddressYn == 'N'">
+                                                            <li class="basic" v-on:click="changeMainAddress(i)">
+                                                                <a>기본배송지로 설정</a>
+                                                            </li>
+                                                            <li class="small_line"><img src="/images/l_icon_category.png"></li>
+                                                        </template>
+                                                        <li class="edit_first">
+                                                            <a v-on:click="modalDisplay(true, '배송지 수정', i)">수정</a>
+                                                        </li>
+                                                        <li class="small_line"><img src="/images/l_icon_category.png"></li>
+                                                        <li class="edit_second">
+                                                            <a v-on:click="deleteDelivery(i)">삭제</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="web_del_mag_list_info">
+                                                    <div class="top_checkBox_piece">
+                                                        <input type="checkbox" name="list" id="selectAll2" value="s">
+                                                        <label for="selectAll2"></label>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <p class="address">{{ item.address }}</p>
+                                                        </li>
+                                                        <li>
+                                                            <p class="customer_info">{{ item.userName }}
+                                                                <span class="small_line"><img src="/images/l_icon_category.png"></span>{{ item.userCellNo }}</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </section>
+                                          </template>
+                                       </div>
+                                 </div>
+                                 </div>
+                  
                 <div
                     class="members"
                     v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
@@ -164,10 +280,9 @@
                     <input
                         type="text"
                         id="unAddr"
-                        class="int"
                         maxlength="80"
-                        placeholder="도로명, 지번, 건물명 검색">
-                    <input type="text" id="unAddr2" class="int" maxlength="80" placeholder="상세주소">
+                        placeholder="도로명, 지번, 건물명 검색" onclick="openZipSearch()" onkeydown="openZipSearch()">
+                    <input type="text" id="unAddr2" maxlength="80" placeholder="상세주소" >
                     <h4>휴대폰</h4>
                     <input type="tel" id="unDeliveryUserCellNo" placeholder="연락처를 입력해주세요">
                 </div>
@@ -363,19 +478,30 @@
 
                 var span = $(".close");                                       
 
-                // When the user clicks on the button, open the modal 
-                
-
-                // When the user clicks on <span> (x), close the modal
                 span.click(function() {
                     $('#c_Modal').hide();
                 });
-
-                // When the user clicks anywhere outside of the modal, close it
-                
-                
             })
-     </script>
+        function openInfoModal() {
+            console.log("click")
+            $('#iModal').show();
+        }
+
+        function closeInfoModal() {
+            console.log("click")
+            $('#iModal').hide();
+        }
+        // Get the modal
+        $(function () {
+
+            var span = $(".close");                                       
+
+            span.click(function() {
+                $('#iModal').hide();
+            });
+        })
+ </script>
+     
         <%-include('general/footer') %>
     </body>
 </html>
