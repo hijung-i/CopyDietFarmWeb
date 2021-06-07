@@ -22,7 +22,7 @@ function getOrderDetail() {
         orderNumber: $('#orderNumber').val()
     }
     console.log(params);
-    ajaxCallWithLogin(API_SERVER + '/order/getPurchaseOrderDetail', params, 'POST',
+    ajaxCall(API_SERVER + '/order/getPurchaseOrderDetail', params, 'POST',
     function(data) {
         app.order = data.result;
         var products = app.order.products;
@@ -43,9 +43,6 @@ function getOrderDetail() {
             location.href="/orderlist";
         }
         console.error(err);
-    }, {
-        isRequired: true,
-        userId: true
     })
 
 }

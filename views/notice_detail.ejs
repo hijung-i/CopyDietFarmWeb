@@ -8,7 +8,7 @@
             content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
-
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <title>다이어트 Farm</title>
         <style type="text/css">
             @media screen and (max-width:1079px) {
@@ -31,6 +31,7 @@
         </head>
 
         <body>
+            <input type="hidden" id="boardNo" value="<%=boardNo %>">
             <div class="web_notice_detail">
                 <%-include('general/header') %>
                 </div>
@@ -48,16 +49,16 @@
                         <h2>고객센터</h2>
                         <div class="w_sidemenu">
                             <ul>
-                                <a href="notice">
+                                <a href="/notice">
                                     <li class="clicked_menu">공지사항</li>
                                 </a>
-                                <a href="faq">
+                                <a href="/faq">
                                     <li>fAQ</li>
                                 </a>
-                                <a href="cs-center">
+                                <a href="/cs-center">
                                     <li>고객센터</li>
                                 </a>
-                                <a href="alarm">
+                                <a href="/alarm">
                                     <li>알림설정</li>
                                 </a>
                             </ul>
@@ -67,43 +68,37 @@
                         <h4>공지사항</h4>
                         <div class="nBox_wrap">
                             <ul>
-                                <h3 style="font-size:16px;font-weight:bold">포인트 정책 안내</h3>
-                                <li>2020.10.20</li>
+                                <h3 style="font-size:16px;font-weight:bold">{{ notice.title }}</h3>
+                                <li>{{ notice.createDate }}</li>
                             </ul>
                         </div>
-                        <p>안녕하세요</p>
-                        <p>포인트 제도에 대해서 안내드립니다.
-                            <p>1. 주문금액의 0.5% 포인트 지급<br>- 배송비/할인/일부상품은 제외됩니다.<br>- 구매상품 취소, 반품시 해당 포인트 자동 차감됩니다.
-                                <br>- 주문번호 기준으로 구매확정 시 포인트 일괄지급됩니다.</p>
-                            <p>2. 회원가입 시 가입자에게 포인트 지급(1000포인트)<br>회원가입 시 추천인에게 포인트 지급(1000포인트)</p>
-                            <p>3. 리뷰 작성시 50포인트 지급
-                                <br>
-                                포토리뷰 작성시 100포인트 지급</p>
-                            <div class="notice_detail_web_bottom">
-                                <button type="button" class="noticeBtn" onclick="location.href='notice.html'">목록</button>
-                                <div class="nv_list">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <a href="#"><img src="/images/downarrow_icon_category.png">이전글</a>
-                                            </td>
-                                            <td>포인트 정책 안내
-                                                <span>2020.10.20</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#"><img src="/images/downarrow_icon_category.png">다음글</a>
-                                            </td>
-                                            <td>포인트 정책 안내
-                                                <span>2020.10.20</span></td>
-                                        </tr>
-                                    </table>
-                                </div>
+                        <p v-html="notice.content">
+                        </p>
+                        <div class="notice_detail_web_bottom">
+                            <button type="button" class="noticeBtn" onclick="location.href='/notice'">목록</button>
+                            <div class="nv_list">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <a href="#"><img src="/images/downarrow_icon_category.png">이전글</a>
+                                        </td>
+                                        <td>포인트 정책 안내
+                                            <span>2020.10.20</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#"><img src="/images/downarrow_icon_category.png">다음글</a>
+                                        </td>
+                                        <td>포인트 정책 안내
+                                            <span>2020.10.20</span></td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
-                    </main>
-                    <%-include('general/footer') %>
-                        <script src="/js/notice_detail.js"></script>
-                        
-                    </body>
-                </html>
+                    </div>
+                </main>
+                <%-include('general/footer') %>
+                    <script src="/js/notice_detail.js"></script>
+                    
+                </body>
+            </html>

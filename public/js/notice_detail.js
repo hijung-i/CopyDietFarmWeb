@@ -1,22 +1,24 @@
+var app = new Vue({
+    el: 'main',
+    data: {
+        notice: {}
+    }
+})
+
 function getSpecificBoard() {
-    var boardNo = $("#currentBoardNo").val();
+    var boardNo = $("#boardNo").val();
     var params = {
         boardNo: boardNo
     }
 
     ajaxCall(API_SERVER + '/board/getSpecificBoard', params, 'POST'
     , function(data) {
-        var notice = data.result[0];
-        var html = `
-        <div class="nBox_wrap">
-            <ul>
-                <h3 style="font-size:16px;font-weight:bold">${notice.title}</h3>
-                <li>${notice.createDate}</li>
-            </ul>
-        </div>
-        <p>${notice.content}</p>
-        `;
-        $(".noticeBox").html(html);
+        console.log(data);
+        if(data.result.length == 0){
+            alert('글을 찾을 수 없습니다.');
+            location.href="/notice";
+        }
+        app.notice = data.result[0]; 
     }, function(err) {
         console.log(err);
     })
