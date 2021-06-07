@@ -266,9 +266,8 @@
                                     <div class="view_top_box">
                                         <div class="swiper-container productSwiper">
                                             <div class="swiper-wrapper product_slider">
-                                                <div class="swiper-slide"><img src="/images/blank1.jpg" alt=""></div>
-                                                <div class="swiper-slide"><img src="/images/blank2.jpg" alt=""></div>
-                                                <div class="swiper-slide"><img src="/images/blank1.jpg" alt=""></div>
+                                                    <!-- <div class="swiper-slide" v-for="image in product.representative"><img v-bind:src="RESOURCE_SERVER + image.url" alt=""></div> -->
+
                                             </div>
                                             <div class="swiper-pagination"></div>
                                         </div>
@@ -414,7 +413,7 @@
                                                                 <img v-if="product.zzimYn == 'Y'" class="like like-yes">
                                                                 <img v-if="product.zzimYn == 'N'" class="like like-no">
                                                             </button>
-                                                            <button type="button" class="c_btn" v-on:click="addCart()">장바구니</button>
+                                                            <button type="button" class="c_btn">장바구니</button>
                                                             <button type="button" class="p_btn" v-on:click="onSubmit()">구매하기</button>
                                                         </div>
                                                     </div>

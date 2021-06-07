@@ -7,6 +7,7 @@ var app = new Vue({
         usablePoint: 0,
         orderDTO: '',
         deliveryDescType: 0,
+        deliveryList: [],
         couponList: []
     }, methods: {
         numberFormat,
@@ -103,6 +104,13 @@ $(function() {
         var dGroup = app.deliveryGroupList[i];
         app.orderDTO.products = dGroup.products;
     }
+
+    var span = $(".close");                                       
+
+    span.click(function() {
+        $('#c_Modal').hide();
+        $('#iModal').hide();
+    });
 
     getLogin();
 })
@@ -400,6 +408,25 @@ function getDefaultDeliveryInfo() {
     })
 }
 
+function getDeliveryInfoList() {
+    var params = {};
+
+    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', params, 'POST',
+    function(data) {
+        app.deliveryList = data.result;
+        console.log("getDeliveryInfoList success", data);
+    }, function(err) {
+        console.log("error", err);
+        var responseText = err.responseText;
+        if(responseText == 'NOT_FOUND') {
+            app.orderDTO.delivery = undefined
+        }
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
 function openZipSearch() {
     new daum.Postcode({
         oncomplete: function(data) {
@@ -421,4 +448,26 @@ function getUsableCouponList() {
         isRequired: true,
         userId: true
     })
+}
+
+function openCouponModal() {
+    console.log("click")
+    $('#c_Modal').show();
+}
+
+function closeCouponModal() {
+    console.log("click")
+    $('#c_Modal').hide();
+}
+   
+function openInfoModal() {
+    console.log("click")
+    $('#iModal').show();
+    
+    getDeliveryInfoList();
+}
+
+function closeInfoModal() {
+    console.log("click")
+    $('#iModal').hide();
 }
