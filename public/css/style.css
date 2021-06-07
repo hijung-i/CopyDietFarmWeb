@@ -32,7 +32,7 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
   .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
 @media screen and (min-width:1080px){
-.like {width:25px;height:25px;position:relative;bottom:50px;float:right;right:20px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
+.like {width:25px;height:25px;position:relative;bottom:50px;float:right;right:30px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
 /*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
 .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
@@ -865,7 +865,6 @@ height:400px}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
   .gnb_depth02{ display:inline-block; width:372px; height:486px; text-align:left}
- .etc{position:relative;left:240px;top:-80px}
 #header .tabMenu {display: none;}
   /* footer web */
   #footer {width:100%;min-width:1080px;}
@@ -932,18 +931,18 @@ height:400px}
 .mobile_index{display:none}
 .banner01 img{display:none}
 .body_bottom{width:1080px;margin:0 auto;}
-.body_bottom h3{font-size:25px;font-weight:bold;margin-bottom:60px}
+.body_bottom h3{font-size:25px;font-weight:bold;margin-bottom:30px}
 .w_best .thum ul{margin-top:-20px}
 .w_best .desc .sale{font-size:16px}
 .w_best .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
 .w_best .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10px;color:#F32525}
-.w_best h2{margin-bottom:60px}
+.w_best h2{margin-bottom:20px}
 .w_best .side{float:left;margin-bottom:77px}
 .w_best .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
-.w_best ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}h2{font-size:25px;font-weight:bold;margin-bottom:60px;margin-top:75px}
+.w_best ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}h2{font-size:25px;font-weight:bold;margin-bottom:20px;margin-top:75px}
 .w_best .desc ul li{margin-right:20px;float:left;}
 .body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
-.body_bottom .thum img{width:184px;height:184px;border-radius:6px}
+.body_bottom .thum img{width:247.5px;height:247.5px;border-radius:6px}
 .body_bottom .desc ul li{margin-right:20px;float:left;}
 .body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .desc .sale{font-size:16px;font-weight:bold}
@@ -952,9 +951,9 @@ height:400px}
 .body_bottom .side{float:left;}
 .body_bottom .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
 .body_bottom .thum{padding-bottom:13px}
-.body_bottom .title{font-size:14px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
-.w_best .title{margin-top:13px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:180px;height: 20px;display:inline-block}
-.body_bottom .desc{padding-bottom:40px;margin-top:-20px}                                                                                         
+.body_bottom .title{font-size:14px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:247px;height: 20px;display:inline-block}
+.w_best .title{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:247px;height: 20px;display:inline-block;font-size:14px}
+.body_bottom .desc{padding-bottom:40px}                                                                                         
 .protein, .sweet, .water{margin-top:35px;clear:both}
 /* 메인화면 웹 썸네일 */
 .blank_sec {width: 100%; min-width: 1080px; height: 520px; display: flex;margin-bottom:-120px}
@@ -963,10 +962,11 @@ height:400px}
 .blank_sec li {width: 520px;}
 .blank_sec li:not(:last-child) {margin-right: 20px;}
 .blank_sec img {border-radius:5px;}
+.body_sub_tit{display:flex;justify-content:space-between;}
 /* 메인화면 메인슬라이드 썸네일 */
 .swiper-slide div.thum img {width: 1080px; height: 370px;}
 .catgor_wrap{display:none}
-.w_best .thum img{width:184px;height:184px;border-radius:6px}
+.w_best .thum img{width:247.5px;height:247.5px;border-radius:6px}
 
 #content{width:100%;max-width:1080px;margin:0 auto;}
 #content .pick_wrap{width:1080px;}
