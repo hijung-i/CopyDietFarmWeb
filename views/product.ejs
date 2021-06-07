@@ -365,7 +365,7 @@
                                                                 <img v-if="product.zzimYn == 'Y'" class="like like-yes">
                                                                 <img v-if="product.zzimYn == 'N'" class="like like-no">
                                                             </button>
-                                                            <button type="button" class="c_btn">장바구니</button>
+                                                            <button type="button" class="c_btn" v-on:click="addCart()">장바구니</button>
                                                             <button type="button" class="p_btn" v-on:click="onSubmit()">구매하기</button>
                                                         </div>
                                                     </div>
@@ -466,7 +466,7 @@
                                             </div>
                                         </div>
                                         <div class="float_btns">
-                                            <button class="cart" @click>장바구니</button>
+                                            <button class="cart" @click="updateOrderInfo()">장바구니</button>
                                             <button class="buy" @click="onSubmit()">구매하기</button>
                                         </div>
                                     </div>

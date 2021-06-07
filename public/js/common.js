@@ -5,9 +5,9 @@ var SERVER_IP = '192.168.0.3';
 
 // var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
 var CALLBACK_SERVER = "http://"+ SERVER_IP;
-var API_SERVER = "http://"+ SERVER_IP +":9090";
+// var API_SERVER = "http://"+ SERVER_IP +":9090";
 
-// var API_SERVER = "http://112.217.209.162:9090";
+var API_SERVER = "http://112.217.209.162:9090";
 var RESOURCE_SERVER = "http://112.217.209.162:8000";
 // var API_SERVER = "http://13.209.123.102:9090";
 

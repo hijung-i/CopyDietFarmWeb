@@ -28,7 +28,8 @@ var app = new Vue({
             }
         },
         onOptionSelected,
-        zzimProduct
+        zzimProduct,
+        addCart
     }
 });
 

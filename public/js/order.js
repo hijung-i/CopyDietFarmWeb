@@ -194,15 +194,22 @@ function paymentAction() {
     if($("#selectDeliveryDesc").val() == "") {
         requestOrderDTO.deliveryDesc = $('#deliveryDesc').val()
     }
-    
+    if(requestOrderDTO.userName == '' || requestOrderDTO.userName == undefined) {
+        alert('주문자 이름을 입력해주세요');
+        return;
+    }
     if(requestOrderDTO.userCellNo == '' || requestOrderDTO.userCellNo == undefined) {
         alert('주문자 전화번호를 입력해주세요');
+        return;
+    }
+    if(requestOrderDTO.userEmail == '' || requestOrderDTO.userEmail == undefined) {
+        alert('주문자 이메일 주소를 입력해주세요');
         return;
     }
  
     var items = new Array();
     var count = 0;
-
+;
     for(var i = 0; i < this.deliveryGroupList.length; i++) {
         var dGroup = this.deliveryGroupList[i];
         for(var j = 0; j < dGroup.products.length; j++) {
