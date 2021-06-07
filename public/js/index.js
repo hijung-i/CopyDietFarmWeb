@@ -42,13 +42,23 @@ function getStandDatas() {
                 var html = '';
                 for(var j = 0; j < products.length; j++){
                     var product = products[j];
-                    html += '<div class="swiper-slide"><a href="/product/'+ product.productCode +'""><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>';
+                    html += '<div class="swiper-slide"><a href="/product/'+ product.productCode +'""><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(j+1)+'/'+ products.length+'"></a></div>';
                     // 메인 슬라이드
                 }
 
-                $('')
                 $('.main_slider').html(html);
                 
+                var swiper = new Swiper(".mySwiper", {
+                    pagination: {
+                        el: ".swiper-pagination",
+                        type: "fraction"
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev"
+                    }
+                });
+
                 break;
             case 1:
                 var html = '';
@@ -56,9 +66,9 @@ function getStandDatas() {
                     var product = products[j];                   
                     html += '<div><a href="/product/' + product.productCode +'"><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>';
                 }
-                    $('.responsive').html(salesName);
-                    $('.responsive').html(html);
-                    $('.responsive').slick("refresh");
+                
+                $('.responsive').html(html);
+                $('.responsive').slick("refresh");
                 break;
             case 2:
                 // 위클리 베스트
@@ -108,6 +118,7 @@ $(function(){
         e.preventDefault();
         $('html,body').animate({scrollTop:0},600);
     });
+
 
     // // 멀티플 슬라이드 
     // var slides = document.querySelector('.multiple_slides'),

@@ -29,7 +29,6 @@ var app = new Vue({
         },
         onOptionSelected,
         zzimProduct,
-        addCart
     }
 });
 
@@ -39,24 +38,24 @@ $(function() {
     $("button.c_btn").click(addCart);
     $('button.cart').click(addCart);
 
-           $('.multiple_bxslider').bxSlider({
-            mode: 'horizontal',
-            auto: true,
-            slideWidth: 4000,
-            infiniteLoop: true,
-            controls:true,
-            pager: false,
-            minSlides:2.5,
-            maxSlides:4.5,
-            slideMargin:4
-        });
+    $('.multiple_bxslider').bxSlider({
+        mode: 'horizontal',
+        auto: true,
+        slideWidth: 4000,
+        infiniteLoop: true,
+        controls:true,
+        pager: false,
+        minSlides:2.5,
+        maxSlides:4.5,
+        slideMargin:4
+    });
   
     /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
-        $('div.pdt_detai_tabinner_vn li').on('click',function(){
-            $(this).addClass('onTab');
-            $(this).siblings().removeClass('onTab');
-        });
-        
+    $('div.pdt_detai_tabinner_vn li').on('click',function(){
+        $(this).addClass('onTab');
+        $(this).siblings().removeClass('onTab');
+    });
+    
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
         console.log("data", data);
@@ -83,6 +82,24 @@ function getProductDetail(){
     , function (data) {
         var product = data.result;
         app.product = product;
+
+        var html = '';
+        for(var i = 0; i < product.representative.length; i++ ) {
+            var image = product.representative[i];
+            html += '<div class="swiper-slide"><img src="'+ RESOURCE_SERVER + image.url + '" alt=""></div>';
+        }
+
+        $('.productSwiper .swiper-wrapper').html(html);
+        var swiper = new Swiper(".productSwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction"
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            }
+        });
 
         if(app.product == undefined || app.product == 0){
             // TODO: Open alert modal
@@ -165,7 +182,7 @@ function addCart() {
     }
 
     var params = {
-        options: selectedOptions
+        options: app.selectedOptions
     }
     console.log(params);
     ajaxCallWithLogin(API_SERVER + '/order/addCart', params, 'POST',
