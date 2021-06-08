@@ -471,3 +471,12 @@ function closeInfoModal() {
     console.log("click")
     $('#iModal').hide();
 }
+function openRegisterModal() {
+    console.log("click")
+    $('#rModal').show();
+}
+
+function closeRegisterModal() {
+    console.log("click")
+    $('#rModal').hide();
+}

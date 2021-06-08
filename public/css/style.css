@@ -107,7 +107,7 @@ a:hover{text-decoration:none;}
 .hide{display:none;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 .detail_title{margin:40px 10px 10px 0px;width:100%;overflow:hidden;width:100%;}
-.detail_title a img{position:absolute;top:42px;width:17px}
+.detail_title a img{position:absolute;top:42px;width:17px;left:10px}
 .detail_title .title{width:200px;white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 
 /* *{padding-left:15px;padding-right:15px} */
@@ -397,7 +397,7 @@ height:50px;overflow:hidden}
  #content .w_best{overflow:hidden;width:100%; margin: 0 auto;padding-left:15px;padding-right:15px}
  #content .w_best li .thum img{width:100%;height:auto;}
  #content .w_best li .title{font-size:12px;margin-top:10px}
- #content .w_best li .desc ul{margin-left:-1px}
+ #content .w_best li .desc ul{margin-left:1px}
  .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 9999; background: #fff;}
  .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
  
@@ -931,7 +931,8 @@ height:400px}
 .mobile_index{display:none}
 .banner01 img{display:none}
 .body_bottom{width:1080px;margin:0 auto;}
-.body_bottom h3{font-size:25px;font-weight:bold;margin-bottom:30px}
+.body_bottom h3{font-size:22px;font-weight:bold;margin-bottom:30px}
+.w_best{margin-bottom:80px}
 .w_best .thum ul{margin-top:-20px}
 .w_best .desc .sale{font-size:16px}
 .w_best .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
@@ -939,7 +940,8 @@ height:400px}
 .w_best h2{margin-bottom:20px}
 .w_best .side{float:left;margin-bottom:77px}
 .w_best .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
-.w_best ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}h2{font-size:25px;font-weight:bold;margin-bottom:20px;margin-top:75px}
+.w_best ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+h2{font-size:22px;font-weight:bold;margin-top:75px;margin-bottom:30px}
 .w_best .desc ul li{margin-right:20px;float:left;}
 .body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .thum img{width:247.5px;height:247.5px;border-radius:6px}
@@ -954,7 +956,7 @@ height:400px}
 .body_bottom .title{font-size:14px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:247px;height: 20px;display:inline-block}
 .w_best .title{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:247px;height: 20px;display:inline-block;font-size:14px}
 .body_bottom .desc{padding-bottom:40px}                                                                                         
-.protein, .sweet, .water{margin-top:35px;clear:both}
+.protein, .sweet, .water{margin-top:35px;clear:both;margin-bottom:60px}
 /* 메인화면 웹 썸네일 */
 .blank_sec {width: 100%; min-width: 1080px; height: 520px; display: flex;margin-bottom:-120px}
 .blank_sec > ul {display: flex;width:1080px;justify-content: space-around;}
@@ -1827,7 +1829,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .order_title p span{font-size:14px;font-weight:bold}
 .orderBox02{margin-top:19px;margin-bottom:25px}
 .order00 li{margin-bottom:5px;}
-.order_a_box td span{color:#878787}
+.order_a_box td span{color:#878787;margin-right:20px}
 #btnReorder{width:330px;margin:0 auto;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
 
 /*주문 내역*/
