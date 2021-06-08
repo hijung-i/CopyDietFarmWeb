@@ -8,6 +8,37 @@
         <title>배송지 관리</title>
         <style>
             .small_line{position:relative;top:-9px}
+                /* The Modal (background) */
+                .r_modal{
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+    
+        /* Modal Content/Box */
+        .r_modal .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            height:450px;
+            width:380px;
+                                     
+        }
+        /* The Close Button */
+        
+  
+        .r_modal .close:hover,
+        .r_modal .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
             @media screen and (max-width:1079px) {
                 .web_deliv {
                     display: none;
@@ -126,9 +157,7 @@
                     <div class="contents">
                         <h3 class="del_web_title">배송지 관리</h3>
                         
-                        <div class="thick_line one"></div>
-
-                        <div class="order_list_ctn">
+                          <div class="order_list_ctn">
                             <template v-for="(item, i) in deliveryList">
                                 <section class="web_delivery_manage_list">
                                     <div class="del_mng_list_top">
@@ -142,7 +171,7 @@
                                                 <li class="basic" v-on:click="changeMainAddress(i)">
                                                     <a>기본배송지로 설정</a>
                                                 </li>
-                                                <li class="small_line"><img src="/images/l_icon_category.png"></li>
+                                                <li class="small_line"><img src="/images/l_icon_category@2x.png"></li>
                                             </template>
                                             <li class="edit_first">
                                                 <a v-on:click="modalDisplay(true, '배송지 수정', i)">수정</a>
@@ -189,21 +218,18 @@
                                 </div>
                             </div>
                             <div class="btn_area_d">
-                                <button
-                                    type="button"
-                                    id="btnRegister"
-                                    v-on:click="modalDisplay(true, '배송지 등록')">배송지 등록</button>
+                          <button type="button" class="btnRegister" id="myBtn" onclick="openRegisterModal()">배송지 등록</button>
                             </div>
                         </div>
                         <!-- order_list_ctn -->
                     </div>
                     <!-- body_contents -->
                     <!-- modal window -->
-                    <%-include('general/footer') %>
-
-                    </div>
-                    <div class="modal-background"></div>
-                    <section id="ex1" class="modal deliver_mag_modal" style="margin:auto;">
+                 </div>
+                 
+                       <div class="r_modal" id="rModal" style="display:none">
+                     <div class="modal-content">  
+                        <span class="close" onclick="closeRegisterModal()">&times;</span>                                                      <!-- modal window -->
                         <header class="deliver_magHeader">
                             <ul>
                                 <li>
@@ -238,11 +264,17 @@
                             <input type="text" id="userCellNo" placeholder="숫자만 입력해주세요">
 
                             <div class="btn_area_modal">
-                                <button type="button" id="btnRegister_modal">저장</button>
+                                <button
+                                type="button"
+                                id="btnRegister"
+                                v-on:click="modalDisplay(true, '배송지 등록')">저장</button>
                             </div>
                         </div>
-                    </section>
+                      </div>
+                 </div>
+                    <script src="/js/order.js"></script>
                     <script src="/js/deliveryManagement.js"></script>
+                    <%-include('general/footer') %>
                 </body>
 
             </html>
