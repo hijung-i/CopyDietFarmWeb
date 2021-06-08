@@ -888,7 +888,7 @@ div #ex1.modal ul li {float:left}
 }
 .myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
 .myReview input:checked + label:after {
-    left: calc(100% - 18px); right: 2px; background: ##F99319;
+    left: calc(100% - 18px); right: 2px; background: #F99319;
 }
 .myReview label > span {display: none;}
 
