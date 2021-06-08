@@ -267,17 +267,16 @@
                                         <div class="swiper-container productSwiper">
                                             <div class="swiper-wrapper product_slider">
                                                     <!-- <div class="swiper-slide" v-for="image in product.representative"><img v-bind:src="RESOURCE_SERVER + image.url" alt=""></div> -->
-
                                             </div>
                                             <div class="swiper-pagination"></div>
                                         </div>
-                                        <!-- <div class="view_top_img">
+                                        <!-- <div class="view_top_img">-
                                             <img
                                             v-for="(image, index) in product.representative"
                                             v-bind:src="RESOURCE_SERVER + image.url" style="width:694px">
                                         </div> -->
                                     </div>
-                                    </div>
+                                </div>
                                     <div class="v_top_txt_box">
                                         <div class="modal" id="ex">
                                             <p>공유하기</p>
@@ -418,38 +417,40 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="pp_wrap">
-                                            <section class="purchased_products">
-                                                <h3>이 상품과 같이 구매한 상품들</h3>
-                                                <div class="responsive"></div>
-                                                <!-- <ul class="multiple_bxslider">
-                                                    <li v-for="(product) in recmdList">
-                                                        <a href="#">
-                                                            <img v-bind:src="RESOURCE_SERVER + product.url">
-                                                            <span class="price">
-                                                                <p class="title">{{ product.productName }}</p>
-                                                                <ul>
-                                                                    <li class="sale">{{numberFormat(product.discountPrice)}}원</li>
-                                                                    <li class="cost">{{numberFormat(product.retailPrice)}}원</li>
-                                                                    <li class="ratio">{{numberFormat(product.discountRate)}}%</li>
-                                                                </ul>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </ul> -->
-                                            </section>
-                                        </div>
-                                        <div class="products_ex_mobile" style="padding:0">
-                                            <img
-                                                v-for="image in product.detail"
-                                                v-bind:src="RESOURCE_SERVER + image.url"
-                                                style="width:100%; height:100%">
-                                        </div>
-                                    <!-- 모바일 제품상세 끝나는 자리 -->
                                     </div>
-                                </div>
+                            </div>
+
+                            <div class="pp_wrap">
+                                <section class="purchased_products">
+                                    <h3>이 상품과 같이 구매한 상품들</h3>
+                                    <div class="responsive">
+                                        <!-- <ul class="multiple_bxslider">
+                                            <li v-for="(product) in recmdList">
+                                                <a href="#">
+                                                    <img v-bind:src="RESOURCE_SERVER + product.url">
+                                                    <span class="price">
+                                                        <p class="title">{{ product.productName }}</p>
+                                                        <ul>
+                                                            <li class="sale">{{numberFormat(product.discountPrice)}}원</li>
+                                                            <li class="cost">{{numberFormat(product.retailPrice)}}원</li>
+                                                            <li class="ratio">{{numberFormat(product.discountRate)}}%</li>
+                                                        </ul>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul> -->
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="products_ex_mobile" style="padding:0">
+                                <img
+                                    v-for="image in product.detail"
+                                    v-bind:src="RESOURCE_SERVER + image.url"
+                                    style="width:100%; height:100%">
+                            </div>
+                                    <!-- 모바일 제품상세 끝나는 자리 -->
+                        </div>
+                    </div>
                               <!--//product_top-->   
                               
             <div id="sidebar" class="sidebar">
@@ -1184,6 +1185,7 @@
                         </div>
                     </main>
                     
+
                     <!-- Swiper JS -->
                     <script>
                         var swiper = new Swiper(".productSwiper", {

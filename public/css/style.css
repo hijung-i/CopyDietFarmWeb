@@ -1262,7 +1262,7 @@ div.slideMenu_top {display: none}
 .sid_menu .mDepth01 dt .downArrow {
    width:11px;height:11px
 }
-}
+
 
 .sideMenu .mDepth01{font-size:16px;line-height:32px; background: #fff; z-index: 1;}
 .sideMenu .mDepth01 dl > dt.sideMenu_detail a {padding-left: 12px;}

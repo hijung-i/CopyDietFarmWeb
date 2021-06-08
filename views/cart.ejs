@@ -97,14 +97,18 @@
                                                                     <button
                                                                         class="minus"
                                                                         v-on:click="changeOptionCount(false, i, j, k)"
-                                                                        style="top:-7px"></button>
+                                                                        style="top:-7px"
+                                                                        >
+                                                                    </button>
                                                                     <input
                                                                         class="quantity"
                                                                         min="0"
                                                                         name="quantity"
                                                                         value="1"
                                                                         v-model="option.optionCount"
-                                                                        type="number">
+                                                                        type="number"
+                                                                        readonly
+                                                                        >
                                                                     <button class="plus" v-on:click="changeOptionCount(true, i, j, k)"></button>
                                                                 </div>
                                                             </div>
