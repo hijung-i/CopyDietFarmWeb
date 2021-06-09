@@ -353,7 +353,7 @@ height:50px;overflow:hidden}
  .body_sub_tit p{margin-top:26px;margin-right:15px}
  .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
  .web_index{display:none}
- #shplist .close img{float:right;position:relative;top:-90px}
+ #shplist .close img{float:right;position:relative;top:-90px;cursor:pointer}
  .body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
  .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
  .body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
