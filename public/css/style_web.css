@@ -195,7 +195,7 @@ opacity: 1}
 
 /* 버튼 */
 .btn_area {margin-top:10px;width:100%}
-.btnRegister{width:100%;margin:auto;padding: 15px 0 15px;border:0;cursor: pointer;color:#fff;background-color:#F99319;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
+#btnRegister{width:100%;margin:auto;padding: 15px 0 15px;border:0;cursor: pointer;color:#fff;background-color:#F99319;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
 
 /*배송정보*/
 .detail_title01{overflow:hidden; width:100%;}

@@ -318,10 +318,7 @@ height:50px;overflow:hidden}
 
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
-  .nav_wrap .nav-underline a:nth-child(1).active{
-    left: 0;
-    opacity: 1;
-    }
+ 
   .noticeBox{padding-top:10px}
    #content .main_sub .sub_items ul li{margin-bottom:6px}
    .deliver_info_top{display:flex;justify-content:space-between;margin-right:15px}
@@ -583,25 +580,24 @@ border-spacing: 0 20px;font-size:14px}
 /*메인 팝업창*/
 #popup_layer {position:fixed;top:0;left:0;z-index: 10000; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4)} 
 /*팝업 박스*/
-.popup_box{position: relative;top:75%;left:50%;transform:translate(-50%, -50%);background:#fff;box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);-webkit-box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);-moz-box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);}
+.popup_box{position: relative;top:50%;left:50%;transform:translate(-50%, -50%);background:#fff;box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);-webkit-box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);-moz-box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);}
 /*컨텐츠 영역*/
 .popup_box{ background-color: #fefefe;
  /* 15% from the top and centered */
-padding-top:41px;
-padding-left:50px;      
-padding-right:50px;
-padding-bottom:39px;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-height:400px}
-.index-modal h2{text-align:center;font-size:20px;font-weight:bolder;margin-bottom:28px}
-.index-modal p{text-align:center;font-size:14px}
-.index-modal .second{color:#6B6B6B;margin-bottom:14px}
-.index-modal p span{color:#FF8B00;font-weight:bold}
-.index-modal ul{display:flex;justify-content:space-between;}
+width:270px;
+height:233px;
+
+
+}
+.index-modal p{text-align:center;}
+.index-modal .close{position:relative;left:124px;top:-104px}
+.index-modal .close img{width:14px;height:14px}
+.sale_coupon{position:relative;top:-20px}
+.sale_coupon img {width:168px;height:87px}
+.index-modal .app01{color:#4A4A4A;font-size:16px;font-weight:bold;margin-top:30px;margin-bottom:7px}
+.index-modal p span{color:#FF8B00;font-weight:bold;font-size:20px}
 .index-modal ul li{float:left;list-style:none;margin-bottom:25px;margin-top:25px;}
-.index-modal ul li img{width:52px;height:52px;cursor:pointer}
-.index-modal a .id-login{clear:both;color:#BBBBBB;text-decoration:underline;margin-bottom:39px}
+.index-modal .app02{width:270px;height:49px;background-color:#000000;font-size:16px;color:#ffffff;margin-top:19px;padding-top:16px}
 /*버튼영역*/
 .popup_box .popup_btn {display:table;table-layout: fixed;width:100%;height:45px;background:#5d5d5d;word-break: break-word;}
 .popup_box .popup_btn a {position: relative; display: table-cell; height:30px; color:#fff;text-align:center;vertical-align:middle;text-decoration:none; background:#FF8B00}

@@ -457,21 +457,15 @@ $(function(){
 	'<div class="popup_box">' +
 	'<div class="popup_cont">' +
 	'<div class="index-modal">' +
-	'<h2>SNS 1초 회원가입!</h2>' +
-	'<p class="second">1초 간편 회원가입 후,</p>' +
-	'<p><span>5000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
-	'<ul>' +
-	'<li class="kakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>' +
-	'<li class="naver" id="naver_id_login"><img src="/images/naver_login@2x.png"></li>' +
-	'</ul>' +
-	'<a href="/login-form"><p class="id-login">아이디 로그인</p></a>' +
+	'<p class="sale_coupon"><img src="/images/sale_coupon@2x.png"></p>' +
+	'<a href="javascript:closePop();"> <p class="close"><img src="/images/x_main@2x.png"></a></p>' +
+	'<p class="app01">앱 설치 시</p>' +
+	'<p><span>할인 쿠폰 즉시 지급!</span></p>' +
+	'<a href=""><p class="app02">앱 설치하고 쿠폰받기 > </p></a>' +
 	'</div>' +
 	'</div>'+
-	'<div class="popup_btn">' +
-	'<a id="chk_today" href="javascript:closeToday();" class="close_day">오늘 하루 보지 않기</a> ' +
-	'<a href="javascript:closePop();">닫기</a>' +
-	'</div>' +
 	'</div>';
+
 
 	var myPageModal = 
 	'<div class="modal-content">' +
