@@ -11,7 +11,14 @@
 
         <title>다이어트 Farm</title>
         <style type="text/css">
-            @media screen and (max-width:1079px) {}
+            @media screen and (max-width:1079px) {
+                #header_mypage{position: fixed;
+    width: 100%;
+    top: 0;
+    height: 90px;
+    background-color: #fff;
+    z-index: 999;}
+            }
             @media screen and (min-width:1080px) {
                 .mobile_myinfo {
                     display: none;
@@ -42,7 +49,7 @@
             <%-include('general/header_mypage') %>
             </div>
             <!--//모바일 헤더 끝-->
-            <main id="content" class="content">
+            <main id="content" class="content" style="padding-top:60px">
                 <div class="myPage">
                     <div class="myPage01">
                         <% if (!isLoggedIn) { %>

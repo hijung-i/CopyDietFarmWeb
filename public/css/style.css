@@ -353,6 +353,7 @@ height:50px;overflow:hidden}
  .body_sub_tit p{margin-top:26px;margin-right:15px}
  .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
  .web_index{display:none}
+ #shplist .close img{float:right;position:relative;top:-90px;cursor:pointer}
  .body_bottom h3{font-size:14px;font-weight:bold;padding-left:15px;padding-top:24px}
  .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
  .body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
@@ -742,8 +743,7 @@ height:400px}
   .orderer_info, .deliver_info{padding-left:15px;border-bottom:8px solid #f1f1f1}
   .orderer_info img{width:8px;position:relative;top:-2px}
   .deliver_info h3 img{width:8px;position:relative;top:-2px}
-  .deliver_info p{float:right;position:relative;top:-35px;left:-20px;font-size:14px;font-weight:bold}
-  .deliver_info p img{width:12px;position:relative;left:-2px}
+  .deliver_info p img{position:relative;left:-2px}
   .orderer_info h3, .deliver_info h3, .final_price h3{padding-top:22px;font-size:14px;margin-bottom:18px}
   .orderer_info .members table{font-size:14px}
   .members table{width:70%;}
@@ -1027,7 +1027,7 @@ div.box.int_id{width:350px}
 .w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
 .w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
 .clicked_menu{background-color:#F99319;color:#fff}
-.csBox_web{float:left;margin-left:30px;margin-top:30px}
+.csBox_web{float:right;margin-left:30px;margin-top:-230px}
 .csBox_web ul li{float:left}
 .csBox_web h3{font-size:18px;font-weight:bold;color:#000}
 .csBox_web .innerbox{border:1px solid #BBBBBB;width:431px;height:214px;margin-right:20px;margin-top:20px}

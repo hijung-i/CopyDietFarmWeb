@@ -794,7 +794,7 @@ delivery_manage_list .customer_info {
 .web_delivery_manage_list .address,
 .web_delivery_manage_list .customer_info
 {text-align: left;margin-left:15px}
-.btn_area_d{width:90%;margin:0 auto; margin-top: 100px;}
+.btn_area_d {width:90%; margin:0 auto; margin-top: 100px;}
 }
 
 
@@ -1428,7 +1428,7 @@ delivery_manage_list .customer_info {
 .review_line {
     width: 100%; height: 1px;
     margin: 0 auto;
-    background: #E6E6sE6;
+    background: #E6E6E6;
     margin-top: 14px;
 }
 .review_prod {

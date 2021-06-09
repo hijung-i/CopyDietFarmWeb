@@ -11,6 +11,15 @@
                 .web_p_review {
                     display: none;
                 }
+                .mobile_p_review{position: fixed;
+                            min-width: 360px;
+                            width: 100%;
+                            height: 80px;
+                            top: 0;
+                            background-color: #fff;
+                            z-index: 9999;
+                            margin-bottom: 20px;}
+                 .contents{padding-top:80px}
             }
             @media screen and (min-width:1080px) {
                 .mobile_p_review {
@@ -20,7 +29,7 @@
         </style>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/myPage.css">
-        <link rel="stylesheet" 'href="/css/style_web.css">
+        <link rel="stylesheet" href="/css/style_web.css">
         <%-include('general/head') %>
 
     </head>
