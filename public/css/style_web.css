@@ -250,7 +250,7 @@ header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: poi
 .order_info_ctn .quan_option {color: #878787}
 .orderList_detail_list li {padding: 0}
 .orderList_detail_list .thum {width: 50px; height: 62px;background: #ccc;margin-right: 10px;
-    background: url(../images/dietfarmbread.jpg);background-size: cover;background-position: center}
+    background: url();background-size: cover;background-position: center}
 .orderList_detail_list > .order_info_ctn {display: flex;text-align: left}
 
 /* order_detail table */ 
@@ -1200,7 +1200,7 @@ delivery_manage_list .customer_info {
 .review_prod .review_img {
     width: 50px; height: 62px;
     background: #ccc;
-    background-image: url(../images/dietfarmbread.jpg);
+    background-image: url();
     background-size: cover; background-position: center;
     margin-right: 8px;
 }
@@ -1458,7 +1458,7 @@ delivery_manage_list .customer_info {
 .review_prod .review_img {
     width: 50px; height: 62px;
     background: #ccc;
-    background-image: url(../images/dietfarmbread.jpg);
+    background-image: url();
     background-size: cover; background-position: center;
     margin-right: 8px;
 }

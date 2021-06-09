@@ -2048,7 +2048,7 @@ background: #fff;padding: 4px 6px;}
 .shpcart_select input[type="radio"] + label:before {content: '';position: absolute; left: 0; top: -4px;width: 21px; height: 21px; text-align: center;background: #fff;border: 1px solid #cacece;border-radius: 100%;}
 
 .shoplist_info {flex-flow: column}
-.brand_1 .shoplist_info .shopcart_thum {min-width: 62px; background: #abc;background-image:url(../images/dietfarmbread.jpg);
+.brand_1 .shoplist_info .shopcart_thum {min-width: 62px; background: #abc;background-image:url();
 background-size: cover;background-position: center;}
 
 /* 장바구니 목록S */
