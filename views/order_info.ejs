@@ -332,23 +332,31 @@
                             </div>
                                 <div class=coupon_list>
                                     <ul>
-                                        <template v-for="coupon in couponList">
+                                        <template v-for="(coupon, index) in couponList">
 
-                                        <li class="g_coupon">
+                                            <li class="g_coupon" v-on:click="applyCoupon(index)">
 
-                                            <div class="couponBox01">
-                                                <h3>{{ coupon }}</h3>
-                                                <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
-                                                <p class="condition">1만원 이상 결제 시</p>
-                                                <p class="range">2020-11-11 ~ 2020-12-11</p>
-                                            </div>
-                                            <div class="couponBox02">
-                                                <a href="">
-                                                    <img src="/images/c_icon_coupon@2x.png">
-                                                    <p class="download">다운로드</p>
-                                                  </a>
-                                            </div>
-                                        </li>
+                                                <div class="couponBox01">
+                                                    <template v-if="coupon.amount != undefined">
+                                                        <h3>{{ numberFormat(coupon.amount) }}원 할인</h3>
+                                                    </template>
+                                                    <template v-if="coupon.rate != undefined">
+                                                        <h3>{{ numberFormat(coupon.rate) }}% 할인</h3>
+                                                    </template>
+                                                    <template v-if="coupon.couponType == 'D'">
+                                                        <h3>배송비 무료</h3>
+                                                    </template>
+                                                    <p class="sale"><span>{{ coupon.couponName }}</span></p>
+                                                    <p class="condition">{{ numberFormat(coupon.conditionalAmount) }}원 이상 구매 시</p>
+                                                    <p class="range">{{ formatDate(coupon.startDate)}} ~ {{formatDate(coupon.expireDate)}}</p>
+                                                </div>
+                                                <div class="couponBox02">
+                                                    <a href="">
+                                                        <img src="/images/c_icon_coupon@2x.png">
+                                                        <p class="download">다운로드</p>
+                                                    </a>
+                                                </div>
+                                            </li>
                                         </template>
                                         
                                     </ul>

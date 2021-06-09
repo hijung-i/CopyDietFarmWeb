@@ -45,7 +45,9 @@ var app = new Vue({
 
             $('.order_payment li').removeClass('border-orange')
             $('.order_payment li:nth-child('+ app.paymentNo +')').addClass('border-orange')
-        }
+        },
+        formatDate,
+        applyCoupon
     },
     computed: {
         remainingPoint: {
@@ -62,7 +64,6 @@ var app = new Vue({
                         this.orderDTO.paidPointAmount = this.usablePoint;
                         remainingPoint = 0;
                     }
-                    
                     
                     this.orderDTO.paidRealAmount = this.orderDTO.paymentTotalAmount - this.orderDTO.paidCouponAmount - this.orderDTO.paidPointAmount + this.orderDTO.totalDeliveryCost;
                     this.orderDTO.accumulatePoint = 0;
@@ -441,6 +442,7 @@ function getUsableCouponList() {
     
     ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST', 
     function(data) {
+        app.couponList = data.result;
         console.log("get usableCouponList", data);
     }, function(err) {
         console.error("get usable coupon list ", err);
@@ -479,4 +481,15 @@ function openRegisterModal() {
 function closeRegisterModal() {
     console.log("click")
     $('#rModal').hide();
+}
+
+function applyCoupon(idx) {
+
+}
+
+function formatDate(strDate) {
+    if(strDate != undefined && typeof(strDate) == typeof('')) {
+        return strDate.substr(0, 10);
+    }
+    return ''
 }

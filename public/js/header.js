@@ -384,7 +384,7 @@ function getCategory() {
             sideTabHtml += '                </a>';
             for(var j = 0; j < category.category2.length; j++) {
                 var category2 = category.category2[j];
-                sideTabHtml += '            <a href="/products/'+ category2.category2Code+'">';
+                sideTabHtml += '            <a href="/products/'+category.category1Code+'/category/'+ category2.category2Code+'">';
                 sideTabHtml += '                <li>'+ category2.category2Name+'</li>';
                 sideTabHtml += '            </a>';
             }

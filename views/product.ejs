@@ -611,7 +611,7 @@
                             <div class="review_btn">
                               <button class="btn" style="width:90%;height:45px;">리뷰쓰기</button>
                             </div>
-                            <div class="review_list_null" style="display:none">
+                            <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
                                 <img src="/images/note_icon_review.png">
                                 <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
                                 <!--// <div class="btn_area"> <button type="button"
@@ -624,17 +624,19 @@
                                
                             </div>
 
-                            <div class="reviews">
-                                <p class="num">리뷰 8,171개</p>
-                                <div class="product_review01">
+                            <div class="reviews" v-if="reviewList != undefined || reviewList.length > 0">
+                                <p class="num">리뷰 {{ reviewList.length }}개</p>
+                                <div class="product_review01" v-for="(review, index) in reviewList">
                                     <div class="review_info01">
                                         <ul>
-                                            <li class="myInquiry">
-                                                <span>내글</span></li>
-                                            <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
-                                            <li>2020.10.21</li>
+                                            <template v-if="reviewList.updateYn == 'Y'">    
+                                                <li class="myInquiry">
+                                                    <span>내글</span></li>
+                                                <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
+                                            </template>
+                                            <li>{{ formatDate(review.createDate) }}</li>
                                         </ul>
-                                        <ul>
+                                        <ul v-if="reviewList.updateYn == 'Y'">
                                             <li>
                                                 <a href="#">수정</a>
                                             </li>
@@ -645,25 +647,30 @@
                                         </ul>
                                     </div>
                                     <div class="review_info02">
-                                        <p class="option">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</p>
+                                        <p class="option">옵션 : {{ review.product.options[0].optionDesc}} <template v-if="review.product.options.length > 1">외 {{review.product.options.length - 1}} 건</template></p>
                                         <div id="star_grade" class="star_grade">
                                             <div class="starRev">
-                                                <span class="starR1 on">별1_왼쪽</span>
-                                                <span class="starR2">별1_오른쪽</span>
-                                                <span class="starR1">별2_왼쪽</span>
-                                                <span class="starR2">별2_오른쪽</span>
-                                                <span class="starR1">별3_왼쪽</span>
-                                                <span class="starR2">별3_오른쪽</span>
-                                                <span class="starR1">별4_왼쪽</span>
-                                                <span class="starR2">별4_오른쪽</span>
-                                                <span class="starR1">별5_왼쪽</span>
-                                                <span class="starR2">별5_오른쪽</span>
+                                                <template v-for="count in (review.gpa * 2)">
+                                                    <span class="starR1 on" v-if="count % 2 == 1">별1_왼쪽</span>
+                                                    <span class="starR2 on" v-if="count % 2 == 0">별1_오른쪽</span>
+                                                    
+                                                </template>
+                                                <template v-for="count in (10 - (review.gpa * 2))">
+                                                    <template v-if="(10 - (review.gpa * 2)) % 2 == 1">
+                                                        <span class="starR1" v-if="count % 2 == 0">별1_왼쪽</span>
+                                                        <span class="starR2" v-if="count % 2 == 1">별1_오른쪽</span>
+                                                    </template>
+                                                    <template v-if="(10 - (review.gpa * 2)) % 2 == 0">
+                                                        <span class="starR2" v-if="count % 2 == 0">별1_오른쪽</span>
+                                                        <span class="starR1" v-if="count % 2 == 1">별1_왼쪽</span>
+                                                    </template>
+                                                        
+                                                </template>
                                             </div>
-                                            <p class="review_summ" style="font-size:14px;">배송 빠르게 받아봤고 혼합100팩으로 시켰는데
-                                                전라인이기본적으로 훈제향이 베이스라 부담없이 맛나고 먹기도 간편하네요. 해동 후 전자렌지 30초면 딱 부드럽게 먹기 좋습니다. 같이 보내주신
-                                                곤약젤리와 스파클링도 맛있네요!</p>
-                                            <div class="review_img01">
-                                                <img src="/images/dietfarmbread.jpg" style="width:104px;height:104px">
+                                            <p class="review_summ" style="font-size:14px;">{{ review.content }}</p>
+                                            <div class="review_img01" v-if="review.contentType == 'I'">
+                                                <img v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
+
                                             </div>
 
                                             <span id="toc-toggle" onclick="openCloseToc()">더보기<img
@@ -677,145 +684,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--//product_review01-->
-                                <div class="product_review02">
-                                    <div class="review_info01">
-                                        <ul>
-                                            <li>박*지</li>
-                                            <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
-                                            <li>2020.10.21</li>
-                                        </ul>
-                                        <ul>
-                                            <li>
-                                                <a href="#">신고</a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="review_info02">
-                                        <p class="option" style="font-size:13px">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</p>
-                                        <div id="star_grade" class="star_grade">
-                                            <div class="starRev">
-                                                <span class="starR1 on">별1_왼쪽</span>
-                                                <span class="starR2">별1_오른쪽</span>
-                                                <span class="starR1">별2_왼쪽</span>
-                                                <span class="starR2">별2_오른쪽</span>
-                                                <span class="starR1">별3_왼쪽</span>
-                                                <span class="starR2">별3_오른쪽</span>
-                                                <span class="starR1">별4_왼쪽</span>
-                                                <span class="starR2">별4_오른쪽</span>
-                                                <span class="starR1">별5_왼쪽</span>
-                                                <span class="starR2">별5_오른쪽</span>
-                                            </div>
-                                        </div>
-                                        <p class="review_summ" style="font-size:14px;">배송 빠르게 받아봤고 혼합100팩으로 시켰는데
-                                            전라인이기본적으로 훈제향이 베이스라 부담없이 맛나고 먹기도 간편하네요. 해동 후 전자렌지 30초면 딱 부드럽게 먹기 좋습니다. 같이 보내주신
-                                            곤약젤리와 스파클링도 맛있네요!</p>
-                                        <div class="review_img02">
-                                            <img src="/images/dietfarmbread.jpg" style="width:104px;height:104px">
-                                        </div>
-                                        <span id="toc-toggle" onclick="openCloseToc()">더보기<img
-                                            src="/images/downarrow_ico_main.png"
-                                            style="width:11px;height:11px;position:relative;top:2px;left:4px"></span>
-                                        <div id="toc-content" style="display:none">
-                                            <li>글 이어서 어쩌구</li>
-                                            <li><img src="/images/dietfarmbread.jpg" style="width:605px"></li>
-                                        </div>
-                                    </div>
-                                    <div class="line_review"></div>
-                                </div>
-                                <div class="product_review02">
-                                    <div class="review_info01">
-                                        <ul>
-                                            <li>박*지</li>
-                                            <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
-                                            <li>2020.10.21</li>
-                                        </ul>
-                                        <ul>
-                                            <li>
-                                                <a href="#">신고</a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="review_info02">
-                                        <p class="option" style="font-size:13px">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</p>
-                                        <div id="star_grade" class="star_grade">
-                                            <div class="starRev">
-                                                <span class="starR1 on">별1_왼쪽</span>
-                                                <span class="starR2">별1_오른쪽</span>
-                                                <span class="starR1">별2_왼쪽</span>
-                                                <span class="starR2">별2_오른쪽</span>
-                                                <span class="starR1">별3_왼쪽</span>
-                                                <span class="starR2">별3_오른쪽</span>
-                                                <span class="starR1">별4_왼쪽</span>
-                                                <span class="starR2">별4_오른쪽</span>
-                                                <span class="starR1">별5_왼쪽</span>
-                                                <span class="starR2">별5_오른쪽</span>
-                                            </div>
-                                        </div>
-                                        <p class="review_summ" style="font-size:14px;">배송 빠르게 받아봤고 혼합100팩으로 시켰는데
-                                            전라인이기본적으로 훈제향이 베이스라 부담없이 맛나고 먹기도 간편하네요. 해동 후 전자렌지 30초면 딱 부드럽게 먹기 좋습니다. 같이 보내주신
-                                            곤약젤리와 스파클링도 맛있네요!</p>
-                                        <div class="review_img02">
-                                            <img src="/images/dietfarmbread.jpg" style="width:104px;height:104px">
-                                        </div>
-                                        <span id="toc-toggle" onclick="openCloseToc()">더보기<img
-                                            src="/images/downarrow_ico_main.png"
-                                            style="width:11px;height:11px;position:relative;top:2px;left:4px"></span>
-                                        <div id="toc-content" style="display:none">
-                                            <li>글 이어서 어쩌구</li>
-                                            <li><img src="/images/dietfarmbread.jpg" style="width:605px"></li>
-                                        </div>
-                                    </div>
-                                    <div class="line_review"></div>
-                                </div>
-                                <div class="product_review02">
-                                    <div class="review_info01">
-                                        <ul>
-                                            <li>박*지</li>
-                                            <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
-                                            <li>2020.10.21</li>
-                                        </ul>
-                                        <ul>
-                                            <li>
-                                                <a href="#">신고</a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="review_info02">
-                                        <p class="option" style="font-size:13px">옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</p>
-                                        <div id="star_grade" class="star_grade">
-                                            <div class="starRev">
-                                                <span class="starR1 on">별1_왼쪽</span>
-                                                <span class="starR2">별1_오른쪽</span>
-                                                <span class="starR1">별2_왼쪽</span>
-                                                <span class="starR2">별2_오른쪽</span>
-                                                <span class="starR1">별3_왼쪽</span>
-                                                <span class="starR2">별3_오른쪽</span>
-                                                <span class="starR1">별4_왼쪽</span>
-                                                <span class="starR2">별4_오른쪽</span>
-                                                <span class="starR1">별5_왼쪽</span>
-                                                <span class="starR2">별5_오른쪽</span>
-                                            </div>
-                                        </div>
-                                        <p class="review_summ" style="font-size:14px;">배송 빠르게 받아봤고 혼합100팩으로 시켰는데
-                                            전라인이기본적으로 훈제향이 베이스라 부담없이 맛나고 먹기도 간편하네요. 해동 후 전자렌지 30초면 딱 부드럽게 먹기 좋습니다. 같이 보내주신
-                                            곤약젤리와 스파클링도 맛있네요!</p>
-                                        <div class="review_img02">
-                                            <img src="/images/dietfarmbread.jpg" style="width:104px;height:104px">
-                                        </div>
-                                        <span id="toc-toggle" onclick="openCloseToc()">더보기<img
-                                            src="/images/downarrow_ico_main.png"
-                                            style="width:11px;height:11px;position:relative;top:2px;left:4px"></span>
-                                        <div id="toc-content" style="display:none">
-                                            <li>글 이어서 어쩌구</li>
-                                            <li><img src="/images/dietfarmbread.jpg" style="width:605px"></li>
-                                        </div>
-                                    </div>
-                                    <div class="line_review"></div>
-                                </div>
+                               
                                 <div id="wrap">
                                     <a href="#ex1" rel="modal:open"
                                      style="float:right;margin-left:200px;position:relative;left:50px;top:30px;margin-bottom:30px;width:168px;height:45px;border-radius:5px;background-color:#F99319;color:#fff;font-size:18px;font-weight:bold;text-align:center;padding-top:10px">리뷰쓰기</a>
@@ -843,7 +712,7 @@
                                     <div class="option_btns">
                                         <button
                                             type="button"
-                                            style="width:18%;background-color:#fff;border:1px solid #F99319">
+                                            style="width:18%;background-color:#fff;border:1px solid #EFA543">
                                             <img src="/images/heart_icon_menu.png"></button>
                                         <button type="button" style="width:39%">장바구니</button>
                                         <button type="button" style="width:39%">구매하기</button>
@@ -858,7 +727,7 @@
                             </div>
 
                       
-                            <p class="inquiry">문의 571개</p>
+                            <p class="inquiry">문의 {{questionList.length}}개</p>
                             <div class="qna">
                                 <div class="myReview">
                                     <p>내 문의 보기</p>
@@ -866,15 +735,17 @@
                                     <label for="prod_detail_toggle">
                                         <span>아이콘</span></label>
                                 </div>
-                                <div class="reveiw01">
+                                <div class="reveiw01" v-for="(question, index) in questionList" v-bind:key="index">
                                     <div class="review_edit">
                                         <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
+                                            <span v-if="question.answerState == 'N'">미답변</span>
+                                            <span v-if="question.answerState == 'Y'">답변완료</span>
+                                        </p>
+                                        <ul v-if="question.updateYn == 'Y'">
                                             <li class="myInquiry">
                                                 <span>내글</span>
                                                 <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
+                                            <li>{{formatDate(question.createDate)}}
                                                 <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
                                             <li>
                                                 <a href="#">수정</a>
@@ -891,19 +762,17 @@
                                                 <tbody>
                                                     <tr class="faq_q">
                                                         <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
+                                                            {{question.content}}
                                                         </td>
                                                     </tr>
-                                                    <tr class="faq_a faq_a01">
+                                                    <tr class="faq_a faq_a01" v-if="question.answerState == 'Y'">
                                                         <td>
                                                             <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
+                                                                <p v-html="question.answer"></p>
                                                                 <ul>
                                                                     <li>판매자</li>
                                                                     <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
+                                                                    <li>{{formatDate(question.updateDate)}}</li>
                                                                     <li><img src="/images/l_icon_category.png"></li>
                                                                     <li>신고</li>
                                                                 </ul>
@@ -915,202 +784,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="reveiw01">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="reveiw01">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="reveiw01">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="reveiw01">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span>답변완료</span></p>
-                                        <ul>
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>2020.10.21
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인 부탁드립니다.
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p>안녕하세요&nbsp;</p>
-                                                                <p>너그러운 마음으로 기다려 주시면 안전하게 배송해드리겠습니다.</p>
-                                                                <p></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>2020.10.21</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <div id="wrap_qna">
                                     <a href="javascript:openModal('modal1');" class="button modal-open">문의하기</a>
                                 </div>
@@ -1169,12 +843,12 @@
                                         </p>
                                     </div>
                                 </button>
-                                `
+                                
                                 <div class="common_btn_wrap" style="padding-left:15px" id="btn_mobile">
                                     <div class="option_btns">
                                         <button
                                             type="button"
-                                            style="width:18%;background-color:#fff;border:1px solid #F99319">
+                                            style="width:18%;background-color:#fff;border:1px solid #EFA543">
                                             <img src="/images/heart_icon_menu.png"></button>
                                         <button type="button" style="width:39%">장바구니</button>
                                         <button type="button" style="width:39%">구매하기</button>
