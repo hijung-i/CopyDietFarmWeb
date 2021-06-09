@@ -100,14 +100,7 @@ function getProductDetail(){
                 prevEl: ".swiper-button-prev"
             }
         });
-        var html = '';
-            for(var j = 0; j < products.length; j++){
-                var product = products[j];                   
-                html += '<div><a href="/product/' + product.productCode +'"><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"></a></div>';
-            }
-            
-            $('.responsive').html(html);
-            $('.responsive').slick("refresh");
+        
         
 
         if(app.product == undefined || app.product == 0){

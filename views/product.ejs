@@ -68,7 +68,7 @@
                 margin-top:-68px;position:sticky;top:0}
 
         /* swiper bundle */
-        .swiper-container { width: 409px;height: 373px; z-index: 0}
+        .swiper-container { min-width: 360px;height: 373px; z-index: 0}
 
         .swiper-slide {text-align: center; font-size: 18px; background: #fff;
             /* Center slide text vertically */
@@ -388,7 +388,8 @@
                                                                             name="quantity"
                                                                             v-model="item.optionCount"
                                                                             value="1"
-                                                                            type="number">
+                                                                            type="number"
+                                                                            readonly>
                                                                         <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
                                                                     </div>
                                                                     <p>
@@ -423,7 +424,11 @@
                             <div class="pp_wrap">
                                 <section class="purchased_products">
                                     <h3>이 상품과 같이 구매한 상품들</h3>
-                                    <div class="responsive">
+                                    <div class="responsive1">
+                                        <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a></div>
+                                        <div><a href=""><img src="/images/blank2.jpg" alt="상품 이미지2"></a></div>
+                                        <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a></div>
+                                        <div><a href=""><img src="/images/blank2.jpg" alt="상품 이미지2"></a></div>
                                         <!-- <ul class="multiple_bxslider">
                                             <li v-for="(product) in recmdList">
                                                 <a href="#">
@@ -1185,6 +1190,45 @@
                         </div>
                     </main>
                     
+                    <script>
+                        $('.responsive1').slick({
+                            dots: false,
+                            infinite: true,
+                            speed: 300,
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            autoplay:true,
+                            autoplaySpeed:3000,
+                            pauseOnHover:true,
+                            arrow:true,
+                            responsive: [
+                              {
+                                breakpoint: 1024,
+                                settings: {
+                                  slidesToShow: 3,
+                                  slidesToScroll: 1,
+                                  infinite: true,
+                                  dots: false
+                                }
+                              },
+                              {
+                                breakpoint: 600,
+                                settings: {
+                                  slidesToShow: 3,
+                                  slidesToScroll: 1
+                                }
+                              },
+                              {
+                                breakpoint: 360,
+                                settings: {
+                                  slidesToShow: 3,
+                                  slidesToScroll: 1
+                                }
+                              }
+            
+                            ]
+                        });
+                    </script>
 
                     <!-- Swiper JS -->
                     <script>
@@ -1260,6 +1304,7 @@
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
                     <script type="text/javascript" src="/js/product.js"></script>
                     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
                 </body>
                 <%-include('general/footer') %>
