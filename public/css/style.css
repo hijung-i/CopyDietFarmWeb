@@ -318,6 +318,10 @@ height:50px;overflow:hidden}
 
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  .nav_wrap .nav-underline a:nth-child(1).active{
+    left: 0;
+    opacity: 1;
+    }
   .noticeBox{padding-top:10px}
    #content .main_sub .sub_items ul li{margin-bottom:6px}
    .deliver_info_top{display:flex;justify-content:space-between;margin-right:15px}

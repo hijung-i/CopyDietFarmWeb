@@ -52,12 +52,21 @@
     </div>
     <div class="nav_wrap">
         <nav id="nav">
-            <a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>
+            <a href="#" class="web_cate active"><img src="/images/category_ico_main.png">전체카테고리</a>
             <a href="#">신상</a>
             <a href="#">베스트</a>
             <a href="#">특가</a>
             <a href="#">매일배송</a>
         </nav>
+   <script>
+    /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
+    $(function() { $('#nav a').on('click',function(){
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+    });
+  });
+</script>
+    
         <div class="searchbox">
             <form id="search-form" action="search-list">
                 <div class="search">
@@ -124,7 +133,7 @@
                 
             </ul>
             <div class="side_banner">
-             <img src="/images/doctor_banner.png" style="width:100%">
+             <img src="images/doctor_banner.png" style="width:100%">
              <img src="images/event_icon_banner@2x.png" style="width:100%">   
             </div>
         </div>
