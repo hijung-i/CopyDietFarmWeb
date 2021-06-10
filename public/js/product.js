@@ -100,6 +100,8 @@ function getProductDetail(){
                 prevEl: ".swiper-button-prev"
             }
         });
+        
+        
 
         if(app.product == undefined || app.product == 0){
             // TODO: Open alert modal
