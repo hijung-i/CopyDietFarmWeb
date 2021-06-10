@@ -9,11 +9,10 @@
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
         <title>다이어트 Farm</title>
-        <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+        
         <%-include('general/head') %>
-  
+            
             <style type="text/css">
-            h2, h3, ul, li, p{font-family: 'Nanum Gothic'}
                 nav a:nth-child(1) {color:#F99319}                
                 .bx-wrapper {-moz-box-shadow: none !important;-webkit-box-shadow: none !important;
                 box-shadow: none !important}
@@ -39,7 +38,6 @@
                 .showing {z-index: 9999;opacity: 1}
                 @media screen and (min-width:1080px) {
                     .sp_wrap {margin-top: 65px}
-                    #footer{margin-top:70px}
                     /* 웹 메인 슬라이더  */
                     /* #slider_main {width: 100%; margin: 0 auto; overflow: hidden;} 
     .slider_main_wrap {
@@ -121,7 +119,7 @@
                     <h2 class="mtpSlideTit">오픈특가</h2>
 
                     <div class="responsive">
-               <!--//<div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a></div>--> 
+                        <!-- <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a></div> -->
                     </div>
                     <h2 class="event_title">이벤트</h2>
                     <div class="blank_sec">
@@ -141,7 +139,7 @@
                     <div class="best_wrap">
                         <section class="w_best">
                             <h2>위클리 베스트</h2>
-                             <ul>
+                            <ul>
                                 <!-- <li>
                                     <a href="#">
                                       <div class="thum"><img src="/images/greek_yogurt.jpg" alt="위클리 베스트1">
@@ -170,7 +168,7 @@
                                     <a href="">더보기<img src="/images/rightarrow_icon_join.png"></a>
                                 </p>
                             </div>
-                             <ul>
+                            <ul>
                                 <!-- <li>
                                     <a href="#">
                                         <div class="thum">
@@ -197,6 +195,7 @@
                                     <a href="">더보기<img src="/images/rightarrow_icon_join.png"></a>
                                 </p>
                             </div>
+                
                             <ul>
 
                                 <!-- <li>
@@ -217,9 +216,6 @@
                                 </li> -->
                             </ul>
                         </div>
-                <div class="long_banner">
-                    <img src="/images/long_banner.png" style="width:100% !important;margin-top:30px;margin-bottom:70px">
-                </div>
                 <div class="water">
                     <div class="body_sub_tit">
                         <h3>수분이 필요할 때!</h3>
@@ -227,7 +223,7 @@
                             <a href="">더보기<img src="/images/rightarrow_icon_join.png"></a>
                         </p>
                     </div>
-                     <ul>
+                    <ul>
                         <!-- <li>
                             <a href="#">
                                 <div class="thum">
@@ -260,9 +256,9 @@
 
         <script src="/js/index.js"></script>
         <!-- slick js -->
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="/js/slick.min.js"></script>
+        <script type="text/javascript" src="/js/slick.min.js"></script> -->
         <%-include('general/footer') %>
         <!-- <script type="text/javascript"> imgslide(); //페이지가 로딩될 때 함수 실행 function
         imgslide(){ $val = $(".slider_main_wrap").attr("val"); // 현재 이미지 번호 가져오기 $mx =
@@ -283,7 +279,7 @@
                 speed: 300,
                 slidesToShow: 3,
                 slidesToScroll: 1,
-                autoplay:true,
+                autoplay:false,
                 autoplaySpeed:3000,
                 pauseOnHover:true,
                 arrow:true,
@@ -291,7 +287,7 @@
                   {
                     breakpoint: 1024,
                     settings: {
-                      slidesToShow: 3,
+                      slidesToShow: 4,
                       slidesToScroll: 1,
                       infinite: true,
                       dots: false
@@ -300,7 +296,7 @@
                   {
                     breakpoint: 600,
                     settings: {
-                      slidesToShow: 3,
+                      slidesToShow: 4,
                       slidesToScroll: 1
                     }
                   },
@@ -311,9 +307,7 @@
                       slidesToScroll: 1
                     }
                   }
-                  // You can unslick at a given breakpoint now by adding:
-                  // settings: "unslick"
-                  // instead of a settings object
+
                 ]
             });
         </script>
