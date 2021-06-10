@@ -1894,9 +1894,10 @@ a.button.modal-open{float:right;position:relative;right:20px;top:-20px}
 .final_price p{font-size:16px;font-weight:bold;border-bottom:1px solid #BBBBBB;padding-bottom:20px}
 .total_price{border-top:0.5px solid #BBBBBB}
 .final_price_web{border-bottom:8px solid#f1f1f1}
-.payment_method{padding-top:24px}
-.payment_method p{font-size:16px;font-weight:bold}
-    .agree{display:none}
+.payment_method{border-bottom: 8px solid #f1f1f1;padding-bottom:24px}
+.payment_method p{font-size:14px;font-weight:bold;text-align:center;width:94%;background-color:#F1F1F1;margin-left:15px;padding:7px;border-radius:5px}
+.payment_method p span{color:#6B6B6B;font-size:12px}
+.agree{display:none}
     .order_confirm p{margin-top:11px;margin-bottom:25px;margin-left:25px;margin-right:45px}
     .order_confirm  .option{color:#878787;margin-top:-10px;margin-left:15px}
 .agree{display:none}

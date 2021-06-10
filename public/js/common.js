@@ -498,6 +498,72 @@ $(function(){
 	'</div>' +
 	'</div>';
 	
+
+	var reviewModal = 
+	'<div class="modal-content">' +
+	'<span class="close">&times;</span>' +
+	'<div class="product_review_modal">' +
+	'<div class="review_write_modal_header">' +
+	'<h2 style="font-size:16px;margin-top:18px">리뷰쓰기</h2>' +
+	'</div>' +
+	'<div class="reviewWriteBox">' +
+	'<div class="review01">' +
+	'<table style="clear:both">' +
+	'<tbody>' +
+	'<tr class="reviewProduct_modal">' +
+	'<td>' +
+	'<a href="#">' +
+	'</a>' +
+	' <ul class="reviewProductInfo">' +
+	'<li><span>(아임월)</span></li>' +
+	'<li>굿밸런스 라이트밀 도시락</li>' +
+	'<li><span>옵션 : 한입닭&큐브닭 9종 혼합 36팩</span></li>' +
+	'</ul>' +
+	'</div>' +
+	'</td>' +
+	'</tr>' +
+	'</tbody>' +
+	'</table>' +
+	'</div>' +
+	'<div id="star_grade" class="star_grade">' +
+	'<p>별점으로 만족도를 알려주세요</p>' +
+	'<div class="starRev">' +
+	'<span class="starR1 on">별1_왼쪽</span>' +
+	'<span class="starR2">별1_오른쪽</span>' +
+	'<span class="starR1">별2_왼쪽</span>' +
+	'<span class="starR2">별2_오른쪽</span>' +
+	'<span class="starR1">별3_왼쪽</span>' +
+	'<span class="starR2">별3_오른쪽</span>' +
+	'<span class="starR1">별4_왼쪽</span>' +
+	'<span class="starR2">별4_오른쪽</span>' +
+	'<span class="starR1">별4_왼쪽</span>' +
+	'<span class="starR1">별5_왼쪽</span>' +
+	'<span class="starR2">별5_오른쪽</span>' +
+	'</div>' +
+	'</div>' +
+	'<p>' +
+	'<textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px;margin-top:20px"></textarea>' +
+	'</p>' +
+	'<label for="upload">사진 (선택)</label>' +
+	'<input type="file" id="upload" name="upload">' +
+	'<div id="preview">' +
+	'<div class="previewBox">' +
+	'<ul>' +
+	'<li></li>' +
+	'<li class="p2"></li>' +
+	'</ul>' +
+	'</div>' +
+	'</div>' +
+	'<p class="red" style="clear:both">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>' +
+	'</div>' +
+	'</div>' +
+	'<div class="modal_line"></div>' +
+	'<div class="btn_area">' +
+	'<button type="button" id="btnEnroll">등록</button>' +
+	'</div>' +
+	'</div>' +
+	'</div>';
+				 
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
 		// 로그인 시에만 표시
@@ -513,23 +579,23 @@ $(function(){
 		var btn = document.getElementById('myBtn');
 		var span = document.getElementsByClassName('close')[0];
 		var funcs = [];
-		// if(btn != null) {
-		// 	btn.addEventListener('click', openModal());
-		// }
+		 if(btn != null) {
+		 	btn.addEventListener('click', openModal());
+		}
 
-		// if( span != null) {
-		// 	span.addEventListener('click', hideModal());
-		// }
+		 if( span != null) {
+		 	span.addEventListener('click', hideModal());
+		 }
 
-		// // When the user clicks on the button, open the modal 
-		// btn.onclick = function() {
-		// modal.style.display = "block";
-		// }
+		// When the user clicks on the button, open the modal 
+		 btn.onclick = function() {
+		 modal.style.display = "block";
+		 }
 
 		// // When the user clicks on <span> (x), close the modal
-		// span.onclick = function() {
-		// modal.style.display = "none";
-		// }
+		span.onclick = function() {
+	    modal.style.display = "none";
+		 }
 
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
