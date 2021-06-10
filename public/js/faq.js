@@ -55,7 +55,12 @@ function getFaqList(){
                     $(this).addClass("current");
                 }
             });
-             n
+            $(".Faq01 tr.faq_q td").click(function() {
+                $(".downArrow").addClass('arrow-clicked');
+              });
+              $(".Faq01 tr.faq_q current").click(function() {
+                $(".downArrow").removeClass('arrow-clicked');
+              });
         });
 
         const modal = document.getElementById('modal')

@@ -461,7 +461,7 @@ $(function(){
 	'<a href="javascript:closePop();"> <p class="close"><img src="/images/x_main@2x.png"></a></p>' +
 	'<p class="app01">앱 설치 시</p>' +
 	'<p><span>할인 쿠폰 즉시 지급!</span></p>' +
-	'<a href=""><p class="app02">앱 설치하고 쿠폰받기 > </p></a>' +
+	'<a href="https://play.google.com/store/apps/details?id=com.dietFarm"><p class="app02">앱 설치하고 쿠폰받기 > </p></a>' +
 	'</div>' +
 	'</div>'+
 	'</div>';

@@ -50,7 +50,25 @@
             </a>
         </div>
     </div>
- </header>
+      <script>
+    /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
+    $(function() { $('#nav a').on('click',function(){
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+    });
+  });
+</script>
+    
+        <div class="searchbox">
+            <form id="search-form" action="search-list">
+                <div class="search">
+                    <input type="text" name="keyword" class="round" placeholder="검색해보세요.">
+                    <a href="#"><img src="/images/search_icon_menu.png"></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
 <div class="sideMenu">
     <div class="sideMenu_Header">
         <div class="slideMenu_top">
@@ -67,9 +85,11 @@
         <div class="tabMenu">
             <ul class="tab_wrap">
                 <li class="active on" data-tab="tab1">
-                    <span>품목</span></li>
+                    <span>품목</span>
+                </li>
                 <li data-tab="tab2" class="" id="possible">
-                    <span>브랜드</span></li>
+                    <span>브랜드</span>
+                </li>
                 <span></span>
             </ul>
         </div>
@@ -104,6 +124,10 @@
                 </li>
                 
             </ul>
+            <div class="side_banner">
+             <img src="images/doctor_banner.png" style="width:100%">
+             <img src="images/event_icon_banner@2x.png" style="width:100%">   
+            </div>
         </div>
         <div id="tab2" class="tab_cont" style="display: none">
             <div class="brandCate_top">
@@ -140,113 +164,10 @@
             <section class="brand">
                 <ul class="mDepth01">
                     <li>
-                        <ul>
-                            <li>
-                                <a href="#">해담은</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
+                        <a href="">해담은</a>
+                        <button class="favorite-btn"><img class="like like-yes"></button>
                     </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">파프리카푸드</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">해담은2</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">파프리카푸드2</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">해담은</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">파프리카푸드</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">해담은2</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">파프리카푸드2</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">파프리카푸드2</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">파프리카푸드2</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">파프리카푸드2</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <a href="#">파프리카푸드2</a>
-                            <li>
-                                <a href="#"><img src="/images/heart_icon_menu.png"></a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                 </ul>
             </section>
         </div>
