@@ -938,7 +938,7 @@ font-size: 14px;
 /*position:fixed;*/
 top: 20px;
 }
-.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #F99319;position:relative;top:6px}
+.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #F99319}
 .common_btn_wrap > .option_btns button:nth-child(2) {
     background: #fff;
     border: 1px solid #F99319;

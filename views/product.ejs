@@ -643,16 +643,6 @@
                                         <a class="arrow nnext" href="#"></a>
                                     </div>
                                 </div>
-                                <div class="common_btn_wrap" style="padding-left:15px" id="btn_mobile">
-                                    <div class="option_btns">
-                                        <button
-                                            type="button"
-                                            style="width:18%;background-color:#fff;border:1px solid #EFA543">
-                                            <img src="/images/heart_icon_menu.png"></button>
-                                        <button type="button" style="width:39%">장바구니</button>
-                                        <button type="button" style="width:39%">구매하기</button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div id="tab4" class="tab_cont Mtab_cont">
@@ -660,7 +650,18 @@
                             <div class="review_btn">
                                 <button class="btn" style="width:90%;height: 45px;">문의하기</button>
                             </div>
+                            <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
+                                <img src="/images/note_icon_review.png">
+                                <p class="no_review">아직 작성된 문의가 없습니다.</p>
+                                <!--// <div class="btn_area"> <button type="button"
+                                id="btnRW_null">리뷰쓰기</button> -->
 
+                                <div id="wrap">
+                                    <a href="#ex1" rel="modal:open"
+                                     style="float:right;margin-left:200px;position:relative;left:50px;top:30px;margin-bottom:30px;width:168px;height:45px;border-radius:5px;background-color:#F99319;color:#fff;font-size:18px;font-weight:bold;text-align:center;padding-top:10px">리뷰쓰기</a>
+                                </div>
+                               
+                            </div>
                       
                             <p class="inquiry">문의 {{questionList.length}}개</p>
                             <div class="qna">
@@ -778,17 +779,6 @@
                                         </p>
                                     </div>
                                 </button>
-                                
-                                <div class="common_btn_wrap" style="padding-left:15px" id="btn_mobile">
-                                    <div class="option_btns">
-                                        <button
-                                            type="button"
-                                            style="width:18%;background-color:#fff;border:1px solid #EFA543">
-                                            <img src="/images/heart_icon_menu.png"></button>
-                                        <button type="button" style="width:39%">장바구니</button>
-                                        <button type="button" style="width:39%">구매하기</button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </main>
