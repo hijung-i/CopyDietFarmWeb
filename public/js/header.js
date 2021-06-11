@@ -12,22 +12,22 @@ function getEventStands() {
       for(var i = 0; i < data.result.length; i++){
 
          // TODO: 화면 너비가 pc버전일때 break;
-         if(i == 4) break;
+         if(i == 3) break;
 
          var stand = data.result[i];
          if(i == 0){
-            html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'>홈</a>';
+            html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'> 홈</a>';
          }
          console.log(currentStandCode, stand.salesStandCode);
          if( currentStandCode == stand.salesStandCode){
             $('#heade_common #nav a').removeClass("is-current");
-            html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ stand.salesStandName +'</a>';
+            html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ '<span>' + stand.salesStandName + '</span>' +'</a>';
          } else {
-            html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ stand.salesStandName +'</a>';
+            html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ '<span>' + stand.salesStandName + '</span>' + '</a>';
          }
       }
 
-      html += '<div class="nav-underline"></div>';
+      html += '<span></span>';
       console.log(html);
       $('#header_common #nav').html(html);
 

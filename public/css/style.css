@@ -318,6 +318,9 @@ height:50px;overflow:hidden}
 
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  /* gnb 애니메이션 */
+  
+  .non_members > p {display: none;}
   .noticeBox{padding-top:10px}
    #content .main_sub .sub_items ul li{margin-bottom:6px}
    .deliver_info_top{display:flex;justify-content:space-between;margin-right:15px}
@@ -339,7 +342,7 @@ height:50px;overflow:hidden}
    .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top: 15px; justify-content: space-between; align-items: center; margin-top: 61px;}
    #header_mypage .menu_btns{background-color:#fff; min-width: 360px; height: 28px; margin: 0 auto; padding: 18px 16px 0; display: flex; margin-top:30px; justify-content: space-between; align-items: center}
    .btnMenu {width:19.44px;height:13.67px;}
-   #nav{position: absolute;/*width:360px;*/;margin-top:10px;height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none;padding-top:24px;overflow:visible}
+   #nav{position: absolute;/*width:360px;*/;margin-top:10px;height:27px; line-height: 27px; white-space:nowrap; display: flex; justify-content: space-between; -ms-overflow-style:none; margin-top:24px;overflow:visible}
    .nav_wrap {position: relative; width: 310px; height:auto; margin: 0 auto; overflow:visible;}
    #nav::-webkit-scrollbar{ display:none; }
       .nav_wrap::-webkit-scrollbar {display:none;}
@@ -743,7 +746,7 @@ height:400px}
   .orderer_info img{width:8px;position:relative;top:-2px}
   .deliver_info h3 img{width:8px;position:relative;top:-2px}
   .deliver_info p{float:right;position:relative;top:-35px;left:-20px;font-size:14px;font-weight:bold}
-  .deliver_info p img{width:12px;position:relative;left:-2px}
+  /* .deliver_info p img{width:12px;position:relative;left:-2px} */
   .orderer_info h3, .deliver_info h3, .final_price h3{padding-top:22px;font-size:14px;margin-bottom:18px}
   .orderer_info .members table{font-size:14px}
   .members table{width:70%;}

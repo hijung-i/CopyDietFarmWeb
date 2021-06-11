@@ -792,8 +792,16 @@ delivery_manage_list .customer_info {
 .del_mng_list_top a {cursor: pointer;}
 
 .web_delivery_manage_list .address,
-.web_delivery_manage_list .customer_info
-{text-align: left;margin-left:15px}
+.web_delivery_manage_list .customer_info {
+    text-align: left; 
+    margin-left:15px;
+}
+.web_delivery_manage_list .customer_info {
+    font-size: 12px; 
+    font-weight: 400; 
+    color: #878787;
+
+}
 .btn_area_d{width:90%;margin:0 auto}
 }
 
@@ -890,6 +898,10 @@ delivery_manage_list .customer_info {
 
 .web_del_mag_list_info {
     display: flex;
+    margin-top: 40px;
+}
+.web_del_mag_list_info p.address {
+    font-size: 14px; font-weight: 400;
 }
 
 .btn_area_modal {margin-top:10px;width:100%;}
@@ -964,8 +976,8 @@ delivery_manage_list .customer_info {
     vertical-align: middle;
 }
 
-/* 낱개 체크박스 */
-.top_checkBox_piece input[type="checkbox"] {
+/* 낱개 라디오박스 */
+.top_checkBox_piece input[type="radio"] {
     position: relative;
     width: 1px; height: 1px;
     padding: 0; margin: -1px;
@@ -973,7 +985,7 @@ delivery_manage_list .customer_info {
     clip: rect(0,0,0,0);
     border: 0;
 }
-.top_checkBox_piece input[type="checkbox"] + label {
+.top_checkBox_piece input[type="radio"] + label {
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -983,7 +995,7 @@ delivery_manage_list .customer_info {
     user-select: none;
 }
 
-.top_checkBox_piece input[type="checkbox"] + label:before {
+.top_checkBox_piece input[type="radio"] + label:before {
     content: '\2713';
     color: #BBBBBB;
     display: inline-block;
@@ -997,7 +1009,7 @@ delivery_manage_list .customer_info {
     border-radius: 100%;
 }
 
-.top_checkBox_piece input[type="checkbox"]:checked + label:before {
+.top_checkBox_piece input[type="radio"]:checked + label:before {
     content: '\2713';
     color: #fff;
     background: #F99319;

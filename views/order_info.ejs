@@ -15,26 +15,46 @@
                 .web_order_info {
                     display: none;
                 }
-            .i_modal .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            position:absolute;
-            left:410px;
-            margin-top:10px
-          
-        }
-        .modal-content h3{margin-left:15px}
+                .i_modal .close {
+                    color: #aaa;
+                    font-size: 28px;
+                }
+                .modalTop_ctn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                .modalTop_ctn span {padding-right: 10px;}
+
+            /* Modal Content/Box */
+            .i_modal .modal-content {
+                        background-color: #fefefe;
+                        margin: 15% auto; /* 15% from the top and centered */
+                        height:450px;
+                        min-width:360px;
+                        width: 100%;
+                                                 
+                    }
+            .modal-content h3{margin-left:15px}
             }
+
             @media screen and (min-width:1080px){
-           .i_modal .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            position:absolute;
-            left:740px;
-          
-        }
+                   .i_modal .close {
+                        color: #aaa;
+                        float: right;
+                        font-size: 28px;
+                        position:absolute;
+                        left:740px;
+                    }
+
+                     /* Modal Content/Box */
+                    .i_modal .modal-content {
+                        background-color: #fefefe;
+                        margin: 15% auto; /* 15% from the top and centered */
+                        height:450px;
+                        width:380px;
+
+                    }
             }
             /* The Modal (background) */
             .i_modal{
@@ -50,14 +70,7 @@
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
     
-        /* Modal Content/Box */
-        .i_modal .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            height:450px;
-            width:380px;
-                                     
-        }
+       
         /* The Close Button */
         
   
@@ -166,7 +179,7 @@
             </template>
             <div class="orderer_info">
                 <h3><img src="images/asterisk.png">
-                    주문자 정보
+                    주문자
                 </h3>
                 <div class="members" v-if="orderDTO.userId != '비회원주문'">
                     <table>
@@ -204,9 +217,11 @@
                 <button type="button" id="myBtn" onclick="openInfoModal()">변경</button>
                 </div>
                 <div class="i_modal" id="iModal" style="display:none">
-                     <div class="modal-content">  
-                        <span class="close" onclick="closeInfoModal()">&times;</span>                                                      <!-- modal window -->
-                               <h3>배송지 관리</h3>
+                    <div class="modal-content">
+                        <div class="modalTop_ctn">
+                            <h3>배송지 변경</h3>                             
+                            <span class="close" onclick="closeInfoModal()">&times;</span>                                                      <!-- modal window -->
+                        </div>
                                     <div class="top_checkBox">
                                         <input
                                             type="checkbox"
@@ -226,7 +241,8 @@
                                                     <ul class="del_mng_type">
                                                         <li class="type_first">{{ item.addressName }}</li>
                                                         <li class="type_second" v-if="item.mainAddressYn == 'Y'">
-                                                            <span class="tema">기본배송지</span></li>
+                                                            <span class="tema">기본배송지</span>
+                                                        </li>
                                                     </ul>
                                                     <ul class="edit_remove">
                                                         <template v-if="item.mainAddressYn == 'N'">
@@ -246,24 +262,31 @@
                                                 </div>
                                                 <div class="web_del_mag_list_info">
                                                     <div class="top_checkBox_piece">
-                                                        <input type="checkbox" name="list" id="selectAll2" value="s">
-                                                        <label for="selectAll2"></label>
+                                                        <input type="radio" name="list" v-bind:id="'selectAll' + (i + 2)" v-bind:value="i">
+                                                        <label v-bind:for="'selectAll' + (i+2)"></label>
                                                     </div>
+                                                    
                                                     <ul>
                                                         <li>
                                                             <p class="address">{{ item.address }}</p>
                                                         </li>
                                                         <li>
                                                             <p class="customer_info">{{ item.userName }}
-                                                                <span class="small_line"><img src="/images/l_icon_category.png"></span>{{ item.userCellNo }}</p>
+                                                                <span class="small_line"><img src="/images/l_icon_category.png"></span>{{ item.userCellNo }}
+                                                            </p>
                                                         </li>
                                                     </ul>
                                                 </div>
+                                                
                                             </section>
                                           </template>
-                                       </div>
+                                          <div class="btn_area_d">
+                                            <button type="button" class="btnRegister" id="myBtn" onclick="openRegisterModal()">배송지 등록</button>
+                                        </div>
+                                    </div>
                                  </div>
                                  </div>
+
                   
                 <div
                     class="members"
@@ -461,6 +484,52 @@
                 <button type="button" id="orderBtn" v-on:click="paymentAction">결제하기</button>
             </div>
         </main>
+
+        <div class="r_modal" id="rModal" style="display:none">
+            <div class="modal-content">  
+               <span class="close" onclick="closeRegisterModal()">&times;</span>                                                      <!-- modal window -->
+               <header class="deliver_magHeader">
+                   <ul>
+                       <li>
+                           <h2>배송지 관리</h2>
+                       </li>
+                       <li class="clsWindow">
+                           <i onclick="modalDisplay(false)" class="fal fa-times"></i>
+                       </li>
+                   </ul>
+                   <h3>배송지 수정</h3>
+               </header>
+
+               <div class="deliver_mag_modal_ctt">
+                   <input type="hidden" id="selectedDeliveryNo" value="">
+                   <input type="hidden" id="mainAddressYn" value="">
+                   <p>배송지 이름</p>
+                   <input
+                       type="text"
+                       id="deliveryName"
+                       name="deliveryName"
+                       placeholder="배송지 이름을 입력해주세요">
+                   <p>받으시는 분</p>
+                   <input
+                       type="text"
+                       id="receiverName"
+                       name="receiverName"
+                       placeholder="받으시는 분 이름을 입력해주세요">
+                   <p>주소</p>
+                   <input type="text" id="addr" name="address" placeholder="도로명, 지번, 건물명 검색">
+                   <input type="text" id="addr2" name="address2">
+                   <p>휴대폰</p>
+                   <input type="text" id="userCellNo" placeholder="숫자만 입력해주세요">
+
+                   <div class="btn_area_modal">
+                       <button
+                       type="button"
+                       id="btnRegister"
+                       v-on:click="modalDisplay(true, '배송지 등록')">저장</button>
+                   </div>
+               </div>
+             </div>
+        </div>
 
         <script src="/js/order.js"></script>
     

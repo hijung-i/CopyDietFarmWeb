@@ -389,7 +389,9 @@
                                                                             name="quantity"
                                                                             v-model="item.optionCount"
                                                                             value="1"
-                                                                            type="number">
+                                                                            type="number"
+                                                                            readonly
+                                                                            >
                                                                         <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
                                                                     </div>
                                                                     <p>
@@ -423,7 +425,12 @@
                                         <div class="pp_wrap">
                                             <section class="purchased_products">
                                                 <h3>이 상품과 같이 구매한 상품들</h3>
-                                                <div class="responsive"></div>
+                                                <div class="responsive">
+                                                    <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a></div>
+                                                    <div><a href=""><img src="/images/blank2.jpg" alt="상품 이미지2"></a></div>
+                                                    <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a></div>
+                                                    <div><a href=""><img src="/images/blank2.jpg" alt="상품 이미지2"></a></div>
+                                                </div>
                                                 <!-- <ul class="multiple_bxslider">
                                                     <li v-for="(product) in recmdList">
                                                         <a href="#">
@@ -492,7 +499,9 @@
                                                             name="quantity"
                                                             v-model="item.optionCount"
                                                             value="1"
-                                                            type="number">
+                                                            type="number"
+                                                            readonly
+                                                            >
                                                         <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
                                                     </div>
                                                     <p>
@@ -1183,7 +1192,6 @@
                             </div>
                         </div>
                     </main>
-                    
                     <!-- Swiper JS -->
                     <script>
                         var swiper = new Swiper(".productSwiper", {

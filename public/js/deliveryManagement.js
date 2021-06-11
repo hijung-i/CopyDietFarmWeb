@@ -47,12 +47,16 @@ $(function() {
                 break;
         }
     })
+    $('#btnRegister').click(function() {
+        addDelivery();
+        
+    })
     getDeliveryInfoList();
 
 })
 function modalDisplay(display, modalName, i) {
     console.log("click", display, modalName)
-    if(display) { 
+    if(display) {
         $('.deliver_magHeader h3').html(modalName);
         if(i != undefined) {
             var deliveryInfo = app.deliveryList[i];
