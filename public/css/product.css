@@ -207,6 +207,13 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 
 /*products_web*/
 @media screen and (min-width:1080px){
+#tab1_mobile {height: 769px;}
+
+/* 상품상세 멀티슬라이드 */
+.responsive1 div img {
+    width: 294px; height: 353px;
+}
+
 .other_cont{display:block;}
 
 .tab_wrap{width:75%;border-bottom: none; display: flex; background: #fff;}
@@ -295,7 +302,7 @@ margin-left:-18px
 .view_navi li{float:left;padding-right:20px;margin-right:14px;background:url('/img/ico/bar_16.gif') no-repeat right 2px}
 .view_navi li.last {background:none;color:#000}
 .view_navi li a{float:left;color:#777;font-family: 'Noto sans',sans-serif;font-size:14px;font-weight:600}
-.view_navi_box{margin-bottom:21px;margin-top:44px}
+.view_navi_box{margin-bottom:21px; margin-top:44px}
 .view_navi_box span{font-size:18px;font-weight:bold;}
 .infoDetails{width:74%;margin-top:40px}
 .infoDetails ul li h3{font-size:18px;font-weight:bold;margin-bottom:10px}
@@ -307,7 +314,7 @@ margin-left:-18px
 -webkit-box-shadow: none !important;
 box-shadow: none !important}
 .purchased_products ul li{float:left}
-.purchased_products img{border-radius:5px}
+.purchased_products img{border-radius:5px; width: 294px;}
 .view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif}
 .view_top_img {float:left}
 
@@ -755,7 +762,6 @@ div #ex1.modal ul li {float:left}
 .t_price p{float:right;margin-right:15px;margin-top:20px;margin-bottom:10px}
 .total{font-weight:normal}
 
-.pp_wrap{margin-bottom:-50px;padding-top:40px}
 
 @media screen and (max-width:1079px){
 .v_top_txt_box .modal p{text-align:center}
@@ -888,7 +894,7 @@ div #ex1.modal ul li {float:left}
 }
 .myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
 .myReview input:checked + label:after {
-    left: calc(100% - 18px); right: 2px; background: ##F99319;
+    left: calc(100% - 18px); right: 2px; background: #F99319;
 }
 .myReview label > span {display: none;}
 

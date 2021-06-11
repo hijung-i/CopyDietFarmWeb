@@ -12,7 +12,7 @@ function getEventStands() {
       for(var i = 0; i < data.result.length; i++){
 
          // TODO: 화면 너비가 pc버전일때 break;
-         if(i == 4) break;
+         if(i == 3) break;
 
          var stand = data.result[i];
          if(i == 0){
@@ -384,7 +384,11 @@ function getCategory() {
             sideTabHtml += '                </a>';
             for(var j = 0; j < category.category2.length; j++) {
                 var category2 = category.category2[j];
+<<<<<<< HEAD
                 sideTabHtml += '            <a href="/products/'+ category2.category2Code+'/category/data.categoryNo">';
+=======
+                sideTabHtml += '            <a href="/products/'+category.category1Code+'/category/'+ category2.category2Code+'">';
+>>>>>>> 5ba023fae38627eec5c856d47fed45e830a39b26
                 sideTabHtml += '                <li>'+ category2.category2Name+'</li>';
                 sideTabHtml += '            </a>';
             }
