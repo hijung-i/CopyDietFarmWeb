@@ -195,7 +195,7 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 /* contents Mtab_cont active 요소에 처음엔 display block, 다른 메뉴 누르면 display none 다시 누르면 display block이 반복돼야함 */
 .inquiry{display:none}
 .modal-open{display:none}
-.option{font-size:12px;color:#878787;}
+.option{font-size:12px;color:#878787;margin-left:15px}
 .review_img01 img{width:100px;height:60px;margin-left:13px}
 .review_img02 img{width:100px;height:60px;margin-left:13px}
 .review_summ{clear:both;font-size:14px;line-height:18px;margin-top:10px;padding-left:10px;padding-right:10px;margin-bottom:10px}

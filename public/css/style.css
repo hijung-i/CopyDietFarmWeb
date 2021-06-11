@@ -973,7 +973,7 @@ height:233px;
 .catgor_wrap{display:none}
 .w_best .thum img{width:247.5px;height:247.5px;border-radius:6px}
 
-#content{width:100%;max-width:1080px;margin:0 auto;}
+#content{width:100%;max-width:1080px;margin:0 auto;padding-left:15px;padding-right:15px}
 #content .pick_wrap{width:1080px;}
 #content .pick_wrap{margin:10px 10px;width:100%;}
 #content .pick_product h2{margin-top:40px;margin-bottom:20px;font-size:18px;color:#000;}
@@ -1170,7 +1170,7 @@ margin-left: 3px;
 input#secret[type="checkbox"]:checked + .secret::before {
 transform: scale(1) rotateZ(0deg);
 }
-
+.blank_sec p{opacity:0.8;font-size:20px;border-radius:20px;background-color:#fff;padding-top:9px;padding-bottom:8px;padding-left:26px;padding-right:26px;position:absolute;margin-top:-50px;margin-left:70px}
 
 .faq_content{width:1080px;margin:0 auto}
 .faq_content h2{margin-top:55px;font-size:20px;font-weight:bold;color:#000;padding-bottom:20px;border-bottom:2px solid #6B6B6B}
@@ -1179,7 +1179,7 @@ transform: scale(1) rotateZ(0deg);
 .w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
 .w_sidemenu ul li.active-color {background-color:#F99319;color:#fff}
 .clicked_menu{background-color:#F99319;color:#fff}
-.faq_content .faq{float:left;width:831px;margin-left:81px;margin-bottom:360px;margin-top:33px}
+.faq_content .faq{float:left;width:831px;margin-left:61px;margin-bottom:360px;margin-top:33px}
 .faq_content .faq h3{font-size:20px;font-weight:bold;color:#000;padding-bottom:24px;border-bottom:2px solid #6B6B6B}
 .faq_q .title{padding-top:15px}
 .faq .downArrow{display:flex;margin-top:5px;width:11px;height:11px;justify-content:space-between;position:relative;left:800px;top:-12px}
@@ -2349,17 +2349,17 @@ display: flex;
 
 /*추천 검색어*/
 .recommend_wrap{width:100%; /* border-bottom:1px solid #bbbbbb */}
-.recommend{margin-left:15px;padding-top:30px;width:90%;}
+.recommend{margin-left:15px;margin-right:15px;padding-top:30px}
 .recommend h2{font-size:12px;font-weight:bold;margin-bottom:10px}
 .recommend ul{display:grid;grid-template-columns: repeat(4, 2fr);width: 100%;margin:auto;margin-bottom:45px}
 .recommend ul li{border:1px solid #BBBBBB;border-radius:20px;padding:8px;text-align:center;margin-right:7px;margin-top:10px;font-weight:bold}
 
 /*검색 결과*/
 .result_wrap{width:100%;border-bottom:1px solid #bbbbbb}
-.search_result{padding:50px 20px 80px;width:100%;}
-.search_result h3{font-size:12px;font-weight:bold;margin-bottom:30px}
+.search_result{padding:20px 15px 80px;width:100%;}
+.search_result h3{font-size:14px;font-weight:bold;margin-bottom:20px;margin-left:10px}
 /*.search_result ul{overflow:scroll}*/
-.search_result ul li{width:100%;padding:11px;margin-bottom:10px;border-bottom:1px solid #bbbbbb}
+.search_result ul li{width:100%;padding:11px;margin-bottom:10px;border-bottom''':1px solid #bbbbbb}
 
 /*최근 검색*/
 .search_recent{width:100%;padding-left:25px;margin-top:30px}
@@ -2382,7 +2382,8 @@ display: flex;
 .footer_sns ul li img{width:27px;height:27px}
 .footer-top-area,
 .footer-bottom-area,
-.footer-top-area div{
+
+ .footer-top-area div{
   display: flex;
 }
 
