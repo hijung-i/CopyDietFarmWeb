@@ -20,8 +20,7 @@ var app = new Vue({
         changeOptionCount,
         formatDate,
         onSubmit: function() {
-            // console.log(app.deliveryGroupList, app.orderDTO); 
-            if(app.deliveryGroupList != undefined || app.deliveryGroupList.length > 0) {
+            if(app.selectedOptions != undefined && app.selectedOptions.length > 0) {
                 location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
             } else {
                 alert('상품을 선택해주세요');
