@@ -136,9 +136,9 @@
                 <a href="#" value="취소"  onClick="history.back(); return false"><img src="images/leftarrow_ico_my.png" alt=""></a>
             </div>
         </section>
+        <input type="hidden" id="deliveryGroupList" value="<%=deliveryGroupList %>">
+        <input type="hidden" id="orderDTO" value="<%=orderDTO %>">
         <main id="content" class="order_info_content">
-            <input type="hidden" id="deliveryGroupList" value="<%=deliveryGroupList %>">
-            <input type="hidden" id="orderDTO" value="<%=orderDTO %>">
 
             <h3 class="order_title" style="margin-left:15px">주문상품<span class="web_num"></span></h3>
             <template v-for="(item, index) in deliveryGroupList">
@@ -169,7 +169,8 @@
                 <h3><img src="images/asterisk.png">
                     주문자 정보
                 </h3>
-                <div class="members" v-if="orderDTO.userId != '비회원주문'">
+            
+                <div class="members" v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
                     <table>
                         <tr>
                             <td>
@@ -188,7 +189,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="non_members" v-if="orderDTO.userId == '비회원주문'">
+                <div class="non_members" v-if="orderDTO.userId == '비회원주문' || orderDTO.delivery == undefined">
                     <h4>이름</h4>
                     <input type="text" id="unName" placeholder="이름을 입력해주세요">
                     <h4>휴대폰</h4>
@@ -269,8 +270,7 @@
                                     </div>
                                  </div>
                                  </div>                  
-                <div>
-                    class="members"
+                <div class="members"
                     v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
                     <span class="addr" style="margin-bottom:13px">{{ orderDTO.delivery.address }}</span><br>
                     <span class="name" style="margin-right:18px">{{ orderDTO.delivery.userName }}</span>
