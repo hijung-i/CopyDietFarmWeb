@@ -352,10 +352,7 @@
                                             <section class="purchased_products">
                                                 <h3>이 상품과 같이 구매한 상품들</h3>
                                                 <div class="responsive">
-                                                    <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a></div>
-                                                    <div><a href=""><img src="/images/blank2.jpg" alt="상품 이미지2"></a></div>
-                                                    <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a></div>
-                                                    <div><a href=""><img src="/images/blank2.jpg" alt="상품 이미지2"></a></div>
+                                                    
                                                 </div>
                                                 <!-- <ul class="multiple_bxslider">
                                                     <li v-for="(product) in recmdList">
@@ -795,46 +792,7 @@
                             </div>
                         </div>
                     </main>
-                    <script>
-                        $('.responsive1').slick({
-                            dots: false,
-                            infinite: true,
-                            speed: 300,
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            autoplay:true,
-                            autoplaySpeed:3000,
-                            pauseOnHover:true,
-                            arrow:true,
-                            responsive: [
-                              {
-                                breakpoint: 1024,
-                                settings: {
-                                  slidesToShow: 3,
-                                  slidesToScroll: 1,
-                                  infinite: true,
-                                  dots: false
-                                }
-                              },
-                              {
-                                breakpoint: 600,
-                                settings: {
-                                  slidesToShow: 3,
-                                  slidesToScroll: 1
-                                }
-                              },
-                              {
-                                breakpoint: 360,
-                                settings: {
-                                  slidesToShow: 3,
-                                  slidesToScroll: 1
-                                }
-                              }
-            
-                            ]
-                        });
-                    </script>
-                    <!-- Swiper JS -->
+
                     <script>
                         var swiper = new Swiper(".productSwiper", {
                             pagination: {
@@ -850,60 +808,34 @@
                     <script>
                         var upload = document.querySelector('#upload');
                         var preview = document.querySelector('#preview');
+                        if(upload) {
+                            upload.addEventListener('change', function (e) {
+                                var get_file = e.target.files;
 
-                        upload.addEventListener('change', function (e) {
-                            var get_file = e.target.files;
+                                var image = document.createElement('img');
 
-                            var image = document.createElement('img');
+                                var reader = new FileReader();
 
-                            var reader = new FileReader();
+                                reader.onload = (function (aImg) {
+                                    console.log(1);
 
-                            reader.onload = (function (aImg) {
-                                console.log(1);
+                                    return function (e) {
+                                        console.log(3);
+                                        aImg.src = e.target.result
+                                    }
+                                })(image)
 
-                                return function (e) {
-                                    console.log(3);
-                                    aImg.src = e.target.result
+                                if (get_file) {
+                                    reader.readAsDataURL(get_file[0]);
+                                    console.log(2);
                                 }
-                            })(image)
 
-                            if (get_file) {
-                                reader.readAsDataURL(get_file[0]);
-                                console.log(2);
-                            }
+                                preview.appendChild(image);
+                            })
+                        }
 
-                            preview.appendChild(image);
-                        })
                     </script>
-                    <script>
-                        var upload = document.querySelector('#upload');
-                        var preview = document.querySelector('#preview');
-
-                        upload.addEventListener('change', function (e) {
-                            var get_file = e.target.files;
-
-                            var image = document.createElement('img');
-
-                            var reader = new FileReader();
-
-                            reader.onload = (function (aImg) {
-                                console.log(1);
-
-                                return function (e) {
-                                    console.log(3);
-                                    aImg.src = e.target.result
-                                }
-                            })(image)
-
-                            if (get_file) {
-                                reader.readAsDataURL(get_file[0]);
-                                console.log(2);
-                            }
-
-                            preview.appendChild(image);
-                        })
-                    </script>
-
+                   
                     <script src="/js/orderDTO/OrderDTO.js"></script>
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
                     <script type="text/javascript" src="/js/product.js"></script>
