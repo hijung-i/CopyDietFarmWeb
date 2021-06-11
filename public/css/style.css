@@ -2364,7 +2364,7 @@ display: flex;
 .search_result{padding:20px 15px 80px;width:100%;}
 .search_result h3{font-size:14px;font-weight:bold;margin-bottom:20px;margin-left:10px}
 /*.search_result ul{overflow:scroll}*/
-.search_result ul li{width:100%;padding:11px;margin-bottom:10px;border-bottom''':1px solid #bbbbbb}
+.search_result ul li{width:100%;padding:11px;margin-bottom:10px;border-bottom:1px solid #bbbbbb}
 
 /*최근 검색*/
 .search_recent{width:100%;padding-left:25px;margin-top:30px}
