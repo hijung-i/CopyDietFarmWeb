@@ -75,7 +75,8 @@ function sideTabClose() {
 $(function() {
     getEventStands();
     getBrandList();
-    
+    getCategory();
+
     jQuery('.side_back').bind("touchend click", function(){
         sideMenu('off');
     });
@@ -404,7 +405,9 @@ function getCategory() {
         buttonHtml += '</a>';
         buttonHtml += '</li>';
         
-        $('.category ul').html(buttonHtml);
+        if($('.category ul').length > 0) {
+            $('.category ul').html(buttonHtml);
+        }
         $('.sideMenu_ctt #tab1 ul.mDepth01').html(sideTabHtml);
         $("dt.faq_q").click(function() {
             if ($(this).next('dd').css("display") != "none") {

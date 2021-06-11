@@ -53,7 +53,8 @@ router.get('/products/:salesStandCode/event', (req: Request, res: Response, next
     render(req, res, 'products', {
         standCode: standCode,
         listType: 'EVENT',
-        listTitle: ''
+        listTitle: '',
+        currentPage: 'products'
     })
 })
 router.get('/products/:category1Code/category/:category2Code', (req: Request, res: Response, next: NextFunction) => {
@@ -78,7 +79,8 @@ router.get('/search-list', (req: Request, res: Response, next: NextFunction) => 
     render(req, res, 'products', {
         keyword: keyword,
         listType: 'SEARCH',
-        listTitle: ''
+        listTitle: '',
+        currentPage: 'products'
     })
 })
 

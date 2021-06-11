@@ -576,34 +576,34 @@ $(function(){
 			$('#popup_layer').hide();
 		}
 
-		var modal = document.getElementById('myModal');
-		var btn = document.getElementById('myBtn');
-		var span = document.getElementsByClassName('close')[0];
-		var funcs = [];
-		 if(btn != null) {
-		 	btn.addEventListener('click', openModal());
-		}
+		// var modal = document.getElementById('myModal');
+		// var btn = document.getElementById('myBtn');
+		// var span = document.getElementsByClassName('close')[0];
+		// var funcs = [];
+		//  if(btn != null) {
+		//  	btn.addEventListener('click', openModal());
+		// }
 
-		 if( span != null) {
-		 	span.addEventListener('click', hideModal());
-		 }
+		//  if( span != null) {
+		//  	span.addEventListener('click', hideModal());
+		//  }
 
-		// When the user clicks on the button, open the modal 
-		 btn.onclick = function() {
-		 modal.style.display = "block";
-		 }
+		// // When the user clicks on the button, open the modal 
+		//  btn.onclick = function() {
+		//  modal.style.display = "block";
+		//  }
 
-		// // When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
-	    modal.style.display = "none";
-		 }
+		// // // When the user clicks on <span> (x), close the modal
+		// span.onclick = function() {
+	   //  modal.style.display = "none";
+		//  }
 
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
+		// // When the user clicks anywhere outside of the modal, close it
+		// window.onclick = function(event) {
+		// 	if (event.target == modal) {
+		// 		modal.style.display = "none";
+		// 	}
+		// }
 	}, function(err){
 		console.error(err);
 	})

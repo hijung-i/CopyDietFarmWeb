@@ -1,6 +1,5 @@
 $(function () {
     getStandDatas();
-    getCategory();
     listenForLikes();
 });
 

@@ -56,11 +56,15 @@ function getFaqList(){
                 }
             });
             $(".Faq01 tr.faq_q td").click(function() {
-                $(".downArrow").addClass('arrow-clicked');
-              });
-              $(".Faq01 tr.faq_q current").click(function() {
-                $(".downArrow").removeClass('arrow-clicked');
-              });
+                var hasClass = $(this).find(".downArrow").hasClass('arrow-clicked');
+            
+                if(hasClass) {
+                    $(this).find(".downArrow").removeClass('arrow-clicked');
+                } else {
+                    $(this).find(".downArrow").addClass('arrow-clicked')
+                }
+            });
+
         });
 
         const modal = document.getElementById('modal')
