@@ -9,7 +9,7 @@ router.get('/', (req: Request, res: Response, next: NextFunction) => {
         console.log('session', req.session)
         console.log('sessionId', req.sessionID)
     }
-    render(req, res, 'index', {})
+    render(req, res, 'index', { currentPage: 'main' })
 })
 
 router.get('/logout', (req: Request, res: Response, next: NextFunction) => {
@@ -64,11 +64,12 @@ router.get('/products/:category1Code/category/:category2Code', (req: Request, re
         category1Code: category1Code,
         category2Code: category2Code,
         listType: 'CATEGORY',
-        listTitle: ''
+        listTitle: '',
+        currentPage: 'products'
     })
 })
 router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'search', {})
+    render(req, res, 'search', { currentPage: '검색' })
 })
 
 router.get('/search-list', (req: Request, res: Response, next: NextFunction) => {
@@ -86,7 +87,7 @@ router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
     const sessionUser = req.session.user || {}
     console.log('isLoggedIn ->> ', isLoggedIn, sessionUser)
 
-    render(req, res, 'my_page', { isLoggedIn: isLoggedIn, sessionUser })
+    render(req, res, 'my_page', { isLoggedIn: isLoggedIn, sessionUser, currentPage: '마이페이지' })
 })
 router.get('/faq', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'faq', {})
@@ -257,7 +258,11 @@ const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
 
-    res.render(view, data || null)
+    const defaultData: any = {
+        currentPage: ''
+    }
+    data.currentPage = data.currentPage || ''
+    res.render(view, data || defaultData)
 }
 
 export default router

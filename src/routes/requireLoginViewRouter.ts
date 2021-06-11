@@ -35,7 +35,8 @@ router.get('/pick-product', (req: Request, res: Response, next: NextFunction) =>
     checkLogin(req, res, () => {
         render(req, res, 'products', {
             listTitle: '찜한 상품',
-            listType: 'ZZIM'
+            listType: 'ZZIM',
+            currentPage: '찜한 상품'
         })
     })
 })
@@ -79,8 +80,11 @@ router.get('/coupon', (req: Request, res: Response, next: NextFunction) => {
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
-
-    res.render(view, data || null)
+    const defaultData: any = {
+        currentPage: ''
+    }
+    data.currentPage = data.currentPage || ''
+    res.render(view, data || defaultData)
 }
 
 function checkLogin(req: Request, res: Response, next: Function) {

@@ -38,9 +38,15 @@
                     style="width: 19px; height: 14px;">
             </a>
         </div>
-        <div class="comp_logo">
-            <a href="/"><img src="/images/logo_new@2x.png"></a>
-        </div>
+        <% if (currentPage == 'main' || currentPage == 'products') { %>
+            <div class="comp_logo">
+                <a href="/"><img src="/images/logo_new@2x.png"></a>
+            </div>
+        <% } else { %>
+            <div class="myPage_title">
+                <h2><%=currentPage %></h2>
+            </div>
+        <% } %> 
         <div class="btnCart">
             <a href="/cart" onclick="mCart('on');">
                 <img
@@ -50,22 +56,27 @@
             </a>
         </div>
     </div>
+    
     <div class="nav_wrap">
-        <nav id="nav">
-            <a href="#" class="web_cate active"><img src="/images/category_ico_main.png">전체카테고리</a>
-            <a href="#">신상</a>
-            <a href="#">베스트</a>
-            <a href="#">특가</a>
-            <a href="#">매일배송</a>
-        </nav>
-   <script>
-    /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
-    $(function() { $('#nav a').on('click',function(){
-        $(this).addClass('active');
-        $(this).siblings().removeClass('active');
-    });
-  });
-</script>
+        <% if(currentPage == 'main' || currentPage == 'products') { %>
+            <nav id="nav">
+                <a href="#" class="web_cate active"><img src="/images/category_ico_main.png">전체카테고리</a>
+                <a href="#">신상</a>
+                <a href="#">베스트</a>
+                <a href="#">특가</a>
+                <a href="#">매일배송</a>
+            </nav>
+        <% } %>
+        </div>
+    <script>
+            /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
+            $(function() { 
+                $('#nav a').on('click',function(){
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+            });
+        });
+    </script>
     
         <div class="searchbox">
             <form id="search-form" action="search-list">
