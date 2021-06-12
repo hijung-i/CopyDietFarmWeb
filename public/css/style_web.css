@@ -759,7 +759,7 @@ margin-left: 0;
     margin-left:8px;
 
 }
-.del_mng_list_top ul li img{margin-left:5px;margin-right:5px}
+.del_mng_list_top ul li img {padding: 2px;}
 .web_delivery_manage_list p img{margin-left:10px;margin-right:10px}
 .web_delivery_manage_list .edit_remove{margin-right:-25px}
 .web_delivery_manage_list .edit_remove li {
@@ -847,7 +847,6 @@ margin-left: 0;
 }
 .del_mng_list_top ul li img{margin-left:5px;margin-right:5px}
 .web_delivery_manage_list p img{margin-left:10px;margin-right:10px}
-.web_delivery_manage_list .edit_remove{margin-right:-60px}
 .web_delivery_manage_list .edit_remove li {
     font-size: 12px;
     padding: 2px;
@@ -898,7 +897,7 @@ delivery_manage_list .customer_info {
 
 .web_del_mag_list_info {
     display: flex;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 .web_del_mag_list_info p.address {
     font-size: 14px; font-weight: 400;

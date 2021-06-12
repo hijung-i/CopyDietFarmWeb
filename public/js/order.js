@@ -9,13 +9,15 @@ var app = new Vue({
         deliveryDescType: 0,
         deliveryList: [],
         couponList: []
+        
     }, methods: {
+        
         numberFormat,
         paymentAction,
         descTypeChange: function() {
             var type = $("#selectDeliveryDesc")[0].options.selectedIndex;
             var value = $("#selectDeliveryDesc").val();
-
+            
             if(type == 1) {
                 $("#deliveryDesc").removeAttr("disabled");
                 $("#deliveryDesc").removeAttr("readonly");
@@ -47,7 +49,14 @@ var app = new Vue({
             $('.order_payment li:nth-child('+ app.paymentNo +')').addClass('border-orange')
         },
         formatDate,
-        applyCoupon
+        applyCoupon,
+        onDeliveryInfoSelected: function() {
+            
+            var checked = $('input[type=radio][name=list]:checked')
+            app.orderDTO.delivery = app.deliveryList[checked.val()]
+
+            closeInfoModal();
+        }
     },
     computed: {
         remainingPoint: {
