@@ -121,7 +121,9 @@ $(function() {
     app.orderDTO.products = new Array();
     for(var i = 0; i < app.deliveryGroupList.length; i++) {
         var dGroup = app.deliveryGroupList[i];
-        app.orderDTO.products = dGroup.products;
+        for(var j = 0; j < dGroup.products.length; j++) {
+            app.orderDTO.products.push(dGroup.products[j]);
+        }
     }
 
     var span = $(".close");                                       
@@ -260,6 +262,7 @@ function paymentAction() {
 
     requestOrderDTO.paidRealAmount = app.orderDTO.paidRealAmount;
 
+
     var bootpayParams = {
         price: requestOrderDTO.paidRealAmount,
         application_id: "5feae25e2fa5c2001d0391b9",
@@ -290,8 +293,11 @@ function paymentAction() {
     requestOrderDTO.products = app.orderDTO.products;
     requestOrderDTO.paymentTotalAmount = app.orderDTO.paymentTotalAmount;
     requestOrderDTO.couponNo = app.orderDTO.couponNo;
-    console.log(requestOrderDTO, bootpayParams)
     
+    console.log(requestOrderDTO);
+    if(requestOrderDTO.products == undefined || requestOrderDTO.products.length < 1) {
+        return;
+    }
 
     BootPay.request(
         bootpayParams
@@ -463,7 +469,8 @@ function getUsableCouponList() {
     function(data) {
         var usableCoupon = new Array();
         for(var i = 0; i < data.result.length; i++) {
-            if(data.result[i].couponStatus == 'A') usableCoupon.push(data.result[i])
+            var coupon = data.result[i];
+            if(coupon.couponStatus == 'A') usableCoupon.push(data.result[i])
         }
 
         app.couponList = usableCoupon;
@@ -518,7 +525,22 @@ function applyCoupon(idx) {
     
     app.coupon = selectedCoupon
     app.orderDTO.couponNo = selectedCoupon.couponNo
-    app.orderDTO.paidCouponAmount = selectedCoupon.amount
+    switch (selectedCoupon.couponType) {
+        case "P":
+            app.orderDTO.paidCouponAmount = selectedCoupon.amount
+            break;
+        case "R":
+            app.orderDTO.paidCouponAmount = app.orderDTO.paymentTotalAmount / 100 * selectedCoupon.rate
+            if(app.orderDTO.paidCouponAmount > selectedCoupon.maxAmount) {
+                app.orderDTO.paidCouponAmount = selectedCoupon.maxAmount;
+                console.log("maxamount", selectedCoupon.maxAmount);
+            }
+            console.log("rate coupon", app.orderDTO.paidCouponAmount, app.orderDTO.paymentTotalAmount / 100 * selectedCoupon.rate, selectedCoupon.rate)
+            break;
+        case "D":
+            app.orderDTO.paidCouponAmount = app.orderDTO.totalDeliveryCost
+            break;
+    }
     alert('쿠폰이 적용되었습니다.');
     closeCouponModal();
 }
