@@ -9,54 +9,54 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no"/>
     <meta name="format-detection" content="no"/>
 
-        <title>주문하기</title>
-        <style type="text/css">
-            @media screen and (max-width:1079px) {
-                .web_order_info {
-                    display: none;
+    <title>주문하기</title>
+    <style type="text/css">
+        @media screen and (max-width:1079px) {
+            .web_order_info {
+                display: none;
+            }
+            .i_modal .close {
+                color: #aaa;
+                font-size: 28px;
+            }
+            .modalTop_ctn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .modalTop_ctn span {padding-right: 10px;}
+
+        /* Modal Content/Box */
+        .i_modal .modal-content {
+                    background-color: #fefefe;
+                    margin: 15% auto; /* 15% from the top and centered */
+                    height:450px;
+                    min-width:360px;
+                    width: 100%;
+                                                
                 }
+        .modal-content h3{margin-left:15px}
+        }
+
+        @media screen and (min-width:1080px){
                 .i_modal .close {
                     color: #aaa;
+                    float: right;
                     font-size: 28px;
+                    position:absolute;
+                    left:740px;
                 }
-                .modalTop_ctn {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+
+                    /* Modal Content/Box */
+                .i_modal .modal-content {
+                    background-color: #fefefe;
+                    margin: 15% auto; /* 15% from the top and centered */
+                    height:450px;
+                    width:380px;
+
                 }
-                .modalTop_ctn span {padding-right: 10px;}
-
-            /* Modal Content/Box */
-            .i_modal .modal-content {
-                        background-color: #fefefe;
-                        margin: 15% auto; /* 15% from the top and centered */
-                        height:450px;
-                        min-width:360px;
-                        width: 100%;
-                                                 
-                    }
-            .modal-content h3{margin-left:15px}
-            }
-
-            @media screen and (min-width:1080px){
-                   .i_modal .close {
-                        color: #aaa;
-                        float: right;
-                        font-size: 28px;
-                        position:absolute;
-                        left:740px;
-                    }
-
-                     /* Modal Content/Box */
-                    .i_modal .modal-content {
-                        background-color: #fefefe;
-                        margin: 15% auto; /* 15% from the top and centered */
-                        height:450px;
-                        width:380px;
-
-                    }
-            }
         }
+    
         /* The Modal (background) */
         .i_modal{
         display: none; /* Hidden by default */
@@ -365,7 +365,7 @@
                                     <ul>
                                         <template v-for="(coupon, index) in couponList">
 
-                                            <li class="g_coupon" v-on:click="applyCoupon(index)">
+                                            <li class="y_coupon" v-on:click="applyCoupon(index)">
 
                                                 <div class="couponBox01">
                                                     <template v-if="coupon.amount != undefined">
@@ -384,7 +384,7 @@
                                                 <div class="couponBox02">
                                                     <a href="">
                                                         <img src="/images/c_icon_coupon@2x.png">
-                                                        <p class="download">다운로드</p>
+                                                        <p class="download">쿠폰 사용</p>
                                                     </a>
                                                 </div>
                                             </li>
