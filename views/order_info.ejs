@@ -46,17 +46,42 @@
                     position:absolute;
                     left:740px;
                 }
-
-                    /* Modal Content/Box */
-                .i_modal .modal-content {
-                    background-color: #fefefe;
-                    margin: 15% auto; /* 15% from the top and centered */
-                    height:450px;
-                    width:380px;
-
+                .modalTop_ctn > h3 {
+                    text-align: center;
                 }
-        }
-    
+            /* Modal Content/Box */
+            .i_modal .modal-content {
+                        background-color: #fefefe;
+                        margin: 15% auto; /* 15% from the top and centered */
+                        height:450px;
+                        width:360px;                                              
+                    }
+            .modal-content h3{margin-left:15px}
+            }
+
+            @media screen and (min-width:1080px){
+                   .i_modal .close {
+                        color: #aaa;
+                        float: right;
+                        font-size: 28px;
+                        position:absolute;
+                        left:740px;
+                    }
+
+                     /* Modal Content/Box */
+                    .i_modal .modal-content {
+                        background-color: #fefefe;
+                        margin: 15% auto; /* 15% from the top and centered */
+                    }
+                        /* Modal Content/Box */
+                    .i_modal .modal-content {
+                        background-color: #fefefe;
+                        margin: 15% auto; /* 15% from the top and centered */
+                        width: 380px;
+                        height:575px;             
+                    }
+            }
+        
         /* The Modal (background) */
         .i_modal{
         display: none; /* Hidden by default */
@@ -71,14 +96,6 @@
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
 
-    /* Modal Content/Box */
-    .i_modal .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        height:450px;
-        width:380px;
-                                    
-    }
     /* The Close Button */
     
 
@@ -229,9 +246,9 @@
                 </div>
                 <div class="i_modal" id="iModal" style="display:none">
                     <div class="modal-content">
+                        <div class="modal_ctn">
                         <div class="modalTop_ctn">
-                            <h3>배송지 변경</h3>                             
-                            <span class="close" onclick="closeInfoModal()">&times;</span>                                                      <!-- modal window -->
+                            <h3>배송지 변경</h3>                                                                                   <!-- modal window -->
                         </div>
                                     <div class="top_checkBox">
                                         <input
@@ -263,7 +280,7 @@
                                                             <li class="small_line"><img src="/images/l_icon_category.png"></li>
                                                         </template>
                                                         <li class="edit_first">
-                                                            <a v-on:click="modalDisplay(true, '배송지 수정', i)">수정</a>
+                                                            <a>수정</a>
                                                         </li>
                                                         <li class="small_line"><img src="/images/l_icon_category.png"></li>
                                                         <li class="edit_second">
@@ -273,12 +290,12 @@
                                                 </div>
                                                 <div class="web_del_mag_list_info">
                                                     <div class="top_checkBox_piece">
-                                                        <input type="radio" name="list" v-bind:id="'selectAll' + (i + 2)" v-bind:value="i">
+                                                        <input type="radio" name="list" v-on: v-bind:id="'selectAll' + (i + 2)" v-on:change="onDeliveryInfoSelected()" v-bind:value="i" v-bind:checked="item.address == orderDTO.delivery.address">
                                                         <label v-bind:for="'selectAll' + (i+2)"></label>
                                                     </div>
                                                     
                                                     <ul>
-                                                        <li>
+                                                        <li class="order_info_modal_address">
                                                             <p class="address">{{ item.address }}</p>
                                                         </li>
                                                         <li>
@@ -287,16 +304,17 @@
                                                             </p>
                                                         </li>
                                                     </ul>
+                                                    
                                                 </div>
                                           
                                             </section>
-                                          </template>
-                                       </div>
-                                       <div class="btn_area_modal">
-                                        <button type="button" id="btnRegister_modal">저장</button>
+                                        </template>
                                     </div>
-                                 </div>
-                                 </div>                  
+
+                                    
+                    </div>
+                </div>
+                </div>                  
                 <div class="members"
                     v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
                     <span class="addr" style="margin-bottom:13px">{{ orderDTO.delivery.address }}</span><br>
@@ -547,7 +565,6 @@
                             <label><img src="/images/phone_ico2_pay.png" style="width:62px;height:22px"><input type="radio" @change="selectPayment" style="display: none;" v-model="paymentNo" value="5"></label>
                         </li>
                     </ul>
-
                 </div>
             </div>
             <!--//결제 수단-->
@@ -608,6 +625,7 @@
         </div>
 
         <script src="/js/order.js"></script>
+        
     
         <%-include('general/footer') %>
     </body>
