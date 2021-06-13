@@ -96,6 +96,7 @@ background-color:#F99319;border-radius:5px;
 .coupon_list p{color:#878787}
 .coupon_list{padding-left:15px;padding-right:15px}
 .coupon_list ul li{display:flex;margin-bottom:15px}
+.y_coupon, .g_coupon{cursor: pointer;0}
 .y_coupon .couponBox01{width:70%;border-right:1.5px dashed #F99319!important;border:1.5px solid #F99319;padding-top:13px;padding-left:14px;padding-bottom:13px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
