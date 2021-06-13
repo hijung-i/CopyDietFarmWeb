@@ -490,6 +490,7 @@ function openRegisterModal() {
 function closeRegisterModal() {
     console.log("click")
     $('#rModal').hide();
+    $('#iModal').hide();
 }
 
 function applyCoupon(idx) {

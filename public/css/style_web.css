@@ -808,7 +808,21 @@ margin-left: 0;
 
 @media screen and (min-width:1080px){
 .top_checkBox_piece{position:relative;top:-20px;left:10px}
-.btn_area_d{width: 330px; margin:20px auto}
+.btn_area_d {
+    width: 330px; 
+    height: 45px; 
+    margin:20px auto;
+    background: #f99319;
+    border-radius: 5px;
+    line-height: 45px;
+    text-align: center;
+}
+.btn_area_d > a {
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 100px;
+}
 .web_delivery_manage_list {
 width: 90%;
 margin: 0 auto;
@@ -973,6 +987,7 @@ delivery_manage_list .customer_info {
     width: 20%;
     left: 0;
     vertical-align: middle;
+    display: none;
 }
 
 /* 낱개 라디오박스 */
