@@ -181,7 +181,7 @@ function paymentAction() {
     }
 
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
-    var methods = ['npay', 'vbank', 'kakao', 'card', 'phone'];
+    var methods = ['npay', 'bank', 'kakao', 'card', 'phone'];
     var method = methods[app.paymentNo -1];
     var requestOrderDTO = {};
 
