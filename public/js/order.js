@@ -290,19 +290,17 @@ function paymentAction() {
     requestOrderDTO.couponNo = app.orderDTO.couponNo;
     
     
-    requestOrderDTO.paidRealAmount = app.orderDTO.paidPointAmount;
+    requestOrderDTO.paidRealAmount = app.orderDTO.paidRealAmount;
     requestOrderDTO.paidCouponAmount = app.orderDTO.paidCouponAmount;
     requestOrderDTO.paidPointAmount = app.orderDTO.paidPointAmount;
     requestOrderDTO.accumulatePoint = app.orderDTO.accumulatePoint;
-
 
     console.log(requestOrderDTO);
     if(requestOrderDTO.products == undefined || requestOrderDTO.products.length < 1) {
         return;
     }
 
-    if(app.orderdTO.paidRealAmount == 0) {
-
+    if(app.orderDTO.paidRealAmount == 0) {
         addOrder(requestOrderDTO);
     } else {
         if(app.paymentNo == undefined || app.paymentNo == 0) {
