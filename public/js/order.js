@@ -175,11 +175,7 @@ function paymentAction() {
         return;
     }
 
-    if(app.paymentNo == undefined || app.paymentNo == 0) {
-        alert('결제 수단을 선택해주세요');
-        return;
-    }
-
+    
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
     var methods = ['npay', 'bank', 'kakao', 'card', 'phone'];
     var method = methods[app.paymentNo -1];
@@ -262,7 +258,6 @@ function paymentAction() {
 
     requestOrderDTO.paidRealAmount = app.orderDTO.paidRealAmount;
 
-
     var bootpayParams = {
         price: requestOrderDTO.paidRealAmount,
         application_id: "5feae25e2fa5c2001d0391b9",
@@ -294,53 +289,67 @@ function paymentAction() {
     requestOrderDTO.paymentTotalAmount = app.orderDTO.paymentTotalAmount;
     requestOrderDTO.couponNo = app.orderDTO.couponNo;
     
+    
+    requestOrderDTO.paidRealAmount = app.orderDTO.paidPointAmount;
+    requestOrderDTO.paidCouponAmount = app.orderDTO.paidCouponAmount;
+    requestOrderDTO.paidPointAmount = app.orderDTO.paidPointAmount;
+    requestOrderDTO.accumulatePoint = app.orderDTO.accumulatePoint;
+
+
     console.log(requestOrderDTO);
     if(requestOrderDTO.products == undefined || requestOrderDTO.products.length < 1) {
         return;
     }
 
-    BootPay.request(
-        bootpayParams
-    ).error(function (data) {
-        //결제 진행시 에러가 발생하면 수행됩니다.
-        console.log(data);
-    }).cancel(function (data) {
-        //결제가 취소되면 수행됩니다.
-        console.log(data);
-    }).ready(function (data) {
-        // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
-        console.log(data);
-    }).confirm(function (data) {
-        console.log(data);
-        var enable = true; // 재고 수량 관리 로직 혹은 다른 처리
-        if (enable) {
-            BootPay.transactionConfirm(data); // 조건이 맞으면 승인 처리를 한다.
-        } else {
-            BootPay.removePaymentWindow(); // 조건이 맞지 않으면 결제 창을 닫고 결제를 승인하지 않는다.
+    if(app.orderdTO.paidRealAmount == 0) {
+
+        addOrder(requestOrderDTO);
+    } else {
+        if(app.paymentNo == undefined || app.paymentNo == 0) {
+            alert('결제 수단을 선택해주세요');
+            return;
         }
-    }).close(function (data) {
-        // 결제창이 닫힐때 수행됩니다. (성공,실패,취소에 상관없이 모두 수행됨)
-        console.log(data);
-    }).done(function (data) {
-        //결제가 정상적으로 완료되면 수행됩니다
-        //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
-        console.log(data);
+
+        BootPay.request(
+            bootpayParams
+        ).error(function (data) {
+            //결제 진행시 에러가 발생하면 수행됩니다.
+            console.log(data);
+        }).cancel(function (data) {
+            //결제가 취소되면 수행됩니다.
+            console.log(data);
+        }).ready(function (data) {
+            // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
+            console.log(data);
+        }).confirm(function (data) {
+            console.log(data);
+            var enable = true; // 재고 수량 관리 로직 혹은 다른 처리
+            if (enable) {
+                BootPay.transactionConfirm(data); // 조건이 맞으면 승인 처리를 한다.
+            } else {
+                BootPay.removePaymentWindow(); // 조건이 맞지 않으면 결제 창을 닫고 결제를 승인하지 않는다.
+            }
+        }).close(function (data) {
+            // 결제창이 닫힐때 수행됩니다. (성공,실패,취소에 상관없이 모두 수행됨)
+            console.log(data);
+        }).done(function (data) {
+            //결제가 정상적으로 완료되면 수행됩니다
+            //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
+            console.log(data);
+            
+            requestOrderDTO.paymentName = data.payment_name;
+            requestOrderDTO.paymentDate = data.purchased_at;
+            requestOrderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
+            requestOrderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
+            requestOrderDTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
+
+            requestOrderDTO.receiptId = data.receipt_id;
+
+            paymentConfirm(requestOrderDTO);
+        });
         
-        requestOrderDTO.paymentName = data.payment_name;
-        requestOrderDTO.paidRealAmount = data.price;
-        requestOrderDTO.paidCouponAmount = app.orderDTO.paidCouponAmount;
-        requestOrderDTO.paidPointAmount = app.orderDTO.paidPointAmount;
-        requestOrderDTO.accumulatePoint = app.orderDTO.accumulatePoint;
+    }
 
-        requestOrderDTO.paymentDate = data.purchased_at;
-        requestOrderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
-        requestOrderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
-        requestOrderDTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
-
-        requestOrderDTO.receiptId = data.receipt_id;
-
-        paymentConfirm(requestOrderDTO);
-    });
 }
 
 function paymentConfirm(requestOrderDTO) {

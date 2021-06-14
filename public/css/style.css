@@ -1350,6 +1350,15 @@ div.slideMenu_top {display: none}
 .tabMenu > .tab_wrap li span {color: #878787; font-weight: 400;}
 
 @media screen and (max-width:1079px) {
+    
+  .hide-mobile {
+    display: none;
+  }
+
+  .long_banner{
+    width: 100%;
+  }
+
   .web_delivery_manage_list {margin-bottom: 23px;}
 
   /* 상품 상세 모바일 탭메뉴 애니메이션 */
@@ -2682,11 +2691,3 @@ display: flex;
   
 }
 .slick-list {width: 100%;}
-
-.hide-mobile {
-  display: none;
-}
-
-.long-banner{
-  width: 100%;
-}
