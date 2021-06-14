@@ -506,6 +506,9 @@ function openInfoModal() {
     $('span.close').click(function() {
         $('html,body').css({'overflow':'visible'});
     })
+    $('.web_del_mag_list_info label').click(function() {
+        $('html,body').css({'overflow':'visible'});
+    })
     
     getDeliveryInfoList();
 }
@@ -589,3 +592,10 @@ function checkCouponUsable(coupon, alert) {
 
     return true;
 }
+// 맨 위로 
+$(function(){
+    $('#goingTo_top').on('click',function(e){
+        e.preventDefault();
+        $('html,body').animate({scrollTop:0},600);
+    });
+});
