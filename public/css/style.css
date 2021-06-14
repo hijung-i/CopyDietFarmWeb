@@ -2686,3 +2686,7 @@ display: flex;
 .hide-mobile {
   display: none;
 }
+
+.long-banner{
+  width: 100%;
+}
