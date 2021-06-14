@@ -952,14 +952,15 @@ font-weight:normal}
     font-weight: 700;
   }
 .sideMenu_Header {display: none;}
-.deliver_info_top button {
-    background-color: transparent;
-    border: none;
-  }
+
   .delete_btn{float:right;position:relative;top:-100px;left:20px}
 .event_title{margin-bottom:30px}
 .mtpSlideTit{margin-top:70px}
-.deliver_info_top {display:flex;justify-content:space-between;}
+.deliver_info_top { 
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
 .btnMenu, .btnCart{display:none;}
 .mobile_index{display:none}
 .banner01 img{display:none}
@@ -2631,6 +2632,7 @@ display: flex;
 }
 
 @media screen and (min-width: 1080px) {
+  .side_banner {display: none;}
   .only-pc{ 
     display: block !important;
   }

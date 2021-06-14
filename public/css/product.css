@@ -927,7 +927,7 @@ width:100%;height:45px;background-color:#F1F1F1;border-radius:0px;border:0;borde
 .common_btn_wrap > .option_btns {
     width: 100%; margin: 0 auto; height: 45px;
     padding: 0;
-    margin-top: 20px;
+    margin: 20px 0;
     white-space:nowrap;
 }
 .common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #F99319}
