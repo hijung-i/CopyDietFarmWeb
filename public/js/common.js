@@ -548,10 +548,10 @@ $(function(){
 			
    userAgent = window.navigator.userAgent.toLowerCase()
    iOS = /iphone|ipod|ipad/.test(userAgent);
-   if(iOS) {
-      // 앱설치 모달
-      $("#popup_layer").html(popup);
-   } else $('#popup_layer').hide();
+   // if(iOS) {
+   //    // 앱설치 모달
+   //    $("#popup_layer").html(popup);
+   // } else $('#popup_layer').hide();
       
 
 	ajaxCall('/user/login', '', 'GET',
@@ -566,7 +566,7 @@ $(function(){
             ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
             function(data) {
                $('#naver_id_login').html(data);
-               $('#naver_id_login a').html("네이버 아이디로 로그인")
+               $('.login-list #naver_id_login a').html("네이버 아이디로 로그인")
             }, function (err) {
                console.log("error login button", err);
             })
