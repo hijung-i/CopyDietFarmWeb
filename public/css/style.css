@@ -2231,7 +2231,7 @@ justify-content: space-evenly}
 
 /* point history design */
 .point_history > .point_history_left .save {font-size: 14px;color: #6B6B6B;font-weight: 400}
-.point_history > .point_history_left .amount {font-size: 14px;font-weight: 700;color: #31845B;
+.point_history > .point_history_left .amount {font-size: 14px;font-weight: 700; 
 }
 
 .point_history .point_history_right .date {font-size: 12px; color: #878787}

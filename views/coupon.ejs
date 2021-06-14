@@ -10,8 +10,8 @@
         <meta name="format-detection" content="no"/>
 
         <title>다이어트 Farm</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <link rel="stylesheet" href="/css/myPage.css">
-        <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/style_web.css">
         <style type="text/css">
             @media screen and (max-width:1079px) {
@@ -113,114 +113,86 @@
                 </nav>
                 
 </div>
-                <main id="content" class="coupon">
-                    <div class="contents">
-                <h2 class="web_coupon_tit">쿠폰</h2>
-                <div class="coupon_web_top">
-                    <input type="text" placeholder="쿠폰 코드를 입력해주세요">
-                    <button type="button" class="coupon_enroll">쿠폰 등록</button>
-                </div>
-                <div class="coupon_table_top">
-                    <ul>
-                        <li>날짜</li>
-                        <li>내용</li>
-                        <li>최소 사용금액</li>
-                        <li>할인</li>
-                        <li>상태</li>
-                    </ul>
-                </div>
-                    <div class=coupon_list>
-                        <ul>
-                            <li class="y_coupon">
-                                <div class="couponBox01">
-                                    <h3>10% 할인</h3>
-                                    <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
-                                    <p class="condition">1만원 이상 결제 시</p>
-                                    <p class="range">2020-11-11 ~ 2020-12-11</p>
-                                </div>
-                                <div class="couponBox02">
-                                    <a href="">
-                                        <img src="/images/c_icon_coupon@2x.png">
-                                        <p class="download">다운로드</p>
-                                      </a>
-                                </div>
-                            </li>
-                            <li class="y_coupon">
-                                <div class="couponBox01">
-                                    <h3>10% 할인</h3>
-                                    <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
-                                    <p class="condition">1만원 이상 결제 시</p>
-                                    <p class="range">2020-11-11 ~ 2020-12-11</p>
-                                </div>
-                                <div class="couponBox02">
-                                    <a href="">
-                                        <img src="/images/c_icon_coupon@2x.png">
-                                        <p class="download">다운로드</p>
-                                      </a>
-                                </div>
-                            </li>
-                            <li class="g_coupon">
-                                <div class="couponBox01">
-                                    <h3>10% 할인</h3>
-                                    <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
-                                    <p class="condition">1만원 이상 결제 시</p>
-                                    <p class="range">2020-11-11 ~ 2020-12-11</p>
-                                </div>
-                                <div class="couponBox02">
-                                    <a href="">
-                                        <img src="/images/c_icon_coupon@2x.png">
-                                        <p class="download">다운로드</p>
-                                      </a>
-                                </div>
-                            </li>
-                            <li class="g_coupon">
-                                <div class="couponBox01">
-                                    <h3>10% 할인</h3>
-                                    <p class="sale"><span>(11월 특별세일) 착한 소비 10% 할인</span></p>
-                                    <p class="condition">1만원 이상 결제 시</p>
-                                    <p class="range">2020-11-11 ~ 2020-12-11</p>
-                                </div>
-                                <div class="couponBox02">
-                                  <a href="">
+    <main id="content" class="coupon">
+        <div class="contents">
+            <h2 class="web_coupon_tit">쿠폰</h2>
+            <div class="coupon_web_top">
+                <input type="text" placeholder="쿠폰 코드를 입력해주세요">
+                <button type="button" class="coupon_enroll">쿠폰 등록</button>
+            </div>
+            <div class="coupon_table_top">
+                <ul>
+                    <li>날짜</li>
+                    <li>내용</li>
+                    <li>최소 사용금액</li>
+                    <li>할인</li>
+                    <li>상태</li>
+                </ul>
+            </div>
+            <div class=coupon_list>
+                <ul>
+                    <template v-for="(coupon, index) in couponList">
+
+                        <li class="y_coupon" v-on:click="applyCoupon(index)">
+
+                            <div class="couponBox01">
+                                <template v-if="coupon.amount != undefined">
+                                    <h3>{{ numberFormat(coupon.amount) }}원 할인</h3>
+                                </template>
+                                <template v-if="coupon.rate != undefined">
+                                    <h3>{{ numberFormat(coupon.rate) }}% 할인</h3>
+                                </template>
+                                <template v-if="coupon.couponType == 'D'">
+                                    <h3>배송비 무료</h3>
+                                </template>
+                                <p class="sale"><span>{{ coupon.couponName }}</span></p>
+                                <p class="condition">{{ numberFormat(coupon.conditionalAmount) }}원 이상 구매 시</p>
+                                <p class="range">{{ formatDate(coupon.startDate)}} ~ {{formatDate(coupon.expireDate)}}</p>
+                            </div>
+                            <div class="couponBox02">
+                                <a href="">
                                     <img src="/images/c_icon_coupon@2x.png">
-                                    <p class="download">다운로드</p>
-                                  </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="couponBtn">
-                        <button type="button" id="modal_btn" class="cBtn">쿠폰 등록</button>
-                    </div>
-                    <div class="black_bg"></div>
-                    <div class="modal_wrap" id="modal_coupon">
-                        <div class="modal_close"><a href="#">close</a></div>
-                        <div>
-                            <p class="coupon_modal_tit">쿠폰 등록</p>
-                            <input type="text">
-                            <button type="button" class="btn_enroll">등록</button>
-                        </div>
-                      </div>
-                      </div>
-                <script>
-                    window.onload = function() {
-                 
-                    function onClick() {
-                        document.querySelector('.modal_wrap').style.display ='block';
-                        document.querySelector('.black_bg').style.display ='block';
-                    }   
-                    function offClick() {
-                        document.querySelector('.modal_wrap').style.display ='none';
-                        document.querySelector('.black_bg').style.display ='none';
-                    }
-                 
-                    document.getElementById('modal_btn').addEventListener('click', onClick);
-                    document.querySelector('.modal_close').addEventListener('click', offClick);
-                 
-                };
-                </script>
-                  </main>
-                <%-include('general/footer') %>
+                                    <p class="download">쿠폰 사용</p>
+                                </a>
+                            </div>
+                        </li>
+                    </template>
                     
-                </body>
-            </html>
+                </ul>
+            </div>
+            <div class="couponBtn">
+                <button type="button" id="modal_btn" class="cBtn">쿠폰 등록</button>
+            </div>
+            <div class="black_bg"></div>
+            <div class="modal_wrap" id="modal_coupon">
+                <div class="modal_close"><a href="#">close</a></div>
+                <div>
+                    <p class="coupon_modal_tit">쿠폰 등록</p>
+                    <input type="text">
+                    <button type="button" class="btn_enroll">등록</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        window.onload = function() {
+        
+        function onClick() {
+            document.querySelector('.modal_wrap').style.display ='block';
+            document.querySelector('.black_bg').style.display ='block';
+        }   
+        function offClick() {
+            document.querySelector('.modal_wrap').style.display ='none';
+            document.querySelector('.black_bg').style.display ='none';
+        }
+        
+        document.getElementById('modal_btn').addEventListener('click', onClick);
+        document.querySelector('.modal_close').addEventListener('click', offClick);
+        
+    };
+    </script>
+    <script src="/js/mypage/coupon.js"></script>
+    <%-include('general/footer') %>
+        
+    </body>
+</html>
