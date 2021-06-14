@@ -10,7 +10,7 @@ var CALLBACK_SERVER = "http://"+ SERVER_IP;
 
 var API_SERVER = "http://112.217.209.162:9090";
 // var RESOURCE_SERVER = "http://112.217.209.162:8000";
-// var API_SERVER = "http://13.209.123.102:9090";
+var API_SERVER = "http://13.209.123.102:9090";
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
@@ -564,46 +564,21 @@ $(function(){
 	'</div>' +
 	'</div>' +
 	'</div>';
-				 
+			
+   userAgent = window.navigator.userAgent.toLowerCase()
+   iOS = /iphone|ipod|ipad/.test(userAgent);
+   if(iOS) {
+      // 앱설치 모달
+      $("#popup_layer").html(popup);
+   } else $('#popup_layer').hide();
+      
+
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
 		// 로그인 시에만 표시
 		console.log(data);
-		if(data.result.isLoggedIn == false) {
-			$("#popup_layer").html(popup);
-			$("#myModal").html(myPageModal);
-		} else {
-			$('#popup_layer').hide();
-		}
+		if(data.result.isLoggedIn == false) $("#myModal").html(myPageModal);
 
-		// var modal = document.getElementById('myModal');
-		// var btn = document.getElementById('myBtn');
-		// var span = document.getElementsByClassName('close')[0];
-		// var funcs = [];
-		//  if(btn != null) {
-		//  	btn.addEventListener('click', openModal());
-		// }
-
-		//  if( span != null) {
-		//  	span.addEventListener('click', hideModal());
-		//  }
-
-		// // When the user clicks on the button, open the modal 
-		//  btn.onclick = function() {
-		//  modal.style.display = "block";
-		//  }
-
-		// // // When the user clicks on <span> (x), close the modal
-		// span.onclick = function() {
-	   //  modal.style.display = "none";
-		//  }
-
-		// // When the user clicks anywhere outside of the modal, close it
-		// window.onclick = function(event) {
-		// 	if (event.target == modal) {
-		// 		modal.style.display = "none";
-		// 	}
-		// }
 	}, function(err){
 		console.error(err);
 	})
