@@ -567,10 +567,12 @@ $(function(){
 			
    userAgent = window.navigator.userAgent.toLowerCase()
    iOS = /iphone|ipod|ipad/.test(userAgent);
-   if(iOS) {
-      // 앱설치 모달
-      // $("#popup_layer").html(popup);
-   } else $('#popup_layer').hide();
+   // if(iOS) {
+   //    // 앱설치 모달
+   //    // $("#popup_layer").html(popup);
+   // } else 
+   $('#popup_layer').hide();
+
       
 
 	ajaxCall('/user/login', '', 'GET',
