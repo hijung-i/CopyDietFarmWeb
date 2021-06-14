@@ -147,13 +147,13 @@
                         <div class="point_history_left">
                             <ul>
                                 <li class="save">적립</li>
-                                <li class="due">2021.14.12</li>
+                                <li class="due">{{ formatDate(point.applyDate)}}</li>
                                 <template v-if="'EDX'.includes(point.pointType)">
-                                    <li class="amount minus">+ 500원</li>
+                                    <li class="amount plus">+ {{numberFormat(point.point) }}원</li>
 
                                 </template>
                                 <template v-else>    
-                                    <li class="amount plus">- 500원</li>
+                                    <li class="amount minus">- {{numberFormat(point.point)}}원</li>
                                 </template>
                             </ul>
                         </div>
