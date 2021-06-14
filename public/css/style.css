@@ -116,7 +116,7 @@ a:hover{text-decoration:none;}
 
 #wrap{position:relative;width:100%;z-index:1;}
 #headerwrap{height:90px;}
-#header_common{position:relative;width:100%}
+#header_common{position:relative;width:100%; background-color: #FFFFFF}
 #header_common h1{position:relative;left:200px;top:34px;z-index:1;}
 #header_common h1 img{max-width:50%;height: auto;}
 #header_common .gnb{position:relative;top:40px; z-index: 11}
