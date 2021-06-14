@@ -506,6 +506,18 @@ function closeCouponModal() {
 function openInfoModal() {
     console.log("click")
     $('#iModal').show();
+    $('html, body').css({'overflow': 'hidden', 'height': '100%'});
+    $('html,body').on('scroll touchmove mousewheel', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+});
+    $('span.close').click(function() {
+        $('html,body').css({'overflow':'visible'});
+    })
+    $('.web_del_mag_list_info label').click(function() {
+        $('html,body').css({'overflow':'visible'});
+    })
     
     getDeliveryInfoList();
 }
@@ -517,6 +529,15 @@ function closeInfoModal() {
 function openRegisterModal() {
     console.log("click")
     $('#rModal').show();
+    $('html, body').css({'overflow': 'hidden', 'height': '100%'});
+    $('html,body').on('scroll touchmove mousewheel', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+});
+    $('span.close').click(function() {
+        $('html,body').css({'overflow':'visible'});
+    })
 }
 
 function closeRegisterModal() {
@@ -580,3 +601,10 @@ function checkCouponUsable(coupon, alert) {
 
     return true;
 }
+// 맨 위로 
+$(function(){
+    $('#goingTo_top').on('click',function(e){
+        e.preventDefault();
+        $('html,body').animate({scrollTop:0},600);
+    });
+});

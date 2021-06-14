@@ -20,7 +20,6 @@
                 font-size: 28px;
             }
             .modalTop_ctn {
-                display: flex;
                 align-items: center;
                 justify-content: space-between;
             }
@@ -36,19 +35,21 @@
                                                 
                 }
         .modal-content h3{margin-left:15px}
+            .modalTop_ctn .order_delMag {
+                        text-align: center;
+                        font-size: 16px;
+                    }
         }
 
         @media screen and (min-width:1080px){
                 .i_modal .close {
                     color: #aaa;
-                    float: right;
                     font-size: 28px;
-                    position:absolute;
-                    left:740px;
                 }
                 .modalTop_ctn > h3 {
                     text-align: center;
                 }
+
             /* Modal Content/Box */
             .i_modal .modal-content {
                         background-color: #fefefe;
@@ -62,10 +63,7 @@
             @media screen and (min-width:1080px){
                    .i_modal .close {
                         color: #aaa;
-                        float: right;
                         font-size: 28px;
-                        position:absolute;
-                        left:740px;
                     }
 
                      /* Modal Content/Box */
@@ -242,7 +240,7 @@
                 <h3><img src="images/asterisk.png">
                    배송지
                 </h3>
-                <button type="button" id="myBtn" onclick="openInfoModal()">변경</button>
+                <a id="myBtn" onclick="openInfoModal()">변경</a>
                 </div>
                 <div class="i_modal" id="iModal" style="display:none">
                     <div class="modal-content">
@@ -252,7 +250,7 @@
                                 <h3>배송지 관리</h3>
                                 <span class="close" onclick="closeRegisterModal()">&times;</span>
                             </div>
-                            <h3>배송지 변경</h3>                                                                                   <!-- modal window -->
+                            <h3 class="order_delMag">배송지 변경</h3>                                                                                   <!-- modal window -->
                         </div>
                         <div class="slim_line_del_switch_modal"></div>
                                     <div class="top_checkBox">

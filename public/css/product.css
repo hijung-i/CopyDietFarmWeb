@@ -207,6 +207,10 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 /*products_web*/
 @media screen and (min-width:1080px){
 #tab1_mobile {height: 769px;}
+.swiper-pagination {
+    width: 10%;
+    left: 88%;
+}
 
 /* 상품상세 멀티슬라이드 */
 .responsive1 div img {
@@ -214,7 +218,7 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 }
 
 .other_cont{display:block;}
-
+#tab li.onTab > span {color: #F99319;}
 .tab_wrap{width:75%;border-bottom: none; display: flex; background: #fff;}
 .tab_wrap li {flex: 1;display: block;height: 16px;font-size: 14px;line-height: 16px;
     text-align: center;cursor: pointer;color: #878787}
@@ -624,7 +628,7 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 .filebox p span{text-decoration:underline
 }
 .tab_cont{display:none; min-height:360px;}
-.tab_cont.active{display:block;}
+.tab_cont.active{display:block; width: 810px;}
 .tab_wrap li.active a {
     font-weight: 700; color: #F99319;
 }
@@ -699,7 +703,6 @@ input#secret[type="checkbox"]:checked + .secret::before {transform: scale(1) rot
 .secret::after {content: "";border: 2px solid #F99319;width: 16px;height: 16px;position: absolute;left: -12px;top: 9px;border-radius: 50%;}
 }
 /*페이징 버튼*/
-.qna .page_wrap{margin-left:-360px}
 .page_nation .none {display:none;}
 .page_nation a {display:block;margin:0 3px;float:left;width:28px;
 height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:13px;color:#000;text-decoration:none;}
@@ -850,7 +853,7 @@ div #ex1.modal ul li {float:left}
 
 
 /*리뷰 없을 때*/
-.review_list_null{width:70%; text-align:center; margin:180px auto;}
+.review_list_null{width:70%; text-align:center; margin:66px auto;}
 .review_list_null .null{font-size:16px;color:#878787;margin-top:21px}
 
 /*문의*/
@@ -927,7 +930,7 @@ width:100%;height:45px;background-color:#F1F1F1;border-radius:0px;border:0;borde
 .common_btn_wrap > .option_btns {
     width: 100%; margin: 0 auto; height: 45px;
     padding: 0;
-    margin-top: 20px;
+    margin: 20px 0;
     white-space:nowrap;
 }
 .common_btn_wrap > .option_btns button:nth-child(1) {background-color:#fff; border: 1px solid #F99319}

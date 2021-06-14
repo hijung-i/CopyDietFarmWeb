@@ -343,10 +343,6 @@
                                     </div>
                             </div>
                             <div class="responsive1">
-                                <div><a href=""><img src="/images/blank2.jpg" alt="상품 이미지2"></a></div>
-                                <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지2"></a></div>
-                                <div><a href=""><img src="/images/blank2.jpg" alt="상품 이미지2"></a></div>
-                                <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지2"></a></div>
                             </div>
                             <div class="products_ex_mobile" style="padding:0">
                                 <img
@@ -431,20 +427,15 @@
 
                 </div>
             </div>
-            
-           
-                          
-                                    
                                        
-                                       
-                                       <!--//플로팅 박스-->
+                    <!--//플로팅 박스-->
                      
                     <div id="tab1" class="tab_cont Mtab_cont active">
                         <div class="products_ex">
                             <img
                                 v-for="image in product.detail"
                                 v-bind:src="RESOURCE_SERVER + image.url"
-                                style="width:75%; height:100%">
+                                style="width:780px; height:100%">
                         </div>
                     </div>
 
@@ -578,7 +569,7 @@
                                
                                 <div id="wrap">
                                     <a href="#ex1" rel="modal:open"
-                                     style="float:right;margin-left:200px;position:relative;left:50px;top:30px;margin-bottom:30px;width:168px;height:45px;border-radius:5px;background-color:#F99319;color:#fff;font-size:18px;font-weight:bold;text-align:center;padding-top:10px">리뷰쓰기</a>
+                                     style="float:right;margin-left:200px;position:relative;left: -30px;top:30px;margin-bottom:30px;width:168px;height:45px;border-radius:5px;background-color:#F99319;color:#fff;font-size:18px;font-weight:bold;text-align:center; line-height: 45px;">리뷰쓰기</a>
                                 </div>
                        
                                 <div class="page_wrap">
@@ -615,12 +606,12 @@
                                     </div>
                       
                           
-                            <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
+                            <!-- <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
                                 <img src="/images/note_icon_review.png">
                                 <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
-                                <!--// <div class="btn_area"> <button type="button"
-                                id="btnRW_null">리뷰쓰기</button> -->
-                            </div>
+                                <div class="btn_area"> <button type="button"
+                                id="btnRW_null">리뷰쓰기</button>
+                            </div> -->
                             
                          <div class="qna">
                                    
@@ -737,43 +728,7 @@
                         </div>
                     </main>
                     <script>
-                        $('.responsive1').slick({
-                            dots: false,
-                            infinite: true,
-                            speed: 300,
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            autoplay:true,
-                            autoplaySpeed:3000,
-                            pauseOnHover:true,
-                            arrow:true,
-                            responsive: [
-                              {
-                                breakpoint: 1024,
-                                settings: {
-                                  slidesToShow: 3,
-                                  slidesToScroll: 1,
-                                  infinite: true,
-                                  dots: false
-                                }
-                              },
-                              {
-                                breakpoint: 600,
-                                settings: {
-                                  slidesToShow: 3,
-                                  slidesToScroll: 1
-                                }
-                              },
-                              {
-                                breakpoint: 360,
-                                settings: {
-                                  slidesToShow: 3,
-                                  slidesToScroll: 1
-                                }
-                              }
-            
-                            ]
-                        });
+
                     </script>
                     <!-- Swiper JS -->
                     <script>
