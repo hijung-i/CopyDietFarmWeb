@@ -15,7 +15,8 @@ class UserService {
     // SERVER_IP = '192.168.0.3'
     SERVER_IP = 'localhost'
 
-    SERVER_URL = 'http://112.217.209.162:9090'
+    SERVER_URL = 'http://' + this.SERVER_IP + ':9090'
+    // SERVER_URL = 'http://112.217.209.162:9090'
 
     // CALLBACK_SERVER = 'http://' + this.SERVER_IP + ':3000'
     CALLBACK_SERVER = 'http://' + this.SERVER_IP

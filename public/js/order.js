@@ -8,8 +8,8 @@ var app = new Vue({
         orderDTO: '',
         deliveryDescType: 0,
         deliveryList: [],
-        couponList: []
-        
+        couponList: [],
+        coupon: {}
     }, methods: {
         
         numberFormat,
@@ -99,6 +99,15 @@ var app = new Vue({
                 set: function(x) {
                     return x;
                 }
+        },
+        usableCouponCount: function() {
+            var count = 0;
+            for(var i = 0; i < this.couponList.length; i++) {
+                var coupon = this.couponList[i];
+
+                if(checkCouponUsable(coupon, false)) count++;
+            }
+            return count;
         }
     }
 })
@@ -112,7 +121,9 @@ $(function() {
     app.orderDTO.products = new Array();
     for(var i = 0; i < app.deliveryGroupList.length; i++) {
         var dGroup = app.deliveryGroupList[i];
-        app.orderDTO.products = dGroup.products;
+        for(var j = 0; j < dGroup.products.length; j++) {
+            app.orderDTO.products.push(dGroup.products[j]);
+        }
     }
 
     var span = $(".close");                                       
@@ -251,6 +262,7 @@ function paymentAction() {
 
     requestOrderDTO.paidRealAmount = app.orderDTO.paidRealAmount;
 
+
     var bootpayParams = {
         price: requestOrderDTO.paidRealAmount,
         application_id: "5feae25e2fa5c2001d0391b9",
@@ -280,8 +292,12 @@ function paymentAction() {
     }
     requestOrderDTO.products = app.orderDTO.products;
     requestOrderDTO.paymentTotalAmount = app.orderDTO.paymentTotalAmount;
-    console.log(requestOrderDTO, bootpayParams)
+    requestOrderDTO.couponNo = app.orderDTO.couponNo;
     
+    console.log(requestOrderDTO);
+    if(requestOrderDTO.products == undefined || requestOrderDTO.products.length < 1) {
+        return;
+    }
 
     BootPay.request(
         bootpayParams
@@ -377,7 +393,7 @@ function addOrder(requestOrderDTO) {
             case 'SUCCESS':
                 alert('상품을 성공적으로 주문했습니다.');
                 requestOrderDTO.orderNumber = data.result;
-                location.href="/order-comp?requestOrderDTO="+JSON.stringify(requestOrderDTO);
+                location.href=("/order-comp?requestOrderDTO="+JSON.stringify(requestOrderDTO)).trim();
                 break;
             case 'NOT_MATCHED':
                 alert('주문 실패, 취소 진행')
@@ -451,7 +467,14 @@ function getUsableCouponList() {
     
     ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST', 
     function(data) {
-        app.couponList = data.result;
+        var usableCoupon = new Array();
+        for(var i = 0; i < data.result.length; i++) {
+            var coupon = data.result[i];
+            if(coupon.couponStatus == 'A') usableCoupon.push(data.result[i])
+        }
+
+        app.couponList = usableCoupon;
+
         console.log("get usableCouponList", data);
     }, function(err) {
         console.error("get usable coupon list ", err);
@@ -494,7 +517,33 @@ function closeRegisterModal() {
 }
 
 function applyCoupon(idx) {
-
+    selectedCoupon = app.couponList[idx]
+    console.log(selectedCoupon, idx);
+    if(!checkCouponUsable(selectedCoupon)) {
+        alert("쿠폰을 사용할 수 없습니다.");
+        return
+    }
+    
+    app.coupon = selectedCoupon
+    app.orderDTO.couponNo = selectedCoupon.couponNo
+    switch (selectedCoupon.couponType) {
+        case "P":
+            app.orderDTO.paidCouponAmount = selectedCoupon.amount
+            break;
+        case "R":
+            app.orderDTO.paidCouponAmount = app.orderDTO.paymentTotalAmount / 100 * selectedCoupon.rate
+            if(app.orderDTO.paidCouponAmount > selectedCoupon.maxAmount) {
+                app.orderDTO.paidCouponAmount = selectedCoupon.maxAmount;
+                console.log("maxamount", selectedCoupon.maxAmount);
+            }
+            console.log("rate coupon", app.orderDTO.paidCouponAmount, app.orderDTO.paymentTotalAmount / 100 * selectedCoupon.rate, selectedCoupon.rate)
+            break;
+        case "D":
+            app.orderDTO.paidCouponAmount = app.orderDTO.totalDeliveryCost
+            break;
+    }
+    alert('쿠폰이 적용되었습니다.');
+    closeCouponModal();
 }
 
 function formatDate(strDate) {
@@ -502,4 +551,23 @@ function formatDate(strDate) {
         return strDate.substr(0, 10);
     }
     return ''
+}
+
+function checkCouponUsable(coupon, alert) {
+    if(coupon.couponName == undefined) {
+        return;
+    }
+
+    if(coupon.conditionalAmount > app.orderDTO.paymentTotalAmount) {
+        if(alert) alert("해당 쿠폰은" + numberFormat(selectedCoupon.conditionalAmount) + "원 이상 구매 시 사용 가능합니다.");
+
+        return false;
+    }
+
+    if(coupon.couponType == 'D' && app.orderDTO.totalDeliveryCost == 0)  {
+        if(alert) alert("차감할 배송비가 없습니다.");
+        return false;
+    }
+
+    return true;
 }
