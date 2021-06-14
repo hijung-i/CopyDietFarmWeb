@@ -329,17 +329,7 @@ height:50px;overflow:hidden}
   .btn_area_d > a {font-size: 14px; font-weight: 700; color: #fff; padding: 10px 100px;}
   .top_checkBox {display: none;}
   .order_info_modal_address {margin-bottom: 15px;}
-  .hide-mobile {
-    display: none !important
-  }
-  #tab3 .num{display:none}
- .long_banner{display:none}
-  .noticeBox{padding-top:10px}
-   #content .main_sub .sub_items ul li{margin-bottom:6px}
-   .deliver_info_top{display:flex;justify-content:space-between;margin-right:15px}
-   .deliver_info_top button{background-color:transparent;border:none;}
    /* 상단 롤링 배너 */
-   .main_banner{height: 42px; min-width: 360px; width: 100%; position: absolute; overflow: hidden}
    .main_banner img {position: absolute;}
    .top_banner img {width:100%}
    .sideMenu {z-index: 9999; position: relative; top: 0 !important;}
@@ -362,11 +352,7 @@ height:50px;overflow:hidden}
    #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
    #nav a:hover{border-bottom:3px solid #F99319;padding-bottom:25px;color: #F99319}
    .top_util, .searchbox, #nav .web_cate{display:none}
-<<<<<<< HEAD
-   #header_common{position:fixed; min-width:360px; top:0px;background-color:#fff;z-index:9999;height:150px}
-=======
    #header_common{position:fixed; min-width:360px;height: 150px; top:0px; z-index:9999}
->>>>>>> 2ba7cf976513235cc4baa9f375f6e73ee097e2c1
    .body_sub_tit{display:flex;justify-content:space-between;}
    .body_sub_tit p{margin-top:26px;margin-right:15px}
    .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
@@ -1639,13 +1625,27 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  
  /* 버튼 */
  .btn_area {margin: 30px 0 91px;}
- #btnJoin, #save, #modify {width: 100%;height:50px;
- text-align:center;border: 0;cursor: pointer;
- color: #fff;background-color: #F99319;
- font-size: 14px;font-weight:700;font-family: '나눔고딕';border-radius:5px}
+ #btnJoin, #save, #modify {
+  width: 100%;
+  height:50px;
+  text-align:center;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background-color: #F99319;
+  font-size: 14px; 
+  font-weight:700; 
+  font-family: '나눔고딕';
+  border-radius:5px
+}
  
  /*배송지 등록*/
- .src_icon img{width:13px;position:relative;margin-left:410px;top:-20px}
+ .src_icon img{
+    width:13px;
+    position:relative;
+    margin-left:410px;
+    top:-20px
+  }
  
  /*탈퇴 버튼*/
  .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
@@ -1947,7 +1947,17 @@ div.orderBox02{padding-bottom:10px}
 }
 /*주문하기 웹*/
 @media screen and (min-width:1080px){
-.modalTop_ctn > h3 { margin-top: 25px;}
+  .slim_line_del_switch_modal {
+    width: 100%;
+    height: 1px;
+    margin: 0 auto;
+    background: #e6e6e6;
+  }
+.modalTop_ctn > h3 { 
+  margin-top: 0;
+  text-align: center;
+}
+.modalTop_tit {display: flex; align-items: center;}
 .order_a_box .option{color:#878787;margin-top:-10px;margin-left:4px}
 .order_a_box{border-bottom:none}
 #my_point{padding-left:10px;width:305px;margin-left:10px}
