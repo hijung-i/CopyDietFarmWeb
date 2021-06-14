@@ -25,7 +25,7 @@
         /* Modal Content/Box */
         .r_modal .modal-content {
             background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
+            margin: 15% -10px; /* 15% from the top and centered */
             height:575px;
             width:380px;
                                      
@@ -198,7 +198,7 @@
                                                 <li class="small_line"><img src="/images/l_icon_category@2x.png"></li>
                                             </template>
                                             <li class="edit_first">
-                                                <a v-on:click="modalDisplay(true, '배송지 수정', i)">수정</a>
+                                                <a v-on:click="modalDisplay(true, '배송지 수정', i)" onclick="openResgisterModal()">수정</a>
                                             </li>
                                             <li class="small_line"><img src="/images/l_icon_category@2x.png"></li>
                                             <li class="edit_second">
@@ -265,7 +265,7 @@
                                     <!-- <i onclick="modalDisplay(false)" class="fal fa-times"></i> -->
                                 </li>
                             </ul>
-                            <h3>배송지 수정</h3>
+                            <h3>배송지 등록</h3>
                             </header>   
                             <div class="deliver_mag_modal_ctt">
                             <input type="hidden" id="selectedDeliveryNo" value="">
