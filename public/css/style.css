@@ -2682,3 +2682,7 @@ display: flex;
   
 }
 .slick-list {width: 100%;}
+
+.hide-mobile {
+  display: none;
+}
