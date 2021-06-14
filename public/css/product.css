@@ -207,6 +207,10 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 /*products_web*/
 @media screen and (min-width:1080px){
 #tab1_mobile {height: 769px;}
+.swiper-pagination {
+    width: 10%;
+    left: 88%;
+}
 
 /* 상품상세 멀티슬라이드 */
 .responsive1 div img {
