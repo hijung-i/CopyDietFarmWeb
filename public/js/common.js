@@ -1,8 +1,8 @@
 // var API_SERVER = "http://localhost:9090";
-var SERVER_IP = 'localhost';
+// var SERVER_IP = 'localhost';
 // var SERVER_IP = '192.168.0.3';
 // var SERVER_IP = 'data-flow.co.kr';
-// var SERVER_IP = 'dietfarm.co.kr';
+var SERVER_IP = 'dietfarm.co.kr';
 
 // var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
 var CALLBACK_SERVER = "http://"+ SERVER_IP;
@@ -10,7 +10,7 @@ var CALLBACK_SERVER = "http://"+ SERVER_IP;
 
 var API_SERVER = "http://112.217.209.162:9090";
 // var RESOURCE_SERVER = "http://112.217.209.162:8000";
-// var API_SERVER = "http://13.209.123.102:9090";
+var API_SERVER = "http://13.209.123.102:9090";
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
@@ -371,25 +371,6 @@ function getCookie(cName) {
    return unescape(cValue);
 }
 
-  
-//마이페이지 로그인 모달 js
-$(function(){
-   //$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
-   //{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
-    var modal = document.getElementById('myModal');
-
-   if ($('#naver_id_login').length > 0) {
-      ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-       function(data) {
-         $('#naver_id_login').html(data);
-      }, function (err) {
-         console.log("error login button", err);
-      })
-   }
-
-   
-   
-});
 var modals = document.getElementsByClassName("modal");
 // Modal을 띄우는 클래스 이름을 가져옵니다.
 var btns = document.getElementsByClassName("btn");
@@ -564,46 +545,36 @@ $(function(){
 	'</div>' +
 	'</div>' +
 	'</div>';
-				 
+			
+   userAgent = window.navigator.userAgent.toLowerCase()
+   iOS = /iphone|ipod|ipad/.test(userAgent);
+   // if(iOS) {
+   //    // 앱설치 모달
+   //    $("#popup_layer").html(popup);
+   // } else $('#popup_layer').hide();
+      
+
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
-		// 로그인 시에만 표시
+		// 로그아웃 시에만 표시
 		console.log(data);
-		if(data.result.isLoggedIn == false) {
-			$("#popup_layer").html(popup);
-			$("#myModal").html(myPageModal);
-		} else {
-			$('#popup_layer').hide();
-		}
+      
+		if(data.result.isLoggedIn == false)  {
+         $("#myModal").html(myPageModal);
 
-		// var modal = document.getElementById('myModal');
-		// var btn = document.getElementById('myBtn');
-		// var span = document.getElementsByClassName('close')[0];
-		// var funcs = [];
-		//  if(btn != null) {
-		//  	btn.addEventListener('click', openModal());
-		// }
+         if ($('#naver_id_login').length > 0) {
+            ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+            function(data) {
+               $('#naver_id_login').html(data);
+               $('.login-list #naver_id_login a').html("네이버 아이디로 로그인")
+            }, function (err) {
+               console.log("error login button", err);
+            })
+         }
 
-		//  if( span != null) {
-		//  	span.addEventListener('click', hideModal());
-		//  }
+      }
 
-		// // When the user clicks on the button, open the modal 
-		//  btn.onclick = function() {
-		//  modal.style.display = "block";
-		//  }
 
-		// // // When the user clicks on <span> (x), close the modal
-		// span.onclick = function() {
-	   //  modal.style.display = "none";
-		//  }
-
-		// // When the user clicks anywhere outside of the modal, close it
-		// window.onclick = function(event) {
-		// 	if (event.target == modal) {
-		// 		modal.style.display = "none";
-		// 	}
-		// }
 	}, function(err){
 		console.error(err);
 	})

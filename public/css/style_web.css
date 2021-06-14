@@ -1,7 +1,6 @@
 /*coupon web*/
 @media screen and (max-width:1079px){
 
-.contents h2{display:none} 
 .coupon_code{display:none}
 }
 @media screen and (min-width:1080px){
@@ -17,6 +16,7 @@
 .point_history_web ul li{float:left;font-size:14px;font-weight:bold;}
 .point_history{flex-direction:row-reverse}
 .save, .brand{display:none}
+
 .point_history_right ul li{float:left;}
 .point_history_left ul li{float:left;}
 .date{position:relative;left:-20px;top:5px}
@@ -26,9 +26,23 @@
 }
 
 @media screen and (max-width:1079px){
-.point_history_web{display:none}
-.point_title_web{display:none}
-.due{display:none}
+    .point_history_web{display:none}
+    .point_title_web{display:none}
+    .due{display:none}
+
+    .point_history .change{
+        font-size: 14px;
+        font-weight: bold;
+
+    }
+
+    .point_history .amount.plus{
+        color: #31845B;
+    }
+    .point_history .amount.minus{
+        color: #D62828;
+    }
+
 }
 
 /*seller_inquiry mobile & web*/
@@ -1829,7 +1843,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
     .main-wrap{width:100%;text-align:left}
     .main-wrap .p1{font-size:14px;font-weight:bold;margin-bottom:10px;margin-left:220px} 
     .main-wrap .p2{width:330px;font-size:14px;margin-left:220px}
-    .contents h2{display:none}
+
     .main-wrap h4{display:none}
     .content_lnb{display:none}
 }

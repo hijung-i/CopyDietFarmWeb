@@ -249,9 +249,6 @@ router.get('/kakao-event', (req: Request, res: Response, next: NextFunction) => 
 router.get('/benefits', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'benefits', {})
 })
-router.get('/coupon', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'coupon', {})
-})
 router.get('/intro', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'landing', {})
 })
