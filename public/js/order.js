@@ -313,8 +313,11 @@ function paymentAction() {
         ).error(function (data) {
             //결제 진행시 에러가 발생하면 수행됩니다.
             console.log(data);
+            alert('결제에 실패했습니다.');
+            location.href="";
         }).cancel(function (data) {
             //결제가 취소되면 수행됩니다.
+            alert('결제를 취소하셨습니다.');
             console.log(data);
         }).ready(function (data) {
             // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
