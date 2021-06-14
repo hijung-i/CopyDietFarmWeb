@@ -371,6 +371,25 @@ function getCookie(cName) {
    return unescape(cValue);
 }
 
+  
+//마이페이지 로그인 모달 js
+$(function(){
+   //$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
+   //{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
+    var modal = document.getElementById('myModal');
+
+   if ($('#naver_id_login').length > 0) {
+      ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+       function(data) {
+         $('#naver_id_login').html(data);
+      }, function (err) {
+         console.log("error login button", err);
+      })
+   }
+
+   
+   
+});
 var modals = document.getElementsByClassName("modal");
 // Modal을 띄우는 클래스 이름을 가져옵니다.
 var btns = document.getElementsByClassName("btn");
@@ -550,30 +569,17 @@ $(function(){
    iOS = /iphone|ipod|ipad/.test(userAgent);
    // if(iOS) {
    //    // 앱설치 모달
-   //    $("#popup_layer").html(popup);
-   // } else $('#popup_layer').hide();
+   //    // $("#popup_layer").html(popup);
+   // } else 
+   $('#popup_layer').hide();
+
       
 
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
-		// 로그아웃 시에만 표시
+		// 로그인 시에만 표시
 		console.log(data);
-      
-		if(data.result.isLoggedIn == false)  {
-         $("#myModal").html(myPageModal);
-
-         if ($('#naver_id_login').length > 0) {
-            ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-            function(data) {
-               $('#naver_id_login').html(data);
-               $('.login-list #naver_id_login a').html("네이버 아이디로 로그인")
-            }, function (err) {
-               console.log("error login button", err);
-            })
-         }
-
-      }
-
+		if(data.result.isLoggedIn == false) $("#myModal").html(myPageModal);
 
 	}, function(err){
 		console.error(err);
