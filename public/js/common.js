@@ -1,5 +1,5 @@
 // var API_SERVER = "http://localhost:9090";
-// var SERVER_IP = 'localhost';
+var SERVER_IP = 'localhost';
 // var SERVER_IP = '192.168.0.3';
 // var SERVER_IP = 'data-flow.co.kr';
 var SERVER_IP = 'dietfarm.co.kr';
