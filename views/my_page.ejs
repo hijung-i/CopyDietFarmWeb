@@ -116,14 +116,18 @@
                                     <li class="point-amount">
                                         <% if (isLoggedIn) { %>
                                             <span v-if="">300원</span>
-                                        <% } %> &nbsp;&nbsp;<img src="/images/downarrow_ico_filter@2x.png" style="width:11px;height:11px;position:relative;top:4px"></li>
+                                        <% } %> &nbsp;&nbsp;<img src="/images/downarrow_ico_filter@2x.png" style="width:11px;height:11px;position:relative;top:4px">
+                                    </li>
                                 </ul>
                             </a>
                             <a href="javascript:location.href='/coupon';">
                                 <ul style="border:none">
                                     <li>쿠폰</li>
                                     <li class="coupon-amount">
-                                        &nbsp;&nbsp;<img src="/images/downarrow_ico_filter@2x.png" style="width:11px;height:11px;position:relative;top:4px"></li>
+                                        <% if (isLoggedIn) { %>
+                                            <span>2장</span>
+                                        <% } %>&nbsp;&nbsp;<img src="/images/downarrow_ico_filter@2x.png" style="width:11px;height:11px;position:relative;top:4px">
+                                    </li>
                                 </ul>
                             </a>
                         </div>

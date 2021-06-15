@@ -318,6 +318,13 @@ height:50px;overflow:hidden}
 
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  .modalTop_tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modalTop_ctn {padding: 0 12px;}
+  .modalTop_ctn h3.order_delMag {padding-top: 0; margin-bottom: 0;}
   .btn_area_d {
     min-width: 330px;
     height: 45px;
@@ -938,15 +945,22 @@ font-weight:normal}
 }
 }
 @media screen and (min-width:1080px){
-.sideMenu_Header {display: none;}
-.deliver_info_top button {
-    background-color: transparent;
-    border: none;
+  /* 마이페이지 배송지 관리 모달 */
+  .deliver_magHeader h3 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
   }
+.sideMenu_Header {display: none;}
+
   .delete_btn{float:right;position:relative;top:-100px;left:20px}
 .event_title{margin-bottom:30px}
 .mtpSlideTit{margin-top:70px}
-.deliver_info_top {display:flex;justify-content:space-between;}
+.deliver_info_top { 
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
 .btnMenu, .btnCart{display:none;}
 .mobile_index{display:none}
 .banner01 img{display:none}
@@ -1286,7 +1300,7 @@ div.slideMenu_top {display: none}
 }
 
 
-.sideMenu .mDepth01{font-size:16px;line-height:32px; background: #fff; z-index: 1;}
+.sideMenu .mDepth01{font-size:16px;line-height:32px; background: #fff; z-index: 9;}
 .sideMenu .mDepth01 dl > dt.sideMenu_detail a {padding-left: 12px;}
 .sideMenu .mDepth01 dt{height: 54px; padding:8px; color:#333; cursor:pointer; border-bottom:1px solid #e0e4e7; font-size: 14px; font-weight: 400; display: flex; align-items: center;padding-left:15px}
 .sideMenu .mDepth01 dt img{vertical-align:middle;}
@@ -1966,7 +1980,7 @@ div.orderBox02{padding-bottom:10px}
   margin-top: 0;
   text-align: center;
 }
-.modalTop_tit {display: flex; align-items: center;}
+.modalTop_tit {display: flex; align-items: center; justify-content: space-between;}
 .order_a_box .option{color:#878787;margin-top:-10px;margin-left:4px}
 .order_a_box{border-bottom:none}
 #my_point{padding-left:10px;width:305px;margin-left:10px}
@@ -2627,6 +2641,7 @@ display: flex;
 }
 
 @media screen and (min-width: 1080px) {
+  .side_banner {display: none;}
   .only-pc{ 
     display: block !important;
   }
