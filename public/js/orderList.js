@@ -29,6 +29,24 @@ function getOrderList() {
     })
 }
 
+function requestOrderCancel(order) {
+    var params = {
+        orderNumber: order.orderNumber,
+        purchaseProductNo: order.purchaseProductNo,
+        content: order.content
+    }
+    
+    ajaxCallWithLogin(API_SERVER + '/order/orderCancel', params, 'POST',
+    function(data){
+        console.log("success", data);
+    }, function(err) {
+        console.log("error", err);
+    }, {
+        isRequire: true,
+        userId: true
+    })
+}
+
 function formatDate(dateStr) {
     var date = new Date(dateStr);
     var month = '' + (date.getMonth() + 1);
