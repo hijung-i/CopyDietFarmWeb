@@ -505,46 +505,47 @@ function closeCouponModal() {
 }
    
 function openInfoModal() {
-    console.log("click")
-    $('#iModal').show();
-    $('html, body').css({'overflow': 'hidden', 'height': '100%'});
-    $('html,body').on('scroll touchmove mousewheel', function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      return false;
-});
-    $('span.close').click(function() {
-        $('html,body').css({'overflow':'visible'});
+    console.log("click");
+    $('#iModal').show();  
+    $('html,body').css({'overflow':'hidden','height':'100%'});  
+    $('#iModal').on('scroll touchmove mousewheel',function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
     })
-    $('.web_del_mag_list_info label').click(function() {
-        $('html,body').css({'overflow':'visible'});
-    })
-    
+
     getDeliveryInfoList();
+
+    var inputs = document.querySelectorAll('input');
+    $(inputs,span).click(function(){
+        console.log('done');
+        
+    });
+
 }
 
 function closeInfoModal() {
-    console.log("click")
+    console.log("click1")
     $('#iModal').hide();
+    $('html, body').css({'overflow': 'visible'});
+    $('html,body').off('scroll touchmove mousewheel');
 }
 function openRegisterModal() {
-    console.log("click")
-    $('#rModal').show();
-    $('html, body').css({'overflow': 'hidden', 'height': '100%'});
-    $('html,body').on('scroll touchmove mousewheel', function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      return false;
-});
-    $('span.close').click(function() {
-        $('html,body').css({'overflow':'visible'});
-    })
+        console.log("click")
+        $('#rModal').show();
+        $('html, body').css({'overflow': 'hidden', 'height': '100%'});
+        $('html,body').on('scroll touchmove mousewheel', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          return false;
+    });
 }
-
 function closeRegisterModal() {
     console.log("click")
     $('#rModal').hide();
     $('#iModal').hide();
+    $('html, body').css({'overflow': 'visible'});
+    $('html,body').off('scroll touchmove mousewheel');
 }
 
 function applyCoupon(idx) {
