@@ -1373,7 +1373,7 @@ div.slideMenu_top {display: none}
     max-width: 100%;
   }
   .long-banner img {
-    width: 100%;
+   display:none
   }
 
   .web_delivery_manage_list {margin-bottom: 23px;}
