@@ -100,7 +100,7 @@ background-color:#F99319;border-radius:5px;
 .coupon_list p{color:#878787}
 .coupon_list{padding-left:15px;padding-right:15px}
 .coupon_list ul li{display:flex;margin-bottom:15px}
-.y_coupon, .g_coupon{cursor: pointer;0}
+.y_coupon, .g_coupon{cursor: pointer;}
 .y_coupon .couponBox01{width:70%;border-right:1.5px dashed #F99319!important;border:1.5px solid #F99319;padding-top:13px;padding-left:14px;padding-bottom:13px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -372,7 +372,7 @@ margin-left:14px
 
 @media screen and (max-width:1079px) {
     .point_list {
-        width: 360px; min-width: 360px;
+        width: 100%; min-width: 360px;
         padding-top: 18px;
     }
     .point_current_situation {text-align: center;}
@@ -387,4 +387,18 @@ margin-left:14px
     }
     .point_list_header {display: none;}
     .point_content .content_validity {display: none;}
+    .point_content {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+    .point_content li:not(:last-child) {padding-bottom: 6px;}
+    .point_content > li.mobile_right {width: 52%;}
+    .point_content > li.mobile_left {text-align: right;}
+    .mobile_left li {font-size: 14px;}
+    .mobile_left li.point_sortation {color:#6B6B6B; font-weight: 400;}
+    .mobile_left li.content_price {color: #31845B; font-weight: 700;}
+    .mobile_right li.content_date {font-size: 12px; font-weight: 400; color: #878787;}
+    .mobile_right li.content_content {font-size: 14px; font-weight: 400; color: #000;}
+    .mobile_right li.savePoint_brand {color: #000;}
 }
