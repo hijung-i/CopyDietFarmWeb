@@ -68,6 +68,7 @@ function getStandDatas() {
                 
                 $('.responsive').html(html);
                 $('.responsive').slick("refresh");
+                
                 break;
             case 2:
                 // 위클리 베스트
@@ -152,6 +153,7 @@ $(function(){
     //     }
     // });
 
+    
 
 });
 
