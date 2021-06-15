@@ -1363,14 +1363,20 @@ div.slideMenu_top {display: none}
 .tabMenu .tab_wrap > li:nth-child(2).on ~ span {left: 50%; opacity: 1;}
 .tabMenu > .tab_wrap li span {color: #878787; font-weight: 400;}
 
+.long-banner img {
+  max-width: 100%;
+}
 @media screen and (max-width:1079px) {
     
   .hide-mobile {
     display: none;
   }
 
-  .long_banner{
-    width: 100%;
+  .long-banner{
+    max-width: 100%;
+  }
+  .long-banner img {
+     display:none
   }
 
   .web_delivery_manage_list {margin-bottom: 23px;}
@@ -1932,6 +1938,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 }
 /*주문하기 모바일*/
 @media screen and (max-width:1079px){
+
 .mtpSlideTit{padding-left:15px}
 .order{width:100%;margin:0 auto}
 .order_q .title span{display:none}

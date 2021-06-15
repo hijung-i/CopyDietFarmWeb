@@ -44,121 +44,27 @@
             <div id="tab1" class="tab_cont active">
                 <div class="tab1_active" style="display:none">
                     <section class="review_list_ctn">
-                        <div class="review_prod">
-                            <div class="review_img"></div>
-                            <ul class="review_detail">
-                                <li class="review_brand">(배송중)</li>
-                                <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
-                                <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                            </ul>
+                        <template v-for="(review, index) in reviewList">
+                            <div class="review_prod">
+                                <div class="review_img"></div>
+                                <ul class="review_detail">
+                                    <li class="review_brand">[{{ review.product.companyName }}]</li>
+                                    <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
+                                    <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
+                                </ul>
 
-                            <div class="btn_area_2" style="margin-top:20px">
-                                <button type="button" class="btnJoin_2">
-                                    <span>리뷰쓰기</span>
-                                </button>
+                                <div class="btn_area_2" style="margin-top:20px">
+                                    <button type="button" class="btnJoin_2">
+                                        <span>리뷰쓰기</span>
+                                    </button>
+                                </div>
+                                <!--//btnJoin-->
                             </div>
-                            <!--//btnJoin-->
-                        </div>
 
-                        <div class="reviewview_line_wrap">
-                            <div class="review_line"></div>
-                        </div>
-
-                        <div class="review_prod">
-                            <div class="review_img"></div>
-                            <ul class="review_detail">
-                                <li class="review_brand">(배송중)</li>
-                                <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
-                                <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                            </ul>
-
-                            <div class="btn_area_2" style="margin-top:20px">
-                                <button type="button" class="btnJoin_2">
-                                    <span>리뷰쓰기</span>
-                                </button>
+                            <div class="reviewview_line_wrap">
+                                <div class="review_line"></div>
                             </div>
-                            <!--//btnJoin-->
-                        </div>
-
-                        <div class="reviewview_line_wrap">
-                            <div class="review_line"></div>
-                        </div>
-
-                        <div class="review_prod">
-                            <div class="review_img"></div>
-                            <ul class="review_detail">
-                                <li class="review_brand">(배송중)</li>
-                                <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
-                                <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                            </ul>
-
-                            <div class="btn_area_2" style="margin-top:20px">
-                                <button type="button" class="btnJoin_2">
-                                    <span>리뷰쓰기</span>
-                                </button>
-                            </div>
-                            <!--//btnJoin-->
-                        </div>
-
-                        <div class="reviewview_line_wrap">
-                            <div class="review_line"></div>
-                        </div>
-
-                        <div class="review_prod">
-                            <div class="review_img"></div>
-                            <ul class="review_detail">
-                                <li class="review_brand">(배송중)</li>
-                                <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
-                                <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                            </ul>
-
-                            <div class="btn_area_2" style="margin-top:20px">
-                                <button type="button" class="btnJoin_2">
-                                    <span>리뷰쓰기</span>
-                                </button>
-                            </div>
-                            <!--//btnJoin-->
-                        </div>
-
-                        <div class="reviewview_line_wrap">
-                            <div class="review_line"></div>
-                        </div>
-
-                        <div class="review_prod">
-                            <div class="review_img"></div>
-                            <ul class="review_detail">
-                                <li class="review_brand">(배송중)</li>
-                                <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
-                                <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                            </ul>
-
-                            <div class="btn_area_2" style="margin-top:20px">
-                                <button type="button" class="btnJoin_2">
-                                    <span>리뷰쓰기</span>
-                                </button>
-                            </div>
-                            <!--//btnJoin-->
-                        </div>
-
-                        <div class="reviewview_line_wrap">
-                            <div class="review_line"></div>
-                        </div>
-
-                        <div class="review_prod">
-                            <div class="review_img"></div>
-                            <ul class="review_detail">
-                                <li class="review_brand">(배송중)</li>
-                                <li class="review_prod_name">굿밸런스 라이트밀 도시락</li>
-                                <li class="review_option">옵션: 한입닭&amp;큐브닭 9종 혼합 36팩</li>
-                            </ul>
-
-                            <div class="btn_area_2" style="margin-top:20px">
-                                <button type="button" class="btnJoin_2">
-                                    <span>리뷰쓰기</span>
-                                </button>
-                            </div>
-                            <!--//btnJoin-->
-                        </div>
+                        </template>
 
                     </section>
                 </div>
@@ -307,5 +213,6 @@
                 <!--//reviews-->
             </div>
         </main>
+        <script src="/js/mypage/product_review.js"></script>
     </body>
 </html>

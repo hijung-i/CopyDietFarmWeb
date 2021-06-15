@@ -32,6 +32,7 @@ var app = new Vue({
             if(option != undefined && !option.isSelected) {
                 $('#option.isSelected')[i].checked = false;
             }
+            
             this.orderDTO = new OrderDTO();
             this.deliveryGroupList = [];
         
