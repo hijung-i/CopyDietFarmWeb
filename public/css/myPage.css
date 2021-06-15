@@ -57,7 +57,7 @@ line-height: 40px; font-size: 14px;}
 
 /*마이페이지*/
 #header{height: 60px !important;padding-top:10px !important;}
-.myPage{letter-spacing:0.2px;margin-bottom:-42px;padding-top:40px}
+.myPage{letter-spacing:0.2px;margin-bottom:-42px;padding-top:60px}
 .myPage_title h2{font-weight:bold;font-size:16px}
 .mypage a{display:block}
 .myPage01{width:100%;padding-top:34px;padding-bottom:12px}
@@ -87,10 +87,12 @@ background-color:#F99319;border-radius:5px;
     .f_recommd h4{margin-top:19px;font-size:14px;color:#F99319;font-weight:bold}
     .f_recommd p{font-size:14px;line-height:20px}
     .f_recommd p span{font-weight:bold}
-    #btnKakao{width:100%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#000;background-color:#FFEB3B;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
+    #btnKakao{width:100%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;background-color:#FFEB3B;border-radius:5px;}
     .f_recommd .buttons{padding-top:27px;display:flex;padding-right:15px;padding-left:15px}
-    #btnURL{width:100%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#fff;background-color:#6A6A6A;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-left:11px;}
-    #btnURL img, #btnKakao img{position:relative;right:17px}
+    .btnURL{width:100%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#fff;background-color:#6A6A6A;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-left:11px;}
+    .btnURL img, #btnKakao img{position:relative;right:17px}
+    #btnKakao a{color:#000;font-size: 14px;font-weight: bold;font-family: '나눔고딕'}
+    .btnURL a{color:#fff;font-size: 14px;font-weight: bold;font-family: '나눔고딕'}
 /*쿠폰*/
 
 .coupon_list p span{padding-bottom:10px;color:#000000;}
@@ -238,8 +240,8 @@ margin-left:14px
     .f_recommd p span{font-weight:bold}
     #btnKakao{width:80%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#000;background-color:#FFEB3B;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
     .buttons{padding-top:27px;}
-    #btnURL{width:80%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#fff;background-color:#6A6A6A;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-left:11px;}
-    #btnURL img, #btnKakao img{position:relative;right:17px}
+    .btnURL{width:80%;height:45px;margin:auto;padding: 13px 0 13px;border:0;cursor: pointer;color:#fff;background-color:#6A6A6A;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-left:11px;}
+    .btnURL img, #btnKakao img{position:relative;right:17px}
 /*쿠폰*/
 .coupon{width:1060px}
 .coupon_web_top input{width:271px;height:45px;border-radius:5px;border:1px solid #BBBBBB}
@@ -323,3 +325,69 @@ margin-left:14px
         padding: 2px;
         }
 }
+
+
+/* 포인트 테이블 개발 */
+@media screen and (min-width:1080px) {
+    .point_info_content {
+        width: 811px;
+        overflow: hidden;
+    }
+    .point_info_content ul  {
+        display: flex;
+        justify-content: space-between;
+    }
+    .point_list_header {
+        border-top: 1px solid #000; 
+        border-bottom: 1px solid #000;
+    }
+    .point_list_header li {
+        padding: 17px 0; 
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .point_content li.point_content_element {
+        font-size: 12px;
+        font-weight: 400;
+        padding: 14px 0;
+        border-bottom: 1px solid #BBB;
+    }
+    .point_info_content ul li {text-align: center;}
+    .headerName_date {width: 133px;}
+    .headerName_content {width: 448px;}
+    .headerName_validity {width: 133px;}
+    .headerName_price {width: 117px;}
+    .content_date {width: 133px;}
+    .content_content {width: 448px;}
+    .content_validity {width: 133px;}
+    .content_price {width: 117px;}
+
+    .point_current_situation {
+        display: none;
+    }
+    .thick_line {display: none;}
+    .point_content .savePoint_brand {display: none;}
+    .point_content .point_sortation {display: none;}
+}
+
+@media screen and (max-width:1079px) {
+    .point_list {
+        width: 360px; min-width: 360px;
+        padding-top: 18px;
+    }
+    .point_current_situation {text-align: center;}
+    .point_current_situation > h3 {
+        font-size: 14px;
+        font-weight: 400;
+        padding-bottom: 8px;
+    }
+    .point_current_situation h4 {
+        font-size: 16px;
+        font-weight: 800;
+    }
+    .point_content {fl}
+    .point_list_header {display: none;}
+    .point_content .content_validity {display: none;}
+}
+
+    

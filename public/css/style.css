@@ -20,7 +20,7 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
   .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 
   .option_btns .like {
-    position: absolute;
+
     top: 0px;
     right: 0px;    
   }
@@ -359,7 +359,7 @@ height:50px;overflow:hidden}
    #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;}
    #nav a:hover{border-bottom:3px solid #F99319;padding-bottom:25px;color: #F99319}
    .top_util, .searchbox, #nav .web_cate{display:none}
-   #header_common{position:fixed; min-width:360px;height: 150px; top:0px; z-index:9999; background: #fff;}
+   #header_common{position:fixed; min-width:360px;height: 100px; top:0px; z-index:9999}
    .body_sub_tit{display:flex;justify-content:space-between;}
    .body_sub_tit p{margin-top:26px;margin-right:15px}
    .body_sub_tit p img{margin-left:4px;width:6px;margin-top:2px}
@@ -438,7 +438,7 @@ height:50px;overflow:hidden}
 /*서브메뉴 (신상, 베스트 등등)*/
 /*#mobile_sub{position:fixed;height:90px;background-color:#fff}*/
 #content .main_sub_wrap{   
-width:100%;border-top:2px solid #f1f1f1;margin-top:150px}
+width:100%;border-top:2px solid #f1f1f1;margin-top:140px}
 #content .main_sub img{padding:7px}
 #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
 #content .main_sub .desc ul li{float:left;white-space:nowrap;margin-left:-4px}
