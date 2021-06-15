@@ -113,7 +113,7 @@
   <!-- 첫 번째 Modal을 여는 클래스 -->
 
   <!-- 첫 번째 Modal -->
-  <div id="modal-review" class="modal" style="display:none">
+  <div id="modal-review" class="modal" style="display:none" id="modal-review">
     
   </div>
    <!-- 두 번째 Modal -->
@@ -499,7 +499,7 @@
                             document.getElementById(".products_ex_mobile").style = "display:none"; }
                             </script> -->
                             <div class="review_btn">
-                              <button class="btn" style="width:90%;height:45px;">리뷰쓰기</button>
+                              <button class="btn" onclick="Modal()" style="width:90%;height:45px;">리뷰쓰기</button>
                             </div>
                             <p class="num">리뷰 {{ reviewList.length }}개</p>
                             <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
