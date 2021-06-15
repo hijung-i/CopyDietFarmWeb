@@ -10,12 +10,11 @@
         <title>다이어트 Farm</title>
         <style type="text/css">
         @media screen and (min-width:500px) and (max-width:1079px){
-  .like {width:25px;height:25px;position:relative;top: 3px !important;right: 10px !important;background: url("/images/beforeheart_icon_main.png") no-repeat;}
-  /*.like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
+  .like {top:0px;margin-right:-12px}
   .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
 @media screen and (min-width:1080px){
-.like {width:25px;height:25px;position:relative;top: 3px !important;right: 10px !important;background: url("/images/beforeheart_icon_main.png") no-repeat;}
+.like {top: 3px !important;right:5px !important;}
 /*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
 .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
@@ -114,7 +113,7 @@
   <!-- 첫 번째 Modal을 여는 클래스 -->
 
   <!-- 첫 번째 Modal -->
-  <div id="modal-review" class="modal" style="display:none">
+  <div id="modal-review" class="modal" style="display:none" id="modal-review">
     
   </div>
    <!-- 두 번째 Modal -->
@@ -230,11 +229,6 @@
 
                                         <div class="v_n_top_info">
                                             <table>
-                                                <tr class="point">
-                                                    <td>
-                                                        <span>포인트</span></td>
-                                                    <td class="ex">로그인, 옵션 선택 후 확인 가능합니다.</td>
-                                                </tr>
                                                 <tr class="delivery-type">
                                                     <td>
                                                         <span>배송방법</span></td>
@@ -496,7 +490,7 @@
                             document.getElementById(".products_ex_mobile").style = "display:none"; }
                             </script> -->
                             <div class="review_btn">
-                              <button class="btn" style="width:90%;height:45px;">리뷰쓰기</button>
+                              <button class="btn" onclick="Modal()" style="width:90%;height:45px;">리뷰쓰기</button>
                             </div>
                             <p class="num">리뷰 {{ reviewList.length }}개</p>
                             <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
