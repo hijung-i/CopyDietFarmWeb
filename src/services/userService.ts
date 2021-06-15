@@ -13,12 +13,16 @@ type Option = {
 class UserService {
     // SERVER_IP = 'dietfarm.co.kr'
     // SERVER_IP = '192.168.0.3'
-    SERVER_IP = 'localhost'
+    // SERVER_IP = 'localhost'
+    // SERVER_IP = '112.217.209.162'
+    // SERVER_IP = '13.209.123.102'
 
-    SERVER_URL = 'http://112.217.209.162:9090'
+    // SERVER_URL = 'http://' + this.SERVER_IP + ':9090'
+    SERVER_URL = 'http://13.209.123.102:9090'
 
     // CALLBACK_SERVER = 'http://' + this.SERVER_IP + ':3000'
-    CALLBACK_SERVER = 'http://' + this.SERVER_IP
+    // CALLBACK_SERVER = 'http://' + this.SERVER_IP
+    CALLBACK_SERVER = 'http://dietfarm.co.kr'
 
     KAKAO_SERVER = 'https://kauth.kakao.com'
 

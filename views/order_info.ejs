@@ -9,31 +9,52 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no"/>
     <meta name="format-detection" content="no"/>
 
-        <title>주문하기</title>
-        <style type="text/css">
-            @media screen and (max-width:1079px) {
-                .web_order_info {
-                    display: none;
+    <title>주문하기</title>
+    <style type="text/css">
+        @media screen and (max-width:1079px) {
+            .web_order_info {
+                display: none;
+            }
+            .i_modal .close {
+                color: #aaa;
+                font-size: 28px;
+            }
+            .modalTop_ctn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .modalTop_ctn span {padding-right: 10px;}
+
+        /* Modal Content/Box */
+        .i_modal .modal-content {
+                    background-color: #fefefe;
+                    margin: 15% auto; /* 15% from the top and centered */
+                    height:450px;
+                    min-width:360px;
+                    width: 100%;
+                                                
                 }
+        .modal-content h3{margin-left:15px}
+        }
+
+        @media screen and (min-width:1080px){
                 .i_modal .close {
                     color: #aaa;
+                    float: right;
                     font-size: 28px;
+                    position:absolute;
+                    left:740px;
                 }
-                .modalTop_ctn {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+                .modalTop_ctn > h3 {
+                    text-align: center;
                 }
-                .modalTop_ctn span {padding-right: 10px;}
-
             /* Modal Content/Box */
             .i_modal .modal-content {
                         background-color: #fefefe;
                         margin: 15% auto; /* 15% from the top and centered */
                         height:450px;
-                        min-width:360px;
-                        width: 100%;
-                                                 
+                        width:360px;                                              
                     }
             .modal-content h3{margin-left:15px}
             }
@@ -51,12 +72,16 @@
                     .i_modal .modal-content {
                         background-color: #fefefe;
                         margin: 15% auto; /* 15% from the top and centered */
-                        height:450px;
-                        width:380px;
-
+                    }
+                        /* Modal Content/Box */
+                    .i_modal .modal-content {
+                        background-color: #fefefe;
+                        margin: 15% auto; /* 15% from the top and centered */
+                        width: 380px;
+                        height:575px;             
                     }
             }
-        }
+        
         /* The Modal (background) */
         .i_modal{
         display: none; /* Hidden by default */
@@ -71,14 +96,6 @@
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
 
-    /* Modal Content/Box */
-    .i_modal .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        height:450px;
-        width:380px;
-                                    
-    }
     /* The Close Button */
     
 
@@ -229,10 +246,15 @@
                 </div>
                 <div class="i_modal" id="iModal" style="display:none">
                     <div class="modal-content">
+                        <div class="modal_ctn">
                         <div class="modalTop_ctn">
-                            <h3>배송지 변경</h3>                             
-                            <span class="close" onclick="closeInfoModal()">&times;</span>                                                      <!-- modal window -->
+                            <div class="modalTop_tit">
+                                <h3>배송지 관리</h3>
+                                <span class="close" onclick="closeRegisterModal()">&times;</span>
+                            </div>
+                            <h3>배송지 변경</h3>                                                                                   <!-- modal window -->
                         </div>
+                        <div class="slim_line_del_switch_modal"></div>
                                     <div class="top_checkBox">
                                         <input
                                             type="checkbox"
@@ -243,7 +265,6 @@
                                         <label for="selectAll1">전체 선택</label>
                                         <button>선택 삭제</button>
                                     </div>
-                                    <div class="thick_line one"></div>
             
                                     <div class="order_list_ctn">
                                         <template v-for="(item, i) in deliveryList">
@@ -263,7 +284,7 @@
                                                             <li class="small_line"><img src="/images/l_icon_category.png"></li>
                                                         </template>
                                                         <li class="edit_first">
-                                                            <a v-on:click="modalDisplay(true, '배송지 수정', i)">수정</a>
+                                                            <a>수정</a>
                                                         </li>
                                                         <li class="small_line"><img src="/images/l_icon_category.png"></li>
                                                         <li class="edit_second">
@@ -273,12 +294,12 @@
                                                 </div>
                                                 <div class="web_del_mag_list_info">
                                                     <div class="top_checkBox_piece">
-                                                        <input type="radio" name="list" v-bind:id="'selectAll' + (i + 2)" v-bind:value="i">
+                                                        <input type="radio" name="list" v-on: v-bind:id="'selectAll' + (i + 2)" v-on:change="onDeliveryInfoSelected()" v-bind:value="i" v-bind:checked="item.address == orderDTO.delivery.address">
                                                         <label v-bind:for="'selectAll' + (i+2)"></label>
                                                     </div>
                                                     
                                                     <ul>
-                                                        <li>
+                                                        <li class="order_info_modal_address">
                                                             <p class="address">{{ item.address }}</p>
                                                         </li>
                                                         <li>
@@ -287,16 +308,17 @@
                                                             </p>
                                                         </li>
                                                     </ul>
+                                                    
                                                 </div>
                                           
                                             </section>
-                                          </template>
-                                       </div>
-                                       <div class="btn_area_modal">
-                                        <button type="button" id="btnRegister_modal">저장</button>
+                                        </template>
                                     </div>
-                                 </div>
-                                 </div>                  
+
+                                    
+                    </div>
+                </div>
+                </div>                  
                 <div class="members"
                     v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
                     <span class="addr" style="margin-bottom:13px">{{ orderDTO.delivery.address }}</span><br>
@@ -304,7 +326,7 @@
                     <span class="num">{{ orderDTO.delivery.userCellNo }}</span>
                 </div>
                 <div class="non_members" v-if="orderDTO.userId == '비회원주문' || orderDTO.delivery == undefined">
-                    <p><input type="checkbox" class="required"  required="required"><label for="all"><span>주문자 정보와 동일</span></label></p>
+                    <!-- <p><input type="checkbox" class="required"  required="required"><label for="all"><span>주문자 정보와 동일</span></label></p> -->
                     <h4>이름</h4>
                     <input type="text" id="unReceiverName" placeholder="이름을 입력해주세요">
                     <h4>주소</h4>
@@ -340,7 +362,10 @@
             <div class="coup_point">
                 <div class="members">
                     <h3>쿠폰</h3>
-                    <button id="cBtn" v-if="orderDTO.userId != '비회원주문' && orderDTO.userId != undefined" onclick="openCouponModal()">쿠폰을 선택해 주세요.</button>
+                    <button id="cBtn" v-if="orderDTO.userId != '비회원주문' && orderDTO.userId != undefined" onclick="openCouponModal()">
+                        <template v-if="coupon.couponName == undefined">쿠폰을 선택해 주세요.</template>
+                        <template v-else>{{ coupon.couponName }}</template>
+                    </button>
                     <button id="cBtn" v-if="orderDTO.userId == '비회원주문' || orderDTO.userId == undefined">쿠폰을 사용하려면 로그인해주세요.</button>
                     <!--//모달창 시작-->
                     <div id="c_Modal" class="coupon_modal">
@@ -365,7 +390,7 @@
                                     <ul>
                                         <template v-for="(coupon, index) in couponList">
 
-                                            <li class="g_coupon" v-on:click="applyCoupon(index)">
+                                            <li class="y_coupon" v-on:click="applyCoupon(index)">
 
                                                 <div class="couponBox01">
                                                     <template v-if="coupon.amount != undefined">
@@ -384,7 +409,7 @@
                                                 <div class="couponBox02">
                                                     <a href="">
                                                         <img src="/images/c_icon_coupon@2x.png">
-                                                        <p class="download">다운로드</p>
+                                                        <p class="download">쿠폰 사용</p>
                                                     </a>
                                                 </div>
                                             </li>
@@ -469,7 +494,7 @@
                    
                       </div>
                     <!--//모달창 끝-->
-                    <p>사용 가능 쿠폰 0장 / 전체 0장</p>
+                    <p>사용 가능 쿠폰 {{usableCouponCount}}장 / 전체 {{ couponList.length }}장</p>
                     <h3>포인트</h3>
                     <div class="point_order">
                         <input type="number" v-model.number="orderDTO.paidPointAmount" v-on:keyup="pointChange()" v-on:focusout="pointChange()" min="0" value="0">
@@ -535,7 +560,7 @@
                             <label><img src="/images/npay_ico_pay.png" style="width:55px;height:22px"><input type="radio" @change="selectPayment" style="display: none;" v-model="paymentNo" value="1"></label>
                         </li>
                         <li>
-                            <label><img src="/images/cash_ico2_pay.png" style="width:62px;height:22px"><input type="radio" @change="selectPayment" style="display: none;" v-model="paymentNo" value="2"></label>
+                            <label style="font-size: 14px; line-height: 34px;">계좌이체<input type="radio" @change="selectPayment" style="display: none;" v-model="paymentNo" value="2"></label>
                         </li>
                         <li>
                             <label><img src="/images/kpay_ico_pay.png" style="width:62px;height:22px"><input type="radio" @change="selectPayment" style="display: none;" v-model="paymentNo" value="3"></label>
@@ -547,7 +572,6 @@
                             <label><img src="/images/phone_ico2_pay.png" style="width:62px;height:22px"><input type="radio" @change="selectPayment" style="display: none;" v-model="paymentNo" value="5"></label>
                         </li>
                     </ul>
-
                 </div>
             </div>
             <!--//결제 수단-->
@@ -608,6 +632,7 @@
         </div>
 
         <script src="/js/order.js"></script>
+        
     
         <%-include('general/footer') %>
     </body>

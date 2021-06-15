@@ -8,14 +8,16 @@ var app = new Vue({
         orderDTO: '',
         deliveryDescType: 0,
         deliveryList: [],
-        couponList: []
+        couponList: [],
+        coupon: {}
     }, methods: {
+        
         numberFormat,
         paymentAction,
         descTypeChange: function() {
             var type = $("#selectDeliveryDesc")[0].options.selectedIndex;
             var value = $("#selectDeliveryDesc").val();
-
+            
             if(type == 1) {
                 $("#deliveryDesc").removeAttr("disabled");
                 $("#deliveryDesc").removeAttr("readonly");
@@ -47,7 +49,14 @@ var app = new Vue({
             $('.order_payment li:nth-child('+ app.paymentNo +')').addClass('border-orange')
         },
         formatDate,
-        applyCoupon
+        applyCoupon,
+        onDeliveryInfoSelected: function() {
+            
+            var checked = $('input[type=radio][name=list]:checked')
+            app.orderDTO.delivery = app.deliveryList[checked.val()]
+
+            closeInfoModal();
+        }
     },
     computed: {
         remainingPoint: {
@@ -90,6 +99,15 @@ var app = new Vue({
                 set: function(x) {
                     return x;
                 }
+        },
+        usableCouponCount: function() {
+            var count = 0;
+            for(var i = 0; i < this.couponList.length; i++) {
+                var coupon = this.couponList[i];
+
+                if(checkCouponUsable(coupon, false)) count++;
+            }
+            return count;
         }
     }
 })
@@ -103,7 +121,9 @@ $(function() {
     app.orderDTO.products = new Array();
     for(var i = 0; i < app.deliveryGroupList.length; i++) {
         var dGroup = app.deliveryGroupList[i];
-        app.orderDTO.products = dGroup.products;
+        for(var j = 0; j < dGroup.products.length; j++) {
+            app.orderDTO.products.push(dGroup.products[j]);
+        }
     }
 
     var span = $(".close");                                       
@@ -155,13 +175,9 @@ function paymentAction() {
         return;
     }
 
-    if(app.paymentNo == undefined || app.paymentNo == 0) {
-        alert('결제 수단을 선택해주세요');
-        return;
-    }
-
+    
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
-    var methods = ['npay', 'vbank', 'kakao', 'card', 'phone'];
+    var methods = ['npay', 'bank', 'kakao', 'card', 'phone'];
     var method = methods[app.paymentNo -1];
     var requestOrderDTO = {};
 
@@ -271,51 +287,67 @@ function paymentAction() {
     }
     requestOrderDTO.products = app.orderDTO.products;
     requestOrderDTO.paymentTotalAmount = app.orderDTO.paymentTotalAmount;
-    console.log(requestOrderDTO, bootpayParams)
+    requestOrderDTO.couponNo = app.orderDTO.couponNo;
     
+    
+    requestOrderDTO.paidRealAmount = app.orderDTO.paidRealAmount;
+    requestOrderDTO.paidCouponAmount = app.orderDTO.paidCouponAmount;
+    requestOrderDTO.paidPointAmount = app.orderDTO.paidPointAmount;
+    requestOrderDTO.accumulatePoint = app.orderDTO.accumulatePoint;
 
-    BootPay.request(
-        bootpayParams
-    ).error(function (data) {
-        //결제 진행시 에러가 발생하면 수행됩니다.
-        console.log(data);
-    }).cancel(function (data) {
-        //결제가 취소되면 수행됩니다.
-        console.log(data);
-    }).ready(function (data) {
-        // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
-        console.log(data);
-    }).confirm(function (data) {
-        console.log(data);
-        var enable = true; // 재고 수량 관리 로직 혹은 다른 처리
-        if (enable) {
-            BootPay.transactionConfirm(data); // 조건이 맞으면 승인 처리를 한다.
-        } else {
-            BootPay.removePaymentWindow(); // 조건이 맞지 않으면 결제 창을 닫고 결제를 승인하지 않는다.
+    console.log(requestOrderDTO);
+    if(requestOrderDTO.products == undefined || requestOrderDTO.products.length < 1) {
+        return;
+    }
+
+    if(app.orderDTO.paidRealAmount == 0) {
+        addOrder(requestOrderDTO);
+    } else {
+        if(app.paymentNo == undefined || app.paymentNo == 0) {
+            alert('결제 수단을 선택해주세요');
+            return;
         }
-    }).close(function (data) {
-        // 결제창이 닫힐때 수행됩니다. (성공,실패,취소에 상관없이 모두 수행됨)
-        console.log(data);
-    }).done(function (data) {
-        //결제가 정상적으로 완료되면 수행됩니다
-        //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
-        console.log(data);
+
+        BootPay.request(
+            bootpayParams
+        ).error(function (data) {
+            //결제 진행시 에러가 발생하면 수행됩니다.
+            console.log(data);
+        }).cancel(function (data) {
+            //결제가 취소되면 수행됩니다.
+            console.log(data);
+        }).ready(function (data) {
+            // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
+            console.log(data);
+        }).confirm(function (data) {
+            console.log(data);
+            var enable = true; // 재고 수량 관리 로직 혹은 다른 처리
+            if (enable) {
+                BootPay.transactionConfirm(data); // 조건이 맞으면 승인 처리를 한다.
+            } else {
+                BootPay.removePaymentWindow(); // 조건이 맞지 않으면 결제 창을 닫고 결제를 승인하지 않는다.
+            }
+        }).close(function (data) {
+            // 결제창이 닫힐때 수행됩니다. (성공,실패,취소에 상관없이 모두 수행됨)
+            console.log(data);
+        }).done(function (data) {
+            //결제가 정상적으로 완료되면 수행됩니다
+            //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
+            console.log(data);
+            
+            requestOrderDTO.paymentName = data.payment_name;
+            requestOrderDTO.paymentDate = data.purchased_at;
+            requestOrderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
+            requestOrderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
+            requestOrderDTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
+
+            requestOrderDTO.receiptId = data.receipt_id;
+
+            paymentConfirm(requestOrderDTO);
+        });
         
-        requestOrderDTO.paymentName = data.payment_name;
-        requestOrderDTO.paidRealAmount = data.price;
-        requestOrderDTO.paidCouponAmount = app.orderDTO.paidCouponAmount;
-        requestOrderDTO.paidPointAmount = app.orderDTO.paidPointAmount;
-        requestOrderDTO.accumulatePoint = app.orderDTO.accumulatePoint;
+    }
 
-        requestOrderDTO.paymentDate = data.purchased_at;
-        requestOrderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
-        requestOrderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
-        requestOrderDTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
-
-        requestOrderDTO.receiptId = data.receipt_id;
-
-        paymentConfirm(requestOrderDTO);
-    });
 }
 
 function paymentConfirm(requestOrderDTO) {
@@ -368,7 +400,7 @@ function addOrder(requestOrderDTO) {
             case 'SUCCESS':
                 alert('상품을 성공적으로 주문했습니다.');
                 requestOrderDTO.orderNumber = data.result;
-                location.href="/order-comp?requestOrderDTO="+JSON.stringify(requestOrderDTO);
+                location.href=("/order-comp?requestOrderDTO="+JSON.stringify(requestOrderDTO)).trim();
                 break;
             case 'NOT_MATCHED':
                 alert('주문 실패, 취소 진행')
@@ -442,7 +474,14 @@ function getUsableCouponList() {
     
     ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST', 
     function(data) {
-        app.couponList = data.result;
+        var usableCoupon = new Array();
+        for(var i = 0; i < data.result.length; i++) {
+            var coupon = data.result[i];
+            if(coupon.couponStatus == 'A') usableCoupon.push(data.result[i])
+        }
+
+        app.couponList = usableCoupon;
+
         console.log("get usableCouponList", data);
     }, function(err) {
         console.error("get usable coupon list ", err);
@@ -481,10 +520,37 @@ function openRegisterModal() {
 function closeRegisterModal() {
     console.log("click")
     $('#rModal').hide();
+    $('#iModal').hide();
 }
 
 function applyCoupon(idx) {
-
+    selectedCoupon = app.couponList[idx]
+    console.log(selectedCoupon, idx);
+    if(!checkCouponUsable(selectedCoupon)) {
+        alert("쿠폰을 사용할 수 없습니다.");
+        return
+    }
+    
+    app.coupon = selectedCoupon
+    app.orderDTO.couponNo = selectedCoupon.couponNo
+    switch (selectedCoupon.couponType) {
+        case "P":
+            app.orderDTO.paidCouponAmount = selectedCoupon.amount
+            break;
+        case "R":
+            app.orderDTO.paidCouponAmount = app.orderDTO.paymentTotalAmount / 100 * selectedCoupon.rate
+            if(app.orderDTO.paidCouponAmount > selectedCoupon.maxAmount) {
+                app.orderDTO.paidCouponAmount = selectedCoupon.maxAmount;
+                console.log("maxamount", selectedCoupon.maxAmount);
+            }
+            console.log("rate coupon", app.orderDTO.paidCouponAmount, app.orderDTO.paymentTotalAmount / 100 * selectedCoupon.rate, selectedCoupon.rate)
+            break;
+        case "D":
+            app.orderDTO.paidCouponAmount = app.orderDTO.totalDeliveryCost
+            break;
+    }
+    alert('쿠폰이 적용되었습니다.');
+    closeCouponModal();
 }
 
 function formatDate(strDate) {
@@ -492,4 +558,23 @@ function formatDate(strDate) {
         return strDate.substr(0, 10);
     }
     return ''
+}
+
+function checkCouponUsable(coupon, alert) {
+    if(coupon.couponName == undefined) {
+        return;
+    }
+
+    if(coupon.conditionalAmount > app.orderDTO.paymentTotalAmount) {
+        if(alert) alert("해당 쿠폰은" + numberFormat(selectedCoupon.conditionalAmount) + "원 이상 구매 시 사용 가능합니다.");
+
+        return false;
+    }
+
+    if(coupon.couponType == 'D' && app.orderDTO.totalDeliveryCost == 0)  {
+        if(alert) alert("차감할 배송비가 없습니다.");
+        return false;
+    }
+
+    return true;
 }
