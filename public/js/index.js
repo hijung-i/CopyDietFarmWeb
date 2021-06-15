@@ -110,6 +110,7 @@ $(document).ready(function(){
         $(this).addClass('on');
         $(this).siblings().removeClass('on');
     });
+
 });
 
 /* 맨 위로 이동 */

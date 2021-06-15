@@ -1369,8 +1369,11 @@ div.slideMenu_top {display: none}
     display: none;
   }
 
-  .long_banner{
-    width: 100%;
+  .long-banner{
+    max-width: 100%;
+  }
+  .long-banner img {
+   display:none
   }
 
   .web_delivery_manage_list {margin-bottom: 23px;}
@@ -1932,6 +1935,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 }
 /*주문하기 모바일*/
 @media screen and (max-width:1079px){
+
 .mtpSlideTit{padding-left:15px}
 .order{width:100%;margin:0 auto}
 .order_q .title span{display:none}
