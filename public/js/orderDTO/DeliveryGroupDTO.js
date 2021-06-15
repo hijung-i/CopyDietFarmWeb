@@ -27,7 +27,8 @@ function DeliveryGroupDTO() {
                 }
             }
         }
-        return this.optionTotalCount / this.countPerDelivery + ((this.optionTotalCount % countPerDelivery > 0)?1:0);
+        console.log("bundle", this.optionTotalCount, countPerDelivery)
+        return Math.floor(this.optionTotalCount / countPerDelivery + ((this.optionTotalCount % countPerDelivery > 0)?1:0));
     
     }
 
@@ -54,7 +55,7 @@ function DeliveryGroupDTO() {
                 if (product.countPerDelivery != 0 ){
                     boxCount = this.bundleDeliveryCost(product.countPerDelivery);
                 }
-
+                console.log(this.deliveryCost, boxCount, product.deliveryCost)
                 if (this.deliveryCost < product.deliveryCost * boxCount) {
                     this.deliveryCost = product.deliveryCost * boxCount;
                     this.deliveryCostProduct = product.productCode
