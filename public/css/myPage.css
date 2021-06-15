@@ -327,39 +327,65 @@ margin-left:14px
 
 /* 포인트 테이블 개발 */
 @media screen and (min-width:1080px) {
-    .point_list > table {
+    .point_info_content {
         width: 811px;
-        text-align: center;
+        overflow: hidden;
     }
-    .point_list > table th {
-        font-size: 14px; font-weight: 700;
-        border-top: 1px solid #000;
+    .point_info_content ul  {
+        display: flex;
+        justify-content: space-between;
+    }
+    .point_list_header {
+        border-top: 1px solid #000; 
         border-bottom: 1px solid #000;
-        padding: 17px 0;
     }
-    .point_list > table td {
+    .point_list_header li {
+        padding: 17px 0; 
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .point_content li.point_content_element {
         font-size: 12px;
         font-weight: 400;
         padding: 14px 0;
         border-bottom: 1px solid #BBB;
     }
+    .point_info_content ul li {text-align: center;}
+    .headerName_date {width: 133px;}
+    .headerName_content {width: 448px;}
+    .headerName_validity {width: 133px;}
+    .headerName_price {width: 117px;}
+    .content_date {width: 133px;}
+    .content_content {width: 448px;}
+    .content_validity {width: 133px;}
+    .content_price {width: 117px;}
+
     .point_current_situation {
         display: none;
     }
     .thick_line {display: none;}
-    .point_content td.savePoint_brand {display: none;}
-    .point_content td.point_sortation {display: none;}
+    .point_content .savePoint_brand {display: none;}
+    .point_content .point_sortation {display: none;}
 }
+
 @media screen and (max-width:1079px) {
     .point_list {
         width: 360px; min-width: 360px;
         padding-top: 18px;
     }
     .point_current_situation {text-align: center;}
-    .point_current_situation > h3 {font-size: 14px; font-weight: 400;}
-    .point_current_situation h4 {font-size: 16px; font-weight: 800; padding-top: 8px;}
-    .point_list > table th {display: none;}
-    .point_content td.indication_validity {display: none;}
+    .point_current_situation > h3 {
+        font-size: 14px;
+        font-weight: 400;
+        padding-bottom: 8px;
+    }
+    .point_current_situation h4 {
+        font-size: 16px;
+        font-weight: 800;
+    }
+    .point_content {fl}
+    .point_list_header {display: none;}
+    .point_content .content_validity {display: none;}
 }
 
     
