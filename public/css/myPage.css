@@ -57,7 +57,7 @@ line-height: 40px; font-size: 14px;}
 
 /*마이페이지*/
 #header{height: 60px !important;padding-top:10px !important;}
-.myPage{letter-spacing:0.2px;margin-bottom:-42px;padding-top:40px}
+.myPage{letter-spacing:0.2px;margin-bottom:-42px;padding-top:60px}
 .myPage_title h2{font-weight:bold;font-size:16px}
 .mypage a{display:block}
 .myPage01{width:100%;padding-top:10px;padding-bottom:12px}
