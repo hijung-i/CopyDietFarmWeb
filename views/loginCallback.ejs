@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="registerForm" action="/sign-up-form" method="GET">
-        <input type="hidden" id="type" value="<%=callback.type %>"></inpu>
+        <input type="hidden" id="type" value="<%=callback.type %>">
         <% if(callback.type == 'K') { %>
             <input type="hidden" name="code" value="<%=callback.code %>">
             <input type="hidden" name="tokenKakao" value='<%=callback.token %>'>
