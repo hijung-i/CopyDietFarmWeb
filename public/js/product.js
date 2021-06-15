@@ -126,7 +126,7 @@ function getProductDetail(){
         }
 
         // v_n_top_info
-        $(".v_n_top_info .point .ex").html()
+        $(".v_n_top_info .point .ex").html(product.deliveryCost)
         $(".v_n_top_info .courier-name .ex").html(product.deliveryCompany);
         
         var deliveryCostHtml = '';
