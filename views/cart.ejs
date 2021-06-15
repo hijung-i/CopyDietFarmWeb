@@ -73,12 +73,12 @@
                                         <div class="shoplist_info flow-column" v-for="(option, k) in product.options">
                                             <div class="shoplist_ctn">
                                                 <div>
-                                                    <input type="checkbox" class="required"  required="required" id="checkAll"
+                                                    <input type="checkbox" class="required"  required="required" id="option.isSelected"
                                                     name="optionSelect"
                                                     v-model="option.isSelected"
                                                     v-on:change="updateOrderInfo(option)"
                                                     v-bind:checked="option.isSelected">
-                                                        <label for="checkAll"><span></span></label>
+                                                        <label for="option.isSelected"><span></span></label>
                                                 </div>
                                                 <div class="flow-column">
                                                     <div class="shopcart_info">
