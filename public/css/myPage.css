@@ -323,3 +323,43 @@ margin-left:14px
         padding: 2px;
         }
 }
+
+
+/* 포인트 테이블 개발 */
+@media screen and (min-width:1080px) {
+    .point_list > table {
+        width: 811px;
+        text-align: center;
+    }
+    .point_list > table th {
+        font-size: 14px; font-weight: 700;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 17px 0;
+    }
+    .point_list > table td {
+        font-size: 12px;
+        font-weight: 400;
+        padding: 14px 0;
+        border-bottom: 1px solid #BBB;
+    }
+    .point_current_situation {
+        display: none;
+    }
+    .thick_line {display: none;}
+    .point_content td.savePoint_brand {display: none;}
+    .point_content td.point_sortation {display: none;}
+}
+@media screen and (max-width:1079px) {
+    .point_list {
+        width: 360px; min-width: 360px;
+        padding-top: 18px;
+    }
+    .point_current_situation {text-align: center;}
+    .point_current_situation > h3 {font-size: 14px; font-weight: 400;}
+    .point_current_situation h4 {font-size: 16px; font-weight: 800; padding-top: 8px;}
+    .point_list > table th {display: none;}
+    .point_content td.indication_validity {display: none;}
+}
+
+    

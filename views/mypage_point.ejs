@@ -63,7 +63,7 @@
     <%-include('general/header') %>
     </div>
 
-    <main>
+    <main style="width: 1080px; margin: 0 auto;">
         <div class="main_contents">
             <div class="web_contents">
                 <div class="left">
@@ -96,7 +96,7 @@
             </div>
         </div>
         <div>
-            <nav class="content_lnb">
+            <nav class="content_lnb point_content_lnb">
                 <ul>
                     <li>
                         <a href="/orderlist">주문내역</a>
@@ -121,7 +121,7 @@
                     </li>
                 </ul>
             </nav>
-            <div class="contents">
+            <!-- <div class="contents">
                 <div id="cp" class="current_point">
                     <p>현재 포인트</p>
                     <h2><img
@@ -185,8 +185,47 @@
                         <a class="arrow nnext" href="#"></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <div class="contents point_list">
+                <div class="point_current_situation">
+                    <h3>현재 포인트</h3>
+                    <h4>000원</h4>
+                </div>
+                <div class="thick_line"></div>
+                <table>
+                    <th class="headerName_date">날짜</th>
+                    <th class="headerName_content">내용</th>
+                    <th class="headerName_validity">유효기간</th>
+                    <th class="headerName_price">금액</th>
+                    <tr class="point_content">
+                        <td>2021.02.18</td>
+                        <td>회원 가입 축하 적립</td>
+                        <td class="savePoint_brand">바디나인</td>
+                        <td class="indication_validity">2021.12.31 </td>
+                        <td class="point_sortation">적립</td>
+                        <td>+1,000원</td>
+                    </tr>
+                </table>
 
+                <div class="page_wrap">
+                    <div class="page_nation">
+                        <a class="arrow pprev" href="#"></a>
+                        <a class="arrow prev" href="#"></a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                        <a href="#">10</a>
+                        <a class="arrow next" href="#"></a>
+                        <a class="arrow nnext" href="#"></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <%-include('general/footer') %>
