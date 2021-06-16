@@ -1,3 +1,4 @@
+var postCode = false;
 var app = new Vue({
     el: 'main',
     data: {
@@ -52,11 +53,14 @@ var app = new Vue({
         applyCoupon,
         onDeliveryInfoSelected: function() {
             
-            var checked = $('input[type=radio][name=list]:checked')
-            app.orderDTO.delivery = app.deliveryList[checked.val()]
+            var checked = $('input[type=radio][name=list]:checked');
+            app.orderDTO.delivery = app.deliveryList[checked.val()];
+
+            checkDeliveryAddress();
 
             closeInfoModal();
-        }
+        },
+        openZipSearch
     },
     computed: {
         remainingPoint: {
@@ -464,11 +468,19 @@ function getDeliveryInfoList() {
 }
 
 function openZipSearch() {
+    $('#unAddr').val('');
+    if(postCode) return; 
+    postCode = true;
     new daum.Postcode({
         oncomplete: function(data) {
-            $('#unAddr').val();
             var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
             $('#unAddr').val(address);
+
+            checkDeliveryAddressNoneMember();
+            postCode = false;
+        },
+        onclose: function() {
+            postCode = false;
         }
     }).open();
 }
@@ -517,7 +529,7 @@ function openInfoModal() {
     getDeliveryInfoList();
 
     var inputs = document.querySelectorAll('input');
-    $(inputs,span).click(function(){
+    $(inputs).click(function(){
         console.log('done');
         
     });
@@ -525,7 +537,6 @@ function openInfoModal() {
 }
 
 function closeInfoModal() {
-    console.log("click1")
     $('#iModal').hide();
     $('html, body').css({'overflow': 'visible'});
     $('html,body').off('scroll touchmove mousewheel');
@@ -610,3 +621,76 @@ $(function(){
         $('html,body').animate({scrollTop:0},600);
     });
 });
+
+
+function checkDeliveryAddress() {
+
+    var delivery = app.orderDTO.delivery;
+    var params = {
+        deliveryNo: delivery.deliveryNo
+    };
+
+    ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
+    function(data) {
+        var result = data.result;
+        updateDeliveryCost(result);
+        
+    }, function(err) {
+        console.log("error", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+
+}
+
+function checkDeliveryAddressNoneMember() {
+    var address = $('#unAddr').val().trim();
+    console.log(address);
+    var params = {
+        address: address
+    };
+
+    if(address == '') return;
+
+    ajaxCall(API_SERVER + '/user/checkDeliveryAddressNoneMembership', params, 'POST',
+    function(data) {
+        var result = data.result;
+        console.log(data);
+        result.address = address;
+        updateDeliveryCost(result);
+        
+    }, function(err) {
+        console.log("error", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+
+}
+
+function updateDeliveryCost(result) {
+    var isJeju = false, isExtra = false;
+    if(result.address.includes('제주특별자치도')) {
+        isJeju = true;
+    } 
+    if(result.count > 0) {
+        isExtra = true;
+    }
+
+    app.orderDTO.totalDeliveryCost = 0;
+    for(var i = 0; i < app.deliveryGroupList.length; i++) {
+        var newDeliveryGroup = new DeliveryGroupDTO();
+        var deliveryGroup = app.deliveryGroupList[i];
+
+        newDeliveryGroup.products = deliveryGroup.products;
+        newDeliveryGroup.loadingPlace = deliveryGroup.products[0].loadingPlace;
+        newDeliveryGroup.brandCode = deliveryGroup.products[0].brandCode;
+        newDeliveryGroup.companyName = deliveryGroup.products[0].companyName;
+        newDeliveryGroup.brandName = deliveryGroup.products[0].brandName;
+        newDeliveryGroup.setDeliveryCost(isJeju, isExtra);
+        
+        app.orderDTO.totalDeliveryCost += newDeliveryGroup.totalDeliveryCost;
+        app.deliveryGroupList[i] = newDeliveryGroup;
+    }
+}
