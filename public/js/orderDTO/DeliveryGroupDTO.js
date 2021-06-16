@@ -84,9 +84,11 @@ function DeliveryGroupDTO() {
 
     
     this.setTotalDeliveryCost = function(isJeju, isExtra) {
+        console.log(this.deliveryCost, this.deliveryCost2, this.deliveryCost3)
+        console.log(isJeju, isExtra)
         this.totalDeliveryCost = this.deliveryCost;
-        this.totalDeliveryCost += (isJeju) ? deliveryCost2 : 0;
-        this.totalDeliveryCost += (isExtra) ? deliveryCost3 : 0;
+        this.totalDeliveryCost += (isJeju) ? this.deliveryCost2 : 0;
+        this.totalDeliveryCost += (isExtra) ? this.deliveryCost3 : 0;
     }
 
     this.deleteNoneSelectedProduct = function() {
