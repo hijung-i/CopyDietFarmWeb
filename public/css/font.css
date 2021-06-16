@@ -1,0 +1,10 @@
+@font-face{
+    font-family: "SEBANG";
+    src: url(SEBANGGothic.otf);
+    font-weight: 500;
+}
+@font-face{
+    font-family: "SEBANG";
+    src: url(SEBANGGothicBold.otf);
+    font-weight: 700;
+}

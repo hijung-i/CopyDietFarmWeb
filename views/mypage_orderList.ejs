@@ -80,7 +80,7 @@
             </div>
             <div class="cancel_footer">
                 <div class="cancelRegister_btn">
-                    <a href="#">등록</a>
+                    <a href="#" onclick="requestOrderCancel()">등록</a>
                 </div>
             </div>
         </div>
@@ -92,7 +92,12 @@
     <div class="mobile_orderlist">
         <section class="detail_title">
             <h2>주문내역</h2>
-            <a href="#"><img src="/images/leftarrow_ico_my.png" style="width:17px;margin-left:10px;margin-top:2px"></a>
+            <a href="#" 
+                value="취소"
+                onclick="history.back(); return false"
+            >
+                <img src="/images/leftarrow_ico_my.png" style="width:17px;margin-left:10px;margin-top:2px">
+            </a>
         </section>
     </div>
     <main id="content" class="content">
@@ -212,7 +217,7 @@
                                                     <ul>
                                                         <template v-if="product.orderStatus == 'P'" >
                                                             <li>
-                                                                <button type="button" class="btnA">취소신청</button>
+                                                                <button type="button" class="btnA" onclick="OpenCancelModal()">취소신청</button>
                                                             </li>
                                                             <li>
                                                                 <button type="button" class="btnB" onclick="location.href='/s_inquiry'">판매자문의</button>
