@@ -57,6 +57,23 @@ function formatDate(dateStr) {
     return month + '-' + day;
 }
 
+function OpenCancelModal() {
+    console.log('open cancel');
+    $('#x_modal').show();
+    $('html,body').css({'overflow':'hidden', 'height':'100%'});
+    $('html,body').on('scroll touchmove mousewheel', function(event) {
+        event.preventDfault();
+        event.stopPropagation();
+        return false;
+    });
+}
+function closeCancelModal() {
+    console.log('close cancel');
+    $('#x_modal').hide();
+    $('html,body').css({'overflow':'visible'});
+    $('html,body').off('scroll touchmove mousewheel');
+}
+
 function convertOrderStatus(orderStatus) {
     switch(orderStatus) {
         case 'C':
