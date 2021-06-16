@@ -761,7 +761,7 @@ div #ex1.modal ul li {float:left}
 @media screen and (max-width:1079px){
 .review_btn_web button{display:none}
 .v_top_txt_box .modal p{text-align:center}
-.products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
+.products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px;display:none}
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:15px;padding-right:15px}
 
 .purchased_products{clear:both;width:100%;padding-bottom:70px}
