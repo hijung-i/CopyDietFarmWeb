@@ -2718,9 +2718,10 @@ display: flex;
   #x_modal {
     position: relative;
     width: 100%; min-width: 360px;
-    height: 100%;
+    height: 100vh;
     background: #fff;
     z-index: 99999;
+    display: none;
   }
   .modal-content {width: 330px; margin: 0 auto;}
   .cancel_header {position: relative;}
@@ -2768,5 +2769,5 @@ display: flex;
 }
 
 @media screen and (min-width:1080px) {
-
+  #x_modal {display: none;}
 }

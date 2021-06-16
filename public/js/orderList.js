@@ -80,12 +80,3 @@ function convertOrderStatus(orderStatus) {
     }
     
 }
-
-function openCancelModal() {
-    console.log('click');
-    $('#x_modal').show();
-}
-function closeCancelModal(); {
-    console.log('click');
-    $('#x_modal').hide();
-}
