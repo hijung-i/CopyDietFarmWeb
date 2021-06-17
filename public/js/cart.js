@@ -30,7 +30,7 @@ var app = new Vue({
         },
         updateOrderInfo: function (option) {
             if(option != undefined && !option.isSelected) {
-                $('#checkAll')[0].checked = false;
+                $('#option.isSelected')[i].checked = false;
             }
             
             this.orderDTO = new OrderDTO();

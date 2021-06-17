@@ -16,3 +16,11 @@ function getFooterNotice() {
         console.error(err);
     })
 }
+
+// 맨 위로 
+$(function(){
+    $('#goingTo_top').on('click',function(e){
+        e.preventDefault();
+        $('html,body').animate({scrollTop:0},600);
+    });
+});

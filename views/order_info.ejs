@@ -332,7 +332,7 @@
                         type="text"
                         id="unAddr"
                         maxlength="80"
-                        placeholder="도로명, 지번, 건물명 검색" onclick="openZipSearch()" onkeydown="openZipSearch()">
+                        placeholder="도로명, 지번, 건물명 검색" @click="openZipSearch()" @keydown="openZipSearch()">
                     <input type="text" id="unAddr2" maxlength="80" placeholder="상세주소" >
                     <h4>휴대폰</h4>
                     <input type="tel" id="unDeliveryUserCellNo" placeholder="연락처를 입력해주세요">
@@ -629,6 +629,7 @@
              </div>
         </div>
 
+        <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
         <script src="/js/order.js"></script>
         
     

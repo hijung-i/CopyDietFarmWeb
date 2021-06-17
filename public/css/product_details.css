@@ -49,7 +49,7 @@ div #ex1.modal ul li {float:left}
 
 @media screen and (max-width:1079px){
 .v_top_txt_box .modal p{text-align:center}
-.products_ex{width:100%;border-top:8px solid #f1f1f1;padding-left:20px}
+/* .products_ex{width:100%;border-top:8px solid #f1f1f1;} */
 .multiple_bxslider > li {float: left;}
 .multiple_bxslider > li img {width: 136px; height: 136px;} 
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:15px;padding-right:15px}

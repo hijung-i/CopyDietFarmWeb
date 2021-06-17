@@ -250,7 +250,7 @@ router.get('/benefits', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'benefits', {})
 })
 router.get('/intro', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'landing', {})
+    render(req, res, 'dietfarm', {})
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {

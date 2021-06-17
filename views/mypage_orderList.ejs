@@ -42,6 +42,49 @@
 </head>
 
 <body>
+    <!--//모달창 시작-->
+    <div id="x_modal" class="cancel_modal">
+        
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="cancel_header">
+                <h2>주문취소</h2>
+                <span class="close" onclick="closeCancelModal()">&times;</span>
+            </div>
+            <div class="cancel_body">
+                <div class="cancel_order_num cancel_body_element">
+                    <h3>주문번호</h3>
+                    <p>00000000</p>
+                </div>
+                <div class="cancel_prod cancel_body_element">
+                    <h3>상품</h3>
+                    <p>상품 이름</p>
+                </div>
+                <div class="cancel_opt cancel_body_element">
+                    <h3>옵션</h3>
+                    <p>상품 옵션</p>
+                </div>
+                <div class="cancel_type cancel_body_element">
+                    <h3>취소유형</h3>
+                    <select name="#" id="#">
+                        <option value="#">선택</option>
+                        <option value="#">선택</option>
+                        <option value="#">선택</option>
+                    </select>
+                </div>
+                <div class="cancel_content cancel_body_element">
+                    <h3>내용</h3>
+                    <input type="text" placeholder="문의하실 내용을 입력해주세요">
+                </div>
+                <div class="thick_line"></div>
+            </div>
+            <div class="cancel_footer">
+                <div class="cancelRegister_btn">
+                    <a href="#" onclick="requestOrderCancel()">등록</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="web_orderlist">
         <%-include('general/header') %>
     </div>
@@ -49,7 +92,12 @@
     <div class="mobile_orderlist">
         <section class="detail_title">
             <h2>주문내역</h2>
-            <a href="#"><img src="/images/leftarrow_ico_my.png" style="width:17px;margin-left:10px;margin-top:2px"></a>
+            <a href="#" 
+                value="취소"
+                onclick="history.back(); return false"
+            >
+                <img src="/images/leftarrow_ico_my.png" style="width:17px;margin-left:10px;margin-top:2px">
+            </a>
         </section>
     </div>
     <main id="content" class="content">
@@ -169,7 +217,7 @@
                                                     <ul>
                                                         <template v-if="product.orderStatus == 'P'" >
                                                             <li>
-                                                                <button type="button" class="btnA">취소신청</button>
+                                                                <button type="button" class="btnA" onclick="OpenCancelModal()">취소신청</button>
                                                             </li>
                                                             <li>
                                                                 <button type="button" class="btnB" onclick="location.href='/s_inquiry'">판매자문의</button>
