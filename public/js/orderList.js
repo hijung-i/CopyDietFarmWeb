@@ -73,6 +73,15 @@ function closeCancelModal() {
     $('html,body').css({'overflow':'visible'});
     $('html,body').off('scroll touchmove mousewheel');
 }
+var cancelModal = document.getElementById("x_modal")
+cancelModal.addEventListener("click",e => {
+    var evTarget = e.target
+    if(evTarget.classList.contains("modal-overlay")) {
+        cancelModal.style.display = "none"
+        $('html,body').css({'overflow':'visible'});
+        $('html,body').off('scroll touchmove mousewheel');
+    }
+})
 
 function convertOrderStatus(orderStatus) {
     switch(orderStatus) {

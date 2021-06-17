@@ -325,8 +325,14 @@ margin-left:14px
         padding: 2px;
         }
 }
-
-
+@media screen and (min-width:1080px) {
+    .forCouponPage {width: 1080px; margin: 0 auto;}
+    .mypage_content_wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+}
 /* 포인트 테이블 개발 */
 @media screen and (min-width:1080px) {
     .point_info_content {

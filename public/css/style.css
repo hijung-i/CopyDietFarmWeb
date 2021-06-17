@@ -1003,7 +1003,7 @@ font-weight:normal}
 .catgor_wrap{display:none}
 .w_best .thum img{width:247.5px;height:247.5px;border-radius:6px}
 
-#content{width:100%;max-width:1080px;margin:0 auto;padding-left:15px;padding-right:15px}
+#content{width:100%;max-width:1080px;margin:0 auto; /* padding-left:15px;padding-right:15px */}
 #content .pick_wrap{width:1080px;}
 #content .pick_wrap{margin:10px 10px;width:100%;}
 #content .pick_product h2{margin-top:40px;margin-bottom:20px;font-size:18px;color:#000;}
@@ -2713,6 +2713,8 @@ display: flex;
   
 }
 .slick-list {width: 100%;}
+div#app {width: 1080px; margin: 0 auto;}
+
 /* 주문 취소 모달 */
 @media screen and (max-width:1079px) {
   #x_modal {
@@ -2769,5 +2771,73 @@ display: flex;
 }
 
 @media screen and (min-width:1080px) {
-  #x_modal {display: none;}
+  #x_modal.modal-overlay {
+    width: 100%; height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    z-index: 1;
+    display: none;
+  }
+  #x_modal > .modal-content {
+    position: relative;
+    top: 50%; 
+    transform: translateY(-50%);
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.18);
+    width: 380px;
+    margin: 0 auto;
+  }
+  .cancel_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px; margin: 0 auto;
+    padding: 25px 0 30px 0;
+  }
+  .cancel_body {
+    width: 330px; margin: 0 auto;
+  }
+  .cancel_footer {
+    width: 330px; margin: 0 auto;
+  }
+  .cancel_header .close {font-size: 28px; cursor: pointer;}
+  .cancel_body_element:not(:last-child) {
+    padding-bottom: 13px;
+  }
+  .cancel_body h3 {
+    font-size: 12px; font-weight: 700; 
+    padding-bottom: 5px;
+  }
+  .cancel_body p {
+    font-size: 12px; font-weight: 400;
+    letter-spacing: 0.6px;
+  }
+  .cancel_type select {
+    width: 100%; height: 36px;
+    border: 1px solid #BBBBBB; border-radius: 5px;
+  }
+  .cancel_content input {
+    width: 100%; height: 153px;
+    border: 1px solid #BBBBBB; border-radius: 5px;
+  }
+  .cancel_footer {background: #fff; padding-bottom: 25px;}
+  .cancel_footer > .cancelRegister_btn {
+    width: 100%; height: 45px;
+    background: #EFA543;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 45px;
+  }
+  .cancel_footer a {
+    font-size: 14px; font-weight: 700; letter-spacing: 1px;
+    color: #fff;
+    padding: 13px 150px;
+  }
 }
