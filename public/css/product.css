@@ -767,8 +767,7 @@ div #ex1.modal ul li {float:left}
 .purchased_products{clear:both;width:100%;padding-bottom:70px}
 .purchased_products .title{font-size:12px}
 .purchased_products .price{font-size:12px;font-weight:bold}
-#btnSaveProduct{    width: 330px;
-    height: 45px;
+#btnSaveProduct{width:100%;    height: 45px;
     color: #fff;
     background-color: #EFA543;
     border-radius: 5px;

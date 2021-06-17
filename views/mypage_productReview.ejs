@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+<<<<<<< HEAD
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,12 +25,29 @@
                 .contents {
                     padding-top: 80px;
                 }
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품리뷰</title>
+    <style>
+        @media screen and (max-width:1079px) {
+            .web_p_review {
+                display: none;
+>>>>>>> dab0b803ea433a21221de1dcd01d9cf10d53ac3e
             }
-            @media screen and (min-width:1080px) {
-                .mobile_p_review {
-                    display: none;
-                }
+            .mobile_p_review{
+                position: fixed;
+                min-width: 360px;
+                width: 100%;
+                height: 80px;
+                top: 0;
+                background-color: #fff;
+                z-index: 9999;
+                margin-bottom: 20px;
             }
+<<<<<<< HEAD
         </style>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/myPage.css">
@@ -173,6 +191,128 @@
             <div class="web_p_review">
                 <%-include('general/header') %>
                 </div>
+=======
+            .contents{padding-top:80px}
+        }
+        @media screen and (min-width:1080px) {
+            .mobile_p_review {
+                display: none;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="/css/myPage.css">
+    <link rel="stylesheet" href="/css/style_web.css">
+    <%-include('general/head') %>
+
+</head>
+<body>
+    <!-- mobile main -->
+    <div class="mobile_p_review">
+        <section class="detail_title">
+            <h2>상품 리뷰</h2>
+            <script type="text/javascript">
+                function goBack() {
+                    window
+                        .history
+                        .back();
+                }
+            </script>
+            <div class="btnback">
+                <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
+                </a>
+            </div>
+        </section>
+    </div>
+    <div class="web_p_review">
+        <%-include('general/header') %>
+    </div>
+
+    <main>
+        <div class="main_contents">
+            <div class="web_contents">
+                <div class="left">
+                    <h3>마이팜</h3>
+                    <div class="left_ctn">
+                        <ul>
+                            <li><img src="/images/basket_ico.png"></li>
+                            <li>
+                                <span>김수아님</span></li>
+                            <li>내정보
+                                <span>
+                                    <i class="fas fa-chevron-right"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="center">
+                    <h3>포인트<img src="/images/point.png"></h3>
+                    <p>1000 원
+                        <span>
+                            <i class="fas fa-chevron-right"></i></span></p>
+                </div>
+
+                <div class="right">
+                    <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                    <p>3개
+                        <span>
+                            <i class="fas fa-chevron-right"></i></span></p>
+                </div>
+            </div>
+        </div>
+        <nav class="content_lnb">
+            <ul>
+                <li>
+                    <a href="/orderlist">주문내역</a>
+                </li>
+                <li style="white-space:nowrap">
+                    <a href="/delivery-management">배송지 관리</a>
+                </li>
+                <li class="on">
+                    <a href="/p_reveiw">상품 리뷰</a>
+                </li>
+                <li>
+                    <a href="/p_inquiry">상품 문의</a>
+                </li>
+                <li>
+                    <a href="/s_inquiry">판매자 문의</a>
+                </li>
+                <li>
+                    <a href="/point">포인트</a>
+                </li>
+                <li>
+                    <a href="/coupon">쿠폰</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="contents tab5">
+            <h3 class="orderList_detail">상품 리뷰</h3>
+            <div class="order_detail_ctn">
+
+                <div class="tabMenu_review" style="margin-top:-20px; border-bottom: 1px solid #f1f1f1">
+                    <ul class="tab_wrap">
+                        <li class="active on" data-tab="tab1">
+                            <span>작성 가능한 리뷰 ({{ writableReviewList.length }})</span></li>
+                        <li data-tab="tab2" class="" id="possible">
+                            <span>작성한 리뷰 ({{ reviewList.length }})</span></li>
+                        <span></span>
+                    </ul>
+                </div>
+
+                <div id="tab1" class="tab_cont active">
+                    <section class="review_list_ctn">
+                        <template v-for="writable in writableReviewList">
+                            <div class="review_prod">
+                                <div class="img_detail_ctn">
+                                    <div class="review_img"></div>
+                                    <ul class="review_detail">
+                                        <li class="review_brand">[{{ writable.product.companyName }}]</li>
+                                        <li class="review_prod_name">{{writable.product.productName}}</li>
+                                        <li class="review_option">옵션: {{ getOptionName(writable.product.options) }}</li>
+                                    </ul>
+                                </div>
+>>>>>>> dab0b803ea433a21221de1dcd01d9cf10d53ac3e
 
                 <div class="main_contents">
                     <div class="web_contents">
@@ -190,6 +330,7 @@
                             </div>
                         </div>
 
+<<<<<<< HEAD
                         <div class="center">
                             <h3>포인트<img src="/images/point.png"></h3>
                             <p>1000 원
@@ -353,8 +494,87 @@
                                 </div>
                             </div>
 
+=======
+                            <div class="reviewview_line_wrap">
+                                <div class="review_line"></div>
+                            </div>
+                        </template>
+
+                    </section>
+                </div>
+                <div id="tab2" class="tab_cont">
+                    <div class="reviews" v-for="(review, index) in reviewList">
+                        <div class="review_complete">
+                            <table class="orderbox web_orderbox">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="order_a_box">
+                                                <div class="web_prod_info_ctn">
+                                                    <a href="#">
+                                                        <img v-bind:src="RESOURCE_SERVER + review.product.url" align="left"
+                                                        style="width:50px; height: 62px; margin-right:20px;margin-left:15px"></a>
+                                                    <ul class="order001">
+                                                        <li class="web_brandName">[{{ review.product.companyName }}]</li>
+                                                        <li style="color:#000">{{ review.product.productName }}</li>
+                                                        <li class="web_prod_opt">옵션 : {{ getOptionName(review.product.options) }}</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="edit_del_icon">
+                                                    <p class="editBtn_click start1">
+                                                        <img src="/images/one_icon_review.png" alt="수정,삭제 아이콘">
+                                                    </p>
+                                                    <div class="review_edit_del_btn_ctn fade1">
+                                                        <button class="review_editBtn">수정하기</button><br>
+                                                        <button class="review_delBtn">삭제하기</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="reviewview_line_wrap">
+                                <div class="review_line"></div>
+                            </div>
+
+                            <div class="product_review01">
+                                <div class="review_info02">
+                                    <p>{{formatDate(review.createDate)}}</p>
+                                    <div id="star_grade" class="star_grade">
+                                        <div class="starRev">
+                                            <template v-for="count in (review.gpa * 2)">
+                                                <span class="starR1 on" v-if="count % 2 == 1">별1_왼쪽</span>
+                                                <span class="starR2 on" v-if="count % 2 == 0">별1_오른쪽</span>
+                                            </template>
+                                            <template v-for="count in (10 - (review.gpa * 2))">
+                                                <template v-if="(10 - (review.gpa * 2)) % 2 == 1">
+                                                    <span class="starR1" v-if="count % 2 == 0">별1_왼쪽</span>
+                                                    <span class="starR2" v-if="count % 2 == 1">별1_오른쪽</span>
+                                                </template>
+                                                <template v-if="(10 - (review.gpa * 2)) % 2 == 0">
+                                                    <span class="starR2" v-if="count % 2 == 0">별1_오른쪽</span>
+                                                    <span class="starR1" v-if="count % 2 == 1">별1_왼쪽</span>
+                                                </template>
+                                                    
+                                            </template>
+                                        </div>
+                                        <p style="font-size:14px">{{review.content}}</p>
+                                    </div>
+
+                                    <p>
+                                        <img v-bind:src="RESOURCE_SERVER + image.url" v-for="image in review.files" style="width:125px; height: 70px;">
+                                    </p>
+                                </div>
+                            </div>
+                            <!--//product_review01-->
+                            <div class="thick_line"></div>
+>>>>>>> dab0b803ea433a21221de1dcd01d9cf10d53ac3e
                         </div>
+                        <!--//review_complete-->
                     </div>
+<<<<<<< HEAD
                     <script>
                         window.onload = function () {
 
@@ -391,3 +611,15 @@
                     <script src="/js/main.js"></script>
                     <script src="/js/common.js"></script>
                 </html>
+=======
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <%-include('general/footer') %>
+    <script src="/js/mypage/product_review.js"></script>
+</body>
+    
+</html>
+>>>>>>> dab0b803ea433a21221de1dcd01d9cf10d53ac3e

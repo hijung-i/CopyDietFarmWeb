@@ -67,7 +67,6 @@ function getStandDatas() {
                 }
                 
                 $('.responsive').html(html);
-                
                 $('.responsive').slick({
                     dots: false,
                     infinite: true,
@@ -105,6 +104,7 @@ function getStandDatas() {
 
                     ]
                 });
+                
                 break;
             case 2:
                 // 위클리 베스트
@@ -190,6 +190,7 @@ $(function(){
     //     }
     // });
 
+    
 
 });
 

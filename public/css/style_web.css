@@ -1532,6 +1532,7 @@ delivery_manage_list .customer_info {
 .review_list_ctn {
     width: 100%;
     margin: 0 auto;
+    padding-top:10px
 }
 .modal deliver_mag_modal{width:350px}
 .review_line {
@@ -1551,6 +1552,7 @@ delivery_manage_list .customer_info {
 .review_prod .review_detail {
     padding-left: 10px;
     text-align: left;
+    width:230px
 }
 .review_prod .review_detail > li {
     font-size: 12px;
