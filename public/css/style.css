@@ -1182,10 +1182,10 @@ input#shoplist_part_selt {margin-right: 10px;}
 .shopBox02 {background-color:#F8F8F8}
 .shopBox02 table{margin-left:44px;margin-top:20px}
 .shopBox02 .t1{padding-right:301px}
-.shopBox02 td{padding-bottom:17px}
+.shopBox02 td{padding-bottom:17px;font-size:14px;letter-spacing:0.4px;}
 .shopBox02 table .total{border-top:1px solid #BBBBBB;}
 .shopBox02 table .total td{font-weight:bold;padding-top:12px;color:#000}
-.purchaseBtn{float:right;margin-top:20px;width:282px;height:45px;background-color:#F99319;color:#fff;border-radius:5px}
+.purchaseBtn{float:right;margin-top:20px;width:282px;height:45px;background-color:#F99319;color:#fff;border-radius:5px;margin-bottom:100px}
 
 .shop_null{width:1080px;height:682.5px;}
 .shop_null p{text-align:center;padding-top:331px}
