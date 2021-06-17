@@ -452,7 +452,7 @@ $(function(){
 	'<div class="login-list">' + 
 	'<ul>' +
 	'<li><button id="naver_id_login" class="naver">네이버로 로그인</button></li>' +
-	'<li><button onclick="loginWithKakaoApi()" class="kakao">카카오로 로그인/가입</button></li>' +
+	'<li><button onclick="loginWithKakaoApi()" class="kakao">카카오로 로그인</button></li>' +
 	'<li><a href="/login-form" class="id_comp">아이디로 로그인</a></li>' +
 	'</ul>' +
 	'</div>' +
