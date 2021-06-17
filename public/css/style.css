@@ -449,7 +449,7 @@ height:50px;overflow:hidden}
 /*서브메뉴 (신상, 베스트 등등)*/
 /*#mobile_sub{position:fixed;height:90px;background-color:#fff}*/
 #content .main_sub_wrap{   
-width:100%;border-top:2px solid #f1f1f1;margin-top:140px}
+width:100%;border-top:2px solid #f1f1f1}
 #content .main_sub img{padding:7px}
 #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
 #content .main_sub .desc ul li{float:left;white-space:nowrap;margin-left:-4px}
