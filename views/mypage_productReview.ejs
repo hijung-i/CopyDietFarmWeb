@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+<<<<<<< HEAD
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>상품리뷰</title>
+        <style>
+            @media screen and (max-width:1079px) {
+                .web_p_review {
+                    display: none;
+                }
+                .mobile_p_review {
+                    position: fixed;
+                    min-width: 360px;
+                    width: 100%;
+                    height: 80px;
+                    top: 0;
+                    background-color: #fff;
+                    z-index: 9999;
+                    margin-bottom: 20px;
+                }
+                .contents {
+                    padding-top: 80px;
+                }
+=======
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +35,7 @@
         @media screen and (max-width:1079px) {
             .web_p_review {
                 display: none;
+>>>>>>> dab0b803ea433a21221de1dcd01d9cf10d53ac3e
             }
             .mobile_p_review{
                 position: fixed;
@@ -21,6 +47,151 @@
                 z-index: 9999;
                 margin-bottom: 20px;
             }
+<<<<<<< HEAD
+        </style>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/myPage.css">
+        <link rel="stylesheet" href="/css/style_web.css">
+        <%-include('general/head') %>
+
+        </head>
+
+        <body>
+            <div class="black_bg"></div>
+            <div class="modal_wrap">
+                <div class="modal_close">
+                    <a href="#">close</a>
+                </div>
+                <div>
+                    <div class="reviewModifyBox">
+                        <h2>리뷰쓰기</h2>
+                        <div class="review01">
+                            <table>
+                                <tbody>
+                                    <tr class="reviewProduct">
+                                        <td>
+                                            <div class="detailBox">
+                                                <a href="#"><img
+                                                    src="images/dietfarmbread.jpg"
+                                                    align="left"
+                                                    style="width:90px;margin-right:15px"></a>
+                                                <ul class="reviewProductInfo">
+                                                    <li>디어썸라이프</li>
+                                                    <li>[디어썸1]간편하고 든든한 고구마스틱 300g</li>
+                                                    <li>간편하고 든든한 고구마스틱 300g (20g*15개입)</li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="star_grade" class="star_grade">
+                            <p>별점으로 만족도를 선택해주세요</p>
+
+                            <div class="starRev">
+                                <span class="starR1 on">별1_왼쪽</span>
+                                <span class="starR2">별1_오른쪽</span>
+                                <span class="starR1">별2_왼쪽</span>
+                                <span class="starR2">별2_오른쪽</span>
+                                <span class="starR1">별3_왼쪽</span>
+                                <span class="starR2">별3_오른쪽</span>
+                                <span class="starR1">별4_왼쪽</span>
+                                <span class="starR2">별4_오른쪽</span>
+                                <span class="starR1">별5_왼쪽</span>
+                                <span class="starR2">별5_오른쪽</span>
+                            </div>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <form>
+                                    <p>
+                                        <textarea
+                                            style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px"></textarea>
+                                    </p>
+                                </form>
+                            </li>
+                        </ul>
+                        <div class="filebox">
+                            <label for="upload">사진 (선택)</label>
+                            <input type="file" id="upload" name="upload">
+                            <div id="preview">
+                                <div class="previewBox">
+                                    <ul>
+                                        <li></li>
+                                        <li class="p2"></li>
+                                    </ul>
+                                </div>
+                                <!-- 미리보기 공간 -->
+                            </div>
+
+                            <script>
+                                var upload = document.querySelector('#upload');
+                                var preview = document.querySelector('#preview');
+
+                                upload.addEventListener('change', function (e) {
+                                    var get_file = e.target.files;
+
+                                    var image = document.createElement('img');
+
+                                    /* FileReader 객체 생성 */
+                                    var reader = new FileReader();
+
+                                    /* reader 시작시 함수 구현 */
+                                    reader.onload = (function (aImg) {
+                                        console.log(1);
+
+                                        return function (e) {
+                                            console.log(3);
+                                            /* base64 인코딩 된 스트링 데이터 */
+                                            aImg.src = e.target.result
+                                        }
+                                    })(image)
+
+                                    if (get_file) {
+                                        /*
+                                            get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고
+                                            onload 에 설정했던 return 으로 넘어간다.
+                                            이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
+                                        */
+                                        reader.readAsDataURL(get_file[0]);
+                                        console.log(2);
+                                    }
+
+                                    preview.appendChild(image);
+                                })
+                            </script>
+                            <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="btn_area">
+                        <button type="button" id="btnSaveProduct">저장</button>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile main -->
+            <div class="mobile_p_review">
+                <section class="detail_title">
+                    <h2>상품 리뷰</h2>
+                    <script type="text/javascript">
+                        function goBack() {
+                            window
+                                .history
+                                .back();
+                        }
+                    </script>
+                    <div class="btnback">
+                        <a href="#" value="취소" onclick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="web_p_review">
+                <%-include('general/header') %>
+                </div>
+=======
             .contents{padding-top:80px}
         }
         @media screen and (min-width:1080px) {
@@ -133,15 +304,189 @@
                                         <li class="review_option">옵션: {{ getOptionName(writable.product.options) }}</li>
                                     </ul>
                                 </div>
+>>>>>>> dab0b803ea433a21221de1dcd01d9cf10d53ac3e
 
-                                <div class="btn_area_2" style="margin-top:20px">
-                                    <button type="button" class="btnJoin_2">
-                                        <span>리뷰쓰기</span>
-                                    </button>
+                <div class="main_contents">
+                    <div class="web_contents">
+                        <div class="left">
+                            <h3>마이팜</h3>
+                            <div class="left_ctn">
+                                <ul>
+                                    <li><img src="/images/basket_ico.png"></li>
+                                    <li>
+                                        <span>김수아님</span></li>
+                                    <li>내정보
+                                        <span>
+                                            <i class="fas fa-chevron-right"></i></span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+<<<<<<< HEAD
+                        <div class="center">
+                            <h3>포인트<img src="/images/point.png"></h3>
+                            <p>1000 원
+                                <span>
+                                    <i class="fas fa-chevron-right"></i></span></p>
+                        </div>
+
+                        <div class="right">
+                            <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                            <p>3개
+                                <span>
+                                    <i class="fas fa-chevron-right"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <nav class="content_lnb">
+                    <ul>
+                        <li>
+                            <a href="/orderlist">주문내역</a>
+                        </li>
+                        <li style="white-space:nowrap">
+                            <a href="/delivery-management">배송지 관리</a>
+                        </li>
+                        <li class="on">
+                            <a href="/p_reveiw">상품 리뷰</a>
+                        </li>
+                        <li>
+                            <a href="/p_inquiry">상품 문의</a>
+                        </li>
+                        <li>
+                            <a href="/s_inquiry">판매자 문의</a>
+                        </li>
+                        <li>
+                            <a href="/point">포인트</a>
+                        </li>
+                        <li>
+                            <a href="/coupon">쿠폰</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="contents tab5">
+                    <h3 class="orderList_detail">상품 리뷰</h3>
+                    <div class="order_detail_ctn">
+
+                        <div
+                            class="tabMenu_review"
+                            style="margin-top:-20px;border-bottom: 1px solid #f1f1f1;">
+                            <ul class="tab_wrap">
+                                <li class="active on" data-tab="tab1">
+                                    <span>작성 가능한 리뷰 (3)</span></li>
+                                <li data-tab="tab2" class="" id="possible">
+                                    <span>작성한 리뷰 (9)</span></li>
+                                <span></span>
+                            </ul>
+                        </div>
+
+                        <div id="tab1" class="tab_cont active">
+                            <div class="review_item_box">
+                                <img src="images/dietfarmbread.jpg" style="width:50px;height:62px">
+                                <ul>
+                                    <li>
+                                        <span>(아임월)</span></li>
+                                    <li>굿밸런스 라이트밀 도시락</li>
+                                    <li>
+                                        <span>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</span></li>
+                                </ul>
+                                <button type="button" id="modal_btn">리뷰쓰기</button>
+                            </div>
+                            <div class="review_item_box">
+                                <img src="images/dietfarmbread.jpg" style="width:50px;height:62px">
+                                <ul>
+                                    <li>
+                                        <span>(아임월)</span></li>
+                                    <li>굿밸런스 라이트밀 도시락</li>
+                                    <li>
+                                        <span>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</span></li>
+                                </ul>
+                                <button type="button">리뷰쓰기</button>
+                            </div>
+                        </div>
+                        <div id="tab2" class="tab_cont">
+                            <div class="review_box_wrap">
+                                <div class="review_item_box02">
+                                    <div class="box_wrap">
+                                        <img src="images/dietfarmbread.jpg" style="width:50px;height:62px">
+                                        <ul>
+                                            <li>
+                                                <span>(아임월)</span></li>
+                                            <li>굿밸런스 라이트밀 도시락</li>
+                                            <li>
+                                                <span>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="edit_del_icon">
+                                        <p class="editBtn_click start3"><img src="/images/one_icon_review.png" alt="수정,삭제 아이콘">
+                                        </p>
+                                        <div class="review_edit_del_btn_ctn fade3">
+                                            <button class="review_editBtn">수정하기</button><br>
+                                            <button class="review_delBtn">삭제하기</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!--//btnJoin-->
+                                <div class="review_complete">
+                                    <p>2020.10.21</p>
+                                    <div id="star_grade" class="star_grade">
+                                        <div class="starRev">
+                                            <span class="starR1 on">별1_왼쪽</span>
+                                            <span class="starR2">별1_오른쪽</span>
+                                            <span class="starR1">별2_왼쪽</span>
+                                            <span class="starR2">별2_오른쪽</span>
+                                            <span class="starR1">별3_왼쪽</span>
+                                            <span class="starR2">별3_오른쪽</span>
+                                            <span class="starR1">별4_왼쪽</span>
+                                            <span class="starR2">별4_오른쪽</span>
+                                            <span class="starR1">별5_왼쪽</span>
+                                            <span class="starR2">별5_오른쪽</span>
+                                        </div>
+                                        <p style="font-size:14px">좋아요좋아요좋아요좋아요</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review_box_wrap">
+                                <div class="review_item_box02">
+                                    <div class="box_wrap">
+                                        <img src="images/dietfarmbread.jpg" style="width:50px;height:62px">
+                                        <ul>
+                                            <li>
+                                                <span>(아임월)</span></li>
+                                            <li>굿밸런스 라이트밀 도시락</li>
+                                            <li>
+                                                <span>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="edit_del_icon">
+                                        <p class="editBtn_click start3"><img src="/images/one_icon_review.png" alt="수정,삭제 아이콘">
+                                        </p>
+                                        <div class="review_edit_del_btn_ctn fade3">
+                                            <button class="review_editBtn">수정하기</button><br>
+                                            <button class="review_delBtn">삭제하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review_complete">
+                                    <p>2020.10.21</p>
+                                    <div id="star_grade" class="star_grade">
+                                        <div class="starRev">
+                                            <span class="starR1 on">별1_왼쪽</span>
+                                            <span class="starR2">별1_오른쪽</span>
+                                            <span class="starR1">별2_왼쪽</span>
+                                            <span class="starR2">별2_오른쪽</span>
+                                            <span class="starR1">별3_왼쪽</span>
+                                            <span class="starR2">별3_오른쪽</span>
+                                            <span class="starR1">별4_왼쪽</span>
+                                            <span class="starR2">별4_오른쪽</span>
+                                            <span class="starR1">별5_왼쪽</span>
+                                            <span class="starR2">별5_오른쪽</span>
+                                        </div>
+                                        <p style="font-size:14px">좋아요좋아요좋아요좋아요</p>
+                                    </div>
+                                </div>
                             </div>
 
+=======
                             <div class="reviewview_line_wrap">
                                 <div class="review_line"></div>
                             </div>
@@ -217,9 +562,48 @@
                             </div>
                             <!--//product_review01-->
                             <div class="thick_line"></div>
+>>>>>>> dab0b803ea433a21221de1dcd01d9cf10d53ac3e
                         </div>
                         <!--//review_complete-->
                     </div>
+<<<<<<< HEAD
+                    <script>
+                        window.onload = function () {
+
+                            function onClick() {
+                                document
+                                    .querySelector('.modal_wrap')
+                                    .style
+                                    .display = 'block';
+                                document
+                                    .querySelector('.black_bg')
+                                    .style
+                                    .display = 'block';
+                            }
+                            function offClick() {
+                                document
+                                    .querySelector('.modal_wrap')
+                                    .style
+                                    .display = 'none';
+                                document
+                                    .querySelector('.black_bg')
+                                    .style
+                                    .display = 'none';
+                            }
+                            document
+                                .getElementById('modal_btn')
+                                .addEventListener('click', onClick);
+                            document
+                                .querySelector('.modal_close')
+                                .addEventListener('click', offClick);
+                        };
+                    </script>
+                    <%-include('general/footer') %>
+                    </body>
+                    <script src="/js/main.js"></script>
+                    <script src="/js/common.js"></script>
+                </html>
+=======
 
                 </div>
             </div>
@@ -231,3 +615,4 @@
 </body>
     
 </html>
+>>>>>>> dab0b803ea433a21221de1dcd01d9cf10d53ac3e

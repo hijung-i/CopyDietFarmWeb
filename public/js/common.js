@@ -434,28 +434,6 @@ window.onclick = function(event) {
 };
    
 //메인페이지 index 로그인 모달 js          
-//오늘하루만보기 닫기버튼 스크립트
-function closeToday() {
-   setCookie( "popToday", "close" , 1  );
-   $("#popup_layer").css("display", "none");
-   document.getElementById("popup_layer").style.display = "none";
-}
-//그냥 닫기버튼 스크립트
-function closePop() {
-   document.getElementById("popup_layer").style.display = "none";
-}
-
-
-// 7일동안 닫기버튼 스크립트는 아래 스크립트로 교체
-function closeToday() {
-   setCookie( "popToday", "close" , 7 );
-   $("#popup_layer" ).css("display", "none");
-   document.getElementById("popup_layer").style.display = "none";
-}
-function closePop() {
-   document.getElementById("popup_layer").style.display = "none";
-}    
-
 //메인화면 진입 시 팝업 창 
 
 $(function(){
@@ -479,7 +457,7 @@ $(function(){
 	'<div class="login-list">' + 
 	'<ul>' +
 	'<li><button id="naver_id_login" class="naver">네이버로 로그인</button></li>' +
-	'<li><button onclick="loginWithKakaoApi()" class="kakao">카카오로 로그인/가입</button></li>' +
+	'<li><button onclick="loginWithKakaoApi()" class="kakao">카카오로 로그인</button></li>' +
 	'<li><a href="/login-form" class="id_comp">아이디로 로그인</a></li>' +
 	'</ul>' +
 	'</div>' +

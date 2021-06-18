@@ -1,5 +1,3 @@
-
-
 /*변수 선언*/
 $(function() {
     //niceDuplicationCheck();

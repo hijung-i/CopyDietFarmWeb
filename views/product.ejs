@@ -9,6 +9,7 @@
 
         <title>다이어트 Farm</title>
         <style type="text/css">
+     
         @media screen and (min-width:500px) and (max-width:1079px){
   .like {top:0px;margin-right:-12px}
   .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
@@ -18,15 +19,100 @@
 /*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
 .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 }
-            @media screen and (max-width:1079px) {
-                .web_product_details {
-                    display: none;
-                }
-                .sidebar{display:none}
-                         }
-            @media screen and (min-width:1080px) {
-                .mobile_product_details { display: none}                       
-            }
+    @media screen and (max-width:1079px) {
+        .web_product_details {display: none}
+        .sidebar{display:none}
+        .modal_wrap{
+        display: none;
+        width: 370px;
+        height: auto;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        margin: -160px 0 0 -180px;
+        background:#fff;
+        z-index:9999;
+        padding:15px
+       }
+       .modal_wrap02{display: none;
+        width: 370px;
+        height: 500px;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        margin: -160px 0 0 -180px;
+        background:#fff;
+        z-index:9999;
+        }
+    .black_bg, .black_bg02{
+        display: none;
+        position: absolute;
+        content: "";
+        width:1090px;
+        height:1200px;
+        background-color:rgba(0, 0,0, 0.5);
+        top:-100px;
+        left: 0;
+        z-index:1000;
+    }
+    .modal_close, .modal_close02{
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
+    .modal_close> a, .modal_close02> a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background:url(/images/x_icon_login.png)no-repeat;
+        text-indent: -9999px;
+        position:relative;
+        top:42px
+    }
+     }
+      @media screen and (min-width:1080px) {
+        .modal_wrap, .modal_wrap02{
+        display: none;
+        width: 500px;
+        height: auto;
+        position: absolute;
+        top:40%;
+        left: 50%;
+        margin: -250px 0 0 -250px;
+        background:#eee;
+        z-index: 2;
+       }
+    .black_bg, .black_bg02{
+        display: none;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color:rgba(0, 0,0, 0.5);
+        top:0;
+        left: 0;
+        z-index: 1;
+    }
+    .modal_close, .modal_close02{
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
+    .modal_close> a, .modal_close02 a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background:url(/images/x_icon_login.png)no-repeat;
+        text-indent: -9999px;
+        position:relative;
+        top:42px
+    }
+   .mobile_product_details { display: none}                       
+     }
             /* The Modal (background) */
         .modal {
             display: none; /* Hidden by default */
@@ -108,23 +194,7 @@
 </head>
 
 <body>
-
-<!--// 모달창-->
-  <!-- 첫 번째 Modal을 여는 클래스 -->
-
-  <!-- 첫 번째 Modal -->
-  <div id="modal-review" class="modal" style="display:none" id="modal-review">
-    
-  </div>
-   <!-- 두 번째 Modal -->
-  <div class="modal" style="display:none" id="modal-inquiry">
-
-   
-  </div>
-<!--//모달 끝-->
-
-
-            <div class="web_product_details">
+           <div class="web_product_details">
                 <%-include('general/header') %>
                 </div>
 
@@ -486,12 +556,115 @@
                             </div>
                         </div>
                         <div id="tab3" class="tab_cont Mtab_cont">
-                            <!--// <script> function myFunction() {
-                            document.getElementById(".products_ex_mobile").style = "display:none"; }
-                            </script> -->
                             <div class="review_btn">
-                              <button class="btn" onclick="Modal()" style="width:90%;height:45px;">리뷰쓰기</button>
+                                <button type="button" id="modal_btn" style="width:90%;height:45px;">리뷰쓰기</button>
                             </div>
+                              <div class="black_bg"></div>
+                              <div class="modal_wrap">
+                                  <div class="modal_close"><a href="#">close</a></div>
+                                  <div>
+                                             <div class="reviewModifyBox">
+                                                 <h2>리뷰쓰기</h2>
+                                          <div class="review01">
+                                              <table>
+                                                  <tbody>
+                                                      <tr class="reviewProduct">
+                                                          <td>
+                                                              <div class="detailBox">
+                                                                  <a href="#"><img src="images/dietfarmbread.jpg" align="left" style="width:90px;margin-right:15px"></a>
+                                                                  <ul class="reviewProductInfo">
+                                                                      <li>디어썸라이프</li>
+                                                                      <li>[디어썸1]간편하고 든든한 고구마스틱 300g</li>
+                                                                      <li>간편하고 든든한 고구마스틱 300g (20g*15개입)</li>
+                                                                  </ul>
+                                                              </div>
+                                                          </td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                          <div id="star_grade" class="star_grade">
+                                              <p>별점으로 만족도를 선택해주세요</p>
+                              
+                                              <div class="starRev">
+                                                  <span class="starR1 on">별1_왼쪽</span>
+                                                  <span class="starR2">별1_오른쪽</span>
+                                                  <span class="starR1">별2_왼쪽</span>
+                                                  <span class="starR2">별2_오른쪽</span>
+                                                  <span class="starR1">별3_왼쪽</span>
+                                                  <span class="starR2">별3_오른쪽</span>
+                                                  <span class="starR1">별4_왼쪽</span>
+                                                  <span class="starR2">별4_오른쪽</span>
+                                                  <span class="starR1">별5_왼쪽</span>
+                                                  <span class="starR2">별5_오른쪽</span>
+                                              </div>
+                                          </div>
+                              
+                                          <ul>
+                                              <li>
+                                                  <form>
+                                                      <p><textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px"></textarea></p>
+                                                  </form>
+                                              </li>
+                                          </ul>
+                                          <div class="filebox">
+                                              <label for="upload">사진 (선택)</label>
+                                              <input type="file" id="upload" name="upload">
+                                              <div id="preview">
+                                                  <div class="previewBox">
+                                                      <ul>
+                                                          <li></li>
+                                                          <li class="p2"></li>
+                                                      </ul>
+                                                  </div>
+                                                  <!-- 미리보기 공간 -->
+                                              </div>
+                              
+                                              <script>
+                                                  var upload = document.querySelector('#upload');
+                                                  var preview = document.querySelector('#preview');
+                              
+                                                  upload.addEventListener('change', function(e) {
+                                                      var get_file = e.target.files;
+                              
+                                                      var image = document.createElement('img');
+                              
+                                                      /* FileReader 객체 생성 */
+                                                      var reader = new FileReader();
+                              
+                                                      /* reader 시작시 함수 구현 */
+                                                      reader.onload = (function(aImg) {
+                                                          console.log(1);
+                              
+                                                          return function(e) {
+                                                              console.log(3);
+                                                              /* base64 인코딩 된 스트링 데이터 */
+                                                              aImg.src = e.target.result
+                                                          }
+                                                      })(image)
+                              
+                                                      if (get_file) {
+                                                          /* 
+                                                              get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
+                                                              onload 에 설정했던 return 으로 넘어간다.
+                                                              이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
+                                                          */
+                                                          reader.readAsDataURL(get_file[0]);
+                                                          console.log(2);
+                                                      }
+                              
+                                                      preview.appendChild(image);
+                                                  })
+                                              </script>
+                                              <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
+                                          </div>
+                                      </div>
+                              
+                                      <div class="btn_area">
+                                          <button type="button" id="btnSaveProduct">저장</button>
+                                      </div>
+                                  </div>
+                              </div>
                             <p class="num">리뷰 {{ reviewList.length }}개</p>
                             <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
                                 <img src="/images/note_icon_review.png">
@@ -543,7 +716,7 @@
                                                         
                                                 </template>
                                             </div>
-                                            <p class="review_summ" style="font-size:14px;">{{ review.content }}</p>
+                                            <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
                                             <div class="review_img01" v-if="review.contentType == 'I'">
                                                 <img v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
 
@@ -561,10 +734,9 @@
                                     </div>
                                 </div>
                                
-                                <div id="wrap">
-                                    <a href="#ex1" rel="modal:open"
-                                     style="float:right;margin-left:200px;position:relative;left: -30px;top:30px;margin-bottom:30px;width:168px;height:45px;border-radius:5px;background-color:#F99319;color:#fff;font-size:18px;font-weight:bold;text-align:center; line-height: 45px;">리뷰쓰기</a>
-                                </div>
+                                <div class="review_btn_web">
+                                    <button type="button" id="modal_btn">리뷰쓰기</button>
+                                     </div>
                        
                                 <div class="page_wrap">
                                     <div class="page_nation">
@@ -589,8 +761,28 @@
                         <div id="tab4" class="tab_cont Mtab_cont">
                             <!--//review_btn-->
                             <div class="review_btn">
-                                <button class="btn" style="width:90%;height: 45px;">문의하기</button>
-                            </div> 
+                                <button type="button" id="modal_btn02" style="width:90%;height:45px;">문의하기</button>
+                                 </div>
+                              <div class="black_bg02"></div>
+                              <div class="modal_wrap02">
+                                  <div class="modal_close02"><a href="#">close</a></div>
+                                  <div>
+                                 <div class="productInquiryBox">
+                                          <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
+                                          <form>
+                                              <p><textarea style="border-radius:5px;width:330px;height:153px; border: 1px solid #BBBBBB;" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
+                              
+                                          </form>
+                                          <div class="group">
+                                              <input type="checkbox" id="secret">
+                                              <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
+                                          </div>
+                                      </div>
+                                      <div class="btn_area">
+                                          <button type="button" id="btnInquiry">등록</button>
+                                      </div>
+                                  </div>
+                              </div>
                             <p class="inquiry">문의 {{questionList.length}}개</p>
                                     <div class="myReview">
                                         <p style="margin-right:10px">내 문의 보기</p>
@@ -778,8 +970,28 @@
                             }
                             preview.appendChild(image);
                         })
-                    </script>
+                        window.onload = function() {
+ 
+                        function onClick() {
+                            document.querySelector('.modal_wrap').style.display ='block';
+                            document.querySelector('.black_bg').style.display ='block';
+                            document.querySelector('.modal_wrap02').style.display ='block';
+                            document.querySelector('.black_bg02').style.display ='block';
+                        }   
+                        function offClick() {
+                            document.querySelector('.modal_wrap').style.display ='none';
+                            document.querySelector('.black_bg').style.display ='none';
+                            document.querySelector('.modal_wrap02').style.display ='none';
+                            document.querySelector('.black_bg02').style.display ='none';
+                        }
 
+                        document.getElementById('modal_btn').addEventListener('click', onClick);
+                        document.querySelector('.modal_close').addEventListener('click', offClick);
+                        document.getElementById('modal_btn02').addEventListener('click', onClick);
+                        document.querySelector('.modal_close02').addEventListener('click', offClick);
+
+                        };
+                    </script>
                     <script src="/js/orderDTO/OrderDTO.js"></script>
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
                     <script type="text/javascript" src="/js/product.js"></script>
