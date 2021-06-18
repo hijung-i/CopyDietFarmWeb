@@ -146,7 +146,7 @@
                             <a href="javascript:location.href='/point';">포인트</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">쿠폰</a>
+                            <a href="javascript:location.href='/coupon';">쿠폰</a>
                         </li>
                     </ul>
                 </nav>
@@ -186,7 +186,7 @@
                                             <td>
                                                 <div class="order_list_box">
                                                     <div class="order_img">
-                                                        <a href="/product/'+ product.productCode +'">
+                                                        <a v-bind:href="'/product/' + product.productCode">
                                                             <img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:50px;height:62px;margin-right:8px">
                                                         </a>
                                                     </div>

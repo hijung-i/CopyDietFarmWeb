@@ -229,10 +229,13 @@ width: 400px; height: 147px;color: #000; background: #fff;margin: 44px -10px 0 0
 .content_lnb li a{padding: 16px 35px}
 .web_contents .left{margin-left:20px}
 .contents h3 {font-size: 20px; font-weight: 700;padding-bottom:16px;color: #000}
-.web_body{width:1080px;margin:0 auto}
+.web_body{
+    width:1080px;
+    margin:0 auto; 
+    display: flex; 
+    justify-content: space-between;
+}
 .orderHistory_wrap{width:870px}
-.orderHistory{position:relative;left:205px;top:-290px;}
-.order_list_box_w{float:left;position:relative;left:200px;top:-350px}
 .order_list_box_w h3{font-size:20px;font-weight:bold;margin-bottom:20px}
 .order_list_box_w .cell {width:300px;border: 2px solid #32845B}
 .order_list_box_w th {background: #32845B;color: #fff;padding: 10px 10px;font-size: 14px; font-weight: 500;letter-spacing: 0.6px}
@@ -2057,7 +2060,7 @@ font-weight: 400;border-radius:5px;}
 
 }
 @media screen and (min-width:1080px) {
-    main#mypage_prod_inq_ctt, main#mypage_seller_inq_ctt, main#mypage_point_ctt {
+    main#mypage_prod_inq_ctt, main#mypage_seller_inq_ctt, main#mypage_point_ctt, .mypage_coupon_ctt {
         width: 1080px;
         margin: 0 auto;
     }

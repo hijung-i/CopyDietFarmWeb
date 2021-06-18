@@ -54,7 +54,8 @@
                 </section>
             </div>
                 <%-include('general/header') %>
-                <div class="main_contents_wrap">
+                <div class="mypage_coupon_ctt">
+                    <div class="main_contents_wrap">
                         <div class="main_contents mypage_myinfo">
                             <h3>마이팜</h3>
                             <div class="main_contents_elements_wrap">
@@ -75,9 +76,9 @@
                                 </div>
                             </div>
                         </div>
-                </div>
-                <div class="mypage_content_wrap forCouponPage">
-                <nav class="content_lnb">
+                    </div>
+                    <div class="mypage_content_wrap forCouponPage">
+                        <nav class="content_lnb">
                     <ul>
                         <li>
                             <a href="/orderlist">주문내역</a>
@@ -101,71 +102,70 @@
                             <a href="/coupon">쿠폰</a>
                         </li>
                     </ul>
-                </nav>
-                
-
-    <main id="content" class="coupon">
-        <div class="contents">
-            <h2 class="web_coupon_tit">쿠폰</h2>
-            <div class="coupon_web_top">
-                <input type="text" placeholder="쿠폰 코드를 입력해주세요">
-                <button type="button" class="coupon_enroll">쿠폰 등록</button>
-            </div>
-            <div class="coupon_table_top">
-                <ul>
-                    <li>날짜</li>
-                    <li>내용</li>
-                    <li>최소 사용금액</li>
-                    <li>할인</li>
-                    <li>상태</li>
-                </ul>
-            </div>
-            <div class=coupon_list>
-                <ul>
-                    <template v-for="(coupon, index) in couponList">
-
-                        <li class="y_coupon" v-on:click="applyCoupon(index)">
-
-                            <div class="couponBox01">
-                                <template v-if="coupon.amount != undefined">
-                                    <h3>{{ numberFormat(coupon.amount) }}원 할인</h3>
+                        </nav>
+                        <main id="content" class="coupon">
+                    <div class="contents">
+                        <h2 class="web_coupon_tit">쿠폰</h2>
+                        <div class="coupon_web_top">
+                            <input type="text" placeholder="쿠폰 코드를 입력해주세요">
+                            <button type="button" class="coupon_enroll">쿠폰 등록</button>
+                        </div>
+                        <div class="coupon_table_top">
+                            <ul>
+                                <li>날짜</li>
+                                <li>내용</li>
+                                <li>최소 사용금액</li>
+                                <li>할인</li>
+                                <li>상태</li>
+                            </ul>
+                        </div>
+                        <div class=coupon_list>
+                            <ul>
+                                <template v-for="(coupon, index) in couponList">
+                                
+                                    <li class="y_coupon" v-on:click="applyCoupon(index)">
+                                    
+                                        <div class="couponBox01">
+                                            <template v-if="coupon.amount != undefined">
+                                                <h3>{{ numberFormat(coupon.amount) }}원 할인</h3>
+                                            </template>
+                                            <template v-if="coupon.rate != undefined">
+                                                <h3>{{ numberFormat(coupon.rate) }}% 할인</h3>
+                                            </template>
+                                            <template v-if="coupon.couponType == 'D'">
+                                                <h3>배송비 무료</h3>
+                                            </template>
+                                            <p class="sale"><span>{{ coupon.couponName }}</span></p>
+                                            <p class="condition">{{ numberFormat(coupon.conditionalAmount) }}원 이상 구매 시</p>
+                                            <p class="range">{{ formatDate(coupon.startDate)}} ~ {{formatDate(coupon.expireDate)}}</p>
+                                        </div>
+                                        <div class="couponBox02">
+                                            <a href="">
+                                                <img src="/images/c_icon_coupon@2x.png">
+                                                <p class="download">쿠폰 사용</p>
+                                            </a>
+                                        </div>
+                                    </li>
                                 </template>
-                                <template v-if="coupon.rate != undefined">
-                                    <h3>{{ numberFormat(coupon.rate) }}% 할인</h3>
-                                </template>
-                                <template v-if="coupon.couponType == 'D'">
-                                    <h3>배송비 무료</h3>
-                                </template>
-                                <p class="sale"><span>{{ coupon.couponName }}</span></p>
-                                <p class="condition">{{ numberFormat(coupon.conditionalAmount) }}원 이상 구매 시</p>
-                                <p class="range">{{ formatDate(coupon.startDate)}} ~ {{formatDate(coupon.expireDate)}}</p>
+
+                            </ul>
+                        </div>
+                        <div class="couponBtn">
+                            <button type="button" id="modal_btn" class="cBtn">쿠폰 등록</button>
+                        </div>
+                        <div class="black_bg"></div>
+                        <div class="modal_wrap" id="modal_coupon">
+                            <div class="modal_close"><a href="#">close</a></div>
+                            <div>
+                                <p class="coupon_modal_tit">쿠폰 등록</p>
+                                <input type="text">
+                                <button type="button" class="btn_enroll">등록</button>
                             </div>
-                            <div class="couponBox02">
-                                <a href="">
-                                    <img src="/images/c_icon_coupon@2x.png">
-                                    <p class="download">쿠폰 사용</p>
-                                </a>
-                            </div>
-                        </li>
-                    </template>
-                    
-                </ul>
-            </div>
-            <div class="couponBtn">
-                <button type="button" id="modal_btn" class="cBtn">쿠폰 등록</button>
-            </div>
-            <div class="black_bg"></div>
-            <div class="modal_wrap" id="modal_coupon">
-                <div class="modal_close"><a href="#">close</a></div>
-                <div>
-                    <p class="coupon_modal_tit">쿠폰 등록</p>
-                    <input type="text">
-                    <button type="button" class="btn_enroll">등록</button>
+                        </div>
+                    </div>
+                        </main>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </main>
-</div>
     <script>
         window.onload = function() {
         
