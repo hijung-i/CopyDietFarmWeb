@@ -127,7 +127,7 @@ padding-right:15px;float:left;position:relative;top:6px}
 .skip_menu a{position:absolute;top:-90px;left:0;width:138px;border:1px solid #4ec53d;background:#333;text-align:center}
 .skip_menu a:active, .skip_menu a:focus{top:0;z-index:1000;text-decoration:none}
 .skip_menu span{display:inline-block;padding:2px 6px 0 0;color:#fff;letter-spacing:-1px;font-size:13px;line-height:26px}
-
+.btnCart .count_num{width:15px;height:14px;background-color:red;border-radius:40px;position:relative;top:14px;right:4px}
 .top_util {position:relative; width:100%; max-width: 1080px; height:55px; letter-spacing:-0.005em; margin: 0 auto;}
 .top_util .menu_list { display: flex; float: right; height: 55px; line-height: 55px;}
 .top_util .menu_list .join{color:#F99319}
@@ -315,9 +315,20 @@ height:50px;overflow:hidden}
    .non_members input[type="checkbox"]:checked + label{
      background: url(../images/aftercheck_icon_join.png)no-repeat;
       background-size:19px 19px;}
+.reviewModifyBox h2{text-align:center;font-weight:bold;font-size:16px;padding-top:20px;margin-bottom:38px}
+.reviewModifyBox .detailBox ul{display:inline-block}
+.reviewModifyBox .star_grade{text-align: center;
+  margin-bottom: 20px;
+  border-top: 1px solid #f1f1f1;
+  padding-top: 26px;
+  border-bottom: 1px solid #E6E6E6;
+  padding-bottom: 26px;
+  margin-top: 19px}
+.reviewModifyBox .star_grade p{font-size:16px;font-weight:bold;text-align:center}
 
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  .shopcart_info>div:last-child p {width: 208px}
   .modalTop_tit {
     display: flex;
     justify-content: space-between;
@@ -416,7 +427,7 @@ height:50px;overflow:hidden}
  .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
  
  /*  모바일 depth02 */
- .mDepth01 {overflow: auto;}
+ .mDepth01 {overflow:scroll}
  .mDepth01 li {position: relative; background: #fff;}
 
  .gnb_depth02 li {background: #F5F5F5;}
@@ -438,7 +449,7 @@ height:50px;overflow:hidden}
 /*서브메뉴 (신상, 베스트 등등)*/
 /*#mobile_sub{position:fixed;height:90px;background-color:#fff}*/
 #content .main_sub_wrap{   
-width:100%;border-top:2px solid #f1f1f1;margin-top:140px}
+width:100%;border-top:2px solid #f1f1f1}
 #content .main_sub img{padding:7px}
 #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
 #content .main_sub .desc ul li{float:left;white-space:nowrap;margin-left:-4px}
@@ -817,7 +828,7 @@ height:233px;
   .mtpSlideTit {margin: 24px 0 21px 0;}
 
 /*모바일에서 안보이는 요소 */
-
+.alarm_boxes h4{display:none}
 }
 
 
@@ -825,6 +836,37 @@ height:233px;
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
+/*장바구니*/
+#shpcart_select input[type="checkbox"]{display:none;}
+#shpcart_select input[type="checkbox"] + label{
+  display: inline-block;
+  margin: -2px 10px 0 0;
+  vertical-align: middle;
+  background: url(../images/beforecheck_icon_join.png)left top no-repeat;
+  cursor: pointer;
+  background-size:19px 19px;
+ padding-left:33px;
+ padding-bottom:4px
+}
+#shpcart_select input[type="checkbox"]:checked + label{
+  background: url(../images/aftercheck_icon_join.png)no-repeat;
+   background-size:19px 19px;} 
+.shoplist_ctn input[type="checkbox"]{display:none;}
+.shoplist_ctn input[type="checkbox"] + label{
+  display: inline-block;
+  margin: -2px 10px 0 0;
+  vertical-align: middle;
+  background: url(../images/beforecheck_icon_join.png)left top no-repeat;
+  cursor: pointer;
+  background-size:19px 19px;
+ padding-left:33px;
+ padding-bottom:4px
+}
+.shoplist_ctn input[type="checkbox"]:checked + label{
+  background: url(../images/aftercheck_icon_join.png)no-repeat;
+   background-size:19px 19px;} 
+.alarm_boxes h4{border-bottom:2px solid #424242;font-size:20px;font-weight:bold;padding-bottom:24px}
+.shopcart_info .close{position:relative;top:30px}
 .current_point > p, .current_point h2{display:none}
 .inquiry_product_head h4{margin-bottom:14px;font-size:12px;font-weight:bold}
 .inquiry_product_head p{display:none}
@@ -1119,7 +1161,7 @@ display: flex;justify-content:space-between; margin-top: 20px;align-items: cente
 .term_contents{font-size:20px}
 
 /*장바구니*/
-.shoplist_ctn {width: 100%;display: flex;  font-size: 14px;letter-spacing: 0.8px;}
+.shoplist_ctn {width: 100%;display: flex;font-size: 14px;letter-spacing: 0.8px;border-bottom:1px solid #e6e6e6}
 input#shoplist_part_selt {margin-right: 10px;}
 .shoplist_ctn{max-width:1080px; position: relative}
 .shoplist_ctn img{position:relative;}
@@ -1129,9 +1171,9 @@ input#shoplist_part_selt {margin-right: 10px;}
 .btnback{display:none}
 .btn_area_web .total{display:none}
 .detail_title h2{margin-left:-15px;margin-bottom:44px;margin-top:55px;font-size:30px;color:#000;}
-.shpcart_select_del_web button{margin-left:-930px;margin-top:14px;border:1px solid #BBBBBB;font-size:12px;font-weight:normal;border-radius:2px}
+.shpcart_select_del_web button{margin-top:14px;border:1px solid #BBBBBB;font-size:12px;font-weight:normal;border-radius:2px}
 
-#shoplist_t_price_web{margin-top:25.5px}
+#shoplist_t_price_web{margin-top:25.5px;display:flex}
 .shopBox01, .shopBox02{float:left;width:540px;height:177px;border:1px solid #BBBBBB;border-radius:5px}
 .shopBox01 h3{font-size:16px;font-weight:bold;padding-top:18px;padding-left:15.5px;color:#000}
 .shopBox01 p{margin-top:15.5px;padding-left:15.5px}
@@ -1140,10 +1182,10 @@ input#shoplist_part_selt {margin-right: 10px;}
 .shopBox02 {background-color:#F8F8F8}
 .shopBox02 table{margin-left:44px;margin-top:20px}
 .shopBox02 .t1{padding-right:301px}
-.shopBox02 td{padding-bottom:17px}
+.shopBox02 td{padding-bottom:17px;font-size:14px;letter-spacing:0.4px;}
 .shopBox02 table .total{border-top:1px solid #BBBBBB;}
 .shopBox02 table .total td{font-weight:bold;padding-top:12px;color:#000}
-.purchaseBtn{float:right;margin-top:20px;width:282px;height:45px;background-color:#F99319;color:#fff;border-radius:5px}
+.purchaseBtn{float:right;margin-top:20px;width:282px;height:45px;background-color:#F99319;color:#fff;border-radius:5px;margin-bottom:100px}
 
 .shop_null{width:1080px;height:682.5px;}
 .shop_null p{text-align:center;padding-top:331px}
@@ -1408,9 +1450,9 @@ div.slideMenu_top {display: none}
 
   .pdt_detai_tabinner_vn > ul.tab_wrap > span {
     position: absolute; 
-    left: 0; bottom: 0; height: 3px;
+    left: 0; bottom:-1px; height: 3px;
     background: #FF8B00;
-    width: 25%; margin: 0 14px;
+    width: 25%; margin: 0 24px;
     opacity: 0; 
     transition: all .3s;
     z-index: 99;
@@ -1653,7 +1695,6 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  .leftarrow{position:absolute;right:20px;}
  
  /* 버튼 */
- .btn_area {margin: 30px 0 91px;}
  #btnJoin, #save, #modify {
   width: 100%;
   height:50px;
@@ -1758,8 +1799,6 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .agree ul li{float:left;}
 
 /* 버튼 */
-
-.btn_area {margin:10px 10px}
 
 #btnOrder{width:100%;margin:auto;padding: 21px 0 17px;border: 0;cursor: pointer;color: #fff;
     background-color: #F99319;font-size: 14px;
@@ -2133,7 +2172,7 @@ background: #fff;padding: 4px 6px;}
 .brand_1 .shoplist_info .shopcart_thum {min-width: 62px; background: #abc;background-image:url();
 background-size: cover;background-position: center;}
 
-/* 장바구니 목록S */
+/* 장바구니 목록*/
 .brand_1 {margin: 0 15px 0 15px}
 .brand_1 > h3 {width: 100%;float: left;padding: 15px 10px;border-bottom: 1px solid #BBBBBB;font-weight: 700; font-size: 14px;}
 .shoplist_ctn {padding: 20px 0 20px 0;position:relative }
@@ -2143,7 +2182,6 @@ background-size: cover;background-position: center;}
 .shoplist_ctn>div:last-child{width: 100%}
 .shoplist_ctn .shopcart_info {width: 100%}
 .flow-column {flex-flow: column}
-.shopcart_info>div:last-child p {width: 208px}
 .shopcart_product {width: 100%}
 .shopcart_product>div:first-child{padding-right: 20px}
 .shopcart_product .price_web{margin-top: 12px}
@@ -2196,7 +2234,7 @@ background-color: #F99319;font-size: 14px; font-weight: 400;border-radius:5px}
 
 /*판매자 문의하기*/
 .btn_area {width:100%;clear:both;/*border-top:8px solid #E6E6E6;*/padding-right:15px}
-#btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
+#btnInquiry{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px}
 .inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
 .inquiryBox ul li form p textarea{border-radius:5px;width:100%;height:153px}
@@ -2239,7 +2277,7 @@ font-weight:bold;vertical-align: middle; background-color:transparent;cursor: po
 border: 1px solid #BBBBBB;border-radius:5px;}
 .filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;
   margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
-.filebox p{color:#878787;line-height:20px;font-weight:normal;padding-top:20px}
+.filebox p{color:#D62828;line-height:20px;font-weight:normal;padding-top:20px}
 .previewBox ul li{float:left;border:1px solid #BBBBBB;width:110px;height:110px;margin-top:15px}
 .filebox{margin-top:25px}
 .filebox .p2{margin-left:10px}
@@ -2317,7 +2355,6 @@ justify-content: space-evenly}
 .title p img{margin-bottom:18px;width:50px;height:90px;margin-right:20px;margin-top:10px}
 .order_a_box ul{padding-top:13px}
 .order_a_box ul li{margin-bottom:5px}
-.tab_cont{min-height:360px;}
 /* .tab_cont.active{display:block !important;} */
 
 /* style02 */
@@ -2404,7 +2441,7 @@ display: flex;
 }
 	
 /* 버튼 */
-.btn_area {margin-top:25px;width:100%;padding-right:15px}
+.btn_area {margin-top:25px;width:100%;padding-left:15px;padding-right:15px}
 
 
 /*검색*/

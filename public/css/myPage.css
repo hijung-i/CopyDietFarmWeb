@@ -60,7 +60,7 @@ line-height: 40px; font-size: 14px;}
 .myPage{letter-spacing:0.2px;margin-bottom:-42px;padding-top:60px}
 .myPage_title h2{font-weight:bold;font-size:16px}
 .mypage a{display:block}
-.myPage01{width:100%;/*padding-top:34px;*/padding-bottom:12px}
+.myPage01{width:100%;padding-top:34px;padding-bottom:12px}
 .myPage01 h3{font-size:16px}
 .myPage01_2 .invite ul li a:last-child {color:#fff;background-color:#F99319;border:1px solid #F99319;border-radius:30px;width:88px;height:22px;padding:2px 11px 2px 11px;letter-spacing:1px;}
 .myPage01_2 .benefits ul li {color:#fff;background-color:#FF475E;border:1px solid #FF475E;border-radius:30px;width:88px;height:22px;padding:2px;padding:2px 11px 2px 11px;letter-spacing:1px;}
