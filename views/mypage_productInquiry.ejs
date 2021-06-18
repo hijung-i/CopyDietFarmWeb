@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style_web.css">
     <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/mypage.css">
     <!-- main.js -->
     <script src="/js/main.js"></script>
     <%-include('general/head') %>
@@ -59,39 +60,32 @@
     </div>
     <div class="web_p_inquiry">
         <%-include('general/header') %>
-        </div>
-        <div class="main_contents">
-            <div class="web_contents">
-                <div class="left">
-                    <h3>마이팜</h3>
-                    <div class="left_ctn">
-                        <ul>
-                            <li><img src="/images/basket_ico.png"></li>
-                            <li>
-                                <span>김수아님</span></li>
-                            <li>내정보
-                                <span>
-                                    <i class="fas fa-chevron-right"></i></span></li>
-                        </ul>
+    </div>
+    <main id="myPage_prod_inq_ctt">
+        <div class="main_contents_wrap">
+            <div class="main_contents mypage_myinfo">
+                <h3>마이팜</h3>
+                <div class="main_contents_elements_wrap">
+                    <div class="mypage_member_info">
+                        <img src="/images/basket_ico.png" alt="바구니 아이콘">
+                        <h3>김수아님</h3>
+                        <p>내정보<span><i class="fas fa-chevron-right"></i></span></p>
                     </div>
-                </div>
 
-                <div class="center">
-                    <h3>포인트<img src="/images/point.png"></h3>
-                    <p>1000 원
-                        <span>
-                            <i class="fas fa-chevron-right"></i></span></p>
-                </div>
+                    <div class="mypage_point_info frame400">
+                        <h3>포인트<img src="/images/point.png" alt="포인트 아이콘"></h3>
+                        <p>000원<span><i class="fas fa-chevron-right"></i></span></p>
+                    </div>
 
-                <div class="right">
-                    <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
-                    <p>3개
-                        <span>
-                            <i class="fas fa-chevron-right"></i></span></p>
+                    <div class="mypage_coupon_info frame400">
+                        <h3>쿠폰<img src="/images/coupon_ico.png" alt="쿠폰 아이콘"></h3>
+                        <p>0개<span><i class="fas fa-chevron-right"></i></span></p>
+                    </div>
                 </div>
             </div>
         </div>
-        <nav class="content_lnb">
+        <div class="mypage_content_wrap">
+            <nav class="content_lnb">
             <ul>
                 <li>
                     <a href="/orderlist">주문내역</a>
@@ -115,9 +109,8 @@
                     <a href="/coupon">쿠폰</a>
                 </li>
             </ul>
-        </nav>
-
-        <div class="contents">
+            </nav>
+            <div class="contents">
             <div class="body_contents tab6">
                 <h3 class="orderList_detail">상품 문의</h3>
                 <div class="order_detail_ctn">
@@ -250,7 +243,11 @@
                             <a class="arrow nnext" href="#"></a>
                         </div>
                     </div>
-
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
                     <!-- modal window -->
     <section
         id="ex1"
