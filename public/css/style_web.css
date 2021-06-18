@@ -2043,7 +2043,7 @@ font-weight: 400;border-radius:5px;}
 
 }
 @media screen and (min-width:1080px) {
-    main#mypage_prod_inq_ctt, main#mypage_seller_inq_ctt, main#mypage_point_ctt {
+    main#mypage_prod_inq_ctt, main#mypage_seller_inq_ctt, main#mypage_point_ctt, .mypage_coupon_ctt {
         width: 1080px;
         margin: 0 auto;
     }

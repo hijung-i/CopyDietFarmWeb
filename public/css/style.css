@@ -2751,6 +2751,12 @@ display: flex;
 }
 .slick-list {width: 100%;}
 div#app {width: 1080px; margin: 0 auto;}
+/* 상품 문의 메인 컨텐츠 영역 width 조정 */
+@media screen and (min-width:1080px) {
+  .order_detail_ctn div#tab1 {
+    width: 831px;
+  }
+}
 
 /* 주문 취소 모달 */
 @media screen and (max-width:1079px) {
