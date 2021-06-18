@@ -552,7 +552,9 @@ $(function(){
 	'</div>';
 			
    userAgent = window.navigator.userAgent.toLowerCase()
+   
    iOS = /iphone|ipod|ipad/.test(userAgent);
+   isBrowser = /chrome|IE/.test(userAgent);
    // if(iOS) {
    //    // 앱설치 모달
    //    // $("#popup_layer").html(popup);

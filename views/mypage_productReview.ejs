@@ -111,12 +111,13 @@
             <h3 class="orderList_detail">상품 리뷰</h3>
             <div class="order_detail_ctn">
 
-                <div class="tabMenu_review" style="margin-top:-20px; border-bottom: 1px solid #f1f1f1">
+                <div class="tabMenu_review"
+                    style="margin-top:-20px; border-bottom: 1px solid #f1f1f1;">
                     <ul class="tab_wrap">
                         <li class="active on" data-tab="tab1">
-                            <span>작성 가능한 리뷰 ({{ writableReviewList.length }})</span></li>
+                            <span>작성 가능한 리뷰 (3)</span></li>
                         <li data-tab="tab2" class="" id="possible">
-                            <span>작성한 리뷰 ({{ reviewList.length }})</span></li>
+                            <span>작성한 리뷰 (9)</span></li>
                         <span></span>
                     </ul>
                 </div>
@@ -124,26 +125,16 @@
                 <div id="tab1" class="tab_cont active">
                     <section class="review_list_ctn">
                         <template v-for="writable in writableReviewList">
-                            <div class="review_prod">
-                                <div class="img_detail_ctn">
-                                    <div class="review_img"></div>
-                                    <ul class="review_detail">
-                                        <li class="review_brand">[{{ writable.product.companyName }}]</li>
-                                        <li class="review_prod_name">{{writable.product.productName}}</li>
-                                        <li class="review_option">옵션: {{ getOptionName(writable.product.options) }}</li>
-                                    </ul>
-                                </div>
-
-                                <div class="btn_area_2" style="margin-top:20px">
-                                    <button type="button" class="btnJoin_2">
-                                        <span>리뷰쓰기</span>
-                                    </button>
-                                </div>
-                                <!--//btnJoin-->
-                            </div>
-
-                            <div class="reviewview_line_wrap">
-                                <div class="review_line"></div>
+                            <div class="review_item_box">
+                                <img src="images/dietfarmbread.jpg" style="width:50px;height:62px">
+                                <ul>
+                                    <li>
+                                        <span>(아임월)</span></li>
+                                    <li>굿밸런스 라이트밀 도시락</li>
+                                    <li>
+                                        <span>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</span></li>
+                                </ul>
+                                <button type="button" id="modal_btn">리뷰쓰기</button>
                             </div>
                         </template>
 
@@ -151,72 +142,45 @@
                 </div>
                 <div id="tab2" class="tab_cont">
                     <div class="reviews" v-for="(review, index) in reviewList">
-                        <div class="review_complete">
-                            <table class="orderbox web_orderbox">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="order_a_box">
-                                                <div class="web_prod_info_ctn">
-                                                    <a href="#">
-                                                        <img v-bind:src="RESOURCE_SERVER + review.product.url" align="left"
-                                                        style="width:50px; height: 62px; margin-right:20px;margin-left:15px"></a>
-                                                    <ul class="order001">
-                                                        <li class="web_brandName">[{{ review.product.companyName }}]</li>
-                                                        <li style="color:#000">{{ review.product.productName }}</li>
-                                                        <li class="web_prod_opt">옵션 : {{ getOptionName(review.product.options) }}</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="edit_del_icon">
-                                                    <p class="editBtn_click start1">
-                                                        <img src="/images/one_icon_review.png" alt="수정,삭제 아이콘">
-                                                    </p>
-                                                    <div class="review_edit_del_btn_ctn fade1">
-                                                        <button class="review_editBtn">수정하기</button><br>
-                                                        <button class="review_delBtn">삭제하기</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <div class="reviewview_line_wrap">
-                                <div class="review_line"></div>
-                            </div>
-
-                            <div class="product_review01">
-                                <div class="review_info02">
-                                    <p>{{formatDate(review.createDate)}}</p>
-                                    <div id="star_grade" class="star_grade">
-                                        <div class="starRev">
-                                            <template v-for="count in (review.gpa * 2)">
-                                                <span class="starR1 on" v-if="count % 2 == 1">별1_왼쪽</span>
-                                                <span class="starR2 on" v-if="count % 2 == 0">별1_오른쪽</span>
-                                            </template>
-                                            <template v-for="count in (10 - (review.gpa * 2))">
-                                                <template v-if="(10 - (review.gpa * 2)) % 2 == 1">
-                                                    <span class="starR1" v-if="count % 2 == 0">별1_왼쪽</span>
-                                                    <span class="starR2" v-if="count % 2 == 1">별1_오른쪽</span>
-                                                </template>
-                                                <template v-if="(10 - (review.gpa * 2)) % 2 == 0">
-                                                    <span class="starR2" v-if="count % 2 == 0">별1_오른쪽</span>
-                                                    <span class="starR1" v-if="count % 2 == 1">별1_왼쪽</span>
-                                                </template>
-                                                    
-                                            </template>
-                                        </div>
-                                        <p style="font-size:14px">{{review.content}}</p>
-                                    </div>
-
-                                    <p>
-                                        <img v-bind:src="RESOURCE_SERVER + image.url" v-for="image in review.files" style="width:125px; height: 70px;">
+                        <div class="review_box_wrap">
+                            <div class="review_item_box02">
+                                <div class="box_wrap">
+                                    <img src="images/dietfarmbread.jpg" style="width:50px;height:62px">
+                                    <ul>
+                                        <li>
+                                            <span>(아임월)</span></li>
+                                        <li>굿밸런스 라이트밀 도시락</li>
+                                        <li>
+                                            <span>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</span></li>
+                                    </ul>
+                                </div>
+                                <div class="edit_del_icon">
+                                    <p class="editBtn_click start3"><img src="/images/one_icon_review.png" alt="수정,삭제 아이콘">
                                     </p>
+                                    <div class="review_edit_del_btn_ctn fade3">
+                                        <button class="review_editBtn">수정하기</button><br>
+                                        <button class="review_delBtn">삭제하기</button>
+                                    </div>
                                 </div>
                             </div>
-                            <!--//product_review01-->
-                            <div class="thick_line"></div>
+                            <div class="review_complete">
+                                <p>2020.10.21</p>
+                                <div id="star_grade" class="star_grade">
+                                    <div class="starRev">
+                                        <span class="starR1 on">별1_왼쪽</span>
+                                        <span class="starR2">별1_오른쪽</span>
+                                        <span class="starR1">별2_왼쪽</span>
+                                        <span class="starR2">별2_오른쪽</span>
+                                        <span class="starR1">별3_왼쪽</span>
+                                        <span class="starR2">별3_오른쪽</span>
+                                        <span class="starR1">별4_왼쪽</span>
+                                        <span class="starR2">별4_오른쪽</span>
+                                        <span class="starR1">별5_왼쪽</span>
+                                        <span class="starR2">별5_오른쪽</span>
+                                    </div>
+                                    <p style="font-size:14px">좋아요좋아요좋아요좋아요</p>
+                                </div>
+                            </div>
                         </div>
                         <!--//review_complete-->
                     </div>

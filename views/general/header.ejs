@@ -1,4 +1,7 @@
-<header id="header_common">
+
+<header id="header_common" 
+    class="<% if(currentPage != 'main' && currentPage != 'products') { %>sub<% } else { %>main<% } %>" >
+
     <div class="top_util">
         <ul class="menu_list" id="menu_list_header">
             <% if(isLoggedIn != true) { %>
