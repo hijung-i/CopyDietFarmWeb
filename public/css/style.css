@@ -1839,9 +1839,11 @@ justify-self: center;width: 100%;margin: 0 auto;}
 
 #content .order_complete_info tr td:first-child{
   padding-right: 32px;
-  vertical-align: top;
+  width:170px
 }
-
+#content .order_complete_info tr td:nth-child(2){
+width:400px
+}
 .order_complete_info ul li{
   margin-bottom: 7px;
 }
@@ -1971,7 +1973,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 #content .order_complete_info h3{width:100%;text-align:center;margin-top:35px;margin-bottom:36px;font-size:16px;font-weight:bold}
 .order_complete_wrap{width:400px;border-top:8px solid #F1F1F1;padding-top:38px;margin-bottom:30px;margin:0 auto}
 .order_complete_wrap table tr td{padding-left:20px}
-#content .order_complete_info tr td span{width:100px;color:#878787}
+#content .order_complete_info tr td span{color:#878787}
 #content .order_complete_info tr td{font-size:14px;padding-bottom:20px;font-weight:bold;letter-spacing:0.2px}    
 .btn_area{width:400px;margin:0 auto}
 }
