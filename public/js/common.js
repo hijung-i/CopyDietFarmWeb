@@ -285,6 +285,11 @@ $(document).ready(function() {
       $('.sideMenu').show().animate({
          left: 0
       });
+      var z = $('#tab1').offset().top;
+      var innerHeight = $(window).height();
+      $('#tab1 ul').css ({
+          'max-height' : (innerHeight - z) + 'px'
+      });
    });
    $('.slideMenu_close>a').on('click', function() {
       $('.sideMenu').animate({
