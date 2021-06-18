@@ -207,6 +207,8 @@ margin-left:14px
 }
 
     @media screen and (min-width:1080px){
+.orderlist_btn{margin-top:24px}
+.orderlist_btn ul li{margin-left:10px}
         /*판매자문의 추가 06/04*/
 .inquiry_product{margin-left:15px;margin-right:15px;
     border-bottom:1px solid #E6E6E6;padding-bottom:15px;margin-top:14px}
