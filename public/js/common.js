@@ -563,6 +563,7 @@ $(function(){
             ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
             function(data) {
                $('#naver_id_login').html(data);
+               $('#naver_id_login a').html('네이버로 로그인');
             }, function (err) {
                console.log("error login button", err);
             })
