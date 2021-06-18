@@ -384,18 +384,7 @@ function getCookie(cName) {
 $(function(){
    //$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
    //{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
-    var modal = document.getElementById('myModal');
-
-   if ($('#naver_id_login').length > 0) {
-      ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-       function(data) {
-         $('#naver_id_login').html(data);
-      }, function (err) {
-         console.log("error login button", err);
-      })
-   }
-
-   
+    var modal = document.getElementById('myModal');   
    
 });
 var modals = document.getElementsByClassName("modal");
@@ -565,13 +554,25 @@ $(function(){
 
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
-		// 로그인 시에만 표시
+		// 로그아웃 시에만 표시
 		console.log(data);
-		if(data.result.isLoggedIn == false) $("#myModal").html(myPageModal);
+		if(data.result.isLoggedIn == false) {
+         $("#myModal").html(myPageModal);
+         
+         if ($('#naver_id_login').length > 0) {
+            ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+            function(data) {
+               $('#naver_id_login').html(data);
+            }, function (err) {
+               console.log("error login button", err);
+            })
+         }
+      } 
 
 	}, function(err){
 		console.error(err);
 	})
+
 	$("#modal-inquiry").html(inquiryModal);
 	
 });
