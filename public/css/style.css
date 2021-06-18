@@ -120,6 +120,12 @@ a:hover{text-decoration:none;}
 
 #header_common.main {height: 150px; }
 #header_common.sub {height: 100px;}
+#header_common.main ~ .content {
+  margin-top: 150px;
+}
+#header_common.sub ~ .content {
+  margin-top: 100px;
+}
 #header_common h1{position:relative;left:200px;top:34px;z-index:1;}
 #header_common h1 img{max-width:50%;height: auto;}
 #header_common .gnb{position:relative;top:40px; z-index: 11}
