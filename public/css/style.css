@@ -733,7 +733,7 @@ height:233px;
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
   #content .desc .ratio{color:#F32525}
   .page_wrap{display:none}
-  #footer{ position: relative; bottom: 0; width: 100%; min-width: 360px; border-top: 8px solid #f4f4f4; margin-top: 10px;
+  #footer{ position: relative; bottom: 0; width: 100%; min-width: 360px; border-top: 8px solid #f4f4f4;
   }
   .footer_top {position: absolute; top: 234px; padding-top: 25px;}
   .footer_top > ul {display: flex;}

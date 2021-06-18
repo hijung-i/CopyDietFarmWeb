@@ -273,6 +273,21 @@ margin-left:14px
 .benefits img{width:100%}
 .benefits p{font-size:14px;font-weight:bold;margin-top:10px;margin-bottom:18px}
 .event_content img{width:100%}
+
+.point_current_situation {
+    padding-bottom: 18px;
+    border-bottom: 6px solid #F1F1F1;
+}
+
+.point_content {
+    padding: 10px 0px;
+    border-top: 1px solid #E6E6E6;
+}
+
+.point_content:first-child{
+    border-top: none;
+}
+
 @media screen and (min-width:1000px) {
     .del_inq_info {
         display: flex;
@@ -354,7 +369,8 @@ margin-left:14px
         font-size: 14px;
         font-weight: 700;
     }
-    .point_content li.point_content_element {
+    .point_content {
+
         font-size: 12px;
         font-weight: 400;
         padding: 14px 0;
@@ -373,6 +389,7 @@ margin-left:14px
     .point_current_situation {
         display: none;
     }
+
     .thick_line {display: none;}
     .point_content .savePoint_brand {display: none;}
     .point_content .point_sortation {display: none;}
@@ -383,7 +400,9 @@ margin-left:14px
         width: 100%; min-width: 360px;
         padding-top: 18px;
     }
-    .point_current_situation {text-align: center;}
+    .point_current_situation {
+        text-align: center;
+    }
     .point_current_situation > h3 {
         font-size: 14px;
         font-weight: 400;
