@@ -43,7 +43,7 @@
 
 <body>
     <!--//모달창 시작-->
-    <div id="x_modal" class="cancel_modal">
+    <div id="x_modal" class="cancel_modal modal-overlay">
         
         <!-- Modal content -->
         <div class="modal-content">
@@ -100,36 +100,27 @@
             </a>
         </section>
     </div>
-    <main id="content" class="content">
+    <main id="content" class="content" style="width: 1080px; margin: 0 auto;">
         <div class="mypage_web_side">
-            <div class="main_contents">
-                <div class="web_contents">
-                    <div class="left">
-                        <h3>마이팜</h3>
-                        <div class="left_ctn">
-                            <ul>
-                                <li><img src="/images/basket_ico.png"></li>
-                                <li>
-                                    <span>김수아님</span></li>
-                                <li>내정보
-                                    <span>
-                                        <i class="fas fa-chevron-right"></i></span></li>
-                            </ul>
+            <div class="main_contents_wrap">
+                <div class="main_contents mypage_myinfo">
+                    <h3>마이팜</h3>
+                    <div class="main_contents_elements_wrap">
+                        <div class="mypage_member_info">
+                            <img src="/images/basket_ico.png" alt="바구니 아이콘">
+                            <h3>김수아님</h3>
+                            <p>내정보<span><i class="fas fa-chevron-right"></i></span></p>
                         </div>
-                    </div>
 
-                    <div class="center">
-                        <h3>포인트<img src="/images/point.png"></h3>
-                        <p>1000 원
-                            <span>
-                                <i class="fas fa-chevron-right"></i></span></p>
-                    </div>
+                        <div class="mypage_point_info frame400">
+                            <h3>포인트<img src="/images/point.png" alt="포인트 아이콘"></h3>
+                            <p>000원<span><i class="fas fa-chevron-right"></i></span></p>
+                        </div>
 
-                    <div class="right">
-                        <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
-                        <p>3개
-                            <span>
-                                <i class="fas fa-chevron-right"></i></span></p>
+                        <div class="mypage_coupon_info frame400">
+                            <h3>쿠폰<img src="/images/coupon_ico.png" alt="쿠폰 아이콘"></h3>
+                            <p>0개<span><i class="fas fa-chevron-right"></i></span></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,11 +146,12 @@
                             <a href="javascript:location.href='/point';">포인트</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">쿠폰</a>
+                            <a href="javascript:location.href='/coupon';">쿠폰</a>
                         </li>
                     </ul>
                 </nav>
-                <div class="order_list_box_w">
+                <div class="mypage_order_info_wrap">
+                    <div class="order_list_box_w">
                     <h3>주문내역</h3>
                     <table class="cell">
                         <th>주문/결제</th>
@@ -171,8 +163,8 @@
                             <td>0</td>
                         </tr>
                     </table>
-                </div>
-                <div class="orderHistory_wrap">
+                    </div>
+                    <div class="orderHistory_wrap">
                     <template v-for="(order, oIdx) in orderList">
                     <div class="orderHistory">
                         <div class="orderBox">
@@ -194,7 +186,7 @@
                                             <td>
                                                 <div class="order_list_box">
                                                     <div class="order_img">
-                                                        <a href="#">
+                                                        <a v-bind:href="'/product/' + product.productCode">
                                                             <img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:50px;height:62px;margin-right:8px">
                                                         </a>
                                                     </div>
@@ -212,7 +204,7 @@
                                                 </div>
                                             </td>
                                             <div class="review_line"></div>
-                                            <td>
+                                            <td class="orderlist_btn">
                                                 <div class="order_list_btn">
                                                     <ul>
                                                         <template v-if="product.orderStatus == 'P'" >
@@ -260,8 +252,8 @@
                     <div class="grayLine" v-if="oIdx != orderList.length -1"></div>
                     </template>
                     
-                </div>
-                <div class="page_wrap">
+                    </div>
+                    <div class="page_wrap">
                     <div class="page_nation">
                         <a class="arrow pprev" href="#"></a>
                         <a class="arrow prev" href="#"></a>
@@ -277,6 +269,7 @@
                         <a href="#">10</a>
                         <a class="arrow next" href="#"></a>
                         <a class="arrow nnext" href="#"></a>
+                    </div>
                     </div>
                 </div>
             </div>

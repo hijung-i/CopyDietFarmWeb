@@ -1,4 +1,7 @@
-<header id="header_common">
+
+<header id="header_common" 
+    class="<% if(currentPage != 'main' && currentPage != 'products') { %>sub<% } else { %>main<% } %>" >
+
     <div class="top_util">
         <ul class="menu_list" id="menu_list_header">
             <% if(isLoggedIn != true) { %>
@@ -26,7 +29,6 @@
         </ul>
     </div>
     <div class="main_banner">
-        <a href="/product/P00935"><img src="/images/coffee_banner@2x.png" alt="배너" style="width:100%;height:42px"></a>
         <a href="/product/P00879"><img src="/images/doctor_banner@2x.png" alt="배너" style="width:100%;height:42px"></a>
     </div>
     <div class="menu_btns">
@@ -52,6 +54,7 @@
                     src="/images/cart_icon_main@2x.png"
                     alt="장바구니 아이콘"
                     style="width: 21px; height: 21px;">
+                <div class="count_num"></div>
             </a>
         </div>
     </div>

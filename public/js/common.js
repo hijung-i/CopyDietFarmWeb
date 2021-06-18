@@ -2,15 +2,18 @@
 // var SERVER_IP = 'localhost';
 // var SERVER_IP = '192.168.0.3';
 // var SERVER_IP = 'data-flow.co.kr';
-var SERVER_IP = 'dietfarm.co.kr';
 
 // var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
-var CALLBACK_SERVER = "http://"+ SERVER_IP;
+
 // var API_SERVER = "http://"+ SERVER_IP +":9090";
 
 // var API_SERVER = "http://112.217.209.162:9090";
 // var RESOURCE_SERVER = "http://112.217.209.162:8000";
+
+// 운영
 var API_SERVER = "http://13.209.123.102:9090";
+var SERVER_IP = 'dietfarm.co.kr';
+var CALLBACK_SERVER = "http://"+ SERVER_IP;
 
 var RESOURCE_SERVER = "http://13.209.123.102:8000";
 
@@ -285,6 +288,11 @@ $(document).ready(function() {
       $('.sideMenu').show().animate({
          left: 0
       });
+      var z = $('#tab1').offset().top;
+      var innerHeight = $(window).height();
+      $('#tab1 ul').css ({
+          'max-height' : (innerHeight - z) + 'px'
+      });
    });
    $('.slideMenu_close>a').on('click', function() {
       $('.sideMenu').animate({
@@ -376,18 +384,7 @@ function getCookie(cName) {
 $(function(){
    //$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
    //{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
-    var modal = document.getElementById('myModal');
-
-   if ($('#naver_id_login').length > 0) {
-      ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-       function(data) {
-         $('#naver_id_login').html(data);
-      }, function (err) {
-         console.log("error login button", err);
-      })
-   }
-
-   
+    var modal = document.getElementById('myModal');   
    
 });
 var modals = document.getElementsByClassName("modal");
@@ -429,28 +426,6 @@ window.onclick = function(event) {
 };
    
 //메인페이지 index 로그인 모달 js          
-//오늘하루만보기 닫기버튼 스크립트
-function closeToday() {
-   setCookie( "popToday", "close" , 1  );
-   $("#popup_layer").css("display", "none");
-   document.getElementById("popup_layer").style.display = "none";
-}
-//그냥 닫기버튼 스크립트
-function closePop() {
-   document.getElementById("popup_layer").style.display = "none";
-}
-
-
-// 7일동안 닫기버튼 스크립트는 아래 스크립트로 교체
-function closeToday() {
-   setCookie( "popToday", "close" , 7 );
-   $("#popup_layer" ).css("display", "none");
-   document.getElementById("popup_layer").style.display = "none";
-}
-function closePop() {
-   document.getElementById("popup_layer").style.display = "none";
-}    
-
 //메인화면 진입 시 팝업 창 
 
 $(function(){
@@ -474,7 +449,7 @@ $(function(){
 	'<div class="login-list">' + 
 	'<ul>' +
 	'<li><button id="naver_id_login" class="naver">네이버로 로그인</button></li>' +
-	'<li><button onclick="loginWithKakaoApi()" class="kakao">카카오로 로그인/가입</button></li>' +
+	'<li><button onclick="loginWithKakaoApi()" class="kakao">카카오로 로그인</button></li>' +
 	'<li><a href="/login-form" class="id_comp">아이디로 로그인</a></li>' +
 	'</ul>' +
 	'</div>' +
@@ -566,7 +541,9 @@ $(function(){
 	'</div>';
 			
    userAgent = window.navigator.userAgent.toLowerCase()
+   
    iOS = /iphone|ipod|ipad/.test(userAgent);
+   isBrowser = /chrome|IE/.test(userAgent);
    // if(iOS) {
    //    // 앱설치 모달
    //    // $("#popup_layer").html(popup);
@@ -577,13 +554,25 @@ $(function(){
 
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
-		// 로그인 시에만 표시
+		// 로그아웃 시에만 표시
 		console.log(data);
-		if(data.result.isLoggedIn == false) $("#myModal").html(myPageModal);
+		if(data.result.isLoggedIn == false) {
+         $("#myModal").html(myPageModal);
+         
+         if ($('#naver_id_login').length > 0) {
+            ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+            function(data) {
+               $('#naver_id_login').html(data);
+            }, function (err) {
+               console.log("error login button", err);
+            })
+         }
+      } 
 
 	}, function(err){
 		console.error(err);
 	})
+
 	$("#modal-inquiry").html(inquiryModal);
 	
 });

@@ -232,11 +232,11 @@ $(function(){
     $("ul.tab_wrap .on").click(function(){
         $("div#tab2").hide();
         $("div#tab1").show();
-        var z = $('#tab1').offset().top;
-        var innerHeight = $(window).height();
-        $('#tab1 ul').css ({
-            'max-height' : (innerHeight - z) + 'px'
-        });
+        // var z = $('#tab1').offset().top;
+        // var innerHeight = $(window).height();
+        // $('#tab1 ul').css ({
+        //     'max-height' : (innerHeight - z) + 'px'
+        // });
     });
 
     $('.tabMenu_review li').on('click',function(){
@@ -433,6 +433,11 @@ function getCategory() {
             $('body').css ({
                 position:'fixed',
                 overflow:'hidden'
+            });
+            var z = $('#tab1').offset().top;
+            var innerHeight = $(window).height();
+            $('#tab1 ul').css ({
+                'max-height' : (innerHeight - z) + 'px'
             });
         })
 

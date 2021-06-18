@@ -63,40 +63,32 @@
     <%-include('general/header') %>
     </div>
 
-    <main>
-        <div class="main_contents">
-            <div class="web_contents">
-                <div class="left">
-                    <h3>마이팜</h3>
-                    <div class="left_ctn">
-                        <ul>
-                            <li><img src="/images/basket_ico.png"></li>
-                            <li>
-                                <span>김수아님</span></li>
-                            <li>내정보
-                                <span>
-                                    <i class="fas fa-chevron-right"></i></span></li>
-                        </ul>
+    <main id="mypage_point_ctt">
+        <div class="main_contents_wrap">
+            <div class="main_contents mypage_myinfo">
+                <h3>마이팜</h3>
+                <div class="main_contents_elements_wrap">
+                    <div class="mypage_member_info">
+                        <img src="/images/basket_ico.png" alt="바구니 아이콘">
+                        <h3>김수아님</h3>
+                        <p>내정보<span><i class="fas fa-chevron-right"></i></span></p>
                     </div>
-                </div>
 
-                <div class="center">
-                    <h3>포인트<img src="/images/point.png"></h3>
-                    <p>1000 원
-                        <span>
-                            <i class="fas fa-chevron-right"></i></span></p>
-                </div>
+                    <div class="mypage_point_info frame400">
+                        <h3>포인트<img src="/images/point.png" alt="포인트 아이콘"></h3>
+                        <p>000원<span><i class="fas fa-chevron-right"></i></span></p>
+                    </div>
 
-                <div class="right">
-                    <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
-                    <p>3개
-                        <span>
-                            <i class="fas fa-chevron-right"></i></span></p>
+                    <div class="mypage_coupon_info frame400">
+                        <h3>쿠폰<img src="/images/coupon_ico.png" alt="쿠폰 아이콘"></h3>
+                        <p>0개<span><i class="fas fa-chevron-right"></i></span></p>
+                    </div>
                 </div>
             </div>
         </div>
         <div>
-            <nav class="content_lnb point_content_lnb">
+            <div class="mypage_content_wrap">
+                <nav class="content_lnb point_content_lnb">
                 <ul>
                     <li>
                         <a href="/orderlist">주문내역</a>
@@ -120,8 +112,8 @@
                         <a href="/coupon">쿠폰</a>
                     </li>
                 </ul>
-            </nav>
-            <!-- <div class="contents">
+                </nav>
+                <!-- <div class="contents">
                 <div id="cp" class="current_point">
                     <p>현재 포인트</p>
                     <h2><img
@@ -186,12 +178,11 @@
                     </div>
                 </div>
             </div> -->
-            <div class="contents point_list">
+                <div class="contents point_list">
                 <div class="point_current_situation">
                     <h3>현재 포인트</h3>
                     <h4>000원</h4>
                 </div>
-                <div class="thick_line"></div>
                 <!-- <table>
                     <th class="headerName_date">날짜</th>
                     <th class="headerName_content">내용</th>
@@ -213,20 +204,70 @@
                         <li class="headerName_validity">유효기간</li>
                         <li class="headerName_price">금액</li>
                     </ul>
-                    <ul class="point_content">
-                        <li class="point_content_element mobile_right">
-                            <ul>
-                                <li class="content_date">2021.02.18</li>
-                                <li class="content_content">회원 가입 축하 적립</li>
-                                <li class="savePoint_brand">바디나인</li>
-                            </ul>
+                    <ul>
+                        <li class="point_content">
+                            <div class="point_content_element mobile_right">
+                                <ul>
+                                    <li class="content_date">2021.02.18</li>
+                                    <li class="content_content">회원 가입 축하 적립</li>
+                                    <li class="savePoint_brand">바디나인</li>
+                                </ul>
+                            </div>
+                            <div class="point_content_element mobile_left">
+                                <ul>
+                                    <li class="content_validity">2021.12.31</li>
+                                    <li class="point_sortation">적립</li>
+                                    <li class="content_price">+ 000원</li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="point_content_element mobile_left">
-                            <ul>
-                                <li class="content_validity">2021.12.31</li>
-                                <li class="point_sortation">적립</li>
-                                <li class="content_price">+ 000원</li>
-                            </ul>
+                        <li class="point_content">
+                            <div class="point_content_element mobile_right">
+                                <ul>
+                                    <li class="content_date">2021.02.18</li>
+                                    <li class="content_content">회원 가입 축하 적립</li>
+                                    <li class="savePoint_brand">바디나인</li>
+                                </ul>
+                            </div>
+                            <div class="point_content_element mobile_left">
+                                <ul>
+                                    <li class="content_validity">2021.12.31</li>
+                                    <li class="point_sortation">적립</li>
+                                    <li class="content_price">+ 000원</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="point_content">
+                            <div class="point_content_element mobile_right">
+                                <ul>
+                                    <li class="content_date">2021.02.18</li>
+                                    <li class="content_content">회원 가입 축하 적립</li>
+                                    <li class="savePoint_brand">바디나인</li>
+                                </ul>
+                            </div>
+                            <div class="point_content_element mobile_left">
+                                <ul>
+                                    <li class="content_validity">2021.12.31</li>
+                                    <li class="point_sortation">적립</li>
+                                    <li class="content_price">+ 000원</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="point_content">
+                            <div class="point_content_element mobile_right">
+                                <ul>
+                                    <li class="content_date">2021.02.18</li>
+                                    <li class="content_content">회원 가입 축하 적립</li>
+                                    <li class="savePoint_brand">바디나인</li>
+                                </ul>
+                            </div>
+                            <div class="point_content_element mobile_left">
+                                <ul>
+                                    <li class="content_validity">2021.12.31</li>
+                                    <li class="point_sortation">적립</li>
+                                    <li class="content_price">+ 000원</li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -247,6 +288,7 @@
                         <a class="arrow next" href="#"></a>
                         <a class="arrow nnext" href="#"></a>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
