@@ -1,8 +1,7 @@
+import { globalData } from '../app'
 import { NextFunction, Request, Response, Router } from 'express'
 import * as fs from 'fs'
 import path from 'path'
-import { globalData } from '../app'
-import userService from '../services/userService'
 
 const router = Router()
 
@@ -11,7 +10,7 @@ router.get('/acme-challenge/:fileName', async (req: Request, res: Response, next
     const acmeDir = '.well-known/acme-challenge'
     const fileName = req.params.fileName
     const filePath = path.join(acmeDir, fileName)
-
+    console.log(globalData.getBaseDir(), filePath)
     try {
         fs.readFile(path.join(globalData.getBaseDir(), filePath), { encoding: 'utf-8' }, (data) => {
             res.send(data)
