@@ -78,15 +78,21 @@ router.get('/coupon', (req: Request, res: Response, next: NextFunction) => {
 })
 
 router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_productReview', {})
+    checkLogin(req, res, (sessionUser) => {
+        render(req, res, 'mypage_productReview', {})
+    })
 })
 
 router.get('/p_inquiry', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_productInquiry', {})
+    checkLogin(req, res, (sessionUser) => {
+        render(req, res, 'mypage_productInquiry', {})
+    })
 })
 
 router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_seller_inquiry', {})
+    checkLogin(req, res, (sessionUser) => {
+        render(req, res, 'mypage_seller_inquiry', {})
+    })
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {

@@ -395,6 +395,8 @@ margin-left:14px
     .point_content .point_sortation {display: none;}
 }
 
+
+.point_content .content_price.minus { color: red}
 @media screen and (max-width:1079px) {
     .point_list {
         width: 100%; min-width: 360px;
