@@ -27,7 +27,9 @@ export namespace globalData {
 import indexViewRouter from './routes/indexViewRouter'
 import requireLoginViewRouter from './routes/requireLoginViewRouter'
 import snsLoginRouter from './routes/snsLoginRouter'
+
 import niceIdentifierRouter from './routes/niceIdentifierRouter'
+import sslCertificateRouter from './routes/sslCertificateRouter'
 import userApiRouter from './routes/userApiRouter'
 
 app.use(session({
@@ -50,6 +52,8 @@ app.use('/', requireLoginViewRouter)
 app.use('/user', userApiRouter)
 app.use('/user', snsLoginRouter)
 app.use('/nice', niceIdentifierRouter)
+
+app.use('/.well-known', sslCertificateRouter)
 
 app.set('views', path.join(__baseDir, 'views'))
 app.set('view engine', 'ejs')
