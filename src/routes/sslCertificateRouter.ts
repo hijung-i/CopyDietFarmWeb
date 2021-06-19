@@ -11,6 +11,7 @@ router.get('/acme-challenge/:fileName', async (req: Request, res: Response, next
     const fileName = req.params.fileName
     const filePath = path.join(acmeDir, fileName)
     console.log(globalData.getBaseDir(), filePath)
+    
     try {
         fs.readFile(path.join(globalData.getBaseDir(), filePath), { encoding: 'utf-8' }, (data) => {
             res.send(data)
