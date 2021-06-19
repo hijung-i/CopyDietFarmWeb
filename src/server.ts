@@ -1,11 +1,12 @@
 import app, { globalData } from './app'
+import * as path from 'path'
 import * as fs from 'fs'
 
 import * as http from 'http'
 import * as https from 'https'
 
 const options = {
-    pfx: fs.readFileSync(globalData.getBaseDir() + '/cert/cert.pfx'),
+    pfx: fs.readFileSync(path.join(globalData.getBaseDir(), '/cert/cert.pfx')),
     passphrase: 'dataflow0327!@'
 }
 
@@ -16,6 +17,6 @@ httpServer.listen(80, () => {
     console.log('SERVER IS LISTENING PORT 80')
 })
 
-httpsServer.listen(443, () => {
-    console.log('SERVER IS LISTENING PORT 443')
-})
+// httpsServer.listen(443, () => {
+//     console.log('SERVER IS LISTENING PORT 443')
+// })
