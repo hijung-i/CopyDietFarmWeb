@@ -14,13 +14,15 @@ router.get('/acme-challenge/:fileName', async (req: Request, res: Response, next
 
     let file;
     try{
-        file = fs.readFileSync(path.join(globalData.getBaseDir(), filePath))
+        file = fs.readFile(path.join(globalData.getBaseDir(), filePath), { encoding: 'utf-8' }, (data) => {
+            res.send(data);
+        })
+
     } catch(err) {
+        res.send('')
         console.error(err)
     }
 
-    console.log(file)
-    res.send(file)
 })
 
 export default router
