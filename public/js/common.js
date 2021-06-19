@@ -1,4 +1,4 @@
-// var API_SERVER = "http://localhost:9090";
+var API_SERVER = "http://localhost:9090";
 // var SERVER_IP = 'localhost';
 // var SERVER_IP = '192.168.0.3';
 // var SERVER_IP = 'data-flow.co.kr';
@@ -11,7 +11,7 @@
 // var RESOURCE_SERVER = "http://112.217.209.162:8000";
 
 // 운영
-var API_SERVER = "http://13.209.123.102:9090";
+// var API_SERVER = "http://13.209.123.102:9090";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "http://"+ SERVER_IP;
 
