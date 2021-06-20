@@ -375,6 +375,7 @@ margin-left:14px
         font-weight: 400;
         padding: 14px 0;
         border-bottom: 1px solid #BBB;
+        display: flex;
     }
     .point_info_content ul li {text-align: center;}
     .headerName_date {width: 133px;}
