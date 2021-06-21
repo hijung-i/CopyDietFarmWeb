@@ -353,7 +353,6 @@ margin-left:14px
 /* 포인트 테이블 개발 */
 @media screen and (min-width:1080px) {
     .point_info_content {
-        width: 811px;
         overflow: hidden;
     }
     .point_info_content ul  {
@@ -369,12 +368,14 @@ margin-left:14px
         font-size: 14px;
         font-weight: 700;
     }
+    ul.point_list_body {display: block;}
     .point_content {
 
         font-size: 12px;
         font-weight: 400;
         padding: 14px 0;
         border-bottom: 1px solid #BBB;
+        display: flex;
     }
     .point_info_content ul li {text-align: center;}
     .headerName_date {width: 133px;}
