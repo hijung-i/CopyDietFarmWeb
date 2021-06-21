@@ -1,20 +1,26 @@
+import { globalData } from '../app'
 import { NextFunction, Request, Response, Router } from 'express'
 import * as fs from 'fs'
-import path from 'path'
-import { globalData } from '../app'
-import userService from '../services/userService'
+import * as path from 'path'
 
 const router = Router()
 
 router.get('/acme-challenge/:fileName', async (req: Request, res: Response, next: NextFunction) => {
-    console.log('GET acme-challenge --> ', req.params.fileName)
     const acmeDir = '.well-known/acme-challenge'
     const fileName = req.params.fileName
-    const filePath = path.join(acmeDir, fileName)
+    const filePath = path.join(globalData.getBaseDir(), path.join(acmeDir, fileName))
+    console.log(filePath)
 
-    const file = fs.readFileSync(path.join(globalData.getBaseDir(), filePath))
-    console.log(file)
-    res.send(file)
+    try {
+        fs.readFile(filePath, { encoding: 'utf-8' }, (err, data) => {
+	    if (err) console.log(err)
+	    console.log(data)
+            res.send(data)
+        })
+    } catch (err) {
+        res.send('')
+        console.error(err)
+    }
 })
 
 export default router
