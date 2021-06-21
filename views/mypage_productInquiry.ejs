@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주문내역</title>
+    <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
     <style type="text/css">
         @media screen and (max-width:1079px) {
             .web_p_inquiry {
@@ -31,7 +31,8 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="/css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/css/style_web.css">
     <link rel="stylesheet" href="/css/product.css">
     <link rel="stylesheet" href="/css/mypage.css">
@@ -111,7 +112,7 @@
             </ul>
             </nav>
             <div class="contents">
-            <div class="body_contents tab6">
+                <div class="body_contents tab6">
                 <h3 class="orderList_detail">상품 문의</h3>
                 <div class="order_detail_ctn">
 
@@ -126,11 +127,11 @@
                     </div>
 
                     <div id="tab1" class="tab_cont active">
-                        <div class="p_inquiry_box">
+                        <div class="p_inquiry_box" v-for="ask in waitingAskList">
                             <div class="box_top">
                                 <p>미답변</p>
                                 <ul>
-                                    <li>2020.10.21</li>
+                                    <li>{{ formatDate(ask.createDate) }}</li>
                                     <li><img src="images/l_icon_category.png"></li>
                                     <li>
                                         <a href="">수정</a>
@@ -143,61 +144,18 @@
                             </div>
                             <div class="box_btm">
                                 <p>
-                                    <span>(아임월) 굿밸런스 라이트밀 도시락</span></p>
-                                <p>언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인부탁드립니다.</p>
+                                    <span>{{ ask.productName}}</span></p>
+                                <p v-html="ask.content"></p>
                             </div>
                         </div>
-                        <div class="p_inquiry_box">
-                            <div class="box_top">
-                                <p>미답변</p>
-                                <ul>
-                                    <li>2020.10.21</li>
-                                    <li><img src="images/l_icon_category.png"></li>
-                                    <li>
-                                        <a href="">수정</a>
-                                    </li>
-                                    <li><img src="images/l_icon_category.png"></li>
-                                    <li>
-                                        <a href="">삭제</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="box_btm">
-                                <p>
-                                    <span>(아임월) 굿밸런스 라이트밀 도시락</span></p>
-                                <p>언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인부탁드립니다.</p>
-                            </div>
-                        </div>
-                        <div class="p_inquiry_box">
-                            <div class="box_top">
-                                <p>미답변</p>
-                                <ul>
-                                    <li>2020.10.21</li>
-                                    <li><img src="images/l_icon_category.png"></li>
-                                    <li>
-                                        <a href="">수정</a>
-                                    </li>
-                                    <li><img src="images/l_icon_category.png"></li>
-                                    <li>
-                                        <a href="">삭제</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="box_btm">
-                                <p>
-                                    <span>(아임월) 굿밸런스 라이트밀 도시락</span></p>
-                                <p>언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인부탁드립니다.</p>
-                            </div>
-                        </div>
-
                     </div>
 
                     <div id="tab2" class="tab_cont">
-                        <div class="p_inquiry_box">
+                        <div class="p_inquiry_box" v-for="ask in doneAskList">
                             <div class="box_top">
                                 <p>답변완료</p>
                                 <ul>
-                                    <li>2020.10.21</li>
+                                    <li>{{ formatDate(ask.createDate) }}</li>
                                     <li><img src="images/l_icon_category.png"></li>
                                     <li>
                                         <a href="">삭제</a>
@@ -206,15 +164,15 @@
                             </div>
                             <div class="box_btm">
                                 <p>
-                                    <span>(아임월) 굿밸런스 라이트밀 도시락</span></p>
-                                <p>언제 배송되나요? 일요일날 주문해서 아직도 안왔어요. 확인부탁드립니다.</p>
+                                    <span>{{ask.productName}}</span></p>
+                                <p v-html="ask.content"><p>
                             </div>
                             <div class="p_answer">
-                                <p>안녕하세요<br>너그러운 마음으로 기다려 주시면 안전하게<br>배송해드리겠습니다.</p>
+                                <p v-html="ask.answer"></p>
                                 <ul>
                                     <li>판매자</li>
                                     <li><img src="images/l_icon_category.png"></li>
-                                    <li>2020.10.21</li>
+                                    <li>{{ formatDate(ask.answerDate) }}</li>
                                     <li><img src="images/l_icon_category.png"></li>
                                     <li>
                                         <a href="">신고</a>
@@ -244,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
             </div>
         </div>
     </main>
@@ -276,7 +234,10 @@
         </div>
     </section>
 
+    </main>
+
     <!-- modal window end -->
+    <script src="/js/mypage/productInquiry.js"></script>
     <%-include('general/footer') %>
     </body>
 

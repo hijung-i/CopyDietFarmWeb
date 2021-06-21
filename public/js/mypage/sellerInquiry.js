@@ -1,9 +1,10 @@
 var app = new Vue({
-    el: 'main',
+    el: '#main',
     data: {
         RESOURCE_SERVER,
-        reviewList: [],
-        writableReviewList: []
+        askList: [],
+        waitingAskList: [],
+        doneAskList: []
     }, methods: {
         formatDate,
         getOptionName: function(options) {
@@ -17,34 +18,23 @@ var app = new Vue({
 })
 
 $(function() {
-    getQuestionList();
-    getWritableReview();
+    getQuestionList()
 });
 
 function getQuestionList() {
     var params = {};
 
-    ajaxCallWithLogin(API_SERVER + '/board/getReview', params, 'POST', 
+    ajaxCallWithLogin(API_SERVER + '/board/getMyQuestionList', params, 'POST', 
     function (data) {
-    
-        app.reviewList = data.result;
-        console.log("success", data);
-    }, function (err){
-        console.log("error while getReview", err);
-    }, {
-        isRequired: true,
-        userId: true
-    })
-}
+        console.log(data);
+        app.askList = data.result;
 
-function getWritableReview() {
-    var params = {};
-
-    ajaxCallWithLogin(API_SERVER + '/board/getWritableReview', params, 'POST', 
-    function (data) {
-    
-        app.writableReviewList = data.result;
-        console.log("success", data);
+        app.waitingAskList = app.askList.filter(function(val) {
+            return val.answerState == 'N'
+        }) 
+        app.doneAskList = app.askList.filter(function(val) {
+            return (val.answerState == 'Y')
+        }) 
     }, function (err){
         console.log("error while getReview", err);
     }, {

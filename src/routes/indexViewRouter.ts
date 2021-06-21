@@ -205,15 +205,6 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'order_info', { deliveryGroupList: JSON.stringify(deliveryGroupList), orderDTO: JSON.stringify(orderDTO) })
 })
 
-router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_productReview', {})
-})
-router.get('/p_inquiry', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_productInquiry', {})
-})
-router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage_seller_inquiry', {})
-})
 router.get('/s_inquiry_more', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'web_seller_inquiry', {})
 })

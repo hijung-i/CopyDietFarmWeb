@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품리뷰</title>
+    <title>상품 리뷰, 다이어트팜:: 다이어트 건강식단 플랫폼</title>
     <style>
         @media screen and (max-width:1079px) {
             .web_p_review {
@@ -115,9 +115,9 @@
                     style="margin-top:-20px; border-bottom: 1px solid #f1f1f1;">
                     <ul class="tab_wrap">
                         <li class="active on" data-tab="tab1">
-                            <span>작성 가능한 리뷰 (3)</span></li>
+                            <span>작성 가능한 리뷰 ({{ writableReviewList.length}})</span></li>
                         <li data-tab="tab2" class="" id="possible">
-                            <span>작성한 리뷰 (9)</span></li>
+                            <span>작성한 리뷰 ({{ reviewList.length}})</span></li>
                         <span></span>
                     </ul>
                 </div>
@@ -126,13 +126,13 @@
                     <section class="review_list_ctn">
                         <template v-for="writable in writableReviewList">
                             <div class="review_item_box">
-                                <img src="images/dietfarmbread.jpg" style="width:50px;height:62px">
+                                <img v-bind:src="RESOURCE_SERVER + writable.product.url" style="width:50px;height:62px">
                                 <ul>
                                     <li>
-                                        <span>(아임월)</span></li>
-                                    <li>굿밸런스 라이트밀 도시락</li>
+                                        <span>[{{ writable.product.companyName }}]</span></li>
+                                    <li>{{writable.product.productName }}</li>
                                     <li>
-                                        <span>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</span></li>
+                                        <span>{{ getOptionName(writable.product.options) }}</span></li>
                                 </ul>
                                 <button type="button" id="modal_btn">리뷰쓰기</button>
                             </div>
@@ -145,13 +145,13 @@
                         <div class="review_box_wrap">
                             <div class="review_item_box02">
                                 <div class="box_wrap">
-                                    <img src="images/dietfarmbread.jpg" style="width:50px;height:62px">
+                                    <img v-bind:src="RESOURCE_SERVER + review.product.url" style="width:50px;height:62px">
                                     <ul>
                                         <li>
-                                            <span>(아임월)</span></li>
-                                        <li>굿밸런스 라이트밀 도시락</li>
+                                            <span>[{{ review.product.companyName }}]</span></li>
+                                        <li>{{review.product.productName}} </li>
                                         <li>
-                                            <span>옵션 : 한입닭&amp;큐브닭 9종 혼합 36팩</span></li>
+                                            <span>{{ getOptionName(review.product.options) }}</span></li>
                                     </ul>
                                 </div>
                                 <div class="edit_del_icon">
@@ -164,21 +164,26 @@
                                 </div>
                             </div>
                             <div class="review_complete">
-                                <p>2020.10.21</p>
+                                <p>{{ formatDate(review.createDate) }}</p>
                                 <div id="star_grade" class="star_grade">
                                     <div class="starRev">
-                                        <span class="starR1 on">별1_왼쪽</span>
-                                        <span class="starR2">별1_오른쪽</span>
-                                        <span class="starR1">별2_왼쪽</span>
-                                        <span class="starR2">별2_오른쪽</span>
-                                        <span class="starR1">별3_왼쪽</span>
-                                        <span class="starR2">별3_오른쪽</span>
-                                        <span class="starR1">별4_왼쪽</span>
-                                        <span class="starR2">별4_오른쪽</span>
-                                        <span class="starR1">별5_왼쪽</span>
-                                        <span class="starR2">별5_오른쪽</span>
+                                        <template v-for="count in (review.gpa * 2)">
+                                            <span class="starR1 on" v-if="count % 2 == 1">별1_왼쪽</span>
+                                            <span class="starR2 on" v-if="count % 2 == 0">별1_오른쪽</span>
+                                        </template>
+                                        <template v-for="count in (10 - (review.gpa * 2))">
+                                            <template v-if="(10 - (review.gpa * 2)) % 2 == 1">
+                                                <span class="starR1" v-if="count % 2 == 0">별1_왼쪽</span>
+                                                <span class="starR2" v-if="count % 2 == 1">별1_오른쪽</span>
+                                            </template>
+                                            <template v-if="(10 - (review.gpa * 2)) % 2 == 0">
+                                                <span class="starR2" v-if="count % 2 == 0">별1_오른쪽</span>
+                                                <span class="starR1" v-if="count % 2 == 1">별1_왼쪽</span>
+                                            </template>
+                                                
+                                        </template>
                                     </div>
-                                    <p style="font-size:14px">좋아요좋아요좋아요좋아요</p>
+                                    <p style="font-size:14px" v-html="review.content"></p>
                                 </div>
                             </div>
                         </div>
