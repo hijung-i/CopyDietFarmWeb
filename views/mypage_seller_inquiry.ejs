@@ -38,7 +38,6 @@
         <link rel="stylesheet" href="/css/product.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <!-- main.js -->
-        <script src="/js/main.js"></script>
         <%-include('general/head') %>
 </head>
 
@@ -121,7 +120,7 @@
                         </ul>
                         </div>
                         <div id="tab1" class="tab_cont active">
-                        <div class="s_inquiry_box">
+                        <div class="s_inquiry_box" v-for="ask in waitingAskList">
                         <div class="inquiry_product">
                             <div class="inquiry_product_head">
                                 <h4>아임월</h4>

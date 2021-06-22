@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '#main',
+    el: 'main',
     data: {
         RESOURCE_SERVER,
         askList: [],
