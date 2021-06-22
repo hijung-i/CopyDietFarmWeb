@@ -1248,7 +1248,6 @@ color: #878787;
 .basic > .bar {
 margin-left: 3px;
 }
-.del_mng_list_top a {cursor: pointer;}
 
 /*버튼 색상 설정*/
 :root{--font-color: #4e4e4e;--yello-color: #F99319;--yello-border-color: #F99319;}
@@ -2429,35 +2428,14 @@ padding: 12px 0;}
 .thick_line {width: 100%; height: 8px;background: #F1F1F1;}
 
 /* 부스러기 */
-.delivery_manage_list .del_mng_type {align-items: center;}
+
 .delivery_manage_list .del_mng_type,
 .delivery_manage_list .edit_remove {
 display: flex;
 }
 .customer_info img{position:relative;top:0}
 .edit_remove li img{position:relative;top:0;left:2px}
-.del_mng_list_top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 4px 4px 0;
-}
-.del_mng_list_top li {
-  padding: 4px 4px 4px 0;
-}
-.del_mng_list_top .type_first {
-  font-size: 14px; font-weight:bold;
-}
-.del_mng_list_top .type_second > .tema {
-  font-size: 12px;
-  color: #fff;
-  background: #BBBBBB;
-  text-align: center;
-  border-radius: 5px;
-  padding: 2px;
-  margin-left:8px;
-}
-	
+
 /* 버튼 */
 .btn_area {margin-top:25px;width:100%;padding-left:15px;padding-right:15px}
 
