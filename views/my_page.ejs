@@ -35,7 +35,7 @@
     <body>
 
  <!-- //마이페이지 로그인 모달 시작 -->
-        <div id="myModal" class="mypage_modal"></div>
+      <!--//  <div id="myModal" class="mypage_modal"></div>-->
         <article class="skip_menu">
             <a href="#">
                 <span>바로가기1</span></a>
@@ -67,7 +67,7 @@
                                     style="position:relative;margin-right:7px;width:20px;height:20px">회원가입</button>
                         
                                 </div>-->
-                                <button type="button" class="btnMyPage">로그인 / 회원가입</button>
+                                <button type="button" class="btnMyPage" onclick="location.href='/sign-up-form'">로그인 / 회원가입</button>
                             <% } else if (isLoggedIn) { %>
                                 <ul style="border:none;">
                                     <li style="font-size:16px;font-weight:bold;"><%=sessionUser.userName %>님</li>
