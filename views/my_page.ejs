@@ -67,7 +67,9 @@
                                     style="position:relative;margin-right:7px;width:20px;height:20px">회원가입</button>
                         
                                 </div>-->
+                            <div class="mypage_btn">
                                 <button type="button" class="btnMyPage" onclick="location.href='/sign-up-form'">로그인 / 회원가입</button>
+                            </div>
                             <% } else if (isLoggedIn) { %>
                                 <ul style="border:none;">
                                     <li style="font-size:16px;font-weight:bold;"><%=sessionUser.userName %>님</li>
@@ -188,7 +190,7 @@
                                 </ul>
                             </a>
                         </div>
-                       <div class="myPage05"> <ul style="border:none;padding-bottom:38px"> <li><a
+                       <div class="myPage05"> <ul style="border:none;padding-bottom:42px"> <li><a
                         href="javascript:location.href='/logout';">로그아웃</a></li> </ul> 
                         </div>
                 </div>

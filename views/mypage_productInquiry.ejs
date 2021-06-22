@@ -127,6 +127,10 @@
                     </div>
 
                     <div id="tab1" class="tab_cont active">
+                        <div class="review_list_null" v-if="waitingAskList == undefined || waitingAskList.length == 0">
+                            <img src="/images/note_icon_review.png">
+                            <p class="no_review">아직 작성된 문의가 없습니다.</p>
+                        </div>
                         <div class="p_inquiry_box" v-for="ask in waitingAskList">
                             <div class="box_top">
                                 <p>미답변</p>
@@ -151,6 +155,10 @@
                     </div>
 
                     <div id="tab2" class="tab_cont">
+                        <div class="review_list_null" v-if="doneAskList == undefined || doneAskList.length == 0">
+                            <img src="/images/note_icon_review.png">
+                            <p class="no_review">아직 답변 완료된 문의가 없습니다.</p>
+                        </div>
                         <div class="p_inquiry_box" v-for="ask in doneAskList">
                             <div class="box_top">
                                 <p>답변완료</p>

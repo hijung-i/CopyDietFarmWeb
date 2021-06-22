@@ -123,6 +123,10 @@
                 </div>
 
                 <div id="tab1" class="tab_cont active">
+                    <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
+                        <img src="/images/note_icon_review.png">
+                        <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
+                    </div>
                     <section class="review_list_ctn">
                         <template v-for="writable in writableReviewList">
                             <div class="review_item_box">
@@ -141,6 +145,10 @@
                     </section>
                 </div>
                 <div id="tab2" class="tab_cont">
+                    <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
+                        <img src="/images/note_icon_review.png">
+                        <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
+                    </div>
                     <div class="reviews" v-for="(review, index) in reviewList">
                         <div class="review_box_wrap">
                             <div class="review_item_box02">

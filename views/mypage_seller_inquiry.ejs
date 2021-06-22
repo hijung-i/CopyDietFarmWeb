@@ -121,6 +121,10 @@
                         </ul>
                         </div>
                         <div id="tab1" class="tab_cont active">
+                        <!--<div class="review_list_null" v-if="waitingAskList == undefined || waitingAskList.length == 0">
+                                <img src="/images/note_icon_review.png">
+                                <p class="no_review">아직 작성된 문의가 없습니다.</p>
+                            </div> //-->
                         <div class="s_inquiry_box">
                         <div class="inquiry_product">
                             <div class="inquiry_product_head">
@@ -157,7 +161,11 @@
                     
                         </div>
 
-                        <div id="tab2" class="tab_cont">
+              <div id="tab2" class="tab_cont">
+             <!--//  <div class="review_list_null" v-if="doneAskList == undefined || doneAskList.length == 0">
+                    <img src="/images/note_icon_review.png">
+                    <p class="no_review">아직 답변 완료된 문의가 없습니다.</p>
+                </div>--> 
                 <div class="s_inquiry_box" v-for="ask in doneAskList">
                     <div class="inquiry_product">
                         <div class="inquiry_product_head">
