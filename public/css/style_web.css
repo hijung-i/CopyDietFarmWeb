@@ -1,7 +1,7 @@
 /*coupon web*/
 @media screen and (max-width:1079px){
 .review_item_box{display:flex;justify-content: space-around;border-bottom:1px solid #E6E6E6;padding-bottom:21px;padding-top:22px}
-.review_item_box ul li{margin-bottom:6px}
+.review_item_box ul li{margin-bottom:6px;width:200px}
 .review_item_box ul li span{color:#878787}
 .review_item_box button{width:66px;height:36px;border-radius:5px;background-color:#EFA543;color:#fff;border:none;margin-top:12px}
 .review_item_box02{display:flex;justify-content: space-between;border-bottom:1px solid #E6E6E6;padding-bottom:21px;padding-top:22px;padding-right:15px}
