@@ -55,7 +55,7 @@
                         <% if (!isLoggedIn) { %>
                             <h3>로그인 해주세요.</h3>
                             <h4>신규 회원가입시 10,000P 적립금 지급!</h4>
-                            <div class="buttons">
+                          <!--//<div class="buttons">
                                 <button id="myBtn"  onclick="openModal()" class="btnLogin"><img
                                     src="/images/login_icon_my@2x.png"
                                     style="position:relative;margin-right:7px;width:20px;height:20px">로그인</button>
@@ -66,7 +66,8 @@
                                     src="/images/join_icon_my@2x.png"
                                     style="position:relative;margin-right:7px;width:20px;height:20px">회원가입</button>
                         
-                                </div>
+                                </div>-->
+                                <button type="button" class="btnMyPage">로그인 / 회원가입</button>
                             <% } else if (isLoggedIn) { %>
                                 <ul style="border:none;">
                                     <li style="font-size:16px;font-weight:bold;"><%=sessionUser.userName %>님</li>
