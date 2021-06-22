@@ -130,6 +130,7 @@
                     <section class="review_list_ctn">
                         <template v-for="writable in writableReviewList">
                             <div class="review_item_box">
+                                <div class="box_top">
                                 <img v-bind:src="RESOURCE_SERVER + writable.product.url" style="width:50px;height:62px">
                                 <ul>
                                     <li>
@@ -138,6 +139,7 @@
                                     <li>
                                         <span>{{ getOptionName(writable.product.options) }}</span></li>
                                 </ul>
+                            </div>
                                 <button type="button" id="modal_btn">리뷰쓰기</button>
                             </div>
                         </template>

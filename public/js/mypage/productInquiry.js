@@ -7,7 +7,7 @@ var app = new Vue({
         doneAskList: []
     }, methods: {
         formatDate,
-        getOptionName: function(options) {
+        getOptionName: function(optm,ions) {
             var optionName = options[0].optionDesc
             if(options.length > 1)  {
                 optionName += '외 ' + (options.length -1) + '건';
