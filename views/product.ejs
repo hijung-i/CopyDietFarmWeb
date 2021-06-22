@@ -6,7 +6,7 @@
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
-
+        
         <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
         <style type="text/css">
      
@@ -113,26 +113,6 @@
     }
    .mobile_product_details { display: none}                       
      }
-            /* The Modal (background) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 10000; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-        /* Modal Content/Box */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%; /* Could be more or less, depending on screen size */
-        }
         /* The Close Button */
         .product_close {
             color: #aaa;
@@ -191,11 +171,42 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <%-include('general/head') %>
         <link rel="stylesheet" href="/css/product.css">
+        <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-           <div class="web_product_details">
-                <%-include('general/header') %>
+                <!-- 공유하기 모달 -->
+                    <div id="share_modal" class="share_modal modal-overlay">
+                        
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            
+                            <div class="share_header">
+                                <h2>공유하기</h2>
+                                <span class="close" onclick="">&times;</span>
+                            </div>
+
+                            <div class="share_body">
+                                <div class="kakaoTalk">
+                                    <p><img src="/images/url_icon_friend@2x.png" alt="url"></p>
+                                    <p>카카오톡</p>
+                                </div>
+                                <div class="sms">
+                                    <p><img src="/images/url_icon_friend@2x.png" alt="url"></p>
+                                    <p>문자</p>
+                                </div>
+                                <div class="copyUrl">
+                                    <p><img src="/images/url_icon_friend@2x.png" alt="url"></p>
+                                    <p>url 복사</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                <!-- 공유하기 모달 끝 -->
+                <div class="web_product_details">
+                    <%-include('general/header') %>
                 </div>
 
                 <div class="mobile_product_details">
@@ -269,7 +280,8 @@
                                     </div>
                                 </div>
                                     <div class="v_top_txt_box">
-                                        <div class="modal" id="ex">
+                                        
+                                        <!-- <div class="modal" id="ex">
                                             <p>공유하기</p>
                                             <ul>
                                                 <li>
@@ -283,7 +295,8 @@
                                                 </li>
                                             </ul>
                                             <a href="#" rel="modal:close"></a>
-                                        </div>
+                                        </div> -->
+
                                         <div class="share_img">
                                             <p>
                                                 <a href="#ex" rel="modal:open"><img src="/images/share_icon_detail.png"></a>
@@ -459,7 +472,8 @@
                                                             name="quantity"
                                                             v-model="item.optionCount"
                                                             value="1"
-                                                            type="number">
+                                                            type="number"
+                                                            readonly>
                                                         <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
                                                     </div>
                                                     <p>
