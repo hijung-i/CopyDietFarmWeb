@@ -1,11 +1,9 @@
 /* Slider */
 .slick-slider
-{
-    position: relative;
-    top: 30px;
-    display: block;
+{   display: block;
     box-sizing: border-box;
-
+    padding-left:15px;
+    padding-right:15px;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -17,11 +15,37 @@
         touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
 }
-
+@media screen and (max-width:1079px){
+.slick-slider .title{
+    width:140px;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    margin-top:10px}
+    
+    .slick-slider ul{
+    margin-left:2px!important;
+    font-size:13px
+    }
+    
+    .slick-slider ul li{
+    margin-right:4px
+    }
+}
+@media screen and (min-width:1080px){
+    .slick-slider .title{
+       font-size:14px;
+       margin-top:13px
+       }
+    .slick-slider  .desc .sale{font-size:16px;font-weight:bold}
+    .slick-slider  .desc .cost{font-size:16px;text-decoration:line-through;color:#6B6B6B}
+    .slick-slider  .desc .ratio{font-size:16px;font-weight:bold;color:#F32525}
+    .slick-slider .desc ul{display:flex;margin-top:10px}
+    .slick-slider .desc ul li{margin-right:7px}
+    }
 .slick-list
 {
     position: relative;
-
     display: block;
     overflow: hidden;
 
@@ -129,7 +153,7 @@
     background: url(/images/group_5044.png);
 }
 .slick-next {
-    top: -205px; right: -1025px;
+    top: -280px; right: -1025px;
     z-index: 9;
     background: url(/images/group_5045.png);
 }
