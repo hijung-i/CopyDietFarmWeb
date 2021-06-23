@@ -162,7 +162,8 @@
 @media screen and (max-width:1079px) {
     div.slick-active {width: 146px !important;}
     .slick-slide img {
-        width: 136px !important; 
+        width: 136px !important;
+        height:136px
     }
     .slick-arrow {display: none !important;}
 }

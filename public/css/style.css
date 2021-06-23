@@ -116,9 +116,7 @@ a:hover{text-decoration:none;}
 #wrap{position:relative;width:100%;z-index:1;}
 #headerwrap{height:90px;}
 #header_common{width:100%; background-color: #FFFFFF}
-@media screen and (max-width:629px){
-.slick-slider{margin-bottom:-200px}
-}
+
 @media screen and (min-width:630px) and (max-width:1079px){
 .slick-slider{margin-bottom:40px}
 }
@@ -420,6 +418,9 @@ height:50px;overflow:hidden}
  #content .s_wrap{margin-bottom:-50px}
  #content .s_price{margin:20px 10px 20px;width:100%;margin-bottom:-50px;}
  #content .mtpSlideTit{font-size:20px;margin-bottom:21px}
+ #content .mtpSlideTit1{font-size:14px;font-weight:bold;margin-bottom:21px;clear:both;margin-left:15px;}
+ #content .r_products{border-top:8px solid #f1f1f1;border-bottom:8px solid #f1f1f1;
+margin-top:100px;padding-top:25px;padding-bottom:21px}
  #content .s_price li .title{font-size:12px;/*overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100px;height: 20px;display:inline-block*/}
  #content .s_price li .price{font-size:12px;font-weight:bold;margin-top:12px;overflow:visible;}
  #content .s_price ul li img{margin-bottom:10px}
@@ -814,8 +815,7 @@ height:233px;
   .order_btn{width:100%;padding-left:15px;margin-bottom:25px}
   #orderBtn{width:98%;height:45px;color:#fff;border:0;background-color:#F99319;border-radius:5px}
   .web_num{display:none}
-  /* 슬릭 슬라이드 모바일 */
-.responsive div img {width: 136px; height: 162px;}
+
 .event_title{display:none;}
 .web_index{display:none}
 .body_bottom h3{font-size:20px;font-weight:bold;padding-left:15px;padding-top:24px}
