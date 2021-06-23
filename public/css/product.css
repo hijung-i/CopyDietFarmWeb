@@ -214,7 +214,7 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 
 /* 상품상세 멀티슬라이드 */
 .responsive1 div img {
-    width: 294px; height: 353px;
+    width: 330px; height: 353px;
 }
 
 .other_cont{display:block;}
