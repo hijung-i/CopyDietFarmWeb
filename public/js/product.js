@@ -492,3 +492,63 @@ $(function(){
         $('html,body').animate({scrollTop:0},600);
     });
 });
+
+/* 공유하기 모달 */
+function openShareModal() {
+    console.log('open share');
+    $('#share_modal').show();
+    $('html,body').css({'overflow' : 'hidden', 'height' : '100%'});
+    $('html,body').on('scroll touchmove mousewheel',function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    });
+}
+function closeShareModal() {
+    $('#share_modal').hide();
+    $('html,body').css({'overflow':'visible'});
+    $('html,body').off('scroll touchmove mosewheel');
+}
+// var shareModal = document.getElementById("share_modal")
+// shareModal.addEventListener("click",e=> {
+//     var evTarget = e.target
+//     if(evTarget.classList.contains("share_modal")) {
+//         shareModal.style.display = "none"
+//         $('html,body').css({'overflow':'visivle'});
+//         $('html,body').off('scroll touchmove mosewheel');
+//     }
+// })
+
+/* 공유하기 */
+Kakao.Link.sendDefault({
+    objectType: 'feed',
+    content: {
+      title: '제품 이미지',
+      description: '...',
+      imageUrl:
+        'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+      link: {
+        mobileWebUrl: 'https://developers.kakao.com',
+        androidExecutionParams: 'test',
+      },
+    },
+    social: {
+      likeCount: 10,
+      commentCount: 20,
+      sharedCount: 30,
+    },
+    buttons: [
+      {
+        title: '웹으로 이동',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+        },
+      },
+      {
+        title: '앱으로 이동',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+        },
+      },
+    ]
+  });

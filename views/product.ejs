@@ -183,16 +183,16 @@
                             
                             <div class="share_header">
                                 <h2>공유하기</h2>
-                                <span class="close" onclick="">&times;</span>
+                                <span class="close" onclick="closeShareModal()">&times;</span>
                             </div>
 
                             <div class="share_body">
                                 <div class="kakaoTalk">
-                                    <p><img src="/images/url_icon_friend@2x.png" alt="url"></p>
+                                    <p onclick="Kakao.Link.sendDefault(PARAMETER);"><img src="/images/shareKakao@2x.png" alt="url"></p>
                                     <p>카카오톡</p>
                                 </div>
                                 <div class="sms">
-                                    <p><img src="/images/url_icon_friend@2x.png" alt="url"></p>
+                                    <p><img src="/images/shareSMS@2x.png" alt="url"></p>
                                     <p>문자</p>
                                 </div>
                                 <div class="copyUrl">
@@ -203,8 +203,8 @@
                         </div>
                         
                     </div>
-
                 <!-- 공유하기 모달 끝 -->
+                
                 <div class="web_product_details">
                     <%-include('general/header') %>
                 </div>
@@ -299,7 +299,7 @@
 
                                         <div class="share_img">
                                             <p>
-                                                <a href="#ex" rel="modal:open"><img src="/images/share_icon_detail.png"></a>
+                                                <a href="#" onclick="openShareModal();"><img src="/images/share_icon_detail.png"></a>
                                             </p>
                                         </div>
                                         <h1 class="v_top_name">{{ product.productName }}</h1>
