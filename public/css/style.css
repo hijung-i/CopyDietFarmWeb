@@ -116,9 +116,7 @@ a:hover{text-decoration:none;}
 #wrap{position:relative;width:100%;z-index:1;}
 #headerwrap{height:90px;}
 #header_common{width:100%; background-color: #FFFFFF}
-@media screen and (max-width:629px){
-.slick-slider{margin-bottom:-200px}
-}
+
 @media screen and (min-width:630px) and (max-width:1079px){
 .slick-slider{margin-bottom:40px}
 }
