@@ -1,7 +1,7 @@
 /*coupon web*/
 @media screen and (max-width:1079px){
 .review_item_box{display:flex;justify-content: space-around;border-bottom:1px solid #E6E6E6;padding-bottom:21px;padding-top:22px}
-.review_item_box ul li{margin-bottom:6px}
+.review_item_box ul li{margin-bottom:6px;width:200px}
 .review_item_box ul li span{color:#878787}
 .review_item_box button{width:66px;height:36px;border-radius:5px;background-color:#EFA543;color:#fff;border:none;margin-top:12px}
 .review_item_box02{display:flex;justify-content: space-between;border-bottom:1px solid #E6E6E6;padding-bottom:21px;padding-top:22px;padding-right:15px}
@@ -9,7 +9,6 @@
 .box_wrap{padding-left:15px}
 .box_wrap ul{display:inline-block}
 .box_wrap ul li{margin-bottom:5px;margin-left:9px}
-.review_box_wrap{border-bottom:8px solid #F1F1F1}
 .p_inquiry_box{border-bottom:1px solid #E6E6E6;padding-top:18px;max-width:100%;min-width:360px}
 .p_inquiry_box .box_top{display:flex;justify-content:space-between;margin-bottom:20px;padding-left:15px;padding-right:15px}
 .p_inquiry_box .box_top ul li{display:inline-block;margin-left:6px}
@@ -38,10 +37,10 @@
 .coupon_code{display:none}
 }
 @media screen and (min-width:1080px){
-    .review_item_box{display:flex;justify-content: space-around;border-bottom:1px solid #E6E6E6;padding-bottom:21px;padding-top:22px}
-    .review_item_box ul li{margin-bottom:6px}
-    .review_item_box ul li span{color:#878787}
-    .review_item_box button{width:66px;height:36px;border-radius:5px;background-color:#EFA543;color:#fff;border:none;margin-top:12px}
+.review_item_box{display:flex;justify-content: space-between;border-bottom:1px solid #E6E6E6;padding-bottom:21px;padding-top:22px}
+.review_item_box ul li{margin-bottom:6px}
+.review_item_box ul li span{color:#878787}
+.review_item_box button{width:66px;height:36px;border-radius:5px;background-color:#EFA543;color:#fff;border:none;margin-top:12px}
 .p_inquiry_box{border-bottom:1px solid #E6E6E6;padding-top:18px}
 .p_inquiry_box .box_top{display:flex;justify-content:space-between;margin-bottom:20px;padding-left:15px;padding-right:15px}
 .p_inquiry_box .box_top ul li{display:inline-block}
@@ -888,7 +887,6 @@ margin-left: 0;
 }
 .del_mng_list_top ul li img {padding: 2px;}
 .web_delivery_manage_list p img{margin-left:10px;margin-right:10px}
-.web_delivery_manage_list .edit_remove{margin-right:-25px}
 .web_delivery_manage_list .edit_remove li {
     font-size: 12px;
     padding: 2px;
@@ -927,9 +925,10 @@ margin-left: 0;
     font-size: 12px; 
     font-weight: 400; 
     color: #878787;
+    margin-top:10px
 
 }
-.btn_area_d{width:90%;margin:0 auto}
+
     .deliver_info_top {
         display: flex;
         align-items: center;
@@ -941,28 +940,26 @@ margin-left: 0;
 
 @media screen and (min-width:1080px){
 .top_checkBox_piece{position:relative;top:-20px;left:10px}
-.btn_area_d {
+.btn_area_d {margin:0 auto;text-align:center;margin-top:50px}
+.btn_area_d button {
     width: 330px; 
     height: 45px; 
-    margin:20px auto;
+    text-align:center;
     background: #f99319;
     border-radius: 5px;
     line-height: 45px;
     text-align: center;
-}
-.btn_area_d > a {
     color: #fff;
     font-weight: 700;
     font-size: 14px;
-    padding: 10px 100px;
+    border:none
 }
 .web_delivery_manage_list {
 width: 90%;
 margin: 0 auto;
 margin-left: 0;
 }
-.web_delivery_manage_list .del_mng_type {align-items: center; padding-left:15px;}
-
+.customer_info{margin-top:10px}
 .web_delivery_manage_list .del_mng_type,
 .web_delivery_manage_list .edit_remove {
     display: flex;
@@ -998,19 +995,13 @@ margin-left: 0;
     font-size: 12px;
     padding: 2px;
 }
-.bar {
-    width: 0.1px; height: 0.1px;
-    background: #bbb;
-    color: #bbb;
-    font-size: 0.5px;
-    opacity: 0.4;
-}
-delivery_manage_list p {padding: 4px 0 4px 0;}
-delivery_manage_list .address {
+
+.delivery_manage_list p {padding: 4px 0 4px 0;}
+.delivery_manage_list .address {
     width: 60%;
     font-size: 14px;
 }
-delivery_manage_list .customer_info {
+.delivery_manage_list .customer_info {
     font-size: 12px;
     color: #878787;
 }
@@ -1018,7 +1009,6 @@ delivery_manage_list .customer_info {
 .basic > .bar {
     margin-left: 3px;
 }
-.del_mng_list_top a {cursor: pointer;}
 
 .web_delivery_manage_list .address,
 .web_delivery_manage_list .customer_info {
@@ -1482,7 +1472,7 @@ delivery_manage_list .customer_info {
 
 
     }
-.review_complete {padding-top: 16px;}
+.review_complete {padding-top: 16px;border-bottom:8px solid #f1f1f1}
 .review_complete td {padding: 0 !important;}
 .review_complete .web_prod_info_ctn {padding-left: 0 !important;}
 .web_prod_info_ctn .order001 li {font-size: 12px;}

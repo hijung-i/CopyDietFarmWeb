@@ -255,7 +255,8 @@ margin-left:14px
 
 }
 
-    @media screen and (min-width:1080px){
+@media screen and (min-width:1080px){
+    .mypage_content_wrap{display:flex;justify-content: space-between;}
 .orderlist_btn{margin-top:24px}
 .orderlist_btn ul li{margin-left:10px}
         /*판매자문의 추가 06/04*/
@@ -350,12 +351,12 @@ margin-left:14px
 
 /* 모바일 화면 대응 orderdelist */
 @media screen  and (max-width:1079px) {
+    .box_top{display:flex}
+    .box_top ul{margin-left:20px}
+    .box_wrap{display:flex;margin-top:15px}
+    .box_wrap ul{margin-left:20px}
     .wide_line {display: none;}
     header#wheader {display: none;}
-    /*.order_a:not(:first-child){border-top: 1px solid #ccc}*/
-}
-/* 모바일 화면 대응 orderdetail */
-@media screen  and (max-width:1079px) {
     body {
         min-width: 360px;
     }
@@ -372,14 +373,11 @@ margin-left:14px
         padding-top: 0; min-width: 360px;
     }
     .detail_title {display: block !important;} 
-   
-   /* 주문 상세 컨텐트 */
-
-
-/* 주문 상세 타이틀 */
+  /* 주문 상세 타이틀 */
 .detail_title{margin:40px 10px 0px 10px;width:100%;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10px;margin-bottom:10px;margin-top:2px}
 }
+
 
 /* 모바일 화면 대응 deliverymanage */
 @media screen and (min-width:1080px) {
@@ -390,15 +388,21 @@ margin-left:14px
         font-size: 12px;
         padding: 2px;
         }
+        .forCouponPage {width: 1080px; margin: 0 auto;}
+        .mypage_content_wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            margin-bottom:100px
+        }
+        .box_top{display:flex}
+        .box_top ul{margin-left:20px}
+        .box_wrap{display:flex;margin-top:15px;border-bottom:1px solid #E6E6E6;padding-bottom:15px}
+        .box_wrap ul{margin-left:20px}
+        .box_wrap ul li{padding-bottom:7px}
+        .editBtn_click{display:none}
 }
-@media screen and (min-width:1080px) {
-    .forCouponPage {width: 1080px; margin: 0 auto;}
-    .mypage_content_wrap {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 30px;
-    }
-}
+
 /* 포인트 테이블 개발 */
 @media screen and (min-width:1080px) {
     .point_info_content {
