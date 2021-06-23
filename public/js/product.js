@@ -492,3 +492,20 @@ $(function(){
         $('html,body').animate({scrollTop:0},600);
     });
 });
+
+/* 공유하기 모달 */
+function openShareModal() {
+    console.log('open share');
+    $('#share_modal').show();
+    $('html,body').css({'overflow' : 'hidden', 'height' : '100%'});
+    $('html,body').on('scroll touchmove mousewheel',function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    });
+}
+function closeShareModal() {
+    $('#share_modal').hide();
+    $('html,body').css({'overflow':'visible'});
+    $('html,body').off('scroll touchmove mosewheel');
+}

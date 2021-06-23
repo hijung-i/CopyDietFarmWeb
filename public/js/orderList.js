@@ -58,7 +58,6 @@ function formatDate(dateStr) {
 }
 
 function OpenCancelModal() {
-    console.log('open cancel');
     $('#x_modal').show();
     $('html,body').css({'overflow':'hidden', 'height':'100%'});
     $('html,body').on('scroll touchmove mousewheel', function(event) {

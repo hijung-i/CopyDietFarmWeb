@@ -2750,6 +2750,9 @@ display: flex;
   
 }
 .slick-list {width: 100%;}
+@media screen and (max-width:1079px) {
+  .slick-list {width: 100%; height: 190px;}
+}
 div#app {width: 1080px; margin: 0 auto;}
 /* 상품 문의 메인 컨텐츠 영역 width 조정 */
 @media screen and (min-width:1080px) {
@@ -2884,6 +2887,52 @@ div#app {width: 1080px; margin: 0 auto;}
     padding: 13px 150px;
   }
 }
+
+/* 공유하기 모달 */
+#share_modal.modal-overlay {
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #0000004D;
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    z-index: 9999;
+    display: none;
+}
+#share_modal > .modal-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 228px; height: 128px;
+  margin: 0 auto;
+}
+.share_header {
+  justify-content: space-between;
+  align-items: center;
+  width: 164px; margin: 0 auto;
+  padding: 15px 0 21px;
+}
+.share_header > h2 {text-align: center;}
+.share_header .close {
+  position: absolute;
+  top: 8px; right: 12px;
+  font-size: 28px; cursor: pointer;
+}
+.share_body {
+  width: 164px; margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.share_body p {text-align: center;}
+
+.share_body img {width: 39px; cursor: pointer;}
+
 /* 쿠폰 페이지 */
 @media screen and (max-width:1079px) {
   main#content.coupon {
