@@ -206,7 +206,6 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 
 /*products_web*/
 @media screen and (min-width:1080px){
-.pdt_detai_tabinner_vn > ul {width: 75%;}
 #tab1_mobile {height: 769px;}
 .swiper-pagination {
     width: 10%;
@@ -215,7 +214,7 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 
 /* 상품상세 멀티슬라이드 */
 .responsive1 div img {
-    width: 330px; height: 353px;
+    width: 294px; height: 353px;
 }
 
 .other_cont{display:block;}
@@ -749,7 +748,7 @@ div #ex1.modal ul li {float:left}
 
 @media screen and (min-width:1080px){
     .products_ex {width: 780px;}
-    .products_ex img {width:810px;}
+    .products_ex img {width: 780px;}
 }
 @media screen and (max-width:1079px) {
     .products_ex {display: none;}

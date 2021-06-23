@@ -43,9 +43,19 @@
             }
             .showing {z-index: 9999;opacity: 1}
             @media screen and (min-width:1080px) {
+                .water{margin-bottom:100px}
+                .black_bg{
+                display:block;
+                position:absolute;
+                width:100%;
+                height:360px;
+                background-color:rgba(0, 0,0, 0.5);
+                top:0;
+                left: 0;
+                z-index: 1000;}
                 .sp_wrap {margin-top: 65px}
 
-                .slider_main_wrap img {width: 1080px; height: 370px;} 
+                .slider_main_wrap img {width: 1080px; height: 370px;z-index:100} 
             }
 
             /* swiper bundle */
@@ -59,7 +69,7 @@
                 align-items: center
             }
             
-            .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover}
+            .swiper-slide img {display: block;width: 100%;height:360px;object-fit: cover}
             .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
                 left: 88%; bottom: 25px}
             .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
@@ -76,10 +86,12 @@
             <%-include('general/header') %>
                 <main id="content" class="content_main">
                     <div class="swiper-container mySwiper">
+                      <div class="black_bg"> </div>
                         <div class="swiper-wrapper main_slider">
                             <!-- <div class="swiper-slide"><a href=""><img src="/images/m_img1.jpg" alt="1/7"></a></div>
                              -->
-                        </div>
+                       
+                     </div>
                         <div class="swiper-pagination"></div>
                     </div>
                     <!--//메인 이미지-->
