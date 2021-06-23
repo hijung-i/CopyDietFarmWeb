@@ -2894,8 +2894,6 @@ div#app {width: 1080px; margin: 0 auto;}
     align-items: center;
     justify-content: center;
     background: #0000004D;
-    backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(13.5px);
     z-index: 9999;
     display: none;
 }
