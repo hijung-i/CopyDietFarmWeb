@@ -15,7 +15,7 @@
     -webkit-tap-highlight-color: transparent;
 }
 @media screen and (max-width:1079px){
-.slick-slider{padding-left:15px;padding-right:15px}
+.slick-slider{padding-left:15px;padding-right:15px;margin-bottom:40px}
 .slick-slider .title{
     width:140px;
     white-space: nowrap;
