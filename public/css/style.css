@@ -843,6 +843,7 @@ height:233px;
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
+#content .mtpSlideTit1{margin-top:50px}
 /*장바구니*/
 #shpcart_select input[type="checkbox"]{display:none;}
 #shpcart_select input[type="checkbox"] + label{
