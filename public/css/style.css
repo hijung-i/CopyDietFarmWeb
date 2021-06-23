@@ -1118,7 +1118,7 @@ div.box.int_id{width:350px}
 .w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
 .w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
 .clicked_menu{background-color:#F99319;color:#fff}
-.csBox_web{float:right;margin-left:30px;margin-top:-200px}
+.csBox_web{float:right;margin-left:30px;margin-top:-200px;margin-bottom:200px}
 .csBox_web ul li{float:left}
 .csBox_web h3{font-size:18px;font-weight:bold;color:#000}
 .csBox_web .innerbox{border:1px solid #BBBBBB;width:431px;height:214px;margin-right:20px;margin-top:20px}
