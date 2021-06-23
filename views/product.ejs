@@ -188,7 +188,7 @@
 
                             <div class="share_body">
                                 <div class="kakaoTalk">
-                                    <p onclick="Kakao.Link.sendDefault(PARAMETER);"><img src="/images/shareKakao@2x.png" alt="url"></p>
+                                    <p ><a id="kakao-link-btn" href="javascript:sendLink()"><img src="/images/shareKakao@2x.png" alt="url"></a></p>
                                     <p>카카오톡</p>
                                 </div>
                                 <div class="sms">
@@ -1004,6 +1004,44 @@
 
                         };
                     </script>
+                    <script type="text/javascript">
+                        function sendLink() {
+                          Kakao.Link.sendDefault({
+                            objectType: 'feed',
+                            content: {
+                              title: '다이어트 식품',
+                              description: '...',
+                              imageUrl:
+                                'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+                              link: {
+                                mobileWebUrl: 'https://developers.kakao.com',
+                                webUrl: 'https://developers.kakao.com',
+                              },
+                            },
+                            social: {
+                              likeCount: 286,
+                              commentCount: 45,
+                              sharedCount: 845,
+                            },
+                            buttons: [
+                              {
+                                title: '웹으로 보기',
+                                link: {
+                                  mobileWebUrl: 'https://developers.kakao.com',
+                                  webUrl: 'https://developers.kakao.com',
+                                },
+                              },
+                              {
+                                title: '앱으로 보기',
+                                link: {
+                                  mobileWebUrl: 'https://developers.kakao.com',
+                                  webUrl: 'https://developers.kakao.com',
+                                },
+                              },
+                            ],
+                          })
+                        }
+                      </script>
                     <script src="/js/orderDTO/OrderDTO.js"></script>
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
                     <script type="text/javascript" src="/js/product.js"></script>
