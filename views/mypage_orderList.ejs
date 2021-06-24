@@ -30,7 +30,11 @@
             .mobile_orderlist {
                 display: none;
             }
-            .order_a{border-bottom:1px solid #f1f1f1}
+            .order_a{border-bottom:1px solid #f1f1f1;display: flex;
+             justify-content: space-between;
+            }
+            .mypage_order_info_wrap{margin-left:80px}
+}
             
         }
     </style>
@@ -101,9 +105,8 @@
             </a>
         </section>
     </div>
-    <main id="content" class="content" style="width: 1080px; margin: 0 auto;">
-        <div class="mypage_web_side">
-            <div class="main_contents_wrap">
+    <main id="content" class="content">
+             <div class="main_contents_wrap">
                 <div class="main_contents mypage_myinfo">
                     <h3>마이팜</h3>
                     <div class="main_contents_elements_wrap">
@@ -131,7 +134,7 @@
                     </div>
                 </div>
             </div>
-            <div class="web_body">
+            <div class="mypage_content_wrap">
                 <nav class="content_lnb">
                     <ul>
                         <li class="on">
@@ -146,7 +149,7 @@
                         <li>
                             <a href="javascript:location.href='/p_inquiry';">상품 문의</a>
                         </li>
-                        <li>
+                        <li style="white-space:nowrap">
                             <a href="javascript:location.href='/s_inquiry';">판매자 문의</a>
                         </li>
                         <li>
@@ -280,8 +283,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+     </main>
 
     <!-- modal window -->
     <div id="ex1" class="modal">
