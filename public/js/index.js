@@ -155,18 +155,6 @@ $(function(){
         e.preventDefault();
         $('html,body').animate({scrollTop:0},600);
     });
-
-    //     if($("div.popup_layer_wrapper").children(".checkLogin") === true) {
-    //     $('html,body').css({'overflow':'hidden', 'height' : '100%'});
-    //     $('html,body').on('scroll touchmove mousewheel', function(event) {
-    //         event.preventDfault();
-    //         event.stopPropagation();
-    //         return false;
-    //     });
-    // } else {
-    //     $('html,body').css({'overflow':'visible'});
-    //     $('html,body').off('scroll touchmove mousewheel');
-    // };
     
     // // 멀티플 슬라이드 
     // var slides = document.querySelector('.multiple_slides'),

@@ -360,7 +360,6 @@ function getCategory() {
             '/images/baby_icon_category@2x.png',
             '/images/pet_icon_category@2x.png',
             '/images/kitchen_icon_category@2x.png',
-            '/images/all_icon_category@2x.png'  
         ];
         
         var buttonHtml = '';
@@ -404,12 +403,12 @@ function getCategory() {
 
         }
 
-        buttonHtml += '<li class = "mTabBtnMenu">';
-        buttonHtml += '<a >';
-        buttonHtml += '<span><img src="'+ imgList[10] +'"></span>';
-        buttonHtml += '<p>전체보기</p>';
-        buttonHtml += '</a>';
-        buttonHtml += '</li>';
+        // buttonHtml += '<li class = "mTabBtnMenu">';
+        // buttonHtml += '<a >';
+        // buttonHtml += '<span><img src="'+ imgList[10] +'"></span>';
+        // buttonHtml += '<p>전체보기</p>';
+        // buttonHtml += '</a>';
+        // buttonHtml += '</li>';
         
         if($('.category ul').length > 0) {
             $('.category ul').html(buttonHtml);

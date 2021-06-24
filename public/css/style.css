@@ -611,7 +611,6 @@ border-spacing: 0 20px;font-size:14px}
 .faq .page_wrap{display:none}
 
 /*메인 팝업창*/
-.popup_layer_wrapper {display: none;}
 #popup_layer {
   position:absolute;
   top:0; left:0;

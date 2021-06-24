@@ -589,6 +589,17 @@ $(function(){
 	}, function(err){
 		console.error(err);
 	})
+   if($("div.popup_layer_wrapper").find(".checkLogin") === true) {
+      $('html,body').css({'overflow':'hidden', 'height' : '100%'});
+      $('html,body').on('scroll touchmove mousewheel', function(event) {
+          event.preventDfault();
+          event.stopPropagation();
+          return false;
+      });
+      } else {
+          $('html,body').css({'overflow':'visible'});
+          $('html,body').off('scroll touchmove mousewheel');
+      };
 
 	$("#modal-inquiry").html(inquiryModal);
 	
