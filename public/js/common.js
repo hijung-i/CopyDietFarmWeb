@@ -443,7 +443,7 @@ $(function(){
 	// '</div>';
 
    var popup =
-   '<div id="popup_layer">' +
+   '<div id="popup_layer" class="checkLogin">' +
    '<div class="popup_box">' +
    '<div class="popup_cont">' +
    '<div class="index-modal">' +

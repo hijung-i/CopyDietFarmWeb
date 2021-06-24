@@ -170,7 +170,7 @@
                 x()
             }), d.bind("mouseleave", function() {
                 y()
-            })), b.generateNextPrev && (a("." + b.container, c).after('<a href="#" class="' + b.prev + '">Prev</a>'), a("." + b.prev, c).after('<a href="#" class="' + b.next + '"></a>')), a("." + b.next, c).click(function(a) {
+            })), b.generateNextPrev && (a("." + b.container, c).after('<a href="#" class="' + b.prev + '">Prev</a>'), a("." + b.prev, c).after('<a href="#" class="' + b.next + '">Next</a>')), a("." + b.next, c).click(function(a) {
                 a.preventDefault(), b.play && y(), w("next", i)
             }), a("." + b.prev, c).click(function(a) {
                 a.preventDefault(), b.play && y(), w("prev", i)
