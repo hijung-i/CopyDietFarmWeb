@@ -669,6 +669,10 @@
                                                     <span>내글</span></li>
                                                 <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
                                             </template>
+                                            <template v-else>    
+                                                <li class="">{{ review.userId }}</li>
+                                                <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
+                                            </template>
                                             <li>{{ formatDate(review.createDate) }}</li>
                                         </ul>
                                         <ul v-if="reviewList.updateYn == 'Y'">
