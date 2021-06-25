@@ -400,9 +400,8 @@ function getCategory() {
             sideTabHtml += '        </dd>';
             sideTabHtml += '    </dl>';
             sideTabHtml += '</li>';
-
-
-        }
+        
+            }
 
         buttonHtml += '<li class = "mTabBtnMenu">';
         buttonHtml += '<a >';

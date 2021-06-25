@@ -2230,7 +2230,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .number-input {border: 1px solid #BBBBBB;   background: #F5F5F5;display: inline-flex;
 border-radius: 5px;margin-right: 0px;margin-left: auto}
   .number-input,
-  .number-input * {box-sizing: border-box;}
+  .number-input * {box-sizing: border-box;margin-left:15px}
   .number-input button {outline:none;-webkit-appearance: none;background-color: transparent;border: none;align-items: center;justify-content: center;width: 20px;
   height: 26px;cursor: pointer;margin: 0;
   position: relative;}

@@ -666,7 +666,7 @@
                                         <ul>
                                             <template v-if="reviewList.updateYn == 'Y'">    
                                                 <li class="myInquiry">
-                                                    <span>{{ review.product.options[0].optionDesc}}</span></li>
+                                                    <span>{{ formatDate(review.userName) }}</span></li>
                                                 <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
                                             </template>
                                             <li>{{ formatDate(review.createDate) }}</li>
