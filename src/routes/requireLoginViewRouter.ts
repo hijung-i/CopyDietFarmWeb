@@ -108,7 +108,7 @@ const render = (req: Request, res: Response, view: any, data: any | null) => {
 function checkLogin(req: Request, res: Response, next: Function) {
     const isLoggedIn = req.session.isLoggedIn
     if (isLoggedIn !== true) {
-        res.send('<script>alert("로그인이 필요한 접근입니다.");location.href = "/login-form";</script>')
+        res.send('<script>alert("로그인이 필요한 접근입니다.");location.href = "/sign-up-form";</script>')
     } else {
         next(req.session.user)
     }

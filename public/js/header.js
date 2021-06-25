@@ -12,7 +12,7 @@ function getEventStands() {
       for(var i = 0; i < data.result.length; i++){
 
          // TODO: 화면 너비가 pc버전일때 break;
-         if(i == 3) break;
+         if(i == 4) break;
 
          var stand = data.result[i];
          if(i == 0){
@@ -382,7 +382,7 @@ function getCategory() {
             sideTabHtml += '            <img class="downArrow" src="/images/downarrow_ico_main.png"';
             sideTabHtml += '            alt="화살표" style="width:11px;height:11px">';
             sideTabHtml += '        </dt>';
-            sideTabHtml += '        <dd class="subMenu faq_a" style="top: 0;">';
+            sideTabHtml += '        <dd class="subMenu faq_a" style="top: -'+ i * (54)+'px;">';
             sideTabHtml += '            <ul class="gnb_depth02">';
             
             sideTabHtml += '                <a href="/products/'+ category.category1Code+'/category/ALL">';
@@ -399,9 +399,8 @@ function getCategory() {
             sideTabHtml += '        </dd>';
             sideTabHtml += '    </dl>';
             sideTabHtml += '</li>';
-
-
-        }
+        
+            }
 
         // buttonHtml += '<li class = "mTabBtnMenu">';
         // buttonHtml += '<a >';
