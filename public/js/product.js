@@ -490,6 +490,24 @@ $(function(){
     });
 });
 
+$(document).ready(function(){
+
+    var navHeight = $("html,body").height(); 
+
+    $("#goingTo_top").hide();
+
+    $(window).scroll(function(){ 
+        var rollIt = $(this).scrollTop() >= navHeight; 
+
+    if(rollIt){ 
+	        $("#goingTo_top").show().css({"position":"fixed"});
+        }
+        else{
+            $("#goingTo_top").hide();
+        }
+    });
+    
+});
 /* 공유하기 모달 */
 function openShareModal() {
     console.log('open share');

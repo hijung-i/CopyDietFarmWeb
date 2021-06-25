@@ -155,7 +155,25 @@ $(function(){
         e.preventDefault();
         $('html,body').animate({scrollTop:0},600);
     });
+    
+    $(document).ready(function(){
 
+        var navHeight = $("html,body").height(); 
+    
+        $("#goingTo_top").hide();
+    
+        $(window).scroll(function(){ 
+            var rollIt = $(this).scrollTop() >= navHeight; 
+    
+        if(rollIt){ 
+                $("#goingTo_top").show().css({"position":"fixed"});
+            }
+            else{
+                $("#goingTo_top").hide();
+            }
+        });
+        
+    });
 
     // // 멀티플 슬라이드 
     // var slides = document.querySelector('.multiple_slides'),
