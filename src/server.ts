@@ -17,6 +17,6 @@ httpServer.listen(80, () => {
     console.log('SERVER IS LISTENING PORT 80')
 })
 
-// httpsServer.listen(443, () => {
-//     console.log('SERVER IS LISTENING PORT 443')
-// })
+httpsServer.listen(443, () => {
+    console.log('SERVER IS LISTENING PORT 443')
+})
