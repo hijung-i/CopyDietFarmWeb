@@ -338,23 +338,6 @@ function niceIdentifyPopup(nextMethod) {
    open('/nice/identifying-page?nextMethod='+ nextMethod , '다이어트팜 본인 인증', options);
 }
 
-function onIdentifyingSuccess(data, nextMethod) {
-   console.log(data);
-   $("#formUserName").val(data.userName);
-   $("#formUserInfo").val(data.userInfo);
-   $("#formDupInfo").val(data.dupInfo);
-   $("#formUserGender").val(data.userGender);
-   $("#formUserCellNo").val(data.userCellNo);
-   switch(nextMethod) {
-      case 'register':
-         $("#infoForm").attr("action", "/sign-up-form");
-         break;
-   }
-
-   $("#infoForm").submit();
-
-}
-
 // 쿠키 생성
 function setCookie(cName, cValue, cDay){
    var expire = new Date();
