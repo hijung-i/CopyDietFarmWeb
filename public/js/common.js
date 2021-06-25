@@ -445,6 +445,7 @@ $(function(){
    var popup =
    '<div id="popup_layer" class="checkLogin">' +
    '<div class="popup_box">' +
+   '<span class="close" onclick="closePopupModal();">x</span>' +
    '<div class="popup_cont">' +
    '<div class="index-modal">' +
    '<h2>SNS 1초 회원가입!</h2>' +
@@ -583,7 +584,8 @@ $(function(){
                event.stopPropagation();
                return false;
             })
-         }
+
+         } 
          if ($('#naver_id_login').length > 0) {
             ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
             function(data) {
@@ -593,11 +595,10 @@ $(function(){
                console.log("error login button", err);
             })
          }
-      } else {
-         $('html,body').css({'overflow':'visible'});
-         $('html,body').off('scroll touchmove mousewheel');
-      }
-
+      } // else {
+        //  $('html,body').css({'overflow':'visible'});
+        //  $('html,body').off('scroll touchmove mousewheel');
+        // }
 	}, function(err){
 		console.error(err);
 	})
@@ -605,7 +606,11 @@ $(function(){
 	$("#modal-inquiry").html(inquiryModal);
 	
 });
-
+function closePopupModal() {
+   $('.popup_layer_wrapper').hide();
+   $('html,body').css({'overflow':'visible'});
+   $('html,body').off('scroll touchmove mousewheel');
+}
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
    Kakao.Auth.authorize({
