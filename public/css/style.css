@@ -2827,7 +2827,7 @@ display: flex;
 
 /* 상품 문의 메인 컨텐츠 영역 width 조정 */
 @media screen and (min-width:1080px) {
-  .order_detail_ctn div#tab1 {
+  .order_detail_ctn div#tab1, .order_detail_ctn div#tab2 {
     width: 831px;
   }
 }
