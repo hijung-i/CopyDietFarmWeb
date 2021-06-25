@@ -408,7 +408,7 @@ margin-left:14px
 /* 포인트 테이블 개발 */
 @media screen and (min-width:1080px) {
     .point_info_content {
-        overflow: hidden;
+        margin-left:50px
     }
     .point_info_content ul  {
         display: flex;
