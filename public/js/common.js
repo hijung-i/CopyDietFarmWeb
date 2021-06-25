@@ -11,7 +11,8 @@
 // var RESOURCE_SERVER = "http://112.217.209.162:8000";
 
 // 운영
-var API_SERVER = "http://13.209.123.102";
+// var API_SERVER = "http://13.209.123.102";
+var API_SERVER = "https://dietfarm119.co.kr";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "http://"+ SERVER_IP;
 
