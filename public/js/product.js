@@ -490,7 +490,7 @@ $(function(){
     });
 });
 
-/* 공유하기 모달 */
+/* 공유하기 모달 스크롤 제어 */
 function openShareModal() {
     console.log('open share');
     $('#share_modal').show();

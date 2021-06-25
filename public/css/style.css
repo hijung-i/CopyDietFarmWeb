@@ -1437,7 +1437,8 @@ div.slideMenu_top {display: none}
 .mDepth01 dt {
    justify-content: space-between;
 }
-/*
+
+.pdt_detai_tabinner_vn > ul {width: 75%;}
 /* 사이드 메뉴 gnb 애니메이션 */
 .sideMenu .tabMenu {width:100%; position: relative; top: 0; left: 0; height: 30px;}
 .tab_wrap{width:100%;border-bottom: none; display: flex; /*margin: 0 auto; */ position: relative; background: #fff;}
