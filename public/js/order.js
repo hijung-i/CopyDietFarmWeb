@@ -299,6 +299,13 @@ function paymentAction() {
     requestOrderDTO.paidPointAmount = app.orderDTO.paidPointAmount;
     requestOrderDTO.accumulatePoint = app.orderDTO.accumulatePoint;
 
+    var mobile = /iphone|ipod|ipad|android/;
+    var userAgent = window.navigator.userAgent.toLowerCase();
+    requestOrderDTO.accessPoint = 'P';
+    
+    if(mobile.test(userAgent)) {
+        requestOrderDTO.accessPoint = 'M';
+    }
     console.log(requestOrderDTO);
     if(requestOrderDTO.products == undefined || requestOrderDTO.products.length < 1) {
         return;

@@ -96,6 +96,13 @@ $(function() {
             location.href = '/';
         }
 
+        var mobile = /iphone|ipod|ipad|android/;
+        var userAgent = window.navigator.userAgent.toLowerCase();
+        params.accessPoint = 'P';
+        
+        if(mobile.test(userAgent)) {
+            params.accessPoint = 'M';
+        }
         ajaxCall('/user/register', params, 'POST', 
         function(data) {
             console.log("register success", data);

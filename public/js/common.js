@@ -11,7 +11,7 @@
 // var RESOURCE_SERVER = "http://112.217.209.162:8000";
 
 // 운영
-var API_SERVER = "http://13.209.123.102:9090";
+var API_SERVER = "http://13.209.123.102";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "http://"+ SERVER_IP;
 
@@ -336,23 +336,6 @@ $(document).ready(function() {
 function niceIdentifyPopup(nextMethod) {
    var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';
    open('/nice/identifying-page?nextMethod='+ nextMethod , '다이어트팜 본인 인증', options);
-}
-
-function onIdentifyingSuccess(data, nextMethod) {
-   console.log(data);
-   $("#formUserName").val(data.userName);
-   $("#formUserInfo").val(data.userInfo);
-   $("#formDupInfo").val(data.dupInfo);
-   $("#formUserGender").val(data.userGender);
-   $("#formUserCellNo").val(data.userCellNo);
-   switch(nextMethod) {
-      case 'register':
-         $("#infoForm").attr("action", "/sign-up-form");
-         break;
-   }
-
-   $("#infoForm").submit();
-
 }
 
 // 쿠키 생성
