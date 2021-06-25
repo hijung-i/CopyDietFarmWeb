@@ -698,7 +698,7 @@ border-spacing: 0 20px;font-size:14px}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
   /* 멀티플 슬라이드 */
     /* 메인 이미지 슬라이더 */
-    .swiper-container {margin-top: 151px; position: relative;background-color:rgba(0,0,0,0.5))}
+    .swiper-container {margin-top: 151px; position: relative}
     .swiper-wrapper {min-width: 360px; width: 100%; height: 400px;}
     .swiper-slide img {min-width: 360px; height: 212px;}
     .swiper-pagination {position: absolute; width: 56px; height: 20px; line-height: 20px; left: 82% !important; bottom: 10px;}
@@ -706,8 +706,6 @@ border-spacing: 0 20px;font-size:14px}
     .swiper-pagination-total {font-weight: 400;}
     /* 메인 이미지 슬라이더 end */
 
-    .swiper-slide 
-  
     #web_only{display:none}
     .m_best h2{margin-top:24px;margin-bottom:15px;margin-left:15px;font-size:14px}
     #content{width:100%;margin-right:15px}
@@ -1104,6 +1102,18 @@ font-weight:normal}
 .catgor_wrap{display:none}
 .w_best .thum img{width:247.5px;height:247.5px;border-radius:6px}
 
+/* 
+.swiper-slide .background{
+  width: 100%;
+  height: 360px;
+  filter: blur(3px);
+  background-position: center;
+} */
+
+.swiper-slide a{
+  width: 100%;
+  max-width: 1080px;
+}
 #content{width:100%;/*max-width:1080px;*/margin:0 auto; /* padding-left:15px;padding-right:15px */}
 main#content.coupon {
   width: 831px; 
