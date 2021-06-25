@@ -80,7 +80,7 @@
                     <div class="mypage_point_info frame400">
                         <h3>포인트<img src="/images/point.png" alt="포인트 아이콘"></h3>
                         <% if (isLoggedIn) { %>
-                            <p v-if="">원<span><i class="fas fa-chevron-right"></i></span></p>
+                            <p v-if="">{{ totalPointAmount }}원<span><i class="fas fa-chevron-right"></i></span></p>
                         <% } %>
                     
                      </div>
@@ -108,7 +108,7 @@
                         <li>
                             <a href="/p_inquiry">상품 문의</a>
                         </li>
-                        <li>
+                        <li style="white-space:nowrap">
                             <a href="/s_inquiry">판매자 문의</a>
                         </li>
                         <li class="on">
@@ -204,6 +204,7 @@
                     </tr>
                 </table> -->
                 <div class="point_info_content">
+                    <h3 class="orderList_detail">포인트</h3>
                     <ul class="point_list_header">
                         <li class="headerName_date">날짜</li>
                         <li class="headerName_content">내용</li>

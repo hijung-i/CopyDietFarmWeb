@@ -12,7 +12,7 @@ function getEventStands() {
       for(var i = 0; i < data.result.length; i++){
 
          // TODO: 화면 너비가 pc버전일때 break;
-         if(i == 3) break;
+         if(i == 4) break;
 
          var stand = data.result[i];
          if(i == 0){
@@ -399,9 +399,8 @@ function getCategory() {
             sideTabHtml += '        </dd>';
             sideTabHtml += '    </dl>';
             sideTabHtml += '</li>';
-
-
-        }
+        
+            }
 
         // buttonHtml += '<li class = "mTabBtnMenu">';
         // buttonHtml += '<a >';

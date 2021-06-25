@@ -488,6 +488,22 @@ $(function(){
         e.preventDefault();
         $('html,body').animate({scrollTop:0},600);
     });
+    
+    var navHeight = $("html,body").height(); 
+
+    $("#goingTo_top").hide();
+
+    $(window).scroll(function(){ 
+        var rollIt = $(this).scrollTop() >= navHeight; 
+
+    if(rollIt){ 
+	        $("#goingTo_top").show().css({"position":"fixed"});
+        }
+        else{
+            $("#goingTo_top").hide();
+        }
+    });
+    
 });
 
 /* 공유하기 모달 스크롤 제어 */

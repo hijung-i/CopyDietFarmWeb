@@ -80,7 +80,8 @@
                 .mobile_deliv {
                     display: none;
                 }
-                .small_line{position:relative;top:-5px}
+                .small_line{position:relative;top:-6px}
+                .contents{width:100%;margin-left:80px}
             }
         </style>
         <link rel="stylesheet" href="/css/style.css">
@@ -139,12 +140,9 @@
         
                                 <div class="mypage_point_info frame400">
                                     <h3>포인트<img src="/images/point.png" alt="포인트 아이콘"></h3>
-                                    <% if (isLoggedIn) { %>
-                                        <p v-if="">원<span><i class="fas fa-chevron-right"></i></span></p>
-                                    <% } %>
-                                
-                                 </div>
-        
+                                    <p>{{ totalPointAmount }}원<span><i class="fas fa-chevron-right"></i></span></p>
+                                </div>
+
                                 <div class="mypage_coupon_info frame400">
                                     <h3>쿠폰<img src="/images/coupon_ico.png" alt="쿠폰 아이콘"></h3>
                                     <p>0개<span><i class="fas fa-chevron-right"></i></span></p>
@@ -167,7 +165,7 @@
                             <li>
                                 <a href="javascript:location.href='/p_inquiry';">상품 문의</a>
                             </li>
-                            <li>
+                            <li style="white-space:nowrap">
                                 <a href="javascript:location.href='/s_inquiry';">판매자 문의</a>
                             </li>
                             <li>
