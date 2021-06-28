@@ -330,13 +330,25 @@ margin-left:14px
 }
 
 .point_content {
-    padding: 10px 0px;
+    padding: 10px 15px;
+    
     border-top: 1px solid #E6E6E6;
 }
 
 .point_content:first-child{
     border-top: none;
 }
+.point_content .mobile_left {
+    min-width: 38%;
+    text-align: right;
+    margin-right: auto
+}
+
+.point_content .mobile_right {
+    min-width: 54%;
+    text-align: left;
+}
+
 
 @media screen and (min-width:1000px) {
     .del_inq_info {
@@ -423,7 +435,9 @@ margin-left:14px
         font-size: 14px;
         font-weight: 700;
     }
-    ul.point_list_body {display: block;}
+    ul.point_list_body {
+        display: block;
+    }
     .point_content {
 
         font-size: 12px;
@@ -431,6 +445,7 @@ margin-left:14px
         padding: 14px 0;
         border-bottom: 1px solid #BBB;
         display: flex;
+        flex-flow: row;
     }
     .point_info_content ul li {text-align: center;}
     .headerName_date {width: 133px;}
@@ -475,11 +490,11 @@ margin-left:14px
     .point_content {
         display: flex;
         flex-direction: row-reverse;
-        justify-content: space-around;
     }
     .point_content li:not(:last-child) {padding-bottom: 6px;}
     .point_content > li.mobile_right {width: 52%;}
-    .point_content > li.mobile_left {text-align: right;}
+    .point_content > li.mobile_left {text-align: right;;}
+
     .mobile_left li {font-size: 14px;}
     .mobile_left li.point_sortation {color:#6B6B6B; font-weight: 400;}
     .mobile_left li.content_price {color: #31845B; font-weight: 700;}

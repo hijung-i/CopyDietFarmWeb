@@ -149,8 +149,6 @@ var app = new Vue({
                 console.log(product);
                
             }
-            console.log(requestDeliveryGroupList);
-            return;
             
             location.href="/order?deliveryGroupList=" + JSON.stringify(requestDeliveryGroupList)+'&orderDTO='+ JSON.stringify(this.orderDTO);
         },
