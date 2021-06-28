@@ -299,12 +299,20 @@ function paymentAction() {
     requestOrderDTO.paidPointAmount = app.orderDTO.paidPointAmount;
     requestOrderDTO.accumulatePoint = app.orderDTO.accumulatePoint;
 
+    var mobile = /iphone|ipod|ipad|android/;
+    var userAgent = window.navigator.userAgent.toLowerCase();
+    requestOrderDTO.accessPoint = 'P';
+    
+    if(mobile.test(userAgent)) {
+        requestOrderDTO.accessPoint = 'M';
+    }
     console.log(requestOrderDTO);
     if(requestOrderDTO.products == undefined || requestOrderDTO.products.length < 1) {
         return;
     }
 
     if(app.orderDTO.paidRealAmount == 0) {
+        requestOrderDTO.paymentName = '전체포인트할인'
         addOrder(requestOrderDTO);
     } else {
         if(app.paymentNo == undefined || app.paymentNo == 0) {
@@ -401,6 +409,9 @@ function paymentCancel(reason, requestOrderDTO) {
 
 function addOrder(requestOrderDTO) {
     ajaxCall(API_SERVER + '/order/addOrder', requestOrderDTO, 'POST',
+    
+    
+    
     function(data) {
         console.log("success", data);
         switch(data.message) {

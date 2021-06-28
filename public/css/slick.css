@@ -13,6 +13,7 @@
     -ms-touch-action: pan-y;
         touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
+    margin-top: 30px
 }
 @media screen and (max-width:1079px){
 .slick-slider{padding-left:15px;padding-right:15px;margin-bottom:40px}
@@ -33,8 +34,8 @@
     }
 }
 @media screen and (min-width:1080px){
-    .slick-slider{margin-top:-45px}
-    .slick-slider .title{
+    .r_products{position:absolute}
+      .slick-slider .title{
        font-size:14px;
        margin-top:13px
        }
@@ -153,7 +154,7 @@
     background: url(/images/group_5044.png);
 }
 .slick-next {
-    top: -280px; right: -994px;
+    top: -280px; right: -1004px;
     z-index: 9;
     background: url(/images/group_5045.png);
 }

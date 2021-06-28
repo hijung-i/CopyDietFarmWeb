@@ -433,7 +433,8 @@ margin-top:100px;padding-top:25px;padding-bottom:21px}
  #content .w_best li .desc ul{margin-left:1px}
  
  /*  모바일 depth02 */
- .mDepth01 {overflow:scroll}
+ .mDepth01 {overflow:scroll; 
+  overflow-x: hidden;}
  .mDepth01 li {position: relative; background: #fff;}
 
  .gnb_depth02 li {background: #F5F5F5;}
@@ -874,6 +875,10 @@ border-spacing: 0 20px;font-size:14px}
 .side{display:none}
 .sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
+
+.pick_list_null{width:70%; text-align:center; margin:70px auto}
+.pick_list_null img{width:100px!important}
+.pick_list_null p{margin-top:28.49px;font-size:16px;color:#878787;padding-bottom:189.51px}
   /* 멀티플 슬라이드 */
   .mtpSlideTit {margin: 24px 0 21px 0;}
 
@@ -1139,9 +1144,8 @@ justify-self: center;width: 100%;margin: 0 auto;}
 #content .pick_product .desc .cost{/*margin-left:-48px;*/font-size:16px;color:#6B6B6B;text-decoration:line-through;font-weight:bold}
 #content .pick_product .desc .ratio{/*margin-left:-98px;*/color:#F32525;font-size:16px;font-weight:bold}
 /*찜 내역 없을때*/
-.pick_list_null{width:70%; text-align:center; margin:197px auto;}
-.pick_list_null img{width:100px;height:75px}
-.no_list{font-size:16px;color:#878787;margin-top:15px}
+
+
 
 /*회원 탈퇴*/
 .contents .delete .web_title{font-size:25px;font-weight:bold;text-align:center}
@@ -1634,7 +1638,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
   .web_login_title{display:none}
   .box{width:100%}
   .confirm_mag{clear:both}
-  .signup_wrap{width:441px;margin:0 auto}
+  .signup_wrap{margin:0 auto}
   }
 
 
@@ -2038,6 +2042,9 @@ width:400px
 .t2{font-size:12px;line-height:14px;margin-top:5px;}
 .order_list_box{display:flex;justify-content:flex-start;margin-top:10px;margin-bottom:10px}
 .order ul li{white-space:nowrap}
+.order_list_btn .done {
+  font-size: 11px;
+}
 .order0{margin-top:-10px}
 .btnA{width:69px;height:26px;background-color:#F99319;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:10px;}
 .btnB{width:69px;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:11px}
@@ -2830,7 +2837,7 @@ display: flex;
 
 /* 상품 문의 메인 컨텐츠 영역 width 조정 */
 @media screen and (min-width:1080px) {
-  .order_detail_ctn div#tab1 {
+  .order_detail_ctn div#tab1, .order_detail_ctn div#tab2 {
     width: 831px;
   }
 }

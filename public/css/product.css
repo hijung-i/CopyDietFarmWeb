@@ -748,7 +748,7 @@ div #ex1.modal ul li {float:left}
 
 @media screen and (min-width:1080px){
     .products_ex {width: 780px;}
-    .products_ex img {width: 780px;}
+    .products_ex img {width: 820px;}
 }
 @media screen and (max-width:1079px) {
     .products_ex {display: none;}

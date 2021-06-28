@@ -176,8 +176,8 @@ function checkNaverRegistration(params) {
 
 			$('#registerForm').submit();
 		} else {
-			alert("에러가 발생했습니다.", JSON.stringify(err));
 			console.log("error while check naver registraition", err);
+			alert("에러가 발생했습니다.", JSON.stringify(err));
 		}
 	})
 }
@@ -191,8 +191,8 @@ function linkKakaoUser(params) {
 			loginKakao(params);
 		}
 	}, function(err) {
-		alert("에러가 발생했습니다.", JSON.stringify(err));
 		console.log("error while kakao link", err);
+		alert("에러가 발생했습니다.", JSON.stringify(err));
 	})
 }
 
@@ -215,9 +215,9 @@ function loginKakao(params) {
 		console.log("success loginKakao", data);
 		location.href='/';
 	}, function(err) {
-
-		alert("에러가 발생했습니다.", JSON.stringify(err));
 		console.log("error while loginKakao", err);
+		alert("에러가 발생했습니다.");
+		location.href="/";
 	});
 
 }
@@ -230,6 +230,8 @@ function loginNaver(params) {
 		location.href='/';
 	}, function(err) {
 		console.log("error while loginKakao", err);
+		alert("에러가 발생했습니다.", JSON.stringify(err));
+		location.href="/";
 	});
 
 }
