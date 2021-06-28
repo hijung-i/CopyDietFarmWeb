@@ -12,7 +12,11 @@
 
         <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
         <style type="text/css">
-        .sub_items img{border-radius:5px}
+        @media screen and (max-width:1079px){
+        #header_common.sub{height:140px!important}
+        #header_common.sub ~ .content{margin-top:140px!important}
+        #nav a{margin-left:10px}    
+    }
         </style>
         <%-include('general/head') %>
             <link rel="stylesheet" href="/css/style.css">
@@ -36,10 +40,7 @@
         <% } %>
         <main id="content" class="content">
            
-      <!--//    <div class="pick_list_null">
-                <img src="/images/twoheart_icon_heart.png">
-                <p class="no_list">찜한 상품이 없습니다.</p>
-            </div>-->  
+            
             <div class="main_sub_wrap">
                 <section class="main_sub">
 
@@ -61,8 +62,12 @@
                             </div>
                         </div>
                     </form>
+                    <div class="pick_list_null" style="display:none;">
+                        <img src="/images/twoheart_icon_heart.png">
+                        <p class="no_list"></p>
+                    </div> 
                     <div class="sub_items">
-                       
+                        
                         <ul>
                                 <!--//
                             <li>
