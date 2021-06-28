@@ -27,13 +27,16 @@ function getHotKeyowrds() {
         var result = data.result;
         var five = '';
         var ten = '';
-        for(var i = 0; i < result.length; i++){
+
+        var n = (result.length > 10)?10:result.length;
+        for(var i = 0; i < n; i++){
             var keyword = result[i];
             if( i < 5 ){
                 five += '<li><a href="/search-list?keyword='+keyword.keyword+'"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
             } else if ( i >= 5){
                 ten += '<li><a href="/search-list?keyword='+keyword.keyword+'"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
             }
+            
         }
         $('.search_list ul.five').html(five);
         $('.search_list ul.ten').html(ten);
