@@ -312,6 +312,7 @@ function paymentAction() {
     }
 
     if(app.orderDTO.paidRealAmount == 0) {
+        requestOrderDTO.paymentName = '전체포인트할인'
         addOrder(requestOrderDTO);
     } else {
         if(app.paymentNo == undefined || app.paymentNo == 0) {
