@@ -10,6 +10,8 @@ const options = {
     passphrase: 'dataflow0327!@'
 }
 
+https.globalAgent.options.ca = require('ssl-root-cas/latest').create()
+
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(options, app)
 
