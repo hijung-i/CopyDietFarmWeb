@@ -287,8 +287,7 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .mDepth01 dt {justify-content: space-between;}
 
 .sideMenu h2 {padding:15px 10px;text-align:left;position:relative;
-height:50px;overflow:hidden}
- .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;padding-top:4px} 
+height:50px;overflow:hidden} 
  .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
   #content .main_sub img{width: 100%;background-repeat: no-repeat;background-size: cover;background-position: center}
   #content .main_sub{width:100%;margin:10px auto}   
@@ -432,8 +431,6 @@ margin-top:100px;padding-top:25px;padding-bottom:21px}
  #content .w_best li .thum img{width:100%;height:auto;}
  #content .w_best li .title{font-size:12px;margin-top:10px}
  #content .w_best li .desc ul{margin-left:1px}
- .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 9999; background: #fff;}
- .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
  
  /*  모바일 depth02 */
  .mDepth01 {overflow:scroll}
@@ -756,7 +753,6 @@ border-spacing: 0 20px;font-size:14px}
     #content .w_best li .desc ul li{ margin-bottom:20px;display:flex;margin-right:7px}
     #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
     .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 999; background: #fff;}
-    .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
     /*  모바일 depth02 */
     .mDepth01 dd {
       min-width: 360px; width: 100%;
@@ -764,6 +760,7 @@ border-spacing: 0 20px;font-size:14px}
     }
     .gnb_depth02 li {background: #F5F5F5;}
      
+    /* 모바일 푸터 메뉴 수정 */
   .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;padding-top:4px} 
   .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
   .sweet h3{clear:both;font-size:20px;font-weight:bold;padding-left:15px}
@@ -2908,8 +2905,6 @@ display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(13.5px);
     z-index: 1;
     display: none;
   }

@@ -564,17 +564,23 @@ $(function(){
 		console.log(data.result);
 		if(data.result.isLoggedIn == false) {
         
+
+         $("#myModal").html(myPageModal);
          
-         
-         // if(iOS || isBrowser && $('html').width() <= 1079) {
-         //    $(".popup_layer_wrapper").html(popup);
-         //    $('html,body').css({'overflow':'hidden','height':'100%'});
-         //    $('html,body').on('scroll touchmove mousewheel', function(event) {
-         //       event.preventDefault();
-         //       event.stopPropagation();
-         //       return false;
-         //    })
-         // }
+         if(iOS || isBrowser && $('html').width() <= 1079) {
+            if($('.popup_layer_wrapper').length > 0) {
+
+               $(".popup_layer_wrapper").html(popup);
+               
+               $('html,body').css({'overflow':'hidden','height':'100%'});
+               $('html,body').on('scroll touchmove mousewheel', function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  return false;
+               })
+            }
+
+         } 
          if ($('#naver_id_login').length > 0) {
             ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
             function(data) {
@@ -584,10 +590,7 @@ $(function(){
                console.log("error login button", err);
             })
          }
-      } // else {
-        //  $('html,body').css({'overflow':'visible'});
-        //  $('html,body').off('scroll touchmove mousewheel');
-        // }
+      } 
 	}, function(err){
 		console.error(err);
 	})
