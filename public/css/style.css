@@ -433,7 +433,8 @@ margin-top:100px;padding-top:25px;padding-bottom:21px}
  #content .w_best li .desc ul{margin-left:1px}
  
  /*  모바일 depth02 */
- .mDepth01 {overflow:scroll}
+ .mDepth01 {overflow:scroll; 
+  overflow-x: hidden;}
  .mDepth01 li {position: relative; background: #fff;}
 
  .gnb_depth02 li {background: #F5F5F5;}
@@ -1637,7 +1638,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
   .web_login_title{display:none}
   .box{width:100%}
   .confirm_mag{clear:both}
-  .signup_wrap{width:441px;margin:0 auto}
+  .signup_wrap{margin:0 auto}
   }
 
 

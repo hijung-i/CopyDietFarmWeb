@@ -563,9 +563,6 @@ $(function(){
 		// 로그아웃 시에만 표시
 		console.log(data.result);
 		if(data.result.isLoggedIn == false) {
-        
-
-         $("#myModal").html(myPageModal);
          
          if(iOS || isBrowser && $('html').width() <= 1079) {
             if($('.popup_layer_wrapper').length > 0) {
@@ -598,6 +595,13 @@ $(function(){
 	$("#modal-inquiry").html(inquiryModal);
 	
 });
+
+function closePopupModal() {
+   $('.popup_layer_wrapper').hide();
+   $('html,body').css({'overflow':'visible'});
+   $('html,body').off('scroll touchmove mousewheel');
+}
+
 
 function openMyModal() {
    $('#myModal').show();
