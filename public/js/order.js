@@ -409,6 +409,9 @@ function paymentCancel(reason, requestOrderDTO) {
 
 function addOrder(requestOrderDTO) {
     ajaxCall(API_SERVER + '/order/addOrder', requestOrderDTO, 'POST',
+    
+    
+    
     function(data) {
         console.log("success", data);
         switch(data.message) {

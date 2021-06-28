@@ -112,6 +112,7 @@ var app = new Vue({
         },
         onSubmit: function() {
             var requestDeliveryGroupList = new Array();
+            
             for(var i = 0; i < this.deliveryGroupList.length; i++) {
                 var deliveryGroup = this.deliveryGroupList[i];
                 var requestDeliveryGroup = deliveryGroup.cloneObject();
@@ -126,6 +127,31 @@ var app = new Vue({
                 alert('상품을 선택해주세요.')
                 return false;
             }
+
+            for(var i = 0; i < requestDeliveryGroupList.length; i++) {
+                
+                var group = requestDeliveryGroupList[i];
+                for(var j = 0; j < group.products.length; j++) {
+                    var product = group.products[j];
+                    console.log(product.productCode, group.deliveryCostProduct)
+                    if(product.productCode == group.deliveryCostProduct) {
+                        product.isDelivery = true
+                        product.deliveryCost = group.deliveryCost
+                        product.deliveryCost2 = group.deliveryCost2
+                        product.deliveryCost3 = group.deliveryCost3
+                    } else {
+                        product.deliveryCost = 0
+                        product.deliveryCost2 = 0
+                        product.deliveryCost3 = 0
+                    }
+                }
+
+                console.log(product);
+               
+            }
+            console.log(requestDeliveryGroupList);
+            return;
+            
             location.href="/order?deliveryGroupList=" + JSON.stringify(requestDeliveryGroupList)+'&orderDTO='+ JSON.stringify(this.orderDTO);
         },
         deleteSelectedItems: function() {
