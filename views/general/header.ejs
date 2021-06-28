@@ -43,6 +43,11 @@
         <div class="comp_logo <% if(currentPage != 'main' && currentPage != 'products') { %> hide-mobile <% } %>">
             <a href="/"><img src="/images/logo_new@2x.png"></a>
         </div>
+        <% if (currentPage == 'products') { %>
+            <div class="products_title">
+                <h2><%=currentPage %></h2>
+            </div>
+        <% } %> 
         <% if (currentPage != 'main' && currentPage != 'products') { %>
             <div class="myPage_title">
                 <h2><%=currentPage %></h2>
