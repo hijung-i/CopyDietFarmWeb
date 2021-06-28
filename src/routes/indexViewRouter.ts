@@ -66,7 +66,7 @@ router.get('/products/:category1Code/category/:category2Code', (req: Request, re
         category2Code: category2Code,
         listType: 'CATEGORY',
         listTitle: '',
-        currentPage: 'products'
+        currentPage: 'category'
     })
 })
 router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {

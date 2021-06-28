@@ -35,7 +35,7 @@
     <body>
 
  <!-- //마이페이지 로그인 모달 시작 -->
-      <!--//  <div id="myModal" class="mypage_modal"></div>-->
+     <div id="myModal" class="mypage_modal"></div>
         <article class="skip_menu">
             <a href="#">
                 <span>바로가기1</span></a>
@@ -68,7 +68,7 @@
                         
                                 </div>-->
                             <div class="mypage_btn">
-                                <button type="button" class="btnMyPage" onclick="location.href='/sign-up-form'">로그인 / 회원가입</button>
+                                <button type="button" class="btnMyPage" onclick="openMyModal()">로그인 / 회원가입</button>
                             </div>
                             <% } else if (isLoggedIn) { %>
                                 <ul style="border:none;">

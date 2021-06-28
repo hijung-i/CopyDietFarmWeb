@@ -53,8 +53,15 @@ function getProductListByCategory() {
     
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
     , function (data) {  
-        var html = generateHtmlForProductList(data.result);
-        $('.sub_items ul').html(html);
+        if(data.result.length > 0) {
+            var html = generateHtmlForProductList(data.result);
+            
+            $('.sub_items ul').html(html);
+        } else {
+            $('.sub_items ul').hide();
+            $('.pick_list_null').show();
+            $('.pick_list_null').html('<img src="/images/gift_icon_detailpage@2x.png"><p>더 나은 구성을 위해 준비중입니다.</p>');
+        }
 
     }, function (err){
         console.log("getProductByStandCode err", err);
@@ -78,14 +85,16 @@ function getCategoryList(){
 
         for(var i = 0; i < data.result.length; i++){
             var cate = data.result[i];
+
+            $('.myPage_title').html(cate.category1Name);
             if(cate.category1Code == category1Code){
-                var html = '<li class=""><a href="/products/'+ category1Code +'/category/ALL">전체보기</a></li>';
+                var html = '<a href="/products/'+ category1Code +'/category/ALL">전체보기</a>';
                 for(var j = 0; j < cate.category2.length; j++){
                     var  menuCate2 = cate.category2[j]
-                    html += '<li class=""><a href="/products/'+ category1Code +'/category/'+ menuCate2.category2Code +'">' + menuCate2.category2Name + '</a></li>';
+                    html += '<a href="/products/'+ category1Code +'/category/'+ menuCate2.category2Code +'">' + menuCate2.category2Name + '</a>';
                 }
-                $('#header .main_gnb').html(html);
-                $('#header .main_gnb li').css({
+                $('.nav_wrap #nav').html(html);
+                $('.nav_wrap #nav a').css({
                     'width': 'fit-content'
                 });
 
