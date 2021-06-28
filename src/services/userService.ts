@@ -18,11 +18,11 @@ class UserService {
     // SERVER_IP = '13.209.123.102'
 
     // SERVER_URL = 'http://' + this.SERVER_IP + ':9090'
-    SERVER_URL = 'https://dietfarm119.co.kr'
+    SERVER_URL = 'http://dietfarm119.co.kr:9090'
 
     // CALLBACK_SERVER = 'http://' + this.SERVER_IP + ':3000'
     // CALLBACK_SERVER = 'http://' + this.SERVER_IP
-    CALLBACK_SERVER = 'https://dietfarm.co.kr'
+    CALLBACK_SERVER = 'http://dietfarm.co.kr'
 
     KAKAO_SERVER = 'https://kauth.kakao.com'
 
