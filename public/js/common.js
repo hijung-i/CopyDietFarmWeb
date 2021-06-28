@@ -16,7 +16,7 @@ var API_SERVER = "http://dietfarm119.co.kr:9090";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "http://"+ SERVER_IP;
 
-var RESOURCE_SERVER = "http://dietfarm119.co.kr:9090";
+var RESOURCE_SERVER = "http://13.209.123.102:9090/data/diet";
 
 
 function ajaxCall(url, params, type, onSuccess, onError){
