@@ -22,7 +22,7 @@ class UserService {
 
     // CALLBACK_SERVER = 'http://' + this.SERVER_IP + ':3000'
     // CALLBACK_SERVER = 'http://' + this.SERVER_IP
-    CALLBACK_SERVER = 'https://dietfarm.co.kr'
+    CALLBACK_SERVER = 'http://dietfarm.co.kr'
 
     KAKAO_SERVER = 'https://kauth.kakao.com'
 
