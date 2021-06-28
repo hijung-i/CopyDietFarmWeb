@@ -224,3 +224,23 @@ function getSelectedOptionIndexes(ele) {
     
     return [prd, opt];
 }
+
+function openInfoModal() {
+    console.log("click");
+    $('#iModal').show();  
+    $('html,body').css({'overflow':'hidden','height':'100%'});  
+    $('#iModal').on('scroll touchmove mousewheel',function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    })
+
+    getDeliveryInfoList();
+
+    var inputs = document.querySelectorAll('input');
+    $(inputs).click(function(){
+        console.log('done');
+        
+    });
+
+}
