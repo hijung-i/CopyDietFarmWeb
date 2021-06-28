@@ -66,7 +66,7 @@ router.get('/products/:category1Code/category/:category2Code', (req: Request, re
         category2Code: category2Code,
         listType: 'CATEGORY',
         listTitle: '',
-        currentPage: 'products'
+        currentPage: 'category'
     })
 })
 router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {
@@ -90,7 +90,7 @@ router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
     console.log('isLoggedIn ->> ', isLoggedIn, sessionUser)
 
     render(req, res, 'my_page', { isLoggedIn: isLoggedIn, sessionUser, currentPage: '마이팜' })
-    render(req, res, 'coupon', { isLoggedIn: isLoggedIn, sessionUser})
+    render(req, res, 'coupo', { isLoggedIn: isLoggedIn, sessionUser, currentPage: '마이팜' })
 })
 router.get('/faq', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'faq', {})

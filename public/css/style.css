@@ -871,6 +871,10 @@ border-spacing: 0 20px;font-size:14px}
 .side{display:none}
 .sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
+
+.pick_list_null{width:70%; text-align:center; margin:70px auto}
+.pick_list_null img{width:100px!important}
+.pick_list_null p{margin-top:28.49px;font-size:16px;color:#878787;padding-bottom:189.51px}
   /* 멀티플 슬라이드 */
   .mtpSlideTit {margin: 24px 0 21px 0;}
 
@@ -1136,9 +1140,8 @@ justify-self: center;width: 100%;margin: 0 auto;}
 #content .pick_product .desc .cost{/*margin-left:-48px;*/font-size:16px;color:#6B6B6B;text-decoration:line-through;font-weight:bold}
 #content .pick_product .desc .ratio{/*margin-left:-98px;*/color:#F32525;font-size:16px;font-weight:bold}
 /*찜 내역 없을때*/
-.pick_list_null{width:70%; text-align:center; margin:197px auto;}
-.pick_list_null img{width:100px;height:75px}
-.no_list{font-size:16px;color:#878787;margin-top:15px}
+
+
 
 /*회원 탈퇴*/
 .contents .delete .web_title{font-size:25px;font-weight:bold;text-align:center}

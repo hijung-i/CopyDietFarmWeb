@@ -40,16 +40,11 @@
                     style="width: 19px; height: 14px;">
             </a>
         </div>
-        <div class="comp_logo <% if(currentPage != 'main' && currentPage != 'products') { %> hide-mobile <% } %>">
+        <div class="comp_logo <% if(currentPage != 'main' && currentPage != 'products' ) { %> hide-mobile <% } %>">
             <a href="/"><img src="/images/logo_new@2x.png"></a>
         </div>
-        <% if (currentPage == 'products') { %>
-            <div class="products_title">
-                <h2><%=currentPage %></h2>
-            </div>
-        <% } %> 
         <% if (currentPage != 'main' && currentPage != 'products') { %>
-            <div class="myPage_title">
+            <div class="myPage_title" style="font-size:16px;font-weight:bold">
                 <h2><%=currentPage %></h2>
             </div>
         <% } %> 
@@ -64,7 +59,7 @@
         </div>
     </div>
     
-    <div class="nav_wrap <% if(currentPage != 'main' && currentPage != 'products') { %> hide-mobile <% } %>" >
+    <div class="nav_wrap <% if(currentPage != 'main' && currentPage != 'products' && currentPage != 'category') { %> hide-mobile <% } %>" >
         <nav id="nav">
             <a href="#" class="web_cate active"><img src="/images/category_ico_main.png">전체카테고리</a>
             <a href="#">신상</a>
@@ -72,7 +67,7 @@
             <a href="#">특가</a>
             <a href="/products/SALES_011/event"><span>최저가</span></a>
         </nav>
-        
+       
         <div class="searchbox">
             <form id="search-form" action="search-list">
                 <div class="search">
