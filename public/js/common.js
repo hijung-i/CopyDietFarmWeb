@@ -459,7 +459,7 @@ $(function(){
    '</div>' +
    '<p style="color:#BBBBBB;margin-top:22px;margin-bottom:22.4px">또는</p>' +
    '<div class="signup_btn">' +
-   '<a type="button" class="loginBtn">아이디로 로그인</a>' +
+   '<a type="button" href="/login-form" class="loginBtn">아이디로 로그인</a>' +
    '</div>' +
    '</div>' +
    '</div>' ;

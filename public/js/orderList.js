@@ -6,7 +6,9 @@ var app = new Vue({
     }, methods: {
         numberFormat,
         formatDate,
-        convertOrderStatus
+        convertOrderStatus,
+        orderConfirm,
+        openCancelModal
     }
 })
 
@@ -57,7 +59,7 @@ function formatDate(dateStr) {
     return month + '-' + day;
 }
 
-function OpenCancelModal() {
+function openCancelModal() {
     $('#x_modal').show();
     $('html,body').css({'overflow':'hidden', 'height':'100%'});
     $('html,body').on('scroll touchmove mousewheel', function(event) {
@@ -82,6 +84,25 @@ cancelModal.addEventListener("click",e => {
     }
 })
 
+function orderConfirm(oIdx, pIdx) {
+    var order = app.orderList[oIdx];
+    var product = order.products[pIdx];
+    var params = {
+        orderNumber: order.orderNumber,
+        products: []
+    }
+
+    params.products.push(product);
+    ajaxCallWithLogin(API_SERVER + '/order/orderConfirm', params, 'POST',
+    function(data) {
+        alert('구매확정에 성공했습니다.');
+
+        console.log(data);
+    }, function(err) {
+        console.error(err);
+    })
+}
+
 function convertOrderStatus(orderStatus) {
     switch(orderStatus) {
         case 'C':
@@ -97,6 +118,8 @@ function convertOrderStatus(orderStatus) {
             return '결제 완료';
         case 'D':
             return '배송중';
+        case 'F':
+            return '배송완료';
         case 'R':
             return '리뷰작성';
         case 'L':

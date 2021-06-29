@@ -190,7 +190,7 @@
                                                     <ul>
                                                         <template v-if="product.orderStatus == 'P'" >
                                                             <li>
-                                                                <button type="button" class="btnA" onclick="OpenCancelModal()">취소 요청</button>
+                                                                <button type="button" class="btnA" v-on:click="openCancelModal()">취소 요청</button>
                                                             </li>
                                                         </template>
                                                         <template v-if="product.orderStatus == 'X'" >
@@ -200,7 +200,7 @@
                                                         </template>
                                                         <template v-if="'SDF'.includes(product.orderStatus)">
                                                             <li>
-                                                                <button type="button" class="btnA">구매확정</button>
+                                                                <button type="button" @click="orderConfirm(oIdx, pIdx)" class="btnA">구매확정</button>
                                                             </li>
                                                             <li>
                                                                 <button type="button" class="btnB">배송조회</button>
