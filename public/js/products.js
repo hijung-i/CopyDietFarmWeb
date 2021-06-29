@@ -10,11 +10,16 @@ $(function () {
 function getProductByStandCode() {
     var salesStandCode = $('#currentStandCode').val();
     var sortOption = $('#sortOption').val();
+    var salesStandName =  $('#salesStandName').val();
+    
+    var keywordDesc = "<span>\""+salesStandName+ "\"</span>";
+    $('.keyword').html(keywordDesc);
 
     if(salesStandCode){
         var params = {
             salesStandCode: salesStandCode,
-            sortOption: sortOption 
+            sortOption: sortOption,
+            salesStandName: salesStandName
         }
         
         ajaxCallWithLogin(API_SERVER + '/product/getProductByStandCode', params, 'post'
@@ -50,8 +55,25 @@ function getProductListByCategory() {
         category2Code: category2Code,
         sortOption: sortOption
     }
-    
-   
+
+    ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
+    , function (data) {  
+        if(data.result.length > 0) {
+            var html = generateHtmlForProductList(data.result);
+            
+            $('.sub_items ul').html(html);
+        } else {
+            $('.sub_items ul').hide();
+            $('.pick_list_null').show();
+            $('.pick_list_null').html('<img src="/images/gift_icon_detailpage@2x.png"><p>더 나은 구성을 위해 준비중입니다.</p>');
+        }
+
+    }, function (err){
+        console.log("getProductByStandCode err", err);
+    }, {
+        isRequire: false,
+        userId: true
+    });
   
 }
 
