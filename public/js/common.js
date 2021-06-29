@@ -454,11 +454,13 @@ $(function(){
 	'<div class="signup_btn">' +
 	'<button type="button" class="btnKakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png">카카오 계정으로 시작하기</button>' +
 	'<button type="button" class="btnNaver"><img src="/images/naver_login@2x.png">네이버 계정으로 시작하기</button>' +
-	'</div>' ;
-   '<div class="line" style="width:100%;color:#bbbbbb"></div>' +
+	'</div>' +
+   '<div class="line" style="width:100%;color:#bbbbbb">' +
+   '</div>' +
    '<p style="color:#BBBBBB;margin-top:22px;margin-bottom:22.4px">또는</p>' +
    '<div class="signup_btn">' +
    '<button type="button" class="loginBtn">아이디로 로그인</button>' +
+   '</div>' +
    '</div>' +
    '</div>' ;
 

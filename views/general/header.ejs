@@ -32,7 +32,7 @@
         <a href="/product/P00879"><img src="/images/doctor_banner@2x.png" alt="배너" style="width:100%;height:42px"></a>
     </div>
     <div class="menu_btns">
-        <div class="btnMenu">
+        <div class="btnMenu  <% if(currentPage == 'category' ) { %> hide-mobile <% } %>">
             <a href="#">
                 <img
                     src="/images/category_ico_main.png"
@@ -40,6 +40,20 @@
                     style="width: 19px; height: 14px;">
             </a>
         </div>
+        <% if (currentPage != 'main' && currentPage != 'products' && currentPage != '마이팜' && currentPage != '찜한 상품' && currentPage != '검색') { %>
+        <div class="detail_title_header">
+           <script type="text/javascript">
+                function goBack() {
+                    window
+                        .history
+                        .back();
+                }
+            </script>
+            <div class="btnback">
+                <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
+            </div>
+        </div>
+        <% } %>
         <div class="comp_logo <% if(currentPage != 'main' && currentPage != 'products' ) { %> hide-mobile <% } %>">
             <a href="/"><img src="/images/logo_new@2x.png"></a>
         </div>

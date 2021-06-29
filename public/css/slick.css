@@ -13,7 +13,6 @@
     -ms-touch-action: pan-y;
         touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
-    margin-top: 30px
 }
 @media screen and (max-width:1079px){
 .slick-slider{padding-left:15px;padding-right:15px;margin-bottom:40px}
