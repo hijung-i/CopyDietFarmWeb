@@ -51,24 +51,8 @@ function getProductListByCategory() {
         sortOption: sortOption
     }
     
-    ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
-    , function (data) {  
-        if(data.result.length > 0) {
-            var html = generateHtmlForProductList(data.result);
-            
-            $('.sub_items ul').html(html);
-        } else {
-            $('.sub_items ul').hide();
-            $('.pick_list_null').show();
-            $('.pick_list_null').html('<img src="/images/gift_icon_detailpage@2x.png"><p>더 나은 구성을 위해 준비중입니다.</p>');
-        }
-
-    }, function (err){
-        console.log("getProductByStandCode err", err);
-    }, {
-        isRequire: false,
-        userId: true
-    });
+   
+  
 }
 
 function getCategoryList(){
@@ -118,7 +102,7 @@ function productSearch(keyword) {
     }
 
     var keywordDesc = "<span style=\"color: red;\">\""+keyword + "\"</span>에 대한 검색 결과";
-    $('.main_sub h2').html(keywordDesc);
+    $('.keyword').html(keywordDesc);
 
     ajaxCallWithLogin(API_SERVER + '/product/productSearchBar', params, 'POST',
     function(data) {

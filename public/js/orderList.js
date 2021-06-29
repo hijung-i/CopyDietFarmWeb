@@ -1,8 +1,12 @@
 var app = new Vue({
     el: 'main',
+    components: {
+        'mypage-component': mypageComponent
+    },
     data: {
         RESOURCE_SERVER,
-        orderList: []
+        orderList: [],
+        totalPointAmount: 0
     }, methods: {
         numberFormat,
         formatDate,
@@ -12,6 +16,8 @@ var app = new Vue({
 
 $(function() {
     getOrderList();
+    getUsablePointAmount();
+
 })
 
 function getOrderList() {
@@ -105,4 +111,21 @@ function convertOrderStatus(orderStatus) {
             return '재주문';
     }
     
+}
+function getUsablePointAmount() {
+    var params = {};
+    ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
+    function(data) {
+        if(data.result)
+            app.totalPointAmount = numberFormat(data.result);
+
+        
+        console.log("success usablePoint", data);
+    }, function(err) {
+        console.log("error", err)
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
 }

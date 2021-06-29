@@ -12,21 +12,20 @@
 
         <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
         <style type="text/css">
-        @media screen and (max-width:1079px){
-        #header_common.sub{height:140px!important}
-        #header_common.sub ~ .content{margin-top:140px!important}
-        #nav a{margin-left:10px}    
-    }
+            @media screen and (max-width:1079px){
+                #header_common.sub{height:140px!important}
+                #header_common.sub ~ .content{margin-top:140px!important}
+                #nav a{margin-left:10px}    
+            }
         </style>
-        <%-include('general/head') %>
-            <link rel="stylesheet" href="/css/style.css">
-            <!-- font awesome -->
-            <link rel="stylesheet"
-                href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-                integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-                crossorigin="anonymous"/>
-        </head>
-
+    <%-include('general/head') %>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet"
+        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+        crossorigin="anonymous"/>
+</head>
 <body>
     <%-include('general/header') %>
         <input type="hidden" id="listType" value="<%=listType %>">
@@ -44,8 +43,12 @@
             <div class="main_sub_wrap">
                 <section class="main_sub">
 
-                    <% if( listTitle != '' ) { %>
-                        <h2><%=listTitle %></h2>
+                    <% if( listTitle != 'SEARCH' && listTitle == 'CATEGORY' ) { %>
+                        <h2 class="keyword"></h2>
+                    <% } else if( listTitle != 'EVENT') { %>
+                        <h2 class="keyword"></h2>
+                    <% } else if( listTitle != 'CATEGORY' && listTitle == 'SEARCH' ) { %>
+                        <h2 class="keyword"></h2>
                     <% } %>
                    <form name="#" id="#" method="get" action="#">
                         <div class="n_sort">
