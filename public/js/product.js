@@ -522,3 +522,9 @@ function closeShareModal() {
     $('html,body').css({'overflow':'visible'});
     $('html,body').off('scroll touchmove mosewheel');
 }
+/* 카카오톡 공유하기 */
+Kakao.Link.createScrapButton({
+    container: '#kakao-link-btn',
+    requestUrl: 'https://developers.kakao.com',
+    templateId: 55707
+  });

@@ -10,6 +10,8 @@ const options = {
     passphrase: 'dataflow0327!@'
 }
 
+https.globalAgent.options.ca = require('ssl-root-cas').create()
+
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(options, app)
 
@@ -17,6 +19,6 @@ httpServer.listen(80, () => {
     console.log('SERVER IS LISTENING PORT 80')
 })
 
-// httpsServer.listen(443, () => {
-//     console.log('SERVER IS LISTENING PORT 443')
-// })
+httpsServer.listen(443, () => {
+    console.log('SERVER IS LISTENING PORT 443')
+})

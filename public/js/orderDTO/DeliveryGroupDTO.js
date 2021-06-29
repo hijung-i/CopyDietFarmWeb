@@ -61,14 +61,17 @@ function DeliveryGroupDTO() {
 
                 if (this.deliveryCost2 < product.deliveryCost2 * boxCount) {
                     this.deliveryCost2 = product.deliveryCost2 * boxCount;
+                    this.deliveryCostProduct = product.productCode;
                 }
 
                 if (this.deliveryCostBasis < product.deliveryCostBasis) {
                     this.deliveryCostBasis = product.deliveryCostBasis;
+                    this.deliveryCostProduct = product.productCode;
                 }
 
                 if (this.deliveryCost3 < product.deliveryCost3 * boxCount) {
                     this.deliveryCost3 = product.deliveryCost3 * boxCount;
+                    this.deliveryCostProduct = product.productCode;
                 }
 
                 if (this.deliveryCostBasis != 999999 && this.deliveryCostBasis < this.groupPrice) {
@@ -78,6 +81,7 @@ function DeliveryGroupDTO() {
             
             this.setTotalDeliveryCost(isJeju, isExtra);
         }
+        console.log("this.deliveryCostProduct", this.companyName, this.deliveryCostProduct)
     }
 
     
@@ -120,6 +124,7 @@ function DeliveryGroupDTO() {
         clone.deliveryCost = this.deliveryCost;
         clone.deliveryCost2 = this.deliveryCost2;
         clone.deliveryCost3 = this.deliveryCost3;
+        clone.deliveryCostProduct = this.deliveryCostProduct;
         clone.isSelected = this.isSelected;
         clone.companyName = this.companyName;
         clone.brandName = this.brandName;

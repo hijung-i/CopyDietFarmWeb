@@ -191,7 +191,7 @@
 
                             <div class="share_body">
                                 <div class="kakaoTalk">
-                                    <p ><a id="kakao-link-btn" href="javascript:sendLink()"><img src="/images/shareKakao@2x.png" alt="url"></a></p>
+                                    <p ><a href="javascript:void(0);" onclick="Kakao.Link.sendScrap(PARAMETER);"><img src="/images/shareKakao@2x.png" alt="url"></a></p>
                                     <p>카카오톡</p>
                                 </div>
                                 <div class="sms">
@@ -1015,46 +1015,6 @@
 
                         };
                     </script>
-                    <!-- 공유하기 카카오톡 api -->
-                    <script type="text/javascript">
-                        function sendLink() {
-                            console.log('rr')
-                          Kakao.Link.sendDefault({
-                            objectType: 'feed',
-                            content: {
-                              title: '다이어트 식품',
-                              description: '...',
-                              imageUrl:
-                                'http://13.209.123.102:8000/representative/076c22a7679141346852332fdc987558_1624262108770.png',
-                              link: {
-                                mobileWebUrl: 'http://dietfarm.co.kr',
-                                webUrl: 'http://dietfarm.co.kr',
-                              },
-                            },
-                            social: {
-                              likeCount: 286,
-                              commentCount: 45,
-                              sharedCount: 845,
-                            },
-                            buttons: [
-                              {
-                                title: '웹으로 보기',
-                                link: {
-                                  mobileWebUrl: 'http://dietfarm.co.kr',
-                                  webUrl: 'http://dietfarm.co.kr',
-                                },
-                              },
-                              {
-                                title: '앱으로 보기',
-                                link: {
-                                  mobileWebUrl: 'http://dietfarm.co.kr/product/',
-                                  webUrl: 'http://dietfarm.co.kr/product/',
-                                },
-                              },
-                            ],
-                          })
-                        }
-                      </script>
                     <script src="/js/orderDTO/OrderDTO.js"></script>
                     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
                     <script type="text/javascript" src="/js/product.js"></script>

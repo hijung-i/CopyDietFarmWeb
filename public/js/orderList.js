@@ -85,6 +85,7 @@ cancelModal.addEventListener("click",e => {
 function convertOrderStatus(orderStatus) {
     switch(orderStatus) {
         case 'C':
+        case 'A':
             return '구매확정';
         case 'XC':
             return '취소완료';

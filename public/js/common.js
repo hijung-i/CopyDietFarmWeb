@@ -5,17 +5,18 @@
 
 // var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
 
-// var API_SERVER = "http://"+ SERVER_IP +":9090";
+// var API_SERVER = "http://192.168.0.3:9090";
 
 // var API_SERVER = "http://112.217.209.162:9090";
 // var RESOURCE_SERVER = "http://112.217.209.162:8000";
 
 // 운영
-var API_SERVER = "http://13.209.123.102:9090";
+// var API_SERVER = "http://13.209.123.102";
+var API_SERVER = "https://dietfarm119.co.kr";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "http://"+ SERVER_IP;
 
-var RESOURCE_SERVER = "http://13.209.123.102:8000";
+var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
 
 function ajaxCall(url, params, type, onSuccess, onError){
@@ -338,23 +339,6 @@ function niceIdentifyPopup(nextMethod) {
    open('/nice/identifying-page?nextMethod='+ nextMethod , '다이어트팜 본인 인증', options);
 }
 
-function onIdentifyingSuccess(data, nextMethod) {
-   console.log(data);
-   $("#formUserName").val(data.userName);
-   $("#formUserInfo").val(data.userInfo);
-   $("#formDupInfo").val(data.dupInfo);
-   $("#formUserGender").val(data.userGender);
-   $("#formUserCellNo").val(data.userCellNo);
-   switch(nextMethod) {
-      case 'register':
-         $("#infoForm").attr("action", "/sign-up-form");
-         break;
-   }
-
-   $("#infoForm").submit();
-
-}
-
 // 쿠키 생성
 function setCookie(cName, cValue, cDay){
    var expire = new Date();
@@ -445,6 +429,7 @@ $(function(){
    var popup =
    '<div id="popup_layer" class="checkLogin">' +
    '<div class="popup_box">' +
+   '<span class="close" onclick="closePopupModal();">x</span>' +
    '<div class="popup_cont">' +
    '<div class="index-modal">' +
    '<h2>SNS 1초 회원가입!</h2>' +
@@ -469,11 +454,13 @@ $(function(){
 	'<div class="signup_btn">' +
 	'<button type="button" class="btnKakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png">카카오 계정으로 시작하기</button>' +
 	'<button type="button" class="btnNaver"><img src="/images/naver_login@2x.png">네이버 계정으로 시작하기</button>' +
-	'</div>' ;
-   '<div class="line" style="width:100%;color:#bbbbbb"></div>' +
+	'</div>' +
+   '<div class="line" style="width:100%;color:#bbbbbb">' +
+   '</div>' +
    '<p style="color:#BBBBBB;margin-top:22px;margin-bottom:22.4px">또는</p>' +
    '<div class="signup_btn">' +
    '<button type="button" class="loginBtn">아이디로 로그인</button>' +
+   '</div>' +
    '</div>' +
    '</div>' ;
 
@@ -578,18 +565,21 @@ $(function(){
 		// 로그아웃 시에만 표시
 		console.log(data.result);
 		if(data.result.isLoggedIn == false) {
-        
          
-         
-         // if(iOS || isBrowser && $('html').width() <= 1079) {
-         //    $(".popup_layer_wrapper").html(popup);
-         //    $('html,body').css({'overflow':'hidden','height':'100%'});
-         //    $('html,body').on('scroll touchmove mousewheel', function(event) {
-         //       event.preventDefault();
-         //       event.stopPropagation();
-         //       return false;
-         //    })
-         // }
+         if(iOS || isBrowser && $('html').width() <= 1079) {
+            if($('.popup_layer_wrapper').length > 0) {
+
+               $(".popup_layer_wrapper").html(popup);
+               
+               $('html,body').css({'overflow':'hidden','height':'100%'});
+               $('html,body').on('scroll touchmove mousewheel', function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  return false;
+               })
+            }
+
+         } 
          if ($('#naver_id_login').length > 0) {
             ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
             function(data) {
@@ -599,11 +589,7 @@ $(function(){
                console.log("error login button", err);
             })
          }
-      } else {
-         $('html,body').css({'overflow':'visible'});
-         $('html,body').off('scroll touchmove mousewheel');
-      }
-
+      } 
 	}, function(err){
 		console.error(err);
 	})
@@ -612,16 +598,25 @@ $(function(){
 	
 });
 
+function closePopupModal() {
+   $('.popup_layer_wrapper').hide();
+   $('html,body').css({'overflow':'visible'});
+   $('html,body').off('scroll touchmove mousewheel');
+}
+
+
 function openMyModal() {
    $('#myModal').show();
 }
 
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
+   console.log("loginWithKakaoAPI");
    Kakao.Auth.authorize({
         redirectUri: CALLBACK_SERVER + '/user/result/kakao',
       scope: 'profile,plusfriends,account_email,gender,birthday,birthyear,phone_number'
    })
+   console.log("loginWithKakaoAPI end");
 }
 
 function naverCallback(success, paramStr) {

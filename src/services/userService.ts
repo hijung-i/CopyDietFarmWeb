@@ -18,7 +18,7 @@ class UserService {
     // SERVER_IP = '13.209.123.102'
 
     // SERVER_URL = 'http://' + this.SERVER_IP + ':9090'
-    SERVER_URL = 'http://13.209.123.102:9090'
+    SERVER_URL = 'http://dietfarm119.co.kr:9090'
 
     // CALLBACK_SERVER = 'http://' + this.SERVER_IP + ':3000'
     // CALLBACK_SERVER = 'http://' + this.SERVER_IP

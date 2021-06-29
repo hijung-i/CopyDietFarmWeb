@@ -382,7 +382,7 @@ function getCategory() {
             sideTabHtml += '            <img class="downArrow" src="/images/downarrow_ico_main.png"';
             sideTabHtml += '            alt="화살표" style="width:11px;height:11px">';
             sideTabHtml += '        </dt>';
-            sideTabHtml += '        <dd class="subMenu faq_a" style="top: 0;">';
+            sideTabHtml += '        <dd class="subMenu faq_a" style="top: -'+ i * (54)+'px;">';
             sideTabHtml += '            <ul class="gnb_depth02">';
             
             sideTabHtml += '                <a href="/products/'+ category.category1Code+'/category/ALL">';

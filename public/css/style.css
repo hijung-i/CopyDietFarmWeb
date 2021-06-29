@@ -287,8 +287,7 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .mDepth01 dt {justify-content: space-between;}
 
 .sideMenu h2 {padding:15px 10px;text-align:left;position:relative;
-height:50px;overflow:hidden}
- .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;padding-top:4px} 
+height:50px;overflow:hidden} 
  .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
   #content .main_sub img{width: 100%;background-repeat: no-repeat;background-size: cover;background-position: center}
   #content .main_sub{width:100%;margin:10px auto}   
@@ -432,11 +431,10 @@ margin-top:100px;padding-top:25px;padding-bottom:21px}
  #content .w_best li .thum img{width:100%;height:auto;}
  #content .w_best li .title{font-size:12px;margin-top:10px}
  #content .w_best li .desc ul{margin-left:1px}
- .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 9999; background: #fff;}
- .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
  
  /*  모바일 depth02 */
- .mDepth01 {overflow:scroll}
+ .mDepth01 {overflow:scroll; 
+  overflow-x: hidden;}
  .mDepth01 li {position: relative; background: #fff;}
 
  .gnb_depth02 li {background: #F5F5F5;}
@@ -618,6 +616,7 @@ border-spacing: 0 20px;font-size:14px}
   width: 100%; height: 100%; 
   background-color: rgba(0, 0, 0, 0.4);
 } 
+
 /*팝업 박스*/
 .popup_box{
   position: absolute;
@@ -631,6 +630,11 @@ border-spacing: 0 20px;font-size:14px}
   box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);
   -webkit-box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);
   -moz-box-shadow: 2px 5px 10px 0px rgba(0,0,0,0.35);
+}
+.popup_box > span.close {
+  position: absolute;
+  right: 20px; top: 16px;
+  font-size: 28px;
 }
 .index-modal > h2 {
   font-size: 20px;
@@ -750,7 +754,6 @@ border-spacing: 0 20px;font-size:14px}
     #content .w_best li .desc ul li{ margin-bottom:20px;display:flex;margin-right:7px}
     #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
     .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 999; background: #fff;}
-    .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;} 
     /*  모바일 depth02 */
     .mDepth01 dd {
       min-width: 360px; width: 100%;
@@ -758,6 +761,7 @@ border-spacing: 0 20px;font-size:14px}
     }
     .gnb_depth02 li {background: #F5F5F5;}
      
+    /* 모바일 푸터 메뉴 수정 */
   .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;padding-top:4px} 
   .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
   .sweet h3{clear:both;font-size:20px;font-weight:bold;padding-left:15px}
@@ -983,7 +987,7 @@ font-weight:normal}
   .mDepth01 > li {width: 168px; height: 54px; position: relative;}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
-  .gnb_depth02{ display:inline-block; width:372px; height:486px; text-align:left}
+  .gnb_depth02{ display:inline-block; width:372px; height:540px; text-align:left}
 #header .tabMenu {display: none;}
   /* footer web */
   #footer {width:100%;min-width:1080px;}
@@ -1634,6 +1638,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
   .web_login_title{display:none}
   .box{width:100%}
   .confirm_mag{clear:both}
+  .signup_wrap{margin:0 auto}
   }
 
 
@@ -2037,6 +2042,9 @@ width:400px
 .t2{font-size:12px;line-height:14px;margin-top:5px;}
 .order_list_box{display:flex;justify-content:flex-start;margin-top:10px;margin-bottom:10px}
 .order ul li{white-space:nowrap}
+.order_list_btn .done {
+  font-size: 11px;
+}
 .order0{margin-top:-10px}
 .btnA{width:69px;height:26px;background-color:#F99319;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:10px;}
 .btnB{width:69px;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:11px}
@@ -2314,7 +2322,6 @@ background-color: #F99319;font-size: 14px; font-weight: 400;border-radius:5px}
 
 
 /*판매자 문의하기*/
-.btn_area {width:100%;clear:both;/*border-top:8px solid #E6E6E6;*/padding-right:15px}
 #btnInquiry{width:100%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px}
 .inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
@@ -2501,7 +2508,7 @@ display: flex;
 .edit_remove li img{position:relative;top:-5px;left:1px}
 
 /* 버튼 */
-.btn_area {margin-top:25px;width:100%;padding-left:15px;padding-right:15px}
+.btn_area {margin-top:25px}
 
 
 /*검색*/
@@ -2898,8 +2905,6 @@ display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(13.5px);
     z-index: 1;
     display: none;
   }
