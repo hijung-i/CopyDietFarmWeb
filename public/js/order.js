@@ -14,7 +14,7 @@ var app = new Vue({
     }, methods: {
         
         numberFormat,
-        paymentAction,
+        paymentAction, 
         descTypeChange: function() {
             var type = $("#selectDeliveryDesc")[0].options.selectedIndex;
             var value = $("#selectDeliveryDesc").val();
