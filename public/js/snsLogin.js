@@ -59,7 +59,6 @@ function requestKaKaoUserInfo() {
 				userCellNo: account.phone_number.replace(/-/gi, '').replace('+82 ', '0').replace('+1 ', ''),
 				userInfo: account.birthyear + account.birthday
 			}
-
 			switch(account.gender) {
 				case 'male':
 					params.userGender = 'M'
@@ -104,7 +103,7 @@ function checkKakaoRegistration(params) {
 				break;
 			case '기존 회원 아님 회원가입 진행':
 				// 회원가입 화면으로 연결
-                $('input[name=tokenNaver]').val(params.tokenNaver)
+                $('input[name=kakaoNo]').val(params.kakaoNo)
 				$('input[name=userId]').val(params.userId)
 				$('input[name=password]').val(params.password)
 				$('input[name=userEmail]').val(params.userEmail)

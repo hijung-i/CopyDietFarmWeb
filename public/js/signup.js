@@ -93,6 +93,7 @@ $(function() {
             params.tokenNaver = tokenNaver;
         } else {
             alert('잘못된 접근입니다.');
+            return;
             location.href = '/';
         }
 
