@@ -338,6 +338,7 @@ height:50px;overflow:hidden}
 
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  .keyword{display:none}
   #header_common.main ~ .content {
     margin-top: 150px;
   }
@@ -468,7 +469,7 @@ width:100%;border-top:2px solid #f1f1f1}
 #content .main_sub_wrap .desc .sale{font-weight:bold;}   
 #content .main_sub_wrap .desc .cost{color:#bbbbbb;text-decoration:line-through;margin-left:7px;}   
 #content .main_sub_wrap .desc .ratio{color:#F32525;font-weight:bold/*;font-size:11px*/;margin-left:7px}      
-#content .main_sub_wrap .main_sub h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}   
+
 
 
 /*찜한 상품*/
@@ -882,7 +883,7 @@ border-spacing: 0 20px;font-size:14px}
 .sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
 
-.pick_list_null{width:70%; text-align:center; margin:70px auto}
+.pick_list_null{width:100%; text-align:center; margin:120px auto}
 .pick_list_null img{width:100px!important}
 .pick_list_null p{margin-top:28.49px;font-size:16px;color:#878787;padding-bottom:189.51px}
   /* 멀티플 슬라이드 */
@@ -897,6 +898,9 @@ border-spacing: 0 20px;font-size:14px}
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
+  .myPage_title{display:none}
+.header_wrap{border-bottom:2px solid #F5F5F5;border-top:2px solid #F5F5F5}
+.keyword{width:1040px;margin:0 auto;margin-bottom:40px;margin-top:40px}
 #content .mtpSlideTit1{max-width:1080px;margin:0 auto;margin-top:50px}
 /*장바구니*/
 #shpcart_select input[type="checkbox"]{display:none;}

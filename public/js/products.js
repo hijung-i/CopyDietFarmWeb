@@ -10,11 +10,16 @@ $(function () {
 function getProductByStandCode() {
     var salesStandCode = $('#currentStandCode').val();
     var sortOption = $('#sortOption').val();
+    var salesStandName =  $('#salesStandName').val();
+    
+    var keywordDesc = "<span>\""+salesStandName+ "\"</span>";
+    $('.keyword').html(keywordDesc);
 
     if(salesStandCode){
         var params = {
             salesStandCode: salesStandCode,
-            sortOption: sortOption 
+            sortOption: sortOption,
+            salesStandName: salesStandName
         }
         
         ajaxCallWithLogin(API_SERVER + '/product/getProductByStandCode', params, 'post'
@@ -50,7 +55,7 @@ function getProductListByCategory() {
         category2Code: category2Code,
         sortOption: sortOption
     }
-    
+
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
     , function (data) {  
         if(data.result.length > 0) {
@@ -69,6 +74,7 @@ function getProductListByCategory() {
         isRequire: false,
         userId: true
     });
+  
 }
 
 function getCategoryList(){
@@ -118,7 +124,7 @@ function productSearch(keyword) {
     }
 
     var keywordDesc = "<span style=\"color: red;\">\""+keyword + "\"</span>에 대한 검색 결과";
-    $('.main_sub h2').html(keywordDesc);
+    $('.keyword').html(keywordDesc);
 
     ajaxCallWithLogin(API_SERVER + '/product/productSearchBar', params, 'POST',
     function(data) {

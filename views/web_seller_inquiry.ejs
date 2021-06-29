@@ -20,36 +20,12 @@
                     <link rel="stylesheet" href="/css/style.css">
                     <link rel="stylesheet" href="/css/myPage.css">
                     <link rel="stylesheet" href="/css/style_web.css">
-                                <!-- select tag design plugin -->
-                                <link
-                                    rel="stylesheet"
-                                    href="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/css/nice-select.css">
-                                    <script src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.js"></script>
-                                    <script
-                                        src="./jquery-nice-select-1.1.0/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
-                                    <!-- modal -->
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-                                    <script
-                                        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-                                    <link
-                                        rel="stylesheet"
-                                        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
-                                    <!-- main.js -->
+                               <!-- main.js -->
                                     <script src="/js/main.js"></script>
                                     <script src="/js/common.js"></script>
                                 </head>
 
                                 <body>
-
-                                    <script>
-                                        $(document).ready(function () {
-                                            $("#gnbAllMenu").hide();
-                                            $("#btnGnbOpen").click(function () {
-                                                $("#gnbAllMenu").slideToggle("fast");
-                                            });
-                                        });
-                                    </script>
-
                                     <div class="mobile_s_inquiry">
                                         <section class="detail_title">
                                             <h2>판매자 문의하기 (주문건)</h2>
@@ -60,45 +36,8 @@
                                         <div class="web_s_inquiry">
                                             <%-include('general/header') %>
                                             </div>
-                                            <div class="main_contents">
-                                                <div class="web_contents">
-                                                    <div class="left">
-                                                        <h3>마이팜</h3>
-                                                        <div class="left_ctn">
-                                                            <ul>
-                                                                <li>
-                                                                    <img src="/images/basket_ico.png"></li>
-                                                                    <li>
-                                                                        <span>김수아님</span>
-                                                                    </li>
-                                                                    <li>내정보
-                                                                        <span>
-                                                                            <i class="fas fa-chevron-right"></i>
-                                                                        </span>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="center">
-                                                            <h3>포인트<img src="/images/point.png"></h3>
-                                                                <p>1000 원
-                                                                    <span>
-                                                                        <i class="fas fa-chevron-right"></i>
-                                                                    </span>
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="right">
-                                                                <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
-                                                                    <p>3개
-                                                                        <span>
-                                                                            <i class="fas fa-chevron-right"></i>
-                                                                        </span>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                            <%-include('general/mypage') %>
+                                            <div class="mypage_content_wrap">
                                                         <nav class="content_lnb">
                                                             <ul>
                                                                 <li>
@@ -235,46 +174,9 @@
                                                                 </div>
                                                             </div>
                                                             <!--//order-->
-
-                                                            <script type="text/javascript">
-                                                                $(document).ready(function () {
-                                                                    $(".open_close").click(function () {
-                                                                        $(".toggle").toggle();
-                                                                    });
-                                                                });
-                                                                $(document).ready(function () {
-                                                                    $(".open_close2").click(function () {
-                                                                        $(".toggle2").toggle();
-                                                                    });
-                                                                });
-                                                                $(document).ready(function () {
-                                                                    $(".open_close3").click(function () {
-                                                                        $(".toggle3").toggle();
-                                                                    });
-                                                                });
-                                                            </script>
-
-                                                            <script type="text/javascript">
-                                                                jQuery(document).ready(function () {
-                                                                    $("tr.order_q").click(function () {
-                                                                        if ($(this).next('tr').css("display") != "none") {
-                                                                            $(this)
-                                                                                .next('tr')
-                                                                                .hide();
-                                                                            $(this).removeClass("current");
-                                                                        } else {
-                                                                            $("tr.order_a").css('display', 'current');
-                                                                            $("tr.order_q").removeClass("current");
-                                                                            $(this)
-                                                                                .next('tr')
-                                                                                .show();
-                                                                            $(this).addClass("none");
-                                                                        }
-                                                                    });
-                                                                });
-                                                            </script>
-
+                                                        </div>
+                                                           
                                                         </body>
 
                                                     </html>
-                                                    <script src="/js/main.js"></script>
+                                       

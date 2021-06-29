@@ -104,7 +104,7 @@
         </section>
     </div>
     <main id="content" class="content">
-        <%-include('general/mypage') %>
+        <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
             <div class="mypage_content_wrap">
                 <nav class="content_lnb">
                     <ul>
@@ -331,6 +331,7 @@
     <%-include('general/footer') %>
 
         
+<script src="/js/mypage/mypageComponent.js"></script>
 <script src="/js/orderList.js"></script>
 </body>
 

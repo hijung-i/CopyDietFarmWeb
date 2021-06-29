@@ -72,7 +72,7 @@
             </a>
         </div>
     </div>
-    
+    <div class="header_wrap">
     <div class="nav_wrap <% if(currentPage != 'main' && currentPage != 'products' && currentPage != 'category') { %> hide-mobile <% } %>" >
         <nav id="nav">
             <a href="#" class="web_cate active"><img src="/images/category_ico_main.png">전체카테고리</a>
@@ -83,7 +83,7 @@
         </nav>
        
         <div class="searchbox">
-            <form id="search-form" action="search-list">
+            <form id="search-form" action="/search-list">
                 <div class="search">
                     <input type="text" name="keyword" class="round" placeholder="검색해보세요.">
                     <a href="#"><img src="/images/search_icon_menu.png"></a>
@@ -92,7 +92,7 @@
         </div>
     
     </div>
-
+</div>
     <script>
             /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
             $(function() { 
