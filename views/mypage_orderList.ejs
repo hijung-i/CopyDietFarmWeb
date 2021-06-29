@@ -37,7 +37,6 @@
 }
             
     </style>
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style_web.css">
     <link rel="stylesheet" href="/css/myPage.css">
     <%-include('general/head') %>
@@ -148,7 +147,7 @@
                     </div>
                     <div class="orderHistory_wrap">
                     <template v-for="(order, oIdx) in orderList">
-                    <div class="orderHistory">
+                    <div class="orderHistory"> 
                         <div class="orderBox">
                             <div class="order01">
 
@@ -212,7 +211,7 @@
                                                                 <button type="button" class="btnA">리뷰작성</button>
                                                             </li>
                                                             <li v-else>
-                                                                <span class="done">리뷰 작성 완료</span>
+                                                                <span class="done">리뷰완료</span>
                                                             </li>
                                                             <li>
                                                                 <button type="button" class="btnB">재주문</button>
