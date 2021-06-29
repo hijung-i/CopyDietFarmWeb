@@ -762,7 +762,8 @@ border-spacing: 0 20px;font-size:14px}
     .gnb_depth02 li {background: #F5F5F5;}
      
     /* 모바일 푸터 메뉴 수정 */
-  .pages > ul {display: flex; width: 100%; justify-content: space-between; padding: 0 25px;padding-top:4px} 
+  div.pages {display: flex; width: 100%; justify-content: space-around;}
+  div.pages div {margin-top: 4px;}
   .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
   .sweet h3{clear:both;font-size:20px;font-weight:bold;padding-left:15px}
   #mHeader{position:fixed;height:90px;background-color:#fff}
