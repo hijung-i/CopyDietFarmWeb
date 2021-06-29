@@ -4,9 +4,6 @@
         <div class="main_contents_elements_wrap">
             <div class="mypage_member_info">
             <% if (!isLoggedIn) { %>
-                <img src="/images/basket_ico.png" alt="바구니 아이콘">
-                <h3>로그인 해주세요.</h3>
-            <% } else if (isLoggedIn) { %>
             <img src="/images/basket_ico.png" alt="바구니 아이콘">
                    <h3><%=sessionUser.userName %>님</h3>
                    <p><a href="javascript:location.href='/myinfo-usercheck';">내정보<span><i class="fas fa-chevron-right"></i></span></a></p> 
@@ -27,4 +24,3 @@
         </div>
     </div>
 </div>
-<script src="/js/mypage.js"></script>
