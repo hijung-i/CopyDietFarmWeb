@@ -1563,7 +1563,7 @@ div.slideMenu_top {display: none}
   .modal_ctn {
     width: 330px;
     margin: 0 auto;
-    height: 575px;
+    height: 450px;
   }
   
 }
@@ -3016,5 +3016,46 @@ display: flex;
   main#content.coupon {
     width: 100%;
     min-width: 360px;
+  }
+}
+
+/* 장바구니 > 주문하기 모달 */
+@media screen and (min-width:1080px) {
+  div#iModal {
+    width: 100%; height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.25);
+  }
+  div#iModal > .modal-content {
+    position: relative;
+    top: 50%; transform: translateY(-50%);
+    background: #fff;
+    border-radius: 5px;
+    width: 380px; height: 450px;
+    margin: 0 auto;
+  }
+  .i_modal .close {
+    color: #aaa;
+    font-size: 28px; 
+    cursor: pointer;
+  }
+  .modalTop_tit {padding-top: 25px;}
+  .modalTop_tit > h3 {
+    font-size: 18px; font-weight: 700;
+  }
+  #iModal div.modalTop_ctn h3.order_delMag {
+    font-size: 16px; font-weight: 700;
+    padding: 18px 0 30px 0;
+  }
+  .i_modal div.top_checkBox {
+    position: relative;
+    width: 20%; left: 0;
+    vertical-align: middle;
+    display: none;
   }
 }
