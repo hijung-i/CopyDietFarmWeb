@@ -898,7 +898,10 @@ border-spacing: 0 20px;font-size:14px}
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
-  .myPage_title{display:none}
+.pick_list_null{width:100%;text-align:center;margin-top:140px;margin-bottom:200px}
+.pick_list_null img{width:100px!important;height:100px!important}
+.pick_list_null p{padding-top:20px;font-size:16px;color:#878787}
+.myPage_title{display:none}
 .header_wrap{border-bottom:2px solid #F5F5F5;border-top:2px solid #F5F5F5}
 .keyword{width:1040px;margin:0 auto;margin-bottom:40px;margin-top:40px}
 #content .mtpSlideTit1{max-width:1080px;margin:0 auto;margin-top:50px}

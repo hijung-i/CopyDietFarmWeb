@@ -56,7 +56,7 @@
         <%-include('general/header') %>
     </div>
     <main id="mypage_seller_inq_ctt">
-        <%-include('general/mypage') %>
+        <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
         <div class="mypage_content_wrap">
             <nav class="content_lnb">
                 <ul>
@@ -245,6 +245,7 @@
     </section>
 
     <!-- modal window end -->
+    <script src="/js/mypage/mypageComponent.js"></script>
     <script src="/js/mypage/sellerInquiry.js"></script>
     <%-include('general/footer') %>
     </body>

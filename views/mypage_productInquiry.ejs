@@ -62,9 +62,10 @@
     <div class="web_p_inquiry">
         <%-include('general/header') %>
     </div>
+    
     <main id="mypage_prod_inq_ctt">
-        <%-include('general/mypage') %>
-        <div class="mypage_content_wrap">
+        <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
+       <div class="mypage_content_wrap">
          <div class="mypage_lnb">
             <nav class="content_lnb">
             <ul>
@@ -223,11 +224,12 @@
         </div>
     </section>
 
-    </main>
-
+  
     <!-- modal window end -->
-    <script src="/js/mypage/productInquiry.js"></script>
+ 
     <%-include('general/footer') %>
+    <script src="/js/mypage/mypageComponent.js"></script>
+    <script src="/js/mypage/productInquiry.js"></script>
     </body>
 
 </html>

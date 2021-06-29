@@ -54,6 +54,7 @@
                 <input type="hidden" id="orderNumber" value="<%=orderNumber%>">
                 <main>
                     <%-include('general/mypage') %>
+              <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
               <div class="mypage_content_wrap">
                 <nav class="content_lnb">
                     <ul>
@@ -336,26 +337,8 @@
                 </main>
                     <!--//order-->
     <%-include('general/footer') %>
+    <script src="/js/mypage/mypageComponent.js"></script>
     <script src="/js/orderDetail.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            $("tr.order_q").click(function () {
-                if ($(this).next('tr').css("display") != "none") {
-                    $(this)
-                        .next('tr')
-                        .hide();
-                    $(this).removeClass("current");
-                } else {
-                    $("tr.order_a").css('display', 'current');
-                    $("tr.order_q").removeClass("current");
-                    $(this)
-                        .next('tr')
-                        .show();
-                    $(this).addClass("none");
-                }
-            });
-        });
-    </script>
-
+    
 </body>
 </html>
