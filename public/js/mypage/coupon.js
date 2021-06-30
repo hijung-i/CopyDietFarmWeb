@@ -1,7 +1,11 @@
 var app = new Vue({
     el: 'main',
+    components: {
+        'mypage-component': mypageComponent
+    },
     data: {
-        couponList: []
+        couponList: [],
+        totalPointAmount: 0
     }, methods: {
         numberFormat,
         formatDate,

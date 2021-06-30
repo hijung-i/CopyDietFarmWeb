@@ -1,8 +1,12 @@
 var app = new Vue({
     el: 'main',
+    components: {
+        'mypage-component': mypageComponent
+    },
     data: {
         totalPointAmount: 0,
-        pointList: []
+        pointList: [],
+        totalPointAmount: 0
     },
     methods: {
         numberFormat,

@@ -1,7 +1,11 @@
 var app = new Vue({
     el: '#app',
+    components: {
+        'mypage-component': mypageComponent
+    },
     data: {
-        deliveryList: new Array()
+        deliveryList: new Array(),
+        totalPointAmount: 0
     },
     methods: {
         modalDisplay,

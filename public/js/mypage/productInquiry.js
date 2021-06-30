@@ -1,10 +1,14 @@
 var app = new Vue({
     el: 'main',
+    components: {
+        'mypage-component': mypageComponent
+    },
     data: {
         RESOURCE_SERVER,
         askList: [],
         waitingAskList: [],
-        doneAskList: []
+        doneAskList: [],
+        totalPointAmount: 0
     }, methods: {
         formatDate,
         getOptionName: function(optm,ions) {

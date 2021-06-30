@@ -1,9 +1,13 @@
 var app = new Vue({
     el: 'main',
+    components: {
+        'mypage-component': mypageComponent
+    },
     data: {
         RESOURCE_SERVER,
         reviewList: [],
-        writableReviewList: []
+        writableReviewList: [],
+        totalPointAmount: 0
     }, methods: {
         formatDate,
         getOptionName: function(options) {
