@@ -429,7 +429,7 @@ $(function(){
    var popup =
    '<div id="popup_layer" class="checkLogin">' +
    '<div class="popup_box">' +
-   '<span class="close" onclick="closePopupModal();">x</span>' +
+   //'<span class="close" onclick="closePopupModal();">x</span>' +
    '<div class="popup_cont">' +
    '<div class="index-modal">' +
    '<h2>SNS 1초 회원가입!</h2>' +

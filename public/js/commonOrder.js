@@ -72,31 +72,13 @@ deliveryModalTemplate += '</div>';
 
 var deliveryModalComponent = {
     template: deliveryModalTemplate,
+    el: '',
     data: function() {
         return {
             deliveryList: []
         }
     }, methods: {
-        
+        openInfoModal,
+        closeRegisterModal
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-function closeRegisterModal() {
-    console.log("click")
-    $('#rModal').hide();
-    $('#iModal').hide();
-    $('html, body').css({'overflow': 'visible','hegiht':'auto'});
-    $('html,body').off('scroll touchmove mousewheel');
 }
