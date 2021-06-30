@@ -338,6 +338,7 @@ height:50px;overflow:hidden}
 
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  .faq h3{display:none}
   .keyword{display:none}
   #header_common.main ~ .content {
     margin-top: 150px;
@@ -592,7 +593,7 @@ border-spacing: 0 20px;font-size:14px}
 .total_mobile .price{float:right;padding-right:15px}
 
 /*faq*/
-.faq h3{display:none}
+
 .faq_web_title{display:none}
 .faq{margin-top:20px;width:100%;}
 .faq_q .title{padding-top:15px}

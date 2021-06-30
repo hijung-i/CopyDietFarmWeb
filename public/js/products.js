@@ -42,6 +42,11 @@ function getProductListByCategory() {
     var category1Code = $('#category1Code').val();
     var category2Code = $('#category2Code').val();
     var sortOption = $('#sortOption').val();
+    var category2Name = $('#category2Name').val();
+
+
+    var keywordDesc = "<span>\""+category2Name+ "\"</span>";
+    $('.keyword').html(keywordDesc);
 
     if((category1Code == null || category1Code == undefined || category1Code == '')
         || (category2Code == null || category2Code == undefined || category2Code == '')){
@@ -53,9 +58,10 @@ function getProductListByCategory() {
     var params = {
         category1Code: category1Code,
         category2Code: category2Code,
-        sortOption: sortOption
+        sortOption: sortOption,
+        category2Name: category2Name
     }
-
+    
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
     , function (data) {  
         if(data.result.length > 0) {
