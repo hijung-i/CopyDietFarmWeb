@@ -108,7 +108,7 @@ function goBack() {
 
 function generateHtmlForProduct(product){
 
-    var html = '<li>';
+   var html = '<li>';
    html += '<div class="thum">';
    html += '<a href="/product/'+ product.productCode +'">';
    html += '<img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';
@@ -129,9 +129,11 @@ function generateHtmlForProduct(product){
    html += '<p class="title">' +product.productName + '</p>';
    html += '<ul>';
    html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
-   if(product.discountPrice != product.retailPrice){
+
+   var discountRate = Math.round(product.discountRate, 0)
+   if(product.discountPrice != product.retailPrice && discountRate != 0){
       html += '<li class="cost">' + numberFormat(product.retailPrice) + '원</li>';
-      html += '<li class="ratio">' + Math.round(product.discountRate, 0) + '%</li>';
+      html += '<li class="ratio">' + discountRate + '%</li>';
    }
    html += '</ul>';
    html += '</div>';
@@ -638,7 +640,6 @@ function zzimAction(button) {
    var productNo = $(zzim).find('input[name=productNo]').val();
    var productCode = $(zzim).find('input[name=productCode]').val();
 
-   console.log(zzimYn);
    var params = {
       productNo,
       productCode
@@ -655,7 +656,6 @@ function zzimAction(button) {
       $(zzim).find('div.like').removeClass('like-yes');
       $(zzim).find('div.like').addClass('like-no');
    }
-   console.log(url);
 
    ajaxCallWithLogin(url, params, 'POST',
    function(data) {

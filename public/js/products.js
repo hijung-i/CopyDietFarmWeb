@@ -11,9 +11,6 @@ function getProductByStandCode() {
     var salesStandCode = $('#currentStandCode').val();
     var sortOption = $('#sortOption').val();
     var salesStandName =  $('#salesStandName').val();
-    
-    var keywordDesc = "<span>\""+salesStandName+ "\"</span>";
-    $('.keyword').html(keywordDesc);
 
     if(salesStandCode){
         var params = {

@@ -396,11 +396,7 @@ function getRecommendedProducts() {
 function insertRecommandListHtml() {
     
     var recmdList = app.recmdList;
-    var html = '';
-    for(var i = 0; i < recmdList.length; i++) {
-         var product = recmdList[i];
-         html += '<div><a href="/product/' + product.productCode +'"><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"><div class="desc"><p class="title">' +product.productName + '</p><ul><li class="sale">' + numberFormat(product.discountPrice) + '원</li><li class="cost">' + numberFormat(product.retailPrice) + '원</li><li class="ratio">' + Math.round(product.discountRate, 0) + '%</li></ul></div></a></div>'
-    }
+    var html = generateHtmlForProductList(recmdList);
 
     $('.responsive').html(html);
 

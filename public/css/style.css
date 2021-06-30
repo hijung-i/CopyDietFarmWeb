@@ -1082,7 +1082,7 @@ font-weight:normal}
   margin-top: 70px;}
 .w_best{width:1080px;margin-bottom:80px;max-width: 1080px;margin: 0 auto;}
 .w_best .thum ul{margin-top:-20px}
-.w_best .desc .sale{font-size:16px}
+.w_best .desc .sale{font-size:16px; font-weight:bold}
 .w_best .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
 .w_best .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10px;color:#F32525}
 .w_best h2{margin-bottom:20px}
@@ -2838,6 +2838,20 @@ display: flex;
     color: #000000;
   }
   
+  .r_products {
+    min-height: 613px;
+  }
+
+  .r_products .responsive {
+    position: absolute;
+  }
+
+  .swiper-container{
+    top: 6px;
+  }
+  .product_top .swiper-container {
+    top: 0px;
+  }
 }
 .slick-list {width: 100%;}
 @media screen and (max-width:1079px) {
