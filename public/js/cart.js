@@ -4,9 +4,9 @@ var deliveryGroupList = new Array();
 var cartList = new Array();
 var cammelDeliveryList = new Vue({
     el:'div',
-    components: {
-        'delivery-modal-component':deliveryModalComponent
-    },
+    // components: {
+    //     'delivery-modal-component':deliveryModalComponent
+    // },
     data: {
         deliveryList: []
     }
