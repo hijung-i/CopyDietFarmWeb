@@ -131,6 +131,7 @@ function productSearch(keyword) {
 
         var html = generateHtmlForProductList(data.result);
         $('.sub_items ul').html(html);
+        
         console.log("search success", data);
     }, function(err) {
         console.log("searchKeyword", err);
@@ -146,9 +147,15 @@ function getPickProduct() {
         for(var i = 0; i < data.result.length; i++) {
             data.result[i].zzimYn = 'Y'; 
         }
-        
-        var html = generateHtmlForProductList(data.result);
-        $('.sub_items ul').html(html);
+        if(data.result.length > 0) {
+            var html = generateHtmlForProductList(data.result);
+            
+            $('.sub_items ul').html(html);
+        } else {
+            $('.sub_items ul').hide();
+            $('.pick_list_null').show();
+            $('.pick_list_null').html('<img src="/images/twoheart_icon_heart@2x.png"><p>찜한 상품이 없습니다.</p>');
+        }
         console.log("loading zzim list", data);
     }, function(err) {
         console.log("error while load zzim", err);

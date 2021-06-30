@@ -63,9 +63,8 @@
     <%-include('general/header') %>
     </div>
 
-    <main id="mypage_point_ctt">
-        <%-include('general/mypage') %>
-        <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
+    <main id="content" class="content">
+       <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
         <div>
             <div class="mypage_content_wrap">
                 <nav class="content_lnb point_content_lnb">
