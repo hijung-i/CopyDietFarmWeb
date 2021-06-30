@@ -11,18 +11,18 @@ type Option = {
 }
 
 class UserService {
-    // SERVER_IP = 'dietfarm.co.kr'
-    // SERVER_IP = '192.168.0.3'
+    // SERVER_IP = 'dietfarm119.co.kr'
+    SERVER_IP = '192.168.0.3'
     // SERVER_IP = 'localhost'
     // SERVER_IP = '112.217.209.162'
     // SERVER_IP = '13.209.123.102'
 
-    // SERVER_URL = 'http://' + this.SERVER_IP + ':9090'
-    SERVER_URL = 'https://dietfarm119.co.kr'
+    SERVER_URL = 'http://' + this.SERVER_IP + ':9090'
+    // SERVER_URL = 'http://dietfarm119.co.kr:9090'
 
     // CALLBACK_SERVER = 'http://' + this.SERVER_IP + ':3000'
-    // CALLBACK_SERVER = 'http://' + this.SERVER_IP
-    CALLBACK_SERVER = 'https://dietfarm.co.kr'
+    CALLBACK_SERVER = 'http://' + this.SERVER_IP
+    // CALLBACK_SERVER = 'https://dietfarm.co.kr'
 
     KAKAO_SERVER = 'https://kauth.kakao.com'
 

@@ -153,7 +153,7 @@ background-color:#F99319;border-radius:5px;
 .coupon_list img{width:38px;height:38px;margin-bottom:7px;margin-top:10px}
 .coupon_list p{color:#878787}
 .coupon_list{padding-left:15px;padding-right:15px}
-.coupon_list ul li{display:flex;margin-bottom:15px}
+.coupon_list ul li{display:flex;margin-bottom:15px;}
 .y_coupon, .g_coupon{cursor: pointer;}
 .y_coupon .couponBox01{width:70%;border-right:1.5px dashed #F99319!important;border:1.5px solid #F99319;padding-top:13px;padding-left:14px;padding-bottom:13px;
     border-top-left-radius: 10px;
@@ -314,6 +314,7 @@ margin-left:14px
     border-bottom: 1px solid #000;
     padding-bottom: 17px;}
 .coupon_list ul{flex-flow:row-reverse}
+.coupon_list ul li {position:relative}
 .coupon_list .sale{position:absolute;left:150px}
 .coupon_list h3{font-size: 12px !important;font-weight:normal!important;position:absolute;left:600px}
 .coupon_list .range{margin-bottom:20px;margin-top:20px;padding-bottom:20px;border-bottom:1px solid #BBBBBB}

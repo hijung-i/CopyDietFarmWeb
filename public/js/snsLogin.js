@@ -228,7 +228,7 @@ function loginNaver(params) {
 		console.log("success loginKakao", data);
 		location.href='/';
 	}, function(err) {
-		console.log("error while loginKakao", err);
+		console.log("error while loginNaver", err);
 		alert("에러가 발생했습니다.", JSON.stringify(err));
 		location.href="/";
 	});
@@ -259,6 +259,8 @@ $(function() {
 			break;
 		case 'N':
 			checkNaverLoginValue();
+			break;
+		default:
 	}
 })
 

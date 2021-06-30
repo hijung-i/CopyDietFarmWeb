@@ -87,13 +87,15 @@ $(function() {
         }
         console.log(params);
 
+        var type = '';
         if(kakaoNo != undefined && kakaoNo != '') {
+            type = 'K';
             params.kakaoNo = kakaoNo;
         } else if(tokenNaver != undefined && tokenNaver != '') {
+            type = 'N';
             params.tokenNaver = tokenNaver;
         } else {
             alert('잘못된 접근입니다.');
-            return;
             location.href = '/';
         }
 
@@ -108,7 +110,14 @@ $(function() {
         function(data) {
             console.log("register success", data);
             alert("회원가입에 성공했습니다.");
-            location.href = "/";
+            switch(type) {
+                case 'K':
+                    loginKakao(params);
+                    break;
+                case 'N':
+                    loginNaver(params);
+                    break;
+            }    
         }, 
         function(err) {
             console.log(err);
