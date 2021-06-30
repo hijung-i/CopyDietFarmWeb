@@ -30,6 +30,11 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
   .like {width:25px;height:25px;position:relative;bottom:50px;float:right;right:20px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
   /*.like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
   .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
+
+  .option_btns .like {
+    float: none;
+    position: sticky;
+  }
 }
 @media screen and (min-width:1080px){
 .like {width:25px;height:25px;position:relative;bottom:50px;float:right;right:30px;background: url("/images/beforeheart_icon_main.png") no-repeat;}
@@ -516,6 +521,9 @@ font-size: 14px;font-weight:bold;color:#fff;background:#F99319;border-radius:5px
 .info_mob ul li{float:left;margin-right:10px}
 .info_mob ul li img{position:relative;top:2px}
 .innerbox{clear:both}
+.order .innerbox {
+  margin-top: 80px;
+}
 .csBtn01{width:100%;height:45px;text-align:center;border:0;cursor: pointer;color: #fff;background-color:#31845B;font-size:14px;
 font-weight:bold;border-radius:5px;font-family:'나눔고딕';margin-top:15px}
 .csBtn01 img{width:20px;position:relative;margin-right:10px;margin-left:-15px}
@@ -3080,4 +3088,11 @@ display: flex;
     vertical-align: middle;
     display: none;
   }
+}
+
+@media screen and (max-width: 670px) {
+  .orderDetail ul li{max-width: 210px;}
+}
+@media screen and (min-width: 671px) {
+  .orderDetail ul li{max-width: 100%}
 }

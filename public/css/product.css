@@ -940,7 +940,7 @@ width:100%;height:45px;background-color:#F1F1F1;border-radius:0px;border:0;borde
     margin: 20px 0;
     white-space:nowrap;
 }
-.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#F99319; border: 1px solid #F99319}
+.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#F99319; border: 1px solid #F99319; position: relative; top: -5px; text-align: center;}
 .common_btn_wrap > .option_btns button:nth-child(2) {
     background: #fff;
     border: 1px solid #F99319;
@@ -1066,28 +1066,31 @@ color: #878787; font-size: 12px;}
 /*네번째 탭 문의하기 모달창 css*/
 
 @media screen and (min-width:1080px){
-.line{position:relative;margin-top:4px}
-.share_img img{ float:right;position:relative;top:-40px;left:4px}
-.option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
-.reviews .num{width:100%;font-size:18px;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:14px;padding-bottom:18px}
-#tab3 .num{width:780px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-    position: relative;
-    top: 10px;
-    padding-bottom:20px;
-    border-bottom:1px solid #E6E6E6}
-#tab4 .inquiry{width:100%;font-size:18px;font-weight:bold;margin-top:10px;position:relative;top:10px}
-.myReview{width:75%;padding-right:5px;
-    border-bottom:2px solid #E6E6E6;
-    padding-bottom:20px;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-    align-items: center;
-    padding-right:15px
-    /* outline: 2px solid red; */
-    
-}
+    .line{position:relative;margin-top:4px}
+    .share_img img{ float:right;position:relative;top:-40px;left:4px}
+    .option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
+    .reviews .num{width:100%;font-size:18px;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:14px;padding-bottom:18px}
+    #tab3 .num{width:780px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+        position: relative;
+        top: 10px;
+        padding-bottom:20px;
+        border-bottom:1px solid #E6E6E6}
+    #tab4 .inquiry{width:100%;font-size:18px;font-weight:bold;margin-top:10px;position:relative;top:10px}
+    .myReview{width:75%;padding-right:5px;
+        border-bottom:2px solid #E6E6E6;
+        padding-bottom:20px;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        align-items: center;
+        padding-right:15px
+        /* outline: 2px solid red; */
+        
+    }
+    .common_btn_wrap > .option_btns button:nth-child(1) {
+        top: 8px;
+    }
 }
