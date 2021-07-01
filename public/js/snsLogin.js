@@ -260,6 +260,9 @@ $(function() {
 		case 'N':
 			checkNaverLoginValue();
 			break;
+		case 'A':
+			
+			break;
 		default:
 	}
 })
