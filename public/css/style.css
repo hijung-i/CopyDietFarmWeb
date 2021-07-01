@@ -343,6 +343,7 @@ height:50px;overflow:hidden}
 
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  .faq h3{display:none}
   .keyword{display:none}
   #header_common.main ~ .content {
     margin-top: 150px;
@@ -355,7 +356,7 @@ height:50px;overflow:hidden}
   }
   .modalTop_ctn {padding: 0 12px;}
   .modalTop_ctn h3.order_delMag {padding-top: 0; margin-bottom: 0;}
-
+f
   .top_checkBox {display: none;}
   .order_info_modal_address {margin-bottom: 15px;}
    /* 상단 롤링 배너 */
@@ -600,7 +601,7 @@ border-spacing: 0 20px;font-size:14px}
 .total_mobile .price{float:right;padding-right:15px}
 
 /*faq*/
-.faq h3{display:none}
+
 .faq_web_title{display:none}
 .faq{margin-top:20px;width:100%;}
 .faq_q .title{padding-top:15px}
@@ -906,7 +907,10 @@ border-spacing: 0 20px;font-size:14px}
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
-  .myPage_title{display:none}
+.pick_list_null{width:100%;text-align:center;margin-top:140px;margin-bottom:200px}
+.pick_list_null img{width:100px!important;height:100px!important}
+.pick_list_null p{padding-top:20px;font-size:16px;color:#878787}
+.myPage_title{display:none}
 .header_wrap{border-bottom:2px solid #F5F5F5;border-top:2px solid #F5F5F5}
 .keyword{width:1040px;margin:0 auto;margin-bottom:40px;margin-top:40px}
 #content .mtpSlideTit1{max-width:1080px;margin:0 auto;margin-top:50px}

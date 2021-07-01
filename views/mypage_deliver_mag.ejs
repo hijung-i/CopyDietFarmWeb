@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>배송지 관리, 다이어트팜:: 다이어트 건강식단 플랫폼</title>
+        <title>배송지 관리, 다이어트팜:: 엄선된 건강 식단 마켓</title>
         <style>
             
                 /* The Modal (background) */
@@ -84,7 +84,6 @@
                 .contents{width:100%;margin-left:80px}
             }
         </style>
-        <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <link rel="stylesheet" href="/css/style_web.css">
 
@@ -111,8 +110,9 @@
         <body>
             <div class="web_deliv">
                 <%-include('general/header') %>
+                
                 </div>
-                <div id="app">
+               
                     <div class="mobile_deliv">
                         <section class="detail_title">
                             <h2>배송지 관리</h2>
@@ -123,9 +123,9 @@
                             </div>
                         </section>
                     </div>
-
+                    <main id="app">
                     <!-- web main -->
-                    <  <%-include('general/mypage') %>
+                    <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
                     <div class="mypage_content_wrap">
                         <nav class="content_lnb">
                         <ul>
@@ -225,7 +225,7 @@
                     </div>
                     <!-- body_contents -->
                     <!-- modal window -->
-                 </div>
+                </main>
                  
                     <div class="r_modal" id="rModal" style="display:none">
                     <div class="modal-content">
@@ -271,6 +271,7 @@
                         </div>
                     </div>
                     </div>
+                    <script src="/js/mypage/mypageComponent.js"></script>
                     <script src="/js/order.js"></script>
                     <script src="/js/deliveryManagement.js"></script>
                     <%-include('general/footer') %>

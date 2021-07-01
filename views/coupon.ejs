@@ -9,7 +9,7 @@
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
 
-        <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+        <title>다이어트팜:: 엄선된 건강 식단 마켓</title>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <link rel="stylesheet" href="/css/myPage.css">
         <link rel="stylesheet" href="/css/style_web.css">
@@ -55,10 +55,9 @@
                     </div>
                 </section>
             </div>
-                
+            <%-include('general/header') %>
                 <div class="mypage_coupon_ctt">
-                    <%-include('general/header') %>
-                    <%-include('general/mypage') %>
+                  <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
                     <div class="mypage_content_wrap">
                         <nav class="content_lnb">
                             <ul>
@@ -165,6 +164,7 @@
         
     };
     </script>
+     <script src="/js/mypage/mypageComponent.js"></script>
     <script src="/js/mypage/coupon.js"></script>
     <%-include('general/footer') %>
         
