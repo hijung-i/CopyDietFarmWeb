@@ -11,10 +11,11 @@ var app = new Vue({
         deliveryGroupList: '',
         paymentNo: 0,
         usablePoint: 0,
-        orderDTO: {
+        orderDTO:  {
             delivery: {}
         },
-        requestDeliveryGroupList:[],
+        requestDeliveryGroupList: [],
+        deliveryGroupList,
         deliveryDescType: 0,
         deliveryList: [],
         couponList: [],
