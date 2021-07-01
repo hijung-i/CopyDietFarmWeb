@@ -29,3 +29,14 @@ var mypageModal = {
         }
     }
 }
+
+function openMyModal() {
+    $('.modal-content').show("display:block");
+    scrollBlock();
+}
+
+function closeModal() {
+    console.log("click")
+    $('.modal-content').hide();
+    scrollAllow();
+}
