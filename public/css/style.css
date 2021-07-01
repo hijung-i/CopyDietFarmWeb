@@ -972,7 +972,7 @@ font-weight:normal}
     top: 30%;
     text-align: center;
   }
-  #content .main_sub img{padding:10px;border-radius:5px;width: 90px;}
+  #content .main_sub img{padding:10px;border-radius:5px}
   #content .main_sub ul{margin-left:10px}
   #content .sub_items ul li{margin-bottom:44px}
   #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(3, 3fr);justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}

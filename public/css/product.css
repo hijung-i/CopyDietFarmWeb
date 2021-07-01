@@ -745,13 +745,36 @@ div #ex1.modal ul li {float:left}
 .product_modal03 #btnEnroll{width:100%;height:45px;color:#fff;font-size:14px;font-weight:bold;background-color:#F99319;border-radius:5px;border:none}
 }
 
-
 @media screen and (min-width:1080px){
     .products_ex {width: 780px;}
     .products_ex img {width: 810px;}
+    .delivery-cost td p{
+        position: relative;
+        left: 138px;
+        top: 12px;
+        border: 1px solid #bbbbbb;
+        border-radius: 5px;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 1px;
+        padding-bottom: 2px;
+        font-size: 11px;
+    }
 }
 @media screen and (max-width:1079px) {
     .products_ex {display: none;}
+    .delivery-cost td p{
+        position: relative;
+        left: 104px;
+        top: 7px;
+        font-size: 12px;
+        border: 1px solid #bbbbbb;
+        border-radius: 5px;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 1px;
+        padding-bottom: 2px;
+        }
 }
 .option_wrap h3{margin-bottom:8px;font-size:12px;}
 .product_option{width:100%;margin:0 auto;}
