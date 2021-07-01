@@ -5,7 +5,7 @@ var app = new Vue({
     },
     data: {
         couponList: [],
-        totalPointAmount: 0
+        
     }, methods: {
         numberFormat,
         formatDate,

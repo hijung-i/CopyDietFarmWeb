@@ -71,7 +71,7 @@ function getProductListByCategory() {
         } else {
             $('.sub_items ul').hide();
             $('.pick_list_null').show();
-            $('.pick_list_null').html('<img src="/images/gift_icon_detailpage@2x.png"><p>더 나은 구성을 위해 준비중입니다.</p>');
+            $('.pick_list_null').html('<img src="/images/gift_icon_detailpage@2x.png"><p>더 나은 구성을 위해 상품 준비중입니다.</p>');
         }
 
     }, function (err){
