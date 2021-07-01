@@ -1,3 +1,5 @@
+
+
 function DeliveryGroupDTO() {
     this.loadingPlace = "";
     this.brandCode = "";

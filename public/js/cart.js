@@ -5,6 +5,9 @@ var cartList = new Array();
 
 var app = new Vue({
     el: 'main',
+    components: {
+        'delivery-info-modal': deliveryInfoModalComponent
+    },
     data: {
         RESOURCE_SERVER,
         API_SERVER,
@@ -12,7 +15,7 @@ var app = new Vue({
         orderDTO: {},
         requestDeliveryGroupList: [],
         cartList,
-        deliveryGroupList
+        deliveryGroupList,
     },
     methods: {
         numberFormat,
@@ -249,22 +252,22 @@ function getSelectedOptionIndexes(ele) {
     return [prd, opt];
 }
 
-function openInfoModal() {
-    console.log("click");
-    $('#iModal').show();  
-    $('html,body').css({'overflow':'hidden','height':'100%'});  
-    $('#iModal').on('scroll touchmove mousewheel',function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        return false;
-    })
+// function openInfoModal() {
+//     console.log("click");
+//     $('#iModal').show();  
+//     $('html,body').css({'overflow':'hidden','height':'100%'});  
+//     $('#iModal').on('scroll touchmove mousewheel',function(event) {
+//         event.preventDefault();
+//         event.stopPropagation();
+//         return false;
+//     })
 
-    getDeliveryInfoList();
+//     getDeliveryInfoList();
 
-    var inputs = document.querySelectorAll('input');
-    $(inputs).click(function(){
-        console.log('done');
+//     var inputs = document.querySelectorAll('input');
+//     $(inputs).click(function(){
+//         console.log('done');
         
-    });
+//     });
 
-}
+// }

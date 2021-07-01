@@ -14,13 +14,13 @@
      
         @media screen and (min-width:500px) and (max-width:1079px){
 
-  .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
-}
-@media screen and (min-width:1080px){
-.like {top: 3px !important;right:5px !important;}
-/*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
-.like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
-}
+        .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
+        }
+        @media screen and (min-width:1080px){
+        .like {top: 3px !important;right:5px !important;}
+        /*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
+        .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
+        }
     @media screen and (max-width:1079px) {
         .web_product_details {display: none}
         .sidebar{display:none}
@@ -46,137 +46,109 @@
         background:#fff;
         z-index:9999;
         }
-    .black_bg, .black_bg02{
-        display: none;
-        position: absolute;
-        content: "";
-        width:1090px;
-        height:1200px;
-        background-color:rgba(0, 0,0, 0.5);
-        top:-100px;
-        left: 0;
-        z-index:1000;
     }
-    .modal_close, .modal_close02{
-        width: 26px;
-        height: 26px;
-        position: absolute;
-        top: -30px;
-        right: 0;
-    }
-    .modal_close> a, .modal_close02> a{
-        display: block;
-        width: 100%;
-        height: 100%;
-        background:url(/images/x_icon_login.png)no-repeat;
-        text-indent: -9999px;
-        position:relative;
-        top:42px
-    }
-     }
-      @media screen and (min-width:1080px) {
+    @media screen and (min-width:1080px) {
         #content{max-width:1080px;margin:0 auto;width:1080px}
         .slick-prev{top:230px!important}
         .slick-next{top:-300px!important}
-        .modal_wrap, .modal_wrap02{
-        display: none;
-        width: 500px;
-        height: auto;
-        position: absolute;
-        top:40%;
-        left: 50%;
-        margin: -250px 0 0 -250px;
-        background:#eee;
-        z-index: 2;
-       }
-    .black_bg, .black_bg02{
-        display: none;
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 100%;
-        background-color:rgba(0, 0,0, 0.5);
-        top:0;
-        left: 0;
-        z-index: 1;
+        .modal_wrap, .modal_wrap02 {
+            display: none;
+            width: 500px;
+            height: auto;
+            position: absolute;
+            top:40%;
+            left: 50%;
+            margin: -250px 0 0 -250px;
+            background:#eee;
+            z-index: 2;
+        }
+        .black_bg, .black_bg02{
+            display: none;
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color:rgba(0, 0,0, 0.5);
+            top:0;
+            left: 0;
+            z-index: 1;
+        }
+        .modal_close, .modal_close02{
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            top: -30px;
+            right: 0;
+        }
+        .modal_close> a, .modal_close02 a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            background:url(/images/x_icon_login.png)no-repeat;
+            text-indent: -9999px;
+            position:relative;
+            top:42px
+        }
+        .mobile_product_details { display: none}                       
     }
-    .modal_close, .modal_close02{
-        width: 26px;
-        height: 26px;
-        position: absolute;
-        top: -30px;
-        right: 0;
-    }
-    .modal_close> a, .modal_close02 a{
-        display: block;
-        width: 100%;
-        height: 100%;
-        background:url(/images/x_icon_login.png)no-repeat;
-        text-indent: -9999px;
-        position:relative;
-        top:42px
-    }
-   .mobile_product_details { display: none}                       
-     }
         /* The Close Button */
-        .product_close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .product_close:hover,
-        .product_close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }  
-        .fixed { position: fixed; top:0; left:0; }
-        .sidebar{width:270px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
-                margin-top:-68px;position:sticky;top:0}
-        /* swiper bundle */
-        .swiper-container { min-width: 360px;height: 373px; z-index: 0}
-        .swiper-slide {text-align: center; font-size: 18px; background: #fff;
-            /* Center slide text vertically */
-            display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
-            -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
-            justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
-            align-items: center
-        } 
-        .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover}
-        .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
-          left: 1000px; bottom: 25px}
-        .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
+    .product_close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .product_close:hover,
+    .product_close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }  
+    .fixed { position: fixed; top:0; left:0; }
+    .sidebar{width:270px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
+            margin-top:-68px;position:sticky;top:0}
+    /* swiper bundle */
+    .swiper-container { min-width: 360px;height: 373px; z-index: 0}
+    .swiper-slide {text-align: center; font-size: 18px; background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
+        -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
+        justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
+        align-items: center
+    } 
+    .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover}
+    .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
+        left: 1000px; bottom: 25px}
+    .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
         
-        @media screen and (max-width:1079px) {
-            .swiper-container {
-                margin-top: 11px !important;
-                height: 373px !important;
-            }
-            .swiper-slide {height: 373px !important;}
-            .swiper-slide img {
-                height: 373px !important;
-            }
-            .swiper-wrapper {height: 373px !important;}
-            .swiper-pagination {left: 72% !important;}
+    @media screen and (max-width:1079px) {
+        .swiper-container {
+            margin-top: 11px !important;
+            height: 373px !important;
         }
-        @media screen and (min-width:1080px) {
-            .swiper-container {
-                margin-left: 0 !important;
-                position: relative;
-                width: 694px; height: 694px;
-            }
-            .swiper-container {
-                height: 694px;
-            }
-            }
-        
+        .swiper-slide {height: 373px !important;}
+        .swiper-slide img {
+            height: 373px !important;
+        }
+        .swiper-wrapper {height: 373px !important;}
+        .swiper-pagination {left: 72% !important;}
+    }
+    @media screen and (min-width:1080px) {
+        .swiper-container {
+            margin-left: 0 !important;
+            position: relative;
+            width: 694px; height: 694px;
+        }
+        .swiper-container {
+            height: 694px;
+        }
+    }
         
         </style>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <%-include('general/head') %>
         <link rel="stylesheet" href="/css/product.css">
-</head>
+    </head>
 
 <body>
                 <!-- 공유하기 모달 -->

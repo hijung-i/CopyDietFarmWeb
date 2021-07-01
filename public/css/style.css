@@ -963,8 +963,16 @@ font-weight:normal}
   .carosuel_tit{margin-top:65px}
   .section{width:1080px}
  .carousel img{width:350px;height:350px}
-  #content .main_sub {width:100%}
-  #content .main_sub img{padding:10px;border-radius:5px;height:360px}
+  #content .main_sub {
+    width:100%; min-width: 1080px;
+    height: 837px;
+  }
+  .main_sub div.pick_list_null {
+    position: relative;
+    top: 30%;
+    text-align: center;
+  }
+  #content .main_sub img{padding:10px;border-radius:5px;width: 90px;}
   #content .main_sub ul{margin-left:10px}
   #content .sub_items ul li{margin-bottom:44px}
   #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(3, 3fr);justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}

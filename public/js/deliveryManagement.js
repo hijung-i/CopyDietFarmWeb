@@ -1,7 +1,8 @@
 var app = new Vue({
     el: '#app',
     components: {
-        'mypage-component': mypageComponent
+        'mypage-component': mypageComponent,
+        'delivery-register-modal': deliveryRegisterModalComponent
     },
     data: {
         deliveryList: new Array(),
@@ -201,21 +202,6 @@ function changeMainAddress(index) {
         userId: true
     })
 }
-
-
-function getDeliveryInfoList() {
-    var params = {};
-    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', params, 'POST',
-    function(data) {
-        app.deliveryList = data.result;
-    }, function(err) {
-        console.log("err", err);
-    }, {
-        isRequired: true,
-        userId: true
-    })
-}
-
 function openZipSearch() {
     new daum.Postcode({
         oncomplete: function(data) {
@@ -224,4 +210,17 @@ function openZipSearch() {
             console.log(data);
         }
     }).open();
+}
+
+function getDeliveryInfoList() {
+    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', {}, 'POST',
+    function(data) {
+        app.deliveryList = data.result;
+
+    }, function(err) {
+        console.log("err", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
 }
