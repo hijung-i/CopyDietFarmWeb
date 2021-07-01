@@ -778,7 +778,7 @@ border-spacing: 0 20px;font-size:14px}
      
     /* 모바일 푸터 메뉴 수정 */
   div.pages {display: flex; width: 100%; justify-content: space-around;}
-  div.pages div {margin-top: 4px;}
+  div.pages div {margin-top: 4px; text-align: center; min-width: 60px}
   .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
   .sweet h3{clear:both;font-size:20px;font-weight:bold;padding-left:15px}
   #mHeader{position:fixed;height:90px;background-color:#fff}
@@ -1112,16 +1112,15 @@ font-weight:normal}
 .w_best > ul,
 .protein > ul,
 .sweet > ul,
+.body_bottom > ul
 .water > ul{
   display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px
 }
 
 
 .w_best .desc ul li{margin-right:20px;float:left;}
-.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .thum img{width:247.5px;height:247.5px;border-radius:6px}
 .body_bottom .desc ul li{margin-right:20px;float:left;}
-.body_bottom ul:not(ul li ul){display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
 .body_bottom .desc .sale{font-size:16px;font-weight:bold}
 .body_bottom .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
 .body_bottom .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10px;color:#F32525}
