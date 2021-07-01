@@ -685,6 +685,6 @@ function scrollBlock() {
 }
 
 function scrollAllow() {
-   $('html, body').css({'overflow': 'visible'});
+   $('html, body').css({'overflow': 'visible', 'height': 'auto'});
    $('html,body').off('scroll touchmove mousewheel');
 }

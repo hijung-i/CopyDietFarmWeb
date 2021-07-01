@@ -238,7 +238,7 @@
                 <h3><img src="images/asterisk.png">
                    배송지
                 </h3>
-                <a id="myBtn" onclick="openInfoModal()">변경</a>
+                <button type="button" id="my-button" class="shopBtn01" onclick="openInfoModal()" style="border: 0; background:none;">변경</button>
                 </div>
                 <div class="i_modal" id="iModal" style="display:none">
                     <div class="modal-content">
@@ -621,7 +621,8 @@
                </div>
              </div>
         </div>
-
+        <script src="/js/deliveryInfoModalComponent.js"></script>
+        <script src="/js/orderDTO/OrderDTO.js"></script>
         <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
         <script src="/js/order.js"></script>
         

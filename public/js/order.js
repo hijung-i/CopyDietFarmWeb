@@ -1,12 +1,20 @@
 var postCode = false;
+
+
 var app = new Vue({
     el: 'main',
+    components: {
+        'delivery-info-modal': deliveryInfoModalComponent
+    },
     data: {
         RESOURCE_SERVER,
         deliveryGroupList: '',
         paymentNo: 0,
         usablePoint: 0,
-        orderDTO: '',
+        orderDTO: {
+            delivery: {}
+        },
+        requestDeliveryGroupList:[],
         deliveryDescType: 0,
         deliveryList: [],
         couponList: [],
