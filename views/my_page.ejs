@@ -28,14 +28,14 @@
         <link rel="stylesheet" href="/css/myPage.css">
         <link rel="stylesheet" href="/css/style.css">
         <%-include('general/head') %>
-
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   
     </head>
 
     <body>
 
  <!-- //마이페이지 로그인 모달 시작 -->
-     <div id="myModal" class="mypage_modal"></div>
+     
         <article class="skip_menu">
             <a href="#">
                 <span>바로가기1</span></a>
@@ -58,6 +58,7 @@
                         
                             <div class="mypage_btn">
                                 <button type="button" class="btnMyPage" onclick="openMyModal()">로그인 / 회원가입</button>
+                                <mypage-modal></mypage-modal>
                             </div>
                             <% } else if (isLoggedIn) { %>
                                 <ul style="border:none;">
@@ -184,6 +185,7 @@
                         </div>
                 </div>
             </main>
+            <script src="/js/mypage/mypageModal.js"></script>
             <script src="/js/mypage.js"></script>
             <script>
                 function openModal() {
