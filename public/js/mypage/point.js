@@ -26,7 +26,6 @@ function getUsablePointAmount() {
     function(data) {
         if(data.result)
             app.totalPointAmount = numberFormat(data.result);
-
         
         console.log("success usablePoint", data);
     }, function(err) {

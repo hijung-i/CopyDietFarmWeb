@@ -48,7 +48,6 @@ var deliveryRegisterModalComponent = {
     props: ["deliveryList"],
     data: function() {
         return {
-            dataList: this.deliveryList
         }
     }, methods: {
         openRegisterModal,

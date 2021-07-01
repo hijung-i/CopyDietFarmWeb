@@ -83,7 +83,6 @@ function DeliveryGroupDTO() {
             
             this.setTotalDeliveryCost(isJeju, isExtra);
         }
-        console.log("this.deliveryCostProduct", this.companyName, this.deliveryCostProduct)
     }
 
     
