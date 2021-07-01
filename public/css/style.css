@@ -3074,7 +3074,7 @@ display: flex;
 @media screen and (min-width:1080px) {
   div#iModal {
     width: 100%; height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0; left: 0;
     flex-direction: column;
     align-items: center;
@@ -3084,11 +3084,13 @@ display: flex;
   }
   div#iModal > .modal-content {
     position: relative;
-    top: 50%; transform: translateY(-50%);
+    transform: translateY(50%);
     background: #fff;
     border-radius: 5px;
     width: 380px; height: 450px;
     margin: 0 auto;
+    
+    overflow-y: scroll;
   }
   .i_modal .close {
     color: #aaa;
