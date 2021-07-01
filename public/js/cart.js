@@ -3,6 +3,7 @@ var isJeju = false, isExtra = false;
 var deliveryGroupList = new Array();
 var cartList = new Array();
 
+
 var app = new Vue({
     el: 'main',
     components: {
