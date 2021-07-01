@@ -162,6 +162,7 @@ function getProductDetail(){
     })
 }
 
+
 function addCart() {
     console.log(selectedOptions);
     if(app.deliveryGroupList.length > 0) {
