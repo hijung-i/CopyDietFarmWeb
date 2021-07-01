@@ -1,7 +1,12 @@
 var app = new Vue({
     el: '#app',
+    components: {
+        'delivery-info-modal': deliveryInfoModalComponent,
+        'delivery-register-modal': deliveryRegisterModalComponent
+    },
     data: {
-        deliveryList: new Array()
+        deliveryList: new Array(),
+        totalPointAmount: 0
     },
     methods: {
         modalDisplay,
@@ -197,21 +202,6 @@ function changeMainAddress(index) {
         userId: true
     })
 }
-
-
-function getDeliveryInfoList() {
-    var params = {};
-    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', params, 'POST',
-    function(data) {
-        app.deliveryList = data.result;
-    }, function(err) {
-        console.log("err", err);
-    }, {
-        isRequired: true,
-        userId: true
-    })
-}
-
 function openZipSearch() {
     new daum.Postcode({
         oncomplete: function(data) {

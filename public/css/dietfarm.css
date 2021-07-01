@@ -39,7 +39,7 @@ html::-webkit-scrollbar{display: none;}
 #sns a{display: block; height: 46px; width: 46px;}
 #sns a img{width: 100%; height: 100%;} 
 
-#scroll{height: 105px; position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; justify-content: space-between; align-items: center; flex-direction: column;}
+#scroll{height: 105px; position: absolute; bottom: -26px; left: 50%; transform: translateX(-50%); display: flex; justify-content: space-between; align-items: center; flex-direction: column; z-index: 9;}
 
 
 #check-page{width: 100%; height: 100vh; background: #F0F5EE; position: relative; overflow: hidden;}

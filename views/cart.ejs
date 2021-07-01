@@ -204,7 +204,7 @@
         </div>
 
         <section id="shoplist_t_price_web">
-
+            <delivery-info-modal ></delivery-info-modal>
             <div class="shopBox01">
                 <h3>배송지</h3>
                 <p>서울 강남구 테헤란로 8길 11-4 202호</p>
@@ -212,89 +212,7 @@
                     <span>박민지 &nbsp;&nbsp;&nbsp;010-3288-0568</span>
                 </p>
                 <button type="button" class="shopBtn01" id="my-button" onclick="openInfoModal()">배송지 변경</button>
-                <delivery-modal-component></delivery-modal-component>
-                <!-- <div id="element_to_pop_up">
-                                <a class="b-close"><img src="/images/x_icon_login.png"></a>
-
-                                <h2>배송지 관리</h2>
-                                <h3>배송지 변경</h3>
-
-                                <section class="delivery_manage_list">
-
-                                    <input id="check" type="checkbox">
-                                    <div class="del_mng_list_top">
-                                        <ul class="del_mng_type">
-                                            <li class="type_first">회사</li>
-                                            <li class="type_second">
-                                                <span class="tema">기본배송지</span></li>
-                                        </ul>
-                                        <ul class="edit_remove">
-                                            <li class="edit_first">
-                                                <a>수정</a>
-                                            </li>
-                                            <li><img src="/images/l_icon_category@2x.png"></li>
-                                            <li class="edit_second">
-                                                <a>삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-                                    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-                                </section>
-
-                                <div class="del_line_thick"></div>
-                                <section class="delivery_manage_list">
-                                    <input id="check" type="checkbox">
-                                    <div class="del_mng_list_top">
-                                        <ul class="del_mng_type">
-                                            <li class="type_first">회사</li>
-                                        </ul>
-                                        <ul class="edit_remove">
-                                            <li class="basic">
-                                                <a>기본배송지로 설정</a><img src="/images/l_icon_category@2x.png"></li>
-                                            <li class="edit_first">
-                                                <a>수정</a>
-                                                <img src="/images/l_icon_category@2x.png">
-                                            </li>
-                                            <li class="edit_second">
-                                                <a>삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-                                    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-                                </section>
-
-                                <div class="del_line_thick"></div>
-
-                                <section class="delivery_manage_list">
-                                    <input id="check" type="checkbox">
-                                    <div class="del_mng_list_top">
-                                        <ul class="del_mng_type">
-                                            <li class="type_first">회사</li>
-                                        </ul>
-                                        <ul class="edit_remove">
-                                            <li class="basic">
-                                                <a>기본배송지로 설정</a><img src="/images/l_icon_category@2x.png"></li>
-                                            <li class="edit_first">
-                                                <a>수정</a>
-                                            </li>
-                                            <li><img src="/images/l_icon_category@2x.png"></li>
-                                            <li class="edit_second">
-                                                <a>삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-                                    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-                                </section>
-
-                                <div class="del_line_thick"></div>
-
-                                <div class="btn_area">
-                                    <button type="button" id="btnRegister">확인</button>
-                                </div>
-                            </div> -->
+                
             </div>
             <div class="shopBox02">
                 <table class="final">
@@ -331,57 +249,11 @@
             <button type="button" class="purchaseBtn" v-on:click="onSubmit()" style="border:none">구매하기</button>
         </div>
     </main>
-
+    <script src="/js/deliveryInfoModalComponent.js"></script>
     <script src="/js/orderDTO/OrderDTO.js"></script>
     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
     <script src="/js/cart.js"></script>
-    <script src="/js/commonOrder.js"></script>
-    <script>
-        //웹 햄버거 버튼
-        $(document).ready(function () {
-            $("#gnbAllMenu").hide();
-            $("#btnGnbOpen").click(function () {
-                $("#gnbAllMenu").slideToggle("fast");
-            });
-        });
-
-        $(document).ready(function () {
-            $(".m_slides_sub").hide();
-            $(".m_ba_slides_n_w li").hover(function () {
-                $("ul:not(:animated)", this).slideDown("700");
-
-                $(".m_ba_slides_n_w li a").removeClass("active");
-            }, function () {
-                $("ul", this).slideUp("700");
-            });
-
-            $("#memberMenu").bind("moseover mouseenter", function () {
-                $("#memMenu").show();
-            });
-            $("#memMenu").bind("moseout mouseleave", function () {
-                $("#memMenu").hide();
-            });
-
-            $("#NotmemberMenu").bind("moseover mouseenter", function () {
-                $("#NotmemMenu").show();
-            });
-            $("#NotmemMenu").bind("moseout mouseleave", function () {
-                $("#NotmemMenu").hide();
-            });
-
-            $('#my-button').bind('click', function (e) {
-                e.preventDefault();
-                $('#element_to_pop_up').bPopup({ modalColor: 'gray' });
-            });
-
-            $('#my-button2').bind('click', function (e) {
-                e.preventDefault();
-                $('#element_to_pop_up').bPopup({});
-            });
-
-        })
-    </script>
-
+    
 </body>
 
 </html>

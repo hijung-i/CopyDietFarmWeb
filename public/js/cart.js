@@ -2,18 +2,12 @@ var isJeju = false, isExtra = false;
 
 var deliveryGroupList = new Array();
 var cartList = new Array();
-var cammelDeliveryList = new Vue({
-    el:'div',
-    // components: {
-    //     'delivery-modal-component':deliveryModalComponent
-    // },
-    data: {
-        deliveryList: []
-    }
-})
 
 var app = new Vue({
     el: 'main',
+    components: {
+        'delivery-info-modal': deliveryInfoModalComponent
+    },
     data: {
         RESOURCE_SERVER,
         API_SERVER,

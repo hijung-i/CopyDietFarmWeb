@@ -677,3 +677,18 @@ $(document).on("click", "#sh-link", function(e) {
  else { input_clip.select(); } try { var successful = document.execCommand('copy'); input_clip.blur(); if (successful) { alert("URL이 복사 되었습니다. 원하시는 곳에 붙여넣기 해 주세요.");
   $('html').find('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes'); } else { alert('이 브라우저는 지원하지 않습니다.'); } } 
   catch (err) { alert('이 브라우저는 지원하지 않습니다.'); } });
+
+
+function scrollBlock() {
+   $('html, body').css({'overflow': 'hidden', 'height': '100%'});
+   $('html,body').on('scroll touchmove mousewheel', function(event) {
+         event.preventDefault();
+         event.stopPropagation();
+         return false;
+   });
+}
+
+function scrollAllow() {
+   $('html, body').css({'overflow': 'visible'});
+   $('html,body').off('scroll touchmove mousewheel');
+}
