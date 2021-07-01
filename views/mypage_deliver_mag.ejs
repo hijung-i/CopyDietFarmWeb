@@ -122,9 +122,10 @@
                 </div>
             </section>
         </div>
-
+        <main>
         <!-- web main -->
-        <  <%-include('general/mypage') %>
+        <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
+        
         <div class="mypage_content_wrap">
             <nav class="content_lnb">
             <ul>
@@ -226,7 +227,9 @@
         <!-- modal window -->
 
         <delivery-register-modal></delivery-register-modal>
-        </div>
+    </main>
+    </div>
+        
          
     
     <script src="/js/deliveryRegisterModalComponent.js"></script>
