@@ -17,8 +17,8 @@ deliveryInfoModalTemplate += '                    onclick="selectAll(this)">';
 deliveryInfoModalTemplate += '                <label for="selectAll1">전체 선택</label>';
 deliveryInfoModalTemplate += '                <button>선택 삭제</button>';
 deliveryInfoModalTemplate += '            </div>';
-deliveryInfoModalTemplate += '            <div class="order_list_ctn">{{ dataList }}';
-deliveryInfoModalTemplate += '                <template v-for="(item, i) in dataList">';
+deliveryInfoModalTemplate += '            <div class="order_list_ctn">';
+deliveryInfoModalTemplate += '                <template v-for="(item, i) in deliveryList">';
 deliveryInfoModalTemplate += '                    <section class="web_delivery_manage_list">';
 deliveryInfoModalTemplate += '                        <div class="del_mng_list_top">';
 deliveryInfoModalTemplate += '                            <ul class="del_mng_type">';
@@ -47,7 +47,7 @@ deliveryInfoModalTemplate += '                        <div class="web_del_mag_li
 deliveryInfoModalTemplate += '                            <div class="top_checkBox_piece">';
 deliveryInfoModalTemplate += '                                <input type="radio" name="list" v-on: v-bind:id="\'selectAll\' + (i + 2)"';
 deliveryInfoModalTemplate += '                                    v-on:change="onDeliveryInfoSelected()" v-bind:value="i"';
-deliveryInfoModalTemplate += '                                    v-bind:checked="item.address == orderDTO.delivery.address">';
+deliveryInfoModalTemplate += '                                    v-bind:checked="orderDto.delivery != undefined && item.address == orderDto.delivery.address">';
 deliveryInfoModalTemplate += '                                <label v-bind:for="\'selectAll" + (i+2)\'></label>';
 deliveryInfoModalTemplate += '                            </div>';
 deliveryInfoModalTemplate += '                            <ul>';
@@ -72,29 +72,42 @@ deliveryInfoModalTemplate += '</div>';
 
 var deliveryInfoModalComponent = {
     template: deliveryInfoModalTemplate,
-    props: ['deliveryList'],
+    props: ["orderDto"],
     data: function() {
         return {
-            dataList: this.deliveryList
+            deliveryList: []
         }
-    }, methods: {
+    },
+    methods: {
         openInfoModal,
         closeInfoModal,
-        getDeliveryInfoList,
+        getDeliveryInfoList: function() {
+            var component = this;
+            ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', {}, 'POST',
+            function(data) {
+                component.deliveryList = data.result;
+                console.log(component);
+            }, function(err) {
+                console.log("err", err);
+            }, {
+                isRequired: true,
+                userId: true
+            });
+
+        },
         reloadComponent: function() {
             console.log('reload');
             this.render += 1;
         }
+    }, created: function() {
+        this.getDeliveryInfoList();
     }
 }
 
 function openInfoModal() {
-    console.log("click");
-    $('#iModal').show();  
+    $('#iModal').show();
     scrollBlock();
     
-    getDeliveryInfoList();
-
     var inputs = document.querySelectorAll('input');
     $(inputs).click(function(){
         console.log('done');
@@ -105,18 +118,4 @@ function openInfoModal() {
 function closeInfoModal() {
     $('#iModal').hide();
     scrollAllow();
-}
-
-function getDeliveryInfoList() {
-    console.log(deliveryInfoModalComponent);
-    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', {}, 'POST',
-    function(data) {
-        deliveryInfoModalComponent.dataList = data.result;
-
-    }, function(err) {
-        console.log("err", err);
-    }, {
-        isRequired: true,
-        userId: true
-    })
 }

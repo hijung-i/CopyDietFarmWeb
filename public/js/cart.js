@@ -12,7 +12,9 @@ var app = new Vue({
         RESOURCE_SERVER,
         API_SERVER,
         checkAll: true,
-        orderDTO: {},
+        orderDTO: {
+            delivery: {}
+        },
         requestDeliveryGroupList: [],
         cartList,
         deliveryGroupList,
