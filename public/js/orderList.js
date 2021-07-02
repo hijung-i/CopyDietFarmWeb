@@ -97,15 +97,18 @@ function orderConfirm(oIdx, pIdx) {
         orderNumber: order.orderNumber,
         products: []
     }
-
     params.products.push(product);
     ajaxCallWithLogin(API_SERVER + '/order/orderConfirm', params, 'POST',
     function(data) {
         alert('구매확정에 성공했습니다.');
+        getOrderList();
 
         console.log(data);
     }, function(err) {
         console.error(err);
+    }, {
+        isRequired: true,
+        userId: true
     })
 }
 

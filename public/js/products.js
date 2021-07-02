@@ -39,11 +39,6 @@ function getProductListByCategory() {
     var category1Code = $('#category1Code').val();
     var category2Code = $('#category2Code').val();
     var sortOption = $('#sortOption').val();
-    var category2Name = $('#category2Name').val();
-
-
-    var keywordDesc = "<span>\""+category2Name+ "\"</span>";
-    $('.keyword').html(keywordDesc);
 
     if((category1Code == null || category1Code == undefined || category1Code == '')
         || (category2Code == null || category2Code == undefined || category2Code == '')){
@@ -55,16 +50,18 @@ function getProductListByCategory() {
     var params = {
         category1Code: category1Code,
         category2Code: category2Code,
-        sortOption: sortOption,
-        category2Name: category2Name
+        sortOption: sortOption
     }
     
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
     , function (data) {  
         if(data.result.length > 0) {
+            console.log(data.result);
+            var category1Name = data.result[0].category1Name
             var html = generateHtmlForProductList(data.result);
-            
+
             $('.sub_items ul').html(html);
+            $('.keyword').html(category1Name);
         } else {
             $('.sub_items ul').hide();
             $('.pick_list_null').show();
@@ -72,7 +69,7 @@ function getProductListByCategory() {
         }
 
     }, function (err){
-        console.log("getProductByStandCode err", err);
+        console.log("getProductListByCategory err", err);
     }, {
         isRequire: false,
         userId: true

@@ -73,7 +73,8 @@ function sideTabClose() {
     });
 }
 $(function() {
-    getEventStands();
+    var listType = $('#listType').val();
+    if(listType != 'CATEGORY') getEventStands();
     getBrandList();
     getCategory();
 
