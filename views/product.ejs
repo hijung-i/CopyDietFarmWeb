@@ -24,7 +24,7 @@
     @media screen and (max-width:1079px) {
         .web_product_details {display: none}
         .sidebar{display:none}
-        .review_modal{
+        .review_modal, .inquiry_modal{
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
         z-index: 1; /* Sit on top */
@@ -36,21 +36,28 @@
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
-       /* Modal Content/Box */
-.modal-content {
+ /* Modal Content/Box */
+.review_modal .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     width:400px!important;
     padding:10px;
-    z-index:99999
-                       
+    z-index:99999                       
+}
+
+.inquiry_modal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    width:400px!important;
+    padding:10px;
+    height:500px;
+    z-index:99999                       
 }
 /* The Close Button */
 .modal-content .close {
     color: #aaa;
     float: right;
     font-size: 28px;
-    margin-top:10px;
 
 }
 .modal-content .close:hover,
@@ -61,62 +68,9 @@
 }
     }
     @media screen and (min-width:1080px) {
-        #content{max-width:1080px;margin:0 auto;width:1080px}
-        .slick-prev{top:230px!important}
-        .slick-next{top:-300px!important}
-        .modal_wrap, .modal_wrap02 {
-            display: none;
-            width: 500px;
-            height: auto;
-            position: absolute;
-            top:40%;
-            left: 50%;
-            margin: -250px 0 0 -250px;
-            background:#eee;
-            z-index: 2;
-        }
-        .black_bg, .black_bg02{
-            display: none;
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 100%;
-            background-color:rgba(0, 0,0, 0.5);
-            top:0;
-            left: 0;
-            z-index: 1;
-        }
-        .modal_close, .modal_close02{
-            width: 26px;
-            height: 26px;
-            position: absolute;
-            top: -30px;
-            right: 0;
-        }
-        .modal_close> a, .modal_close02 a{
-            display: block;
-            width: 100%;
-            height: 100%;
-            background:url(/images/x_icon_login.png)no-repeat;
-            text-indent: -9999px;
-            position:relative;
-            top:42px
-        }
-        .mobile_product_details { display: none}                       
-    }
-        /* The Close Button */
-    .product_close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-    .product_close:hover,
-    .product_close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }  
+    #content{max-width:1080px;margin:0 auto;width:1080px}
+    .slick-prev{top:230px!important}
+    .slick-next{top:-300px!important}
     .fixed { position: fixed; top:0; left:0; }
     .sidebar{width:270px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
             margin-top:-68px;position:sticky;top:0}
@@ -568,7 +522,7 @@
                             <div class="review_btn">
                                 <button type="button" id="modal_btn" style="width:90%;height:45px;" onclick="openReviewModal()">리뷰쓰기</button>
                             </div>
-                        <productreview-modal></productreview-modal>
+                        
                             <p class="num">리뷰 {{ reviewList.length }}개</p>
                             <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
                                 <img src="/images/note_icon_review.png">
@@ -666,280 +620,235 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="tab4" class="tab_cont Mtab_cont">
-                            <!--//review_btn-->
-                            <div class="review_btn">
-                                <button type="button" id="modal_btn02" style="width:90%;height:45px;">문의하기</button>
-                                 </div>
-                              <div class="black_bg02"></div>
-                              <div class="modal_wrap02">
-                                  <div class="modal_close02"><a href="#">close</a></div>
-                                  <div>
-                                 <div class="productInquiryBox">
-                                          <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
-                                          <form>
-                                              <p><textarea style="border-radius:5px;width:330px;height:153px; border: 1px solid #BBBBBB;" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
-                              
-                                          </form>
-                                          <div class="group">
-                                              <input type="checkbox" id="secret">
-                                              <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
-                                          </div>
-                                      </div>
-                                      <div class="btn_area">
-                                          <button type="button" id="btnInquiry">등록</button>
-                                      </div>
-                                  </div>
-                              </div>
-                            <p class="inquiry">문의 {{questionList.length}}개</p>
-                                    <div class="myReview">
-                                        <p style="margin-right:10px">내 문의 보기</p>
-                                        <input type="checkbox" id="prod_detail_toggle">
-                                        <label for="prod_detail_toggle">
-                                            <span>아이콘</span></label>
-                                    </div>
-                      
-                          
-                            <!-- <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
-                                <img src="/images/note_icon_review.png">
-                                <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
-                                <div class="btn_area"> <button type="button"
-                                id="btnRW_null">리뷰쓰기</button>
-                            </div> -->
+        <div id="tab4" class="tab_cont Mtab_cont">
+            <!--//review_btn-->
+            <div class="review_btn">
+                <button type="button" id="modal_btn02" style="width:90%;height:45px;" onclick="openInquiryModal()">문의하기</button>
+            </div>
+            
+            <p class="inquiry">문의 {{questionList.length}}개</p>
+            <div class="myReview">
+                <p style="margin-right:10px">내 문의 보기</p>
+                <input type="checkbox" id="prod_detail_toggle">
+                <label for="prod_detail_toggle">
+                <span>아이콘</span></label>
+            </div>
                             
-                         <div class="qna">
-                                   
-                               
-                                <div class="reveiw01" v-for="(question, index) in questionList" v-bind:key="index">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span v-if="question.answerState == 'N'">미답변</span>
-                                            <span v-if="question.answerState == 'Y'">답변완료</span>
-                                        </p>
-                                        <ul v-if="question.updateYn == 'Y'">
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>{{formatDate(question.createDate)}}
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+            <div class="qna">
+                <div class="reveiw01" v-for="(question, index) in questionList" v-bind:key="index">
+                    <div class="review_edit">
+                        <p>
+                            <span v-if="question.answerState == 'N'">미답변</span>
+                            <span v-if="question.answerState == 'Y'">답변완료</span>
+                        </p>
+                        <ul v-if="question.updateYn == 'Y'">
+                            <li class="myInquiry">
+                                <span>내글</span>
+                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
+                            <li>{{formatDate(question.createDate)}}
+                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
+                            <li>
+                                <a href="#">수정</a>
+                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
+                            <li>
+                                <a href="#">삭제</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            {{question.content}}
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01" v-if="question.answerState == 'Y'">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p v-html="question.answer"></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>{{formatDate(question.updateDate)}}</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div id="wrap_qna">
-                                    <a href="javascript:openModal('modal1');" class="button modal-open">문의하기</a>
-                                </div>
-                                <!--//모달 안 내용 시작 -->
-                                <div id="modal"></div>
-                                <div class="modal-con modal1">
-                                    <a href="javascript:;" class="close"><img src="/images/x_icon_login.png"></a>
-                                    <div class="title">
-                                        <h2>상품 문의</h2>
-                                    </div>
-                                    <div class="productInquiryBox" style="padding-right:20px">
-                                        <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
-                                        <form>
-                                            <p>
-                                                <textarea
-                                                    style="border-radius:5px;width:800px;height:200px;padding:10px;font-size:14px"
-                                                    placeholder="문의하실 내용을 입력해주세요"></textarea>
-                                            </p>
-
-                                        </form>
-                                        <div class="group">
-                                            <input type="checkbox" id="secret">
-                                            <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
-                                        </div>
-                                    </div>
-                                    <div class="btn_area">
-                                        <button type="button" id="btnInquiry">등록</button>
-                                    </div>
-
-                                </div>
-                                <!--//문의 모달 끝-->
-
-                                <div class="page_wrap">
-                                    <div class="page_nation">
-                                        <a class="arrow pprev" href="#"></a>
-                                        <a class="arrow prev" href="#"></a>
-                                        <a href="#" class="active">1</a>
-                                        <a href="#">2</a>
-                                        <a href="#">3</a>
-                                        <a href="#">4</a>
-                                        <a href="#">5</a>
-                                        <a href="#">6</a>
-                                        <a href="#">7</a>
-                                        <a href="#">8</a>
-                                        <a href="#">9</a>
-                                        <a href="#">10</a>
-                                        <a class="arrow next" href="#"></a>
-                                        <a class="arrow nnext" href="#"></a>
-                                    </div>
-                                </div>
-
-                                <button type="button" class="more_inq">
-                                    <div class="more_btn_ctn">
-                                        <p>더보기
-                                            <img src="/images/downarrow_icon_category.png" alt="화살표">
-                                        </p>
-                                    </div>
-                                </button>
-                            </div>
+                    <div class="bbsFaq01">
+                        <div class="innerbox">
+                            <table>
+                                <tbody>
+                                    <tr class="faq_q">
+                                        <td class="title">
+                                            {{question.content}}
+                                        </td>
+                                    </tr>
+                                    <tr class="faq_a faq_a01" v-if="question.answerState == 'Y'">
+                                        <td>
+                                            <div class="faq_a_box">
+                                                <p v-html="question.answer"></p>
+                                                <ul>
+                                                    <li>판매자</li>
+                                                    <li><img src="/images/l_icon_category.png"></li>
+                                                    <li>{{formatDate(question.updateDate)}}</li>
+                                                    <li><img src="/images/l_icon_category.png"></li>
+                                                    <li>신고</li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </main>
-                    <script>
-                        var upload = document.querySelector('#upload');
-                        var preview = document.querySelector('#preview');
-    
-                        upload.addEventListener('change', function(e) {
-                            var get_file = e.target.files;
-    
-                            var image = document.createElement('img');
-    
-                            /* FileReader 객체 생성 */
-                            var reader = new FileReader();
-    
-                            /* reader 시작시 함수 구현 */
-                            reader.onload = (function(aImg) {
-                                console.log(1);
-    
-                                return function(e) {
-                                    console.log(3);
-                                    /* base64 인코딩 된 스트링 데이터 */
-                                    aImg.src = e.target.result
-                                }
-                            })(image)
-    
-                            if (get_file) {
-                                /* 
-                                    get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
-                                    onload 에 설정했던 return 으로 넘어간다.
-                                    이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
-                                */
-                                reader.readAsDataURL(get_file[0]);
-                                console.log(2);
-                            }
-    
-                            preview.appendChild(image);
-                        })
-                    </script>
-                    <!-- Swiper JS -->
-                    <script>
-                        var swiper = new Swiper(".productSwiper", {
-                            pagination: {
-                                el: ".swiper-pagination",
-                                type: "fraction"
-                            },
-                            navigation: {
-                                nextEl: ".swiper-button-next",
-                                prevEl: ".swiper-button-prev"
-                            }
-                        });
-                    </script>
-                    <script>
-                        var upload = document.querySelector('#upload');
-                        var preview = document.querySelector('#preview');
-                        upload.addEventListener('change', function (e) {
-                            var get_file = e.target.files;
-                            var image = document.createElement('img');
-                            var reader = new FileReader();
-                            reader.onload = (function (aImg) {
-                                console.log(1);
-                                return function (e) {
-                                    console.log(3);
-                                    aImg.src = e.target.result
-                                }
-                            })(image)
-                            if (get_file) {
-                                reader.readAsDataURL(get_file[0]);
-                                console.log(2);
-                            }
-                            preview.appendChild(image);
-                        })
-                    </script>
-                    <script>
-                        var upload = document.querySelector('#upload');
-                        var preview = document.querySelector('#preview');
-                        upload.addEventListener('change', function (e) {
-                            var get_file = e.target.files;
-                            var image = document.createElement('img');
-                            var reader = new FileReader();
-                            reader.onload = (function (aImg) {
-                                console.log(1);
-                                return function (e) {
-                                    console.log(3);
-                                    aImg.src = e.target.result
-                                }
-                            })(image)
-                            if (get_file) {
-                                reader.readAsDataURL(get_file[0]);
-                                console.log(2);
-                            }
-                            preview.appendChild(image);
-                        })
-                        window.onload = function() {
- 
-                        function onClick() {
-                            document.querySelector('.modal_wrap').style.display ='block';
-                            document.querySelector('.black_bg').style.display ='block';
-                            document.querySelector('.modal_wrap02').style.display ='block';
-                            document.querySelector('.black_bg02').style.display ='block';
-                        }   
-                        function offClick() {
-                            document.querySelector('.modal_wrap').style.display ='none';
-                            document.querySelector('.black_bg').style.display ='none';
-                            document.querySelector('.modal_wrap02').style.display ='none';
-                            document.querySelector('.black_bg02').style.display ='none';
-                        }
+                    </div>
+                </div>
+                
+                <div id="wrap_qna">
+                    <a href="javascript:openModal('modal1');" class="button modal-open">문의하기</a>
+                </div>
+                                <!--//모달 안 내용 시작 -->
+                <div id="modal"></div>
+                <div class="modal-con modal1">
+                    <a href="javascript:;" class="close"><img src="/images/x_icon_login.png"></a>
+                    <div class="title">
+                        <h2>상품 문의</h2>
+                    </div>
+                    <div class="productInquiryBox" style="padding-right:20px">
+                        <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
+                        <form>
+                            <p>
+                                <textarea
+                                    style="border-radius:5px;width:800px;height:200px;padding:10px;font-size:14px"
+                                    placeholder="문의하실 내용을 입력해주세요"></textarea>
+                            </p>
 
-                        document.getElementById('modal_btn').addEventListener('click', onClick);
-                        document.querySelector('.modal_close').addEventListener('click', offClick);
-                        document.getElementById('modal_btn02').addEventListener('click', onClick);
-                        document.querySelector('.modal_close02').addEventListener('click', offClick);
+                        </form>
+                        <div class="group">
+                            <input type="checkbox" id="secret">
+                            <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
+                        </div>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" id="btnInquiry">등록</button>
+                    </div>
 
-                        };
-                    </script>
-                    <script src="/js/productReviewModal.js"></script>
-                    <script src="/js/orderDTO/OrderDTO.js"></script>
-                    <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
-                    <script type="text/javascript" src="/js/product.js"></script>
-                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                </div>
+                <!--//문의 모달 끝-->
+
+                <div class="page_wrap">
+                    <div class="page_nation">
+                        <a class="arrow pprev" href="#"></a>
+                        <a class="arrow prev" href="#"></a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                        <a href="#">10</a>
+                        <a class="arrow next" href="#"></a>
+                        <a class="arrow nnext" href="#"></a>
+                    </div>
+                </div>
+
+                <button type="button" class="more_inq">
+                    <div class="more_btn_ctn">
+                        <p>더보기
+                            <img src="/images/downarrow_icon_category.png" alt="화살표">
+                        </p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <product-review-modal></product-review-modal>
+        <product-inquiry-modal></product-inquiry-modal>
+    </main>
+    <script>
+        var upload = document.querySelector('#upload');
+        var preview = document.querySelector('#preview');
+
+        upload.addEventListener('change', function(e) {
+            var get_file = e.target.files;
+
+            var image = document.createElement('img');
+
+            /* FileReader 객체 생성 */
+            var reader = new FileReader();
+
+            /* reader 시작시 함수 구현 */
+            reader.onload = (function(aImg) {
+                console.log(1);
+
+                return function(e) {
+                    console.log(3);
+                    /* base64 인코딩 된 스트링 데이터 */
+                    aImg.src = e.target.result
+                }
+            })(image)
+
+            if (get_file) {
+                /* 
+                    get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
+                    onload 에 설정했던 return 으로 넘어간다.
+                    이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
+                */
+                reader.readAsDataURL(get_file[0]);
+                console.log(2);
+            }
+
+            preview.appendChild(image);
+        })
+    </script>
+    <!-- Swiper JS -->
+    <script>
+        var swiper = new Swiper(".productSwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction"
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            }
+        });
+    </script>
+    <script>
+        var upload = document.querySelector('#upload');
+        var preview = document.querySelector('#preview');
+        upload.addEventListener('change', function (e) {
+            var get_file = e.target.files;
+            var image = document.createElement('img');
+            var reader = new FileReader();
+            reader.onload = (function (aImg) {
+                console.log(1);
+                return function (e) {
+                    console.log(3);
+                    aImg.src = e.target.result
+                }
+            })(image)
+            if (get_file) {
+                reader.readAsDataURL(get_file[0]);
+                console.log(2);
+            }
+            preview.appendChild(image);
+        })
+    </script>
+    <script>
+        var upload = document.querySelector('#upload');
+        var preview = document.querySelector('#preview');
+        upload.addEventListener('change', function (e) {
+            var get_file = e.target.files;
+            var image = document.createElement('img');
+            var reader = new FileReader();
+            reader.onload = (function (aImg) {
+                console.log(1);
+                return function (e) {
+                    console.log(3);
+                    aImg.src = e.target.result
+                }
+            })(image)
+            if (get_file) {
+                reader.readAsDataURL(get_file[0]);
+                console.log(2);
+            }
+            preview.appendChild(image);
+        })
+        window.onload = function() {
+        }
+    </script>                    
+    <script src="/js/productReviewModal.js"></script>
+    <script src="/js/productInquiryModal.js"></script>
+    <script src="/js/orderDTO/OrderDTO.js"></script>
+    <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
+    <script type="text/javascript" src="/js/product.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
-                </body>
-                <%-include('general/footer') %>
-            </html>
+</body>
+<%-include('general/footer') %>
+</html>
