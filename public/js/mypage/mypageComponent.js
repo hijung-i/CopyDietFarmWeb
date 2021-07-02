@@ -31,6 +31,6 @@ var mypageComponent = {
     template: mypageTemplate,
     props: ["totalPointAmount"],
     data: function() {
-
+        return {}
     }
 }
