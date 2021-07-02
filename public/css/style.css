@@ -1566,7 +1566,6 @@ div.slideMenu_top {display: none}
     width: 25%; margin: 0 24px;
     opacity: 0; 
     transition: all .3s;
-    z-index: 99;
   }
 
   .pdt_detai_tabinner_vn > ul.tab_wrap li.onTab span {color: #FF8B00; font-weight: 700;}
@@ -2895,7 +2894,7 @@ display: flex;
     z-index: 99999;
     display: none;
   }
-  .modal-content {width: 330px; margin: 0 auto}
+  .modal-content {width: 330px}
   .cancel_header {position: relative;}
   .cancel_header > h2 {
     text-align: center;

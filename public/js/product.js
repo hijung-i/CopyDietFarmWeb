@@ -4,6 +4,9 @@ var isExtra = false, isJeju = false;
 
 var app = new Vue({
     el: 'main',
+    components: {
+        'productreview-modal': productReviewModal
+    },
     data: {
         RESOURCE_SERVER,
         selectedOptions,
