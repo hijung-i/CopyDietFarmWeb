@@ -20,9 +20,9 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
   .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
 
   .option_btns .like {
-
-    top: 0px;
-    right: 0px;    
+    
+    float: none;
+    position: sticky;
   }
 }
 
