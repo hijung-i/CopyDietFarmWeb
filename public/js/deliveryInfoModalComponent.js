@@ -45,7 +45,7 @@ deliveryInfoModalTemplate += '                            </ul>';
 deliveryInfoModalTemplate += '                        </div>';
 deliveryInfoModalTemplate += '                        <div class="web_del_mag_list_info">';
 deliveryInfoModalTemplate += '                            <div class="top_checkBox_piece">';
-deliveryInfoModalTemplate += '                                <input type="radio" name="list" v-on: v-bind:id="\'selectAll\' + (i + 2)"';
+deliveryInfoModalTemplate += '                                <input type="radio" name="list" v-on: v-bind:id="\'option\' + (i + 2)"';
 deliveryInfoModalTemplate += '                                    v-on:change="onDeliveryInfoSelected()" v-bind:value="i"';
 deliveryInfoModalTemplate += '                                    v-bind:checked="orderDto.delivery != undefined && item.address == orderDto.delivery.address">';
 deliveryInfoModalTemplate += '                                <label v-bind:for="\' option\' + i "><span></span></label>';
