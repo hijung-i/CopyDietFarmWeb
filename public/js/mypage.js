@@ -1,3 +1,19 @@
+var app = new Vue({
+    el: '#app',
+    components: {
+        'mypage-modal': mypageModal
+    },
+    data: {
+        deliveryList: new Array(),
+    },
+    methods: {
+        getUsablePointAmount,
+        getLogin
+    }
+})
+
+
+
 $(function() {
     getLogin();
 })

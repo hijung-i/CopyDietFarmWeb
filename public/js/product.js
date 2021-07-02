@@ -4,6 +4,10 @@ var isExtra = false, isJeju = false;
 
 var app = new Vue({
     el: 'main',
+    components: {
+        'product-review-modal': productReviewModal,
+        'product-inquiry-modal': productInquiryModal
+    },
     data: {
         RESOURCE_SERVER,
         selectedOptions,
@@ -161,6 +165,7 @@ function getProductDetail(){
         userId : true
     })
 }
+
 
 function addCart() {
     console.log(selectedOptions);
