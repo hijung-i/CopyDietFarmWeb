@@ -119,7 +119,7 @@ router.get('/order-comp', (req: Request, res: Response, next: NextFunction) => {
     res.locals.orderDTO = JSON.parse(req.query.requestOrderDTO as string)
     console.log(res?.locals.orderDTO)
 
-    render(req, res, 'order_complete', {})
+    render(req, res, 'order/order_complete', {})
 })
 
 router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFunction) => {
@@ -128,7 +128,7 @@ router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFu
     if (orderNumber.length > 15 || orderNumber.length < 14) {
         res.send('<script>alert("올바르지 않은 주문번호입니다.");location.href = "/orderlist";</script>')
     } else {
-        render(req, res, 'mypage_orderList_detail', { orderNumber })
+        render(req, res, 'mypage/mypage_orderList_detail', { orderNumber })
     }
 })
 
@@ -200,7 +200,7 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     orderDTO.paidPointAmount = 0
     orderDTO.paidCouponAmount = 0
 
-    render(req, res, 'order_info', { deliveryGroupList: JSON.stringify(deliveryGroupList), orderDTO: JSON.stringify(orderDTO) })
+    render(req, res, 'order/order_info', { deliveryGroupList: JSON.stringify(deliveryGroupList), orderDTO: JSON.stringify(orderDTO) })
 })
 
 router.get('/s_inquiry_more', (req: Request, res: Response, next: NextFunction) => {
