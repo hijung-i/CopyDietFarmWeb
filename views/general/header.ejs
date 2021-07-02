@@ -5,10 +5,10 @@
     <div class="top_util">
         <ul class="menu_list" id="menu_list_header">
             <% if(isLoggedIn != true) { %>
-                <li class="join" style="color:#F99319">
+                <!-- <li class="join" style="color:#F99319">
                     <a href="/sign-up-form">회원가입</a>
                 </li>
-                <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
+                <li class="bar"><img src="/images/l_icon_category@2x.png"></li> -->
                 <li class="login_top">
                     <a href="/login-form">로그인</a>
                 </li>
@@ -17,15 +17,17 @@
             <li class="cs_center">
                 <a href="/cs-center">고객센터</a>
             </li>
-            <li class="cart">
-                <a href="/cart"><img src="/images/cart_icon_main@2x.png" alt="장바구니"></a>
-            </li>
-            <li class="mypage">
-                <a href="/orderlist"><img src="/images/dietfarm_mypage.png" alt="마이페이지" style="width:15px"></a>
-            </li>
-            <li class="pick">
-                <a href="/pick-product"><img src="/images/afterheart_ico_main.png" alt="찜한 메뉴"></a>
-            </li>
+            <% if(isLoggedIn != true) { %>
+                <li class="cart">
+                    <a href="/cart"><img src="/images/cart_icon_main@2x.png" alt="장바구니"></a>
+                </li>
+                <li class="mypage">
+                    <a href="/orderlist"><img src="/images/dietfarm_mypage.png" alt="마이페이지" style="width:15px"></a>
+                </li>
+                <li class="pick">
+                    <a href="/pick-product"><img src="/images/afterheart_ico_main.png" alt="찜한 메뉴"></a>
+                </li>
+            <% } %>
         </ul>
     </div>
     <div class="main_banner">
