@@ -676,7 +676,7 @@ $(document).on("click", "#sh-link", function(e) {
 
 
 function scrollBlock() {
-   $('html, body').css({'overflow': 'hidden', 'height': '100%'});
+   $('html, body').css({'overflow': 'hidden', 'height': 'auto'});
    $('html,body').on('scroll touchmove mousewheel', function(event) {
          event.preventDefault();
          event.stopPropagation();
