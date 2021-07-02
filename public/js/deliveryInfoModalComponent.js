@@ -75,7 +75,8 @@ var deliveryInfoModalComponent = {
     props: ["orderDto"],
     data: function() {
         return {
-            deliveryList: []
+            deliveryList: [],
+            onDeliveryInfoSelected: []
         }
     },
     methods: {
@@ -98,7 +99,16 @@ var deliveryInfoModalComponent = {
         reloadComponent: function() {
             console.log('reload');
             this.render += 1;
-        }
+        },
+        onDeliveryInfoSelected: function() {
+        console.log('select!');
+        var checked = $('input[type=radio][name=list]:checked');
+        app.orderDTO.delivery = app.deliveryList[checked.val()];
+
+        checkDeliveryAddress();
+
+        closeInfoModal();
+    }
     }, created: function() {
         this.getDeliveryInfoList();
     }
