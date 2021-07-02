@@ -18,7 +18,7 @@
                 #nav a{margin-left:10px}    
             }
         </style>
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
     <!-- font awesome -->
     <link rel="stylesheet"
         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -26,7 +26,7 @@
         crossorigin="anonymous"/>
 </head>
 <body>
-    <%-include('general/header') %>
+    <%-include(webroot + 'views/general/header') %>
         <input type="hidden" id="listType" value="<%=listType %>">
         <% if(listType == 'CATEGORY') { %>
             <input type="hidden" id="category1Code" value="<%=category1Code %>">
@@ -95,6 +95,6 @@
         </main>
         <script src="/js/products.js"></script>
 
-    <%-include('general/footer') %>
+    <%-include(webroot + 'views/general/footer') %>
 </body>
 </html>

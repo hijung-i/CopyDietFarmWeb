@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="/css/mypage.css">
     <!-- main.js -->
     <script src="/js/main.js"></script>
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
 </head>
 
 <body>
@@ -60,7 +60,7 @@
         </section>
     </div>
     <div class="web_p_inquiry">
-        <%-include('general/header') %>
+        <%-include(webroot + 'views/general/header') %>
     </div>
     
     <main id="mypage_prod_inq_ctt">
@@ -227,8 +227,8 @@
   
     <!-- modal window end -->
  
-    <%-include('general/footer') %>
-    <script src="/js/mypage/mypageComponent.js"></script>
+    <%-include(webroot + 'views/general/footer') %>
+    <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/mypage/productInquiry.js"></script>
     </body>
 

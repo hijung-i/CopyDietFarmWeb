@@ -1,4 +1,5 @@
 import { NextFunction, request, Request, Response, Router } from 'express'
+import { globalData } from '../app'
 import { DeliveryInfo, SessionUser, User } from '../models/user'
 const qs = require('querystring')
 
@@ -141,28 +142,28 @@ router.get('/product', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'product', {})
 })
 router.get('/membership', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'membership', {})
+    render(req, res, 'events/membership', {})
 })
 router.get('/n_member', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'new_membership', {})
+    render(req, res, 'events/new_membership', {})
 })
 router.get('/f_invite', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'friend_invite', {})
+    render(req, res, 'events/friend_invite', {})
 })
 router.get('/f_purchase', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'first_purchase', {})
+    render(req, res, 'events/first_purchase', {})
 })
 router.get('/m_save', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'money_save', {})
+    render(req, res, 'events/money_save', {})
 })
 router.get('/k_friend', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'kakao_friend', {})
+    render(req, res, 'events/kakao_friend', {})
 })
 router.get('/b_event', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'birthday_event', {})
+    render(req, res, 'events/birthday_event', {})
 })
 router.get('/r_event', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'review_event', {})
+    render(req, res, 'events/review_event', {})
 })
 router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     const sessionUser: SessionUser | undefined = req.session.user
@@ -244,7 +245,7 @@ router.get('/intro', (req: Request, res: Response, next: NextFunction) => {
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
-
+    res.locals.webroot = globalData.getBaseDir()
     const defaultData: any = {
         currentPage: ''
     }

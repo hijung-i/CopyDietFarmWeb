@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="/css/myPage.css">
     <link rel="stylesheet" href="/css/style_web.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
 </head>
 <body>
 <div class="mobile_point">
@@ -60,7 +60,7 @@
     </section>
 </div>
 <div class="web_point">
-    <%-include('general/header') %>
+    <%-include(webroot + 'views/general/header') %>
     </div>
 
     <main id="content" class="content">
@@ -232,8 +232,8 @@
             </div>
         </div>
     </main>
-    <script src="/js/mypage/mypageComponent.js"></script>
+    <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/mypage/point.js"></script>
-    <%-include('general/footer') %>
+    <%-include(webroot + 'views/general/footer') %>
     </body>
 </html>

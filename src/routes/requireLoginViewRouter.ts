@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express'
+import { globalData } from '../app'
 import { SessionUser } from '../models/user'
 const router = Router()
 
@@ -98,6 +99,7 @@ router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
+    res.locals.webroot = globalData.getBaseDir()
     const defaultData: any = {
         currentPage: ''
     }

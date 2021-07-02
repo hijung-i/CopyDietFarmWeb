@@ -39,7 +39,7 @@
     </style>
     <link rel="stylesheet" href="/css/style_web.css">
     <link rel="stylesheet" href="/css/myPage.css">
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </head>
@@ -89,7 +89,7 @@
         </div>
     </div>
     <div class="web_orderlist">
-        <%-include('general/header') %>
+        <%-include(webroot + 'views/general/header') %>
     </div>
 
     <div class="mobile_orderlist">
@@ -328,10 +328,10 @@
     </div>
     <!-- modal -->
     <!-- body_contents tab3 -->
-    <%-include('general/footer') %>
+    <%-include(webroot + 'views/general/footer') %>
 
         
-<script src="/js/mypage/mypageComponent.js"></script>
+<script src="/js/components/mypageComponent.js"></script>
 <script src="/js/orderList.js"></script>
 </body>
 

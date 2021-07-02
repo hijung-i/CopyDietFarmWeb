@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no" />
     <meta name="format-detection" content="no" />
     <title>다이어트 Farm</title>
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
 
 <style type="text/css">
     nav a:nth-child(1) {
@@ -80,7 +80,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
 </head>
 <body>
     <div class="web_index">
-        <%-include('general/header_web') %>
+        <%-include(webroot + 'views/general/header_web') %>
      </div><!--//web_index-->
      
     <div class="mobile_index">
@@ -89,7 +89,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
         <a href="#"><span>바로가기2</span></a>
         <a href="#"><span>바로가기3</span></a>
     </article>
-    <%-include('general/header') %>
+    <%-include(webroot + 'views/general/header') %>
     </div>
     <main id="content" class="content">
         <section class="main_img">
@@ -964,7 +964,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
         </div>
     </main>
 
-    <%-include('general/footer') %>
+    <%-include(webroot + 'views/general/footer') %>
 
     <script src="/js/index.js"></script>
     <script>

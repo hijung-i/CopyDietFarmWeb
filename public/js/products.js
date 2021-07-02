@@ -94,7 +94,9 @@ function getCategoryList(){
 
             $('.myPage_title').html(cate.category1Name);
             if(cate.category1Code == category1Code){
-                var html = '<a href="/products/'+ category1Code +'/category/ALL">전체보기</a>';
+                var html = '';
+                html += '<a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';
+                html += '<a href="/products/'+ category1Code +'/category/ALL">전체보기</a>';
                 for(var j = 0; j < cate.category2.length; j++){
                     var  menuCate2 = cate.category2[j]
                     html += '<a href="/products/'+ category1Code +'/category/'+ menuCate2.category2Code +'">' + menuCate2.category2Name + '</a>';
@@ -107,6 +109,15 @@ function getCategoryList(){
                 break;
             }
         }
+        
+        $('.web_cate').click(function() {
+            var isActive = $('.web_cate').hasClass("active");
+            if( isActive ){
+                sideTabClose();
+            } else {
+                sideTabOpen();
+            }
+        });
     }, function (err){
         console.log("getProductByStandCode err", err);
     }, {

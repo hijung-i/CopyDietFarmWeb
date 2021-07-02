@@ -87,7 +87,7 @@
 <link rel="stylesheet" href="/css/myPage.css">
 <link rel="stylesheet" href="/css/style_web.css">
 
-<%-include('general/head') %>
+<%-include(webroot + 'views/general/head') %>
     <!-- font awesome -->
     <link
         rel="stylesheet"
@@ -109,7 +109,7 @@
 
 <body>
     <div class="web_deliv">
-        <%-include('general/header') %>
+        <%-include(webroot + 'views/general/header') %>
     </div>
     <div id="app">
         <div class="mobile_deliv">
@@ -233,9 +233,9 @@
          
     
     <script src="/js/deliveryRegisterModalComponent.js"></script>
-    <script src="/js/mypage/mypageComponent.js"></script>
+    <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/deliveryManagement.js"></script>
-    <%-include('general/footer') %>
+    <%-include(webroot + 'views/general/footer') %>
 </body>
 
 </html>

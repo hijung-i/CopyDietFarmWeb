@@ -60,7 +60,7 @@
         </style>
         <link rel="stylesheet" href="/css/myPage.css">
         <link rel="stylesheet" href="/css/style.css">
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   
     </head>
@@ -79,7 +79,7 @@
         </article>
         <div class="mobile_myinfo">
 
-            <%-include('general/header') %>
+            <%-include(webroot + 'views/general/header') %>
             </div>
             <!--//모바일 헤더 끝-->
             <main id="content" class="content" style="padding-top:60px">
@@ -233,6 +233,6 @@
                     $('#mModal').hide();
                 }
             </script>
-            <%-include('general/footer') %>
+            <%-include(webroot + 'views/general/footer') %>
         </body>
     </html>

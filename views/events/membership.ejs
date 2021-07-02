@@ -9,19 +9,27 @@
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
 
-        <title>다이어트팜:: 엄선된 건강 식단 마켓</title>
+        <title>회원가입, 다이어트팜:: 다이어트 건강식단 플랫폼</title>
         <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/style02.css">
         <link rel="stylesheet" href="/css/myPage.css">
 
         <style type="text/css">
             @media screen and (max-width:1079px) {
-                .web_kakao {
+                .web_benefits {
                     display: none;
                 }
+                .mobile_benefits{position: fixed;
+                            min-width: 360px;
+                            width: 100%;
+                            height: 80px;
+                            top: 0;
+                            background-color: #fff;
+                            z-index: 9999;
+                            margin-bottom: 20px;}
+                 .event_content{padding-top:90px}
             }
             @media screen and (min-width:1080px) {
-                .mobile_kakao {
+                .mobile_benefits {
                     display: none;
                 }
             }
@@ -30,17 +38,17 @@
                 height: auto;
             }
         </style>
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
         </head>
 
         <body>
-            <div class="web_kakao">
-                <%-include('general/header') %>
+            <div class="web_benefits">
+                <%-include(webroot + 'views/general/header') %>
                 </div>
                 <!--//web_invite-->
-                <div class="mobile_kakao">
+                <div class="mobile_benefits">
                     <section class="detail_title">
-                        <h2>카카오 채널 친구 추가 이벤트</h2>
+                        <h2>회원 혜택</h2>
                         <script type="text/javascript">
                             function goBack() {
                                 window
@@ -53,12 +61,13 @@
                         </div>
                     </section>
                 </div>
-                <main id="content" class="content">
-                    <div class="kakao_event">
-                        <img src="/images/kakao_event.png">
+                <main id="content" class="event_content">
+                    <div class="membership">
+                     <a href="/sign-up-form">
+                        <img src="/images/membership-event@2x.png">
+                    </a>
                     </div>
                 </main>
-                <%-include('general/footer') %>
-                    
+                <%-include(webroot + 'views/general/footer') %>
                 </body>
             </html>

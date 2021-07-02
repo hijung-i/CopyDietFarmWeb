@@ -33,12 +33,12 @@
                 .cs_content{width:1080px;margin:0 auto;max-width:1080px}
             }
         </style>
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
 
         </head>
         <body>
             <div class="web_notice">
-                <%-include('general/header') %>
+                <%-include(webroot + 'views/general/header') %>
                 </div>
                 <div class="mobile_notice">
                     <section class="detail_title">
@@ -112,6 +112,6 @@
                     </div>
                 </main>
                 <script src="/js/notice.js"></script>
-        <%-include('general/footer') %>
+        <%-include(webroot + 'views/general/footer') %>
     </body>
 </html>
