@@ -121,6 +121,39 @@ a:hover{text-decoration:none;}
 #wrap{position:relative;width:100%;z-index:1;}
 #headerwrap{height:90px;}
 #header_common{width:100%; background-color: #FFFFFF}
+.m_modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.m_modal .modal-content {
+  background-color: #fefefe;
+  margin: 25% auto; /* 15% from the top and centered */
+  height:675px;
+  width:380px;
+                          
+}
+.modal-content > .modal-content_ctn {
+  width: 330px;
+  margin: 0 auto;
+  height: 575px;
+}
+.m_modal .close {
+  color: #aaa;
+  font-size: 28px;
+  float:right;
+  cursor:pointer;
+  margin-right:10px
+}
 @media screen and (min-width:630px) and (max-width:1079px){
 .slick-slider{margin-bottom:40px}
 }
@@ -1196,7 +1229,6 @@ font-size:14px;font-weight:bold;color:#fff;background:#F99319;border-radius:5px;
 p.confirm_mag{margin-top:10px}
 div.box.int_id{width:350px}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.signup_wrap{width:441px;margin:0 auto}
 .box{width:100%}
 .web_login_title{text-align:center;margin-top:55px;font-size:16px;font-weight:bold}
 .fail-wrap-web p{width:279px;height:52px;background-color:#707070;color:#fff;margin-top:22px;text-align:center;font-size:14px;padding-top:18px}

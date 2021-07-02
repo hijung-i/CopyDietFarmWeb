@@ -10,7 +10,7 @@ mypageModalTemplate += '<p class="line02"><span>10000P + 무료배송 </span>쿠
 mypageModalTemplate += '<div class="signup_btn">';
 mypageModalTemplate += '<button type="button" class="btnKakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png">카카오 계정으로 시작하기</button>';
 mypageModalTemplate += '<button type="button" class="btnNaver"><img src="/images/naver_login@2x.png">네이버 계정으로 시작하기</button>';
-mypageModalTemplate += '<button type="button" class="btnApple"><img src="">애플 계정으로 시작하기</button>';
+mypageModalTemplate += '<button type="button" class="btnApple"><img src="/images/apple_logo@2x.png">애플 계정으로 시작하기</button>';
 mypageModalTemplate += '</div>';
 mypageModalTemplate += '<div class="line" style="width:100%;color:#bbbbbb">';
 mypageModalTemplate += '</div>'
