@@ -448,7 +448,8 @@ function getCategory() {
 }
 
 function getBrandList() {
-    ajaxCallWithLogin(API_SERVER + '/product/getBrandList', {}, 'POST',
+    var param = {};
+    ajaxCallWithLogin(API_SERVER + '/product/getBrandList', param , 'POST',
     function(data) {
         var html = '';
         var result = data.result;
