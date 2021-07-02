@@ -1,16 +1,7 @@
-// var API_SERVER = "http://localhost:9090";
-// var SERVER_IP = 'localhost';
-// var SERVER_IP = '192.168.0.3';
-// var SERVER_IP = 'data-flow.co.kr';
-// var API_SERVER = "http://192.168.0.3:9090";
-
-// var API_SERVER = "http://112.217.209.162:9090";
-// var RESOURCE_SERVER = "http://112.217.209.162:8000";
-
 // 운영
 var API_SERVER = "https://dietfarm119.co.kr";
 var SERVER_IP = 'dietfarm.co.kr';
-var CALLBACK_SERVER = "http://"+ SERVER_IP;
+var CALLBACK_SERVER = "https://"+ SERVER_IP;
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
@@ -611,9 +602,10 @@ function openMyModal() {
 function loginWithKakaoApi() {
    console.log("loginWithKakaoAPI");
    Kakao.Auth.authorize({
-        redirectUri: CALLBACK_SERVER + '/user/result/kakao',
+      redirectUri: CALLBACK_SERVER + '/user/result/kakao',
       scope: 'profile,plusfriends,account_email,gender,birthday,birthyear,phone_number'
    })
+
    console.log("loginWithKakaoAPI end");
 }
 
