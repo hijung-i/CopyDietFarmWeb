@@ -1,6 +1,10 @@
 import { User } from '../models/user'
 import * as request from 'request-promise-native'
+import * as winston from '../configs/winston'
+
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
+
+const STREAM = winston.stream
 
 type Option = {
     uri: string,
@@ -31,10 +35,13 @@ class UserService {
         user.password = this.SHA256(user.userId + this.SHA256(user.password!))
 
         return request(options).then((res: any): UserResult => {
+
+            STREAM.writeDebug(`LOGIN SUCCESS, userId = ${res.result.userId}`)
             return setUserResult(StatusCode.success, StatusMessage.success, res.result)
         }).catch((err: any): UserResult => {
             if (err) {
                 console.log('Error occured while login', err.statusCode, err.error)
+                STREAM.writeDebug(`ERROR userService.login(), statusCode = ${err.statusCode}, error = ${err.error}`)
             }
             return setUserResult(StatusCode.error, err.error, null)
         })
@@ -53,10 +60,14 @@ class UserService {
         }
 
         return request(options).then((res: any): UserResult => {
+
+            STREAM.writeDebug(`LOGIN SUCCESS TYPE: KAKAO, userId = ${res.result.userId}`)
             return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
         }).catch((err: any): UserResult => {
             if (err) {
                 console.log('Error occured while login', err.statusCode, err.error)
+                STREAM.writeDebug(`ERROR userService.loginKakao(), statusCode = ${err.statusCode}, error = ${err.error}`)
+
             }
             return setUserResult(StatusCode.error, err.error, null)
         })
@@ -78,10 +89,12 @@ class UserService {
         console.log(options)
 
         return request(options).then((res: any): UserResult => {
+            STREAM.writeDebug(`LOGIN SUCCESS TYPE: NAVER, userId = ${res.result.userId}`)
             return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
         }).catch((err: any): UserResult => {
             if (err) {
                 console.log('Error occured while loginNaver', err.statusCode, err.error)
+                STREAM.writeDebug(`ERROR userService.loginNaver(), statusCode = ${err.statusCode}, error = ${err.error}`)
             }
             return setUserResult(StatusCode.error, err.error, null)
         })
@@ -178,77 +191,6 @@ class UserService {
         }).catch((err: any) => {
             console.error('GET /request/token > request error >>', err.statusCode, err.error)
         })
-    }
-
-    requestKakaoUserInfo = async () => {
-        const url = this.KAKAO_SERVER + '/v2/user/me'
-
-        const options = {
-            uri: url,
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
-            }
-        }
-
-        request(options).then((res: any) => {
-            console.log('GET /user/me result >>', res)
-
-        }).catch((err: any) => {
-            console.error('GET /user/me error >>', err.statusCode, err.error)
-        })
-		// function(res) {
-		// 	console.log(res)
-		// 	var account = res.kakao_account;
-
-		// 	var agreement = false;
-		// 	if (account.birthday_needs_agreement == true ) {
-		// 		agreement = true;
-		// 	}
-		// 	if (account.birthyear_needs_agreement == true ) {
-		// 		agreement = true;
-		// 	}
-		// 	if (account.gender_needs_agreement == true ) {
-		// 		agreement = true;
-		// 	}
-
-		// 	if(agreement) {
-		// 		alert('선택 정보에 동의해주셔야 회원가입이 가능합니다.');
-		// 		kakaoUnlink();
-		// 		return;
-		// 	}
-
-		// 	var params = {
-		// 		kakaoNo: res.id,
-		// 		userEmail: account.email,
-		// 		userName: account.profile.nickname,
-		// 		userCellNo: account.phone_number.replace(/-/gi, '').replace('+82 ', '0').replace('+1 ', ''),
-		// 		userInfo: account.birthyear + account.birthday
-		// 	}
-
-		// 	switch(account.gender) {
-		// 		case 'male':
-		// 			params.userGender = 'M'
-		// 			break;
-		// 		case 'female':
-		// 			params.userGender = 'W'
-		// 			break;
-		// 		default:
-		// 			params.userGender = 'X'
-		// 			break;
-		// 	}
-
-		// 	params.userId = params.kakaoNo + '@K';
-		// 	params.password = params.kakaoNo + '@K';
-
-		// 	checkKakaoRegistration(params);
-		// },
-		// fail: function(error) {
-		// 	console.log(
-		// 		'login success, but failed to request user information: '
-		// 		,error
-		// 	)
-		// },
     }
 
     SHA256 = (s: string): string => {

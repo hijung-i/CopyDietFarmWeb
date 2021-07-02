@@ -2,6 +2,7 @@ import { Console } from 'console'
 import { NextFunction, Request, Response, Router } from 'express'
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
 import { NiceUser, SessionUser, User } from '../models/user'
+
 import userService from '../services/userService'
 
 const router = Router()
