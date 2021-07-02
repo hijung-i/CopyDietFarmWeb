@@ -603,9 +603,6 @@ function closePopupModal() {
 }
 
 
-function openMyModal() {
-   $('#myModal').show();
-}
 
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {

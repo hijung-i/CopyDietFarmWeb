@@ -1,5 +1,6 @@
 var mypageModalTemplate = '';
 
+mypageModalTemplate += '<div class="m_modal" id="m_Modal">'
 mypageModalTemplate += '<div class="modal-content">';
 mypageModalTemplate += '<span class="close" onclick="closeModal()">&times;</span>';
 mypageModalTemplate += '<div class="signup_wrap">';
@@ -19,6 +20,7 @@ mypageModalTemplate += '<a type="button" href="/login-form" class="loginBtn">아
 mypageModalTemplate += '</div>';
 mypageModalTemplate += '</div>';
 mypageModalTemplate += '</div>' ;
+mypageModalTemplate += '</div>' ;
 
 var mypageModal = {
     template: mypageModalTemplate,
@@ -27,16 +29,19 @@ var mypageModal = {
         return {
         
         }
+    }, methods: {
+        openMyModal,
+        closeModal
     }
 }
 
 function openMyModal() {
-    $('.modal-content').show("display:block");
+    $('#m_Modal').show();
     scrollBlock();
 }
 
 function closeModal() {
     console.log("click")
-    $('.modal-content').hide();
+    $('#m_Modal').hide();
     scrollAllow();
 }
