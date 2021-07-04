@@ -114,7 +114,6 @@ function openInfoModal() {
     
     var inputs = document.querySelectorAll('input');
     $(inputs).click(function(){
-        console.log('done');
         
     });
 }

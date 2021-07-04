@@ -217,7 +217,7 @@ var app = new Vue({
             })
         },
         onDeliveryInfoSelected: function(data) {
-            console.log("event 발생", data)
+            console.log("event 발생", data);
             this.orderDTO.delivery = data;
 
             checkDeliveryAddress();

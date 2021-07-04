@@ -61,7 +61,6 @@ var app = new Vue({
         formatDate,
         applyCoupon,
         onDeliveryInfoSelected: function() {
-            console.log('select!');
             var checked = $('input[type=radio][name=list]:checked');
             app.orderDTO.delivery = app.deliveryList[checked.val()];
 

@@ -209,7 +209,7 @@
             <div class="shopBox01">
                 <h3>배송지</h3>
                 <template v-if="orderDTO.delivery != undefined">
-                    <p>{{ this.orderDTO.delivery.address }}</p>
+                    <p>{{ orderDTO.delivery.address }}</p>
                     <p>
                         <span>{{ orderDTO.delivery.userName }} &nbsp;&nbsp;&nbsp; {{ orderDTO.delivery.userCellNo }}</span>
                     </p>                    
