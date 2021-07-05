@@ -180,62 +180,61 @@
     }
         
         </style>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <%-include(webroot + 'views/general/head') %>
         <link rel="stylesheet" href="/css/product.css">
     </head>
 
 <body>
-                <!-- 공유하기 모달 -->
-                    <div id="share_modal" class="share_modal modal-overlay">
-                        
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            
-                            <div class="share_header">
-                                <h2>공유하기</h2>
-                                <span class="close" onclick="closeShareModal()">&times;</span>
-                            </div>
-
-                            <div class="share_body">
-                                <div class="kakaoTalk">
-                                    <p ><a href="javascript:void(0);" onclick="Kakao.Link.sendScrap(PARAMETER);"><img src="/images/shareKakao@2x.png" alt="url"></a></p>
-                                    <p>카카오톡</p>
-                                </div>
-                                <div class="sms">
-                                    <p><a href="javascript:void(0);"><img src="/images/shareSMS@2x.png" alt="url"></a></p>
-                                    <p>문자</p>
-                                </div>
-                                <div class="copyUrl">
-                                    <p><a href="javascript:void(0);"><img src="/images/url_icon_friend@2x.png" alt="url"></a></p>
-                                    <p>url 복사</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                <!-- 공유하기 모달 끝 -->
+        <!-- 공유하기 모달 -->
+            <div id="share_modal" class="share_modal modal-overlay">
                 
-                <div class="web_product_details">
-                    <%-include(webroot + 'views/general/header') %>
+                <!-- Modal content -->
+                <div class="modal-content">
+                    
+                    <div class="share_header">
+                        <h2>공유하기</h2>
+                        <span class="close" onclick="closeShareModal()">&times;</span>
+                    </div>
+
+                    <div class="share_body">
+                        <div class="kakaoTalk">
+                            <p ><a href="javascript:void(0);" onclick="Kakao.Link.sendScrap(PARAMETER);"><img src="/images/shareKakao@2x.png" alt="url"></a></p>
+                            <p>카카오톡</p>
+                        </div>
+                        <div class="sms">
+                            <p><a href="javascript:void(0);"><img src="/images/shareSMS@2x.png" alt="url"></a></p>
+                            <p>문자</p>
+                        </div>
+                        <div class="copyUrl">
+                            <p><a href="javascript:void(0);"><img src="/images/url_icon_friend@2x.png" alt="url"></a></p>
+                            <p>url 복사</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        <!-- 공유하기 모달 끝 -->
+        
+        <div class="web_product_details">
+            <%-include(webroot + 'views/general/header') %>
+        </div>
+
+        <div class="mobile_product_details">
+            <section class="detail_title">
+                <h2 class="title">{{ product.productName }}</h2>
+                <div class="btnback">
+                    <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
+                    </a>
                 </div>
 
-                <div class="mobile_product_details">
-                    <section class="detail_title">
-                        <h2 class="title">{{ product.productName }}</h2>
-                        <div class="btnback">
-                            <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
-                            </a>
-                        </div>
-
-                        <div class="btncart">
-                            <a href="/cart"><img
-                                src="/images/cart_icon_main@2x.png"
-                                alt=""
-                                style="width:21px;height:21px;left:10px"></a>
-                        </div>
-                    </section>
+                <div class="btncart">
+                    <a href="/cart"><img
+                        src="/images/cart_icon_main@2x.png"
+                        alt=""
+                        style="width:21px;height:21px;left:10px"></a>
                 </div>
+            </section>
+        </div>
                 <!--//모바일 헤더 끝-->
 
                 <!-- contents-wrap // -->
