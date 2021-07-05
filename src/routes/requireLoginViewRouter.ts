@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express'
+import { globalData } from '../app'
 import { SessionUser } from '../models/user'
 const router = Router()
 
@@ -28,7 +29,7 @@ router.get('/delivery-management', (req: Request, res: Response, next: NextFunct
 
 router.get('/delivery-management/:userId', (req: Request, res: Response, next: NextFunction) => {
     const userId = req.params.userId
-    render(req, res, 'mypage_deliver_mag', { userId })
+    render(req, res, 'mypage/mypage_deliver_mag', { userId })
 })
 
 router.get('/pick-product', (req: Request, res: Response, next: NextFunction) => {
@@ -59,14 +60,14 @@ router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
 
     checkLogin(req, res, (sessionUser) => {
-        render(req, res, 'mypage_orderList', {})
+        render(req, res, 'mypage/mypage_orderList', {})
     })
 })
 
 router.get('/point', (req: Request, res: Response, next: NextFunction) => {
 
     checkLogin(req, res, (sessionUser) => {
-        render(req, res, 'mypage_point', {})
+        render(req, res, 'mypage/mypage_point', {})
     })
 })
 
@@ -79,25 +80,26 @@ router.get('/coupon', (req: Request, res: Response, next: NextFunction) => {
 
 router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
     checkLogin(req, res, (sessionUser) => {
-        render(req, res, 'mypage_productReview', {})
+        render(req, res, 'mypage/mypage_productReview', {})
     })
 })
 
 router.get('/p_inquiry', (req: Request, res: Response, next: NextFunction) => {
     checkLogin(req, res, (sessionUser) => {
-        render(req, res, 'mypage_productInquiry', {})
+        render(req, res, 'mypage/mypage_productInquiry', {})
     })
 })
 
 router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
     checkLogin(req, res, (sessionUser) => {
-        render(req, res, 'mypage_seller_inquiry', {})
+        render(req, res, 'mypage/mypage_seller_inquiry', {})
     })
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
+    res.locals.webroot = globalData.getBaseDir()
     const defaultData: any = {
         currentPage: ''
     }

@@ -32,7 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/css/myPage.css">
     <link rel="stylesheet" href="/css/style_web.css">
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
 
 </head>
 <body>
@@ -54,7 +54,7 @@
         </section>
     </div>
     <div class="web_p_review">
-        <%-include('general/header') %>
+        <%-include(webroot + 'views/general/header') %>
     </div>
 
     <main id="myPage_review_ctt">
@@ -184,8 +184,8 @@
             </div>
         </div>
     </main>
-    <%-include('general/footer') %>
-    <script src="/js/mypage/mypageComponent.js"></script>
+    <%-include(webroot + 'views/general/footer') %>
+    <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/mypage/product_review.js"></script>
 </body>
     

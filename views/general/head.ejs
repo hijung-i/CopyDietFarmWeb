@@ -61,18 +61,4 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
     $.noConflict();
 
     Kakao.init('ed5593bb84a351edac6197d384fd3e1e');
-    AppleID.auth.init({
-        clientId : 'kr.co.dietfarm',
-        scope : 'name,email',
-        redirectURI: 'https://dietfarm.co.kr',
-        state : '12bf1f301be5e2d81aeb514acfa3a03742c20b5e2c424938b7f90f119666445c'
-    });
-
-    document.addEventListener('AppleIDSignInOnSuccess', function(data) {
-        console.log("AppleIdSignInSuccess", data);
-    })
-
-    document.addEventListener('AppleIdSignInFailure', function (error) {
-        console.log("AppleIdSignInFailure", error);
-    })
-4</script>
+</script>

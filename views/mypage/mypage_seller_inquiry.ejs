@@ -38,7 +38,7 @@
         <link rel="stylesheet" href="/css/product.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <!-- main.js -->
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
 </head>
 
 <body>
@@ -53,7 +53,7 @@
         </section>
     </div>
     <div class="web_p_inquiry">
-        <%-include('general/header') %>
+        <%-include(webroot + 'views/general/header') %>
     </div>
     <main id="mypage_seller_inq_ctt">
         <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
@@ -245,9 +245,9 @@
     </section>
 
     <!-- modal window end -->
-    <script src="/js/mypage/mypageComponent.js"></script>
+    <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/mypage/sellerInquiry.js"></script>
-    <%-include('general/footer') %>
+    <%-include(webroot + 'views/general/footer') %>
     </body>
 
 </html>

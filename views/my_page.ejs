@@ -11,7 +11,40 @@
 
         <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
         <style type="text/css">
-            @media screen and (max-width:1079px) {
+        .m_modal{
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .m_modal .modal-content {
+        background-color: #fefefe;
+        margin: 25% auto; /* 15% from the top and centered */
+        height:575px;
+        width:380px;
+                                
+    }
+    .modal-content > .modal-content_ctn {
+        width: 330px;
+        margin: 0 auto;
+        height: 575px;
+    }
+    .m_modal .close {
+        color: #aaa;
+        font-size: 28px;
+        float:right;
+        cursor:pointer;
+        margin-right:10px
+    }
+           @media screen and (max-width:1079px) {
                 #header_mypage{position: fixed;
                                 width: 100%;
                                 top: 0;
@@ -27,15 +60,15 @@
         </style>
         <link rel="stylesheet" href="/css/myPage.css">
         <link rel="stylesheet" href="/css/style.css">
-        <%-include('general/head') %>
-
+        <%-include(webroot + 'views/general/head') %>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   
     </head>
 
     <body>
 
  <!-- //마이페이지 로그인 모달 시작 -->
-     <div id="myModal" class="mypage_modal"></div>
+     
         <article class="skip_menu">
             <a href="#">
                 <span>바로가기1</span></a>
@@ -46,10 +79,11 @@
         </article>
         <div class="mobile_myinfo">
 
-            <%-include('general/header') %>
+            <%-include(webroot + 'views/general/header') %>
             </div>
             <!--//모바일 헤더 끝-->
             <main id="content" class="content" style="padding-top:60px">
+                <div id="app">
                 <div class="myPage">
                     <div class="myPage01">
                         <% if (!isLoggedIn) { %>
@@ -58,6 +92,7 @@
                         
                             <div class="mypage_btn">
                                 <button type="button" class="btnMyPage" onclick="openMyModal()">로그인 / 회원가입</button>
+                                <mypage-modal></mypage-modal>
                             </div>
                             <% } else if (isLoggedIn) { %>
                                 <ul style="border:none;">
@@ -73,7 +108,7 @@
                             <ul class="invite">
                                 <li><img src="/images/gift_icon@2x.png">친구 초대</li>
                                 <li>
-                                    <va href="/invite" style="border-radius: 20px;
+                                    <a href="/invite" style="border-radius: 20px;
                                     background-color: #F99319;
                                     padding: 4px;
                                     color: #fff;
@@ -183,18 +218,21 @@
                         href="javascript:location.href='/logout';">로그아웃</a></li> </ul> 
                         </div>
                 </div>
+           
+            </div>
             </main>
+            <script src="/js/mypage/mypageModal.js"></script>
             <script src="/js/mypage.js"></script>
             <script>
                 function openModal() {
                     console.log("click");
-                    $('#myModal').show();
+                    $('#mModal').show();
                 }
 
                 function closeModal() {
-                    $('#myModal').hide();
+                    $('#mModal').hide();
                 }
             </script>
-            <%-include('general/footer') %>
+            <%-include(webroot + 'views/general/footer') %>
         </body>
     </html>

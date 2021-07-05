@@ -41,7 +41,7 @@ class UserService {
         }).catch((err: any): UserResult => {
             if (err) {
                 console.log('Error occured while login', err.statusCode, err.error)
-                STREAM.writeDebug(`ERROR userService.login(), statusCode = ${err.statusCode}, error = ${err.error}`)
+                STREAM.writeError(`ERROR userService.login(), statusCode = ${err.statusCode}, error = ${err.error}`)
             }
             return setUserResult(StatusCode.error, err.error, null)
         })
@@ -66,7 +66,7 @@ class UserService {
         }).catch((err: any): UserResult => {
             if (err) {
                 console.log('Error occured while login', err.statusCode, err.error)
-                STREAM.writeDebug(`ERROR userService.loginKakao(), statusCode = ${err.statusCode}, error = ${err.error}`)
+                STREAM.writeError(`ERROR userService.loginKakao(), statusCode = ${err.statusCode}, error = ${err.error}`)
 
             }
             return setUserResult(StatusCode.error, err.error, null)
@@ -94,7 +94,7 @@ class UserService {
         }).catch((err: any): UserResult => {
             if (err) {
                 console.log('Error occured while loginNaver', err.statusCode, err.error)
-                STREAM.writeDebug(`ERROR userService.loginNaver(), statusCode = ${err.statusCode}, error = ${err.error}`)
+                STREAM.writeError(`ERROR userService.loginNaver(), statusCode = ${err.statusCode}, error = ${err.error}`)
             }
             return setUserResult(StatusCode.error, err.error, null)
         })

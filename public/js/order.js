@@ -619,10 +619,6 @@ $(function(){
         e.preventDefault();
         $('html,body').animate({scrollTop:0},600);
     });
-});
-
-$(document).ready(function(){
-
     var navHeight = $("html,body").height(); 
 
     $("#goingTo_top").hide();
@@ -630,7 +626,7 @@ $(document).ready(function(){
     $(window).scroll(function(){ 
         var rollIt = $(this).scrollTop() >= navHeight; 
 
-    if(rollIt){ 
+        if(rollIt){ 
 	        $("#goingTo_top").show().css({"position":"fixed"});
         }
         else{

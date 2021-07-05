@@ -33,12 +33,12 @@
         <link rel="stylesheet" href="/css/myPage.css">
         <link rel="stylesheet" href="/css/style_web.css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
         </head>
 
         <body>
             <div class="web_ol_detail">
-                <%-include('general/header') %>
+                <%-include(webroot + 'views/general/header') %>
                 </div>
                 <div class="mobile_ol_detail">
                     <section class="detail_title">
@@ -53,7 +53,7 @@
                 </div>
                 <input type="hidden" id="orderNumber" value="<%=orderNumber%>">
                 <main>
-                    <%-include('general/mypage') %>
+                    <%-include(webroot + 'views/general/mypage') %>
               <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
               <div class="mypage_content_wrap">
                 <nav class="content_lnb">
@@ -336,8 +336,8 @@
                   
                 </main>
                     <!--//order-->
-    <%-include('general/footer') %>
-    <script src="/js/mypage/mypageComponent.js"></script>
+    <%-include(webroot + 'views/general/footer') %>
+    <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/orderDetail.js"></script>
     
 </body>

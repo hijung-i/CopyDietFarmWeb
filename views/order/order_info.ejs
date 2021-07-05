@@ -148,7 +148,7 @@
     </style>
     <link rel="stylesheet" href="/css/style_web.css">
     <link rel="stylesheet" href="/css/myPage.css">
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
     <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
     <script src="https://cdn.bootpay.co.kr/js/bootpay-3.3.1.min.js"
             type="application/javascript"></script>
@@ -156,7 +156,7 @@
 </head>
 <body>
         <div class="web_order_info">
-            <%-include('general/header') %>
+            <%-include(webroot + 'views/general/header') %>
         </div>
         <section class="detail_title">
             <h2>주문하기</h2>
@@ -622,12 +622,12 @@
                </div>
              </div>
         </div>
-        <script src="/js/deliveryInfoModalComponent.js"></script>
+        <script src="/js/components/deliveryInfoModalComponent.js"></script>
         <script src="/js/orderDTO/OrderDTO.js"></script>
         <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
         <script src="/js/order.js"></script>
         
     
-        <%-include('general/footer') %>
+        <%-include(webroot + 'views/general/footer') %>
     </body>
 </html>

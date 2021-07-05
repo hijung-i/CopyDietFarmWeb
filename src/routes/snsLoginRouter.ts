@@ -3,6 +3,10 @@ import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/
 import { NiceUser, SessionUser, User } from '../models/user'
 import userService from '../services/userService'
 
+import * as winston from '../configs/winston'
+
+const STREAM = winston.stream
+
 const router = Router()
 const client_id = 'Kaft2327QoUkggPhMChf'
 const client_secret = 'qojmNfIAbA'
@@ -95,6 +99,8 @@ router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) 
 
 router.get('/callback/apple', (req: Request, res: Response, next: NextFunction) => {
     console.log('GET /callback/apple req.query >> ', req.query)
+    STREAM.writeDebug(`GET /user/callback/apple req.query => ${req.query}`)
+    
 })
 
 const userToSession = (req: Request, user: User) => {

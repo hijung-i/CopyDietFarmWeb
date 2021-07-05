@@ -81,6 +81,8 @@ function parsePointType(pointType) {
             return "회원가입";
         case "E":
             return "기간만료";
+        case "J":
+            return "물 마시기";
 
     }
 }

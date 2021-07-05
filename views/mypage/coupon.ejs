@@ -36,7 +36,7 @@
                 .myPage_title h2{display:none}
             }
         </style>
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
         </head>
 
         <body>
@@ -55,7 +55,7 @@
                     </div>
                 </section>
             </div>
-            <%-include('general/header') %>
+            <%-include(webroot + 'views/general/header') %>
                 <div class="mypage_coupon_ctt">
                   <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
                     <div class="mypage_content_wrap">
@@ -162,9 +162,9 @@
         
     };
     </script>
-     <script src="/js/mypage/mypageComponent.js"></script>
+     <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/mypage/coupon.js"></script>
-    <%-include('general/footer') %>
+    <%-include(webroot + 'views/general/footer') %>
         
     </body>
 </html>

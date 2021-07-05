@@ -12,7 +12,7 @@
     <title>다이어트팜:: 엄선된 건강 식단 마켓</title>
     <link rel="stylesheet" href="/css/style_web.css">
 
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
 
         <style type="text/css">
             @media screen and (max-width:1079px) {
@@ -81,7 +81,7 @@
 
 <body>
     <div class="web_shoppingcart">
-        <%-include('general/header') %>
+        <%-include(webroot + 'views/general/header') %>
     </div>
 
     <section class="detail_title">
@@ -252,7 +252,7 @@
             <button type="button" class="purchaseBtn" v-on:click="onSubmit()" style="border:none">구매하기</button>
         </div>
     </main>
-    <script src="/js/deliveryInfoModalComponent.js"></script>
+    <script src="/js/components/deliveryInfoModalComponent.js"></script>
     <script src="/js/orderDTO/OrderDTO.js"></script>
     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
     <script src="/js/cart.js"></script>
