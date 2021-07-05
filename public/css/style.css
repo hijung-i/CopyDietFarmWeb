@@ -1,6 +1,5 @@
 /* none scroll */
 body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-y:auto; }
-.popup_layer_wrapper{display:none}
 @font-face{ 
   font-family: '나눔고딕'; 
   font-weight: normal; 
@@ -1641,7 +1640,7 @@ div.slideMenu_top {display: none}
 /* 메뉴 아이콘 */
 
 .btn_ctn {width: 100%; height: auto;background: #ccc}
-/* #mHeader */ .sideMenu{display:none; width:100%; min-width: 360px; height: 100vh; background: #fff;}
+/* #mHeader */ .sideMenu{display:none; width:168px; height: 100vh; background: #fff;}
 .sideMenu h2{padding:15px 10px;text-align:left;position:relative;
 height:50px;overflow:hidden}
         

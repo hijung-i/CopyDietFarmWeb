@@ -200,7 +200,7 @@ var app = new Vue({
             }
             requestDeliveryGroup.deleteNoneSelectedProduct();
             products = requestDeliveryGroup.products;
-
+            
             var params = {
                 products
             }
@@ -215,8 +215,17 @@ var app = new Vue({
                 isRequired: true,
                 userId: true
             })
-        }
+        },
+            onDeliveryInfoSelected: function(data) {
+                console.log("event 발생", data);
+                this.orderDTO.delivery = data;
+    
+                checkDeliveryAddress();
+                this.$forceUpdate()
+            }
+        
     }
+    
 });
 
 $(function() {
@@ -254,23 +263,3 @@ function getSelectedOptionIndexes(ele) {
     
     return [prd, opt];
 }
-
-// function openInfoModal() {
-//     console.log("click");
-//     $('#iModal').show();  
-//     $('html,body').css({'overflow':'hidden','height':'100%'});  
-//     $('#iModal').on('scroll touchmove mousewheel',function(event) {
-//         event.preventDefault();
-//         event.stopPropagation();
-//         return false;
-//     })
-
-//     getDeliveryInfoList();
-
-//     var inputs = document.querySelectorAll('input');
-//     $(inputs).click(function(){
-//         console.log('done');
-        
-//     });
-
-// }
