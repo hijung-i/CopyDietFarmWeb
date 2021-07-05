@@ -205,13 +205,15 @@
         </div>
 
         <section id="shoplist_t_price_web">
-            <delivery-info-modal v-bind:order-dto="orderDTO"></delivery-info-modal>
+            <delivery-info-modal v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
             <div class="shopBox01">
                 <h3>배송지</h3>
-                <p>서울 강남구 테헤란로 8길 11-4 202호</p>
-                <p>
-                    <span>박민지 &nbsp;&nbsp;&nbsp;010-3288-0568</span>
-                </p>
+                <template v-if="orderDTO.delivery != undefined">
+                    <p>{{ orderDTO.delivery.address }}</p>
+                    <p>
+                        <span>{{ orderDTO.delivery.userName }} &nbsp;&nbsp;&nbsp; {{ orderDTO.delivery.userCellNo }}</span>
+                    </p>                    
+                </template>
                 <button type="button" id="my-button" class="shopBtn01" onclick="openInfoModal()">배송지 변경</button>
                 
             </div>
