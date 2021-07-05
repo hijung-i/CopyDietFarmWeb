@@ -1609,7 +1609,7 @@ div.slideMenu_top {display: none}
 /* 메뉴 아이콘 */
 
 .btn_ctn {width: 100%; height: auto;background: #ccc}
-/* #mHeader */ .sideMenu{display:none; width:100%; min-width: 360px; height: 100vh; background: #fff;}
+/* #mHeader */ .sideMenu{display:none; width:168px; height: 100vh; background: #fff;}
 .sideMenu h2{padding:15px 10px;text-align:left;position:relative;
 height:50px;overflow:hidden}
         
