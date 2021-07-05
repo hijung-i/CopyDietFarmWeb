@@ -376,6 +376,7 @@ height:50px;overflow:hidden}
 
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  
   .faq h3{display:none}
   .keyword{display:none}
   #header_common.main ~ .content {
@@ -939,6 +940,7 @@ border-spacing: 0 20px;font-size:14px}
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
+.review_btn{display:none}
 .pick_list_null{width:100%;text-align:center;margin-top:140px;margin-bottom:200px}
 .pick_list_null img{width:100px!important;height:100px!important}
 .pick_list_null p{padding-top:20px;font-size:16px;color:#878787}
