@@ -100,7 +100,11 @@ router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) 
 router.get('/callback/apple', (req: Request, res: Response, next: NextFunction) => {
     console.log('GET /callback/apple req.query >> ', req.query)
     STREAM.writeDebug(`GET /user/callback/apple req.query => ${req.query}`)
-    
+})
+
+router.post('/callback/apple', (req: Request, res: Response, next: NextFunction) => {
+    console.log('POST /callback/apple req.query >> ', req.query)
+    STREAM.writeDebug(`POST /user/callback/apple req.query => ${req.query}`)
 })
 
 const userToSession = (req: Request, user: User) => {
