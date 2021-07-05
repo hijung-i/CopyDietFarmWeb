@@ -1,6 +1,5 @@
 /* none scroll */
 body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-y:auto; }
-.popup_layer_wrapper{display:none}
 @font-face{ 
   font-family: '나눔고딕'; 
   font-weight: normal; 
