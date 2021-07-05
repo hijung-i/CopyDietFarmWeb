@@ -35,8 +35,8 @@ var mypageModal = {
     }, mounted: function () {
         AppleID.auth.init({
             clientId : 'kr.co.dietfarm',
-            scope : 'name email',
-            redirectURI: 'https://dietfarm.co.kr',
+            scope : 'user name email',
+            redirectURI: 'https://dietfarm.co.kr/user/callback/apple',
             state : '12bf1f301be5e2d81aeb514acfa3a03742c20b5e2c424938b7f90f119666445c'
         });
         console.log("appleLogin init")
