@@ -567,6 +567,7 @@ $(function(){
                   event.stopPropagation();
                   return false;
                })
+               $('.popup_layer_wrapper').css({'display':'block'});
             }
 
          } 

@@ -665,6 +665,7 @@ border-spacing: 0 20px;font-size:14px}
   justify-content: center;
   background: rgba(0, 0, 0, 0.70);
   z-index: 9999;
+  display: none;
 }
 
 /* 메인 팝업창 (회원가입) */
