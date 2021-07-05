@@ -292,7 +292,7 @@ margin-left:14px
     }
     .inquiry_product .inquiry_detail ul li{margin-bottom:7px}
     .web_coupon_tit{margin-bottom:20px}
-    #content{width:1080px;margin:0 auto}
+    #content{margin:0 auto}
     #cBtn{border: 1px solid #BBBBBB;
         width:330px;
         background-color: #fff;
@@ -316,13 +316,13 @@ margin-left:14px
 .coupon_web_top{margin-bottom:26px}
 .couponBtn{display:none}
 .coupon_table_top ul{display: flex;
-    justify-content: space-between;
-    padding-left: 54px;
-    padding-right: 54px;
-    border-top: 1px solid #000;
-    padding-top: 17px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 17px;}
+                     justify-content: space-between;
+                     padding-left: 54px;
+                     padding-right: 54px;
+                     border-top: 1px solid #000;
+                     padding-top: 17px;
+                     border-bottom: 1px solid #000;
+                     padding-bottom: 17px;}
 .coupon_list ul{flex-flow:row-reverse}
 .coupon_list .sale{position:absolute;left:150px}
 .coupon_list h3{font-size: 12px !important;font-weight:normal!important;position:absolute;left:600px}

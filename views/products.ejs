@@ -24,6 +24,7 @@
         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
         crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/myPage.css">
 </head>
 <body>
     <%-include(webroot + 'views/general/header') %>
@@ -38,9 +39,9 @@
             <input type="hidden" id="keyword" value="<%=keyword %>">
         <% } %>
         <main id="content" class="content">
-           
-            
-            <div class="main_sub_wrap">
+           <div id="app">
+             <%-include('general/header') %>
+              <div class="main_sub_wrap">
                 <section class="main_sub">
                     <h2 class="keyword"></h2>
 
@@ -91,10 +92,15 @@
                     </div>
                 </section>
             </div>
-
+          </div>
+      
         </main>
         <script src="/js/products.js"></script>
+        <%-include('general/footer') %>
 
+<<<<<<< HEAD
     <%-include(webroot + 'views/general/footer') %>
+=======
+>>>>>>> 594a54041296cb6307458c5df7924855c9815d56
 </body>
 </html>

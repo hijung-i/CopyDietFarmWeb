@@ -27,7 +27,7 @@
     /* Modal Content/Box */
     .m_modal .modal-content {
         background-color: #fefefe;
-        margin: 25% auto; /* 15% from the top and centered */
+        margin: 15% auto; /* 15% from the top and centered */
         height:575px;
         width:380px;
                                 
@@ -78,12 +78,11 @@
                 <span>바로가기3</span></a>
         </article>
         <div class="mobile_myinfo">
-
-            <%-include(webroot + 'views/general/header') %>
-            </div>
-            <!--//모바일 헤더 끝-->
-            <main id="content" class="content" style="padding-top:60px">
-                <div id="app">
+        </div>
+        <!--//모바일 헤더 끝-->
+        <main id="content" class="content" style="padding-top:60px">
+            <div id="app">
+                    <%-include(webroot + 'views/general/header') %>
                 <div class="myPage">
                     <div class="myPage01">
                         <% if (!isLoggedIn) { %>
@@ -92,7 +91,7 @@
                         
                             <div class="mypage_btn">
                                 <button type="button" class="btnMyPage" onclick="openMyModal()">로그인 / 회원가입</button>
-                                <mypage-modal></mypage-modal>
+                        
                             </div>
                             <% } else if (isLoggedIn) { %>
                                 <ul style="border:none;">
@@ -223,16 +222,6 @@
             </main>
             <script src="/js/mypage/mypageModal.js"></script>
             <script src="/js/mypage.js"></script>
-            <script>
-                function openModal() {
-                    console.log("click");
-                    $('#mModal').show();
-                }
-
-                function closeModal() {
-                    $('#mModal').hide();
-                }
-            </script>
             <%-include(webroot + 'views/general/footer') %>
         </body>
     </html>
