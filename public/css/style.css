@@ -930,7 +930,6 @@ border-spacing: 0 20px;font-size:14px}
 .pick_list_null p{margin-top:28.49px;font-size:16px;color:#878787;padding-bottom:189.51px}
   /* 멀티플 슬라이드 */
   .mtpSlideTit {margin: 24px 0 21px 0;}
-
 /*모바일에서 안보이는 요소 */
 .alarm_boxes h4{display:none}
 }
@@ -989,6 +988,7 @@ border-spacing: 0 20px;font-size:14px}
   overflow: auto;
   margin-left: 14px;
 font-weight:normal}
+
 /* 1초 회원가입 */
 #popup_layer {display: none !important;}
 
@@ -1005,6 +1005,7 @@ font-weight:normal}
     top: 30%;
     text-align: center;
   }
+
   #content .main_sub img{padding:10px;border-radius:5px}
   #content .main_sub ul{margin-left:10px}
   #content .sub_items ul li{margin-bottom:44px}
@@ -1113,7 +1114,6 @@ font-weight:normal}
     font-weight: 700;
   }
 .sideMenu_Header {display: none;}
-
 .sub_items, .n_sort{max-width:1080px;margin:0 auto;width:1080px}
 .delete_btn{float:right;position:relative;top:-100px;left:20px}
 .event_title{max-width:1080px;margin:0 auto;margin-bottom:20px}
@@ -1128,11 +1128,11 @@ font-weight:normal}
 .mobile_index{display:none}
 .banner01 img{display:none}
 .long-banner{margin-top:100px;margin-bottom:30px}
-.body_bottom h3{    font-size: 18px;
+.body_bottom h3{font-size: 18px;
   font-weight: bold;
   margin-bottom: 30px;
   max-width: 1080px;
-  margin-top: 70px;}
+  margin-top: 70px}
 .w_best{width:1080px;margin-bottom:80px;max-width: 1080px;margin: 0 auto;}
 .w_best .thum ul{margin-top:-20px}
 .w_best .desc .sale{font-size:16px; font-weight:bold}
@@ -2103,12 +2103,10 @@ width:400px
 .t2{font-size:12px;line-height:14px;margin-top:5px;}
 .order_list_box{display:flex;justify-content:flex-start;margin-top:10px;margin-bottom:10px}
 .order ul li{white-space:nowrap}
-.order_list_btn .done {
-  font-size: 11px;
-}
 .order0{margin-top:-10px}
 .btnA{width:69px;height:26px;background-color:#F99319;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:10px;}
 .btnB{width:69px;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:11px}
+.btnC{width:69px;height:26px;background-color:#F99319;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:10px;}
 .grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;padding:0;padding-top:10px}
 
 /*주문 내역 없을때*/
@@ -2895,6 +2893,7 @@ display: flex;
 
   .r_products .responsive {
     position: absolute;
+    overflow: hidden;
   }
 
   .swiper-container{
