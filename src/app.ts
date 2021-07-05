@@ -65,7 +65,7 @@ app.use(Express.static(path.join(__baseDir, 'public')))
 app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
     let err = new Error('Not Found!') as Err
     err.status = 404
-    STREAM.writeError(req.url)
+    STREAM.writeError(`NOT FOUND! METHOD: ${req.method}, URI: ${req.url}`)
     STREAM.writeError(err)
     next(err)
 })
