@@ -1,8 +1,8 @@
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<mypage-modal></mypage-modal>
 <header id="header_common" 
     class="<% if(currentPage != 'main' && currentPage != 'products') { %>sub<% } else { %>main<% } %>" >
-
+    <mypage-modal></mypage-modal>
     <div class="top_util">
         <ul class="menu_list" id="menu_list_header">
             <% if(isLoggedIn != true) { %>

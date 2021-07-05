@@ -17,16 +17,17 @@
                 #header_common.sub ~ .content{margin-top:140px!important}
                 #nav a{margin-left:10px}    
             }
-        </style>
+                 </style>
     <%-include('general/head') %>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- font awesome -->
     <link rel="stylesheet"
         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
         crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/myPage.css">
 </head>
 <body>
-    <%-include('general/header') %>
         <input type="hidden" id="listType" value="<%=listType %>">
         <% if(listType == 'CATEGORY') { %>
             <input type="hidden" id="category1Code" value="<%=category1Code %>">
@@ -38,9 +39,9 @@
             <input type="hidden" id="keyword" value="<%=keyword %>">
         <% } %>
         <main id="content" class="content">
-           
-            
-            <div class="main_sub_wrap">
+           <div id="app">
+             <%-include('general/header') %>
+              <div class="main_sub_wrap">
                 <section class="main_sub">
 
                     <% if( listTitle != 'SEARCH' && listTitle == 'CATEGORY' ) { %>
@@ -97,10 +98,11 @@
                     </div>
                 </section>
             </div>
-
+          </div>
+      
         </main>
         <script src="/js/products.js"></script>
+        <%-include('general/footer') %>
 
-    <%-include('general/footer') %>
 </body>
 </html>
