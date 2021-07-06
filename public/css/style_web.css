@@ -220,7 +220,7 @@ width: 400px; height: 147px;color: #000; background: #fff;margin: 44px -10px 0 0
 .main_contents .center p > span, .main_contents .right p > span {font-size: 20px; font-weight: 100; color: #ccc;padding: 12px 0 0 12px}
 
 /* contents */
-.content_lnb {width:138px; text-align: center;margin-left:180px}
+.content_lnb {width:138px; text-align: center;}
 .content_lnb a {color:#000}
 .content_lnb li {width:138px;padding: 16px 0;    border: 1px solid #F5F5F5;height: 50px}
 .content_lnb li.on {background: #F99319}

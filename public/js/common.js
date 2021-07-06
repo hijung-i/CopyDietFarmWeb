@@ -403,18 +403,18 @@ window.onclick = function(event) {
 //메인화면 진입 시 팝업 창 
 
 $(function(){
-	var popup = 
-	'<div class="popup_box">' +
-	'<div class="popup_cont">' +
-	'<div class="index-modal">' +
-	'<p class="sale_coupon"><img src="/images/sale_coupon@2x.png"></p>' +
-	'<span class="close" onclick="closePopupModal();">x</span>' +
-	'<p class="app01">앱 설치 시</p>' +
-	'<p><span>할인 쿠폰 즉시 지급!</span></p>' +
-	'<a href="https://play.google.com/store/apps/details?id=com.dietFarm"><p class="app02">앱 설치하고 쿠폰받기 > </p></a>' +
-	'</div>' +
-	'</div>'+
-	'</div>';
+	// var popup = 
+	// '<div class="popup_box">' +
+	// '<div class="popup_cont">' +
+	// '<div class="index-modal">' +
+	// '<p class="sale_coupon"><img src="/images/sale_coupon@2x.png"></p>' +
+	// '<span class="close" onclick="closePopupModal();">x</span>' +
+	// '<p class="app01">앱 설치 시</p>' +
+	// '<p><span>할인 쿠폰 즉시 지급!</span></p>' +
+	// '<a href="https://play.google.com/store/apps/details?id=com.dietFarm"><p class="app02">앱 설치하고 쿠폰받기 > </p></a>' +
+	// '</div>' +
+	// '</div>'+
+	// '</div>';
 
    // var popup =
    // '<div id="popup_layer" class="checkLogin">' +
@@ -484,27 +484,28 @@ $(function(){
    // $('#popup_layer').hide();
    // $("#popup_layer").html(popup);
    
+   // if(iOS || isBrowser && $('html').width() <= 1079) {
+   //    if($('.popup_layer_wrapper').length > 0) {
+   
+   //       $(".popup_layer_wrapper").html(popup);
+      
+   //       $('html,body').css({'overflow':'hidden','height':'100%'});
+   //       $('html,body').on('scroll touchmove mousewheel', function(event) {
+   //          event.preventDefault();
+   //          event.stopPropagation();
+   //          return false;
+   //       })
+   //       $('.popup_layer_wrapper').css({'display':'block'});
+   //    }
+   
+   // } 
+
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
 		// 로그아웃 시에만 표시
 		console.log(data.result);
 		if(data.result.isLoggedIn == false) {
          
-         if(iOS || isBrowser && $('html').width() <= 1079) {
-            if($('.popup_layer_wrapper').length > 0) {
-
-               $(".popup_layer_wrapper").html(popup);
-            
-               $('html,body').css({'overflow':'hidden','height':'100%'});
-               $('html,body').on('scroll touchmove mousewheel', function(event) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  return false;
-               })
-               $('.popup_layer_wrapper').css({'display':'block'});
-            }
-
-         } 
          if ($('#naver_id_login').length > 0) {
             ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
             function(data) {
@@ -521,13 +522,20 @@ $(function(){
 	
 });
 
+if($('#popup_layer_wrapper').css({'display':'block'})) {
+   $('html,body').css({'overflow':'hidden','height':'100%'});
+   $('html,body').on('scroll touchmove mousewheel', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+   })
+}
+
 function closePopupModal() {
    $('.popup_layer_wrapper').hide();
    $('html,body').css({'overflow':'visible'});
    $('html,body').off('scroll touchmove mousewheel');
 }
-
-
 
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {

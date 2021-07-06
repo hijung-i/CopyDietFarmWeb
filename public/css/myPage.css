@@ -419,10 +419,10 @@ margin-left:14px
         .mypage_content_wrap {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
-            margin-bottom:100px;
-            width:1300px
-        
+            padding-top: 30px;
+            padding-bottom:100px;
+            width:1080px;
+            margin: 0 auto;
         }
         .box_top{display:flex}
         .box_top ul{margin-left:20px}

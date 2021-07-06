@@ -678,7 +678,6 @@ border-spacing: 0 20px;font-size:14px}
   justify-content: center;
   background: rgba(0, 0, 0, 0.70);
   z-index: 9999;
-  display: none;
 }
 
 /* 메인 팝업창 (회원가입) */
@@ -1227,11 +1226,9 @@ font-weight:normal}
   width: 100%;
   max-width: 1080px;
 }
-#content{width:100%;/*max-width:1080px;*/margin:0 auto; /* padding-left:15px;padding-right:15px */}
+
 main#content.coupon {
   width: 831px;
-  margin: 0 auto;
-  margin-left:80px
 }
 #content .pick_wrap{width:1080px;}
 #content .pick_wrap{margin:10px 10px;width:100%;}
