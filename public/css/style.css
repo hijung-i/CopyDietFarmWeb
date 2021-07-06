@@ -720,8 +720,8 @@ border-spacing: 0 20px;font-size:14px}
 }
 .index-modal .close img{width:14px;height:14px}
 .sale_coupon{position:relative;top:-20px}
-.sale_coupon img {width:168px;height:87px}
-.index-modal .app01{color:#4A4A4A;font-size:16px;font-weight:bold;margin-top:30px;margin-bottom:7px}
+.sale_coupon img {width:157px;height:87px}
+.index-modal .app01{color:#4A4A4A;font-size:16px;font-weight:bold; margin-bottom:7px}
 .index-modal p span{ 
   color:#FF8B00;
   font-weight:bold;
@@ -737,7 +737,7 @@ border-spacing: 0 20px;font-size:14px}
   width: 52px; height: 52px;
 }
 .login_with_sns li:not(:last-child) {padding-right: 17px;}
-.index-modal .app02{width:270px;height:49px;background-color:#000000;font-size:16px;color:#ffffff;margin-top:19px;padding-top:16px}
+.index-modal .app02{width:270px;height:49px;background-color:#000000;font-size:16px;color:#ffffff;margin-top:21px;padding-top:16px}
 /*버튼영역*/
 .popup_box .popup_btn {display:table;table-layout: fixed;width:100%;height:45px;background:#5d5d5d;word-break: break-word;}
 .popup_box .popup_btn a {position: relative; display: table-cell; height:30px; color:#fff;text-align:center;vertical-align:middle;text-decoration:none; background:#FF8B00}
