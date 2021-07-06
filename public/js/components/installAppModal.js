@@ -13,9 +13,5 @@ installAppTemplate += '</div>'
 installAppTemplate += '</div>'
 
 var installAppModal = {
-    template: installAppTemplate,
-    props: [],
-    methods: {
-          
-        }
-    }
+    template: installAppTemplate
+}

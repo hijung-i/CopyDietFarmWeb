@@ -200,32 +200,32 @@
                 
             </div>
         <!-- 공유하기 모달 끝 -->
-        
-        <div class="web_product_details">
-            <%-include(webroot + 'views/general/header') %>
-        </div>
+        <main id="content">
+            <div class="web_product_details">
+                <%-include(webroot + 'views/general/header') %>
+            </div>
+            
+            <div class="mobile_product_details">
+                <section class="detail_title">
+                    <h2 class="title">{{ product.productName }}</h2>
+                    <div class="btnback">
+                        <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
+                        </a>
+                    </div>
 
-        <div class="mobile_product_details">
-            <section class="detail_title">
-                <h2 class="title">{{ product.productName }}</h2>
-                <div class="btnback">
-                    <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
-                    </a>
-                </div>
-
-                <div class="btncart">
-                    <a href="/cart"><img
-                        src="/images/cart_icon_main@2x.png"
-                        alt=""
-                        style="width:21px;height:21px;left:10px"></a>
-                </div>
-            </section>
-        </div>
-                <!--//모바일 헤더 끝-->
+                    <div class="btncart">
+                        <a href="/cart"><img
+                            src="/images/cart_icon_main@2x.png"
+                            alt=""
+                            style="width:21px;height:21px;left:10px"></a>
+                    </div>
+                </section>
+            </div>
+                    <!--//모바일 헤더 끝-->
 
                 <!-- contents-wrap // -->
                 <input type="hidden" id="productCode" value="<%=productCode %>">
-                <main id="content">
+
                     <div class="product_top">
                         <div class="tabMenu">
                             <div id="detail_info" class="pdt_detai_tab_vn">

@@ -1,6 +1,6 @@
 // 운영
-var API_SERVER = "http://localhost:9090";
-// var API_SERVER = "https://dietfarm119.co.kr";
+// var API_SERVER = "http://localhost:9090";
+var API_SERVER = "https://dietfarm119.co.kr";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "https://"+ SERVER_IP;
 
@@ -407,67 +407,42 @@ window.onclick = function(event) {
 //메인화면 진입 시 팝업 창 
 
 $(function(){
-   var popup =
-   '<div id="popup_layer" class="checkLogin">' +
-   '<div class="popup_box">' +
-   //'<span class="close" onclick="closePopupModal();">x</span>' +
-   '<div class="popup_cont">' +
-   '<div class="index-modal">' +
-   '<h2>SNS 1초 회원가입!</h2>' +
-   '<p class="second">1초 간편 회원가입 후,</p>' +
-   '<p><span>10000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
-   '<ul class= "login_with_sns">' +
-   '<li class="kakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>' +
-   '<li class="naver" id="naver_id_login"><img src="/images/naver_login@2x.png"></li>' +
-   '</ul>' +
-   '<a href="/login-form"><p class="id-login">아이디 로그인</p></a>' +
-   '</div>' +
-   '</div>' +
-   '</div>';
-
-   userAgent = window.navigator.userAgent.toLowerCase()
-   
-   iOS = /iphone|ipod|ipad/.test(userAgent);
-   isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
-   // if(iOS) {
-   //    // 앱설치 모달
-   //    // $("#popup_layer").html(popup);
-   // } else 
-   // $('#popup_layer').hide();
-   // $("#popup_layer").html(popup);
-   
-   if(iOS || isBrowser && $('html').width() <= 1079) {
-      if($('.popup_layer_wrapper').length > 0) {
-         $('html,body').css({'overflow':'hidden','height':'100%'});
-         $('html,body').on('scroll touchmove mousewheel', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            return false;
-         })
-         $('.popup_layer_wrapper').css({'display':'block'});
-      } 
-
-   } 
-
-	ajaxCall('/user/login', '', 'GET',
-	function(data) {
-		// 로그아웃 시에만 표시
-		console.log(data.result);
-		 if(data.result.isLoggedIn == false) {
+   // var popup =
+   // '<div id="popup_layer" class="checkLogin">' +
+   // '<div class="popup_box">' +
+   // //'<span class="close" onclick="closePopupModal();">x</span>' +
+   // '<div class="popup_cont">' +
+   // '<div class="index-modal">' +
+   // '<h2>SNS 1초 회원가입!</h2>' +
+   // '<p class="second">1초 간편 회원가입 후,</p>' +
+   // '<p><span>10000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
+   // '<ul class= "login_with_sns">' +
+   // '<li class="kakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>' +
+   // '<li class="naver" id="naver_id_login"><img src="/images/naver_login@2x.png"></li>' +
+   // '</ul>' +
+   // '<a href="/login-form"><p class="id-login">아이디 로그인</p></a>' +
+   // '</div>' +
+   // '</div>' +
+   // '</div>';
+	// ajaxCall('/user/login', '', 'GET',
+	// function(data) {
+	// 	// 로그아웃 시에만 표시
+	// 	console.log(data.result);
+	// 	 if(data.result.isLoggedIn == false) {
          
-         if ($('#naver_id_login').length > 0) {
-            ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-            function(data) {
-               $('#naver_id_login').html(data);
-               $('.modal-content #naver_id_login a').html('네이버로 로그인');
-            }, function (err) {
-               console.log("error login button", err);
-            })
-         }
-      } 
-	}, function(err){
-		console.error(err);
-	})
+   //       if ($('#naver_id_login').length > 0) {
+   //          ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+   //          function(data) {
+   //             $('#naver_id_login').html(data);
+   //             $('.modal-content #naver_id_login a').html('네이버로 로그인');
+   //          }, function (err) {
+   //             console.log("error login button", err);
+   //          })
+   //       }
+   //    } 
+	// }, function(err){
+	// 	console.error(err);
+	// })
 	
 });
 

@@ -6,7 +6,8 @@ var app = new Vue({
     el: 'main',
     components: {
         'product-review-modal': productReviewModal,
-        'product-inquiry-modal': productInquiryModal
+        'product-inquiry-modal': productInquiryModal,
+        'mypage-modal': signModal
     },
     data: {
         RESOURCE_SERVER,

@@ -1,4 +1,9 @@
-
+new Vue({
+    el: 'main',
+    components: {
+        'mypage-modal': signModal
+    }
+})
 $(function () {
     getDatas();
 
