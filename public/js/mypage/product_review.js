@@ -1,7 +1,8 @@
 var app = new Vue({
     el: 'main',
     components: {
-        'mypage-component': mypageComponent
+        'mypage-component': mypageComponent,
+        'product-review-modal': productReviewModal
     },
     data: {
         RESOURCE_SERVER,

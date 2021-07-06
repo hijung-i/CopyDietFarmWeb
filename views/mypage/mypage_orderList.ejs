@@ -22,7 +22,6 @@
                             height: 80px;
                             top: 0;
                             background-color: #fff;
-                            z-index: 9999;
                             margin-bottom: 20px;}
                  #content{padding-top:60px}
         }
@@ -207,7 +206,7 @@
                                                         </template>
                                                         <template v-if="'AC'.includes(product.orderStatus)">
                                                             <li v-if="product.reviewState == 'N'">
-                                                                <button type="button" class="btnA">리뷰작성</button>
+                                                                <button type="button" class="btnA" onclick="openReviewModal()">리뷰작성</button>
                                                             </li>
                                                             <li v-else>
                                                                 <button type="button" class="btnC">리뷰완료</button>
@@ -253,83 +252,15 @@
                     </div>
                 </div>
             </div>
-     </main>
+            <product-review-modal></product-review-modal>
+        </main>
 
-    <!-- modal window -->
-    <div id="ex1" class="modal">
-
-        <header class="detail_title01 orderlistModal">
-            <ul>
-                <li>
-                    <h2>배송조회</h2>
-                </li>
-                <li class="ordlist_clsWindow">
-                    <i class="fal fa-times"></i>
-                </li>
-            </ul>
-            <h2 class="title">(아임월) 다이어트 굿 밀도시락어쩌구저쩌구</h2>
-        </header>
-
-        <div class="circle_line">
-            <div class="line2"></div>
-            <ul>
-                <li><img src="/images/one_icon_order.png"></li>
-                <li><img src="/images/one_icon_order.png"></li>
-                <li><img src="/images/one_icon_order.png"></li>
-                <li><img src="/images/one_icon_order.png"></li>
-                <li><img src="/images/one_icon_order.png"></li>
-            </ul>
-        </div>
-        <div class="d_state">
-            <ul>
-                <li>상품인수</li>
-                <li>상품이동중</li>
-                <li>배송지도착</li>
-                <li>배송출발</li>
-                <li>배송도착</li>
-            </ul>
-        </div>
-        <div class="d_date">
-            <ul>
-                <li>2.23</li>
-                <li>2.23</li>
-                <li>2.23</li>
-                <li>2.23</li>
-                <li>2.23</li>
-            </ul>
-        </div>
-
-        <div class="addr">
-            <div class="addr01">
-                <ul>
-                    <li class="p">보내는분</li>
-                    <li class="a">용산</li>
-                </ul>
-            </div>
-            <div class="addr02">
-                <ul>
-                    <li class="p">받는분</li>
-                    <li class="a">역삼(대)</li>
-                </ul>
-            </div>
-        </div>
-        <div class="d_num">
-            <ul>
-                <li class="d">운송장번호</li>
-                <li class="num">롯데택배 236308075290</li>
-            </ul>
-        </div>
-
-        <div class="delivery_list_null">
-            <img src="/images/cart_icon_order.png">
-            <p class="no_list">배송 준비 중입니다.</p>
-        </div>
-    </div>
+  
     <!-- modal -->
     <!-- body_contents tab3 -->
     <%-include(webroot + 'views/general/footer') %>
 
-        
+<script src="/js/productReviewModal.js"></script>        
 <script src="/js/components/mypageComponent.js"></script>
 <script src="/js/orderList.js"></script>
 </body>
