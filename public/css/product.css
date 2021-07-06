@@ -206,6 +206,7 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 
 /*products_web*/
 @media screen and (min-width:1080px){
+#review_Modal, #inquiry_Modal{display:none}
 #tab1_mobile {height: 769px;}
 .swiper-pagination {
     width: 10%;
@@ -279,7 +280,6 @@ label:after {
 border-top:1px solid #BBBBBB;border-bottom:1px solid #BBBBBB;border-left:1px solid #BBBBBB;
 text-align:center;padding-top:24px;width:204px;height:68px;font-size:18px;color: #707070 !important;font-weight:bold}
 #btn_mobile{display:none}
-.review_btn button{display:none}
 .common_btn_wrap{margin-left:-10px}
 button.h_btn {width:51px;height:45px;background-color:#fff;border:1px solid #F99319;border-radius:5px;position:relative;top:7px}
 button.h_btn img{width:26px;height:21px;}
@@ -790,7 +790,7 @@ div #ex1.modal ul li {float:left}
 
 
 @media screen and (max-width:1079px){
-.review_btn_web button{display:none}
+
 .v_top_txt_box .modal p{text-align:center}
 .products_ex{width:100%;border-top:8px solid #f1f1f1;}
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:15px;padding-right:15px}
@@ -806,7 +806,6 @@ div #ex1.modal ul li {float:left}
 
 .review_btn{display:flex;justify-content:center; padding-bottom:21px;border-bottom:8px solid #f1f1f1;border-top:2px solid #E6E6E6;padding-top:28px}
 .review_btn button{border:2px solid #F99319;background-color:#fff;color:#F99319;font-weight:bold;border-radius:5px}
-.review_btn_web
 .v_floating_wrap{display:none}
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}

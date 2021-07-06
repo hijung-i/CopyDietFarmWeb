@@ -115,7 +115,20 @@ a:hover{text-decoration:none;}
 .detail_title .title{width:200px;white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title_header a img{position:absolute;top:80px}
 /* *{padding-left:15px;padding-right:15px} */
-
+.group input[type="checkbox"]{display:none;}
+.group input[type="checkbox"] + label{
+  display: inline-block;
+  margin: -2px 10px 0 0;
+  vertical-align: middle;
+  background: url(../images/beforecheck_icon_join.png)left top no-repeat;
+  cursor: pointer;
+  background-size:19px 19px;
+ padding-left:33px;
+ padding-bottom:4px
+}
+.group input[type="checkbox"]:checked + label{
+  background: url(../images/aftercheck_icon_join.png)no-repeat;
+   background-size:19px 19px;}
 /* Header */
 #wrap{position:relative;width:100%;z-index:1;}
 #headerwrap{height:90px;}
@@ -947,6 +960,10 @@ border-spacing: 0 20px;font-size:14px}
   .mtpSlideTit {margin: 24px 0 21px 0;}
 /*모바일에서 안보이는 요소 */
 .alarm_boxes h4{display:none}
+
+/*제품상세페이지 모달 버튼*/
+.review_btn button{width:90%;height:45px}
+
 }
 
 
@@ -954,7 +971,9 @@ border-spacing: 0 20px;font-size:14px}
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
-.review_btn{display:none}
+.review_btn button{    position: absolute;
+  margin-top: 270px;
+  margin-left: 600px;width:168px;height:45px;background-color:#F99319;border-radius:5px;border:0;font-size:18px;color:#fff;font-weight:bold}
 .pick_list_null{width:100%;text-align:center;margin-top:140px;margin-bottom:200px}
 .pick_list_null img{width:100px!important;height:100px!important}
 .pick_list_null p{padding-top:20px;font-size:16px;color:#878787}
@@ -1015,7 +1034,6 @@ font-weight:normal}
 
   #content .main_sub {
     width:100%; min-width: 1080px;
-    height: 837px;
   }
   .main_sub div.pick_list_null {
     position: relative;
