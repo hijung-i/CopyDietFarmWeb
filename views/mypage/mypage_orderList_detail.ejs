@@ -29,7 +29,6 @@
                 }
             }
         </style>
-        <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <link rel="stylesheet" href="/css/style_web.css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -52,7 +51,7 @@
                     </section>
                 </div>
                 <input type="hidden" id="orderNumber" value="<%=orderNumber%>">
-                <main>
+            <main>
                     <%-include(webroot + 'views/general/mypage') %>
               <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
               <div class="mypage_content_wrap">
@@ -108,7 +107,6 @@
                                                      <template v-if="product.orderStatus == 'P'" >
                                                         
                                                             <button type="button" class="btnConfirm">취소신청</button>
-                                                    
                                                             <button type="button" class="btnConfirm" onclick="location.href='/s_inquiry'">판매자문의</button>
                                                       
                                                     </template>
@@ -125,7 +123,7 @@
                                                     </template>
                                                     <template v-if="'AC'.includes(product.orderStatus)">
                                                 
-                                                            <button type="button" class="btnConfirm">리뷰작성</button>
+                                                            <button type="button" class="btnConfirm" onclick="openReviewModal()">리뷰작성</button>
                                                             <button type="button" class="btnConfirm">재주문</button>
                                                     </template>
                                                 </ul>
@@ -331,12 +329,13 @@
 
                             </div>
                         </div>
-
                     </div>
-                  
+                <product-review-modal></product-review-modal>  
                 </main>
-                    <!--//order-->
+     <!--//order-->
     <%-include(webroot + 'views/general/footer') %>
+    <script src="/js/productReviewModal.js"></script>
+    <script src="/js/product.js"></script>
     <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/orderDetail.js"></script>
     

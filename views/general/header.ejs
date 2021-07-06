@@ -1,14 +1,15 @@
 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <header id="header_common" 
     class="<% if(currentPage != 'main' && currentPage != 'products') { %>sub<% } else { %>main<% } %>" >
-
+    <mypage-modal></mypage-modal>
     <div class="top_util">
         <ul class="menu_list" id="menu_list_header">
             <% if(isLoggedIn != true) { %>
-                <!-- <li class="join" style="color:#F99319">
-                    <a href="/sign-up-form">회원가입</a>
+                <li class="join" style="color:#F99319">
+                    <a href="javascript:void(0)" onclick="openMyModal()">회원가입</a>
                 </li>
-                <li class="bar"><img src="/images/l_icon_category@2x.png"></li> -->
+                 <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
                 <li class="login_top">
                     <a href="/login-form">로그인</a>
                 </li>
@@ -91,15 +92,7 @@
     
     </div>
 </div>
-    <script>
-            /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
-            $(function() { 
-                $('#nav a').on('click',function(){
-                $(this).addClass('active');
-                $(this).siblings().removeClass('active');
-            });
-        });
-    </script>
+
     
 </header>
 <div class="sideMenu">
@@ -206,5 +199,17 @@
         </div>
     </div>
 </div>
+</div>
 <!-- //sideMenu -->
+<script>
+    /* 모바일 제품상세 탭메뉴 lnb 언더바 애니메이션 */
+    $(function() { 
+        $('#nav a').on('click',function(){
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+    });
+});
+</script>
+<script src="/js/mypage/mypageModal.js"></script>
+<script src="/js/mypage.js"></script>
 <script src="/js/header.js"></script>
