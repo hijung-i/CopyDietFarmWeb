@@ -62,8 +62,8 @@ var app = new Vue({
         applyCoupon,
         onDeliveryInfoSelected: function() {
             var checked = $('input[type=radio][name=list]:checked');
-            app.orderDTO.delivery = app.deliveryList[checked.val()];
-
+            var selectedDelivery = app.deliveryList[checked.val()];
+            app.orderDTO.delivery = selectedDelivery;
             checkDeliveryAddress();
 
             closeInfoModal();
