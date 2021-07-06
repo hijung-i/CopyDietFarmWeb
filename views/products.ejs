@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="/css/myPage.css">
 </head>
 <body>
-    <%-include(webroot + 'views/general/header') %>
+  
         <input type="hidden" id="listType" value="<%=listType %>">
         <% if(listType == 'CATEGORY') { %>
             <input type="hidden" id="category1Code" value="<%=category1Code %>">
@@ -40,7 +40,7 @@
         <% } %>
         <main id="content" class="content">
            <div id="app">
-             <%-include('general/header') %>
+            <%-include(webroot + 'views/general/header') %>
               <div class="main_sub_wrap">
                 <section class="main_sub">
                     <h2 class="keyword"></h2>

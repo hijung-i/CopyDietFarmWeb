@@ -216,13 +216,14 @@ var app = new Vue({
                 userId: true
             })
         },
-            onDeliveryInfoSelected: function(data) {
-                console.log("event 발생", data);
-                this.orderDTO.delivery = data;
-    
-                checkDeliveryAddress();
-                this.$forceUpdate()
-            }
+        onDeliveryInfoSelected: function(data) {
+            console.log("event 발생", data);
+            var selectedDelivery = Object.assign(data);
+            this.orderDTO.delivery = selectedDelivery;
+
+            checkDeliveryAddress();
+            this.$forceUpdate();
+        }
         
     }
     

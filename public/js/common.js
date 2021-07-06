@@ -408,7 +408,7 @@ $(function(){
 	'<div class="popup_cont">' +
 	'<div class="index-modal">' +
 	'<p class="sale_coupon"><img src="/images/sale_coupon@2x.png"></p>' +
-	'<a href="javascript:closePop();"> <p class="close"><img src="/images/x_main@2x.png"></a></p>' +
+	'<span class="close" onclick="closePopupModal();">x</span>' +
 	'<p class="app01">앱 설치 시</p>' +
 	'<p><span>할인 쿠폰 즉시 지급!</span></p>' +
 	'<a href="https://play.google.com/store/apps/details?id=com.dietFarm"><p class="app02">앱 설치하고 쿠폰받기 > </p></a>' +
@@ -470,74 +470,9 @@ $(function(){
 	'<div class="btn_area">' +
 	'<button type="button" id="btnInquiry">등록</button>' +
 	'</div>' +
+	'</div>'+
 	'</div>';
-	
 
-	var reviewModal = 
-	'<div class="modal-content">' +
-	'<span class="close">&times;</span>' +
-	'<div class="product_review_modal">' +
-	'<div class="review_write_modal_header">' +
-	'<h2 style="font-size:16px;margin-top:18px">리뷰쓰기</h2>' +
-	'</div>' +
-	'<div class="reviewWriteBox">' +
-	'<div class="review01">' +
-	'<table style="clear:both">' +
-	'<tbody>' +
-	'<tr class="reviewProduct_modal">' +
-	'<td>' +
-	'<a href="#">' +
-	'</a>' +
-	' <ul class="reviewProductInfo">' +
-	'<li><span>(아임월)</span></li>' +
-	'<li>굿밸런스 라이트밀 도시락</li>' +
-	'<li><span>옵션 : 한입닭&큐브닭 9종 혼합 36팩</span></li>' +
-	'</ul>' +
-	'</div>' +
-	'</td>' +
-	'</tr>' +
-	'</tbody>' +
-	'</table>' +
-	'</div>' +
-	'<div id="star_grade" class="star_grade">' +
-	'<p>별점으로 만족도를 알려주세요</p>' +
-	'<div class="starRev">' +
-	'<span class="starR1 on">별1_왼쪽</span>' +
-	'<span class="starR2">별1_오른쪽</span>' +
-	'<span class="starR1">별2_왼쪽</span>' +
-	'<span class="starR2">별2_오른쪽</span>' +
-	'<span class="starR1">별3_왼쪽</span>' +
-	'<span class="starR2">별3_오른쪽</span>' +
-	'<span class="starR1">별4_왼쪽</span>' +
-	'<span class="starR2">별4_오른쪽</span>' +
-	'<span class="starR1">별4_왼쪽</span>' +
-	'<span class="starR1">별5_왼쪽</span>' +
-	'<span class="starR2">별5_오른쪽</span>' +
-	'</div>' +
-	'</div>' +
-	'<p>' +
-	'<textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px;margin-top:20px"></textarea>' +
-	'</p>' +
-	'<label for="upload">사진 (선택)</label>' +
-	'<input type="file" id="upload" name="upload">' +
-	'<div id="preview">' +
-	'<div class="previewBox">' +
-	'<ul>' +
-	'<li></li>' +
-	'<li class="p2"></li>' +
-	'</ul>' +
-	'</div>' +
-	'</div>' +
-	'<p class="red" style="clear:both">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>' +
-	'</div>' +
-	'</div>' +
-	'<div class="modal_line"></div>' +
-	'<div class="btn_area">' +
-	'<button type="button" id="btnEnroll">등록</button>' +
-	'</div>' +
-	'</div>' +
-	'</div>';
-			
    userAgent = window.navigator.userAgent.toLowerCase()
    
    iOS = /iphone|ipod|ipad/.test(userAgent);
@@ -548,7 +483,6 @@ $(function(){
    // } else 
    // $('#popup_layer').hide();
    // $("#popup_layer").html(popup);
-   $("#myModal").html(myPageModal);
    
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
@@ -567,6 +501,7 @@ $(function(){
                   event.stopPropagation();
                   return false;
                })
+               $('.popup_layer_wrapper').css({'display':'block'});
             }
 
          } 
@@ -583,8 +518,6 @@ $(function(){
 	}, function(err){
 		console.error(err);
 	})
-
-	$("#modal-inquiry").html(inquiryModal);
 	
 });
 
