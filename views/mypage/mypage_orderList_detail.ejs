@@ -107,7 +107,7 @@
                                                      <template v-if="product.orderStatus == 'P'" >
                                                         
                                                             <button type="button" class="btnConfirm">취소신청</button>
-                                                            <button type="button" class="btnConfirm" onclick="location.href='/s_inquiry'">판매자문의</button>
+                                                            <button type="button" class="btnConfirm" onclick="opensInquiryModal()">판매자문의</button>
                                                       
                                                     </template>
                                                     <template v-if="product.orderStatus == 'X'" >
@@ -118,7 +118,7 @@
                                                     <template v-if="'SDF'.includes(product.orderStatus)">
                                                         
                                                             <button type="button" class="btnConfirm">구매확정</button>
-                                                            <button type="button" class="btnConfirm">배송조회</button>
+                                                            <button type="button" class="btnConfirm"  onclick="openDInfoModal()">배송조회</button>
                                                       
                                                     </template>
                                                     <template v-if="'AC'.includes(product.orderStatus)">
@@ -332,11 +332,13 @@
                     </div>
                 <product-review-modal></product-review-modal> 
                 <seller-inquiry-modal></seller-inquiry-modal>
+                <delivery-info-modal></delivery-info-modal>
                 </main>
      <!--//order-->
     <%-include(webroot + 'views/general/footer') %>
     <script src="/js/productReviewModal.js"></script>
     <script src="/js/sellerInquiryModal.js"></script>
+    <script src="/js/deliveryinfoModal.js"></script>
     <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/orderDetail.js"></script>
     

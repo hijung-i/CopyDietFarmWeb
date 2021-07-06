@@ -2,7 +2,7 @@ var deliveryInfoTemplate = '';
 
 deliveryInfoTemplate+='<div class="dInfo_modal" id="dInfo_Modal">'
 deliveryInfoTemplate+='<div class="modal-content">'
-deliveryInfoTemplate+='<span class="close" onclick="closeModal()">&times;</span>'
+deliveryInfoTemplate+='<span class="close" onclick="closeModal02()">&times;</span>'
 deliveryInfoTemplate+='<section class="detail_title">'
 deliveryInfoTemplate+='<h2 class="title">{{ product.productName }}</h2>'
 deliveryInfoTemplate+='<div class="btnback">'
@@ -10,7 +10,7 @@ deliveryInfoTemplate+='    <a href="#" value="취소"  onClick="history.back(); 
 deliveryInfoTemplate+='    </a>'
 deliveryInfoTemplate+='</div>'
 deliveryInfoTemplate+='</section>'
-deliveryInfoTemplate+='<main id="content" class="del_info_content" style="margin-top:40px">'
+deliveryInfoTemplate+='<div id="content" class="del_info_content" style="margin-top:40px">'
 deliveryInfoTemplate+='<div class="circle_line">'
 deliveryInfoTemplate+='    <div class="line"></div>'
 deliveryInfoTemplate+='    <ul>'
@@ -63,7 +63,7 @@ deliveryInfoTemplate+='<div class="delivery_list_null">'
 deliveryInfoTemplate+='    <img src="/images/cart_icon_order.png">'
 deliveryInfoTemplate+='    <p class="no_list">배송 준비 중입니다.</p>'
 deliveryInfoTemplate+='</div>'
-deliveryInfoTemplate+='</main>'
+deliveryInfoTemplate+='</div>'
 deliveryInfoTemplate+='</div>'
 deliveryInfoTemplate+='</div>'
 
@@ -78,12 +78,12 @@ var deliveryInfoModal = {
     
     }
 }
-function openDeliveryInfoModal() {
+function openDInfoModal() {
     $('#dInfo_modal').show();
     scrollBlock();
 }
 
-function closeModal() {
+function closeModal02() {
     console.log("click")
     $('#dInfo_modal').hide();
     scrollAllow();

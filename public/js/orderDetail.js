@@ -3,7 +3,8 @@ var app = new Vue({
     el: 'main',
     components: {
         'product-review-modal': productReviewModal,
-        'seller-inquiry-modal': sellerInquiryModal
+        'seller-inquiry-modal': sellerInquiryModal,
+        'delivery-info-modal': deliveryInfoModal
     },
     data: {
         order: {},

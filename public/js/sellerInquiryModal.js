@@ -2,7 +2,7 @@ var sellerInquiryTemplate = '';
 
 sellerInquiryTemplate+='<div class="s_inquiry_modal" id="s_inquiry_modal">'
 sellerInquiryTemplate+='    <div class="modal-content">'
-sellerInquiryTemplate+='        <span class="close" onclick="closeModal()">&times;</span>'
+sellerInquiryTemplate+='        <span class="close" onclick="closeModal03()">&times;</span>'
 sellerInquiryTemplate+='        <h3 class="web_title">판매자 문의(주문건)</h3>'
 sellerInquiryTemplate+='        <div class="inquiryBox">'
 sellerInquiryTemplate+='            <ul>'
@@ -89,7 +89,7 @@ function opensInquiryModal() {
     scrollBlock();
 }
 
-function closeModal() {
+function closeModal03() {
     console.log("click")
     $('#s_inquiry_modal').hide();
     scrollAllow();
