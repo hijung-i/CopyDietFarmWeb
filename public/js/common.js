@@ -484,21 +484,21 @@ $(function(){
    // $('#popup_layer').hide();
    // $("#popup_layer").html(popup);
    
-   // if(iOS || isBrowser && $('html').width() <= 1079) {
-   //    if($('.popup_layer_wrapper').length > 0) {
+   if(iOS || isBrowser && $('html').width() <= 1079) {
+      if($('.popup_layer_wrapper').length > 0) {
+
+         $(".popup_layer_wrapper").html(popup);
    
-   //       $(".popup_layer_wrapper").html(popup);
-      
-   //       $('html,body').css({'overflow':'hidden','height':'100%'});
-   //       $('html,body').on('scroll touchmove mousewheel', function(event) {
-   //          event.preventDefault();
-   //          event.stopPropagation();
-   //          return false;
-   //       })
-   //       $('.popup_layer_wrapper').css({'display':'block'});
-   //    }
-   
-   // } 
+         $('html,body').css({'overflow':'hidden','height':'100%'});
+         $('html,body').on('scroll touchmove mousewheel', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+         })
+         $('.popup_layer_wrapper').css({'display':'block'});
+      }
+
+   } 
 
 	ajaxCall('/user/login', '', 'GET',
 	function(data) {
