@@ -2,18 +2,28 @@
 var app = new Vue({
     el: 'main',
     components: {
+        'mypage-component': mypageComponent,
         'product-review-modal': productReviewModal,
         'seller-inquiry-modal': sellerInquiryModal,
         'delivery-info-modal': deliveryInfoModal
     },
     data: {
-        order: {},
-        RESOURCE_SERVER
+        order: {
+            products: {}
+        },
+        RESOURCE_SERVER,
+        reviewModal: false,
+        inquiryModal: false
     },
     methods: {
         convertOrderStatus,
         numberFormat,
-        formatDate
+        formatDate,
+        onChildPopupClosed: function(data) {
+            this.reviewModal = false
+            this.inquiryModal = false
+        }
+
     }
 })
 

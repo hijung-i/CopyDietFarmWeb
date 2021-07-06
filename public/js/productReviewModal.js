@@ -150,4 +150,3 @@ function openReviewModal() {
     app.reviewModal = true;
     scrollBlock();
 }
-
