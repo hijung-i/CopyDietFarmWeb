@@ -119,7 +119,7 @@
                                         <span>{{ getOptionName(writable.product.options) }}</span></li>
                                 </ul>
                             </div>
-                                <button type="button" id="modal_btn">리뷰쓰기</button>
+                                <button type="button" id="modal_btn" onclick="openReviewModal()">리뷰쓰기</button>
                             </div>
                         </template>
 
@@ -183,10 +183,12 @@
             </div>
             </div>
         </div>
+        <product-review-modal></product-review-modal>
     </main>
     <%-include(webroot + 'views/general/footer') %>
+    <script src="/js/productReviewModal.js"></script>
     <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/mypage/product_review.js"></script>
-</body>
+   </body>
     
 </html>

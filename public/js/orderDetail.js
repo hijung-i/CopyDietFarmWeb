@@ -1,6 +1,10 @@
 
 var app = new Vue({
     el: 'main',
+    components: {
+        'product-review-modal': productReviewModal,
+        'seller-inquiry-modal': sellerInquiryModal
+    },
     data: {
         order: {},
         RESOURCE_SERVER

@@ -84,7 +84,7 @@ var sellerInquiryModal = {
     
     }
 }
-function opens_InquiryModal() {
+function opensInquiryModal() {
     $('#s_inquiry_modal').show();
     scrollBlock();
 }
