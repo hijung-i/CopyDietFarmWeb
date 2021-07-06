@@ -16,6 +16,6 @@ var installAppModal = {
     template: installAppTemplate,
     props: [],
     methods: {
-        
+          
         }
     }

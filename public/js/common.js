@@ -477,18 +477,16 @@ $(function(){
    
    iOS = /iphone|ipod|ipad/.test(userAgent);
    isBrowser = /chrome|IE/.test(userAgent);
-   // if(iOS) {
-   //    // 앱설치 모달
-   //    // $("#popup_layer").html(popup);
-   // } else 
-   // $('#popup_layer').hide();
-   // $("#popup_layer").html(popup);
+   // // if(iOS) {
+   // //    // 앱설치 모달
+   // //    // $("#popup_layer").html(popup);
+   // // } else 
+   // // $('#popup_layer').hide();
+   // // $("#popup_layer").html(popup);
    
    if(iOS || isBrowser && $('html').width() <= 1079) {
       if($('.popup_layer_wrapper').length > 0) {
 
-         $(".popup_layer_wrapper").html(popup);
-   
          $('html,body').css({'overflow':'hidden','height':'100%'});
          $('html,body').on('scroll touchmove mousewheel', function(event) {
             event.preventDefault();
@@ -496,7 +494,7 @@ $(function(){
             return false;
          })
          $('.popup_layer_wrapper').css({'display':'block'});
-      }
+      } 
 
    } 
 
@@ -504,7 +502,7 @@ $(function(){
 	function(data) {
 		// 로그아웃 시에만 표시
 		console.log(data.result);
-		if(data.result.isLoggedIn == false) {
+		 if(data.result.isLoggedIn == false) {
          
          if ($('#naver_id_login').length > 0) {
             ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
@@ -522,14 +520,6 @@ $(function(){
 	
 });
 
-if($('#popup_layer_wrapper').css({'display':'block'})) {
-   $('html,body').css({'overflow':'hidden','height':'100%'});
-   $('html,body').on('scroll touchmove mousewheel', function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      return false;
-   })
-}
 
 function closePopupModal() {
    $('.popup_layer_wrapper').hide();

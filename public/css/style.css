@@ -1,7 +1,7 @@
 /* none scroll */
 body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-y:auto; }
 @font-face{
-  font-family: '나눔고딕';
+  font-family: 'Nanum Gothic', sans-serif;
   font-weight: normal;
   font-style: normal;
   src:url('/font/NanumGothic.woff') format('woff');
@@ -95,7 +95,7 @@ body, select, input, textarea, a[href^="tel:"]:link {
     color: #383838;
     font-weight: normal;
    font-size:12px;
-   font-family:'나눔고딕';
+   font-family: 'Nanum Gothic', sans-serif;
    letter-spacing:-0.5px;
   overflow: visible;
 }
@@ -181,7 +181,7 @@ a:hover{text-decoration:none;}
 #header_common h1{position:relative;left:200px;top:34px;z-index:1;}
 #header_common h1 img{max-width:50%;height: auto;}
 #header_common .gnb{position:relative;top:40px; z-index: 11}
-#header_common .gnb a{font-family:'나눔고딕';font-size:16px;font-weight:bold;padding-left:15px;
+#header_common .gnb a{ font-family: 'Nanum Gothic', sans-serif; font-size:16px;font-weight:bold;padding-left:15px;
 padding-right:15px;float:left;position:relative;top:6px}
 
 .skip_menu{position:absolute}
@@ -426,7 +426,7 @@ f
    .nav_wrap {position: relative;height:auto; margin: 0 auto; overflow:scroll; padding: 0px 15px;}
    #nav::-webkit-scrollbar{ display:none; }
       .nav_wrap::-webkit-scrollbar {display:none;}
-   #nav a{font-family:'나눔고딕'; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;margin-right:40px}
+   #nav a{ font-family: 'Nanum Gothic', sans-serif; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;margin-right:40px}
    #nav a:last-child{
      margin-right: 0px;
    }
@@ -572,7 +572,7 @@ font-size: 14px;font-weight:bold;color:#fff;background:#F99319;border-radius:5px
   margin-top: 80px;
 }
 .csBtn01{width:100%;height:45px;text-align:center;border:0;cursor: pointer;color: #fff;background-color:#31845B;font-size:14px;
-font-weight:bold;border-radius:5px;font-family:'나눔고딕';margin-top:15px}
+font-weight:bold;border-radius:5px; font-family: 'Nanum Gothic', sans-serif; margin-top:15px}
 .csBtn01 img{width:20px;position:relative;margin-right:10px;margin-left:-15px}
 
 /*알림*/
@@ -678,6 +678,7 @@ border-spacing: 0 20px;font-size:14px}
   justify-content: center;
   background: rgba(0, 0, 0, 0.70);
   z-index: 9999;
+  display: none;
 }
 
 /* 메인 팝업창 (회원가입) */
@@ -1416,7 +1417,7 @@ margin-left: 3px;
 
 /*버튼 색상 설정*/
 :root{--font-color: #4e4e4e;--yello-color: #F99319;--yello-border-color: #F99319;}
-#btnRegister{width:100%;margin:0 auto;padding: 15px 0 15px;border:0;cursor: pointer;color:#fff;background-color:#F99319;font-size: 14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;}
+#btnRegister{width:100%;margin:0 auto;padding: 15px 0 15px;border:0;cursor: pointer;color:#fff;background-color:#F99319;font-size: 14px;font-weight: bold; font-family: 'Nanum Gothic', sans-serif; border-radius:5px;}
 #check{position:relative;top:70px;right:30px}
 
 
@@ -1844,7 +1845,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  .box {display: block;width:440px;height: 51px;
  border: solid 1px #dadada;padding: 10px 14px 10px 14px;box-sizing: border-box;background: #fff;position: relative;border-radius:8px;}
  .int {display: block;position: relative;width: 100%;height: 29px;border: none;background:#fff; font-size: 15px;}
- input {font-family: '나눔고딕'}
+ input {font-family: 'Nanum Gothic', sans-serif;}
  .box.int_id {padding-right: 110px;}
  .box.int_pass {padding-right: 40px;}
  .box.int_pass_check {padding-right: 40px;}
@@ -1889,7 +1890,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
   background-color: #F99319;
   font-size: 14px;
   font-weight:700;
-  font-family: '나눔고딕';
+  font-family: 'Nanum Gothic', sans-serif;
   border-radius:5px
 }
 
@@ -1912,7 +1913,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  .new_pwd_ck input{height:45px;width:100%;border-radius:5px;border:1px solid #BBBBBB}
  .new_pwd_ck p{color:#6B6B6B;font-size:10px}
  .red_sign{font-size:12px;color:#D62828;margin-top:33px;margin-bottom:184px}
- #btnPwdChange{width:100%;height:45px;text-align:center; border:0;cursor: pointer;color:#fff;background-color:#F99319;font-size:14px;font-weight: bold;font-family: '나눔고딕';border-radius:5px;margin-bottom:15px}
+ #btnPwdChange{width:100%;height:45px;text-align:center; border:0;cursor: pointer;color:#fff;background-color:#F99319;font-size:14px;font-weight: bold; font-family: 'Nanum Gothic', sans-serif; border-radius:5px;margin-bottom:15px}
  #w_content{width:400px;margin:0 auto}
  #w_content .btnback{display:none}
 .bx-wrapper {
@@ -1986,7 +1987,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 
 #btnOrder{width:100%;margin:auto;padding: 21px 0 17px;border: 0;cursor: pointer;color: #fff;
     background-color: #F99319;font-size: 14px;
-    font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
+    font-weight: 400; font-family: 'Nanum Gothic', sans-serif; border-radius:5px;}
 
 /*주문 완료*/
 #content .order_complete_info{margin-top:20px;}
@@ -2125,7 +2126,7 @@ width:400px
 .orderBox02{margin-bottom:25px}
 .order00 li{margin-bottom:5px;}
 .order_a_box td span{color:#878787;margin-right:20px}
-#btnReorder{width:330px;margin:0 auto;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
+#btnReorder{width:330px;margin:0 auto;border:1px solid #BBBBBB;cursor: pointer;color:#000;background-color:transparent;font-size: 14px;font-weight: 400; font-family: 'Nanum Gothic', sans-serif; border-radius:5px;}
 
 /*주문 내역*/
 .order_title ul li{font-size:12px}
