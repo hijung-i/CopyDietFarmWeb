@@ -477,16 +477,15 @@ $(function(){
    
    iOS = /iphone|ipod|ipad/.test(userAgent);
    isBrowser = /chrome|IE/.test(userAgent);
-   // // if(iOS) {
-   // //    // 앱설치 모달
-   // //    // $("#popup_layer").html(popup);
-   // // } else 
-   // // $('#popup_layer').hide();
-   // // $("#popup_layer").html(popup);
+   // if(iOS) {
+   //    // 앱설치 모달
+   //    // $("#popup_layer").html(popup);
+   // } else 
+   // $('#popup_layer').hide();
+   // $("#popup_layer").html(popup);
    
    if(iOS || isBrowser && $('html').width() <= 1079) {
       if($('.popup_layer_wrapper').length > 0) {
-
          $('html,body').css({'overflow':'hidden','height':'100%'});
          $('html,body').on('scroll touchmove mousewheel', function(event) {
             event.preventDefault();
