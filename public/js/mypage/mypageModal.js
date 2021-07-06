@@ -49,7 +49,6 @@ var mypageModal = {
             console.log("AppleIdSignInFailure", error);
         })
 
-
     }
 }
 
