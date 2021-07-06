@@ -8,7 +8,6 @@ function getEventStands() {
       $("#header_common #nav").html('');
       var html = '';
       html += '<a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';      
-      console.log(data);
       for(var i = 0; i < data.result.length; i++){
 
          // TODO: 화면 너비가 pc버전일때 break;
@@ -18,7 +17,6 @@ function getEventStands() {
          if(i == 0){
             html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'> 홈</a>';
          }
-         console.log(currentStandCode, stand.salesStandCode);
          if( currentStandCode == stand.salesStandCode){
             $('#heade_common #nav a').removeClass("is-current");
             html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ '<span>' + stand.salesStandName + '</span>' +'</a>';
@@ -28,7 +26,6 @@ function getEventStands() {
       }
 
       html += '<span></span>';
-      console.log(html);
       $('#header_common #nav').html(html);
 
         // web size side menu set
@@ -427,7 +424,6 @@ function getCategory() {
         });
 
         $(".mTabBtnMenu").on("click",function() {
-            console.log('clear');
             sideTabOpen();
             $('body').css ({
                 position:'fixed',
@@ -463,7 +459,6 @@ function getBrandList() {
 
         $('.brand ul').html(html);
 
-        console.log(data);
     }, function(err) {
         console.error(err);
     }, {

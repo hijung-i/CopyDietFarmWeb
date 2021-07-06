@@ -49,7 +49,6 @@ $(function() {
     
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
-        console.log("data", data);
         if(data.result.isLoggedIn == true) {
             checkDeliveryAddress();
         }
@@ -72,7 +71,6 @@ function getProductDetail(){
     }
     ajaxCallWithLogin(API_SERVER + '/product/getProductDetail', params, 'POST'
     , function (data) {
-        console.log(data.result);
         app.product = data.result;
 
         var html = '';
@@ -326,7 +324,6 @@ function getProductQuestionList() {
         productCode: app.product.productCode
     };
     
-    console.log(params);
     ajaxCall(API_SERVER + '/product/getQAByProduct', params, 'POST', 
     function (data) {
         app.questionList = data.result;
@@ -453,7 +450,6 @@ function getProductList() {
     }
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'POST',
     function(data) {
-        console.log(data);
         app.recmdList = data.result;
         
         insertRecommandListHtml();
