@@ -1,9 +1,9 @@
 var productReviewTemplate = '';
 
 productReviewTemplate += '<div class="review_modal" id="review_Modal">'
-productReviewTemplate += '<div class="modal-content">'
+productReviewTemplate += '<div class="modal-content" >'
 productReviewTemplate += '<span class="close" onclick="closeModal()">&times;</span>';
-productReviewTemplate += '<div>'
+productReviewTemplate += '<div v-if="product != undefined">'
 productReviewTemplate += '<div class="reviewModifyBox">'
 productReviewTemplate += '<h2>리뷰쓰기</h2>'
 productReviewTemplate += '<div class="review01">'
@@ -12,11 +12,11 @@ productReviewTemplate += '<tbody>'
 productReviewTemplate += '<tr class="reviewProduct">'
 productReviewTemplate += '<td>'
 productReviewTemplate += '<div class="detailBox">'
-productReviewTemplate += '<a href="#"><img src="" align="left" style="width:90px;margin-right:15px"></a>'
+productReviewTemplate += '<a v-bind:href="\'/product/\' + product.productCode"><img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:90px;margin-right:15px"></a>'
 productReviewTemplate += '<ul class="reviewProductInfo">'
-productReviewTemplate += '<li>디어썸라이프</li>'
-productReviewTemplate += '<li>[디어썸1]간편하고 든든한 고구마스틱 300g</li>'
-productReviewTemplate += '<li>간편하고 든든한 고구마스틱 300g (20g*15개입)</li>'
+productReviewTemplate += '<li>{{ product.companyName }}</li>'
+productReviewTemplate += '<li>{{ product.productName }}</li>'
+productReviewTemplate += '<li>{{ getOptionName() }}</li>'
 productReviewTemplate += '</ul>'
 productReviewTemplate += '</div>'
 productReviewTemplate += '</td>'
@@ -26,38 +26,41 @@ productReviewTemplate += '</table>'
 productReviewTemplate += '</div>'
 productReviewTemplate += '<div id="star_grade" class="star_grade">'
 productReviewTemplate += '<p>별점으로 만족도를 선택해주세요</p>'
-productReviewTemplate += '<div class="starRev">'
-productReviewTemplate += '<span class="starR1 on">별1_왼쪽</span>'
-productReviewTemplate += '<span class="starR2">별1_오른쪽</span>'
-productReviewTemplate += '<span class="starR1">별2_왼쪽</span>'
-productReviewTemplate += '<span class="starR2">별2_오른쪽</span>'
-productReviewTemplate += '<span class="starR1">별3_왼쪽</span>'
-productReviewTemplate += '<span class="starR2">별3_오른쪽</span>'
-productReviewTemplate += '<span class="starR1">별4_왼쪽</span>'
-productReviewTemplate += '<span class="starR2">별4_오른쪽</span>'
-productReviewTemplate += '<span class="starR1">별5_왼쪽</span>'
-productReviewTemplate += '<span class="starR2">별5_오른쪽</span>'
+productReviewTemplate += '<div class="starRev" v-if="review.gpa != undefined">'
+productReviewTemplate += '<template v-for="count in (review.gpa * 2)">';
+productReviewTemplate += '    <span class="starR1 on" v-if="count % 2 == 1" v-on:click="onStarClick(true, count)">별1_왼쪽</span>';
+productReviewTemplate += '    <span class="starR2 on" v-if="count % 2 == 0" v-on:click="onStarClick(true, count)">별1_오른쪽</span>';
+productReviewTemplate += '</template>';
+productReviewTemplate += '<template v-for="count in (10 - (review.gpa * 2))">';
+productReviewTemplate += '  <template v-if="(10 - (review.gpa * 2)) % 2 == 1">';
+productReviewTemplate += '      <span class="starR1" v-if="count % 2 == 0" v-on:click="onStarClick(false, count)">별1_왼쪽</span>';
+productReviewTemplate += '      <span class="starR2" v-if="count % 2 == 1" v-on:click="onStarClick(false, count)">별1_오른쪽</span>';
+productReviewTemplate += '  </template>';
+productReviewTemplate += '  <template v-if="(10 - (review.gpa * 2)) % 2 == 0">';
+productReviewTemplate += '      <span class="starR2" v-if="count % 2 == 0" v-on:click="onStarClick(false, count)">별1_오른쪽</span>';
+productReviewTemplate += '      <span class="starR1" v-if="count % 2 == 1" v-on:click="onStarClick(false, count)">별1_왼쪽</span>';
+productReviewTemplate += '  </template>';
+productReviewTemplate += '</template>';
 productReviewTemplate += '</div>'
 productReviewTemplate += '</div>'
 productReviewTemplate += '<ul>'
 productReviewTemplate += '<li>'
 productReviewTemplate += '<form>'
-productReviewTemplate += '<p><textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px"></textarea></p>'
+productReviewTemplate += '<p><textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px" v-html="review.content"></textarea></p>'
 productReviewTemplate += '</form>'
 productReviewTemplate += '</li>'
 productReviewTemplate += '</ul>'
 productReviewTemplate += '<div class="filebox">'
-productReviewTemplate += '<label for="upload">사진 (선택)</label>'
-productReviewTemplate += '<input type="file" id="upload" name="upload">'
-productReviewTemplate += '<div id="preview">'
-productReviewTemplate += '<div class="previewBox">'
-productReviewTemplate += '<ul>'
-productReviewTemplate += '<li></li>'
-productReviewTemplate += '<li class="p2"></li>'
-productReviewTemplate += '</ul>'
-productReviewTemplate += '</div>'
-productReviewTemplate += '</div>'
-productReviewTemplate += '<p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>'
+productReviewTemplate += '  <label for="upload">사진 (선택)</label>'
+productReviewTemplate += '  <input type="file" id="upload" name="upload">'
+productReviewTemplate += '  <div id="preview" v-if="review.files != undefined && review.files.length > 0">'
+productReviewTemplate += '      <div class="previewBox">'
+productReviewTemplate += '          <ul>'
+productReviewTemplate += '            <li></li>'
+productReviewTemplate += '          </ul>'
+productReviewTemplate += '      </div>'
+productReviewTemplate += '  </div>'
+productReviewTemplate += '  <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>'
 productReviewTemplate += '</div>'
 productReviewTemplate += '</div>'
 productReviewTemplate += '<div class="btn_area">'
@@ -69,13 +72,46 @@ productReviewTemplate += '</div>'
 
 var productReviewModal = {
     template: productReviewTemplate,
-    props: [],
+    props: {
+        product: {
+            type: Object,
+            default: function() {
+                return {}
+            }
+        }, review: {
+            type: Object,
+            default: function() {
+                return {
+                    gpa: 5,
+                    content: '',
+                    files: []
+                }
+            }
+        }
+    },
     data: function() {
+        if(this.review == null || this.review == undefined) {
+        }
         return {
-        
+            RESOURCE_SERVER
         }
     }, methods: {
-    
+        getOptionName: function() {
+            if(this.product.options == undefined) return ''
+            
+            if(this.product.options.length > 1) {
+                var optionName = this.product.options[0].optionDesc;
+                optionName += ' 외 ' + new String(this.product.options.length - 1) + '개';
+                return optionName;
+            } else {
+                return this.product.options[0].optionDesc
+            }
+        }, onStarClick: function(active, gpa) {
+            var before = this.review.gpa;
+            this.review.gpa = (active)? (gpa / 2) : (gpa / 2 + before); 
+        }
+    }, computed: {
+        
     }
 }
 

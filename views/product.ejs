@@ -812,8 +812,8 @@
                 </button>
             </div>
         </div>
-        <product-review-modal></product-review-modal>
-            <product-inquiry-modal></product-inquiry-modal>
+        <product-review-modal v-bind:product="product"></product-review-modal>
+        <product-inquiry-modal></product-inquiry-modal>
     </main>
     <script>
         var upload = document.querySelector('#upload');
@@ -884,30 +884,7 @@
             }
             preview.appendChild(image);
         })
-    </script>
-    <script>
-        var upload = document.querySelector('#upload');
-        var preview = document.querySelector('#preview');
-        upload.addEventListener('change', function (e) {
-            var get_file = e.target.files;
-            var image = document.createElement('img');
-            var reader = new FileReader();
-            reader.onload = (function (aImg) {
-                console.log(1);
-                return function (e) {
-                    console.log(3);
-                    aImg.src = e.target.result
-                }
-            })(image)
-            if (get_file) {
-                reader.readAsDataURL(get_file[0]);
-                console.log(2);
-            }
-            preview.appendChild(image);
-        })
-        window.onload = function() {
-        }
-    </script>                    
+    </script>                
     <script src="/js/productReviewModal.js"></script>
     <script src="/js/productInquiryModal.js"></script>
     <script src="/js/orderDTO/OrderDTO.js"></script>
