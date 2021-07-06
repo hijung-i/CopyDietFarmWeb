@@ -385,7 +385,7 @@ height:50px;overflow:hidden}
   padding-bottom: 26px;
   margin-top: 19px}
 .reviewModifyBox .star_grade p{font-size:16px;font-weight:bold;text-align:center}
-
+.popup_layer_wrapper {display: none;}
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
   
@@ -1140,6 +1140,11 @@ font-weight:normal}
 .sid_menu .mDepth01 dt .downArrow {
    width:11px;height:11px
 }
+}
+@media screen and (max-width:1079px) {
+  .sub_items {
+    padding-top: 108px;
+  }
 }
 @media screen and (min-width:1080px){
   /* 마이페이지 배송지 관리 모달 */

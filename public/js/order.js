@@ -60,15 +60,20 @@ var app = new Vue({
         },
         formatDate,
         applyCoupon,
-        onDeliveryInfoSelected: function() {
-            var checked = $('input[type=radio][name=list]:checked');
-            var selectedDelivery = app.deliveryList[checked.val()];
-            app.orderDTO.delivery = selectedDelivery;
-            checkDeliveryAddress();
+        onDeliveryInfoSelected: function(data) {
+            console.log("event 발생",data);
+            var selectedDelivery = Object.assign(data);
+            this.orderDTO.delivery = selectedDelivery;
+        }
+        // onDeliveryInfoSelected: function() {
+        //     var checked = $('input[type=radio][name=list]:checked');
+        //     var selectedDelivery = app.deliveryList[checked.val()];
+        //     app.orderDTO.delivery = selectedDelivery;
+        //     checkDeliveryAddress();
 
-            closeInfoModal();
-        },
-        openZipSearch
+        //     closeInfoModal();
+        // }
+        ,openZipSearch
     },
     computed: {
         remainingPoint: {
