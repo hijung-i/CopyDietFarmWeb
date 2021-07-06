@@ -1,6 +1,6 @@
 // 운영
-// var API_SERVER = "http://localhost:9090";
-var API_SERVER = "https://dietfarm119.co.kr";
+var API_SERVER = "http://localhost:9090";
+// var API_SERVER = "https://dietfarm119.co.kr";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "https://"+ SERVER_IP;
 
@@ -26,7 +26,7 @@ function ajaxCall(url, params, type, onSuccess, onError){
    })
 }
 
-function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError){
+function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError, file){
    var param = JSON.stringify(params);
    $.ajax({
       type : type,
@@ -37,6 +37,10 @@ function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError){
       beforeSend : function(xmlHttpRequest){
          xmlHttpRequest.setRequestHeader("AJAX", "true")
          xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
+
+         if(file != undefined && file != null && file != false) {
+            xmlHttpREqeuset.setRequestHeader
+         }
       },
       success : onSuccess,
       error : onError
@@ -403,80 +407,28 @@ window.onclick = function(event) {
 //메인화면 진입 시 팝업 창 
 
 $(function(){
-	// var popup = 
-	// '<div class="popup_box">' +
-	// '<div class="popup_cont">' +
-	// '<div class="index-modal">' +
-	// '<p class="sale_coupon"><img src="/images/sale_coupon@2x.png"></p>' +
-	// '<span class="close" onclick="closePopupModal();">x</span>' +
-	// '<p class="app01">앱 설치 시</p>' +
-	// '<p><span>할인 쿠폰 즉시 지급!</span></p>' +
-	// '<a href="https://play.google.com/store/apps/details?id=com.dietFarm"><p class="app02">앱 설치하고 쿠폰받기 > </p></a>' +
-	// '</div>' +
-	// '</div>'+
-	// '</div>';
-
-   // var popup =
-   // '<div id="popup_layer" class="checkLogin">' +
-   // '<div class="popup_box">' +
-   // //'<span class="close" onclick="closePopupModal();">x</span>' +
-   // '<div class="popup_cont">' +
-   // '<div class="index-modal">' +
-   // '<h2>SNS 1초 회원가입!</h2>' +
-   // '<p class="second">1초 간편 회원가입 후,</p>' +
-   // '<p><span>10000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
-   // '<ul class= "login_with_sns">' +
-   // '<li class="kakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>' +
-   // '<li class="naver" id="naver_id_login"><img src="/images/naver_login@2x.png"></li>' +
-   // '</ul>' +
-   // '<a href="/login-form"><p class="id-login">아이디 로그인</p></a>' +
-   // '</div>' +
-   // '</div>' +
-   // '</div>';
-
-	var myPageModal = 
-	'<div class="modal-content">' +
-	'<span class="close" onclick="closeModal()">&times;</span>' +
-	'<div class="signup_wrap">' + 
-	'<h2>SNS 계정으로 시작하기</h2>' +
-	'<p style="color:#6B6B6B">1초 간편 회원가입 후, </p>' +
-	'<p class="line02"><span>10000P + 무료배송 </span>쿠폰 혜택을 받아보세요!</p>' +
-	'<div class="signup_btn">' +
-	'<button type="button" class="btnKakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png">카카오 계정으로 시작하기</button>' +
-	'<button type="button" class="btnNaver"><img src="/images/naver_login@2x.png">네이버 계정으로 시작하기</button>' +
-	'</div>' +
-   '<div class="line" style="width:100%;color:#bbbbbb">' +
-   '</div>' +
-   '<p style="color:#BBBBBB;margin-top:22px;margin-bottom:22.4px">또는</p>' +
-   '<div class="signup_btn">' +
-   '<a type="button" href="/login-form" class="loginBtn">아이디로 로그인</a>' +
+   var popup =
+   '<div id="popup_layer" class="checkLogin">' +
+   '<div class="popup_box">' +
+   //'<span class="close" onclick="closePopupModal();">x</span>' +
+   '<div class="popup_cont">' +
+   '<div class="index-modal">' +
+   '<h2>SNS 1초 회원가입!</h2>' +
+   '<p class="second">1초 간편 회원가입 후,</p>' +
+   '<p><span>10000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
+   '<ul class= "login_with_sns">' +
+   '<li class="kakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>' +
+   '<li class="naver" id="naver_id_login"><img src="/images/naver_login@2x.png"></li>' +
+   '</ul>' +
+   '<a href="/login-form"><p class="id-login">아이디 로그인</p></a>' +
    '</div>' +
    '</div>' +
-   '</div>' ;
-
-	var inquiryModal = 
-	'<div class="modal-content">' +
-	'<span class="close">&times;</span>' +
-	'<div class="productInquiryBox">' +
-	'<h3>(아임월) 굿밸런스 라이트밀 도시락</h3>' +
-	'<form>' +
-	'<p><textarea style="border-radius:5px;width:100%;height:153px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>' +
-	'</form>' +
-	'<div class="group">' +
-	'<input type="checkbox" id="secret">' +
-	'<label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>' +
-	'</div>' +
-	'</div>' +
-	'<div class="btn_area">' +
-	'<button type="button" id="btnInquiry">등록</button>' +
-	'</div>' +
-	'</div>'+
-	'</div>';
+   '</div>';
 
    userAgent = window.navigator.userAgent.toLowerCase()
    
    iOS = /iphone|ipod|ipad/.test(userAgent);
-   isBrowser = /chrome|IE/.test(userAgent);
+   isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
    // if(iOS) {
    //    // 앱설치 모달
    //    // $("#popup_layer").html(popup);

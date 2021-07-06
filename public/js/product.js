@@ -15,9 +15,14 @@ var app = new Vue({
         optionTotalPrice: 0,
         orderDTO: {},
         deliveryGroupList: [],
+        currentReview: {},
         reviewList: [],
+        reviewModal: false,
+        currentQuestion: {},
         questionList: [],
-        recmdList: []
+        inquiryModal: false,
+        recmdList: [],
+        modal: []
     }, methods: {
         numberFormat,
         deleteFromArray,
@@ -32,6 +37,38 @@ var app = new Vue({
         },
         onOptionSelected,
         zzimProduct,
+        onReviewUpdateClick: function(index) {
+            this.currentReview = this.reviewList[index];
+
+            openReviewModal()
+        },
+        onInquiryUpdateClick: function(index) {
+            this.currentQuestion = this.questionList[index];
+            var isChecked = this.currentQuestion.checkbox;
+
+            this.currentQuestion.checkbox 
+                = (isChecked != undefined && (isChecked == true || isChecked == 'Y'))?true:false;
+            openInquiryModal()
+        },
+        onChildPopupClosed: function(data) {
+            this.reviewModal = false;
+            this.inquiryModal = false; 
+
+            this.currentReview = {};
+            this.currentQuestion = {};
+        },
+        insertReviewComplete: function(data) {
+            this.reviewList.push(data);
+        },
+        deleteReview: function(index) {
+            this.reviewList.splice(index, 1);
+        },
+        insertInquiryComplete: function(data) {
+            this.questionList.push(data);
+        },
+        deleteInquiry: function(index) {
+            this.questionList.splice(index, 1);
+        }
     }
 });
 
@@ -49,7 +86,6 @@ $(function() {
     
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
-        console.log("data", data);
         if(data.result.isLoggedIn == true) {
             checkDeliveryAddress();
         }
@@ -72,7 +108,6 @@ function getProductDetail(){
     }
     ajaxCallWithLogin(API_SERVER + '/product/getProductDetail', params, 'POST'
     , function (data) {
-        console.log(data.result);
         app.product = data.result;
 
         var html = '';
@@ -311,13 +346,16 @@ function getReviewList() {
         productCode: app.product.productCode
     };
 
-    ajaxCall(API_SERVER + '/board/getReview', params, 'POST', 
+    ajaxCallWithLogin(API_SERVER + '/board/getReview', params, 'POST', 
     function (data) {
     
         app.reviewList = data.result;
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);
+    }, {
+        isRequired: false,
+        userId: true
     })
 }
 
@@ -326,13 +364,15 @@ function getProductQuestionList() {
         productCode: app.product.productCode
     };
     
-    console.log(params);
-    ajaxCall(API_SERVER + '/product/getQAByProduct', params, 'POST', 
+    ajaxCallWithLogin(API_SERVER + '/product/getQAByProduct', params, 'POST', 
     function (data) {
         app.questionList = data.result;
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);
+    }, {
+        isRequired: false,
+        userId: true
     })
 }
 
@@ -453,7 +493,6 @@ function getProductList() {
     }
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'POST',
     function(data) {
-        console.log(data);
         app.recmdList = data.result;
         
         insertRecommandListHtml();
