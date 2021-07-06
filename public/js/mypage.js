@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     components: {
-        'mypage-modal': mypageModal
+        'mypage-modal': signModal
     },
     data: {
         deliveryList: new Array(),
@@ -14,8 +14,6 @@ var app = new Vue({
         getLogin
     }
 })
-
-
 
 $(function() {
     getLogin();

@@ -22,25 +22,11 @@
         .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
         }
     @media screen and (max-width:1079px) {
-        .web_product_details {display: none}
-        .sidebar{display:none}
-        .review_modal, .inquiry_modal{
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
+
        /* Modal Content/Box */
        .web_product_details {display: none}
         .sidebar{display:none}
         .review_modal, .inquiry_modal{
-        display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
         z-index: 1; /* Sit on top */
         left: 0;
@@ -140,7 +126,7 @@
         cursor: pointer;
     }  
     .fixed { position: fixed; top:0; left:0; }
-    .sidebar{width:270px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
+    .sidebar{width:270px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
             margin-top:-68px;position:sticky;top:0}
     /* swiper bundle */
     .swiper-container { min-width: 360px;height: 373px; z-index: 0}
@@ -180,67 +166,66 @@
     }
         
         </style>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <%-include(webroot + 'views/general/head') %>
         <link rel="stylesheet" href="/css/product.css">
     </head>
 
 <body>
-                <!-- 공유하기 모달 -->
-                    <div id="share_modal" class="share_modal modal-overlay">
-                        
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            
-                            <div class="share_header">
-                                <h2>공유하기</h2>
-                                <span class="close" onclick="closeShareModal()">&times;</span>
-                            </div>
-
-                            <div class="share_body">
-                                <div class="kakaoTalk">
-                                    <p ><a href="javascript:void(0);" onclick="Kakao.Link.sendScrap(PARAMETER);"><img src="/images/shareKakao@2x.png" alt="url"></a></p>
-                                    <p>카카오톡</p>
-                                </div>
-                                <div class="sms">
-                                    <p><a href="javascript:void(0);"><img src="/images/shareSMS@2x.png" alt="url"></a></p>
-                                    <p>문자</p>
-                                </div>
-                                <div class="copyUrl">
-                                    <p><a href="javascript:void(0);"><img src="/images/url_icon_friend@2x.png" alt="url"></a></p>
-                                    <p>url 복사</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                <!-- 공유하기 모달 끝 -->
+        <!-- 공유하기 모달 -->
+            <div id="share_modal" class="share_modal modal-overlay">
                 
-                <div class="web_product_details">
-                    <%-include(webroot + 'views/general/header') %>
-                </div>
+                <!-- Modal content -->
+                <div class="modal-content">
+                    
+                    <div class="share_header">
+                        <h2>공유하기</h2>
+                        <span class="close" onclick="closeShareModal()">&times;</span>
+                    </div>
 
-                <div class="mobile_product_details">
-                    <section class="detail_title">
-                        <h2 class="title">{{ product.productName }}</h2>
-                        <div class="btnback">
-                            <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
-                            </a>
+                    <div class="share_body">
+                        <div class="kakaoTalk">
+                            <p ><a href="javascript:void(0);" onclick="Kakao.Link.sendScrap(PARAMETER);"><img src="/images/shareKakao@2x.png" alt="url"></a></p>
+                            <p>카카오톡</p>
                         </div>
-
-                        <div class="btncart">
-                            <a href="/cart"><img
-                                src="/images/cart_icon_main@2x.png"
-                                alt=""
-                                style="width:21px;height:21px;left:10px"></a>
+                        <div class="sms">
+                            <p><a href="javascript:void(0);"><img src="/images/shareSMS@2x.png" alt="url"></a></p>
+                            <p>문자</p>
                         </div>
-                    </section>
+                        <div class="copyUrl">
+                            <p><a href="javascript:void(0);"><img src="/images/url_icon_friend@2x.png" alt="url"></a></p>
+                            <p>url 복사</p>
+                        </div>
+                    </div>
                 </div>
-                <!--//모바일 헤더 끝-->
+                
+            </div>
+        <!-- 공유하기 모달 끝 -->
+        <main id="content">
+            <div class="web_product_details">
+                <%-include(webroot + 'views/general/header') %>
+            </div>
+            
+            <div class="mobile_product_details">
+                <section class="detail_title">
+                    <h2 class="title">{{ product.productName }}</h2>
+                    <div class="btnback">
+                        <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="btncart">
+                        <a href="/cart"><img
+                            src="/images/cart_icon_main@2x.png"
+                            alt=""
+                            style="width:21px;height:21px;left:10px"></a>
+                    </div>
+                </section>
+            </div>
+                    <!--//모바일 헤더 끝-->
 
                 <!-- contents-wrap // -->
                 <input type="hidden" id="productCode" value="<%=productCode %>">
-                <main id="content">
+
                     <div class="product_top">
                         <div class="tabMenu">
                             <div id="detail_info" class="pdt_detai_tab_vn">
@@ -617,11 +602,11 @@
                                         </ul>
                                         <ul v-if="reviewList.updateYn == 'Y'">
                                             <li>
-                                                <a href="#">수정</a>
+                                                <span>수정</span>
                                             </li>
                                             <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
                                             <li>
-                                                <a href="#">삭제</a>
+                                                <span @click="deleteReview(index)">삭제</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -707,14 +692,18 @@
                         <ul v-if="question.updateYn == 'Y'">
                             <li class="myInquiry">
                                 <span>내글</span>
-                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                            <li>{{formatDate(question.createDate)}}
-                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
+                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span>
+                            </li>
                             <li>
-                                <a href="#">수정</a>
-                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
+                                {{formatDate(question.createDate)}}
+                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span>
+                            </li>
                             <li>
-                                <a href="#">삭제</a>
+                                <span class="btn" @click="onInquiryUpdateClick(index)">수정</span>
+                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span>
+                            </li>
+                            <li>
+                                <span class="btn" @click="deleteInquiry(index)">삭제</span>
                             </li>
                         </ul>
                     </div>
@@ -749,33 +738,9 @@
                 </div>
                 
                 <div id="wrap_qna">
-                    <a href="javascript:openModal('modal1');" class="button modal-open">문의하기</a>
+                    <a class="button modal-open">문의하기</a>
                 </div>
-                                <!--//모달 안 내용 시작 -->
-                <div id="modal"></div>
-                <div class="modal-con modal1">
-                    <a href="javascript:;" class="close"><img src="/images/x_icon_login.png"></a>
-                    <div class="title">
-                        <h2>상품 문의</h2>
-                    </div>
-                    <div class="productInquiryBox" style="padding-right:20px">
-                        <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
-                        <form>
-                            <p>
-                                <textarea
-                                    style="border-radius:5px;width:800px;height:200px;padding:10px;font-size:14px"
-                                    placeholder="문의하실 내용을 입력해주세요"></textarea>
-                            </p>
-
-                        </form>
-                        <div class="group">
-                            <input type="checkbox" id="secret">
-                            <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
-                        </div>
-                    </div>
-                </div>
-                <!--//문의 모달 끝-->
-
+               
                 <div class="page_wrap">
                     <div class="page_nation">
                         <a class="arrow pprev" href="#"></a>
@@ -804,8 +769,8 @@
                 </button>
             </div>
         </div>
-        <product-review-modal></product-review-modal>
-        <product-inquiry-modal></product-inquiry-modal>
+        <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="currentReview" v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
+        <product-inquiry-modal v-if="inquiryModal" v-bind:product="product" v-bind:inquiry="currentQuestion" v-on:add-complete="insertInquiryComplete" v-on:close="onChildPopupClosed"></product-inquiry-modal>
     </main>
     <script>
         var upload = document.querySelector('#upload');
@@ -876,30 +841,7 @@
             }
             preview.appendChild(image);
         })
-    </script>
-    <script>
-        var upload = document.querySelector('#upload');
-        var preview = document.querySelector('#preview');
-        upload.addEventListener('change', function (e) {
-            var get_file = e.target.files;
-            var image = document.createElement('img');
-            var reader = new FileReader();
-            reader.onload = (function (aImg) {
-                console.log(1);
-                return function (e) {
-                    console.log(3);
-                    aImg.src = e.target.result
-                }
-            })(image)
-            if (get_file) {
-                reader.readAsDataURL(get_file[0]);
-                console.log(2);
-            }
-            preview.appendChild(image);
-        })
-        window.onload = function() {
-        }
-    </script>                    
+    </script>                
     <script src="/js/productReviewModal.js"></script>
     <script src="/js/productInquiryModal.js"></script>
     <script src="/js/orderDTO/OrderDTO.js"></script>

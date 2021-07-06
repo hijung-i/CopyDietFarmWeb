@@ -49,7 +49,6 @@ router.get('/product/:productCode', (req: Request, res: Response, next: NextFunc
 })
 router.get('/products/:salesStandCode/event', (req: Request, res: Response, next: NextFunction) => {
     const standCode = req.params.salesStandCode
-    console.log(standCode)
 
     render(req, res, 'products', {
         standCode: standCode,

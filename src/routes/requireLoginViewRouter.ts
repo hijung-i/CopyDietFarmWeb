@@ -74,7 +74,7 @@ router.get('/point', (req: Request, res: Response, next: NextFunction) => {
 router.get('/coupon', (req: Request, res: Response, next: NextFunction) => {
 
     checkLogin(req, res, (sessionUser) => {
-        render(req, res, 'coupon', { currentPage: '쿠폰' })
+        render(req, res, 'mypage/coupon', { currentPage: '쿠폰' })
     })
 })
 

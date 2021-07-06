@@ -152,7 +152,6 @@
     <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
     <script src="https://cdn.bootpay.co.kr/js/bootpay-3.3.1.min.js"
             type="application/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
         <div class="web_order_info">
@@ -233,84 +232,17 @@
                     <input type="email" id="unEmail" placeholder="이메일을 입력해주세요">
                 </div>
             </div>
-            <delivery-info-modal v-bind:order-dto="orderDTO"></delivery-info-modal>
+            <delivery-info-modal v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
             <div class="deliver_info">
                 <div class="deliver_info_top">
-                <h3><img src="images/asterisk.png">
-                   배송지
-                </h3>
-                <button type="button" id="my-button" class="shopBtn01" onclick="openInfoModal()" style="border: 0; background:none;">변경</button>
+                    <h3><img src="images/asterisk.png">
+                       배송지
+                    </h3>
+                    <button type="button" id="my-button" class="shopBtn01" onclick="openInfoModal()" style="border: 0; background:none;">변경</button>
                 </div>
-                <div id="iModal" class="i_modal" style="display:none">
-                    <div class="modal-content">
-                        <div class="modal_ctn">
-                            <div class="modalTop_ctn">
-                                <div class="modalTop_tit">
-                                    <h3>배송지 관리</h3>
-                                    <span class="close" onclick="closeRegisterModal()">&times;</span>
-                                </div>
-                                <h3 class="order_delMag">배송지 변경</h3>                                                                                   <!-- modal window -->
-                            </div>
-                            <div class="slim_line_del_switch_modal"></div>
-                            <div class="top_checkBox">
-                                <input
-                                    type="checkbox"
-                                    name="list"
-                                    id="selectAll1"
-                                    value="selectAll"
-                                    onclick='selectAll(this)'>
-                                <label for="selectAll1">전체 선택</label>
-                                <button>선택 삭제</button>
-                            </div>
-                            <div class="order_list_ctn">
-                                <template v-for="(item, i) in deliveryList">
-                                    <section class="web_delivery_manage_list">
-                                        <div class="del_mng_list_top">
-                                            <ul class="del_mng_type">
-                                                <li class="type_first">{{ item.addressName }}</li>
-                                                <li class="type_second" v-if="item.mainAddressYn == 'Y'">
-                                                    <span class="tema">기본배송지</span>
-                                                </li>
-                                            </ul>
-                                            <ul class="edit_remove">
-                                                <template v-if="item.mainAddressYn == 'N'">
-                                                    <li class="basic" v-on:click="changeMainAddress(i)">
-                                                        <a>기본배송지로 설정</a>
-                                                    </li>
-                                                    <li class="small_line"><img src="/images/l_icon_category.png"></li>
-                                                </template>
-                                                <li class="edit_first">
-                                                    <a>수정</a>
-                                                </li>
-                                                <li class="small_line"><img src="/images/l_icon_category.png"></li>
-                                                <li class="edit_second">
-                                                    <a v-on:click="deleteDelivery(i)">삭제</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="web_del_mag_list_info">
-                                            <div class="top_checkBox_piece">
-                                                <input type="radio" name="list" v-on: v-bind:id="'selectAll' + (i + 2)" v-on:change="onDeliveryInfoSelected()" v-bind:value="i" v-bind:checked="item.address == orderDTO.delivery.address">
-                                                <label v-bind:for="'selectAll' + (i+2)"></label>
-                                            </div>
-                                            
-                                            <ul>
-                                                <li class="order_info_modal_address">
-                                                    <p class="address">{{ item.address }}</p>
-                                                </li>
-                                                <li>
-                                                    <p class="customer_info">{{ item.userName }}
-                                                        <span class="small_line"><img src="/images/l_icon_category.png"></span>{{ item.userCellNo }}
-                                                    </p>
-                                                </li>
-                                            </ul>   
-                                        </div>
-                                    </section>
-                                </template>
-                            </div>
-                        </div>
-                    </div>
-                </div>                  
+                 <!-- iModal 자리 -->
+                 
+                 <!--  -->
                 <div class="members"
                     v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
                     <span class="addr" style="margin-bottom:13px">{{ orderDTO.delivery.address }}</span><br>

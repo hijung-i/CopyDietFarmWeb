@@ -32,22 +32,16 @@
         <%-include(webroot + 'views/general/head') %>
         <style type="text/css">
             nav a:nth-child(1) {color:#F99319}
-            .bx-wrapper {-moz-box-shadow: none !important;-webkit-box-shadow: none !important;
+            .bx-wrapper {-moz-box-shadow: none !important; -webkit-box-shadow: none !important;
             box-shadow: none !important} 
-
             .main_pager_wrapper {position: absolute;right: 10%;top: 6.6%;z-index: 777;width: 60px;
                 height: auto;text-align: center;background: #fff;border-radius: 20px;padding: 6px;
                 font-size: 12px}
-
             .main_pager_wrapper span {font-weight: 700}
-
             .main_pager_wrapper > .mr10 {letter-spacing: 2px}
-
             #mHeader .tab_wrap {width: 100%;padding-bottom: 20px;border-bottom: 2px solid #E6E6E6;
                 background: #fff;z-index: 99}
-
             #mHeader .tab_cont {display: none;min-height: 360px}
-
             #mHeader .tab_cont.active {display: block;background: #fff;position: absolute;
                 width: 100%}
             @media screen and (max-width:1079px) {
@@ -70,7 +64,6 @@
                 .swiper-slide img {display: block;width: 100%;height:360px;object-fit:cover;}
                 .slider_main_wrap img {width: 1080px; height: 370px;z-index:100} 
             }
-
             /* swiper bundle */
             .swiper-container { width: 100%;height: 100%;z-index: 0;}
           
@@ -85,20 +78,19 @@
             .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
             left: 88%; bottom: 25px}
             .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
-
-
         </style>
         <link rel="stylesheet" href="/css/myPage.css">
 </head>
 <body>
         <!--//로그인 모달영역시작-->
-        <div class="popup_layer_wrapper">
-            <!-- <div id="popup_layer"></div> -->
-        </div>
-          <!--//로그인 모달영역끝-->
-
+        <!--//로그인 모달영역끝-->
+        
         <main id="content" class="content_main">
             <div id="app">
+                <div class="popup_layer_wrapper">
+                    <!-- <div id="popup_layer"></div> -->
+                    <install-modal></install-modal>
+                </div>
                 <%-include(webroot + 'views/general/header') %>
                     <div class="swiper-container mySwiper">
                     <!--//  <div class="black_bg"> </div>-->
@@ -269,7 +261,6 @@
                                             <li class="cost">26,000원</li>
                                             <li class="ratio">10%</li>
                                         </ul>
-
                                     <div class="item-2">
                                         <img src="/images/m_img2.jpg" alt="">
                                     </div>
@@ -285,13 +276,10 @@
             </div>
           </div>
         </main>
-
+        <script src="/js/components/installAppModal.js"></script>
         <script src="/js/index.js"></script>
         <script src="/js/common.js"></script>
+
         <%-include(webroot + 'views/general/footer') %>
-
-
-
-
     </body>
 </html>

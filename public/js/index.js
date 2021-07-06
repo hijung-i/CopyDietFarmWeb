@@ -3,6 +3,35 @@ $(function () {
     listenForLikes();
 });
 
+var app = new Vue({
+    el: 'main',
+    components: {
+        'install-modal': installAppModal,
+        'mypage-modal': signModal
+    }, computed: {
+        installModal: function() {
+            userAgent = window.navigator.userAgent.toLowerCase()
+        
+            iOS = /iphone|ipod|ipad/.test(userAgent);
+            isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
+    
+            if(iOS || isBrowser && $('html').width() <= 1079) {
+                if($('.popup_layer_wrapper').length > 0) {
+                    $('html,body').css({'overflow':'hidden','height':'100%'});
+                    $('html,body').on('scroll touchmove mousewheel', function(event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        return false;
+                    })
+                    $('.popup_layer_wrapper').css({'display':'block'});
+                } 
+            }
+        }
+
+    }
+});
+
+
 function listenForLikes (){
     var like = document.querySelectorAll("like");
     like.forEach(like => {

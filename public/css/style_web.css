@@ -220,7 +220,7 @@ width: 400px; height: 147px;color: #000; background: #fff;margin: 44px -10px 0 0
 .main_contents .center p > span, .main_contents .right p > span {font-size: 20px; font-weight: 100; color: #ccc;padding: 12px 0 0 12px}
 
 /* contents */
-.content_lnb {width:138px; text-align: center;margin-left:180px}
+.content_lnb {width:138px; text-align: center;}
 .content_lnb a {color:#000}
 .content_lnb li {width:138px;padding: 16px 0;    border: 1px solid #F5F5F5;height: 50px}
 .content_lnb li.on {background: #F99319}
@@ -460,7 +460,7 @@ justify-self: center;width: 100%;margin: 0 auto;}
 /* 버튼 */
 #btnOrder{width:100%;margin:auto;padding: 21px 0 17px;border: 0;cursor: pointer;color: #fff;
     background-color: #F99319;font-size: 14px;
-    font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
+    font-weight: 400; font-family: 'Nanum Gothic', sans-serif; border-radius:5px;}
 
 /*주문 완료*/
 #web_content .order_complete_info{margin-top:20px;}
@@ -623,7 +623,7 @@ color:#000;font-size:14px;background-color:#F1F1F1}
     background-color:transparent;
     font-size: 14px;
     font-weight: 400;
-    font-family: '나눔고딕';
+    font-family: 'Nanum Gothic', sans-serif;
     border-radius:5px;
     margin-top: 20px;
     padding-bottom: 20px;
@@ -2017,7 +2017,7 @@ h3 {font-size: 14px;font-weight:700;}
 select { width: 100%;height: 29px;font-size: 15px;background: #fff url(https://static.nid.naver.com/images/join/pc/sel_arr_2x.gif) 100% 50% no-repeat;
     background-size: 20px 8px;-webkit-appearance: none;display: inline-block;
     text-align: start;border: none;
-    cursor: default;font-family:'나눔고딕'}
+    cursor: default; font-family: 'Nanum Gothic', sans-serif;}
 
 .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
 .member_delete ul li a{text-decoration:underline;}

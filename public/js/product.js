@@ -6,7 +6,8 @@ var app = new Vue({
     el: 'main',
     components: {
         'product-review-modal': productReviewModal,
-        'product-inquiry-modal': productInquiryModal
+        'product-inquiry-modal': productInquiryModal,
+        'mypage-modal': signModal
     },
     data: {
         RESOURCE_SERVER,
@@ -15,9 +16,14 @@ var app = new Vue({
         optionTotalPrice: 0,
         orderDTO: {},
         deliveryGroupList: [],
+        currentReview: {},
         reviewList: [],
+        reviewModal: false,
+        currentQuestion: {},
         questionList: [],
-        recmdList: []
+        inquiryModal: false,
+        recmdList: [],
+        modal: []
     }, methods: {
         numberFormat,
         deleteFromArray,
@@ -32,6 +38,38 @@ var app = new Vue({
         },
         onOptionSelected,
         zzimProduct,
+        onReviewUpdateClick: function(index) {
+            this.currentReview = this.reviewList[index];
+
+            openReviewModal()
+        },
+        onInquiryUpdateClick: function(index) {
+            this.currentQuestion = this.questionList[index];
+            var isChecked = this.currentQuestion.checkbox;
+
+            this.currentQuestion.checkbox 
+                = (isChecked != undefined && (isChecked == true || isChecked == 'Y'))?true:false;
+            openInquiryModal()
+        },
+        onChildPopupClosed: function(data) {
+            this.reviewModal = false;
+            this.inquiryModal = false; 
+
+            this.currentReview = {};
+            this.currentQuestion = {};
+        },
+        insertReviewComplete: function(data) {
+            this.reviewList.push(data);
+        },
+        deleteReview: function(index) {
+            this.reviewList.splice(index, 1);
+        },
+        insertInquiryComplete: function(data) {
+            this.questionList.push(data);
+        },
+        deleteInquiry: function(index) {
+            this.questionList.splice(index, 1);
+        }
     }
 });
 
@@ -49,7 +87,6 @@ $(function() {
     
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
-        console.log("data", data);
         if(data.result.isLoggedIn == true) {
             checkDeliveryAddress();
         }
@@ -72,12 +109,11 @@ function getProductDetail(){
     }
     ajaxCallWithLogin(API_SERVER + '/product/getProductDetail', params, 'POST'
     , function (data) {
-        var product = data.result;
-        app.product = product;
+        app.product = data.result;
 
         var html = '';
-        for(var i = 0; i < product.representative.length; i++ ) {
-            var image = product.representative[i];
+        for(var i = 0; i < app.product.representative.length; i++ ) {
+            var image = app.product.representative[i];
             html += '<div class="swiper-slide"><img src="'+ RESOURCE_SERVER + image.url + '" alt=""></div>';
         }
 
@@ -100,55 +136,55 @@ function getProductDetail(){
             return false;
         }
 
-        if(product.options.length == 1) {
-            app.selectedOptions = JSON.parse(JSON.stringify(product.options));
+        if(app.product.options.length == 1) {
+            app.selectedOptions = JSON.parse(JSON.stringify(app.product.options));
             app.selectedOptions[0].optionCount = 1;
             app.selectedOptions[0].isSelected = true;
             drawSelectedOptions();
         }
 
-        app.product.discountRate = Math.round(product.discountRate);
+        app.product.discountRate = Math.round(app.product.discountRate);
         // 상품명
-        $('.detail_title h2').html(product.productName);
-        $('.v_top_name').html(product.productName);
-        $('.infoArea01 .product_name_css .con span').html(product.productName);
+        $('.detail_title h2').html(app.product.productName);
+        $('.v_top_name').html(app.product.productName);
+        $('.infoArea01 .product_name_css .con span').html(app.product.productName);
 
         // 가격 정보
         var productDesc = $('.v_top_txt')
         var discountPrice = $('.price_mobile .p1')
         var retailPrice = $('.price_mobile .p2')
         var discountRate = $('.price_mobile .p3')
-        productDesc.html(product.productDesc);
-        discountPrice.html(numberFormat(product.discountPrice)+'원');
+        productDesc.html(app.product.productDesc);
+        discountPrice.html(numberFormat(app.product.discountPrice)+'원');
         
-        if(product.discountPrice != product.retailPrice){
-            retailPrice.html(numberFormat(product.retailPrice)+'원');
-            discountRate.html(numberFormat(Math.round(product.discountRate, 0))+'%');
+        if(app.product.discountPrice != app.product.retailPrice){
+            retailPrice.html(numberFormat(app.product.retailPrice)+'원');
+            discountRate.html(numberFormat(Math.round(app.product.discountRate, 0))+'%');
         } else {
             $('.v_top_txt_box .p2').hide()
             $('.v_top_txt_box .p3').hide();
         }
 
         // v_n_top_info
-        $(".v_n_top_info .point .ex").html(product.deliveryCost)
-        $(".v_n_top_info .courier-name .ex").html(product.deliveryCompany);
+        $(".v_n_top_info .point .ex").html(app.product.deliveryCost)
+        $(".v_n_top_info .courier-name .ex").html(app.product.deliveryCompany);
         
         var deliveryCostHtml = '';
-        if(product.deliveryCostBasis == 0){
+        if(app.product.deliveryCostBasis == 0){
             deliveryCostHtml = '무료배송';
-        } else if(product.deliveryCostBasis < 999999) {
-            deliveryCostHtml = numberFormat(product.deliveryCostBasis)+'원 이상 구매시 무료배송';
+        } else if(app.product.deliveryCostBasis < 999999) {
+            deliveryCostHtml = numberFormat(app.product.deliveryCostBasis)+'원 이상 구매시 무료배송';
         } else {
-            deliveryCostHtml = numberFormat(product.deliveryCost); 
-            if(product.deliveryCost3 != 0) {
-                deliveryCostHtml += ' ~ ' + numberFormat(product.deliveryCost3) + '원';
+            deliveryCostHtml = numberFormat(app.product.deliveryCost); 
+            if(app.product.deliveryCost3 != 0) {
+                deliveryCostHtml += ' ~ ' + numberFormat(app.product.deliveryCost3) + '원';
             }
         }
         $('.v_n_top_info .delivery-cost .ex').html(deliveryCostHtml);
 
         var packingTypeHtml = '';
-        if (product.packingType == 'A') packingTypeHtml = '상온 (종이박스)';
-        else if (product.packingType == 'B') packingTypeHtml = '냉장 (아이스박스)';
+        if (app.product.packingType == 'A') packingTypeHtml = '상온 (종이박스)';
+        else if (app.product.packingType == 'B') packingTypeHtml = '냉장 (아이스박스)';
         $('.v_n_top_info .packing-type .ex').html(packingTypeHtml);
 
         console.log(app.product)
@@ -311,13 +347,16 @@ function getReviewList() {
         productCode: app.product.productCode
     };
 
-    ajaxCall(API_SERVER + '/board/getReview', params, 'POST', 
+    ajaxCallWithLogin(API_SERVER + '/board/getReview', params, 'POST', 
     function (data) {
     
         app.reviewList = data.result;
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);
+    }, {
+        isRequired: false,
+        userId: true
     })
 }
 
@@ -326,13 +365,15 @@ function getProductQuestionList() {
         productCode: app.product.productCode
     };
     
-    console.log(params);
-    ajaxCall(API_SERVER + '/product/getQAByProduct', params, 'POST', 
+    ajaxCallWithLogin(API_SERVER + '/product/getQAByProduct', params, 'POST', 
     function (data) {
         app.questionList = data.result;
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);
+    }, {
+        isRequired: false,
+        userId: true
     })
 }
 
@@ -453,7 +494,6 @@ function getProductList() {
     }
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'POST',
     function(data) {
-        console.log(data);
         app.recmdList = data.result;
         
         insertRecommandListHtml();
