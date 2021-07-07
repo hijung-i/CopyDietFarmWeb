@@ -63,6 +63,14 @@ app.set('view engine', 'ejs')
 app.use(Express.static(path.join(__baseDir, 'public')))
 
 app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
+    if (!req.secure) {
+        res.redirect('https://' + req.hostname + req.url)
+    } else {
+      next()
+    }
+})
+
+app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
     let err = new Error('Not Found!') as Err
     err.status = 404
     STREAM.writeError(`NOT FOUND! METHOD: ${req.method}, URI: ${req.url}`)
