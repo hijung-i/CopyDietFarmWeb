@@ -219,7 +219,7 @@ router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) =
     render(req, res, 'myinfo', {})
 })
 router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'myinfoUserCheck', {})
+    render(req, res, 'myInfoUserCheck', {})
 })
 router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'order_details', {})

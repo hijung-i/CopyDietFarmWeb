@@ -8,7 +8,9 @@ var app = new Vue({
         RESOURCE_SERVER,
         reviewList: [],
         writableReviewList: [],
-        totalPointAmount: 0
+        totalPointAmount: 0,
+        reviewModal: false,
+        inquiryModal: false
     }, methods: {
         formatDate,
         getOptionName: function(options) {
@@ -18,7 +20,19 @@ var app = new Vue({
             }
             return optionName;
         }
-    }
+    },
+    onReviewUpdateClick: function(index) {
+        this.currentReview = this.reviewList[index];
+
+        openReviewModal()
+    },
+    onChildPopupClosed: function(data) {
+        this.reviewModal = false;
+        this.inquiryModal = false; 
+
+        this.currentReview = {};
+        this.currentQuestion = {};
+    },
 })
 
 $(function() {

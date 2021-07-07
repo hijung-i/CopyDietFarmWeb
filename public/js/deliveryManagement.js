@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '#app',
+    el: 'main',
     components: {
         'mypage-component': mypageComponent,
         'delivery-register-modal': deliveryRegisterModalComponent

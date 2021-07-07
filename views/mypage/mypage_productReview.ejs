@@ -182,7 +182,7 @@
             </div>
             </div>
         </div>
-        <product-review-modal></product-review-modal>
+        <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal>
     </main>
     <%-include(webroot + 'views/general/footer') %>
     <script src="/js/productReviewModal.js"></script>

@@ -1,70 +1,86 @@
 var productReviewTemplate = '';
 
 productReviewTemplate += '<div class="review_modal" id="review_Modal">'
-productReviewTemplate += '<div class="modal-content" >'
-productReviewTemplate += '<span class="close" @click="closeModal()">&times;</span>';
-productReviewTemplate += '<div v-if="product != undefined">'
-productReviewTemplate += '<div class="reviewModifyBox">'
-productReviewTemplate += '<h2>리뷰쓰기</h2>'
-productReviewTemplate += '<div class="review01">'
-productReviewTemplate += '  <table>'
-productReviewTemplate += '      <tbody>'
-productReviewTemplate += '          <tr class="reviewProduct">'
-productReviewTemplate += '              <td>'
-productReviewTemplate += '                  <div class="detailBox">'
-productReviewTemplate += '                      <a v-bind:href="\'/product/\' + product.productCode"><img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:90px;margin-right:15px"></a>'
-productReviewTemplate += '                      <ul class="reviewProductInfo">'
-productReviewTemplate += '                          <li>{{ product.companyName }}</li>'
-productReviewTemplate += '                          <li>{{ product.productName }}</li>'
-productReviewTemplate += '                          <li>{{ getOptionName() }}</li>'
-productReviewTemplate += '                      </ul>'
+productReviewTemplate += '  <div class="modal-content" >'
+productReviewTemplate += '      <span class="close" @click="closeModal()">&times;</span>';
+productReviewTemplate += '      <div class="review_before" v-if="reviewLevel == 0">'
+productReviewTemplate += '          <h2>리뷰쓰기</h2>'
+productReviewTemplate += '          <h3>리뷰 쓸 상품을 선택해주세요.</h3>'
+productReviewTemplate += '          <div class="detailBox" v-for="(writable, index) in writableList">'
+productReviewTemplate += '              <input type="radio" v-model="writableReviewIndex" v-bind:value="index" class="rc">'
+productReviewTemplate += '              <label for="rc" class="rc"><span><a v-bind:href="\'/product/\' + product.productCode"><img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:50px;height:60px;margin-right:15px"></a></span></label>'
+productReviewTemplate += '              <ul class="reviewProductInfo">'
+productReviewTemplate += '                  <li>{{ product.companyName }}</li>'
+productReviewTemplate += '                  <li>{{ product.productName }}</li>'
+productReviewTemplate += '                  <li>{{ getOptionName() }}</li>'
+productReviewTemplate += '              </ul>'
+productReviewTemplate += '          </div>'
+productReviewTemplate += '          <div class="rbtn_wrap">'
+productReviewTemplate += '              <button type="button" @click="onReviewSelect()">확인</button>'
+productReviewTemplate += '          </div>'
+productReviewTemplate += '      </div>'
+productReviewTemplate += '      <div v-if="reviewLevel == 1">'
+productReviewTemplate += '          <div class="reviewModifyBox">'
+productReviewTemplate += '              <h2>리뷰쓰기</h2>'
+productReviewTemplate += '              <div class="review01">'
+productReviewTemplate += '                  <table>'
+productReviewTemplate += '                      <tbody>'
+productReviewTemplate += '                          <tr class="reviewProduct">'
+productReviewTemplate += '                              <td>'
+productReviewTemplate += '                                  <div class="detailBox">'
+productReviewTemplate += '                                      <a v-bind:href="\'/product/\' + product.productCode"><img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:50px;height:60px;margin-right:15px"></a>'
+productReviewTemplate += '                                      <ul class="reviewProductInfo">'
+productReviewTemplate += '                                          <li>{{ product.companyName }}</li>'
+productReviewTemplate += '                                          <li>{{ product.productName }}</li>'
+productReviewTemplate += '                                          <li>{{ getOptionName() }}</li>'
+productReviewTemplate += '                                      </ul>'
+productReviewTemplate += '                                  </div>'
+productReviewTemplate += '                              </td>'
+productReviewTemplate += '                          </tr>'
+productReviewTemplate += '                      </tbody>'
+productReviewTemplate += '                  </table>'
+productReviewTemplate += '              </div>'
+productReviewTemplate += '              <div id="star_grade" class="star_grade">'
+productReviewTemplate += '                  <p>별점으로 만족도를 선택해주세요</p>'
+productReviewTemplate += '                  <div class="starRev" v-if="review.gpa != undefined">'
+productReviewTemplate += '                  <template v-for="count in (review.gpa * 2)">';
+productReviewTemplate += '                      <span class="starR1 on" v-if="count % 2 == 1" v-on:click="onStarClick(true, count)">별1_왼쪽</span>';
+productReviewTemplate += '                      <span class="starR2 on" v-if="count % 2 == 0" v-on:click="onStarClick(true, count)">별1_오른쪽</span>';
+productReviewTemplate += '                  </template>';
+productReviewTemplate += '                  <template v-for="count in (10 - (review.gpa * 2))">';
+productReviewTemplate += '                    <template v-if="(10 - (review.gpa * 2)) % 2 == 1">';
+productReviewTemplate += '                        <span class="starR1" v-if="count % 2 == 0" v-on:click="onStarClick(false, count)">별1_왼쪽</span>';
+productReviewTemplate += '                        <span class="starR2" v-if="count % 2 == 1" v-on:click="onStarClick(false, count)">별1_오른쪽</span>';
+productReviewTemplate += '                    </template>';
+productReviewTemplate += '                    <template v-if="(10 - (review.gpa * 2)) % 2 == 0">';
+productReviewTemplate += '                        <span class="starR2" v-if="count % 2 == 0" v-on:click="onStarClick(false, count)">별1_오른쪽</span>';
+productReviewTemplate += '                        <span class="starR1" v-if="count % 2 == 1" v-on:click="onStarClick(false, count)">별1_왼쪽</span>';
+productReviewTemplate += '                    </template>';
+productReviewTemplate += '                  </template>';
 productReviewTemplate += '                  </div>'
-productReviewTemplate += '              </td>'
-productReviewTemplate += '          </tr>'
-productReviewTemplate += '      </tbody>'
-productReviewTemplate += '  </table>'
-productReviewTemplate += '</div>'
-productReviewTemplate += '<div id="star_grade" class="star_grade">'
-productReviewTemplate += '  <p>별점으로 만족도를 선택해주세요</p>'
-productReviewTemplate += '  <div class="starRev" v-if="review.gpa != undefined">'
-productReviewTemplate += '  <template v-for="count in (review.gpa * 2)">';
-productReviewTemplate += '      <span class="starR1 on" v-if="count % 2 == 1" v-on:click="onStarClick(true, count)">별1_왼쪽</span>';
-productReviewTemplate += '      <span class="starR2 on" v-if="count % 2 == 0" v-on:click="onStarClick(true, count)">별1_오른쪽</span>';
-productReviewTemplate += '  </template>';
-productReviewTemplate += '  <template v-for="count in (10 - (review.gpa * 2))">';
-productReviewTemplate += '    <template v-if="(10 - (review.gpa * 2)) % 2 == 1">';
-productReviewTemplate += '        <span class="starR1" v-if="count % 2 == 0" v-on:click="onStarClick(false, count)">별1_왼쪽</span>';
-productReviewTemplate += '        <span class="starR2" v-if="count % 2 == 1" v-on:click="onStarClick(false, count)">별1_오른쪽</span>';
-productReviewTemplate += '    </template>';
-productReviewTemplate += '    <template v-if="(10 - (review.gpa * 2)) % 2 == 0">';
-productReviewTemplate += '        <span class="starR2" v-if="count % 2 == 0" v-on:click="onStarClick(false, count)">별1_오른쪽</span>';
-productReviewTemplate += '        <span class="starR1" v-if="count % 2 == 1" v-on:click="onStarClick(false, count)">별1_왼쪽</span>';
-productReviewTemplate += '    </template>';
-productReviewTemplate += '  </template>';
-productReviewTemplate += '  </div>'
-productReviewTemplate += '</div>'
-productReviewTemplate += '<form>'
-productReviewTemplate += '    <input type="hidden" value="">'
-productReviewTemplate += '    <textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px" v-html="review.content"></textarea>'
-productReviewTemplate += '</form>'
-productReviewTemplate += '<div class="filebox">'
-productReviewTemplate += '  <label for="upload">사진 (선택)</label>'
-productReviewTemplate += '  <input type="file" id="upload" name="upload">'
-productReviewTemplate += '  <div id="preview" v-if="review.files != undefined && review.files.length > 0">'
-productReviewTemplate += '      <div class="previewBox">'
-productReviewTemplate += '          <ul>'
-productReviewTemplate += '              <li></li>'
-productReviewTemplate += '          </ul>'
+productReviewTemplate += '              </div>'
+productReviewTemplate += '              <form>'
+productReviewTemplate += '                  <input type="hidden" value="">'
+productReviewTemplate += '                  <textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px" v-html="review.content"></textarea>'
+productReviewTemplate += '              </form>'
+productReviewTemplate += '              <div class="filebox">'
+productReviewTemplate += '                   <label for="upload">사진 (선택)</label>'
+productReviewTemplate += '                   <input type="file" id="upload" name="upload">'
+productReviewTemplate += '                   <div id="preview" v-if="review.files != undefined && review.files.length > 0">'
+productReviewTemplate += '                       <div class="previewBox">'
+productReviewTemplate += '                           <ul>'
+productReviewTemplate += '                               <li></li>'
+productReviewTemplate += '                           </ul>'
+productReviewTemplate += '                       </div>'
+productReviewTemplate += '                   </div>'
+productReviewTemplate += '                   <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>'
+productReviewTemplate += '              </div>'
+productReviewTemplate += '          </div>'
+productReviewTemplate += '          <div class="btn_area">'
+productReviewTemplate += '              <button type="button" id="btnSaveProduct" @click="onSubmit">저장</button>'
+productReviewTemplate += '          </div>'
 productReviewTemplate += '      </div>'
 productReviewTemplate += '  </div>'
-productReviewTemplate += '  <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>'
-productReviewTemplate += '</div>'
-productReviewTemplate += '</div>'
-productReviewTemplate += '  <div class="btn_area">'
-productReviewTemplate += '      <button type="button" id="btnSaveProduct" @click="onSubmit">저장</button>'
-productReviewTemplate += '  </div>'
-productReviewTemplate += '</div>'
-productReviewTemplate += '</div>'
 productReviewTemplate += '</div>'
 
 var productReviewModal = {
@@ -85,13 +101,26 @@ var productReviewModal = {
                     files: []
                 }
             }
+        }, writableList: {
+            type: Array,
+            default: function() {
+                return new Array()
+            }
+        },
+        writable: {
+            type: Object,
+            default: function() {
+                return {}
+            }
         }
     },
     data: function() {
         if(this.review == null || this.review == undefined) {
         }
         return {
-            RESOURCE_SERVER
+            RESOURCE_SERVER,
+            writableReviewIndex: -1,
+            currentWritable: this.writable
         }
     }, methods: {
         initialize,
@@ -118,10 +147,28 @@ var productReviewModal = {
         }, closeModal: function() {
             this.$emit('close', 'review')
             scrollAllow();
+        }, onReviewSelect: function() {
+            // 확인 버튼 클릭시 동작
+            var selectedWritable = this.writableList[this.writableReviewIndex];
+
+            if(selectedWritable != undefined && selectedWritable.purchaseProductNo != 0) {
+                console.log("writable 변경", selectedWritable);
+                this.currentWritable =  selectedWritable
+            }
         }
 
     }, computed: {
-        
+        reviewLevel: function() {
+            return (this.currentWritable == {} || this.currentWritable.purchaseProductNo == 0)?0:1
+        } 
+    }, created: function() {
+        console.log(this)
+        if(this.writableList == undefined || this.writableList.length == 0) {
+            alert('상품 구매 후 리뷰 작성이 가능합니다.');
+            this.closeModal();
+
+            return;
+        }
     }
 }
 
