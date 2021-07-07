@@ -21,7 +21,7 @@ mypageTemplate += '             </div>';
 mypageTemplate += '         ';
 mypageTemplate += '            <div class="mypage_coupon_info frame400">';
 mypageTemplate += '                <h3>쿠폰<img src="/images/coupon_ico.png" alt="쿠폰 아이콘"></h3>';
-mypageTemplate += '                <p>0개<span><i class="fas fa-chevron-right"></i></span></p>';
+mypageTemplate += '                <p v-if="">{{ usableCouponAmount }}개<span><i class="fas fa-chevron-right"></i></span></p>';
 mypageTemplate += '            </div>';
 mypageTemplate += '        </div>';
 mypageTemplate += '    </div>';
@@ -29,7 +29,16 @@ mypageTemplate += '</div>';
 
 var mypageComponent = {
     template: mypageTemplate,
-    props: ["totalPointAmount"],
+    props: {
+        totalPointAmount: {
+            type: String | Number,
+            default: function() { return 0 }
+        },
+        usableCouponAmount: {
+            type: Number,
+            default: function() { return 0 }
+        }
+    },
     data: function() {
         return {
 

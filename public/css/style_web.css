@@ -148,7 +148,6 @@ appearance: none;}
     }
     .main_contents_elements_wrap {
         display: flex;
-        margin-left:180px
     }
     .mypage_member_info {
         width: 137px; height: 147px;
@@ -210,7 +209,7 @@ div.dateNo p.no{margin-top:7px}
 padding-left: 4px}
 
 /* main > center */
-.main_contents{width:100%;background-color:#F5F5F5}
+/* .main_contents{width:100%;background-color:#F5F5F5} */
 .web_contents .center{position:relative;left:41px;top:-25px}
 .web_contents .right{position:relative;left:81px;top:-25px}
 .main_contents .center, .main_contents .right {
