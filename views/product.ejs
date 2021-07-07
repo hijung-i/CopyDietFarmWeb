@@ -564,9 +564,11 @@
                             </div>
                         </div>
                         <div id="tab3" class="tab_cont Mtab_cont">
-                            <div class="review_btn">
-                                <button type="button" id="modal_btn" onclick="openReviewModal()">리뷰쓰기</button>
-                            </div>
+                            <% if( isLoggedIn ) { %>
+                                <div class="review_btn">
+                                    <button type="button" id="modal_btn" onclick="openReviewModal()">리뷰쓰기</button>
+                                </div>
+                            <% } %>
                         
                             <p class="num">리뷰 {{ reviewList.length }}개</p>
                             <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
@@ -662,9 +664,11 @@
                         </div>
         <div id="tab4" class="tab_cont Mtab_cont">
             <!--//review_btn-->
+            <% if( isLoggedIn ) { %>
             <div class="review_btn">
                 <button type="button" onclick="openInquiryModal()">문의하기</button>
             </div>
+            <% } %>
             
             <p class="inquiry">문의 {{questionList.length}}개</p>
             <div class="myReview">
@@ -732,7 +736,7 @@
                 <div id="wrap_qna">
                     <a class="button modal-open">문의하기</a>
                 </div>
-               
+
                 <div class="page_wrap">
                     <div class="page_nation">
                         <a class="arrow pprev" href="#"></a>
@@ -761,7 +765,8 @@
                 </button>
             </div>
         </div>
-        <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="currentReview" v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
+        <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="currentReview" v-bind:writable-list="writableList" v-bind:writable="writable"
+            v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
         <product-inquiry-modal v-if="inquiryModal" v-bind:product="product" v-bind:inquiry="currentQuestion" v-on:add-complete="insertInquiryComplete" v-on:close="onChildPopupClosed"></product-inquiry-modal>
     </main>
     <script>

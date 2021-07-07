@@ -17,6 +17,8 @@ var app = new Vue({
         orderDTO: {},
         deliveryGroupList: [],
         currentReview: {},
+        writable: { purchaseProductNo: 0 },
+        writableList: [],
         reviewList: [],
         reviewModal: false,
         currentQuestion: {},
@@ -88,6 +90,7 @@ $(function() {
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
         if(data.result.isLoggedIn == true) {
+            getWritableReviewList();
             checkDeliveryAddress();
         }
     }, function(err) {
@@ -610,3 +613,21 @@ Kakao.Link.createScrapButton({
     requestUrl: 'https://developers.kakao.com',
     templateId: 55707
   });
+
+function getWritableReviewList() {
+    var productCode = $("#productCode").val();
+
+    var params = {
+        productCode: productCode
+    }
+
+    ajaxCallWithLogin(API_SERVER + '/board/getWritableReview', params, 'POST',
+    function(data) {
+        app.writableList = data.result;
+    }, function(err) {
+        console.log(err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
