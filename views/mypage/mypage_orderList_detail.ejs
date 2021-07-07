@@ -329,8 +329,8 @@
                             </div>
                         </div>
                     </div>
-                <product-review-modal></product-review-modal> 
-                <seller-inquiry-modal></seller-inquiry-modal>
+                <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal> 
+                <seller-inquiry-modal v-if="inquiryModal" v-on:close="onChildPopupClosed"></seller-inquiry-modal>
                 <delivery-info-modal></delivery-info-modal>
                 </main>
      <!--//order-->

@@ -7,13 +7,17 @@ var app = new Vue({
     data: {
         RESOURCE_SERVER,
         orderList: [],
-        totalPointAmount: 0
+        totalPointAmount: 0,
+        reviewModal: false
     }, methods: {
         numberFormat,
         formatDate,
         convertOrderStatus,
         orderConfirm,
-        openCancelModal
+        openCancelModal,
+        onChildPopupClosed: function(data) {
+            this.reviewModal = false
+        }
     }
 })
 

@@ -2,7 +2,7 @@ var sellerInquiryTemplate = '';
 
 sellerInquiryTemplate+='<div class="s_inquiry_modal" id="s_inquiry_modal">'
 sellerInquiryTemplate+='    <div class="modal-content">'
-sellerInquiryTemplate+='        <span class="close" onclick="closeModal03()">&times;</span>'
+sellerInquiryTemplate+='        <span class="close" @click="closeModal()">&times;</span>'
 sellerInquiryTemplate+='        <h3 class="web_title">판매자 문의(주문건)</h3>'
 sellerInquiryTemplate+='        <div class="inquiryBox">'
 sellerInquiryTemplate+='            <ul>'
@@ -51,6 +51,8 @@ sellerInquiryTemplate+='                            </form>'
 sellerInquiryTemplate+='                        </li>'
 sellerInquiryTemplate+='                    </ul>'
 sellerInquiryTemplate+='                </li>'
+sellerInquiryTemplate+='            </ul>'
+
 sellerInquiryTemplate+='                <div class="filebox">'
 sellerInquiryTemplate+='                    <label for="upload">사진</label>'
 sellerInquiryTemplate+='                    <input type="file" id="upload" name="upload">'
@@ -82,15 +84,13 @@ var sellerInquiryModal = {
         }
     }, methods: {
     
+        closeModal: function () {
+            app.inquiryModal = false
+            scrollAllow();
+        }
     }
 }
 function opensInquiryModal() {
-    $('#s_inquiry_modal').show();
+    app.inquiryModal = true;
     scrollBlock();
-}
-
-function closeModal03() {
-    console.log("click")
-    $('#s_inquiry_modal').hide();
-    scrollAllow();
 }
