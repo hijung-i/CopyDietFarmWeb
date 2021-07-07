@@ -17,6 +17,8 @@ var app = new Vue({
         orderDTO: {},
         deliveryGroupList: [],
         currentReview: {},
+        writable: { purchaseProductNo: 0 },
+        writableList: [],
         reviewList: [],
         reviewModal: false,
         currentQuestion: {},
@@ -88,6 +90,7 @@ $(function() {
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
         if(data.result.isLoggedIn == true) {
+            getWritableReviewList();
             checkDeliveryAddress();
         }
     }, function(err) {
@@ -96,6 +99,47 @@ $(function() {
 
     
 })
+function getProductListByCategory() {
+    var category1Code = $('#category1Code').val();
+    var category2Code = $('#category2Code').val();
+    var sortOption = $('#sortOption').val();
+
+    if((category1Code == null || category1Code == undefined || category1Code == '')
+        || (category2Code == null || category2Code == undefined || category2Code == '')){
+        // TODO: Open alert modal
+        // location.href = '/'
+    }
+    if(category2Code == 'ALL') category2Code = '';
+
+    var params = {
+        category1Code: category1Code,
+        category2Code: category2Code,
+        sortOption: sortOption
+    }
+    
+ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
+, function (data) {  
+    if(data.result.length > 0) {
+        console.log(data.result);
+        var category1Name = data.result[0].category1Name
+        var html = generateHtmlForProductList(data.result);
+
+        $('.sub_items ul').html(html);
+        $('.keyword').html(category1Name);
+    } else {
+        $('.sub_items ul').hide();
+        $('.pick_list_null').show();
+        $('.pick_list_null').html('<img src="/images/gift_icon_detailpage@2x.png"><p>더 나은 구성을 위해 상품 준비중입니다.</p>');
+    }
+
+}, function (err){
+    console.log("getProductListByCategory err", err);
+}, {
+    isRequire: false,
+    userId: true
+});
+
+}
 
 function getProductDetail(){
     var productCode = $("#productCode").val();
@@ -569,3 +613,21 @@ Kakao.Link.createScrapButton({
     requestUrl: 'https://developers.kakao.com',
     templateId: 55707
   });
+
+function getWritableReviewList() {
+    var productCode = $("#productCode").val();
+
+    var params = {
+        productCode: productCode
+    }
+
+    ajaxCallWithLogin(API_SERVER + '/board/getWritableReview', params, 'POST',
+    function(data) {
+        app.writableList = data.result;
+    }, function(err) {
+        console.log(err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
