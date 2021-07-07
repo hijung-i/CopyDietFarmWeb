@@ -4,6 +4,7 @@ import { NiceUser, SessionUser, User } from '../models/user'
 import userService from '../services/userService'
 
 import * as winston from '../configs/winston'
+import { globalData } from '../app'
 
 const STREAM = winston.stream
 
@@ -40,7 +41,7 @@ router.get('/result/kakao', async (req: Request, res: Response, next: NextFuncti
 
     res.locals.callback = callback
 
-    res.render('loginCallback')
+    render(req, res, 'loginCallback', {})
 })
 
 router.get('/result/naver', async (req: Request, res: Response, next: NextFunction) => {
@@ -61,7 +62,7 @@ router.get('/result/naver', async (req: Request, res: Response, next: NextFuncti
 
     res.locals.callback = callback
 
-    res.render('loginCallback')
+    render(req, res, 'loginCallback', {})
 })
 
 router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) => {
@@ -105,6 +106,16 @@ router.post('/callback/apple', (req: Request, res: Response, next: NextFunction)
 
     res.status(200).send('POST /user/callback/apple')
 })
+
+const render = (req: Request, res: Response, view: any, data: any | null) => {
+    res.locals.webroot = globalData.getBaseDir()
+
+    const defaultData: any = {
+        currentPage: ''
+    }
+    data.currentPage = data.currentPage || ''
+    res.render(view, data || defaultData)
+}
 
 const userToSession = (req: Request, user: User) => {
     const sessionUser: SessionUser = {
