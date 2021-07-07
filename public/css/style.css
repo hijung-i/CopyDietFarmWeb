@@ -196,7 +196,7 @@ padding-right:15px;float:left;position:relative;top:6px}
 .top_util .menu_list  .bar{position:relative; top:21.5px}
 .top_util .menu_list li.cart, .top_util .menu_list li.mypage, .top_util .menu_list li.pick {position: relative; top: 10px;}
 .top_util .menu_list > li:last-child {padding-right:0}
-.top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap;font-family:Noto Sans KR;}
+.top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap;font-family:Noto Sans KR;border:none;background-color:transparent}
 .top_util .menu_list > li strong {font-weight:700}
 .top_util .menu_list > li strong+a {margin-left:4px}
 .top_util .cart img {width:18px;height:18px;margin-top:8px}
@@ -949,8 +949,38 @@ border-spacing: 0 20px;font-size:14px}
 .review_btn button{width:90%;height:45px}
 
 }
+.review_before h2{text-align:center;font-size:16px;font-weight:bold;margin-top:19px}
+.review_before h3{text-align:center;font-size:16px;font-weight:bold;margin-top:32px;margin-bottom:34px}
+.review_before .detailBox{display:flex;border-top:0.5px solid #bbbbbb;padding-top:21px;padding-bottom:23px}
+.rbtn_wrap button{
+width: 100%;
+border: none;
+height: 45px;
+border-radius: 5px;
+background-color: #EFA543;
+color: #fff;
+font-weight: bold;
+font-size: 14px;
+}
+.detailBox{display:flex}
+input[type="checkbox"] {display: none;}
 
+.rc{position: relative;margin-left:25px;font-size:14px;font-weight:bold}
 
+.review_before input[type="checkbox"]{display:none;}
+.review_before input[type="checkbox"] + label{
+  display: inline-block;
+  margin: -2px 10px 0 0;
+  vertical-align: middle;
+  background: url(../images/beforecheck_icon_join.png)left top no-repeat;
+  cursor: pointer;
+  background-size:19px 19px;
+ padding-left:33px;
+ padding-bottom:4px
+}
+.review_before input[type="checkbox"]:checked + label{
+  background: url(../images/aftercheck_icon_join.png)no-repeat;
+   background-size:19px 19px;}
 
 /*1080px이상 웹용 */
 
@@ -1660,7 +1690,7 @@ div.slideMenu_top {display: none}
 /* 메뉴 아이콘 */
 
 .btn_ctn {width: 100%; height: auto;background: #ccc}
-/* #mHeader */ .sideMenu{display:none; width:168px; height: 100vh; background: #fff;}
+/* #mHeader */ .sideMenu{display:none; height: 100vh; background: #fff;}
 .sideMenu h2{padding:15px 10px;text-align:left;position:relative;
 height:50px;overflow:hidden}
 
