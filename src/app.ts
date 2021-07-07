@@ -48,6 +48,13 @@ app.use(Express.urlencoded({ extended: false, limit: '16MB' }))
 app.use(cookieParser())
 
 app.use(logger('dev'))
+app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
+    if (!req.secure) {
+        res.redirect('https://' + req.hostname + req.url)
+    } else {
+        next()
+    }
+})
 
 app.use('/', indexViewRouter)
 app.use('/', requireLoginViewRouter)
@@ -61,14 +68,6 @@ app.set('views', path.join(__baseDir, 'views'))
 app.set('view engine', 'ejs')
 
 app.use(Express.static(path.join(__baseDir, 'public')))
-
-app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
-    if (!req.secure) {
-        res.redirect('https://' + req.hostname + req.url)
-    } else {
-      next()
-    }
-})
 
 app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
     let err = new Error('Not Found!') as Err
