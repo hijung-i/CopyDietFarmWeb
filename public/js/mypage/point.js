@@ -6,19 +6,35 @@ var app = new Vue({
     data: {
         totalPointAmount: 0,
         pointList: [],
-        totalPointAmount: 0
+        usableCouponAmount: 0
     },
     methods: {
         numberFormat,
         formatDate,
-        parsePointType
+        parsePointType,
+        getUsableCouponList
     }
 })
 
 $(function() {
     getUsablePointAmount();
     getPointHistory();
+    getUsableCouponList();
 })
+
+function getUsableCouponList() {
+ 
+    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST', 
+    function(data) {
+        app.usableCouponAmount = data.result.length;
+        console.log("get usableCouponList", data);
+    }, function(err) {
+        console.error("get usable coupon list ", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
 
 function getUsablePointAmount() {
     var params = {};
