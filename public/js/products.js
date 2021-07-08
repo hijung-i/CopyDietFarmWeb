@@ -100,7 +100,7 @@ function getCategoryList(){
             $('.myPage_title').html(cate.category1Name);
             if(cate.category1Code == category1Code){
                 var html = '';
-                html += '<a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';
+                html += '<a class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';
                 html += '<a href="/products/'+ category1Code +'/category/ALL">전체보기</a>';
                 for(var j = 0; j < cate.category2.length; j++){
                     var  menuCate2 = cate.category2[j]

@@ -7,7 +7,7 @@ function getEventStands() {
 
       $("#header_common #nav").html('');
       var html = '';
-      html += '<a href="#" class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';      
+      html += '<a class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';      
       for(var i = 0; i < data.result.length; i++){
 
          // TODO: 화면 너비가 pc버전일때 break;
