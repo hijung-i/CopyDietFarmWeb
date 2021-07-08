@@ -47,6 +47,17 @@ router.get('/product/:productCode', (req: Request, res: Response, next: NextFunc
     const productCode = req.params.productCode
     render(req, res, 'product', { productCode: productCode })
 })
+
+router.get('/products/:brandCode/brand', (req: Request, res: Response, next: NextFunction) => {
+    const brandCode = req.params.brandCode
+
+    render(req, res, 'products', {
+        brandCode: brandCode,
+        listType: 'BRAND',
+        currentPage: 'products'
+    })
+})
+
 router.get('/products/:salesStandCode/event', (req: Request, res: Response, next: NextFunction) => {
     const standCode = req.params.salesStandCode
 
@@ -134,9 +145,7 @@ router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFu
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'terms_of_service', {})
 })
-router.get('/products', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'products', {})
-})
+
 router.get('/product', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'product', {})
 })

@@ -64,13 +64,33 @@ var app = new Vue({
             this.reviewList.push(data);
         },
         deleteReview: function(index) {
+            var params = {
+                
+            };
+            ajaxCallWithLogin(API_SERVER + '/board/deleteReview', params, 'POST'
+            , function(data) {
+
+            }, function(err) {
+                
+            })
             this.reviewList.splice(index, 1);
         },
         insertInquiryComplete: function(data) {
             this.questionList.push(data);
         },
         deleteInquiry: function(index) {
-            this.questionList.splice(index, 1);
+            var params = this.questionList[index];
+
+            ajaxCallWithLogin(API_SERVER + '/product/removeQA', params, 'POST'
+            , function(data) {
+                alert('문의 삭제에 성공했습니다.');
+                app.questionList.splice(index, 1);
+            }, function(err) {
+                console.log(err);
+            }, {
+                isReuqired: true,
+                userId: true
+            });
         }
     }
 });
@@ -624,6 +644,7 @@ function getWritableReviewList() {
     ajaxCallWithLogin(API_SERVER + '/board/getWritableReview', params, 'POST',
     function(data) {
         app.writableList = data.result;
+        console.log("writableList", data.result);
     }, function(err) {
         console.log(err);
     }, {
