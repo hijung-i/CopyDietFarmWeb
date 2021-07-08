@@ -123,7 +123,7 @@
                                                     <template v-if="'AC'.includes(product.orderStatus)">
                                                 
                                                             <button type="button" class="btnConfirm" onclick="openReviewModal()">리뷰작성</button>
-                                                            <button type="button" class="btnConfirm">재주문</button>
+                                                            <button type="button" class="btnConfirm"><a v-bind:href="'/product/' + product.productCode">재주문</a></button>
                                                     </template>
                                                 </ul>
                                             </div>
@@ -331,7 +331,7 @@
                     </div>
                 <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal> 
                 <seller-inquiry-modal v-if="inquiryModal" v-on:close="onChildPopupClosed"></seller-inquiry-modal>
-                <delivery-info-modal></delivery-info-modal>
+                <delivery-info-modal v-if="deliveryModal" v-on:close="onChildPopupClosed"></delivery-info-modal>
                 </main>
      <!--//order-->
     <%-include(webroot + 'views/general/footer') %>

@@ -10,6 +10,7 @@ var app = new Vue({
         orderList: [],
         totalPointAmount: 0,
         reviewModal: false,
+        deliveryMOdal: false,
         product: {}
     }, methods: {
         numberFormat,
