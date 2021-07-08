@@ -23,7 +23,7 @@
                             top: 0;
                             background-color: #fff;
                             margin-bottom: 20px;
-                            z-index: 999}
+                            z-index: 999;}
                  #content{padding-top:60px}
         }
         @media screen and (min-width:1080px) {
@@ -158,14 +158,14 @@
                                         <li class="t2">
                                             <a v-bind:href="'/ol_detail/' + order.orderNumber">주문상세보기<img src="/images/arrow_icon_order.png" style="width:7px;margin-left:5px"></a>
                                         </li>
-                                    </ul>yle="border:0">
+                                    </ul>
+                                </div>
+                                <table style="border:0">
                                     <tbody>
                                         <tr class="order_a" V-for="(product, pIdx) in order.products">
                                             <td>
                                                 <div class="order_list_box">
-                                           
-                                </div>
-                                <table st         <div class="order_img">
+                                                    <div class="order_img">
                                                         <a v-bind:href="'/product/' + product.productCode">
                                                             <img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:50px;height:62px;margin-right:8px">
                                                         </a>
@@ -202,18 +202,18 @@
                                                                 <button type="button" @click="orderConfirm(oIdx, pIdx)" class="btnA">구매확정</button>
                                                             </li>
                                                             <li>
-                                                                <button type="button" onclick="openDInfoModal()" class="btnB">배송조회</button>
+                                                                <button type="button" class="btnB" onclick="openDInfoModal()">배송조회</button>
                                                             </li>
                                                         </template>
                                                         <template v-if="'AC'.includes(product.orderStatus)">
                                                             <li v-if="product.reviewState == 'N'">
                                                                 <button type="button" class="btnA" onclick="openReviewModal()">리뷰작성</button>
                                                             </li>
-                                                            <li v-else>
-                                                                <span>리뷰완료</span>
+                                                            <li v-else style="margin-bottom:10px">
+                                                                <span class="btnC">리뷰완료</span>
                                                             </li>
                                                             <li>
-                                                                <button type="button" class="btnB" onclick="'/product/' + product.productCode">재주문</button>
+                                                                <a v-bind:href="'/product/' + product.productCode"><button type="button" class="btnB">재주문</button></a>
                                                             </li>
                                                         </template>
                                                     </ul>
@@ -252,18 +252,16 @@
                     </div>
                 </div>
             </div>
-            
-            <delivery-info-modal></delivery-info-modal>
             <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal>
+            <delivery-info-modal v-if="deliveryModal"></delivery-info-modal>
         </main>
 
   
     <!-- modal -->
     <!-- body_contents tab3 -->
     <%-include(webroot + 'views/general/footer') %>
-
+    <script src="/js/deliveryInfoModal.js"></script>
 <script src="/js/productReviewModal.js"></script>
-<script src="/js/deliveryInfoModal.js"></script> 
 <script src="/js/components/mypageComponent.js"></script>
 <script src="/js/orderList.js"></script>
 </body>
