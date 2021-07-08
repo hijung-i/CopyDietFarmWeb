@@ -104,7 +104,7 @@ router.post('/callback/apple', (req: Request, res: Response, next: NextFunction)
     STREAM.writeDebug(`POST /user/callback/apple req.query => ${JSON.stringify(req.query)}`)
     STREAM.writeDebug(`POST /user/callback/apple req.body => ${JSON.stringify(req.body)}`)
 
-    res.status(200).send('POST /user/callback/apple')
+    res.status(200).send('<script>alert("기능 준비중입니다."); location.href="/";</script>')
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {
