@@ -1610,7 +1610,7 @@ div.slideMenu_top {display: none}
   max-width: 100%;
 }
 @media screen and (max-width:1079px) {
-
+  .page_nation{display:none}
   .hide-mobile {
     display: none;
   }
@@ -1653,17 +1653,18 @@ div.slideMenu_top {display: none}
     position: absolute;
     left: 0; bottom:-1px; height: 3px;
     background: #FF8B00;
-    width: 25%; margin: 0 24px;
+    width: 25%;
     opacity: 0;
     transition: all .3s;
+    z-index: 9;
   }
 
   .pdt_detai_tabinner_vn > ul.tab_wrap li.onTab span {color: #FF8B00; font-weight: 700;}
   .pdt_detai_tabinner_vn > ul.tab_wrap > li.onTab {font-weight: 700;}
   .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(1).onTab ~ span {left: 0; opacity: 1;}
-  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(2).onTab ~ span {left: 23%; opacity: 1;}
-  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(3).onTab ~ span {left: 45%; opacity: 1;}
-  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(4).onTab ~ span {left: 67%; opacity: 1;}
+  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(2).onTab ~ span {left: 25%; opacity: 1;}
+  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(3).onTab ~ span {left: 50%; opacity: 1;}
+  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(4).onTab ~ span {left: 75%; opacity: 1;}
   .pdt_detai_tabinner_vn > ul.tab_wrap li span {color: #878787; font-weight: 400;}
 
   .order{margin-top:20px;width:100%;}
