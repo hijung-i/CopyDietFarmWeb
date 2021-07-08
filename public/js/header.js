@@ -452,7 +452,7 @@ function getBrandList() {
 
         for(var i = 0; i < result.length; i++) {
             html += '<li>';
-            html += '    <a href="">'+ result[i].brandName +'</a>';
+            html += '    <a href="/product/getBrandList">'+ result[i].brandName +'</a>';
             html += '    <button class="favorite-btn"><img class="like like-no"></button>';
             html += '</li>';
         }

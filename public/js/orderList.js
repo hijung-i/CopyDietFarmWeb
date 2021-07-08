@@ -10,7 +10,7 @@ var app = new Vue({
         orderList: [],
         totalPointAmount: 0,
         reviewModal: false,
-        deliveryMOdal: false,
+        deliveryModal: false,
         product: {}
     }, methods: {
         numberFormat,
@@ -19,7 +19,9 @@ var app = new Vue({
         orderConfirm,
         openCancelModal,
         onChildPopupClosed: function(data) {
-            this.reviewModal = false
+            this.reviewModal = false,
+            this.inquiryModal = false,
+            this.deliveryModal = false
         }
     }
 })

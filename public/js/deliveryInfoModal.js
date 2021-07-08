@@ -1,6 +1,6 @@
 var deliveryInfoTemplate = '';
 
-deliveryInfoTemplate+='<div class="dInfo_modal" id="dInfo_Modal">'
+deliveryInfoTemplate+='<div class="dInfo_modal" id="dInfo_modal">'
 deliveryInfoTemplate+='<div class="modal-content">'
 deliveryInfoTemplate+='<span class="close" onclick="closeModal02()">&times;</span>'
 deliveryInfoTemplate+='<section class="detail_title">'
@@ -72,7 +72,8 @@ var deliveryInfoModal = {
     props: {
         product: {
             type: Object,
-            default: function() { return {} }
+            default: function() 
+            { return {} }
         }
     },
     data: function() {
@@ -88,7 +89,7 @@ function openDInfoModal() {
     scrollBlock();
 }
 
-function closeModal02() {
+function closeModal() {
     console.log("click")
     $('#dInfo_modal').hide();
     scrollAllow();
