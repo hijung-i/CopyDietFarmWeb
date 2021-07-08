@@ -134,6 +134,7 @@ a:hover{text-decoration:none;}
 #headerwrap{height:90px;}
 #header_common{width:100%; background-color: #FFFFFF}
 .m_modal, .dInfo_modal{
+  display:none;
   position: fixed; /* Stay in place */
   z-index: 999999; /* Sit on top */
   left: 0;

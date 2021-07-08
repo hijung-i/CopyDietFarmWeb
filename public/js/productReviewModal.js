@@ -61,7 +61,7 @@ productReviewTemplate += '                  </div>'
 productReviewTemplate += '              </div>'
 productReviewTemplate += '              <form>'
 productReviewTemplate += '                  <input type="hidden" value="">'
-productReviewTemplate += '                  <textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px" v-html="review.content"></textarea>'
+productReviewTemplate += '                  <textarea v-model="review.content" style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px" v-html="review.content"></textarea>'
 productReviewTemplate += '              </form>'
 productReviewTemplate += '              <div class="filebox">'
 productReviewTemplate += '                   <label for="upload">사진 (선택)</label>'
@@ -98,7 +98,9 @@ var productReviewModal = {
                     boardNo: 0,
                     gpa: 5,
                     content: '',
-                    files: []
+                    files: [],
+                    reviewNo: 0,
+                    files: false
                 }
             }
         }, writableList: {
@@ -155,6 +157,26 @@ var productReviewModal = {
                 console.log("writable 변경", selectedWritable);
                 this.currentWritable =  selectedWritable
             }
+        },
+            onSubmit: function() {
+            var params = {};
+            Object.assign(params, this.product);
+            Object.assign(params, this.review);
+            
+            if(params.content == ''|| params.content == undefined) {
+                alert('내용을 입력해주세요');
+                return;
+            }
+
+            if(params.reviewNo != undefined && params.reviewNo != 0) {
+                updateProductQA(this, params);
+            } else {
+                insertProductQA(this, params);
+            }
+        },
+        closeModal: function() {
+            this.$emit('close', 'review')
+            scrollAllow();
         }
 
     }, computed: {
@@ -193,7 +215,51 @@ function updateReview() {
 
 }
 
+
+function insertReviewQA(comp, review) {
+
+    ajaxCallWithLogin(API_SERVER + '/product/addQA', review, 'POST',
+    function(data) {
+        alert('리뷰 등록에 성공했습니다.');
+        comp.$emit('addComplete', review);
+
+        comp.closeModal();
+    }, function(error) {
+        alert('리뷰 등록에 실패했습니다.');
+        console.log(error);
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
+
+}
+
+function updateReviewQA(comp, review) {
+
+    ajaxCallWithLogin(API_SERVER + '/product/updateQA', review, 'POST',
+    function(data) {
+        initialize();
+
+        alert('리뷰 수정에 성공했습니다.');
+        comp.closeModal();
+    }, function(error) {
+        alert('리뷰 수정에 실패했습니다.');
+        console.log(error);
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
+}
+
 function openReviewModal() {
     app.reviewModal = true;
     scrollBlock();
 }
+
+
+
+
+
+ 
