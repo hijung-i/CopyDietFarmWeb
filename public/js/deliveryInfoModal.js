@@ -69,10 +69,15 @@ deliveryInfoTemplate+='</div>'
 
 var deliveryInfoModal = {
     template: deliveryInfoTemplate,
-    props: [],
+    props: {
+        product: {
+            type: Object,
+            default: function() { return {} }
+        }
+    },
     data: function() {
         return {
-        
+            
         }
     }, methods: {
     

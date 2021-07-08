@@ -37,6 +37,8 @@
             <input type="hidden" id="salesStandName" value="">
         <% } else if (listType == 'SEARCH') { %>
             <input type="hidden" id="keyword" value="<%=keyword %>">
+        <% } else if (listType == 'BRAND') { %>
+            <input type="hidden" id="brandCode" value="<%=brandCode %>">
         <% } %>
         <main id="content" class="content">
            <div id="app">

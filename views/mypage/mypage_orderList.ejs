@@ -22,7 +22,8 @@
                             height: 80px;
                             top: 0;
                             background-color: #fff;
-                            margin-bottom: 20px;}
+                            margin-bottom: 20px;
+                            z-index: 999}
                  #content{padding-top:60px}
         }
         @media screen and (min-width:1080px) {
@@ -201,7 +202,7 @@
                                                                 <button type="button" @click="orderConfirm(oIdx, pIdx)" class="btnA">구매확정</button>
                                                             </li>
                                                             <li>
-                                                                <button type="button" class="btnB">배송조회</button>
+                                                                <button type="button" onclick="openDInfoModal()" class="btnB">배송조회</button>
                                                             </li>
                                                         </template>
                                                         <template v-if="'AC'.includes(product.orderStatus)">
@@ -209,7 +210,7 @@
                                                                 <button type="button" class="btnA" onclick="openReviewModal()">리뷰작성</button>
                                                             </li>
                                                             <li v-else>
-                                                                <button type="button" class="btnC">리뷰완료</button>
+                                                                <span>리뷰완료</span>
                                                             </li>
                                                             <li>
                                                                 <button type="button" class="btnB">재주문</button>
@@ -252,6 +253,8 @@
                     </div>
                 </div>
             </div>
+            
+            <delivery-info-modal></delivery-info-modal>
             <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal>
         </main>
 
@@ -260,7 +263,8 @@
     <!-- body_contents tab3 -->
     <%-include(webroot + 'views/general/footer') %>
 
-<script src="/js/productReviewModal.js"></script>        
+<script src="/js/productReviewModal.js"></script>
+<script src="/js/deliveryInfoModal.js"></script> 
 <script src="/js/components/mypageComponent.js"></script>
 <script src="/js/orderList.js"></script>
 </body>

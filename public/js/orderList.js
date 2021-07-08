@@ -2,13 +2,15 @@ var app = new Vue({
     el: 'main',
     components: {
         'mypage-component': mypageComponent,
+        'delivery-info-modal': deliveryInfoModal,
         'product-review-modal': productReviewModal
     },
     data: {
         RESOURCE_SERVER,
         orderList: [],
         totalPointAmount: 0,
-        reviewModal: false
+        reviewModal: false,
+        product: {}
     }, methods: {
         numberFormat,
         formatDate,
