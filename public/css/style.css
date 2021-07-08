@@ -2978,8 +2978,6 @@ display: flex;
     width: 831px;
   }
   .review_modal, .inquiry_modal, .s_inquiry_modal{
-  
-    display: none;
     position: fixed;
     z-index: 100000;
     left: 0;
