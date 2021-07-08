@@ -109,7 +109,9 @@
                         <template v-for="writable in writableReviewList">
                             <div class="review_item_box">
                                 <div class="box_top">
+                                    <a v-bind:href="'/product/' + writable.product.productCode">
                                 <img v-bind:src="RESOURCE_SERVER + writable.product.url" style="width:50px;height:62px">
+                                </a>
                                 <ul>
                                     <li>
                                         <span>[{{ writable.product.companyName }}]</span></li>
@@ -133,7 +135,7 @@
                         <div class="review_box_wrap">
                             <div class="review_item_box02">
                              <div class="box_wrap">
-                                 <a v-bind:href="'/product/' + product.productCode">
+                                 <a v-bind:href="'/product/' + review.productCode">
                                     <img v-bind:src="RESOURCE_SERVER + review.product.url" style="width:50px;height:62px">
                                 </a>
                                     <ul>
@@ -184,13 +186,14 @@
             </div>
             </div>
         </div>
-        <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="currentReview" v-bind:writable-list="writableList" v-bind:writable="writable"
-            v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
+        <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="currentReview"
+         v-on:close="onChildPopupClosed"></product-review-modal>
     </main>
     <%-include(webroot + 'views/general/footer') %>
     <script src="/js/productReviewModal.js"></script>
     <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/mypage/product_review.js"></script>
+    
    </body>
     
 </html>
