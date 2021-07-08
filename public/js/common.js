@@ -1,6 +1,6 @@
 // 운영
-// var API_SERVER = "http://localhost:9090";
-var API_SERVER = "https://dietfarm119.co.kr";
+var API_SERVER = "http://localhost:9090";
+//var API_SERVER = "https://dietfarm119.co.kr";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "https://"+ SERVER_IP;
 

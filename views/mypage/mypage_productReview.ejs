@@ -132,8 +132,10 @@
                     <div class="reviews" v-for="(review, index) in reviewList">
                         <div class="review_box_wrap">
                             <div class="review_item_box02">
-                                <div class="box_wrap">
+                             <div class="box_wrap">
+                                 <a v-bind:href="'/product/' + product.productCode">
                                     <img v-bind:src="RESOURCE_SERVER + review.product.url" style="width:50px;height:62px">
+                                </a>
                                     <ul>
                                         <li>
                                             <span>[{{ review.product.companyName }}]</span></li>
@@ -182,7 +184,8 @@
             </div>
             </div>
         </div>
-        <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal>
+        <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="currentReview" v-bind:writable-list="writableList" v-bind:writable="writable"
+            v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
     </main>
     <%-include(webroot + 'views/general/footer') %>
     <script src="/js/productReviewModal.js"></script>
