@@ -133,8 +133,7 @@ a:hover{text-decoration:none;}
 #wrap{position:relative;width:100%;z-index:1;}
 #headerwrap{height:90px;}
 #header_common{width:100%; background-color: #FFFFFF}
-.m_modal{
-  display: none; /* Hidden by default */
+.m_modal, .dInfo_modal{
   position: fixed; /* Stay in place */
   z-index: 999999; /* Sit on top */
   left: 0;
@@ -3014,7 +3013,7 @@ display: flex;
     z-index: 99999;
     display: none;
   }
-  .modal-content {width: 330px;margin:20px auto;background-color:#fff;padding:10px}
+  .modal-content {width: 330px;margin:70px auto;background-color:#fff;padding:10px}
   .modal-content .close{font-size:28px;float:right;cursor:pointer}
   .cancel_header {position: relative;}
   .cancel_header > h2 {
