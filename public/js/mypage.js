@@ -72,10 +72,10 @@ function getUsableCouponList() {
         userId: true
     })
 }
-function openModal() {
-    $('#mModal').show();
-}
-
-function closeModal() {
-    $('#mModal').hide();
-}
+// function openModal() {
+//     $('#mModal').show();
+// }
+// 
+// function closeModal() {
+//     $('#mModal').hide();
+// }

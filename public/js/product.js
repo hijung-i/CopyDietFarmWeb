@@ -498,6 +498,7 @@ function insertRecommandListHtml() {
         slidesToScroll: 1,
         autoplay:true,
         autoplaySpeed:3000,
+        draggable: true,
         pauseOnHover:true,
         arrow:true,
         responsive: [
@@ -514,7 +515,7 @@ function insertRecommandListHtml() {
             breakpoint: 600,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 1
+              slides: 1
             }
           },
           {
