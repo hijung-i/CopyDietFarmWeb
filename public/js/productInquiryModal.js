@@ -3,7 +3,7 @@ var productInquiryTemplate = '';
 productInquiryTemplate += '<div class="inquiry_modal" id="inquiry_Modal">'
 productInquiryTemplate += '     <div class="modal-content">'
 productInquiryTemplate += '         <span class="close" @click="closeModal()">&times;</span>'
-productInquiryTemplate += '         <div v->'
+productInquiryTemplate += '         <div>'
 productInquiryTemplate += '             <div class="productInquiryBox">'
 productInquiryTemplate += '             <h3>{{ product.productName }}</h3>'
 productInquiryTemplate += '             <form>'

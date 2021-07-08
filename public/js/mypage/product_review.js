@@ -9,8 +9,20 @@ var app = new Vue({
         reviewList: [],
         writableReviewList: [],
         totalPointAmount: 0,
+        product: {},
+        optionTotalPrice: 0,
+        orderDTO: {},
+        deliveryGroupList: [],
+        currentReview: {},
+        writable: { purchaseProductNo: 0 },
+        writableList: [],
+        reviewList: [],
         reviewModal: false,
-        inquiryModal: false
+        currentQuestion: {},
+        questionList: [],
+        inquiryModal: false,
+        recmdList: [],
+        modal: []
     }, methods: {
         formatDate,
         getOptionName: function(options) {
@@ -52,6 +64,24 @@ function getQuestionList() {
         console.log("error while getReview", err);
     }, {
         isRequired: true,
+        userId: true
+    })
+}
+
+function getReviewList() {
+    var params = {
+        productCode: app.product.productCode
+    };
+
+    ajaxCallWithLogin(API_SERVER + '/board/getReview', params, 'POST', 
+    function (data) {
+    
+        app.reviewList = data.result;
+        console.log("success", data);
+    }, function (err){
+        console.log("error while getReview", err);
+    }, {
+        isRequired: false,
         userId: true
     })
 }
