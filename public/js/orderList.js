@@ -14,6 +14,7 @@ var app = new Vue({
         beforeDeliveryCount: 0,
         onDeliveryCount: 0,
         afterDeliveryCount: 0,
+        usableCouponAmount: 0,
         product: {}
     }, methods: {
         numberFormat,
@@ -21,6 +22,7 @@ var app = new Vue({
         convertOrderStatus,
         orderConfirm,
         openCancelModal,
+        getUsableCouponList,
         onChildPopupClosed: function(data) {
             this.reviewModal = false,
             this.inquiryModal = false,
@@ -32,8 +34,20 @@ var app = new Vue({
 $(function() {
     getOrderList();
     getUsablePointAmount();
-
+    getUsableCouponList();
 })
+function getUsableCouponList() {
+    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST',
+    function(data) {
+        app.usableCouponAmount = data.result.length;
+        console.log("get usableCouponList", data);
+    }, function(err) {
+        console.error("get usable coupon list",err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
 
 function getOrderList() {
     ajaxCallWithLogin(API_SERVER + '/order/getPurchaseOrderListByUserId', {}, 'POST',

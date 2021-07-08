@@ -183,7 +183,6 @@ appearance: none;}
 /*모바일*/
 @media screen and (max-width:1079px){
 .main_contents{display:none}
-.page_nation{display:none}
 .order_list_box h3, .order_list_box table{display:none}
 div.dateNo{padding-left:15px}
 div.dateNo p.no{margin-top:7px}
@@ -254,8 +253,7 @@ top: 130%; transform: translateY(-130%);text-align: center}
 /*product_review mobile&web */
 @media screen and (max-width:1079px){
 .orderDetails{border-bottom:8px solid #F1F1F1;padding-left:15px;padding-right:15px}
-.orderList_detail{display:none}
-.page_nation{display:none}    
+.orderList_detail{display:none}    
 /* orderlist */
 .ord_detail_btn {cursor: pointer;}
 .order_list_ctn {width: 100%;padding: 12px 0;font-size: 14px;color: #000;align-items: center;}
