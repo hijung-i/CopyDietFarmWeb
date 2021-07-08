@@ -111,7 +111,7 @@ a:hover{text-decoration:none;}
 .hide{display:none;}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 .detail_title{margin:40px 10px 10px 0px;width:100%;overflow:hidden;width:100%;}
-.detail_title a img{position:absolute;top:42px;width:17px;left:10px}
+
 .detail_title .title{width:200px;white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title_header a img{position:absolute;top:80px}
 /* *{padding-left:15px;padding-right:15px} */
@@ -1838,7 +1838,8 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  .sns_login ul li{float:left;padding:25px;cursor:pointer}
 .sns_login ul li img{width:46px;height:46px}
  .btndelete{position:absolute;top:4px}
-.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+
+.btncart{position:absolute;right:15px;top:-15px;padding:15px 0}
 #btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
 
 
