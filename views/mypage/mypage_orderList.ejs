@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문내역, 다이어트팜:: 엄선된 건강 식단 마켓</title>
     <style>
+
+       
         @media screen and (max-width:1079px) {
             .web_orderlist {
                 display: none;
@@ -94,12 +96,11 @@
     <div class="mobile_orderlist">
         <section class="detail_title">
             <h2>주문내역</h2>
-            <a href="#" 
-                value="취소"
-                onclick="history.back(); return false"
-            >
-                <img src="/images/leftarrow_ico_my.png" style="width:17px;margin-left:10px;margin-top:2px">
-            </a>
+            <div class="btnback">
+                <a value="취소" onclick="history.back(); return false">
+                    <img src="/images/leftarrow_ico_my.png">
+                </a>
+            </div>
         </section>
     </div>
     <main id="content" class="content">
@@ -108,25 +109,25 @@
                 <nav class="content_lnb">
                     <ul>
                         <li class="on">
-                            <a href="javascript:location.href='/orderlist';">주문내역</a>
+                            <a href="/orderlist">주문내역</a>
                         </li>
                         <li style="white-space:nowrap">
-                            <a href="javascript:location.href='/delivery-management';">배송지 관리</a>
+                            <a href="/delivery-management">배송지 관리</a>
                         </li>
                         <li>
-                            <a href="javascript:location.href='/p_review';">상품 리뷰</a>
+                            <a href="/p_review">상품 리뷰</a>
                         </li>
                         <li>
-                            <a href="javascript:location.href='/p_inquiry';">상품 문의</a>
+                            <a href="/p_inquiry">상품 문의</a>
                         </li>
                         <li style="white-space:nowrap">
-                            <a href="javascript:location.href='/s_inquiry';">판매자 문의</a>
+                            <a href="/s_inquiry">판매자 문의</a>
                         </li>
                         <li>
-                            <a href="javascript:location.href='/point';">포인트</a>
+                            <a href="/point">포인트</a>
                         </li>
                         <li>
-                            <a href="javascript:location.href='/coupon';">쿠폰</a>
+                            <a href="/coupon">쿠폰</a>
                         </li>
                     </ul>
                 </nav>
@@ -138,9 +139,9 @@
                         <th>배송중</th>
                         <th>배송완료</th>
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>{{ beforeDeliveryCount }}</td>
+                            <td>{{ onDeliveryCount }}</td>
+                            <td>{{ afterDeliveryCount }}</td>
                         </tr>
                     </table>
                     </div>
@@ -232,7 +233,7 @@
                     </template>
                     
                     </div>
-                    <div class="page_wrap">
+                    <div clas="page_wrap">
                     <div class="page_nation">
                         <a class="arrow pprev" href="#"></a>
                         <a class="arrow prev" href="#"></a>

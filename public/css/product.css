@@ -712,6 +712,16 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .page_nation a.active {background-color:#fff;color:#F99319;}
 
 
+.v_top_txt_box {
+    position: relative;
+}
+
+.share_img {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+
 @media screen and (min-width:1080px){
  .product_top{display:flex;flex-flow:column-reverse}
  .review_img{float:right;margin-right:50px;margin-top:-120px}
@@ -729,7 +739,6 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 @media screen and (max-width:1079px){
 /*div #ex1.modal p{text-align:center;}*/
 div #ex1.modal ul li {float:left}
-.share_img img{float:right;position:relative;top:80px;left:-24px}
 .option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
 .option_wrap h3{font-size:12px;font-weight:bold;margin-top:21px}
 

@@ -8,7 +8,7 @@ mypageTemplate += '            <div class="mypage_member_info">';
 // mypageTemplate += '            <% if (!isLoggedIn) { %>';
 mypageTemplate += '                 <img src="/images/basket_ico.png" alt="바구니 아이콘">';
 // mypageTemplate += '                   <h3><%=sessionUser.userName %>님</h3>';
-mypageTemplate += '                 <p><a href="javascript:location.href=\'/myinfo-usercheck\';">내정보<span><i class="fas fa-chevron-right"></i></span></a></p>';
+mypageTemplate += '                 <p><a href="/myinfo-usercheck">내정보<span><i class="fas fa-chevron-right"></i></span></a></p>';
 // mypageTemplate += '            <% } %>';
 mypageTemplate += '           </div>';
 mypageTemplate += '           <div class="mypage_point_info frame400">';

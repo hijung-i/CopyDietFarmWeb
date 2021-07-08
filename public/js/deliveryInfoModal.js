@@ -6,7 +6,7 @@ deliveryInfoTemplate+='<span class="close" onclick="closeModal02()">&times;</spa
 deliveryInfoTemplate+='<section class="detail_title">'
 deliveryInfoTemplate+='<h2 class="title">{{ product.productName }}</h2>'
 deliveryInfoTemplate+='<div class="btnback">'
-deliveryInfoTemplate+='    <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">'
+deliveryInfoTemplate+='    <a onclick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">'
 deliveryInfoTemplate+='    </a>'
 deliveryInfoTemplate+='</div>'
 deliveryInfoTemplate+='</section>'
