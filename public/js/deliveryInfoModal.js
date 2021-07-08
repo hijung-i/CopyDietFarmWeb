@@ -85,12 +85,11 @@ var deliveryInfoModal = {
     }
 }
 function openDInfoModal() {
-    $('#dInfo_modal').show();
+    app.deliveryModal = true;
     scrollBlock();
 }
 
 function closeModal() {
-    console.log("click")
-    $('#dInfo_modal').hide();
+    app.deliveryModal = false;
     scrollAllow();
 }
