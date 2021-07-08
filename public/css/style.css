@@ -109,9 +109,9 @@ a:hover{text-decoration:none;}
 .clear{clear:both;}
 .show{display:block;}
 .hide{display:none;}
+
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
-.detail_title{margin:40px 10px 10px 0px;width:100%;overflow:hidden;width:100%;}
-.detail_title a img{position:absolute;top:42px;width:17px;left:10px}
+
 .detail_title .title{width:200px;white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title_header a img{position:absolute;top:80px}
 /* *{padding-left:15px;padding-right:15px} */
@@ -867,7 +867,6 @@ border-spacing: 0 20px;font-size:14px}
   .dietFarm_info li > span {color: #F99319;}
 
   /*장바구니 후 결제하기*/
-  .btnback img{width:17px;position:relative;top:-18px;left:15px}
   .order_title {font-size:14px;font-weight:bold}
   .order_product{border-bottom:8px solid #f1f1f1;}
   .order_product h4{font-size:14px;margin-top:20px;padding-bottom:10px;padding-left:15px;font-weight:normal}
@@ -1838,7 +1837,8 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  .sns_login ul li{float:left;padding:25px;cursor:pointer}
 .sns_login ul li img{width:46px;height:46px}
  .btndelete{position:absolute;top:4px}
-.btncart{position:absolute;right:45px;top:-2px;padding:15px 0}
+
+.btncart{position:absolute;right:15px;top:-15px;padding:15px 0}
 #btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
 
 
@@ -1978,7 +1978,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01_1{width:100%;border-top:8px solid #E6E6E6}
 .order01 td{font-size:14px;line-height:22px;padding-bottom:10px}
-.orderHistory .order01 td{font-size:14px;line-height:22px}
+.orderHistory .order01 td{font-size:14px;line-height:22px; width: 93%}
 .order01 tr.order_q td{cursor:pointer;}
 .order01 tr.faq_a{display:none;}
 .ship_list p{font-size:14px;font-weight:bold;;display:flex;position:relative;left:-100px}

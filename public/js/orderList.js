@@ -11,6 +11,9 @@ var app = new Vue({
         totalPointAmount: 0,
         reviewModal: false,
         deliveryModal: false,
+        beforeDeliveryCount: 0,
+        onDeliveryCount: 0,
+        afterDeliveryCount: 0,
         product: {}
     }, methods: {
         numberFormat,
@@ -38,6 +41,13 @@ function getOrderList() {
         var result = data.result;
         console.log(result);
         app.orderList = result;
+
+        beforeDelivery = result.filter(data => 'PS'.includes(data.orderStatus)).length
+        onDelivery = result.filter(data => 'D'.includes(data.orderStatus)).length
+        afterDelivery = result.filter(data => 'FCA'.includes(data.orderStatus)).length
+
+        console.log(beforeDelivery, onDelivery, afterDelivery)
+
 
     }, function(err) {
         console.log(err);

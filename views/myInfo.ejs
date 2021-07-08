@@ -55,7 +55,7 @@
                                 <img src="/images/basket_ico.png" alt="바구니 아이콘">
                                 <% if (!isLoggedIn) { %>
                                    <h3><%=sessionUser.userName %>님</h3>
-                                   <p><a href="javascript:location.href='/myinfo-usercheck';">내정보<span><i class="fas fa-chevron-right"></i></span></a></p> 
+                                   <p><a href="/myinfo-usercheck">내정보<span><i class="fas fa-chevron-right"></i></span></a></p> 
                                 <% } %>
                            
                             </div>
@@ -96,7 +96,7 @@
                             <a href="/point">포인트</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">쿠폰</a>
+                            <a href="/coupon">쿠폰</a>
                         </li>
                     </ul>
                 </nav>
