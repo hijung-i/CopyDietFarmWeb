@@ -14,6 +14,10 @@ var app = new Vue({
         beforeDeliveryCount: 0,
         onDeliveryCount: 0,
         afterDeliveryCount: 0,
+        writable: { purchaseProductNo: 0 },
+        writableList: [],
+        reviewList: [],
+        reviewModal: false,
         product: {}
     }, methods: {
         numberFormat,

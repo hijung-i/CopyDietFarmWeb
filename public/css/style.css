@@ -385,9 +385,14 @@ height:50px;overflow:hidden}
   padding-bottom: 26px;
   margin-top: 19px}
 .reviewModifyBox .star_grade p{font-size:16px;font-weight:bold;text-align:center}
-/*1079px이하 모바일-태블릿 */
+/*1079px이하 모S바일-태블릿 */
 @media screen and (max-width:1079px){
-  
+  .detail_title{position: relative;
+    margin: 0px 15px;
+    margin-top: 35px}
+  .detail_title a img{width: 17px}
+  .btnback{position:absolute;top:4px}
+  .page_nation{display:none}
   .faq h3{display:none}
   .keyword{display:none}
   #header_common.main ~ .content {
@@ -401,7 +406,7 @@ height:50px;overflow:hidden}
   }
   .modalTop_ctn {padding: 0 12px;}
   .modalTop_ctn h3.order_delMag {padding-top: 0; margin-bottom: 0;}
-f
+
   .top_checkBox {display: none;}
   .order_info_modal_address {margin-bottom: 15px;}
    /* 상단 롤링 배너 */
