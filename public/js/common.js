@@ -521,6 +521,8 @@ function zzimAction(button) {
       userId: true
    })
 }
+
+//URL 공유하기 코드
 $(document).on("click", "#sh-link", function(e) { 
  $('html').find('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'); var html = "<input id='clip_target' type='text' value='' style='position:absolute;top:-9999em;'/>"; $(this).append(html); 
  var input_clip = document.getElementById("clip_target"); 

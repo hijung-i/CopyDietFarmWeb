@@ -104,6 +104,28 @@ function updateProductQA(comp, inquiry) {
     })
 }
 
+function deleteProductQA(inquiry) {
+    var selectedqaNo = app.inquiry[inquiry].qaNo;
+
+    var params = {
+        qaNo: selectedqaNo
+    }
+    
+    ajaxCallWithLogin(API_SERVER + '/user/deleteProductQA', params, 'POST',
+    function(data) {
+        alert('삭제 되었습니다.');
+        console.log("success ", data);
+        modalDisplay(false);
+        
+        getDeliveryInfoList();
+    }, function(err) {
+        console.log("err", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
 function openInquiryModal() {
     app.inquiryModal = true;
     scrollBlock();

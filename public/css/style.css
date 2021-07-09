@@ -1535,7 +1535,7 @@ transform: scale(1) rotateZ(0deg);
 div.slideMenu_top {display: none}
 .main_banner{display:none}
 .more_inq{display:none}
-.v_n_top_info{margin-top:30px;margin-bottom:28px}
+.v_n_top_info{margin-top:4px;margin-bottom:28px}
 .v_n_top_info td{padding:10px}
 .v_n_top_info td span{color:#6B6B6B}
 }
@@ -1672,9 +1672,7 @@ div.slideMenu_top {display: none}
   .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(2).onTab ~ span {left: 23%; opacity: 1;}
   .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(3).onTab ~ span {left: 45%; opacity: 1;}
   .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(4).onTab ~ span {left: 67%; opacity: 1;}
-  .pdt_detai_tabinner_vn > ul.tab_wrap li span {color: #878787; font-weight: 400;}
-
-  .order{margin-top:20px;width:100%;}
+  .pdt_detai_tabinner_vn > ul.tab_wrap li span {color: #878787; font-weight: 400;}  .order{margin-top:20px;width:100%;}
   .orderHistory .order01 td{font-size:14px;line-height:22px; width: 93%}
 }
 
