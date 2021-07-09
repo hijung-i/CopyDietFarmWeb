@@ -372,9 +372,9 @@ height:50px;overflow:hidden}
     padding-bottom:4px;
     margin-top:14px
    }
-   .non_members input[type="checkbox"]:checked + label{
-     background: url(../images/aftercheck_icon_join.png)no-repeat;
-      background-size:19px 19px;}
+.non_members input[type="checkbox"]:checked + label{
+background: url(../images/aftercheck_icon_join.png)no-repeat;
+background-size:19px 19px;}
 .reviewModifyBox h2{text-align:center;font-weight:bold;font-size:16px;padding-top:20px;margin-bottom:38px}
 .reviewModifyBox .detailBox ul{display:inline-block}
 .reviewModifyBox .star_grade{text-align: center;
@@ -385,8 +385,11 @@ height:50px;overflow:hidden}
   padding-bottom: 26px;
   margin-top: 19px}
 .reviewModifyBox .star_grade p{font-size:16px;font-weight:bold;text-align:center}
+
 /*1079px이하 모S바일-태블릿 */
 @media screen and (max-width:1079px){
+  .header_wrap{border-bottom:1px solid #f1f1f1}
+  .t1 img{position:relative;top:7px}
   .detail_title{position: relative;
     margin: 0px 15px;
     margin-top: 35px}
@@ -941,7 +944,7 @@ border-spacing: 0 20px;font-size:14px}
 .sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
 
-.pick_list_null{width:100%; text-align:center; margin:120px auto}
+.pick_list_null{width:100%; text-align:center;margin:80px auto;padding-top:200px}
 .pick_list_null img{width:100px!important}
 .pick_list_null p{margin-top:28.49px;font-size:16px;color:#878787;padding-bottom:189.51px}
   /* 멀티플 슬라이드 */
@@ -1672,6 +1675,7 @@ div.slideMenu_top {display: none}
   .pdt_detai_tabinner_vn > ul.tab_wrap li span {color: #878787; font-weight: 400;}
 
   .order{margin-top:20px;width:100%;}
+  .orderHistory .order01 td{font-size:14px;line-height:22px; width: 93%}
 }
 
 @media screen and (min-width:1080px) {
@@ -1688,7 +1692,7 @@ div.slideMenu_top {display: none}
     margin: 0 auto;
     height: 450px;
   }
-
+  .orderHistory .order01 td{font-size:14px;line-height:22px}
 }
 
 /* 메뉴 아이콘 */
@@ -1983,7 +1987,6 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 .order_q .title{font-size:14px;font-weight:bold;}
 .order01_1{width:100%;border-top:8px solid #E6E6E6}
 .order01 td{font-size:14px;line-height:22px;padding-bottom:10px}
-.orderHistory .order01 td{font-size:14px;line-height:22px; width: 93%}
 .order01 tr.order_q td{cursor:pointer;}
 .order01 tr.faq_a{display:none;}
 .ship_list p{font-size:14px;font-weight:bold;;display:flex;position:relative;left:-100px}

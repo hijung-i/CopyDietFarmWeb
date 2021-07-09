@@ -12,6 +12,7 @@ var app = new Vue({
         reviewModal: false,
         deliveryModal: false,
         beforeDeliveryCount: 0,
+        currentReview: {},
         onDeliveryCount: 0,
         afterDeliveryCount: 0,
         writable: { purchaseProductNo: 0 },
@@ -25,11 +26,29 @@ var app = new Vue({
         convertOrderStatus,
         orderConfirm,
         openCancelModal,
+        onSubmit: function() {
+            
+        },
+        onReviewUpdateClick: function(index) {
+            this.currentReview = this.reviewList[index];
+
+            openReviewModal()
+        },
+        onInquiryUpdateClick: function(index) {
+            this.currentQuestion = this.questionList[index];
+            var isChecked = this.currentQuestion.checkbox;
+
+            this.currentQuestion.checkbox 
+                = (isChecked != undefined && (isChecked == true || isChecked == 'Y'))?true:false;
+            openInquiryModal()
+        },
         onChildPopupClosed: function(data) {
-            this.reviewModal = false,
-            this.inquiryModal = false,
-            this.deliveryModal = false
-        }
+            this.reviewModal = false;
+            this.inquiryModal = false; 
+
+            this.currentReview = {};
+            this.currentQuestion = {};
+        },
     }
 })
 
