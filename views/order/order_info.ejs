@@ -204,7 +204,7 @@
                     주문자
                 </h3>
             
-                <div class="members" v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
+                <div class="members" v-if="orderDTO.userId != '비회원주문'">
                     <table>
                         <tr>
                             <td>
@@ -223,7 +223,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="non_members" v-if="orderDTO.userId == '비회원주문' || orderDTO.delivery == undefined">
+                <div class="non_members" v-if="orderDTO.userId == '비회원주문'">
                     <h4>이름</h4>
                     <input type="text" id="unName" placeholder="이름을 입력해주세요">
                     <h4>휴대폰</h4>
