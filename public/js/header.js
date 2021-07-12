@@ -471,3 +471,22 @@ function getBrandList() {
         userId: true
     })
 }
+
+function searchBrand(keyword) {
+    var params = {
+        keyword: keyword
+    }
+    ajaxCall(API_SERVER + '/product/brandSearchBar', params, 'POST'
+    , function(data) {
+        var result = data.result;
+        var html = '';
+        for(var i = 0; i < result.length; i++) {
+            var product = result[i];
+            html += '<li><a href="/brand/'+ brand.brandCode +'">'+ brand.brandName +'</a></li>'; 
+        }
+        $("").html(html);
+
+    }, function(err) {
+        console.log(err);
+    })
+}
