@@ -2,15 +2,15 @@ var signModalTemplate = '';
 
 signModalTemplate += '<div class="m_modal" id="m_Modal">'
 signModalTemplate += '<div class="modal-content">';
-signModalTemplate += '<span class="close" onclick="closeModal()">&times;</span>';
+signModalTemplate += '<span class="close" @click="closeModal()">&times;</span>';
 signModalTemplate += '<div class="signup_wrap">';
 signModalTemplate += '<h2>SNS 계정으로 시작하기</h2>';
 signModalTemplate += '<p style="color:#6B6B6B">1초 간편 회원가입 후, </p>';
 signModalTemplate += '<p class="line02"><span>10000P + 무료배송 </span>쿠폰 혜택을 받아보세요!</p>';
 signModalTemplate += '<div class="signup_btn">';
 signModalTemplate += '<button type="button" class="btnKakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png">카카오 계정으로 시작하기</button>';
-signModalTemplate += '<button type="button" class="btnNaver"><img src="/images/naver_login@2x.png">네이버 계정으로 시작하기</button>';
-signModalTemplate += '<button type="button" id="appleid-signin" data-color="black" data-border="true" data-type="sign in" class="btnApple"><img src="">애플 계정으로 시작하기</button>';
+signModalTemplate += '<button type="button" class="btnNaver naver_id_login" id="naver_id_login" ></button>';
+signModalTemplate += '<button type="button" id="appleid-signin" data-color="black" data-border="true" data-type="sign in" class="btnApple" onclick="AppleID.auth.signIn()"><img src="">애플 계정으로 시작하기</button>';
 signModalTemplate += '</div>';
 signModalTemplate += '<div class="line" style="width:100%;color:#bbbbbb">';
 signModalTemplate += '</div>'
@@ -32,7 +32,9 @@ var signModal = {
     }, methods: {
         openMyModal,
         closeModal: function() {
-            // 
+            console.log("click")
+            $('#m_Modal').hide();
+            scrollAllow();
         }
     }, mounted: function () {
         // AppleID.auth.init({
@@ -55,10 +57,4 @@ var signModal = {
 function openMyModal() {
     $('#m_Modal').show();
     scrollBlock();
-}
-
-function closeModal() {
-    console.log("click")
-    $('#m_Modal').hide();
-    scrollAllow();
 }

@@ -181,6 +181,29 @@ function getPickProduct() {
     })
 }
 
+function getProductListByBrandCode() {
+    var brandCode = $('#brandCode').val();
+    var companyCode = $('#companyCode').val();
+
+    var params = {
+        brandCode,
+        companyCode
+    };
+
+    ajaxCallWithLogin(API_SERVER + '/product/getBrandListDetail', params, 'POST',
+    function(data){
+        console.log("get ProductList by BrandCode", data);
+        
+        var html = generateHtmlForProductList(data.result);
+        $('.sub_items ul').html(html)
+    }, function(err) {
+        console.error("err");
+    }, {
+        isRequired: false,
+        userId: true
+    })
+}
+
 function getDatas() {
     var listType = $('#listType').val();
 
@@ -202,6 +225,10 @@ function getDatas() {
         case 'ZZIM':
             getPickProduct();
             break;
+        case 'BRAND':
+            getProductListByBrandCode();
+            break;
+
     }
 }
 // 맨 위로 

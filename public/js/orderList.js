@@ -55,8 +55,20 @@ var app = new Vue({
 $(function() {
     getOrderList();
     getUsablePointAmount();
-
+    getUsableCouponList();
 })
+function getUsableCouponList() {
+    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST',
+    function(data) {
+        app.usableCouponAmount = data.result.length;
+        console.log("get usableCouponList", data);
+    }, function(err) {
+        console.error("get usable coupon list",err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
 
 function getOrderList() {
     ajaxCallWithLogin(API_SERVER + '/order/getPurchaseOrderListByUserId', {}, 'POST',

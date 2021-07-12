@@ -425,25 +425,16 @@ $(function(){
    // '</div>' +
    // '</div>' +
    // '</div>';
-	// ajaxCall('/user/login', '', 'GET',
-	// function(data) {
-	// 	// 로그아웃 시에만 표시
-	// 	console.log(data.result);
-	// 	 if(data.result.isLoggedIn == false) {
-         
-   //       if ($('#naver_id_login').length > 0) {
-   //          ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-   //          function(data) {
-   //             $('#naver_id_login').html(data);
-   //             $('.modal-content #naver_id_login a').html('네이버로 로그인');
-   //          }, function (err) {
-   //             console.log("error login button", err);
-   //          })
-   //       }
-   //    } 
-	// }, function(err){
-	// 	console.error(err);
-	// })
+
+   if ($('#naver_id_login').length > 0) {
+      ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+      function(data) {
+         $('.naver_id_login').html(data);
+         $('.modal-content #naver_id_login a').html('<img src="/images/naver_login@2x.png">네이버 계정으로 시작하기');
+      }, function (err) {
+         console.log("error login button", err);
+      })
+   }
 
    AppleID.auth.init({
       clientId : 'kr.co.dietfarm',
@@ -463,12 +454,12 @@ function closePopupModal() {
 
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
-   console.log("loginWithKakaoAPI");
-   Kakao.Auth.authorize({
-      redirectUri: CALLBACK_SERVER + '/user/result/kakao',
-      scope: 'profile,plusfriends,account_email,gender,birthday,birthyear,phone_number'
-   })
 
+   // scope: 'profile,plusfriends,account_email,phone_number,gender,birthday,birthyear'
+   Kakao.Auth.authorize({
+      redirectUri: CALLBACK_SERVER + '/user/result/kakao'
+   })
+   
    console.log("loginWithKakaoAPI end");
 }
 
@@ -482,6 +473,13 @@ function naverCallback(success, paramStr) {
       alert('네이버 아이디로 로그인에 실패했습니다.')
       location.href = '/'
    }
+}
+
+function kakaoLogout() {
+   alert('카카오 로그아웃')
+   Kakao.Auth.logout(function() {
+      location.href = '/logout'
+   })
 }
 
 function zzimAction(button) {

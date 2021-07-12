@@ -6,7 +6,6 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
   font-style: normal;
   src:url('/font/NanumGothic.woff') format('woff');
 }
-dt.faq_q:hover{display:block}
 .skip_menu{position:absolute}
 .skip_menu a{position:absolute;top:-90px;left:0;width:138px;border:1px solid #4ec53d;background:#333;text-align:center}
 .skip_menu a:active, .skip_menu a:focus{top:0;z-index:1000;text-decoration:none}
@@ -109,6 +108,23 @@ a:hover{text-decoration:none;}
 .clear{clear:both;}
 .show{display:block;}
 .hide{display:none;}
+
+
+.detail_title{
+  position:relative;
+  margin: 0px 15px;
+  margin-top: 35px;
+}
+.detail_title a{
+  position: absolute;
+  top: 0px
+}
+.detail_title a img{
+  width: 17px;
+}
+
+.btnback{position:absolute;top:4px}
+.btncart{position:absolute;right:15px;top:-2px;padding:15px 0}
 
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 
@@ -370,17 +386,27 @@ height:50px;overflow:hidden}
   color: #391B1B;
   padding-top:10px;
   margin-top:37px}
-  .signup_wrap .btnNaver{width: 100%;
-  height: 45px;
-  background-color: #03C75A;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ffffff;
-  padding-top:10px;
-  margin-top:15px}
+  .signup_wrap .btnNaver{
+      width: 100%;
+      height: 45px;
+      background-color: #03C75A;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      margin-top:15px
+  }
+  .btnNaver a{
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 45px;
+  }
+  
+  .signup_wrap .btnNaver a img{
+      top: 8px;
+  }
+  
   .signup_wrap .btnApple{width: 100%;
       height: 45px;
       background-color: #bbbbbb;
@@ -407,7 +433,6 @@ height:50px;overflow:hidden}
       color: #949494;
       border: 2px solid #bbbbbb;
   }
-  
   .signup_wrap button img{width:26px;height:26px;position:relative;right:20px;top:-4px}
 .mobile_signup .detail_title h2{padding-bottom:35px !important;}
 .signup_wrap .join_title{margin-bottom:6px;margin-top:18px}
@@ -566,6 +591,9 @@ margin-top:100px;padding-top:25px;padding-bottom:21px}
  .mDepth01 li {position: relative; background: #fff;}
 
  .gnb_depth02 li {background: #F5F5F5;}
+ .sideMenu_detail.current ~ .subMenu {
+  display: block;
+}
 
  .sideMenu #tab2 .mDepth01 li{
    height: 49px;
@@ -1160,11 +1188,14 @@ font-weight:normal}
   #nav .web_cate{width:168px;height:54px;white-space:nowrap; position: relative;}
   .sideMenu{display:none; position: absolute !important;}
   .downArrow{display:none}
-  .mDepth01{position:absolute; border:1px solid #f5f5f5}
-  .mDepth01 > li {width: 168px; height: 54px; position: relative;}
+  .mDepth01{position:absolute; }
+  .mDepth01 > li {width: 170px; height: 54px; position: relative;border:1px solid #f5f5f5}
   .mDepth01 dt{width:168px;height:45px;font-size:16px;display:inline-block;border-bottom:1px solid #F5F5F5;padding:10px;background-color:#fff}
   .mDepth01 dt img{position:relative;left:-10px}
-  .gnb_depth02{ display:inline-block; width:372px; height:540px; text-align:left}
+  .gnb_depth02{ display:inline-block; 
+    width: 372px;
+    height: 540px;
+    text-align:left}
 #header .tabMenu {display: none;}
   /* footer web */
   #footer {width:100%;min-width:1080px;}
@@ -1607,7 +1638,7 @@ div.slideMenu_top {display: none}
 }
 
 
-.sideMenu .mDepth01{font-size:16px;line-height:32px; background: #fff; z-index: 9;}
+.sideMenu .mDepth01{font-size:16px;line-height:32px;  z-index: 9;}
 .sideMenu .mDepth01 dl > dt.sideMenu_detail a {padding-left: 12px;}
 .sideMenu .mDepth01 dt{height: 54px; padding:8px; color:#333; cursor:pointer; border-bottom:1px solid #e0e4e7; font-size: 14px; font-weight: 400; display: flex; align-items: center;padding-left:15px}
 .sideMenu .mDepth01 dt img{vertical-align:middle;}
@@ -1675,7 +1706,7 @@ div.slideMenu_top {display: none}
   max-width: 100%;
 }
 @media screen and (max-width:1079px) {
-
+  .page_nation{display:none}
   .hide-mobile {
     display: none;
   }
@@ -1718,9 +1749,10 @@ div.slideMenu_top {display: none}
     position: absolute;
     left: 0; bottom:-1px; height: 3px;
     background: #FF8B00;
-    width: 25%; margin: 0 24px;
+    width: 25%;
     opacity: 0;
     transition: all .3s;
+    z-index: 9;
   }
 
   .pdt_detai_tabinner_vn > ul.tab_wrap li.onTab span {color: #FF8B00; font-weight: 700;}
@@ -1902,7 +1934,6 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
 .sns_login ul li img{width:46px;height:46px}
  .btndelete{position:absolute;top:4px}
 
-.btncart{position:absolute;right:15px;top:-15px;padding:15px 0}
 #btnCheckIdDuplicate{width:85px;height:51px;margin-left:5px;background-color:#F99319;color:#fff;border-radius:5px;border:0}
 
 
@@ -2511,14 +2542,6 @@ font-weight: 400;border-radius:5px}
 .inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
 .inquiryBox ul li ul li{line-height:14px}
 .inquiryBox .words form{margin-top:-20px}
-.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
-text-align:center;line-height:17px;
-font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
-border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
-.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
-.filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
-.filebox p span{text-decoration:underline
-}
 
 /*문의하기(상품문의)*/
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
@@ -2538,20 +2561,18 @@ input#secret[type="checkbox"]:checked + .secret::before {transform: scale(1) rot
 
 .secret::after {content: "";border: 2px solid #F99319;width: 16px;height: 16px;position: absolute;left: -12px;top: -3px;border-radius: 50%;}
 
-
-/*사진 첨부부분은 판매자 문의하기와 같이 사용*/
-.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
-text-align:center;line-height:17px;
-font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
-border: 1px solid #BBBBBB;border-radius:5px;}
-.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;
-  margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
-.filebox p{color:#D62828;line-height:20px;font-weight:normal;padding-top:20px}
-.previewBox ul li{float:left;border:1px solid #BBBBBB;width:110px;height:110px;margin-top:15px}
-.filebox{margin-top:25px}
-.filebox .p2{margin-left:10px}
 .inquiryBox p{clear:both;padding-top:20px}
 
+.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
+  text-align:center;line-height:17px;
+  font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
+  border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
+  .filebox input[type="file"],
+  .filebox input[type="files"]
+   {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
+  .filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
+  .filebox p span{text-decoration:underline
+  }
 
 /*포인트*/
 /* 현재 포인트 */
@@ -3235,6 +3256,27 @@ display: flex;
 
 .share_body img {width: 39px; cursor: pointer;}
 
+
+.previewBox {
+  margin-top: 15px;
+}
+.previewBox ul li {
+  width: 110px;
+  height: 110px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.previewBox ul li:last-child{
+  margin-right: 0px;
+}
+
+
+.previewBox ul li img {
+  width: 100%;
+  height: 100%;
+}
+
 /* 쿠폰 페이지 */
 @media screen and (max-width:1079px) {
   main#content.coupon {
@@ -3284,6 +3326,12 @@ display: flex;
     vertical-align: middle;
     display: none;
   }
+
+  .sideMenu_ctt ul.mDepth01{
+    width: 540px;
+  } 
+  
+
 }
 
 @media screen and (max-width: 670px) {

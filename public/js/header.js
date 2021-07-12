@@ -79,18 +79,6 @@ $(function() {
         sideMenu('off');
     });
     
-    $("tr.faq_q").click(function() {
-        if ($(this).next('tr').css("display") != "none") {
-            $(this).next('tr').hide();
-            $(this).removeClass("current");
-        } else {
-            $("tr.faq_a").css('display', 'none');
-            $("tr.faq_q").removeClass("current");
-            $(this).next('tr').show();
-            $(this).addClass("current");
-        }
-    });
-    
     $(window).resize(function(){
         var winW = $(window).width();
         if (winW > 1080) {
@@ -134,21 +122,6 @@ $(function() {
         });
     });
 
-
-        // 햄버거 2단계 메뉴
-    /* $(document).ready(function() {
-        $("dt.faq_q").click(function() {
-            if ($(this).next('dd').css("display") != "none") {
-                $(this).next('dd').hide();
-                $(this).removeClass("current");
-            } else {
-                $("dd.faq_a").css('display', 'none');
-                $("dt.faq_q").removeClass("current");
-                $(this).next('dd').show();
-                $(this).addClass("current");
-            }
-        });
-    }); */
 
     $(".sideMenu").hide();
     $(".web_cate > a").click(function(){
@@ -334,7 +307,7 @@ window.onload = function() {
             if($first.position().left < -360) {    // 제일 앞에 배너 제일 뒤로 옮김
                 $first.css("left", $last.position().left + $last.width()+5 );
                 first++;
-                last++;
+                last++;h
                 if(last > imgCnt) { last=1; }   
                 if(first > imgCnt) { first=1; }
             }
@@ -407,26 +380,35 @@ function getCategory() {
         // buttonHtml += '</a>';
         // buttonHtml += '</li>';
         
-        $("dt.faq_q").hover(function(){
-            $(this).next('dd').show();
-        })
-        
+    
         if($('.category ul').length > 0) {
             $('.category ul').html(buttonHtml);
         }
+
         $('.sideMenu_ctt #tab1 ul.mDepth01').html(sideTabHtml);
+
         $("dt.faq_q").click(function() {
-            if ($(this).next('dd').css("display") != "none") {
-                $(this).next('dd').hide();
-                $(this).removeClass("active");
-            } else {
-                $("dd.faq_a").css('display', 'none');
+            var isCurrent = $('dt.faq_q').hasClass('current');
+            
+            if( isCurrent ) {
                 $("dt.faq_q").removeClass("current");
-                $(this).next('dd').show();
+            } else {
                 $(this).addClass("current");
             }
         });
 
+        $('dt.faq_q').hover(function() {
+            if($(window).width() >= 1079){
+                $("dt.faq_q").removeClass("current");
+                
+                $(this).addClass("current");
+            }
+        })
+
+        $('.sideMenu_ctt ul.mDepth01').mouseleave(function() {
+            $("dt.faq_q").removeClass("current");
+        })
+        
         $(".mTabBtnMenu").on("click",function() {
             sideTabOpen();
             $('body').css ({
@@ -447,16 +429,22 @@ function getCategory() {
 
 }
 
-function getBrandList(brand) {
+function getBrandList() {
     var param = {};
     ajaxCallWithLogin(API_SERVER + '/product/getBrandList', param , 'POST',
     function(data) {
         var html = '';
         var result = data.result;
-
+        
         for(var i = 0; i < result.length; i++) {
+            var brand = result[i];
             html += '<li>';
-            html += '    <a href="/product/'+ brand.brandCode +'">'+ result[i].brandName +'</a>';
+            html += '    <a href="/products/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'/brand';
+            if(brand.brandCode != '') {
+                html += '?companyCode='+brand.companyCode
+            }
+            
+            html += '">'+ brand.brandName +'</a>';
             html += '    <button class="favorite-btn"><img class="like like-no"></button>';
             html += '</li>';
         }
