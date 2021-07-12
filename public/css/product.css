@@ -58,6 +58,7 @@ input[type=number]::-webkit-outer-spin-button {
     /* outline: 2px solid red; */
   }
 #tab ul li{cursor: pointer;}
+.share_body button{border:none;background-color:transparent;font-size:12px}
 /*products_mobile*/
 
 
