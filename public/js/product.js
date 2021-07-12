@@ -655,3 +655,33 @@ function getWritableReviewList() {
         userId: true
     })
 }
+
+function sendKakaoLink() {
+
+    Kakao.Link.sendDefault({
+        // requestUrl: url,
+        objectType: 'feed',
+        content: {
+            title: app.product.productName,
+            imageUrl:
+                RESOURCE_SERVER + app.product.url,
+            link: {
+                mobileWebUrl: 'https://dietfarm.page.link/?link=https://dietfarm.co.kr/product/'+ app.product.productCode+'&apn=com.dietFarm',
+                webUrl: 'https://dietfarm.page.link/?link=https://dietfarm.co.kr/product/'+ app.product.productCode
+            },
+        },
+        buttons: [
+            {
+                title: '상품 보러가기',
+                link: {
+                    mobileWebUrl: 'https://dietfarm.page.link/?link=https://dietfarm.co.kr/product/'+ app.product.productCode+'&apn=com.dietFarm',
+                    webUrl: 'https://dietfarm.page.link/?link=https://dietfarm.co.kr/product/'+ app.product.productCode
+                },
+            }
+        ],
+        callback: function() {
+            console.log("공유 click");
+        }
+    });
+    
+}

@@ -398,9 +398,11 @@ function getCategory() {
         });
 
         $('dt.faq_q').hover(function() {
-            $("dt.faq_q").removeClass("current");
-
-            $(this).addClass("current");
+            if($(window).width() >= 1079){
+                $("dt.faq_q").removeClass("current");
+                
+                $(this).addClass("current");
+            }
         })
 
         $('.sideMenu_ctt ul.mDepth01').mouseleave(function() {
