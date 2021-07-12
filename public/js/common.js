@@ -1,11 +1,11 @@
 // 테스트
-// var API_SERVER = "http://192.168.0.3:9090";
-// var CALLBACK_SERVER = "http://192.168.0.3";
+var API_SERVER = "http://192.168.0.3:9090";
+var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-var API_SERVER = "https://dietfarm119.co.kr";
-var SERVER_IP = 'dietfarm.co.kr';
-var CALLBACK_SERVER = "https://"+ SERVER_IP;
+// var API_SERVER = "https://dietfarm119.co.kr";
+// var SERVER_IP = 'dietfarm.co.kr';
+// var CALLBACK_SERVER = "https://"+ SERVER_IP;
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
@@ -50,6 +50,28 @@ function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError, file){
    })
 }
 
+function ajaxCallMultipartFormData(url, params, type, onSuccess, onError){
+   var param = JSON.stringify(params);
+   $.ajax({
+      type : type,
+      cache : false,
+      data : param,
+      url : url,
+      enctype: 'multipart/form-data',
+      contentType : false,
+      beforeSend : function(xmlHttpRequest){
+         xmlHttpRequest.setRequestHeader("AJAX", "true")
+         xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
+
+         if(file != undefined && file != null && file != false) {
+            xmlHttpREqeuset.setRequestHeader
+         }
+      },
+      success : onSuccess,
+      error : onError
+   })
+}
+
 // option -> require user data as parameter
 function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
    $.ajax({
@@ -72,6 +94,8 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
             if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
             if(isAvailable(option.address) && option.address == true) params.address = user.address
          }
+         if(option.multipart != undefined && option.multipart == true) 
+            ajaxCallMultipartFormData(url, params, type, onSuccess, onError )
          ajaxCall(url, params, type, onSuccess, onError);
 
       },

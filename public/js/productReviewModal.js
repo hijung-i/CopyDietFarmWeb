@@ -69,7 +69,7 @@ productReviewTemplate += '                   <input type="file" multiple id="upl
 productReviewTemplate += '                   <div id="preview" v-if="currentReview.files != undefined && currentReview.files.length > 0">'
 productReviewTemplate += '                       <div class="previewBox">'
 productReviewTemplate += '                           <ul>'
-productReviewTemplate += '                               <li v-for="(file, fIdx) in currentReview.files"><img v-bind:src="file"></li>'
+productReviewTemplate += '                               <li v-for="(file, fIdx) in currentReview.files"><img v-bind:src="file.url"></li>'
 productReviewTemplate += '                           </ul>'
 productReviewTemplate += '                       </div>'
 productReviewTemplate += '                   </div>'
@@ -158,15 +158,25 @@ var productReviewModal = {
             }
         }, onFileSelected: function() {
             var files = document.getElementById('upload').files;
-            this.currentReview.files.push(...files)
+            Array.from(files).forEach(element => {
+                this.currentReview.files.push(this.fileToObject(element))
+            });
         }, fileToObject: function(file) {
             var object = {
                 productCode: this.product.productCode,
                 filename: '',
                 fileType: file.type,
+                url: '',
                 size: file.size,
                 file: file
             }
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                object.url =  e.target.result;
+            }
+            reader.readAsDataURL(file);
+
+            return object;
         },onSubmit: function() {
             var params = {};
             Object.assign(params, this.product);
