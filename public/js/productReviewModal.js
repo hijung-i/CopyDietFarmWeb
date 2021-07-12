@@ -3,7 +3,7 @@ var productReviewTemplate = '';
 productReviewTemplate += '<div class="review_modal" id="review_Modal">'
 productReviewTemplate += '  <div class="modal-content" >'
 productReviewTemplate += '      <span class="close" @click="closeModal()">&times;</span>';
-productReviewTemplate += '      <div class="review_before" v-if="currentWritable == undefined">'
+productReviewTemplate += '      <div class="review_before" v-if="currentWritable.purchaseProductNo == undefined">'
 productReviewTemplate += '          <h2>리뷰쓰기</h2>'
 productReviewTemplate += '          <h3>리뷰 쓸 상품을 선택해주세요.</h3>'
 productReviewTemplate += '          <div class="detailBox" v-for="(writable, index) in writableList">'
@@ -19,7 +19,7 @@ productReviewTemplate += '          <div class="rbtn_wrap">'
 productReviewTemplate += '              <button type="button" @click="onReviewSelect()">확인</button>'
 productReviewTemplate += '          </div>'
 productReviewTemplate += '      </div>'
-productReviewTemplate += '      <div v-if="currentWritable != undefined">'
+productReviewTemplate += '      <div v-if="currentWritable.purchaseProductNo != undefined">'
 productReviewTemplate += '          <div class="reviewModifyBox">'
 productReviewTemplate += '              <h2>리뷰쓰기</h2>'
 productReviewTemplate += '              <div class="review01">'
@@ -69,7 +69,7 @@ productReviewTemplate += '                   <input type="file" multiple id="upl
 productReviewTemplate += '                   <div id="preview" v-if="currentReview.files != undefined && currentReview.files.length > 0">'
 productReviewTemplate += '                       <div class="previewBox">'
 productReviewTemplate += '                           <ul>'
-productReviewTemplate += '                               <li><img v-bind:src></li>'
+productReviewTemplate += '                               <li v-for="(file, fIdx) in currentReview.files"><img v-bind:src="file"></li>'
 productReviewTemplate += '                           </ul>'
 productReviewTemplate += '                       </div>'
 productReviewTemplate += '                   </div>'
@@ -120,7 +120,8 @@ var productReviewModal = {
             RESOURCE_SERVER,
             writableReviewIndex: -1,
             currentWritable: Object.assign({}, this.writable),
-            currentReview: Object.assign({}, this.review)
+            currentReview: Object.assign({}, this.review),
+            fileList: new Array()
         }
     }, methods: {
         initialize,
@@ -158,7 +159,15 @@ var productReviewModal = {
         }, onFileSelected: function() {
             var files = document.getElementById('upload').files;
             this.currentReview.files.push(...files)
-        }, onSubmit: function() {
+        }, fileToObject: function(file) {
+            var object = {
+                productCode: this.product.productCode,
+                filename: '',
+                fileType: file.type,
+                size: file.size,
+                file: file
+            }
+        },onSubmit: function() {
             var params = {};
             Object.assign(params, this.product);
             Object.assign(params, this.currentWritable);
