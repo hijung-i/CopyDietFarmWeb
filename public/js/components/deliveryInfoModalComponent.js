@@ -104,7 +104,9 @@ var deliveryInfoModalComponent = {
             closeInfoModal();
         }
     }, created: function() {
-        this.getDeliveryInfoList();
+        if( this.orderDTO != undefined && this.orderDTO.userId != '비회원주문') {
+            this.getDeliveryInfoList();
+        }
     }
 }
 
@@ -121,18 +123,4 @@ function openInfoModal() {
 function closeInfoModal() {
     $('#iModal').hide();
     scrollAllow();
-}
-
-function getDeliveryInfoList() {
-    console.log(deliveryInfoModalComponent);
-    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', {}, 'POST',
-    function(data) {
-        deliveryInfoModalComponent.dataList = data.result;
-
-    }, function(err) {
-        console.log("err", err);
-    }, {
-        isRequired: true,
-        userId: true
-    })
 }

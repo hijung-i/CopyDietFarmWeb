@@ -431,7 +431,7 @@ $(function(){
    if ($('#naver_id_login').length > 0) {
       ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
       function(data) {
-         $('#naver_id_login').html(data);
+         $('.naver_id_login').html(data);
          $('.modal-content #naver_id_login a').html('<img src="/images/naver_login@2x.png">네이버 계정으로 시작하기');
       }, function (err) {
          console.log("error login button", err);
