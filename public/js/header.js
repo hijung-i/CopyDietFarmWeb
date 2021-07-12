@@ -447,16 +447,17 @@ function getCategory() {
 
 }
 
-function getBrandList(brand) {
+function getBrandList() {
     var param = {};
     ajaxCallWithLogin(API_SERVER + '/product/getBrandList', param , 'POST',
     function(data) {
         var html = '';
         var result = data.result;
-
+        
         for(var i = 0; i < result.length; i++) {
+            var brand = result[i];
             html += '<li>';
-            html += '    <a href="/product/'+ brand.brandCode +'">'+ result[i].brandName +'</a>';
+            html += '    <a href="/product/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'">'+ brand.brandName +'</a>';
             html += '    <button class="favorite-btn"><img class="like like-no"></button>';
             html += '</li>';
         }

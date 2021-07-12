@@ -387,17 +387,27 @@ height:50px;overflow:hidden}
   color: #391B1B;
   padding-top:10px;
   margin-top:37px}
-  .signup_wrap .btnNaver{width: 100%;
-  height: 45px;
-  background-color: #03C75A;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ffffff;
-  padding-top:10px;
-  margin-top:15px}
+  .signup_wrap .btnNaver{
+      width: 100%;
+      height: 45px;
+      background-color: #03C75A;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      margin-top:15px
+  }
+  .btnNaver a{
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 45px;
+  }
+  
+  .signup_wrap .btnNaver a img{
+      top: 8px;
+  }
+  
   .signup_wrap .btnApple{width: 100%;
       height: 45px;
       background-color: #bbbbbb;
@@ -424,7 +434,6 @@ height:50px;overflow:hidden}
       color: #949494;
       border: 2px solid #bbbbbb;
   }
-  
   .signup_wrap button img{width:26px;height:26px;position:relative;right:20px;top:-4px}
 .mobile_signup .detail_title h2{padding-bottom:35px !important;}
 .signup_wrap .join_title{margin-bottom:6px;margin-top:18px}
@@ -2536,14 +2545,6 @@ font-weight: 400;border-radius:5px}
 .inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
 .inquiryBox ul li ul li{line-height:14px}
 .inquiryBox .words form{margin-top:-20px}
-.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
-text-align:center;line-height:17px;
-font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
-border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
-.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
-.filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
-.filebox p span{text-decoration:underline
-}
 
 /*문의하기(상품문의)*/
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
@@ -2563,20 +2564,18 @@ input#secret[type="checkbox"]:checked + .secret::before {transform: scale(1) rot
 
 .secret::after {content: "";border: 2px solid #F99319;width: 16px;height: 16px;position: absolute;left: -12px;top: -3px;border-radius: 50%;}
 
-
-/*사진 첨부부분은 판매자 문의하기와 같이 사용*/
-.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
-text-align:center;line-height:17px;
-font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
-border: 1px solid #BBBBBB;border-radius:5px;}
-.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;
-  margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
-.filebox p{color:#D62828;line-height:20px;font-weight:normal;padding-top:20px}
-.previewBox ul li{float:left;border:1px solid #BBBBBB;width:110px;height:110px;margin-top:15px}
-.filebox{margin-top:25px}
-.filebox .p2{margin-left:10px}
 .inquiryBox p{clear:both;padding-top:20px}
 
+.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
+  text-align:center;line-height:17px;
+  font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
+  border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
+  .filebox input[type="file"],
+  .filebox input[type="files"]
+   {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
+  .filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
+  .filebox p span{text-decoration:underline
+  }
 
 /*포인트*/
 /* 현재 포인트 */
@@ -3259,6 +3258,22 @@ display: flex;
 .share_body p {text-align: center;}
 
 .share_body img {width: 39px; cursor: pointer;}
+
+
+.previewBox {
+  margin-top: 15px;
+
+}
+
+.previewBox ul li {
+  width: 110px;
+  height: 110px;
+}
+
+.previewBox ul li img {
+  width: 100%;
+  height: 100%;
+}
 
 /* 쿠폰 페이지 */
 @media screen and (max-width:1079px) {

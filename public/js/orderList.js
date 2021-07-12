@@ -15,14 +15,10 @@ var app = new Vue({
         currentReview: {},
         onDeliveryCount: 0,
         afterDeliveryCount: 0,
-<<<<<<< HEAD
-        usableCouponAmount: 0,
-=======
         writable: { purchaseProductNo: 0 },
         writableList: [],
         reviewList: [],
         reviewModal: false,
->>>>>>> e7bcdb9f58a6a58e7db7a122f0eee6967a1167e8
         product: {}
     }, methods: {
         numberFormat,
@@ -30,9 +26,6 @@ var app = new Vue({
         convertOrderStatus,
         orderConfirm,
         openCancelModal,
-<<<<<<< HEAD
-        getUsableCouponList,
-=======
         onSubmit: function() {
             
         },
@@ -49,7 +42,6 @@ var app = new Vue({
                 = (isChecked != undefined && (isChecked == true || isChecked == 'Y'))?true:false;
             openInquiryModal()
         },
->>>>>>> e7bcdb9f58a6a58e7db7a122f0eee6967a1167e8
         onChildPopupClosed: function(data) {
             this.reviewModal = false;
             this.inquiryModal = false; 

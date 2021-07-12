@@ -16,11 +16,13 @@ var app = new Vue({
         optionTotalPrice: 0,
         orderDTO: {},
         deliveryGroupList: [],
-        currentReview: {},
-        writable: { purchaseProductNo: 0 },
-        writableList: [],
+        
+        review: undefined,
+        writable: undefined,
         reviewList: [],
+        writableList: [],
         reviewModal: false,
+        
         currentQuestion: {},
         questionList: [],
         inquiryModal: false,
