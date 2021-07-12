@@ -1499,7 +1499,7 @@ margin-left: 3px;
 }
 
 /*버튼 색상 설정*/
-:root{--font-color: #4e4e4e;--yello-color: #F99319;--yello-border-color: #F99319;}
+
 #btnRegister{width:100%;margin:0 auto;padding: 15px 0 15px;border:0;cursor: pointer;color:#fff;background-color:#F99319;font-size: 14px;font-weight: bold; font-family: 'Nanum Gothic', sans-serif; border-radius:5px;}
 #check{position:relative;top:70px;right:30px}
 
@@ -3218,7 +3218,7 @@ display: flex;
   justify-content: space-between;
   align-items: center;
   width: 164px; margin: 0 auto;
-  padding: 15px 0 21px;
+  padding: 15px 0 14px;
 }
 .share_header > h2 {text-align: center;}
 .share_header .close {
@@ -3231,7 +3231,7 @@ display: flex;
   display: flex;
   justify-content: space-between;
 }
-.share_body p {text-align: center;}
+.share_body p {text-align: center;white-space:nowrap;}
 
 .share_body img {width: 39px; cursor: pointer;}
 
