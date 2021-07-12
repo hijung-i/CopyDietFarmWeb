@@ -6,7 +6,7 @@ body,html {width:100%; min-width:360px; width: 100%;overflow-x:hidden; overflow-
   font-style: normal;
   src:url('/font/NanumGothic.woff') format('woff');
 }
-
+dt.faq_q:hover{display:block}
 .skip_menu{position:absolute}
 .skip_menu a{position:absolute;top:-90px;left:0;width:138px;border:1px solid #4ec53d;background:#333;text-align:center}
 .skip_menu a:active, .skip_menu a:focus{top:0;z-index:1000;text-decoration:none}
@@ -1607,7 +1607,7 @@ div.slideMenu_top {display: none}
 
 .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center}
 #header_mypage .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center;margin-top:-50px}
-.slideMenu_top > .slideMenu_close img{width:19.44px;height:13.67px}
+.slideMenu_top > .slideMenu_close img{width:16px;height:16px}
 .slideMenu_top > .slideMenu_cart img{height: 21px;}
 
 .sid_menu .mDepth01 dt .downArrow {

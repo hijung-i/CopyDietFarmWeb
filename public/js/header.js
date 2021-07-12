@@ -373,7 +373,7 @@ function getCategory() {
             buttonHtml += '</a>';
             buttonHtml += '</li>';
             
-            sideTabHtml += '<li>';
+            sideTabHtml += '<li class="active">';
             sideTabHtml += '    <dl>';
             sideTabHtml += '        <dt class="sideMenu_detail faq_q">';
             sideTabHtml += '            <span><img src="'+ imgList[i]+'" alt="#"/>'+ category.category1Name+'</span>';
@@ -407,6 +407,10 @@ function getCategory() {
         // buttonHtml += '</a>';
         // buttonHtml += '</li>';
         
+        $("dt.faq_q").hover(function(){
+            $(this).next('dd').show();
+        })
+        
         if($('.category ul').length > 0) {
             $('.category ul').html(buttonHtml);
         }
@@ -414,7 +418,7 @@ function getCategory() {
         $("dt.faq_q").click(function() {
             if ($(this).next('dd').css("display") != "none") {
                 $(this).next('dd').hide();
-                $(this).removeClass("current");
+                $(this).removeClass("active");
             } else {
                 $("dd.faq_a").css('display', 'none');
                 $("dt.faq_q").removeClass("current");
