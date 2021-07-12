@@ -373,7 +373,7 @@ function getCategory() {
             buttonHtml += '</a>';
             buttonHtml += '</li>';
             
-            sideTabHtml += '<li>';
+            sideTabHtml += '<li class="active">';
             sideTabHtml += '    <dl>';
             sideTabHtml += '        <dt class="sideMenu_detail faq_q">';
             sideTabHtml += '            <span><img src="'+ imgList[i]+'" alt="#"/>'+ category.category1Name+'</span>';
@@ -407,6 +407,10 @@ function getCategory() {
         // buttonHtml += '</a>';
         // buttonHtml += '</li>';
         
+        $("dt.faq_q").hover(function(){
+            $(this).next('dd').show();
+        })
+        
         if($('.category ul').length > 0) {
             $('.category ul').html(buttonHtml);
         }
@@ -414,7 +418,7 @@ function getCategory() {
         $("dt.faq_q").click(function() {
             if ($(this).next('dd').css("display") != "none") {
                 $(this).next('dd').hide();
-                $(this).removeClass("current");
+                $(this).removeClass("active");
             } else {
                 $("dd.faq_a").css('display', 'none');
                 $("dt.faq_q").removeClass("current");
@@ -443,7 +447,7 @@ function getCategory() {
 
 }
 
-function getBrandList() {
+function getBrandList(brand) {
     var param = {};
     ajaxCallWithLogin(API_SERVER + '/product/getBrandList', param , 'POST',
     function(data) {
@@ -452,7 +456,7 @@ function getBrandList() {
 
         for(var i = 0; i < result.length; i++) {
             html += '<li>';
-            html += '    <a href="/product/getBrandList">'+ result[i].brandName +'</a>';
+            html += '    <a href="/product/'+ brand.brandCode +'">'+ result[i].brandName +'</a>';
             html += '    <button class="favorite-btn"><img class="like like-no"></button>';
             html += '</li>';
         }

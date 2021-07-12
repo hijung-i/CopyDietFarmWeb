@@ -41,7 +41,7 @@
                 <div class="mobile_ol_detail">
                     <section class="detail_title">
                         <h2>주문상세</h2>
-                        <a href="#" 
+                        <a href="#" ㄴ
                             value="취소"
                             onclick="history.back(); return false"
                         >
@@ -51,8 +51,7 @@
                 </div>
                 <input type="hidden" id="orderNumber" value="<%=orderNumber%>">
             <main>
-                    <%-include(webroot + 'views/general/mypage') %>
-              <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
+            <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
               <div class="mypage_content_wrap">
                 <nav class="content_lnb">
                     <ul>

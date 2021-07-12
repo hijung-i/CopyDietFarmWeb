@@ -2,7 +2,7 @@ var signModalTemplate = '';
 
 signModalTemplate += '<div class="m_modal" id="m_Modal">'
 signModalTemplate += '<div class="modal-content">';
-signModalTemplate += '<span class="close" @click="closeModal()">&times;</span>';
+signModalTemplate += '<span class="close" onclick="closeModal()">&times;</span>';
 signModalTemplate += '<div class="signup_wrap">';
 signModalTemplate += '<h2>SNS 계정으로 시작하기</h2>';
 signModalTemplate += '<p style="color:#6B6B6B">1초 간편 회원가입 후, </p>';
