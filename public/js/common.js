@@ -1,11 +1,11 @@
 // 테스트
-// var API_SERVER = "http://192.168.0.3:9090";
-// var CALLBACK_SERVER = "http://192.168.0.3";
+var API_SERVER = "http://192.168.0.3:9090";
+var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-var API_SERVER = "https://dietfarm119.co.kr";
-var SERVER_IP = 'dietfarm.co.kr';
-var CALLBACK_SERVER = "https://"+ SERVER_IP;
+// var API_SERVER = "https://dietfarm119.co.kr";
+// var SERVER_IP = 'dietfarm.co.kr';
+// var CALLBACK_SERVER = "https://"+ SERVER_IP;
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 

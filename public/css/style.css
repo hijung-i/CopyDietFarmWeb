@@ -1648,7 +1648,7 @@ div.slideMenu_top {display: none}
   height: 25px;
 }
 .downArrow{width:11px;height:11px}
-.sideMenu .mDepth01 dd {display:none; background:#f3f5f6;}
+.sideMenu .mDepth01 dd {background:#f3f5f6;}
 .sideMenu .mDepth01 dd li{padding:10px 0 10px 15px; color:#666;}
 .sideMenu .mDepth01 dd li a{color:#666;}
 #m_cart{
