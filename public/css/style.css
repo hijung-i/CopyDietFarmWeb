@@ -266,11 +266,11 @@ padding-right:15px;float:left;position:relative;top:6px}
 .m_slid_2dep_txt .mn2dep a:hover {color:#F99319;height:48px;line-height:48px;background:none;font-weight:600;}
 
 /*검색창*/
-.round {width:358px;height:36px;border-radius:20px;
+.round {width:304px;height:36px;border-radius:20px;
   border:none;background-color:#ededed;
   padding: 8px 8px 8px 25px; z-index: 5;
 }
-.searchbox {width: 358px; height: 36px; position: relative; right: -60px; bottom: -10px;}
+.searchbox {width: 358px; height: 36px; position: relative; right: -104px; bottom: -10px;}
 .search {vertical-align: middle; position: absolute;}
 .search a {position: absolute; width: 16px; height: 16px; top: 10px; right: 15px;}
 .search img{width:16px; height: 16px; z-index:10}
@@ -1155,14 +1155,7 @@ font-weight:normal}
   #nav {width: 664px; display: flex;}
   .nav_wrap {position: relative; display: flex; width: 1080px; height: 54px; margin: 0 auto;}
   #nav .home{display:none}
-  #nav a {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight:bold;
-    width:124px; height:54px;
-    font-size:16px; font-weight: 500;
-    line-height:54px;
-  }
-  #nav a{font-family: 'Noto Sans KR', sans-serif; font-weight:bold;display:inline-block;font-size:16px;line-height:24px;padding:14px; text-align: center;}
+  #nav a{font-family: 'Noto Sans KR', sans-serif; font-weight:bold;display:inline-block;font-size:16px;line-height:24px;padding:14px; text-align: center;width:40px;white-space:nowrap;text-overflow:ellipsis;width:100px}
   #nav a:hover{background-color:#F99319;color:#fff}
   #nav .web_cate img{width:19.44px; margin: 5px 11px;}
   #nav .web_cate{width:168px;height:54px;white-space:nowrap; position: relative;}
