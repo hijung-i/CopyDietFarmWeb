@@ -134,18 +134,4 @@ const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.render(view, data || defaultData)
 }
 
-const userToSession = (req: Request, user: User) => {
-    const sessionUser: SessionUser = {
-        userId: user?.userId!,
-        userCellNo: user?.userCellNo!,
-        userEmail: user?.userEmail!,
-        userInfo: user?.userInfo!,
-        userName: user?.name!
-    }
-
-    req.session.user = sessionUser
-    req.session.isLoggedIn = true
-    req.session.save()
-}
-
 export default router
