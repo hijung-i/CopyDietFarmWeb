@@ -1,11 +1,13 @@
 // 테스트
-var API_SERVER = "http://192.168.0.3:9090";
-var CALLBACK_SERVER = "http://192.168.0.3";
+// var API_SERVER = "http://112.217.209.162:9090";
+// var CALLBACK_SERVER = "http://220.93.22.1";
+// var API_SERVER = "http://192.168.0.3:9090";
+// var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-// var API_SERVER = "https://dietfarm119.co.kr";
-// var SERVER_IP = 'dietfarm.co.kr';
-// var CALLBACK_SERVER = "https://"+ SERVER_IP;
+var API_SERVER = "https://dietfarm119.co.kr";
+var SERVER_IP = 'dietfarm.co.kr';
+var CALLBACK_SERVER = "https://"+ SERVER_IP;
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
@@ -481,10 +483,11 @@ function closePopupModal() {
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
 
-   // scope: 'profile,plusfriends,account_email,phone_number,gender,birthday,birthyear'
    Kakao.Auth.authorize({
       redirectUri: CALLBACK_SERVER + '/user/result/kakao'
+      // scope: 'profile,plusfriends,account_email,phone_number,gender,birthday,birthyear'
    })
+
    
    console.log("loginWithKakaoAPI end");
 }
@@ -502,7 +505,6 @@ function naverCallback(success, paramStr) {
 }
 
 function kakaoLogout() {
-   alert('카카오 로그아웃')
    Kakao.Auth.logout(function() {
       location.href = '/logout'
    })

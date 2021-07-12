@@ -22,26 +22,32 @@ router.get('/naverLoginBtn', function (req: Request, res: Response) {
 
 router.get('/result/kakao', async (req: Request, res: Response, next: NextFunction) => {
     console.log('GET /result/kakao req.query >> ', req.query)
-    const result = await userService.requestKakaoToken(req.query.code)
+    try {
+        const result = await userService.requestKakaoToken(req.query.code)
 
-    const callback = {
-        type: 'K',
-        code: req.query.code,
-        token: result.access_token,
-        refreshToken: result.refresh_token,
-        kakaoNo: '',
-        userId: '',
-        password: '',
-        userEmail: '',
-        userGender: '',
-        userCellNo: '',
-        userInfo: '',
-        userName: ''
+        const callback = {
+            type: 'K',
+            code: req.query.code,
+            token: result.access_token,
+            refreshToken: result.refresh_token,
+            kakaoNo: '',
+            userId: '',
+            password: '',
+            userEmail: '',
+            userGender: '',
+            userCellNo: '',
+            userInfo: '',
+            userName: ''
+        }
+
+        res.locals.callback = callback
+
+        render(req, res, 'loginCallback', {})
+    } catch (error) {
+        console.log('에러 발생', error)
+        STREAM.writeError(JSON.stringify(error))
+        res.send('<script>alert("오류가 발생했습니다."); location.href="/";</script>')
     }
-
-    res.locals.callback = callback
-
-    render(req, res, 'loginCallback', {})
 })
 
 router.get('/result/naver', async (req: Request, res: Response, next: NextFunction) => {
