@@ -54,7 +54,6 @@ var app = new Vue({
             
         },
         selectPayment: function() {
-
             $('.order_payment li').removeClass('border-orange')
             $('.order_payment li:nth-child('+ app.paymentNo +')').addClass('border-orange')
         },
