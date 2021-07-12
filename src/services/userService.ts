@@ -15,9 +15,11 @@ type Option = {
 }
 
 class UserService {
-    SERVER_URL = 'http://dietfarm119.co.kr:9090'
+    SERVER_URL = 'http://192.168.0.3:9090'
+    // SERVER_URL = 'http://dietfarm119.co.kr:9090'
 
-    CALLBACK_SERVER = 'https://dietfarm.co.kr'
+    CALLBACK_SERVER = 'http://192.168.0.3'
+    // CALLBACK_SERVER = 'http://dietfarm.co.kr'
 
     KAKAO_SERVER = 'https://kauth.kakao.com'
 
