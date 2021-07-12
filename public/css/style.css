@@ -2962,8 +2962,7 @@ display: flex;
 
   .r_products .responsive {
     position: absolute;
-    overflow: hidden;
-  }
+    }
 
   .swiper-container{
     top: 6px;
