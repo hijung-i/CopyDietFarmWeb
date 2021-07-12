@@ -188,6 +188,7 @@ var productReviewModal = {
             } else {
                 // updateReview(this, params);
             }
+            alert('기능 준비중입니다.')
         },
         closeModal: function() {
             this.$emit('close', 'review')
