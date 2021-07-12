@@ -439,7 +439,12 @@ function getBrandList() {
         for(var i = 0; i < result.length; i++) {
             var brand = result[i];
             html += '<li>';
-            html += '    <a href="/product/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'">'+ brand.brandName +'</a>';
+            html += '    <a href="/products/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'/brand';
+            if(brand.brandCode != '') {
+                html += '?companyCode='+brand.companyCode
+            }
+            
+            html += '">'+ brand.brandName +'</a>';
             html += '    <button class="favorite-btn"><img class="like like-no"></button>';
             html += '</li>';
         }
