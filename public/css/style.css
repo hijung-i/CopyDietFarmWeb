@@ -182,6 +182,13 @@ a:hover{text-decoration:none;}
   cursor:pointer;
   margin-right:10px
 }
+dd.subMenu {
+  display: none;
+}
+.sideMenu_detail.current ~ .subMenu {
+ display: block;
+}
+
 @media screen and (min-width:630px) and (max-width:1079px){
 .slick-slider{margin-bottom:40px}
 }
@@ -591,9 +598,6 @@ margin-top:100px;padding-top:25px;padding-bottom:21px}
  .mDepth01 li {position: relative; background: #fff;}
 
  .gnb_depth02 li {background: #F5F5F5;}
- .sideMenu_detail.current ~ .subMenu {
-  display: block;
-}
 
  .sideMenu #tab2 .mDepth01 li{
    height: 49px;
