@@ -266,7 +266,7 @@ function getProductDetail(){
 
     }, function (err) {
         console.log("productDetail error", err);
-        alert('상품 정보를 불러오지 못했습니다.');
+        alert('상품 정보를 불러오지 못했습니다.', JSON.stringify(err));
         location.href = '/';
     }, {
         isRequired: false,
