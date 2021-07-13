@@ -50,10 +50,11 @@ router.get('/product/:productCode', (req: Request, res: Response, next: NextFunc
 
 router.get('/products/:brandCode/brand', (req: Request, res: Response, next: NextFunction) => {
     const brandCode = req.params.brandCode
-    const brandName = req.params.brandName
+
     // brand와 company가 모두 있을 경우 companyCode가 쿼리스트링으로 넘어옴
     const companyCode = req.query.companyCode || ''
-    
+    const brandName = req.query.brandName
+
     render(req, res, 'products', {
         brandCode: brandCode,
         companyCode: companyCode,

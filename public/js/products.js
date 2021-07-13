@@ -199,9 +199,10 @@ function getProductListByBrandCode() {
 
     var params = {
         brandCode,
-        companyCode,
-        brandName
+        companyCode
     };
+    
+    $('.myPage_title').html(brandName);
 
     ajaxCallWithLogin(API_SERVER + '/product/getBrandListDetail', params, 'POST',
     function(data){
@@ -213,7 +214,6 @@ function getProductListByBrandCode() {
             var html = generateHtmlForProductList(data.result);
             
             $('.sub_items ul').html(html);
-            $('.myPage_title').html(brand.brandName);
             
         } else {
             $('.sub_items ul').hide();

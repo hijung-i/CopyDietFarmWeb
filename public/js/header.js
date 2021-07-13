@@ -441,14 +441,14 @@ function getBrandList() {
             html += '<li>';
             html += '    <a href="/products/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'/brand';
             if(brand.brandCode != '') {
-                html += '?companyCode='+brand.companyCode
+                html += '?companyCode='+brand.companyCode +'&brandName=' + brand.brandName
             }
             
             html += '">'+ brand.brandName +'</a>';
             html += '    <button class="favorite-btn"><img class="like like-no"></button>';
             html += '</li>';
         }
-        $('.myPage_title').html(brand.brandName);
+
         $('.brand ul').html(html);
         
 
@@ -467,19 +467,20 @@ function searchBrand(keyword) {
     ajaxCall(API_SERVER + '/product/brandSearchBar', params, 'POST'
     , function(data) {
         var result = data.result;
+        console.log(data.result)
         var html = '';
         for(var i = 0; i < result.length; i++) {
             var brand = result[i];
             html += '<li>';
             html += '    <a href="/products/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'/brand';
             if(brand.brandCode != '') {
-                html += '?companyCode='+brand.companyCode
+                html += '?companyCode='+brand.companyCode +'&brandName=' + brand.brandName
             }
             
             html += '">'+ brand.brandName +'</a>';
             html += '</li>'; 
         }
-        $(".result_wrap .search_result ul").html(html);
+        $(".brand ul").html(html);
 
 
     }, function(err) {
@@ -487,18 +488,12 @@ function searchBrand(keyword) {
     })
 }
 $(function() {
-    $(".search_box_ico").click(function() {
-        goSearchResult();
+    $(".brandCate_top .search_box_ico").click(function() {
+        var keyword = $('.brandCate_top #brandSearchKeyword').val().trim();
+        if(keyword.length > 0) {
+            searchBrand(keyword)
+        } else {
+            alert('키워드를 입력해주세요')
+        }
     })
 })
-
-function goSearchResult() {
-    var keyword = $('#brandSearchKeyword').val().trim();
-    if(keyword.length == '' || keyword.length < 1) {
-        alert('검색어를 입력해주세요');
-        return;
-    }
-    
-    $("#brandSearchForm input[name=keyword]").val(keyword);
-    $("#brandSearchForm").submit();
-}
