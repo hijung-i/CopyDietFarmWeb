@@ -53,7 +53,7 @@ router.get('/products/:brandCode/brand', (req: Request, res: Response, next: Nex
     const brandName = req.params.brandName
     // brand와 company가 모두 있을 경우 companyCode가 쿼리스트링으로 넘어옴
     const companyCode = req.query.companyCode || ''
-
+    
     render(req, res, 'products', {
         brandCode: brandCode,
         companyCode: companyCode,
@@ -62,7 +62,6 @@ router.get('/products/:brandCode/brand', (req: Request, res: Response, next: Nex
         currentPage: 'brand'
     })
 })
-
 router.get('/products/:salesStandCode/event', (req: Request, res: Response, next: NextFunction) => {
     const standCode = req.params.salesStandCode
 
@@ -86,17 +85,15 @@ router.get('/products/:category1Code/category/:category2Code', (req: Request, re
 router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'search', { currentPage: '검색' })
 })
-
 router.get('/search-list', (req: Request, res: Response, next: NextFunction) => {
     const keyword = req.query.keyword
 
     render(req, res, 'products', {
         keyword: keyword,
         listType: 'SEARCH',
-        currentPage: 'products'
+        currentPage: 'search'
     })
 })
-
 router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn = req.session.isLoggedIn || false
     const sessionUser = req.session.user || {}
@@ -146,7 +143,6 @@ router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFu
         render(req, res, 'mypage/mypage_orderList_detail', { orderNumber })
     }
 })
-
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'terms_of_service', {})
 })

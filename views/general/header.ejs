@@ -48,10 +48,10 @@
             </div>
         </div>
         <% } %>
-        <div class="comp_logo <% if(currentPage != 'main' && currentPage != 'products' ) { %> hide-mobile <% } %>">
+        <div class="comp_logo <% if(currentPage != 'main' && currentPage != 'products' && currentPage != 'search') { %> hide-mobile <% } %>">
             <a href="/"><img src="/images/logo_new@2x.png"></a>
         </div>
-        <% if (currentPage != 'main' && currentPage != 'products') { %>
+        <% if (currentPage != 'main' && currentPage != 'products' && currentPage != 'search') { %>
             <div class="myPage_title" style="font-size:16px;font-weight:bold">
                 <h2><%=currentPage %></h2>
             </div>
@@ -67,7 +67,7 @@
         </div>
     </div>
     <div class="header_wrap">
-    <div class="nav_wrap <% if(currentPage != 'main' && currentPage != 'products' && currentPage != 'category') { %> hide-mobile <% } %>" >
+    <div class="nav_wrap <% if(currentPage != 'main' && currentPage != 'products' && currentPage != 'category' && currentPage != 'search') { %> hide-mobile <% } %>" >
         <nav id="nav">
             
         </nav>
@@ -149,18 +149,23 @@
         <div id="tab2" class="tab_cont" style="display: none">
             <div class="brandCate_top">
                 <div id="searchUsers" class="instant-search">
+                    <form action="/search-list" method="GET" id="brandSearchForm">
+                        <input type="hidden" name="keyword">
+                    </form>
                     <div class="instant-search__input-container">
                         <input
                             class="instant-search__input"
-                            type="text"
+                            id="brandSearchKeyword"
                             spellcheck="false"
                             placeholder="브랜드명을 검색해보세요."
-                            style="font-size:14px;width:90%" action="/search-list">
+                            style="font-size:14px;width:90%"
+                            onkeypress="if( event.keyCode == 13 ){ goSearchResult();}">
                         <a href="#"><img src="/images/grayx_icon_login.png" alt="취소"></a>
                     </div>
                     <div class="search_box_ico">
                         <a href="#"><img src="/images/searchbox_icon_category.png" alt=""></a>
                     </div>
+                    
                 </div>
                 <div class="categ">
                     <ul>

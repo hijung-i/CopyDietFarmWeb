@@ -162,32 +162,6 @@ ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'pos
 });
 
 }
-function getProductListByBrandCode() {
-    var brandCode = $('#brandCode').val();
-    var companyCode = $('#companyCode').val();
-    var brandName = $('#brandName').val();
-
-    var params = {
-        brandCode,
-        companyCode,
-        brandName: app.brand.brandName
-    };
-
-    ajaxCallWithLogin(API_SERVER + '/product/getBrandListDetail', params, 'POST',
-    function(data){
-        console.log("get ProductList by BrandCode", data);
-        var brandName = data.result[0].brandName
-        var html = generateHtmlForProductList(data.result);
-        $('.sub_items ul').html(html)
-        $('.myPage_title').html(app.brand.brandName);
-        
-    }, function(err) {
-        console.error("err");
-    }, {
-        isRequired: false,
-        userId: true
-    })
-}
 
 function getProductDetail(){
     var productCode = $("#productCode").val();

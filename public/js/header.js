@@ -435,7 +435,7 @@ function getBrandList() {
     function(data) {
         var html = '';
         var result = data.result;
-        
+            
         for(var i = 0; i < result.length; i++) {
             var brand = result[i];
             html += '<li>';
@@ -448,7 +448,7 @@ function getBrandList() {
             html += '    <button class="favorite-btn"><img class="like like-no"></button>';
             html += '</li>';
         }
-
+        $('.myPage_title').html(brand.brandName);
         $('.brand ul').html(html);
         
 
@@ -469,12 +469,36 @@ function searchBrand(keyword) {
         var result = data.result;
         var html = '';
         for(var i = 0; i < result.length; i++) {
-            var product = result[i];
-            html += '<li><a href="/brand/'+ brand.brandCode +'">'+ brand.brandName +'</a></li>'; 
+            var brand = result[i];
+            html += '<li>';
+            html += '    <a href="/products/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'/brand';
+            if(brand.brandCode != '') {
+                html += '?companyCode='+brand.companyCode
+            }
+            
+            html += '">'+ brand.brandName +'</a>';
+            html += '</li>'; 
         }
-        $("").html(html);
+        $(".result_wrap .search_result ul").html(html);
+
 
     }, function(err) {
         console.log(err);
     })
+}
+$(function() {
+    $(".search_box_ico").click(function() {
+        goSearchResult();
+    })
+})
+
+function goSearchResult() {
+    var keyword = $('#brandSearchKeyword').val().trim();
+    if(keyword.length == '' || keyword.length < 1) {
+        alert('검색어를 입력해주세요');
+        return;
+    }
+    
+    $("#brandSearchForm input[name=keyword]").val(keyword);
+    $("#brandSearchForm").submit();
 }
