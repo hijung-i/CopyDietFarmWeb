@@ -363,7 +363,7 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 height:50px;overflow:hidden}
  .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
   #content .main_sub img{width: 100%;background-repeat: no-repeat;background-size: cover;background-position: center}
-  #content .main_sub{width:100%;margin:10px auto}
+  #content .main_sub{width:100%;margin:144px auto}
   #content .sort select{border:0;margin-left:15px;margin-bottom:10px;margin-top:5px}
 
 /*회원가입*/
@@ -1254,11 +1254,7 @@ font-weight:normal}
    width:11px;height:11px
 }
 }
-@media screen and (max-width:1079px) {
-  .sub_items {
-    padding-top: 108px;
-  }
-}
+
 @media screen and (min-width:1080px){
   /* 마이페이지 배송지 관리 모달 */
   .deliver_magHeader h3 {
@@ -1762,9 +1758,9 @@ div.slideMenu_top {display: none}
   .pdt_detai_tabinner_vn > ul.tab_wrap li.onTab span {color: #FF8B00; font-weight: 700;}
   .pdt_detai_tabinner_vn > ul.tab_wrap > li.onTab {font-weight: 700;}
   .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(1).onTab ~ span {left: 0; opacity: 1;}
-  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(2).onTab ~ span {left: 23%; opacity: 1;}
-  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(3).onTab ~ span {left: 45%; opacity: 1;}
-  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(4).onTab ~ span {left: 67%; opacity: 1;}
+  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(2).onTab ~ span {left: 25%; opacity: 1;}
+  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(3).onTab ~ span {left: 50%; opacity: 1;}
+  .pdt_detai_tabinner_vn > ul.tab_wrap > li:nth-child(4).onTab ~ span {left: 75%; opacity: 1;}
   .pdt_detai_tabinner_vn > ul.tab_wrap li span {color: #878787; font-weight: 400;}  .order{margin-top:20px;width:100%;}
   .orderHistory .order01 td{font-size:14px;line-height:22px; width: 93%}
 }
@@ -2950,15 +2946,13 @@ display: flex;
 
 .brand ul li {
   border-top: 1px solid #BBBBBB;
+  padding-bottom:15px
 }
 
 .brand ul li:first-child{
   border-top: none;
 }
-.brand ul li:last-child{
-  padding-right: 15px;
-}
-
+.brand ul li a {font-size:14px}
 @media screen and (max-width:1079px) {
     .only-pc {
       display: none;

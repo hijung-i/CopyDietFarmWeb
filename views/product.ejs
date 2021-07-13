@@ -184,7 +184,7 @@
                     <div class="share_body">
                         <button onclick="sendKakaoLink()"><img src="/images/shareKakao@2x.png" alt="url"><p>카카오톡</p></button>
                         <button><img src="/images/shareSMS@2x.png" alt="url"><p>문자</p></button>
-                        <button><img src="/images/url_icon_friend@2x.png" alt="url"><p>URL 복사</p></button>
+                        <button><img src="/images/url_icon_friend@2x.png" alt="url" onclick="clip(); return false;"><p>URL 복사</p></button>
                         
                     </div>
                 </div>
@@ -286,6 +286,7 @@
                                                     <td class="ex">
                                                         <template>{{ product.deliveryCostHtml }}</template>
                                                     </td>
+                                                    <td class="d_save_wrap"><button class="d_save"><a href="/products/brandCode/brand?companyCode=companyCode">배송비 절약 상품 보기</a></button></td>
                                                 </tr>
                                                 <tr class="packing-type">
                                                     <td>

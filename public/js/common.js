@@ -5,7 +5,9 @@
 // var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-var API_SERVER = "https://dietfarm119.co.kr";
+// var API_SERVER = "http://localhost:9090";
+var API_SERVER = "http://112.217.209.162:9090";
+// var API_SERVER = "https://dietfarm119.co.kr";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "https://"+ SERVER_IP;
 
@@ -570,4 +572,17 @@ function scrollBlock() {
 function scrollAllow() {
    $('html, body').css({'overflow': 'visible'});
    $('html,body').off('scroll touchmove mousewheel');
+}
+
+function clip(){
+
+	var url = '';
+	var textarea = document.createElement("textarea");
+	document.body.appendChild(textarea);
+	url = window.document.location.href;
+	textarea.value = url;
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
+	alert("URL이 복사되었습니다.")
 }

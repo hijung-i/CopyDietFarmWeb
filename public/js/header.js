@@ -346,7 +346,7 @@ function getCategory() {
             buttonHtml += '</a>';
             buttonHtml += '</li>';
             
-            sideTabHtml += '<li class="active">';
+            sideTabHtml += '<li>';
             sideTabHtml += '    <dl>';
             sideTabHtml += '        <dt class="sideMenu_detail faq_q">';
             sideTabHtml += '            <span><img src="'+ imgList[i]+'" alt="#"/>'+ category.category1Name+'</span>';
@@ -450,6 +450,7 @@ function getBrandList() {
         }
 
         $('.brand ul').html(html);
+        
 
     }, function(err) {
         console.error(err);

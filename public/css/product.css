@@ -63,6 +63,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 @media screen and (max-width:1079px){
+.d_save{position: relative;
+font-size: 11px;
+left: 64px;
+top: 24px;
+background-color: transparent;
+border: 1px solid #424242;
+border-radius: 5px;
+margin-bottom: 20px;}
 .line{position:relative;margin-top:10px}
 .view_top_img img{width:100%!important;height:100%!important}
 .view_navi_box{display:none}
@@ -207,15 +215,25 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 
 /*products_web*/
 @media screen and (min-width:1080px){
+.d_save{
+position:absolute;
+font-size: 11px;
+background-color: transparent;
+border: 1px solid #424242;
+border-radius: 5px;
+right:140px;
+margin-top:10px
+}
+.d_save_wrap{padding-bottom:20px}
 #tab1_mobile {height: 769px;}
 .swiper-pagination {
     width: 10%;
     left: 88%;
 }
-.price_mobile .p1{font-size:16px;font-weight:bold;margin-top:12px;margin-bottom:6px}
-.price_mobile .p2{color:#BBBBBB;font-size:14px;text-decoration:line-through;margin-bottom:7px}
+.price_mobile .p1{font-size:16px;font-weight:bold;margin-bottom:6px}
+.price_mobile .p2{color:#BBBBBB;font-size:14px;text-decoration:line-through;margin-left:7px}
 
-.price_mobile .p3{color:#F32525;font-size:16px;font-weight:bold}
+.price_mobile .p3{color:#F32525;font-size:16px;font-weight:bold;margin-left:7px}
 /* 상품상세 멀티슬라이드 */
 .responsive1 div img {
     width: 294px; height: 353px;
@@ -331,7 +349,7 @@ box-shadow: none !important}
 .v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em; font-family: 'Nanum Gothic', sans-serif; line-height:24px}
 .v_top_txt {color:#6B6B6B;font-size:12px;line-height:18px;padding:10px 0 0px} 
 .v_n_top_info .ex{white-space:nowrap;}
-.price_mobile{border-bottom:1px solid #e1e1e1;padding-bottom:10px}
+.price_mobile{display:flex;margin-top:14px;border-bottom:1px solid #e1e1e1;padding-bottom:10px}
 .option_wrap h3{margin-left:-15px}
 .option_wrap #products{border:1px solid #424242;margin-left:-15px;width:305px;height:36px}
 .product_detail_content {position:relative;margin-top:54px;font-family:'Noto sans',sans-serif}
