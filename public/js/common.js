@@ -1,15 +1,13 @@
 // 테스트
 // var API_SERVER = "http://112.217.209.162:9090";
 // var CALLBACK_SERVER = "http://220.93.22.1";
-// var API_SERVER = "http://192.168.0.3:9090";
-// var CALLBACK_SERVER = "http://192.168.0.3";
+var API_SERVER = "http://192.168.0.3:9090";
+var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-// var API_SERVER = "http://localhost:9090";
-// var API_SERVER = "http://112.217.209.162:9090";
-var API_SERVER = "https://dietfarm119.co.kr";
-var SERVER_IP = 'dietfarm.co.kr';
-var CALLBACK_SERVER = "https://"+ SERVER_IP;
+// var API_SERVER = "https://dietfarm119.co.kr";
+// var SERVER_IP = 'dietfarm.co.kr';
+// var CALLBACK_SERVER = "https://"+ SERVER_IP;
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
@@ -55,21 +53,17 @@ function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError, file){
 }
 
 function ajaxCallMultipartFormData(url, params, type, onSuccess, onError){
-   var param = JSON.stringify(params);
    $.ajax({
       type : type,
       cache : false,
-      data : param,
+      data : params,
       url : url,
       enctype: 'multipart/form-data',
+      processData: false,
       contentType : false,
       beforeSend : function(xmlHttpRequest){
          xmlHttpRequest.setRequestHeader("AJAX", "true")
          xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
-
-         if(file != undefined && file != null && file != false) {
-            xmlHttpREqeuset.setRequestHeader
-         }
       },
       success : onSuccess,
       error : onError
@@ -92,15 +86,26 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          }
 
          var user = result.user;
-         if(result.isLoggedIn && user != undefined){
-            if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
-            if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
-            if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
-            if(isAvailable(option.address) && option.address == true) params.address = user.address
+         
+         if(option.multipart != undefined && option.multipart == true) {
+            if(result.isLoggedIn && user != undefined){
+               if(isAvailable(option.userId) && option.userId == true) params.append("userId", user.userId)
+               if(isAvailable(option.userCellNo) && option.userCellNo == true) params.append("userCellNo", user.userCellNo)
+               if(isAvailable(option.userEmail) && option.userEmail == true) params.append('userEmail', user.userEmail)
+               if(isAvailable(option.address) && option.address == true) params.append('address', user.address)
+            }
+
+            ajaxCallMultipartFormData(url, params, type, onSuccess, onError)
+         } else {
+            if(result.isLoggedIn && user != undefined){
+               if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
+               if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
+               if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
+               if(isAvailable(option.address) && option.address == true) params.address = user.address
+            }
+
+            ajaxCall(url, params, type, onSuccess, onError);
          }
-         if(option.multipart != undefined && option.multipart == true) 
-            ajaxCallMultipartFormData(url, params, type, onSuccess, onError )
-         ajaxCall(url, params, type, onSuccess, onError);
 
       },
       error: function(err){
