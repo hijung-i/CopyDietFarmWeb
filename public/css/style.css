@@ -316,6 +316,7 @@ padding-right:15px;float:left;position:relative;top:6px}
 .brand ul li ul{height:45px;width:100%;display: flex;justify-content: space-between;padding-right:25px;font-size:14px;padding-top:5px;padding-bottom:5px;border-bottom:0.5px solid #BBBBBB;}
 .brand ul li ul img{position:relative;top:7px}
 .brand ul li ul li a{margin-left:20px;position:relative; line-height: 36px;}
+.brandCate_top{padding-top:14px}
 .categ ul li{font-size:14px; background-color:transparent; padding-right: 14px; line-height: 14px;}
 
 /*페이징 버튼*/
@@ -2948,7 +2949,7 @@ display: flex;
 .brand ul li:first-child{
   border-top: none;
 }
-.brand ul li a {font-size:14px}
+.brand ul li a {font-size:14px;margin-left:15px}
 @media screen and (max-width:1079px) {
     .only-pc {
       display: none;

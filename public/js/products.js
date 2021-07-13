@@ -144,9 +144,19 @@ function productSearch(keyword) {
 
     ajaxCallWithLogin(API_SERVER + '/product/productSearchBar', params, 'POST',
     function(data) {
-
-        var html = generateHtmlForProductList(data.result);
-        $('.sub_items ul').html(html);
+        if(data.result.length > 0) {
+            var html = generateHtmlForProductList(data.result);
+            
+            $('.sub_items ul').html(html);
+            $('.myPage_title').html(brand.brandName);
+            
+        } else {
+            $('.n_sort').hide();
+            $('.sub_items ul').hide();
+            $('.pick_list_null').show();
+            $('.pick_list_null').html('<img src="/images/twoheart_icon_heart@2x.png"><p>해당 브랜드가 존재하지 않습니다.</p>');
+        }
+        
         
         console.log("search success", data);
     }, function(err) {
@@ -186,6 +196,7 @@ function getProductListByBrandCode() {
     var companyCode = $('#companyCode').val();
     var brandName = $('#brandName').val();
 
+
     var params = {
         brandCode,
         companyCode,
@@ -195,11 +206,22 @@ function getProductListByBrandCode() {
     ajaxCallWithLogin(API_SERVER + '/product/getBrandListDetail', params, 'POST',
     function(data){
         console.log("get ProductList by BrandCode", data);
-        var brandName = data.result[0].brandName
         var html = generateHtmlForProductList(data.result);
-        $('.sub_items ul').html(html)
-        $('.myPage_title').html(app.brand.brandName);
-        
+        var brand = data.result[i];
+
+        if(data.result.length > 0) {
+            var html = generateHtmlForProductList(data.result);
+            
+            $('.sub_items ul').html(html);
+            $('.myPage_title').html(brand.brandName);
+            
+        } else {
+            $('.sub_items ul').hide();
+            $('.pick_list_null').show();
+            $('.pick_list_null').html('<img src="/images/twoheart_icon_heart@2x.png"><p>찜한 상품이 없습니다.</p>');
+        }
+    
+  
     }, function(err) {
         console.error("err");
     }, {

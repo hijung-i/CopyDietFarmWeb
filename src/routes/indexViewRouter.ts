@@ -94,7 +94,7 @@ router.get('/search-list', (req: Request, res: Response, next: NextFunction) => 
     render(req, res, 'products', {
         keyword: keyword,
         listType: 'SEARCH',
-        currentPage: 'products'
+        currentPage: 'search'
     })
 })
 
