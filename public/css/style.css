@@ -182,6 +182,13 @@ a:hover{text-decoration:none;}
   cursor:pointer;
   margin-right:10px
 }
+dd.subMenu {
+  display: none;
+}
+.sideMenu_detail.current ~ .subMenu {
+ display: block;
+}
+
 @media screen and (min-width:630px) and (max-width:1079px){
 .slick-slider{margin-bottom:40px}
 }
@@ -592,9 +599,6 @@ margin-top:100px;padding-top:25px;padding-bottom:21px}
  .mDepth01 li {position: relative; background: #fff;}
 
  .gnb_depth02 li {background: #F5F5F5;}
- .sideMenu_detail.current ~ .subMenu {
-  display: block;
-}
 
  .sideMenu #tab2 .mDepth01 li{
    height: 49px;
@@ -1645,7 +1649,7 @@ div.slideMenu_top {display: none}
   height: 25px;
 }
 .downArrow{width:11px;height:11px}
-.sideMenu .mDepth01 dd {display:none; background:#f3f5f6;}
+.sideMenu .mDepth01 dd {background:#f3f5f6;}
 .sideMenu .mDepth01 dd li{padding:10px 0 10px 15px; color:#666;}
 .sideMenu .mDepth01 dd li a{color:#666;}
 #m_cart{
@@ -3253,7 +3257,14 @@ display: flex;
 
 
 .previewBox {
+  width: 100%;
+  overflow-x: scroll;
   margin-top: 15px;
+}
+
+.previewBox ul {
+  display: flex;
+  flex-flow: row;
 }
 .previewBox ul li {
   width: 110px;

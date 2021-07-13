@@ -68,8 +68,8 @@ productReviewTemplate += '                   <label for="upload">사진 (선택)
 productReviewTemplate += '                   <input type="file" multiple id="upload" name="upload" @change="onFileSelected">'
 productReviewTemplate += '                   <div id="preview" v-if="currentReview.files != undefined && currentReview.files.length > 0">'
 productReviewTemplate += '                       <div class="previewBox">'
-productReviewTemplate += '                           <ul>'
-productReviewTemplate += '                               <li v-for="(file, fIdx) in currentReview.files"><img v-bind:src="file"></li>'
+productReviewTemplate += '                           <ul v-bind:style="{ width: ulWidth }">'
+productReviewTemplate += '                               <li v-for="(file, fIdx) in currentReview.files"><img v-bind:src="file.url"></li>'
 productReviewTemplate += '                           </ul>'
 productReviewTemplate += '                       </div>'
 productReviewTemplate += '                   </div>'
@@ -136,8 +136,9 @@ var productReviewModal = {
                 return this.product.options[0].optionDesc
             }
         }, onStarClick: function(active, gpa) {
-            var before = this.review.gpa;
-            this.review.gpa = (active)? (gpa / 2) : (gpa / 2 + before); 
+            var before = this.currentReview.gpa;
+            console.log(before, gpa);
+            this.currentReview.gpa = (active)? (gpa / 2) : (gpa / 2 + before); 
         }, onSubmit: function() {
             console.log(this.review);
             if (this.review.boardNo == 0) {
@@ -158,22 +159,34 @@ var productReviewModal = {
             }
         }, onFileSelected: function() {
             var files = document.getElementById('upload').files;
-            this.currentReview.files.push(...files)
+            Array.from(files).forEach(element => {
+                this.currentReview.files.push(this.fileToObject(element))
+            });
+
         }, fileToObject: function(file) {
             var object = {
                 productCode: this.product.productCode,
                 filename: '',
                 fileType: file.type,
+                url: '',
                 size: file.size,
-                file: file
+                file: file,
+                updateYn: 'Y'
             }
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                object.url =  e.target.result;
+            }
+            reader.readAsDataURL(file);
+
+            return object;
         },onSubmit: function() {
             var params = {};
             Object.assign(params, this.product);
             Object.assign(params, this.currentWritable);
             Object.assign(params, this.currentReview);
             
-            console.log(params);
             if(params.purchaseProductNo == undefined || params.purchaseProductNo == 0 ) {
                 alert('구매 내역을 선택해주세요')
                 return;
@@ -183,12 +196,27 @@ var productReviewModal = {
                 return;
             }
 
-            if(params.reviewNo != undefined && params.reviewNo != 0) {
-                // insertReview(this, params);
+            var contentType = 'T';
+            if(params.files.length > 0) {
+                contentType = 'I';
+            }
+
+            var formData = new FormData();
+
+            Array.from(params.files).forEach(function(obj) {
+                if(obj.updateYn == 'Y') formData.append("files", obj.file)
+            })
+
+            formData.append("purchaseProductNo", params.purchaseProductNo);
+            formData.append("content", params.content);
+            formData.append("gpa", params.gpa);
+            formData.append("contentType", contentType);            
+
+            if(params.reviewNo == undefined || params.reviewNo == 0) {
+                insertReview(this, formData);
             } else {
                 // updateReview(this, params);
             }
-            alert('기능 준비중입니다.')
         },
         closeModal: function() {
             this.$emit('close', 'review')
@@ -196,9 +224,9 @@ var productReviewModal = {
         }
 
     }, computed: {
-        reviewLevel: function() {
-            return (this.currentWritable == {} || this.currentWritable.purchaseProductNo == 0)?0:1
-        } 
+        ulWidth: function() {
+            return ((this.currentReview.files.length * 120) - 10) + 'px'
+        }
     }, created: function() {
         console.log(this, this.review)
         if(this.writableList == undefined || this.writableList.length == 0) {
@@ -219,9 +247,10 @@ function initialize() {
 }
 
 function insertReview(comp, review) {
-
-    ajaxCallWithLogin(API_SERVER + '/product/addQA', review, 'POST',
+    console.log("insertReview", review);
+    ajaxCallWithLogin(API_SERVER + '/board/insertReview', review, 'POST',
     function(data) {
+        console.log(data);
         alert('리뷰 등록에 성공했습니다.');
         comp.$emit('addComplete', review);
 
@@ -232,6 +261,7 @@ function insertReview(comp, review) {
     },
     {
         isRequired: true,
+        multipart: true,
         userId: true
     })
 
@@ -239,7 +269,7 @@ function insertReview(comp, review) {
 
 function updateReview(comp, review) {
 
-    ajaxCallWithLogin(API_SERVER + '/product/updateQA', review, 'POST',
+    ajaxCallMultipartFormData(API_SERVER + '/product/updateQA', review, 'POST',
     function(data) {
         initialize();
 

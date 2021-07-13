@@ -73,8 +73,10 @@ function requestKaKaoUserInfo() {
 		fail: function(error) {
 			console.log(
 				'login success, but failed to request user information: '
-				,error
+				, error
 			)
+			alert('카카오 로그인 중 오류가 발생했습니다.');
+			location.href = "/";
 		},
 	});
 }

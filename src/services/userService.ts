@@ -192,6 +192,7 @@ class UserService {
             return result
         }).catch((err: any) => {
             console.error('GET /request/token > request error >>', err.statusCode, err.error)
+            STREAM.writeError(JSON.stringify(err))
         })
     }
 

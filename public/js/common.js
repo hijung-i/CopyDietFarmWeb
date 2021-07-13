@@ -48,6 +48,24 @@ function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError, file){
    })
 }
 
+function ajaxCallMultipartFormData(url, params, type, onSuccess, onError){
+   $.ajax({
+      type : type,
+      cache : false,
+      data : params,
+      url : url,
+      enctype: 'multipart/form-data',
+      processData: false,
+      contentType : false,
+      beforeSend : function(xmlHttpRequest){
+         xmlHttpRequest.setRequestHeader("AJAX", "true")
+         xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
+      },
+      success : onSuccess,
+      error : onError
+   })
+}
+
 // option -> require user data as parameter
 function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
    $.ajax({
@@ -64,13 +82,26 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          }
 
          var user = result.user;
-         if(result.isLoggedIn && user != undefined){
-            if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
-            if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
-            if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
-            if(isAvailable(option.address) && option.address == true) params.address = user.address
+         
+         if(option.multipart != undefined && option.multipart == true) {
+            if(result.isLoggedIn && user != undefined){
+               if(isAvailable(option.userId) && option.userId == true) params.append("userId", user.userId)
+               if(isAvailable(option.userCellNo) && option.userCellNo == true) params.append("userCellNo", user.userCellNo)
+               if(isAvailable(option.userEmail) && option.userEmail == true) params.append('userEmail', user.userEmail)
+               if(isAvailable(option.address) && option.address == true) params.append('address', user.address)
+            }
+
+            ajaxCallMultipartFormData(url, params, type, onSuccess, onError)
+         } else {
+            if(result.isLoggedIn && user != undefined){
+               if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
+               if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
+               if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
+               if(isAvailable(option.address) && option.address == true) params.address = user.address
+            }
+
+            ajaxCall(url, params, type, onSuccess, onError);
          }
-         ajaxCall(url, params, type, onSuccess, onError);
 
       },
       error: function(err){
@@ -455,10 +486,11 @@ function closePopupModal() {
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
 
-   // scope: 'profile,plusfriends,account_email,phone_number,gender,birthday,birthyear'
    Kakao.Auth.authorize({
       redirectUri: CALLBACK_SERVER + '/user/result/kakao'
+      // scope: 'profile,plusfriends,account_email,phone_number,gender,birthday,birthyear'
    })
+
    
    console.log("loginWithKakaoAPI end");
 }
@@ -476,7 +508,6 @@ function naverCallback(success, paramStr) {
 }
 
 function kakaoLogout() {
-   alert('카카오 로그아웃')
    Kakao.Auth.logout(function() {
       location.href = '/logout'
    })
