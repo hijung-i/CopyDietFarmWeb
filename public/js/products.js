@@ -194,11 +194,12 @@ function getPickProduct() {
 function getProductListByBrandCode() {
     var brandCode = $('#brandCode').val();
     var companyCode = $('#companyCode').val();
+    var sortOption = $('#sortOption').val();
     var brandName = $('#brandName').val();
-
 
     var params = {
         brandCode,
+        sortOption,
         companyCode
     };
     
