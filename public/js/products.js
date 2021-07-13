@@ -208,7 +208,9 @@ function getProductListByBrandCode() {
         console.log("get ProductList by BrandCode", data);
         var html = generateHtmlForProductList(data.result);
         var brand = data.result[i];
-
+        var keywordDesc = "<span style=\"color: red;\">\""+keyword + "\"</span>에 대한 검색 결과";
+        $('.keyword').html(keywordDesc);
+        
         if(data.result.length > 0) {
             var html = generateHtmlForProductList(data.result);
             
