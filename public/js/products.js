@@ -213,7 +213,7 @@ function getProductListByBrandCode() {
             var html = generateHtmlForProductList(data.result);
             
             $('.sub_items ul').html(html);
-            $('.myPage_title').html(brand.brandName);
+        
             
         } else {
             $('.sub_items ul').hide();
