@@ -151,7 +151,7 @@ function productSearch(keyword) {
             $('.myPage_title').html(brand.brandName);
             
         } else {
-            $('.n_sort').hide();
+            $('.sub_items ul').hide();
             $('.sub_items ul').hide();
             $('.pick_list_null').show();
             $('.pick_list_null').html('<img src="/images/twoheart_icon_heart@2x.png"><p>해당 브랜드가 존재하지 않습니다.</p>');
@@ -208,9 +208,7 @@ function getProductListByBrandCode() {
         console.log("get ProductList by BrandCode", data);
         var html = generateHtmlForProductList(data.result);
         var brand = data.result[i];
-        var keywordDesc = "<span style=\"color: red;\">\""+keyword + "\"</span>에 대한 검색 결과";
-        $('.keyword').html(keywordDesc);
-        
+
         if(data.result.length > 0) {
             var html = generateHtmlForProductList(data.result);
             
