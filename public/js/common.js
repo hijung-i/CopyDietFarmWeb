@@ -254,64 +254,6 @@ function sideMenu(key) {
    }
 }
 
-function onLayerPop(layerId, seq, lang) {
-
-   if (layerId == 'offLayer'){
-      $(".pop_layer").hide();
-   } else {
-      var h = $("#"+layerId).height();
-      if(document.body.scrollHeight <= document.body.Height){
-         var allHeight = document.body.Height;
-      } else {
-         var allHeight = document.body.scrollHeight;
-      }
-   }
-}
-
-function onLayerPop02(layerId, seq) {
-   //alert(layerId);
-   if (layerId == 'offLayer'){
-      $(".pop_layer").hide();
-   } else {
-      var h = $("#"+layerId).height();
-   //   $(".pop_layer_back").hide();
-      if(document.body.scrollHeight <= document.body.Height){
-         var allHeight = document.body.Height;
-      } else {
-         var allHeight = document.body.scrollHeight;
-      }
-
-      $(".pop_layer").hide();
-      $(".pop_layer_back").css("height",allHeight).show();
-      $("#"+layerId).show();
-      $("#"+layerId+">.popContainer").show();
-
-   }
-}
-
-function showLayer( obj ) {
-   $('#' + obj).slideToggle("fast", function () {
-      if($(this).css("display") == 'block') {
-         $("img#arDown").attr("src","/mobile/img/arrow_up.png");
-      }
-      else {
-         $("img#arDown").attr("src","/mobile/img/arrow_down.png");
-      }
-   });
-}
-
-function changeMyTab(opt) {
-   $('#myTab1').hide();
-   $('#myTab2').hide();
-   $('#myTab3').hide();
-   $('#myTab4').hide();
-   $('#myTab5').hide();
-   $('#myTab6').hide();
-   $('#myTab7').hide();
-   $('#myTab8').hide();
-   $('#myTab' + opt).show();
-}
-
 // 햄버거 메뉴
 $(document).ready(function() {
 
@@ -325,6 +267,7 @@ $(document).ready(function() {
           'max-height' : (innerHeight - z) + 'px'
       });
    });
+   
    $('.slideMenu_close>a').on('click', function() {
       $('.sideMenu').animate({
          left: -100 + '%'
@@ -392,52 +335,6 @@ function getCookie(cName) {
    }
    return unescape(cValue);
 }
-
-  
-//마이페이지 로그인 모달 js
-$(function(){
-   //$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
-   //{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
-    var modal = document.getElementById('myModal');   
-   
-});
-var modals = document.getElementsByClassName("modal");
-// Modal을 띄우는 클래스 이름을 가져옵니다.
-var btns = document.getElementsByClassName("btn");
-// Modal을 닫는 close 클래스를 가져옵니다.
-var spanes = document.getElementsByClassName("close");
-var funcs = [];
- 
-// Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
-function Modal(num) {
-  // 해당 클래스의 내용을 클릭하면 Modal을 띄웁니다.
-    btns[num].onclick =  function() {
-        modals[num].style.display = "block";
-        console.log(num);
-    };
- 
-    // <span> 태그(X 버튼)를 클릭하면 Modal이 닫습니다.
-    spanes[num].onclick = function() {
-        modals[num].style.display = "none";
-    };
-  };
-
-// 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의합니다.
-for(var i = 0; i < btns.length; i++) {
-  funcs[i] = Modal;
-}
- 
-// 원하는 Modal 수만큼 funcs 함수를 호출합니다.
-for(var j = 0; j < btns.length; j++) {
-  funcs[j](j);
-}
- 
-// Modal 영역 밖을 클릭하면 Modal을 닫습니다.
-window.onclick = function(event) {
-  if (event.target.className == "modal") {
-      event.target.style.display = "none";
-  }
-};
    
 //메인페이지 index 로그인 모달 js          
 //메인화면 진입 시 팝업 창 
@@ -479,13 +376,6 @@ $(function(){
   });
 	
 });
-
-
-function closePopupModal() {
-   $('.popup_layer_wrapper').hide();
-   $('html,body').css({'overflow':'visible'});
-   $('html,body').off('scroll touchmove mousewheel');
-}
 
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
