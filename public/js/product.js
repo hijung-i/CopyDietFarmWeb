@@ -176,6 +176,14 @@ function getProductDetail(){
     ajaxCallWithLogin(API_SERVER + '/product/getProductDetail', params, 'POST'
     , function (data) {
         app.product = data.result;
+        
+        var meta = '';
+        meta += '<meta property="og:url" content="http://dietfarm.co.kr/product/' + app.product.productCode +'">'
+        meta += '<meta property="og:title" content="'+ app.product.productName + '">'
+        meta += '<meta property="og:type" content="website">'
+        meta += '<meta property="og:image" content="'+ RESOURCE_SERVER + app.product.url + '">'
+        meta += '<meta property="og:description" content="'+ app.product.productDesc + '">'
+        $('head').append(meta)
 
         var html = '';
         for(var i = 0; i < app.product.representative.length; i++ ) {
@@ -194,8 +202,6 @@ function getProductDetail(){
                 prevEl: ".swiper-button-prev"
             }
         });
-        
-        
 
         if(app.product == undefined || app.product == 0){
             // TODO: Open alert modal

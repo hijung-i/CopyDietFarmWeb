@@ -194,14 +194,16 @@ function getPickProduct() {
 function getProductListByBrandCode() {
     var brandCode = $('#brandCode').val();
     var companyCode = $('#companyCode').val();
+    var sortOption = $('#sortOption').val();
     var brandName = $('#brandName').val();
-
 
     var params = {
         brandCode,
-        companyCode,
-        brandName
+        sortOption,
+        companyCode
     };
+    
+    $('.myPage_title').html(brandName);
 
     ajaxCallWithLogin(API_SERVER + '/product/getBrandListDetail', params, 'POST',
     function(data){
@@ -213,7 +215,6 @@ function getProductListByBrandCode() {
             var html = generateHtmlForProductList(data.result);
             
             $('.sub_items ul').html(html);
-        
             
         } else {
             $('.sub_items ul').hide();
