@@ -27,47 +27,47 @@
        .web_product_details {display: none}
         .sidebar{display:none}
         .review_modal, .inquiry_modal{
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
- /* Modal Content/Box */
-.review_modal .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    width:400px!important;
-    padding:10px;
-    z-index:99999;
-                     
-}
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        /* Modal Content/Box */
+        .review_modal .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            width:400px!important;
+            padding:10px;
+            z-index:99999;
+                            
+        }
 
-.inquiry_modal .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    width:400px!important;
-    padding:10px;
-    height:500px;
-    z-index:99999                       
-}
-/* The Close Button */
-.modal-content .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+        .inquiry_modal .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            width:400px!important;
+            padding:10px;
+            height:500px;
+            z-index:99999                       
+        }
+        /* The Close Button */
+        .modal-content .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
 
-}
-.modal-content .close:hover,
-.modal-content .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+        }
+        .modal-content .close:hover,
+        .modal-content .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     }
     @media screen and (min-width:1080px) {
         #content{max-width:1080px;margin:0 auto;width:1080px}
@@ -182,18 +182,10 @@
                     </div>
 
                     <div class="share_body">
-                        <div class="kakaoTalk">
-                            <p ><a href="javascript:void(0);" onclick="Kakao.Link.sendScrap(PARAMETER);"><img src="/images/shareKakao@2x.png" alt="url"></a></p>
-                            <p>카카오톡</p>
-                        </div>
-                        <div class="sms">
-                            <p><a href="javascript:void(0);"><img src="/images/shareSMS@2x.png" alt="url"></a></p>
-                            <p>문자</p>
-                        </div>
-                        <div class="copyUrl">
-                            <p><a href="javascript:void(0);"><img src="/images/url_icon_friend@2x.png" alt="url"></a></p>
-                            <p>url 복사</p>
-                        </div>
+                        <button onclick="sendKakaoLink()"><img src="/images/shareKakao@2x.png" alt="url"><p>카카오톡</p></button>
+                        <button><img src="/images/shareSMS@2x.png" alt="url"><p>문자</p></button>
+                        <button><img src="/images/url_icon_friend@2x.png" alt="url"><p>URL 복사</p></button>
+                        
                     </div>
                 </div>
                 
@@ -266,23 +258,7 @@
                                     </div>
                                 </div>
                                     <div class="v_top_txt_box">
-                                        
-                                        <!-- <div class="modal" id="ex">
-                                            <p>공유하기</p>
-                                            <ul>
-                                                <li>
-                                                    <a href=""><img src="/images/url_icon_friend@2x.png">카카오톡</a>
-                                                </li>
-                                                <li>
-                                                    <a href=""><img src="/images/url_icon_friend@2x.png">문자</a>
-                                                </li>
-                                                <li>
-                                                    <a href=""><img src="/images/url_icon_friend@2x.png">URL 복사</a>
-                                                </li>
-                                            </ul>
-                                            <a href="#" rel="modal:close"></a>
-                                        </div> -->
-
+                                
                                         <div class="share_img">
                                             <p>
                                                 <a href="#" onclick="openShareModal();"><img src="/images/share_icon_detail.png"></a>
@@ -306,7 +282,6 @@
                                                 <tr class="delivery-cost">
                                                     <td>
                                                         <span>배송비</span>
-                                                        <p><a href="productBrand">배송비 절약 상품 보기</a></p>
                                                     </td>
                                                     <td class="ex">
                                                         <template>{{ product.deliveryCostHtml }}</template>
@@ -763,47 +738,11 @@
                 </button>
             </div>
         </div>
-        <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="currentReview" v-bind:writable-list="writableList" v-bind:writable="writable"
+        <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="review" v-bind:writable-list="writableList" v-bind:writable="writable"
             v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
         <product-inquiry-modal v-if="inquiryModal" v-bind:product="product" v-bind:inquiry="currentQuestion" v-on:add-complete="insertInquiryComplete" v-on:close="onChildPopupClosed"></product-inquiry-modal>
     </main>
-    <script>
-        var upload = document.querySelector('#upload');
-        var preview = document.querySelector('#preview');
-
-        upload.addEventListener('change', function(e) {
-            var get_file = e.target.files;
-
-            var image = document.createElement('img');
-
-            /* FileReader 객체 생성 */
-            var reader = new FileReader();
-
-            /* reader 시작시 함수 구현 */
-            reader.onload = (function(aImg) {
-                console.log(1);
-
-                return function(e) {
-                    console.log(3);
-                    /* base64 인코딩 된 스트링 데이터 */
-                    aImg.src = e.target.result
-                }
-            })(image)
-
-            if (get_file) {
-                /* 
-                    get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
-                    onload 에 설정했던 return 으로 넘어간다.
-                    이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
-                */
-                reader.readAsDataURL(get_file[0]);
-                console.log(2);
-            }
-
-            preview.appendChild(image);
-        })
-    </script>
-    <!-- Swiper JS -->
+   <!-- Swiper JS -->
     <script>
         var swiper = new Swiper(".productSwiper", {
             pagination: {

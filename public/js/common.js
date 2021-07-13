@@ -1,6 +1,10 @@
-// 운영
-// var API_SERVER = "http://localhost:9090";
+// 테스트
+// var API_SERVER = "http://112.217.209.162:9090";
+// var CALLBACK_SERVER = "http://220.93.22.1";
 // var API_SERVER = "http://192.168.0.3:9090";
+// var CALLBACK_SERVER = "http://192.168.0.3";
+
+// 운영
 var API_SERVER = "https://dietfarm119.co.kr";
 var SERVER_IP = 'dietfarm.co.kr';
 var CALLBACK_SERVER = "https://"+ SERVER_IP;
@@ -48,6 +52,28 @@ function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError, file){
    })
 }
 
+function ajaxCallMultipartFormData(url, params, type, onSuccess, onError){
+   var param = JSON.stringify(params);
+   $.ajax({
+      type : type,
+      cache : false,
+      data : param,
+      url : url,
+      enctype: 'multipart/form-data',
+      contentType : false,
+      beforeSend : function(xmlHttpRequest){
+         xmlHttpRequest.setRequestHeader("AJAX", "true")
+         xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
+
+         if(file != undefined && file != null && file != false) {
+            xmlHttpREqeuset.setRequestHeader
+         }
+      },
+      success : onSuccess,
+      error : onError
+   })
+}
+
 // option -> require user data as parameter
 function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
    $.ajax({
@@ -70,6 +96,8 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
             if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
             if(isAvailable(option.address) && option.address == true) params.address = user.address
          }
+         if(option.multipart != undefined && option.multipart == true) 
+            ajaxCallMultipartFormData(url, params, type, onSuccess, onError )
          ajaxCall(url, params, type, onSuccess, onError);
 
       },
@@ -425,25 +453,16 @@ $(function(){
    // '</div>' +
    // '</div>' +
    // '</div>';
-	// ajaxCall('/user/login', '', 'GET',
-	// function(data) {
-	// 	// 로그아웃 시에만 표시
-	// 	console.log(data.result);
-	// 	 if(data.result.isLoggedIn == false) {
-         
-   //       if ($('#naver_id_login').length > 0) {
-   //          ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-   //          function(data) {
-   //             $('#naver_id_login').html(data);
-   //             $('.modal-content #naver_id_login a').html('네이버로 로그인');
-   //          }, function (err) {
-   //             console.log("error login button", err);
-   //          })
-   //       }
-   //    } 
-	// }, function(err){
-	// 	console.error(err);
-	// })
+
+   if ($('#naver_id_login').length > 0) {
+      ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+      function(data) {
+         $('.naver_id_login').html(data);
+         $('.modal-content #naver_id_login a').html('<img src="/images/naver_login@2x.png">네이버 계정으로 시작하기');
+      }, function (err) {
+         console.log("error login button", err);
+      })
+   }
 
    AppleID.auth.init({
       clientId : 'kr.co.dietfarm',
@@ -463,12 +482,13 @@ function closePopupModal() {
 
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
-   console.log("loginWithKakaoAPI");
+
    Kakao.Auth.authorize({
-      redirectUri: CALLBACK_SERVER + '/user/result/kakao',
-      scope: 'profile,plusfriends,account_email,gender,birthday,birthyear,phone_number'
+      redirectUri: CALLBACK_SERVER + '/user/result/kakao'
+      // scope: 'profile,plusfriends,account_email,phone_number,gender,birthday,birthyear'
    })
 
+   
    console.log("loginWithKakaoAPI end");
 }
 
@@ -482,6 +502,12 @@ function naverCallback(success, paramStr) {
       alert('네이버 아이디로 로그인에 실패했습니다.')
       location.href = '/'
    }
+}
+
+function kakaoLogout() {
+   Kakao.Auth.logout(function() {
+      location.href = '/logout'
+   })
 }
 
 function zzimAction(button) {
@@ -521,6 +547,8 @@ function zzimAction(button) {
       userId: true
    })
 }
+
+//URL 공유하기 코드
 $(document).on("click", "#sh-link", function(e) { 
  $('html').find('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'); var html = "<input id='clip_target' type='text' value='' style='position:absolute;top:-9999em;'/>"; $(this).append(html); 
  var input_clip = document.getElementById("clip_target"); 

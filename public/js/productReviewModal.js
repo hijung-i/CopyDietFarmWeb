@@ -3,7 +3,7 @@ var productReviewTemplate = '';
 productReviewTemplate += '<div class="review_modal" id="review_Modal">'
 productReviewTemplate += '  <div class="modal-content" >'
 productReviewTemplate += '      <span class="close" @click="closeModal()">&times;</span>';
-productReviewTemplate += '      <div class="review_before" v-if="reviewLevel == 0">'
+productReviewTemplate += '      <div class="review_before" v-if="currentWritable.purchaseProductNo == undefined">'
 productReviewTemplate += '          <h2>리뷰쓰기</h2>'
 productReviewTemplate += '          <h3>리뷰 쓸 상품을 선택해주세요.</h3>'
 productReviewTemplate += '          <div class="detailBox" v-for="(writable, index) in writableList">'
@@ -19,7 +19,7 @@ productReviewTemplate += '          <div class="rbtn_wrap">'
 productReviewTemplate += '              <button type="button" @click="onReviewSelect()">확인</button>'
 productReviewTemplate += '          </div>'
 productReviewTemplate += '      </div>'
-productReviewTemplate += '      <div v-if="reviewLevel == 1">'
+productReviewTemplate += '      <div v-if="currentWritable.purchaseProductNo != undefined">'
 productReviewTemplate += '          <div class="reviewModifyBox">'
 productReviewTemplate += '              <h2>리뷰쓰기</h2>'
 productReviewTemplate += '              <div class="review01">'
@@ -42,17 +42,17 @@ productReviewTemplate += '                  </table>'
 productReviewTemplate += '              </div>'
 productReviewTemplate += '              <div id="star_grade" class="star_grade">'
 productReviewTemplate += '                  <p>별점으로 만족도를 선택해주세요</p>'
-productReviewTemplate += '                  <div class="starRev" v-if="review.gpa != undefined">'
-productReviewTemplate += '                  <template v-for="count in (review.gpa * 2)">';
+productReviewTemplate += '                  <div class="starRev" v-if="currentReview.gpa != undefined">'
+productReviewTemplate += '                  <template v-for="count in (currentReview.gpa * 2)">';
 productReviewTemplate += '                      <span class="starR1 on" v-if="count % 2 == 1" v-on:click="onStarClick(true, count)">별1_왼쪽</span>';
 productReviewTemplate += '                      <span class="starR2 on" v-if="count % 2 == 0" v-on:click="onStarClick(true, count)">별1_오른쪽</span>';
 productReviewTemplate += '                  </template>';
-productReviewTemplate += '                  <template v-for="count in (10 - (review.gpa * 2))">';
-productReviewTemplate += '                    <template v-if="(10 - (review.gpa * 2)) % 2 == 1">';
+productReviewTemplate += '                  <template v-for="count in (10 - (currentReview.gpa * 2))">';
+productReviewTemplate += '                    <template v-if="(10 - (currentReview.gpa * 2)) % 2 == 1">';
 productReviewTemplate += '                        <span class="starR1" v-if="count % 2 == 0" v-on:click="onStarClick(false, count)">별1_왼쪽</span>';
 productReviewTemplate += '                        <span class="starR2" v-if="count % 2 == 1" v-on:click="onStarClick(false, count)">별1_오른쪽</span>';
 productReviewTemplate += '                    </template>';
-productReviewTemplate += '                    <template v-if="(10 - (review.gpa * 2)) % 2 == 0">';
+productReviewTemplate += '                    <template v-if="(10 - (currentReview.gpa * 2)) % 2 == 0">';
 productReviewTemplate += '                        <span class="starR2" v-if="count % 2 == 0" v-on:click="onStarClick(false, count)">별1_오른쪽</span>';
 productReviewTemplate += '                        <span class="starR1" v-if="count % 2 == 1" v-on:click="onStarClick(false, count)">별1_왼쪽</span>';
 productReviewTemplate += '                    </template>';
@@ -61,15 +61,15 @@ productReviewTemplate += '                  </div>'
 productReviewTemplate += '              </div>'
 productReviewTemplate += '              <form>'
 productReviewTemplate += '                  <input type="hidden" value="">'
-productReviewTemplate += '                  <textarea v-model="review.content" style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px" v-html="review.content"></textarea>'
+productReviewTemplate += '                  <textarea v-model="currentReview.content" style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px" v-html="currentReview.content"></textarea>'
 productReviewTemplate += '              </form>'
 productReviewTemplate += '              <div class="filebox">'
 productReviewTemplate += '                   <label for="upload">사진 (선택)</label>'
-productReviewTemplate += '                   <input type="file" id="upload" name="upload">'
-productReviewTemplate += '                   <div id="preview" v-if="review.files != undefined && review.files.length > 0">'
+productReviewTemplate += '                   <input type="file" multiple id="upload" name="upload" @change="onFileSelected">'
+productReviewTemplate += '                   <div id="preview" v-if="currentReview.files != undefined && currentReview.files.length > 0">'
 productReviewTemplate += '                       <div class="previewBox">'
 productReviewTemplate += '                           <ul>'
-productReviewTemplate += '                               <li></li>'
+productReviewTemplate += '                               <li v-for="(file, fIdx) in currentReview.files"><img v-bind:src="file.url"></li>'
 productReviewTemplate += '                           </ul>'
 productReviewTemplate += '                       </div>'
 productReviewTemplate += '                   </div>'
@@ -99,8 +99,7 @@ var productReviewModal = {
                     gpa: 5,
                     content: '',
                     files: [],
-                    reviewNo: 0,
-                    files: false
+                    reviewNo: 0
                 }
             }
         }, writableList: {
@@ -112,17 +111,17 @@ var productReviewModal = {
         writable: {
             type: Object,
             default: function() {
-                return {}
+                return undefined
             }
         }
     },
     data: function() {
-        if(this.review == null || this.review == undefined) {
-        }
         return {
             RESOURCE_SERVER,
             writableReviewIndex: -1,
-            currentWritable: this.writable
+            currentWritable: Object.assign({}, this.writable),
+            currentReview: Object.assign({}, this.review),
+            fileList: new Array()
         }
     }, methods: {
         initialize,
@@ -157,22 +156,49 @@ var productReviewModal = {
                 console.log("writable 변경", selectedWritable);
                 this.currentWritable =  selectedWritable
             }
-        },
-            onSubmit: function() {
+        }, onFileSelected: function() {
+            var files = document.getElementById('upload').files;
+            Array.from(files).forEach(element => {
+                this.currentReview.files.push(this.fileToObject(element))
+            });
+        }, fileToObject: function(file) {
+            var object = {
+                productCode: this.product.productCode,
+                filename: '',
+                fileType: file.type,
+                url: '',
+                size: file.size,
+                file: file
+            }
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                object.url =  e.target.result;
+            }
+            reader.readAsDataURL(file);
+
+            return object;
+        },onSubmit: function() {
             var params = {};
             Object.assign(params, this.product);
-            Object.assign(params, this.review);
+            Object.assign(params, this.currentWritable);
+            Object.assign(params, this.currentReview);
             
+            console.log(params);
+            if(params.purchaseProductNo == undefined || params.purchaseProductNo == 0 ) {
+                alert('구매 내역을 선택해주세요')
+                return;
+            }
             if(params.content == ''|| params.content == undefined) {
                 alert('내용을 입력해주세요');
                 return;
             }
 
             if(params.reviewNo != undefined && params.reviewNo != 0) {
-                updateProductQA(this, params);
+                // insertReview(this, params);
             } else {
-                insertProductQA(this, params);
+                // updateReview(this, params);
             }
+            alert('기능 준비중입니다.')
         },
         closeModal: function() {
             this.$emit('close', 'review')
@@ -184,11 +210,10 @@ var productReviewModal = {
             return (this.currentWritable == {} || this.currentWritable.purchaseProductNo == 0)?0:1
         } 
     }, created: function() {
-        console.log(this)
+        console.log(this, this.review)
         if(this.writableList == undefined || this.writableList.length == 0) {
             alert('상품 구매 후 리뷰 작성이 가능합니다.');
             this.closeModal();
-
             return;
         }
     }
@@ -203,20 +228,7 @@ function initialize() {
     }
 }
 
-function addReview() {
-    var params = {
-
-    }
-
-    ajaxCallWithLogin(API_SERVER + '/insertReview')
-}
-
-function updateReview() {
-
-}
-
-
-function insertReviewQA(comp, review) {
+function insertReview(comp, review) {
 
     ajaxCallWithLogin(API_SERVER + '/product/addQA', review, 'POST',
     function(data) {
@@ -235,7 +247,7 @@ function insertReviewQA(comp, review) {
 
 }
 
-function updateReviewQA(comp, review) {
+function updateReview(comp, review) {
 
     ajaxCallWithLogin(API_SERVER + '/product/updateQA', review, 'POST',
     function(data) {
@@ -258,8 +270,3 @@ function openReviewModal() {
     scrollBlock();
 }
 
-
-
-
-
- 

@@ -198,7 +198,7 @@
                                                                 <button type="button" class="btnA">취소신청철회</button>
                                                             </li>
                                                         </template>
-                                                        <template v-if="'SDF'.includes(product.orderStatus)">
+                                                        <template v-if="'DF'.includes(product.orderStatus)">
                                                             <li>
                                                                 <button type="button" @click="orderConfirm(oIdx, pIdx)" class="btnA">구매확정</button>
                                                             </li>

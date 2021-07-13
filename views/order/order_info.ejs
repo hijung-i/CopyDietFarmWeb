@@ -185,7 +185,7 @@
                             <img v-bind:src="RESOURCE_SERVER + product.url">
                             <ul>
                                 <li>{{ product.productName }}</li>
-                                <li>{{ numberFormat(option.optionTotalPrice) }}</li>
+                                <li>{{ numberFormat(option.optionTotalPrice) }}원</li>
                                 <li>
                                     <span>수량 :
                                         {{ option.optionCount }}개</span></li>
@@ -232,7 +232,6 @@
                     <input type="email" id="unEmail" placeholder="이메일을 입력해주세요">
                 </div>
             </div>
-            <delivery-info-modal v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
             <div class="deliver_info">
                 <div class="deliver_info_top">
                     <h3><img src="images/asterisk.png">
@@ -434,7 +433,7 @@
                     <tr>
                         <td>
                             <span>상품 금액</span></td>
-                        <td>{{ numberFormat(orderDTO.paymentTotalAmount) }}</td>
+                        <td>{{ numberFormat(orderDTO.paymentTotalAmount) }}원</td>
                     </tr>
                     <tr>
                         <td>
@@ -461,7 +460,7 @@
                     <tr class="total_price">
                         <td class="total">
                             <span>총 결제 금액</span></td>
-                        <td class="order_info_prc">{{ numberFormat(orderDTO.paidRealAmount) }}</td>
+                        <td class="order_info_prc">{{ numberFormat(orderDTO.paidRealAmount) }}원</td>
                     </tr>
                     <tr class="predict">
                         <td>
@@ -507,6 +506,9 @@
             <div class="order_btn">
                 <button type="button" id="orderBtn" v-on:click="paymentAction">결제하기</button>
             </div>
+            <delivery-info-modal v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
+            
+
         </main>
 
         <div class="r_modal" id="rModal" style="display:none">
@@ -553,6 +555,7 @@
                    </div>
                </div>
              </div>
+             
         </div>
         <script src="/js/components/deliveryInfoModalComponent.js"></script>
         <script src="/js/orderDTO/OrderDTO.js"></script>

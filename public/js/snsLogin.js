@@ -28,22 +28,15 @@ function requestKaKaoUserInfo() {
 		success: function(res) {
 			console.log(res)
 			var account = res.kakao_account;
-
-			var agreement = false;
+			
 			if (account.birthday_needs_agreement == true ) {
-				agreement = true;
+				account.birthyear = '0000';
 			}
 			if (account.birthyear_needs_agreement == true ) {
-				agreement = true;
+				account.birthday = '0000';
 			}
 			if (account.gender_needs_agreement == true ) {
-				agreement = true;
-			}
-
-			if(agreement) {
-				alert('선택 정보에 동의해주셔야 회원가입이 가능합니다.');
-				kakaoUnlink();
-				return;
+				account.gender = 'X';
 			}
 
 			if (account.has_phone_number == false) {
@@ -80,8 +73,10 @@ function requestKaKaoUserInfo() {
 		fail: function(error) {
 			console.log(
 				'login success, but failed to request user information: '
-				,error
+				, error
 			)
+			alert('카카오 로그인 중 오류가 발생했습니다.');
+			location.href = "/";
 		},
 	});
 }
@@ -113,6 +108,10 @@ function checkKakaoRegistration(params) {
 				$('input[name=userName]').val(params.userName)
 
 				$('#registerForm').submit();
+				break;
+			case '탈퇴회원':
+				alert('탈퇴 후 30일이 지나지 않아 재가입이 불가능합니다.')
+				kakaoUnlink();
 				break;
 		}
 	}, function(err) {
@@ -160,6 +159,10 @@ function checkNaverRegistration(params) {
 				$('input[name=userName]').val(params.userName)
 
 				$('#registerForm').submit();
+				break;
+			case '탈퇴회원':
+				alert('탈퇴 후 30일이 지나지 않아 재가입이 불가능합니다.')
+				kakaoUnlink();
 				break;
 		}
 	}, function(err) {

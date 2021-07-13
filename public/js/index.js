@@ -100,10 +100,10 @@ function getStandDatas() {
                     infinite: true,
                     speed: 300,
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 3,
                     autoplay:true,
                     autoplaySpeed:3000,
-                    pauseOnHover:true,
+                    pauseOnHover:false,
                     arrow:true,
                     responsive: [
                     {
