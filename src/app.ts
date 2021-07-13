@@ -50,7 +50,7 @@ app.use(cookieParser())
 app.use(logger('dev'))
 app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
 
-    if (req.hostname !== 'localhost' && !req.secure) {
+    if (req.hostname === 'dietfarm.co.kr' && !req.secure) {
         res.redirect('https://' + req.hostname + req.url)
     } else {
         next()

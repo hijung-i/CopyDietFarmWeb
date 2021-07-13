@@ -58,6 +58,7 @@ input[type=number]::-webkit-outer-spin-button {
     /* outline: 2px solid red; */
   }
 #tab ul li{cursor: pointer;}
+.share_body button{border:none;background-color:transparent;font-size:12px}
 /*products_mobile*/
 
 
@@ -130,7 +131,7 @@ input[type=number]::-webkit-outer-spin-button {
 .tabMenu{margin-bottom:-4px}
 
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
-#content .tabMenu ul{padding-left:25px;padding-right:25px;border-bottom:2px solid #f1f1f1}
+#content .tabMenu ul{border-bottom:2px solid #f1f1f1}
 #content .tabMenu li{float:left;width:25%;height:35px;font-size:14px;text-align:center;padding:10px}
 #content .tabMenu li{color:#878787;}
 #content .tabMenu li.active > a {color: #F99319; font-weight: 700;}
@@ -211,7 +212,10 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
     width: 10%;
     left: 88%;
 }
+.price_mobile .p1{font-size:16px;font-weight:bold;margin-top:12px;margin-bottom:6px}
+.price_mobile .p2{color:#BBBBBB;font-size:14px;text-decoration:line-through;margin-bottom:7px}
 
+.price_mobile .p3{color:#F32525;font-size:16px;font-weight:bold}
 /* 상품상세 멀티슬라이드 */
 .responsive1 div img {
     width: 294px; height: 353px;
@@ -296,7 +300,6 @@ width:310px;
 height:40px;
 margin-left:-18px
 }
-.price_mobile{display:none}
 .view_navi_box {display:block;position:relative;background:none;padding-top:30px;text-align:left;color:#4d4d4d;font-weight:600;letter-spacing:-0.05em;}
 .view_navi_tit {display:inline;padding-bottom:30px;text-align:left;color:#4d4d4d;font-size:18px}
 
@@ -324,10 +327,11 @@ box-shadow: none !important}
 .ico_v_dsd {padding:3px 8px 4px;background:#aaacaf;color:#fff;font-size:12px;letter-spacing:-0.05em}
 
 /* 제품상세 우측 설명박스*/
-.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:58px 29px 147px; left: 704px; top: -694px;} 
+.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:48px 29px 147px; left: 704px; top: -694px;} 
 .v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em; font-family: 'Nanum Gothic', sans-serif; line-height:24px}
-.v_top_txt {color:#6B6B6B;font-size:12px;line-height:18px;padding:10px 0 15px;border-bottom:1px solid #e1e1e1} 
-.v_n_top_info .ex{padding-left:20px}
+.v_top_txt {color:#6B6B6B;font-size:12px;line-height:18px;padding:10px 0 0px} 
+.v_n_top_info .ex{white-space:nowrap;}
+.price_mobile{border-bottom:1px solid #e1e1e1;padding-bottom:10px}
 .option_wrap h3{margin-left:-15px}
 .option_wrap #products{border:1px solid #424242;margin-left:-15px;width:305px;height:36px}
 .product_detail_content {position:relative;margin-top:54px;font-family:'Noto sans',sans-serif}
@@ -618,14 +622,7 @@ font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
 .inquiryBox ul li ul li{line-height:14px}
 .inquiryBox .words form{margin-top:-20px}
-.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
-text-align:center;line-height:17px;
-font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
-border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
-.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
-.filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
-.filebox p span{text-decoration:underline
-}
+
 .tab_cont{display:none; min-height:360px;}
 .tab_cont.active{display:block; width:1040px;}
 .tab_wrap li.active a {
@@ -817,7 +814,7 @@ div #ex1.modal ul li {float:left}
 .v_floating_wrap{display:none}
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}
-.num{width:100%;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:10px;padding-bottom:18px
+.num{width:100%;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:24px;padding-bottom:18px
 ;padding-left:10px;padding-top:4px;font-size:14px;font-weight:bold;}
 .product_review01{width:100%;}
 .review_info01 ul li{float:left;font-size:13px;padding-left:15px}
@@ -1100,7 +1097,7 @@ color: #878787; font-size: 12px;}
 
 @media screen and (min-width:1080px){
     .line{position:relative;margin-top:4px}
-    .share_img img{ float:right;position:relative;top:-40px;left:4px}
+    .share_img img{ float:right;position:relative;top:20px;left:4px}
     .option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
     .reviews .num{width:100%;font-size:18px;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:14px;padding-bottom:18px}
     #tab3 .num{width:780px;

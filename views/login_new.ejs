@@ -9,11 +9,8 @@
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
 
-        <title>다이어트팜:: 엄선된 건강 식단 마켓</title>
+        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
         <%-include(webroot + 'views/general/head')%>
-            <link rel="stylesheet" href="css/style.css">
-            <link rel="stylesheet" href="css/style02.css">
-            <link rel="stylesheet" href="css/signup.css">
             
             <style type="text/css">
                 @media screen and (max-width:1079px) {
@@ -30,6 +27,7 @@
 
         </head>
         <body>
+            <main id="content">
             <div class="web_login">
                 <%-include(webroot + 'views/general/header') %>
                 </div>
@@ -37,13 +35,6 @@
                 <div class="mobile_login">
                     <section class="detail_title">
                         <h2>로그인</h2>
-                        <script type="text/javascript">
-                            function goBack() {
-                                window
-                                    .history
-                                    .back();
-                            }
-                        </script>
                         <div class="btndelete">
                             <a href="#" value="취소"  onClick="history.back(); return false"><img src="images/x_icon_login@2x.png" alt="" style="width:13.95px;position:relative;left:15px">
                             </a>
@@ -61,7 +52,7 @@
                                     <p>SNS계정으로 간편 로그인하세요.</p>
                                     <ul>
                                         <li onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>
-                                        <li id="naver_id_login"><img src="/images/naver_login.png"></li>
+                                        <li id="naver_id_login" class="naver_id_login"><img src="/images/naver_login.png"></li>
                                     </ul>
                                 </section>
                                 <div class="login-input-wrap">
@@ -94,7 +85,8 @@
                         </div>
                     </div>
                 </div>
-                
+            </main>
                 <script src="/js/login.js"></script>
+                <script src="/js/myPage.js"></script>
             </body>
         </html>
