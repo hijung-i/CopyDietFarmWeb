@@ -15,11 +15,11 @@ type Option = {
 }
 
 class UserService {
-    // SERVER_URL = 'http://112.217.209.162:9090'
-    SERVER_URL = 'http://dietfarm119.co.kr:9090'
+    SERVER_URL = 'http://192.168.0.3:9090'
+    // SERVER_URL = 'http://dietfarm119.co.kr:9090'
 
-    // CALLBACK_SERVER = 'http://112.217.209.162:9090'
-    CALLBACK_SERVER = 'http://dietfarm.co.kr'
+    CALLBACK_SERVER = 'http://192.168.0.3'
+    // CALLBACK_SERVER = 'http://dietfarm.co.kr'
 
     KAKAO_SERVER = 'https://kauth.kakao.com'
 
@@ -97,6 +97,31 @@ class UserService {
             if (err) {
                 console.log('Error occured while loginNaver', err.statusCode, err.error)
                 STREAM.writeError(`ERROR userService.loginNaver(), statusCode = ${err.statusCode}, error = ${err.error}`)
+            }
+            return setUserResult(StatusCode.error, err.error, null)
+        })
+    }
+
+    loginApple = async (user: User): Promise<UserResult> => {
+        let options: Option = {
+            uri: `${this.SERVER_URL}/user/loginApple`,
+            method: 'POST',
+            headers: {
+                'Accept-Charset': 'application/json;charset=UTF-8',
+                'Content-Type': 'application/json'
+            },
+            json: true,
+            body: user
+        }
+        console.log(options)
+
+        return request(options).then((res: any): UserResult => {
+            STREAM.writeDebug(`LOGIN SUCCESS TYPE: APPLE, userId = ${res.result.userId}`)
+            return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
+        }).catch((err: any): UserResult => {
+            if (err) {
+                console.log('Error occured while loginApple', err.statusCode, err.error)
+                STREAM.writeError(`ERROR userService.loginApple(), statusCode = ${err.statusCode}, error = ${err.error}`)
             }
             return setUserResult(StatusCode.error, err.error, null)
         })

@@ -11,7 +11,7 @@
     
 	<meta charset="utf-8">
     <title>NICE평가정보 - CheckPlus 본인인증 테스트</title>
-    <%-include('../general/head') %>
+    <%-include(webroot + 'views/general/head') %>
 </head>
 <body>
     <form method="GET" id="infoForm">
@@ -49,8 +49,10 @@
             userGender = 'M'
         } else if ( userGender == '2'){
             userGender = 'W'
+        } else {
+            userGender = 'X'
         }
-        
+
         var params = {
             userName: userName,
             userInfo: userInfo,
@@ -62,7 +64,7 @@
         var sRtnMsg = $('#sRtnMsg').html();
 
         if (sRtnMsg == '') {
-            opener.onIdentifyingSuccess(params, nextMethod);
+            opener.onIdentifyingSuccess(params);
             window.close();
         } else {
             alert('본인인증에 실패했습니다.');

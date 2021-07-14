@@ -1,25 +1,3 @@
-// function loginWithKakaoApi() {
-// 	Kakao.Auth.login({
-// 		success: function(authObj) {
-// 			console.log("success", authObj)
-// 			if(authObj != undefined) {
-// 				alert('로그인')
-// 				requestKaKaoUserInfo();
-// 			} else {
-// 				alert('실패', err);
-// 				alert('KAKAO 계정으로 로그인에 실패했습니다.');
-// 			}
-// 		},
-// 		fail: function(err) {
-// 			console.log("err", err);
-// 			alert('로그인 실패', err)
-// 			if(err) {
-// 				alert('KAKAO 계정으로 로그인에 실패했습니다.');
-// 				return;
-// 			}
-// 		},
-// 	})
-// }
 
 // 카카오계정 로그인 이후 유저 정보 요청
 function requestKaKaoUserInfo() {
@@ -46,6 +24,7 @@ function requestKaKaoUserInfo() {
 			}
 
 			var params = {
+				type: 'K',
 				kakaoNo: res.id,
 				userEmail: account.email,
 				userName: account.profile.nickname,
@@ -77,6 +56,7 @@ function requestKaKaoUserInfo() {
 			)
 			alert('카카오 로그인 중 오류가 발생했습니다.');
 			location.href = "/";
+			return;
 		},
 	});
 }
@@ -98,6 +78,8 @@ function checkKakaoRegistration(params) {
 				break;
 			case '기존 회원 아님 회원가입 진행':
 				// 회원가입 화면으로 연결
+				
+				$('input[name=type]').val(params.type)
                 $('input[name=kakaoNo]').val(params.kakaoNo)
 				$('input[name=userId]').val(params.userId)
 				$('input[name=password]').val(params.password)
@@ -149,6 +131,7 @@ function checkNaverRegistration(params) {
 				break;
 			case '기존 회원 아님 회원가입 진행':
 				// 회원가입 화면으로 연결
+				$('input[name=type]').val(params.type)
                 $('input[name=tokenNaver]').val(params.tokenNaver)
 				$('input[name=userId]').val(params.userId)
 				$('input[name=password]').val(params.password)
@@ -180,6 +163,7 @@ function checkNaverRegistration(params) {
 		} else {
 			console.log("error while check naver registraition", err);
 			alert("에러가 발생했습니다.", JSON.stringify(err));
+			location.href = "/"
 		}
 	})
 }
@@ -194,7 +178,8 @@ function linkKakaoUser(params) {
 		}
 	}, function(err) {
 		console.log("error while kakao link", err);
-		alert("에러가 발생했습니다.", JSON.stringify(err));
+		alert("계정 연동 중 에러가 발생했습니다.", JSON.stringify(err));
+		location.href = "/"
 	})
 }
 
@@ -206,7 +191,23 @@ function linkNaverUser(params) {
 			loginNaver(params);
 		}
 	}, function(err) {
-		console.error("nave account link", err);
+		console.log("error while naver link", err);
+		alert("계정 연동 중 에러가 발생했습니다.", JSON.stringify(err));
+		location.href = "/"
+	})
+}
+
+function linkAppleUser(params) {
+	ajaxCall(API_SERVER + '/user/linkAppleUser', params, 'POST',
+	function(data) {
+		console.log("apple account link success", data);
+		if(data.message == 'SUCCESS') {
+			loginApple(params);
+		}
+	}, function(err) {
+		console.log("error while apple link", err);
+		alert("계정 연동 중 에러가 발생했습니다.", JSON.stringify(err));
+		location.href = "/"
 	})
 }
 
@@ -228,7 +229,7 @@ function loginKakao(params) {
 function loginNaver(params) {
 	ajaxCall('/user/login/naver', params, 'POST', 
 	function(data) {
-		console.log("success loginKakao", data);
+		console.log("success loginNaver", data);
 		location.href='/';
 	}, function(err) {
 		console.log("error while loginNaver", err);
@@ -236,6 +237,19 @@ function loginNaver(params) {
 		location.href="/";
 	});
 
+}
+
+function loginApple(params) {
+	ajaxCall('/user/login/apple', params, 'POST',
+	function(data) {
+		console.log("success loginApple", data);
+		location.href = "/"
+	}, function(err) {
+		console.log("애플 로그인 중 오류가 발생했습니다", err)
+		alert("애플 로그인 중 오류가 발생했습니다", err)
+		location.href = "/"
+		return;
+	})
 }
 
 // 카카오 연동 해제
@@ -252,24 +266,55 @@ function kakaoUnlink() {
 	});
 }
 
-$(function() {
-	switch($('#type').val()) {
-		case 'K':
-			var token = $('input[name=tokenKakao]').val()
-			console.log(token)
-			Kakao.Auth.setAccessToken(token)
-			requestKaKaoUserInfo();
-			break;
-		case 'N':
-			checkNaverLoginValue();
-			break;
-		case 'A':
-			
-			break;
-		default:
-	}
-})
+function checkAppleLoginValue() {
+	
+	var appleNo = $('input[name=appleNo]').val()
+	var userId = $('input[name=userId]').val()
+	var userEmail = $('input[name=userEmail]').val();
 
+	if(userEmail == '' || userEmail == undefined ) { 
+		alert('이메일 정보가 필요합니다.');
+		return;
+	}
+	
+	var params = {
+		type: 'A',
+		userId,
+		appleNo,
+		userEmail
+	}
+
+	ajaxCall(API_SERVER + '/user/findAppleUser', params, 'POST', 
+	function ( data ) {
+		console.log(data);
+		if (data === 'DUPLICATE') {
+			// 탈퇴 회원
+			alert('탈퇴 후 30일이 지나지 않아 재가입이 불가능합니다.')
+			location.href = "/"
+			return;
+		} else if (data === 'NOT_FOUND') {
+			// 가입 진행
+			$('#registerForm').submit();
+			
+		} else if (data.result != undefined ) {
+			if (data.result.appleNo != '' && data.result.appleNo != undefined ) {
+				// 로그인
+				loginApple(params);
+			} else if (data.result.userId != '' && data.result.appleNo === ''){
+				// 계정 연동
+
+			}
+		}
+	}, function ( err ) {
+		if(err.responseText == 'NOT_FOUND') {
+			$('#registerForm').submit();
+		} else {
+			console.log("error while check apple registraition", err);
+			alert("에러가 발생했습니다.", JSON.stringify(err));
+			location.href = "/"
+		}
+	})
+}
 
 function checkNaverLoginValue() {
 	var tokenNaver = $('input[name=tokenNaver]').val();
@@ -315,6 +360,7 @@ function checkNaverLoginValue() {
 	}
 
 	var params = {
+		type: 'N',
 		tokenNaver,
 		userId,
 		userName,
