@@ -16,8 +16,14 @@ const router = Router()
 
 const sSiteCode = 'BT514'
 const sSitePW = 'tQSumidmqcYh'
-
-const sModulePath = path.join(globalData.getBaseDir(), 'nice_modules/window/CPClient.exe')
+let sModulePath = ''
+if (process.platform === 'win32') {
+    sModulePath = path.join(globalData.getBaseDir(), 'nice_modules/window/CPClient.exe')
+} else if (process.platform === 'linux') {
+    sModulePath = path.join(globalData.getBaseDir(), 'nice_modules/linux/CPClient_64bit')
+} else if (process.platform === 'darwin') {
+    sModulePath = path.join(globalData.getBaseDir(), 'nice_modules/mac/CPClient_mac')
+}
 // const sModulePath = '/home/dataflow1/DietFarm/Api/nice_modules/linux/CPClient_64bit'
 
 // const serverIp = 'https://dietfarm.co.kr'
