@@ -2279,7 +2279,7 @@ width:400px
 .order_list_null{width:70%; text-align:center; margin:197px auto;}
 .order_list_null img{width:100px;height:75px}
 .no_list{font-size:16px;color:#878787;margin-top:15px}
-
+/*
 @media screen and (min-width:1020px)and (max-width:1920px){
 #content .order_complete_info{margin-top:20px;width:1080px;margin:0 auto}
 #content .order_complete_info h3{width:100%;text-align:center;margin-top:35px;margin-bottom:36px;font-size:16px;font-weight:bold}
@@ -2287,8 +2287,8 @@ width:400px
 .order_complete_wrap table tr td{padding-left:20px}
 #content .order_complete_info tr td span{color:#878787}
 #content .order_complete_info tr td{font-size:14px;padding-bottom:20px;font-weight:bold;letter-spacing:0.2px}
-.btn_area{width:400px;margin:0 auto}
-}
+
+}*/
 /*주문하기 모바일*/
 @media screen and (max-width:1079px){
 

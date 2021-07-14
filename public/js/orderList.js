@@ -45,7 +45,8 @@ var app = new Vue({
         onChildPopupClosed: function(data) {
             this.reviewModal = false;
             this.inquiryModal = false; 
-
+            this.deliveryModal = false;
+            
             this.currentReview = {};
             this.currentQuestion = {};
         },
