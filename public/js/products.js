@@ -204,12 +204,12 @@ function getProductListByBrandCode() {
     };
     
     $('.myPage_title').html(brandName);
-
+    console.log(params)
     ajaxCallWithLogin(API_SERVER + '/product/getBrandListDetail', params, 'POST',
     function(data){
         console.log("get ProductList by BrandCode", data);
         var html = generateHtmlForProductList(data.result);
-        var brand = data.result[i];
+        // var brand = data.result[i];
 
         if(data.result.length > 0) {
             var html = generateHtmlForProductList(data.result);

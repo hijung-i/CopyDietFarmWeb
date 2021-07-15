@@ -19,6 +19,7 @@
             }
         </style>
     <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
     <!-- font awesome -->
     <link rel="stylesheet"
         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -39,6 +40,7 @@
             <input type="hidden" id="keyword" value="<%=keyword %>">
         <% } else if (listType == 'BRAND') { %>
             <input type="hidden" id="brandCode" value="<%=brandCode %>">
+            <input type="hidden" id="brandName" value="<%=brandName %>">
             <input type="hidden" id="companyCode" value="<%=companyCode %>">
         <% } %>
         <main id="content" class="content">

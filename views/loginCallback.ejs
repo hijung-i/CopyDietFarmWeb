@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
 </head>
 <body>
     <form id="registerForm" action="/sign-up-form" method="GET">
-        <input type="hidden" id="type" value="<%=callback.type %>">
+        <input type="hidden" id="type" name="type" value="<%=callback.type %>">
         <% if(callback.type == 'K') { %>
             <input type="hidden" name="code" value="<%=callback.code %>">
             <input type="hidden" name="tokenKakao" value='<%=callback.token %>'>
             <input type="hidden" name="kakaoNo" value='<%=callback.kakaoNo %>'>
         <% } else if (callback.type == 'N') { %>
             <input type="hidden" name="tokenNaver" value='<%=callback.tokenNaver %>'>
+        <% } else if (callback.type == 'A') { %>
+            <input type="hidden" name="appleNo" value='<%=callback.appleNo %>'>
+                
         <% } %>
         <input type="hidden" name="userId" value='<%=callback.userId %>'>
         <input type="hidden" name="password" value='<%=callback.password %>'>
@@ -25,7 +29,26 @@
         <input type="hidden" name="userInfo" value='<%=callback.userInfo %>'>
         <input type="hidden" name="userName" value='<%=callback.userName %>'>
     </form>
-    
+
+    <script>                
+        $(function() {
+            switch($('#type').val()) {
+                case 'K':
+                    var token = $('input[name=tokenKakao]').val()
+                    console.log(token)
+                    Kakao.Auth.setAccessToken(token)
+                    requestKaKaoUserInfo();
+                    break;
+                case 'N':
+                    checkNaverLoginValue();
+                    break;
+                case 'A':
+                    checkAppleLoginValue();
+                    break;
+                default:
+            }
+        })
+    </script>
     <script src="/js/snsLogin.js"></script>
 
 </body>

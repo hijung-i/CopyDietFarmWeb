@@ -121,7 +121,41 @@ router.post('/callback/apple', (req: Request, res: Response, next: NextFunction)
     STREAM.writeDebug(`POST /user/callback/apple req.query => ${JSON.stringify(req.query)}`)
     STREAM.writeDebug(`POST /user/callback/apple req.body => ${JSON.stringify(req.body)}`)
 
-    res.status(200).send('<script>alert("기능 준비중입니다."); location.href="/";</script>')
+    const tokens = req.body.id_token.split('.')
+
+    const parsed = decodeBase64(tokens)
+
+    let params = {
+        header: parsed[0],
+        content: parsed[1],
+        user: req.body.user
+    }
+
+    const appleNo = params.content?.email.split('@')[0]
+    const userId = appleNo + '@A'
+
+    const lastName: string = (params.user?.name?.lastName === undefined) ? '' : params.user?.name?.lastName
+    const firstName: string = (params.user?.name?.firstName === undefined) ? '' : params.user?.name?.firstName
+
+    const callback = {
+        type: 'A',
+        code: req.body.code,
+        token: req.body.id_token,
+        refreshToken: '',
+        appleNo,
+        userId,
+        password: userId,
+        userEmail: params.content?.email,
+        userGender: '',
+        userCellNo: '',
+        userInfo: '',
+        userName: lastName.concat(firstName)
+    }
+
+    res.locals.callback = callback
+
+    render(req, res, 'loginCallback', {})
+    // res.status(200).send('<script>alert("기능 준비중입니다."); location.href="/";</script>')
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {
@@ -132,6 +166,20 @@ const render = (req: Request, res: Response, view: any, data: any | null) => {
     }
     data.currentPage = data.currentPage || ''
     res.render(view, data || defaultData)
+}
+
+const decodeBase64 = (array: Array<any>) => {
+    const decodes = new Array()
+    array.forEach((v: any) => {
+
+        const decoded = Buffer.from(v, 'base64').toString('utf8')
+        if (decoded.includes('{') && decoded.includes(':') && decoded.includes('}')) {
+            let json = JSON.parse(decoded)
+            decodes.push(json)
+        }
+    })
+
+    return decodes
 }
 
 export default router

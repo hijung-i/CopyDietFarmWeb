@@ -1,3 +1,4 @@
+var double = false;
 var app = new Vue({
     el: 'main',
     components: {
@@ -16,15 +17,20 @@ var app = new Vue({
 })
 
 $(function() {
-
     $("#addr").click(function() {
-        openZipSearch();
+        if(!double) {
+            double = true
+            openZipSearch();
+        }
     })
 
     $("#addr").keydown(function() {
-        openZipSearch();
-        
-        $(this).val('');
+        if(!double) {
+            double = true
+            openZipSearch();
+            
+            $(this).val('');
+        }
     })
     var height = window.innerHeight;
     var bottomUlHeight = $('.pages')[0].offsetHeight;
@@ -207,6 +213,7 @@ function openZipSearch() {
         oncomplete: function(data) {
             var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
             $('#addr').val(address);
+            double = false;
             console.log(data);
         }
     }).open();

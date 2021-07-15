@@ -74,7 +74,10 @@ var deliveryInfoModal = {
             
         }
     }, methods: {
-    
+        closeModal: function() {
+            app.deliveryModal = false;
+            scrollAllow();
+        }
     }
 }
 function openDInfoModal() {
