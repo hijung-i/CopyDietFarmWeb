@@ -118,7 +118,7 @@ function getStandDatas() {
                     {
                         breakpoint: 600,
                         settings: {
-                        slidesToShow: 4,
+                        slidesToShow: 2.5,
                         slidesToScroll: 1
                         }
                     },
