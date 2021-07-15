@@ -1129,7 +1129,9 @@ input[type="checkbox"] {display: none;}
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
-.review_btn button{    position: absolute;
+#signup_title_web h2{font-size:24px;font-weight:bold;margin-top:56px;text-align:center;}
+.review_btn button{
+  position: absolute;
   margin-top: 270px;
   margin-left: 600px;width:168px;height:45px;background-color:#F99319;border-radius:5px;border:0;font-size:18px;color:#fff;font-weight:bold}
 .pick_list_null{width:100%;text-align:center;margin-top:140px;margin-bottom:200px}
@@ -2087,7 +2089,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  .gray{color:#6B6B6B;font-size:10px;border-bottom:1px solid #BBBBBB;padding-bottom:15px}
  .terms ul li{margin-bottom:20px}
  .terms ul li span{color:#BBBBBB}
- .leftarrow{position:absolute;right:20px;}
+
 
  /* 버튼 */
  #btnJoin, #save, #modify,
@@ -2383,7 +2385,7 @@ width:400px
 }*/
 /*주문하기 모바일*/
 @media screen and (max-width:1079px){
-
+.leftarrow{position:absolute;right:20px;}
 .mtpSlideTit{padding-left:15px}
 .order{width:100%;margin:0 auto}
 .order_q .title span{display:none}
@@ -3079,7 +3081,8 @@ padding: 12px 0;}
 
 .brand ul li {
   border-top: 1px solid #BBBBBB;
-  padding-bottom:15px
+  padding-bottom:15px;
+  padding-top:10px
 }
 
 .brand ul li:first-child{
