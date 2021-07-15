@@ -206,11 +206,11 @@ dd.subMenu {
 /* 모바일 헤더 높이 조정 */
 @media screen and (max-width:1079px) {
   #header_common.main {height: 150px; }
-  #header_common.sub {height: 100px;}
+  #header_common.sub {height: 120px;}
 }
 
 #header_common.sub ~ .content {
-  margin-top: 100px;
+  margin-top: 120px;
 }
 #header_common h1{position:relative;left:200px;top:34px;z-index:1;}
 #header_common h1 img{max-width:50%;height: auto;}

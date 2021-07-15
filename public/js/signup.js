@@ -129,6 +129,9 @@ $(function() {
                 case 'N':
                     loginNaver(params);
                     break;
+                case 'A':
+                    loginApple(params);
+                    break;
             }    
         }, 
         function(err) {

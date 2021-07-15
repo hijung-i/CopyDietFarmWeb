@@ -246,9 +246,9 @@ function loginApple(params) {
 		location.href = "/"
 	}, function(err) {
 		console.log("애플 로그인 중 오류가 발생했습니다", err)
-		alert("애플 로그인 중 오류가 발생했습니다", err)
-		location.href = "/"
+		alert("애플 로그인 중 오류가 발생했습니다", JSON.stringify(err))
 		return;
+		location.href = "/"
 	})
 }
 
