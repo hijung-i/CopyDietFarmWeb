@@ -265,8 +265,9 @@ $(document).ready(function() {
       });
       var z = $('#tab1').offset().top;
       var innerHeight = $(window).height();
-      $('#tab1 ul').css ({
-          'max-height' : (innerHeight - z) + 'px'
+      $('div.sideMenu_ctt').css ({
+          'max-height' : (innerHeight - z) + 'px',
+          'overflow' : 'auto'
       });
    });
    
