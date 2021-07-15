@@ -1,6 +1,7 @@
 import { User } from '../models/user'
 import * as request from 'request-promise-native'
 import * as winston from '../configs/winston'
+import { PROD, DEV_JGPARK, DEV_UBUNTU } from '../configs/url'
 
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
 
@@ -14,12 +15,12 @@ type Option = {
     body?: Object
 }
 
-class UserService {
-    // SERVER_URL = 'http://192.168.0.3:9090'
-    SERVER_URL = 'https://dietfarm119.co.kr'
+const current = PROD
 
-    // CALLBACK_SERVER = 'http://192.168.0.3'
-    CALLBACK_SERVER = 'https://dietfarm.co.kr'
+class UserService {
+    SERVER_URL = current.API_SERVER
+
+    CALLBACK_SERVER = current.CALLBACK_SERVER
 
     KAKAO_SERVER = 'https://kauth.kakao.com'
 

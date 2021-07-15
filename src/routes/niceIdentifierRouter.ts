@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import { StatusCode, StatusMessage, UserResult } from '../models/response'
 import { NiceUser, SessionUser, User } from '../models/user'
+
+import { PROD, DEV_JGPARK, DEV_UBUNTU } from '../configs/url'
 import userService from '../services/userService'
 import { exec } from 'child_process'
 import * as path from 'path'
@@ -26,8 +28,8 @@ if (process.platform === 'win32') {
 }
 // const sModulePath = '/home/dataflow1/DietFarm/Api/nice_modules/linux/CPClient_64bit'
 
-const serverIp = 'https://dietfarm.co.kr'
-// const serverIp = 'http://localhost'
+const serverIp = PROD.CALLBACK_SERVER
+
 const sAuthType = ''
 const sPopGubun = 'Y'
 const sCustomize = ''
