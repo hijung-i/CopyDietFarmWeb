@@ -8,7 +8,7 @@ signModalTemplate += '<h2>SNS 계정으로 시작하기</h2>';
 signModalTemplate += '<p style="color:#6B6B6B">1초 간편 회원가입 후, </p>';
 signModalTemplate += '<p class="line02"><span>10000P + 무료배송 </span>쿠폰 혜택을 받아보세요!</p>';
 signModalTemplate += '<div class="signup_btn">';
-signModalTemplate += '<button type="button" class="btnKakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png">카카오 계정으로 시작하기1</button>';
+signModalTemplate += '<button type="button" class="btnKakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png">카카오 계정으로 시작하기</button>';
 signModalTemplate += '<button type="button" class="btnNaver naver_id_login" id="naver_id_login" ></button>';
 signModalTemplate += '<button type="button" id="appleid-signin" data-color="black" data-border="true" data-type="sign in" class="btnApple" onclick="AppleID.auth.signIn()"><img src="">애플 계정으로 시작하기</button>';
 signModalTemplate += '</div>';
