@@ -435,16 +435,16 @@ function getReviewList() {
         productCode: app.product.productCode
     };
 
-    ajaxCallWithLogin(API_SERVER + '/board/getReview', params, 'POST', 
+    ajaxCall(API_SERVER + '/board/getReview', params, 'POST', 
     function (data) {
     
         app.reviewList = data.result;
+        // Array.from(app.reviewList).forEach(function(item) {
+            
+        // })
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);
-    }, {
-        isRequired: false,
-        userId: true
     })
 }
 

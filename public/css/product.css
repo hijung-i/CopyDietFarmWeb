@@ -168,11 +168,9 @@ margin-bottom: 20px;}
 .t_price li{font-size:14px;}
 .t_price p{float:right;margin-right:15px;margin-top:20px;margin-bottom:10px}
 .total{font-weight:normal}
-.total_price{display:none}
 .common_btn_wrap{width:100%;}
-.option_btns{float:left;}
 .option_btns button{height:45px;
-font-size:16px;border:none;border-radius:5px}
+font-size:16px;border-radius:5px}
 .h_btn{width:10%;background-color:transparent;border:1px solid #F99319;position:relative}
 .c_btn{width:44%}
 .p_btn{width:44%}
@@ -318,8 +316,7 @@ label:after {
 border-top:1px solid #BBBBBB;border-bottom:1px solid #BBBBBB;border-left:1px solid #BBBBBB;
 text-align:center;padding-top:24px;width:204px;height:68px;font-size:18px;color: #707070 !important;font-weight:bold}
 #btn_mobile{display:none}
-.common_btn_wrap{margin-left:-10px}
-button.h_btn {width:51px;height:45px;background-color:#fff;border:1px solid #F99319;border-radius:5px;position:relative;top:7px}
+button.h_btn {width:51px;height:45px;background-color:#fff;border:1px solid #F99319;border-radius:5px;}
 button.h_btn img{width:26px;height:21px;}
 button.c_btn{width:120px;height:45px;border-radius:5px}
 button.p_btn{width:120px;height:45px;border:0;border-radius:5px}
@@ -400,8 +397,6 @@ box-shadow: none !important}
 .common_btn_wrap .h_btn img{width:25px;height:25px}
 .common_btn_wrap_main .c_btn{width:120px;height:45px;background-color:#fff;border:1px solid #F99319;border-radius:5px;color:#F99319}
 .common_btn_wrap.p_btn{width:120px;height:45px;background-color:#F99319;border:0;color:#fff;border-radius:5px}
-.common_btn_wrap .option_btns{float:left;white-space:nowrap;margin-top:25px;margin-left:-10px}
-
 
 .ico_select_arrow {float:right; position:relative;top:-2px;right:0px;}
 .ico_select_arrow img {border:none;vertical-align:middle}
@@ -454,13 +449,6 @@ box-shadow: none !important}
     min-height: 220px;
 }
 
-/* floating tab bottom jgpark 작업 */
-
-.total_price {
-    margin-top: 9px;
-    display: flex;
-    
-}
 .total_price button.h_btn {
     margin-right: 11px;
 }
@@ -492,8 +480,6 @@ box-shadow: none !important}
     
     margin-left: 5px;
 }
-
-
 .float_btns {
     margin-top: 9px;
 }
@@ -834,6 +820,10 @@ div #ex1.modal ul li {float:left}
 
 
 @media screen and (max-width:1079px){
+    .total_price {
+        margin-top: 15px
+    }
+
 
 .v_top_txt_box .modal p{text-align:center}
 .products_ex{width:100%;border-top:8px solid #f1f1f1;}
@@ -993,29 +983,9 @@ div #ex1.modal ul li {float:left}
 .more_inq{
 width:100%;height:45px;background-color:#F1F1F1;border-radius:0px;border:0;border-bottom:2px solid #E6E6E6}
 
-/* 하단 버튼 세 개 */
-@media screen and (max-width:499px){
-.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#F99319; border: 1px solid #F99319; position: relative; text-align: center;top:5px}
-}
-.common_btn_wrap{width:100%}
-.common_btn_wrap > .option_btns {
-    width: 100%; margin: 0 auto; height: 45px;
-    padding: 0;
-    margin: 20px 0;
-    white-space:nowrap;
-}
-@media screen and (min-width:500px){.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#F99319; border: 1px solid #F99319; position: relative; text-align: center}}
-.common_btn_wrap > .option_btns button:nth-child(2) {
-    background: #fff;
-    border: 1px solid #F99319;
-    color: #F99319;
-    font-weight:700
-}
-.common_btn_wrap > .option_btns button:nth-child(3) {
-    background: #F99319;
-    color: #fff;
-    font-weight: 700;
-}
+
+
+
 /* 문의 목록 */
 .review_edit ul > .myInquiry{
     padding-left:6px;

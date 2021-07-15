@@ -21,10 +21,10 @@ const logger = winston.createLogger({
 })
 
 const stream = {
-    writeDebug: message => {
+    writeDebug: (message: any) => {
         logger.debug(new Date().toLocaleString() + ': ' + message)
     },
-    writeError: message => {
+    writeError: (message: any) => {
         logger.error(new Date().toLocaleString() + ': ' + message)
     }
 }

@@ -320,11 +320,7 @@
                                                                     <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
                                                                 </select>
                                                             </template>
-                                                            <template v-if="product.options.length == 1">
-                                                                <select name="products" id="product" style="border-color:#BBBBBB" readonly="readonly">
-                                                                    <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
-                                                                </select>
-                                                            </template>
+
                                                         </template>
                                                     </td>
                                                 </tr>
@@ -366,17 +362,18 @@
                                                     </div>
                                                     <div class="line_w"></div>
                                                     <div class="total_price">
-                                                        <p>총 상품금액
-                                                            <span>{{ numberFormat(optionTotalPrice) }}원
-                                                            </span>
+                                                        <p>
+                                                            총 상품금액
+                                                            <span class="bold">{{ numberFormat(optionTotalPrice) }}원</span>
                                                         </p>
+                                                        <div class="accumulate-points">
+                                                            <p>예상 포인트 <span class="green">{{ }}</span>원 (실 결제금액의 3%)</p>
+                                                            <p>배송 금액 {{  }}원</p>
+                                                        </div>
                                                     </div>
                                                     <div class="common_btn_wrap">
                                                         <div class="option_btns">
-                                                            <button type="button" class="h_btn" v-on:click="zzimProduct()">
-                                                                <img v-if="product.zzimYn == 'Y'" class="like like-yes">
-                                                                <img v-if="product.zzimYn == 'N'" class="like like-no">
-                                                            </button>
+                                                            <button type="button" v-bind:class="{ 'h_btn': true, 'like': true, 'like-yes': product.zzimYn == 'Y', 'like-no': product.zzimYn == 'N' } " v-on:click="zzimProduct()"></button>
                                                             <button type="button" class="c_btn">장바구니</button>
                                                             <button type="button" class="p_btn" v-on:click="onSubmit()">구매하기</button>
                                                         </div>
