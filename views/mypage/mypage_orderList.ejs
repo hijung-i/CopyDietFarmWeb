@@ -104,6 +104,7 @@
             </div>
         </section>
     </div>
+
     <main id="content" class="content">
         <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
             <div class="mypage_content_wrap">
@@ -133,6 +134,9 @@
                     </ul>
                 </nav>
                 <div class="mypage_order_info_wrap">
+                    <div class="order_list_null" v-if="orderList == undefined || orderList.length == 0">
+                        <p class="no_review">주문 내역이 없습니다.</p>
+                    </div>
                     <div class="order_list_box_w">
                     <h3>주문내역</h3>
                     <table class="cell">
