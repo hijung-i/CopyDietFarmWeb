@@ -565,6 +565,7 @@ background-size:19px 19px;}
     margin-top: 35px}
   .detail_title a img{width: 17px}
   .btnback{position:absolute;top:4px}
+  .btnback img {z-index: 9999;}
   .keyword{font-size:14px;padding-top:14px;margin-left:15px;padding-bottom:14px}
   .page_nation{display:none}
   .faq h3{display:none}
@@ -3538,4 +3539,11 @@ padding: 12px 0;}
 }
 @media screen and (min-width: 671px) {
   .orderDetail ul li{max-width: 100%}
+}
+
+.sideMenu_ctt {
+  -ms-overflow-style: none;
+}
+.sideMenu_ctt::-webkit-scrollbar {
+  display: none;
 }
