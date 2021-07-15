@@ -647,7 +647,7 @@ table.web_qna {padding: 12px 0;}
 /* 판매자문의모바일 css */
 #toc-toggle{cursor:pointer;}
 #toc-content{margin-left:10px}
-.btn_area {width:100%;clear:both; padding-right:38px;}
+.btn_area {width:100%}
 #btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
@@ -713,7 +713,6 @@ font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 
 /*문의-모달*/
 .productInquiryBox{width:1068px;height:auto;}
-.btn_area {width:340px;margin:0 auto}
 #btnInquiry{width:330px;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  10px 0px;margin-bottom:25px}
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
@@ -827,6 +826,11 @@ div #ex1.modal ul li {float:left}
 .t_price li{font-size:14px;position:relative;top:-10px}
 .t_price p{float:right;margin-right:15px;margin-top:20px;margin-bottom:10px}
 .total{font-weight:normal}
+#btnSaveProduct{width:100%;    height: 45px;
+    color: #fff;
+    background-color: #EFA543;
+    border-radius: 5px;
+    border: none;}
 
 
 @media screen and (max-width:1079px){
@@ -838,11 +842,6 @@ div #ex1.modal ul li {float:left}
 .purchased_products{clear:both;width:100%;padding-bottom:70px}
 .purchased_products .title{font-size:12px}
 .purchased_products .price{font-size:12px;font-weight:bold}
-#btnSaveProduct{width:100%;    height: 45px;
-    color: #fff;
-    background-color: #EFA543;
-    border-radius: 5px;
-    border: none;}
 
 .review_btn{display:flex;justify-content:center; padding-bottom:21px;border-bottom:8px solid #f1f1f1;border-top:2px solid #E6E6E6;padding-top:28px}
 .review_btn button{border:2px solid #F99319;background-color:#fff;color:#F99319;font-weight:bold;border-radius:5px}

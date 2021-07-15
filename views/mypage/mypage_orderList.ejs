@@ -25,7 +25,7 @@
                             top: 0;
                             background-color: #fff;
                             margin-bottom: 20px;
-                            z-index: 1000;}
+                            z-index: 1;}
                  #content{padding-top:60px}
         }
         @media screen and (min-width:1080px) {
@@ -255,7 +255,7 @@
                 </div>
             </div>
             <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal>
-            <delivery-info-modal v-if="deliveryModal"></delivery-info-modal>
+            <delivery-info-modal v-if="deliveryModal" v-on:close="onChildPopupClosed"></delivery-info-modal>
         </main>
 
   

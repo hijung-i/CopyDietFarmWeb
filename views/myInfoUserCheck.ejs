@@ -21,11 +21,12 @@
                 .mobile_usercheck {
                     display: none;
                 }
+                .contents h2{margin-left:-44px}
             }
         </style>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/style_web.css">
-        <link rel="stylesheet" href="/css/style02.css">
+        <link rel="stylesheet" href="/css/myPage.css">
         <%-include(webroot + 'views/general/head') %>
 <%-include(webroot + 'views/general/openGraph.ejs') %>
         </head>
@@ -51,43 +52,16 @@
                 <%-include(webroot + 'views/general/header') %>
                 </div>
 
-                <div class="main_contents">
-                    <div class="web_contents">
-                        <div class="left">
-                            <h3>마이팜</h3>
-                            <div class="left_ctn">
-                                <ul>
-                                    <li><img src="/images/basket_ico.png"></li>
-                                    <li>
-                                        <span>김수아님</span></li>
-                                    <li>내정보
-                                        <span>
-                                            <i class="fas fa-chevron-right"></i></span></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="center">
-                            <h3>포인트<img src="/images/point.png"></h3>
-                            <p>1000 원
-                                <span>
-                                    <i class="fas fa-chevron-right"></i></span></p>
-                        </div>
-
-                        <div class="right">
-                            <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
-                            <p>3개
-                                <span>
-                                    <i class="fas fa-chevron-right"></i></span></p>
-                        </div>
-                    </div>
-                </div>
-                <nav class="content_lnb">
+              
+              <main>
+                <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
+                <div class="mypage_content_wrap">
+                    <nav class="content_lnb">
                     <ul>
-                        <li class="on">
+                        <li>
                             <a href="/orderlist">주문내역</a>
                         </li>
-                        <li style="white-space:nowrap">
+                        <li class="on" style="white-space:nowrap">
                             <a href="/delivery-management">배송지 관리</a>
                         </li>
                         <li>
@@ -96,7 +70,7 @@
                         <li>
                             <a href="/p_inquiry">상품 문의</a>
                         </li>
-                        <li>
+                        <li style="white-space:nowrap">
                             <a href="/s_inquiry">판매자 문의</a>
                         </li>
                         <li>
@@ -106,8 +80,7 @@
                             <a href="/coupon">쿠폰</a>
                         </li>
                     </ul>
-                </nav>
-
+                    </nav>
                 <div class="contents">
                     <h2 style="font-size:20px">내정보</h2>
                     <div class="main-container">
@@ -125,12 +98,14 @@
                                     <input placeholder="비밀번호를 입력해주세요" type="password">
                                 </div>
                                 <div class="login-button-wrap">
-                                    <button>로그인</button>
+                                    <button>확인</button>
                                 </div>
                             </section>
                         </div>
                     </div>
                 </div>
-                <script src="./js/main.js"></script>
+            </main>
+            <script src="/js/components/mypageComponent.js"></script>
+            <script src="/js/mypage/coupon.js"></script>                
             </body>
         </html>

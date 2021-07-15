@@ -16,7 +16,7 @@
     
 }
 @media screen and (max-width:1079px){
-.slick-slider{padding-left:15px;padding-right:15px;margin-bottom:40px; height: 199px;}
+.slick-slider{padding-right:15px;margin-bottom:40px; height: 199px;}
 .slick-slider .title{
     width:140px;
     white-space: nowrap;
