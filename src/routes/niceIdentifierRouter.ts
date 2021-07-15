@@ -26,8 +26,8 @@ if (process.platform === 'win32') {
 }
 // const sModulePath = '/home/dataflow1/DietFarm/Api/nice_modules/linux/CPClient_64bit'
 
-// const serverIp = 'https://dietfarm.co.kr'
-const serverIp = 'http://localhost'
+const serverIp = 'https://dietfarm.co.kr'
+// const serverIp = 'http://localhost'
 const sAuthType = ''
 const sPopGubun = 'Y'
 const sCustomize = ''
