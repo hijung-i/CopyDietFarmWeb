@@ -187,8 +187,7 @@
                     </div>
                 </div>
             </div>
-            <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal>
-            <delivery-info-modal v-if="deliveryModal" v-on:close="onChildPopupClosed"></delivery-info-modal>
+            <delivery-info-modal v-if="deliveryModal"></delivery-info-modal>
         </main>
 
   
@@ -198,7 +197,7 @@
     <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/deliveryInfoModal.js"></script>
     <script src="/js/productReviewModal.js"></script>
-    <script src="/js/orderList.js"></script>
+    <script src="/js/deliveryStatus.js"></script>
 </body>
 
 </html>

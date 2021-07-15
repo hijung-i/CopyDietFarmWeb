@@ -48,16 +48,16 @@ router.get('/product/:productCode', (req: Request, res: Response, next: NextFunc
     render(req, res, 'product', { productCode: productCode })
 })
 
-router.get('/products/:brandCode/brand', (req: Request, res: Response, next: NextFunction) => {
-    const brandCode = req.params.brandCode
+router.get('/products/:companyCode/brand', (req: Request, res: Response, next: NextFunction) => {
+    const companyCode = req.params.companyCode
 
-    // brand와 company가 모두 있을 경우 companyCode가 쿼리스트링으로 넘어옴
-    const companyCode = req.query.companyCode || ''
+    // brand와 company가 모두 있을 경우 brandCode가 쿼리스트링으로 넘어옴
+    const brandCode = req.query.brandCode || ''
     const brandName = req.query.brandName
 
     render(req, res, 'products', {
-        brandCode: brandCode,
         companyCode: companyCode,
+        brandCode: brandCode,
         brandName: brandName,
         listType: 'BRAND',
         currentPage: 'brand'
@@ -145,9 +145,6 @@ router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFu
     }
 })
 
-router.get('/delivery-status', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'mypage/mypage_deliveryStatus', {})
-})
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'terms_of_service', {})
 })

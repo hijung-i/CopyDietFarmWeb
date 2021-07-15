@@ -302,7 +302,7 @@ function checkAppleLoginValue() {
 				loginApple(params);
 			} else if (data.result.userId != '' && data.result.appleNo === ''){
 				// 계정 연동
-
+				linkAppleUser(params);
 			}
 		}
 	}, function ( err ) {

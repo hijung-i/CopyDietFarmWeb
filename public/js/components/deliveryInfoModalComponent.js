@@ -87,7 +87,7 @@ var deliveryInfoModalComponent = {
             ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', {}, 'POST',
             function(data) {
                 component.deliveryList = data.result;
-                console.log(component);
+                console.log(data);
             }, function(err) {
                 console.log("err", err);
             }, {
@@ -104,7 +104,7 @@ var deliveryInfoModalComponent = {
             closeInfoModal();
         }
     }, created: function() {
-        if( this.orderDTO != undefined && this.orderDTO.userId != '비회원주문') {
+        if( this.orderDto != undefined && this.orderDto.userId != '비회원주문') {
             this.getDeliveryInfoList();
         }
     }

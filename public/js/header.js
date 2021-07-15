@@ -7,7 +7,7 @@ function getEventStands() {
  
        $("#header_common #nav").html('');
        var html = '';
-       html += '<a class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';      
+       html += '<a class="web_cate display-flex"><img src="/images/category_ico_main.png">전체카테고리</a>';      
        for(var i = 0; i < data.result.length; i++){
  
           // TODO: 화면 너비가 pc버전일때 break;
@@ -380,112 +380,109 @@ function getEventStands() {
          // buttonHtml += '</a>';
          // buttonHtml += '</li>';
          
-     
-         if($('.category ul').length > 0) {
-             $('.category ul').html(buttonHtml);
-         }
+    
+        if($('.category ul').length > 0) {
+            $('.category ul').html(buttonHtml);
+        }
+
+        $('.sideMenu_ctt #tab1 ul.mDepth01').html(sideTabHtml);
+
+        $("dt.faq_q").click(function() {
+            $("dt.faq_q").removeClass("current");
+            $(this).addClass("current");
+        });
  
-         $('.sideMenu_ctt #tab1 ul.mDepth01').html(sideTabHtml);
+        $('dt.faq_q').hover(function() {
+            if($(window).width() >= 1079){
+                $("dt.faq_q").removeClass("current");
+                
+                $(this).addClass("current");
+            }
+        })
  
-         $("dt.faq_q").click(function() {
-             var isCurrent = $('dt.faq_q').hasClass('current');
-             
-             if( isCurrent ) {
-                 $("dt.faq_q").removeClass("current");
-             } else {
-                 $(this).addClass("current");
-             }
-         });
- 
-         $('dt.faq_q').hover(function() {
-             if($(window).width() >= 1079){
-                 $("dt.faq_q").removeClass("current");
-                 
-                 $(this).addClass("current");
-             }
-         })
- 
-         $('.sideMenu_ctt ul.mDepth01').mouseleave(function() {
-             $("dt.faq_q").removeClass("current");
-         })
+        $('.sideMenu_ctt ul.mDepth01').mouseleave(function() {
+            if($(window).width() >= 1079){
+                $("dt.faq_q").removeClass("current");
+            }
+        })
          
-         $(".mTabBtnMenu").on("click",function() {
-             sideTabOpen();
-             $('body').css ({
-                 position:'fixed',
-                 overflow:'hidden'
-             });
-             var z = $('#tab1').offset().top;
-             var innerHeight = $(window).height();
-             $('#tab1 ul').css ({
-                 'max-height' : (innerHeight - z) + 'px'
-             });
-         })
+        $(".mTabBtnMenu").on("click",function() {
+            sideTabOpen();
+            $('body').css ({
+                position:'fixed',
+                overflow:'hidden'
+            });
+            var z = $('#tab1').offset().top;
+            var innerHeight = $(window).height();
+            $('#tab1 ul').css ({
+                'max-height' : (innerHeight - z) + 'px'
+            });
+        })
  
-         console.log("getCategory => ", data);
-     }, function (err){
-         console.log("onError", err);
-     })
+        console.log("getCategory => ", data);
+    }, function (err){
+        console.log("onError", err);
+    })
  
  }
  
  function getBrandList() {
-     var param = {};
-     ajaxCallWithLogin(API_SERVER + '/product/getBrandList', param , 'POST',
-     function(data) {
-         var html = '';
-         var result = data.result;
-             
-         for(var i = 0; i < result.length; i++) {
-             var brand = result[i];
-             html += '<li>';
-             html += '    <a href="/products/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'/brand';
-             if(brand.brandCode != '') {
-                 html += '?companyCode='+brand.companyCode +'&brandName=' + brand.brandName
-             }
-             
-             html += '">'+ brand.brandName +'</a>';
-             html += '    <button class="favorite-btn"><img class="like like-no"></button>';
-             html += '</li>';
-         }
- 
-         $('.brand ul').html(html);
-         
- 
-     }, function(err) {
-         console.error(err);
-     }, {
-         isRequired: false,
-         userId: true
-     })
+    var param = {};
+    ajaxCallWithLogin(API_SERVER + '/product/getBrandList', param , 'POST',
+    function(data) {
+        var html = '';
+        var result = data.result;
+            
+        for(var i = 0; i < result.length; i++) {
+            var brand = result[i];
+            html += '<li>';
+            html += '    <a href="/products/'+ brand.companyCode +'/brand?brandName=' + brand.brandName;
+            if(brand.brandCode != '') {
+                html += '&brandCode='+ brand.brandCode;
+            }
+            
+            html += '">'+ brand.brandName +'</a>';
+            html += '    <button class="favorite-btn"><img class="like like-no"></button>';
+            html += '</li>';
+        }
+
+        $('.brand ul').html(html);
+        
+
+    }, function(err) {
+        console.error(err);
+    }, {
+        isRequired: false,
+        userId: true
+    })
  }
  
  function searchBrand(keyword) {
-     var params = {
-         keyword: keyword
-     }
-     ajaxCall(API_SERVER + '/product/brandSearchBar', params, 'POST'
-     , function(data) {
-         var result = data.result;
-         console.log(data.result)
-         var html = '';
-         for(var i = 0; i < result.length; i++) {
-             var brand = result[i];
-             html += '<li>';
-             html += '    <a href="/products/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'/brand';
-             if(brand.brandCode != '') {
-                 html += '?companyCode='+brand.companyCode +'&brandName=' + brand.brandName
-             }
-             
-             html += '">'+ brand.brandName +'</a>';
-             html += '</li>'; 
-         }
-         $(".brand ul").html(html);
- 
- 
-     }, function(err) {
-         console.log(err);
-     })
+    var params = {
+        keyword: keyword
+    }
+    ajaxCall(API_SERVER + '/product/brandSearchBar', params, 'POST'
+    , function(data) {
+        var result = data.result;
+        console.log(data.result)
+        var html = '';
+        for(var i = 0; i < result.length; i++) {
+            var brand = result[i];
+            html += '<li>';
+            html += '    <a href="/products/'+ brand.companyCode +'/brand?brandName=' + brand.brandName;
+            if(brand.brandCode != '') {
+                html += '&brandCode='+ brand.brandCode;
+            }
+            
+            html += '">'+ brand.brandName +'</a>';
+            html += '</li>'; 
+        }
+        $(".brand ul").html(html);
+
+
+    }, function(err) {
+        console.log(err);
+    })
  }
  $(function() {
      $(".brandCate_top .search_box_ico").click(function() {

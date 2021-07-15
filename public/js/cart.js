@@ -36,7 +36,8 @@ var app = new Vue({
         },
         updateOrderInfo: function (option) {
             if(option != undefined && !option.isSelected) {
-                $('#option.isSelected')[i].checked = false;
+                // 전체 선택 해제
+                $('#checkAll')[0].checked = false;
             }
             
             this.orderDTO = new OrderDTO();
@@ -196,7 +197,7 @@ var app = new Vue({
                 if(i == oIdx) {
                     continue;
                 }
-                currentProduct.options[i].isSelected =false;
+                currentProduct.options[i].isSelected = false;
             }
             requestDeliveryGroup.deleteNoneSelectedProduct();
             products = requestDeliveryGroup.products;

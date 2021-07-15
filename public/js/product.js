@@ -94,6 +94,21 @@ var app = new Vue({
                 userId: true
             });
         }
+    }, computed: {
+        brandListUrl: function() {
+            const brandCode = this.product.brandCode
+            const companyCode = this.product.companyCode
+            
+            let brandName = this.product.brandName
+            brandName = (brandName === '')? this.product.companyName : brandName
+            
+            let url = '/products/' + companyCode + '/brand?brandName=' + brandName
+            if (brandCode != '') {
+                url += '&brandCode=' + brandCode
+            }
+
+            return url
+        }
     }
 });
 
@@ -691,34 +706,4 @@ function sendKakaoLink() {
         }
     });
     
-}
-
-function getBrandList() {
-    var param = {};
-    ajaxCallWithLogin(API_SERVER + '/product/getBrandList', param , 'POST',
-    function(data) {
-        var html = '';
-        var result = data.result;
-            
-        for(var i = 0; i < result.length; i++) {
-            var brand = result[i];
-            html += '<button class="d_save">';
-            html += '    <a href="/products/'+ ((brand.brandCode == '')?brand.companyCode:brand.brandCode) +'/brand';
-            if(brand.brandCode != '') {
-                html += '?companyCode='+brand.companyCode +'&brandName=' + brand.brandName
-            }
-            
-            html += '">'+ brand.brandName +'</a>';
-            html += ' </button>';
-           
-        }
-        $('.d_save_wrap').html(html);
-        
-
-    }, function(err) {
-        console.error(err);
-    }, {
-        isRequired: false,
-        userId: true
-    })
 }

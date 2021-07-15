@@ -96,6 +96,12 @@ router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
     })
 })
 
+router.get('/delivery-status', (req: Request, res: Response, next: NextFunction) => {
+    checkLogin(req, res, (sessionUser) => {
+        render(req, res, 'mypage/mypage_deliveryStatus', {})
+    })
+})
+
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
