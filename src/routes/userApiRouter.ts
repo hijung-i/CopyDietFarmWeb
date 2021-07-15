@@ -56,7 +56,7 @@ router.post('/login/kakao', async (req: Request, res: Response, next: NextFuncti
 router.post('/login/apple', async (req: Request, res: Response, next: NextFunction) => {
     console.log('POST /user/login/apple >>', req.body)
     const user = req.body as User
-    const loginResult: UserResult = await userService.loginKakao(user)
+    const loginResult: UserResult = await userService.loginApple(user)
 
     if (loginResult.message === StatusMessage.success) {
         console.log('loginSuccess -> ', loginResult.data)
