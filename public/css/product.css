@@ -1004,7 +1004,7 @@ width:100%;height:45px;background-color:#F1F1F1;border-radius:0px;border:0;borde
     margin: 20px 0;
     white-space:nowrap;
 }
-@media screen and (min-width:500px){.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#F99319; border: 1px solid #F99319; position: relative; text-align: center;top:-5px}}
+@media screen and (min-width:500px){.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#F99319; border: 1px solid #F99319; position: relative; text-align: center}}
 .common_btn_wrap > .option_btns button:nth-child(2) {
     background: #fff;
     border: 1px solid #F99319;

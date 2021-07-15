@@ -144,6 +144,10 @@ router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFu
         render(req, res, 'mypage/mypage_orderList_detail', { orderNumber })
     }
 })
+
+router.get('/delivery-status', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'mypage/mypage_deliveryStatus', {})
+})
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'terms_of_service', {})
 })
