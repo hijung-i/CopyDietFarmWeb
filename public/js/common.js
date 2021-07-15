@@ -1,6 +1,6 @@
 // 테스트
 // var API_SERVER = "http://112.217.209.162:9090";
-// var CALLBACK_SERVER = "http://220.93.22.1";
+// var CALLBACK_SERVER = "http://112.217.209.162";
 // var API_SERVER = "http://192.168.0.3:9090";
 // var CALLBACK_SERVER = "http://192.168.0.3";
 
