@@ -112,11 +112,6 @@
                                     <p class="t1">{{ order.orderNumber }}&nbsp;&nbsp;<img src="/images/l_icon_category.png">&nbsp;
                                         <span>{{ formatDate(order.paymentDate) }}</span>
                                     </p>
-                                    <ul>
-                                        <li class="t2">
-                                            <a v-bind:href="'/ol_detail/' + order.orderNumber">주문상세보기<img src="/images/arrow_icon_order.png" style="width:7px;margin-left:5px"></a>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <table style="border:0">
                                     <tbody>
@@ -145,12 +140,9 @@
                                             <td class="orderlist_btn">
                                                 <div class="order_list_btn">
                                                     <ul>
-                                                      
-                                                           
-                                                            <li>
-                                                                <button type="button" class="btnB" onclick="openDInfoModal()">배송조회</button>
-                                                            </li>
-                                          
+                                                        <li>
+                                                            <button type="button" class="btnB" onclick="openDInfoModal()">배송조회</button>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </td>

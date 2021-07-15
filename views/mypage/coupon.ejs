@@ -86,6 +86,9 @@
                         </nav>
                         <main id="content" class="coupon">
                             <div class="contents">
+                        <div class="order_list_null" v-if="couponList == undefined ||couponList.length == 0">
+                            <p class="no_review">쿠폰 내역이 없습니다.</p>
+                        </div>
                         <h2 class="web_coupon_tit">쿠폰</h2>
                         <div class="coupon_web_top">
                             <input type="text" placeholder="쿠폰 코드를 입력해주세요">

@@ -10,7 +10,7 @@ deliveryInfoTemplate+='    <a onclick="history.back(); return false"><img src="/
 deliveryInfoTemplate+='    </a>'
 deliveryInfoTemplate+='</div>'
 deliveryInfoTemplate+='</section>'
-deliveryInfoTemplate+='<div id="content" class="del_info_content" style="margin-top:40px">'
+deliveryInfoTemplate+='<div id="content" class="del_info_content">'
 deliveryInfoTemplate+=' <div class="circle_line">'
 deliveryInfoTemplate+='        <div class="line" >'
 deliveryInfoTemplate+='        </div>'
