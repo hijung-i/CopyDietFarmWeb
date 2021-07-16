@@ -80,7 +80,9 @@ a:hover{text-decoration:none;}
 .clear{clear:both;}
 .show{display:block;}
 .hide{display:none;}
-
+.green {
+  color: #31845B
+}
 
 .common_btn_wrap{
   width:100%;
@@ -98,7 +100,7 @@ a:hover{text-decoration:none;}
   background-color: #FFFFFF;
   border: 2px solid #F99319;
 }
-.option_btns .h_btn.like-no {
+.h_btn.like-no {
   background-color: #F99319;
 }
 

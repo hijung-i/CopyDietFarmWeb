@@ -74,7 +74,7 @@ app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction
     let err = new Error('Not Found!') as Err
     err.status = 404
     STREAM.writeError(`NOT FOUND! METHOD: ${req.method}, URI: ${req.url}`)
-    STREAM.writeError(err)
+    STREAM.writeError(JSON.stringify(err))
     next(err)
 })
 
@@ -82,8 +82,8 @@ app.use((err: Err, req: Express.Request, res: Express.Response, next: Express.Ne
     res.status(err.status || 500)
     console.log('BODY -> ', req.body)
     console.error('ERROR WHILE PROCESSING url ', req.url,'=>\n', err.message)
-    STREAM.writeError(req.url)
-    STREAM.writeError(req.body)
+    STREAM.writeError(JSON.stringify(req.url))
+    STREAM.writeError(JSON.stringify(req.body))
 
     res.json({
         message: err.message,
