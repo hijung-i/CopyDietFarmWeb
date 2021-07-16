@@ -25,14 +25,14 @@ const stream = {
         try {
             logger.debug(new Date().toLocaleString() + ': ' + message)
         } catch (err) {
-            logger.error("failed to log", JSON.stringify(err))
+            logger.error('failed to log', JSON.stringify(err))
         }
     },
     writeError: (message: any) => {
         try {
             logger.error(new Date().toLocaleString() + ': ' + message)
         } catch (err) {
-            logger.error("failed to log", JSON.stringify(err))
+            logger.error('failed to log', JSON.stringify(err))
         }
     }
 }
