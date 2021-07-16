@@ -105,7 +105,7 @@ var app = new Vue({
                             }
 
                             var paidRealRate = ((this.orderDTO.paidRealAmount - this.orderDTO.totalDeliveryCost) / this.orderDTO.paymentTotalAmount)
-                            product.accumulatePoint = Math.round((this.orderDTO.paidRealAmount * (product.optionTotalPrice / this.orderDTO.paymentTotalAmount)) * 0.03)
+                            product.accumulatePoint = Math.round(((this.orderDTO.paidRealAmount - this.orderDTO.totalDeliveryCost) * (product.optionTotalPrice / this.orderDTO.paymentTotalAmount)) * 0.03)
 
                             if(product.productCode == "P00879" || product.productCode == "P00982") {
                                 var totalCount = 0
