@@ -5,15 +5,16 @@ var app = new Vue({
         'mypage-component': mypageComponent,
         'product-review-modal': productReviewModal,
         'seller-inquiry-modal': sellerInquiryModal,
-        'delivery-info-modal': deliveryInfoModal
     },
     data: {
         order: {
             products: {}
         },
+        totalPointAmount: 0,
         RESOURCE_SERVER,
         reviewModal: false,
-        inquiryModal: false
+        inquiryModal: false,
+        deliveryModal: false
     },
     methods: {
         convertOrderStatus,
@@ -29,7 +30,22 @@ var app = new Vue({
 
 $(function() {
     getOrderDetail();
+    getUsablePointAmount();
+    getUsableCouponList();
 })
+
+function getUsableCouponList() {
+    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST',
+    function(data) {
+        app.usableCouponAmount = data.result.length;
+        console.log("get usableCouponList", data);
+    }, function(err) {
+        console.error("get usable coupon list",err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
 
 function getOrderDetail() {
 
@@ -85,4 +101,21 @@ function convertOrderStatus(orderStatus) {
             return '배송중';
     }
     
+}
+
+function getUsablePointAmount() {
+    var params = {};
+    ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
+    function(data) {
+        if(data.result)
+            app.totalPointAmount = numberFormat(data.result);
+
+            console.log("success usablePoint",data);
+    }, function(err) {
+        console.log("error",err)
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
 }

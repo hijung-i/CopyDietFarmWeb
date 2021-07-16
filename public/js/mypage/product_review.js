@@ -31,6 +31,10 @@ var app = new Vue({
                 optionName += '외 ' + (options.length -1) + '건';
             }
             return optionName;
+        },
+        closeModal: function() {
+            this.$emit('close', 'review')
+            scrollAllow();
         }
     },
     onReviewUpdateClick: function(index) {
