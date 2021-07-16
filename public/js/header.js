@@ -494,3 +494,51 @@ function getEventStands() {
          }
      })
  })
+
+function productSearch(keyword) {
+    
+    var sortOption = $('#sortOption').val();
+    var params = {
+        keyword,
+        sortOption
+    }
+
+    var keywordDesc = "<span style=\"color: red;\">\""+keyword + "\"</span>에 대한 검색 결과";
+    $('.keyword').html(keywordDesc);
+
+    ajaxCallWithLogin(API_SERVER + '/product/productSearchBar', params, 'POST',
+    function(data) {
+        if(data.result.length > 0) {
+            var html = generateHtmlForProductList(data.result);
+            
+            $('.sub_items ul').html(html);
+            $('.myPage_title').html(brand.brandName);
+            
+        } else {
+            $('.sub_items ul').hide();
+            $('.sub_items ul').hide();
+            $('.pick_list_null').show();
+            $('.pick_list_null').html('<img src="/images/twoheart_icon_heart@2x.png"><p>해당 브랜드가 존재하지 않습니다.</p>');
+        }
+        
+        
+        console.log("search success", data);
+    }, function(err) {
+        console.log("searchKeyword", err);
+    }, {
+        isRequired: false,
+        userId: true
+    })
+}
+
+
+$(function() {
+    $(".searchbox .search_box_icon").click(function() {
+        var keyword = $('.searchbox #websearchform').val().trim();
+        if(keyword.length > 0) {
+            productSearch(keyword)
+        } else {
+            alert('키워드를 입력해주세요')
+        }
+    })
+})

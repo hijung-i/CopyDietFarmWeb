@@ -167,6 +167,7 @@ function productSearch(keyword) {
     })
 }
 
+
 function getPickProduct() {
     ajaxCallWithLogin(API_SERVER + '/order/getZzimInfoByUserID', {}, 'POST',
     function(data) {

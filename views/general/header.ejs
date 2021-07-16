@@ -73,10 +73,12 @@
         </nav>
        
         <div class="searchbox">
-            <form id="search-form" action="/search-list">
+            <form id="search-form" action="/search-list" method="GET">
                 <div class="search">
-                    <input type="text" name="keyword" class="round" placeholder="검색해보세요.">
-                    <a href="#"><img src="/images/search_ico.png"></a>
+                    <input type="text" name="keyword" class="round" id="websearchform" placeholder="검색해보세요.">
+                <div class="search_box_icon">
+                    <a href=""><img src="/images/search_ico.png"></a>
+                </div>
                 </div>
             </form>
         </div>
