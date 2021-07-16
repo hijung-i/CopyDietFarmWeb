@@ -77,7 +77,7 @@
                 <div class="search">
                     <input type="text" name="keyword" class="round" id="websearchform" placeholder="검색해보세요.">
                 <div class="search_box_icon">
-                    <a href=""><img src="/images/search_ico.png"></a>
+                <input type="submit" value="">
                 </div>
                 </div>
             </form>
@@ -153,21 +153,20 @@
                 <div id="searchUsers" class="instant-search">
                     <form action="/search-list" method="GET" id="brandSearchForm">
                         <input type="hidden" name="keyword">
+                        <div class="instant-search__input-container">
+                            <input
+                                class="instant-search__input"
+                                id="brandSearchKeyword"
+                                spellcheck="false"
+                                placeholder="브랜드명을 검색해보세요."
+                                style="font-size:14px;width:90%"
+                                onkeypress="if( event.keyCode == 13 ){ goSearchResult();}">
+                            <a href="#"><img src="/images/grayx_icon_login.png" alt="취소"></a>
+                        </div>
+                        <div class="search_box_ico">
+                            <input type="submit" value=" ">
+                        </div>
                     </form>
-                    <div class="instant-search__input-container">
-                        <input
-                            class="instant-search__input"
-                            id="brandSearchKeyword"
-                            spellcheck="false"
-                            placeholder="브랜드명을 검색해보세요."
-                            style="font-size:14px;width:90%"
-                            onkeypress="if( event.keyCode == 13 ){ goSearchResult();}">
-                        <a href="#"><img src="/images/grayx_icon_login.png" alt="취소"></a>
-                    </div>
-                    <div class="search_box_ico">
-                        <a href="#"><img src="/images/searchbox_icon_category.png" alt=""></a>
-                    </div>
-                    
                 </div>
                 <div class="categ">
                     <ul>

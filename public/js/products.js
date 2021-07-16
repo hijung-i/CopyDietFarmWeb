@@ -167,7 +167,6 @@ function productSearch(keyword) {
     })
 }
 
-
 function getPickProduct() {
     ajaxCallWithLogin(API_SERVER + '/order/getZzimInfoByUserID', {}, 'POST',
     function(data) {
@@ -220,7 +219,7 @@ function getProductListByBrandCode() {
         } else {
             $('.sub_items ul').hide();
             $('.pick_list_null').show();
-            $('.pick_list_null').html('<p>해당 브랜드에 상품이 존재하지 않습니다.</p>');
+            $('.pick_list_null').html('<p>해당브랜드에 상품이 없습니다.</p>');
         }
     
   
