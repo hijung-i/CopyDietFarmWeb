@@ -116,9 +116,6 @@ router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) 
 })
 
 router.post('/callback/apple', (req: Request, res: Response, next: NextFunction) => {
-    console.log('POST /callback/apple req.query >> ', req.query)
-
-    STREAM.writeDebug(`POST /user/callback/apple req.query => ${JSON.stringify(req.query)}`)
     STREAM.writeDebug(`POST /user/callback/apple req.body => ${JSON.stringify(req.body)}`)
 
     const tokens = req.body.id_token.split('.')
