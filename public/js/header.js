@@ -494,3 +494,15 @@ function getEventStands() {
          }
      })
  })
+
+$(function() {
+    $(".searchbox .search_box_icon ").click(function() {
+        var keyword = $('.searchbox #websearchform').val().trim();
+        if(keyword.length > 0) {
+            searchBrand(keyword)
+        } else {
+            alert('키워드를 입력해주세요')
+        }
+    })
+})
+

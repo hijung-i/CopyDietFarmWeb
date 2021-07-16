@@ -84,6 +84,11 @@ a:hover{text-decoration:none;}
   color: #31845B
 }
 
+
+.search_box_icon{display:inline-block;position:relative;right:40px;top:3px}
+.search_box_icon input{background:url('/images/search_ico.png')no-repeat;border:none;width:25px;}
+.search_box_ico{display:inline-block;}
+.search_box_ico input{background:url('/images/searchbox_icon_category.png')no-repeat;border:none;width:45px;height:45px}
 .common_btn_wrap{
   width:100%;
   margin: 20px 0;
@@ -438,7 +443,7 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .sideMenu h2 {padding:15px 10px;text-align:left;position:relative;
 height:50px;overflow:hidden}
  .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
-  #content .main_sub img{width: 100%;background-repeat: no-repeat;background-size: cover;background-position: center}
+  #content .main_sub img{width: 100%;height:360px!important;background-repeat: no-repeat;background-size: cover;background-position: center}
   #content .sort select{border:0;margin-left:15px;margin-bottom:10px;margin-top:5px}
 
 /*회원가입*/
@@ -756,6 +761,7 @@ font-weight:bold;border-radius:5px; font-family: 'Nanum Gothic', sans-serif; mar
 .alarmBox *:not(ul){padding-right:20px;}
 .alarmBox h3{font-size:14px;margin-bottom:10px;margin-top:19px}
 .alarm{border-bottom:2px solid #E6E6E6}
+.alarm:last-child{border:none}
 .alarmS{padding-left:15px;padding-bottom:20px;width:86%}
 .alarmBox{width:100%; margin: 0 auto;
    display: -webkit-box;
@@ -968,6 +974,7 @@ border-spacing: 0 20px;font-size:14px}
     #web_only{display:none}
     .m_best h2{margin-top:24px;margin-bottom:15px;margin-left:15px;font-size:14px}
     #content{width:100%;margin-right:15px}
+    .cs_content{padding-bottom:44px}
     .m_bestn_w{display:grid;grid-template-columns: repeat(2, 2fr);
       ;align-items: center;
       justify-self: center;width:50%}
@@ -1524,7 +1531,7 @@ div.box.int_id{width:350px}
 .w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
 .w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
 .clicked_menu{background-color:#F99319;color:#fff}
-.csBox_web{float:right;margin-left:30px;margin-bottom:200px;margin-top:40px}
+.csBox_web{float:right;margin-left:30px;margin-top:40px}
 .csBox_web ul li{float:left}
 .csBox_web h3{font-size:18px;font-weight:bold;color:#000}
 .csBox_web .innerbox{border:1px solid #BBBBBB;width:431px;height:214px;margin-right:20px;margin-top:20px}
@@ -2908,9 +2915,8 @@ padding: 12px 0;}
   font-size: 0.8em;cursor: pointer}
 .instant-search__title {font-size: 1.1em;font-weight: bold}
 .instant-search__paragraph {line-height: 1.5;margin: 8px 0}
-#searchUsers {  display: -webkit-box;
-  display: -ms-flexbox; 
-  display: flex;width:94%;margin:0 auto }
+#searchUsers {display:flex;
+width:94%;margin:0 auto }
 
 
 /*인기 검색어*/

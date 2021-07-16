@@ -14,7 +14,8 @@ var app = new Vue({
         RESOURCE_SERVER,
         reviewModal: false,
         inquiryModal: false,
-        deliveryModal: false
+        inquiryList: [],
+        inquiry: { purchaseProductNo: 0 }
     },
     methods: {
         convertOrderStatus,
