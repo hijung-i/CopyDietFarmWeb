@@ -58,6 +58,7 @@ $(function() {
     getUsablePointAmount();
     getUsableCouponList();
 })
+
 function getUsableCouponList() {
     ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST',
     function(data) {
