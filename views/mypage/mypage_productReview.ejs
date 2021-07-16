@@ -98,7 +98,8 @@
                         <li class="active on" data-tab="tab1">
                             <span>작성 가능한 리뷰 ({{ writableReviewList.length}})</span></li>
                         <li data-tab="tab2" class="" id="possible">
-                            <span>작성한 리뷰 ({{ reviewList.length}})</span></li>
+                            <span>작성한 리뷰 ({{ reviewList.length}})</span>
+                        </li>
                         <span></span>
                     </ul>
                 </div>
@@ -113,16 +114,18 @@
                             <div class="review_item_box">
                                 <div class="box_top">
                                     <a v-bind:href="'/product/' + writable.product.productCode">
-                                <img v-bind:src="RESOURCE_SERVER + writable.product.url" style="width:50px;height:62px">
-                                </a>
-                                <ul>
-                                    <li>
-                                        <span>[{{ writable.product.companyName }}]</span></li>
-                                    <li>{{writable.product.productName }}</li>
-                                    <li>
-                                        <span>{{ getOptionName(writable.product.options) }}</span></li>
-                                </ul>
-                            </div>
+                                        <img v-bind:src="RESOURCE_SERVER + writable.product.url" style="width:50px;height:62px">
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <span>[{{ writable.product.companyName }}]</span>
+                                        </li>
+                                        <li>{{writable.product.productName }}</li>
+                                        <li>
+                                            <span>{{ getOptionName(writable.product.options) }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <button type="button" id="modal_btn" onclick="openReviewModal()">리뷰쓰기</button>
                             </div>
                         </template>
@@ -134,57 +137,72 @@
                         <img src="/images/note_icon_review.png">
                         <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
                     </div>
-                    <div class="reviews" v-for="(review, index) in reviewList">
-                        <div class="review_box_wrap">
-                            <div class="review_item_box02">
-                             <div class="box_wrap">
-                                 <a v-bind:href="'/product/' + review.productCode">
-                                    <img v-bind:src="RESOURCE_SERVER + review.product.url" style="width:50px;height:62px">
-                                </a>
-                                    <ul>
-                                        <li>
-                                            <span>[{{ review.product.companyName }}]</span></li>
-                                        <li>{{review.product.productName}} </li>
-                                        <li>
-                                            <span>{{ getOptionName(review.product.options) }}</span></li>
-                                    </ul>
+                    
+                    <div class="product_review01" v-for="(review, index) in reviewList">
+                        <div class="review_info01">
+                            <ul>
+                                <template v-if="reviewList.updateYn == 'Y'">    
+                                    <li class="myInquiry">
+                                        <span>{{ formatDate(review.userName) }}</span>
+                                    </li>
+                                    <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
+                                </template>
+                                <template v-else>    
+                                    <li class="">{{ review.userId }}</li>
+                                    <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
+                                </template>
+                                <li>{{ formatDate(review.createDate) }}</li>
+                            </ul>
+                            <ul v-if="reviewList.updateYn == 'Y'">
+                                <li>
+                                    <span>수정</span>
+                                </li>
+                                <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
+                                <li>
+                                    <span @click="deleteReview(index)">삭제</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="review_info02">
+                            <p class="option">옵션 : {{ review.product.options[0].optionDesc}} <template v-if="review.product.options.length > 1">외 {{review.product.options.length - 1}} 건</template></p>
+                            <div id="star_grade" class="star_grade">
+                                <div class="starRev">
+                                    <template v-for="count in (review.gpa * 2)">
+                                        <span class="starR1 on" v-if="count % 2 == 1">별1_왼쪽</span>
+                                        <span class="starR2 on" v-if="count % 2 == 0">별1_오른쪽</span>
+                                        
+                                    </template>
+                                    <template v-for="count in (10 - (review.gpa * 2))">
+                                        <template v-if="(10 - (review.gpa * 2)) % 2 == 1">
+                                            <span class="starR1" v-if="count % 2 == 0">별1_왼쪽</span>
+                                            <span class="starR2" v-if="count % 2 == 1">별1_오른쪽</span>
+                                        </template>
+                                        <template v-if="(10 - (review.gpa * 2)) % 2 == 0">
+                                            <span class="starR2" v-if="count % 2 == 0">별1_오른쪽</span>
+                                            <span class="starR1" v-if="count % 2 == 1">별1_왼쪽</span>
+                                        </template>
+                                            
+                                    </template>
                                 </div>
-                                <div class="edit_del_icon">
-                                    <p class="editBtn_click start3"><img src="/images/one_icon_review.png" alt="수정,삭제 아이콘">
-                                    </p>
-                                    <div class="review_edit_del_btn_ctn fade3">
-                                        <button class="review_editBtn">수정하기</button><br>
-                                        <button class="review_delBtn">삭제하기</button>
+                                <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
+                                <div class="review-img-wrapper" v-if="review.contentType == 'I'">
+                                    <div class="review-img" v-bind:style="{ width: ((review.files.length * 110) - 10) }">
+                                        <img v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="review_complete">
-                                <p>{{ formatDate(review.createDate) }}</p>
-                                <div id="star_grade" class="star_grade">
-                                    <div class="starRev">
-                                        <template v-for="count in (review.gpa * 2)">
-                                            <span class="starR1 on" v-if="count % 2 == 1">별1_왼쪽</span>
-                                            <span class="starR2 on" v-if="count % 2 == 0">별1_오른쪽</span>
-                                        </template>
-                                        <template v-for="count in (10 - (review.gpa * 2))">
-                                            <template v-if="(10 - (review.gpa * 2)) % 2 == 1">
-                                                <span class="starR1" v-if="count % 2 == 0">별1_왼쪽</span>
-                                                <span class="starR2" v-if="count % 2 == 1">별1_오른쪽</span>
-                                            </template>
-                                            <template v-if="(10 - (review.gpa * 2)) % 2 == 0">
-                                                <span class="starR2" v-if="count % 2 == 0">별1_오른쪽</span>
-                                                <span class="starR1" v-if="count % 2 == 1">별1_왼쪽</span>
-                                            </template>
-                                                
-                                        </template>
-                                    </div>
-                                    <p style="font-size:14px;margin-top:10px;margin-bottom:10px" v-html="review.content"></p>
+
+                                <span id="toc-toggle" onclick="openCloseToc()">더보기<img
+                                    src="/images/downarrow_ico_main.png"
+                                    style="width:11px;height:11px;position:relative;top:2px;left:4px"></span>
+                                <div id="toc-content" style="display:none">
+                                    <li>글 이어서 어쩌구</li>
+                                    <li><img src="/images/dietfarmbread.jpg" style="width:605px"></li>
                                 </div>
+                                <div class="line_review"></div>
                             </div>
                         </div>
-                        <!--//review_complete-->
                     </div>
-
                 </div>
             </div>
             </div>
