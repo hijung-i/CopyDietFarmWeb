@@ -1,7 +1,7 @@
 var deliveryInfoTemplate = '';
 
 deliveryInfoTemplate+='<div class="dInfo_modal" id="dInfo_modal">'
-deliveryInfoTemplate+='<div class="modal-content">'
+deliveryInfoTemplate+='<div class="modal-content" V-for="(product, pIdx) in order.products">'
 deliveryInfoTemplate+='<span class="close" @click="closeModal()">&times;</span>'
 deliveryInfoTemplate+='<section class="detail_title">'
 deliveryInfoTemplate+='<h2 class="title">{{ product.productName }}</h2>'
@@ -37,20 +37,20 @@ deliveryInfoTemplate+='    <div class="addr">'
 deliveryInfoTemplate+='        <div class="addr01">'
 deliveryInfoTemplate+='            <ul>'
 deliveryInfoTemplate+='                <li class="p">보내는분</li>'
-deliveryInfoTemplate+='                <li class="a">용산</li>'
+deliveryInfoTemplate+='                <li class="a">{{ courierName }}</li>'
 deliveryInfoTemplate+='            </ul>'
 deliveryInfoTemplate+='        </div>'
 deliveryInfoTemplate+='        <div class="addr02">'
 deliveryInfoTemplate+='            <ul>'
 deliveryInfoTemplate+='                <li class="p">받는분</li>'
-deliveryInfoTemplate+='                <li class="a">역삼(대)</li>'
+deliveryInfoTemplate+='                <li class="a">{{ UserName }}</li>'
 deliveryInfoTemplate+='            </ul>'
 deliveryInfoTemplate+='        </div>'
 deliveryInfoTemplate+='    </div>'
 deliveryInfoTemplate+='    <div class="d_num">'
 deliveryInfoTemplate+='        <ul>'
 deliveryInfoTemplate+='            <li class="d">운송장번호</li>'
-deliveryInfoTemplate+='            <li class="num">롯데택배 236308075290</li>'
+deliveryInfoTemplate+='            <li class="num">{{ courierNo }}</li>'
 deliveryInfoTemplate+='        </ul>'
 deliveryInfoTemplate+='    </div>'
 deliveryInfoTemplate+='   <div class="d_status">'
@@ -67,7 +67,7 @@ var deliveryInfoModal = {
             type: Object,
             default: function() 
             { return {} }
-        }
+        },
     },
     data: function() {
         return {

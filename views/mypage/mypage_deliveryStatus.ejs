@@ -46,6 +46,17 @@
 </head>
 
 <body>
+    <form action="http://trace-apidev.sweettracker.net:8102/add_invoice"method="post">
+        <input type="hidden" name="num" value="1234567890">
+        <input type="hidden" name="code" value="04">
+        <input type="hidden" name="fid" value="100000123">
+        <input type="hidden" name="callback_url" value="http://api.sweettracker.net/getdata">
+        <input type="hidden" name="callback_type" value=json>
+        <input type="hidden" name="tier" value="sweet">
+        <input type="hidden" name="key" value="5QSKHhEHYIZ9ePFQ8P2SRw">
+        <input type="hidden" name="type" value="json">
+        <button>Send</button>
+        </form>
     <div class="web_orderlist">
         <%-include(webroot + 'views/general/header') %>
     </div>

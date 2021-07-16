@@ -63,6 +63,19 @@ router.get('/products/:companyCode/brand', (req: Request, res: Response, next: N
         currentPage: 'brand'
     })
 })
+
+router.get('', (req: Request, res: Response, next: NextFunction) => {
+    const courierName = req.params.courierName
+    const courierNo = req.params.courierNo
+
+    render(req, res, 'product', {
+        courierName: courierName,
+        courierNo: courierNo,
+        listType: 'Delivery',
+        currentPage: 'delivery'
+    })
+})
+
 router.get('/products/:salesStandCode/event', (req: Request, res: Response, next: NextFunction) => {
     const standCode = req.params.salesStandCode
 

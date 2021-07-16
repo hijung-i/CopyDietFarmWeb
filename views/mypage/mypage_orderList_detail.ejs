@@ -143,7 +143,7 @@
                                                     <ul class="order00">
                                                         <li class="ship_state">{{ convertOrderStatus(product.orderStatus) }}</li>
                                                         <li class="product">{{ product.productName }}</li>
-                                                        <li class="price">{{ product.optionTotalPrice }}원</li>
+                                                        <li class="price">{{  numberFormat(option.optionTotalPrice) }}원</li>
                                                         <li class="quantitiy">수량 : {{ option.opitonCount}}개</li>
                                                         <li class="option">옵션 : {{ option.optionDesc }}</li>
                                                     </ul>
