@@ -60,7 +60,6 @@ $(function() {
     })
     $('#btnRegister').click(function() {
         addDelivery();
-        
     })
     getDeliveryInfoList();
 

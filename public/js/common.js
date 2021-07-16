@@ -1,12 +1,12 @@
 // 테스트
 // var API_SERVER = "http://112.217.209.162:9090";
 // var CALLBACK_SERVER = "http://112.217.209.162";
-// var API_SERVER = "http://192.168.0.3:9090";
-// var CALLBACK_SERVER = "http://192.168.0.3";
+var API_SERVER = "http://192.168.0.3:9090";
+var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-var API_SERVER = "https://dietfarm119.co.kr";
-var CALLBACK_SERVER = "https://dietfarm.co.kr";
+// var API_SERVER = "https://dietfarm119.co.kr";
+// var CALLBACK_SERVER = "https://dietfarm.co.kr";
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
@@ -80,6 +80,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          var result = data.result;
          if(option.isRequired == true && result.isLoggedIn != true) {
             // TODO: Open alert modal
+            console.log(url);
             alert('로그인이 필요한 동작입니다.');
             return false;
          }

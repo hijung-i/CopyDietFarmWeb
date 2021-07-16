@@ -325,41 +325,39 @@
                                                     </td>
                                                 </tr>
                                             </table>
-
-                                            <div id="selectedOptionDiv">
-                                                <div v-for="(item, index) in selectedOptions">
-                                                    <div class="product_count">
+                                            <div class="selected-option-slide">
+                                                <div id="selectedOptionDiv" v-bind:style="{ width: selectedOptionWidth }">
+                                                    <div v-for="(item, index) in selectedOptions" class="product_count">
                                                         <div class="product_title">
-                                                            <h4>{{ item.optionDesc }}
-                                                                <h4>
-                                                                    <ul v-if="product.options.length > 1">
-                                                                        <li><img
-                                                                            src="/images/x_icon_login.png"
-                                                                            v-on:click="deleteFromArray(index)"
-                                                                            style="width:8px;cursor:pointer;"></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="number_price">
-                                                                    <div class="number-input">
-                                                                        <button class="minus" v-on:click="changeOptionCount(false, index)"></button>
-                                                                        <input
-                                                                            class="quantity"
-                                                                            min="1"
-                                                                            name="quantity"
-                                                                            v-model="item.optionCount"
-                                                                            value="1"
-                                                                            type="number"
-                                                                            readonly>
-                                                                        <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
-                                                                    </div>
-                                                                    <p>
-                                                                        {{ numberFormat(item.optionDiscountPrice * item.optionCount) }}
-                                                                        원</p>
-
-                                                                </div>
+                                                            <h4>{{ item.optionDesc }}</h4>
+                                                            <ul v-if="product.options.length > 1">
+                                                                <li><img
+                                                                    src="/images/x_icon_login.png"
+                                                                    v-on:click="deleteFromArray(index)"
+                                                                    style="width:8px;cursor:pointer;"></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="number_price">
+                                                            <div class="number-input">
+                                                                <button class="minus" v-on:click="changeOptionCount(false, index)"></button>
+                                                                <input
+                                                                    class="quantity"
+                                                                    min="1"
+                                                                    name="quantity"
+                                                                    v-model="item.optionCount"
+                                                                    value="1"
+                                                                    type="number"
+                                                                    readonly>
+                                                                <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
                                                             </div>
+                                                            <p>
+                                                                {{ numberFormat(item.optionDiscountPrice * item.optionCount) }}
+                                                                원
+                                                            </p>
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
                                                     <div class="line_w"></div>
                                                     <div class="total_price">
                                                         <p>
@@ -367,7 +365,7 @@
                                                             <span class="bold">{{ numberFormat(optionTotalPrice) }}원</span>
                                                         </p>
                                                         <div class="accumulate-points">
-                                                            <p>예상 포인트 <span class="green">{{ }}</span>원 (실 결제금액의 3%)</p>
+                                                            <p>예상 포인트 <span class="green">{{ accumulatePoint }}</span>원 ({{pointReason}})</p>
                                                             <p>배송 금액 {{  }}원</p>
                                                         </div>
                                                     </div>
@@ -417,46 +415,43 @@
                             </table>
 
                             <div id="selectedOptionDiv">
-                                <div v-for="(item, index) in selectedOptions">
-                                    <div class="product_count" style="margin-right:12px">
-                                        <div class="product_title">
-                                            <h4>{{ item.optionDesc }}
-                                                <h4>
-                                                    <ul>
-                                                        <li><img
-                                                            src="/images/x_icon_login.png"
-                                                            v-on:click="deleteFromArray(index)"
-                                                            style="width:8px"></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="number_price">
-                                                    <div class="number-input">
-                                                        <button class="minus" v-on:click="changeOptionCount(false, index)"></button>
-                                                        <input
-                                                            class="quantity"
-                                                            min="1"
-                                                            name="quantity"
-                                                            v-model="item.optionCount"
-                                                            value="1"
-                                                            type="number"
-                                                            readonly>
-                                                        <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
-                                                    </div>
-                                                    <p>
-                                                        {{ numberFormat(item.optionDiscountPrice * item.optionCount) }}
-                                                        원</p>
-
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="product_count"  v-for="(item, index) in selectedOptions" style="margin-right:12px">
+                                    <div class="product_title">
+                                        <h4>{{ item.optionDesc }}</h4>
+                                        <ul>
+                                            <li>
+                                                <img
+                                                src="/images/x_icon_login.png"
+                                                v-on:click="deleteFromArray(index)"
+                                                style="width:8px">
+                                            </li>
+                                        </ul>
                                     </div>
+                                    <div class="number_price">
+                                        <div class="number-input">
+                                            <button class="minus" v-on:click="changeOptionCount(false, index)"></button>
+                                            <input
+                                                class="quantity"
+                                                min="1"
+                                                name="quantity"
+                                                v-model="item.optionCount"
+                                                value="1"
+                                                type="number"
+                                                readonly>
+                                            <button class="plus" v-on:click="changeOptionCount(true, index)"></button>
+                                        </div>
+                                        <p>
+                                        {{ numberFormat(item.optionDiscountPrice * item.optionCount) }}
+                                        원</p>
+
+                                    </div>
+                                </div>
+                            </div>
                                     <div class="v_opt_btn_w">
                                         <div class="line_w"></div>
                                         <div class="total_price">
-                                            <button type="button" class="h_btn" v-on:click="zzimProduct()">
-                                                <img v-if="product.zzimYn == 'Y'" class="like like-yes">
-                                                <img v-if="product.zzimYn == 'N'" class="like like-no">
-                                            </button>
+                                            <button type="button" v-bind:class="{ 'h_btn': true, 'like': true, 'like-yes': product.zzimYn == 'Y', 'like-no': product.zzimYn == 'N' } " v-on:click="zzimProduct()"></button>
+                                                            
                                             <div>
                                                 <p class="left">총 금액</p> <span class="price">{{ numberFormat(optionTotalPrice) }}<span>원</span></span>
                                             </div>

@@ -105,6 +105,15 @@ var app = new Vue({
                             }
 
                             product.accumulatePoint = Math.round((this.orderDTO.paidRealAmount * (product.optionTotalPrice / this.orderDTO.paymentTotalAmount)) * 0.03)
+                            if(product.productCode == "P00879" || product.productCode == "P00982") {
+                                var totalCount = 0
+                                Array.from(product.options).forEach(function(option) {
+                                    totalCount += option.optionCount;
+                                })
+                
+                                product.accumulatePoint = (totalCount * 10000)
+                            }
+
                             this.orderDTO.accumulatePoint += product.accumulatePoint;    
                         }
 
@@ -464,25 +473,6 @@ function getDefaultDeliveryInfo() {
         }
         app.orderDTO.delivery = delivery
         console.log("defaultDeliveryInfo success", data);
-    }, function(err) {
-        console.log("error", err);
-        var responseText = err.responseText;
-        if(responseText == 'NOT_FOUND') {
-            app.orderDTO.delivery = undefined
-        }
-    }, {
-        isRequired: true,
-        userId: true
-    })
-}
-
-function getDeliveryInfoList() {
-    var params = {};
-
-    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', params, 'POST',
-    function(data) {
-        app.deliveryList = data.result;
-        console.log("getDeliveryInfoList success", data);
     }, function(err) {
         console.log("error", err);
         var responseText = err.responseText;
