@@ -361,6 +361,11 @@ function paymentAction() {
             //결제가 정상적으로 완료되면 수행됩니다
             //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
             console.log(data);
+
+            requestOrderDTO.cashReceiptYn = 'N'
+            if(data.cash_result != undefined && data.cash_result != '') {
+                requestOrderDTO.cashReceiptYn = 'Y'
+            }
             
             requestOrderDTO.paymentName = data.payment_name;
             requestOrderDTO.paymentDate = data.purchased_at;
