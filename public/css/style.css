@@ -610,7 +610,7 @@ background-size:19px 19px;}
   display: flex; -ms-overflow-style:none;}
    .nav_wrap {position: relative;height:auto; margin: 0 auto; overflow:scroll; padding: 0px 15px;}
    #nav::-webkit-scrollbar{ display:none; }
-      .nav_wrap::-webkit-scrollbar {display:none;}
+  .nav_wrap::-webkit-scrollbar {display:none;}
    #nav a{ font-family: 'Nanum Gothic', sans-serif; height:19px;font-size:16px;font-weight:bold;color:#878787;white-space:nowrap;margin-right:40px; display: flex}
    #nav a:last-child{
      margin-right: 0px;
@@ -3549,3 +3549,6 @@ padding: 12px 0;}
 .sideMenu_ctt::-webkit-scrollbar {
   display: none;
 }
+
+#tab1 > ul.mDepth01 {-ms-overflow-stle: none;}
+#tab1 > ul.mDepth01::-webkit-scrollbar{display: none;}
