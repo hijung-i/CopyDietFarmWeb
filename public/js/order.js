@@ -104,14 +104,16 @@ var app = new Vue({
                                 product.optionTotalPrice += option.optionTotalPrice;
                             }
 
+                            var paidRealRate = ((this.orderDTO.paidRealAmount - this.orderDTO.totalDeliveryCost) / this.orderDTO.paymentTotalAmount)
                             product.accumulatePoint = Math.round((this.orderDTO.paidRealAmount * (product.optionTotalPrice / this.orderDTO.paymentTotalAmount)) * 0.03)
+
                             if(product.productCode == "P00879" || product.productCode == "P00982") {
                                 var totalCount = 0
                                 Array.from(product.options).forEach(function(option) {
                                     totalCount += option.optionCount;
                                 })
-                
-                                product.accumulatePoint = (totalCount * 10000)
+                                
+                                product.accumulatePoint = Math.round((10000 * totalCount) * paidRealRate) 
                             }
 
                             this.orderDTO.accumulatePoint += product.accumulatePoint;    
@@ -487,7 +489,8 @@ function getDefaultDeliveryInfo() {
 
 function openZipSearch() {
     $('#unAddr').val('');
-    if(postCode) return; 
+    if(postCode) return;
+
     postCode = true;
     new daum.Postcode({
         oncomplete: function(data) {
