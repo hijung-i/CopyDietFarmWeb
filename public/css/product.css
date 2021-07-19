@@ -1,5 +1,5 @@
-/* 수량 선택 버튼 */
 
+/* 수량 선택 버튼 */
 input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;appearance: textfield;  }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -61,170 +61,183 @@ input[type=number]::-webkit-outer-spin-button {
 .share_body button{border:none;background-color:transparent;font-size:12px}
 /*products_mobile*/
 
-
+.product_count .number-input,
+.product_count .number-input *{
+    margin-left: 0px;
+}
 @media screen and (max-width:1079px){
-.d_save{position: relative;
-font-size: 11px;
-left: 64px;
-top: 24px;
-background-color: transparent;
-border: 1px solid #424242;
-border-radius: 5px;
-margin-bottom: 20px;}
-.line{position:relative;margin-top:10px}
-.view_top_img img{width:100%!important;height:100%!important}
-.view_navi_box{display:none}
-.v_top_txt_box{margin-top:13px}
-.qna, .reviews{width: 100% !important;}
+    .d_save{position: relative;
+        font-size: 11px;
+        left: 64px;
+        top: 24px;
+        background-color: transparent;
+        border: 1px solid #424242;
+        border-radius: 5px;
+        margin-bottom: 20px;}
+    .line{position:relative;margin-top:10px}
+    .view_top_img img{width:100%!important;height:100%!important}
+    .view_navi_box{display:none}
+    .v_top_txt_box{margin-top:13px}
+    .qna, .reviews{width: 100% !important;}
 
-/* 모바일 반응형 */
-.Mtab_cont {display: none}
-.Mtab_cont.active {display: block;}
-.other_cont {display: none;}
-.other_cont.active {display: block;}
+    /* 모바일 반응형 */
+    .Mtab_cont {display: none}
+    .Mtab_cont.active {display: block;}
+    .other_cont {display: none;}
+    .other_cont.active {display: block;}
 
 
-/* 토글 버튼 디자인 */
+    /* 토글 버튼 디자인 */
 
-.myReview input {position: absolute; left: -9999px;}
-.myReview  label{
-    position: relative;
-    display: block; 
-    width: 33px; height: 20px;
-    background: #fff;
-    border: 1px solid #bbb;
-    border-radius: 13px;
-    transition: ease-in .1s;
-}
-.myReview label:after {
-    content: ""; 
-    position: absolute; 
-    left: 2px; top: 50%;
-    width: 16px; height: 16px;
-    border-radius: 100%;
-    background: #bbb;
-    transform: translateY(-50%);
-    transition: all .4s;
-}
+    .myReview input {position: absolute; left: -9999px;}
+    .myReview  label{
+        position: relative;
+        display: block; 
+        width: 33px; height: 20px;
+        background: #fff;
+        border: 1px solid #bbb;
+        border-radius: 13px;
+        transition: ease-in .1s;
+    }
+    .myReview label:after {
+        content: ""; 
+        position: absolute; 
+        left: 2px; top: 50%;
+        width: 16px; height: 16px;
+        border-radius: 100%;
+        background: #bbb;
+        transform: translateY(-50%);
+        transition: all .4s;
+    }
 
-.myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
-.myReview input:checked + label:after { left: calc(100% - 18px); right: 2px; background: #F99319;}
-.myReview label > span {display: none;}
+    .myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
+    .myReview input:checked + label:after { left: calc(100% - 18px); right: 2px; background: #F99319;}
+    .myReview label > span {display: none;}
 
-.myReview input {position: absolute; left: -9999px;}
-.myReview label {
-    position: relative;
-    display: block; 
-    width: 33px; height: 20px;
-    background: #fff;
-    border: 1px solid #bbb;
-    border-radius: 13px;
-    transition: ease-in .1s;
-}
-.myReview label label:after {
-    content: ""; 
-    position: absolute; 
-    left: 2px; top: 50%;
-    width: 16px; height: 16px;
-    border-radius: 100%;
-    background: #bbb;
-    transform: translateY(-50%);
-    transition: all .4s;
-}
-.myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
-.myReview input:checked + label:after {
-    left: calc(100% - 18px); right: 2px; background: #F99319;
-}
-.myReview label > span {display: none;}
-.tabMenu{margin-bottom:-4px}
+    .myReview input {position: absolute; left: -9999px;}
+    .myReview label {
+        position: relative;
+        display: block; 
+        width: 33px; height: 20px;
+        background: #fff;
+        border: 1px solid #bbb;
+        border-radius: 13px;
+        transition: ease-in .1s;
+    }
+    .myReview label label:after {
+        content: ""; 
+        position: absolute; 
+        left: 2px; top: 50%;
+        width: 16px; height: 16px;
+        border-radius: 100%;
+        background: #bbb;
+        transform: translateY(-50%);
+        transition: all .4s;
+    }
+    .myReview input:checked + label {background: #fff; border: 1px solid #F99319; }
+    .myReview input:checked + label:after {
+        left: calc(100% - 18px); right: 2px; background: #F99319;
+    }
+    .myReview label > span {display: none;}
+    .tabMenu{margin-bottom:-4px}
 
-#content .tabMenu{margin-top:22px;width:100%;text-align:center}
-#content .tabMenu ul{border-bottom:2px solid #f1f1f1}
-#content .tabMenu li{float:left;width:25%;height:35px;font-size:14px;text-align:center;padding:10px}
-#content .tabMenu li{color:#878787;}
-#content .tabMenu li.active > a {color: #F99319; font-weight: 700;}
+    #content .tabMenu{margin-top:22px;width:100%;text-align:center}
+    #content .tabMenu ul{border-bottom:2px solid #f1f1f1}
+    #content .tabMenu li{float:left;width:25%;height:35px;font-size:14px;text-align:center;padding:10px}
+    #content .tabMenu li{color:#878787;}
+    #content .tabMenu li.active > a {color: #F99319; font-weight: 700;}
 
-/* #content .tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:11px;} */
-.v_top_name{font-size:16px;font-weight:bold;margin-bottom:7px;padding-left:15px}
-.v_top_txt{font-size:12px;color:#6B6B6B;line-height:normal;padding-left:15px;margin-bottom:5px}
-.price_mobile .p1{font-size:16px;font-weight:bold;margin-top:12px;margin-bottom:6px;padding-left:15px}
-.price_mobile .p2{color:#BBBBBB;font-size:14px;text-decoration:line-through;margin-bottom:7px;padding-left:15px}
+    /* #content .tabMenu li:hover{color:#F99319;border-bottom:3px solid #F99319; padding-bottom:11px;} */
+    .v_top_name{
+        font-size:16px;
+        font-weight:bold;
+        margin-bottom:7px;
+        padding-left:15px;
+        padding-right: 45px;
+    }
 
-.price_mobile .p3{color:#F32525;font-size:16px;font-weight:bold;padding-left:15px}
-.price_mobile{border-bottom:8px solid #F1F1F1;padding-bottom:19px}
-.v_n_top_info table tr{width:100%;display:flex;justify-content:space-between}
-#content .v_n_top_info{width:100%;border-bottom:8px solid #f1f1f1;}
-#content .v_n_top_info{margin-top:20px;padding-left:15px;padding-right:15px}
-#content .v_n_top_info tr td span{color:#878787;}
-#content .v_n_top_info .ex{position:absolute;left:120px}
-#content .v_n_top_info tr td{font-size:13.4px;padding-bottom:20px}
-.product_option select{width:100%;height:36px;border-radius:5px;padding:5px}
-.product_count{border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;}
-.product_count h4{font-size:14px;margin-left:15px;}
-.product_title{display:flex;justify-content:space-between;padding-right:15px;padding-top:10px}
-.product_count .result{padding:2px 21px 2px 20px;border:1px solid #BBBBBB;font-size:14px;font-weight:normal}
-.number_price p{float:right;position:relative;left:-15px;top:20px;font-size:14px}
-.t_price ul{display:flex;justify-content:space-between;margin-left:15px;margin-right:15px;margin-top:20px;margin-bottom:4px}
-.t_price li{font-size:14px;}
-.t_price p{float:right;margin-right:15px;margin-top:20px;margin-bottom:10px}
-.total{font-weight:normal}
-.common_btn_wrap{width:100%;}
-.option_btns button{height:45px;
-font-size:16px;border-radius:5px}
-.h_btn{width:10%;background-color:transparent;border:1px solid #F99319;position:relative}
-.c_btn{width:44%}
-.p_btn{width:44%}
-.pp_wrap{margin-bottom:-50px;}
-.purchased_products h3{margin-top:20px;margin-bottom:10px;font-size:14px;font-weight:bold}
-.purchased_products .title{font-size:12px;margin-top:15px;width:120px;white-space: nowrap;
-overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
-.purchased_products .price ul{margin-top:7px;margin-left:-4px}
-.purchased_products .price ul li{float:left;margin-left:4px}
-.purchased_products .cost{color:#BBBBBB;text-decoration:line-through}
-.purchased_products .ratio{color:#F32525}
-.infoDetails{
-    width:100%;
-    clear:both;
-    border-top:2px solid #E6E6E6;
-    padding-top:48px;
-    padding-bottom:20px;
-    padding-left:20px;
-    padding-right:20px;
-}
-.infoDetails h3{padding-bottom:10px;font-size:14px;font-weight:bold}
-.infoDetails ul{margin-bottom:20px}
-.infoDetails ul li{font-size:12px;line-height:20px}
-.infoDetails .title{font-weight:bold;}
-.page_wrap{display:none}
- #wrap{display:none}
-.modal-con{display:none}
-/* contents Mtab_cont active 요소에 처음엔 display block, 다른 메뉴 누르면 display none 다시 누르면 display block이 반복돼야함 */
-.inquiry{display:none}
-.modal-open{display:none}
-.option{font-size:12px;color:#878787;margin-left:15px}
+    .v_top_txt{font-size:12px;color:#6B6B6B;line-height:normal;padding-left:15px;margin-bottom:5px}
+    .price_mobile .p1{font-size:16px;font-weight:bold;margin-top:12px;margin-bottom:6px;padding-left:15px}
+    .price_mobile .p2{color:#BBBBBB;font-size:14px;text-decoration:line-through;margin-bottom:7px;padding-left:15px}
 
-.review-img-wrapper { 
-    padding: 0px 15px; 
-    overflow-x: scroll;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
-.review-img-wrapper::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
-}
-.review-img {
-    display: flex;
-    flex-flow: row;
-}
+    .price_mobile .p3{color:#F32525;font-size:16px;font-weight:bold;padding-left:15px}
+    .price_mobile{border-bottom:8px solid #F1F1F1;padding-bottom:19px}
+    .v_n_top_info table tr{width:100%;display:flex;justify-content:space-between}
+    #content .v_n_top_info{width:100%;border-bottom:8px solid #f1f1f1;}
+    #content .v_n_top_info{margin-top:20px;padding-left:15px;padding-right:15px}
+    #content .v_n_top_info tr td span{color:#878787;}
+    #content .v_n_top_info .ex{position:absolute;left:120px}
+    #content .v_n_top_info tr td{font-size:13.4px;padding-bottom:20px}
+    .product_option select{width:100%;height:36px;border-radius:5px;padding:5px}
+    .product_count{border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;}
+    .product_count h4{font-size:14px;}
+    .product_title{display:flex;justify-content:space-between;padding-top:10px}
+    .product_count .result{padding:2px 21px 2px 20px;border:1px solid #BBBBBB;font-size:14px;font-weight:normal}
+    .number_price p{float:right;position:relative;top:20px;font-size:14px}
+    .t_price ul{display:flex;justify-content:space-between;margin-left:15px;margin-right:15px;margin-top:20px;margin-bottom:4px}
+    .t_price li{font-size:14px;}
+    .t_price p{float:right;margin-right:15px;margin-top:20px;margin-bottom:10px}
+    .total{font-weight:normal}
+    .common_btn_wrap{width:100%;}
+    .option_btns button{height:45px;
+    font-size:16px;border-radius:5px}
+    .h_btn{width:10%;background-color:transparent;border:1px solid #F99319;position:relative}
+    .c_btn{width:44%}
+    .p_btn{width:44%}
+    .pp_wrap{margin-bottom:-50px;}
+    .purchased_products h3{margin-top:20px;margin-bottom:10px;font-size:14px;font-weight:bold}
+    .purchased_products .title{font-size:12px;margin-top:15px;width:120px;white-space: nowrap;
+    overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
+    .purchased_products .price ul{margin-top:7px;margin-left:-4px}
+    .purchased_products .price ul li{float:left;margin-left:4px}
+    .purchased_products .cost{color:#BBBBBB;text-decoration:line-through}
+    .purchased_products .ratio{color:#F32525}
+    .infoDetails{
+        width:100%;
+        clear:both;
+        border-top:2px solid #E6E6E6;
+        padding-top:48px;
+        padding-bottom:20px;
+        padding-left:20px;
+        padding-right:20px;
+    }
+    .infoDetails h3{padding-bottom:10px;font-size:14px;font-weight:bold}
+    .infoDetails ul{margin-bottom:20px}
+    .infoDetails ul li{font-size:12px;line-height:20px}
+    .infoDetails .title{font-weight:bold;}
+    .page_wrap{display:none}
+    #wrap{display:none}
+    .modal-con{display:none}
+    /* contents Mtab_cont active 요소에 처음엔 display block, 다른 메뉴 누르면 display none 다시 누르면 display block이 반복돼야함 */
+    .inquiry{display:none}
+    .modal-open{display:none}
+    .option{font-size:12px;color:#878787;margin-left:15px}
 
-.review-img img{margin-right: 10px}
-.review-img img:last-child {
-    margin-right: 0px;
-}
-.review_summ{clear:both;font-size:14px;line-height:18px;margin-top:10px;padding-left:10px;padding-right:10px;margin-bottom:10px}
-.review_info02{border-bottom:8px solid #F1F1F1;padding-bottom:20px}
- #toc-toggle{display:none}
-.floating{display:none}
+    .review-img-wrapper { 
+        padding: 0px 15px; 
+        overflow-x: scroll;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    .review-img-wrapper::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+    }
+    .review-img {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .review-img img{margin-right: 10px}
+    .review-img img:last-child {
+        margin-right: 0px;
+    }
+    .review_summ{clear:both;font-size:14px;line-height:18px;margin-top:10px;padding-left:10px;padding-right:10px;margin-bottom:10px}
+    .review_info02{border-bottom:8px solid #F1F1F1;padding-bottom:20px}
+    #toc-toggle{display:none}
+    .floating{display:none}
+    #selectedOptionDiv {
+        width: 100% !important;
+    }
 
 }
 
@@ -330,7 +343,6 @@ border-color:#BBBBBB;
 cursor:pointer;
 width:310px;
 height:40px;
-margin-left:-18px
 }
 .view_navi_box {display:block;position:relative;background:none;padding-top:30px;text-align:left;color:#4d4d4d;font-weight:600;letter-spacing:-0.05em;}
 .view_navi_tit {display:inline;padding-bottom:30px;text-align:left;color:#4d4d4d;font-size:18px}
@@ -364,8 +376,8 @@ box-shadow: none !important}
 .v_top_txt {color:#6B6B6B;font-size:12px;line-height:18px;padding:10px 0 0px} 
 .v_n_top_info .ex{white-space:nowrap;}
 .price_mobile{display:flex;margin-top:14px;border-bottom:1px solid #e1e1e1;padding-bottom:10px}
-.option_wrap h3{margin-left:-15px}
-.option_wrap #products{border:1px solid #424242;margin-left:-15px;width:305px;height:36px}
+
+.option_wrap #products{border:1px solid #424242;width:305px;height:36px}
 .product_detail_content {position:relative;margin-top:54px;font-family:'Noto sans',sans-serif}
 .pdt_detail_tab {position:relative;background:#fff; width:800px;z-index:10; }
 .pdt_detail_tab_inner {display:inline;float:left;height:61px;width:801px;border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5;background-color:#fff;}
@@ -424,29 +436,44 @@ box-shadow: none !important}
 
 
 #detail_purchase_info{margin-top:100px}
+.selected-option-slide {
+    width: 100%;
+    overflow-x: scroll
+}
+.product_count{
+    width: 100%;
+    max-width: 306px;
+    border:1px solid #BBBBBB;
+    margin-top:11px;
+    border-radius:5px;
+}
 
+.selected-option-slide .product_count {
+    margin-right: 10px;
+    display: inline-block;
+}
 
-.product_count{border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;margin-left:-18px;margin-right:-14px}
+.selected-option-slide .product_count:last-child {
+    margin-right: 0px;
+}
+
 .product_count h4{font-size:14px;margin-left:15px;}
 .product_count li img {
   cursor: pointer;
 }
-.floating .option_wrap #products{border:1px solid #424242;margin-left:4px;width:224px;height:36px}
-.floating .option_wrap{margin-bottom:40px;padding-right:15px;margin-top:33px}
-  
+.floating .option_wrap #products{border:1px solid #424242;width:100%;height:36px}
+.floating .option_wrap{margin-bottom:40px;padding:0px 15px;margin-top:33px}
 
 .floating .option_wrap h3{margin-bottom:8px;font-size:14px;margin-left:4px}
 .floating .product_option select{width:305px;height:36px;border-radius:5px;margin-top:20px}
 .floating .common_btn_wrap{margin-left:14px}
-.product_title{display:flex;justify-content:space-between;padding-right:15px;padding-top:10px;}
 .t_price{border-top:1px solid #F1F1F1;padding-top:5px;}
 .t_price ul{display:flex;justify-content:space-between;margin-left:15px;margin-right:15px;padding-bottom:14px}
 .t_price li{font-size:14px;}
-.floating #selectedOptionDiv{margin-left:24px}
 .floating .line_w{
     width:100%; 
     border-bottom:1px solid #E4E4E4;
-    min-height: 220px;
+    margin-top: 15px;
 }
 
 .total_price button.h_btn {
@@ -803,11 +830,14 @@ div #ex1.modal ul li {float:left}
 }
 .option_wrap h3{margin-bottom:8px;font-size:12px;}
 .product_option{width:100%;margin:0 auto;}
-.product_count{border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;background-color:#fff;}
-.product_count h4{font-size:14px;margin-left:15px;}
-.product_title{display:flex;justify-content:space-between;padding-right:15px;padding-top:10px}
+.product_count{
+    padding: 0px 15px;
+    border:1px solid #BBBBBB;margin-top:11px;border-radius:5px;background-color:#fff;
+}
+.product_count h4{font-size:14px;}
+.product_title{display:flex;justify-content:space-between;padding-top:10px}
 .product_count .result{padding:2px 21px 2px 20px;border:1px solid #BBBBBB;font-size:14px;font-weight:normal}
-.number_price p{float:right;position:relative;left:-15px;top:20px;font-size:14px}
+.number_price p{float:right;position:relative; top:20px;font-size:14px}
 .t_price ul{display:flex;justify-content:space-between;margin-left:15px;margin-right:15px;margin-top:20px;margin-bottom:4px}
 .t_price li{font-size:14px;position:relative;top:-10px}
 .t_price p{float:right;margin-right:15px;margin-top:20px;margin-bottom:10px}
@@ -1102,7 +1132,7 @@ color: #878787; font-size: 12px;}
 @media screen and (min-width:1080px){
     .line{position:relative;margin-top:4px}
     .share_img img{ float:right;position:relative;top:20px;left:4px}
-    .option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
+    .option_wrap{margin-bottom:40px;}
     .reviews .num{width:100%;font-size:18px;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:14px;padding-bottom:18px}
     #tab3 .num{width:780px;
         font-size: 18px;

@@ -17,6 +17,24 @@ var app = new Vue({
 })
 
 $(function() {
+    getUsablePointAmount();
+    getUsableCouponList();
+})
+
+function getUsableCouponList() {
+    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST',
+    function(data) {
+        app.usableCouponAmount = data.result.length;
+        console.log("get usableCouponList", data);
+    }, function(err) {
+        console.error("get usable coupon list",err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
+$(function() {
     $("#addr").click(function() {
         if(!double) {
             double = true
@@ -60,7 +78,6 @@ $(function() {
     })
     $('#btnRegister').click(function() {
         addDelivery();
-        
     })
     getDeliveryInfoList();
 
@@ -227,6 +244,23 @@ function getDeliveryInfoList() {
     }, function(err) {
         console.log("err", err);
     }, {
+        isRequired: true,
+        userId: true
+    })
+}
+function getUsablePointAmount() {
+    var params = {};
+    ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
+    function(data) {
+        if(data.result)
+            app.totalPointAmount = numberFormat(data.result);
+
+        
+        console.log("success usablePoint", data);
+    }, function(err) {
+        console.log("error", err)
+    },
+    {
         isRequired: true,
         userId: true
     })

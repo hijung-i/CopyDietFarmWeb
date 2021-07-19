@@ -22,8 +22,23 @@ var app = new Vue({
 })
 
 $(function() {
-    getQuestionList()
+    getQuestionList();
+    getUsablePointAmount();
+    getUsableCouponList();
 });
+
+function getUsableCouponList() {
+    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST',
+    function(data) {
+        app.usableCouponAmount = data.result.length;
+        console.log("get usableCouponList", data);
+    }, function(err) {
+        console.error("get usable coupon list",err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
 
 function getQuestionList() {
     var params = {};
@@ -52,4 +67,20 @@ function formatDate(strDate) {
         return strDate.substr(0, 10);
     }
     return ''
+}
+function getUsablePointAmount() {
+    var params = {};
+    ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
+    function(data) {
+        if(data.result)
+            app.totalPointAmount = numberFormat(data.result);
+
+            console.log("success usablePoint", data);
+    }, function(err) {
+        console.log("error",err)
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
 }

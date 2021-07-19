@@ -80,6 +80,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          var result = data.result;
          if(option.isRequired == true && result.isLoggedIn != true) {
             // TODO: Open alert modal
+            console.log(url);
             alert('로그인이 필요한 동작입니다.');
             return false;
          }

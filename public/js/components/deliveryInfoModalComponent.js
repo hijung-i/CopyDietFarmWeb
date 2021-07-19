@@ -104,7 +104,8 @@ var deliveryInfoModalComponent = {
             closeInfoModal();
         }
     }, created: function() {
-        if( this.orderDto != undefined && this.orderDto.userId != '비회원주문') {
+        if( this.orderDto.userId != undefined && this.orderDto.userId != '비회원주문') {
+            console.log("created", this.orderDto)
             this.getDeliveryInfoList();
         }
     }

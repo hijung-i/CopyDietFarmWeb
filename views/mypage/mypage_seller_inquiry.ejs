@@ -55,6 +55,8 @@
         <%-include(webroot + 'views/general/header') %>
     </div>
     <main id="mypage_seller_inq_ctt">
+        <input type="hidden" id="userId" value="<%=user.userId %>">
+        <input type="hidden" id="userName" value="<%=user.userName %>">
         <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
         <div class="mypage_content_wrap">
             <nav class="content_lnb">

@@ -104,7 +104,18 @@ var app = new Vue({
                                 product.optionTotalPrice += option.optionTotalPrice;
                             }
 
-                            product.accumulatePoint = Math.round((this.orderDTO.paidRealAmount * (product.optionTotalPrice / this.orderDTO.paymentTotalAmount)) * 0.03)
+                            var paidRealRate = ((this.orderDTO.paidRealAmount - this.orderDTO.totalDeliveryCost) / this.orderDTO.paymentTotalAmount)
+                            product.accumulatePoint = Math.round(((this.orderDTO.paidRealAmount - this.orderDTO.totalDeliveryCost) * (product.optionTotalPrice / this.orderDTO.paymentTotalAmount)) * 0.03)
+
+                            if(product.productCode == "P00879" || product.productCode == "P00982") {
+                                var totalCount = 0
+                                Array.from(product.options).forEach(function(option) {
+                                    totalCount += option.optionCount;
+                                })
+                                
+                                product.accumulatePoint = Math.round((10000 * totalCount) * paidRealRate) 
+                            }
+
                             this.orderDTO.accumulatePoint += product.accumulatePoint;    
                         }
 
@@ -361,6 +372,11 @@ function paymentAction() {
             //결제가 정상적으로 완료되면 수행됩니다
             //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
             console.log(data);
+
+            requestOrderDTO.cashReceiptYn = 'N'
+            if(data.cash_result != undefined && data.cash_result != '') {
+                requestOrderDTO.cashReceiptYn = 'Y'
+            }
             
             requestOrderDTO.paymentName = data.payment_name;
             requestOrderDTO.paymentDate = data.purchased_at;
@@ -471,28 +487,10 @@ function getDefaultDeliveryInfo() {
     })
 }
 
-function getDeliveryInfoList() {
-    var params = {};
-
-    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', params, 'POST',
-    function(data) {
-        app.deliveryList = data.result;
-        console.log("getDeliveryInfoList success", data);
-    }, function(err) {
-        console.log("error", err);
-        var responseText = err.responseText;
-        if(responseText == 'NOT_FOUND') {
-            app.orderDTO.delivery = undefined
-        }
-    }, {
-        isRequired: true,
-        userId: true
-    })
-}
-
 function openZipSearch() {
     $('#unAddr').val('');
-    if(postCode) return; 
+    if(postCode) return;
+
     postCode = true;
     new daum.Postcode({
         oncomplete: function(data) {

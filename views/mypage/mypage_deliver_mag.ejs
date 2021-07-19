@@ -124,6 +124,8 @@
         </div>
         <main>
         <!-- web main -->
+        <input type="hidden" id="userId" value="<%=user.userId %>">
+        <input type="hidden" id="userName" value="<%=user.userName %>">
         <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
         
         <div class="mypage_content_wrap">
@@ -231,9 +233,8 @@
     </div>
         
          
-    
-    <script src="/js/components/deliveryRegisterModalComponent.js"></script>
     <script src="/js/components/mypageComponent.js"></script>
+    <script src="/js/components/deliveryRegisterModalComponent.js"></script>
     <script src="/js/deliveryManagement.js"></script>
     <%-include(webroot + 'views/general/footer') %>
 </body>

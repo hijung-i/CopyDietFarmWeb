@@ -200,9 +200,9 @@ function duplicationCheck(params) {
                 location.href = '/';
                 return false;
             case '정보존재':
-                alert('동일한 명의로 이미 가입되어 있습니다.')
-                location.href = '/';
-                return false;
+                alert('동일한 명의로 이미 가입되어 있습니다. 계정 연동을 진행합니다.')
+                linkAppleUser(params)
+                break;
             case '가입가능':
                 alert('본인인증이 완료되었습니다.')
                 app.identified = true
