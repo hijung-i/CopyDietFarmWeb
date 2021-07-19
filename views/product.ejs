@@ -7,232 +7,217 @@
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
         
-        <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+
+
+        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
         <style type="text/css">
      
         @media screen and (min-width:500px) and (max-width:1079px){
-  .like {top:0px;margin-right:-12px}
-  .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
-}
-@media screen and (min-width:1080px){
-.like {top: 3px !important;right:5px !important;}
-/*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
-.like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
-}
-    @media screen and (max-width:1079px) {
-        .web_product_details {display: none}
-        .sidebar{display:none}
-        .modal_wrap{
-        display: none;
-        width: 370px;
-        height: auto;
-        position: absolute;
-        top:50%;
-        left: 50%;
-        margin: -160px 0 0 -180px;
-        background:#fff;
-        z-index:9999;
-        padding:15px
-       }
-       .modal_wrap02{display: none;
-        width: 370px;
-        height: 500px;
-        position: absolute;
-        top:50%;
-        left: 50%;
-        margin: -160px 0 0 -180px;
-        background:#fff;
-        z-index:9999;
+
+        .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
         }
-    .black_bg, .black_bg02{
-        display: none;
-        position: absolute;
-        content: "";
-        width:1090px;
-        height:1200px;
-        background-color:rgba(0, 0,0, 0.5);
-        top:-100px;
-        left: 0;
-        z-index:1000;
-    }
-    .modal_close, .modal_close02{
-        width: 26px;
-        height: 26px;
-        position: absolute;
-        top: -30px;
-        right: 0;
-    }
-    .modal_close> a, .modal_close02> a{
-        display: block;
-        width: 100%;
-        height: 100%;
-        background:url(/images/x_icon_login.png)no-repeat;
-        text-indent: -9999px;
-        position:relative;
-        top:42px
-    }
-     }
-      @media screen and (min-width:1080px) {
-        #content{max-width:1080px;margin:0 auto;width:1080px}
-        .slick-prev{top:230px!important}
-        .slick-next{top:-300px!important}
-        .modal_wrap, .modal_wrap02{
-        display: none;
-        width: 500px;
-        height: auto;
-        position: absolute;
-        top:40%;
-        left: 50%;
-        margin: -250px 0 0 -250px;
-        background:#eee;
-        z-index: 2;
-       }
-    .black_bg, .black_bg02{
-        display: none;
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 100%;
-        background-color:rgba(0, 0,0, 0.5);
-        top:0;
-        left: 0;
-        z-index: 1;
-    }
-    .modal_close, .modal_close02{
-        width: 26px;
-        height: 26px;
-        position: absolute;
-        top: -30px;
-        right: 0;
-    }
-    .modal_close> a, .modal_close02 a{
-        display: block;
-        width: 100%;
-        height: 100%;
-        background:url(/images/x_icon_login.png)no-repeat;
-        text-indent: -9999px;
-        position:relative;
-        top:42px
-    }
-   .mobile_product_details { display: none}                       
-     }
+        @media screen and (min-width:1080px){
+        .like {top: 3px !important;right:5px !important;}
+        /*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
+        .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
+        }
+    @media screen and (max-width:1079px) {
+
+       /* Modal Content/Box */
+       .web_product_details {display: none}
+        .sidebar{display:none}
+        .review_modal, .inquiry_modal{
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        /* Modal Content/Box */
+        .review_modal .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            width:400px!important;
+            padding:10px;
+            z-index:99999;
+                            
+        }
+
+        .inquiry_modal .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            width:400px!important;
+            padding:10px;
+            height:500px;
+            z-index:99999                       
+        }
         /* The Close Button */
-        .product_close {
+        .modal-content .close {
             color: #aaa;
             float: right;
             font-size: 28px;
-            font-weight: bold;
+
         }
-        .product_close:hover,
-        .product_close:focus {
+        .modal-content .close:hover,
+        .modal-content .close:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
-        }  
-        .fixed { position: fixed; top:0; left:0; }
-        .sidebar{width:270px;height:928px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
-                margin-top:-68px;position:sticky;top:0}
-        /* swiper bundle */
-        .swiper-container { min-width: 360px;height: 373px; z-index: 0}
-        .swiper-slide {text-align: center; font-size: 18px; background: #fff;
-            /* Center slide text vertically */
-            display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
-            -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
-            justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
-            align-items: center
-        } 
-        .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover}
-        .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
-          left: 1000px; bottom: 25px}
-        .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
-        
-        @media screen and (max-width:1079px) {
-            .swiper-container {
-                margin-top: 11px !important;
-                height: 373px !important;
-            }
-            .swiper-slide {height: 373px !important;}
-            .swiper-slide img {
-                height: 373px !important;
-            }
-            .swiper-wrapper {height: 373px !important;}
-            .swiper-pagination {left: 72% !important;}
         }
-        @media screen and (min-width:1080px) {
-            .swiper-container {
-                margin-left: 0 !important;
-                position: relative;
-                width: 694px; height: 694px;
-            }
-            .swiper-container {
-                height: 694px;
-            }
-            }
+    }
+    @media screen and (min-width:1080px) {
+        #content{max-width:1080px;margin:0 auto;width:1080px}
+        .slick-prev{top:230px!important}
+        .slick-next{top:-300px!important}
+        .modal_wrap, .modal_wrap02 {
+            width: 500px;
+            height: auto;
+            position: absolute;
+            top:40%;
+            left: 50%;
+            margin: -250px 0 0 -250px;
+            background:#eee;
+            z-index: 2;
+        }
+        .black_bg, .black_bg02{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color:rgba(0, 0,0, 0.5);
+            top:0;
+            left: 0;
+            z-index: 1;
+        }
+        .modal_close, .modal_close02{
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            top: -30px;
+            right: 0;
+        }
+        .modal_close> a, .modal_close02 a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            background:url(/images/x_icon_login.png)no-repeat;
+            text-indent: -9999px;
+            position:relative;
+            top:42px
+        }
+        .mobile_product_details { display: none}                       
+    }
+        /* The Close Button */
+    .product_close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .product_close:hover,
+    .product_close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }  
+    .fixed { position: fixed; top:0; left:0; }
+    .sidebar{width:270px;background-color:#FFFFFF; border:1px solid #BBBBBB;float:right;
+            margin-top:-68px;position:sticky;top:0}
+    /* swiper bundle */
+    .swiper-container { min-width: 360px;height: 373px; z-index: 0}
+    .swiper-slide {text-align: center; font-size: 18px; background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
+        -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
+        justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
+        align-items: center
+    } 
+    .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover}
+    .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
+        left: 1000px; bottom: 25px}
+    .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
         
+    @media screen and (max-width:1079px) {
+        .swiper-container {
+            margin-top: 11px !important;
+            height: 373px !important;
+        }
+        .swiper-slide {height: 373px !important;}
+        .swiper-slide img {
+            height: 373px !important;
+        }
+        .swiper-wrapper {height: 373px !important;}
+        .swiper-pagination {left: 72% !important;}
+    }
+    @media screen and (min-width:1080px) {
+        .swiper-container {
+            margin-left: 0 !important;
+            position: relative;
+            width: 694px; height: 694px;
+        }
+        .swiper-container {
+            height: 694px;
+        }
+    }
         
         </style>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
+        
         <link rel="stylesheet" href="/css/product.css">
-        <link rel="stylesheet" href="/css/style.css">
-</head>
+    </head>
 
 <body>
-                <!-- 공유하기 모달 -->
-                    <div id="share_modal" class="share_modal modal-overlay">
-                        
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            
-                            <div class="share_header">
-                                <h2>공유하기</h2>
-                                <span class="close" onclick="closeShareModal()">&times;</span>
-                            </div>
+        <!-- 공유하기 모달 -->
+            <div id="share_modal" class="share_modal modal-overlay">
+                
+                <!-- Modal content -->
+                <div class="modal-content">
+                    
+                    <div class="share_header">
+                        <h2>공유하기</h2>
+                        <span class="close" onclick="closeShareModal()">&times;</span>
+                    </div>
 
-                            <div class="share_body">
-                                <div class="kakaoTalk">
-                                    <p ><a href="javascript:void(0);" onclick="Kakao.Link.sendScrap(PARAMETER);"><img src="/images/shareKakao@2x.png" alt="url"></a></p>
-                                    <p>카카오톡</p>
-                                </div>
-                                <div class="sms">
-                                    <p><a href="javascript:void(0);"><img src="/images/shareSMS@2x.png" alt="url"></a></p>
-                                    <p>문자</p>
-                                </div>
-                                <div class="copyUrl">
-                                    <p><a href="javascript:void(0);"><img src="/images/url_icon_friend@2x.png" alt="url"></a></p>
-                                    <p>url 복사</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="share_body">
+                        <button onclick="sendKakaoLink()"><img src="/images/shareKakao@2x.png" alt="url"><p>카카오톡</p></button>
+                        <button><img src="/images/shareSMS@2x.png" alt="url"><p>문자</p></button>
+                        <button><img src="/images/url_icon_friend@2x.png" alt="url" onclick="clip(); return false;"><p>URL 복사</p></button>
                         
                     </div>
-                <!-- 공유하기 모달 끝 -->
+                </div>
                 
-                <div class="web_product_details">
-                    <%-include('general/header') %>
-                </div>
+            </div>
+        <!-- 공유하기 모달 끝 -->
+        <main id="content">
+            <div class="web_product_details">
+                <%-include(webroot + 'views/general/header') %>
+            </div>
+            
+            <div class="mobile_product_details">
+                <section class="detail_title">
+                    <h2 class="title">{{ product.productName }}</h2>
+                    <div class="btnback">
+                        <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
+                        </a>
+                    </div>
 
-                <div class="mobile_product_details">
-                    <section class="detail_title">
-                        <h2 class="title">{{ product.productName }}</h2>
-                        <div class="btnback">
-                            <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
-                            </a>
-                        </div>
-
-                        <div class="btncart">
-                            <a href="/cart"><img
-                                src="/images/cart_icon_main@2x.png"
-                                alt=""
-                                style="width:21px;height:21px;left:10px"></a>
-                        </div>
-                    </section>
-                </div>
-                <!--//모바일 헤더 끝-->
+                    <div class="btncart">
+                        <a href="/cart"><img
+                            src="/images/cart_icon_main@2x.png"
+                            alt=""
+                            style="width:21px;height:21px;"></a>
+                    </div>
+                </section>
+            </div>
+                    <!--//모바일 헤더 끝-->
 
                 <!-- contents-wrap // -->
                 <input type="hidden" id="productCode" value="<%=productCode %>">
-                <main id="content">
+
                     <div class="product_top">
                         <div class="tabMenu">
                             <div id="detail_info" class="pdt_detai_tab_vn">
@@ -258,16 +243,7 @@
                         <div class="contents other_cont active">
                             <div id="tab1_mobile">
                                 <div class="view_wrap">
-                                    <!-- 상품navi -->
-                                    <div class="view_navi_box">
-                                        <span>도시락/샐러드
-                                            <img
-                                                src="/images/rightarrow_icon_join@2x.png"
-                                                style="width:9px;position:relative;top:3px">
-                                    도시락</span>
-                                        <!-- //상품navi -->
-                                    </div>
-                                    <!-- 상품설명 -->
+                                  <!-- 상품설명 -->
                                     <div class="view_top_box">
                                         <div class="swiper-container productSwiper">
                                             <div class="swiper-wrapper product_slider">
@@ -283,23 +259,7 @@
                                     </div>
                                 </div>
                                     <div class="v_top_txt_box">
-                                        
-                                        <!-- <div class="modal" id="ex">
-                                            <p>공유하기</p>
-                                            <ul>
-                                                <li>
-                                                    <a href=""><img src="/images/url_icon_friend@2x.png">카카오톡</a>
-                                                </li>
-                                                <li>
-                                                    <a href=""><img src="/images/url_icon_friend@2x.png">문자</a>
-                                                </li>
-                                                <li>
-                                                    <a href=""><img src="/images/url_icon_friend@2x.png">URL 복사</a>
-                                                </li>
-                                            </ul>
-                                            <a href="#" rel="modal:close"></a>
-                                        </div> -->
-
+                                
                                         <div class="share_img">
                                             <p>
                                                 <a href="#" onclick="openShareModal();"><img src="/images/share_icon_detail.png"></a>
@@ -322,10 +282,12 @@
                                                 </tr>
                                                 <tr class="delivery-cost">
                                                     <td>
-                                                        <span>배송비</span></td>
+                                                        <span>배송비</span>
+                                                    </td>
                                                     <td class="ex">
                                                         <template>{{ product.deliveryCostHtml }}</template>
                                                     </td>
+                                                    <td class="d_save_wrap"><button class="d_save"><a v-bind:href="brandListUrl">배송비 절약 상품 보기</a></button></td>
                                                 </tr>
                                                 <tr class="packing-type">
                                                     <td>
@@ -358,11 +320,7 @@
                                                                     <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
                                                                 </select>
                                                             </template>
-                                                            <template v-if="product.options.length == 1">
-                                                                <select name="products" id="product" style="border-color:#BBBBBB" readonly="readonly">
-                                                                    <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
-                                                                </select>
-                                                            </template>
+
                                                         </template>
                                                     </td>
                                                 </tr>
@@ -404,17 +362,18 @@
                                                     </div>
                                                     <div class="line_w"></div>
                                                     <div class="total_price">
-                                                        <p>총 상품금액
-                                                            <span>{{ numberFormat(optionTotalPrice) }}원
-                                                            </span>
+                                                        <p>
+                                                            총 상품금액
+                                                            <span class="bold">{{ numberFormat(optionTotalPrice) }}원</span>
                                                         </p>
+                                                        <div class="accumulate-points">
+                                                            <p>예상 포인트 <span class="green">{{ }}</span>원 (실 결제금액의 3%)</p>
+                                                            <p>배송 금액 {{  }}원</p>
+                                                        </div>
                                                     </div>
                                                     <div class="common_btn_wrap">
                                                         <div class="option_btns">
-                                                            <button type="button" class="h_btn" v-on:click="zzimProduct()">
-                                                                <img v-if="product.zzimYn == 'Y'" class="like like-yes">
-                                                                <img v-if="product.zzimYn == 'N'" class="like like-no">
-                                                            </button>
+                                                            <button type="button" v-bind:class="{ 'h_btn': true, 'like': true, 'like-yes': product.zzimYn == 'Y', 'like-no': product.zzimYn == 'N' } " v-on:click="zzimProduct()"></button>
                                                             <button type="button" class="c_btn">장바구니</button>
                                                             <button type="button" class="p_btn" v-on:click="onSubmit()">구매하기</button>
                                                         </div>
@@ -577,80 +536,12 @@
                             </div>
                         </div>
                         <div id="tab3" class="tab_cont Mtab_cont">
-                            <div class="review_btn">
-                                <button type="button" id="modal_btn" style="width:90%;height:45px;">리뷰쓰기</button>
-                            </div>
-                              <div class="black_bg"></div>
-                              <div class="modal_wrap">
-                                  <div class="modal_close"><a href="#">close</a></div>
-                                  <div>
-                                             <div class="reviewModifyBox">
-                                                 <h2>리뷰쓰기</h2>
-                                          <div class="review01">
-                                              <table>
-                                                  <tbody>
-                                                      <tr class="reviewProduct">
-                                                          <td>
-                                                              <div class="detailBox">
-                                                                  <a href="#"><img src="images/dietfarmbread.jpg" align="left" style="width:90px;margin-right:15px"></a>
-                                                                  <ul class="reviewProductInfo">
-                                                                      <li>디어썸라이프</li>
-                                                                      <li>[디어썸1]간편하고 든든한 고구마스틱 300g</li>
-                                                                      <li>간편하고 든든한 고구마스틱 300g (20g*15개입)</li>
-                                                                  </ul>
-                                                              </div>
-                                                          </td>
-                                                      </tr>
-                                                  </tbody>
-                                              </table>
-                                          </div>
-                                          <div id="star_grade" class="star_grade">
-                                              <p>별점으로 만족도를 선택해주세요</p>
-                              
-                                              <div class="starRev">
-                                                  <span class="starR1 on">별1_왼쪽</span>
-                                                  <span class="starR2">별1_오른쪽</span>
-                                                  <span class="starR1">별2_왼쪽</span>
-                                                  <span class="starR2">별2_오른쪽</span>
-                                                  <span class="starR1">별3_왼쪽</span>
-                                                  <span class="starR2">별3_오른쪽</span>
-                                                  <span class="starR1">별4_왼쪽</span>
-                                                  <span class="starR2">별4_오른쪽</span>
-                                                  <span class="starR1">별5_왼쪽</span>
-                                                  <span class="starR2">별5_오른쪽</span>
-                                              </div>
-                                          </div>
-                              
-                                          <ul>
-                                              <li>
-                                                  <form>
-                                                      <p><textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px"></textarea></p>
-                                                  </form>
-                                              </li>
-                                          </ul>
-                                          <div class="filebox">
-                                              <label for="upload">사진 (선택)</label>
-                                              <input type="file" id="upload" name="upload">
-                                              <div id="preview">
-                                                  <div class="previewBox">
-                                                      <ul>
-                                                          <li></li>
-                                                          <li class="p2"></li>
-                                                      </ul>
-                                                  </div>
-                                                  <!-- 미리보기 공간 -->
-                                              </div>
-                              
-                                             
-                                              <p style="clear:both;">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>
-                                          </div>
-                                      </div>
-                              
-                                      <div class="btn_area">
-                                          <button type="button" id="btnSaveProduct">저장</button>
-                                      </div>
-                                  </div>
-                              </div>
+                            <% if( isLoggedIn ) { %>
+                                <div class="review_btn">
+                                    <button type="button" id="modal_btn" onclick="openReviewModal()">리뷰쓰기</button>
+                                </div>
+                            <% } %>
+                        
                             <p class="num">리뷰 {{ reviewList.length }}개</p>
                             <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
                                 <img src="/images/note_icon_review.png">
@@ -677,11 +568,11 @@
                                         </ul>
                                         <ul v-if="reviewList.updateYn == 'Y'">
                                             <li>
-                                                <a href="#">수정</a>
+                                                <span>수정</span>
                                             </li>
                                             <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
                                             <li>
-                                                <a href="#">삭제</a>
+                                                <span @click="deleteReview(index)">삭제</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -707,9 +598,11 @@
                                                 </template>
                                             </div>
                                             <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
-                                            <div class="review_img01" v-if="review.contentType == 'I'">
-                                                <img v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
-
+                                            <div class="review-img-wrapper" v-if="review.contentType == 'I'">
+                                                <div class="review-img" v-bind:style="{ width: ((review.files.length * 110) - 10) }">
+                                                    <img v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
+    
+                                                </div>
                                             </div>
 
                                             <span id="toc-toggle" onclick="openCloseToc()">더보기<img
@@ -723,11 +616,6 @@
                                         </div>
                                     </div>
                                 </div>
-                               
-                                <div class="review_btn_web">
-                                    <button type="button" id="modal_btn">리뷰쓰기</button>
-                                     </div>
-                       
                                 <div class="page_wrap">
                                     <div class="page_nation">
                                         <a class="arrow pprev" href="#"></a>
@@ -748,279 +636,153 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="tab4" class="tab_cont Mtab_cont">
-                            <!--//review_btn-->
-                            <div class="review_btn">
-                                <button type="button" id="modal_btn02" style="width:90%;height:45px;">문의하기</button>
-                                 </div>
-                              <div class="black_bg02"></div>
-                              <div class="modal_wrap02">
-                                  <div class="modal_close02"><a href="#">close</a></div>
-                                  <div>
-                                 <div class="productInquiryBox">
-                                          <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
-                                          <form>
-                                              <p><textarea style="border-radius:5px;width:330px;height:153px; border: 1px solid #BBBBBB;" placeholder="문의하실 내용을 입력해주세요"></textarea></p>
-                              
-                                          </form>
-                                          <div class="group">
-                                              <input type="checkbox" id="secret">
-                                              <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
-                                          </div>
-                                      </div>
-                                      <div class="btn_area">
-                                          <button type="button" id="btnInquiry">등록</button>
-                                      </div>
-                                  </div>
-                              </div>
-                            <p class="inquiry">문의 {{questionList.length}}개</p>
-                                    <div class="myReview">
-                                        <p style="margin-right:10px">내 문의 보기</p>
-                                        <input type="checkbox" id="prod_detail_toggle">
-                                        <label for="prod_detail_toggle">
-                                            <span>아이콘</span></label>
-                                    </div>
-                      
-                          
-                            <!-- <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
-                                <img src="/images/note_icon_review.png">
-                                <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
-                                <div class="btn_area"> <button type="button"
-                                id="btnRW_null">리뷰쓰기</button>
-                            </div> -->
+        <div id="tab4" class="tab_cont Mtab_cont">
+            <!--//review_btn-->
+            <% if( isLoggedIn ) { %>
+            <div class="review_btn">
+                <button type="button" onclick="openInquiryModal()">문의하기</button>
+            </div>
+            <% } %>
+            
+            <p class="inquiry">문의 {{questionList.length}}개</p>
+            <div class="myReview">
+                <p style="margin-right:10px">내 문의 보기</p>
+                <input type="checkbox" id="prod_detail_toggle">
+                <label for="prod_detail_toggle">
+                <span>아이콘</span></label>
+            </div>
                             
-                         <div class="qna">
-                                   
-                               
-                                <div class="reveiw01" v-for="(question, index) in questionList" v-bind:key="index">
-                                    <div class="review_edit">
-                                        <p>
-                                            <span v-if="question.answerState == 'N'">미답변</span>
-                                            <span v-if="question.answerState == 'Y'">답변완료</span>
-                                        </p>
-                                        <ul v-if="question.updateYn == 'Y'">
-                                            <li class="myInquiry">
-                                                <span>내글</span>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>{{formatDate(question.createDate)}}
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">수정</a>
-                                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span></li>
-                                            <li>
-                                                <a href="#">삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+            <div class="qna">
+                <div class="reveiw01" v-for="(question, index) in questionList" v-bind:key="index">
+                    <div class="review_edit">
+                        <p>
+                            <span v-if="question.answerState == 'N'">미답변</span>
+                            <span v-if="question.answerState == 'Y'">답변완료</span>
+                        </p>
+                        <ul v-if="question.updateYn == 'Y'">
+                            <li class="myInquiry">
+                                <span>내글</span>
+                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span>
+                            </li>
+                            <li>
+                                {{formatDate(question.createDate)}}
+                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span>
+                            </li>
+                            <li>
+                                <span class="btn" @click="onInquiryUpdateClick(index)">수정</span>
+                                <span class="bar"><img src="/images/l_icon_category.png" alt="구분라인"></span>
+                            </li>
+                            <li>
+                                <span class="btn" @click="deleteInquiry(index)">삭제</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                                    <div class="bbsFaq01">
-                                        <div class="innerbox">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="faq_q">
-                                                        <td class="title">
-                                                            {{question.content}}
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="faq_a faq_a01" v-if="question.answerState == 'Y'">
-                                                        <td>
-                                                            <div class="faq_a_box">
-                                                                <p v-html="question.answer"></p>
-                                                                <ul>
-                                                                    <li>판매자</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>{{formatDate(question.updateDate)}}</li>
-                                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                                    <li>신고</li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div id="wrap_qna">
-                                    <a href="javascript:openModal('modal1');" class="button modal-open">문의하기</a>
-                                </div>
-                                <!--//모달 안 내용 시작 -->
-                                <div id="modal"></div>
-                                <div class="modal-con modal1">
-                                    <a href="javascript:;" class="close"><img src="/images/x_icon_login.png"></a>
-                                    <div class="title">
-                                        <h2>상품 문의</h2>
-                                    </div>
-                                    <div class="productInquiryBox" style="padding-right:20px">
-                                        <h3>(아임월) 굿밸런스 라이트밀 도시락</h3>
-                                        <form>
-                                            <p>
-                                                <textarea
-                                                    style="border-radius:5px;width:800px;height:200px;padding:10px;font-size:14px"
-                                                    placeholder="문의하실 내용을 입력해주세요"></textarea>
-                                            </p>
-
-                                        </form>
-                                        <div class="group">
-                                            <input type="checkbox" id="secret">
-                                            <label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>
-                                        </div>
-                                    </div>
-                                    <div class="btn_area">
-                                        <button type="button" id="btnInquiry">등록</button>
-                                    </div>
-
-                                </div>
-                                <!--//문의 모달 끝-->
-
-                                <div class="page_wrap">
-                                    <div class="page_nation">
-                                        <a class="arrow pprev" href="#"></a>
-                                        <a class="arrow prev" href="#"></a>
-                                        <a href="#" class="active">1</a>
-                                        <a href="#">2</a>
-                                        <a href="#">3</a>
-                                        <a href="#">4</a>
-                                        <a href="#">5</a>
-                                        <a href="#">6</a>
-                                        <a href="#">7</a>
-                                        <a href="#">8</a>
-                                        <a href="#">9</a>
-                                        <a href="#">10</a>
-                                        <a class="arrow next" href="#"></a>
-                                        <a class="arrow nnext" href="#"></a>
-                                    </div>
-                                </div>
-
-                                <button type="button" class="more_inq">
-                                    <div class="more_btn_ctn">
-                                        <p>더보기
-                                            <img src="/images/downarrow_icon_category.png" alt="화살표">
-                                        </p>
-                                    </div>
-                                </button>
-                            </div>
+                    <div class="bbsFaq01">
+                        <div class="innerbox">
+                            <table>
+                                <tbody>
+                                    <tr class="faq_q">
+                                        <td class="title">
+                                            {{question.content}}
+                                        </td>
+                                    </tr>
+                                    <tr class="faq_a faq_a01" v-if="question.answerState == 'Y'">
+                                        <td>
+                                            <div class="faq_a_box">
+                                                <p v-html="question.answer"></p>
+                                                <ul>
+                                                    <li>판매자</li>
+                                                    <li><img src="/images/l_icon_category.png"></li>
+                                                    <li>{{formatDate(question.updateDate)}}</li>
+                                                    <li><img src="/images/l_icon_category.png"></li>
+                                                    <li>신고</li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </main>
-                    <script>
-                        var upload = document.querySelector('#upload');
-                        var preview = document.querySelector('#preview');
-    
-                        upload.addEventListener('change', function(e) {
-                            var get_file = e.target.files;
-    
-                            var image = document.createElement('img');
-    
-                            /* FileReader 객체 생성 */
-                            var reader = new FileReader();
-    
-                            /* reader 시작시 함수 구현 */
-                            reader.onload = (function(aImg) {
-                                console.log(1);
-    
-                                return function(e) {
-                                    console.log(3);
-                                    /* base64 인코딩 된 스트링 데이터 */
-                                    aImg.src = e.target.result
-                                }
-                            })(image)
-    
-                            if (get_file) {
-                                /* 
-                                    get_file[0] 을 읽어서 read 행위가 종료되면 loadend 이벤트가 트리거 되고 
-                                    onload 에 설정했던 return 으로 넘어간다.
-                                    이와 함게 base64 인코딩 된 스트링 데이터가 result 속성에 담겨진다.
-                                */
-                                reader.readAsDataURL(get_file[0]);
-                                console.log(2);
-                            }
-    
-                            preview.appendChild(image);
-                        })
-                    </script>
-                    <!-- Swiper JS -->
-                    <script>
-                        var swiper = new Swiper(".productSwiper", {
-                            pagination: {
-                                el: ".swiper-pagination",
-                                type: "fraction"
-                            },
-                            navigation: {
-                                nextEl: ".swiper-button-next",
-                                prevEl: ".swiper-button-prev"
-                            }
-                        });
-                    </script>
-                    <script>
-                        var upload = document.querySelector('#upload');
-                        var preview = document.querySelector('#preview');
-                        upload.addEventListener('change', function (e) {
-                            var get_file = e.target.files;
-                            var image = document.createElement('img');
-                            var reader = new FileReader();
-                            reader.onload = (function (aImg) {
-                                console.log(1);
-                                return function (e) {
-                                    console.log(3);
-                                    aImg.src = e.target.result
-                                }
-                            })(image)
-                            if (get_file) {
-                                reader.readAsDataURL(get_file[0]);
-                                console.log(2);
-                            }
-                            preview.appendChild(image);
-                        })
-                    </script>
-                    <script>
-                        var upload = document.querySelector('#upload');
-                        var preview = document.querySelector('#preview');
-                        upload.addEventListener('change', function (e) {
-                            var get_file = e.target.files;
-                            var image = document.createElement('img');
-                            var reader = new FileReader();
-                            reader.onload = (function (aImg) {
-                                console.log(1);
-                                return function (e) {
-                                    console.log(3);
-                                    aImg.src = e.target.result
-                                }
-                            })(image)
-                            if (get_file) {
-                                reader.readAsDataURL(get_file[0]);
-                                console.log(2);
-                            }
-                            preview.appendChild(image);
-                        })
-                        window.onload = function() {
- 
-                        function onClick() {
-                            document.querySelector('.modal_wrap').style.display ='block';
-                            document.querySelector('.black_bg').style.display ='block';
-                            document.querySelector('.modal_wrap02').style.display ='block';
-                            document.querySelector('.black_bg02').style.display ='block';
-                        }   
-                        function offClick() {
-                            document.querySelector('.modal_wrap').style.display ='none';
-                            document.querySelector('.black_bg').style.display ='none';
-                            document.querySelector('.modal_wrap02').style.display ='none';
-                            document.querySelector('.black_bg02').style.display ='none';
-                        }
+                    </div>
+                </div>
+                
+              
+                <div class="page_wrap">
+                    <div class="page_nation">
+                        <a class="arrow pprev" href="#"></a>
+                        <a class="arrow prev" href="#"></a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                        <a href="#">10</a>
+                        <a class="arrow next" href="#"></a>
+                        <a class="arrow nnext" href="#"></a>
+                    </div>
+                </div>
 
-                        document.getElementById('modal_btn').addEventListener('click', onClick);
-                        document.querySelector('.modal_close').addEventListener('click', offClick);
-                        document.getElementById('modal_btn02').addEventListener('click', onClick);
-                        document.querySelector('.modal_close02').addEventListener('click', offClick);
-
-                        };
-                    </script>
-                    <script src="/js/orderDTO/OrderDTO.js"></script>
-                    <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
-                    <script type="text/javascript" src="/js/product.js"></script>
-                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                <button type="button" class="more_inq">
+                    <div class="more_btn_ctn">
+                        <p>더보기
+                            <img src="/images/downarrow_icon_category.png" alt="화살표">
+                        </p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="review" v-bind:writable-list="writableList" v-bind:writable="writable"
+            v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
+        <product-inquiry-modal v-if="inquiryModal" v-bind:product="product" v-bind:inquiry="currentQuestion" v-on:add-complete="insertInquiryComplete" v-on:close="onChildPopupClosed"></product-inquiry-modal>
+    </main>
+   <!-- Swiper JS -->
+    <script>
+        var swiper = new Swiper(".productSwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction"
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            }
+        });
+    </script>
+    <script>
+        var upload = document.querySelector('#upload');
+        var preview = document.querySelector('#preview');
+        upload.addEventListener('change', function (e) {
+            var get_file = e.target.files;
+            var image = document.createElement('img');
+            var reader = new FileReader();
+            reader.onload = (function (aImg) {
+                console.log(1);
+                return function (e) {
+                    console.log(3);
+                    aImg.src = e.target.result
+                }
+            })(image)
+            if (get_file) {
+                reader.readAsDataURL(get_file[0]);
+                console.log(2);
+            }
+            preview.appendChild(image);
+        })
+    </script>
+    
+    <script src="/js/productReviewModal.js"></script>
+    <script src="/js/productInquiryModal.js"></script>
+    <script src="/js/orderDTO/OrderDTO.js"></script>
+    <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
+    <script type="text/javascript" src="/js/product.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
-                </body>
-                <%-include('general/footer') %>
-            </html>
+</body>
+<%-include(webroot + 'views/general/footer') %>
+</html>

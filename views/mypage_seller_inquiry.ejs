@@ -55,55 +55,83 @@
     <div class="web_p_inquiry">
         <%-include('general/header') %>
     </div>
-    <main id="mypage_seller_inq_ctt">
-        <%-include('general/mypage') %>
-        <div class="mypage_content_wrap">
-            <nav class="content_lnb">
-                <ul>
-                    <li>
-                        <a href="/orderlist">주문내역</a>
-                    </li>
-                    <li style="white-space:nowrap">
-                        <a href="/delivery-management">배송지 관리</a>
-                    </li>
-                    <li>
-                        <a href="/p_review">상품 리뷰</a>
-                    </li>
-                    <li >
-                        <a href="/p_inquiry">상품 문의</a>
-                    </li>
-                    <li class="on" style="white-space:nowrap">
-                        <a href="/s_inquiry">판매자 문의</a>
-                    </li>
-                    <li>
-                        <a href="/point">포인트</a>
-                    </li>
-                    <li>
-                        <a href="/coupon">쿠폰</a>
-                    </li>
-                </ul>
-            </nav>     
-            <div class="contents">
-                <div class="body_contents tab6">
-                    <h3 class="orderList_detail">판매자 문의</h3>
-                    <div class="order_detail_ctn">
-                        <div
-                        class="tabMenu_review"
-                        style="margin-top:-20px;border-bottom: 1px solid #f1f1f1;">
-                        <ul class="tab_wrap">
-                            <li class="active on" data-tab="tab1">
-                                <span>진행중인 문의</span></li>
-                            <li data-tab="tab2" id="possible">
-                                <span>완료된 문의</span></li>
-                            <span></span>
+
+    <main>
+        <div class="main_contents">
+            <div class="web_contents">
+                <div class="left">
+                    <h3>마이팜</h3>
+                    <div class="left_ctn">
+                        <ul>
+                            <li><img src="/images/basket_ico.png"></li>
+                            <li>
+                                <span>김수아님</span></li>
+                            <li>내정보
+                                <span>
+                                    <i class="fas fa-chevron-right"></i></span></li>
                         </ul>
-                        </div>
-                        <div id="tab1" class="tab_cont active">
-                            <div class="review_list_null" v-if="waitingAskList == undefined || waitingAskList.length == 0">
-                                <img src="/images/note_icon_review.png">
-                                <p class="no_review">아직 작성된 문의가 없습니다.</p>
-                            </div>
-                        <div class="s_inquiry_box" v-for="ask in waitingAskList">
+                    </div>
+                </div>
+
+                <div class="center">
+                    <h3>포인트<img src="/images/point.png"></h3>
+                    <p>1000 원
+                        <span>
+                            <i class="fas fa-chevron-right"></i></span></p>
+                </div>
+
+                <div class="right">
+                    <h3>쿠폰<img src="/images/Coupon_ico.png"></h3>
+                    <p>3개
+                        <span>
+                            <i class="fas fa-chevron-right"></i></span></p>
+                </div>
+            </div>
+        </div>
+        <nav class="content_lnb">
+            <ul>
+                <li>
+                    <a href="/orderlist">주문내역</a>
+                </li>
+                <li style="white-space:nowrap">
+                    <a href="/delivery-management">배송지 관리</a>
+                </li>
+                <li>
+                    <a href="/p_review">상품 리뷰</a>
+                </li>
+                <li >
+                    <a href="/p_inquiry">상품 문의</a>
+                </li>
+                <li class="on" style="white-space:nowrap">
+                    <a href="/s_inquiry">판매자 문의</a>
+                </li>
+                <li>
+                    <a href="/point">포인트</a>
+                </li>
+                <li>
+                    <a href="/coupon">쿠폰</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="contents">
+            <div class="body_contents tab6">
+                <h3 class="orderList_detail">판매자 문의</h3>
+                <div class="order_detail_ctn">
+
+                <div
+                    class="tabMenu_review"
+                    style="margin-top:-20px;border-bottom: 1px solid #f1f1f1;">
+                    <ul class="tab_wrap">
+                        <li class="active on" data-tab="tab1">
+                            <span>진행중인 문의</span></li>
+                        <li data-tab="tab2" id="possible">
+                            <span>완료된 문의</span></li>
+                        <span></span>
+                    </ul>
+                </div>
+                <div id="tab1" class="tab_cont active">
+                    <div class="s_inquiry_box" v-for="ask in waitingAskList">
                         <div class="inquiry_product">
                             <div class="inquiry_product_head">
                                 <h4>아임월</h4>
@@ -135,15 +163,11 @@
                                 <span>{{ ask.product.productName }}</span></p>
                             <p v-html="ask.content"></p>
                         </div>
-                        </div>
+                    </div>
                     
-                        </div>
+                </div>
 
             <div id="tab2" class="tab_cont">
-             <div class="review_list_null" v-if="doneAskList == undefined || doneAskList.length == 0">
-                    <img src="/images/note_icon_review.png">
-                    <p class="no_review">아직 답변 완료된 문의가 없습니다.</p>
-                </div>
                 <div class="s_inquiry_box" v-for="ask in doneAskList">
                     <div class="inquiry_product">
                         <div class="inquiry_product_head">
@@ -189,29 +213,27 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-                    
-                        <!--//order-->
-                        <div class="page_wrap">
-                            <div class="page_nation">
-                                <a class="arrow pprev" href="#"></a>
-                                <a class="arrow prev" href="#"></a>
-                                <a href="#" class="active">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">7</a>
-                                <a href="#">8</a>
-                                <a href="#">9</a>
-                                <a href="#">10</a>
-                                <a class="arrow next" href="#"></a>
-                                <a class="arrow nnext" href="#"></a>
-                            </div>
-                        </div>
 
-                    </div>
+            </div>
+            
+
+            <!--//order-->
+            <div class="page_wrap">
+                <div class="page_nation">
+                    <a class="arrow pprev" href="#"></a>
+                    <a class="arrow prev" href="#"></a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a class="arrow next" href="#"></a>
+                    <a class="arrow nnext" href="#"></a>
                 </div>
             </div>
         </div>

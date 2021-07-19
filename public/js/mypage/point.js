@@ -1,20 +1,40 @@
 var app = new Vue({
     el: 'main',
+    components: {
+        'mypage-component': mypageComponent
+    },
     data: {
         totalPointAmount: 0,
-        pointList: []
+        pointList: [],
+        usableCouponAmount: 0
     },
     methods: {
         numberFormat,
         formatDate,
-        parsePointType
+        parsePointType,
+        getUsableCouponList
     }
 })
 
 $(function() {
     getUsablePointAmount();
     getPointHistory();
+    getUsableCouponList();
 })
+
+function getUsableCouponList() {
+ 
+    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST', 
+    function(data) {
+        app.usableCouponAmount = data.result.length;
+        console.log("get usableCouponList", data);
+    }, function(err) {
+        console.error("get usable coupon list ", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
 
 function getUsablePointAmount() {
     var params = {};
@@ -22,7 +42,6 @@ function getUsablePointAmount() {
     function(data) {
         if(data.result)
             app.totalPointAmount = numberFormat(data.result);
-
         
         console.log("success usablePoint", data);
     }, function(err) {
@@ -78,6 +97,8 @@ function parsePointType(pointType) {
             return "회원가입";
         case "E":
             return "기간만료";
+        case "J":
+            return "물 마시기";
 
     }
 }

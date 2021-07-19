@@ -8,8 +8,32 @@
         content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
     <meta name="format-detection" content="telephone=no, address=no, email=no"/>
     <meta name="format-detection" content="no"/>
-    <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+    <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
     <style type="text/css">
+    /*배송정보*/
+
+.line{border-top:2px solid #F99319;position:relative;top:8px;width:90%;left:30px}
+.circle_line ul{display:flex;justify-content:space-around;}
+.circle_line ul li{float:left}
+.d_state ul, .d_date ul{display:flex;justify-content:space-around;}
+.d_state ul li, .d_date ul li{font-size:10px;float:left;color:#6B6B6B}
+
+.addr{margin-top:28px;border-top:0.5px solid #BBBBBB}
+.addr ul{float:left;padding-bottom:10px;padding-top:10px;}
+.addr01 ul{margin-right:75px;}
+.addr01 ul li, .addr02 ul li{float:left;}
+.addr .p{padding-left:15px;color:#6B6B6B;font-size:12px}
+.addr .a{margin-left:20px;font-size:12px}
+.d_num ul{display:flex;border-bottom:0.5px solid #BBBBBB;padding-bottom:10px;padding-top:10px;border-top:0.5px solid #BBBBBB;clear:both;}
+.d_num ul li{float:left;}
+.d_num .d{padding-left:15px;color:#6B6B6B;font-size:12px}
+.d_num .num{margin-left:20px;font-size:12px}
+
+/*배송 준비중 일때*/
+.delivery_list_null{width:70%; text-align:center; margin:180px auto;}
+.order_list_null img{width:100px;height:75px}
+.no_list{font-size:16px;color:#878787;margin-top:21px}
+
         @media screen and (max-width:1079px) {
             .web_delivery_info {
                 display: none;
@@ -24,22 +48,25 @@
 
     <link rel="stylesheet" href="/css/delivery.css">
     <link rel="stylesheet" href="/css/style02.css">
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
 </head>
 
 <body>
     <div class="web_delivery_info">
-        <%-include('general/header') %>
+        <%-include(webroot + 'views/general/header') %>
     </div>
-    <main id="content" class="del_info_content">
-        <section class="detail_title01">
-            <h2 class="title">(아임월) 다이어트 굿 밀도시락어쩌구저쩌구</h2>
+    <section class="detail_title">
+        <h2 class="title">{{ product.productName }}</h2>
+        <div class="btnback">
+            <a onclick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
+            </a>
+        </div>
 
-            <div class="btnback">
-                <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="" style="">
-                </a>
-            </div>
-        </section>
+      
+    </section>
+    <main id="content" class="del_info_content" style="margin-top:40px">
+        
         <div class="circle_line">
             <div class="line"></div>
             <ul>

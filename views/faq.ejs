@@ -16,31 +16,35 @@
                     display: none;
                 }
                 .mobile_faq{position: fixed;
-    min-width: 360px;
-    width: 100%;
-    height: 80px;
-    top: 0;
-    background-color: #fff;
-    z-index: 9999;
-    margin-bottom: 20px;}
-    #content{padding-top:60px
-                          }
-                        }
+                    min-width: 360px;
+                    width: 100%;
+                    height: 80px;
+                    top: 0;
+                    background-color: #fff;
+                    z-index: 9999;
+                    margin-bottom: 20px;
+                }
+                #content{
+                    padding-top:60px
+                }
+            }
             @media screen and (min-width:1080px) {
                 .mobile_faq {
                     display: none;
                 }
                 .faq_content{width:1080px;margin:0 auto;max-width:1080px}
+                #footer{margin-top:1700px}
             }
         </style>
         <link rel="stylesheet" href="/css/style.css">
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
 
         </head>
 
         <body>
             <div class="web_faq">
-                <%-include('general/header') %>
+                <%-include(webroot + 'views/general/header') %>
                 </div>
 
                 <div class="mobile_faq">
@@ -48,7 +52,7 @@
                         <h2>FAQ</h2>
 
                         <div class="btnback">
-                            <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
+                            <a onclick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
                             </a>
                         </div>
                     </section>
@@ -62,7 +66,7 @@
                                     <li>공지사항</li>
                                 </a>
                                 <a href="faq">
-                                    <li class="clicked_menu">fAQ</li>
+                                    <li class="clicked_menu">FAQ</li>
                                 </a>
                                 <a href="cs-center">
                                     <li>고객센터</li>
@@ -369,7 +373,7 @@
                     </div>
                     <!--//faq-->
                 </main>
+                <%-include(webroot + 'views/general/footer') %>
                 <script src="/js/faq.js"></script>
-              
-            </body>
+             </body>
         </html>

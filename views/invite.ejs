@@ -9,7 +9,7 @@
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
 
-        <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <style type="text/css">
@@ -36,12 +36,13 @@
             }
             .buttons img{width:20px}
         </style>
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
         </head>
 
         <body>
             <div class="web_invite">
-                <%-include('general/header') %>
+                <%-include(webroot + 'views/general/header') %>
                 </div>
                 <!--//web_invite-->
                 <div class="mobile_invite">
@@ -69,7 +70,7 @@
                         </div>
                   
                 </main>
-                <%-include('general/footer') %>
+                <%-include(webroot + 'views/general/footer') %>
                     
                 </body>
             </html>

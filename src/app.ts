@@ -23,6 +23,8 @@ export namespace globalData {
         return __baseDir
     }
 }
+import * as winston from './configs/winston'
+const STREAM = winston.stream
 
 import indexViewRouter from './routes/indexViewRouter'
 import requireLoginViewRouter from './routes/requireLoginViewRouter'
@@ -46,6 +48,14 @@ app.use(Express.urlencoded({ extended: false, limit: '16MB' }))
 app.use(cookieParser())
 
 app.use(logger('dev'))
+app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
+
+    if (req.hostname === 'dietfarm.co.kr' && !req.secure) {
+        res.redirect('https://' + req.hostname + req.url)
+    } else {
+        next()
+    }
+})
 
 app.use('/', indexViewRouter)
 app.use('/', requireLoginViewRouter)
@@ -63,6 +73,8 @@ app.use(Express.static(path.join(__baseDir, 'public')))
 app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
     let err = new Error('Not Found!') as Err
     err.status = 404
+    STREAM.writeError(`NOT FOUND! METHOD: ${req.method}, URI: ${req.url}`)
+    STREAM.writeError(err)
     next(err)
 })
 
@@ -70,6 +82,9 @@ app.use((err: Err, req: Express.Request, res: Express.Response, next: Express.Ne
     res.status(err.status || 500)
     console.log('BODY -> ', req.body)
     console.error('ERROR WHILE PROCESSING url ', req.url,'=>\n', err.message)
+    STREAM.writeError(req.url)
+    STREAM.writeError(req.body)
+
     res.json({
         message: err.message,
         data: err.data

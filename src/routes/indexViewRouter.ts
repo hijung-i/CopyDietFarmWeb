@@ -1,4 +1,5 @@
 import { NextFunction, request, Request, Response, Router } from 'express'
+import { globalData } from '../app'
 import { DeliveryInfo, SessionUser, User } from '../models/user'
 const qs = require('querystring')
 
@@ -46,14 +47,41 @@ router.get('/product/:productCode', (req: Request, res: Response, next: NextFunc
     const productCode = req.params.productCode
     render(req, res, 'product', { productCode: productCode })
 })
+
+router.get('/products/:companyCode/brand', (req: Request, res: Response, next: NextFunction) => {
+    const companyCode = req.params.companyCode
+
+    // brand와 company가 모두 있을 경우 brandCode가 쿼리스트링으로 넘어옴
+    const brandCode = req.query.brandCode || ''
+    const brandName = req.query.brandName
+
+    render(req, res, 'products', {
+        companyCode: companyCode,
+        brandCode: brandCode,
+        brandName: brandName,
+        listType: 'BRAND',
+        currentPage: 'brand'
+    })
+})
+
+router.get('', (req: Request, res: Response, next: NextFunction) => {
+    const courierName = req.params.courierName
+    const courierNo = req.params.courierNo
+
+    render(req, res, 'product', {
+        courierName: courierName,
+        courierNo: courierNo,
+        listType: 'Delivery',
+        currentPage: 'delivery'
+    })
+})
+
 router.get('/products/:salesStandCode/event', (req: Request, res: Response, next: NextFunction) => {
     const standCode = req.params.salesStandCode
-    console.log(standCode)
 
     render(req, res, 'products', {
         standCode: standCode,
         listType: 'EVENT',
-        listTitle: '',
         currentPage: 'products'
     })
 })
@@ -65,25 +93,21 @@ router.get('/products/:category1Code/category/:category2Code', (req: Request, re
         category1Code: category1Code,
         category2Code: category2Code,
         listType: 'CATEGORY',
-        listTitle: '',
         currentPage: 'category'
     })
 })
 router.get('/search-form', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'search', { currentPage: '검색' })
 })
-
 router.get('/search-list', (req: Request, res: Response, next: NextFunction) => {
     const keyword = req.query.keyword
 
     render(req, res, 'products', {
         keyword: keyword,
         listType: 'SEARCH',
-        listTitle: '',
-        currentPage: 'products'
+        currentPage: 'search'
     })
 })
-
 router.get('/mypage', (req: Request, res: Response, next: NextFunction) => {
     const isLoggedIn = req.session.isLoggedIn || false
     const sessionUser = req.session.user || {}
@@ -121,7 +145,7 @@ router.get('/order-comp', (req: Request, res: Response, next: NextFunction) => {
     res.locals.orderDTO = JSON.parse(req.query.requestOrderDTO as string)
     console.log(res?.locals.orderDTO)
 
-    render(req, res, 'order_complete', {})
+    render(req, res, 'order/order_complete', {})
 })
 
 router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFunction) => {
@@ -130,42 +154,40 @@ router.get('/ol_detail/:orderNumber', (req: Request, res: Response, next: NextFu
     if (orderNumber.length > 15 || orderNumber.length < 14) {
         res.send('<script>alert("올바르지 않은 주문번호입니다.");location.href = "/orderlist";</script>')
     } else {
-        render(req, res, 'mypage_orderList_detail', { orderNumber })
+        render(req, res, 'mypage/mypage_orderList_detail', { orderNumber })
     }
 })
 
 router.get('/terms', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'terms_of_service', {})
 })
-router.get('/products', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'products', {})
-})
+
 router.get('/product', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'product', {})
 })
 router.get('/membership', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'membership', {})
+    render(req, res, 'events/membership', {})
 })
 router.get('/n_member', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'new_membership', {})
+    render(req, res, 'events/new_membership', {})
 })
 router.get('/f_invite', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'friend_invite', {})
+    render(req, res, 'events/friend_invite', {})
 })
 router.get('/f_purchase', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'first_purchase', {})
+    render(req, res, 'events/first_purchase', {})
 })
 router.get('/m_save', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'money_save', {})
+    render(req, res, 'events/money_save', {})
 })
 router.get('/k_friend', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'kakao_friend', {})
+    render(req, res, 'events/kakao_friend', {})
 })
 router.get('/b_event', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'birthday_event', {})
+    render(req, res, 'events/birthday_event', {})
 })
 router.get('/r_event', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'review_event', {})
+    render(req, res, 'events/review_event', {})
 })
 router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     const sessionUser: SessionUser | undefined = req.session.user
@@ -202,7 +224,7 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     orderDTO.paidPointAmount = 0
     orderDTO.paidCouponAmount = 0
 
-    render(req, res, 'order_info', { deliveryGroupList: JSON.stringify(deliveryGroupList), orderDTO: JSON.stringify(orderDTO) })
+    render(req, res, 'order/order_info', { deliveryGroupList: JSON.stringify(deliveryGroupList), orderDTO: JSON.stringify(orderDTO) })
 })
 
 router.get('/s_inquiry_more', (req: Request, res: Response, next: NextFunction) => {
@@ -222,7 +244,7 @@ router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) =
     render(req, res, 'myinfo', {})
 })
 router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'myinfoUserCheck', {})
+    render(req, res, 'myInfoUserCheck', {})
 })
 router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'order_details', {})
@@ -247,7 +269,7 @@ router.get('/intro', (req: Request, res: Response, next: NextFunction) => {
 const render = (req: Request, res: Response, view: any, data: any | null) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false
     res.locals.user = req.session.user
-
+    res.locals.webroot = globalData.getBaseDir()
     const defaultData: any = {
         currentPage: ''
     }

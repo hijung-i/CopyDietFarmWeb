@@ -5,49 +5,52 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta
-            name="viewport"
-            content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        name="viewport"
+        content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
 
-        <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
         <style type="text/css">
-        @media screen and (max-width:1079px){
-        #header_common.sub{height:140px!important}
-        #header_common.sub ~ .content{margin-top:140px!important}
-        #nav a{margin-left:10px}    
-    }
+            @media screen and (max-width:1079px){
+                #header_common.sub{height:140px!important}
+                #header_common.sub ~ .content{margin-top:140px!important}
+                #nav a{margin-left:10px}    
+            }
         </style>
-        <%-include('general/head') %>
-            <link rel="stylesheet" href="/css/style.css">
-            <!-- font awesome -->
-            <link rel="stylesheet"
-                href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-                integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-                crossorigin="anonymous"/>
-        </head>
-
+    <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
+    <!-- font awesome -->
+    <link rel="stylesheet"
+        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+        crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/myPage.css">
+</head>
 <body>
-    <%-include('general/header') %>
+  
         <input type="hidden" id="listType" value="<%=listType %>">
         <% if(listType == 'CATEGORY') { %>
             <input type="hidden" id="category1Code" value="<%=category1Code %>">
             <input type="hidden" id="category2Code" value="<%=category2Code %>">
         <% } else if (listType == 'EVENT') { %>
             <input type="hidden" id="currentStandCode" value="<%=standCode %>">
+            <input type="hidden" id="salesStandName" value="">
         <% } else if (listType == 'SEARCH') { %>
             <input type="hidden" id="keyword" value="<%=keyword %>">
+        <% } else if (listType == 'BRAND') { %>
+            <input type="hidden" id="brandCode" value="<%=brandCode %>">
+            <input type="hidden" id="brandName" value="<%=brandName %>">
+            <input type="hidden" id="companyCode" value="<%=companyCode %>">
         <% } %>
         <main id="content" class="content">
-           
-            
-            <div class="main_sub_wrap">
+           <div id="app">
+            <%-include(webroot + 'views/general/header') %>
+              <div class="main_sub_wrap">
                 <section class="main_sub">
+                    <h2 class="keyword"></h2>
 
-                    <% if( listTitle != '' ) { %>
-                        <h2><%=listTitle %></h2>
-                    <% } %>
-                   <form name="#" id="#" method="get" action="#">
+                    <form name="#" id="#" method="get" action="#">
                         <div class="n_sort">
                             <div class="sort">
                                 <select name="#" id="sortOption"
@@ -94,10 +97,11 @@
                     </div>
                 </section>
             </div>
-
+          </div>
+      
         </main>
+        <script src="/js/products.js"></script>
 
-    <%-include('general/footer') %>
-    <script src="/js/products.js"></script>
+    <%-include(webroot + 'views/general/footer') %>
 </body>
 </html>

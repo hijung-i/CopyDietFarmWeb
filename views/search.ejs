@@ -10,9 +10,10 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no"/>
     <meta name="format-detection" content="no"/>
 
-    <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+    <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
     <link rel="stylesheet" href="/css/style.css">
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
 </head>
 <body>
     <article class="skip_menu">
@@ -23,7 +24,7 @@
         <a href="#">
             <span>바로가기3</span></a>
     </article>
-    <%-include('general/header') %>
+    <%-include(webroot + 'views/general/header') %>
 
     <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -39,7 +40,9 @@
                 id="mobileSearchKeyword"
                 type="text"
                 spellcheck="false"
-                placeholder="검색어를 입력해주세요">
+                placeholder="검색어를 입력해주세요"
+               
+>
             <a href="#"><img src="./images/grayx_icon_login.png" alt="취소"></a>
         </div>
         <div class="search_box_ico">
@@ -99,6 +102,6 @@
         </div>
     </div>
     <script src="/js/search.js"></script>
-    <%-include('general/footer') %>
+    <%-include(webroot + 'views/general/footer') %>
 </body>
 </html>

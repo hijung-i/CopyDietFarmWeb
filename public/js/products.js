@@ -1,4 +1,9 @@
-
+new Vue({
+    el: 'main',
+    components: {
+        'mypage-modal': signModal
+    }
+})
 $(function () {
     getDatas();
 
@@ -10,11 +15,13 @@ $(function () {
 function getProductByStandCode() {
     var salesStandCode = $('#currentStandCode').val();
     var sortOption = $('#sortOption').val();
+    var salesStandName =  $('#salesStandName').val();
 
     if(salesStandCode){
         var params = {
             salesStandCode: salesStandCode,
-            sortOption: sortOption 
+            sortOption: sortOption,
+            salesStandName: salesStandName
         }
         
         ajaxCallWithLogin(API_SERVER + '/product/getProductByStandCode', params, 'post'
@@ -54,21 +61,25 @@ function getProductListByCategory() {
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
     , function (data) {  
         if(data.result.length > 0) {
+            console.log(data.result);
+            var category1Name = data.result[0].category1Name
             var html = generateHtmlForProductList(data.result);
-            
+
             $('.sub_items ul').html(html);
+            $('.keyword').html(category1Name);
         } else {
             $('.sub_items ul').hide();
             $('.pick_list_null').show();
-            $('.pick_list_null').html('<img src="/images/gift_icon_detailpage@2x.png"><p>더 나은 구성을 위해 준비중입니다.</p>');
+            $('.pick_list_null').html('<img src="/images/gift_icon_detailpage@2x.png"><p>더 나은 구성을 위해 상품 준비중입니다.</p>');
         }
 
     }, function (err){
-        console.log("getProductByStandCode err", err);
+        console.log("getProductListByCategory err", err);
     }, {
         isRequire: false,
         userId: true
     });
+  
 }
 
 function getCategoryList(){
@@ -88,7 +99,9 @@ function getCategoryList(){
 
             $('.myPage_title').html(cate.category1Name);
             if(cate.category1Code == category1Code){
-                var html = '<a href="/products/'+ category1Code +'/category/ALL">전체보기</a>';
+                var html = '';
+                html += '<a class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';
+                html += '<a href="/products/'+ category1Code +'/category/ALL">전체보기</a>';
                 for(var j = 0; j < cate.category2.length; j++){
                     var  menuCate2 = cate.category2[j]
                     html += '<a href="/products/'+ category1Code +'/category/'+ menuCate2.category2Code +'">' + menuCate2.category2Name + '</a>';
@@ -101,6 +114,15 @@ function getCategoryList(){
                 break;
             }
         }
+        
+        $('.web_cate').click(function() {
+            var isActive = $('.web_cate').hasClass("active");
+            if( isActive ){
+                sideTabClose();
+            } else {
+                sideTabOpen();
+            }
+        });
     }, function (err){
         console.log("getProductByStandCode err", err);
     }, {
@@ -118,13 +140,24 @@ function productSearch(keyword) {
     }
 
     var keywordDesc = "<span style=\"color: red;\">\""+keyword + "\"</span>에 대한 검색 결과";
-    $('.main_sub h2').html(keywordDesc);
+    $('.keyword').html(keywordDesc);
 
     ajaxCallWithLogin(API_SERVER + '/product/productSearchBar', params, 'POST',
     function(data) {
-
-        var html = generateHtmlForProductList(data.result);
-        $('.sub_items ul').html(html);
+        if(data.result.length > 0) {
+            var html = generateHtmlForProductList(data.result);
+            
+            $('.sub_items ul').html(html);
+            $('.myPage_title').html(brand.brandName);
+            
+        } else {
+            $('.sub_items ul').hide();
+            $('.sub_items ul').hide();
+            $('.pick_list_null').show();
+            $('.pick_list_null').html('<img src="/images/twoheart_icon_heart@2x.png"><p>해당 브랜드가 존재하지 않습니다.</p>');
+        }
+        
+        
         console.log("search success", data);
     }, function(err) {
         console.log("searchKeyword", err);
@@ -140,14 +173,60 @@ function getPickProduct() {
         for(var i = 0; i < data.result.length; i++) {
             data.result[i].zzimYn = 'Y'; 
         }
-        
-        var html = generateHtmlForProductList(data.result);
-        $('.sub_items ul').html(html);
+        if(data.result.length > 0) {
+            var html = generateHtmlForProductList(data.result);
+            
+            $('.sub_items ul').html(html);
+        } else {
+            $('.sub_items ul').hide();
+            $('.pick_list_null').show();
+            $('.pick_list_null').html('<img src="/images/twoheart_icon_heart@2x.png"><p>찜한 상품이 없습니다.</p>');
+        }
         console.log("loading zzim list", data);
     }, function(err) {
         console.log("error while load zzim", err);
     }, {
         isRequire: true,
+        userId: true
+    })
+}
+
+function getProductListByBrandCode() {
+    var brandCode = $('#brandCode').val();
+    var companyCode = $('#companyCode').val();
+    var sortOption = $('#sortOption').val();
+    var brandName = $('#brandName').val();
+
+    var params = {
+        brandCode,
+        sortOption,
+        companyCode
+    };
+    
+    $('.myPage_title').html(brandName);
+    console.log(params)
+    ajaxCallWithLogin(API_SERVER + '/product/getBrandListDetail', params, 'POST',
+    function(data){
+        console.log("get ProductList by BrandCode", data);
+        var html = generateHtmlForProductList(data.result);
+        // var brand = data.result[i];
+
+        if(data.result.length > 0) {
+            var html = generateHtmlForProductList(data.result);
+            
+            $('.sub_items ul').html(html);
+            
+        } else {
+            $('.sub_items ul').hide();
+            $('.pick_list_null').show();
+            $('.pick_list_null').html('<p>해당브랜드에 상품이 없습니다.</p>');
+        }
+    
+  
+    }, function(err) {
+        console.error("err");
+    }, {
+        isRequired: false,
         userId: true
     })
 }
@@ -173,6 +252,10 @@ function getDatas() {
         case 'ZZIM':
             getPickProduct();
             break;
+        case 'BRAND':
+            getProductListByBrandCode();
+            break;
+
     }
 }
 // 맨 위로 

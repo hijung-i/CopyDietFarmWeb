@@ -8,8 +8,7 @@
             content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
         <link rel="stylesheet" href="/css/style.css">
         <style type="text/css">
             @media screen and (max-width:1079px) {
@@ -33,12 +32,13 @@
                 .cs_content{width:1080px;margin:0 auto;max-width:1080px}
             }
         </style>
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
 
         </head>
         <body>
             <div class="web_notice">
-                <%-include('general/header') %>
+                <%-include(webroot + 'views/general/header') %>
                 </div>
                 <div class="mobile_notice">
                     <section class="detail_title">
@@ -65,7 +65,7 @@
                                     <li class="clicked_menu">공지사항</li>
                                 </a>
                                 <a href="faq">
-                                    <li>fAQ</li>
+                                    <li>FAQ</li>
                                 </a>
                                 <a href="cs-center">
                                     <li>고객센터</li>
@@ -112,6 +112,6 @@
                     </div>
                 </main>
                 <script src="/js/notice.js"></script>
-        <%-include('general/footer') %>
+        <%-include(webroot + 'views/general/footer') %>
     </body>
 </html>

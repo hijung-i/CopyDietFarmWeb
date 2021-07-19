@@ -2,6 +2,7 @@ import { Console } from 'console'
 import { NextFunction, Request, Response, Router } from 'express'
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
 import { NiceUser, SessionUser, User } from '../models/user'
+
 import userService from '../services/userService'
 
 const router = Router()
@@ -41,6 +42,21 @@ router.post('/login/kakao', async (req: Request, res: Response, next: NextFuncti
     console.log('POST /user/login/kakao >>', req.body)
     const user = req.body as User
     const loginResult: UserResult = await userService.loginKakao(user)
+
+    if (loginResult.message === StatusMessage.success) {
+        console.log('loginSuccess -> ', loginResult.data)
+        userToSession(req, loginResult.data!)
+
+        console.log('save user on session', req.session.user)
+    }
+
+    res.status(loginResult.statusCode).send(loginResult.data || loginResult.message)
+})
+
+router.post('/login/apple', async (req: Request, res: Response, next: NextFunction) => {
+    console.log('POST /user/login/apple >>', req.body)
+    const user = req.body as User
+    const loginResult: UserResult = await userService.loginApple(user)
 
     if (loginResult.message === StatusMessage.success) {
         console.log('loginSuccess -> ', loginResult.data)

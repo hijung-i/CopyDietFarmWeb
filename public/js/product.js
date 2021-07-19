@@ -4,6 +4,11 @@ var isExtra = false, isJeju = false;
 
 var app = new Vue({
     el: 'main',
+    components: {
+        'product-review-modal': productReviewModal,
+        'product-inquiry-modal': productInquiryModal,
+        'mypage-modal': signModal
+    },
     data: {
         RESOURCE_SERVER,
         selectedOptions,
@@ -11,9 +16,18 @@ var app = new Vue({
         optionTotalPrice: 0,
         orderDTO: {},
         deliveryGroupList: [],
+        
+        review: undefined,
+        writable: undefined,
         reviewList: [],
+        writableList: [],
+        reviewModal: false,
+        
+        currentQuestion: {},
         questionList: [],
-        recmdList: []
+        inquiryModal: false,
+        recmdList: [],
+        modal: []
     }, methods: {
         numberFormat,
         deleteFromArray,
@@ -28,6 +42,73 @@ var app = new Vue({
         },
         onOptionSelected,
         zzimProduct,
+        onReviewUpdateClick: function(index) {
+            this.currentReview = this.reviewList[index];
+
+            openReviewModal()
+        },
+        onInquiryUpdateClick: function(index) {
+            this.currentQuestion = this.questionList[index];
+            var isChecked = this.currentQuestion.checkbox;
+
+            this.currentQuestion.checkbox 
+                = (isChecked != undefined && (isChecked == true || isChecked == 'Y'))?true:false;
+            openInquiryModal()
+        },
+        onChildPopupClosed: function(data) {
+            this.reviewModal = false;
+            this.inquiryModal = false; 
+
+            this.currentReview = {};
+            this.currentQuestion = {};
+        },
+        insertReviewComplete: function(data) {
+            this.reviewList.push(data);
+        },
+        deleteReview: function(index) {
+            var params = {
+                
+            };
+            ajaxCallWithLogin(API_SERVER + '/board/deleteReview', params, 'POST'
+            , function(data) {
+
+            }, function(err) {
+                
+            })
+            this.reviewList.splice(index, 1);
+        },
+        insertInquiryComplete: function(data) {
+            this.questionList.push(data);
+        },
+        deleteInquiry: function(index) {
+            var params = this.questionList[index];
+
+            ajaxCallWithLogin(API_SERVER + '/product/removeQA', params, 'POST'
+            , function(data) {
+                alert('문의 삭제에 성공했습니다.');
+                app.questionList.splice(index, 1);
+            }, function(err) {
+                console.log(err);
+            }, {
+                isReuqired: true,
+                userId: true
+            });
+        }
+    }, computed: {
+        brandListUrl: function() {
+            const brandCode = this.product.brandCode
+            const companyCode = this.product.companyCode
+            
+            let brandName = this.product.brandName
+            brandName = (brandName === '')? this.product.companyName : brandName
+            
+            let url = '/products/' + companyCode + '/brand?brandName=' + brandName
+            if (brandCode != '') {
+                url += '&brandCode=' + brandCode
+            }
+
+            return url
+        }
     }
 });
 
@@ -45,16 +126,57 @@ $(function() {
     
     ajaxCall('/user/login', {}, 'GET', 
     function( data ){
-        console.log("data", data);
         if(data.result.isLoggedIn == true) {
+            getWritableReviewList();
             checkDeliveryAddress();
         }
     }, function(err) {
         console.log("error", err);
     })
 
-    
+   
 })
+function getProductListByCategory() {
+    var category1Code = $('#category1Code').val();
+    var category2Code = $('#category2Code').val();
+    var sortOption = $('#sortOption').val();
+
+    if((category1Code == null || category1Code == undefined || category1Code == '')
+        || (category2Code == null || category2Code == undefined || category2Code == '')){
+        // TODO: Open alert modal
+        // location.href = '/'
+    }
+    if(category2Code == 'ALL') category2Code = '';
+
+    var params = {
+        category1Code: category1Code,
+        category2Code: category2Code,
+        sortOption: sortOption
+    }
+    
+ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'post'
+, function (data) {  
+    if(data.result.length > 0) {
+        console.log(data.result);
+        var category1Name = data.result[0].category1Name
+        var html = generateHtmlForProductList(data.result);
+
+        $('.sub_items ul').html(html);
+        $('.keyword').html(category1Name);
+    } else {
+        $('.sub_items ul').hide();
+        $('.pick_list_null').show();
+        $('.pick_list_null').html('<img src="/images/gift_icon_detailpage@2x.png"><p>더 나은 구성을 위해 상품 준비중입니다.</p>');
+    }
+
+}, function (err){
+    console.log("getProductListByCategory err", err);
+}, {
+    isRequire: false,
+    userId: true
+});
+
+}
 
 function getProductDetail(){
     var productCode = $("#productCode").val();
@@ -68,12 +190,19 @@ function getProductDetail(){
     }
     ajaxCallWithLogin(API_SERVER + '/product/getProductDetail', params, 'POST'
     , function (data) {
-        var product = data.result;
-        app.product = product;
+        app.product = data.result;
+        
+        var meta = '';
+        meta += '<meta property="og:url" content="http://dietfarm.co.kr/product/' + app.product.productCode +'">'
+        meta += '<meta property="og:title" content="'+ app.product.productName + '">'
+        meta += '<meta property="og:type" content="website">'
+        meta += '<meta property="og:image" content="'+ RESOURCE_SERVER + app.product.url + '">'
+        meta += '<meta property="og:description" content="'+ app.product.productDesc + '">'
+        $('head').append(meta)
 
         var html = '';
-        for(var i = 0; i < product.representative.length; i++ ) {
-            var image = product.representative[i];
+        for(var i = 0; i < app.product.representative.length; i++ ) {
+            var image = app.product.representative[i];
             html += '<div class="swiper-slide"><img src="'+ RESOURCE_SERVER + image.url + '" alt=""></div>';
         }
 
@@ -88,63 +217,61 @@ function getProductDetail(){
                 prevEl: ".swiper-button-prev"
             }
         });
-        
-        
 
         if(app.product == undefined || app.product == 0){
             // TODO: Open alert modal
             return false;
         }
 
-        if(product.options.length == 1) {
-            app.selectedOptions = JSON.parse(JSON.stringify(product.options));
+        if(app.product.options.length == 1) {
+            app.selectedOptions = JSON.parse(JSON.stringify(app.product.options));
             app.selectedOptions[0].optionCount = 1;
             app.selectedOptions[0].isSelected = true;
             drawSelectedOptions();
         }
 
-        app.product.discountRate = Math.round(product.discountRate);
+        app.product.discountRate = Math.round(app.product.discountRate);
         // 상품명
-        $('.detail_title h2').html(product.productName);
-        $('.v_top_name').html(product.productName);
-        $('.infoArea01 .product_name_css .con span').html(product.productName);
+        $('.detail_title h2').html(app.product.productName);
+        $('.v_top_name').html(app.product.productName);
+        $('.infoArea01 .product_name_css .con span').html(app.product.productName);
 
         // 가격 정보
         var productDesc = $('.v_top_txt')
         var discountPrice = $('.price_mobile .p1')
         var retailPrice = $('.price_mobile .p2')
         var discountRate = $('.price_mobile .p3')
-        productDesc.html(product.productDesc);
-        discountPrice.html(numberFormat(product.discountPrice)+'원');
+        productDesc.html(app.product.productDesc);
+        discountPrice.html(numberFormat(app.product.discountPrice)+'원');
         
-        if(product.discountPrice != product.retailPrice){
-            retailPrice.html(numberFormat(product.retailPrice)+'원');
-            discountRate.html(numberFormat(Math.round(product.discountRate, 0))+'%');
+        if(app.product.discountPrice != app.product.retailPrice){
+            retailPrice.html(numberFormat(app.product.retailPrice)+'원');
+            discountRate.html(numberFormat(Math.round(app.product.discountRate, 0))+'%');
         } else {
             $('.v_top_txt_box .p2').hide()
             $('.v_top_txt_box .p3').hide();
         }
 
         // v_n_top_info
-        $(".v_n_top_info .point .ex").html(product.deliveryCost)
-        $(".v_n_top_info .courier-name .ex").html(product.deliveryCompany);
+        $(".v_n_top_info .point .ex").html(app.product.deliveryCost)
+        $(".v_n_top_info .courier-name .ex").html(app.product.deliveryCompany);
         
         var deliveryCostHtml = '';
-        if(product.deliveryCostBasis == 0){
+        if(app.product.deliveryCostBasis == 0){
             deliveryCostHtml = '무료배송';
-        } else if(product.deliveryCostBasis < 999999) {
-            deliveryCostHtml = numberFormat(product.deliveryCostBasis)+'원 이상 구매시 무료배송';
+        } else if(app.product.deliveryCostBasis < 999999) {
+            deliveryCostHtml = numberFormat(app.product.deliveryCostBasis)+'원 이상 구매시 무료배송';
         } else {
-            deliveryCostHtml = numberFormat(product.deliveryCost); 
-            if(product.deliveryCost3 != 0) {
-                deliveryCostHtml += ' ~ ' + numberFormat(product.deliveryCost3) + '원';
+            deliveryCostHtml = numberFormat(app.product.deliveryCost); 
+            if(app.product.deliveryCost3 != 0) {
+                deliveryCostHtml += ' ~ ' + numberFormat(app.product.deliveryCost3) + '원';
             }
         }
         $('.v_n_top_info .delivery-cost .ex').html(deliveryCostHtml);
 
         var packingTypeHtml = '';
-        if (product.packingType == 'A') packingTypeHtml = '상온 (종이박스)';
-        else if (product.packingType == 'B') packingTypeHtml = '냉장 (아이스박스)';
+        if (app.product.packingType == 'A') packingTypeHtml = '상온 (종이박스)';
+        else if (app.product.packingType == 'B') packingTypeHtml = '냉장 (아이스박스)';
         $('.v_n_top_info .packing-type .ex').html(packingTypeHtml);
 
         console.log(app.product)
@@ -154,13 +281,15 @@ function getProductDetail(){
 
     }, function (err) {
         console.log("productDetail error", err);
-        alert('상품 정보를 불러오지 못했습니다.');
+        alert('상품 정보를 불러오지 못했습니다.', JSON.stringify(err));
         location.href = '/';
     }, {
         isRequired: false,
         userId : true
     })
 }
+
+   
 
 function addCart() {
     console.log(selectedOptions);
@@ -310,6 +439,9 @@ function getReviewList() {
     function (data) {
     
         app.reviewList = data.result;
+        // Array.from(app.reviewList).forEach(function(item) {
+            
+        // })
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);
@@ -321,13 +453,15 @@ function getProductQuestionList() {
         productCode: app.product.productCode
     };
     
-    console.log(params);
-    ajaxCall(API_SERVER + '/product/getQAByProduct', params, 'POST', 
+    ajaxCallWithLogin(API_SERVER + '/product/getQAByProduct', params, 'POST', 
     function (data) {
         app.questionList = data.result;
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);
+    }, {
+        isRequired: false,
+        userId: true
     })
 }
 
@@ -396,11 +530,7 @@ function getRecommendedProducts() {
 function insertRecommandListHtml() {
     
     var recmdList = app.recmdList;
-    var html = '';
-    for(var i = 0; i < recmdList.length; i++) {
-         var product = recmdList[i];
-         html += '<div><a href="/product/' + product.productCode +'"><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"><div class="desc"><p class="title">' +product.productName + '</p><ul><li class="sale">' + numberFormat(product.discountPrice) + '원</li><li class="cost">' + numberFormat(product.retailPrice) + '원</li><li class="ratio">' + Math.round(product.discountRate, 0) + '%</li></ul></div></a></div>'
-    }
+    var html = generateHtmlForProductList(recmdList);
 
     $('.responsive').html(html);
 
@@ -412,6 +542,7 @@ function insertRecommandListHtml() {
         slidesToScroll: 1,
         autoplay:true,
         autoplaySpeed:3000,
+        draggable: true,
         pauseOnHover:true,
         arrow:true,
         responsive: [
@@ -428,7 +559,7 @@ function insertRecommandListHtml() {
             breakpoint: 600,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 1
+              slides: 1
             }
           },
           {
@@ -452,7 +583,6 @@ function getProductList() {
     }
     ajaxCallWithLogin(API_SERVER + '/product/getProductListByCategory', params, 'POST',
     function(data) {
-        console.log(data);
         app.recmdList = data.result;
         
         insertRecommandListHtml();
@@ -528,3 +658,52 @@ Kakao.Link.createScrapButton({
     requestUrl: 'https://developers.kakao.com',
     templateId: 55707
   });
+
+function getWritableReviewList() {
+    var productCode = $("#productCode").val();
+
+    var params = {
+        productCode: productCode
+    }
+
+    ajaxCallWithLogin(API_SERVER + '/board/getWritableReview', params, 'POST',
+    function(data) {
+        app.writableList = data.result;
+        console.log("writableList", data.result);
+    }, function(err) {
+        console.log(err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
+function sendKakaoLink() {
+
+    Kakao.Link.sendDefault({
+        // requestUrl: url,
+        objectType: 'feed',
+        content: {
+            title: app.product.productName,
+            imageUrl:
+                RESOURCE_SERVER + app.product.url,
+            link: {
+                mobileWebUrl: 'https://dietfarm.page.link/?link=https://dietfarm.co.kr/product/'+ app.product.productCode+'&apn=com.dietFarm',
+                webUrl: 'https://dietfarm.page.link/?link=https://dietfarm.co.kr/product/'+ app.product.productCode
+            },
+        },
+        buttons: [
+            {
+                title: '상품 보러가기',
+                link: {
+                    mobileWebUrl: 'https://dietfarm.page.link/?link=https://dietfarm.co.kr/product/'+ app.product.productCode+'&apn=com.dietFarm',
+                    webUrl: 'https://dietfarm.page.link/?link=https://dietfarm.co.kr/product/'+ app.product.productCode
+                },
+            }
+        ],
+        callback: function() {
+            console.log("공유 click");
+        }
+    });
+    
+}

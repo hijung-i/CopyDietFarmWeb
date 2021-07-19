@@ -58,10 +58,19 @@ input[type=number]::-webkit-outer-spin-button {
     /* outline: 2px solid red; */
   }
 #tab ul li{cursor: pointer;}
+.share_body button{border:none;background-color:transparent;font-size:12px}
 /*products_mobile*/
 
 
 @media screen and (max-width:1079px){
+.d_save{position: relative;
+font-size: 11px;
+left: 64px;
+top: 24px;
+background-color: transparent;
+border: 1px solid #424242;
+border-radius: 5px;
+margin-bottom: 20px;}
 .line{position:relative;margin-top:10px}
 .view_top_img img{width:100%!important;height:100%!important}
 .view_navi_box{display:none}
@@ -130,7 +139,7 @@ input[type=number]::-webkit-outer-spin-button {
 .tabMenu{margin-bottom:-4px}
 
 #content .tabMenu{margin-top:22px;width:100%;text-align:center}
-#content .tabMenu ul{padding-left:25px;padding-right:25px;border-bottom:2px solid #f1f1f1}
+#content .tabMenu ul{border-bottom:2px solid #f1f1f1}
 #content .tabMenu li{float:left;width:25%;height:35px;font-size:14px;text-align:center;padding:10px}
 #content .tabMenu li{color:#878787;}
 #content .tabMenu li.active > a {color: #F99319; font-weight: 700;}
@@ -159,12 +168,10 @@ input[type=number]::-webkit-outer-spin-button {
 .t_price li{font-size:14px;}
 .t_price p{float:right;margin-right:15px;margin-top:20px;margin-bottom:10px}
 .total{font-weight:normal}
-.total_price{display:none}
 .common_btn_wrap{width:100%;}
-.option_btns{float:left;}
 .option_btns button{height:45px;
-font-size:16px;border:none;border-radius:5px}
-.h_btn{width:10%;background-color:transparent;border:1px solid #F99319;position:relative;top:6px}
+font-size:16px;border-radius:5px}
+.h_btn{width:10%;background-color:transparent;border:1px solid #F99319;position:relative}
 .c_btn{width:44%}
 .p_btn{width:44%}
 .pp_wrap{margin-bottom:-50px;}
@@ -195,8 +202,25 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 .inquiry{display:none}
 .modal-open{display:none}
 .option{font-size:12px;color:#878787;margin-left:15px}
-.review_img01 img{width:100px;height:60px;margin-left:13px}
-.review_img02 img{width:100px;height:60px;margin-left:13px}
+
+.review-img-wrapper { 
+    padding: 0px 15px; 
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.review-img-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+.review-img {
+    display: flex;
+    flex-flow: row;
+}
+
+.review-img img{margin-right: 10px}
+.review-img img:last-child {
+    margin-right: 0px;
+}
 .review_summ{clear:both;font-size:14px;line-height:18px;margin-top:10px;padding-left:10px;padding-right:10px;margin-bottom:10px}
 .review_info02{border-bottom:8px solid #F1F1F1;padding-bottom:20px}
  #toc-toggle{display:none}
@@ -206,12 +230,25 @@ overflow:hidden;text-overflow: ellipsis;margin:10px auto;margin-left:-1px}
 
 /*products_web*/
 @media screen and (min-width:1080px){
+.d_save{
+position:absolute;
+font-size: 11px;
+background-color: transparent;
+border: 1px solid #424242;
+border-radius: 5px;
+right:140px;
+margin-top:10px
+}
+.d_save_wrap{padding-bottom:20px}
 #tab1_mobile {height: 769px;}
 .swiper-pagination {
     width: 10%;
     left: 88%;
 }
+.price_mobile .p1{font-size:16px;font-weight:bold;margin-bottom:6px}
+.price_mobile .p2{color:#BBBBBB;font-size:14px;text-decoration:line-through;margin-left:7px}
 
+.price_mobile .p3{color:#F32525;font-size:16px;font-weight:bold;margin-left:7px}
 /* 상품상세 멀티슬라이드 */
 .responsive1 div img {
     width: 294px; height: 353px;
@@ -279,9 +316,7 @@ label:after {
 border-top:1px solid #BBBBBB;border-bottom:1px solid #BBBBBB;border-left:1px solid #BBBBBB;
 text-align:center;padding-top:24px;width:204px;height:68px;font-size:18px;color: #707070 !important;font-weight:bold}
 #btn_mobile{display:none}
-.review_btn button{display:none}
-.common_btn_wrap{margin-left:-10px}
-button.h_btn {width:51px;height:45px;background-color:#fff;border:1px solid #F99319;border-radius:5px;position:relative;top:7px}
+button.h_btn {width:51px;height:45px;background-color:#fff;border:1px solid #F99319;border-radius:5px;}
 button.h_btn img{width:26px;height:21px;}
 button.c_btn{width:120px;height:45px;border-radius:5px}
 button.p_btn{width:120px;height:45px;border:0;border-radius:5px}
@@ -297,7 +332,6 @@ width:310px;
 height:40px;
 margin-left:-18px
 }
-.price_mobile{display:none}
 .view_navi_box {display:block;position:relative;background:none;padding-top:30px;text-align:left;color:#4d4d4d;font-weight:600;letter-spacing:-0.05em;}
 .view_navi_tit {display:inline;padding-bottom:30px;text-align:left;color:#4d4d4d;font-size:18px}
 
@@ -318,17 +352,18 @@ margin-left:-18px
 box-shadow: none !important}
 .purchased_products ul li{float:left}
 .purchased_products img{border-radius:5px; width: 294px;}
-.view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif}
+.view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif;margin-top:100px}
 .view_top_img {float:left}
 
 .ico_v_dsd_box {padding:0px 0 10px}
 .ico_v_dsd {padding:3px 8px 4px;background:#aaacaf;color:#fff;font-size:12px;letter-spacing:-0.05em}
 
 /* 제품상세 우측 설명박스*/
-.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:58px 29px 147px; left: 704px; top: -694px;} 
-.v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em;font-family:'나눔고딕';line-height:24px}
-.v_top_txt {color:#6B6B6B;font-size:12px;line-height:18px;padding:10px 0 15px;border-bottom:1px solid #e1e1e1} 
-.v_n_top_info .ex{padding-left:20px}
+.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:48px 29px 147px; left: 704px; top: -694px;} 
+.v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em; font-family: 'Nanum Gothic', sans-serif; line-height:24px}
+.v_top_txt {color:#6B6B6B;font-size:12px;line-height:18px;padding:10px 0 0px} 
+.v_n_top_info .ex{white-space:nowrap;}
+.price_mobile{display:flex;margin-top:14px;border-bottom:1px solid #e1e1e1;padding-bottom:10px}
 .option_wrap h3{margin-left:-15px}
 .option_wrap #products{border:1px solid #424242;margin-left:-15px;width:305px;height:36px}
 .product_detail_content {position:relative;margin-top:54px;font-family:'Noto sans',sans-serif}
@@ -362,8 +397,6 @@ box-shadow: none !important}
 .common_btn_wrap .h_btn img{width:25px;height:25px}
 .common_btn_wrap_main .c_btn{width:120px;height:45px;background-color:#fff;border:1px solid #F99319;border-radius:5px;color:#F99319}
 .common_btn_wrap.p_btn{width:120px;height:45px;background-color:#F99319;border:0;color:#fff;border-radius:5px}
-.common_btn_wrap .option_btns{float:left;white-space:nowrap;margin-top:25px;margin-left:-10px}
-
 
 .ico_select_arrow {float:right; position:relative;top:-2px;right:0px;}
 .ico_select_arrow img {border:none;vertical-align:middle}
@@ -416,13 +449,6 @@ box-shadow: none !important}
     min-height: 220px;
 }
 
-/* floating tab bottom jgpark 작업 */
-
-.total_price {
-    margin-top: 9px;
-    display: flex;
-    
-}
 .total_price button.h_btn {
     margin-right: 11px;
 }
@@ -454,8 +480,6 @@ box-shadow: none !important}
     
     margin-left: 5px;
 }
-
-
 .float_btns {
     margin-top: 9px;
 }
@@ -609,7 +633,7 @@ table.web_qna {padding: 12px 0;}
 /* 판매자문의모바일 css */
 #toc-toggle{cursor:pointer;}
 #toc-content{margin-left:10px}
-.btn_area {width:100%;clear:both; padding-right:38px;}
+.btn_area {width:100%}
 #btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
@@ -619,14 +643,7 @@ font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
 .inquiryBox ul li ul li{line-height:14px}
 .inquiryBox .words form{margin-top:-20px}
-.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
-text-align:center;line-height:17px;
-font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
-border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
-.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
-.filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
-.filebox p span{text-decoration:underline
-}
+
 .tab_cont{display:none; min-height:360px;}
 .tab_cont.active{display:block; width:1040px;}
 .tab_wrap li.active a {
@@ -682,7 +699,6 @@ border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
 
 /*문의-모달*/
 .productInquiryBox{width:1068px;height:auto;}
-.btn_area {width:340px;margin:0 auto}
 #btnInquiry{width:330px;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  10px 0px;margin-bottom:25px}
 .productInquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:24px}
@@ -713,6 +729,16 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 .page_nation a.active {background-color:#fff;color:#F99319;}
 
 
+.v_top_txt_box {
+    position: relative;
+}
+
+.share_img {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+
 @media screen and (min-width:1080px){
  .product_top{display:flex;flex-flow:column-reverse}
  .review_img{float:right;margin-right:50px;margin-top:-120px}
@@ -730,7 +756,6 @@ height:28px;line-height:28px;text-align:center;background-color:#fff;font-size:1
 @media screen and (max-width:1079px){
 /*div #ex1.modal p{text-align:center;}*/
 div #ex1.modal ul li {float:left}
-.share_img img{float:right;position:relative;top:80px;left:-24px}
 .option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
 .option_wrap h3{font-size:12px;font-weight:bold;margin-top:21px}
 
@@ -745,13 +770,36 @@ div #ex1.modal ul li {float:left}
 .product_modal03 #btnEnroll{width:100%;height:45px;color:#fff;font-size:14px;font-weight:bold;background-color:#F99319;border-radius:5px;border:none}
 }
 
-
 @media screen and (min-width:1080px){
     .products_ex {width: 780px;}
-    .products_ex img {width: 820px;}
+    .products_ex img {width: 810px;}
+    .delivery-cost td p{
+        position: relative;
+        left: 138px;
+        top: 12px;
+        border: 1px solid #bbbbbb;
+        border-radius: 5px;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 1px;
+        padding-bottom: 2px;
+        font-size: 11px;
+    }
 }
 @media screen and (max-width:1079px) {
     .products_ex {display: none;}
+    .delivery-cost td p{
+        position: relative;
+        left: 104px;
+        top: 7px;
+        font-size: 12px;
+        border: 1px solid #bbbbbb;
+        border-radius: 5px;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 1px;
+        padding-bottom: 2px;
+        }
 }
 .option_wrap h3{margin-bottom:8px;font-size:12px;}
 .product_option{width:100%;margin:0 auto;}
@@ -764,10 +812,19 @@ div #ex1.modal ul li {float:left}
 .t_price li{font-size:14px;position:relative;top:-10px}
 .t_price p{float:right;margin-right:15px;margin-top:20px;margin-bottom:10px}
 .total{font-weight:normal}
+#btnSaveProduct{width:100%;    height: 45px;
+    color: #fff;
+    background-color: #EFA543;
+    border-radius: 5px;
+    border: none;}
 
 
 @media screen and (max-width:1079px){
-.review_btn_web button{display:none}
+    .total_price {
+        margin-top: 15px
+    }
+
+
 .v_top_txt_box .modal p{text-align:center}
 .products_ex{width:100%;border-top:8px solid #f1f1f1;}
 .purchased_products{clear:both;width:100%;border-top:8px solid #f1f1f1;padding-left:15px;padding-right:15px}
@@ -775,20 +832,14 @@ div #ex1.modal ul li {float:left}
 .purchased_products{clear:both;width:100%;padding-bottom:70px}
 .purchased_products .title{font-size:12px}
 .purchased_products .price{font-size:12px;font-weight:bold}
-#btnSaveProduct{width:100%;    height: 45px;
-    color: #fff;
-    background-color: #EFA543;
-    border-radius: 5px;
-    border: none;}
 
 .review_btn{display:flex;justify-content:center; padding-bottom:21px;border-bottom:8px solid #f1f1f1;border-top:2px solid #E6E6E6;padding-top:28px}
 .review_btn button{border:2px solid #F99319;background-color:#fff;color:#F99319;font-weight:bold;border-radius:5px}
-.review_btn_web
 .v_floating_wrap{display:none}
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}
-.num{width:100%;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:10px;padding-bottom:18px
-;padding-left:10px;padding-top:4px;font-size:18px;font-weight:bold;}
+.num{width:100%;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:24px;padding-bottom:18px
+;padding-left:10px;padding-top:4px;font-size:14px;font-weight:bold;}
 .product_review01{width:100%;}
 .review_info01 ul li{float:left;font-size:13px;padding-left:15px}
 .review_info01 {width:100%;display: flex;justify-content: space-between;margin-top:20px;padding-right:20px;}
@@ -827,10 +878,10 @@ div #ex1.modal ul li {float:left}
     .starRev{display:inline-block;margin:0 auto;margin-top:10px;margin-left:14px}
     .review_btn_web #modal_btn{width:168px;height:45px;background-color:#F99319;border-radius:5px;border:0;font-size:18px;color:#fff;font-weight:bold;float:right;margin-top:30px;margin-right:20px} 
 }
-    /*리뷰*/
+/*리뷰*/
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}
-.review_info01 ul li{float:left;font-size:13px;padding-left:15px}
+.review_info01 ul li{float:left;font-size:13px;padding-left:15px;top:-5px}
 .review_info01 {width:100%;display: flex;justify-content: space-between;margin-top:20px;padding-right:20px;margin-bottom:10px}
 .review_info02 ul li{float:left;}
 .starRev span{padding:5px}
@@ -932,26 +983,9 @@ div #ex1.modal ul li {float:left}
 .more_inq{
 width:100%;height:45px;background-color:#F1F1F1;border-radius:0px;border:0;border-bottom:2px solid #E6E6E6}
 
-/* 하단 버튼 세 개 */
-.common_btn_wrap{width:100%}
-.common_btn_wrap > .option_btns {
-    width: 100%; margin: 0 auto; height: 45px;
-    padding: 0;
-    margin: 20px 0;
-    white-space:nowrap;
-}
-.common_btn_wrap > .option_btns button:nth-child(1) {background-color:#F99319; border: 1px solid #F99319}
-.common_btn_wrap > .option_btns button:nth-child(2) {
-    background: #fff;
-    border: 1px solid #F99319;
-    color: #F99319;
-    font-weight:700
-}
-.common_btn_wrap > .option_btns button:nth-child(3) {
-    background: #F99319;
-    color: #fff;
-    font-weight: 700;
-}
+
+
+
 /* 문의 목록 */
 .review_edit ul > .myInquiry{
     padding-left:6px;
@@ -1066,28 +1100,31 @@ color: #878787; font-size: 12px;}
 /*네번째 탭 문의하기 모달창 css*/
 
 @media screen and (min-width:1080px){
-.line{position:relative;margin-top:4px}
-.share_img img{ float:right;position:relative;top:-40px;left:4px}
-.option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
-.reviews .num{width:100%;font-size:18px;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:14px;padding-bottom:18px}
-#tab3 .num{width:780px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-    position: relative;
-    top: 10px;
-    padding-bottom:20px;
-    border-bottom:1px solid #E6E6E6}
-#tab4 .inquiry{width:100%;font-size:18px;font-weight:bold;margin-top:10px;position:relative;top:10px}
-.myReview{width:75%;padding-right:5px;
-    border-bottom:2px solid #E6E6E6;
-    padding-bottom:20px;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-    align-items: center;
-    padding-right:15px
-    /* outline: 2px solid red; */
-    
-}
+    .line{position:relative;margin-top:4px}
+    .share_img img{ float:right;position:relative;top:20px;left:4px}
+    .option_wrap{margin-bottom:40px;padding-left:15px;padding-right:15px}
+    .reviews .num{width:100%;font-size:18px;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:14px;padding-bottom:18px}
+    #tab3 .num{width:780px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+        position: relative;
+        top: 10px;
+        padding-bottom:20px;
+        border-bottom:1px solid #E6E6E6}
+    #tab4 .inquiry{width:100%;font-size:18px;font-weight:bold;margin-top:10px;position:relative;top:10px}
+    .myReview{width:75%;padding-right:5px;
+        border-bottom:2px solid #E6E6E6;
+        padding-bottom:20px;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        align-items: center;
+        padding-right:15px
+        /* outline: 2px solid red; */
+        
+    }
+    .common_btn_wrap > .option_btns button:nth-child(1) {
+        top: 8px;
+    }
 }

@@ -3,16 +3,22 @@ var isJeju = false, isExtra = false;
 var deliveryGroupList = new Array();
 var cartList = new Array();
 
+
 var app = new Vue({
     el: 'main',
+    components: {
+        'delivery-info-modal': deliveryInfoModalComponent
+    },
     data: {
         RESOURCE_SERVER,
         API_SERVER,
         checkAll: true,
-        orderDTO: {},
+        orderDTO: {
+            delivery: {}
+        },
         requestDeliveryGroupList: [],
         cartList,
-        deliveryGroupList
+        deliveryGroupList,
     },
     methods: {
         numberFormat,
@@ -30,7 +36,8 @@ var app = new Vue({
         },
         updateOrderInfo: function (option) {
             if(option != undefined && !option.isSelected) {
-                $('#option.isSelected')[i].checked = false;
+                // 전체 선택 해제
+                $('#checkAll')[0].checked = false;
             }
             
             this.orderDTO = new OrderDTO();
@@ -190,11 +197,11 @@ var app = new Vue({
                 if(i == oIdx) {
                     continue;
                 }
-                currentProduct.options[i].isSelected =false;
+                currentProduct.options[i].isSelected = false;
             }
             requestDeliveryGroup.deleteNoneSelectedProduct();
             products = requestDeliveryGroup.products;
-
+            
             var params = {
                 products
             }
@@ -209,8 +216,18 @@ var app = new Vue({
                 isRequired: true,
                 userId: true
             })
+        },
+        onDeliveryInfoSelected: function(data) {
+            console.log("event 발생", data);
+            var selectedDelivery = Object.assign(data);
+            this.orderDTO.delivery = selectedDelivery;
+
+            checkDeliveryAddress();
+            this.$forceUpdate();
         }
+        
     }
+    
 });
 
 $(function() {
@@ -247,24 +264,4 @@ function getSelectedOptionIndexes(ele) {
     var opt = id[1].substring('opt_'.length);
     
     return [prd, opt];
-}
-
-function openInfoModal() {
-    console.log("click");
-    $('#iModal').show();  
-    $('html,body').css({'overflow':'hidden','height':'100%'});  
-    $('#iModal').on('scroll touchmove mousewheel',function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        return false;
-    })
-
-    getDeliveryInfoList();
-
-    var inputs = document.querySelectorAll('input');
-    $(inputs).click(function(){
-        console.log('done');
-        
-    });
-
 }

@@ -1,20 +1,12 @@
-// var API_SERVER = "http://localhost:9090";
-// var SERVER_IP = 'localhost';
-// var SERVER_IP = '192.168.0.3';
-// var SERVER_IP = 'data-flow.co.kr';
-
-// var CALLBACK_SERVER = "http://"+ SERVER_IP +":3000";
-
-// var API_SERVER = "http://192.168.0.3:9090";
-
+// 테스트
 // var API_SERVER = "http://112.217.209.162:9090";
-// var RESOURCE_SERVER = "http://112.217.209.162:8000";
+// var CALLBACK_SERVER = "http://112.217.209.162";
+// var API_SERVER = "http://192.168.0.3:9090";
+// var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-// var API_SERVER = "http://13.209.123.102";
 var API_SERVER = "https://dietfarm119.co.kr";
-var SERVER_IP = 'dietfarm.co.kr';
-var CALLBACK_SERVER = "http://"+ SERVER_IP;
+var CALLBACK_SERVER = "https://dietfarm.co.kr";
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
@@ -38,7 +30,7 @@ function ajaxCall(url, params, type, onSuccess, onError){
    })
 }
 
-function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError){
+function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError, file){
    var param = JSON.stringify(params);
    $.ajax({
       type : type,
@@ -46,6 +38,28 @@ function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError){
       data : param,
       url : url,
       contentType : "application/json;charset=UTF-8",
+      beforeSend : function(xmlHttpRequest){
+         xmlHttpRequest.setRequestHeader("AJAX", "true")
+         xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
+
+         if(file != undefined && file != null && file != false) {
+            xmlHttpREqeuset.setRequestHeader
+         }
+      },
+      success : onSuccess,
+      error : onError
+   })
+}
+
+function ajaxCallMultipartFormData(url, params, type, onSuccess, onError){
+   $.ajax({
+      type : type,
+      cache : false,
+      data : params,
+      url : url,
+      enctype: 'multipart/form-data',
+      processData: false,
+      contentType : false,
       beforeSend : function(xmlHttpRequest){
          xmlHttpRequest.setRequestHeader("AJAX", "true")
          xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
@@ -71,13 +85,26 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          }
 
          var user = result.user;
-         if(result.isLoggedIn && user != undefined){
-            if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
-            if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
-            if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
-            if(isAvailable(option.address) && option.address == true) params.address = user.address
+         
+         if(option.multipart != undefined && option.multipart == true) {
+            if(result.isLoggedIn && user != undefined){
+               if(isAvailable(option.userId) && option.userId == true) params.append("userId", user.userId)
+               if(isAvailable(option.userCellNo) && option.userCellNo == true) params.append("userCellNo", user.userCellNo)
+               if(isAvailable(option.userEmail) && option.userEmail == true) params.append('userEmail', user.userEmail)
+               if(isAvailable(option.address) && option.address == true) params.append('address', user.address)
+            }
+
+            ajaxCallMultipartFormData(url, params, type, onSuccess, onError)
+         } else {
+            if(result.isLoggedIn && user != undefined){
+               if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
+               if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
+               if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
+               if(isAvailable(option.address) && option.address == true) params.address = user.address
+            }
+
+            ajaxCall(url, params, type, onSuccess, onError);
          }
-         ajaxCall(url, params, type, onSuccess, onError);
 
       },
       error: function(err){
@@ -111,7 +138,7 @@ function goBack() {
 
 function generateHtmlForProduct(product){
 
-    var html = '<li>';
+   var html = '<li>';
    html += '<div class="thum">';
    html += '<a href="/product/'+ product.productCode +'">';
    html += '<img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';
@@ -132,9 +159,11 @@ function generateHtmlForProduct(product){
    html += '<p class="title">' +product.productName + '</p>';
    html += '<ul>';
    html += '<li class="sale">' + numberFormat(product.discountPrice) + '원</li>';
-   if(product.discountPrice != product.retailPrice){
+
+   var discountRate = Math.round(product.discountRate, 0)
+   if(product.discountPrice != product.retailPrice && discountRate != 0){
       html += '<li class="cost">' + numberFormat(product.retailPrice) + '원</li>';
-      html += '<li class="ratio">' + Math.round(product.discountRate, 0) + '%</li>';
+      html += '<li class="ratio">' + discountRate + '%</li>';
    }
    html += '</ul>';
    html += '</div>';
@@ -224,64 +253,6 @@ function sideMenu(key) {
    }
 }
 
-function onLayerPop(layerId, seq, lang) {
-
-   if (layerId == 'offLayer'){
-      $(".pop_layer").hide();
-   } else {
-      var h = $("#"+layerId).height();
-      if(document.body.scrollHeight <= document.body.Height){
-         var allHeight = document.body.Height;
-      } else {
-         var allHeight = document.body.scrollHeight;
-      }
-   }
-}
-
-function onLayerPop02(layerId, seq) {
-   //alert(layerId);
-   if (layerId == 'offLayer'){
-      $(".pop_layer").hide();
-   } else {
-      var h = $("#"+layerId).height();
-   //   $(".pop_layer_back").hide();
-      if(document.body.scrollHeight <= document.body.Height){
-         var allHeight = document.body.Height;
-      } else {
-         var allHeight = document.body.scrollHeight;
-      }
-
-      $(".pop_layer").hide();
-      $(".pop_layer_back").css("height",allHeight).show();
-      $("#"+layerId).show();
-      $("#"+layerId+">.popContainer").show();
-
-   }
-}
-
-function showLayer( obj ) {
-   $('#' + obj).slideToggle("fast", function () {
-      if($(this).css("display") == 'block') {
-         $("img#arDown").attr("src","/mobile/img/arrow_up.png");
-      }
-      else {
-         $("img#arDown").attr("src","/mobile/img/arrow_down.png");
-      }
-   });
-}
-
-function changeMyTab(opt) {
-   $('#myTab1').hide();
-   $('#myTab2').hide();
-   $('#myTab3').hide();
-   $('#myTab4').hide();
-   $('#myTab5').hide();
-   $('#myTab6').hide();
-   $('#myTab7').hide();
-   $('#myTab8').hide();
-   $('#myTab' + opt).show();
-}
-
 // 햄버거 메뉴
 $(document).ready(function() {
 
@@ -291,10 +262,12 @@ $(document).ready(function() {
       });
       var z = $('#tab1').offset().top;
       var innerHeight = $(window).height();
-      $('#tab1 ul').css ({
-          'max-height' : (innerHeight - z) + 'px'
+      $('div.sideMenu_ctt').css ({
+          'max-height' : (innerHeight - z) + 'px',
+          'overflow' : 'auto'
       });
    });
+   
    $('.slideMenu_close>a').on('click', function() {
       $('.sideMenu').animate({
          left: -100 + '%'
@@ -315,22 +288,6 @@ $(document).ready(function() {
 
    $('.slideMenu_close>a').on('click', function() {
       $('.gnb').show();
-   });
-
-   $("#memberMenu").bind("moseover mouseenter",function(){
-      $("#memMenu").show();
-   });
-
-   $("#memMenu").bind("moseout mouseleave",function(){
-      $("#memMenu").hide();
-   });
-
-   $("#NotmemberMenu").bind("moseover mouseenter",function(){
-      $("#NotmemMenu").show();
-   });
-
-   $("#NotmemMenu").bind("moseout mouseleave",function(){
-      $("#NotmemMenu").hide();
    });
 
 });
@@ -362,258 +319,57 @@ function getCookie(cName) {
    }
    return unescape(cValue);
 }
-
-  
-//마이페이지 로그인 모달 js
-$(function(){
-   //$(".popup_box").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
-   //{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
-    var modal = document.getElementById('myModal');   
-   
-});
-var modals = document.getElementsByClassName("modal");
-// Modal을 띄우는 클래스 이름을 가져옵니다.
-var btns = document.getElementsByClassName("btn");
-// Modal을 닫는 close 클래스를 가져옵니다.
-var spanes = document.getElementsByClassName("close");
-var funcs = [];
- 
-// Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
-function Modal(num) {
-  // 해당 클래스의 내용을 클릭하면 Modal을 띄웁니다.
-    btns[num].onclick =  function() {
-        modals[num].style.display = "block";
-        console.log(num);
-    };
- 
-    // <span> 태그(X 버튼)를 클릭하면 Modal이 닫습니다.
-    spanes[num].onclick = function() {
-        modals[num].style.display = "none";
-    };
-  };
-
-// 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의합니다.
-for(var i = 0; i < btns.length; i++) {
-  funcs[i] = Modal;
-}
- 
-// 원하는 Modal 수만큼 funcs 함수를 호출합니다.
-for(var j = 0; j < btns.length; j++) {
-  funcs[j](j);
-}
- 
-// Modal 영역 밖을 클릭하면 Modal을 닫습니다.
-window.onclick = function(event) {
-  if (event.target.className == "modal") {
-      event.target.style.display = "none";
-  }
-};
    
 //메인페이지 index 로그인 모달 js          
 //메인화면 진입 시 팝업 창 
 
 $(function(){
-	// var popup = 
-	// '<div class="popup_box">' +
-	// '<div class="popup_cont">' +
-	// '<div class="index-modal">' +
-	// '<p class="sale_coupon"><img src="/images/sale_coupon@2x.png"></p>' +
-	// '<a href="javascript:closePop();"> <p class="close"><img src="/images/x_main@2x.png"></a></p>' +
-	// '<p class="app01">앱 설치 시</p>' +
-	// '<p><span>할인 쿠폰 즉시 지급!</span></p>' +
-	// '<a href="https://play.google.com/store/apps/details?id=com.dietFarm"><p class="app02">앱 설치하고 쿠폰받기 > </p></a>' +
-	// '</div>' +
-	// '</div>'+
-	// '</div>';
+   // var popup =
+   // '<div id="popup_layer" class="checkLogin">' +
+   // '<div class="popup_box">' +
+   // //'<span class="close" onclick="closePopupModal();">x</span>' +
+   // '<div class="popup_cont">' +
+   // '<div class="index-modal">' +
+   // '<h2>SNS 1초 회원가입!</h2>' +
+   // '<p class="second">1초 간편 회원가입 후,</p>' +
+   // '<p><span>10000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
+   // '<ul class= "login_with_sns">' +
+   // '<li class="kakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>' +
+   // '<li class="naver" id="naver_id_login"><img src="/images/naver_login@2x.png"></li>' +
+   // '</ul>' +
+   // '<a href="/login-form"><p class="id-login">아이디 로그인</p></a>' +
+   // '</div>' +
+   // '</div>' +
+   // '</div>';
 
-   var popup =
-   '<div id="popup_layer" class="checkLogin">' +
-   '<div class="popup_box">' +
-   '<span class="close" onclick="closePopupModal();">x</span>' +
-   '<div class="popup_cont">' +
-   '<div class="index-modal">' +
-   '<h2>SNS 1초 회원가입!</h2>' +
-   '<p class="second">1초 간편 회원가입 후,</p>' +
-   '<p><span>10000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
-   '<ul class= "login_with_sns">' +
-   '<li class="kakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>' +
-   '<li class="naver" id="naver_id_login"><img src="/images/naver_login@2x.png"></li>' +
-   '</ul>' +
-   '<a href="/login-form"><p class="id-login">아이디 로그인</p></a>' +
-   '</div>' +
-   '</div>' +
-   '</div>';
+   if ($('#naver_id_login').length > 0) {
+      ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
+      function(data) {
+         $('.naver_id_login').html(data);
+         $('.modal-content #naver_id_login a').html('<img src="/images/naver_login@2x.png">네이버 계정으로 시작하기');
+      }, function (err) {
+         console.log("error login button", err);
+      })
+   }
 
-	var myPageModal = 
-	'<div class="modal-content">' +
-	'<span class="close" onclick="closeModal()">&times;</span>' +
-	'<div class="signup_wrap">' + 
-	'<h2>SNS 계정으로 시작하기</h2>' +
-	'<p style="color:#6B6B6B">1초 간편 회원가입 후, </p>' +
-	'<p class="line02"><span>10000P + 무료배송 </span>쿠폰 혜택을 받아보세요!</p>' +
-	'<div class="signup_btn">' +
-	'<button type="button" class="btnKakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png">카카오 계정으로 시작하기</button>' +
-	'<button type="button" class="btnNaver"><img src="/images/naver_login@2x.png">네이버 계정으로 시작하기</button>' +
-	'</div>' ;
-   '<div class="line" style="width:100%;color:#bbbbbb"></div>' +
-   '<p style="color:#BBBBBB;margin-top:22px;margin-bottom:22.4px">또는</p>' +
-   '<div class="signup_btn">' +
-   '<button type="button" class="loginBtn">아이디로 로그인</button>' +
-   '</div>' +
-   '</div>' ;
-
-	var inquiryModal = 
-	'<div class="modal-content">' +
-	'<span class="close">&times;</span>' +
-	'<div class="productInquiryBox">' +
-	'<h3>(아임월) 굿밸런스 라이트밀 도시락</h3>' +
-	'<form>' +
-	'<p><textarea style="border-radius:5px;width:100%;height:153px" placeholder="문의하실 내용을 입력해주세요"></textarea></p>' +
-	'</form>' +
-	'<div class="group">' +
-	'<input type="checkbox" id="secret">' +
-	'<label for="secret" class="secret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀글 선택시 작성자만 조회 가능합니다.</label>' +
-	'</div>' +
-	'</div>' +
-	'<div class="btn_area">' +
-	'<button type="button" id="btnInquiry">등록</button>' +
-	'</div>' +
-	'</div>';
-	
-
-	var reviewModal = 
-	'<div class="modal-content">' +
-	'<span class="close">&times;</span>' +
-	'<div class="product_review_modal">' +
-	'<div class="review_write_modal_header">' +
-	'<h2 style="font-size:16px;margin-top:18px">리뷰쓰기</h2>' +
-	'</div>' +
-	'<div class="reviewWriteBox">' +
-	'<div class="review01">' +
-	'<table style="clear:both">' +
-	'<tbody>' +
-	'<tr class="reviewProduct_modal">' +
-	'<td>' +
-	'<a href="#">' +
-	'</a>' +
-	' <ul class="reviewProductInfo">' +
-	'<li><span>(아임월)</span></li>' +
-	'<li>굿밸런스 라이트밀 도시락</li>' +
-	'<li><span>옵션 : 한입닭&큐브닭 9종 혼합 36팩</span></li>' +
-	'</ul>' +
-	'</div>' +
-	'</td>' +
-	'</tr>' +
-	'</tbody>' +
-	'</table>' +
-	'</div>' +
-	'<div id="star_grade" class="star_grade">' +
-	'<p>별점으로 만족도를 알려주세요</p>' +
-	'<div class="starRev">' +
-	'<span class="starR1 on">별1_왼쪽</span>' +
-	'<span class="starR2">별1_오른쪽</span>' +
-	'<span class="starR1">별2_왼쪽</span>' +
-	'<span class="starR2">별2_오른쪽</span>' +
-	'<span class="starR1">별3_왼쪽</span>' +
-	'<span class="starR2">별3_오른쪽</span>' +
-	'<span class="starR1">별4_왼쪽</span>' +
-	'<span class="starR2">별4_오른쪽</span>' +
-	'<span class="starR1">별4_왼쪽</span>' +
-	'<span class="starR1">별5_왼쪽</span>' +
-	'<span class="starR2">별5_오른쪽</span>' +
-	'</div>' +
-	'</div>' +
-	'<p>' +
-	'<textarea style="border-radius:5px;width:100%;height:153px;border-color:#BBBBBB;padding:15px;margin-top:20px"></textarea>' +
-	'</p>' +
-	'<label for="upload">사진 (선택)</label>' +
-	'<input type="file" id="upload" name="upload">' +
-	'<div id="preview">' +
-	'<div class="previewBox">' +
-	'<ul>' +
-	'<li></li>' +
-	'<li class="p2"></li>' +
-	'</ul>' +
-	'</div>' +
-	'</div>' +
-	'<p class="red" style="clear:both">상품과 관련없거나 부적절한 리뷰는 포인트가 지급되지 않으며 앱 내에 등록되지 않습니다.</p>' +
-	'</div>' +
-	'</div>' +
-	'<div class="modal_line"></div>' +
-	'<div class="btn_area">' +
-	'<button type="button" id="btnEnroll">등록</button>' +
-	'</div>' +
-	'</div>' +
-	'</div>';
-			
-   userAgent = window.navigator.userAgent.toLowerCase()
-   
-   iOS = /iphone|ipod|ipad/.test(userAgent);
-   isBrowser = /chrome|IE/.test(userAgent);
-   // if(iOS) {
-   //    // 앱설치 모달
-   //    // $("#popup_layer").html(popup);
-   // } else 
-   // $('#popup_layer').hide();
-   // $("#popup_layer").html(popup);
-   $("#myModal").html(myPageModal);
-   
-	ajaxCall('/user/login', '', 'GET',
-	function(data) {
-		// 로그아웃 시에만 표시
-		console.log(data.result);
-		if(data.result.isLoggedIn == false) {
-         
-         if(iOS || isBrowser && $('html').width() <= 1079) {
-            if($('.popup_layer_wrapper').length > 0) {
-
-               $(".popup_layer_wrapper").html(popup);
-               
-               $('html,body').css({'overflow':'hidden','height':'100%'});
-               $('html,body').on('scroll touchmove mousewheel', function(event) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  return false;
-               })
-            }
-
-         } 
-         if ($('#naver_id_login').length > 0) {
-            ajaxCallDataTypeHtml('/user/naverLoginBtn', {}, 'GET',
-            function(data) {
-               $('#naver_id_login').html(data);
-               $('.modal-content #naver_id_login a').html('네이버로 로그인');
-            }, function (err) {
-               console.log("error login button", err);
-            })
-         }
-      } 
-	}, function(err){
-		console.error(err);
-	})
-
-	$("#modal-inquiry").html(inquiryModal);
+   AppleID.auth.init({
+      clientId : 'kr.co.dietfarm',
+      scope : 'name email',
+      redirectURI: 'https://dietfarm.co.kr/user/callback/apple',
+      state : '12bf1f301be5e2d81aeb514acfa3a03742c20b5e2c424938b7f90f119666445c'
+  });
 	
 });
 
-function closePopupModal() {
-   $('.popup_layer_wrapper').hide();
-   $('html,body').css({'overflow':'visible'});
-   $('html,body').off('scroll touchmove mousewheel');
-}
-
-
-function openMyModal() {
-   $('#myModal').show();
-}
-
 // kakao 계정 로그인 순서1번
 function loginWithKakaoApi() {
-   console.log("loginWithKakaoAPI");
+
    Kakao.Auth.authorize({
-        redirectUri: CALLBACK_SERVER + '/user/result/kakao',
-      scope: 'profile,plusfriends,account_email,gender,birthday,birthyear,phone_number'
+      redirectUri: CALLBACK_SERVER + '/user/result/kakao'
+      // scope: 'profile,plusfriends,account_email,phone_number,gender,birthday,birthyear'
    })
+
+   
    console.log("loginWithKakaoAPI end");
 }
 
@@ -629,6 +385,12 @@ function naverCallback(success, paramStr) {
    }
 }
 
+function kakaoLogout() {
+   Kakao.Auth.logout(function() {
+      location.href = '/logout'
+   })
+}
+
 function zzimAction(button) {
    var url = '';
    var params = {}
@@ -639,7 +401,6 @@ function zzimAction(button) {
    var productNo = $(zzim).find('input[name=productNo]').val();
    var productCode = $(zzim).find('input[name=productCode]').val();
 
-   console.log(zzimYn);
    var params = {
       productNo,
       productCode
@@ -656,7 +417,6 @@ function zzimAction(button) {
       $(zzim).find('div.like').removeClass('like-yes');
       $(zzim).find('div.like').addClass('like-no');
    }
-   console.log(url);
 
    ajaxCallWithLogin(url, params, 'POST',
    function(data) {
@@ -668,6 +428,8 @@ function zzimAction(button) {
       userId: true
    })
 }
+
+//URL 공유하기 코드
 $(document).on("click", "#sh-link", function(e) { 
  $('html').find('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'); var html = "<input id='clip_target' type='text' value='' style='position:absolute;top:-9999em;'/>"; $(this).append(html); 
  var input_clip = document.getElementById("clip_target"); 
@@ -675,3 +437,31 @@ $(document).on("click", "#sh-link", function(e) {
  else { input_clip.select(); } try { var successful = document.execCommand('copy'); input_clip.blur(); if (successful) { alert("URL이 복사 되었습니다. 원하시는 곳에 붙여넣기 해 주세요.");
   $('html').find('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes'); } else { alert('이 브라우저는 지원하지 않습니다.'); } } 
   catch (err) { alert('이 브라우저는 지원하지 않습니다.'); } });
+
+
+function scrollBlock() {
+   $('html, body').css({'overflow': 'hidden', 'height': 'auto'});
+   $('html,body').on('scroll touchmove mousewheel', function(event) {
+         event.preventDefault();
+         event.stopPropagation();
+         return false;
+   });
+}
+
+function scrollAllow() {
+   $('html, body').css({'overflow': 'visible'});
+   $('html,body').off('scroll touchmove mousewheel');
+}
+
+function clip(){
+
+	var url = '';
+	var textarea = document.createElement("textarea");
+	document.body.appendChild(textarea);
+	url = window.document.location.href;
+	textarea.value = url;
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
+	alert("URL이 복사되었습니다.")
+}

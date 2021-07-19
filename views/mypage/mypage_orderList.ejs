@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문내역, 다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
+    <style>
+
+       
+        @media screen and (max-width:1079px) {
+            .web_orderlist {
+                display: none;
+            }
+            .order_list_box_w {
+                display: none;
+            }
+            .order_a{border-bottom:1px solid #f1f1f1}
+            .order_a:last-child{border:none}
+            .mobile_orderlist{position: fixed;
+                            min-width: 360px;
+                            width: 100%;
+                            height: 80px;
+                            top: 0;
+                            background-color: #fff;
+                            margin-bottom: 20px;
+                            z-index: 1;}
+                 #content{padding-top:60px}
+        }
+        @media screen and (min-width:1080px) {
+            .mobile_orderlist {
+                display: none;
+            }
+            .order_a{border-bottom:1px solid #f1f1f1;display: flex;
+             justify-content: space-between;
+            }
+            .mypage_order_info_wrap{margin-left:80px}
+}
+            
+    </style>
+    <link rel="stylesheet" href="/css/style_web.css">
+    <link rel="stylesheet" href="/css/myPage.css">
+    <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
+
+</head>
+
+<body>
+    <!--//모달창 시작-->
+    <div id="x_modal" class="cancel_modal modal-overlay">
+        
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="cancel_header">
+                <h2>주문취소</h2>
+                <span class="close" onclick="closeCancelModal()">&times;</span>
+            </div>
+            <div class="cancel_body">
+                <div class="cancel_order_num cancel_body_element">
+                    <h3>주문번호</h3>
+                    <p>00000000</p>
+                </div>
+                <div class="cancel_prod cancel_body_element">
+                    <h3>상품</h3>
+                    <p>상품 이름</p>
+                </div>
+                <div class="cancel_opt cancel_body_element">
+                    <h3>옵션</h3>
+                    <p>상품 옵션</p>
+                </div>
+                <div class="cancel_type cancel_body_element">
+                    <h3>취소유형</h3>
+                    <select name="#" id="#">
+                        <option value="#">선택</option>
+                        <option value="#">선택</option>
+                        <option value="#">선택</option>
+                    </select>
+                </div>
+                <div class="cancel_content cancel_body_element">
+                    <h3>내용</h3>
+                    <input type="text" placeholder="문의하실 내용을 입력해주세요">
+                </div>
+                <div class="thick_line"></div>
+            </div>
+            <div class="cancel_footer">
+                <div class="cancelRegister_btn">
+                    <a href="#" onclick="requestOrderCancel()">등록</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="web_orderlist">
+        <%-include(webroot + 'views/general/header') %>
+    </div>
+
+    <div class="mobile_orderlist">
+        <section class="detail_title">
+            <h2>주문내역</h2>
+            <div class="btnback">
+                <a value="취소" onclick="history.back(); return false">
+                    <img src="/images/leftarrow_ico_my.png">
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <main id="content" class="content">
+        <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
+            <div class="mypage_content_wrap">
+                <nav class="content_lnb">
+                    <ul>
+                        <li class="on">
+                            <a href="/orderlist">주문내역</a>
+                        </li>
+                        <li style="white-space:nowrap">
+                            <a href="/delivery-management">배송지 관리</a>
+                        </li>
+                        <li>
+                            <a href="/p_review">상품 리뷰</a>
+                        </li>
+                        <li>
+                            <a href="/p_inquiry">상품 문의</a>
+                        </li>
+                        <li style="white-space:nowrap">
+                            <a href="/s_inquiry">판매자 문의</a>
+                        </li>
+                        <li>
+                            <a href="/point">포인트</a>
+                        </li>
+                        <li>
+                            <a href="/coupon">쿠폰</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mypage_order_info_wrap">
+                    <div class="order_list_null" v-if="orderList == undefined || orderList.length == 0">
+                        <p class="no_review">주문 내역이 없습니다.</p>
+                    </div>
+                    <div class="order_list_box_w">
+                    <h3>주문내역</h3>
+                    <table class="cell">
+                        <th>주문/결제</th>
+                        <th>배송중</th>
+                        <th>배송완료</th>
+                        <tr>
+                            <td>{{ beforeDeliveryCount }}</td>
+                            <td>{{ onDeliveryCount }}</td>
+                            <td>{{ afterDeliveryCount }}</td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div class="orderHistory_wrap">
+                    <template v-for="(order, oIdx) in orderList">
+                    <div class="orderHistory"> 
+                        <div class="orderBox">
+                            <div class="order01">
+
+                                <div class="order_list_title">
+                                    <p class="t1">{{ order.orderNumber }}&nbsp;&nbsp;<img src="/images/l_icon_category.png">&nbsp;
+                                        <span>{{ formatDate(order.paymentDate) }}</span>
+                                    </p>
+                                    <ul>
+                                        <li class="t2">
+                                            <a v-bind:href="'/ol_detail/' + order.orderNumber">주문상세보기<img src="/images/arrow_icon_order.png" style="width:7px;margin-left:5px"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <table style="border:0">
+                                    <tbody>
+                                        <tr class="order_a" V-for="(product, pIdx) in order.products">
+                                            <td>
+                                                <div class="order_list_box">
+                                                    <div class="order_img">
+                                                        <a v-bind:href="'/product/' + product.productCode">
+                                                            <img v-bind:src="RESOURCE_SERVER + product.url" align="left" style="width:50px;height:62px;margin-right:8px">
+                                                        </a>
+                                                    </div>
+                                                    <div class="orderDetail">
+                                                        <ul class="order0">
+                                                            <li>{{ product.productName }}</li>
+                                                            <li>{{ numberFormat(product.retailPrice) }}</li>
+                                                            <li>
+                                                                <span>
+                                                                    {{ convertOrderStatus(product.orderStatus) }}
+
+                                                                </span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <div class="review_line"></div>
+                                            <td class="orderlist_btn">
+                                                <div class="order_list_btn">
+                                                    <ul>
+                                                        <template v-if="product.orderStatus == 'P'" >
+                                                            <li>
+                                                                <button type="button" class="btnA" v-on:click="openCancelModal()">취소 요청</button>
+                                                            </li>
+                                                        </template>
+                                                        <template v-if="product.orderStatus == 'X'" >
+                                                            <li>
+                                                                <button type="button" class="btnA">취소신청철회</button>
+                                                            </li>
+                                                        </template>
+                                                        <template v-if="'DF'.includes(product.orderStatus)">
+                                                            <li>
+                                                                <button type="button" @click="orderConfirm(oIdx, pIdx)" class="btnA">구매확정</button>
+                                                            </li>
+                                                            <li>
+                                                                <button type="button" class="btnB" onclick="openDInfoModal()">배송조회</button>
+                                                            </li>
+                                                        </template>
+                                                        <template v-if="'AC'.includes(product.orderStatus)">
+                                                            <li v-if="product.reviewState == 'N'">
+                                                                <button type="button" class="btnA" onclick="openReviewModal()">리뷰작성</button>
+                                                            </li>
+                                                            <li v-else style="margin-bottom:10px">
+                                                                <span class="btnC">리뷰완료</span>
+                                                            </li>
+                                                            <li>
+                                                                <a v-bind:href="'/product/' + product.productCode"><button type="button" class="btnB">재주문</button></a>
+                                                            </li>
+                                                        </template>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//orderHistory-->
+                    <div class="grayLine" v-if="oIdx != orderList.length -1"></div>
+                    </template>
+                    
+                    </div>
+                    <div clas="page_wrap">
+                    <div class="page_nation">
+                        <a class="arrow pprev" href="#"></a>
+                        <a class="arrow prev" href="#"></a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                        <a href="#">10</a>
+                        <a class="arrow next" href="#"></a>
+                        <a class="arrow nnext" href="#"></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal>
+            <delivery-info-modal v-if="deliveryModal" v-on:close="onChildPopupClosed"></delivery-info-modal>
+        </main>
+
+  
+    <!-- modal -->
+    <!-- body_contents tab3 -->
+    <%-include(webroot + 'views/general/footer') %>
+    <script src="/js/components/mypageComponent.js"></script>
+    <script src="/js/deliveryInfoModal.js"></script>
+    <script src="/js/productReviewModal.js"></script>
+    <script src="/js/orderList.js"></script>
+</body>
+
+</html>

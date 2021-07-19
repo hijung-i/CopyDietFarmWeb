@@ -9,7 +9,7 @@
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
 
-        <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
         <style type="text/css">
             @media screen and (max-width:1079px) {
                 .web_with {
@@ -22,7 +22,8 @@
                 }
             }
         </style>
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
             <link rel="stylesheet" href="./css/style02.css">
             <link rel="stylesheet" href="/css/style.css">
             <link rel="stylesheet" href="/css/signup.css">
@@ -41,7 +42,7 @@
                     </section>
                 </div>
                 <div class="web_with">
-                    <%-include('general/header_web') %>
+                    <%-include(webroot + 'views/general/header_web') %>
                     </div>
                     <div class="contents">
                         <div class="delete">

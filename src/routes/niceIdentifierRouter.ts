@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response, Router } from 'express'
 import { StatusCode, StatusMessage, UserResult } from '../models/response'
 import { NiceUser, SessionUser, User } from '../models/user'
+
+import { PROD, DEV_JGPARK, DEV_UBUNTU } from '../configs/url'
 import userService from '../services/userService'
 import { exec } from 'child_process'
 import * as path from 'path'
@@ -16,13 +18,18 @@ const router = Router()
 
 const sSiteCode = 'BT514'
 const sSitePW = 'tQSumidmqcYh'
-
-const sModulePath = path.join(globalData.getBaseDir(), 'nice_modules/window/CPClient.exe')
+let sModulePath = ''
+if (process.platform === 'win32') {
+    sModulePath = path.join(globalData.getBaseDir(), 'nice_modules/window/CPClient.exe')
+} else if (process.platform === 'linux') {
+    sModulePath = path.join(globalData.getBaseDir(), 'nice_modules/linux/CPClient_64bit')
+} else if (process.platform === 'darwin') {
+    sModulePath = path.join(globalData.getBaseDir(), 'nice_modules/mac/CPClient_mac')
+}
 // const sModulePath = '/home/dataflow1/DietFarm/Api/nice_modules/linux/CPClient_64bit'
 
-// 우분투
-// const serverIp = '112.217.209.162:3000'
-const serverIp = 'localhost:3000'
+const serverIp = PROD.CALLBACK_SERVER
+
 const sAuthType = ''
 const sPopGubun = 'Y'
 const sCustomize = ''
@@ -42,8 +49,8 @@ router.get('/identifying-page', (req: Request, res: Response) => {
     // 처리 결과 메시지
     let sRtnMSG = ''
 
-    let sReturnUrl = `http://${serverIp}/nice/` // 성공시 이동될 URL (방식 : 프로토콜을 포함한 절대 주소)
-    let sErrorUrl = `http://${serverIp}/nice/` // 실패시 이동될 URL (방식 : 프로토콜을 포함한 절대 주소)
+    let sReturnUrl = `${serverIp}/nice/` // 성공시 이동될 URL (방식 : 프로토콜을 포함한 절대 주소)
+    let sErrorUrl = `${serverIp}/nice/` // 실패시 이동될 URL (방식 : 프로토콜을 포함한 절대 주소)
     switch (nextMethod) {
         case 'register':
             sReturnUrl += 'success-register'
@@ -89,7 +96,7 @@ router.get('/identifying-page', (req: Request, res: Response) => {
         }
 
         console.log('sRtnMSG = ', sRtnMSG)
-        res.render('nice/checkplus_main_web.ejs', { sEncData , sRtnMSG, nextMethod })
+        render(req, res, 'nice/checkplus_main_web.ejs', { sEncData , sRtnMSG, nextMethod })
     })
 })
 
@@ -102,7 +109,8 @@ const identifyingSuccessPost = (req: Request, res: Response) => {
       const requestnumber = ''
       const authtype = ''
       const errcode = ''
-      res.render('checkplus_fail.ejs', { sRtnMSG , requestnumber , authtype , errcode })
+      render(req, res, 'checkplus_fail.ejs', { sRtnMSG , requestnumber , authtype , errcode })
+      return
   }
 
   if (sEncData !== '') {
@@ -170,89 +178,91 @@ const identifyingSuccessPost = (req: Request, res: Response) => {
       req.session.niceUserData = userData
 
       const nextMethod = req.query.nextMethod
-      res.render('nice/checkplus_success', { sRtnMSG, requestnumber , responsenumber , authtype , name , birthdate , gender , nationalinfo , dupinfo , conninfo , mobileno , mobileco, nextMethod })
+      render(req, res, 'nice/checkplus_success', { sRtnMSG, requestnumber , responsenumber , authtype , name , birthdate , gender , nationalinfo , dupinfo , conninfo , mobileno , mobileco, nextMethod })
   })
 }
 
 const identifyingSuccessGet = (req: Request, res: Response) => {
-  const sEncData = req.query?.EncodeData as string
-  let cmd = ''
+    const sEncData = req.query?.EncodeData as string
+    let cmd = ''
 
-  if (/^0-9a-zA-Z+\/=/.test(sEncData) === true) {
-      const sRtnMSG = '입력값 오류'
-      const requestnumber = ''
-      const authtype = ''
-      const errcode = ''
-      res.render('checkplus_fail.ejs', { sRtnMSG , requestnumber , authtype , errcode })
-  }
+    if (/^0-9a-zA-Z+\/=/.test(sEncData) === true) {
+        const sRtnMSG = '입력값 오류'
+        const requestnumber = ''
+        const authtype = ''
+        const errcode = ''
+        render(req, res, 'checkplus_fail.ejs', { sRtnMSG , requestnumber , authtype , errcode })
+        return
+    }
 
-  if (sEncData !== '') {
-      cmd = sModulePath + ' ' + 'DEC' + ' ' + sSiteCode + ' ' + sSitePW + ' ' + sEncData
-  }
+    if (sEncData !== '') {
+        cmd = sModulePath + ' ' + 'DEC' + ' ' + sSiteCode + ' ' + sSitePW + ' ' + sEncData
+    }
 
-  let sDecData = ''
+    let sDecData = ''
 
-  const child = exec(cmd , { encoding: 'utf-8' })
-  child.stdout?.on('data', function(data) {
-      sDecData += data
-  })
-  child.on('close', function() {
-      let requestnumber: string = ''
-      let responsenumber: string = ''
-      let authtype: string = ''
-      let name: string = ''
-      let birthdate: string = ''
-      let gender: string = ''
-      let nationalinfo: string = ''
-      let dupinfo: string = ''
-      let conninfo: string = ''
-      let mobileno: string = ''
-      let mobileco: string = ''
+    const child = exec(cmd , { encoding: 'utf-8' })
+    child.stdout?.on('data', function(data) {
+        sDecData += data
+    })
 
-      // 처리 결과 메시지
-      let sRtnMSG = ''
-      // 처리 결과 확인
-      if (sDecData === '-1') {
-        sRtnMSG = '암/복호화 시스템 오류'
-      } else if (sDecData === '-4') {
-        sRtnMSG = '복호화 처리 오류'
-      } else if (sDecData === '-5') {
-        sRtnMSG = 'HASH값 불일치 - 복호화 데이터는 리턴됨'
-      } else if (sDecData === '-6') {
-        sRtnMSG = '복호화 데이터 오류'
-      } else if (sDecData === '-9') {
-        sRtnMSG = '입력값 오류'
-      } else if (sDecData === '-12') {
-        sRtnMSG = '사이트 비밀번호 오류'
-      } else {
-        // 항목의 설명은 개발 가이드를 참조
-        requestnumber = decodeURIComponent(GetValue(sDecData , 'REQ_SEQ'))     // CP요청 번호 , main에서 생성한 값을 되돌려준다. 세션등에서 비교 가능
-        responsenumber = decodeURIComponent(GetValue(sDecData , 'RES_SEQ'))    // 고유 번호 , 나이스에서 생성한 값을 되돌려준다.
-        authtype = decodeURIComponent(GetValue(sDecData , 'AUTH_TYPE'))        // 인증수단
-        name = decodeURIComponent(GetValue(sDecData , 'UTF8_NAME'))            // 이름
-        birthdate = decodeURIComponent(GetValue(sDecData , 'BIRTHDATE'))       // 생년월일(YYYYMMDD)
-        gender = decodeURIComponent(GetValue(sDecData , 'GENDER'))             // 성별
-        nationalinfo = decodeURIComponent(GetValue(sDecData , 'NATIONALINFO')) // 내.외국인정보
-        dupinfo = decodeURIComponent(GetValue(sDecData , 'DI'))                // 중복가입값(64byte)
-        conninfo = decodeURIComponent(GetValue(sDecData , 'CI'))               // 연계정보 확인값(88byte)
-        mobileno = decodeURIComponent(GetValue(sDecData , 'MOBILE_NO'))        // 휴대폰번호(계약된 경우)
-        mobileco = decodeURIComponent(GetValue(sDecData , 'MOBILE_CO'))        // 통신사(계약된 경우)
-      }
-      console.log(sDecData)
+    child.on('close', function() {
+        let requestnumber: string = ''
+        let responsenumber: string = ''
+        let authtype: string = ''
+        let name: string = ''
+        let birthdate: string = ''
+        let gender: string = ''
+        let nationalinfo: string = ''
+        let dupinfo: string = ''
+        let conninfo: string = ''
+        let mobileno: string = ''
+        let mobileco: string = ''
 
-      const userData: NiceUser = {
-          userName: name,
-          userInfo: birthdate,
-          userGender: gender,
-          dupInfo: dupinfo,
-          userCellNo: mobileno
-      }
+        // 처리 결과 메시지
+        let sRtnMSG = ''
+        // 처리 결과 확인
+        if (sDecData === '-1') {
+            sRtnMSG = '암/복호화 시스템 오류'
+        } else if (sDecData === '-4') {
+            sRtnMSG = '복호화 처리 오류'
+        } else if (sDecData === '-5') {
+            sRtnMSG = 'HASH값 불일치 - 복호화 데이터는 리턴됨'
+        } else if (sDecData === '-6') {
+            sRtnMSG = '복호화 데이터 오류'
+        } else if (sDecData === '-9') {
+            sRtnMSG = '입력값 오류'
+        } else if (sDecData === '-12') {
+            sRtnMSG = '사이트 비밀번호 오류'
+        } else {
+          // 항목의 설명은 개발 가이드를 참조
+            requestnumber = decodeURIComponent(GetValue(sDecData , 'REQ_SEQ'))     // CP요청 번호 , main에서 생성한 값을 되돌려준다. 세션등에서 비교 가능
+            responsenumber = decodeURIComponent(GetValue(sDecData , 'RES_SEQ'))    // 고유 번호 , 나이스에서 생성한 값을 되돌려준다.
+            authtype = decodeURIComponent(GetValue(sDecData , 'AUTH_TYPE'))        // 인증수단
+            name = decodeURIComponent(GetValue(sDecData , 'UTF8_NAME'))            // 이름
+            birthdate = decodeURIComponent(GetValue(sDecData , 'BIRTHDATE'))       // 생년월일(YYYYMMDD)
+            gender = decodeURIComponent(GetValue(sDecData , 'GENDER'))             // 성별
+            nationalinfo = decodeURIComponent(GetValue(sDecData , 'NATIONALINFO')) // 내.외국인정보
+            dupinfo = decodeURIComponent(GetValue(sDecData , 'DI'))                // 중복가입값(64byte)
+            conninfo = decodeURIComponent(GetValue(sDecData , 'CI'))               // 연계정보 확인값(88byte)
+            mobileno = decodeURIComponent(GetValue(sDecData , 'MOBILE_NO'))        // 휴대폰번호(계약된 경우)
+            mobileco = decodeURIComponent(GetValue(sDecData , 'MOBILE_CO'))        // 통신사(계약된 경우)
+        }
+        console.log(sDecData)
 
-      req.session.niceUserData = userData
+        const userData: NiceUser = {
+            userName: name,
+            userInfo: birthdate,
+            userGender: gender,
+            dupInfo: dupinfo,
+            userCellNo: mobileno
+        }
 
-      const nextMethod = req.query.nextMethod
-      res.render('nice/checkplus_success', { sRtnMSG, requestnumber , responsenumber , authtype , name , birthdate , gender , nationalinfo , dupinfo , conninfo , mobileno , mobileco, nextMethod })
-  })
+        req.session.niceUserData = userData
+
+        const nextMethod = req.query.nextMethod
+        render(req, res, 'nice/checkplus_success', { sRtnMSG, requestnumber , responsenumber , authtype , name , birthdate , gender , nationalinfo , dupinfo , conninfo , mobileno , mobileco, nextMethod })
+    })
 }
 
 // success for register
@@ -285,6 +295,17 @@ router.get('/success-find-pw', (req: Request, res: Response) => {
   req.query.nextMethod = 'find-pw'
   identifyingSuccessGet(req, res)
 })
+
+const render = (req: Request, res: Response, view: any, data: any | null) => {
+  res.locals.isLoggedIn = req.session.isLoggedIn || false
+  res.locals.user = req.session.user
+  res.locals.webroot = globalData.getBaseDir()
+  const defaultData: any = {
+      currentPage: ''
+  }
+  data.currentPage = data.currentPage || ''
+  res.render(view, data || defaultData)
+}
 
 function GetValue(plaindata: string, key: string) {
   let arrData = plaindata.split(':')

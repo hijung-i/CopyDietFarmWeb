@@ -9,10 +9,11 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no" />
     <meta name="format-detection" content="no" />
 
-    <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+    <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
+    <link rel="stylesheet" href="/css/style_web.css">
 
-    <%-include('general /head') %>
-        <link rel="stylesheet" href="/css/style.css">
+    <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
 
         <style type="text/css">
             @media screen and (max-width:1079px) {
@@ -73,7 +74,6 @@
                 
             }
         </style>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
         <script src="/js/jquery.bpopup-0.1.1.min.js"></script>
 
@@ -81,13 +81,13 @@
 
 <body>
     <div class="web_shoppingcart">
-        <%-include('general /header') %>
+        <%-include(webroot + 'views/general/header') %>
     </div>
 
     <section class="detail_title">
         <h2>장바구니</h2>
         <div class="btnback">
-            <a href="#" value="취소" onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt=""
+            <a onclick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt=""
                     style="width:17px">
             </a>
         </div>
@@ -121,10 +121,10 @@
                                 <div class="shoplist_ctn">
                                     <div>
                                         <input type="checkbox" class="required" required="required"
-                                            v-bind:id="'option'+ i + '_' + j + '_' +  k" name="optionSelect"
-                                            v-model="option.isSelected" v-on:change="updateOrderInfo(option)"
-                                            v-bind:checked="option.isSelected">
-                                        <label v-bind:for="'option'+ i + '_' + j + '_' +  k"><span></span></label>
+                                        v-bind:id="'option'+ i + '_' + j + '_' +  k" name="optionSelect"
+                                        v-model="option.isSelected" v-on:change="updateOrderInfo(option)"
+                                        v-bind:checked="option.isSelected">
+                                    <label v-bind:for="'option'+ i + '_' + j + '_' +  k"><span></span></label>
                                     </div>
                                     <div class="flow-column">
                                         <div class="shopcart_info">
@@ -139,7 +139,7 @@
                                                     <p class="option_desc">{{ option.optionDesc }}</p>
                                                     <p class="price_web">{{ numberFormat(option.optionDiscountPrice) }}원
                                                     </p>
-                                                    <span class="close"><img src="/images/x_icon_login.png"
+                                                    <span onclick="closeRegisterModal()" class="close"><img src="/images/x_icon_login.png"
                                                             @click="deleteItem(i, j, k)" style="width:12px"
                                                             class="delete_btn"></span>
                                                 </div>
@@ -205,171 +205,23 @@
         </div>
 
         <section id="shoplist_t_price_web">
+            <delivery-info-modal v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
             <div class="shopBox01">
                 <h3>배송지</h3>
-                <p>서울 강남구 테헤란로 8길 11-4 202호</p>
-                <p>
-                    <span>박민지 &nbsp;&nbsp;&nbsp;010-3288-0568</span>
-                </p>
-                <button type="button" class="shopBtn01" id="my-button" onclick="openInfoModal()">배송지 변경</button>
-                <div class="i_modal" id="iModal" style="display:none">
-                    <div class="modal-content">
-                        <div class="modal_ctn">
-                            <div class="modalTop_ctn">
-                                <div class="modalTop_tit">
-                                    <h3>배송지 관리</h3>
-                                    <span class="close" onclick="closeRegisterModal()">&times;</span>
-                                </div>
-                                <h3 class="order_delMag">배송지 변경</h3> <!-- modal window -->
-                            </div>
-                            <div class="slim_line_del_switch_modal"></div>
-                            <div class="top_checkBox">
-                                <input type="checkbox" name="list" id="selectAll1" value="selectAll"
-                                    onclick='selectAll(this)'>
-                                <label for="selectAll1">전체 선택</label>
-                                <button>선택 삭제</button>
-                            </div>
-                            <div class="order_list_ctn">
-                                <template v-for="(item, i) in deliveryList">
-                                    <section class="web_delivery_manage_list">
-                                        <div class="del_mng_list_top">
-                                            <ul class="del_mng_type">
-                                                <li class="type_first">{{ item.addressName }}</li>
-                                                <li class="type_second" v-if="item.mainAddressYn == 'Y'">
-                                                    <span class="tema">기본배송지</span>
-                                                </li>
-                                            </ul>
-                                            <ul class="edit_remove">
-                                                <template v-if="item.mainAddressYn == 'N'">
-                                                    <li class="basic" v-on:click="changeMainAddress(i)">
-                                                        <a>기본배송지로 설정</a>
-                                                    </li>
-                                                    <li class="small_line"><img src="/images/l_icon_category.png"></li>
-                                                </template>
-                                                <li class="edit_first">
-                                                    <a>수정</a>
-                                                </li>
-                                                <li class="small_line"><img src="/images/l_icon_category.png"></li>
-                                                <li class="edit_second">
-                                                    <a v-on:click="deleteDelivery(i)">삭제</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="web_del_mag_list_info">
-                                            <div class="top_checkBox_piece">
-                                                <input type="radio" name="list" v-on: v-bind:id="'selectAll' + (i + 2)"
-                                                    v-on:change="onDeliveryInfoSelected()" v-bind:value="i"
-                                                    v-bind:checked="item.address == orderDTO.delivery.address">
-                                                <label v-bind:for="'selectAll' + (i+2)"></label>
-                                            </div>
-
-                                            <ul>
-                                                <li class="order_info_modal_address">
-                                                    <p class="address">{{ item.address }}</p>
-                                                </li>
-                                                <li>
-                                                    <p class="customer_info">{{ item.userName }}
-                                                        <span class="small_line"><img
-                                                                src="/images/l_icon_category.png"></span>{{
-                                                        item.userCellNo }}
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </section>
-                                </template>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div id="element_to_pop_up">
-                                <a class="b-close"><img src="/images/x_icon_login.png"></a>
-
-                                <h2>배송지 관리</h2>
-                                <h3>배송지 변경</h3>
-
-                                <section class="delivery_manage_list">
-
-                                    <input id="check" type="checkbox">
-                                    <div class="del_mng_list_top">
-                                        <ul class="del_mng_type">
-                                            <li class="type_first">회사</li>
-                                            <li class="type_second">
-                                                <span class="tema">기본배송지</span></li>
-                                        </ul>
-                                        <ul class="edit_remove">
-                                            <li class="edit_first">
-                                                <a>수정</a>
-                                            </li>
-                                            <li><img src="/images/l_icon_category@2x.png"></li>
-                                            <li class="edit_second">
-                                                <a>삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-                                    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-                                </section>
-
-                                <div class="del_line_thick"></div>
-                                <section class="delivery_manage_list">
-                                    <input id="check" type="checkbox">
-                                    <div class="del_mng_list_top">
-                                        <ul class="del_mng_type">
-                                            <li class="type_first">회사</li>
-                                        </ul>
-                                        <ul class="edit_remove">
-                                            <li class="basic">
-                                                <a>기본배송지로 설정</a><img src="/images/l_icon_category@2x.png"></li>
-                                            <li class="edit_first">
-                                                <a>수정</a>
-                                                <img src="/images/l_icon_category@2x.png">
-                                            </li>
-                                            <li class="edit_second">
-                                                <a>삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-                                    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-                                </section>
-
-                                <div class="del_line_thick"></div>
-
-                                <section class="delivery_manage_list">
-                                    <input id="check" type="checkbox">
-                                    <div class="del_mng_list_top">
-                                        <ul class="del_mng_type">
-                                            <li class="type_first">회사</li>
-                                        </ul>
-                                        <ul class="edit_remove">
-                                            <li class="basic">
-                                                <a>기본배송지로 설정</a><img src="/images/l_icon_category@2x.png"></li>
-                                            <li class="edit_first">
-                                                <a>수정</a>
-                                            </li>
-                                            <li><img src="/images/l_icon_category@2x.png"></li>
-                                            <li class="edit_second">
-                                                <a>삭제</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p class="address">서울 강남구 테헤란로 8길 11-4 202호</p>
-                                    <p class="customer_info">박민지<img src="/images/l_icon_category@2x.png">010-3288-0568</p>
-                                </section>
-
-                                <div class="del_line_thick"></div>
-
-                                <div class="btn_area">
-                                    <button type="button" id="btnRegister">확인</button>
-                                </div>
-                            </div> -->
+                <template v-if="orderDTO.delivery != undefined">
+                    <p>{{ orderDTO.delivery.address }}</p>
+                    <p>
+                        <span>{{ orderDTO.delivery.userName }} &nbsp;&nbsp;&nbsp; {{ orderDTO.delivery.userCellNo }}</span>
+                    </p>                    
+                </template>
+                <button type="button" id="my-button" class="shopBtn01" onclick="openInfoModal()">배송지 변경</button>
+                
             </div>
             <div class="shopBox02">
                 <table class="final">
                     <tr>
                         <td class="t1">상품 금액</td>
-                        <td class="price product-total-price">{{ numberFormat(orderDTO.paymentTotalAmount) }}</td>
+                        <td class="price product-total-price">{{ numberFormat(orderDTO.paymentTotalAmount) }}원</td>
                     </tr>
                     <tr>
                         <td class="t1">상품 할인 금액</td>
@@ -377,7 +229,7 @@
                     </tr>
                     <tr>
                         <td class="t1">배송비</td>
-                        <td class="price total-delivery-cost">{{ numberFormat(orderDTO.totalDeliveryCost) }}</td>
+                        <td class="price total-delivery-cost">{{ numberFormat(orderDTO.totalDeliveryCost) }}원</td>
                     </tr>
                     <tr class="total">
                         <td class="t1">총 결제 금액</td>
@@ -400,56 +252,11 @@
             <button type="button" class="purchaseBtn" v-on:click="onSubmit()" style="border:none">구매하기</button>
         </div>
     </main>
-
+    <script src="/js/components/deliveryInfoModalComponent.js"></script>
     <script src="/js/orderDTO/OrderDTO.js"></script>
     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
     <script src="/js/cart.js"></script>
-    <script>
-        //웹 햄버거 버튼
-        $(document).ready(function () {
-            $("#gnbAllMenu").hide();
-            $("#btnGnbOpen").click(function () {
-                $("#gnbAllMenu").slideToggle("fast");
-            });
-        });
-
-        $(document).ready(function () {
-            $(".m_slides_sub").hide();
-            $(".m_ba_slides_n_w li").hover(function () {
-                $("ul:not(:animated)", this).slideDown("700");
-
-                $(".m_ba_slides_n_w li a").removeClass("active");
-            }, function () {
-                $("ul", this).slideUp("700");
-            });
-
-            $("#memberMenu").bind("moseover mouseenter", function () {
-                $("#memMenu").show();
-            });
-            $("#memMenu").bind("moseout mouseleave", function () {
-                $("#memMenu").hide();
-            });
-
-            $("#NotmemberMenu").bind("moseover mouseenter", function () {
-                $("#NotmemMenu").show();
-            });
-            $("#NotmemMenu").bind("moseout mouseleave", function () {
-                $("#NotmemMenu").hide();
-            });
-
-            $('#my-button').bind('click', function (e) {
-                e.preventDefault();
-                $('#element_to_pop_up').bPopup({ modalColor: 'gray' });
-            });
-
-            $('#my-button2').bind('click', function (e) {
-                e.preventDefault();
-                $('#element_to_pop_up').bPopup({});
-            });
-
-        })
-    </script>
-
+    
 </body>
 
 </html>

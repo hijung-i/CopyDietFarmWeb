@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no"/>
     <meta name="format-detection" content="no"/>
 
-    <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+    <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
     <style type="text/css">
         @media screen and (max-width:1079px) {
             .web_alarm {
@@ -25,12 +25,13 @@
     }
     </style>
     <link rel="stylesheet" href="/css/style.css">
-    <%-include('general/head') %>
+    <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
     </head>
 
 <body>
     <div class="web_alarm">
-        <%-include('general/header') %>
+        <%-include(webroot + 'views/general/header') %>
     </div>
     <div class="mobile_alarm">
         <section class="detail_title">
@@ -40,7 +41,7 @@
             value="취소"
             onclick="history.back(); return false"
         >
-            <img src="/images/leftarrow_ico_my.png" style="width:17px;margin-left:10px;margin-top:2px">
+            <img src="/images/leftarrow_ico_my.png">
         </a>
         </section>
     </div>
@@ -57,7 +58,7 @@
                             <li class="menu">공지사항</li>
                         </a>
                         <a href="faq">
-                            <li class="menu">fAQ</li>
+                            <li class="menu">FAQ</li>
                         </a>
                         <a href="cs-center">
                             <li class="menu">고객센터</li>
@@ -95,6 +96,7 @@
 </div>
 
     </main>
+    <%-include(webroot + 'views/general/footer') %>
     <script src="/js/alarm.js"></script>
 </body>
 </html>

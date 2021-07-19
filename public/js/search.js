@@ -41,7 +41,7 @@ function getHotKeyowrds() {
         $('.search_list ul.five').html(five);
         $('.search_list ul.ten').html(ten);
     }, function(err) {
-        console.log("error while get getHotKeyowrd ",err);
+        console.log("error while get getHotKeyword ",err);
     })
 }
 function getCFKeywords() {
@@ -57,7 +57,7 @@ function getCFKeywords() {
         $('.recommend ul').html(html);
 
     }, function(err) {
-        console.log("error while get getCFKeyowrd ",err);
+        console.log("error while get getCFKeyword ",err);
     })
 }
 

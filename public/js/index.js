@@ -3,6 +3,33 @@ $(function () {
     listenForLikes();
 });
 
+var app = new Vue({
+    el: 'main',
+    data: {
+    },
+    components: {
+        'install-modal': installAppModal,
+        'mypage-modal': signModal
+    }, computed: {
+        installModal: function() {
+            userAgent = window.navigator.userAgent.toLowerCase()
+        
+            iOS = /iphone|ipod|ipad/.test(userAgent);
+            isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
+    
+            if(iOS && isBrowser && $('html').width() <= 1079) {
+                scrollBlock();
+                return true;
+            }
+
+            scrollAllow();
+            return false;
+        }
+
+    }
+});
+
+
 function listenForLikes (){
     var like = document.querySelectorAll("like");
     like.forEach(like => {
@@ -65,11 +92,7 @@ function getStandDatas() {
 
                 break;
             case 1:
-                var html = '';
-                for(var j = 0; j < products.length; j++){
-                    var product = products[j];                   
-                    html += '<div><a href="/product/' + product.productCode +'"><img src="'+RESOURCE_SERVER + product.url +'" alt="'+(i+1)+'/'+ products.length+'"><div class="desc"><p class="title">' +product.productName + '</p><ul><li class="sale">' + numberFormat(product.discountPrice) + '원</li><li class="cost">' + numberFormat(product.retailPrice) + '원</li><li class="ratio">' + Math.round(product.discountRate, 0) + '%</li></ul></div></a></div>';
-                }
+                var html = generateHtmlForProductList(products);
                 
                 $('.responsive').html(html);
                 $('.responsive').slick({
@@ -77,10 +100,10 @@ function getStandDatas() {
                     infinite: true,
                     speed: 300,
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 3,
                     autoplay:false,
                     autoplaySpeed:3000,
-                    pauseOnHover:true,
+                    pauseOnHover:false,
                     arrow:true,
                     responsive: [
                     {

@@ -9,7 +9,7 @@
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
 
-        <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
         <style type="text/css">
             @media screen and (max-width:1079px) {
                 .web_cs_center {
@@ -23,22 +23,24 @@
                     display: none;
                 }
                 .contents{width:1080px;margin:0 auto}
+                #footer{ margin-top:400px}
             }
         </style>
         <link rel="stylesheet" href="/css/style.css">
-        <%-include('general/head') %>
+        <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
 
         </head>
 
         <body>
             <div class="web_cs_center">
-                <%-include('general/header') %>
+                <%-include(webroot + 'views/general/header') %>
                 </div>
                 <div class="mobile_cs_center">
                     <section class="detail_title">
                         <h2>고객센터</h2>
                         <div class="btnback">
-                            <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt=""></a>
+                            <a onclick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt=""></a>
                         </div>
                     </section>
                 </div>
@@ -51,7 +53,7 @@
                                     <li>공지사항</li>
                                 </a>
                                 <a href="faq">
-                                    <li>fAQ</li>
+                                    <li>FAQ</li>
                                 </a>
                                 <a href="cs-center">
                                     <li class="clicked_menu">고객센터</li>
@@ -109,6 +111,6 @@
                         </div>
                     </div>
                 </main>
-                
+                <%-include(webroot + 'views/general/footer') %>
             </body>
         </html>

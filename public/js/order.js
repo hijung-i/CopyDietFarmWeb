@@ -1,12 +1,21 @@
 var postCode = false;
+
+
 var app = new Vue({
     el: 'main',
+    components: {
+        'delivery-info-modal': deliveryInfoModalComponent
+    },
     data: {
         RESOURCE_SERVER,
         deliveryGroupList: '',
         paymentNo: 0,
         usablePoint: 0,
-        orderDTO: '',
+        orderDTO:  {
+            delivery: {}
+        },
+        requestDeliveryGroupList: [],
+        deliveryGroupList,
         deliveryDescType: 0,
         deliveryList: [],
         couponList: [],
@@ -14,7 +23,7 @@ var app = new Vue({
     }, methods: {
         
         numberFormat,
-        paymentAction,
+        paymentAction, 
         descTypeChange: function() {
             var type = $("#selectDeliveryDesc")[0].options.selectedIndex;
             var value = $("#selectDeliveryDesc").val();
@@ -45,22 +54,25 @@ var app = new Vue({
             
         },
         selectPayment: function() {
-
             $('.order_payment li').removeClass('border-orange')
             $('.order_payment li:nth-child('+ app.paymentNo +')').addClass('border-orange')
         },
         formatDate,
         applyCoupon,
-        onDeliveryInfoSelected: function() {
-            
-            var checked = $('input[type=radio][name=list]:checked');
-            app.orderDTO.delivery = app.deliveryList[checked.val()];
+        onDeliveryInfoSelected: function(data) {
+            console.log("event 발생",data);
+            var selectedDelivery = Object.assign(data);
+            this.orderDTO.delivery = selectedDelivery;
+        }
+        // onDeliveryInfoSelected: function() {
+        //     var checked = $('input[type=radio][name=list]:checked');
+        //     var selectedDelivery = app.deliveryList[checked.val()];
+        //     app.orderDTO.delivery = selectedDelivery;
+        //     checkDeliveryAddress();
 
-            checkDeliveryAddress();
-
-            closeInfoModal();
-        },
-        openZipSearch
+        //     closeInfoModal();
+        // }
+        ,openZipSearch
     },
     computed: {
         remainingPoint: {
@@ -526,26 +538,6 @@ function closeCouponModal() {
     console.log("click")
     $('#c_Modal').hide();
 }
-   
-function openInfoModal() {
-    console.log("click");
-    $('#iModal').show();  
-    $('html,body').css({'overflow':'hidden','height':'100%'});  
-    $('#iModal').on('scroll touchmove mousewheel',function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        return false;
-    })
-
-    getDeliveryInfoList();
-
-    var inputs = document.querySelectorAll('input');
-    $(inputs).click(function(){
-        console.log('done');
-        
-    });
-
-}
 
 function closeInfoModal() {
     $('#iModal').hide();
@@ -631,10 +623,6 @@ $(function(){
         e.preventDefault();
         $('html,body').animate({scrollTop:0},600);
     });
-});
-
-$(document).ready(function(){
-
     var navHeight = $("html,body").height(); 
 
     $("#goingTo_top").hide();
@@ -642,7 +630,7 @@ $(document).ready(function(){
     $(window).scroll(function(){ 
         var rollIt = $(this).scrollTop() >= navHeight; 
 
-    if(rollIt){ 
+        if(rollIt){ 
 	        $("#goingTo_top").show().css({"position":"fixed"});
         }
         else{

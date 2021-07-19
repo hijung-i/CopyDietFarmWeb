@@ -8,34 +8,24 @@
          content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
-        <meta property="og:url" content="http://dietfarm.co.kr/">
-        <meta property="og:title" content="다이어트팜:: 다이어트 건강식단 플랫폼">
-        <meta property="og:type" content="website">
-        <meta property="og:image" content="http://13.209.123.102:8000/representative/076c22a7679141346852332fdc987558_1624262108770.png">
-        <meta property="og:description" content="사이트 설명">
-        <meta name="naver-site-verification" content="b264699251c1f4fc308e0f177d9fe27ac9704fd5" />
-        <title>다이어트팜:: 다이어트 건강식단 플랫폼</title>
+        <meta name="description" content="페이지 설명">
 
-        <%-include('general/head') %>
+        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
 
+        <%-include(webroot + 'views/general/head') %>
+<%-include(webroot + 'views/general/openGraph.ejs') %>
         <style type="text/css">
             nav a:nth-child(1) {color:#F99319}
-            .bx-wrapper {-moz-box-shadow: none !important;-webkit-box-shadow: none !important;
-            box-shadow: none !important}
-
+            .bx-wrapper {-moz-box-shadow: none !important; -webkit-box-shadow: none !important;
+            box-shadow: none !important} 
             .main_pager_wrapper {position: absolute;right: 10%;top: 6.6%;z-index: 777;width: 60px;
                 height: auto;text-align: center;background: #fff;border-radius: 20px;padding: 6px;
                 font-size: 12px}
-
             .main_pager_wrapper span {font-weight: 700}
-
             .main_pager_wrapper > .mr10 {letter-spacing: 2px}
-
             #mHeader .tab_wrap {width: 100%;padding-bottom: 20px;border-bottom: 2px solid #E6E6E6;
                 background: #fff;z-index: 99}
-
             #mHeader .tab_cont {display: none;min-height: 360px}
-
             #mHeader .tab_cont.active {display: block;background: #fff;position: absolute;
                 width: 100%}
             @media screen and (max-width:1079px) {
@@ -58,7 +48,6 @@
                 .swiper-slide img {display: block;width: 100%;height:360px;object-fit:cover;}
                 .slider_main_wrap img {width: 1080px; height: 370px;z-index:100} 
             }
-
             /* swiper bundle */
             .swiper-container { width: 100%;height: 100%;z-index: 0;}
           
@@ -71,22 +60,19 @@
             
             
             .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
-                left: 88%; bottom: 25px}
+            left: 88%; bottom: 25px}
             .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
-
-
         </style>
-
+        <link rel="stylesheet" href="/css/myPage.css">
 </head>
 <body>
         <!--//로그인 모달영역시작-->
-        <div class="popup_layer_wrapper">
-            <!-- <div id="popup_layer"></div> -->
-        </div>
-          <!--//로그인 모달영역끝-->
+        <!--//로그인 모달영역끝-->
+        <!-- <button type="button" id="appleid-signin" data-color="black" data-border="true" data-type="sign in" class="btnApple"><img src="">애플 계정으로 시작하기</button> -->
+        <main id="content" class="content_main">
+            <div id="app">
 
-            <%-include('general/header') %>
-                <main id="content" class="content_main">
+                <%-include(webroot + 'views/general/header') %>
                     <div class="swiper-container mySwiper">
                     <!--//  <div class="black_bg"> </div>-->
                         <div class="swiper-wrapper main_slider">
@@ -136,19 +122,13 @@
                     <div class="blank_sec">
                         <ul>
                             <li>
-                                <a href="/product/P00879"><img src="/images/banner01.PNG" style="width:300px; height:400px;">
-                                    <p>자세히보기<img src="/images/arrow_ico_join.png" style="width:10px;height:20px;position:relative;top:3px;left:10px"></p>
-                                </a>
+                                <a href="/product/P00879"><img src="/images/doctor_img_event@2x.png" style="width:300px; height:400px;"></a>
                             </li>
                             <li>
-                                <a href="/f_invite"><img src="/images/banner02.png" style="width:450px;height:400px">
-                                    <p style="margin-left: 144px !important;">자세히보기<img src="/images/arrow_ico_join.png" style="width:10px;height:20px;position:relative;top:3px;left:10px"></p>
-                                </a>
+                                <a href="/f_invite"><img src="/images/friend_img_event@2x.png" style="width:450px;height:400px"></a>
                             </li>
                             <li>
-                                <a href="/product/P00744"><img src="/images/banner03.png" style="width:300px;height:400px">
-                                    <p>자세히보기<img src="/images/arrow_ico_join.png" style="width:10px;height:20px;position:relative;top:3px;left:10px"></p>
-                                </a>
+                                <a href="/product/P00982"><img src="/images/rara_img_event@2x.png" style="width:300px;height:400px"></a>
                             </li>
                         </ul>
                     </div>
@@ -256,7 +236,6 @@
                                             <li class="cost">26,000원</li>
                                             <li class="ratio">10%</li>
                                         </ul>
-
                                     <div class="item-2">
                                         <img src="/images/m_img2.jpg" alt="">
                                     </div>
@@ -268,16 +247,17 @@
                         </li> -->
                     </ul>
                 </div>
-            </section>
-         </div>
+               </section>
+            </div>
+          </div>
+          <%-include(webroot + 'views/general/footer') %>
+            <div class="popup_layer_wrapper"  v-if="installModal">
+                <!-- <div id="popup_layer"></div> -->
+                <install-modal></install-modal>
+            </div>
         </main>
-
+        <script src="/js/components/installAppModal.js"></script>
         <script src="/js/index.js"></script>
-        <script src="/js/common.js"></script>
-        <%-include('general/footer') %>
-
-
-
 
     </body>
 </html>

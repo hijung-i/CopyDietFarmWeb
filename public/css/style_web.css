@@ -107,8 +107,8 @@
 }
 
 /*seller_inquiry mobile & web*/
-@media screen and (min-width:360px) and (max-width:1079px){#btnModify{width:100%;}
-.web_title{display:none}
+@media screen and (max-width:1079px)
+{#btnModify{width:100%;}
 .inquiryBox select{width:100%;
 height:40px;
 font-size:12px;
@@ -144,11 +144,9 @@ appearance: none;}
     .mypage_myinfo > h3 {
         width: 100%;
         padding: 19px 0 12px 0;
-        margin-left:180px
     }
     .main_contents_elements_wrap {
         display: flex;
-        margin-left:180px
     }
     .mypage_member_info {
         width: 137px; height: 147px;
@@ -184,7 +182,6 @@ appearance: none;}
 /*모바일*/
 @media screen and (max-width:1079px){
 .main_contents{display:none}
-.page_nation{display:none}
 .order_list_box h3, .order_list_box table{display:none}
 div.dateNo{padding-left:15px}
 div.dateNo p.no{margin-top:7px}
@@ -210,7 +207,7 @@ div.dateNo p.no{margin-top:7px}
 padding-left: 4px}
 
 /* main > center */
-.main_contents{width:100%;background-color:#F5F5F5}
+/* .main_contents{width:100%;background-color:#F5F5F5} */
 .web_contents .center{position:relative;left:41px;top:-25px}
 .web_contents .right{position:relative;left:81px;top:-25px}
 .main_contents .center, .main_contents .right {
@@ -220,7 +217,7 @@ width: 400px; height: 147px;color: #000; background: #fff;margin: 44px -10px 0 0
 .main_contents .center p > span, .main_contents .right p > span {font-size: 20px; font-weight: 100; color: #ccc;padding: 12px 0 0 12px}
 
 /* contents */
-.content_lnb {width:138px; text-align: center;margin-left:180px}
+.content_lnb {width:138px; text-align: center;}
 .content_lnb a {color:#000}
 .content_lnb li {width:138px;padding: 16px 0;    border: 1px solid #F5F5F5;height: 50px}
 .content_lnb li.on {background: #F99319}
@@ -255,8 +252,7 @@ top: 130%; transform: translateY(-130%);text-align: center}
 /*product_review mobile&web */
 @media screen and (max-width:1079px){
 .orderDetails{border-bottom:8px solid #F1F1F1;padding-left:15px;padding-right:15px}
-.orderList_detail{display:none}
-.page_nation{display:none}    
+.orderList_detail{display:none}    
 /* orderlist */
 .ord_detail_btn {cursor: pointer;}
 .order_list_ctn {width: 100%;padding: 12px 0;font-size: 14px;color: #000;align-items: center;}
@@ -335,6 +331,10 @@ header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: poi
 .line2{border-top:2px solid #F99319;position:relative;top:12px}
 .circle_line ul{display:flex;justify-content:space-around;}
 .circle_line ul li > img {vertical-align: middle;}
+.circle_line {text-align: center;margin-bottom:20px}
+.circle_line p{margin-top:10px}
+.circle_line span{margin-top:4px}
+.d_status{font-size:16px;color:#878787;padding-top:201px;padding-bottom:204px;text-align:center;}
 .d_state ul, .d_date ul{display:flex;justify-content:space-around;}
 .d_state ul li, .d_date ul li{font-size:10px;float:left;color:#6B6B6B}
 
@@ -406,7 +406,7 @@ padding: 4px 0;}
 
 /* button */
 .btn_area > button {
-    width: 330px; height: 45px;
+    width: 310px; height: 45px;
     margin: 0 auto;
     background: #fff;
     font-weight: 14; font-weight: 500;
@@ -458,12 +458,9 @@ justify-self: center;width: 100%;margin: 0 auto;}
 .order_a_box tr td:last-child{text-align:right;}
 
 /* 버튼 */
-
-.btn_area {margin:10px 10px}
-
 #btnOrder{width:100%;margin:auto;padding: 21px 0 17px;border: 0;cursor: pointer;color: #fff;
     background-color: #F99319;font-size: 14px;
-    font-weight: 400;font-family: '나눔고딕';border-radius:5px;}
+    font-weight: 400; font-family: 'Nanum Gothic', sans-serif; border-radius:5px;}
 
 /*주문 완료*/
 #web_content .order_complete_info{margin-top:20px;}
@@ -616,7 +613,6 @@ color:#000;font-size:14px;background-color:#F1F1F1}
 .order_q .title00{padding-top:10px;padding-bottom:10px;padding-left:15px;font-size:16px;font-weight:bold;}
 .order_a_box td{padding-bottom:5px}
 .order_a_box td span{color:#878787}
-.btn_area {margin:20px 15px;}
 #btnReorder{
         width:100%; height: 45px; 
     line-height: 0px; 
@@ -627,7 +623,7 @@ color:#000;font-size:14px;background-color:#F1F1F1}
     background-color:transparent;
     font-size: 14px;
     font-weight: 400;
-    font-family: '나눔고딕';
+    font-family: 'Nanum Gothic', sans-serif;
     border-radius:5px;
     margin-top: 20px;
     padding-bottom: 20px;
@@ -650,7 +646,7 @@ color:#000;font-size:14px;background-color:#F1F1F1}
 .order_list_box{display:flex;justify-content:flex-start;margin-bottom:10px;margin-top:10px}
 .order ul li{white-space:nowrap}
 .order0{margin-top:-10px}
-.order_list_btn{width: 58px; float:right;padding-right: 0;}
+.order_list_btn{width: 58px; padding-right: 0;}
 .btnA{width:100%;height:26px;background-color:#F99319;border:0;color:#fff;border-radius:5px;margin-bottom:8px;white-space:nowrap;}
 .btnB{width:100%;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;white-space:nowrap;padding:1px}
 .grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;margin-top:20px}
@@ -964,7 +960,6 @@ margin-right:15px
     border:none
 }
 .web_delivery_manage_list {
-width: 90%;
 margin: 0 auto;
 margin-left: 0;
 border-bottom:8px solid #f1f1f1;
@@ -1174,7 +1169,8 @@ padding-top:20px
 
 .modal a.close-modal {display: none !important;}
 .deliver_mag_modal {width: 380px;}
-.deliver_magHeader {padding: 12px 0;}
+.deliver_magHeader {padding: 12px 0;text-align:center}
+.deliver_magHeader h2{text-align: center;}
 .deliver_mag_modal > header > ul {
     display: flex;
     justify-content: space-between;
@@ -1197,7 +1193,11 @@ padding-top:20px
     padding: 16px 0;
     margin-top:-40px
 }
-
+.deliver_mag_modal_ctt p{
+font-size:14px;
+font-weight:bold;
+padding-bottom:6px
+}
 .deliver_mag_modal_ctt input {
     width: 100%; height: 45px;
     border: 1px solid #BBBBBB;
@@ -1213,6 +1213,13 @@ padding-top:20px
 .deliver_mag_modal_ctt input::placeholder {
     padding-left: 14px;
 }
+.deliver_mag_modal_ctt button{
+        width: 100%;
+        height: 45px;
+        border: 0;
+        border-radius: 5px;
+        background-color: #EFA543;
+        color: #fff;}
 
 
 @media screen and (min-width:360px) and (max-width:1079px){
@@ -1861,7 +1868,7 @@ table.web_qna {padding: 12px 0;}
 /* select design css */
 
 /* 판매자문의모바일 css */
-.btn_area {width:100%;clear:both; padding-right:38px;}
+.btn_area {width:100%;clear:both}
 #btnInquiry{width:96%;height:45px;border: 0;cursor: pointer;color: #fff;background-color: #F99319;font-size: 14px;
 font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox{padding-left:20px;padding-right:20px;margin-bottom:20px;margin-top:30px}
@@ -1871,14 +1878,7 @@ font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox ul li ul{margin-bottom:13px;font-weight:normal;margin-top:5px}
 .inquiryBox ul li ul li{line-height:14px}
 .inquiryBox .words form{margin-top:-20px}
-.filebox label{width:100%;height:45px;color:#000; display: inline-block;padding-top:14px;
-text-align:center;line-height:17px;
-font-weight:bold;vertical-align: middle; background-color:transparent;cursor: pointer;
-border: 1px solid #BBBBBB;border-radius:5px;font-size:15px;font-weight:bold}
-.filebox input[type="file"] {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}
-.filebox p{color:#878787;line-height:20px;font-weight:normal;margin-top:20px}
-.filebox p span{text-decoration:underline
-}
+
 .tab_cont{display:none;min-height:360px;}
 .tab_cont.active{display:block;}
 .filebox label {
@@ -2022,7 +2022,7 @@ h3 {font-size: 14px;font-weight:700;}
 select { width: 100%;height: 29px;font-size: 15px;background: #fff url(https://static.nid.naver.com/images/join/pc/sel_arr_2x.gif) 100% 50% no-repeat;
     background-size: 20px 8px;-webkit-appearance: none;display: inline-block;
     text-align: start;border: none;
-    cursor: default;font-family:'나눔고딕'}
+    cursor: default; font-family: 'Nanum Gothic', sans-serif;}
 
 .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
 .member_delete ul li a{text-decoration:underline;}

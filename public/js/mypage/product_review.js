@@ -1,9 +1,28 @@
 var app = new Vue({
     el: 'main',
+    components: {
+        'mypage-component': mypageComponent,
+        'product-review-modal': productReviewModal
+    },
     data: {
         RESOURCE_SERVER,
         reviewList: [],
-        writableReviewList: []
+        writableReviewList: [],
+        totalPointAmount: 0,
+        product: {},
+        optionTotalPrice: 0,
+        orderDTO: {},
+        deliveryGroupList: [],
+        currentReview: {},
+        writable: { purchaseProductNo: 0 },
+        writableList: [],
+        reviewList: [],
+        reviewModal: false,
+        currentQuestion: {},
+        questionList: [],
+        inquiryModal: false,
+        recmdList: [],
+        modal: []
     }, methods: {
         formatDate,
         getOptionName: function(options) {
@@ -13,7 +32,19 @@ var app = new Vue({
             }
             return optionName;
         }
-    }
+    },
+    onReviewUpdateClick: function(index) {
+        this.currentReview = this.reviewList[index];
+
+        openReviewModal()
+    },
+    onChildPopupClosed: function(data) {
+        this.reviewModal = false;
+        this.inquiryModal = false; 
+
+        this.currentReview = {};
+        this.currentQuestion = {};
+    },
 })
 
 $(function() {
@@ -33,6 +64,24 @@ function getQuestionList() {
         console.log("error while getReview", err);
     }, {
         isRequired: true,
+        userId: true
+    })
+}
+
+function getReviewList() {
+    var params = {
+        productCode: app.product.productCode
+    };
+
+    ajaxCallWithLogin(API_SERVER + '/board/getReview', params, 'POST', 
+    function (data) {
+    
+        app.reviewList = data.result;
+        console.log("success", data);
+    }, function (err){
+        console.log("error while getReview", err);
+    }, {
+        isRequired: false,
         userId: true
     })
 }

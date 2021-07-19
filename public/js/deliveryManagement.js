@@ -1,7 +1,13 @@
+var double = false;
 var app = new Vue({
-    el: '#app',
+    el: 'main',
+    components: {
+        'mypage-component': mypageComponent,
+        'delivery-register-modal': deliveryRegisterModalComponent
+    },
     data: {
-        deliveryList: new Array()
+        deliveryList: new Array(),
+        totalPointAmount: 0
     },
     methods: {
         modalDisplay,
@@ -11,15 +17,20 @@ var app = new Vue({
 })
 
 $(function() {
-
     $("#addr").click(function() {
-        openZipSearch();
+        if(!double) {
+            double = true
+            openZipSearch();
+        }
     })
 
     $("#addr").keydown(function() {
-        openZipSearch();
-        
-        $(this).val('');
+        if(!double) {
+            double = true
+            openZipSearch();
+            
+            $(this).val('');
+        }
     })
     var height = window.innerHeight;
     var bottomUlHeight = $('.pages')[0].offsetHeight;
@@ -197,27 +208,26 @@ function changeMainAddress(index) {
         userId: true
     })
 }
-
+function openZipSearch() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
+            $('#addr').val(address);
+            double = false;
+            console.log(data);
+        }
+    }).open();
+}
 
 function getDeliveryInfoList() {
-    var params = {};
-    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', params, 'POST',
+    ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', {}, 'POST',
     function(data) {
         app.deliveryList = data.result;
+
     }, function(err) {
         console.log("err", err);
     }, {
         isRequired: true,
         userId: true
     })
-}
-
-function openZipSearch() {
-    new daum.Postcode({
-        oncomplete: function(data) {
-            var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
-            $('#addr').val(address);
-            console.log(data);
-        }
-    }).open();
 }
