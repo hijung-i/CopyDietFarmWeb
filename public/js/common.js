@@ -290,22 +290,6 @@ $(document).ready(function() {
       $('.gnb').show();
    });
 
-   $("#memberMenu").bind("moseover mouseenter",function(){
-      $("#memMenu").show();
-   });
-
-   $("#memMenu").bind("moseout mouseleave",function(){
-      $("#memMenu").hide();
-   });
-
-   $("#NotmemberMenu").bind("moseover mouseenter",function(){
-      $("#NotmemMenu").show();
-   });
-
-   $("#NotmemMenu").bind("moseout mouseleave",function(){
-      $("#NotmemMenu").hide();
-   });
-
 });
 function niceIdentifyPopup(nextMethod) {
    var options = 'top=10, left=10, width=360, height=600, status=no, menubar=no, toolbar=no, resizable=no';

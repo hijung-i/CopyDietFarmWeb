@@ -123,10 +123,10 @@ function getEventStands() {
      });
  
  
-     $(".sideMenu").hide();
-     $(".web_cate > a").click(function(){
-         $(".sideMenu").slideToggle("fast");
-     });
+    // $(".sideMenu").hide();
+    // $(".web_cate > a").click(function(){
+    //     $(".sideMenu").slideToggle("fast");
+    // });
  
      
      
@@ -141,20 +141,7 @@ function getEventStands() {
          $("ul").slideUp("700");
      });
  
-     $("#memberMenu").bind("moseover mouseenter", function () {
-         $("#memMenu").show();
-     });
-     $("#memMenu").bind("moseout mouseleave", function () {
-         $("#memMenu").hide();
-     });
- 
-     $("#NotmemberMenu").bind("moseover mouseenter", function () {
-         $("#NotmemMenu").show();
-     });
-     $("#NotmemMenu").bind("moseout mouseleave", function () {
-         $("#NotmemMenu").hide();
-     });
- 
+
      $(".open_close").click(function () {
          $(".toggle").toggle();
      });
