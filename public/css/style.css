@@ -83,8 +83,7 @@ a:hover{text-decoration:none;}
 .green {
   color: #31845B
 }
-
-
+#header_common #nav a .onTab {color: #F99319;}
 .search_box_icon{display:inline-block;position:relative;right:40px;top:3px}
 .search_box_icon input{background:url('/images/search_ico.png')no-repeat;border:none;width:25px;}
 .search_box_ico{display:inline-block;}
@@ -1155,7 +1154,7 @@ border-spacing: 0 20px;font-size:14px}
 
 /*제품상세페이지 모달 버튼*/
 .review_btn button{width:90%;height:45px}
-
+.order01 td{width:100px}
 }
 .review_before h2{text-align:center;font-size:16px;font-weight:bold;margin-top:19px}
 .review_before h3{text-align:center;font-size:16px;font-weight:bold;margin-top:32px;margin-bottom:34px}
@@ -1475,9 +1474,6 @@ font-weight:normal}
   max-width: 1080px;
 }
 
-main#content.coupon {
-  width: 831px;
-}
 #content .pick_wrap{width:1080px;}
 #content .pick_wrap{margin:10px 10px;width:100%;}
 #content .pick_product h2{margin-top:40px;margin-bottom:20px;font-size:18px;color:#000;}

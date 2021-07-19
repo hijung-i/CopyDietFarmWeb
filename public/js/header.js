@@ -18,15 +18,19 @@ function getEventStands() {
              html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'> 홈</a>';
           }
           if( currentStandCode == stand.salesStandCode){
-             $('#heade_common #nav a').removeClass("is-current");
+             $('#header_common #nav a').removeClass("is-current");
              html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ '<span>' + stand.salesStandName + '</span>' +'</a>';
           } else {
              html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ '<span>' + stand.salesStandName + '</span>' + '</a>';
           }
        }
- 
-       html += '<span></span>';
+        html += '<span></span>';
        $('#header_common #nav').html(html);
+
+       $('#header_common #nav a').on('click',function(){
+        $(this).addClass('onTab');
+        $(this).siblings().removeClass('onTab');
+    });
  
          // web size side menu set
        $('.web_cate').click(function() {

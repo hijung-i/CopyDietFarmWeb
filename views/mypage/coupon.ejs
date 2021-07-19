@@ -33,14 +33,16 @@
                     display: none;
                 }
                 .myPage_title h2{display:none}
+                .contents{width:860px}
             }
         </style>
         <%-include(webroot + 'views/general/head') %>
-<%-include(webroot + 'views/general/openGraph.ejs') %>
+       <%-include(webroot + 'views/general/openGraph.ejs') %>
         </head>
 
         <body>
-            <div class="mobile_coupon">
+            <%-include(webroot + 'views/general/header') %>
+        <!--//  <div class="mobile_coupon">
                 <section class="detail_title">
                     <h2>쿠폰</h2>
                     <script type="text/javascript">
@@ -55,9 +57,9 @@
                     </div>
                 </section>
             </div>
-            <%-include(webroot + 'views/general/header') %>
-                <div class="mypage_coupon_ctt">
-                  <mypage-component v-bind:total-point-amount="totalPointAmount" v-bind:usable-coupon-amount></mypage-component>
+        -->  
+            <main id="content" class="coupon">
+                <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
                     <div class="mypage_content_wrap">
                         <nav class="content_lnb">
                             <ul>
@@ -84,12 +86,9 @@
                         </li>
                             </ul>
                         </nav>
-                        <main id="content" class="coupon">
-                            <div class="contents">
-                        <div class="order_list_null" v-if="couponList == undefined ||couponList.length == 0">
-                            <p class="no_review">쿠폰 내역이 없습니다.</p>
-                        </div>
-                        <h2 class="web_coupon_tit">쿠폰</h2>
+                       
+                 <div class="contents">
+                      <h2 class="web_coupon_tit">쿠폰</h2>
                         <div class="coupon_web_top">
                             <input type="text" placeholder="쿠폰 코드를 입력해주세요">
                             <button type="button" class="coupon_enroll">쿠폰 등록</button>
@@ -102,6 +101,9 @@
                                 <li>할인</li>
                                 <li>상태</li>
                             </ul>
+                        </div>
+                        <div class="order_list_null" v-if="couponList == undefined ||couponList.length == 0">
+                            <p class="no_review">쿠폰 내역이 없습니다.</p>
                         </div>
                         <div class=coupon_list>
                             <ul>
@@ -147,7 +149,7 @@
                             </div>
                         </main>
                     </div>
-                </div>
+    
     <script>
         window.onload = function() {
         
