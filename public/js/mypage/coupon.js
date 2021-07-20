@@ -5,6 +5,7 @@ var app = new Vue({
     },
     data: {
         couponList: [],
+        totalPointAmount: 0
         
     }, methods: {
         numberFormat,
@@ -18,7 +19,26 @@ var app = new Vue({
 
 $(function() {
     getUsableCouponList();
+    getUsablePointAmount();
 })
+
+
+function getUsablePointAmount() {
+    var params = {};
+    ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
+    function(data) {
+        if(data.result)
+            app.totalPointAmount = numberFormat(data.result);
+        
+        console.log("success usablePoint", data);
+    }, function(err) {
+        console.log("error", err)
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
+}
 
 function getUsableCouponList() {
     
