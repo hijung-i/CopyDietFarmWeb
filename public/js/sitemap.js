@@ -5,6 +5,7 @@ function sitemapCateList() {
         
         var sitemapCateHtml = '';
         var result = data.result;
+        console.log(sitemapCateHtml);
 
         for(var i = 0; i < result.length; i++) {
             var category = result[i];
