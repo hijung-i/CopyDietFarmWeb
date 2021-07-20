@@ -11,9 +11,7 @@ var app = new Vue({
         deliveryGroupList: '',
         paymentNo: 0,
         usablePoint: 0,
-        orderDTO:  {
-            delivery: {}
-        },
+        orderDTO: new OrderDTO(),
         requestDeliveryGroupList: [],
         deliveryGroupList,
         deliveryDescType: 0,
@@ -65,7 +63,7 @@ var app = new Vue({
             var selectedDelivery = Object.assign({}, data);
             this.orderDTO.delivery = selectedDelivery;
             
-            checkDeliveryAddress();
+            checkDeliveryAddress(this);
         }
         ,openZipSearch
     },
@@ -131,26 +129,42 @@ var app = new Vue({
             }
             return count;
         }
+    },
+    created: function() {
+        var deliveryGroupList = $('#deliveryGroupList').val();
+    
+        this.deliveryGroupList = JSON.parse(deliveryGroupList);
+        this.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
+        console.log(this.orderDTO)
+        this.orderDTO.products = new Array();
+        for(var i = 0; i < this.deliveryGroupList.length; i++) {
+
+            var dGroup = Object.assign(new DeliveryGroupDTO(), this.deliveryGroupList[i]);
+            this.deliveryGroupList[i] = dGroup
+            for(var j = 0; j < dGroup.products.length; j++) {
+                this.orderDTO.products.push(dGroup.products[j]);
+            }
+        }
+        
+        getLogin();
     }
 })
 
 $(function() {
-    var deliveryGroupList = $('#deliveryGroupList').val();
+    // var deliveryGroupList = $('#deliveryGroupList').val();
     
-    app.deliveryGroupList = JSON.parse(deliveryGroupList);
-    app.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
+    // app.deliveryGroupList = JSON.parse(deliveryGroupList);
+    // app.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
 
-    app.orderDTO.products = new Array();
-    for(var i = 0; i < app.deliveryGroupList.length; i++) {
+    // app.orderDTO.products = new Array();
+    // for(var i = 0; i < app.deliveryGroupList.length; i++) {
 
-        var dGroup = Object.assign(new DeliveryGroupDTO(), app.deliveryGroupList[i]);
-        app.deliveryGroupList[i] = dGroup
-        for(var j = 0; j < dGroup.products.length; j++) {
-            app.orderDTO.products.push(dGroup.products[j]);
-        }
-    }
-
-    getLogin();
+    //     var dGroup = Object.assign(new DeliveryGroupDTO(), app.deliveryGroupList[i]);
+    //     app.deliveryGroupList[i] = dGroup
+    //     for(var j = 0; j < dGroup.products.length; j++) {
+    //         app.orderDTO.products.push(dGroup.products[j]);
+    //     }
+    // }
 })
 
 function getLogin() {
@@ -158,7 +172,8 @@ function getLogin() {
         var isLoggedIn = data.result.isLoggedIn;
 
         if(isLoggedIn) {
-            if(app.orderDTO.delivery.address === '') getDefaultDeliveryInfo(app);
+            console.log('orderDTO.delivery =>>>>>>>>>>>> ', app.orderDTO.delivery)
+            if(app.orderDTO.delivery.address == '') getDefaultDeliveryInfo(app);
             getUsablePointAmount();
             getUsableCouponList();
         }
@@ -607,28 +622,6 @@ $(function(){
     });
     
 });
-
-function checkDeliveryAddress() {
-
-    var delivery = app.orderDTO.delivery;
-    var params = {
-        deliveryNo: delivery.deliveryNo
-    };
-
-    ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
-    function(data) {
-        var result = data.result;
-        var totalDelivertCost = updateDeliveryCost(app.deliveryGroupList, result);
-
-        app.orderDTO.totalDeliveryCost = totalDelivertCost
-    }, function(err) {
-        console.log("error", err);
-    }, {
-        isRequired: true,
-        userId: true
-    })
-
-}
 
 function checkDeliveryAddressNoneMember() {
     var address = $('#unAddr').val().trim();

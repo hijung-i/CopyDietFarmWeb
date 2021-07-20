@@ -218,7 +218,7 @@ var app = new Vue({
             var selectedDelivery = Object.assign({}, data);
             this.orderDTO.delivery = selectedDelivery;
 
-            checkDeliveryAddress();
+            checkDeliveryAddress(this);
         }
         
     }, created: function() {

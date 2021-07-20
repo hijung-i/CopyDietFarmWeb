@@ -205,6 +205,7 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
         address: '',
         mainAddressYn: ''
     }
+
     try {
         console.log(sessionUser)
         if (req.session.isLoggedIn === true) {
@@ -219,7 +220,7 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
         console.log('GET /order >> error', err)
     }
 
-    orderDTO.delivery = deliveryInfo
+    orderDTO.delivery = orderDTO.delivery || deliveryInfo
     orderDTO.deliveryDesc = ''
     orderDTO.paidPointAmount = 0
     orderDTO.paidCouponAmount = 0
