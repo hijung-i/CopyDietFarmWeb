@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport"
+         content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+        <meta name="format-detection" content="no"/>
+        <meta name="description" content="페이지 설명">
+
+    <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
+    <%-include(webroot + 'views/general/head') %>
+    <%-include(webroot + 'views/general/openGraph.ejs') %>
+    <style>
+        div.sitemap_title {
+            max-width: 954px;
+            width: 100%; height: 38px;
+            margin: 0 auto;
+            margin-top: 54px;
+            margin-bottom: 28px;
+            border-bottom: 2px solid #E6E6E6;
+        }
+        div.sitemap_title {
+            display: flex;
+            font-size: 20px; font-weight: 700;
+            align-items: center;
+        }
+        div.sitemap_title > p {padding: 0 8px;}
+        div.sitemap_content_wrapper {
+            max-width: 954px; width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 66px;
+        }
+        div.sitemap_box {
+            width: 234px; height: 502px;
+            background: #f8f8f8 0% 0% no-repeat padding-box;
+            border-right: 1.5px solid #e6e6e6;
+            border-bottom: 1.5px solid #e6e6e6;
+        }.sitemap_content_type {
+            width: 183px; height: 33px;
+            border-bottom: 2px solid #F99319;
+            margin-top: 32px;
+        }
+        .sitemap_content_type > h3 {
+            font-size: 18px;
+            color: #000;
+        }
+        .sitemap_content_type span {
+            font-size: 20px;
+            color: #F99319;
+            padding: 0 8.5px 0 10px;
+        }
+        .sitemap_menuList div {
+            display: flex;
+        }
+        .sitemap_menuList div img {margin-right: 8.5px;}
+        .sitemap_menuList > ul > li {
+            margin: 20px 0 0 24px;
+            font-size: 16px;
+        }
+        .sitemap_menuList > ul li:not(:first-child) {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <main id="content" class="content_main">
+        <div id="app">
+            <%-include(webroot + 'views/general/header') %>
+
+            <div class="sitemap_title">
+                <p><img src="/images/square.png" alt="사이트맵 네모" style="padding-bottom: 4px;"></p>
+                <h3>사이트맵</h3>
+            </div>
+
+            <div class="sitemap_content_wrapper">
+
+                <div class="sitemap_categ sitemap_box">
+                    <div class="sitemap_content_type"><h3><span>01</span>카테고리</h3></div>
+
+                    <div class="sitemap_menuList">
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sitemap_evnet sitemap_box">
+                    <div class="sitemap_content_type"><h3><span>02</span>이벤트</h3></div>
+                </div>
+
+                <div class="sitemap_companyInfo sitemap_box">
+                    <div class="sitemap_content_type"><h3><span>03</span>회사정보</h3></div>
+                    <div class="sitemap_menuList">
+                        <ul>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">공지사항</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">FAQ</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">고객센터</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">알림설정</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">사업자정보확인</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">개인정보처리방침</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">이용약관</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sitemap_myFarm sitemap_box">
+                    <div class="sitemap_content_type"><h3><span>04</span>마이팜</h3></div>
+                    <div class="sitemap_menuList">
+                        <ul>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">회원가입</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">로그인</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">이벤트</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p><img src="/images/sitemap_arrow.png" alt="화살표"></p>
+                                    <p><a href="#">친구초대</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <%-include(webroot + 'views/general/footer') %>
+    </main>
+
+    <script src="/js/sitemap.js"></script>
+</body>
+</html>
