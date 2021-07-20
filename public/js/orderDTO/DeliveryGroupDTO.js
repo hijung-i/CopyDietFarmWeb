@@ -17,9 +17,8 @@ function DeliveryGroupDTO() {
     this.optionTotalCount = 0
 
     this.bundleDeliveryCost = function(countPerDelivery) {
-        console.log("countPerDelivery", countPerDelivery)
         this.optionTotalCount = 0;
-        
+
         Array.from(this.products).forEach(product => {
             Array.from(product.options).forEach(option => {
                 if(option.isSelected != undefined && option.isSelected) {
@@ -30,7 +29,7 @@ function DeliveryGroupDTO() {
                 }
             })
         })
-       
+
         return Math.floor(this.optionTotalCount / countPerDelivery + ((this.optionTotalCount % countPerDelivery > 0)?1:0)); 
     }
 
@@ -57,7 +56,6 @@ function DeliveryGroupDTO() {
                 if (product.countPerDelivery != 0 ){
                     boxCount = this.bundleDeliveryCost(product.countPerDelivery);
                 }
-                console.log(product.deliveryCost, product.deliveryCost2, product.deliveryCost3, boxCount)
                 if (this.deliveryCost < product.deliveryCost * boxCount) {
                     this.deliveryCost = product.deliveryCost * boxCount;
                     this.deliveryCostProduct = product.productCode
@@ -88,7 +86,6 @@ function DeliveryGroupDTO() {
 
     
     this.setTotalDeliveryCost = function(isJeju, isExtra) {
-        console.log(this.loadingPlace, this.deliveryCost, this.deliveryCost2, this.deliveryCost3)
         this.totalDeliveryCost = this.deliveryCost;
         this.totalDeliveryCost += (isJeju) ? this.deliveryCost2 : 0;
         this.totalDeliveryCost += (isExtra) ? this.deliveryCost3 : 0;

@@ -158,7 +158,7 @@ function getLogin() {
         var isLoggedIn = data.result.isLoggedIn;
 
         if(isLoggedIn) {
-            getDefaultDeliveryInfo(app.orderDTO);
+            if(app.orderDTO.delivery.address === '') getDefaultDeliveryInfo(app);
             getUsablePointAmount();
             getUsableCouponList();
         }

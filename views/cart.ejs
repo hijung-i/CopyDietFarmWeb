@@ -208,10 +208,10 @@
             <delivery-info-modal v-if="deliveryInfoModal" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
             <div class="shopBox01">
                 <h3>배송지</h3>
-                <template v-if="delivery != undefined">
-                    <p>{{ delivery.address }}</p>
+                <template v-if="orderDTO.delivery != undefined">
+                    <p>{{ orderDTO.delivery.address }}</p>
                     <p>
-                        <span>{{ delivery.userName }} &nbsp;&nbsp;&nbsp; {{ delivery.userCellNo }}</span>
+                        <span>{{ orderDTO.delivery.userName }} &nbsp;&nbsp;&nbsp; {{ orderDTO.delivery.userCellNo }}</span>
                     </p>                    
                 </template>
                 <button type="button" id="my-button" class="shopBtn01" onclick="openInfoModal()">배송지 변경</button>
