@@ -16,9 +16,11 @@ var app = new Vue({
         orderDTO: {
             delivery: {}
         },
+        delivery: {},
         requestDeliveryGroupList: [],
         cartList,
         deliveryGroupList,
+        deliveryInfoModal: false
     },
     methods: {
         numberFormat,
@@ -36,10 +38,11 @@ var app = new Vue({
         },
         updateOrderInfo: function (option) {
             if(option != undefined && !option.isSelected) {
-                // 전체 선택 해제
+                // TODO: 전체 선택 해제
                 $('#checkAll')[0].checked = false;
             }
-            
+
+            // TODO: 상품 묶음 배송(DeliveryGroup) 정보에 따라 
             this.orderDTO = new OrderDTO();
             this.deliveryGroupList = [];
         
@@ -81,7 +84,6 @@ var app = new Vue({
                 }
                 this.orderDTO.totalDeliveryCost = this.orderDTO.deliveryCost + this.orderDTO.deliveryCost2 + this.orderDTO.deliveryCost3;
             }
-
         },
         changeOptionCount: function (plus, gIdx, pIdx, oIdx) {
             if(plus) {
@@ -140,7 +142,6 @@ var app = new Vue({
                 var group = requestDeliveryGroupList[i];
                 for(var j = 0; j < group.products.length; j++) {
                     var product = group.products[j];
-                    console.log(product.productCode, group.deliveryCostProduct)
                     if(product.productCode == group.deliveryCostProduct) {
                         product.isDelivery = true
                         product.deliveryCost = group.deliveryCost
@@ -152,11 +153,9 @@ var app = new Vue({
                         product.deliveryCost3 = 0
                     }
                 }
-
                 console.log(product);
-               
             }
-            
+            this.orderDTO.delivery = this.delivery
             location.href="/order?deliveryGroupList=" + JSON.stringify(requestDeliveryGroupList)+'&orderDTO='+ JSON.stringify(this.orderDTO);
         },
         deleteSelectedItems: function() {
@@ -219,36 +218,48 @@ var app = new Vue({
         },
         onDeliveryInfoSelected: function(data) {
             console.log("event 발생", data);
-            var selectedDelivery = Object.assign(data);
-            this.orderDTO.delivery = selectedDelivery;
+            var selectedDelivery = Object.assign({}, data);
+            this.delivery = selectedDelivery;
 
             checkDeliveryAddress();
             this.$forceUpdate();
         }
         
+    }, created: function() {
+
+        this.getCartItemList()
+        getDefaultDeliveryInfo(this)
+            
+        var interval = setInterval(function() {
+            console.log("안 끝", app.delivery)
+            if(app.delivery != undefined) {
+                console.log("끝")
+                checkDeliveryAddress()
+                clear()
+            }
+        }, 100)
+         
+        
+
+        function clear() {
+            clearInterval(interval)
+        }
     }
     
 });
 
-$(function() {
-    checkDeliveryAddress();
-    app.getCartItemList();
-
-})
-
 function checkDeliveryAddress() {
-    var params = {};
+    var params = {
+        deliveryNo: app.delivery.deliveryNo
+    };
     
     ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
     function(data) {
         var result = data.result;
-
-        if(result.address.includes('제주특별자치도')) {
-            isJeju = true;
-        } 
-        if(result.count > 0) {
-            isExtra = true;
-        }
+        var newObj = updateDeliveryCost(app.deliveryGroupList, result);
+        
+        app.deliveryGroupList = newObj.deliveryGroupList
+        app.orderDTO.totalDeliveryCost = newObj.totalDeliveryCost
     }, function(err) {
         console.log("error", err);
     }, {

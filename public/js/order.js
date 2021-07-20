@@ -19,7 +19,8 @@ var app = new Vue({
         deliveryDescType: 0,
         deliveryList: [],
         couponList: [],
-        coupon: {}
+        coupon: {},
+        deliveryInfoModal: false
     }, methods: {
         
         numberFormat,
@@ -61,17 +62,11 @@ var app = new Vue({
         applyCoupon,
         onDeliveryInfoSelected: function(data) {
             console.log("event 발생",data);
-            var selectedDelivery = Object.assign(data);
+            var selectedDelivery = Object.assign({}, data);
             this.orderDTO.delivery = selectedDelivery;
+            
+            checkDeliveryAddress();
         }
-        // onDeliveryInfoSelected: function() {
-        //     var checked = $('input[type=radio][name=list]:checked');
-        //     var selectedDelivery = app.deliveryList[checked.val()];
-        //     app.orderDTO.delivery = selectedDelivery;
-        //     checkDeliveryAddress();
-
-        //     closeInfoModal();
-        // }
         ,openZipSearch
     },
     computed: {
@@ -168,7 +163,7 @@ function getLogin() {
         var isLoggedIn = data.result.isLoggedIn;
 
         if(isLoggedIn) {
-            getDefaultDeliveryInfo();
+            getDefaultDeliveryInfo(app.orderDTO);
             getUsablePointAmount();
             getUsableCouponList();
         }
@@ -460,44 +455,24 @@ function addOrder(requestOrderDTO) {
     })
 }
 
-function getDefaultDeliveryInfo() {
-    var params = {};
-
-    ajaxCallWithLogin(API_SERVER + '/user/getDefaultDevlieryInfo', params, 'POST',
-    function(data) {
-        var result = data.result;
-        var delivery = {
-            address: result.address,
-            addressName: result.addressName,
-            deliveryNo: result.deliveryNo,
-            userCellNo: result.userCellNo,
-            userName: result.userName
-        }
-        app.orderDTO.delivery = delivery
-        console.log("defaultDeliveryInfo success", data);
-    }, function(err) {
-        console.log("error", err);
-        var responseText = err.responseText;
-        if(responseText == 'NOT_FOUND') {
-            app.orderDTO.delivery = undefined
-        }
-    }, {
-        isRequired: true,
-        userId: true
-    })
-}
-
 function openZipSearch() {
     $('#unAddr').val('');
     if(postCode) return;
 
     postCode = true;
+    var doubleClick = false;
     new daum.Postcode({
         oncomplete: function(data) {
+            doubleClick = true
+            if(!doubleClick) {
+                return false;
+            }
+
             var address = data.zonecode + ", " + data.roadAddress + " ("+ data.bname +") ";
             $('#unAddr').val(address);
 
             checkDeliveryAddressNoneMember();
+            doubleClick = true
             postCode = false;
         },
         onclose: function() {
@@ -648,8 +623,11 @@ function checkDeliveryAddress() {
     ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
     function(data) {
         var result = data.result;
-        updateDeliveryCost(result);
+        var newObj = updateDeliveryCost(app.deliveryGroupList, result);
         
+        app.deliveryGroupList = newObj.deliveryGroupList
+        app.orderDTO.totalDeliveryCost = newObj.totalDeliveryCost
+
     }, function(err) {
         console.log("error", err);
     }, {
@@ -673,7 +651,11 @@ function checkDeliveryAddressNoneMember() {
         var result = data.result;
         console.log(data);
         result.address = address;
-        updateDeliveryCost(result);
+    
+        var newObj = updateDeliveryCost(app.deliveryGroupList, result);
+        
+        app.deliveryGroupList = newObj.deliveryGroupList
+        app.orderDTO.totalDeliveryCost = newObj.totalDeliveryCost
         
     }, function(err) {
         console.log("error", err);
@@ -682,30 +664,4 @@ function checkDeliveryAddressNoneMember() {
         userId: true
     })
 
-}
-
-function updateDeliveryCost(result) {
-    var isJeju = false, isExtra = false;
-    if(result.address.includes('제주특별자치도')) {
-        isJeju = true;
-    } 
-    if(result.count > 0) {
-        isExtra = true;
-    }
-
-    app.orderDTO.totalDeliveryCost = 0;
-    for(var i = 0; i < app.deliveryGroupList.length; i++) {
-        var newDeliveryGroup = new DeliveryGroupDTO();
-        var deliveryGroup = app.deliveryGroupList[i];
-
-        newDeliveryGroup.products = deliveryGroup.products;
-        newDeliveryGroup.loadingPlace = deliveryGroup.products[0].loadingPlace;
-        newDeliveryGroup.brandCode = deliveryGroup.products[0].brandCode;
-        newDeliveryGroup.companyName = deliveryGroup.products[0].companyName;
-        newDeliveryGroup.brandName = deliveryGroup.products[0].brandName;
-        newDeliveryGroup.setDeliveryCost(isJeju, isExtra);
-        
-        app.orderDTO.totalDeliveryCost += newDeliveryGroup.totalDeliveryCost;
-        app.deliveryGroupList[i] = newDeliveryGroup;
-    }
 }

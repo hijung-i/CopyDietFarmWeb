@@ -1,22 +1,16 @@
 var deliveryInfoModalTemplate = '';
 
-deliveryInfoModalTemplate += '<div class="i_modal" id="iModal" style="display:none" >';
+deliveryInfoModalTemplate += '<div class="i_modal" id="iModal">';
 deliveryInfoModalTemplate += '    <div class="modal-content">';
 deliveryInfoModalTemplate += '        <div class="modal_ctn">';
 deliveryInfoModalTemplate += '            <div class="modalTop_ctn">';
 deliveryInfoModalTemplate += '                <div class="modalTop_tit">';
 deliveryInfoModalTemplate += '                    <h3>배송지 관리</h3>';
-deliveryInfoModalTemplate += '                    <span class="close" onclick="closeInfoModal()">&times;</span>';
+deliveryInfoModalTemplate += '                    <span class="close" @click="closeInfoModal()">&times;</span>';
 deliveryInfoModalTemplate += '                </div>';
 deliveryInfoModalTemplate += '                <h3 class="order_delMag">배송지 변경</h3>';
 deliveryInfoModalTemplate += '            </div>';
 deliveryInfoModalTemplate += '            <div class="slim_line_del_switch_modal"></div>';
-deliveryInfoModalTemplate += '            <div class="top_checkBox">';
-deliveryInfoModalTemplate += '                <input type="checkbox" name="list" id="selectAll1" value="selectAll"';
-deliveryInfoModalTemplate += '                    onclick="selectAll(this)">';
-deliveryInfoModalTemplate += '                <label for="selectAll1">전체 선택</label>';
-deliveryInfoModalTemplate += '                <button>선택 삭제</button>';
-deliveryInfoModalTemplate += '            </div>';
 deliveryInfoModalTemplate += '            <div class="order_list_ctn">';
 deliveryInfoModalTemplate += '                <template v-for="(item, i) in deliveryList">';
 deliveryInfoModalTemplate += '                    <section class="web_delivery_manage_list">';
@@ -81,13 +75,12 @@ var deliveryInfoModalComponent = {
     },
     methods: {
         openInfoModal,
-        closeInfoModal,
         getDeliveryInfoList: function() {
             var component = this;
             ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', {}, 'POST',
             function(data) {
                 component.deliveryList = data.result;
-                console.log(data);
+                console.log("deliveryInfoList", data);
             }, function(err) {
                 console.log("err", err);
             }, {
@@ -101,27 +94,23 @@ var deliveryInfoModalComponent = {
             this.selectedDeliveryInfo = this.deliveryList[checked.val()];
 
             this.$emit('delivery-selected', this.selectedDeliveryInfo);
-            closeInfoModal();
+            this.closeInfoModal();
+        },
+        closeInfoModal: function () {
+            app.deliveryInfoModal = false
+            scrollAllow();
         }
-    }, created: function() {
-        if( this.orderDto.userId != undefined && this.orderDto.userId != '비회원주문') {
-            console.log("created", this.orderDto)
-            this.getDeliveryInfoList();
+        
+    }, mounted: function() {
+        console.log("mounted", this.orderDto.userId != undefined && this.orderDto.userId != '비회원주문')
+        if(this.orderDto.userId === '비회원주문') {
+            return
         }
+        this.getDeliveryInfoList();
     }
 }
 
 function openInfoModal() {
-    $('#iModal').show();
+    app.deliveryInfoModal = true
     scrollBlock();
-    
-    var inputs = document.querySelectorAll('input');
-    $(inputs).click(function(){
-        
-    });
-}
-
-function closeInfoModal() {
-    $('#iModal').hide();
-    scrollAllow();
 }

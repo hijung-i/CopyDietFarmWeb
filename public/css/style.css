@@ -1373,7 +1373,7 @@ font-weight:normal}
 .controlls span.next {left: calc(100% - 50px);}
 
 /* 슬릭 슬라이드 웹 */
-.responsive div img {width: 350px; height: 350px;padding-right:15px}
+.responsive div img {width: 350px; height: 350px}
 
 #header_mypage .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center;margin-top:-50px}
 .slideMenu_top > .slideMenu_close img{width:19.44px;height:13.67px}
