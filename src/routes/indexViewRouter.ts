@@ -249,6 +249,9 @@ router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction
 router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'order_details', {})
 })
+router.get('/sitemap', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'sitemap', {})
+})
 /* 새 화면 추가 보기용 (파일명 임시)*/
 router.get('/login002', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'login_tracking', {})
