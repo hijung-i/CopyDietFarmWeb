@@ -83,7 +83,7 @@ a:hover{text-decoration:none;}
 .green {
   color: #31845B
 }
-#header_common #nav a.is-current{color:#F99319;border-bottom:3px solid #F99319;padding-bottom:25px;}
+#header_common #nav a.is-current{color:#F99319/*;border-bottom:3px solid #F99319;padding-bottom:25px;*/}
 
 .search_box_icon{display:inline-block;position:relative;right:40px;top:3px}
 .search_box_icon input{background:url('/images/search_ico.png')no-repeat;border:none;width:25px;}
@@ -3048,16 +3048,15 @@ width:94%;margin:0 auto }
   max-width: 144px;
   height: 27px;
   font-size: 10px;
-
   margin-bottom: 6px;
   background-color: #FFFFFF;
-
   border: 1px solid #878787;
-  border-radius: 5px;
+  border-radius: 5px
 }
 
 .ask-buttons button img{
   margin-right: 5px;
+  margin-bottom:-5px
 }
 
 .ask-buttons button:last-child{
@@ -3069,8 +3068,7 @@ width:94%;margin:0 auto }
 
 .footer-bottom-area {
   background-color: #F4F4F4;
-  padding: 25px 24px;
-
+  padding: 25px 24px
 }
 
 .black {
