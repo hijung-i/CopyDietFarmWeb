@@ -83,7 +83,6 @@ a:hover{text-decoration:none;}
 .green {
   color: #31845B
 }
-#header_common #nav a.is-current{color:#F99319/*;border-bottom:3px solid #F99319;padding-bottom:25px;*/}
 
 .search_box_icon{display:inline-block;position:relative;right:40px;top:3px}
 .search_box_icon input{background:url('/images/search_ico.png')no-repeat;border:none;width:25px;}
@@ -263,6 +262,7 @@ dd.subMenu {
 }
 /* 모바일 헤더 높이 조정 */
 @media screen and (max-width:1079px) {
+  #header_common #nav a.is-current{color:#F99319;border-bottom:3px solid #F99319;padding-bottom:25px}
   #header_common.main {height: 150px; }
   #header_common.sub {height: 120px;}
 }
@@ -559,7 +559,7 @@ background-size:19px 19px;}
   margin-top: 19px}
 .reviewModifyBox .star_grade p{font-size:16px;font-weight:bold;text-align:center}
 
-/*1079px이하 모S바일-태블릿 */
+/*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
   #content .main_sub{width:100%;margin:104px auto}
  .t1 img{position:relative;top:7px}
@@ -1190,6 +1190,7 @@ input[type="checkbox"] {display: none;}
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
+  #header_common #nav a.is-current{color:#fff;background-color:#F99319}
 #signup_title_web h2{font-size:24px;font-weight:bold;margin-top:56px;text-align:center;}
 .review_btn button{
   position: absolute;

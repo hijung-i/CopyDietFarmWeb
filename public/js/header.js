@@ -15,7 +15,7 @@ function getEventStands() {
  
           var stand = data.result[i];
           if(i == 0){
-             html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'> 홈</a>';
+             html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'':'')+'> 홈</a>';
           }
           if( currentStandCode == stand.salesStandCode){
              $('#header_common #nav a').removeClass("is-current");
