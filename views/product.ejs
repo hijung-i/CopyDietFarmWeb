@@ -14,12 +14,12 @@
      
         @media screen and (min-width:500px) and (max-width:1079px){
 
-        .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
+        .like-yes { background: url("/images/afterheart_icon.png") no-repeat}
         }
         @media screen and (min-width:1080px){
         .like {top: 3px !important;right:5px !important;}
         /*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
-        .like-yes { background: url("/images/afterheart_icon_main.png") no-repeat}
+        .like-yes { background: url("/images/afterheart_icon.png") no-repeat}
         }
     @media screen and (max-width:1079px) {
 
@@ -290,7 +290,7 @@
                                                     <td class="d_save_wrap"><button class="d_save"><a v-bind:href="brandListUrl">배송비 절약 상품 보기</a></button></td>
                                                 </tr>
                                                 <tr class="packing-type">
-                                                    <td>
+                                                    <td class="packing">
                                                         <span>포장타입</span></td>
                                                     <td class="ex">
                                                         <template v-if="product.packingType == 'A'">상온 (종이박스)</template>

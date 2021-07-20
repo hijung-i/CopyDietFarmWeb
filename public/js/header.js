@@ -15,10 +15,10 @@ function getEventStands() {
  
           var stand = data.result[i];
           if(i == 0){
-             html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'> 홈</a>';
+             html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'':'')+'> 홈</a>';
           }
           if( currentStandCode == stand.salesStandCode){
-             $('#heade_common #nav a').removeClass("is-current");
+             $('#header_common #nav a').removeClass("is-current");
              html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ '<span>' + stand.salesStandName + '</span>' +'</a>';
           } else {
              html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ '<span>' + stand.salesStandName + '</span>' + '</a>';
@@ -123,10 +123,10 @@ function getEventStands() {
      });
  
  
-     $(".sideMenu").hide();
-     $(".web_cate > a").click(function(){
-         $(".sideMenu").slideToggle("fast");
-     });
+    // $(".sideMenu").hide();
+    // $(".web_cate > a").click(function(){
+    //     $(".sideMenu").slideToggle("fast");
+    // });
  
      
      
@@ -141,20 +141,7 @@ function getEventStands() {
          $("ul").slideUp("700");
      });
  
-     $("#memberMenu").bind("moseover mouseenter", function () {
-         $("#memMenu").show();
-     });
-     $("#memMenu").bind("moseout mouseleave", function () {
-         $("#memMenu").hide();
-     });
- 
-     $("#NotmemberMenu").bind("moseover mouseenter", function () {
-         $("#NotmemMenu").show();
-     });
-     $("#NotmemMenu").bind("moseout mouseleave", function () {
-         $("#NotmemMenu").hide();
-     });
- 
+
      $(".open_close").click(function () {
          $(".toggle").toggle();
      });

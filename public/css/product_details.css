@@ -84,7 +84,7 @@ div #ex1.modal ul li {float:left}
     cursor: pointer
 }
 .starR2{
-    background: url(../images/star_ico_reviewxxhdpi.png) no-repeat right 0;
+    background: ../images/star_ico_reviewxxhdpi.png) no-repeat right 0;
     background-size: auto 100%;
     width: 15px;
     height: 30px;
