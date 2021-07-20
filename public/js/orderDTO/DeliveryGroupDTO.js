@@ -120,6 +120,11 @@ function DeliveryGroupDTO() {
 
     this.cloneObject = function () {
         var clone = Object.assign({}, this)
+        clone.setDeliveryCost = this.setDeliveryCost
+        clone.setTotalDeliveryCost = this.setTotalDeliveryCost
+        clone.bundleDeliveryCost = this.bundleDeliveryCost
+        clone.deleteNoneSelectedProduct = this.deleteNoneSelectedProduct
+
         return clone;
     }
 

@@ -142,18 +142,13 @@ $(function() {
 
     app.orderDTO.products = new Array();
     for(var i = 0; i < app.deliveryGroupList.length; i++) {
-        var dGroup = app.deliveryGroupList[i];
+
+        var dGroup = Object.assign(new DeliveryGroupDTO(), app.deliveryGroupList[i]);
+        app.deliveryGroupList[i] = dGroup
         for(var j = 0; j < dGroup.products.length; j++) {
             app.orderDTO.products.push(dGroup.products[j]);
         }
     }
-
-    var span = $(".close");                                       
-
-    span.click(function() {
-        $('#c_Modal').hide();
-        $('#iModal').hide();
-    });
 
     getLogin();
 })
@@ -623,11 +618,9 @@ function checkDeliveryAddress() {
     ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
     function(data) {
         var result = data.result;
-        var newObj = updateDeliveryCost(app.deliveryGroupList, result);
-        
-        app.deliveryGroupList = newObj.deliveryGroupList
-        app.orderDTO.totalDeliveryCost = newObj.totalDeliveryCost
+        var totalDelivertCost = updateDeliveryCost(app.deliveryGroupList, result);
 
+        app.orderDTO.totalDeliveryCost = totalDelivertCost
     }, function(err) {
         console.log("error", err);
     }, {
@@ -649,13 +642,11 @@ function checkDeliveryAddressNoneMember() {
     ajaxCall(API_SERVER + '/user/checkDeliveryAddressNoneMembership', params, 'POST',
     function(data) {
         var result = data.result;
-        console.log(data);
         result.address = address;
     
-        var newObj = updateDeliveryCost(app.deliveryGroupList, result);
-        
-        app.deliveryGroupList = newObj.deliveryGroupList
-        app.orderDTO.totalDeliveryCost = newObj.totalDeliveryCost
+        var totalDelivertCost = updateDeliveryCost(app.deliveryGroupList, result);
+
+        app.orderDTO.totalDeliveryCost = totalDelivertCost
         
     }, function(err) {
         console.log("error", err);

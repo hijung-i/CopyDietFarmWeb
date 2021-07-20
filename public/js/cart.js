@@ -155,6 +155,7 @@ var app = new Vue({
                 }
                 console.log(product);
             }
+
             this.orderDTO.delivery = this.delivery
             location.href="/order?deliveryGroupList=" + JSON.stringify(requestDeliveryGroupList)+'&orderDTO='+ JSON.stringify(this.orderDTO);
         },
@@ -256,10 +257,9 @@ function checkDeliveryAddress() {
     ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
     function(data) {
         var result = data.result;
-        var newObj = updateDeliveryCost(app.deliveryGroupList, result);
-        
-        app.deliveryGroupList = newObj.deliveryGroupList
-        app.orderDTO.totalDeliveryCost = newObj.totalDeliveryCost
+        var totalDelivertCost = updateDeliveryCost(app.deliveryGroupList, result);
+
+        app.orderDTO.totalDeliveryCost = totalDelivertCost
     }, function(err) {
         console.log("error", err);
     }, {

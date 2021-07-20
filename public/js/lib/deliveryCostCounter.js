@@ -39,27 +39,13 @@ function updateDeliveryCost(deliveryGroupList, result) {
         isExtra = true;
     }
 
-    var newDeliveryGroupList = new Array();
-
     var totalDeliveryCost = 0;
-    for(var i = 0; i < deliveryGroupList.length; i++) {
-        var newDeliveryGroup = new DeliveryGroupDTO();
-        var deliveryGroup = deliveryGroupList[i];
+    Array.from(deliveryGroupList).forEach(deliveryGroup => {
+        totalDeliveryCost += deliveryGroup.deliveryCost;
 
-        newDeliveryGroup.products = deliveryGroup.products;
-        newDeliveryGroup.loadingPlace = deliveryGroup.products[0].loadingPlace;
-        newDeliveryGroup.brandCode = deliveryGroup.products[0].brandCode;
-        newDeliveryGroup.companyName = deliveryGroup.products[0].companyName;
-        newDeliveryGroup.brandName = deliveryGroup.products[0].brandName;
-        newDeliveryGroup.setDeliveryCost(isJeju, isExtra);
-        
-        totalDeliveryCost += newDeliveryGroup.totalDeliveryCost;
-        console.log("new delivery group ", newDeliveryGroup)
-        newDeliveryGroupList.push(newDeliveryGroup);
-    }
+        if(isJeju) totalDeliveryCost += deliveryGroup.deliveryCost2
+        if(isExtra) totalDeliveryCost += deliveryGroup.deliveryCost3
+    })
 
-    return {
-        deliveryGroupList: newDeliveryGroupList,
-        totalDeliveryCost
-    }
+    return totalDeliveryCost
 }
