@@ -134,7 +134,10 @@ function generateHtmlForProductList(products, maxSize){
 }
 
 function goBack() {
-   window.history.back(); return false;
+   if(window.history.length < 1) location.href = "/" 
+   else window.history.back();
+   
+   return false;
 }
 
 function generateHtmlForProduct(product){
@@ -405,23 +408,25 @@ function zzimAction(button) {
    var params = {
       productNo,
       productCode
-   }
+   }  
+
    
-   if(zzimYn == 'N') {
-      url = API_SERVER + '/order/addZzim';
-      $(zzim).find('input[name=zzimYn]').val('Y');
-      $(zzim).find('div.like').removeClass('like-no');
-      $(zzim).find('div.like').addClass('like-yes');
-   } else if(zzimYn == 'Y') {
-      url = API_SERVER + '/order/deleteZzim';
-      $(zzim).find('input[name=zzimYn]').val('N');
-      $(zzim).find('div.like').removeClass('like-yes');
-      $(zzim).find('div.like').addClass('like-no');
-   }
+      url = API_SERVER + '/order/' + ((zzimYn == 'N')?'addZzim':'deleteZzim');
 
    ajaxCallWithLogin(url, params, 'POST',
    function(data) {
       console.log('zzimaction', params, data);
+      if(zzimYn == 'N') {
+         $(zzim).find('input[name=zzimYn]').val('Y');
+         $(zzim).find('div.like').removeClass('like-no');
+         $(zzim).find('div.like').addClass('like-yes');
+      } else if(zzimYn == 'Y') {
+         $(zzim).find('input[name=zzimYn]').val('N');
+         $(zzim).find('div.like').removeClass('like-yes');
+         $(zzim).find('div.like').addClass('like-no');
+      }
+   
+
    }, function(err) {
       console.error(err)
    }, {
