@@ -315,7 +315,7 @@ function getEventStands() {
      }    
  
  }
- 
+
  function getCategory() {
      var param = {};
      ajaxCall(API_SERVER + "/product/getCategoryList", param, 'post'
