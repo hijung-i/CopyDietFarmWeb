@@ -250,7 +250,7 @@ background-color: transparent;
 border: 1px solid #424242;
 border-radius: 5px;
 right:140px;
-margin-top:10px
+margin-top:14px
 }
 .d_save_wrap{padding-bottom:20px}
 #tab1_mobile {height: 769px;}
@@ -364,7 +364,7 @@ height:40px;
 box-shadow: none !important}
 .purchased_products ul li{float:left}
 .purchased_products img{border-radius:5px; width: 294px;}
-.view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif;margin-top:100px}
+.view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif;margin-top:40px}
 .view_top_img {float:left}
 
 .ico_v_dsd_box {padding:0px 0 10px}
@@ -430,7 +430,7 @@ box-shadow: none !important}
 .preview_box img {width:64px;height:64px;vertical-align:middle;border:1px solid #dedede}
 
 .pdt_detail_n {position:relative}
-.pdt_details {position:relative;display: inline-block;width:1080px;}
+.pdt_details {position:relative;display: inline-block;width:1080px}
 .pdt_details li {float:left;}
 .pdt_details li img {width:1080px}
 
@@ -438,7 +438,7 @@ box-shadow: none !important}
 #detail_purchase_info{margin-top:100px}
 .selected-option-slide {
     width: 100%;
-    overflow-x: scroll
+ /*   overflow-x: scroll */
 }
 .product_count{
     width: 100%;
@@ -457,7 +457,6 @@ box-shadow: none !important}
     margin-right: 0px;
 }
 
-.product_count h4{font-size:14px;margin-left:15px;}
 .product_count li img {
   cursor: pointer;
 }
@@ -611,9 +610,9 @@ table.web_qna {padding: 12px 0;}
     background: #fff;
     border: 1px solid #BBBBBB;
     font-size: 14px; font-weight: 500;
-    color: #000;
+    color: #000
 }
-.review_edit_del_btn_ctn > .review_editBtn {border-radius: 5px 5px 0 0;}
+.review_edit_del_btn_ctn > .review_editBtn {border-radius: 5px 5px 0 0}
 .review_edit_del_btn_ctn .review_delBtn {border-radius: 0 0 5px 5px; border-top: 0;}
 .review_info02 {text-align: left;border-bottom:1px solid #E6E6E6;padding-bottom:20px;}
 /* 상품 리뷰 web */
@@ -696,7 +695,7 @@ font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .qna{width:75%;}
 #wrap_qna{margin-top:40px}
 /* 토글 버튼 디자인 */
-.myReview input {position: absolute; left: -9999px;}
+.myReview input {position: absolute; left: -9999px}
 .myReview label {
     position: relative;
     display: block; 
@@ -941,7 +940,7 @@ div #ex1.modal ul li {float:left}
 
 
 /*리뷰 없을 때*/
-.review_list_null{width:70%; text-align:center; margin:66px auto;}
+.review_list_null{text-align:center; margin:66px auto;}
 .review_list_null .null{font-size:16px;color:#878787;margin-top:21px}
 
 /*문의*/
