@@ -42,7 +42,7 @@ var app = new Vue({
                 $('#checkAll')[0].checked = false;
             }
 
-            // TODO: 상품 묶음 배송(DeliveryGroup) 정보에 따라 
+            // TODO: 상품 묶음 배송(DeliveryGroup) 정보에 따라
             this.orderDTO = new OrderDTO();
             this.deliveryGroupList = [];
         
