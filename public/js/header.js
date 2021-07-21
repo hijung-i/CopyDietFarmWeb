@@ -15,7 +15,7 @@ function getEventStands() {
  
           var stand = data.result[i];
           if(i == 0){
-             html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'':'')+'> 홈</a>';
+             html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'> 홈</a>';
           }
           if( currentStandCode == stand.salesStandCode){
              $('#header_common #nav a').removeClass("is-current");
@@ -69,6 +69,11 @@ function getEventStands() {
          $('.sideMenu').hide();
      });
  }
+
+ $('body').on('click', function(){
+    $('.sideMenu').css('display:none');
+
+})
  $(function() {
      var listType = $('#listType').val();
      if(listType != 'CATEGORY') getEventStands();
@@ -302,7 +307,7 @@ function getEventStands() {
      }    
  
  }
-
+ 
  function getCategory() {
      var param = {};
      ajaxCall(API_SERVER + "/product/getCategoryList", param, 'post'
@@ -390,6 +395,11 @@ function getEventStands() {
         $('.sideMenu_ctt ul.mDepth01').mouseleave(function() {
             if($(window).width() >= 1079){
                 $("dt.faq_q").removeClass("current");
+            }
+        }) \  ㅇㄴㅁ1ㅂ323
+        $('body').click(function() {
+            if($(window).width() >= 1079){
+                $(".webcate").removeClass("active");
             }
         })
          
@@ -493,3 +503,13 @@ $(function() {
     })
 })
 
+// function goSearchResult() {
+//     var keyword = $('#webSearchKeyword').val().trim();
+//     if(keyword.length == '' || keyword.length < 1) {
+//         alert('검색어를 입력해주세요');
+//         return false;
+//     }
+//     
+//     $("#websearchform input[name=keyword]").val(keyword);
+//     $("#websearchform").submit();
+// }

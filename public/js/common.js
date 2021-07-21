@@ -471,3 +471,9 @@ function clip(){
 	document.body.removeChild(textarea);
 	alert("URL이 복사되었습니다.")
 }
+
+window.onload = function() {
+   setTimeout (function () {
+    scrollTo(0,0);
+   }, 100); 
+  }
