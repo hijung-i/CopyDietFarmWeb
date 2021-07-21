@@ -13,7 +13,8 @@ function getFooterNotice() {
         }
         $('.footer-notice ul').html(html);
     }, function(err) {
-        console.error(err);
+        if(err.responseText !== "")
+            console.error(err);
     })
 }
 

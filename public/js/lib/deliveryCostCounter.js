@@ -1,5 +1,5 @@
 
-function getDefaultDeliveryInfo(obj) {
+function getDefaultDeliveryInfo(app) {
     var params = {};
 
     ajaxCallWithLogin(API_SERVER + '/user/getDefaultDevlieryInfo', params, 'POST',
@@ -13,14 +13,16 @@ function getDefaultDeliveryInfo(obj) {
             userName: result.userName
         }
 
-        obj.delivery = Object.assign({}, delivery);
-
+        app.orderDTO.delivery = delivery;
+    
+        checkDeliveryAddress(app)
         console.log("defaultDeliveryInfo success", data);
     }, function(err) {
-        console.log("error", err);
         var responseText = err.responseText;
         if(responseText == 'NOT_FOUND') {
-            obj.delivery = undefined
+            app.delivery = undefined
+        } else {
+            console.log("error", err);
         }
     }, {
         isRequired: true,
@@ -28,38 +30,45 @@ function getDefaultDeliveryInfo(obj) {
     })
 }
 
-function updateDeliveryCost(deliveryGroupList, result) {
+function updateDeliveryCost(deliveryGroupList, result, app) {
     console.log(result)
-    var isJeju = false, isExtra = false;
+    isJeju = false;
+    isExtra = false;
     if(result.address.includes('제주특별자치도')) {
         isJeju = true;
-    } 
+    }
 
     if(result.count > 0) {
         isExtra = true;
     }
 
-    var newDeliveryGroupList = new Array();
-
     var totalDeliveryCost = 0;
-    for(var i = 0; i < deliveryGroupList.length; i++) {
-        var newDeliveryGroup = new DeliveryGroupDTO();
-        var deliveryGroup = deliveryGroupList[i];
+    Array.from(deliveryGroupList).forEach(deliveryGroup => {
+        totalDeliveryCost += deliveryGroup.deliveryCost;
 
-        newDeliveryGroup.products = deliveryGroup.products;
-        newDeliveryGroup.loadingPlace = deliveryGroup.products[0].loadingPlace;
-        newDeliveryGroup.brandCode = deliveryGroup.products[0].brandCode;
-        newDeliveryGroup.companyName = deliveryGroup.products[0].companyName;
-        newDeliveryGroup.brandName = deliveryGroup.products[0].brandName;
-        newDeliveryGroup.setDeliveryCost(isJeju, isExtra);
-        
-        totalDeliveryCost += newDeliveryGroup.totalDeliveryCost;
-        console.log("new delivery group ", newDeliveryGroup)
-        newDeliveryGroupList.push(newDeliveryGroup);
-    }
+        if(isJeju) totalDeliveryCost += deliveryGroup.deliveryCost2
+        if(isExtra) totalDeliveryCost += deliveryGroup.deliveryCost3
+    })
 
-    return {
-        deliveryGroupList: newDeliveryGroupList,
-        totalDeliveryCost
-    }
+    return totalDeliveryCost
+}
+
+
+function checkDeliveryAddress(app) {
+    var params = {
+        deliveryNo: app.orderDTO.delivery.deliveryNo
+    };
+    
+    ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
+    function(data) {
+        var result = data.result;
+        var totalDelivertCost = updateDeliveryCost(app.deliveryGroupList, result, app);
+
+        app.orderDTO.totalDeliveryCost = totalDelivertCost
+    }, function(err) {
+        console.log("error", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
 }

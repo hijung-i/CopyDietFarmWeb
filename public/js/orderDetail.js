@@ -3,8 +3,10 @@ var app = new Vue({
     el: 'main',
     components: {
         'mypage-component': mypageComponent,
-        'product-review-modal': productReviewModal,
         'seller-inquiry-modal': sellerInquiryModal,
+        'product-review-modal': productReviewModal,
+        'delivery-info-modal': deliveryInfoModal,
+        'delivery-select-modal': deliverySelectModal,
     },
     data: {
         order: {
@@ -14,6 +16,8 @@ var app = new Vue({
         RESOURCE_SERVER,
         reviewModal: false,
         inquiryModal: false,
+        deliveryInfoModalShow: false,
+        deliverySelectModalShow: false,
         inquiryList: [],
         inquiry: { purchaseProductNo: 0 }
     },

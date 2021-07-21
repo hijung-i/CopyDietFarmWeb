@@ -108,7 +108,7 @@
                                                      <template v-if="product.orderStatus == 'P'" >
                                                         
                                                             <button type="button" class="btnConfirm">취소신청</button>
-                                                            <button type="button" class="btnConfirm" onclick="opensInquiryModal()">판매자문의</button>
+                                                            <button type="button" class="btnConfirm" onclick="openDeliverySelectModal()">배송지변경</button>
                                                       
                                                     </template>
                                                     <template v-if="product.orderStatus == 'X'" >
@@ -335,10 +335,14 @@
                 </div>
                 <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal> 
                 <seller-inquiry-modal v-if="inquiryModal" v-on:close="onChildPopupClosed"></seller-inquiry-modal>
-                <delivery-info-modal v-if="deliveryModal" v-on:close="onChildPopupClosed"></delivery-info-modal>
+                <delivery-info-modal v-if="deliveryInfoModalShow" v-on:close="onChildPopupClosed"></delivery-info-modal>
+                <delivery-select-modal v-if="deliverySelectModalShow" v-on:close="onChildPopupClosed"></delivery-select-modal>
+                
             </main>
      <!--//order-->
     <%-include(webroot + 'views/general/footer') %>
+    <script src="/js/deliveryInfoModal.js"></script>
+    <script src="/js/components/deliverySelectModal.js"></script>
     <script src="/js/productReviewModal.js"></script>
     <script src="/js/sellerInquiryModal.js"></script>
     <script src="/js/components/mypageComponent.js"></script>

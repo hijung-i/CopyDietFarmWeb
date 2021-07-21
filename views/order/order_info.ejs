@@ -237,18 +237,16 @@
                     <h3><img src="images/asterisk.png">
                        배송지
                     </h3>
-                    <button v-if="orderDTO.userId !== '비회원주문'" type="button" id="my-button" class="shopBtn01" onclick="openInfoModal()" style="border: 0; background:none;">변경</button>
+                    <button v-if="orderDTO.userId !== '비회원주문'" type="button" id="my-button" class="shopBtn01" onclick="openDeliverySelectModal()" style="border: 0; background:none;">변경</button>
                 </div>
-                 <!-- iModal 자리 -->
-                 
-                 <!--  -->
+
                 <div class="members"
-                    v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery != undefined">
+                    v-if="orderDTO.userId != '비회원주문' && orderDTO.delivery.deliveryNo != undefined && orderDTO.delivery.deliveryNo != 0">
                     <span class="addr" style="margin-bottom:13px">{{ orderDTO.delivery.address }}</span><br>
                     <span class="name" style="margin-right:18px">{{ orderDTO.delivery.userName }}</span>
                     <span class="num">{{ orderDTO.delivery.userCellNo }}</span>
                 </div>
-                <div class="non_members" v-if="orderDTO.userId == '비회원주문' || orderDTO.delivery == undefined">
+                <div class="non_members" v-if="orderDTO.delivery.deliveryNo == undefined || orderDTO.delivery.deliveryNo === 0">
                     <!-- <p><input type="checkbox" class="required"  required="required"><label for="all"><span>주문자 정보와 동일</span></label></p> -->
                     <h4>이름</h4>
                     <input type="text" id="unReceiverName" placeholder="이름을 입력해주세요">
@@ -503,7 +501,7 @@
             <div class="order_btn">
                 <button type="button" id="orderBtn" v-on:click="paymentAction">결제하기</button>
             </div>
-            <delivery-info-modal v-if="deliveryInfoModal" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
+            <delivery-select-modal v-if="deliveryInfoModal" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
             
 
         </main>
@@ -554,7 +552,7 @@
              </div>
              
         </div>
-        <script src="/js/components/deliveryInfoModalComponent.js"></script>
+        <script src="/js/components/deliverySelectModal.js"></script>
         <script src="/js/orderDTO/OrderDTO.js"></script>
         <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
         

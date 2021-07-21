@@ -64,7 +64,7 @@ deliveryInfoModalTemplate += '        </div>';
 deliveryInfoModalTemplate += '    </div>';
 deliveryInfoModalTemplate += '</div>';
 
-var deliveryInfoModalComponent = {
+var deliverySelectModal = {
     template: deliveryInfoModalTemplate,
     props: ["orderDto"],
     data: function() {
@@ -110,7 +110,7 @@ var deliveryInfoModalComponent = {
     }
 }
 
-function openInfoModal() {
+function openDeliverySelectModal() {
     app.deliveryInfoModal = true
     scrollBlock();
 }
