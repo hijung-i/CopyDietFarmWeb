@@ -1,14 +1,14 @@
 // 테스트
-// var API_SERVER = "http://112.217.209.162:9090";
-// var CALLBACK_SERVER = "http://112.217.209.162";
+var API_SERVER = "http://112.217.209.162:9090";
+var CALLBACK_SERVER = "http://112.217.209.162";
 // var API_SERVER = "http://192.168.0.3:9090";
 // var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-var API_SERVER = "https://dietfarm119.co.kr";
-var CALLBACK_SERVER = "https://dietfarm.co.kr";
+// var API_SERVER = "https://dietfarm119.co.kr";
+// var CALLBACK_SERVER = "https://dietfarm.co.kr";
 
-var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
+var RESOURCE_SERVER = "http://dietfarm119.co.kr:8000";
 
 
 function ajaxCall(url, params, type, onSuccess, onError){
@@ -471,3 +471,9 @@ function clip(){
 	document.body.removeChild(textarea);
 	alert("URL이 복사되었습니다.")
 }
+
+window.onload = function() {
+   setTimeout (function () {
+    scrollTo(0,0);
+   }, 100); 
+  }

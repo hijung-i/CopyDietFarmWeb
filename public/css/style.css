@@ -288,7 +288,7 @@ padding-right:15px;float:left;position:relative;top:6px}
 .top_util .menu_list .join{color:#F99319}
 .top_util .menu_list > li { padding:0 10px; white-space:nowrap;}
 .top_util .menu_list  .bar{position:relative}
-.top_util .menu_list li.cart, .top_util .menu_list li.mypage, .top_util .menu_list li.pick {position: relative; top: 10px;}
+.top_util .menu_list li.cart, .top_util .menu_list li.mypage, .top_util .menu_list li.pick {position: relative; top: 4px;}
 .top_util .menu_list > li:last-child {padding-right:0}
 .top_util .menu_list > li * {font-size:12px;color:#333;white-space:nowrap;font-family:Noto Sans KR;border:none;background-color:transparent}
 .top_util .menu_list > li strong {font-weight:700}
@@ -369,7 +369,7 @@ padding-right:15px;float:left;position:relative;top:6px}
 .search a {position: absolute; width: 16px; height: 16px; top: 10px; right: 15px;}
 .search img{width:16px; height: 16px; z-index:10}
  .m_slid_2dep_brand{display:block}
-.instant-search,.instant-search * { transition: background 0.15s, box-shadow 0.15s;}
+.instant-search,.instant-search * { transition: background 0.15s, box-shadow 0.15s;display:flex}
 .instant-search,.instant-search__input-container {border-radius: 5px;}
 .instant-search__input-container {display: inline-flex; box-sizing: border-box; width: 90%;padding: 2px;background: #eeeeee; height: 45px;}
 .instant-search__input-container img {display:none;position: relative; right: 10px; top: 12px;}
@@ -705,7 +705,7 @@ margin-top:20px;padding-top:25px}
 /*#mobile_sub{position:fixed;height:90px;background-color:#fff}*/
 #content .main_sub_wrap{
 width:100%;border-top:2px solid #f1f1f1}
-#content .main_sub img{padding:7px}
+#content .main_sub img{padding:7px;height:220px}
 #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
 #content .main_sub .desc ul li{float:left;white-space:nowrap;margin-left:-4px}
 #content .main_sub_wrap .desc .title{margin-left:5px;margin-bottom:7px}
@@ -1190,6 +1190,7 @@ input[type="checkbox"] {display: none;}
 /*1080px이상 웹용 */
 
 @media screen and (min-width:1080px){
+/*.web_cate{background-color:#F99319;color:#fff}*/
 #header_common #nav a.is-current{color:#fff;background-color:#F99319}
 #signup_title_web h2{font-size:24px;font-weight:bold;margin-top:56px;text-align:center;}
 .review_btn button{
@@ -1531,8 +1532,8 @@ div.box.int_id{width:350px}
 .csBox_web ul li{float:left}
 .csBox_web h3{font-size:18px;font-weight:bold;color:#000}
 .csBox_web .innerbox{border:1px solid #BBBBBB;width:431px;height:214px;margin-right:20px;margin-top:20px}
-.csBox_web .innerbox button{width:288px;height:69px;border-radius:5px;background-color:#31845B;border:none;font-size:25px;color:#fff;margin-top:40px;margin-left:70px}
-.csBox_web .innerbox button img{width:39px;height:39px;position:relative;left:-21px}
+.csBox_web .innerbox button{width:288px;height:69px;border-radius:5px;background-color:#31845B;border:none;font-size:25px;color:#fff;margin-top:40px;margin-left:70px;padding-bottom:14px}
+.csBox_web .innerbox button img{width:39px;height:39px;position:relative;left:-21px;top:10px}
 .csBox_web p{text-align:right;margin-right:25px;margin-top:31px;margin-bottom:10px;color:#31845B;font-size:20px;font-weight:bold}
 .csBox_web ul li ul li{float:right;font-size:14px;color:#000;margin-left:7px}
 .csBox_web ul li ul li img{position:relative;top:5px}
@@ -2913,7 +2914,7 @@ padding: 12px 0;}
   font-size: 0.8em;cursor: pointer}
 .instant-search__title {font-size: 1.1em;font-weight: bold}
 .instant-search__paragraph {line-height: 1.5;margin: 8px 0}
-#searchUsers {display:flex;
+#searchUsers {
 width:94%;margin:0 auto }
 
 
@@ -3139,14 +3140,20 @@ width:94%;margin:0 auto }
 
 .brand ul li {
   border-top: 1px solid #BBBBBB;
-  padding-bottom:15px;
-  padding-top:10px
+  display:flex;
+  justify-content: space-between;
+  padding-bottom:7px
 }
 
 .brand ul li:first-child{
   border-top: none;
 }
-.brand ul li a {font-size:14px;margin-left:15px}
+.brand ul li a {
+  font-size:14px;
+  margin-left:15px;
+  margin-top:10px;
+  padding-top:4px;
+  padding-bottom:4px}
 @media screen and (max-width:1079px) {
     .only-pc {
       display: none;

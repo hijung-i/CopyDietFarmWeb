@@ -15,7 +15,7 @@ function getEventStands() {
  
           var stand = data.result[i];
           if(i == 0){
-             html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'':'')+'> 홈</a>';
+             html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'> 홈</a>';
           }
           if( currentStandCode == stand.salesStandCode){
              $('#header_common #nav a').removeClass("is-current");
@@ -69,6 +69,11 @@ function getEventStands() {
          $('.sideMenu').hide();
      });
  }
+
+ $('body').on('click', function(){
+    $('.web_cate').removeClass('active');
+
+})
  $(function() {
      var listType = $('#listType').val();
      if(listType != 'CATEGORY') getEventStands();
@@ -302,7 +307,7 @@ function getEventStands() {
      }    
  
  }
-
+ 
  function getCategory() {
      var param = {};
      ajaxCall(API_SERVER + "/product/getCategoryList", param, 'post'
