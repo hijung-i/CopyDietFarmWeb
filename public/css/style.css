@@ -77,13 +77,14 @@ a:hover{text-decoration:none;}
 
 .b {font-weight:bold !important;}
 
-.clear{clear:both;}
-.show{display:block;}
-.hide{display:none;}
+.clear{clear:both}
+.show{display:block}
+.hide{display:none}
 .green {
   color: #31845B
 }
 
+.web_cate.display-flex.active{background-color:#F99319;color:#fff}
 .search_box_icon{display:inline-block;position:relative;right:40px;top:3px}
 .search_box_icon input{background:url('/images/search_ico.png')no-repeat;border:none;width:25px;}
 .search_box_ico{display:inline-block;}

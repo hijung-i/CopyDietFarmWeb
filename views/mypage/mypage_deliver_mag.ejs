@@ -157,7 +157,9 @@
 
             <div class="contents">
             <h3 class="del_web_title">배송지 관리</h3>
-            
+            <div class="order_list_null" v-if="deliveryList == undefined ||deliveryList.length == 0">
+                <p class="no_review">등록된 배송지가 없습니다.</p>
+            </div>
                 <div class="order_list_ctn">
                 <template v-for="(item, i) in deliveryList">
                     <section class="web_delivery_manage_list">

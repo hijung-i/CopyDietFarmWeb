@@ -71,7 +71,7 @@ function getEventStands() {
  }
 
  $('body').on('click', function(){
-    $('.web_cate').removeClass('active');
+    sideTabClose();
 
 })
  $(function() {
