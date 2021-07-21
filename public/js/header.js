@@ -396,6 +396,11 @@ function getEventStands() {
             if($(window).width() >= 1079){
                 $("dt.faq_q").removeClass("current");
             }
+        }) \  ㅇㄴㅁ1ㅂ323
+        $('body').click(function() {
+            if($(window).width() >= 1079){
+                $(".webcate").removeClass("active");
+            }
         })
          
         $(".mTabBtnMenu").on("click",function() {

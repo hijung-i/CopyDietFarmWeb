@@ -62,7 +62,15 @@ var deliveryInfoModal = {
         product: {
             type: Object,
             default: function() 
-            { return {} }
+            { return {
+                onDeliveryCount: 0,
+                afterDeliveryCount: 0,
+                product: {},
+                productName:0,
+                courierName: 0,
+                courierNo: 0
+
+            } }
         },
     },
     data: function() {
