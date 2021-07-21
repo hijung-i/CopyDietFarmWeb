@@ -659,7 +659,7 @@ background-size:19px 19px;}
  .slider_main_wrap div {position: absolute; top: 0; left: 0;}
  .slider_main_wrap img { min-width: 360px; width: 100%; height: 212px;}
  .main_slide_pager {position: absolute; right: 25px; bottom: 25px; width: 64px; height: 26px; background: #fff; border-radius: 13px; text-align: center; font-size: 12px; font-weight: 500; line-height: 26px;}
- #content{position:relative;width:100%;z-index:1}
+ #content{position:relative;width:100%}
  #content .main_img{z-index:1;width:100%;}
  #content .s_wrap{margin-bottom:-50px}
  #content .s_price{margin:20px 10px 20px;width:100%;margin-bottom:-50px;}
