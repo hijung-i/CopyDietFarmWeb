@@ -154,7 +154,7 @@ function productSearch(keyword) {
             $('.sub_items ul').hide();
             $('.sub_items ul').hide();
             $('.pick_list_null').show();
-            $('.pick_list_null').html('<img src="/images/twoheart_icon_heart@2x.png"><p>해당 브랜드가 존재하지 않습니다.</p>');
+            $('.pick_list_null').html('<p>해당 상품이 존재하지 않습니다.</p>');
         }
         
         
