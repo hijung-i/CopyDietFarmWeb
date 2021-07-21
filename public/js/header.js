@@ -70,10 +70,9 @@ function getEventStands() {
      });
  }
 
- $('body').on('click', function(){
-    sideTabClose();
 
-})
+
+
  $(function() {
      var listType = $('#listType').val();
      if(listType != 'CATEGORY') getEventStands();

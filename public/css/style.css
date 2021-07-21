@@ -370,7 +370,7 @@ padding-right:15px;float:left;position:relative;top:6px}
 .search a {position: absolute; width: 16px; height: 16px; top: 10px; right: 15px;}
 .search img{width:16px; height: 16px; z-index:10}
  .m_slid_2dep_brand{display:block}
-.instant-search,.instant-search * { transition: background 0.15s, box-shadow 0.15s;display:flex}
+.instant-search,.instant-search * { transition: background 0.15s, box-shadow 0.15s/*;display:flex*/}
 .instant-search,.instant-search__input-container {border-radius: 5px;}
 .instant-search__input-container {display: inline-flex; box-sizing: border-box; width: 90%;padding: 2px;background: #eeeeee; height: 45px;}
 .instant-search__input-container img {display:none;position: relative; right: 10px; top: 12px;}
