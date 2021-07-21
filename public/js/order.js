@@ -156,23 +156,6 @@ var app = new Vue({
     }
 })
 
-$(function() {
-    // var deliveryGroupList = $('#deliveryGroupList').val();
-    
-    // app.deliveryGroupList = JSON.parse(deliveryGroupList);
-    // app.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
-
-    // app.orderDTO.products = new Array();
-    // for(var i = 0; i < app.deliveryGroupList.length; i++) {
-
-    //     var dGroup = Object.assign(new DeliveryGroupDTO(), app.deliveryGroupList[i]);
-    //     app.deliveryGroupList[i] = dGroup
-    //     for(var j = 0; j < dGroup.products.length; j++) {
-    //         app.orderDTO.products.push(dGroup.products[j]);
-    //     }
-    // }
-})
-
 function getLogin() {
     ajaxCall('/user/login', '', 'GET', function(data){
         var isLoggedIn = data.result.isLoggedIn;

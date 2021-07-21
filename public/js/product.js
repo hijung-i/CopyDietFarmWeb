@@ -125,8 +125,7 @@ var app = new Vue({
                 this.pointReason = '적립 이벤트'
                 accumulatePoint = (totalCount * 10000)
             }
-            console.log(accumulatePoint)
-            return accumulatePoint;
+            return Math.round(accumulatePoint);
         }
     }
 });

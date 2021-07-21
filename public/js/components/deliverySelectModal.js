@@ -74,7 +74,7 @@ var deliverySelectModal = {
         }
     },
     methods: {
-        openInfoModal,
+        openDeliverySelectModal,
         getDeliveryInfoList: function() {
             var component = this;
             ajaxCallWithLogin(API_SERVER + '/user/getDeliveryInfoByUserId', {}, 'POST',
