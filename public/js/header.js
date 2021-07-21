@@ -70,9 +70,10 @@ function getEventStands() {
      });
  }
 
+ $('body').on('click', function(){
+    $('.sideMenu').css('display:none');
 
-
-
+})
  $(function() {
      var listType = $('#listType').val();
      if(listType != 'CATEGORY') getEventStands();
@@ -497,3 +498,13 @@ $(function() {
     })
 })
 
+// function goSearchResult() {
+//     var keyword = $('#webSearchKeyword').val().trim();
+//     if(keyword.length == '' || keyword.length < 1) {
+//         alert('검색어를 입력해주세요');
+//         return false;
+//     }
+//     
+//     $("#websearchform input[name=keyword]").val(keyword);
+//     $("#websearchform").submit();
+// }
