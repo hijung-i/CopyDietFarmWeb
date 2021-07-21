@@ -396,7 +396,7 @@ function getEventStands() {
             if($(window).width() >= 1079){
                 $("dt.faq_q").removeClass("current");
             }
-        }) 
+        })
         $('body').click(function() {
             if($(window).width() >= 1079){
                 $(".webcate").removeClass("active");

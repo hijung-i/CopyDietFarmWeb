@@ -205,7 +205,7 @@
         </div>
 
         <section id="shoplist_t_price_web">
-            <delivery-select-modal v-if="deliveryInfoModal" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
+            <delivery-select-modal v-if="deliveryInfoModal" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-select-modal>
             <div class="shopBox01">
                 <h3>배송지</h3>
                 <template v-if="orderDTO.delivery != undefined">
