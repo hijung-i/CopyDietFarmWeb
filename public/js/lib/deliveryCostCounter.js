@@ -18,10 +18,11 @@ function getDefaultDeliveryInfo(app) {
         checkDeliveryAddress(app)
         console.log("defaultDeliveryInfo success", data);
     }, function(err) {
-        console.log("error", err);
         var responseText = err.responseText;
         if(responseText == 'NOT_FOUND') {
             app.delivery = undefined
+        } else {
+            console.log("error", err);
         }
     }, {
         isRequired: true,

@@ -7,7 +7,7 @@ var cartList = new Array();
 var app = new Vue({
     el: 'main',
     components: {
-        'delivery-info-modal': deliveryInfoModalComponent
+        'delivery-select-modal': deliverySelectModal
     },
     data: {
         RESOURCE_SERVER,

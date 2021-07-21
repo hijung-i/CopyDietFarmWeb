@@ -4,7 +4,7 @@ var postCode = false;
 var app = new Vue({
     el: 'main',
     components: {
-        'delivery-info-modal': deliveryInfoModalComponent
+        'delivery-select-modal': deliverySelectModal
     },
     data: {
         RESOURCE_SERVER,
@@ -48,8 +48,10 @@ var app = new Vue({
 
         },
         pointChange: function() {
-            var pointStr = new String(this.orderDTO.paidPointAmount).replace(/^[0~9]/gi, '');
-            this.orderDTO.paidPointAmount = parseInt((pointStr == "")?'0':pointStr);
+            var pointStr = new String(this.orderDTO.paidPointAmount).replace(/[^0-9]/gi, '');
+            console.log(pointStr)
+            var point = parseInt((pointStr == "")?'0':pointStr);
+            this.orderDTO.paidPointAmount = point;
             
         },
         selectPayment: function() {
@@ -59,7 +61,6 @@ var app = new Vue({
         formatDate,
         applyCoupon,
         onDeliveryInfoSelected: function(data) {
-            console.log("event 발생",data);
             var selectedDelivery = Object.assign({}, data);
             this.orderDTO.delivery = selectedDelivery;
             
@@ -69,56 +70,61 @@ var app = new Vue({
     },
     computed: {
         remainingPoint: {
-                get: function() {
-                    var totalAmount = this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost - this.orderDTO.paidCouponAmount
+            get: function() {
+                var beforePointAmount = this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost - this.orderDTO.paidCouponAmount
+                var remainingPoint = this.usablePoint - this.orderDTO.paidPointAmount;
+                
+                console.log(beforePointAmount, this.orderDTO.paidPointAmount, remainingPoint)
+                if (beforePointAmount < this.orderDTO.paidPointAmount) {
+                    this.orderDTO.paidPointAmount = (this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost);
+                    remainingPoint = this.usablePoint - this.orderDTO.paidPointAmount;
+                }
+                if(remainingPoint < 0) {
+                    this.orderDTO.paidPointAmount = this.usablePoint;
+                    remainingPoint = 0;
+                }
+                
+                var paymentAmount = this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost
+                var discountAmount = this.orderDTO.paidCouponAmount + this.orderDTO.paidPointAmount
 
-                    var remainingPoint = this.usablePoint - this.orderDTO.paidPointAmount;
-                    console.log(totalAmount, this.orderDTO.paidPointAmount)
-                    if (totalAmount < this.orderDTO.paidPointAmount) {
-                        console.log("greater than")
-                        this.orderDTO.paidPointAmount = ( this.orderDTO.paymentTotalAmount + this.orderDTO.totalDeliveryCost);
-                        remainingPoint = this.usablePoint - this.orderDTO.paidPointAmount;
-                    } else if(remainingPoint < 0) {
-                        this.orderDTO.paidPointAmount = this.usablePoint;
-                        remainingPoint = 0;
-                    }
-                    
-                    this.orderDTO.paidRealAmount = this.orderDTO.paymentTotalAmount - this.orderDTO.paidCouponAmount - this.orderDTO.paidPointAmount + this.orderDTO.totalDeliveryCost;
-                    this.orderDTO.accumulatePoint = 0;
-                    
-                    for(var i = 0; i < this.deliveryGroupList.length; i++) {
-                        var dGroup = this.deliveryGroupList[i];
-                        for(var j = 0; j < dGroup.products.length; j++) {
-                            var product = dGroup.products[j];
+                this.orderDTO.paidRealAmount = paymentAmount - discountAmount;
+                var withoutDeliveryCost = this.orderDTO.paidRealAmount - this.orderDTO.totalDeliveryCost
 
-                            product.optionTotalPrice = 0;
-                            for(var k = 0; k < product.options.length; k++){
-                                var option = product.options[k];
-                                product.optionTotalPrice += option.optionTotalPrice;
-                            }
-
-                            var paidRealRate = ((this.orderDTO.paidRealAmount - this.orderDTO.totalDeliveryCost) / this.orderDTO.paymentTotalAmount)
-                            product.accumulatePoint = Math.round(((this.orderDTO.paidRealAmount - this.orderDTO.totalDeliveryCost) * (product.optionTotalPrice / this.orderDTO.paymentTotalAmount)) * 0.03)
-
-                            if(product.productCode == "P00879" || product.productCode == "P00982") {
-                                var totalCount = 0
-                                Array.from(product.options).forEach(function(option) {
-                                    totalCount += option.optionCount;
-                                })
-                                
-                                product.accumulatePoint = Math.round((10000 * totalCount) * paidRealRate) 
-                            }
-
-                            this.orderDTO.accumulatePoint += product.accumulatePoint;    
+                this.orderDTO.accumulatePoint = 0;
+                
+                Array.from(this.deliveryGroupList).forEach(dGroup => { 
+                    Array.from(dGroup.products).forEach(product => {
+                        // 닥터링스, 라라커피 옵션당 10,000포인트
+                        var totalCount = 0
+                        var optionTotalPrice = 0
+                        
+                        for(var k = 0; k < product.options.length; k++){
+                            var option = product.options[k];
+                            
+                            totalCount += option.optionCount;
+                            optionTotalPrice += option.optionTotalPrice;
                         }
 
-                    }
+                        if (product.productCode == "P00879" || product.productCode == "P00982") {
+                            product.accumulatePoint 
+                                = Math.round(((totalCount * 10000) / this.orderDTO.paymentTotalAmount) * (withoutDeliveryCost))
+                        } else {
+                            product.accumulatePoint 
+                                = Math.round((optionTotalPrice / this.orderDTO.paymentTotalAmount) * (withoutDeliveryCost) * 0.03)
+                        }
+                        if(withoutDeliveryCost <= 0) {
+                            product.accumulatePoint = 0
+                        }
+                    
+                        this.orderDTO.accumulatePoint += product.accumulatePoint;
+                    })
+                })
 
-                    return remainingPoint;
-                },
-                set: function(x) {
-                    return x;
-                }
+                return remainingPoint;
+            },
+            set: function(x) {
+                return x;
+            }
         },
         usableCouponCount: function() {
             var count = 0;
@@ -172,12 +178,10 @@ function getLogin() {
         var isLoggedIn = data.result.isLoggedIn;
 
         if(isLoggedIn) {
-            console.log('orderDTO.delivery =>>>>>>>>>>>> ', app.orderDTO.delivery)
             if(app.orderDTO.delivery.address == '') getDefaultDeliveryInfo(app);
             getUsablePointAmount();
             getUsableCouponList();
         }
-        console.log("data", data);
     }, function(err){
         console.log("err", err);
     })
@@ -208,6 +212,7 @@ function paymentAction() {
     }
 
     
+
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
     var methods = ['npay', 'bank', 'kakao', 'card', 'phone'];
     var method = methods[app.paymentNo -1];
@@ -228,7 +233,13 @@ function paymentAction() {
     }
     
     requestOrderDTO.delivery = app.orderDTO.delivery
-    if(app.orderDTO.delivery == undefined) {
+    console.log(requestOrderDTO.delivery == undefined 
+        || requestOrderDTO.delivery.deliveryNo == undefined 
+        || requestOrderDTO.delivery.deliveryNo == 0)
+
+    if(requestOrderDTO.delivery == undefined 
+        || requestOrderDTO.delivery.deliveryNo == undefined 
+        || requestOrderDTO.delivery.deliveryNo == 0) {
         var delivery = {
             userName: $('#unReceiverName').val(),
             address: $('#unAddr').val() + $('#unAddr2').val(),
@@ -236,8 +247,11 @@ function paymentAction() {
         }
         requestOrderDTO.delivery = delivery;
     }
+
     requestOrderDTO.deliveryDesc = $("#selectDeliveryDesc").val();
     
+    console.log('requestOrderDTO >>>>>>>>>>>> ', requestOrderDTO)
+
     if($("#selectDeliveryDesc").val() == "") {
         requestOrderDTO.deliveryDesc = $('#deliveryDesc').val()
     }
@@ -253,10 +267,26 @@ function paymentAction() {
         alert('주문자 이메일 주소를 입력해주세요');
         return;
     }
+
+    if(requestOrderDTO.delivery.address == '' || requestOrderDTO.delivery.address == undefined) {
+        alert('배송지 정보가 없습니다.')
+        return;
+    }
+    
+    if(requestOrderDTO.delivery.userName == '' || requestOrderDTO.delivery.userName == undefined) {
+        alert('수령인 정보가 없습니다.')
+        return;
+    }
+    
+    if(requestOrderDTO.delivery.userCellNo == '' || requestOrderDTO.delivery.userCellNo == undefined) {
+        alert('수령인 전화번호를 입력해주세요.')
+        return;
+    }
+    
  
     var items = new Array();
     var count = 0;
-;
+
     for(var i = 0; i < this.deliveryGroupList.length; i++) {
         var dGroup = this.deliveryGroupList[i];
         for(var j = 0; j < dGroup.products.length; j++) {
@@ -442,9 +472,6 @@ function paymentCancel(reason, requestOrderDTO) {
 
 function addOrder(requestOrderDTO) {
     ajaxCall(API_SERVER + '/order/addOrder', requestOrderDTO, 'POST',
-    
-    
-    
     function(data) {
         console.log("success", data);
         switch(data.message) {
@@ -465,7 +492,7 @@ function addOrder(requestOrderDTO) {
     })
 }
 
-function openZipSearch() {
+function openZipSearch(comp) {
     $('#unAddr').val('');
     if(postCode) return;
 
@@ -502,8 +529,6 @@ function getUsableCouponList() {
         }
 
         app.couponList = usableCoupon;
-
-        console.log("get usableCouponList", data);
     }, function(err) {
         console.error("get usable coupon list ", err);
     }, {
@@ -513,41 +538,15 @@ function getUsableCouponList() {
 }
 
 function openCouponModal() {
-    console.log("click")
     $('#c_Modal').show();
 }
 
 function closeCouponModal() {
-    console.log("click")
     $('#c_Modal').hide();
-}
-
-function closeInfoModal() {
-    $('#iModal').hide();
-    $('html, body').css({'overflow': 'visible'});
-    $('html,body').off('scroll touchmove mousewheel');
-}
-function openRegisterModal() {
-        console.log("click")
-        $('#rModal').show();
-        $('html, body').css({'overflow': 'hidden', 'height': '100%'});
-        $('html,body').on('scroll touchmove mousewheel', function(event) {
-          event.preventDefault();
-          event.stopPropagation();
-          return false;
-    });
-}
-function closeRegisterModal() {
-    console.log("click")
-    $('#rModal').hide();
-    $('#iModal').hide();
-    $('html, body').css({'overflow': 'visible'});
-    $('html,body').off('scroll touchmove mousewheel');
 }
 
 function applyCoupon(idx) {
     selectedCoupon = app.couponList[idx]
-    console.log(selectedCoupon, idx);
     if(!checkCouponUsable(selectedCoupon)) {
         alert("쿠폰을 사용할 수 없습니다.");
         return
@@ -563,9 +562,7 @@ function applyCoupon(idx) {
             app.orderDTO.paidCouponAmount = app.orderDTO.paymentTotalAmount / 100 * selectedCoupon.rate
             if(app.orderDTO.paidCouponAmount > selectedCoupon.maxAmount) {
                 app.orderDTO.paidCouponAmount = selectedCoupon.maxAmount;
-                console.log("maxamount", selectedCoupon.maxAmount);
             }
-            console.log("rate coupon", app.orderDTO.paidCouponAmount, app.orderDTO.paymentTotalAmount / 100 * selectedCoupon.rate, selectedCoupon.rate)
             break;
         case "D":
             app.orderDTO.paidCouponAmount = app.orderDTO.totalDeliveryCost
@@ -625,7 +622,6 @@ $(function(){
 
 function checkDeliveryAddressNoneMember() {
     var address = $('#unAddr').val().trim();
-    console.log(address);
     var params = {
         address: address
     };

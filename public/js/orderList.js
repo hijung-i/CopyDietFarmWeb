@@ -26,9 +26,7 @@ var app = new Vue({
         convertOrderStatus,
         orderConfirm,
         openCancelModal,
-        onSubmit: function() {
-            
-        },
+        
         onReviewUpdateClick: function(index) {
             this.currentReview = this.reviewList[index];
 
@@ -103,6 +101,7 @@ function requestOrderCancel(order) {
     
     ajaxCallWithLogin(API_SERVER + '/order/orderCancel', params, 'POST',
     function(data){
+        alert('주문 취소 신청이 완료되었습니다.')
         console.log("success", data);
     }, function(err) {
         console.log("error", err);
