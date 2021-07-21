@@ -336,7 +336,7 @@ $(function(){
    // '<div class="index-modal">' +
    // '<h2>SNS 1초 회원가입!</h2>' +
    // '<p class="second">1초 간편 회원가입 후,</p>' +
-   // '<p><span>10000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
+   // '<p><span>5000P + 무료배송</span> 쿠폰 혜택을 받아보세요!</p>' +
    // '<ul class= "login_with_sns">' +
    // '<li class="kakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png"></li>' +
    // '<li class="naver" id="naver_id_login"><img src="/images/naver_login@2x.png"></li>' +
