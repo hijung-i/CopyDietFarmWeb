@@ -564,7 +564,7 @@ background-size:19px 19px;}
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
   #content .main_sub{width:100%;margin:104px auto}
- .t1 img{position:relative;top:7px}
+ /*.t1 img{position:relative;top:7px}*/
   .detail_title{position: relative;
     margin: 0px 15px;
     margin-top: 35px}
