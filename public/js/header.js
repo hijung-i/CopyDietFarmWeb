@@ -69,11 +69,24 @@ function getEventStands() {
          $('.sideMenu').hide();
      });
  }
+ function result(){
+ if($(".result-area").css("display") == "none"){
+    $(".result-area").show();
+} else {
+    $(".result-area").hide();
+}
+};
+$('body').on('click', function(e){
+    var $tgPoint = $(e.target);
+    var $popCallBtn = $tgPoint.hasClass('round')
+    var $popArea = $tgPoint.hasClass('result-area')
+ 
+    if ( !$popCallBtn && !$popArea ) {
+        $('.result-area').css("display", "none");
+    }
+});
 
- $('body').on('click', function(){
-    $('.sideMenu').css('display:none');
 
-})
  $(function() {
      var listType = $('#listType').val();
      if(listType != 'CATEGORY') getEventStands();

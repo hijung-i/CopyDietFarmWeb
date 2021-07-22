@@ -1530,7 +1530,7 @@ div.box.int_id{width:350px}
 .w_sidemenu ul li{width:138px;height:50px;border:1px solid #F5F5F5;text-align:center;padding:15px}
 .w_sidemenu ul li:hover{background-color:#F99319;color:#fff}
 .clicked_menu{background-color:#F99319;color:#fff}
-.csBox_web{float:right;margin-left:30px;margin-top:40px}
+.csBox_web{position:relative;left:60px;top:30px}
 .csBox_web ul li{float:left}
 .csBox_web h3{font-size:18px;font-weight:bold;color:#000}
 .csBox_web .innerbox{border:1px solid #BBBBBB;width:431px;height:214px;margin-right:20px;margin-top:20px}
@@ -2934,7 +2934,7 @@ width:94%;margin:0 auto }
 .recommend{margin-left:15px;margin-right:15px;padding-top:30px}
 .recommend h2{font-size:12px;font-weight:bold;margin-bottom:10px}
 .recommend ul{display:grid;grid-template-columns: repeat(4, 2fr);width: 100%;margin:auto;margin-bottom:45px}
-.recommend ul li{border:1px solid #BBBBBB;border-radius:20px;padding:8px;text-align:center;margin-right:7px;margin-top:10px;font-weight:bold}
+.recommend ul li{border:1px solid #BBBBBB;border-radius:20px;padding:8px;text-align:center;margin-right:7px;margin-top:10px;font-weight:bold;white-space:nowrap}
 
 /*검색 결과*/
 .result_wrap{width:100%;border-bottom:1px solid #bbbbbb}
@@ -3067,7 +3067,8 @@ width:94%;margin:0 auto }
   margin-bottom: 0px;
   padding:6px;
   padding-left:14px;
-  padding-right:13px
+  padding-right:13px;
+  margin-top:20px
 }
 
 .footer-bottom-area {
