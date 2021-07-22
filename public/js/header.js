@@ -138,7 +138,6 @@ function getEventStands() {
             $('.sideMenu').css("display", "none");
         }
     });
-    
     $('body').on('click', function(e){
         var $tgPoint = $(e.target);
         var $popCallBtn = $tgPoint.hasClass('round')

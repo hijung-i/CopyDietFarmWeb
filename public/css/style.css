@@ -560,7 +560,8 @@ background-size:19px 19px;}
   padding-bottom: 26px;
   margin-top: 19px}
 .reviewModifyBox .star_grade p{font-size:16px;font-weight:bold;text-align:center}
-
+.d_line{width:58px;color:#F99319;position:relative;top:-43px;left:31px}
+.page_wrap{display:none}
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
   #content .main_sub{width:100%;margin:104px auto}
