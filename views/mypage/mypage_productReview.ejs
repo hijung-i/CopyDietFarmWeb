@@ -31,6 +31,7 @@
     </style>
     <link rel="stylesheet" href="/css/myPage.css">
     <link rel="stylesheet" href="/css/style_web.css">
+    <link rel="stylesheet" href="/css/product.css">
     <%-include(webroot + 'views/general/head') %>
 <%-include(webroot + 'views/general/openGraph.ejs') %>
 
@@ -137,7 +138,7 @@
                         <img src="/images/note_icon_review.png">
                         <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
                     </div>
-                    
+                 <div class="reviews">
                     <div class="product_review01" v-for="(review, index) in reviewList">
                         <div class="review_info01">
                             <ul>
@@ -203,6 +204,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
             </div>

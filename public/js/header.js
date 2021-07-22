@@ -69,11 +69,14 @@ function getEventStands() {
          $('.sideMenu').hide();
      });
  }
+ function result(){
+ if($(".result-area").css("display") == "none"){
+    $(".result-area").show();
+} else {
+    $(".result-area").hide();
+}
+};
 
- $('body').on('click', function(){
-    $('.sideMenu').css('display:none');
-
-})
  $(function() {
      var listType = $('#listType').val();
      if(listType != 'CATEGORY') getEventStands();
@@ -106,35 +109,47 @@ function getEventStands() {
      })
     
      // 햄버거 메뉴
-     $(document).ready(function() {
-         $('.btnMenu>a').click(function() {
-             sideTabOpen();
-             $('body').css ({
-                 position:'fixed',
-                 overflow:'hidden'
-             });
-             $('.sideMenu').css ({
-                 
-             })
-         });
- 
-         $('.slideMenu_close>a').click(function() {
-             sideTabClose();
-             $('body').css ({
-                 position:'relative',
-                 overflow:'visible'
-             });
-         });
-     });
- 
- 
-    // $(".sideMenu").hide();
-    // $(".web_cate > a").click(function(){
-    //     $(".sideMenu").slideToggle("fast");
-    // });
- 
      
-     
+    $('.btnMenu>a').click(function() {
+        sideTabOpen();
+        $('body').css ({
+            position:'fixed',
+            overflow:'hidden'
+        });
+        $('.sideMenu').css ({
+            
+        })
+    });
+
+    $('.slideMenu_close>a').click(function() {
+        sideTabClose();
+        $('body').css ({
+            position:'relative',
+            overflow:'visible'
+        });
+    });
+ 
+    $('body').on('click', function(e){
+        var $tgPoint = $(e.target);
+        var $popCallBtn = $tgPoint.hasClass('web_cate')
+        var $popArea = $tgPoint.hasClass('sideMenu')
+    
+        if ( !$popCallBtn && !$popArea ) {
+            $('.sideMenu').css("display", "none");
+        }
+    });
+    $('body').on('click', function(e){
+        var $tgPoint = $(e.target);
+        var $popCallBtn = $tgPoint.hasClass('round')
+        var $popArea = $tgPoint.hasClass('result-area')
+    
+        if ( !$popCallBtn && !$popArea ) {
+            $('.result-area').css("display", "none");
+        }
+    });
+
+   
+
      /* web side menu controll */
      $(".m_ba_slides_n_li a").hover(function () {
          console.log($(this).find("ul"));
