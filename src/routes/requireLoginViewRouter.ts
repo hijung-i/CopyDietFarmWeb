@@ -66,45 +66,57 @@ router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
 
 router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
 
-    checkLogin(req, res, (sessionUser) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
         render(req, res, 'mypage/mypage_orderList', {})
     })
 })
 
 router.get('/point', (req: Request, res: Response, next: NextFunction) => {
 
-    checkLogin(req, res, (sessionUser) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
         render(req, res, 'mypage/mypage_point', {})
+    })
+})
+
+router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
+        render(req, res, 'myInfoUserCheck', {})
+    })
+})
+
+router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
+        render(req, res, 'myinfo', {})
     })
 })
 
 router.get('/coupon', (req: Request, res: Response, next: NextFunction) => {
 
-    checkLogin(req, res, (sessionUser) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
         render(req, res, 'mypage/coupon', { currentPage: '쿠폰' })
     })
 })
 
 router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
-    checkLogin(req, res, (sessionUser) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
         render(req, res, 'mypage/mypage_productReview', {})
     })
 })
 
 router.get('/p_inquiry', (req: Request, res: Response, next: NextFunction) => {
-    checkLogin(req, res, (sessionUser) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
         render(req, res, 'mypage/mypage_productInquiry', {})
     })
 })
 
 router.get('/s_inquiry', (req: Request, res: Response, next: NextFunction) => {
-    checkLogin(req, res, (sessionUser) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
         render(req, res, 'mypage/mypage_seller_inquiry', {})
     })
 })
 
 router.get('/delivery-status', (req: Request, res: Response, next: NextFunction) => {
-    checkLogin(req, res, (sessionUser) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
         render(req, res, 'mypage/mypage_deliveryStatus', {})
     })
 })

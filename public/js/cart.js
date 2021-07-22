@@ -85,16 +85,28 @@ var app = new Vue({
             }
         },
         changeOptionCount: function (plus, gIdx, pIdx, oIdx) {
+            var cartItem = this.deliveryGroupList[gIdx].products[pIdx].options[oIdx]
             if(plus) {
-                this.deliveryGroupList[gIdx].products[pIdx].options[oIdx].optionCount += 1
+                cartItem.optionCount += 1
             } else {
-                if(this.deliveryGroupList[gIdx].products[pIdx].options[oIdx].optionCount <= 1) {
+                if(cartItem.optionCount <= 1) {
                     alert('최소 수량은 1개입니다.');
                     return;
                 }
-                this.deliveryGroupList[gIdx].products[pIdx].options[oIdx].optionCount -= 1;   
+                cartItem.optionCount -= 1;   
             }
-        
+            // 옵션 수량 변경사항 저장
+            var requestCartList = { 
+                options: [cartItem]
+            }
+
+            ajaxCall(API_SERVER + '/order/onChangeOptionCount', requestCartList, 'POST',
+            function(data) {
+                console.log('on change option count', data);
+            }, function(err) {
+                console.log(err);
+            })
+            
             app.updateOrderInfo();
         },
         getCartItemList: function () {

@@ -238,15 +238,7 @@ router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
 router.get('/mem-with', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'membership_withdrawal', {})
 })
-router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'myinfo', {})
-})
-router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'myinfo', {})
-})
-router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'myInfoUserCheck', {})
-})
+
 router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'order_details', {})
 })
