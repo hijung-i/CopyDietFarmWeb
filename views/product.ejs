@@ -447,18 +447,19 @@
                                     </div>
                                 </div>
                             </div>
-                                    <div class="v_opt_btn_w">
+                                    <div class="v_opt_btn_w" style="margin-top:240px">
                                         <div class="line_w"></div>
-                                        <div class="total_price">
-                                            <button type="button" v-bind:class="{ 'h_btn': true, 'like': true, 'like-yes': product.zzimYn == 'Y', 'like-no': product.zzimYn == 'N' } " v-on:click="zzimProduct()"></button>
-                                                            
+                                        <div class="total_price">                                        
                                             <div>
                                                 <p class="left">총 금액</p> <span class="price">{{ numberFormat(optionTotalPrice) }}<span>원</span></span>
                                             </div>
                                         </div>
-                                        <div class="float_btns">
-                                            <button class="cart" @click="updateOrderInfo()">장바구니</button>
-                                            <button class="buy" @click="onSubmit()">구매하기</button>
+                                        <div class="common_btn_wrap" style="margin:40px auto">
+                                            <div class="option_btns" style="display:flex;justify-content:space-between;">
+                                                <button type="button" v-bind:class="{ 'h_btn': true, 'like': true, 'like-yes': product.zzimYn == 'Y', 'like-no': product.zzimYn == 'N' } " v-on:click="zzimProduct()"></button>
+                                                <button type="button" class="c_btn" @click="updateOrderInfo()" style="width:90px!important">장바구니</button>
+                                                <button type="button" class="p_btn" v-on:click="onSubmit()"  style="width:90px!important">구매하기</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
