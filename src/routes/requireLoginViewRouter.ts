@@ -29,7 +29,14 @@ router.get('/delivery-management', (req: Request, res: Response, next: NextFunct
 
 router.get('/delivery-management/:userId', (req: Request, res: Response, next: NextFunction) => {
     const userId = req.params.userId
-    render(req, res, 'mypage/mypage_deliver_mag', { userId })
+
+    checkLogin(req, res, (sessionUser: SessionUser) => {
+        if (userId === sessionUser.userId) {
+            render(req, res, 'mypage/mypage_delivery_management', { userId })
+        } else {
+            res.send('<script>alert("잘못된 접근입니다.");location.href = "/";</script>')
+        }
+    })
 })
 
 router.get('/pick-product', (req: Request, res: Response, next: NextFunction) => {

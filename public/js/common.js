@@ -1,11 +1,11 @@
 // 테스트
 // var API_SERVER = "http://112.217.209.162:9090";
-// var CALLBACK_SERVER = "http://112.217.209.162";
+// var CALLBACK_SERVER = "http://data-flow.co.kr:3000";
 // var API_SERVER = "http://192.168.0.3:9090";
 // var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-var API_SERVER = "https://dietfarm119.co.kr";
+ var API_SERVER = "https://dietfarm119.co.kr";
 var CALLBACK_SERVER = "https://dietfarm.co.kr";
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
@@ -80,6 +80,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          var result = data.result;
          if(option.isRequired == true && result.isLoggedIn != true) {
             // TODO: Open alert modal
+            console.log(url);
             alert('로그인이 필요한 동작입니다.');
             return false;
          }
@@ -133,7 +134,10 @@ function generateHtmlForProductList(products, maxSize){
 }
 
 function goBack() {
-   window.history.back(); return false;
+   if(window.history.length < 1) location.href = "/" 
+   else window.history.back();
+   
+   return false;
 }
 
 function generateHtmlForProduct(product){
@@ -404,23 +408,25 @@ function zzimAction(button) {
    var params = {
       productNo,
       productCode
-   }
+   }  
+
    
-   if(zzimYn == 'N') {
-      url = API_SERVER + '/order/addZzim';
-      $(zzim).find('input[name=zzimYn]').val('Y');
-      $(zzim).find('div.like').removeClass('like-no');
-      $(zzim).find('div.like').addClass('like-yes');
-   } else if(zzimYn == 'Y') {
-      url = API_SERVER + '/order/deleteZzim';
-      $(zzim).find('input[name=zzimYn]').val('N');
-      $(zzim).find('div.like').removeClass('like-yes');
-      $(zzim).find('div.like').addClass('like-no');
-   }
+      url = API_SERVER + '/order/' + ((zzimYn == 'N')?'addZzim':'deleteZzim');
 
    ajaxCallWithLogin(url, params, 'POST',
    function(data) {
       console.log('zzimaction', params, data);
+      if(zzimYn == 'N') {
+         $(zzim).find('input[name=zzimYn]').val('Y');
+         $(zzim).find('div.like').removeClass('like-no');
+         $(zzim).find('div.like').addClass('like-yes');
+      } else if(zzimYn == 'Y') {
+         $(zzim).find('input[name=zzimYn]').val('N');
+         $(zzim).find('div.like').removeClass('like-yes');
+         $(zzim).find('div.like').addClass('like-no');
+      }
+   
+
    }, function(err) {
       console.error(err)
    }, {
@@ -465,3 +471,9 @@ function clip(){
 	document.body.removeChild(textarea);
 	alert("URL이 복사되었습니다.")
 }
+
+window.onload = function() {
+   setTimeout (function () {
+    scrollTo(0,0);
+   }, 100); 
+  }

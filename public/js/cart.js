@@ -7,18 +7,17 @@ var cartList = new Array();
 var app = new Vue({
     el: 'main',
     components: {
-        'delivery-info-modal': deliveryInfoModalComponent
+        'delivery-select-modal': deliverySelectModal
     },
     data: {
         RESOURCE_SERVER,
         API_SERVER,
         checkAll: true,
-        orderDTO: {
-            delivery: {}
-        },
+        orderDTO: new OrderDTO(),
         requestDeliveryGroupList: [],
         cartList,
         deliveryGroupList,
+        deliveryInfoModal: false
     },
     methods: {
         numberFormat,
@@ -36,11 +35,13 @@ var app = new Vue({
         },
         updateOrderInfo: function (option) {
             if(option != undefined && !option.isSelected) {
-                // 전체 선택 해제
+                // TODO: 전체 선택 해제
                 $('#checkAll')[0].checked = false;
             }
-            
-            this.orderDTO = new OrderDTO();
+
+            console.log(isJeju, isExtra);
+
+            // TODO: 상품 묶음 배송(DeliveryGroup) 정보에 따라
             this.deliveryGroupList = [];
         
             for(var i = 0; i < cartList.length; i++) {
@@ -54,7 +55,6 @@ var app = new Vue({
                         isSameGroup = true
                         break
                     }
-                    
                 }
                 
                 if(!isSameGroup) {
@@ -69,6 +69,8 @@ var app = new Vue({
                 }
             }
         
+            this.orderDTO.paymentTotalAmount = 0;
+            this.orderDTO.deliveryCost = 0;
             for (var i = 0; i < this.deliveryGroupList.length; i++) {
                 var it = this.deliveryGroupList[i];
                 this.orderDTO.paymentTotalAmount += it.groupPrice;
@@ -81,7 +83,6 @@ var app = new Vue({
                 }
                 this.orderDTO.totalDeliveryCost = this.orderDTO.deliveryCost + this.orderDTO.deliveryCost2 + this.orderDTO.deliveryCost3;
             }
-
         },
         changeOptionCount: function (plus, gIdx, pIdx, oIdx) {
             if(plus) {
@@ -119,7 +120,6 @@ var app = new Vue({
         },
         onSubmit: function() {
             var requestDeliveryGroupList = new Array();
-            
             for(var i = 0; i < this.deliveryGroupList.length; i++) {
                 var deliveryGroup = this.deliveryGroupList[i];
                 var requestDeliveryGroup = deliveryGroup.cloneObject();
@@ -140,7 +140,6 @@ var app = new Vue({
                 var group = requestDeliveryGroupList[i];
                 for(var j = 0; j < group.products.length; j++) {
                     var product = group.products[j];
-                    console.log(product.productCode, group.deliveryCostProduct)
                     if(product.productCode == group.deliveryCostProduct) {
                         product.isDelivery = true
                         product.deliveryCost = group.deliveryCost
@@ -152,11 +151,8 @@ var app = new Vue({
                         product.deliveryCost3 = 0
                     }
                 }
-
-                console.log(product);
-               
             }
-            
+
             location.href="/order?deliveryGroupList=" + JSON.stringify(requestDeliveryGroupList)+'&orderDTO='+ JSON.stringify(this.orderDTO);
         },
         deleteSelectedItems: function() {
@@ -219,43 +215,18 @@ var app = new Vue({
         },
         onDeliveryInfoSelected: function(data) {
             console.log("event 발생", data);
-            var selectedDelivery = Object.assign(data);
+            var selectedDelivery = Object.assign({}, data);
             this.orderDTO.delivery = selectedDelivery;
 
-            checkDeliveryAddress();
-            this.$forceUpdate();
+            checkDeliveryAddress(this);
         }
         
+    }, created: function() {
+
+        this.getCartItemList()
+        getDefaultDeliveryInfo(this)
     }
-    
 });
-
-$(function() {
-    checkDeliveryAddress();
-    app.getCartItemList();
-
-})
-
-function checkDeliveryAddress() {
-    var params = {};
-    
-    ajaxCallWithLogin(API_SERVER + '/user/checkDeliveryAddress', params, 'POST',
-    function(data) {
-        var result = data.result;
-
-        if(result.address.includes('제주특별자치도')) {
-            isJeju = true;
-        } 
-        if(result.count > 0) {
-            isExtra = true;
-        }
-    }, function(err) {
-        console.log("error", err);
-    }, {
-        isRequired: true,
-        userId: true
-    })
-}
 
 function getSelectedOptionIndexes(ele) {
     var id = $(ele).attr("id").split("-");

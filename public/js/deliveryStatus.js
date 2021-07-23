@@ -14,6 +14,7 @@ var app = new Vue({
         onDeliveryCount: 0,
         afterDeliveryCount: 0,
         product: {},
+        productName:0,
         courierName: 0,
         courierNo: 0
     }, methods: {
@@ -22,8 +23,7 @@ var app = new Vue({
         convertOrderStatus
     }, computed:{
       deliveryListURL: function(){
-        const courierName = this.productDTO.courierName
-        const courierNo = this.productDTO.courierNO
+        Object.assign(params, this.product);
     }
     }
 })
@@ -32,6 +32,14 @@ $(function() {
     getOrderList();
     getUsablePointAmount();
     getUsableCouponList();
+    convertOrderStatus();
+    setDeliveryComplete();
+    getDeliveryInfo();
+    updateDeliveryTime();
+    pushStartDelivery();
+
+
+
 })
 
 
@@ -120,20 +128,6 @@ function getUsablePointAmount() {
         console.log("error", err)
     },
     {
-        isRequired: true,
-        userId: true
-    })
-}
-
-
-function getUsableCouponList() {
-    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST',
-    function(data) {
-        app.usableCouponAmount = data.result.length;
-        console.log("get usableCouponList", data);
-    }, function(err) {
-        console.error("get usable coupon list",err);
-    }, {
         isRequired: true,
         userId: true
     })

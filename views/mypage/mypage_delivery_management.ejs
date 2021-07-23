@@ -2,106 +2,92 @@
 <html lang="ko">
 
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>배송지 관리, 다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
-<style>
-            
-    /* The Modal (background) */
-    .r_modal{
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
-
-    /* Modal Content/Box */
-    .r_modal .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        height:575px;
-        width:380px;
-                                
-    }
-    .modal-content > .modal-content_ctn {
-        width: 330px;
-        margin: 0 auto;
-        height: 575px;
-    }
-    .r_modal .close {
-        color: #aaa;
-        font-size: 28px;
-    }
-    .deliver_magHeader > ul {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    /* The Close Button */
-
-
-    .r_modal .close:hover,
-    .r_modal .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    @media screen and (max-width:1079px) {
-        .web_deliv {
-            display: none;
-        }
-        .small_line{position:relative;top:-3px}
-        .mobile_deliv{
-            position: fixed;
-            min-width: 360px;
-            width: 100%;
-            height: 80px;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배송지 관리, 다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
+    <style>
+                
+        /* The Modal (background) */
+        .r_modal{
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
             top: 0;
-            background-color: #fff;
-            z-index: 1;
-            margin-bottom: 20px;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
+
+        /* Modal Content/Box */
         .r_modal .modal-content {
             background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
             height:575px;
-            min-width: 330px;
-            margin-top: 80px;                             
+            width:380px;
+                                    
         }
-        .contents{padding-top:90px}
-    }
-    @media screen and (min-width:1080px) {
-        .mobile_deliv {
-            display: none;
+        .modal-content > .modal-content_ctn {
+            width: 330px;
+            margin: 0 auto;
+            height: 575px;
         }
-        .small_line{position:relative;top:-6px}
-        .contents{width:100%;margin-left:80px}
-    }
-</style>
-<link rel="stylesheet" href="/css/myPage.css">
-<link rel="stylesheet" href="/css/style_web.css">
+        .r_modal .close {
+            color: #aaa;
+            font-size: 28px;
+        }
+        .deliver_magHeader > ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* The Close Button */
 
-<%-include(webroot + 'views/general/head') %>
-<%-include(webroot + 'views/general/openGraph.ejs') %>
-    <!-- font awesome -->
-    <link
-        rel="stylesheet"
-        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-        crossorigin="anonymous"/>
-    <!-- modal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+
+        .r_modal .close:hover,
+        .r_modal .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media screen and (max-width:1079px) {
+            .web_deliv {
+                display: none;
+            }
+            .small_line{position:relative;top:-3px}
+            .mobile_deliv{
+                position: fixed;
+                min-width: 360px;
+                width: 100%;
+                height: 80px;
+                top: 0;
+                background-color: #fff;
+                z-index: 1;
+                margin-bottom: 20px;
+            }
+            .r_modal .modal-content {
+                background-color: #fefefe;
+                height:575px;
+                min-width: 330px;
+                margin-top: 80px;                             
+            }
+            .contents{padding-top:90px}
+        }
+        @media screen and (min-width:1080px) {
+            .mobile_deliv {
+                display: none;
+            }
+            .small_line{position:relative;top:-6px}
+            .contents{width:100%;margin-left:80px}
+        }
+    </style>
+    <link rel="stylesheet" href="/css/myPage.css">
+    <link rel="stylesheet" href="/css/style_web.css">
+
+    <%-include(webroot + 'views/general/head') %>
+    <%-include(webroot + 'views/general/openGraph.ejs') %>
 
     <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 
@@ -124,6 +110,8 @@
         </div>
         <main>
         <!-- web main -->
+        <input type="hidden" id="userId" value="<%=user.userId %>">
+        <input type="hidden" id="userName" value="<%=user.userName %>">
         <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
         
         <div class="mypage_content_wrap">
@@ -155,7 +143,9 @@
 
             <div class="contents">
             <h3 class="del_web_title">배송지 관리</h3>
-            
+            <div class="order_list_null" v-if="deliveryList == undefined ||deliveryList.length == 0">
+                <p class="no_review">등록된 배송지가 없습니다.</p>
+            </div>
                 <div class="order_list_ctn">
                 <template v-for="(item, i) in deliveryList">
                     <section class="web_delivery_manage_list">
@@ -173,7 +163,7 @@
                                     <li class="small_line"><img src="/images/l_icon_category@2x.png"></li>
                                 </template>
                                 <li class="edit_first">
-                                    <a v-on:click="modalDisplay(true, '배송지 수정', i)" onclick="openRegisterModal()">수정</a>
+                                    <a v-on:click="onUpdateButtonClick(i)">수정</a>
                                 </li>
                                 <li class="small_line"><img src="/images/l_icon_category@2x.png"></li>
                                 <li class="edit_second">
@@ -226,12 +216,11 @@
         <!-- body_contents -->
         <!-- modal window -->
 
-        <delivery-register-modal></delivery-register-modal>
+        <delivery-register-modal v-if="deliveryRegisterModalShow" v-bind:delivery="delivery"></delivery-register-modal>
     </main>
     </div>
         
          
-    
     <script src="/js/components/deliveryRegisterModalComponent.js"></script>
     <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/deliveryManagement.js"></script>

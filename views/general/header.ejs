@@ -13,10 +13,20 @@
                 </li>
                 <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
             <% } %>
+            
+           
             <li class="cs_center">
                 <a href="/cs-center">고객센터</a>
             </li>
+            <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
+            <li class="site_map">
+                <a href="/sitemap">사이트맵</a>
+            </li>
             <% if(isLoggedIn == true) { %>
+            <li class="bar"><img src="/images/l_icon_category@2x.png"></li>
+                <li class="logout">
+                    <a href="javascript:kakaoLogout()">로그아웃</a>
+                </li>
                 <li class="cart">
                     <a href="/cart"><img src="/images/cart_icon_main@2x.png" alt="장바구니"></a>
                 </li>
@@ -49,7 +59,7 @@
         </div>
         <% } %>
         <div class="comp_logo <% if(currentPage != 'main' && currentPage != 'products' && currentPage != 'search') { %> hide-mobile <% } %>">
-            <a href="/"><img src="/images/logo_new@2x.png"></a>
+            <a href="/"><img src="/images/comp_logo@2x.png"></a>
         </div>
         <% if (currentPage != 'main' && currentPage != 'products' && currentPage != 'search') { %>
             <div class="myPage_title" style="font-size:16px;font-weight:bold">
@@ -75,13 +85,54 @@
         <div class="searchbox">
             <form id="search-form" action="/search-list" method="GET">
                 <div class="search">
-                    <input type="text" name="keyword" class="round" id="websearchform" placeholder="검색해보세요.">
+                    <input autocomplete="off" type="text" name="keyword" class="round" id="websearchform"  onclick="result()" placeholder="검색해보세요.">
                 <div class="search_box_icon">
                 <input type="submit" value="">
                 </div>
                 </div>
             </form>
+            <div class="result-area" style="z-index:9999999;background-color:#fff;width:304px;border-bottom:1px solid #E4E4E4;border-left:1px solid #E4E4E4;border-right:1px solid #E4E4E4;display:none">
+                <div class="popular_wrap">
+                    <section class="popular">
+                        <h2 style="padding-top:10px">인기 검색어</h2>
+                        <div class="search_list">
+                            <ul class="five">
+                                <!-- <li>
+                                    <a href="#">
+                                        <span>1</span>
+                                        &nbsp;&nbsp;쯔란</a>
+                                </li>
+                                -->
+                            </ul>
+                            <ul class="ten">
+                                <!-- <li>
+                                    <a href="#">
+                                        <span>6</span>
+                                        &nbsp;&nbsp;김치볶음밥</a>
+                                </li>
+                                 -->
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <div class="search_line"></div>
+                <div class="recommend_wrap" style="padding-bottom:10px">
+                    <section class="recommend">
+                        <h2>추천 검색어</h2>
+                        <ul>
+                            <!-- <li>
+                                <a href="#">삼겹살</a>
+                            </li> -->
+                            
+                        </ul>
+                    </section>
+                </div>
+            </div>
         </div>
+    
+    </div>
+</div>
+
     
     </div>
 </div>
@@ -116,7 +167,7 @@
     <div class="sideMenu_ctt">
         <div id="tab1" class="tab_cont active">
             <ul class="mDepth01">
-                <li>
+                <!-- <li>
                     <dl>
                         <dt class="sideMenu_detail faq_q">
                             <span><img src="/images/salad_icon_category.png" alt="#"/>도시락/샐러드</span>
@@ -140,8 +191,7 @@
                             </ul>
                         </dd>
                     </dl>
-                </li>
-                
+                </li> -->
             </ul>
             <div class="side_banner">
              <img src="/images/doctor_banner.png" style="width:100%">
@@ -191,3 +241,4 @@
     </div>
 </div>
 </div>
+<script src="/js/search.js"></script>

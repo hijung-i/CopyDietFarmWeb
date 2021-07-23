@@ -18,19 +18,19 @@ function DeliveryGroupDTO() {
 
     this.bundleDeliveryCost = function(countPerDelivery) {
         this.optionTotalCount = 0;
-        for (var i = 0; i < this.products.length; i++) {
-            var product = this.products[i];
-            for (var j = 0; j < product.options.length; j++) {
-                var option = product.options[j];
+
+        Array.from(this.products).forEach(product => {
+            Array.from(product.options).forEach(option => {
                 if(option.isSelected != undefined && option.isSelected) {
                     this.optionTotalCount += option.optionCount;
                 } else {
+                    // isSelected 가 undefined인 경우 false로 설정해줌 delete를 위함 
                     option.isSelected = false;
                 }
-            }
-        }
-        return Math.floor(this.optionTotalCount / countPerDelivery + ((this.optionTotalCount % countPerDelivery > 0)?1:0));
-    
+            })
+        })
+
+        return Math.floor(this.optionTotalCount / countPerDelivery + ((this.optionTotalCount % countPerDelivery > 0)?1:0)); 
     }
 
     
@@ -68,7 +68,6 @@ function DeliveryGroupDTO() {
 
                 if (this.deliveryCostBasis < product.deliveryCostBasis) {
                     this.deliveryCostBasis = product.deliveryCostBasis;
-                    this.deliveryCostProduct = product.productCode;
                 }
 
                 if (this.deliveryCost3 < product.deliveryCost3 * boxCount) {
@@ -81,8 +80,8 @@ function DeliveryGroupDTO() {
                 }
             }
             
-            this.setTotalDeliveryCost(isJeju, isExtra);
         }
+        this.setTotalDeliveryCost(isJeju, isExtra);
     }
 
     
@@ -117,19 +116,11 @@ function DeliveryGroupDTO() {
     }
 
     this.cloneObject = function () {
-        var clone = new DeliveryGroupDTO();
-        clone.loadingPlace = this.loadingPlace;
-        clone.groupPrice = this.groupPrice;
-        clone.optionTotalCount = this.optionTotalCount;
-        clone.products = JSON.parse(JSON.stringify(this.products));
-        clone.deliveryCost = this.deliveryCost;
-        clone.deliveryCost2 = this.deliveryCost2;
-        clone.deliveryCost3 = this.deliveryCost3;
-        clone.deliveryCostProduct = this.deliveryCostProduct;
-        clone.isSelected = this.isSelected;
-        clone.companyName = this.companyName;
-        clone.brandName = this.brandName;
-        clone.totalDeliveryCost = this.totalDeliveryCost;
+        var clone = Object.assign({}, this)
+        clone.setDeliveryCost = this.setDeliveryCost
+        clone.setTotalDeliveryCost = this.setTotalDeliveryCost
+        clone.bundleDeliveryCost = this.bundleDeliveryCost
+        clone.deleteNoneSelectedProduct = this.deleteNoneSelectedProduct
 
         return clone;
     }

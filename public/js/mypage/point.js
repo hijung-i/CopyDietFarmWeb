@@ -99,6 +99,8 @@ function parsePointType(pointType) {
             return "기간만료";
         case "J":
             return "물 마시기";
+        case "S":
+            return "만보기";
 
     }
 }

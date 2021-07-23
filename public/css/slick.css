@@ -48,7 +48,6 @@
 {
     position: relative;
     display: block;
-    margin-left:15px;
     margin-right:15px;
     padding: 0;
     overflow:hidden
@@ -142,7 +141,7 @@
     display: none;
 }
 .slick-arrow {
-    width: 82px; height: 82px; 
+    width: 65px; height: 65px; 
     border: 0; border-radius: 100%;
     position: relative;
     overflow: hidden;
@@ -150,12 +149,12 @@
 .slick-prev {
     top: 230px; left: -40px;
     z-index: 9;
-    background: url(/images/group_5044.png);
+    background: url(/images/arrow_left.png)center;
 }
 .slick-next {
     top: -280px; right: -1024px;
     z-index: 9;
-    background: url(/images/group_5045.png);
+    background: url(/images/arrow_right.png)center;
 }
 
 

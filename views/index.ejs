@@ -13,7 +13,7 @@
         <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
 
         <%-include(webroot + 'views/general/head') %>
-<%-include(webroot + 'views/general/openGraph.ejs') %>
+        <%-include(webroot + 'views/general/openGraph.ejs') %>
         <style type="text/css">
             nav a:nth-child(1) {color:#F99319}
             .bx-wrapper {-moz-box-shadow: none !important; -webkit-box-shadow: none !important;
@@ -34,6 +34,7 @@
             }
             .showing {z-index: 9999;opacity: 1}
             @media screen and (min-width:1080px) {
+                .swiper-container{margin-top:-2px}
                 .water{margin-bottom:100px}
                 .black_bg{
                 display:block;
@@ -57,17 +58,66 @@
                 justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
                 align-items: center
             }
-            
-            
+            #pop {
+                width: 360px;
+                height: 490px;
+                background: #3d3d3d;
+                color: #fff;
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                padding: 10px;
+                line-height: 27px;
+                font-size: 14px;
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+            #close{position:relative;left:280px;cursor:pointer}
             .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
-            left: 88%; bottom: 25px}
+            left: 84%; bottom: 25px}
             .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
         </style>
         <link rel="stylesheet" href="/css/myPage.css">
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('#close').click(function(){
+                $('#pop').hide();
+            })
+        })
+        </script>
 </head>
 <body>
-        <!--//로그인 모달영역시작-->
-        <!--//로그인 모달영역끝-->
+    <div id ="pop">
+        <p style="font-weight:bold;color:#F99319">[ 공지사항 ]</p>
+        <p>다이어트팜에 보내주신 성원에 감사드립니다.</p>
+       
+        <p>아래와 같이 공지사항을 말씀드리오니,</p>
+        <p>유념부탁드립니다.</p>
+        <br>
+        <p>1. 주문건에 대한 배송지가 맞는지, 꼭 재확인 부탁드립니다.
+            입력부분에 대하여 이상이 있으신분은,
+            안드로이드 앱의 채널톡이나,
+            다이어트팜으로 연락주시기 바랍니다. ( 070-4366-3299 )</p>
+        <br>2. 신규가입시, 쿠폰 10,000 P 쿠폰지급은 운영상황을 고려하여, 
+            부득이하게, 5,000 P로 조정될수 있습니다.   </p>
+         <br>
+        <p>3.신규가입 쿠폰사용은
+            현시점부터는 30,000원 이상 주문시에 사용가능합니다.</p>
+        <br>
+        <p>4. 카카오채널시 포인트지급(1,000 P)은,
+            안드로이드 앱을 통하여 채널가입하는경우에만 지급되고있으며,
+            직접 카카오톡을 검색을 통한 채널가입의 경우는 지급되지 않습니다.</p>
+        <br>
+        <p>안드로이드 앱의 채널톡을 통한 상담문의및 답변도 가능하오니, 
+            궁금하신점에 대해서 문의주시면,
+            신속하게 답변드리겠습니다.
+            </p> <br>
+
+        <p>감사합니다.</p>
+        <div id="close">close</div>
+    </div>
         <!-- <button type="button" id="appleid-signin" data-color="black" data-border="true" data-type="sign in" class="btnApple"><img src="">애플 계정으로 시작하기</button> -->
         <main id="content" class="content_main">
             <div id="app">

@@ -205,7 +205,7 @@
         </div>
 
         <section id="shoplist_t_price_web">
-            <delivery-info-modal v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-info-modal>
+            <delivery-select-modal v-if="deliveryInfoModal" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-select-modal>
             <div class="shopBox01">
                 <h3>배송지</h3>
                 <template v-if="orderDTO.delivery != undefined">
@@ -214,7 +214,7 @@
                         <span>{{ orderDTO.delivery.userName }} &nbsp;&nbsp;&nbsp; {{ orderDTO.delivery.userCellNo }}</span>
                     </p>                    
                 </template>
-                <button type="button" id="my-button" class="shopBtn01" onclick="openInfoModal()">배송지 변경</button>
+                <button type="button" id="my-button" class="shopBtn01" onclick="openDeliverySelectModal()">배송지 변경</button>
                 
             </div>
             <div class="shopBox02">
@@ -252,9 +252,10 @@
             <button type="button" class="purchaseBtn" v-on:click="onSubmit()" style="border:none">구매하기</button>
         </div>
     </main>
-    <script src="/js/components/deliveryInfoModalComponent.js"></script>
+    <script src="/js/components/deliverySelectModal.js"></script>
     <script src="/js/orderDTO/OrderDTO.js"></script>
     <script src="/js/orderDTO/DeliveryGroupDTO.js"></script>
+    <script src="/js/lib/deliveryCostCounter.js"></script>
     <script src="/js/cart.js"></script>
     
 </body>

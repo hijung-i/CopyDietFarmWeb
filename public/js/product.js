@@ -13,6 +13,7 @@ var app = new Vue({
         RESOURCE_SERVER,
         selectedOptions,
         product: {},
+        pointReason: '실 결제금액의 3%',
         optionTotalPrice: 0,
         orderDTO: {},
         deliveryGroupList: [],
@@ -108,6 +109,23 @@ var app = new Vue({
             }
 
             return url
+        }, selectedOptionWidth: function() {
+            var WIDTH_PER_ITEM = 306 + 10
+
+            return (WIDTH_PER_ITEM * this.selectedOptions.length ) - 10 + 'px'
+        },
+        accumulatePoint: function() {
+            var accumulatePoint = this.optionTotalPrice * 0.03
+            if(this.product.productCode == "P00879" || this.product.productCode == "P00982") {
+                var totalCount = 0
+                Array.from(this.selectedOptions).forEach(function(option) {
+                    totalCount += option.optionCount;
+                })
+
+                this.pointReason = '적립 이벤트'
+                accumulatePoint = (totalCount * 10000)
+            }
+            return Math.round(accumulatePoint);
         }
     }
 });

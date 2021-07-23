@@ -18,7 +18,7 @@ function getEventStands() {
              html += '<a href="/" '+ ((currentStandCode == stand.salesStandCode)?'class="is-current"':'')+'> 홈</a>';
           }
           if( currentStandCode == stand.salesStandCode){
-             $('#heade_common #nav a').removeClass("is-current");
+             $('#header_common #nav a').removeClass("is-current");
              html += '<a href="/products/'+ stand.salesStandCode + '/event" class="is-current">'+ '<span>' + stand.salesStandName + '</span>' +'</a>';
           } else {
              html += '<a href="/products/'+ stand.salesStandCode + '/event" >'+ '<span>' + stand.salesStandName + '</span>' + '</a>';
@@ -69,6 +69,14 @@ function getEventStands() {
          $('.sideMenu').hide();
      });
  }
+ function result(){
+ if($(".result-area").css("display") == "none"){
+    $(".result-area").show();
+} else {
+    $(".result-area").hide();
+}
+};
+
  $(function() {
      var listType = $('#listType').val();
      if(listType != 'CATEGORY') getEventStands();
@@ -101,35 +109,47 @@ function getEventStands() {
      })
     
      // 햄버거 메뉴
-     $(document).ready(function() {
-         $('.btnMenu>a').click(function() {
-             sideTabOpen();
-             $('body').css ({
-                 position:'fixed',
-                 overflow:'hidden'
-             });
-             $('.sideMenu').css ({
-                 
-             })
-         });
+     
+    $('.btnMenu>a').click(function() {
+        sideTabOpen();
+        $('body').css ({
+            position:'fixed',
+            overflow:'hidden'
+        });
+        $('.sideMenu').css ({
+            
+        })
+    });
+
+    $('.slideMenu_close>a').click(function() {
+        sideTabClose();
+        $('body').css ({
+            position:'relative',
+            overflow:'visible'
+        });
+    });
  
-         $('.slideMenu_close>a').click(function() {
-             sideTabClose();
-             $('body').css ({
-                 position:'relative',
-                 overflow:'visible'
-             });
-         });
-     });
- 
- 
-    // $(".sideMenu").hide();
-    // $(".web_cate > a").click(function(){
-    //     $(".sideMenu").slideToggle("fast");
+    // $('body').on('click', function(e){
+    //     var $tgPoint = $(e.target);
+    //     var $popCallBtn = $tgPoint.hasClass('web_cate')
+    //     var $popArea = $tgPoint.hasClass('sideMenu')
+    // 
+    //     if ( !$popCallBtn && !$popArea ) {
+    //         $('.sideMenu').css("display", "none");
+    //     }
     // });
- 
-     
-     
+    $('body').on('click', function(e){
+        var $tgPoint = $(e.target);
+        var $popCallBtn = $tgPoint.hasClass('round')
+        var $popArea = $tgPoint.hasClass('result-area')
+    
+        if ( !$popCallBtn && !$popArea ) {
+            $('.result-area').css("display", "none");
+        }
+    });
+
+   
+
      /* web side menu controll */
      $(".m_ba_slides_n_li a").hover(function () {
          console.log($(this).find("ul"));
@@ -392,6 +412,11 @@ function getEventStands() {
                 $("dt.faq_q").removeClass("current");
             }
         })
+        $('body').click(function() {
+            if($(window).width() >= 1079){
+                $(".webcate").removeClass("active");
+            }
+        })
          
         $(".mTabBtnMenu").on("click",function() {
             sideTabOpen();
@@ -493,3 +518,101 @@ $(function() {
     })
 })
 
+// function goSearchResult() {
+//     var keyword = $('#webSearchKeyword').val().trim();
+//     if(keyword.length == '' || keyword.length < 1) {
+//         alert('검색어를 입력해주세요');
+//         return false;
+//     }
+//     
+//     $("#websearchform input[name=keyword]").val(keyword);
+//     $("#websearchform").submit();
+// }
+$(function() {
+    $(".result_wrap").hide();
+    $('.instant-search__input').keyup(function() {
+        var keyword = $(this).val();
+        if(keyword.trim().length > 0 ){
+            $(".result_wrap").show();
+            searchProduct(keyword);
+            
+        } else {
+            $(".result_wrap").hide();
+            
+        }
+    })
+
+    getHotKeyowrds();
+    getCFKeywords();
+})
+
+function getHotKeyowrds() {
+    var params = {};
+    ajaxCall(API_SERVER + '/user/getHotKeyword', params, 'POST'
+    , function(data) {
+        var result = data.result;
+        var five = '';
+        var ten = '';
+
+        var n = (result.length > 10)?10:result.length;
+        for(var i = 0; i < n; i++){
+            var keyword = result[i];
+            if( i < 5 ){
+                five += '<li><a href="/search-list?keyword='+keyword.keyword+'"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
+            } else if ( i >= 5){
+                ten += '<li><a href="/search-list?keyword='+keyword.keyword+'"><span>'+ (i + 1) +'</span>&nbsp;&nbsp;'+ keyword.keyword +'</a></li>';
+            }
+            
+        }
+        $('.search_list ul.five').html(five);
+        $('.search_list ul.ten').html(ten);
+    }, function(err) {
+        console.log("error while get getHotKeyword ",err);
+    })
+}
+function getCFKeywords() {
+    var params = {};
+    ajaxCall(API_SERVER + '/user/getCFKeyword', params, 'POST'
+    , function(data) {
+        var result = data.result;
+        var html = '';
+        for(var i = 0; i < result.length; i++){
+            var keyword = result[i];
+            html += '<li><a href="/search-list?keyword='+ keyword.keyword + '">'+ keyword.keyword +'</a></li>';
+        }
+        $('.recommend ul').html(html);
+
+    }, function(err) {
+        console.log("error while get getCFKeyword ",err);
+    })
+}
+
+function searchProduct(keyword) {
+    var params = {
+        keyword: keyword
+    }
+    ajaxCall(API_SERVER + '/product/productSearchBar', params, 'POST'
+    , function(data) {
+        var result = data.result;
+        var html = '';
+        for(var i = 0; i < result.length; i++) {
+            var product = result[i];
+            html += '<li><a href="/product/'+ product.productCode +'">'+ product.productName +'</a></li>'; 
+        }
+        $(".result_wrap .search_result ul").html(html);
+
+    }, function(err) {
+        console.log(err);
+    })
+}
+
+function goSearchResult() {
+    var keyword = $('#mobileSearchKeyword').val().trim();
+    if(keyword.length == '' || keyword.length < 1) {
+        alert('검색어를 입력해주세요');
+        return false;
+    }
+    
+    $("#mobileSearchForm input[name=keyword]").val(keyword);
+    $("#mobileSearchForm").submit();
+}

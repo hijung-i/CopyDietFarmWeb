@@ -12,10 +12,6 @@ $(function() {
         }
     })
 
-    $(".search_box_ico").click(function() {
-        goSearchResult();
-    })
-    
     getHotKeyowrds();
     getCFKeywords();
 })
@@ -84,7 +80,7 @@ function goSearchResult() {
     var keyword = $('#mobileSearchKeyword').val().trim();
     if(keyword.length == '' || keyword.length < 1) {
         alert('검색어를 입력해주세요');
-        return;
+        return false;
     }
     
     $("#mobileSearchForm input[name=keyword]").val(keyword);
