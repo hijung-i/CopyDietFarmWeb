@@ -69,13 +69,7 @@ function getEventStands() {
          $('.sideMenu').hide();
      });
  }
- function result(){
- if($(".result-area").css("display") == "none"){
-    $(".result-area").show();
-} else {
-    $(".result-area").hide();
-}
-};
+
 
  $(function() {
      var listType = $('#listType').val();
