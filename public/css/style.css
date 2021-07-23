@@ -134,7 +134,7 @@ a:hover{text-decoration:none;}
 .total_price {
   margin-top: 9px;
   display: flex;
-  flex-flow: column;
+
 }
 
 .total_price .accumulate-points {
@@ -2691,7 +2691,7 @@ opacity: 0.8;}
 
 /* 수량 선택 버튼 */
 
-input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;appearance: textfield;}
+input[type="number"] {-webkit-appearance: textfield;-moz-appearance: textfield;appearance: textfield;padding:10px}
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;}
 .number-input {border: 1px solid #BBBBBB;   background: #F5F5F5;display: inline-flex;
 border-radius: 5px;margin-right: 0px;margin-left: auto}

@@ -359,7 +359,7 @@
                                                 </div>
                                             </div>
                                                     <div class="line_w"></div>
-                                                    <div class="total_price">
+                                                    <div class="total_price" style="  flex-flow: column">
                                                         <p>
                                                             총 상품금액
                                                             <span class="bold">{{ numberFormat(optionTotalPrice) }}원</span>
@@ -455,7 +455,7 @@
                                             </div>
                                         </div>
                                         <div class="common_btn_wrap" style="margin:40px auto">
-                                            <div class="option_btns" style="display:flex;justify-content:space-between;">
+                                            <div class="option_btns" style="display:flex;justify-content:space-between">
                                                 <button type="button" v-bind:class="{ 'h_btn': true, 'like': true, 'like-yes': product.zzimYn == 'Y', 'like-no': product.zzimYn == 'N' } " v-on:click="zzimProduct()"></button>
                                                 <button type="button" class="c_btn" @click="updateOrderInfo()" style="width:90px!important">장바구니</button>
                                                 <button type="button" class="p_btn" v-on:click="onSubmit()"  style="width:90px!important">구매하기</button>

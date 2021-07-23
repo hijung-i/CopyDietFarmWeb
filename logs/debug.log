@@ -3592,3 +3592,85 @@
 {"message":"2021. 7. 16. 오후 3:00:18: LOGIN SUCCESS, userId = luze1004","level":"debug"}
 {"message":"2021. 7. 16. 오후 3:09:34: LOGIN SUCCESS, userId = luze1004","level":"debug"}
 {"message":"2021. 7. 16. 오후 4:34:59: LOGIN SUCCESS, userId = luze1004","level":"debug"}
+{"message":"2021. 7. 23. 오후 12:05:54: LOGIN SUCCESS, userId = luze1004","level":"debug"}
+{"message":"2021. 7. 23. 오후 12:06:08: NOT FOUND! METHOD: GET, URI: /js/jquery.bpopup-0.1.1.min.js","level":"error"}
+{"message":"2021. 7. 23. 오후 12:06:08: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 12:06:08: \"/js/jquery.bpopup-0.1.1.min.js\"","level":"error"}
+{"message":"2021. 7. 23. 오후 12:06:08: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 12:06:08: NOT FOUND! METHOD: GET, URI: /js/jquery.bpopup-0.1.1.min.js","level":"error"}
+{"message":"2021. 7. 23. 오후 12:06:08: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 12:06:08: \"/js/jquery.bpopup-0.1.1.min.js\"","level":"error"}
+{"message":"2021. 7. 23. 오후 12:06:08: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 1:49:33: LOGIN SUCCESS, userId = luze1004","level":"debug"}
+{"message":"2021. 7. 23. 오후 1:49:37: NOT FOUND! METHOD: GET, URI: /js/jquery.bpopup-0.1.1.min.js","level":"error"}
+{"message":"2021. 7. 23. 오후 1:49:37: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 1:49:37: \"/js/jquery.bpopup-0.1.1.min.js\"","level":"error"}
+{"message":"2021. 7. 23. 오후 1:49:37: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 1:49:37: NOT FOUND! METHOD: GET, URI: /js/jquery.bpopup-0.1.1.min.js","level":"error"}
+{"message":"2021. 7. 23. 오후 1:49:37: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 1:49:37: \"/js/jquery.bpopup-0.1.1.min.js\"","level":"error"}
+{"message":"2021. 7. 23. 오후 1:49:37: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:23: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:23: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:23: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:23: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:23: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:23: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:23: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:23: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:26: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:26: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:26: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:26: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:28: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:28: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:28: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:28: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:28: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:28: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:28: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:28: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:29: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:29: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:29: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:29: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:29: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:29: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:29: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:29: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:49: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:49: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:49: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:49: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:49: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:49: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:49: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:20:49: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:00: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:00: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:00: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:00: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:01: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:01: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:01: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:01: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:15: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:15: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:15: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:15: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:15: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:15: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:15: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:15: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:36: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:36: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:36: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:21:36: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:24:30: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:24:30: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:24:30: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:24:30: {}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:24:30: NOT FOUND! METHOD: GET, URI: /images/user/popup.jpg","level":"error"}
+{"message":"2021. 7. 23. 오후 2:24:30: {\"status\":404}","level":"error"}
+{"message":"2021. 7. 23. 오후 2:24:30: \"/images/user/popup.jpg\"","level":"error"}
+{"message":"2021. 7. 23. 오후 2:24:30: {}","level":"error"}
