@@ -601,7 +601,11 @@ function searchProduct(keyword) {
 }
 
 function goSearchResult() {
+<<<<<<< HEAD
+    var keyword = $('#mobileSearchKeyword').val().trim();
+=======
     var keyword = $('.mobileSearchKeyword').val().trim();
+>>>>>>> 5a5a438ec90be0dd3c4b02dc2d0717095c2a83f6
     if(keyword.length == '' || keyword.length < 1) {
         alert('검색어를 입력해주세요');
         return false;
@@ -609,6 +613,9 @@ function goSearchResult() {
     
     $("#mobileSearchForm input[name=keyword]").val(keyword);
     $("#mobileSearchForm").submit();
+<<<<<<< HEAD
+}
+=======
 }
 
 $(function() {
@@ -621,3 +628,4 @@ $(function() {
         }
     })
 })
+>>>>>>> 5a5a438ec90be0dd3c4b02dc2d0717095c2a83f6
