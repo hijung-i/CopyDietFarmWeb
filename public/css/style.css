@@ -87,8 +87,8 @@ a:hover{text-decoration:none;}
 .line03{font-size:12px!important; font-weight:normal!important;color:#BBBBBB!important;margin-top:20px}
 .web_cate.display-flex.active{background-color:#F99319;color:#fff}
 .search_box_icon{display:inline-block;position:relative;right:40px;top:3px}
-.search_box_icon input{background:url('/images/search_ico.png')no-repeat;border:none;width:25px;}
-.search_box_ico{display:inline-block;}
+.search_box_icon input{background:url('/images/search_ico.png')no-repeat;border:none;width:25px}
+.search_box_ico{display:inline-block;float:right}
 .search_box_ico input{background:url('/images/searchbox_icon_category.png')no-repeat;border:none;width:45px;height:45px}
 .common_btn_wrap{
   width:100%;
@@ -377,7 +377,7 @@ padding-right:15px;float:left;position:relative;top:6px}
 .instant-search__input-container img {display:none;position: relative; right: 10px; top: 12px;}
 .instant-search__input-container:focus-within {
   background: #ffffff;}
-.instant-search__input {flex-grow: 1;border: none;outline: none;width: 100%;padding: 0 6px;
+.instant-search__input, .mobileSearchKeyword{flex-grow: 1;border: none;outline: none;width: 100%;padding: 0 6px;
   background: transparent;}
 .instant-search__result {display: block;color: #333333;text-decoration: none;padding: 10px;
   font-size: 0.8em;cursor: pointer;}
@@ -2431,7 +2431,7 @@ width:400px
 .order0{margin-top:-10px}
 .btnA{width:69px;height:26px;background-color:#F99319;border:0;font-size:11px;color:#fff;border-radius:5px;margin-bottom:10px;}
 .btnB{width:69px;height:26px;background-color:#fff;border:1px solid #6B6B6B;color:#6B6B6B;border-radius:5px;font-size:11px}
-.btnC{background-color:#F99319;border:0;font-size:11px;color:#fff;border-radius:5px;padding-left:12px;padding-right:14px;padding-top:5px;padding-bottom:5px;white-space:nowrap;}
+.btnC{font-size:11px;border-radius:5px;padding-left:12px;padding-right:14px;padding-top:5px;padding-bottom:5px;white-space:nowrap;}
 .grayLine{width:100%;margin-bottom:10px;border-top:8px solid #E6E6E6;padding:0;padding-top:10px}
 
 /*주문 내역 없을때*/
@@ -2956,7 +2956,7 @@ width:94%;margin:0 auto }
 
 /* 슬림 라인 */
 .search_line {width: 90%; height: 0.5px;background: BBBBB;margin: 0 auto;margin-top: 14px}
-.result-area{position: relative;}
+.result-area{position: relative}
 .search_result{background-color: #FFFFFF;position: absolute;z-index: 9999}
 
 .footer {
