@@ -28,35 +28,29 @@
         <link rel="stylesheet" href="/css/style_web.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <%-include(webroot + 'views/general/head') %>
-<%-include(webroot + 'views/general/openGraph.ejs') %>
-        </head>
+        <%-include(webroot + 'views/general/openGraph.ejs') %>
+    </head>
 
-        <body>
+    <body>
+        
+        <main>
+            <input type="hidden" id="userId" value="<%=user.userId %>">
+            <input type="hidden" id="userName" value="<%=user.userName %>">
             <div class="mobile_usercheck">
                 <section class="detail_title">
                     <h2>내정보</h2>
-                    <script type="text/javascript">
-                        function goBack() {
-                            window
-                                .history
-                                .back();
-                        }
-                    </script>
                     <div class="btnback">
-                        <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
+                        <a href="#" value="취소" onClick="goBack()"><img src="/images/leftarrow_ico_my.png" alt="">
                         </a>
                     </div>
                 </section>
             </div>
             <div class="web_usercheck">
                 <%-include(webroot + 'views/general/header') %>
-                </div>
-
-              
-              <main>
-                <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
-                <div class="mypage_content_wrap">
-                    <nav class="content_lnb">
+            </div>
+            <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
+            <div class="mypage_content_wrap">
+                <nav class="content_lnb">
                     <ul>
                         <li>
                             <a href="/orderlist">주문내역</a>
@@ -80,7 +74,7 @@
                             <a href="/coupon">쿠폰</a>
                         </li>
                     </ul>
-                    </nav>
+                </nav>
                 <div class="contents">
                     <h2 style="font-size:20px">내정보</h2>
                     <div class="main-container">
@@ -91,21 +85,23 @@
 
                                 <h4>아이디</h4>
                                 <div class="login-input-wrap">
-                                    <input placeholder="아이디를 입력해주세요" type="text" readonly="readonly" value="<%=user.userId %>">
+                                    <input placeholder="아이디를 입력해주세요" type="text" readonly="readonly" v-model="userId" value="<%=user.userId %>">
                                 </div>
                                 <h4>비밀번호</h4>
                                 <div class="login-input-wrap password-wrap">
-                                    <input placeholder="비밀번호를 입력해주세요" type="password">
+                                    <input placeholder="비밀번호를 입력해주세요" @keypress="keypress" v-model="password" type="password">
                                 </div>
                                 <div class="login-button-wrap">
-                                    <button>확인</button>
+                                    <button @click="login">확인</button>
                                 </div>
                             </section>
                         </div>
                     </div>
                 </div>
-            </main>
-            <script src="/js/components/mypageComponent.js"></script>
-            <script src="/js/mypage/coupon.js"></script>                
-            </body>
-        </html>
+            </div>
+        </main>
+        <script src="/js/components/mypageComponent.js"></script>
+        <script src="/js/mypage/signModal.js"></script>
+        <script src="/js/mypage/myinfoUserCheck.js"></script>         
+    </body>
+</html>
