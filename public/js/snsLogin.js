@@ -55,6 +55,7 @@ function requestKaKaoUserInfo() {
 				, error
 			)
 			alert('카카오 로그인 중 오류가 발생했습니다.');
+			alert('err' + JSON.stringify(error))
 			location.href = "/";
 			return;
 		},
@@ -220,6 +221,7 @@ function loginKakao(params) {
 	}, function(err) {
 		console.log("error while loginKakao", err);
 		alert("에러가 발생했습니다.");
+		alert(err.responseText)
 		location.href="/";
 	});
 
