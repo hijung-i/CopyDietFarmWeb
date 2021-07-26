@@ -5,7 +5,7 @@
 // var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
- var API_SERVER = "https://dietfarm119.co.kr";
+var API_SERVER = "https://dietfarm119.co.kr";
 var CALLBACK_SERVER = "https://dietfarm.co.kr";
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";

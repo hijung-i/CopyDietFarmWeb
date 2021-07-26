@@ -576,14 +576,14 @@ function insertRecommandListHtml() {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 4.5,
               slides: 1
             }
           },
           {
             breakpoint: 360,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 4,
               slidesToScroll: 1
             }
           }
