@@ -329,7 +329,7 @@ overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 header.orderlistModal > ul {display: flex; justify-content: space-between; align-items: center;}
 header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: pointer; font-size: 18px; font-weight: 700;}
 .line2{border-top:2px solid #F99319;position:relative;top:12px}
-.circle_line ul{display:flex;justify-content:space-around;}
+.circle_line ul{display:flex;justify-content:space-between;}
 .circle_line ul li > img {vertical-align: middle;}
 .circle_line {text-align: center;margin-bottom:20px}
 .circle_line p{margin-top:10px}
@@ -337,16 +337,6 @@ header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: poi
 .d_status{font-size:16px;color:#878787;padding-top:201px;padding-bottom:204px;text-align:center;}
 .d_state ul, .d_date ul{display:flex;justify-content:space-around;}
 .d_state ul li, .d_date ul li{font-size:10px;float:left;color:#6B6B6B}
-
-.addr ul{float:left;padding-bottom:10px;padding-top:10px;}
-.addr01 ul{margin-right:75px;}
-.addr01 ul li, .addr02 ul li{float:left;}
-.addr .p{padding-left:15px;color:#6B6B6B;font-size:12px}
-.addr .a{margin-left:20px;font-size:12px}
-.d_num ul{display:flex;border-bottom:0.5px solid #BBBBBB;padding-bottom:10px;padding-top:10px;border-top:0.5px solid #BBBBBB;clear:both;}
-.d_num ul li{float:left;}
-.d_num .d{padding-left:15px;color:#6B6B6B;font-size:12px}
-.d_num .num{margin-left:20px;font-size:12px}
 
 /*배송 준비중 일때*/
 .delivery_list_null{width:70%; text-align:center; margin:180px auto;}

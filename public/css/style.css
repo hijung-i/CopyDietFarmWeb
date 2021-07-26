@@ -174,7 +174,6 @@ a:hover{text-decoration:none;}
 
 .detail_title{
   position:relative;
-  margin: 0px 15px;
   margin-top: 35px;
 }
 .detail_title a{
@@ -190,7 +189,7 @@ a:hover{text-decoration:none;}
 
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 
-.detail_title .title{width:200px;white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
+.detail_title .title{ width: 100%; white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title_header a img{position:absolute;top:80px}
 /* *{padding-left:15px;padding-right:15px} */
 .group input[type="checkbox"]{display:none;}
@@ -562,15 +561,29 @@ background-size:19px 19px;}
   padding-bottom: 26px;
   margin-top: 19px}
 .reviewModifyBox .star_grade p{font-size:16px;font-weight:bold;text-align:center}
-.d_line{width:58px;color:#F99319;position:relative;top:-43px;left:31px}
+
+li.on .d_line {
+  border-top:1px solid #F99319
+}
+
+.circle_line li circle{
+  background: #BBBBBB;
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+}
+.circle_line li .d_line{
+  width:58px;
+  border-top: 1px solid #BBBBBB;
+  color:#F99319;position:relative;top:-43px;left:-33px
+}
+
 .page_wrap{display:none}
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
   #content .main_sub{width:100%;margin:104px auto}
  /*.t1 img{position:relative;top:7px}*/
-  .detail_title{position: relative;
-    margin: 0px 15px;
-    margin-top: 35px}
+
   .detail_title a img{width: 17px}
   .btnback{position:absolute;top:4px}
   .btnback img {z-index: 9999;}
@@ -1190,12 +1203,34 @@ input[type="checkbox"] {display: none;}
 }
 .review_before input[type="checkbox"]:checked + label{
   background: url(../images/aftercheck_icon_join.png)no-repeat;
-   background-size:19px 19px;}
+  background-size:19px 19px;
+}
+
+.modal-content .line {
+  display: flex;
+  border-bottom: 1px solid rgb(187, 187, 187);
+  flex-flow: row;
+  padding: 10px 0px;
+}
+
+.modal-content .line .label {
+  color: #6B6B6B
+}
+.modal-content .line .value {
+  margin-left: 20px;
+  color: #000000; 
+} 
+
+.modal-content .line .left,
+.modal-content .line .right {
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
 
 /*1080px이상 웹용 */
-
 @media screen and (min-width:1080px){
-/*.web_cate{background-color:#F99319;color:#fff}*/
 #header_common #nav a.is-current{color:#fff;background-color:#F99319}
 #signup_title_web h2{font-size:24px;font-weight:bold;margin-top:56px;text-align:center;}
 .review_btn button{
@@ -3303,7 +3338,16 @@ width:94%;margin:0 auto }
     z-index: 99999;
     display: none;
   }
-  .modal-content {width: 330px;margin:70px auto;background-color:#fff;padding:10px}
+  .modal-content {
+    width: 350px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color:#fff;
+    padding:15px
+  }
+
   .modal-content .close{font-size:28px;float:right;cursor:pointer}
   .cancel_header {position: relative;}
   .cancel_header > h2 {

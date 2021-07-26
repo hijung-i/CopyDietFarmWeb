@@ -97,6 +97,11 @@ router.get('/callback/naver', (req: Request, res: Response, next: NextFunction) 
 
                 let result = await userService.getNaverUserInfo(obj.access_token)
                 console.log('result >>>>', result)
+                if (!result?.userCellNo.includes('010') && result?.userCellNo.indexOf('010') > 1) {
+                    STREAM.writeError('naver callback -> 잘못된 휴대폰 번호 형식', JSON.stringify(result))
+                    res.send('<script>opener.naverCallback(true, "' + JSON.stringify({ reason: 'INVALID_PHONE_NUMBER' }) + '")</script>')
+                }
+
                 if (result !== null) {
                     res.send('<script>opener.naverCallback(true, \'' + JSON.stringify(result) + '\');window.close();</script>')
                     return

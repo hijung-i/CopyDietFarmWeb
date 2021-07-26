@@ -1,12 +1,12 @@
 // 테스트
 // var API_SERVER = "http://112.217.209.162:9090";
 // var CALLBACK_SERVER = "http://data-flow.co.kr:3000";
-// var API_SERVER = "http://192.168.0.3:9090";
-// var CALLBACK_SERVER = "http://192.168.0.3";
+var API_SERVER = "http://192.168.0.3:9090";
+var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-var API_SERVER = "https://dietfarm119.co.kr";
-var CALLBACK_SERVER = "https://dietfarm.co.kr";
+// var API_SERVER = "https://dietfarm119.co.kr";
+// var CALLBACK_SERVER = "https://dietfarm.co.kr";
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
@@ -383,8 +383,18 @@ function naverCallback(success, paramStr) {
       
       location.href = '/user/result/naver?tokenNaver='+params.tokenNaver+'&userId='+params.userId+'&userCellNo='+params.userCellNo
       + '&userInfo='+params.userInfo+'&userEmail='+params.userEmail+'&userName='+params.userName+'&password='+params.password+'&userGender='+params.userGender
-   } else  {
-      alert('네이버 아이디로 로그인에 실패했습니다.')
+   } else {
+      var message = '에러'
+
+      if(paramStr != undefined) {
+         var params = JSON.parse(paramStr)
+
+         switch(params.reason) {
+            case 'INVALID_PHONE_NUMBER':
+               message = '휴대폰 번호 형식이 올바르지 않음'
+         }
+      }
+      alert('네이버 아이디로 로그인에 실패했습니다.\n사유: ')
       location.href = '/'
    }
 }
@@ -406,8 +416,8 @@ function zzimAction(button) {
    var productCode = $(zzim).find('input[name=productCode]').val();
 
    var params = {
-      productNo,
-      productCode
+      productNo: productNo,
+      productCode: productCode
    }  
 
    
