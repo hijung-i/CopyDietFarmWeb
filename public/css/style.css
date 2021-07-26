@@ -1511,14 +1511,13 @@ line-height:70px;padding-right:15px;text-indent:-14px;font-size:14px}
 .contents .delete .check{margin-bottom:130px}
 .y_btn{width:100%;margin-left:200px}
 .y_btn button{width:330px;height:45px;
-font-size:14px;font-weight:bold;color:#fff;background:#F99319;border-radius:5px;border:1px solid #F99319}
+font-size:14px;font-weight:bold;color:#fff;background:#F99319;border-radius:5px;border:1px solid #F99319;margin-top:44px}
 
 /*로그인*/
 .login-input-section-wrap{padding-top: 50px !important;}
 p.confirm_mag{margin-top:10px}
 div.box.int_id{width:350px}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px;margin-right:10p;margin-bottom:20px;margin-top:2px}
-.box{width:100%}
 .web_login_title{text-align:center;margin-top:55px;font-size:16px;font-weight:bold}
 .fail-wrap-web p{width:279px;height:52px;background-color:#707070;color:#fff;margin-top:22px;text-align:center;font-size:14px;padding-top:18px}
 .content_newPwd{width:441px;margin:0 auto}
@@ -2121,8 +2120,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
  .buttons ul{display:flex}
  /* 입력폼(배송지 등록, - ) */
  input:focus {outline: none;}
- .box {display: block;width:440px;height: 51px;
- border: solid 1px #dadada;padding: 10px 14px 10px 14px;box-sizing: border-box;background: #fff;position: relative;border-radius:8px;}
+ 
  .int {display: block;position: relative;width: 100%;height: 29px;border: none;background:#fff; font-size: 15px;}
  input {font-family: 'Nanum Gothic', sans-serif;}
  .box.int_id {padding-right: 110px;}
@@ -2187,7 +2185,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
   }
 
  /*탈퇴 버튼*/
- .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
+ .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px;width:440px}
  .member_delete ul li a{text-decoration:underline;}
 
  /*비밀번호 재설정*/

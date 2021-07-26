@@ -21,16 +21,23 @@
                 .mobile_myinfo {
                     display: none;
                 }
-                .info{position:relative;left:0px;width:500px}
+                .info{width:700px}
             }
         </style>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/myPage.css">
         <link rel="stylesheet" href="/css/style_web.css">
         <%-include(webroot + 'views/general/head') %>
-<%-include(webroot + 'views/general/openGraph.ejs') %>
+        <%-include(webroot + 'views/general/openGraph.ejs') %>
         </head>
         <body>
+            <main>
+            <input type="hidden" id="userId" value="<%=user.userId %>">
+            <input type="hidden" id="userName" value="<%=user.userName %>">
+            <input type="hidden" id="userEmail" value="<%=user.userEmail %>">
+            <input type="hidden" id="userCellNo" value="<%=user.userCellNo %>">
+            <input type="hidden" id="userGender" value="<%=user.userGender %>">
+            <input type="hidden" id="userInfo" value="<%=user.userInfo %>">
             <div class="mobile_myinfo">
                 <section class="detail_title">
                     <h2>내정보</h2>
@@ -50,35 +57,8 @@
             <div class="web_myinfo">
                 <%-include(webroot + 'views/general/header') %>
             </div>
-                <div class="main_contents_wrap">
-                    <div class="main_contents mypage_myinfo">
-                        <h3>마이팜</h3>
-                        <div class="main_contents_elements_wrap">
-                            <div class="mypage_member_info">
-                                <img src="/images/basket_ico.png" alt="바구니 아이콘">
-                                <% if (!isLoggedIn) { %>
-                                   <h3><%=sessionUser.userName %>님(<%=sessionUser.userId %>)</h3>
-                                   <p><a href="/myinfo-modify">내정보<span><i class="fas fa-chevron-right"></i></span></a></p> 
-                                <% } %>
-                           
-                            </div>
-    
-                            <div class="mypage_point_info frame400">
-                                <h3>포인트<img src="/images/point.png" alt="포인트 아이콘"></h3>
-                                <% if (isLoggedIn) { %>
-                                    <p v-if="">원<span><i class="fas fa-chevron-right"></i></span></p>
-                                <% } %>
-                            
-                             </div>
-    
-                            <div class="mypage_coupon_info frame400">
-                                <h3>쿠폰<img src="/images/coupon_ico.png" alt="쿠폰 아이콘"></h3>
-                                <p>0개<span><i class="fas fa-chevron-right"></i></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="info_wrapper" style="display:flex;justify-content:space-around;width:1080px">
+            <mypage-component v-bind:total-point-amount="totalPointAmount"></mypage-component>
+            <div class="mypage_content_wrap">
                 <nav class="content_lnb">
                     <ul>
                         <li class="on">
@@ -111,19 +91,19 @@
                         <!-- content-->
                         <div id="content">
                             <!-- ID -->
-                            <div style="margin-top:20px">
+                            <div style="margin-top:20px" class="modify_box">
                                 <h3 class="join_title">
                                     <label for="id">아이디</label>
                                 </h3>
                                 <span class="box int_id">
-                                    <input type="text" id="id" class="int" maxlength="20" placeholder="아이디">
+                                    <input type="text" id="id" class="int" maxlength="20" readonly="readonly" v-model="userId" value="<%=user.userId %>" placeholder="아이디">
 
                                 </span>
                                 <span class="error_next_box"></span>
                             </div>
 
                             <!-- PW1 -->
-                            <div>
+                            <div  class="modify_box">
                                 <h3 class="join_title">
                                     <label for="pswd1">새 비밀번호</label>
                                 </h3>
@@ -140,7 +120,7 @@
                             </div>
 
                             <!-- PW2 -->
-                            <div>
+                            <div class="modify_box">
                                 <h3 class="join_title">
                                     <label for="pswd2">새 비밀번호 확인</label>
                                 </h3>
@@ -156,58 +136,58 @@
                             </div>
 
                             <!-- NAME -->
-                            <div>
+                            <div  class="modify_box">
                                 <h3 class="join_title">
                                     <label for="name">이름</label>
                                 </h3>
                                 <span class="box int_name">
-                                    <input type="text" id="name" class="int" maxlength="20">
+                                    <input type="text" id="name" class="int" maxlength="20" readonly="readonly" v-model="userName" value="<%=user.userName %>">
                                 </span>
                                 <span class="error_next_box"></span>
                             </div>
-                            <div>
+                            <div class="modify_box">
                                 <h3 class="join_title">
                                     <label for="addr">이메일</label>
                                 </h3>
                                 <span class="box int_addr">
-                                    <input type="text" id="addr" class="int" maxlength="80">
+                                    <input type="text" id="addr" class="int" maxlength="80" readonly="readonly" v-model="userEmail" value="<%=user.userEmail %>">
                                 </span>
                                 <span class="error_next_box"></span>
                             </div>
-                            <div>
+                            <div class="modify_box">
                                 <h3 class="join_title">
                                     <label for="addr">휴대폰</label>
                                 </h3>
                                 <span class="box int_tel">
-                                    <input type="int" id="tel" class="int" maxlength="80">
+                                    <input type="int" id="tel" class="int" maxlength="80"  readonly="readonly" v-model="userCellNo" value="<%=user.userCellNo %>">
                                 </span>
                                 <span class="/images/error_next_box"></span>
                             </div>
 
                             <!-- BIRTH -->
-                            <div>
+                            <div class="modify_box">
                                 <h3 class="join_title">
                                     <label>생년월일</label>
                                 </h3>
                                 <span class="box int_birth">
-                                    <input type="int" id="birth" class="int" maxlength="80">
+                                    <input type="int" id="birth" class="int" maxlength="80" readonly="readonly" v-model="userInfo" value="<%=user.userInfo %>">
                                 </span>
                                 <span class="/images/error_next_box"></span>
                             </div>
-                            <div id="gender">
+                            <div id="gender" class="modify_box">
                                 <h3 class="join_title">
                                     <label for="gender">성별</label>
                                 </h3>
-                                <input type="radio" name="gender" id="male" value="m">
+                                <input type="radio" name="gender" id="male" value="m" v-model="userGender" value="<%=user.userGender %>">
                                 <label for="apply" style="margin-right:40px">남자</label>
-                                <input type="radio" name="gender" id="female" value="f">
+                                <input type="radio" name="gender" id="female" value="f" v-model="userGender" value="<%=user.userGender %>">
                                 <label for="apply">여자</label>
                             </div>
                             <div class="member_delete">
                                 <p>회원정보를 삭제하시겠어요?</p>
                                 <ul>
                                     <li>
-                                        <a href="membership_withdrawal.html">회원탈퇴</a>
+                                        <a href="/mem-with">회원탈퇴</a>
                                     </li>
                                 </ul>
                             </div>
@@ -226,6 +206,9 @@
                     <!-- wrapper -->
                 </div>
             </div>
-                <script src="./js/main.js"></script>
+        </main>
+            <script src="/js/components/mypageComponent.js"></script>
+            <script src="/js/mypage/signModal.js"></script>   
+            <script src="/js/mypage/myinfo.js"></script>   
             </body>
         </html>

@@ -96,6 +96,11 @@ router.get('/coupon', (req: Request, res: Response, next: NextFunction) => {
         render(req, res, 'mypage/coupon', { currentPage: '쿠폰' })
     })
 })
+router.get('/mem-with', (req: Request, res: Response, next: NextFunction) => {
+    checkLogin(req, res, (sessionUser: SessionUser) => {
+    render(req, res, 'membership_withdrawal', {})
+     })
+})
 
 router.get('/p_review', (req: Request, res: Response, next: NextFunction) => {
     checkLogin(req, res, (sessionUser: SessionUser) => {

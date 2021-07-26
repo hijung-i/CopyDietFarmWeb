@@ -7,6 +7,7 @@ var app = new Vue({
     data: {
         userId: '',
         password: '',
+        userEmail: '',
         totalPointAmount: 0,
         usableCouponAmount: 0
     }, methods: {
@@ -40,7 +41,9 @@ var app = new Vue({
             //     case 'ERROR_SERVER':
             //         alert('알 수 없는 에러가 발생했습니다.');
             //     };
-            // })
+            // }),
+            parsePointType,
+            getUsableCouponList
         },
         keypress: function() {
 
@@ -48,7 +51,52 @@ var app = new Vue({
     }, created: function() {
         var userId = document.getElementById('userId').value;
         this.userId = userId;
+        var userEmail = document.getElementById('userEmail').value;
+        this.userEmail = userEmail;
+        var userName = document.getElementById('userName').value;
+        this.userName = userName;
+        var userCellNo = document.getElementById('userCellNo').value;
+        this.userCellNo = userCellNo;
+        var userInfo = document.getElementById('userInfo').value;
+        this.userInfo = userInfo;
+        var userGender = document.getElementById('userGender').value;
+        this.userGender = userGender;
     }
 
 })
+$(function() {
+    getUsablePointAmount();
+    getPointHistory();
+    getUsableCouponList();
+})
 
+function getUsableCouponList() {
+ 
+    ajaxCallWithLogin(API_SERVER + '/product/getCouponList', {}, 'POST', 
+    function(data) {
+        app.usableCouponAmount = data.result.length;
+        console.log("get usableCouponList", data);
+    }, function(err) {
+        console.error("get usable coupon list ", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
+function getUsablePointAmount() {
+    var params = {};
+    ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
+    function(data) {
+        if(data.result)
+            app.totalPointAmount = numberFormat(data.result);
+        
+        console.log("success usablePoint", data);
+    }, function(err) {
+        console.log("error", err)
+    },
+    {
+        isRequired: true,
+        userId: true
+    })
+}

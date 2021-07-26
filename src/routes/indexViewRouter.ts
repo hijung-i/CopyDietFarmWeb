@@ -234,11 +234,6 @@ router.get('/s_inquiry_more', (req: Request, res: Response, next: NextFunction) 
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'login_fail', {})
 })
-
-router.get('/mem-with', (req: Request, res: Response, next: NextFunction) => {
-    render(req, res, 'membership_withdrawal', {})
-})
-
 router.get('/order-details', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'order_details', {})
 })
