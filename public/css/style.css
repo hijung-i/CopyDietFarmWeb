@@ -86,7 +86,6 @@ a:hover{text-decoration:none;}
 
 .pick_list_null img{height:auto!important}
 .line03{font-size:12px!important; font-weight:normal!important;color:#BBBBBB!important;margin-top:20px}
-#category2Code a{background-color:#F99319;color:#fff}
 .web_cate.display-flex.active{background-color:#F99319;color:#fff}
 .search_box_icon{display:inline-block;position:relative;right:40px;top:3px}
 .search_box_icon input{background:url('/images/search_ico.png')no-repeat;border:none;width:25px}

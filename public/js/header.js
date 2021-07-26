@@ -69,6 +69,7 @@ function getEventStands() {
          $('.sideMenu').hide();
      });
  }
+ //검색창 
  function result(){
     if($(".result-area").css("display") == "none"){
        $(".result-area").show();
@@ -324,6 +325,7 @@ function getEventStands() {
  }
  
  function getCategory() {
+    var currentCategoryCode = $('#currentCategoryCode').val();
      var param = {};
      ajaxCall(API_SERVER + "/product/getCategoryList", param, 'post'
      , function (data) {
@@ -339,7 +341,7 @@ function getEventStands() {
              '/images/pet_icon_category@2x.png',
              '/images/kitchen_icon_category@2x.png',
          ];
-         
+         var html='';
          var buttonHtml = '';
          var sideTabHtml = '';
          var result = data.result;
@@ -378,7 +380,18 @@ function getEventStands() {
              sideTabHtml += '    </dl>';
              sideTabHtml += '</li>';
          
+             if( currentCategoryCode == category.category2){
+                html += '<a href="/products/'+category.category1Code+'/category/'+ category2.category2Code+'" class="is-current">'+  '<li>'+ category2.category2Name+'</li>' +'</a>';
+              } else {
+                html += '<a href="/products/'+category.category1Code+'/category/'+ category2.category2Code+'">'+  '<li>'+ category2.category2Name+'</li>' +'</a>';
+              }
+
              }
+        //밑줄 쫙
+        
+    
+     
+     
  
          // buttonHtml += '<li class = "mTabBtnMenu">';
          // buttonHtml += '<a >';
@@ -607,7 +620,7 @@ function searchProduct(keyword) {
 }
 
 function goSearchResult() {
-    var keyword = $('#mobileSearchForm').val().trim();
+    var keyword = $('.mobileSearchKeyword').val().trim();
     if(keyword.length == '' || keyword.length < 1) {
         alert('검색어를 입력해주세요');
         return false;
@@ -616,7 +629,6 @@ function goSearchResult() {
     $("#mobileSearchForm input[name=keyword]").val(keyword);
     $("#mobileSearchForm").submit();
 }
-
 
 $(function() {
     $(".searchbox .search_box_ico ").click(function() {

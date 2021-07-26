@@ -85,7 +85,7 @@ function getProductListByCategory() {
 function getCategoryList(){
     var category1Code = $('#category1Code').val();
     var sortOption = $('#sortOption').val();
-
+    var currentCategoryCode = $('#currentCategoryCode').val();
     var params = {
         category1Code: category1Code,
         sortOption
@@ -110,11 +110,24 @@ function getCategoryList(){
                 $('.nav_wrap #nav a').css({
                     'width': 'fit-content'
                 });
+               // $('.nav_wrap #nav a').addClass(
+               //     'is-current'
+               // );
 
                 break;
             }
+        if(i == 0){
+                html += '<a href="/" '+ ((currentCategoryCode == menuCate2.category2Code)?'class="is-current"':'')+'>전체보기</a>';
+             }      
+        if( currentCategoryCode == menuCate2.category2Code){
+              $('#header_common #nav a').removeClass("is-current");
+            html += '<a href="/products/'+category1Code+'/category/'+ menuCate2.category2Code +'" class="is-current">' +  menuCate2.category2Name +'</a>';
+          } else {
+            html += '<a href="/products/'+category1Code+'/category/'+ menuCate2.category2Code +'">'+ menuCate2.category2Name  +'</a>';
+          }
+
         }
-        
+       
         $('.web_cate').click(function() {
             var isActive = $('.web_cate').hasClass("active");
             if( isActive ){
