@@ -7,8 +7,8 @@ mypageTemplate += '        <div class="main_contents_elements_wrap">';
 mypageTemplate += '            <div class="mypage_member_info">';
 // mypageTemplate += '            <% if (!isLoggedIn) { %>';
 mypageTemplate += '                 <img src="/images/basket_ico.png" alt="바구니 아이콘">';
-mypageTemplate += '                   <h3>{{userName}}님</h3>';
-mypageTemplate += '                 <p><a href="/myinfo-usercheck">내정보<span><i class="fas fa-chevron-right"></i></span></a></p>';
+mypageTemplate += '                   <h3>{{userName}}님({{userId}})</h3>';
+mypageTemplate += '                 <p><a href="/myinfo-modify">내정보<span><i class="fas fa-chevron-right"></i></span></a></p>';
 // mypageTemplate += '            <% } %>';
 mypageTemplate += '           </div>';
 mypageTemplate += '           <div class="mypage_point_info frame400">';
@@ -41,7 +41,8 @@ var mypageComponent = {
     },
     data: function() {
         return {
-            userName: $('#userName').val()
+            userName: $('#userName').val(),
+            userId: $('#userId').val()
         }
     }, methods: {
         getUserInfo: function() {

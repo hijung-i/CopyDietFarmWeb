@@ -1785,6 +1785,7 @@ padding-bottom:6px
 }
 @media screen and (max-width:1080px){
     .order_a_box {display: flex;margin-bottom:20px}
+    .info_wrapper{display:flex;justify-content:space-between;width:1080px}
 }
 
 .order_a_box > .web_prod_info_ctn{margin-top:14px;padding-left:15px; display: flex;}
@@ -1973,9 +1974,9 @@ input#secret[type="checkbox"]:checked + .secret::before {
 /* 입력폼 */
 @media screen and (min-width:360px) and (max-width:1079px){#wrapper{padding-left:15px;padding-right:15px}}
 @media screen and (min-width:1080px){
-#wrapper{width:330px;margin-left:280px}
+#wrapper{width:330px;}
 #wrapper h3{font-size:14px;font-weight:bold;margin-bottom:-15px}
-.info_title{font-size:20px;font-weight:bold;border-bottom:2px solid #BBBBBB;padding-bottom:20px}
+.info_title{font-size:20px;font-weight:bold;border-bottom:2px solid #BBBBBB;padding-bottom:20px;margin-left:-120px}
 }
 input:focus {outline: none;}
 
