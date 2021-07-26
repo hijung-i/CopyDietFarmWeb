@@ -607,7 +607,7 @@ function searchProduct(keyword) {
 }
 
 function goSearchResult() {
-    var keyword = $('.mobileSearchKeyword').val().trim();
+    var keyword = $('#mobileSearchForm').val().trim();
     if(keyword.length == '' || keyword.length < 1) {
         alert('검색어를 입력해주세요');
         return false;
@@ -616,6 +616,7 @@ function goSearchResult() {
     $("#mobileSearchForm input[name=keyword]").val(keyword);
     $("#mobileSearchForm").submit();
 }
+
 
 $(function() {
     $(".searchbox .search_box_ico ").click(function() {

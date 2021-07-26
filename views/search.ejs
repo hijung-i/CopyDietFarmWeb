@@ -31,24 +31,14 @@
         rel="stylesheet">
 
     <div id="searchUsers" class="instant-search" style="padding-top:120px">
-        <form action="/search-list" method="GET" id="mobileSearchForm">
-            <input type="hidden" name="keyword">
-        
-        <div class="instant-search__input-container">
-            <input
-                class="mobileSearchKeyword"
-                type="text"
-                spellcheck="false"
-                placeholder="검색어를 입력해주세요"
-               
->
-            <a href="#"><img src="/images/grayx_icon_login.png" alt="취소"></a>
-        </div>
-        <div class="search_box_ico">
+        <form id="search-form" action="/search-list" method="GET">
+            <div class="searchForm"  style="display:flex">
+                <input autocomplete="off" type="text" name="keyword" class="rectangular" id="websearchform"  onclick="result()" placeholder="검색해보세요.">
+            <div class="search_box_ico">
             <input type="submit" value="">
-            
-        </div>
-    </form>
+            </div>
+            </div>
+        </form>
     </div>
 
     <div class="result-area-mobile">
