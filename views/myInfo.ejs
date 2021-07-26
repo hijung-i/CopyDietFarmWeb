@@ -15,11 +15,13 @@
                 .web_myinfo {
                     display: none;
                 }
+                .info{width:100%;margin:0 auto}
             }
             @media screen and (min-width:1080px) {
                 .mobile_myinfo {
                     display: none;
                 }
+                .info{position:relative;left:0px;width:500px}
             }
         </style>
         <link rel="stylesheet" href="/css/style.css">
@@ -55,8 +57,8 @@
                             <div class="mypage_member_info">
                                 <img src="/images/basket_ico.png" alt="바구니 아이콘">
                                 <% if (!isLoggedIn) { %>
-                                   <h3><%=sessionUser.userName %>님</h3>
-                                   <p><a href="/myinfo-usercheck">내정보<span><i class="fas fa-chevron-right"></i></span></a></p> 
+                                   <h3><%=sessionUser.userName %>님(<%=sessionUser.userId %>)</h3>
+                                   <p><a href="/myinfo-modify">내정보<span><i class="fas fa-chevron-right"></i></span></a></p> 
                                 <% } %>
                            
                             </div>
@@ -76,6 +78,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="info_wrapper" style="display:flex;justify-content:space-around;width:1080px">
                 <nav class="content_lnb">
                     <ul>
                         <li class="on">
@@ -102,7 +105,7 @@
                     </ul>
                 </nav>
 
-                <main id="contents" class="info">
+                <div id="contents" class="info">
                     <h2 class="info_title">내 정보</h2>
                     <div id="wrapper">
                         <!-- content-->
@@ -221,7 +224,8 @@
 
                     </div>
                     <!-- wrapper -->
-                </main>
+                </div>
+            </div>
                 <script src="./js/main.js"></script>
             </body>
         </html>
