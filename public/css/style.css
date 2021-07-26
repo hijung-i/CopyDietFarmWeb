@@ -1850,6 +1850,7 @@ div.slideMenu_top {display: none}
 }
 
 @media screen and (max-width:1079px) {
+  .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px}
   .sort{padding-top:20px}
   .page_nation{display:none}
   .hide-mobile {
@@ -1913,6 +1914,7 @@ div.slideMenu_top {display: none}
 }
 
 @media screen and (min-width:1080px) {
+  .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px;width:440px}
   #order_detail{margin-left:80px}
   /* 상품 상세 웹 탭메뉴 애니메이션 */
   .product_top .pdt_detai_tabinner_vn {
@@ -2185,7 +2187,7 @@ height :48px;font-size: 18px;background: var(--yello-color);color: white;border:
   }
 
  /*탈퇴 버튼*/
- .member_delete{display:flex;justify-content:space-between;color:#6B6B6B;margin-top:28px;width:440px}
+ 
  .member_delete ul li a{text-decoration:underline;}
 
  /*비밀번호 재설정*/
