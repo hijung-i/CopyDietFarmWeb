@@ -142,7 +142,7 @@ function goBack() {
 
 function generateHtmlForProduct(product){
 
-   var html = '<li>';
+   var html = '<li class="product">';
    html += '<div class="thum">';
    html += '<a href="/product/'+ product.productCode +'">';
    html += '<img src="' +RESOURCE_SERVER + product.url + '" alt="' +product.productName + '썸네일">';

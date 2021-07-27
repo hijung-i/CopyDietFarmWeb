@@ -24,7 +24,6 @@ var app = new Vue({
             scrollAllow();
             return false;
         }
-
     }
 });
 
@@ -74,47 +73,13 @@ function getStandDatas() {
 
                 break;
             case 1:
-                var html = generateHtmlForProductList(products);
-                
-                $('.responsive').html(html);
-                $('.responsive').slick({
-                    dots: false,
-                    infinite: true,
-                    speed: 300,
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    autoplay:false,
-                    autoplaySpeed:3000,
-                    pauseOnHover:false,
-                    arrow:true,
-                    responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 360,
-                        settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                        }
-                    }
-
-                    ]
+                var indexSlider = new ProductSlider(products, {
+                    delay: 0,
+                    count: 3,
+                    margin: 15
                 });
-                
+                indexSlider.setElement('.open-sale')
+
                 break;
             case 2:
                 // 위클리 베스트

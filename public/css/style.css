@@ -745,7 +745,12 @@ width:100%;border-top:2px solid #f1f1f1}
 #content .main_sub_wrap .desc .cost{color:#bbbbbb;text-decoration:line-through;margin-left:7px;}
 #content .main_sub_wrap .desc .ratio{color:#F32525;font-weight:bold/*;font-size:11px*/;margin-left:7px}
 
-
+.protein > .product,
+.sweet > .product,
+.body_bottom > .product,
+.water > .product{
+  width: 50%;
+}
 
 /*찜한 상품*/
 #mHeader{position:fixed;height:90px;background-color:#fff}
@@ -981,7 +986,7 @@ border-spacing: 0 20px;font-size:14px}
 .body_bottom h3{font-size:20px;font-weight:bold;padding-left:15px;padding-top:24px}
 .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
 .body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
-.body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+.body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;}
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
 .body_bottom .desc .ratio{font-weight:bold}
@@ -1042,7 +1047,6 @@ border-spacing: 0 20px;font-size:14px}
     #content .w_best h2{font-size:20px; margin-bottom:20px;margin-top:24px}
     #content .w_best li .thum img{width:100%;height:auto;}
     #content .w_best li .title{font-size:14px}
-    #content .w_best li .desc ul li{ margin-bottom:20px;display:flex;margin-right:7px}
     #content .w_best .desc .sale, #content .w_best .desc .ratio{font-weight:bold}
     .pages {position: fixed; bottom: 0; min-width: 360px; width: 100%; height: 45px; z-index: 999; background: #fff;}
     .pages ul li div a p{ text-align: center;}
@@ -1163,7 +1167,7 @@ border-spacing: 0 20px;font-size:14px}
 .body_bottom h3{font-size:20px;font-weight:bold;padding-left:15px;padding-top:24px}
 .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
 .body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
-.body_bottom ul:not(ul li ul){display:grid;grid-template-columns:repeat(2, 2fr);justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px}
+
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
 .body_bottom .desc .ratio{font-weight:bold}
@@ -1243,6 +1247,31 @@ input[type="checkbox"] {display: none;}
 
 }
 
+.product .thum,
+.product .thum img {
+  width: 100%;
+}
+
+.product .desc ul li{ margin-right:8px;display:inline-block }
+.product .title{
+  overflow: hidden;text-overflow: ellipsis; width: 100%; 
+  white-space: nowrap;height: 20px;display:inline-block;font-size:14px
+}
+
+.product .desc,
+.product .title p {
+  width: 100%;
+}
+.product .desc .sale{font-size:16px;font-weight:bold}
+.product .desc .cost{font-size:16px;text-decoration:line-through;color:#6B6B6B}
+.product .desc .ratio{font-size:16px;font-weight:bold;color:#F32525}
+
+.open-sale {
+  max-width: 1080px;
+  
+  overflow-x: scroll;
+  margin: 40px auto;
+}
 /*1080px이상 웹용 */
 @media screen and (min-width:1080px){
 #header_common #nav a.is-current{color:#fff;background-color:#F99319}
@@ -1425,9 +1454,6 @@ font-weight:normal}
 .controlls span.prev {right: calc(100% - 100px);}
 .controlls span.next {left: calc(100% - 50px);}
 
-/* 슬릭 슬라이드 웹 */
-.responsive div img {width: 350px; height: 350px}
-
 #header_mypage .slideMenu_top {background: #FFFFFF;font-size: 16px;align-items: center;margin-top:-50px}
 .slideMenu_top > .slideMenu_close img{width:19.44px;height:13.67px}
 .slideMenu_top > .slideMenu_cart img{height: 21px;}
@@ -1449,7 +1475,7 @@ font-weight:normal}
 .sub_items, .n_sort{max-width:1080px;margin:0 auto;width:1080px}
 .delete_btn{float:right;position:relative;top:-100px;left:20px}
 .event_title{max-width:1080px;margin:0 auto;margin-bottom:20px}
-.mtpSlideTit{max-width:1080px;margin:0 auto;margin-top:70px;margin-bottom:-40px}
+.mtpSlideTit{max-width:1080px;margin:0 auto;margin-top:70px;margin-bottom:40px}
 .deliver_info_top {
   display:flex;
   justify-content:space-between;
@@ -1466,10 +1492,7 @@ font-weight:normal}
   max-width: 1080px;
   margin-top: 70px}
 .w_best{width:1080px;margin-bottom:80px;max-width: 1080px;margin: 0 auto;}
-.w_best .thum ul{margin-top:-20px}
-.w_best .desc .sale{font-size:16px; font-weight:bold}
-.w_best .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
-.w_best .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10px;color:#F32525}
+
 .w_best h2{margin-bottom:20px}
 .w_best .side{float:left;margin-bottom:77px}
 .w_best .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
@@ -1479,21 +1502,25 @@ font-weight:normal}
 .sweet > ul,
 .body_bottom > ul,
 .water > ul{
-  display:grid;grid-template-columns: repeat(4, 2fr);align-items: center;justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px
+  display:grid;
+  grid-template-columns: repeat(4, 2fr);
+  align-items: center;
+  justify-self: center;margin: 0 auto;padding-left:5px;padding-right:5px
 }
 
-
-.w_best .desc ul li{margin-right:20px;float:left;}
+.w_best > ul > li,
+.protein > ul > li,
+.sweet > ul > li,
+.body_bottom > ul > li,
+.water > ul > li{
+  max-width: 247px;
+}
 .body_bottom .thum img{width:247.5px;height:247.5px;border-radius:6px}
-.body_bottom .desc ul li{margin-right:20px;float:left;}
-.body_bottom .desc .sale{font-size:16px;font-weight:bold}
-.body_bottom .desc .cost{font-size:16px;text-decoration:line-through;margin-left:-12px;color:#6B6B6B}
-.body_bottom .desc .ratio{font-size:16px;font-weight:bold;margin-left:-10px;color:#F32525}
+
 .body_bottom .side{float:left;}
 .body_bottom .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
 .body_bottom .thum{padding-bottom:13px}
 .body_bottom .title{font-size:14px;margin-bottom:5px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:247px;height: 20px;display:inline-block}
-.w_best .title{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:247px;height: 20px;display:inline-block;font-size:14px}
 .body_bottom .desc{padding-bottom:40px}
 .protein, .sweet, .water{width: 1080px;
     margin-bottom: 80px;
@@ -3296,9 +3323,6 @@ width:94%;margin:0 auto }
     min-height: 613px;
   }
 
-  .r_products .responsive {
-    position: absolute;
-    }
 
   .swiper-container{
     top: 6px;
