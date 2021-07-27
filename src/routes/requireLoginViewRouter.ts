@@ -86,7 +86,7 @@ router.get('/myinfo-usercheck', (req: Request, res: Response, next: NextFunction
 
 router.get('/myinfo-modify', (req: Request, res: Response, next: NextFunction) => {
     checkLogin(req, res, (sessionUser: SessionUser) => {
-        render(req, res, 'myinfo', {})
+        render(req, res, 'myInfo', {})
     })
 })
 
