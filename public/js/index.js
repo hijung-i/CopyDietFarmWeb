@@ -116,6 +116,11 @@ function getStandDatas() {
                 });
                 
                 break;
+            case 7:
+                    // 위클리 베스트
+                    $('.timesale ul').html(generateHtmlForProductList(products, 8));
+                    $('.timesale h2').html(salesName);
+                    break;
             case 2:
                 // 위클리 베스트
                 $('.w_best ul').html(generateHtmlForProductList(products, 8));

@@ -1,33 +1,22 @@
 var app = new Vue({
     el: 'main',
     components: {
-        'mypage-modal': signModal,
         'mypage-component': mypageComponent
     },
     data: {
+        totalPointAmount: 0,
+        pointList: [],
+        usableCouponAmount: 0,
         userId: '',
         password: '',
-        userEmail: '',
-        totalPointAmount: 0,
-        usableCouponAmount: 0
-    }, methods: {
-        login: function() {
-    
-            getUsableCouponList
-            
-        },
-        keypress: function() {
+        userEmail: ''
+    },
+    methods: {
+        numberFormat,
+        formatDate,
+        getUsableCouponList,
+        deleteUser
 
-        },
-
-        onSubmit: function() {
-            
-            var userName = Object.assign({}, this.currentuserName);
-            if (userName.currentuserName == undefined) {
-              updateDelivery(delivery);
-            }
-        }
-        
     }, created: function() {
         var userId = document.getElementById('userId').value;
         this.userId = userId;
@@ -41,16 +30,16 @@ var app = new Vue({
         this.userInfo = userInfo;
         var userGender = document.getElementById('userGender').value;
         this.userGender = userGender;
- 
-
     }
 })
-        
+
+
 $(function() {
     getUsablePointAmount();
+    getPointHistory();
     getUsableCouponList();
-    updateUserName();
-}) 
+    deleteUser();
+})
 
 function getUsableCouponList() {
  
@@ -83,25 +72,46 @@ function getUsablePointAmount() {
     })
 }
 
-//회원정보수정
+function formatDate(strDate) {
+    if(strDate != undefined && typeof(strDate) == typeof('')) {
+        return strDate.substr(0, 10);
+    }
+    return ''
+}
 
-function updateUserName() {
-   
-    var params =  {
-        userName: userName
-    };
-    var userName = $("#userName").val();
-     ajaxCallWithLogin(API_SERVER + '/data/userName', params, 'POST',
+function getPointHistory() {
+    ajaxCallWithLogin(API_SERVER + '/point/getPointDetailListByUserId', {},
+    'POST',
     function(data) {
-        
-        alert('이름 수정에 성공했습니다.');
-        console.log("success ", data);
-   
-    }, function(err) {
-        console.log("login failed", err);
-      },
-    {
+        console.log(data);
+        app.pointList = data.result;
+    
+    },function(err) {
+        console.error(err);
+    }, {
         isRequired: true,
         userId: true
     })
 }
+//회원탈퇴
+
+function deleteUser() {
+    var params = {
+        userId: userId
+    };
+    ajaxCallWithLogin(API_SERVER + '/user/withdrawal', params, 'POST',
+     function(data) {
+        var userId = document.getElementById('userId').value;
+        this.userId = userId;
+        console.log(data);
+        alert('회원정보가 삭제되었습니다.');
+      
+    }, function(err) {
+        console.log("error", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
+   

@@ -31,6 +31,13 @@
     
 
             <body>
+                <main>
+                    <input type="hidden" id="userId" value="<%=user.userId %>">
+                    <input type="hidden" id="userName" value="<%=user.userName %>">
+                    <input type="hidden" id="userEmail" value="<%=user.userEmail %>">
+                    <input type="hidden" id="userCellNo" value="<%=user.userCellNo %>">
+                    <input type="hidden" id="userGender" value="<%=user.userGender %>">
+                    <input type="hidden" id="userInfo" value="<%=user.userInfo %>">
                 <div class="mobile_with">
                     <section class="detail_title">
                         <h2>회원탈퇴</h2>
@@ -58,11 +65,13 @@
                             </ul>
                             <span class="d_check"><input type="checkbox" id="check"><label>위 유의사항을 모두 확인 하였습니다.</label></span>
                             <div class="y_btn">
-                                <button>확인</button>
+                                <button onclick="deleteUser()">확인</button>
                             </div>
                         </div>
                     </main>
                     
                 </body>
-                <%-include(webroot + 'views/general/footer') %>
+                <%-include(webroot + 'views/general/footer') %> 
+                <script src="/js/components/mypageComponent.js"></script>
+                <script src="/js/mypage/withdrawal.js"></script>  
             </html>

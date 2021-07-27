@@ -136,7 +136,7 @@
                                     <label for="name">이름</label>
                                 </h3>
                                 <span class="box int_name">
-                                    <input type="text" id="name" class="int" maxlength="20"  v-model="userName" value="<%=user.userName %>">
+                                    <input type="text" id="userName" class="int" maxlength="20"  v-model="userName" value="<%=user.userName %>">
                                 </span>
                                 <span class="error_next_box"></span>
                             </div>
@@ -188,7 +188,7 @@
                             </div>
 
                             <div class="btn_area">
-                                <button type="button" id="btnModify" v-on:click="onUpdateButtonClick()">
+                                <button type="button" id="btnModify" onclick="updateUserName()">
                                     <span >수정하기</span>
                                 </button>
                             </div>
