@@ -34,14 +34,7 @@
             }
             .showing {z-index: 9999;opacity: 1}
             @media screen and (min-width:1080px) {
-                
-                .timesale .desc ul{margin-left:10px;font-size:16px;}
-                .timesale .sale{font-weight:bold}
-                .timesale .cost{font-size: 16px;
-                                text-decoration: line-through;
-                                color: #6B6B6B;}
-                .timesale .ratio{font-weight:bold;font-size:16px;color:red}
-                .timesale .title{font-size:14px;margin-bottom:13px}
+
                 .swiper-container{margin-top:-2px}
                 .water{margin-bottom:100px}
                 .black_bg{
@@ -179,37 +172,13 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="banner01">
+                    <!-- <div class="banner01">
                         <a href="/products/SALES_011/event"><img src="/images/low_price_banner@2x.png" style="width:100%;border-bottom:8px solid #F1F1F1"></a>
-                    </div>
-                    <!--//catgor_wrap-->
-                    <!--//타임특가 SALE-->
-                    <div class="timesale">
-                        <h2>특가 타임 SALE!</h2>
-                        <div class="clock">
-                            <p><span>23</span> 시 <span>50</span> 분 <span>11</span> 초 남음</p>
-                        </div>
-                        <ul>
-                            <ul>
-                               <li>
-                                    <a href="#">
-                                      <div class="thum"><img src="/images/greek_yogurt.jpg" alt="타임특가세일1">
-                                         </div>
-                                        <div class="like"></div>
-                                        <div class="desc">
-                                            <p class="title">제품이름</p>
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </li> 
-
-                            </ul>
-                        </ul>
-                    </div>
+                    </div> -->
+                </div>
+                <div class="timedeal-list">
+                    <timedeal-product v-for="(timedeal, index) in timedealProductList" v-bind:product="timedeal"></timedeal-product>
+                </div>
                     <!-- multiple slide -->
 
                     <h2 class="mtpSlideTit">오픈특가</h2>
@@ -364,6 +333,7 @@
                 <install-modal></install-modal>
             </div>
         </main>
+        <script src="/js/components/timedealComponent.js"></script>
         <script src="/js/components/installAppModal.js"></script>
         <script src="/js/index.js"></script>
 

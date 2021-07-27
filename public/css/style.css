@@ -258,23 +258,118 @@ dd.subMenu {
 .sideMenu_detail.current ~ .subMenu {
  display: block;
 }
-.timesale{border-bottom:8px solid #f1f1f1}
-.timesale img{width:96%;height:238px;margin-left:15px;padding-right:15px;text-align:center;margin-bottom:16px}
- .timesale h2{font-size:20px;font-weight:bold;text-align:center;margin-top:26px;
-  margin-bottom:17px}
-  .timesale .desc ul{padding-left:5px;display:flex}
-  .timesale .desc ul li{margin-right:9px}
-  .timesale .desc p{margin-left:15px}
-  .timesale .desc{padding-bottom:46px}
-  .clock{width:92.3%;margin-left:15px;height:35px;background-color:#00000085;}
-  .clock p{text-align:center;padding-top:7px;font-size:14px;font-weight:bold;color:#fff}
-  .clock p span{background-color:#2C2C2C;border-radius:5px;padding:2px 4px 2px 4px}
+ 
+.timedeal {
+  overflow: hidden;
+}
+
+.timedeal-wrapper {
+  width: 100%;
+  margin: 0px auto;
+  display: flex;
+  flex-flow: row;
+  max-width: 1080px;
+  
+  border: 1px solid #B1B1B1;
+  border-radius: 10px;
+}
+
+.timedeal-wrapper>div {
+  width: 50%;
+}
+
+.timedeal-wrapper .timer {
+  height: 70px;
+  background-color: #7F7F7F;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+
+  text-align: center;
+  line-height: 70px;
+}
+
+.bg-darkgray {
+  background-color: #2C2C2C; 
+}
+
+.timedeal-title{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  margin-bottom: 54px;
+}
+
+.timedeal-title h1 {
+  display: inline-block;
+  font-size: 36px;
+}
+
+.timedeal-title span{
+  width: 53px;
+  height: 53px;
+  display: inline-block;
+}
+.timedeal-title span img {
+  width: 100%;
+  height: 100%;
+}
+
+.timer-area .product {
+  padding: 0px 54px;
+  padding-top: 73px;
+  padding-bottom: 71px;
+}
+
+
+.timedeal-wrapper .product .thum img{
+  width: 100%;
+  height: 100%;
+  height: 421px;
+}
+
+.timedeal-wrapper .timer span.bg-darkgray:first-child {
+  margin-left: 0px;
+}
+
+.timedeal-wrapper .timer span.small {
+  font-size: 20px;
+}
+
+.timedeal-wrapper .timer span.bg-darkgray {
+  border-radius: 5px;
+  margin-left: 31px;
+  margin-right: 10px;
+  height: 40px;
+  padding: 6px;
+}
+
+.timer-area .product .desc {
+  font-size: 30px;
+}
+.timer-area .product .desc .title{
+  margin-bottom: 20px;
+}
+
+.timer-area .product .desc ul li{
+  display: inline-block;
+}
+
 @media screen and (min-width:630px) and (max-width:1079px){
 .slick-slider{margin-bottom:40px}
 }
 /* 모바일 헤더 높이 조정 */
 @media screen and (max-width:1079px) {
- 
+  .timedeal{
+    border-bottom:8px solid #f1f1f1;
+  }
+
+  .timedeal-wrapper {
+    flex-flow: column;
+  }
+
   #header_common #nav a.is-current{color:#F99319;border-bottom:3px solid #F99319;padding-bottom:25px}
   #header_common.main {height: 150px; }
   #header_common.sub {height: 120px;}
@@ -603,6 +698,45 @@ background-size:19px 19px;}
 .page_wrap{display:none}
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
+  .timedeal {
+    padding: 0px 15px;
+    padding-bottom: 22px;
+  }
+  .timedeal h2.mtpSlideTit {
+    padding-left: 0px;
+    text-align: center;
+  }
+
+  .timedeal-wrapper {
+    border: none;
+  }
+  .timedeal-wrapper>div {
+    width: 100%;
+  }
+
+  .timedeal-wrapper .timer {
+    border: 1px solid #B1B1B1;
+    
+    font-size: 16px;
+  }
+  
+  .timedeal-wrapper .timer span.small {
+    font-size: 16px;
+  }
+
+  .timedeal-wrapper .timer span.bg-darkgray {
+    padding: 4px;
+    margin-right: 7px;
+    margin-left: 12px;
+  }
+
+  .timedeal-wrapper .product .desc {
+    padding-top: 16px;
+  }
+  .timedeal-wrapper .product .desc ul li {
+    margin-right: 5px;
+  }
+
   #content .main_sub{width:100%;margin:104px auto}
  /*.t1 img{position:relative;top:7px}*/
 
@@ -768,7 +902,7 @@ justify-self: center;margin: 0 auto;white-space:nowrap}
 #content .pick_product ul li .desc p{font-size:12px;padding:5px;text-overflow: ellipsis;white-space:nowrap;}
 #content .pick_product ul li .desc
 #content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
-#content .desc ul{margin-left:10px;margin-bottom:10px;margin-top:7px}
+#content .desc ul{margin-bottom:10px;margin-top:7px}
 #content .desc .sale{color:#000}
 #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
 #content .desc .ratio{color:#F32525}
@@ -1082,7 +1216,7 @@ border-spacing: 0 20px;font-size:14px}
   #content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
   #content .desc .sale{color:#000; font-weight: bold;}
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
-  #content .desc .ratio{color:#F32525}
+  #content .desc .ratio{color:#F32525; font-weight: bold;}
   .page_wrap{display:none}
   #footer{ position: relative; bottom: 0; width: 100%; min-width: 360px; border-top: 8px solid #f4f4f4;
   }
@@ -1251,6 +1385,12 @@ input[type="checkbox"] {display: none;}
 
 /*1080px이상 웹용 */
 @media screen and (min-width:1080px){
+
+  .timedeal-list {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+
 #header_common #nav a.is-current{color:#fff;background-color:#F99319}
 #signup_title_web h2{font-size:24px;font-weight:bold;margin-top:56px;text-align:center;}
 .review_btn button{
@@ -1444,7 +1584,7 @@ font-weight:normal}
 }
 
 @media screen and (min-width:1080px){
-  .clock{width:94.7%!important;margin-left:15px;height:35px;background-color:#00000085;}
+  .clock{height:35px;background-color:#00000085;}
   .etc img{position:relative;top:2px;left:2px}
   /* 마이페이지 배송지 관리 모달 */
   .deliver_magHeader h3 {
@@ -1480,6 +1620,16 @@ font-weight:normal}
 .w_best h2{margin-bottom:20px}
 .w_best .side{float:left;margin-bottom:77px}
 .w_best .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
+.timedeal {
+  height: 422px;
+}
+.timedeal .thum ul{margin-top:-20px}
+.timedeal .desc .sale{font-weight:bold}
+.timedeal .desc .cost{text-decoration:line-through;color:#6B6B6B}
+.timedeal .desc .ratio{font-weight:bold;color:#F32525}
+.timedeal h2{margin-bottom:20px}
+.timedeal .side{float:left;margin-bottom:77px}
+.timedeal .side img{height:507px;width:262px;border-radius:5px;margin-right:35px}
 
 .w_best > ul,
 .protein > ul,
