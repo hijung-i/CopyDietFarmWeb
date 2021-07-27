@@ -1,12 +1,12 @@
 // 테스트
 // var API_SERVER = "http://112.217.209.162:9090";
 // var CALLBACK_SERVER = "http://data-flow.co.kr:3000";
-//  var API_SERVER = "http://192.168.0.3:9090";
-//  var CALLBACK_SERVER = "http://192.168.0.3";
+ var API_SERVER = "http://192.168.0.3:9090";
+ var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-var API_SERVER = "https://dietfarm119.co.kr";
-var CALLBACK_SERVER = "https://dietfarm.co.kr";
+// var API_SERVER = "https://dietfarm119.co.kr";
+// var CALLBACK_SERVER = "https://dietfarm.co.kr";
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
@@ -486,4 +486,20 @@ window.onload = function() {
    setTimeout (function () {
     scrollTo(0,0);
    }, 100); 
-  }
+}
+
+function masking(str) {
+   var temp = ""
+   var min = 1
+   var max = 2
+
+   if (str.length > 8) {
+         min++
+         max++
+   }
+
+   for (var i = 0; i < str.length; i++) {
+      temp += ((i > min && i < (str.length - max))?'*':str[i])
+   }
+   return temp
+}

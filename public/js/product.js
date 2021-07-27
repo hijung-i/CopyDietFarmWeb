@@ -34,6 +34,7 @@ var app = new Vue({
         deleteFromArray,
         changeOptionCount,
         formatDate,
+        masking,
         onSubmit: function() {
             if(app.selectedOptions != undefined && app.selectedOptions.length > 0) {
                 location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);

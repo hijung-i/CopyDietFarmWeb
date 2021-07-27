@@ -177,18 +177,21 @@ a:hover{text-decoration:none;}
 }
 .detail_title a{
   position: absolute;
-  top: 0px
+  top: 0px;
 }
 .detail_title a img{
   width: 17px;
 }
 
-.btnback{position:absolute;top:4px}
-.btncart{position:absolute;right:15px;top:-2px;padding:15px 0}
+.btnback{position:absolute;top:4px; left: 15px;}
+.btncart{position:absolute;right:35px;top:-2px;padding:15px 0}
 
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 
-.detail_title .title{ width: 100%; white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
+.detail_title .title{ max-width: 221px; white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
+
+.modal-content .detail_title .title{ width: 100%;}
+
 .detail_title_header a img{position:absolute;top:80px}
 /* *{padding-left:15px;padding-right:15px} */
 .group input[type="checkbox"]{display:none;}
