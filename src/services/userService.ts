@@ -145,6 +145,7 @@ class UserService {
 
             const userId = obj.id + '@n'
             const userCellNo = obj.mobile.replace(/-/gi, '')
+
             let userGender = obj.gender
             switch (obj.gender) {
                 case 'F':

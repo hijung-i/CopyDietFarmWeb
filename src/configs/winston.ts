@@ -21,20 +21,29 @@ const logger = winston.createLogger({
 })
 
 const stream = {
-    writeDebug: (message: any) => {
+    writeDebug: (...message: any) => {
         try {
-            logger.debug(new Date().toLocaleString() + ': ' + message)
+            logger.debug(new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) + ': ' + parseMessage(message))
         } catch (err) {
             logger.error('failed to log', JSON.stringify(err))
         }
     },
-    writeError: (message: any) => {
+    writeError: (...message: any) => {
         try {
-            logger.error(new Date().toLocaleString() + ': ' + message)
+            logger.error(new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) + ': ' + parseMessage(message))
         } catch (err) {
             logger.error('failed to log', JSON.stringify(err))
         }
     }
+}
+
+const parseMessage = (message: string[]): string => {
+    let messageString = ''
+    Array.from(message).forEach(m => {
+        messageString += ' '
+        messageString += m
+    })
+    return messageString
 }
 
 export {

@@ -23,12 +23,18 @@ function requestKaKaoUserInfo() {
 				return;
 			}
 
+			var userCellNo = account.phone_number.replace(/-/gi, '').replace('+82 ', '0').replace('+1 ', '');
+			if (!userCellNo.includes('010') || userCellNo.indexOf('010') > 1) {
+				alert('핸드폰 번호 형식이 올바르지 않습니다.')
+				return;
+			}
+
 			var params = {
 				type: 'K',
 				kakaoNo: res.id,
 				userEmail: account.email,
 				userName: account.profile.nickname,
-				userCellNo: account.phone_number.replace(/-/gi, '').replace('+82 ', '0').replace('+1 ', ''),
+				userCellNo,
 				userInfo: account.birthyear + account.birthday
 			}
 			switch(account.gender) {

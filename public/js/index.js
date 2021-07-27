@@ -1,6 +1,5 @@
 $(function () {
     getStandDatas();
-    listenForLikes();
 });
 
 var app = new Vue({
@@ -29,23 +28,6 @@ var app = new Vue({
     }
 });
 
-
-function listenForLikes (){
-    var like = document.querySelectorAll("like");
-    like.forEach(like => {
-     like.addEventListener("click", (event) => {
-       event.target.classList.toggle("like-no");
-       event.target.classList.toggle("like-yes");
-       if (event.target.classList.contains("like-yes")) {
-        console.log("✅💾 Saving Favorite...");
-        getFaveData(event.target);
-      } else {
-        console.log("❌ Removing Favorite...");
-        getFaveData(event.target);
-      }
-    })
-   });
-  }
 
 function getStandDatas() {
     var param = {};
