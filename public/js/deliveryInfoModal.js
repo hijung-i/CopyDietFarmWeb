@@ -55,7 +55,7 @@ deliveryInfoTemplate += '                 <span class="label">운송장번호</s
 deliveryInfoTemplate += '                 <span class="value">{{ product.courierNo }}</span>'
 deliveryInfoTemplate += '             </div>'
 deliveryInfoTemplate += '            <div v-if="deliveryProgress.level != undefined && deliveryProgress.level != 0" class="d_status">'
-deliveryInfoTemplate += '                <p>배송중 입니다.</p>'
+deliveryInfoTemplate += '                <p>배송 조회 기능 준비중 입니다.</p>'
 deliveryInfoTemplate += '            </div>'
 deliveryInfoTemplate += '            <div v-else class="d_status">'
 deliveryInfoTemplate += '                <p>배송 준비 중입니다.</p>'
