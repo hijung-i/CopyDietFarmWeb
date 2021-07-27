@@ -1,12 +1,12 @@
 // 테스트
 // var API_SERVER = "http://112.217.209.162:9090";
 // var CALLBACK_SERVER = "http://data-flow.co.kr:3000";
- var API_SERVER = "http://192.168.0.3:9090";
- var CALLBACK_SERVER = "http://192.168.0.3";
+// var API_SERVER = "http://192.168.0.3:9090";
+// var CALLBACK_SERVER = "http://192.168.0.3";
 
 // 운영
-// var API_SERVER = "https://dietfarm119.co.kr";
-// var CALLBACK_SERVER = "https://dietfarm.co.kr";
+var API_SERVER = "https://dietfarm119.co.kr";
+var CALLBACK_SERVER = "https://dietfarm.co.kr";
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
@@ -90,6 +90,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          if(option.multipart != undefined && option.multipart == true) {
             if(result.isLoggedIn && user != undefined){
                if(isAvailable(option.userId) && option.userId == true) params.append("userId", user.userId)
+               if(isAvailable(option.userName) && option.userName == true) params.append("userName", user.userName)
                if(isAvailable(option.userCellNo) && option.userCellNo == true) params.append("userCellNo", user.userCellNo)
                if(isAvailable(option.userEmail) && option.userEmail == true) params.append('userEmail', user.userEmail)
                if(isAvailable(option.address) && option.address == true) params.append('address', user.address)
@@ -99,6 +100,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          } else {
             if(result.isLoggedIn && user != undefined){
                if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
+               if(isAvailable(option.userName) && option.userName == true) params.userName = user.userName
                if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
                if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
                if(isAvailable(option.address) && option.address == true) params.address = user.address

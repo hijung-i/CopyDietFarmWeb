@@ -12,46 +12,22 @@ var app = new Vue({
         usableCouponAmount: 0
     }, methods: {
         login: function() {
-           
-            // if(this.userId == '' || this.userId == undefined || this.userId.trim() == ''){
-            //     //TODO: Open alert modal
-            //     alert('아이디를 입력해주세요');
-            //     return false;
-            // }   
-            // if(this.password == '' || this.password == undefined || this.password.trim() == ''){
-            //     //TODO: Open alert modal
-            //     alert('비밀번호를 입력해주세요');
-            //     return false;
-            // } 
-
-            // var params = {
-            //     userId: this.userId,
-            //     password: this.password
-            // }
-            // ajaxCall('/user/login', params, 'POST'
-            // , function(data) {
-            //     console.log('로그인 성공', data)
-            // }, function(err) {
-            //     console.log("login failed", err);
-            //     var message = err.responseText;
-            //     switch(message) {
-            //     case 'NOT_MATCHED':
-            //         alert('아이디 또는 비밀번호가 일치하지 않습니다.');
-            //         break;
-            //     case 'ERROR_SERVER':
-            //         alert('알 수 없는 에러가 발생했습니다.');
-            //     };
-            // }),
-            parsePointType,
+    
             getUsableCouponList
             
         },
         keypress: function() {
 
         },
-        onUpdateButtonClick: function(Idx) {
-            this.userName = this.userName[Idx]
+
+        onSubmit: function() {
+            
+            var userName = Object.assign({}, this.currentuserName);
+            if (userName.currentuserName == undefined) {
+              updateDelivery(delivery);
+            }
         }
+        
     }, created: function() {
         var userId = document.getElementById('userId').value;
         this.userId = userId;
@@ -65,13 +41,16 @@ var app = new Vue({
         this.userInfo = userInfo;
         var userGender = document.getElementById('userGender').value;
         this.userGender = userGender;
+ 
+
     }
 })
-    
+        
 $(function() {
     getUsablePointAmount();
     getUsableCouponList();
-})
+    updateUserName();
+}) 
 
 function getUsableCouponList() {
  
@@ -104,44 +83,24 @@ function getUsablePointAmount() {
     })
 }
 
-
 //회원정보수정
 
-function updateDelivery(data) {
-
-    ajaxCallWithLogin(API_SERVER + '/user/userName', data, 'POST',
+function updateUserName() {
+   
+    var params =  {
+        userName: userName
+    };
+    var userName = $("#userName").val();
+     ajaxCallWithLogin(API_SERVER + '/data/userName', params, 'POST',
     function(data) {
-        alert('배송지 수정에 성공했습니다.');
+        
+        alert('이름 수정에 성공했습니다.');
         console.log("success ", data);
    
     }, function(err) {
-        console.log("err", err);
-    }, {
-        isRequired: true,
-        userId: true
-    })
-}
-
-//회원탈퇴
-function deleteUserinfo(index) {
-    var selectedDeliveryNo = app.deliveryList[index].deliveryNo;
-
-    var params = {
-        deliveryNo: selectedDeliveryNo
-    }
-    
-    ajaxCallWithLogin(API_SERVER + '/user/deleteDelivery', params, 'POST',
-    function(data) {
-        alert('배송지 삭제에 성공했습니다.');
-        console.log("success ", data);
-        
-        app.deliveryRegisterModalShow = false
-        scrollAllow();
-        
-        getDeliveryInfoList();
-    }, function(err) {
-        console.log("err", err);
-    }, {
+        console.log("login failed", err);
+      },
+    {
         isRequired: true,
         userId: true
     })
