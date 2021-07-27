@@ -41,13 +41,6 @@
             <div class="mobile_myinfo">
                 <section class="detail_title">
                     <h2>내정보</h2>
-                    <script type="text/javascript">
-                        function goBack() {
-                            window
-                                .history
-                                .back();
-                        }
-                    </script>
                     <div class="btnback">
                         <a href="#" value="취소"  onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="">
                         </a>
@@ -101,8 +94,8 @@
                                 </span>
                                 <span class="error_next_box"></span>
                             </div>
-
-                            <!-- PW1 -->
+                    <!--//
+                         
                             <div  class="modify_box">
                                 <h3 class="join_title">
                                     <label for="pswd1">새 비밀번호</label>
@@ -119,7 +112,7 @@
                                 <span class="error_next_box"></span>
                             </div>
 
-                            <!-- PW2 -->
+                           
                             <div class="modify_box">
                                 <h3 class="join_title">
                                     <label for="pswd2">새 비밀번호 확인</label>
@@ -133,14 +126,14 @@
                                         placeholder="새 비밀번호를 한번 더 입력해주세요">
                                 </span>
                                 <span class="error_next_box"></span>
-                            </div>
+                            </div>//-->
                             <!-- NAME -->
                             <div  class="modify_box">
                                 <h3 class="join_title">
                                     <label for="name">이름</label>
                                 </h3>
                                 <span class="box int_name">
-                                    <input type="text" id="name" class="int" maxlength="20" readonly="readonly" v-model="userName" value="<%=user.userName %>">
+                                    <input type="text" id="name" class="int" maxlength="20"  v-model="userName" value="<%=user.userName %>">
                                 </span>
                                 <span class="error_next_box"></span>
                             </div>
@@ -210,4 +203,5 @@
             <script src="/js/mypage/signModal.js"></script>   
             <script src="/js/mypage/myinfo.js"></script>   
             </body>
+            <%-include(webroot + 'views/general/footer') %>
         </html>

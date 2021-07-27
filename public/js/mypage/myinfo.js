@@ -66,7 +66,6 @@ var app = new Vue({
 })
 $(function() {
     getUsablePointAmount();
-    getPointHistory();
     getUsableCouponList();
 })
 

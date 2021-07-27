@@ -85,7 +85,7 @@ function getProductListByCategory() {
 function getCategoryList(){
     var category1Code = $('#category1Code').val();
     var sortOption = $('#sortOption').val();
-    var currentCategoryCode = $('#currentCategoryCode').val();
+    var currentCategoryCode = $('#category2Code').val();
     var params = {
         category1Code: category1Code,
         sortOption
@@ -101,10 +101,15 @@ function getCategoryList(){
             if(cate.category1Code == category1Code){
                 var html = '';
                 html += '<a class="web_cate"><img src="/images/category_ico_main.png">전체카테고리</a>';
-                html += '<a href="/products/'+ category1Code +'/category/ALL">전체보기</a>';
                 for(var j = 0; j < cate.category2.length; j++){
                     var  menuCate2 = cate.category2[j]
-                    html += '<a href="/products/'+ category1Code +'/category/'+ menuCate2.category2Code +'">' + menuCate2.category2Name + '</a>';
+                    if(j == 0){
+                        html += '<a href="/" '+ ((currentCategoryCode == 'ALL')?'class="is-current"':'')+'>전체보기</a>';
+                    }
+
+                    html += '<a href="/products/'+ category1Code +'/category/'+ menuCate2.category2Code +'" class="'+ ((currentCategoryCode == menuCate2.category2Code)?'is-current':'' )+ '" >' + menuCate2.category2Name + '</a>';
+                
+                    
                 }
                 $('.nav_wrap #nav').html(html);
                 $('.nav_wrap #nav a').css({
@@ -116,15 +121,7 @@ function getCategoryList(){
 
                 break;
             }
-        if(i == 0){
-                html += '<a href="/" '+ ((currentCategoryCode == menuCate2.category2Code)?'class="is-current"':'')+'>전체보기</a>';
-             }      
-        if( currentCategoryCode == menuCate2.category2Code){
-              $('#header_common #nav a').removeClass("is-current");
-            html += '<a href="/products/'+category1Code+'/category/'+ menuCate2.category2Code +'" class="is-current">' +  menuCate2.category2Name +'</a>';
-          } else {
-            html += '<a href="/products/'+category1Code+'/category/'+ menuCate2.category2Code +'">'+ menuCate2.category2Name  +'</a>';
-          }
+            
 
         }
        
