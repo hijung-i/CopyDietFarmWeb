@@ -562,20 +562,31 @@ background-size:19px 19px;}
   margin-top: 19px}
 .reviewModifyBox .star_grade p{font-size:16px;font-weight:bold;text-align:center}
 
-li.on .d_line {
-  border-top:1px solid #F99319
+.circle_line li {
+  position: relative;
 }
 
-.circle_line li circle{
+.circle_line li .circle{
   background: #BBBBBB;
   width: 13px;
   height: 13px;
   border-radius: 13px;
+  display: inline-block
 }
+
 .circle_line li .d_line{
-  width:58px;
+  width: 67px;
   border-top: 1px solid #BBBBBB;
-  color:#F99319;position:relative;top:-43px;left:-33px
+  position: absolute;
+  top: 0px;
+  left:-40px
+}
+
+.circle_line li.on .circle {
+  background-color: #F99319 !important
+}
+.circle_line li.on .d_line {
+  border-top:1px solid #F99319 !important
 }
 
 .page_wrap{display:none}
