@@ -44,9 +44,13 @@ var app = new Vue({
             // }),
             parsePointType,
             getUsableCouponList
+            
         },
         keypress: function() {
 
+        },
+        onUpdateButtonClick: function(Idx) {
+            this.userName = this.userName[Idx]
         }
     }, created: function() {
         var userId = document.getElementById('userId').value;
@@ -62,8 +66,8 @@ var app = new Vue({
         var userGender = document.getElementById('userGender').value;
         this.userGender = userGender;
     }
-
 })
+    
 $(function() {
     getUsablePointAmount();
     getUsableCouponList();
@@ -95,6 +99,49 @@ function getUsablePointAmount() {
         console.log("error", err)
     },
     {
+        isRequired: true,
+        userId: true
+    })
+}
+
+
+//회원정보수정
+
+function updateDelivery(data) {
+
+    ajaxCallWithLogin(API_SERVER + '/user/userName', data, 'POST',
+    function(data) {
+        alert('배송지 수정에 성공했습니다.');
+        console.log("success ", data);
+   
+    }, function(err) {
+        console.log("err", err);
+    }, {
+        isRequired: true,
+        userId: true
+    })
+}
+
+//회원탈퇴
+function deleteUserinfo(index) {
+    var selectedDeliveryNo = app.deliveryList[index].deliveryNo;
+
+    var params = {
+        deliveryNo: selectedDeliveryNo
+    }
+    
+    ajaxCallWithLogin(API_SERVER + '/user/deleteDelivery', params, 'POST',
+    function(data) {
+        alert('배송지 삭제에 성공했습니다.');
+        console.log("success ", data);
+        
+        app.deliveryRegisterModalShow = false
+        scrollAllow();
+        
+        getDeliveryInfoList();
+    }, function(err) {
+        console.log("err", err);
+    }, {
         isRequired: true,
         userId: true
     })
