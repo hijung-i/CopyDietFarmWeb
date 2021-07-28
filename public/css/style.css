@@ -189,7 +189,10 @@ a:hover{text-decoration:none;}
 
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 
-.detail_title .title{ width: 100%; white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
+.detail_title .title{
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 100%; white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
 .detail_title_header a img{position:absolute;top:80px}
 /* *{padding-left:15px;padding-right:15px} */
 .group input[type="checkbox"]{display:none;}

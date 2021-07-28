@@ -2,7 +2,7 @@ var timedealTemplate = '';
 
 timedealTemplate += '  <div class="timedeal" v-if="saleNow">';
 timedealTemplate += '    <h2 class="mtpSlideTit only-mobile">특가 타임 SALE !</h2>';
-timedealTemplate += '    <a href="\'/product/\' + product.productCode" class="timedeal-wrapper">';
+timedealTemplate += '    <a v-bind:href="\'/product/\' + product.productCode" class="timedeal-wrapper">';
 timedealTemplate += '        <div class="timer-area">';
 timedealTemplate += '            <div class="product only-pc">';
 timedealTemplate += '                <div class="timedeal-title">';
