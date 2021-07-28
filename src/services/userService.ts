@@ -15,7 +15,7 @@ type Option = {
     body?: Object
 }
 
-const current = PROD
+const current = DEV_JGPARK
 
 class UserService {
     SERVER_URL = current.API_SERVER

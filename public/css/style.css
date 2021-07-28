@@ -2832,6 +2832,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
 #order_detail .order_a_box{margin-top:14px;padding-left:15px;padding-right:15px}
 }
 @media screen and (min-width:1080px){
+  .y_coupon{position:relative;}
   #content .main_sub img{height:360px}
   .warn{width:1080px;margin:0 auto;background-color:#F5F5F5;padding-top:20px;padding-bottom:20px}
   .warn p{text-align:center;padding-left:15px;padding-right:15px;line-height:20px;margin-bottom:10px}
