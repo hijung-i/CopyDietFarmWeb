@@ -5,10 +5,12 @@ $(function () {
 var app = new Vue({
     el: 'main',
     data: {
+        timedealProductList: []
     },
     components: {
         'install-modal': installAppModal,
-        'mypage-modal': signModal
+        'mypage-modal': signModal,
+        'timedeal-product': TimedealComponent
     }, computed: {
         installModal: function() {
             userAgent = window.navigator.userAgent.toLowerCase()
@@ -21,12 +23,32 @@ var app = new Vue({
                 return true;
             }
 
-            scrollAllow();
             return false;
         }
+    }, created: function() {
+        getTimedeal();
     }
 });
 
+function getTimedeal() {
+    var params = {
+        timedeal: 'Y'        
+    }
+
+    var option = {
+        isRequired: false,
+        userId: true
+    };
+    ajaxCallWithLogin(API_SERVER + "/product/getSalesStands", params, 'post'
+    , function(data) {
+        console.log(data);
+        app.timedealProductList = data.result.products[0];
+
+    }, function(err) {
+        console.log("error while get timedeal stands data", err);
+
+    }, option);
+}
 
 function getStandDatas() {
     var param = {};

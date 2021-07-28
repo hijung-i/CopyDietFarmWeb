@@ -7,67 +7,63 @@ var app = new Vue({
     data: {
         userId: '',
         password: '',
-        userEmail: '',
-        totalPointAmount: 0,
+        userEmail: ''
+        , userGender: undefined
+        , totalPointAmount: 0,
         usableCouponAmount: 0
     }, methods: {
         login: function() {
-           
-            // if(this.userId == '' || this.userId == undefined || this.userId.trim() == ''){
-            //     //TODO: Open alert modal
-            //     alert('아이디를 입력해주세요');
-            //     return false;
-            // }   
-            // if(this.password == '' || this.password == undefined || this.password.trim() == ''){
-            //     //TODO: Open alert modal
-            //     alert('비밀번호를 입력해주세요');
-            //     return false;
-            // } 
-
-            // var params = {
-            //     userId: this.userId,
-            //     password: this.password
-            // }
-            // ajaxCall('/user/login', params, 'POST'
-            // , function(data) {
-            //     console.log('로그인 성공', data)
-            // }, function(err) {
-            //     console.log("login failed", err);
-            //     var message = err.responseText;
-            //     switch(message) {
-            //     case 'NOT_MATCHED':
-            //         alert('아이디 또는 비밀번호가 일치하지 않습니다.');
-            //         break;
-            //     case 'ERROR_SERVER':
-            //         alert('알 수 없는 에러가 발생했습니다.');
-            //     };
-            // }),
-            parsePointType,
+    
             getUsableCouponList
             
         },
         keypress: function() {
 
         },
-        onUpdateButtonClick: function(Idx) {
-            this.userName = this.userName[Idx]
+        onSubmit: function() {
+            var component = this;
+
+            var params =  {
+                name: this.userName,
+                userInfo: this.userInfo
+            };
+
+            
+        
+            ajaxCallWithLogin(API_SERVER + '/user/updateUserInfo', params, 'POST',
+            function(data) {
+                alert('이름 수정에 성공했습니다.');
+                console.log("success ", data);
+                component.updateSessionUser(params)
+            }, function(err) {
+                console.log("login failed", err);
+                },
+            {
+                isRequired: true,
+                userId: true
+            })
+        },
+        updateSessionUser: function(params) {
+            ajaxCallWithLogin('/user/user', params, 'PUT', 
+            function(data) {
+                location.reload();
+            }, function(err) {
+                console.log(err);
+            }, {
+                isRequired: true,
+                userId: true
+            })
         }
     }, created: function() {
-        var userId = document.getElementById('userId').value;
-        this.userId = userId;
-        var userEmail = document.getElementById('userEmail').value;
-        this.userEmail = userEmail;
-        var userName = document.getElementById('userName').value;
-        this.userName = userName;
-        var userCellNo = document.getElementById('userCellNo').value;
-        this.userCellNo = userCellNo;
-        var userInfo = document.getElementById('userInfo').value;
-        this.userInfo = userInfo;
-        var userGender = document.getElementById('userGender').value;
-        this.userGender = userGender;
+        this.userId = document.getElementById('userId').value;
+        this.userEmail = document.getElementById('userEmail').value;
+        this.userName = document.getElementById('userName').value;
+        this.userCellNo = document.getElementById('userCellNo').value;
+        this.userInfo = document.getElementById('userInfo').value;
+        this.userGender = document.getElementById('userGender').value;
     }
 })
-    
+        
 $(function() {
     getUsablePointAmount();
     getUsableCouponList();
@@ -99,49 +95,6 @@ function getUsablePointAmount() {
         console.log("error", err)
     },
     {
-        isRequired: true,
-        userId: true
-    })
-}
-
-
-//회원정보수정
-
-function updateDelivery(data) {
-
-    ajaxCallWithLogin(API_SERVER + '/user/userName', data, 'POST',
-    function(data) {
-        alert('배송지 수정에 성공했습니다.');
-        console.log("success ", data);
-   
-    }, function(err) {
-        console.log("err", err);
-    }, {
-        isRequired: true,
-        userId: true
-    })
-}
-
-//회원탈퇴
-function deleteUserinfo(index) {
-    var selectedDeliveryNo = app.deliveryList[index].deliveryNo;
-
-    var params = {
-        deliveryNo: selectedDeliveryNo
-    }
-    
-    ajaxCallWithLogin(API_SERVER + '/user/deleteDelivery', params, 'POST',
-    function(data) {
-        alert('배송지 삭제에 성공했습니다.');
-        console.log("success ", data);
-        
-        app.deliveryRegisterModalShow = false
-        scrollAllow();
-        
-        getDeliveryInfoList();
-    }, function(err) {
-        console.log("err", err);
-    }, {
         isRequired: true,
         userId: true
     })

@@ -90,6 +90,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          if(option.multipart != undefined && option.multipart == true) {
             if(result.isLoggedIn && user != undefined){
                if(isAvailable(option.userId) && option.userId == true) params.append("userId", user.userId)
+               if(isAvailable(option.userName) && option.userName == true) params.append("userName", user.userName)
                if(isAvailable(option.userCellNo) && option.userCellNo == true) params.append("userCellNo", user.userCellNo)
                if(isAvailable(option.userEmail) && option.userEmail == true) params.append('userEmail', user.userEmail)
                if(isAvailable(option.address) && option.address == true) params.append('address', user.address)
@@ -99,6 +100,7 @@ function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
          } else {
             if(result.isLoggedIn && user != undefined){
                if(isAvailable(option.userId) && option.userId == true) params.userId = user.userId
+               if(isAvailable(option.userName) && option.userName == true) params.userName = user.userName
                if(isAvailable(option.userCellNo) && option.userCellNo == true) params.userCellNo = user.userCellNo
                if(isAvailable(option.userEmail) && option.userEmail == true) params.userEmail = user.userEmail
                if(isAvailable(option.address) && option.address == true) params.address = user.address
@@ -362,6 +364,51 @@ $(function(){
       redirectURI: 'https://dietfarm.co.kr/user/callback/apple',
       state : '12bf1f301be5e2d81aeb514acfa3a03742c20b5e2c424938b7f90f119666445c'
   });
+  
+   (function() {
+      var w = window;
+      if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+      }
+      var ch = function() {
+      ch.c(arguments);
+      };
+      ch.q = [];
+      ch.c = function(args) {
+      ch.q.push(args);
+      };
+      w.ChannelIO = ch;
+
+      function l() {
+         if (w.ChannelIOInitialized) {
+            return;
+         }
+         w.ChannelIOInitialized = true;
+         var s = document.createElement('script');
+         s.type = 'text/javascript';
+         s.async = true;
+         s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+         s.charset = 'UTF-8';
+         var x = document.getElementsByTagName('script')[0];
+         x.parentNode.insertBefore(s, x);
+      }
+
+      if (document.readyState === 'complete') {
+         l();
+      } else if (window.attachEvent) {
+         window.attachEvent('onload', l);
+      } else {
+         window.addEventListener('DOMContentLoaded', l, false);
+         window.addEventListener('load', l, false);
+      }
+   })();
+   
+
+   ChannelIO('boot', {
+      "pluginKey": "3b6f23d9-2819-439e-840b-cdc91c798e68",
+      "customLauncherSelector": ".custom-button-1, #custom-button-2",
+      "hideChannelButtonOnBoot": true
+   });
 	
 });
 
@@ -480,12 +527,6 @@ function clip(){
 	document.execCommand("copy");
 	document.body.removeChild(textarea);
 	alert("URL이 복사되었습니다.")
-}
-
-window.onload = function() {
-   setTimeout (function () {
-    scrollTo(0,0);
-   }, 100); 
 }
 
 function masking(str) {
