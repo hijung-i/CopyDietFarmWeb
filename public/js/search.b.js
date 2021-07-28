@@ -17,7 +17,7 @@ class InstantSearch {
     this.options = options;
     this.elements = {
       main: instantSearch,
-      input: instantSearch.querySelector(".instant-search__input"),
+      input: instantSearch.querySelector(".rectangular", ".rectangular_b", ".round"),
       resultsContainer: document.createElement("div")
     };
 

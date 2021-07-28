@@ -543,11 +543,29 @@ $(function() {
 // }
 $(function() {
     $(".result_wrap").hide();
-    $('.instant-search__input').keyup(function() {
+    $('.rectangular', '.round').keyup(function() {
         var keyword = $(this).val();
         if(keyword.trim().length > 0 ){
             $(".result_wrap").show();
             searchProduct(keyword);
+            
+        } else {
+            $(".result_wrap").hide();
+            
+        }
+    })
+
+    getHotKeyowrds();
+    getCFKeywords();
+})
+
+$(function() {
+    $(".result_wrap").hide();
+    $('.rectangular_b').keyup(function() {
+        var keyword = $(this).val();
+        if(keyword.trim().length > 0 ){
+            $(".result_wrap").show();
+            searchBrand(keyword);
             
         } else {
             $(".result_wrap").hide();

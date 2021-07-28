@@ -87,16 +87,16 @@
         </style>
         <link rel="stylesheet" href="/css/myPage.css">
         <script type="text/javascript">
-         //   $( document ).ready(function() {
-         //           cookiedata = document.cookie;
-         //
-           //     if ( cookiedata.indexOf("ncookie=done") < 0 ){
-           //         document.getElementById('popup-cookie').style.display = "block";
-           //     $("#wrap").prepend('<div id="dimm-cookie" onclick="dimm_close();" class="black" />');
-           //         } else {
-           //         document.getElementById('popup-cookie').style.display = "none";
-           //     }
-           // });
+          $( document ).ready(function() {
+                  cookiedata = document.cookie;
+    
+         if ( cookiedata.indexOf("ncookie=done") < 0 ){
+             document.getElementById('popup-cookie').style.display = "block";
+         $("#wrap").prepend('<div id="dimm-cookie" onclick="dimm_close();" class="black" />');
+             } else {
+             document.getElementById('popup-cookie').style.display = "none";
+         }
+        });
          
                 function setCookie( name, value, expiredays ) { 
                     var todayDate = new Date();
@@ -149,7 +149,7 @@
                         </ul>
                     </div>
                 </div>
-                 
+                </div>
                  
                 <!-- 스크립트 -->
         

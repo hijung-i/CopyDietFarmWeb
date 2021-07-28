@@ -54,7 +54,7 @@
         <% if (currentPage != 'main' && currentPage != 'products' && currentPage != '마이팜' && currentPage != '찜한 상품' && currentPage != '검색') { %>
         <div class="detail_title_header">
             <div class="btnback">
-                <a href="#" value="취소" onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px"></a>
+                <a href="#" value="취소" onClick="history.back(); return false"><img src="/images/leftarrow_ico_my.png" alt="" style="width:17px;position:absolute;top:74px"></a>
             </div>
         </div>
         <% } %>
@@ -91,7 +91,19 @@
                 </div>
                 </div>
             </form>
-            <div class="result-area" style="z-index:9999999;background-color:#fff;width:304px;border-bottom:1px solid #E4E4E4;border-left:1px solid #E4E4E4;border-right:1px solid #E4E4E4;display:none">
+            <div class="result_wrap" style="z-index:999999">
+                <section class="search_result" >
+                    <h3>검색결과</h3>
+                    <ul>
+                        <!-- <li>
+                            <a href="#">친환경 미니 밤호박</a>
+                        </li>
+                        -->
+    
+                    </ul>
+                </section>
+            </div>
+            <div class="result-area" style="z-index:99999;background-color:#fff;width:304px;border-bottom:1px solid #E4E4E4;border-left:1px solid #E4E4E4;border-right:1px solid #E4E4E4;display:none">
                 <div class="popular_wrap">
                     <section class="popular">
                         <h2 style="padding-top:10px">인기 검색어</h2>
@@ -201,23 +213,30 @@
         <div id="tab2" class="tab_cont" style="display: none">
             <div class="brandCate_top">
                 <div id="searchUsers" class="instant-search">
-                    <form action="/search-list" method="GET" id="brandSearchForm">
-                        <input type="hidden" name="keyword">
-                        <div class="instant-search__input-container">
-                            <input
-                                class="instant-search__input"
-                                id="brandSearchKeyword"
-                                spellcheck="false"
-                                placeholder="브랜드명을 검색해보세요."
-                                style="font-size:14px;width:90%"
-                                onkeypress="if( event.keyCode == 13 ){ goSearchResult();}">
-                            <a href="#"><img src="/images/grayx_icon_login.png" alt="취소"></a>
-                        </div>
+                    <form id="search-form" action="/search-list" method="GET">
+                        <div class="searchForm"  style="display:flex">a
+                            <input autocomplete="off" type="text" name="keyword" class="rectangular_b" id="brandSearchKeyword" placeholder="브랜드명을 검색해보세요." onclick="result()">
                         <div class="search_box_ico">
-                            <input type="submit" value=" ">
+                        <input type="submit" value="">
+                        </div>
                         </div>
                     </form>
                 </div>
+            
+                <div class="result-area-mobile">
+                    <div class="result_wrap">
+                        <section class="search_result">
+                            <h3>검색결과</h3>
+                            <ul>
+                                <!-- <li>
+                                    <a href="#">친환경 미니 밤호박</a>
+                                </li>
+                                -->
+            
+                            </ul>
+                        </section>
+                    </div>
+
                 <div class="categ">
                     <ul>
                         <li class="all">
