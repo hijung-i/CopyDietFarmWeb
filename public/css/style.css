@@ -84,6 +84,7 @@ a:hover{text-decoration:none;}
   color: #31845B
 }
 
+
 .pick_list_null img{height:auto!important}
 .line03{font-size:12px!important; font-weight:normal!important;color:#BBBBBB!important;margin-top:20px}
 .web_cate.display-flex.active{background-color:#F99319;color:#fff}
@@ -184,7 +185,7 @@ a:hover{text-decoration:none;}
 }
 
 .btnback{position:absolute;top:4px}
-.btncart{position:absolute;right:15px;top:-2px;padding:15px 0}
+.btncart{position:absolute;right:34px;top:-2px;padding:15px 0}
 
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 
@@ -741,7 +742,7 @@ background-size:19px 19px;}
  /*.t1 img{position:relative;top:7px}*/
 
   .detail_title a img{width: 17px}
-  .btnback{position:absolute;top:4px}
+  .btnback{position:absolute;top:4px;left:10px}
   .btnback img {z-index: 9999;}
   .keyword{font-size:14px;padding-top:14px;margin-left:15px;padding-bottom:14px}
   .page_nation{display:none}
