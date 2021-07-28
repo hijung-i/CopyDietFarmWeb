@@ -354,6 +354,9 @@ dd.subMenu {
   font-size: 30px;
 }
 .timer-area .product .desc .title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   margin-bottom: 20px;
 }
 
