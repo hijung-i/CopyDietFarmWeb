@@ -34,6 +34,7 @@
             }
             .showing {z-index: 9999;opacity: 1}
             @media screen and (min-width:1080px) {
+
                 .swiper-container{margin-top:-2px}
                 .water{margin-bottom:100px}
                 .black_bg{
@@ -60,7 +61,7 @@
             }
             #popup-cookie{
                 width: 360px;
-                height:314px;
+                height:500px;
                 background-color:#f1f1f1;
                 position: fixed;
                 left: 50%;
@@ -71,6 +72,7 @@
                 font-size: 14px;
                 overflow-x: hidden;
                 border-radius:5px;
+                overflow-y:hidden;
         
             }
             #popup-cookie h2{text-align: center;padding-top:10px}
@@ -85,16 +87,16 @@
         </style>
         <link rel="stylesheet" href="/css/myPage.css">
         <script type="text/javascript">
-            $( document ).ready(function() {
-                    cookiedata = document.cookie;
-         
-                if ( cookiedata.indexOf("ncookie=done") < 0 ){
-                    document.getElementById('popup-cookie').style.display = "block";
-                $("#wrap").prepend('<div id="dimm-cookie" onclick="dimm_close();" class="black" />');
-                    } else {
-                    document.getElementById('popup-cookie').style.display = "none";
-                }
-            });
+         //   $( document ).ready(function() {
+         //           cookiedata = document.cookie;
+         //
+           //     if ( cookiedata.indexOf("ncookie=done") < 0 ){
+           //         document.getElementById('popup-cookie').style.display = "block";
+           //     $("#wrap").prepend('<div id="dimm-cookie" onclick="dimm_close();" class="black" />');
+           //         } else {
+           //         document.getElementById('popup-cookie').style.display = "none";
+           //     }
+           // });
          
                 function setCookie( name, value, expiredays ) { 
                     var todayDate = new Date();
@@ -130,8 +132,13 @@
                     <br>
                    <p>다이어트팜에 보내주신 성원에 감사드립니다.</p> 
                     
-                    <p>다이어트팜에서는 매주 어디에서도 만날수 없는<br> <span>" 특가 타임 SALE! " </span>을 진행 예정입니다.</p>
+                    <p>1. 다이어트팜에서는 매주 어디에서도 만날수 없는<br> <span>" 특가 타임 SALE! " </span>을 진행 예정입니다.</p>
                     <p> 고객여러분의 많은 관심 부탁드립니다.  </p>
+                    <p>2. 친구추천 포인트 지급관련하여, 
+                        아래와 같이 정책이 변경되었습니다.   </p>
+                    <p>- 기존 : 회원가입시, 추천인,본인 각각 2,000 P 지급</p>
+                    <p>- 현재 : <span style="color:rgba(48, 78, 250, 0.904)!important">신규가입 회원의 주문건 구매확정시, </span><br>추천인, 본인 각각 2,000 P 지급</p>    
+                     
                 
                     <p>감사합니다.</p>
                     
@@ -171,11 +178,13 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="banner01">
+                    <!-- <div class="banner01">
                         <a href="/products/SALES_011/event"><img src="/images/low_price_banner@2x.png" style="width:100%;border-bottom:8px solid #F1F1F1"></a>
-                    </div>
-                    <!--//catgor_wrap-->
-
+                    </div> -->
+                </div>
+                <div class="timedeal-list">
+                    <timedeal-product v-for="(timedeal, index) in timedealProductList" v-bind:product="timedeal"></timedeal-product>
+                </div>
                     <!-- multiple slide -->
 
                     <h2 class="mtpSlideTit">오픈특가</h2>
@@ -321,6 +330,8 @@
                 <install-modal></install-modal>
             </div>
         </main>
+        
+        <script src="/js/components/timedealComponent.js"></script>
         <script src="/js/components/installAppModal.js"></script>
         <script src="/js/index.js"></script>
 
