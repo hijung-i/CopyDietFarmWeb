@@ -84,7 +84,6 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
 router.post('/register', async (req: Request, res: Response, next: NextFunction) => {
     const user = req.body as User
     let registerResult: UserResult
-    console.log(user)
     if (user.userInfo === undefined
         || user.userCellNo === undefined
         || user.userId === undefined
@@ -102,6 +101,25 @@ router.post('/register', async (req: Request, res: Response, next: NextFunction)
         console.log('registerSuccess -> ', registerResult)
     }
     res.status(registerResult.statusCode).send(registerResult.data || registerResult.message)
+})
+
+router.put('/user', async (req: Request, res: Response, next: NextFunction) => {
+    let user = req.body as User
+    let resultVO: UserResult
+
+    if (user.userInfo === undefined
+        || user.userId === undefined
+        || user.name === undefined) {
+        resultVO = setUserResult(StatusCode.error, StatusMessage.forbidden, {})
+        res.status(resultVO.statusCode).send(resultVO.data || resultVO.message)
+        return
+    }
+    user.userEmail = req.session.user?.userEmail
+    user.userCellNo = req.session.user?.userCellNo
+
+    userToSession(req, user)
+    resultVO = setUserResult(StatusCode.success, StatusMessage.success, {})
+    res.status(resultVO.statusCode).send(resultVO.data || resultVO.message)
 })
 
 const userToSession = (req: Request, user: User) => {

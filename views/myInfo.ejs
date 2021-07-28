@@ -169,15 +169,15 @@
                                 </span>
                                 <span class="/images/error_next_box"></span>
                             </div>
-                            <div id="gender" class="modify_box">
+                            <!-- <div id="gender" class="modify_box">
                                 <h3 class="join_title">
                                     <label for="gender">성별</label>
                                 </h3>
-                                <input type="radio" name="gender" id="male" value="m" v-model="userGender" value="<%=user.userGender %>">
+                                <input type="radio" name="gender" id="male" value="M" v-model="userGender" value="<%=user.userGender %>">
                                 <label for="apply" style="margin-right:40px">남자</label>
-                                <input type="radio" name="gender" id="female" value="f" v-model="userGender" value="<%=user.userGender %>">
+                                <input type="radio" name="gender" id="female" value="F" v-model="userGender" value="<%=user.userGender %>">
                                 <label for="apply">여자</label>
-                            </div>
+                            </div> -->
                             <div class="member_delete">
                                 <p>회원정보를 삭제하시겠어요?</p>
                                 <ul>
@@ -188,7 +188,7 @@
                             </div>
 
                             <div class="btn_area">
-                                <button type="button" id="btnModify" onclick="updateUserName()">
+                                <button type="button" id="btnModify" @click="onSubmit()">
                                     <span >수정하기</span>
                                 </button>
                             </div>

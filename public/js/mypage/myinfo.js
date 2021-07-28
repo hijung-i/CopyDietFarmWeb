@@ -7,8 +7,9 @@ var app = new Vue({
     data: {
         userId: '',
         password: '',
-        userEmail: '',
-        totalPointAmount: 0,
+        userEmail: ''
+        , userGender: undefined
+        , totalPointAmount: 0,
         usableCouponAmount: 0
     }, methods: {
         login: function() {
@@ -19,38 +20,54 @@ var app = new Vue({
         keypress: function() {
 
         },
-
         onSubmit: function() {
-            
-            var userName = Object.assign({}, this.currentuserName);
-            if (userName.currentuserName == undefined) {
-              updateDelivery(delivery);
-            }
-        }
-        
-    }, created: function() {
-        var userId = document.getElementById('userId').value;
-        this.userId = userId;
-        var userEmail = document.getElementById('userEmail').value;
-        this.userEmail = userEmail;
-        var userName = document.getElementById('userName').value;
-        this.userName = userName;
-        var userCellNo = document.getElementById('userCellNo').value;
-        this.userCellNo = userCellNo;
-        var userInfo = document.getElementById('userInfo').value;
-        this.userInfo = userInfo;
-        var userGender = document.getElementById('userGender').value;
-        this.userGender = userGender;
- 
+            var component = this;
 
+            var params =  {
+                name: this.userName,
+                userInfo: this.userInfo
+            };
+
+            
+        
+            ajaxCallWithLogin(API_SERVER + '/user/updateUserInfo', params, 'POST',
+            function(data) {
+                alert('이름 수정에 성공했습니다.');
+                console.log("success ", data);
+                component.updateSessionUser(params)
+            }, function(err) {
+                console.log("login failed", err);
+                },
+            {
+                isRequired: true,
+                userId: true
+            })
+        },
+        updateSessionUser: function(params) {
+            ajaxCallWithLogin('/user/user', params, 'PUT', 
+            function(data) {
+                location.reload();
+            }, function(err) {
+                console.log(err);
+            }, {
+                isRequired: true,
+                userId: true
+            })
+        }
+    }, created: function() {
+        this.userId = document.getElementById('userId').value;
+        this.userEmail = document.getElementById('userEmail').value;
+        this.userName = document.getElementById('userName').value;
+        this.userCellNo = document.getElementById('userCellNo').value;
+        this.userInfo = document.getElementById('userInfo').value;
+        this.userGender = document.getElementById('userGender').value;
     }
 })
         
 $(function() {
     getUsablePointAmount();
     getUsableCouponList();
-    updateUserName();
-}) 
+})
 
 function getUsableCouponList() {
  
@@ -77,29 +94,6 @@ function getUsablePointAmount() {
     }, function(err) {
         console.log("error", err)
     },
-    {
-        isRequired: true,
-        userId: true
-    })
-}
-
-//회원정보수정
-
-function updateUserName() {
-   
-    var params =  {
-        userName: userName
-    };
-    var userName = $("#userName").val();
-     ajaxCallWithLogin(API_SERVER + '/data/userName', params, 'POST',
-    function(data) {
-        
-        alert('이름 수정에 성공했습니다.');
-        console.log("success ", data);
-   
-    }, function(err) {
-        console.log("login failed", err);
-      },
     {
         isRequired: true,
         userId: true
