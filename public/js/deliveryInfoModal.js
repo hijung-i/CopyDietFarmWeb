@@ -93,6 +93,8 @@ var deliveryInfoModal = {
             scrollAllow();
         },
         getDeliveryProgress: async function() {
+            // TODO: 배송지 정보가 있는지 Check 없으면 API 호출 후 DB에 저장
+            if(this.product.deliveryProgress)
             this.deliveryProgress = await parcelTrackSmart(this.product.courierCode, this.product.courierNo);
             console.log(this.deliveryProgress)
         }
@@ -100,6 +102,10 @@ var deliveryInfoModal = {
         this.getDeliveryProgress();
     }
 }
+function updateDeliveryProgress(){
+    
+}
+
 function openDInfoModal() {
     app.deliveryInfoModalShow = true;
     scrollBlock();

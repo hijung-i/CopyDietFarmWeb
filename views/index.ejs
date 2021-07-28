@@ -87,36 +87,36 @@
         </style>
         <link rel="stylesheet" href="/css/myPage.css">
         <script type="text/javascript">
-          $( document ).ready(function() {
-                  cookiedata = document.cookie;
-    
-         if ( cookiedata.indexOf("ncookie=done") < 0 ){
-             document.getElementById('popup-cookie').style.display = "block";
-         $("#wrap").prepend('<div id="dimm-cookie" onclick="dimm_close();" class="black" />');
-             } else {
-             document.getElementById('popup-cookie').style.display = "none";
-         }
-        });
-         
-                function setCookie( name, value, expiredays ) { 
-                    var todayDate = new Date();
+            $( document ).ready(function() {
+                cookiedata = document.cookie;
+                console.log(cookiedata);
+                if ( cookiedata.indexOf("ncookie=done") < 0 ){
+                    console.log('cookie 없음')
+                    document.getElementById('popup-cookie').style.display = "block";
+                } else {
+                    console.log("cookie 있음")
+                    document.getElementById('popup-cookie').style.display = "none";
+                }
+            });
+            function setCookie( name, value, expiredays ) { 
+                var todayDate = new Date();
                 todayDate.setDate( todayDate.getDate() + expiredays );
                 document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
             }
-         
-                function closeWin() {
+        
+            function closeWin() {
                     document.getElementById('popup-cookie').style.display = "none";
                 $("#dimm-cookie").remove();
             }
-         
-                function todaycloseWin() {
-                    setCookie("ncookie", "done", 1);
+        
+            function todaycloseWin() {
+                setCookie("ncookie", "done", 1);
                 document.getElementById('popup-cookie').style.display = "none";
                 $("#dimm-cookie").remove();
             }
-         
-                function dimm_close() {
-                    $("#dimm-cookie").remove();
+        
+            function dimm_close() {
+                $("#dimm-cookie").remove();
                 document.getElementById('popup-cookie').style.display = "none";
             }
         </script>
@@ -189,17 +189,8 @@
 
                     <h2 class="mtpSlideTit">오픈특가</h2>
 
-                    <div class="responsive">
-                        <!-- <div><a href=""><img src="/images/blank1.jpg" alt="상품 이미지1"></a>
-                        <div class="desc">
-                                            <p class="title">제품이름</p>
-                                            <ul>
-                                                <li class="sale">23,400원</li>
-                                                <li class="cost">26,000원</li>
-                                                <li class="ratio">10%</li>
-                                            </ul>
-                                        </div>
-                        </div> -->
+                    <div class="open-sale">
+
                     </div>
                     <h2 class="event_title">이벤트</h2>
                     <div class="blank_sec">

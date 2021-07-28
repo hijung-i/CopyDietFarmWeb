@@ -438,7 +438,7 @@ box-shadow: none !important}
 #detail_purchase_info{margin-top:100px}
 .selected-option-slide {
     width: 100%;
- /*   overflow-x: scroll */
+   overflow-x: scroll
 }
 .product_count{
     width: 100%;

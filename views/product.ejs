@@ -12,15 +12,7 @@
         <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
         <style type="text/css">
      
-        @media screen and (min-width:500px) and (max-width:1079px){
 
-        .like-yes { background: url("/images/afterheart_icon.png") no-repeat}
-        }
-        @media screen and (min-width:1080px){
-
-        /*(like-no { background: url("/images/beforeheart_ico_main.png") no-repeat;}*/
-        .like-yes { background: url("/images/afterheart_icon.png") no-repeat}
-        }
     @media screen and (max-width:1079px) {
 
        /* Modal Content/Box */
@@ -71,8 +63,6 @@
     }
     @media screen and (min-width:1080px) {
         #content{max-width:1080px;margin:0 auto;width:1080px}
-        .slick-prev{top:230px!important}
-        .slick-next{top:-300px!important}
         .modal_wrap, .modal_wrap02 {
             width: 500px;
             height: auto;
@@ -326,7 +316,11 @@
                                                 </tr>
                                             </table>
                                             <div class="selected-option-slide">
+<<<<<<< HEAD
                                                 <div id="selectedOptionDiv" v-bind:style="{ width: selectedOptionWidth }">
+=======
+                                                <div id="selectedOptionDiv" v-bind:style="{ width: selectedOptionWidth }" >
+>>>>>>> 76e08b549f47b5d95e43004cfd01c17441578f62
                                                     <div v-for="(item, index) in selectedOptions" class="product_count">
                                                         <div class="product_title">
                                                             <h4>{{ item.optionDesc }}</h4>
@@ -382,8 +376,8 @@
                             <div class="r_products">
                                 <h2 class="mtpSlideTit1">이 상품과 같이 구매한 상품들</h2>
                             <div class="responsive">
-                             <!--// -->
-                             </div>
+
+                            </div>
                             </div>
                             <div class="products_ex_mobile" style="padding:0">
                                 <img
@@ -557,7 +551,7 @@
                                                 <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
                                             </template>
                                             <template v-else>    
-                                                <li class="">{{ review.userId }}</li>
+                                                <li class="">{{ masking(review.userId) }}</li>
                                                 <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
                                             </template>
                                             <li>{{ formatDate(review.createDate) }}</li>

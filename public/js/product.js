@@ -34,6 +34,7 @@ var app = new Vue({
         deleteFromArray,
         changeOptionCount,
         formatDate,
+        masking,
         onSubmit: function() {
             if(app.selectedOptions != undefined && app.selectedOptions.length > 0) {
                 location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
@@ -548,44 +549,13 @@ function getRecommendedProducts() {
 function insertRecommandListHtml() {
     
     var recmdList = app.recmdList;
-    var html = generateHtmlForProductList(recmdList);
-
-    $('.responsive').html(html);
-
-    $('.responsive').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay:true,
-        autoplaySpeed:3000,
-        draggable: true,
-        pauseOnHover:true,
-        arrow:true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: false
-            }
-          },
-          {
-            breakpoint: 360,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1
-            }
-          }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ]
+    var slider = new ProductSlider(recmdList, {
+        count: 3,
+        margin: 15
     });
-    
+
+    slider.setElement('.responsive')
+
 }
 
 function getProductList() {
