@@ -813,9 +813,6 @@ background-size:19px 19px;}
  .body_bottom .desc .sale{font-weight:bold}
  .body_bottom .desc .cost{color:red;text-decoration:line-through;}
  .body_bottom .desc .ratio{font-weight:bold}
- .body_bottom .desc .title{margin-left:10px}
- .body_bottom .desc ul{margin-left:5px}
- .body_bottom .desc ul li{float:left;margin-right:5px}
  .side{display:none}
  #web_only{display:none}
  .m_best h2{margin-top:24px;margin-bottom:15px;margin-left:15px;font-size:14px}
@@ -885,8 +882,8 @@ margin-top:20px;padding-top:25px}
 width:100%;border-top:2px solid #f1f1f1}
 #content .main_sub img{padding:7px;height:220px}
 #content .main_sub ul:first-child{display:grid;grid-template-columns: repeat(2, 3fr);justify-self: center;margin: 0 auto;padding-left:15px;padding-right:15px}
-#content .main_sub .desc ul li{float:left;white-space:nowrap;margin-left:-4px}
-#content .main_sub_wrap .desc .title{margin-left:5px;margin-bottom:7px}
+#content .main_sub .desc ul li{float:left;white-space:nowrap}
+#content .main_sub_wrap .desc .title{margin-bottom:7px}
 #content .main_sub_wrap .desc .sale{font-weight:bold;}
 #content .main_sub_wrap .desc .cost{color:#bbbbbb;text-decoration:line-through;margin-left:7px;}
 #content .main_sub_wrap .desc .ratio{color:#F32525;font-weight:bold/*;font-size:11px*/;margin-left:7px}
@@ -899,26 +896,6 @@ width:100%;border-top:2px solid #f1f1f1}
 }
 
 /*찜한 상품*/
-#mHeader{position:fixed;height:90px;background-color:#fff}
-.btnCart{width: 21px; height: 21px;}
-#content .pick_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:80px}
-#content .pick_wrap{padding-left:15px;padding-right:15px}
-#content .pick_product h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}
-#content .pick_product ul{display:grid;grid-template-columns: repeat(3, 3fr);
-;align-items: center;
-justify-self: center;margin: 0 auto;white-space:nowrap}
-
-#content .pick_product ul li img{width:100%;padding:7px}
-#content .pick_product .title{margin-left:5px}
-#content .pick_product ul li .desc p{font-size:12px;padding:5px;text-overflow: ellipsis;white-space:nowrap;}
-#content .pick_product ul li .desc
-#content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
-#content .desc ul{margin-bottom:10px;margin-top:7px}
-#content .desc .sale{color:#000}
-#content .desc .cost{color:#6B6B6B;text-decoration:line-through}
-#content .desc .ratio{color:#F32525}
-.page_wrap{display:none}
-#content .desc{font-size:14px}
 
 /*cs_center*/
 .cs_content h2{display:none}
@@ -1136,8 +1113,6 @@ border-spacing: 0 20px;font-size:14px}
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
 .body_bottom .desc .ratio{font-weight:bold}
-.body_bottom .desc .title{margin-left:10px;padding-right:5px}
-.body_bottom .desc ul{margin-left:5px}
 .body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
@@ -1317,8 +1292,6 @@ border-spacing: 0 20px;font-size:14px}
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
 .body_bottom .desc .ratio{font-weight:bold}
-.body_bottom .desc .title{margin-left:10px/*;margin-top:20px*/}
-.body_bottom .desc ul{margin-left:5px}
 .body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
 .sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
@@ -1398,20 +1371,21 @@ input[type="checkbox"] {display: none;}
 .product .thum img {
   max-width: 100%;
 }
-
+.product .desc ul{margin-bottom:10px}
 .product .desc ul li{ margin-right:8px;display:inline-block }
 .product .title{
-  overflow: hidden;text-overflow: ellipsis; width: 100%; 
-  white-space: nowrap;height: 20px;display:inline-block;font-size:14px
+ width: 100%; height: 20px;display:inline-block;font-size:14px;margin-bottom:7px
 }
 
 .product .desc,
 .product .title p {
-  width: 100%;
+
+  margin-left:10px
+ 
 }
-.product .desc .sale{font-size:16px;font-weight:bold}
-.product .desc .cost{font-size:16px;text-decoration:line-through;color:#6B6B6B}
-.product .desc .ratio{font-size:16px;font-weight:bold;color:#F32525}
+.product .desc .sale{font-size:16px;font-weight:bold;font-size:15px}
+.product .desc .cost{font-size:16px;text-decoration:line-through;color:#6B6B6B;font-size:15px}
+.product .desc .ratio{font-size:16px;font-weight:bold;color:#F32525;font-size:15px}
 
 .open-sale {
   max-width: 1080px;
