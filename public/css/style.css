@@ -1393,9 +1393,10 @@ input[type="checkbox"] {display: none;}
 
 }
 
+.product{max-width:100%}
 .product .thum,
 .product .thum img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .product .desc ul li{ margin-right:8px;display:inline-block }
@@ -1414,7 +1415,6 @@ input[type="checkbox"] {display: none;}
 
 .open-sale {
   max-width: 1080px;
-  
   overflow-x: scroll;
   margin: 40px auto;
 }
