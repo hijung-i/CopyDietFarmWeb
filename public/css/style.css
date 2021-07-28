@@ -190,14 +190,18 @@ a:hover{text-decoration:none;}
 .desc .title {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 
-.detail_title .title{ max-width: 221px; white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
-
-.modal-content .detail_title .title{ width: 100%;}
-
+.detail_title .title{
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 100%; 
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  margin:0 auto}
 .detail_title_header a img{position:absolute;top:80px}
 /* *{padding-left:15px;padding-right:15px} */
 .group input[type="checkbox"]{display:none;}
@@ -328,10 +332,13 @@ dd.subMenu {
 
 .timer-area .product {
   padding: 0px 54px;
-  padding-top: 73px;
+  padding-top: 67px;
   padding-bottom: 71px;
 }
 
+.timedeal-wrapper .product{
+  margin-bottom: 0px;
+}
 
 .timedeal-wrapper .product .thum img{
   width: 100%;
@@ -354,16 +361,28 @@ dd.subMenu {
   height: 40px;
   padding: 6px;
 }
-
-.timer-area .product .desc {
+.timer-area .product .desc,
+.timer-area .product .title {
   font-size: 30px;
 }
+
 .timer-area .product .desc .title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   margin-bottom: 20px;
+  height: auto;
 }
 
 .timer-area .product .desc ul li{
   display: inline-block;
+}
+
+@media screen and (max-width: 630px) {  
+  .timedeal-wrapper .product .thum img{
+    height: 310px;
+  }
+
 }
 
 @media screen and (min-width:630px) and (max-width:1079px){
@@ -831,7 +850,6 @@ background-size:19px 19px;}
  .m_bestn_tit_box img{ display:inline-block;width:200px;}
  .m_bestn_list{border-bottom:8px solid #f1f1f1;padding-top:10px}
  .m_bestn_mn_box {float:left}
-  #content .desc ul li{float:left}
  #slider_main {/* display: none; */ position: relative; width: 100%; min-width: 360px; margin: 0 auto; margin-top: 151px; overflow: hidden;}
  .slider_main_wrap {position: relative; min-width: 360px; width: 100%; height: 212px; background: #ccc; z-index: 0;}
  .slider_main_wrap div {position: absolute; top: 0; left: 0;}
@@ -1118,7 +1136,6 @@ border-spacing: 0 20px;font-size:14px}
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
 .body_bottom .desc .ratio{font-weight:bold}
-.body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
   /* 멀티플 슬라이드 */
@@ -1145,7 +1162,6 @@ border-spacing: 0 20px;font-size:14px}
     .m_bestn_tit_box img{ display:inline-block;width:200px;}
     .m_bestn_list{border-bottom:8px solid #f1f1f1;padding-top:10px}
     .m_bestn_mn_box {float:left}
-     #content .desc ul li{float:left}
     #content .main_img{z-index:1;width:100%;}
     #content .catgor_wrap{width:100%;border-bottom:8px solid #f1f1f1;}
     #content .category{width:100%;border-top:8px solid #f1f1f1;}
@@ -1192,18 +1208,7 @@ border-spacing: 0 20px;font-size:14px}
   .sweet h3{clear:both;font-size:20px;font-weight:bold;padding-left:15px}
   #mHeader{position:fixed;height:90px;background-color:#fff}
   .btnCart{width: 21px; height: 21px;}
-  #content .pick_wrap{width:100%;border-bottom:8px solid #f1f1f1;margin-top:80px}
-  #content .pick_wrap{padding-left:15px;padding-right:15px}
-  #content .pick_product h2{width:0;height:0;overflow:hidden;margin:-1px;position:absolute}
-  #content .pick_product ul{display:grid;grid-template-columns: repeat(3, 3fr);
-  ;align-items: center;
-  justify-self: center;margin: 0 auto;white-space:nowrap}
 
-  #content .pick_product ul li img{width:100%;padding:7px}
-  #content .pick_product .title{margin-left:5px}
-  #content .pick_product ul li .desc p{font-size:12px;padding:5px;text-overflow: ellipsis;white-space:nowrap;}
-  #content .pick_product ul li .desc
-  #content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
   #content .desc .sale{color:#000; font-weight: bold;}
   #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
   #content .desc .ratio{color:#F32525; font-weight: bold;}
@@ -1294,10 +1299,6 @@ border-spacing: 0 20px;font-size:14px}
 .protein, .sweet, .water{border-top:8px solid #F1F1F1;margin-top:20px}
 .body_bottom .thum img{margin-top:10px;width:100%;padding:10px;height:244px;overflow:hidden;object-fit:cover}
 
-.body_bottom .desc .sale{font-weight:bold}
-.body_bottom .desc .cost{color:red;text-decoration:line-through;}
-.body_bottom .desc .ratio{font-weight:bold}
-.body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
 .sideMenu_Header { min-width: 360px; width: 100%;z-index: 999; background: #fff;}
 .sideMenu #tab1 {width: 100%; min-width: 360px;}
@@ -1371,31 +1372,33 @@ input[type="checkbox"] {display: none;}
 
 }
 
-.product{max-width:100%;margin-bottom:10px}
+.product{max-width:100%;margin-bottom:16px}
 .product .thum,
 .product .thum img {
   max-width: 100%;
 }
-.product .desc ul{margin-bottom:10px}
-.product .desc ul li{/*margin-right:8px;*/display:inline-block }
+.product .desc ul li{display: inline-block; margin-right:5px}
+
 .product .title{
  width: 100%; height: 20px;display:inline-block;font-size:14px;margin-bottom:7px
 }
 
-.product .desc,
-.product .title p {
-
-  margin-left:10px
- 
+.product .desc {
+  font-size: 15px;
+  padding: 0px 10px
 }
-.product .desc .sale{font-size:16px;font-weight:bold;font-size:15px}
-.product .desc .cost{font-size:16px;text-decoration:line-through;color:#6B6B6B;font-size:15px}
-.product .desc .ratio{font-size:16px;font-weight:bold;color:#F32525;font-size:15px}
+
+.product .desc .sale{font-weight:bold;}
+.product .desc .cost{text-decoration:line-through;color:#6B6B6B;}
+.product .desc .ratio{font-weight:bold;color:#F32525;}
 
 .open-sale {
+  margin: 40px auto;
+}
+
+.df-slider{
   max-width: 1080px;
   overflow-x: scroll;
-  margin: 40px auto;
 }
 
 /*1080px이상 웹용 */
@@ -1403,7 +1406,6 @@ input[type="checkbox"] {display: none;}
 
   .timedeal-list {
     padding-top: 50px;
-    padding-bottom: 100px;
   }
 
 #header_common #nav a.is-current{color:#fff;background-color:#F99319}
@@ -1418,7 +1420,7 @@ margin-left: 600px;width:168px;height:45px;background-color:#F99319;border-radiu
 .myPage_title{display:none}
 .header_wrap{border-bottom:2px solid #F5F5F5;border-top:2px solid #F5F5F5}
 .keyword{width:1040px;margin:0 auto;margin-bottom:40px;margin-top:40px}
-#content .mtpSlideTit1{max-width:1080px;margin:0 auto;margin-top:50px;margin-bottom:-40px}
+#content .mtpSlideTit1{max-width:1080px;margin:0 auto;margin-bottom:40px}
 /*장바구니*/
 #shpcart_select input[type="checkbox"]{display:none;}
 #shpcart_select input[type="checkbox"] + label{
@@ -1698,25 +1700,6 @@ font-weight:normal}
   width: 100%;
   max-width: 1080px;
 }
-
-#content .pick_wrap{width:1080px;}
-#content .pick_wrap{margin:10px 10px;width:100%;}
-#content .pick_product h2{margin-top:40px;margin-bottom:20px;font-size:18px;color:#000;}
-
-#content .pick_product ul{display:grid;grid-template-columns: repeat(3, 3fr);
-;align-items: center;
-justify-self: center;width: 100%;margin: 0 auto;}
-
-#content .pick_product ul li img{width:330px;border-radius:5px}
-#content .pick_product ul li .desc p{font-size:16px;padding:5px;margin-top:10px;overflow:visible;text-overflow: ellipsis;white-space: nowrap;width:200px;height: 20px;display:inline-block;margin-bottom:10px}
-#content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
-#content .pick_product .desc ul{margin-left:5px;margin-bottom:44px}
-#content .pick_product .desc .sale{color:#000;font-size:16px;font-weight:bold}
-#content .pick_product .desc .cost{/*margin-left:-48px;*/font-size:16px;color:#6B6B6B;text-decoration:line-through;font-weight:bold}
-#content .pick_product .desc .ratio{/*margin-left:-98px;*/color:#F32525;font-size:16px;font-weight:bold}
-/*찜 내역 없을때*/
-
-
 
 /*회원 탈퇴*/
 .contents .delete .web_title{font-size:25px;font-weight:bold;text-align:center}
@@ -2839,7 +2822,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
 }
 /*주문 완료*/
 @media screen and (max-width:1079px){
-  .open-sale{ padding: 0 15px;}
+  .open-sale{ margin: 0 15px;}
   .warn{background-color:#F5F5F5;padding-top:20px;padding-bottom:20px}
   .warn p{padding-left:15px;padding-right:15px;line-height:20px;margin-bottom:10px}
   #order_detail .order_a_box{margin-top:14px;padding-left:15px;padding-right:15px}
