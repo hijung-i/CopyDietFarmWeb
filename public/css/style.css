@@ -186,6 +186,11 @@ a:hover{text-decoration:none;}
 .btnback{position:absolute;top:4px; left: 15px;}
 .btncart{position:absolute;right:35px;top:-2px;padding:15px 0}
 
+.desc .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .detail_title h2{text-align:center;position:relative;font-weight:bold;font-size:16px}
 
 .detail_title .title{ max-width: 221px; white-space: nowrap;overflow:hidden;text-overflow: ellipsis;margin:0 auto}
@@ -1171,7 +1176,7 @@ border-spacing: 0 20px;font-size:14px}
 .body_bottom .desc .sale{font-weight:bold}
 .body_bottom .desc .cost{color:red;text-decoration:line-through;}
 .body_bottom .desc .ratio{font-weight:bold}
-.body_bottom .desc .title{margin-left:10px/*;margin-top:20px*/}
+.body_bottom .desc .title{margin-left:10px;margin-top:20px}
 .body_bottom .desc ul{margin-left:5px}
 .body_bottom .desc ul li{float:left;margin-right:5px}
 .side{display:none}
@@ -1268,10 +1273,10 @@ input[type="checkbox"] {display: none;}
 
 .open-sale {
   max-width: 1080px;
-  
   overflow-x: scroll;
   margin: 40px auto;
 }
+
 /*1080px이상 웹용 */
 @media screen and (min-width:1080px){
 #header_common #nav a.is-current{color:#fff;background-color:#F99319}
@@ -2696,9 +2701,10 @@ input#secret[type="checkbox"]:checked + .secret::before {
 }
 /*주문 완료*/
 @media screen and (max-width:1079px){
-.warn{background-color:#F5F5F5;padding-top:20px;padding-bottom:20px}
-.warn p{padding-left:15px;padding-right:15px;line-height:20px;margin-bottom:10px}
-#order_detail .order_a_box{margin-top:14px;padding-left:15px;padding-right:15px}
+  .open-sale{ padding: 0 15px;}
+  .warn{background-color:#F5F5F5;padding-top:20px;padding-bottom:20px}
+  .warn p{padding-left:15px;padding-right:15px;line-height:20px;margin-bottom:10px}
+  #order_detail .order_a_box{margin-top:14px;padding-left:15px;padding-right:15px}
 }
 @media screen and (min-width:1080px){
   #content .main_sub img{height:360px}

@@ -23,14 +23,14 @@ var app = new Vue({
         openDeliveryInfo: function(oIdx, pIdx) {
             var currentOrder = this.orderList[oIdx];
             this.product = currentOrder.products[pIdx]
-            
+    
             this.product.courierNo = this.product.courierNo.replace(COURIER_NO_REGEX, '')
-
             this.product.deliveryName = currentOrder.deliveryName;
 
             var found = Array.from(this.carrierList).find(e => 
                 e['Name'] == this.product.courierName
             )
+            console.log('found', found)
 
             if(found == undefined || found['Code'] == undefined) {
                 alert('택배사 정보가 잘못되었거나 지원하지 않는 택배사입니다.')
@@ -47,6 +47,7 @@ var app = new Vue({
     },
     created: async function() {
         var data = await carriersTrackSmart();
+
         if(data['Company'] != undefined) {
             this.carrierList = data['Company'];
         } else {

@@ -97,7 +97,7 @@ var deliverySelectModal = {
             this.closeInfoModal();
         },
         closeInfoModal: function () {
-            app.deliveryInfoModal = false
+            app.deliverySelectModalShow = false
             scrollAllow();
         }
         
@@ -111,6 +111,6 @@ var deliverySelectModal = {
 }
 
 function openDeliverySelectModal() {
-    app.deliveryInfoModal = true
+    app.deliverySelectModalShow = true
     scrollBlock();
 }
