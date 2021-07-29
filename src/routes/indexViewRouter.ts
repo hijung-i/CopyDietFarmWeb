@@ -46,17 +46,6 @@ router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) =>
 router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {
     const productCode = req.params.productCode
     render(req, res, 'product', { productCode: productCode })
-    
-        return request(options).then((res: any): ProductResult => {
-        
-        }).catch((err: any): ProductResult => {
-            if (err) {
-                console.log('Error occured while loginApple', err.statusCode, err.error)
-                STREAM.writeError(`ERROR userService.loginApple(), statusCode = ${err.statusCode}, error = ${err.error}`)
-            }
-            return setProductResult(StatusCode.error, err.error, null)
-        })
-    }
 })
 
 router.get('/products/:companyCode/brand', (req: Request, res: Response, next: NextFunction) => {
