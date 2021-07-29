@@ -62,7 +62,7 @@
         }
     }
     @media screen and (min-width:1080px) {
-        #content{max-width:1080px;margin:0 auto;width:1080px}
+        #content{max-width:1080px;margin:0 auto;width:1080px;margin-bottom:200px}
         .modal_wrap, .modal_wrap02 {
             width: 500px;
             height: auto;
@@ -630,12 +630,15 @@
             </div>
             <% } %>
             
-            <p class="inquiry">문의 {{questionList.length}}개</p>
+           
             <div class="myReview">
-                <p style="margin-right:10px">내 문의 보기</p>
-                <input type="checkbox" id="prod_detail_toggle">
+                <p class="inquiry">문의 {{questionList.length}}개</p>
+
+                <p style="display:flex;white-space:nowrap;">내 문의 보기
+                <input type="checkbox" id="prod_detail_toggle" style="margin-left:4px">
                 <label for="prod_detail_toggle">
                 <span>아이콘</span></label>
+                </p>
             </div>
                             
             <div class="qna">

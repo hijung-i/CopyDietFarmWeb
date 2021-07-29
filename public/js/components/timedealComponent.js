@@ -1,7 +1,11 @@
 var timedealTemplate = '';
 
 timedealTemplate += '  <div class="timedeal" v-if="saleNow">';
+timedealTemplate += '  <div class="timedeal-title_mobile">';
+timedealTemplate += '                    <span><img src="/images/timedeal/free-icon-clock-996232@2x.png"></span>';
 timedealTemplate += '    <h2 class="mtpSlideTit only-mobile">특가 타임 SALE !</h2>';
+timedealTemplate += '                    <span><img src="/images/timedeal/free-icon-clock-996232@2x.png"></span>';
+timedealTemplate += '                </div>';
 timedealTemplate += '    <a v-bind:href="\'/product/\' + product.productCode" class="timedeal-wrapper">';
 timedealTemplate += '        <div class="timer-area">';
 timedealTemplate += '            <div class="product only-pc">';
@@ -31,6 +35,7 @@ timedealTemplate += '            </div>';
 timedealTemplate += '        </div>';
 timedealTemplate += '        <div class="product">';
 timedealTemplate += '            <div class="thum">';
+timedealTemplate += '            <p class="on-img">46%</p>';
 timedealTemplate += '                <img v-bind:src="RESOURCE_SERVER + product.url" alt="썸네일">';
 timedealTemplate += '                <input type="hidden" name="productNo" v-bind:value="product.productNo">';
 timedealTemplate += '                <input type="hidden" name="productCode" v-bind:value="product.productCode">';

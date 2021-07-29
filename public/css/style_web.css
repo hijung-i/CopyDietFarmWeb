@@ -1997,7 +1997,7 @@ input:focus {outline: none;}
 h3 {font-size: 14px;font-weight:700;}
 
 
-.box {display: block;width:440px;height: 51px;
+.box {display: block;height: 51px;
     border: solid 1px #dadada;padding: 10px 14px 10px 14px;box-sizing: border-box;   background: #fff;position: relative;
     border-radius:8px;}
 
