@@ -85,41 +85,41 @@
             left: 84%; bottom: 25px}
             .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
         </style>
-        <link rel="stylesheet" href="/css/myPage.css">
-        <script type="text/javascript">
-            $( document ).ready(function() {
-                cookiedata = document.cookie;
-                console.log(cookiedata);
-                if ( cookiedata.indexOf("ncookie=done") < 0 ){
-                    console.log('cookie 없음')
-                    document.getElementById('popup-cookie').style.display = "block";
-                } else {
-                    console.log("cookie 있음")
-                    document.getElementById('popup-cookie').style.display = "none";
-                }
-            });
-            function setCookie( name, value, expiredays ) { 
-                var todayDate = new Date();
-                todayDate.setDate( todayDate.getDate() + expiredays );
-                document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-            }
-        
-            function closeWin() {
-                    document.getElementById('popup-cookie').style.display = "none";
-                $("#dimm-cookie").remove();
-            }
-        
-            function todaycloseWin() {
-                setCookie("ncookie", "done", 1);
-                document.getElementById('popup-cookie').style.display = "none";
-                $("#dimm-cookie").remove();
-            }
-        
-            function dimm_close() {
-                $("#dimm-cookie").remove();
-                document.getElementById('popup-cookie').style.display = "none";
-            }
-        </script>
+       <link rel="stylesheet" href="/css/myPage.css">
+       // <script type="text/javascript">
+       //     $( document ).ready(function() {
+       //         cookiedata = document.cookie;
+       //         console.log(cookiedata);
+       //         if ( cookiedata.indexOf("ncookie=done") < 0 ){
+       //             console.log('cookie 없음')
+       //             document.getElementById('popup-cookie').style.display = "block";
+       //         } else {
+       //             console.log("cookie 있음")
+       //             document.getElementById('popup-cookie').style.display = "none";
+       //         }
+       //     });
+       //     function setCookie( name, value, expiredays ) { 
+       //         var todayDate = new Date();
+       //         todayDate.setDate( todayDate.getDate() + expiredays );
+       //         document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+       //     }
+       // 
+       //     function closeWin() {
+       //             document.getElementById('popup-cookie').style.display = "none";
+       //         $("#dimm-cookie").remove();
+       //     }
+       // 
+       //     function todaycloseWin() {
+       //         setCookie("ncookie", "done", 1);
+       //         document.getElementById('popup-cookie').style.display = "none";
+       //         $("#dimm-cookie").remove();
+       //     }
+       // 
+       //     function dimm_close() {
+       //         $("#dimm-cookie").remove();
+       //         document.getElementById('popup-cookie').style.display = "none";
+       //     }
+       // </script>
         
 </head>
 <body>
