@@ -3957,9 +3957,6 @@ input#secret[type="checkbox"]:checked+.secret::before {
   position: absolute;
   z-index: 9999
 }
-.footer {
-  margin-bottom: 45px;
-}
 .footer_sns {
   width: 70%;
   margin: 0 auto;
