@@ -17,7 +17,7 @@ var app = new Vue({
         requestDeliveryGroupList: [],
         cartList,
         deliveryGroupList,
-        deliveryInfoModal: false
+        deliverySelectModalShow: false
     },
     methods: {
         numberFormat,

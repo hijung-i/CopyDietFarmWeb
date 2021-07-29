@@ -1,125 +1,124 @@
 <!DOCTYPE html>
 <html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+    <meta name="format-detection" content="no"/>
+    <meta name="description" content="페이지 설명">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport"
-         content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
-        <meta name="format-detection" content="telephone=no, address=no, email=no"/>
-        <meta name="format-detection" content="no"/>
-        <meta name="description" content="페이지 설명">
+    <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
 
-        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
+    <%-include(webroot + 'views/general/head') %>
+    <%-include(webroot + 'views/general/openGraph.ejs') %>
+    <style type="text/css">
+        nav a:nth-child(1) {color:#F99319}
+        .bx-wrapper {-moz-box-shadow: none !important; -webkit-box-shadow: none !important;
+        box-shadow: none !important} 
+        .main_pager_wrapper {position: absolute;right: 10%;top: 6.6%;z-index: 777;width: 60px;
+            height: auto;text-align: center;background: #fff;border-radius: 20px;padding: 6px;
+            font-size: 12px}
+        .main_pager_wrapper span {font-weight: 700}
+        .main_pager_wrapper > .mr10 {letter-spacing: 2px}
+        #mHeader .tab_wrap {width: 100%;padding-bottom: 20px;border-bottom: 2px solid #E6E6E6;
+            background: #fff;z-index: 99}
+        #mHeader .tab_cont {display: none;min-height: 360px}
+        #mHeader .tab_cont.active {display: block;background: #fff;position: absolute;
+            width: 100%}
+        @media screen and (max-width:1079px) {
+            .slider_item img {width: 100%;height: 450px;object-fit: cover}
+            .swiper-slide img {display: block;width: 100%;height:400px}                
+        }
+        .showing {z-index: 9999;opacity: 1}
+        @media screen and (min-width:1080px) {
 
-        <%-include(webroot + 'views/general/head') %>
-        <%-include(webroot + 'views/general/openGraph.ejs') %>
-        <style type="text/css">
-            nav a:nth-child(1) {color:#F99319}
-            .bx-wrapper {-moz-box-shadow: none !important; -webkit-box-shadow: none !important;
-            box-shadow: none !important} 
-            .main_pager_wrapper {position: absolute;right: 10%;top: 6.6%;z-index: 777;width: 60px;
-                height: auto;text-align: center;background: #fff;border-radius: 20px;padding: 6px;
-                font-size: 12px}
-            .main_pager_wrapper span {font-weight: 700}
-            .main_pager_wrapper > .mr10 {letter-spacing: 2px}
-            #mHeader .tab_wrap {width: 100%;padding-bottom: 20px;border-bottom: 2px solid #E6E6E6;
-                background: #fff;z-index: 99}
-            #mHeader .tab_cont {display: none;min-height: 360px}
-            #mHeader .tab_cont.active {display: block;background: #fff;position: absolute;
-                width: 100%}
-            @media screen and (max-width:1079px) {
-                .slider_item img {width: 100%;height: 450px;object-fit: cover}
-                .swiper-slide img {display: block;width: 100%;height:400px}                
-            }
-            .showing {z-index: 9999;opacity: 1}
-            @media screen and (min-width:1080px) {
-
-                .swiper-container{margin-top:-2px}
-                .water{margin-bottom:100px}
-                .black_bg{
-                display:block;
-                position:absolute;
-                width:100%;
-                height:360px;
-                ;
-                top:0;
-                left: 0;
-                z-index: 1000;}
-                .sp_wrap {margin-top: 65px}
-                .swiper-slide img {display: block;width: 100%;height:360px;object-fit:cover;}
-                .slider_main_wrap img {width: 1080px; height: 370px;z-index:100} 
-            }
-            /* swiper bundle */
-            .swiper-container { width: 100%;height: 100%;z-index: 0;}
-          
-            .swiper-slide {text-align: center;font-size: 18px;                /* Center slide text vertically */
-                display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
-                -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
-                justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
-                align-items: center
-            }
-            #popup-cookie{
-                width: 360px;
-                height:500px;
-                background-color:#f1f1f1;
-                position: fixed;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 1;
-                line-height: 27px;
-                font-size: 14px;
-                overflow-x: hidden;
-                border-radius:5px;
-                overflow-y:hidden;
+            .swiper-container{margin-top:-2px}
+            .water{margin-bottom:100px}
+            .black_bg{
+            display:block;
+            position:absolute;
+            width:100%;
+            height:360px;
+            ;
+            top:0;
+            left: 0;
+            z-index: 1000;}
+            .sp_wrap {margin-top: 65px}
+            .swiper-slide img {display: block;width: 100%;height:360px;object-fit:cover;}
+            .slider_main_wrap img {width: 1080px; height: 370px;z-index:100} 
+        }
+        /* swiper bundle */
+        .swiper-container { width: 100%;height: 100%;z-index: 0;}
         
-            }
-            #popup-cookie h2{text-align: center;padding-top:10px}
-            #popup-cookie p{padding:8.6px;font-size:14px}
-            #popup-cookie p span{font-size:16px;font-weight:bold;color:red}
-            .clfix{display:flex;justify-content: space-around;}
-            .clfix a:first-child{width:180px;height:45px;background-color:#F99319;text-align: center;padding-top:10px}
-            .clfix a:last-child{width:180px;height:45px;background-color:#fff;text-align: center;padding-top:10px}
-            .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
-            left: 84%; bottom: 25px}
-            .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
-        </style>
-       <link rel="stylesheet" href="/css/myPage.css">
-       // <script type="text/javascript">
-       //     $( document ).ready(function() {
-       //         cookiedata = document.cookie;
-       //         console.log(cookiedata);
-       //         if ( cookiedata.indexOf("ncookie=done") < 0 ){
-       //             console.log('cookie 없음')
-       //             document.getElementById('popup-cookie').style.display = "block";
-       //         } else {
-       //             console.log("cookie 있음")
-       //             document.getElementById('popup-cookie').style.display = "none";
-       //         }
-       //     });
-       //     function setCookie( name, value, expiredays ) { 
-       //         var todayDate = new Date();
-       //         todayDate.setDate( todayDate.getDate() + expiredays );
-       //         document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-       //     }
-       // 
-       //     function closeWin() {
-       //             document.getElementById('popup-cookie').style.display = "none";
-       //         $("#dimm-cookie").remove();
-       //     }
-       // 
-       //     function todaycloseWin() {
-       //         setCookie("ncookie", "done", 1);
-       //         document.getElementById('popup-cookie').style.display = "none";
-       //         $("#dimm-cookie").remove();
-       //     }
-       // 
-       //     function dimm_close() {
-       //         $("#dimm-cookie").remove();
-       //         document.getElementById('popup-cookie').style.display = "none";
-       //     }
-       // </script>
+        .swiper-slide {text-align: center;font-size: 18px;                /* Center slide text vertically */
+            display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+            -webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;
+            justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
+            align-items: center
+        }
+        #popup-cookie{
+            width: 360px;
+            height:500px;
+            background-color:#f1f1f1;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            line-height: 27px;
+            font-size: 14px;
+            overflow-x: hidden;
+            border-radius:5px;
+            overflow-y:hidden;
+    
+        }
+        #popup-cookie h2{text-align: center;padding-top:10px}
+        #popup-cookie p{padding:8.6px;font-size:14px}
+        #popup-cookie p span{font-size:16px;font-weight:bold;color:red}
+        .clfix{display:flex;justify-content: space-around;}
+        .clfix a:first-child{width:180px;height:45px;background-color:#F99319;text-align: center;padding-top:10px}
+        .clfix a:last-child{width:180px;height:45px;background-color:#fff;text-align: center;padding-top:10px}
+        .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
+        left: 84%; bottom: 25px}
+        .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
+    </style>
+    <link rel="stylesheet" href="/css/myPage.css">
+    <script type="text/javascript">
+        //    $( document ).ready(function() {
+        //        cookiedata = document.cookie;
+        //        console.log(cookiedata);
+        //        if ( cookiedata.indexOf("ncookie=done") < 0 ){
+        //            console.log('cookie 없음')
+        //            document.getElementById('popup-cookie').style.display = "block";
+        //        } else {
+        //            console.log("cookie 있음")
+        //            document.getElementById('popup-cookie').style.display = "none";
+        //        }
+        //    });
+        //    function setCookie( name, value, expiredays ) { 
+        //        var todayDate = new Date();
+        //        todayDate.setDate( todayDate.getDate() + expiredays );
+        //        document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        //    }
+        //
+        //    function closeWin() {
+        //            document.getElementById('popup-cookie').style.display = "none";
+        //        $("#dimm-cookie").remove();
+        //    }
+        //
+        //    function todaycloseWin() {
+        //        setCookie("ncookie", "done", 1);
+        //        document.getElementById('popup-cookie').style.display = "none";
+        //        $("#dimm-cookie").remove();
+        //    }
+        //
+        //    function dimm_close() {
+        //        $("#dimm-cookie").remove();
+        //        document.getElementById('popup-cookie').style.display = "none";
+        //    }
+    </script>
         
 </head>
 <body>

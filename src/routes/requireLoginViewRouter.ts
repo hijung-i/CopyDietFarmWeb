@@ -64,13 +64,6 @@ router.get('/alarm', (req: Request, res: Response, next: NextFunction) => {
 
 })
 
-router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
-
-    checkLogin(req, res, (sessionUser: SessionUser) => {
-        render(req, res, 'mypage/mypage_orderList', {})
-    })
-})
-
 router.get('/point', (req: Request, res: Response, next: NextFunction) => {
 
     checkLogin(req, res, (sessionUser: SessionUser) => {

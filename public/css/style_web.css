@@ -240,7 +240,9 @@ width: 400px; height: 147px;color: #000; background: #fff;margin: 44px -10px 0 0
 padding: 12px 16px;font-size: 12px; font-weight: 700;color: #000}
 .order_list_box_w table.cell td {text-align: center;padding: 12px 16px;font-size: 25px; font-weight: 700;color: #000}
 .grayLine{display:none}
-.mypage_order_info_wrap{margin-right:50px}
+.mypage_order_info_wrap{
+    width: 100%; 
+    margin-right:50px}
 .order_a{border-bottom:1px solid #f1f1f1;}
 
 }

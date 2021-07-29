@@ -25,15 +25,6 @@
             }
             .modalTop_ctn span {padding-right: 10px;}
 
-        /* Modal Content/Box */
-        .i_modal .modal-content {
-                    background-color: #fefefe;
-                    margin: 15% auto; /* 15% from the top and centered */
-                    height:450px;
-                    min-width:360px;
-                    width: 100%;
-                                                
-                }
         .modal-content h3{margin-left:15px}
             .modalTop_ctn .order_delMag {
                         text-align: center;
@@ -115,18 +106,7 @@
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
     .coup_point h2{padding-left:15px}
-    /* Modal Content/Box */
-    .coupon_modal .modal-content {
-        background-color: #fefefe;
-        margin: 45% auto; /* 15% from the top and centered */
-        height:auto;
-        width:80%;
-        padding-top:30px;
-        padding-bottom:20px;
-        
-        position: relative;
-            
-    }
+
     /* The Close Button */
     .coupon_modal .modal-content .close {
         color: #aaa;
@@ -501,7 +481,7 @@
             <div class="order_btn">
                 <button type="button" id="orderBtn" v-on:click="paymentAction">결제하기</button>
             </div>
-            <delivery-select-modal v-if="deliveryInfoModal" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-select-modal>
+            <delivery-select-modal v-if="deliverySelectModalShow" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-select-modal>
             
 
         </main>

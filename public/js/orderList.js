@@ -2,30 +2,43 @@ var app = new Vue({
     el: 'main',
     components: {
         'mypage-component': mypageComponent,
+
+        'order-cancel-modal': OrderCancelModal,
         'delivery-info-modal': deliveryInfoModal,
         'product-review-modal': productReviewModal
     },
     data: {
         RESOURCE_SERVER,
+        userInfo: {},
         orderList: [],
         totalPointAmount: 0,
+
         reviewModal: false,
         deliveryModal: false,
+        orderCancelModalShow: false,
         beforeDeliveryCount: 0,
-        currentReview: {},
         onDeliveryCount: 0,
         afterDeliveryCount: 0,
+
+        currentProduct: {},
+        currentReview: {},
+
         writable: { purchaseProductNo: 0 },
         writableList: [],
         reviewList: [],
         reviewModal: false,
-        product: {}
+        product: {},
+        level: 0
     }, methods: {
         numberFormat,
         formatDate,
         convertOrderStatus,
         orderConfirm,
-        openCancelModal,
+        onOrderCancelClick: function(oIdx, pIdx) {
+            this.currentProduct = this.orderList[oIdx].products[pIdx];
+
+            openCancelModal();
+        },
         
         onReviewUpdateClick: function(index) {
             this.currentReview = this.reviewList[index];
@@ -48,13 +61,26 @@ var app = new Vue({
             this.currentReview = {};
             this.currentQuestion = {};
         },
-    }
-})
+    }, created: function() {
+        var userId = $('userId').val();
+        var userName = $('#userName').val();
+        var userCellNo = $('#userCellNo').val();
 
-$(function() {
-    getOrderList();
-    getUsablePointAmount();
-    getUsableCouponList();
+        this.userInfo = {
+            userId,
+            userName,
+            userCellNo
+        }
+
+        if(this.userId == undefined || this.userId == '비회원주문') {
+            this.level = 1
+            return;
+        }
+        this.level = 2;
+        getOrderList(userInfo);
+        getUsablePointAmount();
+        getUsableCouponList();
+    }
 })
 
 function getUsableCouponList() {
@@ -70,8 +96,9 @@ function getUsableCouponList() {
     })
 }
 
-function getOrderList() {
-    ajaxCallWithLogin(API_SERVER + '/order/getPurchaseOrderListByUserId', {}, 'POST',
+function getOrderList(userInfo) {
+
+    ajaxCallWithLogin(API_SERVER + '/order/getPurchaseOrderListByUserId', userInfo, 'POST',
     function(data) {
         var result = data.result;
         console.log(result);
@@ -120,31 +147,6 @@ function formatDate(dateStr) {
     day = (day.length < 2)?'0'+day: day;
     return month + '-' + day;
 }
-
-function openCancelModal() {
-    $('#x_modal').show();
-    $('html,body').css({'overflow':'hidden', 'height':'100%'});
-    $('html,body').on('scroll touchmove mousewheel', function(event) {
-        event.preventDfault();
-        event.stopPropagation();
-        return false;
-    });
-}
-function closeCancelModal() {
-    console.log('close cancel');
-    $('#x_modal').hide();
-    $('html,body').css({'overflow':'visible'});
-    $('html,body').off('scroll touchmove mousewheel');
-}
-var cancelModal = document.getElementById("x_modal")
-cancelModal.addEventListener("click",e => {
-    var evTarget = e.target
-    if(evTarget.classList.contains("modal-overlay")) {
-        cancelModal.style.display = "none"
-        $('html,body').css({'overflow':'visible'});
-        $('html,body').off('scroll touchmove mousewheel');
-    }
-})
 
 function orderConfirm(oIdx, pIdx) {
     var order = app.orderList[oIdx];

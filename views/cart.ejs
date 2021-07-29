@@ -49,18 +49,6 @@
                 .modalTop_ctn span {
                     padding-right: 10px;
                 }
-
-                /* Modal Content/Box */
-                .i_modal .modal-content {
-                    background-color: #fefefe;
-                    margin: 15% auto;
-                    /* 15% from the top and centered */
-                    height: 450px;
-                    min-width: 360px;
-                    width: 100%;
-
-                }
-
                 .modal-content h3 {
                     margin-left: 15px
                 }
@@ -204,8 +192,7 @@
             </section>
         </div>
 
-        <section id="shoplist_t_price_web">
-            <delivery-select-modal v-if="deliveryInfoModal" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-select-modal>
+        <section id="shoplist_t_price_web"><delivery-select-modal v-if="deliverySelectModalShow" v-bind:order-dto="orderDTO" v-on:delivery-selected="onDeliveryInfoSelected"></delivery-select-modal>
             <div class="shopBox01">
                 <h3>배송지</h3>
                 <template v-if="orderDTO.delivery != undefined">

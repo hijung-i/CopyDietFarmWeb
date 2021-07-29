@@ -18,7 +18,7 @@ var app = new Vue({
         deliveryList: [],
         couponList: [],
         coupon: {},
-        deliveryInfoModal: false
+        deliverySelectModalShow: false
     }, methods: {
         
         numberFormat,
@@ -61,8 +61,7 @@ var app = new Vue({
         formatDate,
         applyCoupon,
         onDeliveryInfoSelected: function(data) {
-            var selectedDelivery = Object.assign({}, data);
-            this.orderDTO.delivery = selectedDelivery;
+            var selectedDelivery = Object.assign({}, data);this.orderDTO.delivery = selectedDelivery;
             
             checkDeliveryAddress(this);
         }

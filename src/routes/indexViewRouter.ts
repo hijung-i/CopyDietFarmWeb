@@ -142,8 +142,8 @@ router.get('/pwdReset', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'pwdReset', {})
 })
 router.get('/order-comp', (req: Request, res: Response, next: NextFunction) => {
-    res.locals.orderDTO = JSON.parse(req.query.requestOrderDTO as string)
-    console.log(res?.locals.orderDTO)
+    const orderDTO = req.query.requestOrderDTO as string
+    res.locals.orderDTO = JSON.parse(qs.unescape(orderDTO))
 
     render(req, res, 'order/order_complete', {})
 })
@@ -231,6 +231,11 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
 router.get('/s_inquiry_more', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'web_seller_inquiry', {})
 })
+
+router.get('/orderlist', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'mypage/mypage_orderList', {})
+})
+
 router.get('/login-fail', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'login_fail', {})
 })
