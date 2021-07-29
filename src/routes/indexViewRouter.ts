@@ -46,19 +46,8 @@ router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) =>
 router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {
     const productCode = req.params.productCode
     render(req, res, 'product', { productCode: productCode })
-
     
 })
-return request(options).then((res: any): UserResult => {
-
-    STREAM.writeDebug(`LOGIN SUCCESS TYPE: KAKAO, userId = ${res.result.userId}`)
-    return setUserResult(StatusCode.success, StatusMessage.success, res.result || {})
-}).catch((err: any): UserResult => {
-    if (err) {
-        console.log('Error occured while login', err.statusCode, err.error)
-        STREAM.writeError(`ERROR userService.loginKakao(), statusCode = ${err.statusCode}, error = ${err.error}`)
-
-    }
 
 router.get('/products/:companyCode/brand', (req: Request, res: Response, next: NextFunction) => {
     const companyCode = req.params.companyCode
