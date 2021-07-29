@@ -866,7 +866,7 @@ div #ex1.modal ul li {float:left}
 .v_floating_wrap{display:none}
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}
-.num{width:100%;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:14px;padding-bottom:18px
+.num{width:100%;font-weight:bold;border-bottom:2px solid #E6E6E6;margin-top:24px;padding-bottom:18px
 ;padding-left:10px;padding-top:4px;font-size:14px;font-weight:bold;}
 .product_review01{width:100%;}
 .review_info01 ul li{float:left;font-size:13px;padding-left:15px}
@@ -950,7 +950,7 @@ div #ex1.modal ul li {float:left}
     padding-bottom:20px;
     display: flex;
     justify-content:space-between;
-    margin-top: 20px;
+    margin-top: 30px;
     align-items: center;
     padding-right:15px
     /* outline: 2px solid red; */

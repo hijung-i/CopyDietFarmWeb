@@ -62,7 +62,7 @@ var app = new Vue({
             this.currentQuestion = {};
         },
     }, created: function() {
-        var userId = $('userId').val();
+        var userId = $('#userId').val();
         var userName = $('#userName').val();
         var userCellNo = $('#userCellNo').val();
 
@@ -72,12 +72,14 @@ var app = new Vue({
             userCellNo
         }
 
-        if(this.userId == undefined || this.userId == '비회원주문') {
+        if(this.userInfo.userId == undefined || this.userInfo.userId == '비회원주문') {
             this.level = 1
             return;
         }
         this.level = 2;
-        getOrderList(userInfo);
+        console.log('level 2')
+
+        getOrderList(this.userInfo);
         getUsablePointAmount();
         getUsableCouponList();
     }

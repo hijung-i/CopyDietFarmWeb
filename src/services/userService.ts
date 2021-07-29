@@ -1,7 +1,7 @@
 import { User } from '../models/user'
 import * as request from 'request-promise-native'
 import * as winston from '../configs/winston'
-import { PROD, DEV_JGPARK, DEV_UBUNTU } from '../configs/url'
+import { current } from '../configs/url'
 
 import { setUserResult, StatusCode, StatusMessage, UserResult } from '../models/response'
 
@@ -14,8 +14,6 @@ type Option = {
     json: boolean,
     body?: Object
 }
-
-const current = PROD
 
 class UserService {
     SERVER_URL = current.API_SERVER
