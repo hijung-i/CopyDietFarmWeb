@@ -199,7 +199,7 @@ a:hover{text-decoration:none;}
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0 auto;
-}}
+}
 .detail_title_header a img{position:absolute;top:80px}
 /* *{padding-left:15px;padding-right:15px} */
 .group input[type="checkbox"]{display:none;}
@@ -273,6 +273,16 @@ dd.subMenu {
 .timedeal {
   overflow: hidden;
 }
+.timedeal-title_mobile{
+  display:flex;
+  justify-content:space-around;
+  padding:0 100px
+}
+.timedeal-title_mobile img{
+ position:relative;
+ top:26px;
+ width:24px
+}
 
 .timedeal-wrapper {
   width: 100%;
@@ -282,7 +292,7 @@ dd.subMenu {
   max-width: 1080px;
   
   border: 1px solid #B1B1B1;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 .timedeal-wrapper>div {
@@ -359,6 +369,19 @@ dd.subMenu {
   height: 40px;
   padding: 6px;
 }
+ .product .on-img{
+  float: right;
+  position: relative;
+  margin-top: -80px;
+  top: 94px;
+  right: 14px;
+  font-weight: bold;
+  font-size: 40px;
+  background-color: #F99319;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+}
 .timer-area .product .desc,
 .timer-area .product .title {
   font-size: 30px;
@@ -386,7 +409,7 @@ dd.subMenu {
 @media screen and (min-width:630px) and (max-width:1079px){
 .slick-slider{margin-bottom:40px}
 }
-/* 모바일 헤더 높이 조정 */
+
 @media screen and (max-width:1079px) {
   .timedeal{
     border-bottom:8px solid #f1f1f1;
@@ -722,6 +745,7 @@ background-size:19px 19px;}
 }
 
 .page_wrap{display:none}
+
 /*1079px이하 모바일-태블릿 */
 @media screen and (max-width:1079px){
   .timedeal {
@@ -1204,38 +1228,13 @@ border-spacing: 0 20px;font-size:14px}
   div.pages div {margin-top: 4px; text-align: center; min-width: 60px}
   .shadow{box-shadow:1px 1px 10px rgba(0,0,0,.3)}
   .sweet h3{clear:both;font-size:20px;font-weight:bold;padding-left:15px}
-  #mHeader{position:fixed;height:90px;background-color:#fff}
-  .btnCart{width: 21px; height: 21px;}
 
-  #content .desc .sale{color:#000; font-weight: bold;}
-  #content .desc .cost{color:#6B6B6B;text-decoration:line-through}
-  #content .desc .ratio{color:#F32525; font-weight: bold;}
-  .page_wrap{display:none}
-  #footer{ position: relative; bottom: 0; width: 100%; min-width: 360px; border-top: 8px solid #f4f4f4;
-  }
-  .footer_top {position: absolute; top: 234px; padding-top: 25px;}
-  .footer_top > ul {  display: -webkit-box;
-  display: -ms-flexbox; 
-  display: flex;}
-  .footer_top li {padding-right:10px;}
-  .footer_top li > a {color: #878787;  font-weight: 700;}
   .footer_ctt_wrapper, .footer_top_wrapper {padding: 25px 26px 0;}
   .dietFarm_info {position: absolute; top: 279px;}
   .mobileCtn_wrap {position: absolute; top: 6px;   display: -webkit-box;
   display: -ms-flexbox; 
   display: flex; justify-content: space-between; text-align: center; color: #6B6B6B;}
-  .accountNumver_notice{padding-right: 8px;}
-  .accountNumver_notice .notice {font-size: 12px; font-weight: 700; color: #6B6B6B; padding: 30px 0 15px;}
-  .footer_ctt_tit > h3 {font-size: 12px; padding-bottom: 15px;}
-  .import_txt {font-size: 15px; font-weight: 700; padding-bottom: 15px;}
-  .padding10, .padding12 {font-size: 12px; font-weight: 700; color: #878787;}
-  .mobileNone {display: none;}
-  .customer_center > ul button {width: 144px; height: 27px; font-size: 10px;}
-  .mobile_footer_bottom_ctn {width: 100%; height: 301px; position: relative; bottom: -246px; background: #f4f4f4; z-index: 0; float: left;}
-  .dietFarm_info .data_flow_comp >span {font-weight: 700; padding-right: 14px; color: #000;}
-  .dietFarm_info li {color: #6B6B6B; padding-bottom: 6px;}
-  .data_flow_comp {padding-top: 15px;}
-  .dietFarm_info li > span {color: #F99319;}
+
 
   /*장바구니 후 결제하기*/
   .order_title {font-size:14px;font-weight:bold}
@@ -1313,6 +1312,8 @@ border-spacing: 0 20px;font-size:14px}
 .review_btn button{width:90%;height:45px}
 .order01 td{width:100px}
 }
+
+
 .review_before h2{text-align:center;font-size:16px;font-weight:bold;margin-top:19px}
 .review_before h3{text-align:center;font-size:16px;font-weight:bold;margin-top:32px;margin-bottom:34px}
 .review_before .detailBox{display:flex;border-top:0.5px solid #bbbbbb;padding-top:21px;padding-bottom:23px}
@@ -2143,28 +2144,6 @@ height:50px;overflow:hidden}
 
 
 
-/* 푸터 */
-.footer_top_wrapper {width: 100%; height: 47px; border-top: 1px solid #f5f5f5;}
-.footer_top {width: 1080px; margin: 0 auto;}
-.footer_top li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
-.footer_top li.sortationBar > img {vertical-align: middle; padding: 0 10px;}
-.footer_top > ul {  display: -webkit-box;
-  display: -ms-flexbox; 
-  display: flex;}
-.footer_ctt_wrapper {width: 100%; height: 269px;}
-.footer_ctt {width: 1080px; margin: 0 auto;   display: -webkit-box;
-  display: -ms-flexbox; 
-  display: flex;}
-.footer_ctt div li {font-size: 12px; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; color: #878787;}
-.footer_ctt div li.padding10 {padding-bottom: 10px;}
-.footer_ctt div li.padding12 {padding-bottom: 12px;}
-.footer_ctt div li.import_txt {color: #000; font-size: 14px; font-weight: 700; padding-bottom: 12px;}
-.footer_ctt div li span {color: #F99319;}
-.footer_ctt div li span a {color: #F99319;}
-li.topSpace {padding-top: 15px;}
-.accountNumver_notice li.notice {font-size: 16px; font-weight: 400; color: #6B6B6B; padding: 13px 0 10px 0;}
-.customer_center button {width: 144px; height: 27px; background: #fff; border: 1px solid #878787; border-radius: 5px; font-size: 10px;}
-li.footer_ctt_tit > h3 {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; color: #6B6B6B;}
 
 /*찜한 메뉴*/
 #content .pick_wrap{width:1080px;}
@@ -2826,6 +2805,7 @@ input#secret[type="checkbox"]:checked + .secret::before {
   #order_detail .order_a_box{margin-top:14px;padding-left:15px;padding-right:15px}
 }
 @media screen and (min-width:1080px){
+  .timedeal-title_mobile{display:none}
   .y_coupon{position:relative;}
   #content .main_sub img{height:360px}
   .warn{width:1080px;margin:0 auto;background-color:#F5F5F5;padding-top:20px;padding-bottom:20px}
