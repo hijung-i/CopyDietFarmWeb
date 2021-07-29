@@ -916,21 +916,7 @@ width:100%;border-top:2px solid #f1f1f1}
   width: 50%;
 }
 
-<<<<<<< HEAD
-#content .pick_product ul li img{width:100%;padding:7px}
-#content .pick_product .title{margin-left:5px}
-#content .pick_product ul li .desc p{font-size:12px;padding:5px;text-overflow: ellipsis;white-space:nowrap;}
-#content .pick_product ul li .desc
-#content .pick_product ul li .desc .price{font-weight:bold;margin-bottom:10px;}
-#content .desc ul{margin-bottom:10px;margin-top:7px;margin-left:10px}
-#content .desc .sale{color:#000}
-#content .desc .cost{color:#6B6B6B;text-decoration:line-through}
-#content .desc .ratio{color:#F32525}
-.page_wrap{display:none}
-#content .desc{font-size:14px}
-=======
 /*찜한 상품*/
->>>>>>> 76e08b549f47b5d95e43004cfd01c17441578f62
 
 /*cs_center*/
 .cs_content h2{display:none}
