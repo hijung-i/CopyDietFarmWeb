@@ -398,9 +398,11 @@ a:hover {
   font-weight: bold;
   font-size: 16px
 }
-
+.detail_title{
+  padding-left:35px;
+  padding-right:35px;
+}
 .detail_title .title {
-  width: 260px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
