@@ -7,24 +7,22 @@
 /*마이페이지 로그인 버튼 모달창*/
 /* The Modal (background) */
 .mypage_modal {
-display: none;
-position: fixed; /* Stay in place */
-z-index: 10000; /* Sit on top */
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .mypage_modal .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
-    height:500px;
-    
-                       
+    height:500px;         
 }
 /* The Close Button */
 .mypage_modal .modal-content .close {
@@ -205,6 +203,11 @@ margin-left:14px
 }
 .inquiry_product .inquiry_detail ul li{margin-bottom:7px}
 
+}
+.user-info-form {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 @media screen and (min-width:1080px){

@@ -61,7 +61,7 @@ var app = new Vue({
             this.currentReview = {};
             this.currentQuestion = {};
         },
-    }, created: function() {
+    }, mounted: function() {
         var userId = $('#userId').val();
         var userName = $('#userName').val();
         var userCellNo = $('#userCellNo').val();
@@ -99,8 +99,12 @@ function getUsableCouponList() {
 }
 
 function getOrderList(userInfo) {
+    var params = {};
+    if(userInfo.userId == '비회원주문') {
+        params = userInfo
+    }
 
-    ajaxCallWithLogin(API_SERVER + '/order/getPurchaseOrderListByUserId', userInfo, 'POST',
+    ajaxCallWithLogin(API_SERVER + '/order/getPurchaseOrderListByUserId', params, 'POST',
     function(data) {
         var result = data.result;
         console.log(result);
