@@ -1,6 +1,9 @@
-import { NextFunction, request, Request, Response, Router } from 'express'
+import { NextFunction, Request, Response, Router } from 'express'
 import { globalData } from '../app'
+
+import * as axios from 'axios'
 import { DeliveryInfo, SessionUser, User } from '../models/user'
+import productService from '../services/productService'
 const qs = require('querystring')
 
 const router = Router()
@@ -43,9 +46,12 @@ router.get('/sign-up-form', (req: Request, res: Response, next: NextFunction) =>
     render(req, res, 'sign_up', { userData })
 })
 
-router.get('/product/:productCode', (req: Request, res: Response, next: NextFunction) => {
+router.get('/product/:productCode', async (req: Request, res: Response, next: NextFunction) => {
     const productCode = req.params.productCode
-    render(req, res, 'product', { productCode: productCode })
+
+    const product = await productService.getProductDetail(req.params)
+
+    render(req, res, 'product', { productCode: productCode, product: product })
 })
 
 router.get('/products/:companyCode/brand', (req: Request, res: Response, next: NextFunction) => {
