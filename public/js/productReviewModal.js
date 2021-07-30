@@ -139,16 +139,6 @@ var productReviewModal = {
             var before = this.currentReview.gpa;
             console.log(before, gpa);
             this.currentReview.gpa = (active)? (gpa / 2) : (gpa / 2 + before); 
-        }, onSubmit: function() {
-            console.log(this.review);
-            if (this.review.boardNo == 0) {
-                console.log("리뷰 작성")
-            } else { 
-                console.log("리뷰 수정")
-            }
-        }, closeModal: function() {
-            this.$emit('close', 'review')
-            scrollAllow();
         }, onReviewSelect: function() {
             // 확인 버튼 클릭시 동작
             var selectedWritable = this.writableList[this.writableReviewIndex];
@@ -181,7 +171,7 @@ var productReviewModal = {
             reader.readAsDataURL(file);
 
             return object;
-        },onSubmit: function() {
+        }, onSubmit: function() {
             var params = {};
             Object.assign(params, this.product);
             Object.assign(params, this.currentWritable);
@@ -215,7 +205,7 @@ var productReviewModal = {
             if(params.reviewNo == undefined || params.reviewNo == 0) {
                 insertReview(this, formData);
             } else {
-                // updateReview(this, params);
+                updateReview(this, params);
             }
         },
         closeModal: function() {
@@ -251,8 +241,8 @@ function insertReview(comp, review) {
     ajaxCallWithLogin(API_SERVER + '/board/insertReview', review, 'POST',
     function(data) {
         console.log(data);
-        alert('리뷰 등록에 성공했습니다.');
         comp.$emit('addComplete', review);
+        alert('리뷰 등록에 성공했습니다.');
 
         comp.closeModal();
     }, function(error) {
@@ -269,20 +259,20 @@ function insertReview(comp, review) {
 
 function updateReview(comp, review) {
 
-    ajaxCallMultipartFormData(API_SERVER + '/product/updateQA', review, 'POST',
-    function(data) {
-        initialize();
+    // ajaxCallMultipartFormData(API_SERVER + '/product/updateQA', review, 'POST',
+    // function(data) {
+    //     initialize();
 
-        alert('리뷰 수정에 성공했습니다.');
-        comp.closeModal();
-    }, function(error) {
-        alert('리뷰 수정에 실패했습니다.');
-        console.log(error);
-    },
-    {
-        isRequired: true,
-        userId: true
-    })
+    //     alert('리뷰 수정에 성공했습니다.');
+    //     comp.closeModal();
+    // }, function(error) {
+    //     alert('리뷰 수정에 실패했습니다.');
+    //     console.log(error);
+    // },
+    // {
+    //     isRequired: true,
+    //     userId: true
+    // })
 }
 
 function openReviewModal() {

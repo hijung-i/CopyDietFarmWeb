@@ -407,8 +407,6 @@ a:hover {
   margin: 0 auto;
 }
 
-
-}
 .detail_title_header a img {
   position: absolute;
   top: 80px
@@ -525,6 +523,8 @@ dd.subMenu {
 }
 .timedeal {
   overflow: hidden;
+  
+  cursor: pointer;
 }
 .timedeal-title_mobile {
   display: flex;
@@ -3955,9 +3955,7 @@ input#secret[type="checkbox"]:checked+.secret::before {
   position: absolute;
   z-index: 9999
 }
-.footer {
-  margin-bottom: 45px;
-}
+
 .footer_sns {
   width: 70%;
   margin: 0 auto;
