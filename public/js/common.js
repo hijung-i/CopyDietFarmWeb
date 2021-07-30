@@ -18,6 +18,7 @@ function ajaxCall(url, params, type, onSuccess, onError){
       type : type,
       cache : false,
       data : param,
+      url: url,
       contentType : "application/json;charset=UTF-8",
       dataType : "json",
       beforeSend : function(xmlHttpRequest){
