@@ -409,8 +409,6 @@ a:hover {
   margin: 0 auto;
 }
 
-
-}
 .detail_title_header a img {
   position: absolute;
   top: 80px
@@ -527,6 +525,8 @@ dd.subMenu {
 }
 .timedeal {
   overflow: hidden;
+  
+  cursor: pointer;
 }
 .timedeal-title_mobile {
   display: flex;

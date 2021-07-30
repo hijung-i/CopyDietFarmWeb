@@ -1,12 +1,12 @@
 var timedealTemplate = '';
 
-timedealTemplate += '  <div class="timedeal" v-if="saleNow">';
+timedealTemplate += '<div class="timedeal" @click="timedealClick()">';
 timedealTemplate += '  <div class="timedeal-title_mobile">';
-timedealTemplate += '                    <span><img src="/images/timedeal/free-icon-clock-996232@2x.png"></span>';
-timedealTemplate += '    <h2 class="mtpSlideTit only-mobile">특가 타임 SALE !</h2>';
-timedealTemplate += '                    <span><img src="/images/timedeal/free-icon-clock-996232@2x.png"></span>';
-timedealTemplate += '                </div>';
-timedealTemplate += '    <a v-bind:href="\'/product/\' + product.productCode" class="timedeal-wrapper">';
+timedealTemplate += '       <span><img src="/images/timedeal/free-icon-clock-996232@2x.png"></span>';
+timedealTemplate += '       <h2 class="mtpSlideTit only-mobile">특가 타임 SALE !</h2>';
+timedealTemplate += '       <span><img src="/images/timedeal/free-icon-clock-996232@2x.png"></span>';
+timedealTemplate += '   </div>';
+timedealTemplate += '   <div class="timedeal-wrapper">';
 timedealTemplate += '        <div class="timer-area">';
 timedealTemplate += '            <div class="product only-pc">';
 timedealTemplate += '                <div class="timedeal-title">';
@@ -25,12 +25,18 @@ timedealTemplate += '                        </template>';
 timedealTemplate += '                    </ul>';
 timedealTemplate += '                </div>';
 timedealTemplate += '            </div>';
-timedealTemplate += '            <div class="timer" v-if="timedealRemainingTime != undefined">';
+timedealTemplate += '            <div class="timer" v-if="timedealRemainingTime != undefined && type == \'O\'">';
 timedealTemplate += '                <span class="bg-darkgray day">{{ timedealRemainingTime.day }}</span>일';
 timedealTemplate += '                <span class="bg-darkgray hour">{{ timedealRemainingTime.hour }}</span>시';
 timedealTemplate += '                <span class="bg-darkgray minute">{{timedealRemainingTime.minute}}</span>분';
 timedealTemplate += '                <span class="bg-darkgray second">{{ timedealRemainingTime.second }}</span>초';
 timedealTemplate += '                <span class="small">남음</span>';
+timedealTemplate += '            </div>';
+timedealTemplate += '            <div class="timer" v-if="type == \'B\'">';
+timedealTemplate += '                <span>특가 타임 시작 시간 {{ product.timedealStarttime }}</span>';
+timedealTemplate += '            </div>';
+timedealTemplate += '            <div class="timer" v-if="type == \'E\'">';
+timedealTemplate += '                <span>특가 타임이 종료되었습니다.</span>';
 timedealTemplate += '            </div>';
 timedealTemplate += '        </div>';
 timedealTemplate += '        <div class="product">';
@@ -52,8 +58,8 @@ timedealTemplate += '                        </template>';
 timedealTemplate += '                    </ul>';
 timedealTemplate += '            </div>';
 timedealTemplate += '        </div>';
-timedealTemplate += '       </a>';
 timedealTemplate += '   </div>';
+timedealTemplate += '</div>';
 
 
 var TimedealComponent = {
@@ -69,13 +75,21 @@ var TimedealComponent = {
         }
     },
     methods: {
-        numberFormat
+        numberFormat,
+        timedealClick: function() {
+            if(this.saleNow) {
+                location.href = "/product/" + this.product.productCode 
+            } else {
+                alert("지금은 특가 타임이 아닙니다.")
+            }
+        }
     },
     data: function() {
         return {
             RESOURCE_SERVER,
             saleNow: true,
-            timedealRemainingTime: {}
+            timedealRemainingTime: {},
+            type: 'B'
         }
     }, mounted: function() {
         var component = this
@@ -85,13 +99,17 @@ var TimedealComponent = {
 
         if(currentTime < startTime) {
             component.saleNow = false;
+            component.type = 'B';
             return;
         }
         var remaining = endTime - currentTime;
         if(remaining <= 0) {
             component.saleNow = false;
+            component.type = 'E';
             return;
         }
+
+        component.type = 'O';
         
         setInterval(function () {
             var currentTime = new Date().getTime();
@@ -100,11 +118,13 @@ var TimedealComponent = {
 
             if(currentTime < startTime) {
                 component.saleNow = false;
+                component.type = 'B';
                 return;
             }
             var remaining = endTime - currentTime;
             if(remaining <= 0) {
                 component.saleNow = false;
+                component.type = 'E';
                 return;
             }
             
