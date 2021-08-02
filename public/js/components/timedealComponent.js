@@ -41,7 +41,7 @@ timedealTemplate += '            </div>';
 timedealTemplate += '        </div>';
 timedealTemplate += '        <div class="product">';
 timedealTemplate += '            <div class="thum">';
-timedealTemplate += '            <p class="on-img">46%</p>';
+timedealTemplate += '            <p class="on-img">{{ Math.round(product.discountRate) }}%</p>';
 timedealTemplate += '                <img v-bind:src="RESOURCE_SERVER + product.url" alt="썸네일">';
 timedealTemplate += '                <input type="hidden" name="productNo" v-bind:value="product.productNo">';
 timedealTemplate += '                <input type="hidden" name="productCode" v-bind:value="product.productCode">';
