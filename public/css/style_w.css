@@ -2487,12 +2487,9 @@
     background: rgba(0, 0, 0, 0.25);
   }
   div#iModal>.modal-content {
-    position: relative;
-    transform: translateY(50%);
     background: #fff;
     border-radius: 5px;
     width: 380px;
-    height: 450px;
     margin: 0 auto;
     overflow-y: scroll;
   }
