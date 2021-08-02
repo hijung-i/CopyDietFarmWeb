@@ -21,8 +21,6 @@ var app = new Vue({
         afterDeliveryCount: 0,
 
         currentProduct: {},
-        currentReview: {},
-
         writable: { purchaseProductNo: 0 },
         writableList: [],
         reviewList: [],
@@ -36,14 +34,22 @@ var app = new Vue({
         orderConfirm,
         onOrderCancelClick: function(oIdx, pIdx) {
             this.currentProduct = this.orderList[oIdx].products[pIdx];
-
+            
             openCancelModal();
         },
-        
-        onReviewUpdateClick: function(index) {
-            this.currentReview = this.reviewList[index];
+        openReivewWriteClick: function(oIdx, pIdx) {
 
-            openReviewModal()
+            console.log("click");
+            this.currentProduct = this.orderList[oIdx].products[pIdx];
+            this.writableList = [this.currentProduct]
+            this.writable.purchaseProductNo = this.currentProduct.purchaseProductNo
+            
+            console.log(this.currentReview)
+            this.reviewModal = true
+            scrollBlock();
+        }, insertReviewComplete: function(data) {
+            console.log("reviewComplete")
+            location.reload();
         },
         onInquiryUpdateClick: function(index) {
             this.currentQuestion = this.questionList[index];
@@ -53,9 +59,13 @@ var app = new Vue({
                 = (isChecked != undefined && (isChecked == true || isChecked == 'Y'))?true:false;
             openInquiryModal()
         },
-        onChildPopupClosed: function(data) {
+        onChildPopupClosed: function(popup, data) {
+            if(popup === 'review') {
+
+            }
+            this.currentProduct
+
             this.reviewModal = false;
-            this.inquiryModal = false; 
             this.deliveryModal = false;
             
             this.currentReview = {};
@@ -165,7 +175,7 @@ function orderConfirm(oIdx, pIdx) {
     ajaxCallWithLogin(API_SERVER + '/order/orderConfirm', params, 'POST',
     function(data) {
         alert('구매확정에 성공했습니다.');
-        getOrderList();
+        getOrderList(app.userInfo);
 
         console.log(data);
     }, function(err) {

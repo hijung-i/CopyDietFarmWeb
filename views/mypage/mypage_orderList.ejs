@@ -191,7 +191,7 @@
                                                     </template>
                                                     <template v-if="'AC'.includes(product.orderStatus)">
                                                         <li v-if="product.reviewState == 'N'">
-                                                            <button type="button" class="btnA" onclick="openReviewModal()">리뷰작성</button>
+                                                            <button type="button" class="btnA" @click="openReivewWriteClick(oIdx, pIdx)">리뷰작성</button>
                                                         </li>
                                                         <li v-else style="margin-bottom:10px">
                                                             <span class="btnC">리뷰완료</span>
@@ -237,10 +237,9 @@
             </div>
         </div>
         <order-cancel-modal v-if="orderCancelModalShow" v-bind:product="currentProduct"></order-cancel-modal>
-        <product-review-modal v-if="reviewModal" v-on:close="onChildPopupClosed"></product-review-modal>
+        <product-review-modal v-if="reviewModal"  v-bind:product="currentProduct" v-bind:writable="writable" v-bind:writable-list="writableList" v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
         <delivery-info-modal v-if="deliveryModal" v-on:close="onChildPopupClosed"></delivery-info-modal>
     </main>
-
   
     <!-- modal -->
     <!-- body_contents tab3 -->
