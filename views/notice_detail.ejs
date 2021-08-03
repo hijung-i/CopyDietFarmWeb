@@ -35,9 +35,9 @@
                 .cs_content{width:1080px;margin:0 auto;max-width:1080px}
             }
         </style>
-        <link rel="stylesheet" href="/css/style.css">
-             <%-include(webroot + 'views/general/head') %>
-<%-include(webroot + 'views/general/openGraph.ejs') %>
+
+        <%-include(webroot + 'views/general/head') %>
+        <%-include(webroot + 'views/general/openGraph.ejs') %>
 
         </head>
 
@@ -85,7 +85,7 @@
                         </div>
                         <p v-html="notice.content">
                         </p>
-                        <div class="notice_detail_web_bottom">
+                        <div class="notice_detail_web_bottom" style="display:none">
                             <button type="button" class="noticeBtn" onclick="location.href='/notice'">목록</button>
                             <div class="nv_list">
                                 <table>

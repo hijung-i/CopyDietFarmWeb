@@ -62,7 +62,7 @@
             <a href="/"><img src="/images/comp_logo@2x.png"></a>
         </div>
         <% if (currentPage != 'main' && currentPage != 'products' && currentPage != 'search') { %>
-            <div class="myPage_title" style="font-size:16px;font-weight:bold">
+            <div class="myPage_title" style="font-weight:bold;font-size:16px">
                 <h2><%=currentPage %></h2>
             </div>
         <% } %> 
@@ -214,7 +214,7 @@
             <div class="brandCate_top">
                 <div id="searchUsers" class="instant-search">
                     <form id="search-form" action="/search-list" method="GET">
-                        <div class="searchForm"  style="display:flex">a
+                        <div class="searchForm"  style="display:flex">
                             <input autocomplete="off" type="text" name="keyword" class="rectangular_b" id="brandSearchKeyword" placeholder="브랜드명을 검색해보세요." onclick="result()">
                         <div class="search_box_ico">
                         <input type="submit" value="">
