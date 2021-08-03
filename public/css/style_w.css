@@ -1860,6 +1860,14 @@
   #order_detail {
     margin-left: 80px
   }
+  #tab1_mobile{
+    width:1080px;
+    margin:0 auto;
+    display:flex;
+    justify-content: space-around;
+    margin-bottom:60px;
+    margin-top:40px
+  }
   /* 상품 상세 웹 탭메뉴 애니메이션 */
   .product_top .pdt_detai_tabinner_vn {
     width: 100%;

@@ -1267,7 +1267,7 @@ dd.subMenu {
 #goingTo_top_C {
   display: inline-block;
   background: #fff;
-  border: 1px solid #BBBBBB;
+  border:none;
   width: 40px;
   height: 40px;
   border-radius: 100%;
@@ -1275,6 +1275,8 @@ dd.subMenu {
   bottom: 110px;
   right: 20px;
   z-index: 99;
+  background: url('/images/channelTalk_floating.png')no-repeat;
+  background-size:40px
 }
 
 /* 배송지 관리 모달 */

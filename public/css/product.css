@@ -252,7 +252,6 @@ right:140px;
 margin-top:14px
 }
 .d_save_wrap{padding-bottom:20px}
-#tab1_mobile {height: 769px;}
 .swiper-pagination {
     width: 10%;
     left: 88%;
@@ -363,14 +362,14 @@ height:40px;
 box-shadow: none !important}
 .purchased_products ul li{float:left}
 .purchased_products img{border-radius:5px; width: 294px;}
-.view_wrap {margin:0px auto;width:1068px;font-family:'Noto sans',sans-serif;margin-top:40px}
+.view_wrap {margin:0px auto;width:688px;font-family:'Noto sans',sans-serif}
 .view_top_img {float:left}
 
 .ico_v_dsd_box {padding:0px 0 10px}
 .ico_v_dsd {padding:3px 8px 4px;background:#aaacaf;color:#fff;font-size:12px;letter-spacing:-0.05em}
 
 /* 제품상세 우측 설명박스*/
-.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:48px 29px 147px; left: 704px; top: -694px;} 
+.v_top_txt_box {position:relative;width:364px;height:694px;background:#F8F8F8;padding:48px 29px 147px} 
 .v_top_name {padding:5px 0 0 0;color:#000;font-size:16px;font-weight:800;letter-spacing:-0.08em; font-family: 'Nanum Gothic', sans-serif; line-height:24px}
 .v_top_txt {color:#6B6B6B;font-size:12px;line-height:18px;padding:10px 0 0px} 
 .v_n_top_info .ex{white-space:nowrap;}
