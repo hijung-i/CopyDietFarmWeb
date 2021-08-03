@@ -3,7 +3,7 @@ var installAppTemplate = '';
 installAppTemplate += '<div class="popup_box">'
 installAppTemplate += '<div class="popup_cont">'
 installAppTemplate += '<div class="index-modal">'
-installAppTemplate += '<p class="sale_coupon"><img src="/images/sale_coupon@2x.png"></p>' 
+installAppTemplate += '<p class="sale_coupon"><img src="/images/coupon_icon_friend@2x.png"></p>' 
 installAppTemplate += '<span class="close" @click="closePopupModal();">x</span>' 
 installAppTemplate += '<p class="app01">앱 설치하러가기</p>' 
 installAppTemplate += '<p @click="closePopupModal();"><span>아니요. 그냥 웹으로 볼래요.</span></p>' 
