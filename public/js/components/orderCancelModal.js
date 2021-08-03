@@ -13,11 +13,11 @@ orderCancelModalTemplate += '                <p>{{ orderCancel.orderNumber }}</p
 orderCancelModalTemplate += '            </div>';
 orderCancelModalTemplate += '            <div class="cancel_prod cancel_body_element">';
 orderCancelModalTemplate += '                <h3>상품</h3>';
-orderCancelModalTemplate += '                <p>{{ orderCancel.productName }}</p>';
+orderCancelModalTemplate += '                <p v-html="productDesc"></p>';
 orderCancelModalTemplate += '            </div>';
 orderCancelModalTemplate += '            <div class="cancel_opt cancel_body_element">';
 orderCancelModalTemplate += '                <h3>옵션</h3>';
-orderCancelModalTemplate += '                <p>{{ optionDesc }}</p>';
+orderCancelModalTemplate += '                <p v-html="optionDesc"></p>';
 orderCancelModalTemplate += '            </div>';
 orderCancelModalTemplate += '            <div class="cancel_type cancel_body_element">';
 orderCancelModalTemplate += '                <h3>취소유형</h3>';
@@ -33,9 +33,7 @@ orderCancelModalTemplate += '            </div>';
 orderCancelModalTemplate += '            <div class="thick_line"></div>';
 orderCancelModalTemplate += '        </div>';
 orderCancelModalTemplate += '        <div class="cancel_footer">';
-orderCancelModalTemplate += '            <div class="cancelRegister_btn">';
-orderCancelModalTemplate += '                <a href="#" @click="onSubmit()">등록</a>';
-orderCancelModalTemplate += '            </div>';
+orderCancelModalTemplate += '            <button @click="onSubmit()" class="cancelRegister_btn">등록</button>';
 orderCancelModalTemplate += '        </div>';
 orderCancelModalTemplate += '    </div>';
 orderCancelModalTemplate += '</div>';
@@ -43,7 +41,7 @@ orderCancelModalTemplate += '</div>';
 var OrderCancelModal = {
     template: orderCancelModalTemplate
     , props: {
-        product: {
+        cancelOrder: {
             type: Object,
             default: function() {
                 return {}
@@ -51,7 +49,7 @@ var OrderCancelModal = {
         }
     }, data: function() {
         return {
-            orderCancel: Object.assign({}, this.product),
+            orderCancel: Object.assign({}, this.cancelOrder),
             orderCancelReason: ["배송 지연", "상품 품절", "상품옵션 변경", "결제수단 변경", "구매정보 변경", "기타"]
         }
     }, methods: {
@@ -59,18 +57,59 @@ var OrderCancelModal = {
             app.orderCancelModalShow = false
             scrollAllow();
         }, onSubmit: function() {
-            console.log(this.orderCancel);
+            if(this.orderCancel.cancelReason == undefined || this.orderCancel.cancelReason.length == 0) {
+                alert('취소 유형을 선택해주세요');
+                return;
+            }
+
+            var cancelReason = this.orderCancel.cancelReason + (this.orderCancel.content != undefined)?(' '+this.orderCancel.content):'';
+
+            var requestOrderCancelDTO = Object.assign({}, this.orderCancel);
+            requestOrderCancelDTO.cancelReason = cancelReason
+            console.log(requestOrderCancelDTO);
+            return; 
+            
+            var component = this;
+            ajaxCallWithLogin(API_SERVER + '/order/orderCancel', requestOrderCancelDTO, 'POST',
+            function(data) {
+                console.log("orderCancel Request success", data);
+                alert('취소 신청이 완료되었습니다.')
+                component.closeCancelModal();
+                getOrderList(app.userInfo);
+                
+            },function( err ){
+                alert('취소 신청에 실패했습니다.')
+                console.log("orderCancel request faield", err)
+            }, {
+                isRequired: true,
+                userId: true
+            })
         }
     }, computed: {
         optionDesc: function() {
             var optionDesc = '';
-            if(this.product.options != undefined) {
-                optionDesc = this.product.options[0].optionDesc;
-                if(this.product.options.length > 1) {
-                    optionDesc += '외 ' + this.product.options.length - 1; 
+
+            Array.from(this.cancelOrder.products).forEach((product) => {
+                
+                if(product.options != undefined) {
+                    optionDesc += product.options[0].optionDesc;
+                    if(product.options.length > 1) {
+                        optionDesc += '외 ' + product.options.length - 1; 
+                    }
+                    optionDesc += '<br>';
                 }
-            }
+            })
+            optionDesc += '<br>';
             return optionDesc
+        },
+        productDesc: function() {
+            var productDesc = '';
+
+            Array.from(this.cancelOrder.products).forEach((product) => {
+                productDesc += product.productName + '<br>'
+            })
+            productDesc += '<br>';
+            return productDesc
 
         }
     }

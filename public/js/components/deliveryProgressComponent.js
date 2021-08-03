@@ -1,10 +1,6 @@
 
 var deliveryProgressTemplate = '';
 
-<div class="">
-
-</div>
-
 var deliveryProgress = {
     template: deliveryProgressTemplate,
     props: {
@@ -19,7 +15,6 @@ var deliveryProgress = {
     },
     data: function() {
     }, methods: {
-    
         
     }
 }

@@ -176,11 +176,7 @@
                                                             <button type="button" class="btnA" v-on:click="onOrderCancelClick(oIdx, pIdx)">취소 요청</button>
                                                         </li>
                                                     </template>
-                                                    <template v-if="product.orderStatus == 'X'" >
-                                                        <li>
-                                                            <button type="button" class="btnA">취소신청철회</button>
-                                                        </li>
-                                                    </template>
+                                                    
                                                     <template v-if="'DF'.includes(product.orderStatus)">
                                                         <li>
                                                             <button type="button" @click="orderConfirm(oIdx, pIdx)" class="btnA">구매확정</button>
@@ -236,14 +232,19 @@
                 </div>
             </div>
         </div>
-        <order-cancel-modal v-if="orderCancelModalShow" v-bind:product="currentProduct"></order-cancel-modal>
+        <alert-modal v-if="alertModalShow" v-bind:alert="alert"></alert-modal>
+        <order-cancel-modal v-if="orderCancelModalShow" v-bind:cancel-order="cancelOrderDTO"></order-cancel-modal>
         <product-review-modal v-if="reviewModal"  v-bind:product="currentProduct" v-bind:writable="writable" v-bind:writable-list="writableList" v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
         <delivery-info-modal v-if="deliveryModal" v-on:close="onChildPopupClosed"></delivery-info-modal>
+    
+    
+        
     </main>
   
     <!-- modal -->
     <!-- body_contents tab3 -->
     <%-include(webroot + 'views/general/footer') %>
+    <script src="/js/components/alertModalComponent.js"></script>
     <script src="/js/components/orderCancelModal.js"></script>
     <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/deliveryInfoModal.js"></script>

@@ -2,7 +2,7 @@ var app = new Vue({
     el: 'main',
     components: {
         'mypage-component': mypageComponent,
-
+        'alert-modal': AlertModalComponent,
         'order-cancel-modal': OrderCancelModal,
         'delivery-info-modal': deliveryInfoModal,
         'product-review-modal': productReviewModal
@@ -25,6 +25,13 @@ var app = new Vue({
         writableList: [],
         reviewList: [],
         reviewModal: false,
+
+        alertModalShow: false,
+        alert: {
+
+        },
+        cancelOrderDTO: {},
+
         product: {},
         level: 0
     }, methods: {
@@ -35,7 +42,9 @@ var app = new Vue({
         onOrderCancelClick: function(oIdx, pIdx) {
             this.currentProduct = this.orderList[oIdx].products[pIdx];
             
-            openCancelModal();
+            getDeliveryGroupProduct(this.currentProduct);
+
+            // openCancelModal();
         },
         openReivewWriteClick: function(oIdx, pIdx) {
 
@@ -210,8 +219,8 @@ function convertOrderStatus(orderStatus) {
         case 'O':
             return '재주문';
     }
-    
 }
+
 function getUsablePointAmount() {
     var params = {};
     ajaxCallWithLogin(API_SERVER + '/point/getUsablePointByUserId', params, 'POST',
@@ -227,5 +236,36 @@ function getUsablePointAmount() {
     {
         isRequired: true,
         userId: true
+    })
+}
+
+function getDeliveryGroupProduct(product) {
+    
+    ajaxCall(API_SERVER + '/order/getDeliveryGroupProduct', product, 'POST',
+    function(data) {
+        app.cancelOrderDTO = data.result;
+
+        var content = '';
+        for(var i = 0; i < app.cancelOrderDTO.products.length; i++){
+            var product = app.cancelOrderDTO.products[i];
+            content += product.productName + '<br>';
+        }
+        content += '<br><br>위 상품을 주문 취소하시겠습니까?';
+
+        app.alert = {
+            title: '주문 취소 신청',
+            content: content,
+            buttonType: 'CONFIRM',
+            callback: function() {
+                openCancelModal();
+
+                this.closeModal();
+                
+            }
+        }
+        app.alertModalShow = true;
+    },
+    function(err) {
+        console.log(err);
     })
 }

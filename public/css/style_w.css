@@ -2137,15 +2137,8 @@
   /*배송지 변경 웹 모달*/
   /*a.button{text-decoration:none;color:#000;margin-left:1020px;position:relative;top:-30px;font-weight:bold}*/
   #share_modal>.modal-content {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #fff;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
     width: 228px;
     height: 128px;
-    margin: 0 auto;
   }
   #modal {
     display: none;
@@ -2384,28 +2377,7 @@
     float: right;
     cursor: pointer
   }
-  #x_modal.modal-overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: 1;
-  }
-  #x_modal>.modal-content {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #fff;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 380px;
-    margin: 0 auto;
-  }
+  
   .cancel_header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2459,14 +2431,7 @@
     background: #fff;
     padding-bottom: 25px;
   }
-  .cancel_footer>.cancelRegister_btn {
-    width: 100%;
-    height: 45px;
-    background: #EFA543;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 45px;
-  }
+  
   .cancel_footer a {
     font-size: 14px;
     font-weight: 700;
