@@ -1841,7 +1841,7 @@ table.web_qna {padding: 12px 0;}
     text-align: left;
 }
 /* 상품 리뷰 web */
-.starRev{display:inline-block;margin:0 auto;margin-top:10px} 
+.starRev{display:inline-block;margin:0 auto;margin-top:10px;margin-left:10px} 
 .starRev span{padding:5px}
 .starR1{
     background: url(../images/star_ico_reviewxxhdpi.png) no-repeat -52px 0;
