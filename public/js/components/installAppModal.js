@@ -7,7 +7,7 @@ installAppTemplate += '<p class="sale_coupon"><img src="/images/coupon_icon_frie
 installAppTemplate += '<span class="close" @click="closePopupModal();">x</span>' 
 installAppTemplate += '<p class="app01">앱 설치하러가기</p>' 
 installAppTemplate += '<p @click="closePopupModal();"><span>아니요. 그냥 웹으로 볼래요.</span></p>' 
-installAppTemplate += '<a href="https://play.google.com/store/apps/details?id=com.dietFarm"><p class="app02">앱 설치하기> </p></a>'
+installAppTemplate += '<a location.href = "intent://play?action=goHome/#Intent;scheme=dietfarm;package=com.test.dietfarm;end";><p class="app02">앱 설치하기> </p></a>'
 installAppTemplate += '</div>' 
 installAppTemplate += '</div>'
 installAppTemplate += '</div>'
