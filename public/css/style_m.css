@@ -984,10 +984,11 @@
       margin-bottom: 7px
     }
     .index-modal p span {
-      color: #FF8B00;
+      color: #bbbbbb;
       font-weight: bold;
       font-size: 14px;
       padding-bottom: 25px;
+      text-decoration: underline;
     }
     .login_with_sns {
       display: -webkit-box;
