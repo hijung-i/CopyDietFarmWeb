@@ -1256,6 +1256,27 @@ dd.subMenu {
   z-index: 99;
 }
 
+#goingTo_top_C >img {
+  position: absolute;
+  width:40px;
+}
+#scroll_wrap {
+  margin: 0 auto;
+  min-width: 360px;
+}
+#goingTo_top_C {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #BBBBBB;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 110px;
+  right: 20px;
+  z-index: 99;
+}
+
 /* 배송지 관리 모달 */
 .modal-background {
   position: fixed;
@@ -1398,7 +1419,11 @@ dd.subMenu {
   font-size: 14px;
   font-weight: bold;
   color: #391B1B;
-  margin-top: 37px
+  margin-top: 37px;
+  padding-bottom:10px
+}
+.signup_wrap .btnKakao img{
+  top:7px
 }
 .signup_wrap .btnNaver {
   width: 100%;
