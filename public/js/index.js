@@ -5,28 +5,27 @@ $(function () {
 var app = new Vue({
     el: 'main',
     data: {
-        timedealProductList: []
+        timedealProductList: [],
+        installModal: false,
     },
     components: {
         'install-modal': installAppModal,
         'mypage-modal': signModal,
         'timedeal-product': TimedealComponent
     }, computed: {
-        installModal: function() {
-            userAgent = window.navigator.userAgent.toLowerCase()
-            isAndroid = /(android)/i.test(navigator.userAgent);
-            //iOS = /iphone|ipod|ipad/.test(userAgent);
-            isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
-    
-            if(isAndroid && isBrowser && $('html').width() <= 1079) {
-                scrollBlock();
-                return true;
-            }
-
-            return false;
-        }
+        
     }, created: function() {
         getTimedeal();
+
+        userAgent = window.navigator.userAgent.toLowerCase()
+        isAndroid = /(android)/i.test(navigator.userAgent);
+        //iOS = /iphone|ipod|ipad/.test(userAgent);
+        isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
+
+        if(isAndroid && isBrowser && $('html').width() <= 1079) {
+            this.installModal = true;
+            scrollBlock();
+        }
     }
 });
 
