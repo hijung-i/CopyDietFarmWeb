@@ -14,11 +14,12 @@ var app = new Vue({
     }, computed: {
         installModal: function() {
             userAgent = window.navigator.userAgent.toLowerCase()
-        
-            iOS = /iphone|ipod|ipad/.test(userAgent);
+            
+            isAndroid = /(android)/i.test(navigator.userAgent);
+            //iOS = /iphone|ipod|ipad/.test(userAgent);
             isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
     
-            if(iOS && isBrowser && $('html').width() <= 1079) {
+            if(isAndroid && isBrowser && $('html').width() <= 1079) {
                 scrollBlock();
                 return true;
             }
