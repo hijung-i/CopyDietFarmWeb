@@ -124,7 +124,6 @@
         <!-- <button type="button" id="appleid-signin" data-color="black" data-border="true" data-type="sign in" class="btnApple"><img src="">애플 계정으로 시작하기</button> -->
         <main id="content" class="content_main">
          <div id="app">
- 
                 <!-- <div id="popup-cookie">
                     <h2>[ 공지사항 ]</h2>
                     <br>
@@ -174,7 +173,7 @@
                     <!-- <div class="banner01">
                         <a href="/products/SALES_011/event"><img src="/images/low_price_banner@2x.png" style="width:100%;border-bottom:8px solid #F1F1F1"></a>
                     </div> -->
-            
+                </div>
                 <div class="timedeal-list">
      
                     <timedeal-product v-for="(timedeal, index) in timedealProductList" v-bind:product="timedeal"></timedeal-product>
@@ -317,8 +316,9 @@
                 </div>
                </section>
             </div>
-     
+          </div>
           <%-include(webroot + 'views/general/footer') %>
+<<<<<<< HEAD
 <<<<<<< HEAD
             <div class="popup_layer_wrapper"  v-if="installModal">
                 <!-- <div id="popup_layer"></div> -->
@@ -334,6 +334,12 @@
             </div>-->
         </div>
 >>>>>>> d014508ec983ae7594930aa05fc7145a2b1bba67
+=======
+            <div class="popup_layer_wrapper"  v-if="installModal">
+                <!-- <div id="popup_layer"></div> -->
+                <install-modal></install-modal>
+            </div>
+>>>>>>> d1d4185e37406fafc143eaf530fd8f007992efd6
         </main>
         
         <script src="/js/components/timedealComponent.js"></script>
