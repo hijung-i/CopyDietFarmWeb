@@ -1585,10 +1585,12 @@
   }
   .order_title {
     width: 1080px;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
-    border-bottom: 8px solid #f1f1f1;
-    padding-bottom: 20px
+    padding-bottom: 20px;
+    margin-top:55px;
+    margin-bottom:44px;
+    text-align: center;
   }
   .order_title .web_num {
     color: #F99319;
@@ -1867,7 +1869,7 @@
     display:flex;
     justify-content: space-around;
     margin-bottom:60px;
-    margin-top:40px
+    margin-top:90px
   }
   /* 상품 상세 웹 탭메뉴 애니메이션 */
   .product_top .pdt_detai_tabinner_vn {
@@ -2625,13 +2627,7 @@
         color: #BBBBBB;
         padding-left: 20px;
     }
-    
-    .contents h3:first-child{
-      font-size:20px;
-      font-weight:bold;
-      line-height:23px;
-      margin-bottom:20px
-  }
+
   .body_contents{margin-left:80px}
   .contents.tab5{margin-left:80px}
   #main {width: 100%; height: 218px;background-color:#F5F5F5;color: #000;}
@@ -2662,7 +2658,6 @@
   .content_lnb li.on > a {font-size: 14px; font-weight: 700;color: #fff}
   .content_lnb li a{padding: 16px 35px}
   .web_contents .left{margin-left:20px}
-  .contents h3 {font-size: 20px; font-weight: 700;padding-bottom:16px;color: #000}
   .web_body{
       margin:0 auto; 
       display: flex; 

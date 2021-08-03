@@ -497,9 +497,8 @@ a:hover {
 /* Modal Content/Box */
 .m_modal .modal-content {
   background-color: #fefefe;
-  margin: 25% auto;
+
   /* 15% from the top and centered */
-  
   height: 675px;
   width: 380px;
 }
@@ -2837,7 +2836,6 @@ input {
 }
 .order_title {
   width: 100%;
-  display: flex;
   justify-content: space-between;
   margin-top: 25px;
   margin-bottom: 20px
