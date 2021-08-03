@@ -1063,6 +1063,7 @@
   }
   .cs_content .noticeBox {
     margin-left: 200px;
+    margin-bottom: 200px
   }
   .noticeBox_detail {
     float: left;
@@ -2145,7 +2146,6 @@
   /*배송지 변경 웹 모달*/
   /*a.button{text-decoration:none;color:#000;margin-left:1020px;position:relative;top:-30px;font-weight:bold}*/
   #share_modal>.modal-content {
-    position: relative;
     top: 50%;
     transform: translateY(-50%);
     background: #fff;
