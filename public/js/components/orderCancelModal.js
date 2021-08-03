@@ -62,13 +62,14 @@ var OrderCancelModal = {
                 return;
             }
 
-            var cancelReason = this.orderCancel.cancelReason + (this.orderCancel.content != undefined)?(' '+this.orderCancel.content):'';
+            var cancelReason = this.orderCancel.cancelReason;
+            cancelReason += (this.orderCancel.content != undefined)?' ' +this.orderCancel.content: '';
 
             var requestOrderCancelDTO = Object.assign({}, this.orderCancel);
+            console.log(requestOrderCancelDTO, cancelReason);
+
             requestOrderCancelDTO.cancelReason = cancelReason
-            console.log(requestOrderCancelDTO);
-            return; 
-            
+
             var component = this;
             ajaxCallWithLogin(API_SERVER + '/order/orderCancel', requestOrderCancelDTO, 'POST',
             function(data) {
