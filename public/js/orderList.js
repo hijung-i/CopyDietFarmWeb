@@ -2,7 +2,6 @@ var app = new Vue({
     el: 'main',
     components: {
         'mypage-component': mypageComponent,
-
         'order-cancel-modal': OrderCancelModal,
         'delivery-info-modal': deliveryInfoModal,
         'product-review-modal': productReviewModal
@@ -12,7 +11,8 @@ var app = new Vue({
         userInfo: {},
         orderList: [],
         totalPointAmount: 0,
-
+        deliveryInfoModalShow: false,
+        
         reviewModal: false,
         deliveryModal: false,
         orderCancelModalShow: false,
@@ -71,6 +71,26 @@ var app = new Vue({
             this.currentReview = {};
             this.currentQuestion = {};
         },
+        openDeliveryInfo: function(oIdx, pIdx) {
+            var currentOrder = this.orderList[oIdx];
+            this.product = currentOrder.products[pIdx]
+    
+            this.product.courierNo = this.product.courierNo.replace(COURIER_NO_REGEX, '')
+            this.product.deliveryName = currentOrder.deliveryName;
+
+            var found = Array.from(this.carrierList).find(e => 
+                e['Name'] == this.product.courierName
+            )
+            console.log('found', found)
+
+            if(found == undefined || found['Code'] == undefined) {
+                alert('택배사 정보가 잘못되었거나 지원하지 않는 택배사입니다.')
+                return;
+            }
+
+            this.product.courierCode = found['Code']
+            this.deliveryInfoModalShow = true;
+        }
     }, mounted: function() {
         var userId = $('#userId').val();
         var userName = $('#userName').val();
