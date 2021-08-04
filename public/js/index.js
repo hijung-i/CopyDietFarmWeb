@@ -22,10 +22,10 @@ var app = new Vue({
         //iOS = /iphone|ipod|ipad/.test(userAgent);
         isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
 
-        if(isAndroid && isBrowser && $('html').width() <= 1079) {
-            this.installModal = true;
-            scrollBlock();
-        }
+        //if(isAndroid && isBrowser && $('html').width() <= 1079) {
+        //    this.installModal = true;
+        //    scrollBlock();
+        //}
     }
 });
 
