@@ -924,10 +924,9 @@
               background: #fff;
               /* 15% from the top and centered */
               width: 270px;
-              height: 199px;
+              height: auto;
               margin: 0 auto;
               background: #fff;
-              padding-top:200px
           }
   
           .popup_box>span.close {
