@@ -689,20 +689,3 @@ function sendKakaoLink() {
     
 }
 
-function imgEnlarge(e){
-    if(e.style.width=="104px" || e.style.width=="" ){
-        e.style.width="300px";
-        e.style.height="300px";
-    }
-    else{
-        e.style.width="104px";
-        e.style.height="104px";
-    }
-    var imgLength = document.getElementsByTagName('img').length;
-    for(var i = 0; i<imgLength; i++){
-        if(document.getElementsByTagName('img')[i].id==  e.id){
-            continue;
-        }
-        document.getElementsByTagName('img')[i].style.width="104px";
-    }
-}

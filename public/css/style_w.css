@@ -33,9 +33,6 @@
     text-align: center;
   }
   .review_btn button {
-    position: absolute;
-    margin-top: 440px;
-    margin-left: 600px;
     width: 168px;
     height: 45px;
     background-color: #F99319;
@@ -43,7 +40,10 @@
     border: 0;
     font-size: 18px;
     color: #fff;
-    font-weight: bold
+    font-weight: bold;
+    margin-top:10px;
+    margin-right:10px;
+    float:right
   }
   .pick_list_null {
     width: 100%;
@@ -2706,4 +2706,8 @@
 .btnConfirm, .btnTracking{width:116px;height:30px;text-align:center; border:1px solid #E6E6E6;display:inline-block;border-radius:5px;
  color:#000;font-size:12px;background-color:#F1F1F1}
 .btnConfirm{margin-right:10px}
+#tab3.active, #tab4.active{
+  display: flex;
+  flex-flow: column-reverse;
+}
 }
