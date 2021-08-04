@@ -3277,7 +3277,9 @@ input[type=number]::-webkit-outer-spin-button {
 .final .price {
   float: right
 }
-
+.review-img{
+  cursor:pointer
+}
 /*판매자 문의하기*/
 #btnInquiry {
   width: 100%;
@@ -3291,9 +3293,6 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 5px
 }
 .inquiryBox {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 20px;
   margin-top: 30px
 }
 .inquiryBox ul li form p textarea {

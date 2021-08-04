@@ -917,103 +917,125 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.4);
     }
-    /*팝업 박스 (앱 설치) */
-    .popup_box {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #fff;
-      /* 15% from the top and centered */
-      width: 270px;
-      height: 199px;
-      margin: 0 auto;
-      background: #fff;
-    }
-    .popup_box>span.close {
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 28px;
-      cursor: pointer;
-    }
-    .index-modal>h2 {
-      font-size: 20px;
-      font-weight: 800;
-      text-align: center;
-      padding: 40px 0 20px 0;
-    }
-    .index-modal p.second {
-      font-size: 14px;
-      font-weight: 400;
-      text-align: center;
-      padding-bottom: 6px;
-      color: #6B6B6B;
-    }
-    .index-modal p.id-login {
-      font-size: 14px;
-      color: #BBBBBB;
-      text-align: center;
-    }
-    /*컨텐츠 영역*/
-    .index-modal p {
-      text-align: center;
-    }
-    .index-modal .close {
-      position: absolute;
-      right: 0;
-      top: -36px;
-      font-size: 28px;
-      color: #BBB;
-    }
-    .index-modal .close img {
-      width: 14px;
-      height: 14px
-    }
-    .sale_coupon {
-      position: relative;
-      top: -20px
-    }
-    .sale_coupon img {
-      width: 157px;
-      height: 87px
-    }
-    .index-modal .app01 {
-      color: #4A4A4A;
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 7px
-    }
-    .index-modal p span {
-      color: #bbbbbb;
-      font-weight: bold;
-      font-size: 14px;
-      padding-bottom: 25px;
-      text-decoration: underline;
-    }
-    .login_with_sns {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      width: 121px;
-      margin: 0 auto;
-      padding: 25px 0;
-    }
-    .login_with_sns li img {
-      width: 52px;
-      height: 52px;
-    }
-    .login_with_sns li:not(:last-child) {
-      padding-right: 17px;
-    }
-    .index-modal .app02 {
-      width: 270px;
-      height: 49px;
-      background-color: #000000;
-      font-size: 16px;
-      color: #ffffff;
-      margin-top: 21px;
-      padding-top: 16px
-    }
+            /*팝업 박스 (앱 설치) */
+            .popup_box {
+              position: relative;
+              top: 30%;
+              background: #fff;
+              /* 15% from the top and centered */
+              width: 270px;
+              height: 300px;
+              margin: 0 auto;
+              background: #fff;
+          }
+  
+          .popup_box>span.close {
+              position: absolute;
+              right: 0;
+              top: 0;
+              font-size: 28px;
+              cursor: pointer;
+          }
+  
+          .index-modal>h2 {
+              font-size: 20px;
+              font-weight: 800;
+              text-align: center;
+              padding: 40px 0 20px 0;
+          }
+  
+          .index-modal p.second {
+              font-size: 14px;
+              font-weight: 400;
+              text-align: center;
+              padding-bottom: 6px;
+              color: #6B6B6B;
+          }
+  
+          .index-modal p.id-login {
+              font-size: 14px;
+              color: #BBBBBB;
+              text-align: center;
+          }
+  
+          /*컨텐츠 영역*/
+          .index-modal p {
+              text-align: center;
+          }
+  
+          .index-modal .close {
+              position: absolute;
+              right: 0;
+              top: -36px;
+              font-size: 28px;
+              color: #BBB;
+          }
+  
+          .index-modal .close img {
+              width: 14px;
+              height: 14px
+          }
+  
+          /*.sale_coupon {
+              position: relative;
+              top: -20px
+          }*/
+          .sale_coupon{
+            padding-top:20px
+          }
+          .sale_coupon img {
+              width: 157px;
+              height: 87px
+          }
+  
+          .index-modal .app01 {
+              color: #4A4A4A;
+              font-size: 24px;
+              font-weight: bold;
+              padding-top:14px
+          
+          }
+  
+          .index-modal p span {
+              color: #bbbbbb;
+              font-weight: bold;
+              font-size: 14px;
+              padding-bottom: 25px;
+              text-decoration: underline;
+
+          }
+  
+          .login_with_sns {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              width: 121px;
+              margin: 0 auto;
+              padding: 25px 0;
+          }
+  
+          .login_with_sns li img {
+              width: 52px;
+              height: 52px;
+          }
+  
+          .login_with_sns li:not(:last-child) {
+              padding-right: 17px;
+          }
+  
+          .index-modal .app02 {
+              width: 270px;
+              height: 49px;
+              background-color: #F99319;
+              font-size: 18px;
+              color: #fff;
+              border-radius: 5px;
+              margin-top: 21px;
+              padding-top:13px;
+              font-weight:bold;
+              margin-bottom:20px
+          }
+
     /*버튼영역*/
     .popup_box .popup_btn {
       display: table;
@@ -1119,8 +1141,7 @@
     .myReview{
     display:flex;
     padding-top:30px;
-    padding-bottom:10px;
-    margin-right:10px
+    padding-bottom:14px;
     }
     .body_bottom .desc .ratio {
       font-weight: bold
@@ -1964,7 +1985,6 @@
     }
 
     .modal-content {
-      width: 350px;
       border-radius:5px;
       left: 50%;
       top: 50%;

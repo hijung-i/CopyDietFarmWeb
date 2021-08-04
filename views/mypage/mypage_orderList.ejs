@@ -111,9 +111,7 @@
                 
             </div>
             <div class="mypage_order_info_wrap" v-if="level == 2">
-                <div class="order_list_null" v-if="orderList == undefined || orderList.length == 0">
-                    <p class="no_review">주문 내역이 없습니다.</p>
-                </div>
+        
                 <div class="order_list_box_w">
                 <h3>주문내역</h3>
                 <table class="cell">
@@ -128,6 +126,9 @@
                 </table>
                 </div>
                 <div class="orderHistory_wrap">
+                    <div class="order_list_null" v-if="orderList == undefined || orderList.length == 0">
+                        <p class="no_review">주문 내역이 없습니다.</p>
+                    </div>
                 <template v-for="(order, oIdx) in orderList">
                 <div class="orderHistory"> 
                     <div class="orderBox">
@@ -182,7 +183,7 @@
                                                             <button type="button" @click="orderConfirm(oIdx, pIdx)" class="btnA">구매확정</button>
                                                         </li>
                                                         <li>
-                                                            <button type="button" class="btnB" onclick="openDInfoModal()">배송조회</button>
+                                                            <button type="button" class="btnB" @click="openDeliveryInfo(oIdx, pIdx)">배송조회</button>
                                                         </li>
                                                     </template>
                                                     <template v-if="'AC'.includes(product.orderStatus)">
@@ -235,21 +236,21 @@
         <alert-modal v-if="alertModalShow" v-bind:alert="alert"></alert-modal>
         <order-cancel-modal v-if="orderCancelModalShow" v-bind:cancel-order="cancelOrderDTO"></order-cancel-modal>
         <product-review-modal v-if="reviewModal"  v-bind:product="currentProduct" v-bind:writable="writable" v-bind:writable-list="writableList" v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
-        <delivery-info-modal v-if="deliveryModal" v-on:close="onChildPopupClosed"></delivery-info-modal>
-    
-    
-        
+        <delivery-info-modal v-if="deliveryInfoModalShow" v-on:close="onChildPopupClosed" v-bind:product="product"></delivery-info-modal>
     </main>
   
     <!-- modal -->
     <!-- body_contents tab3 -->
     <%-include(webroot + 'views/general/footer') %>
     <script src="/js/components/alertModalComponent.js"></script>
+
+    <scripT src="/js/lib/deliveryTracking.js"></script>
     <script src="/js/components/orderCancelModal.js"></script>
     <script src="/js/components/mypageComponent.js"></script>
     <script src="/js/deliveryInfoModal.js"></script>
     <script src="/js/productReviewModal.js"></script>
     <script src="/js/orderList.js"></script>
+
 </body>
 
 </html>

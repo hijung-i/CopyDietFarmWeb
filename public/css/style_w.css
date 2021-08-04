@@ -34,7 +34,7 @@
   }
   .review_btn button {
     position: absolute;
-    margin-top: 270px;
+    margin-top: 440px;
     margin-left: 600px;
     width: 168px;
     height: 45px;
@@ -1584,12 +1584,11 @@
     margin: 0 auto
   }
   .order_title {
-    width: 1080px;
+    display:flex;
+    width: 880px;
     font-size: 30px;
     font-weight: bold;
     padding-bottom: 20px;
-    margin-top:55px;
-    margin-bottom:44px;
     text-align: center;
   }
   .order_title .web_num {
@@ -2544,15 +2543,14 @@
 
   .box {display: block;width:440px;height: 51px;
     border: solid 1px #dadada;padding: 10px 14px 10px 14px;box-sizing: border-box;background: #fff;position: relative;border-radius:8px;}
-  .inquiryBox{margin-left:-20px}
-  .inquiryBox h3{font-size:12px!important;font-weight:bold;margin-bottom:-20px!important}
-  .inquiryBox select{width:330px!important;height:36px;border-radius:5px;border: 1px solid #BBBBBB;font-size:12px;padding:5px}
-  .inquiryBox .filebox label{width:330px;height:45px}
-
+  .inquiryBox h3{font-size:12px!important;font-weight:bold}
+  .inquiryBox select{height:36px;border-radius:5px;border: 1px solid #BBBBBB;font-size:12px;padding:5px}
+  .inquiryBox .filebox label{height:45px}
+  div.contents.point_list{width:920px}
       /* 마이페이지 회원 정보 UI */
-      .main_contents_wrap {
-        width: 100%;
-        background: #f5f5f5;
+    .main_contents_wrap {
+      width: 100%;
+      background: #f5f5f5;
     }
     .main_contents {
         width:1080px; height: 218px;

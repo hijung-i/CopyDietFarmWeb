@@ -190,7 +190,7 @@
                                 <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
                                 <div class="review-img-wrapper" v-if="review.contentType == 'I'">
                                     <div class="review-img" v-bind:style="{ width: ((review.files.length * 110) - 10) }">
-                                        <img v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
+                                        <img  onclick="imgEnlarge(this)" onclick="imgAssign()" v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
 
                                     </div>
                                 </div>
