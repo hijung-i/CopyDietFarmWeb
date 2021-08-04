@@ -924,7 +924,7 @@
               background: #fff;
               /* 15% from the top and centered */
               width: 270px;
-              height: 400px;
+              height: 300px;
               margin: 0 auto;
               background: #fff;
           }
@@ -992,7 +992,7 @@
               color: #4A4A4A;
               font-size: 24px;
               font-weight: bold;
-              margin-top:10px
+              padding-top:14px
           
           }
   
