@@ -27,9 +27,7 @@ var app = new Vue({
         reviewModal: false,
 
         alertModalShow: false,
-        alert: {
-
-        },
+        alert: {},
         cancelOrderDTO: {},
 
         product: {},
@@ -259,8 +257,7 @@ function getDeliveryGroupProduct(product) {
             callback: function() {
                 openCancelModal();
 
-                this.closeModal();
-                
+                this.closeModal();   
             }
         }
         app.alertModalShow = true;

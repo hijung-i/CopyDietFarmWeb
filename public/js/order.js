@@ -193,11 +193,8 @@ function paymentAction() {
         return;
     }
 
-    
-
     var orderTitle = orderTitle = app.deliveryGroupList[0].products[0].options[0].optionDesc;
-    var methods = ['npay', 'bank', 'kakao', 'card', 'phone'];
-    var method = methods[app.paymentNo -1];
+ 
     var requestOrderDTO = {};
 
     requestOrderDTO.paymentNo = app.paymentNo;
@@ -215,9 +212,6 @@ function paymentAction() {
     }
     
     requestOrderDTO.delivery = app.orderDTO.delivery
-    console.log(requestOrderDTO.delivery == undefined 
-        || requestOrderDTO.delivery.deliveryNo == undefined 
-        || requestOrderDTO.delivery.deliveryNo == 0)
 
     if(requestOrderDTO.delivery == undefined 
         || requestOrderDTO.delivery.deliveryNo == undefined 
@@ -231,8 +225,6 @@ function paymentAction() {
     }
 
     requestOrderDTO.deliveryDesc = $("#selectDeliveryDesc").val();
-    
-    console.log('requestOrderDTO >>>>>>>>>>>> ', requestOrderDTO)
 
     if($("#selectDeliveryDesc").val() == "") {
         requestOrderDTO.deliveryDesc = $('#deliveryDesc').val()
@@ -291,44 +283,13 @@ function paymentAction() {
         orderTitle += ' 외 '+ count + '건';
     }
     requestOrderDTO.orderTitle = orderTitle;
+    requestOrderDTO.items = items;
 
-    var nowDate = new Date();
-    var expireDate = new Date(nowDate.getTime() + (60 * 60 * 24 * 1000 * 3));
-
-    var month = ((((expireDate.getMonth() + 1) / 10) >= 1)?expireDate.getMonth() + 1: '0'+(expireDate.getMonth() +1));
-    var date = (((expireDate.getDate()) / 10) > 0)?expireDate.getDate(): '0'+(expireDate.getDate())
     
-    var accountExpireAt = expireDate.getFullYear() + '-' + month +'-' + date  
+
 
     requestOrderDTO.paidRealAmount = app.orderDTO.paidRealAmount;
 
-    var bootpayParams = {
-        price: requestOrderDTO.paidRealAmount,
-        application_id: "5feae25e2fa5c2001d0391b9",
-        name: requestOrderDTO.orderTitle,
-        pg: 'nicepay',
-        method: method,
-        show_agree_window: 0, // 부트페이 정보 동의 창 보이기 여부
-        items: items,
-        user_info: {
-            username: requestOrderDTO.userId,
-            email: requestOrderDTO.userEmail,
-            addr: requestOrderDTO.address,
-            phone: requestOrderDTO.userCellNo
-        },
-        order_id: 'ORDER_WEB', //고유 주문번호로, 생성하신 값을 보내주셔야 합니다.
-        params: {
-
-        },
-        account_expire_at: accountExpireAt, // 가상계좌 입금기간 제한 ( yyyy-mm-dd 포멧으로 입력해주세요. 가상계좌만 적용됩니다. )
-        extra: {
-            vbank_result: 1, // 가상계좌 사용시 사용, 가상계좌 결과창을 볼지(1), 말지(0), 미설정시 봄(1)
-            quota: [0,2,3], // 결제금액이 5만원 이상시 할부개월 허용범위를 설정할 수 있음, [0(일시불), 2개월, 3개월] 허용, 미설정시 12개월까지 허용,
-            theme: 'purple', // [ red, purple(기본), custom ]
-            custom_background: '#00a086', // [ theme가 custom 일 때 background 색상 지정 가능 ]
-            custom_font_color: '#ffffff' // [ theme가 custom 일 때 font color 색상 지정 가능 ]
-        }
-    }
     requestOrderDTO.products = app.orderDTO.products;
     requestOrderDTO.paymentTotalAmount = app.orderDTO.paymentTotalAmount;
     requestOrderDTO.couponNo = app.orderDTO.couponNo;
@@ -346,13 +307,15 @@ function paymentAction() {
     if(mobile.test(userAgent)) {
         requestOrderDTO.accessPoint = 'M';
     }
-    console.log(requestOrderDTO);
+
     if(requestOrderDTO.products == undefined || requestOrderDTO.products.length < 1) {
         return;
     }
 
     if(app.orderDTO.paidRealAmount == 0) {
         requestOrderDTO.paymentName = '전체포인트할인'
+        requestOrderDTO.confirm = 'Y'
+
         addOrder(requestOrderDTO);
     } else {
         if(app.paymentNo == undefined || app.paymentNo == 0) {
@@ -360,52 +323,10 @@ function paymentAction() {
             return;
         }
 
-        BootPay.request(
-            bootpayParams
-        ).error(function (data) {
-            //결제 진행시 에러가 발생하면 수행됩니다.
-            console.log(data);
-            alert('결제에 실패했습니다.');
-            location.href="";
-        }).cancel(function (data) {
-            //결제가 취소되면 수행됩니다.
-            alert('결제를 취소하셨습니다.');
-            console.log(data);
-        }).ready(function (data) {
-            // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
-            console.log(data);
-        }).confirm(function (data) {
-            console.log(data);
-            var enable = true; // 재고 수량 관리 로직 혹은 다른 처리
-            if (enable) {
-                BootPay.transactionConfirm(data); // 조건이 맞으면 승인 처리를 한다.
-            } else {
-                BootPay.removePaymentWindow(); // 조건이 맞지 않으면 결제 창을 닫고 결제를 승인하지 않는다.
-            }
-        }).close(function (data) {
-            // 결제창이 닫힐때 수행됩니다. (성공,실패,취소에 상관없이 모두 수행됨)
-            console.log(data);
-        }).done(function (data) {
-            //결제가 정상적으로 완료되면 수행됩니다
-            //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
-            console.log(data);
+        // addOrder 먼저 수행
+        requestOrderDTO.confirm = 'N'
+        addOrder(requestOrderDTO);
 
-            requestOrderDTO.cashReceiptYn = 'N'
-            if(data.cash_result != undefined && data.cash_result != '') {
-                requestOrderDTO.cashReceiptYn = 'Y'
-            }
-            
-            requestOrderDTO.paymentName = data.payment_name;
-            requestOrderDTO.paymentDate = data.purchased_at;
-            requestOrderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
-            requestOrderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
-            requestOrderDTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
-
-            requestOrderDTO.receiptId = data.receipt_id;
-
-            paymentConfirm(requestOrderDTO);
-        });
-        
     }
 
 }
@@ -413,9 +334,11 @@ function paymentAction() {
 function paymentConfirm(requestOrderDTO) {
     var params = {
         applicationId: '5feae25e2fa5c2001d0391bc',
-        privateKey: '#x1fCHsPFCxs#L#j#J#SsNpN7YPnyMF#0mk#6NCh0kVMub2sH#g='.replace(/#/gi, ''),
+        privateKey: 'x1fCHsPFCxsLjJSsNpN7YPnyMF0mk6NCh0kVMub2sHg=',
         receiptId: requestOrderDTO.receiptId,
-        paidRealAmount: requestOrderDTO.paidRealAmount
+        paidRealAmount: requestOrderDTO.paidRealAmount,
+        orderNumber: requestOrderDTO.orderNumber,
+        paymentName: requestOrderDTO.paymentName
     }
 
     ajaxCall(API_SERVER + '/order/paymentConfirm', params, 'POST',
@@ -423,7 +346,10 @@ function paymentConfirm(requestOrderDTO) {
         console.log("success", data);
         switch(data.message) {
             case 'SUCCESS':
-                addOrder(requestOrderDTO);
+                // addOrder(requestOrderDTO);
+                // TODO: update receiptId and orderStatus = P 
+                alert('상품 주문에 성공했습니다.')
+                location.href=("/order-comp?requestOrderDTO="+JSON.stringify(requestOrderDTO)).trim();
                 break;
             case 'NOT_MATCHED':
                 paymentCancel('paymentConfirm 실패', requestOrderDTO);
@@ -437,7 +363,7 @@ function paymentConfirm(requestOrderDTO) {
 function paymentCancel(reason, requestOrderDTO) {
     var params = {
         applicationId: '5feae25e2fa5c2001d0391bc',
-        privateKey: '#x1fCHsPFCxs#L#j#J#SsNpN7YPnyMF#0mk#6NCh0kVMub2sH#g='.replace(/#/gi, ''),
+        privateKey: 'x1fCHsPFCxsLjJSsNpN7YPnyMF0mk6NCh0kVMub2sHg=',
         receiptId: requestOrderDTO.receiptId,
         paidRealAmount: requestOrderDTO.paidRealAmount,
         name: requestOrderDTO.userName,
@@ -458,9 +384,8 @@ function addOrder(requestOrderDTO) {
         console.log("success", data);
         switch(data.message) {
             case 'SUCCESS':
-                alert('상품을 성공적으로 주문했습니다.');
                 requestOrderDTO.orderNumber = data.result;
-                location.href=("/order-comp?requestOrderDTO="+JSON.stringify(requestOrderDTO)).trim();
+                bootpayModule(requestOrderDTO);
                 break;
             case 'NOT_MATCHED':
                 alert('주문 실패, 취소 진행')
@@ -472,6 +397,93 @@ function addOrder(requestOrderDTO) {
         paymentCancel('addOrder 실패', requestOrderDTO);
         console.log("error", err);
     })
+}
+
+function bootpayModule(requestOrderDTO){
+    var methods = ['npay', 'bank', 'kakao', 'card', 'phone'];
+    var method = methods[app.paymentNo -1];
+
+    var nowDate = new Date();
+    var expireDate = new Date(nowDate.getTime() + (60 * 60 * 24 * 1000 * 3));
+
+    var month = ((((expireDate.getMonth() + 1) / 10) >= 1)?expireDate.getMonth() + 1: '0'+(expireDate.getMonth() +1));
+    var date = (((expireDate.getDate()) / 10) > 0)?expireDate.getDate(): '0'+(expireDate.getDate())
+    
+    var accountExpireAt = expireDate.getFullYear() + '-' + month +'-' + date  
+
+    var bootpayParams = {
+        price: requestOrderDTO.paidRealAmount,
+        application_id: "5feae25e2fa5c2001d0391b9",
+        name: requestOrderDTO.orderTitle,
+        pg: 'nicepay',
+        method: method,
+        show_agree_window: 0, // 부트페이 정보 동의 창 보이기 여부
+        items: requestOrderDTO.items,
+        user_info: {
+            username: requestOrderDTO.userId,
+            email: requestOrderDTO.userEmail,
+            addr: requestOrderDTO.address,
+            phone: requestOrderDTO.userCellNo
+        },
+        order_id: 'ORDER_WEB', //고유 주문번호로, 생성하신 값을 보내주셔야 합니다.
+        params: {
+
+        },
+        account_expire_at: accountExpireAt, // 가상계좌 입금기간 제한 ( yyyy-mm-dd 포멧으로 입력해주세요. 가상계좌만 적용됩니다. )
+        extra: {
+            vbank_result: 1, // 가상계좌 사용시 사용, 가상계좌 결과창을 볼지(1), 말지(0), 미설정시 봄(1)
+            quota: [0,2,3], // 결제금액이 5만원 이상시 할부개월 허용범위를 설정할 수 있음, [0(일시불), 2개월, 3개월] 허용, 미설정시 12개월까지 허용,
+            theme: 'purple', // [ red, purple(기본), custom ]
+            custom_background: '#00a086', // [ theme가 custom 일 때 background 색상 지정 가능 ]
+            custom_font_color: '#ffffff' // [ theme가 custom 일 때 font color 색상 지정 가능 ]
+        }
+    }
+    
+    BootPay.request(
+        bootpayParams
+    ).error(function (data) {
+        //결제 진행시 에러가 발생하면 수행됩니다.
+        console.log(data);
+        alert('결제에 실패했습니다.');
+        location.href="";
+    }).cancel(function (data) {
+        //결제가 취소되면 수행됩니다.
+        alert('결제를 취소하셨습니다.');
+        console.log(data);
+    }).ready(function (data) {
+        // 가상계좌 입금 계좌번호가 발급되면 호출되는 함수입니다.
+        console.log(data);
+    }).confirm(function (data) {
+        console.log(data);
+        var enable = true; // 재고 수량 관리 로직 혹은 다른 처리
+        if (enable) {
+            BootPay.transactionConfirm(data); // 조건이 맞으면 승인 처리를 한다.
+        } else {
+            BootPay.removePaymentWindow(); // 조건이 맞지 않으면 결제 창을 닫고 결제를 승인하지 않는다.
+        }
+    }).close(function (data) {
+        // 결제창이 닫힐때 수행됩니다. (성공,실패,취소에 상관없이 모두 수행됨)
+        console.log(data);
+    }).done(function (data) {
+        //결제가 정상적으로 완료되면 수행됩니다
+        //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
+        console.log(data);
+
+        requestOrderDTO.cashReceiptYn = 'N'
+        if(data.cash_result != undefined && data.cash_result != '') {
+            requestOrderDTO.cashReceiptYn = 'Y'
+        }
+        
+        requestOrderDTO.paymentName = data.payment_name;
+        requestOrderDTO.paymentDate = data.purchased_at;
+        requestOrderDTO.cardName = (data.card_name == undefined)?'':data.card_name;
+        requestOrderDTO.cardNo = (data.card_no == undefined)?'':data.card_no;
+        requestOrderDTO.cardQuota = (data.card_quota == undefined)?0:data.card_quota;
+
+        requestOrderDTO.receiptId = data.receipt_id;
+
+        paymentConfirm(requestOrderDTO);
+    });
 }
 
 function openZipSearch(comp) {
