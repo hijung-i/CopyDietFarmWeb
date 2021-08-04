@@ -20,9 +20,9 @@ var installAppModal = {
     methods: {
         
         closePopupModal: function() {
-            $('.popup_layer_wrapper').hide();
-            $('html,body').css({'overflow':'visible'});
-            $('html,body').off('scroll touchmove mousewheel');
+            app.installModal = false;
+            console.log(app.installModal);
+            scrollAllow();
         }
  
     }
