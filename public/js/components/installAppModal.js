@@ -27,31 +27,3 @@ var installAppModal = {
  
     }
 }
-
-  $( document ).ready(function() {
-        cookiedata = document.cookie;
-        console.log(cookiedata);
-        if ( cookiedata.indexOf("mcookie=done") < 0 ){
-            console.log('cookie 없음')
-            document.getElementById('popup_box').style.display = "block";
-        } else {
-            console.log("cookie 있음")
-            document.getElementById('popup_box').style.display = "none";
-        }
-    });
-    function setCookie( name, value, expiredays ) { 
-        var todayDate = new Date();
-        todayDate.setDate( todayDate.getDate() + expiredays );
-        document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-    }
-    
-    function closeWin() {
-            document.getElementById('popup_box').style.display = "none";
-    
-    }
-    
-    function todaycloseWin() {
-        setCookie("mcookie", "done", 1);
-        document.getElementById('popup_box').style.display = "none";
-    
-    }
