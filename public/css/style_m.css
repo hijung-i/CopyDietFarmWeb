@@ -976,10 +976,10 @@
               height: 14px
           }
   
-          .sale_coupon {
+          /*.sale_coupon {
               position: relative;
               top: -20px
-          }
+          }*/
   
           .sale_coupon img {
               width: 157px;
@@ -1000,6 +1000,7 @@
               font-size: 14px;
               padding-bottom: 25px;
               text-decoration: underline;
+              padding-bottom:20px
           }
   
           .login_with_sns {
