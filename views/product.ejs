@@ -232,7 +232,7 @@
                                             <span>리뷰</span><span class="v_n_numb"></span>
                                         </li>
                                         <li class="mobile_tab"  onclick="changeTab('tab4')" data-tab="tab4">
-                                            <span>문의</span><span class="tab_detail_qna_count  v_n_numb"></span>
+                                            <span>문의</span><span class="tab_detail_qna_count  v_n_numb">(0)</span>
                                         </li>
                                         <span></span>
                                     </ul>
@@ -595,8 +595,7 @@
                                             <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
                                             <div class="review-img-wrapper" v-if="review.contentType == 'I'">
                                                 <div class="review-img" v-bind:style="{ width: ((review.files.length * 110) - 10) }">
-                                                    <img v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
-    
+                                                    <img  onclick="imgEnlarge(this)" onclick="imgAssign()" v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
                                                 </div>
                                             </div>
 
@@ -611,6 +610,7 @@
                                         </div>
                                     </div>
                                 </div>
+                               
                                 <div class="page_wrap">
                                     <div class="page_nation">
                                         <a class="arrow pprev" href="#"></a>

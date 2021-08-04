@@ -899,16 +899,15 @@ div #ex1.modal ul li {float:left}
 .starRev{display:inline-block;margin:0 auto;margin-top:10px;margin-left:10px} 
 }
 @media screen and (min-width:1080px){
-    .reviews p{padding:0px 10px 10px 10px}
     .review_img01, .review_img02{padding-left:15px;margin-bottom:10px}
     /*.review_summ{width:600px}*/
-    .starRev{display:inline-block;margin:0 auto;margin-top:10px;margin-left:14px}
+    .starRev{display:inline-block;margin:0 auto;margin-top:10px}
     .review_btn_web #modal_btn{width:168px;height:45px;background-color:#F99319;border-radius:5px;border:0;font-size:18px;color:#fff;font-weight:bold;float:right;margin-top:30px;margin-right:20px} 
 }
 /*리뷰*/
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}
-.review_info01 ul li{float:left;font-size:13px;padding-left:15px;top:-5px}
+.review_info01 ul li{float:left;font-size:13px;top:-3px;margin-right:10px}
 .review_info01 {width:100%;display: flex;justify-content: space-between;margin-top:20px;padding-right:20px;margin-bottom:10px}
 .review_info02 ul li{float:left;}
 .starRev span{padding:5px}
@@ -970,7 +969,7 @@ div #ex1.modal ul li {float:left}
 }
 .myReview label > span {display: none;}
 
-#toc-toggle{margin-left:10px}
+#toc-toggle{margin-top:10px}
 
 .qna p{
     font-size:14px;
