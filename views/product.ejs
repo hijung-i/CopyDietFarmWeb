@@ -148,6 +148,7 @@
         }
         .swiper-wrapper {height: 373px !important;}
         .swiper-pagination {left: 72% !important;}
+        .myReview{border-bottom:2px solid #e6e6e6}
     }
     @media screen and (min-width:1080px) {
         .swiper-container {
@@ -158,6 +159,8 @@
         .swiper-container {
             height: 694px;
         }
+        .reviews{width: 75% !important;}
+        .mytoggle{padding-top:10px}
     }
         
         </style>
@@ -640,7 +643,7 @@
             <div class="myReview">
                 <p class="inquiry">문의 {{questionList.length}}개</p>
 
-                <p style="display:flex;white-space:nowrap;">내 문의 보기
+                <p class="mytoggle" style="display:flex;white-space:nowrap">내 문의 보기
                 <input type="checkbox" id="prod_detail_toggle" style="margin-left:4px">
                 <label for="prod_detail_toggle">
                 <span>아이콘</span></label>
@@ -648,6 +651,12 @@
             </div>
                             
             <div class="qna">
+                <div class="review_list_null" v-if="inquiryList == undefined ||inquiryList.length == 0">
+                    <img src="/images/note_icon_review.png">
+                    <p class="no_review">아직 작성된 문의가 없습니다.</p>
+                    <!--// <div class="btn_area"> <button type="button"
+                    id="btnRW_null">리뷰쓰기</button> -->
+                </div>
                 <div class="reveiw01" v-for="(question, index) in questionList" v-bind:key="index">
                     <div class="review_edit">
                         <p>
@@ -722,7 +731,7 @@
                     </div>
                 </div>
 
-                <button type="button" class="more_inq">
+                <button type="button" class="more_inq" style="display:none">
                     <div class="more_btn_ctn">
                         <p>더보기
                             <img src="/images/downarrow_icon_category.png" alt="화살표">
