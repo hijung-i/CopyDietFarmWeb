@@ -920,11 +920,11 @@
             /*팝업 박스 (앱 설치) */
             .popup_box {
               position: relative;
-              top: 50%;
+              top: 30%;
               background: #fff;
               /* 15% from the top and centered */
               width: 270px;
-              height: auto;
+              height: 400px;
               margin: 0 auto;
               background: #fff;
           }
@@ -980,7 +980,9 @@
               position: relative;
               top: -20px
           }*/
-  
+          .sale_coupon{
+            padding-top:20px
+          }
           .sale_coupon img {
               width: 157px;
               height: 87px
@@ -1000,7 +1002,7 @@
               font-size: 14px;
               padding-bottom: 25px;
               text-decoration: underline;
-              padding-bottom:20px
+
           }
   
           .login_with_sns {
