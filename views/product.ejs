@@ -159,8 +159,8 @@
         .swiper-container {
             height: 694px;
         }
-        .reviews{width: 75% !important;}
         .mytoggle{padding-top:10px}
+        .review-img{margin-top:10px}
     }
         
         </style>
@@ -536,7 +536,7 @@
                                     <button type="button" id="modal_btn" onclick="openReviewModal()">리뷰쓰기</button>
                                 </div>
                             <% } %>
-                        
+                        <div class="web_flex">
                             <p class="num">리뷰 {{ reviewList.length }}개</p>
                             <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
                                 <img src="/images/note_icon_review.png">
@@ -595,17 +595,12 @@
                                             <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
                                             <div class="review-img-wrapper" v-if="review.contentType == 'I'">
                                                 <div class="review-img" v-bind:style="{ width: ((review.files.length * 110) - 10) }">
-                                                    <img  onclick="imgEnlarge(this)" onclick="imgAssign()" v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
+                                                    <img v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
+                                                </div>
+                                                    
                                                 </div>
                                             </div>
 
-                                            <span id="toc-toggle" onclick="openCloseToc()">더보기<img
-                                                src="/images/downarrow_ico_main.png"
-                                                style="width:11px;height:11px;position:relative;top:2px;left:4px"></span>
-                                            <div id="toc-content" style="display:none">
-                                                <li>글 이어서 어쩌구</li>
-                                                <li><img src="/images/dietfarmbread.jpg" style="width:605px"></li>
-                                            </div>
                                             <div class="line_review"></div>
                                         </div>
                                     </div>
@@ -630,6 +625,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
                         </div>
         <div id="tab4" class="tab_cont Mtab_cont">
             <!--//review_btn-->
@@ -639,7 +635,7 @@
             </div>
             <% } %>
             
-           
+           <div class="web_flex">
             <div class="myReview">
                 <p class="inquiry">문의 {{questionList.length}}개</p>
 
@@ -651,7 +647,7 @@
             </div>
                             
             <div class="qna">
-                <div class="review_list_null" v-if="inquiryList == undefined ||inquiryList.length == 0">
+                <div class="review_list_null" v-if="questionList == undefined ||questionList.length == 0">
                     <img src="/images/note_icon_review.png">
                     <p class="no_review">아직 작성된 문의가 없습니다.</p>
                     <!--// <div class="btn_area"> <button type="button"
@@ -740,6 +736,7 @@
                 </button>
             </div>
         </div>
+        </div>
         <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="review" v-bind:writable-list="writableList" v-bind:writable="writable"
             v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
         <product-inquiry-modal v-if="inquiryModal" v-bind:product="product" v-bind:inquiry="currentQuestion" v-on:add-complete="insertInquiryComplete" v-on:close="onChildPopupClosed"></product-inquiry-modal>
@@ -777,6 +774,8 @@
             }
             preview.appendChild(image);
         })
+
+  
     </script>
     
     <script src="/js/productReviewModal.js"></script>

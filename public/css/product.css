@@ -535,7 +535,6 @@ box-shadow: none !important}
 
 
 /*문의*/
-.qna{width:75%;}
 .myReview{width:100%;border-bottom:2px solid #E6E6E6;padding-bottom:20px}
 .qna p{font-size:14px;padding-left:15px;padding-right:15px}
 .review_edit ul li img{margin-top:4px}
@@ -668,7 +667,7 @@ font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 .inquiryBox ul li ul li{line-height:14px}
 .inquiryBox .words form{margin-top:-20px}
 
-.tab_cont{display:none; min-height:360px;}
+.tab_cont{display:none;}
 .tab_cont.active{display:block}
 .tab_wrap li.active a {
     font-weight: 700; color: #F99319;
@@ -690,7 +689,6 @@ font-weight: 400;border-radius:5px;margin:24px  15px 10px 15px;}
 
 
 /*문의*/
-.qna{width:75%;}
 #wrap_qna{margin-top:40px}
 /* 토글 버튼 디자인 */
 .myReview input {position: absolute; left: -9999px}
@@ -1126,7 +1124,7 @@ color: #878787; font-size: 12px;}
         padding-bottom:20px;
         border-bottom:1px solid #E6E6E6}
     #tab4 .inquiry{width:100%;font-size:18px;font-weight:bold;margin-top:10px}
-    .myReview{width:75%;padding-right:5px;
+    .myReview{padding-right:5px;
         border-bottom:2px solid #E6E6E6;
         padding-bottom:20px;
         display: flex;
