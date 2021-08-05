@@ -1635,7 +1635,6 @@ input[type="checkbox"] {
   color: #6B6B6B
 }
 .modal-content .line .value {
-  margin-left: 20px;
   color: #000000;
 }
 .modal-content .line .left,
@@ -4369,7 +4368,7 @@ line-height: 26px;margin-bottom: 8px}*/
   .circle_line {text-align: center;margin-bottom:20px}
   .circle_line p{margin-top:10px}
   .circle_line span{margin-top:4px}
-  .d_status{font-size:16px;color:#878787;padding-top:201px;padding-bottom:204px;text-align:center;}
+  .d_status{font-size:16px;color:#878787;text-align:center;}
   .d_state ul, .d_date ul{display:flex;justify-content:space-around;}
   .d_state ul li, .d_date ul li{font-size:10px;float:left;color:#6B6B6B}
   
@@ -4787,4 +4786,23 @@ padding-bottom:4px
 background: url(/images/aftercheck_icon_join.png)no-repeat;
  background-size:19px 19px;}
 
- 
+
+.d_status .date,
+.d_status .message
+{
+  margin-bottom: 10px;
+}
+.d_status .date {
+  font-size : 14px;
+}
+
+.d_status .message {
+  background-color: #F1F1F1;
+  color: #000000;
+  font-size: 14px;
+  padding: 4px 10px;
+  text-align: left;
+
+  border-radius: 0px 6px 6px 6px;
+  margin-bottom: 10px;
+}
