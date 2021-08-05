@@ -1992,6 +1992,8 @@
     }
 
     .modal-content {
+      max-width: 350px;
+
       border-radius:5px;
       left: 50%;
       top: 50%;

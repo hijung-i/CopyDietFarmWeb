@@ -6,7 +6,7 @@ deliveryInfoTemplate += '         <span class="close" @click="closeModal()">&tim
 deliveryInfoTemplate += '         <section class="detail_title">'
 deliveryInfoTemplate += '             <h2 class="title">{{ product.productName }}</h2>'
 deliveryInfoTemplate += '         </section>'
-deliveryInfoTemplate += '         <div id="content" class="del_info_content" style="margin-top:40px" V-for="(product, pIdx) in delivery.products">'
+deliveryInfoTemplate += '         <div id="content" class="del_info_content" style="margin-top:40px">'
 deliveryInfoTemplate += '             <div class="circle_line">'
 deliveryInfoTemplate += '                 <ul>'
 deliveryInfoTemplate += '                     <li v-bind:class="{ \'on\': deliveryProgress.complete || deliveryProgress.level >= 1 }">'
@@ -55,7 +55,9 @@ deliveryInfoTemplate += '                 <span class="label">운송장번호</s
 deliveryInfoTemplate += '                 <span class="value">{{ product.courierName }} {{ product.courierNo }}</span>'
 deliveryInfoTemplate += '             </div>'
 deliveryInfoTemplate += '            <div v-if="deliveryProgress.level != undefined && deliveryProgress.level != 0" class="d_status">'
-deliveryInfoTemplate += '                <p>배송 조회 기능 준비중 입니다.</p>'
+deliveryInfoTemplate += '                <div  v-bind:class="{ \'date\': detail.kind == \'DATE\', \'message\': detail.kind == \'DETAIL\' }" v-for="detail in trackingDetails">'
+deliveryInfoTemplate += '                   <span>{{ detail.text }}</span>'
+deliveryInfoTemplate += '                </div>'
 deliveryInfoTemplate += '            </div>'
 deliveryInfoTemplate += '            <div v-else class="d_status">'
 deliveryInfoTemplate += '                <p>배송 준비 중입니다.</p>'
@@ -85,7 +87,8 @@ var deliveryInfoModal = {
         return {
             RESOURCE_SERVER,
             deliveryIndex: -1,
-            deliveryProgress: {}
+            deliveryProgress: {},
+            trackingDetails: []
         }
     }, methods: {
         closeModal: function() {
@@ -94,9 +97,59 @@ var deliveryInfoModal = {
         },
         getDeliveryProgress: async function() {
             // TODO: 배송지 정보가 있는지 Check 없으면 API 호출 후 DB에 저장
-            if(this.product.deliveryProgress)
-            this.deliveryProgress = await parcelTrackSmart(this.product.courierCode, this.product.courierNo);
-            console.log(this.deliveryProgress)
+            var params = {
+                purchaseProductNo: this.product.purchaseProductNo
+            }
+            
+            var component = this;
+            ajaxCall(API_SERVER + '/order/selectDeliveryState', params, 'POST',
+            function(data) {
+                console.log(data);
+                component.deliveryProgress = data.result
+                component.createTrackingDetail();
+            }, function(err) {
+                console.log('error 발생', err);
+                if(err.responseText == 'ERROR_SERVER') {
+                    console.log(component)
+                    parcelTrackSmart(component.product.courierCode, component.product.courierNo)
+                    .then(data => {
+                        component.deliveryProgress = data;
+                        var requestProduct = Object.assign({}, component.product)
+                        requestProduct.deliveryStateDetail = JSON.stringify(component.deliveryProgress);
+                        component.createTrackingDetail();
+
+                        ajaxCall(API_SERVER + '/order/updateDeliveryState', requestProduct, 'POST',
+                        function(data) {
+                            console.log('delivery info update', data);
+                        }, function(err) {
+                            console.log('delivery info update failed', err);
+                        })
+
+                    }). catch(err => {
+                        console.log(err);
+                        alert('배송 정보를 불러오지 못했습니다. 잠시 후에 다시 시도해주세요');
+                        return;
+                    })
+     
+                }
+            })
+
+        }, 
+        createTrackingDetail: function() {
+            this.trackingDetails = new Array();
+            Array.from(this.deliveryProgress.trackingDetails).forEach((detail, index, array) => {
+                if(index > 0) {
+                    if (array[index-1].timeString.substring(0, 10) != detail.timeString.substring(0, 10)) {
+                        this.trackingDetails.push({ kind: 'DATE', text: detail.timeString.substring(0, 10) })
+                    }
+                } else {
+                    this.trackingDetails.push({ kind: 'DATE',  text: detail.timeString.substring(0, 10) })
+                }
+                
+                var text = detail.timeString.substring(11, 16) + ' [' + detail.where + '] ' + detail.kind +'했습니다.';
+                this.trackingDetails.push({ kind: 'DETAIL' , text})
+            })
+            console.log(this.trackingDetails)
         }
     }, mounted: function() {
         this.getDeliveryProgress();

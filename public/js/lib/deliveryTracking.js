@@ -3,7 +3,6 @@
  * Author: jgpark
  */
 
-
 // 스마트 택배 배송 조회 API 설정
 var DELIVERY_TRACKING_TOKEN = '5QSKHhEHYIZ9ePFQ8P2SRw';
 var DELIVERY_TRACKING_HOST = "https://info.sweettracker.co.kr";
@@ -43,4 +42,4 @@ async function _ajaxCallDeliveryTrack(url, params, type){
           xmlHttpRequest.setRequestHeader("Access-Control-Allow-Origin", "*")
        }
     })
- }
+}
