@@ -709,12 +709,7 @@ dd.subMenu {
 .top_util .menu_list .bar {
   position: relative
 }
-.top_util .menu_list li.cart,
-.top_util .menu_list li.mypage,
-.top_util .menu_list li.pick {
-  position: relative;
-  top: 4px;
-}
+
 .top_util .menu_list>li:last-child {
   padding-right: 0
 }
@@ -735,14 +730,15 @@ dd.subMenu {
 .top_util .cart img {
   width: 18px;
   height: 18px;
-  margin-top: 8px
+
 }
 .top_util .mypage img {
-  margin-top: 8px
+ 
 }
+.menu_list img{position:relative;top:2px}
 .top_util .pick img {
   width: 20px;
-  margin-top: 6px
+
 }
 .header_inner {
   position: relative;
@@ -1671,7 +1667,7 @@ input[type="checkbox"] {
 }
 .product .desc {
   font-size: 15px;
-  padding: 0px 10px
+  margin-top:10px
 }
 .product .desc .sale {
   font-weight: bold;
