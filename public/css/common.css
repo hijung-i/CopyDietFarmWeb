@@ -1671,7 +1671,7 @@ input[type="checkbox"] {
 }
 .product .desc {
   font-size: 15px;
-  padding: 0px 10px
+  margin-top:10px
 }
 .product .desc .sale {
   font-weight: bold;

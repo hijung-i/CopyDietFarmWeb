@@ -36,7 +36,7 @@
         }
         .showing {z-index: 9999;opacity: 1}
         @media screen and (min-width:1080px) {
-
+            .popUp{display:none}
             .swiper-container{margin-top:-2px}
             .water{margin-bottom:100px}
             .black_bg{
@@ -316,7 +316,7 @@ function todaycloseWin() {
             </div>
           </div>
           <%-include(webroot + 'views/general/footer') %>
-          <div v-if="installModal">
+          <div v-if="installModal" class="popUp">
             <div class="popup_layer_wrapper" id="popup-cookie">
           <div class="popup_box">
             <div class="popup_cont">
