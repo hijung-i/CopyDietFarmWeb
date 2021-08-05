@@ -88,7 +88,33 @@
         .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
     </style>
     <link rel="stylesheet" href="/css/myPage.css">
-    
+    <script>
+    $( document ).ready(function() {
+    cookiedata = document.cookie;
+    console.log(cookiedata);
+    if ( cookiedata.indexOf("mcookie=done") < 0 ){
+        console.log('cookie 없음')
+        document.getElementById('popup-cookie').style.display = "block";
+        scrollBlock();
+    } else {
+        console.log("cookie 있음")
+        document.getElementById('popup-cookie').style.display = "none";
+    }
+});
+function setCookie( name, value, expiredays ) { 
+    var todayDate = new Date();
+    todayDate.setDate( todayDate.getDate() + expiredays );
+    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+
+function todaycloseWin() {
+    setCookie("mcookie", "done", 1);
+    document.getElementById('popup-cookie').style.display = "none";
+    scrollAllow();
+}
+
+
+    </script>
 </head>
 <body>
    
@@ -290,13 +316,26 @@
           </div>
           <%-include(webroot + 'views/general/footer') %>
           <div v-if="installModal">
-                <install-modal></install-modal>
+            <div class="popup_layer_wrapper" id="popup-cookie">
+          <div class="popup_box">
+            <div class="popup_cont">
+                <div class="index-modal">
+                    <div class="sale_coupon"><img src="/images/app_deit_farm_logo@2x.png" style="width:72px;height:72px">
+                    <p>장보기를 <br>더 쉽고 빠르게 <br>경험하세요!</p>
+                    </div>
+                    <a href="https://dietfarm.page.link/pzok">
+                        <p class="app02">다이어트팜 앱으로 보기 ></p>
+                    </a>
+                    <p><span><a href="javascript:;" onclick="todaycloseWin();">모바일웹으로 볼게요.</a></span></p>
+                </div>
+            </div>
+            </div>
+            </div>
        
             </div>
         </main>
         
         <script src="/js/components/timedealComponent.js"></script>
-        <script src="/js/components/installAppModal.js"></script>
         <script src="/js/index.js"></script>
 
     </body>
