@@ -17,7 +17,7 @@ class ProductService {
         .then(async (data) => {
             return data.data.result
         }).catch(async (err) => {
-            console.log(err)
+            console.log('requestFailed', err)
             STREAM.writeError('ProductService.getProductDetail -> ', JSON.stringify(err))
             return err
         })
