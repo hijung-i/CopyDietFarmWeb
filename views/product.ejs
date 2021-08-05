@@ -13,7 +13,13 @@
         <meta property="og:type" content="website">
         <meta property="og:image" content="https://dietfarm119.co.kr/data/diet/<%=product.url %>">
         <meta property="og:description" content="<%=product.productDesc %>">
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+         
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 
         <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
         <style type="text/css">
@@ -595,33 +601,32 @@
                                             <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
                                             <div class="review-img-wrapper" v-if="review.contentType == 'I'">
                                                 <div class="review-img" v-bind:style="{ width: ((review.files.length * 110) - 10) }">
-                                                    <img v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
+                                                    <img onclick="openImg(this)" v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
                                                 </div>
                                                     
                                                 </div>
+                                        
                                             </div>
-
+                                    <!--//
+                                            <div class="img_modal" id="img_Modal" style="display:none" v-if="review.contentType == 'I'">
+                                                <div class="img-modal-content"  v-bind:style="{ width: ((review.files.length * 110) - 10) }">
+                                                    <span class="close" onclick="closeImg(this);">&times;</span>
+                                                    <img v-bind:src="RESOURCE_SERVER + image.url" style="width:340px;" v-for="image in review.files">
+                                               </div>
+                                           </div>
+                                        <script>
+                                                function openImg() {
+                                                     $('#img_Modal').show(this.image);
+                                                 };
+                                                 
+                                                 function closeImg() {
+                                                     $('#img_Modal').hide(this.image);
+                                                 }
+                                                 
+                                                </script>
+                                            -->
                                             <div class="line_review"></div>
                                         </div>
-                                    </div>
-                                </div>
-                               
-                                <div class="page_wrap">
-                                    <div class="page_nation">
-                                        <a class="arrow pprev" href="#"></a>
-                                        <a class="arrow prev" href="#"></a>
-                                        <a href="#" class="active">1</a>
-                                        <a href="#">2</a>
-                                        <a href="#">3</a>
-                                        <a href="#">4</a>
-                                        <a href="#">5</a>
-                                        <a href="#">6</a>
-                                        <a href="#">7</a>
-                                        <a href="#">8</a>
-                                        <a href="#">9</a>
-                                        <a href="#">10</a>
-                                        <a class="arrow next" href="#"></a>
-                                        <a class="arrow nnext" href="#"></a>
                                     </div>
                                 </div>
                             </div>
@@ -737,10 +742,12 @@
             </div>
         </div>
         </div>
+        <image-modal v-if="imageModalShow" v-bind:image="image" v-bind:review="review" ></image-modal>
         <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="review" v-bind:writable-list="writableList" v-bind:writable="writable"
             v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
         <product-inquiry-modal v-if="inquiryModal" v-bind:product="product" v-bind:inquiry="currentQuestion" v-on:add-complete="insertInquiryComplete" v-on:close="onChildPopupClosed"></product-inquiry-modal>
     </main>
+    
    <!-- Swiper JS -->
     <script>
         var swiper = new Swiper(".productSwiper", {
@@ -777,7 +784,8 @@
 
   
     </script>
-    
+
+    <script src="/js/components/imageModalComponent.js"></script>
     <script src="/js/productReviewModal.js"></script>
     <script src="/js/productInquiryModal.js"></script>
     <script src="/js/orderDTO/OrderDTO.js"></script>

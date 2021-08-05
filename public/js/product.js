@@ -6,6 +6,7 @@ var app = new Vue({
     el: 'main',
     components: {
         'product-review-modal': productReviewModal,
+        'image-modal': imageModalComponent,
         'product-inquiry-modal': productInquiryModal,
         'mypage-modal': signModal
     },
@@ -24,6 +25,7 @@ var app = new Vue({
         writableList: [],
         reviewModal: false,
         
+        imageModalShow: false,
         currentQuestion: {},
         questionList: [],
         inquiryModal: false,
