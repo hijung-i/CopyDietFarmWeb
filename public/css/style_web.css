@@ -155,7 +155,7 @@ header.orderlistModal > ul li.ordlist_clsWindow {margin-right: 10px; cursor: poi
 .circle_line {text-align: center;margin-bottom:20px}
 .circle_line p{margin-top:10px}
 .circle_line span{margin-top:4px}
-.d_status{font-size:16px;color:#878787;padding-top:201px;padding-bottom:204px;text-align:center;}
+.d_status{font-size:16px;color:#878787;padding: 20px 0px;text-align:center;}
 .d_state ul, .d_date ul{display:flex;justify-content:space-around;}
 .d_state ul li, .d_date ul li{font-size:10px;float:left;color:#6B6B6B}
 

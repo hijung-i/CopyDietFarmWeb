@@ -41,9 +41,6 @@ var app = new Vue({
             this.deliveryInfoModalShow = true;
         }
     }, computed:{
-        deliveryListURL: function(){
-            return Object.assign(params, this.product);
-        }
     },
     created: async function() {
         var data = await carriersTrackSmart();
@@ -61,7 +58,7 @@ $(function() {
     getUsablePointAmount();
     getUsableCouponList();
 
-    convertOrderStatus();  
+    convertOrderStatus();
 })
 
 function convertOrderStatus(orderStatus) {
