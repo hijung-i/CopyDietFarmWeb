@@ -25,7 +25,7 @@ var app = new Vue({
         if(isAndroid && isBrowser && $('html').width() <= 1079) {
             this.installModal = true;
             scrollBlock();
-        } 
+        }
         
     }
 });
