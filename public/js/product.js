@@ -129,6 +129,17 @@ var app = new Vue({
                 accumulatePoint = (totalCount * 10000)
             }
             return Math.round(accumulatePoint);
+        },
+        deliveryCost: function() {
+            var deliveryCost = this.product.deliveryCost;
+
+            // deliveryCostBasis 검사
+            if(this.product.deliveryCostBasis != 999999 && this.deliveryCostBasis < this.optiontotalPrice) {
+                deliveryCost = 0;
+            }
+
+
+            return Math.round(deliveryCost);
         }
     }
 });
