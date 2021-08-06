@@ -129,6 +129,27 @@ var app = new Vue({
                 accumulatePoint = (totalCount * 10000)
             }
             return Math.round(accumulatePoint);
+        },
+        deliveryCost: function() {
+            
+            var deliveryCost = this.product.deliveryCost;
+            // var boxCount = 1;
+            // // if(this.product.countPerDelivery != 0) {
+            // //     boxCount = 
+            // // }
+            // // deliveryCostBasis 검사
+            
+            var deliveryCostStr = '';
+
+            if(this.product.deliveryCostBasis == 0 || this.product.deliveryCostBasis == null) {
+                deliveryCostStr = '무료배송'
+            } else if(this.product.deliveryCostBasis >= 999999) {
+                deliveryCostStr = numberFormat(deliveryCost) + '원<br>무료배송 없음'
+            } else {
+                deliveryCostStr = numberFormat(deliveryCost) + '원<br>' + numberFormat(this.product.deliveryCostBasis) + '원 이상 구매시 무료배송'
+            }
+
+            return deliveryCostStr;
         }
     }
 });

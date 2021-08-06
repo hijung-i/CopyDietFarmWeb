@@ -372,7 +372,7 @@
                                                         </p>
                                                         <div class="accumulate-points">
                                                             <p>예상 포인트 <span class="green">{{ accumulatePoint }}</span>원 ({{pointReason}})</p>
-                                                            <p>배송 금액 {{  }}원</p>
+                                                            <p v-html="'배송 금액 ' + deliveryCost"></p>
                                                         </div>
                                                     </div>
                                                     <div class="common_btn_wrap">
@@ -615,16 +615,7 @@
                                                     <img v-bind:src="RESOURCE_SERVER + image.url" style="width:340px;" v-for="image in review.files">
                                                </div>
                                            </div>
-                                        <script>
-                                                function openImg() {
-                                                     $('#img_Modal').show(this.image);
-                                                 };
-                                                 
-                                                 function closeImg() {
-                                                     $('#img_Modal').hide(this.image);
-                                                 }
-                                                 
-                                                </script>
+
                                           
                                             <div class="line_review"></div>
                                         </div>
@@ -786,6 +777,16 @@
   
     </script>
 
+    <script>
+        function openImg() {
+             $('#img_Modal').show(this.image);
+         };
+         
+         function closeImg() {
+             $('#img_Modal').hide(this.image);
+         }
+         
+        </script>
     <script src="/js/components/imageModalComponent.js"></script>
     <script src="/js/productReviewModal.js"></script>
     <script src="/js/productInquiryModal.js"></script>
