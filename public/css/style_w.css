@@ -2381,7 +2381,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color:#fff;
-    padding: 10px
+    padding: 10px;
+    height:700px
   }
   .img-modal {
     position: fixed;
@@ -2391,6 +2392,10 @@
     background-color: rgba(0, 0, 0, 0.4);
     padding: 10px
     
+  }
+  .modal-content textarea{
+    width: 280px !important;
+    height: 200px !important;
   }
   .modal-content .close {
     font-size: 28px;

@@ -213,30 +213,12 @@
                 </template>
                 
                 </div>
-                <div class="page_wrap">
-                    <div class="page_nation">
-                        <a class="arrow pprev" href="#"></a>
-                        <a class="arrow prev" href="#"></a>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#">6</a>
-                        <a href="#">7</a>
-                        <a href="#">8</a>
-                        <a href="#">9</a>
-                        <a href="#">10</a>
-                        <a class="arrow next" href="#"></a>
-                        <a class="arrow nnext" href="#"></a>
-                    </div>
-                </div>
             </div>
         </div>
         <alert-modal v-if="alertModalShow" v-bind:alert="alert"></alert-modal>
         <order-cancel-modal v-if="orderCancelModalShow" v-bind:cancel-order="cancelOrderDTO"></order-cancel-modal>
         <product-review-modal v-if="reviewModal"  v-bind:product="currentProduct" v-bind:writable="writable" v-bind:writable-list="writableList" v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
-        <delivery-info-modal v-if="deliveryInfoModalShow" v-on:close="onChildPopupClosed" v-bind:product="product"></delivery-info-modal>
+        <delivery-info-modal v-if="deliveryInfoModalShow" v-bind:product="product"></delivery-info-modal>
     </main>
   
     <!-- modal -->

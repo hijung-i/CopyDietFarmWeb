@@ -13,7 +13,10 @@ var app = new Vue({
         orderList: [],
         totalPointAmount: 0,
         deliveryInfoModalShow: false,
-        
+        deliveryIndex: -1,
+        deliveryProgress: {},
+        trackingDetails: [],
+
         reviewModal: false,
         deliveryModal: false,
         orderCancelModalShow: false,
@@ -98,6 +101,67 @@ var app = new Vue({
 
             this.product.courierCode = found['Code']
             this.deliveryInfoModalShow = true;
+        },
+        closeModal: function() {
+            app.deliveryInfoModalShow = false;
+            scrollAllow();
+        },
+        getDeliveryProgress: async function() {
+            // TODO: 배송지 정보가 있는지 Check 없으면 API 호출 후 DB에 저장
+            var params = {
+                purchaseProductNo: this.product.purchaseProductNo
+            }
+            
+            var component = this;
+            ajaxCall(API_SERVER + '/order/selectDeliveryState', params, 'POST',
+            function(data) {
+                console.log(data);
+                component.deliveryProgress = data.result
+                component.createTrackingDetail();
+            }, function(err) {
+                console.log('error 발생', err);
+                if(err.responseText == 'ERROR_SERVER') {
+                    console.log(component)
+                    parcelTrackSmart(component.product.courierCode, component.product.courierNo)
+                    .then(data => {
+                        component.deliveryProgress = data;
+                        var requestProduct = Object.assign({}, component.product)
+                        requestProduct.deliveryStateDetail = JSON.stringify(component.deliveryProgress);
+                        component.createTrackingDetail();
+
+                        ajaxCall(API_SERVER + '/order/updateDeliveryState', requestProduct, 'POST',
+                        function(data) {
+                            console.log('delivery info update', data);
+                        }, function(err) {
+                            console.log('delivery info update failed', err);
+                        })
+
+                    }). catch(err => {
+                        console.log(err);
+                        alert('배송 정보를 불러오지 못했습니다. 잠시 후에 다시 시도해주세요');
+                        return;
+                    })
+     
+                }
+            })
+
+        }, 
+        createTrackingDetail: function() {
+            this.getDeliveryProgress();
+            this.trackingDetails = new Array();
+            Array.from(this.deliveryProgress.trackingDetails).forEach((detail, index, array) => {
+                if(index > 0) {
+                    if (array[index-1].timeString.substring(0, 10) != detail.timeString.substring(0, 10)) {
+                        this.trackingDetails.push({ kind: 'DATE', text: detail.timeString.substring(0, 10) })
+                    }
+                } else {
+                    this.trackingDetails.push({ kind: 'DATE',  text: detail.timeString.substring(0, 10) })
+                }
+                
+                var text = detail.timeString.substring(11, 16) + ' [' + detail.where + '] ' + detail.kind +'했습니다.';
+                this.trackingDetails.push({ kind: 'DETAIL' , text})
+            })
+            console.log(this.trackingDetails)
         }
     }, mounted: function() {
         var userId = $('#userId').val();
@@ -136,6 +200,17 @@ function getUsableCouponList() {
     })
 }
 
+
+
+
+function updateDeliveryProgress(){
+
+}
+
+function openDInfoModal() {
+app.deliveryInfoModalShow = true;
+scrollBlock();
+}
 function getOrderList(userInfo) {
     var params = {};
     if(userInfo.userId == '비회원주문') {
