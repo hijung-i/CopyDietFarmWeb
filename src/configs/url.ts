@@ -24,4 +24,4 @@ const DEV_UBUNTU: ServerInfo = {
     CALLBACK_SERVER: 'http://localhost'
 }
 
-export const current = DEV_JGPARK
+export const current = PROD
