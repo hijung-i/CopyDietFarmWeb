@@ -127,6 +127,9 @@ router.get('/faq', (req: Request, res: Response, next: NextFunction) => {
 router.get('/notice', (req: Request, res: Response, next: NextFunction) => {
     render(req, res, 'notice', {})
 })
+router.get('/pros', (req: Request, res: Response, next: NextFunction) => {
+    render(req, res, 'pros', {})
+})
 router.get('/notice/:boardNo', (req: Request, res: Response, next: NextFunction) => {
     const boardNo = req.params.boardNo
     render(req, res, 'notice_detail', { boardNo: boardNo })

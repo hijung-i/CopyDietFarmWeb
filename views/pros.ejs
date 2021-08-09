@@ -22,11 +22,31 @@
                 .mobile_pros {
                     display: none;
                 }
+                .pros_content{
+                    width: 540px !important;
+                    margin:0 auto!important
+                }
             }
             .buttons img{width:20px}
         </style>
+        <script type="text/javascript">
+
+            function uploadImgPreview() {
+
+                let fileInfo = document.getElementById("upImgFile").files[0];
+                let reader = new FileReader();
+          
+                reader.onload = function() {      
+                    document.getElementById ("thumbnailImg").src = reader.result;
+                  };
+                 if( fileInfo ) {        
+                    reader.readAsDataURL( fileInfo );     
+                }        
+            }
+          
+        </script>
         <%-include(webroot + 'views/general/head') %>
-<%-include(webroot + 'views/general/openGraph.ejs') %>
+        <%-include(webroot + 'views/general/openGraph.ejs') %>
         </head>
 
         <body>
@@ -38,10 +58,146 @@
                   
                     
                 </div>
-                <main id="content" class="content">
-                    <p>다이어트팜에서는 <br> 건강관리에 관련된 전문분야에서</p>
+                <main id="content" class="pros_content">
+                    <h2>건강관리 각 분야 전문가 모집 폼</h2>
+                <div class="pros_open">
+                    <p>다이어트팜에서는 <br> 건강관리에 관련된 전문분야에서<br>활동을 희망하시는 전문가를 모집합니다.</p>
+                    <br>
+                    <p>각 분야 전문가는 다이어트팜 회원대상으로,<br> 전문가 유료 서비스 매칭 기회를 드립니다.</p>
+                </div>
+                <div class="service-area">
+                  <h3>1. 제공 서비스 분야 (<span>*</span>)</h3>
+                  <select id="selectServiceDesc" v-on:change="descTypeChange()">
+                      <option value="" selected="selected">선택</option>
+                      <option value="식단관리">식단관리</option>
+                      <option value="체중관리">체중관리</option>
+                      <option value="피트니스 (PT)">피트니스 (PT)</option>
+                      <option value="">기타</option>
+                  </select>
+                  <form>
+                    <input type="text" id="ServiceDesc" disabled="disabled">
+                  </form>
+                </div>
+                <div class="service-intro">
+                    <h3>2. 서비스 및 경력 내용 소개 (<span>*</span>)<br>&nbsp;&nbsp;&nbsp;(서비스 의뢰 고객에게 전달됩니다.)</h3>
+                    <p>한줄 소개</p>
+                 <form class="summ">
+                    <textarea placeholder="10-15자 이상"></textarea>
+                 </form>
+                 <p class="detail">경력내용 상세 소개</p>
+                 <form class="detail_form">
+                     <textarea placeholder="50자 이상"></textarea>
+                 </form>
+                </div>
+                <div class="profile_photo">
+                  <h3>3. 프로필 사진 <br>&nbsp;&nbsp;&nbsp;(등록시, 고객과 매칭확률이 높아집니다.)</h3>
+                    <div class="photo-image">
+                        <div class="thumb-frame">
+                            <img id="thumbnailImg"  style="width:120px;height:160px">
+                        </div>
+                        <div class="file_input">
+                             <input type="file" id="upImgFile" onChange="uploadImgPreview();" accept="image/*">
+                             <p>(이미지 사이즈 120*160)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-photo">
+                    <h3>4. 제공 서비스 소개 사진 <br>&nbsp;&nbsp;&nbsp;(등록시, 고객과 매칭확률이 높아집니다.)</h3>
+                    <div class="form-group">
+                        <input class="form-control form-control-user" type="file" multiple="multiple"
+                        name="product_detail_image" id="product_detail_image" onchange="setDetailImage(event);">
+                    </div>
+                    <div id="images_container"></div>
+                </div>
+                <div class="service-link">
+                    <h3>5. 서비스 동영상 링크 <br>&nbsp;&nbsp;&nbsp;(등록시, 고객과 매칭확률이 높아집니다.)</h3>
+                    <form>
+                        <input type="text" placeholder="동영상 링크를 넣어주세요.">
+                      </form>
+                </div>
+                <div class="verif"> 
+                    <h3>6. 본인인증  (<span>*</span>)</h3>
+            
+                    <button id="btnNiceId" v-if="!identified">
+                        본인 인증
+                    </button>
+                </div>
+                <div class="account-enroll"> 
+                    <h3>7. 계좌등록</h3>
+                  <div class="bank">
+                    <p>은행</p>
+                    <select>
+                        <option value="*">은행선택</option>
+                        <option value="039">경남</option>
+                        <option value="034">광주</option>
+                        <option value="004">국민</option>
+                        <option value="003">기업</option>
+                        <option value="011">농협</option>
+                        <option value="012">단위농협</option>
+                        <option value="031">대구</option>
+                        <option value="032">부산</option>
+                        <option value="064">산림조합</option>
+                        <option value="002">산업</option>
+                        <option value="050">상호저축</option>
+                        <option value="045">새마을금고</option>
+                        <option value="007">수협</option>
+                        <option value="088">신한</option>
+                        <option value="048">신협</option>
+                        <option value="020">우리</option>
+                        <option value="071">우체국</option>
+                        <option value="037">전북</option>
+                        <option value="035">제주</option>
+                        <option value="081">KEB하나</option>
+                        <option value="027">한국시티</option>
+                        <option value="055">도이치</option>
+                        <option value="060">BOA</option>
+                        <option value="062">중국공상</option>
+                        <option value="023">SC제일</option>
+                        <option value="054">HSBC</option>
+                        <option value="089">K뱅크</option>
+                        <option value="090">카카오뱅크</option>
+                    </select>
+                  </div>
+                  <div class="account-num">
+                    <p>계좌번호</p>
+                    <form>
+                        <input type="text" id="accountDesc">
+                    </form>
+                  </div>
+                </div>
+                <div class="pros_end">
+                  <p><span>*</span> 항목은 필수입니다.</p>
+                    <div class="pros-button">
+                        <button onclick="">취소</button>
+                        <button>제출</button>
+                    </div>
+                </div>
                 </main>
                 <%-include(webroot + 'views/general/footer') %>
-                    
+             <script>
+               $("#s-etc").click(function(event){
+                event.preventDefault();
+                $('#ServiceDesc').prop("disabled", false); // Element(s) are now enabled.
+                });
+             </script>
+             <script>
+                function setDetailImage(event){
+                    for(var image of event.target.files){
+                        var reader = new FileReader();
+                        
+                        reader.onload = function(event){
+                            var img = document.createElement("img");
+                            img.setAttribute("src", event.target.result);
+                            img.setAttribute("class", "col-lg-6");
+                            document.querySelector("div#images_container").appendChild(img);
+                        };
+                        
+                        console.log(image);
+                        reader.readAsDataURL(image);
+                    }
+                }
+            </script>
+                 <script src="/js/signup.js"></script>
+                 <script src="/js/pros.js"></script>
                 </body>
             </html>

@@ -316,8 +316,8 @@ function todaycloseWin() {
             </div>
           </div>
           <%-include(webroot + 'views/general/footer') %>
-          <div v-if="installModal" class="popUp">
-            <div class="popup_layer_wrapper" id="popup-cookie">
+          <div class="popUp" onload=" return checkMobile()">
+         <div class="popup_layer_wrapper" id="popup-cookie">
           <div class="popup_box">
             <div class="popup_cont">
                 <div class="index-modal">
@@ -335,9 +335,17 @@ function todaycloseWin() {
        
             </div>
         </main>
-        
+
         <script src="/js/components/timedealComponent.js"></script>
         <script src="/js/index.js"></script>
-
+        <script type="text/javascript">
+        function checkMobile() {
+         userAgent = window.navigator.userAgent.toLowerCase()
+        isAndroid = /(android)/i.test(navigator.userAgent);
+        //iOS = /iphone|ipod|ipad/.test(userAgent);
+        isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
+            }   
+ 
+        </script>
     </body>
 </html>
