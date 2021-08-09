@@ -142,6 +142,16 @@ var app = new Vue({
         this.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
 
         
+        // 핸드폰 번호 형식 검사
+        var userCellNo = this.orderDTO.userCellNo
+        if(/^[0-9]{2,3}[0-9]{3,4}[0-9]{4}/.test(userCellNo)) {
+            console.log('valid');
+        } else {
+            console.log('invalid')
+            // 형식이 잘못되었다면 입력받도록 함
+            this.orderDTO.userCellNo = undefined
+        }
+        
         this.orderDTO.products = new Array();
         
         if(this.deliveryGroupList.length == 0) {
