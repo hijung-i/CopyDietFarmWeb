@@ -99,7 +99,7 @@
                     style="margin-top:-20px; border-bottom: 1px solid #f1f1f1;">
                     <ul class="tab_wrap">
                         <li class="active on" data-tab="tab1">
-                            <span>작성 가능한 리뷰 ({{ writableReviewList.length}})</span></li>
+                            <span>작성 가능한 리뷰 ({{ writableList.length}})</span></li>
                         <li data-tab="tab2" class="" id="possible">
                             <span>작성한 리뷰 ({{ reviewList.length}})</span>
                         </li>
@@ -108,12 +108,12 @@
                 </div>
 
                 <div id="tab1" class="tab_cont active">
-                    <div class="review_list_null" v-if="reviewList == undefined || reviewList.length == 0">
+                    <div class="review_list_null" v-if="writableList == undefined || writableList.length == 0">
                         <img src="/images/note_icon_review.png">
-                        <p class="no_review">아직 작성된 리뷰가 없습니다.</p>
+                        <p class="no_review">작성 가능한 리뷰가 없습니다.</p>
                     </div>
                     <section class="review_list_ctn">
-                        <template v-for="writable in writableReviewList">
+                        <template v-for="writable in writableList">
                             <div class="review_item_box">
                                 <div class="box_top">
                                     <a v-bind:href="'/product/' + writable.product.productCode">
@@ -167,7 +167,7 @@
                             </ul>
                         </div>
                         <div class="review_info02">
-                            <p class="option">옵션 : {{ review.product.options[0].optionDesc}} <template v-if="review.product.options.length > 1">외 {{review.product.options.length - 1}} 건</template></p>
+                            <p class="option">옵션 : {{ review.product.productName }}</p>
                             <div id="star_grade" class="star_grade">
                                 <div class="starRev">
                                     <template v-for="count in (review.gpa * 2)">

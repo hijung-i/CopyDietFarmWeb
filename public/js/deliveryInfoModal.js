@@ -6,7 +6,7 @@ deliveryInfoTemplate += '         <span class="close" @click="closeModal()">&tim
 deliveryInfoTemplate += '         <section class="detail_title">'
 deliveryInfoTemplate += '             <h2 class="title">{{ product.productName }}</h2>'
 deliveryInfoTemplate += '         </section>'
-deliveryInfoTemplate += '         <div id="content" class="del_info_content" style="margin-top:40px">'
+deliveryInfoTemplate += '         <div id="content" class="del_info_content">'
 deliveryInfoTemplate += '             <div class="circle_line">'
 deliveryInfoTemplate += '                 <ul>'
 deliveryInfoTemplate += '                     <li v-bind:class="{ \'on\': deliveryProgress.complete || deliveryProgress.level >= 1 }">'

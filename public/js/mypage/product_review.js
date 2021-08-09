@@ -7,17 +7,20 @@ var app = new Vue({
     data: {
         RESOURCE_SERVER,
         reviewList: [],
-        writableReviewList: [],
+
         totalPointAmount: 0,
         product: {},
         optionTotalPrice: 0,
         orderDTO: {},
         deliveryGroupList: [],
         currentReview: {},
+
         writable: { purchaseProductNo: 0 },
         writableList: [],
+
         reviewList: [],
         reviewModal: false,
+        
         currentQuestion: {},
         questionList: [],
         inquiryModal: false,
@@ -52,8 +55,8 @@ var app = new Vue({
 })
 
 $(function() {
-    getQuestionList();
-    getWritableReview();
+    getWritableReview();    
+    getReviewList();
     getUsablePointAmount();
     getUsableCouponList();
 });
@@ -71,8 +74,9 @@ function getUsableCouponList() {
     })
 }
 
-function getQuestionList() {
-    var params = {};
+function getReviewList() {
+    var params = {
+    };
 
     ajaxCallWithLogin(API_SERVER + '/board/getReview', params, 'POST', 
     function (data) {
@@ -87,31 +91,13 @@ function getQuestionList() {
     })
 }
 
-function getReviewList() {
-    var params = {
-        productCode: app.product.productCode
-    };
-
-    ajaxCallWithLogin(API_SERVER + '/board/getReview', params, 'POST', 
-    function (data) {
-    
-        app.reviewList = data.result;
-        console.log("success", data);
-    }, function (err){
-        console.log("error while getReview", err);
-    }, {
-        isRequired: false,
-        userId: true
-    })
-}
-
 function getWritableReview() {
     var params = {};
 
     ajaxCallWithLogin(API_SERVER + '/board/getWritableReview', params, 'POST', 
     function (data) {
     
-        app.writableReviewList = data.result;
+        app.writableList = data.result;
         console.log("success", data);
     }, function (err){
         console.log("error while getReview", err);

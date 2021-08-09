@@ -12,6 +12,7 @@ var app = new Vue({
         order: {
             products: {}
         },
+        products: {},
         totalPointAmount: 0,
         RESOURCE_SERVER,
         deliveryInfoModalShow: false,
@@ -38,12 +39,11 @@ var app = new Vue({
             this.reviewModal = false
             this.inquiryModal = false
         },
-        openDeliveryInfo: function(oIdx, pIdx) {
-            var currentOrder = this.orderList[oIdx];
-            this.product = currentOrder.products[pIdx]
-    
+        openDeliveryInfo: function(pIdx) {
+            this.product = this.order.products[pIdx];
+
             this.product.courierNo = this.product.courierNo.replace(COURIER_NO_REGEX, '')
-            this.product.deliveryName = currentOrder.deliveryName;
+            this.product.deliveryName = this.order.deliveryName;
 
             var found = Array.from(this.carrierList).find(e => 
                 e['Name'] == this.product.courierName
@@ -120,6 +120,14 @@ var app = new Vue({
             console.log(this.trackingDetails)
         }
 
+    }, mounted: async function() {
+        var data = await carriersTrackSmart();
+
+        if(data['Company'] != undefined) {
+            this.carrierList = data['Company'];
+        } else {
+            alert('택배사 정보 조회에 실패했습니다.')
+        }
     }
 })
 

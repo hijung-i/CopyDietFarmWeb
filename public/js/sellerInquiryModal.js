@@ -8,9 +8,7 @@ sellerInquiryTemplate+='        <div class="inquiryBox">'
 sellerInquiryTemplate+='            <ul>'
 sellerInquiryTemplate+='                <li>'
 sellerInquiryTemplate+='                    <h3>주문번호</h3>'
-sellerInquiryTemplate+='                    <ul>'
-sellerInquiryTemplate+='                        <li></li>'
-sellerInquiryTemplate+='                    </ul>'
+sellerInquiryTemplate+='                    <p>{{ product.orderNumber }}</p>'
 sellerInquiryTemplate+='                </li>'
 sellerInquiryTemplate+='                <li>'
 sellerInquiryTemplate+='                    <h3>상품</h3>'
@@ -82,9 +80,11 @@ var sellerInquiryModal = {
             default: function() {
                 return {}
             },
-        
-        
-        
+        }, inquiry: {
+            type: Object,
+            default: function() {
+                return {}
+            }
         }
     },
     data: function() {

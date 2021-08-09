@@ -385,7 +385,13 @@ function addOrder(requestOrderDTO) {
         switch(data.message) {
             case 'SUCCESS':
                 requestOrderDTO.orderNumber = data.result;
-                bootpayModule(requestOrderDTO);
+
+                if(requestOrderDTO.paidRealAmount != undefined && requestOrderDTO.paidRealAmount > 0) {
+                    bootpayModule(requestOrderDTO);
+                } else {
+                    alert('상품 주문에 성공했습니다.')
+                    location.href=("/order-comp?requestOrderDTO="+JSON.stringify(requestOrderDTO)).trim();
+                }
                 break;
             case 'NOT_MATCHED':
                 alert('주문 실패, 취소 진행')

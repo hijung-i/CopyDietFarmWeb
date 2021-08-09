@@ -71,9 +71,6 @@ var app = new Vue({
             openInquiryModal()
         },
         onChildPopupClosed: function(popup, data) {
-            if(popup === 'review') {
-
-            }
             this.currentProduct
 
             this.reviewModal = false;
@@ -163,7 +160,15 @@ var app = new Vue({
             })
             console.log(this.trackingDetails)
         }
-    }, mounted: function() {
+    }, mounted: async function() {
+        var data = await carriersTrackSmart();
+
+        if(data['Company'] != undefined) {
+            this.carrierList = data['Company'];
+        } else {
+            alert('택배사 정보 조회에 실패했습니다.')
+        }
+
         var userId = $('#userId').val();
         var userName = $('#userName').val();
         var userCellNo = $('#userCellNo').val();
