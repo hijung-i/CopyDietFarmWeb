@@ -9,7 +9,6 @@ var app = new Vue({
         installModal: false,
     },
     components: {
-        'install-modal': installAppModal,
         'mypage-modal': signModal,
         'timedeal-product': TimedealComponent
     }, computed: {
