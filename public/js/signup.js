@@ -33,7 +33,7 @@ $(function() {
         }
 
         var name = $("#userName").val();
-        if(name === '') {
+        if(type != 'A' && name === '') {
             alert('본인인증 정보가 없습니다.')
             return;
         }
