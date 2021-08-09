@@ -149,7 +149,7 @@ router.post('/callback/apple', (req: Request, res: Response, next: NextFunction)
         password: userId,
         userEmail: params.content?.email,
         userGender: 'X', // 나이스 인증 임시 비활성화
-        userCellNo: '',
+        userCellNo: userId, // 나이스 인증 임시 값
         userInfo: '',
         userName: lastName.concat(firstName)
     }
