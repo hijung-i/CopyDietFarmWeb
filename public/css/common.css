@@ -4802,3 +4802,8 @@ background: url(/images/aftercheck_icon_join.png)no-repeat;
   border-radius: 0px 6px 6px 6px;
   margin-bottom: 10px;
 }
+
+.members p{
+  margin-bottom: 16px;
+  font-size: 14px;
+}

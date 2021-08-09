@@ -3,6 +3,13 @@ import { UserResult } from '../src/models/response'
 import { User } from '../src/models/user'
 import UserSerivce from '../src/services/userService'
 
+/**
+ * 
+ * 
+ * Test Case Example
+ * - case title: login
+ * - it()
+ */
 describe('login', () => {
     it('registerResult Object ', async () => {
         const user: User = {

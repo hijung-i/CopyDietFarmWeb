@@ -140,8 +140,16 @@ var app = new Vue({
     
         this.deliveryGroupList = JSON.parse(deliveryGroupList);
         this.orderDTO = JSON.parse((($('#orderDTO').val() != undefined)?$('#orderDTO').val():'{}'));
-        console.log(this.orderDTO)
+
+        
         this.orderDTO.products = new Array();
+        
+        if(this.deliveryGroupList.length == 0) {
+            alert('잘못된 주문 정보입니다.');
+            history.back();
+            return;
+        }
+
         for(var i = 0; i < this.deliveryGroupList.length; i++) {
 
             var dGroup = Object.assign(new DeliveryGroupDTO(), this.deliveryGroupList[i]);

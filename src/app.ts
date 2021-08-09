@@ -57,6 +57,11 @@ app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction
     }
 })
 
+app.set('views', path.join(__baseDir, 'views'))
+app.set('view engine', 'ejs')
+
+app.use(Express.static(path.join(__baseDir, 'public')))
+
 app.use('/', indexViewRouter)
 app.use('/', requireLoginViewRouter)
 app.use('/user', userApiRouter)
@@ -65,11 +70,7 @@ app.use('/nice', niceIdentifierRouter)
 
 app.use('/.well-known', sslCertificateRouter)
 
-app.set('views', path.join(__baseDir, 'views'))
-app.set('view engine', 'ejs')
-
-app.use(Express.static(path.join(__baseDir, 'public')))
-
+// Request Filters
 app.use((req: Express.Request, res: Express.Response, next: Express.NextFunction) => {
     let err = new Error('Not Found!') as Err
     err.status = 404

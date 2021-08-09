@@ -201,8 +201,8 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     const deliveryGroupListStr = req.query.deliveryGroupList as string
     const orderDTOStr = req.query.orderDTO as string
 
-    const deliveryGroupList = JSON.parse(qs.unescape(deliveryGroupListStr))
-    const orderDTO = JSON.parse(orderDTOStr)
+    let orderDTO
+    let deliveryGroupList
     const deliveryInfo: DeliveryInfo = {
         userId: '',
         userName: '',
@@ -213,7 +213,9 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
     }
 
     try {
-        console.log(sessionUser)
+        deliveryGroupList = JSON.parse(qs.unescape(deliveryGroupListStr.replace(/;amp;/gi, '&')))
+        orderDTO = JSON.parse(qs.unescape(orderDTOStr.replace(/;amp;/gi, '&')))
+
         if (req.session.isLoggedIn === true) {
             orderDTO.userId = sessionUser!.userId
             orderDTO.userName = sessionUser!.userName
@@ -223,6 +225,8 @@ router.get('/order', (req: Request, res: Response, next: NextFunction) => {
             orderDTO.userId = '비회원주문'
         }
     } catch (err) {
+        deliveryGroupList = []
+        orderDTO = {}
         console.log('GET /order >> error', err)
     }
 

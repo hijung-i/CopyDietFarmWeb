@@ -1,6 +1,9 @@
 /*************************************
  * API_SERVER: API server url
  * CALLBACK_SERVER: Web server url
+ * @member PROD : AWS
+ * @member DEV_UBUNTU
+ * @member DEV_JGPARK for local test jgpark
  *************************************/
 export type ServerInfo = {
     API_SERVER: string,
@@ -21,4 +24,4 @@ const DEV_UBUNTU: ServerInfo = {
     CALLBACK_SERVER: 'http://localhost'
 }
 
-export const current = PROD
+export const current = DEV_JGPARK

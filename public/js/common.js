@@ -1,17 +1,24 @@
 // 테스트
 // var API_SERVER = "http://112.217.209.162:9090";
 // var CALLBACK_SERVER = "http://data-flow.co.kr:3000";
-// var API_SERVER = "http://192.168.0.3:9090";
-// var CALLBACK_SERVER = "http://192.168.0.3";
+var API_SERVER = "http://192.168.0.3:9090";
+var CALLBACK_SERVER = "http://192.168.0.3";
 // var API_SERVER = "http://192.168.0.6:9090";
 
 // 운영
-var API_SERVER = "https://dietfarm119.co.kr";
-var CALLBACK_SERVER = "https://dietfarm.co.kr";
+// var API_SERVER = "https://dietfarm119.co.kr";
+// var CALLBACK_SERVER = "https://dietfarm.co.kr";
 
 var RESOURCE_SERVER = "https://dietfarm119.co.kr/data/diet";
 
-
+/**
+ * Send Ajax Request without logged in user value
+ * @param {String} url 
+ * @param {Object} params parameter object
+ * @param {String} type request method ('GET'|'POST'|'PUT'|'DELETE')
+ * @param {Function} onSuccess 
+ * @param {Function} onError 
+ */ 
 function ajaxCall(url, params, type, onSuccess, onError){
    var param = JSON.stringify(params);
 
@@ -31,6 +38,15 @@ function ajaxCall(url, params, type, onSuccess, onError){
    })
 }
 
+/**
+ * Send Ajax Request for get Html DOM string( ex. naver login button) 
+ * @param {String} url 
+ * @param {Object} params 
+ * @param {String} type 
+ * @param {Function} onSuccess 
+ * @param {Function} onError 
+ * @param {*} file 
+ */
 function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError, file){
    var param = JSON.stringify(params);
    $.ajax({
@@ -52,6 +68,14 @@ function ajaxCallDataTypeHtml(url, params, type, onSuccess, onError, file){
    })
 }
 
+/**
+ * Send Ajax Request with File(multipart form data)
+ * @param {String} url 
+ * @param {Object} params 
+ * @param {String} type 
+ * @param {Function} onSuccess 
+ * @param {Function} onError 
+ */
 function ajaxCallMultipartFormData(url, params, type, onSuccess, onError){
    $.ajax({
       type : type,
@@ -70,7 +94,17 @@ function ajaxCallMultipartFormData(url, params, type, onSuccess, onError){
    })
 }
 
-// option -> require user data as parameter
+/**
+ * Send ajax request with logged in user data
+ * @param {String} url 
+ * @param {Object} params 
+ * @param {String} type 
+ * @param {Function} onSuccess 
+ * @param {Function} onError 
+ * @param {Object} option  {
+ *    isRequired: true | false, // if it's true, then login is required. otherwise(isRequired are false), send login user values if currently logged in or not 
+ * } 
+ */
 function ajaxCallWithLogin(url, params, type, onSuccess, onError, option){
    $.ajax({
       type: 'GET',
@@ -125,6 +159,12 @@ function numberFormat(number) {
    return (number+"").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+/**
+ * Generate HTML Product DOM String For Array
+ * @param {Array<Product>} products 
+ * @param {Number} maxSize (Optional) max count of HTML DOM String to create 
+ * @returns {HTMLDOMString}
+ */
 function generateHtmlForProductList(products, maxSize){
     var html = '';
     for(var j = 0; j < products.length; j++){
@@ -136,14 +176,13 @@ function generateHtmlForProductList(products, maxSize){
     return html;
 }
 
-function goBack() {
-   if(window.history.length < 1) location.href = "/" 
-   else window.history.back();
-   
-   return false;
-}
 
-function generateHtmlForProduct(product){
+/**
+ * Generate HTML Product DOM String
+ * @param {Product} product 
+ * @returns {HTMLDOMString}
+ */
+ function generateHtmlForProduct(product){
 
    var html = '<li class="product">';
    html += '<div class="thum">';
@@ -177,6 +216,13 @@ function generateHtmlForProduct(product){
    html += '</a>';
    html += '</li>';
     return html;
+}
+
+function goBack() {
+   if(window.history.length < 1) location.href = "/" 
+   else window.history.back();
+   
+   return false;
 }
 
 $(window).bind('orientationchange', function(e) {

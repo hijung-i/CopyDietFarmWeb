@@ -39,7 +39,7 @@ var app = new Vue({
         masking,
         onSubmit: function() {
             if(app.selectedOptions != undefined && app.selectedOptions.length > 0) {
-                location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList)+'&orderDTO='+ JSON.stringify(app.orderDTO);
+                location.href="/order?deliveryGroupList=" + JSON.stringify(app.deliveryGroupList).replace(/&/gi, ';amp;')+'&orderDTO='+ JSON.stringify(app.orderDTO).replace(/&/gi, ';amp;');
             } else {
                 alert('상품을 선택해주세요');
             }

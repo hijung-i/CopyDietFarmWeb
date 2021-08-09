@@ -3,22 +3,22 @@ var  app = new Vue({
     components: {
         'mypage-modal': signModal
     }, data: {
-        identified: false
+        identified: true
     }
 })
 
 /*변수 선언*/
 $(function() {
     var type = $('#type').val();
-    if(type == 'K' || type == 'N') app.identified = true
-
-    $('#btnNiceId').click(function () {
-        var url = '/nice/identifying-page?nextMethod=register'
-        var specs = 'width=500,hegiht,400,toolbar=no,menubar=no,scrollbars=no,resizable=yes'
     
-        window.open(url, '본인인증', specs)
-        return false;
-    })
+    // AppStore 심사 통과를 위해 보류
+    // if(type == 'K' || type == 'N') app.identified = true
+    // $('#btnNiceId').click(function () {
+    //     var url = '/nice/identifying-page?nextMethod=register'
+    //     var specs = 'width=500,hegiht,400,toolbar=no,menubar=no,scrollbars=no,resizable=yes'
+    //     window.open(url, '본인인증', specs)
+    //     return false;
+    // })
 
     $("#btnJoin").click(function (){
         var appleNo = $('#appleNo').val();
@@ -38,10 +38,11 @@ $(function() {
             return;
         }
         var userCellNo = $("#userCellNo").val();
-        if(userCellNo === '') {
+        if(type != 'A' && userCellNo === '') {
             alert('본인인증 정보가 없습니다.')
             return;
         }
+        
         var userGender = $("#userGender").val();
         if(userGender === '') {
             alert('본인인증 정보가 없습니다.')
