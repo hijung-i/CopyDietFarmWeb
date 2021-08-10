@@ -905,7 +905,7 @@ div #ex1.modal ul li {float:left}
 /*리뷰*/
 .review_info01 ul li span{border:1px solid #BBBBBB;background-color:#BBBBBB;color:#FFFFFF;border-radius:5px;padding-left:2px;padding-right:2px;padding-bottom:1px}
 .reviews{width:100%;}
-.review_info01 ul li{float:left;font-size:13px;top:-3px;margin-right:10px}
+.review_info01 ul li{float:left;font-size:13px;top:-11px}
 .review_info01 {width:100%;display: flex;justify-content: space-between;margin-top:20px;padding-right:20px;margin-bottom:10px}
 .review_info02 ul li{float:left;}
 .starRev span{padding:5px}

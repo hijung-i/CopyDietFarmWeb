@@ -74,6 +74,7 @@
         }
     }
     @media screen and (min-width:1080px) {
+        .review_info01 ul li{float:left;font-size:13px;top:-6px!important;margin-right:10px !important;}
         #content{max-width:1080px;margin:0 auto;width:1080px;margin-bottom:200px}
         .modal_wrap, .modal_wrap02 {
             width: 500px;
@@ -579,9 +580,6 @@
                                                 <span>수정</span>
                                             </li>
                                             <li class="line"><img src="/images/l_icon_category@2x.png" alt="구분라인"></li>
-                                            <li>
-                                                <span @click="deleteReview(index)">삭제</span>
-                                            </li>
                                         </ul>
                                     </div>
                                     <div class="review_info02">
@@ -698,8 +696,6 @@
                                                     <li>판매자</li>
                                                     <li><img src="/images/l_icon_category.png"></li>
                                                     <li>{{formatDate(question.updateDate)}}</li>
-                                                    <li><img src="/images/l_icon_category.png"></li>
-                                                    <li>신고</li>
                                                 </ul>
                                             </div>
                                         </td>
