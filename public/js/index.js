@@ -6,23 +6,32 @@ var app = new Vue({
     el: 'main',
     data: {
         timedealProductList: [],
-        installModal: false,
+
     },
     components: {
         'mypage-modal': signModal,
-        'timedeal-product': TimedealComponent
-    }, computed: {
+        'timedeal-product': TimedealComponent,
+        'install-modal' : installAppModal
         
-    }, created: function() {
-        getTimedeal();
-
+    }, computed: {  
+        installModal: function() {
         userAgent = window.navigator.userAgent.toLowerCase()
         isAndroid = /(android)/i.test(navigator.userAgent);
         //iOS = /iphone|ipod|ipad/.test(userAgent);
         isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
 
-   
+        if(isAndroid && isBrowser && $('html').width() <= 1079) {
+            scrollBlock();
+            return true;
+        }
+
+        return false;
+    }
         
+    }, created: function() {
+        getTimedeal();
+
+
     }
 });
 
