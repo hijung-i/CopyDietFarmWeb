@@ -335,54 +335,15 @@
             </div>
        
             </div>-->
-            <div class="popUp"  v-if="installModal">
+            <div class="popUp">
                 <!-- <div id="popup_layer"></div> -->
-                <install-modal></install-modal>
+                <install-modal v-if="installModal"></install-modal>
             </div>
         </main>
-        <script type="text/javascript">
-            function checkMobile() {
-            userAgent = window.navigator.userAgent.toLowerCase()
-            isAndroid = /(android)/i.test(navigator.userAgent);
-         iOS = /iphone|ipod|ipad/.test(userAgent);
-            isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
-        
-                if(iOS) {
-                    $(".popUp").hide();
-            
-                }
     
-            }   
-     
-            </script>
         <script src="/js/components/installAppModal.js"></script>
         <script src="/js/components/timedealComponent.js"></script>
         <script src="/js/index.js"></script>
-      <script>
-     $( document ).ready(function() {
-    cookiedata = document.cookie;
-    console.log(cookiedata);
-    if ( cookiedata.indexOf("kcookie=done") < 0 ){
-        console.log('cookie 없음')
-        document.getElementById('popup-cookie').style.display = "block";
 
-    } else {
-        console.log("cookie 있음")
-        document.getElementById('popup-cookie').style.display = "none";
-    }
-});
-function setCookie( name, value, expiredays ) { 
-    var todayDate = new Date();
-    todayDate.setDate( todayDate.getDate() + expiredays );
-    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-}
-
-function todaycloseWin() {
-    setCookie("kcookie", "done", 1);
-    document.getElementById('popup-cookie').style.display = "none";
-    scrollAllow();
-}
-
-      </script>
     </body>
 </html>
