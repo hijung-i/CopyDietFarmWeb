@@ -82,11 +82,11 @@
                     <h3>2. 서비스 및 경력 내용 소개 (<span>*</span>)<br>&nbsp;&nbsp;&nbsp;(서비스 의뢰 고객에게 전달됩니다.)</h3>
                     <p>한줄 소개</p>
                  <form class="summ">
-                    <textarea placeholder="10-15자 이상"></textarea>
+                    <textarea placeholder="10-15자 이상"  id="summDesc"></textarea>
                  </form>
                  <p class="detail">경력내용 상세 소개</p>
                  <form class="detail_form">
-                     <textarea placeholder="50자 이상"></textarea>
+                     <textarea placeholder="50자 이상"  id="detailDesc"></textarea>
                  </form>
                 </div>
                 <div class="profile_photo">
@@ -112,13 +112,13 @@
                 <div class="service-link">
                     <h3>5. 서비스 동영상 링크 <br>&nbsp;&nbsp;&nbsp;(등록시, 고객과 매칭확률이 높아집니다.)</h3>
                     <form>
-                        <input type="text" placeholder="동영상 링크를 넣어주세요.">
+                        <input id="videoDesc" type="text" placeholder="동영상 링크를 넣어주세요.">
                       </form>
                 </div>
                 <div class="verif"> 
                     <h3>6. 본인인증  (<span>*</span>)</h3>
             
-                    <button id="btnNiceId" v-if="!identified">
+                    <button id="btnNiceId">
                         본인 인증
                     </button>
                 </div>
@@ -126,7 +126,7 @@
                     <h3>7. 계좌등록</h3>
                   <div class="bank">
                     <p>은행</p>
-                    <select>
+                    <select id="accountCode">
                         <option value="*">은행선택</option>
                         <option value="039">경남</option>
                         <option value="034">광주</option>

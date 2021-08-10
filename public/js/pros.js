@@ -54,6 +54,10 @@ function submitRequest(){
 
     var serviceDesc = $("#selectServiceDesc").val(); 
     var accountDesc = $("#accountDesc").val(); 
+    var summDesc = $("#summDesc").val();
+    var detailDesc = $("#detailDesc").val();
+    var videoDesc = $("#videoDesc").val();
+    var accountCode = $("#accountCode").val();
 
     /*
     if(userId == '' || userId == undefined || userId.trim() == ''){
@@ -72,7 +76,11 @@ function submitRequest(){
         // userId: userId,
         // password: password
         serviceType  : serviceDesc,
-        accountNo : accountDesc
+        accountNo : accountDesc,
+        serviceTopic : summDesc,
+        serviceDetail : detailDesc,
+        serviceLink : videoDesc,
+        accountClass : accountCode
     }
 
 
@@ -89,9 +97,21 @@ function submitRequest(){
             alert('알 수 없는 에러가 발생했습니다.');
         };
     })
-
-
 }
+
+//NICE 본인 인증 
+    $(function() {
+        var type = $('#type').val();
+        
+         if(type == 'K' || type == 'N') app.identified = true
+         $('#btnNiceId').click(function () {
+             var url = '/nice/identifying-page?nextMethod=register'
+             var specs = 'width=500,hegiht,400,toolbar=no,menubar=no,scrollbars=no,resizable=yes'
+             window.open(url, '본인인증', specs)
+             return false;
+         })
+
+        })
 
 
 

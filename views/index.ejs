@@ -86,39 +86,39 @@
         .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
         left: 74%; bottom: 25px}
         .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
-    </style>
-    <link rel="stylesheet" href="/css/myPage.css">
-  
-    <script>
-        
-    $( document ).ready(function() {
-    cookiedata = document.cookie;
-    console.log(cookiedata);
-    if ( cookiedata.indexOf("kcookie=done") < 0 ){
-        console.log('cookie 없음')
-        document.getElementById('popup-cookie').style.display = "block";
+      </style>
+      <link rel="stylesheet" href="/css/myPage.css">
 
-    } else {
-        console.log("cookie 있음")
-        document.getElementById('popup-cookie').style.display = "none";
-    }
-});
-function setCookie( name, value, expiredays ) { 
-    var todayDate = new Date();
-    todayDate.setDate( todayDate.getDate() + expiredays );
-    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-}
-
-function todaycloseWin() {
-    setCookie("kcookie", "done", 1);
-    document.getElementById('popup-cookie').style.display = "none";
-    scrollAllow();
-}
-
-
-    </script>
+   <script>
+//        
+//    $( document ).ready(function() {
+//    cookiedata = document.cookie;
+//    console.log(cookiedata);
+//    if ( cookiedata.indexOf("kcookie=done") < 0 ){
+//        console.log('cookie 없음')
+//        document.getElementById('popup-cookie').style.display = "block";
+//
+//    } else {
+//        console.log("cookie 있음")
+//        document.getElementById('popup-cookie').style.display = "none";
+//    }
+//});
+//function setCookie( name, value, expiredays ) { 
+//    var todayDate = new Date();
+//    todayDate.setDate( todayDate.getDate() + expiredays );
+//    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+//}
+//
+//function todaycloseWin() {
+//    setCookie("kcookie", "done", 1);
+//    document.getElementById('popup-cookie').style.display = "none";
+//    scrollAllow();
+//}
+//
+//
+//    </script>
 </head>
-<body onload="checkMobile();">
+<body>
    
         <!-- <button type="button" id="appleid-signin" data-color="black" data-border="true" data-type="sign in" class="btnApple"><img src="">애플 계정으로 시작하기</button> -->
         <main id="content" class="content_main">
@@ -317,7 +317,7 @@ function todaycloseWin() {
             </div>
           </div>
           <%-include(webroot + 'views/general/footer') %>
-          <div class="popUp">
+        <!--// <div class="popUp">
          <div class="popup_layer_wrapper" id="popup-cookie">
           <div class="popup_box">
             <div class="popup_cont">
@@ -334,23 +334,14 @@ function todaycloseWin() {
             </div>
             </div>
        
+            </div>-->
+            <div class="popUp">
+                <!-- <div id="popup_layer"></div> -->
+                <install-modal v-if="installModal"></install-modal>
             </div>
         </main>
-        <script type="text/javascript">
-            function checkMobile() {
-            userAgent = window.navigator.userAgent.toLowerCase()
-            isAndroid = /(android)/i.test(navigator.userAgent);
-         iOS = /iphone|ipod|ipad/.test(userAgent);
-            isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
-        
-                if(iOS) {
-                    $(".popUp").hide();
-            
-                }
     
-            }   
-     
-            </script>
+        <script src="/js/components/installAppModal.js"></script>
         <script src="/js/components/timedealComponent.js"></script>
         <script src="/js/index.js"></script>
 
