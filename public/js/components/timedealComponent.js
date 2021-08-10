@@ -82,6 +82,19 @@ var TimedealComponent = {
             } else {
                 alert("지금은 특가 타임이 아닙니다.")
             }
+        }, stringToDateTimeMillisecond: (str) => {
+            var dateStr = str.split(' ')[0];
+            var timeStr = str.split(' ')[1];
+
+            var year = parseInt(dateStr.split('-')[0]);
+            var month = parseInt(dateStr.split('-')[1]);
+            var date = parseInt(dateStr.split('-')[2]);
+
+            var hour = parseInt(timeStr.split('-')[0]);
+            var minute = parseInt(timeStr.split('-')[1]);
+            var second = parseInt(timeStr.split('-')[2]);
+
+            return new Date(year, month, date, hour, minute, second).getTime(); 
         }
     },
     data: function() {
@@ -94,8 +107,9 @@ var TimedealComponent = {
     }, mounted: function() {
         var component = this
         var currentTime = new Date().getTime();
-        var startTime = new Date(component.product.timedealStarttime).getTime();
-        var endTime = new Date(component.product.timedealEndtime).getTime();
+
+        var startTime = new Date(component.product.timedealStarttime.replace(/-/gi, '/')).getTime();
+        var endTime = new Date(component.product.timedealEndtime.replace(/-/gi, '/')).getTime();
 
         if(currentTime < startTime) {
             component.saleNow = false;
@@ -108,13 +122,13 @@ var TimedealComponent = {
             component.type = 'E';
             return;
         }
-
+        
         component.type = 'O';
         
         setInterval(function () {
             var currentTime = new Date().getTime();
-            var startTime = new Date(component.product.timedealStarttime).getTime();
-            var endTime = new Date(component.product.timedealEndtime).getTime();
+            var startTime = new Date(component.product.timedealStarttime.replace(/-/gi, '/')).getTime();
+            var endTime = new Date(component.product.timedealEndtime.replace(/-/gi, '/')).getTime();
 
             if(currentTime < startTime) {
                 component.saleNow = false;
