@@ -28,6 +28,23 @@
         #mHeader .tab_cont.active {display: block;background: #fff;position: absolute;
             width: 100%}
         @media screen and (max-width:1079px) {
+            #popup-cookie2{
+
+            width: 300px;
+            background-color:#f1f1f1;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            font-size: 14px;
+            overflow-x: hidden;
+            border-radius: 5px;
+            overflow-y: hidden;
+        }
+            #popup-cookie2 img{
+                width:300px
+            }
             .swiper-container{
                 margin-top: 150px;
             }
@@ -36,6 +53,9 @@
         }
         .showing {z-index: 9999;opacity: 1}
         @media screen and (min-width:1080px) {
+            #popup-cookie2 img{
+                width:800px
+            }
             .popUp{display:none}
             .swiper-container{margin-top:-2px}
             .water{margin-bottom:100px}
@@ -51,6 +71,18 @@
             .sp_wrap {margin-top: 65px}
             .swiper-slide img {display: block;width: 100%;height:360px;object-fit:cover;}
             .slider_main_wrap img {width: 1080px; height: 370px;z-index:100} 
+            #popup-cookie2{
+            width: 800px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            font-size: 14px;
+            overflow-x: hidden;
+            border-radius: 5px;
+            overflow-y: hidden;
+        }
         }
         /* swiper bundle */
         .swiper-container { width: 100%;height: 100%;z-index: 0;}
@@ -61,28 +93,16 @@
             justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;
             align-items: center
         }
-       /* #popup-cookie{
-            width: 360px;
-            background-color: #f1f1f1;
+  
+        #popup2{
             position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            line-height: 27px;
-            font-size: 14px;
-            overflow-x: hidden;
-            border-radius: 5px;
-            overflow-y: hidden;
-            border: 1px solid #f1f1f1
-    
+            top:0; left: 0; bottom: 0; right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index:99999
         }
-        #popup-cookie h2{text-align: center;padding-top:10px}
-        #popup-cookie p{padding:8.6px;font-size:14px}
-        #popup-cookie p span{font-size:16px;font-weight:bold;color:red}*/
-        .clfix{display:flex;justify-content: space-around;}
-        .clfix a:first-child{width:180px;height:45px;background-color:#F99319;text-align: center;padding-top:10px}
-        .clfix a:last-child{width:180px;height:45px;background-color:#fff;text-align: center;padding-top:10px}
+        .clfix{display:flex;justify-content: space-around;margin-top:-10px}
+        .clfix a:first-child{width:50%;height:45px;background-color:#F1F1F1;text-align: center;padding-top:10px;color:#4E4E4E}
+        .clfix a:last-child{width:50%;height:45px;background-color:#fff;text-align: center;padding-top:10px;color:#4E4E4E}
         .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
         left: 74%; bottom: 25px}
         .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
@@ -90,50 +110,46 @@
       <link rel="stylesheet" href="/css/myPage.css">
 
    <script>
-//        
-//    $( document ).ready(function() {
-//    cookiedata = document.cookie;
-//    console.log(cookiedata);
-//    if ( cookiedata.indexOf("kcookie=done") < 0 ){
-//        console.log('cookie 없음')
-//        document.getElementById('popup-cookie').style.display = "block";
-//
-//    } else {
-//        console.log("cookie 있음")
-//        document.getElementById('popup-cookie').style.display = "none";
-//    }
-//});
-//function setCookie( name, value, expiredays ) { 
-//    var todayDate = new Date();
-//    todayDate.setDate( todayDate.getDate() + expiredays );
-//    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-//}
-//
-//function todaycloseWin() {
-//    setCookie("kcookie", "done", 1);
-//    document.getElementById('popup-cookie').style.display = "none";
-//    scrollAllow();
-//}
-//
-//
-//    </script>
+        
+    $( document ).ready(function() {
+    cookiedata = document.cookie;
+    console.log(cookiedata);
+    if ( cookiedata.indexOf("ncookie=done") < 0 ){
+        console.log('cookie 없음')
+        document.getElementById('popup2').style.display = "block";
+
+    } else {
+        console.log("cookie 있음")
+        document.getElementById('popup2').style.display = "none";
+    }
+});
+function setCookie( name, value, expiredays ) { 
+    var todayDate = new Date();
+    todayDate.setDate( todayDate.getDate() + expiredays );
+    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+
+function todaycloseWin() {
+    setCookie("ncookie", "done", 1);
+    document.getElementById('popup2').style.display = "none";
+    scrollAllow();
+}
+
+function closeWin() {
+                    document.getElementById('popup2').style.display = "none";
+    
+            }
+         
+
+    </script>
 </head>
 <body>
    
         <!-- <button type="button" id="appleid-signin" data-color="black" data-border="true" data-type="sign in" class="btnApple"><img src="">애플 계정으로 시작하기</button> -->
         <main id="content" class="content_main">
-         <div id="app">
-                <!-- <div id="popup-cookie">
-                    <h2>[ 공지사항 ]</h2>
-                    <br>
-                    <p>안녕하세요  1차 샤인머스켓 타임특가세일에 많은 성원을 보내주셔서 감사드립니다.</p> 
-                    
-                    <p>이에 보답하기 위해 8월 2일부터
-                        2차 샤인머스켓 타임특가 세일(한정 수량)을 진행할 예정이오니, 참고해 주시기 바랍니다.<br>
-                        샤인머스켓 후속 타임특가 SALE 일정은 다시 공지드리겠습니다.</p>
-                
-                    <p>감사합니다.</p>
-                        
+           <div id="popup2">
+              <div id="popup-cookie2">
+                    <img src="images/popup@2x.png">
                         <div>
                             <ul class="clfix">
                                 <a href="javascript:;" onclick="todaycloseWin();" alt="오늘 하루 열지 않기"><li>하루 열지 않기</li></a>
@@ -141,9 +157,7 @@
                             </ul>
                         </div>
                     </div>
-                </div> -->
-                <!-- 스크립트 -->
-        
+                </div>
                 <%-include(webroot + 'views/general/header') %>
                     <div class="swiper-container mySwiper">
                     <!--//  <div class="black_bg"> </div>-->
