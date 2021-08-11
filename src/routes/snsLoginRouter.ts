@@ -124,40 +124,44 @@ router.post('/callback/apple', (req: Request, res: Response, next: NextFunction)
     STREAM.writeDebug(`POST /user/callback/apple req.body => ${JSON.stringify(req.body)}`)
 
     const tokens = req.body.id_token.split('.')
+    try {
+        console.log(tokens)
+        const parsed = decodeBase64(tokens)
 
-    const parsed = decodeBase64(tokens)
+        let params = {
+            header: parsed[0],
+            content: parsed[1],
+            user: req.body.user
+        }
 
-    let params = {
-        header: parsed[0],
-        content: parsed[1],
-        user: req.body.user
+        const appleNo = params.content?.email.split('@')[0]
+        const userId = appleNo + '@A'
+
+        const lastName: string = (params.user?.name?.lastName === undefined) ? '' : params.user?.name?.lastName
+        const firstName: string = (params.user?.name?.firstName === undefined) ? '' : params.user?.name?.firstName
+
+        const callback = {
+            type: 'A',
+            code: req.body.code,
+            token: req.body.id_token,
+            refreshToken: '',
+            appleNo,
+            userId,
+            password: userId,
+            userEmail: params.content?.email,
+            userGender: 'X', // 나이스 인증 임시 비활성화
+            userCellNo: userId, // 나이스 인증 임시 값
+            userInfo: '',
+            userName: lastName.concat(firstName)
+        }
+
+        res.locals.callback = callback
+
+        render(req, res, 'loginCallback', {})
+    } catch (err) {
+        console.log('ERROR snsLoginRouter.loginApple()', err)
+        res.status(200).send('<script>alert("에러가 발생했습니다."); location.href="/";</script>')
     }
-
-    const appleNo = params.content?.email.split('@')[0]
-    const userId = appleNo + '@A'
-
-    const lastName: string = (params.user?.name?.lastName === undefined) ? '' : params.user?.name?.lastName
-    const firstName: string = (params.user?.name?.firstName === undefined) ? '' : params.user?.name?.firstName
-
-    const callback = {
-        type: 'A',
-        code: req.body.code,
-        token: req.body.id_token,
-        refreshToken: '',
-        appleNo,
-        userId,
-        password: userId,
-        userEmail: params.content?.email,
-        userGender: 'X', // 나이스 인증 임시 비활성화
-        userCellNo: userId, // 나이스 인증 임시 값
-        userInfo: '',
-        userName: lastName.concat(firstName)
-    }
-
-    res.locals.callback = callback
-
-    render(req, res, 'loginCallback', {})
-    // res.status(200).send('<script>alert("기능 준비중입니다."); location.href="/";</script>')
 })
 
 const render = (req: Request, res: Response, view: any, data: any | null) => {
@@ -175,9 +179,14 @@ const decodeBase64 = (array: Array<any>) => {
     array.forEach((v: any) => {
 
         const decoded = Buffer.from(v, 'base64').toString('utf8')
-        if (decoded.includes('{') && decoded.includes(':') && decoded.includes('}')) {
-            let json = JSON.parse(decoded)
+        try {
+            const json = JSON.parse(decoded)
             decodes.push(json)
+            return (typeof json === 'object')
+        } catch (e) {
+            console.log('error, this value is not a json object')
+            decodes.push(decoded)
+            return false
         }
     })
 
