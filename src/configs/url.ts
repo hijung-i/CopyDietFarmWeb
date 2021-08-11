@@ -24,4 +24,9 @@ const DEV_UBUNTU: ServerInfo = {
     CALLBACK_SERVER: 'http://localhost'
 }
 
-export const current = PROD
+const DEV_SYYOU: ServerInfo = {
+    API_SERVER: 'http://192.168.0.40:9090',
+    CALLBACK_SERVER: 'http://192.168.0.40'
+} 
+
+export const current = DEV_SYYOU

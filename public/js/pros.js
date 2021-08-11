@@ -2,32 +2,75 @@
 var app = new Vue({
     el: 'main',
     components: {
-
+      //  'mypage-modal': signModal,
+      //  'mypage-component': mypageComponent
     },
     data: {
-        ServiceDescType: 0,
-
+        serviceType: '',
+        accountNo: '',
+        serviceTopic: ''
+        , serviceDetail: ''
+        , serviceLink: ''
+        , accountClass:''
     }, methods: {
- 
-        descTypeChange: function() {
-            var type = $("#selectServiceDesc")[0].options.selectedIndex;
-            var value = $("#selectServiceDesc").val();
-            
-            if(type == 1) {
-                $("#ServiceDesc").removeAttr("disabled");
-                $("#ServiceDesc").removeAttr("readonly");
-            } else if( type > 1){
-                $("#ServiceDesc").removeAttr("disabled");
-                $("#ServiceDesc").attr("readonly", "");
-            } else if( type == 0) {
-                $("#ServiceDesc").attr("disabled", "");
-            }
-            $('#ServiceDesc').val(value);
-        }
-    
-    }
-});
+        onSubmit: function() {
 
+            alert('manager - 001');
+                
+            // var component = this;
+
+            var serviceDesc = $("#selectServiceDesc").val(); 
+            var summDesc = $("#summDesc").val();
+            var detailDesc = $("#detailDesc").val();
+            var videoDesc = $("#videoDesc").val();
+            var accountCode = $("#accountCode").val();
+            var accountDesc = $("#accountDesc").val(); 
+
+            if(serviceDesc == '' || serviceDesc == undefined || serviceDesc.trim() == ''){
+                //TODO: Open alert modal
+                alert('서비스 분야를 입력해주세요');
+                return false;
+            }   
+
+
+            var params = {
+                // userId: userId,
+                // password: password
+                serviceType  : serviceDesc,
+                accountNo : accountDesc,
+                serviceTopic : summDesc,
+                serviceDetail : detailDesc,
+                serviceLink : videoDesc,
+                accountClass : accountCode
+            }
+            
+            alert(serviceDesc)
+            alert(summDesc)
+            alert(detailDesc)
+            alert(videoDesc)
+            alert(accountCode)
+            alert(accountDesc)
+            
+
+            ajaxCall(API_SERVER + '/user/insertManager', params, 'POST',
+            function(data) {
+                alert('전문가 모집 Pool 등록에 성공했습니다.');
+                console.log("success ", data);
+                component.updateSessionUser(params)
+            }, function(err) {
+                console.log("manager insert failed", err);
+                },
+            {
+                // isRequired: true,
+                // userId: true
+            })
+        },
+    },
+    created: function() {
+        console.log("app load")
+    }
+})
+    
 
 
 $(function() {
@@ -59,12 +102,14 @@ function submitRequest(){
     var videoDesc = $("#videoDesc").val();
     var accountCode = $("#accountCode").val();
 
-    /*
-    if(userId == '' || userId == undefined || userId.trim() == ''){
+    
+    if(serviceDesc == '' || serviceDesc == undefined || serviceDesc.trim() == ''){
         //TODO: Open alert modal
-        alert('아이디를 입력해주세요');
+        alert('서비스 분야를 입력해주세요');
         return false;
     }   
+
+    /*
     if(password == '' || password == undefined || password.trim() == ''){
         //TODO: Open alert modal
         alert('비밀번호를 입력해주세요');
@@ -76,11 +121,11 @@ function submitRequest(){
         // userId: userId,
         // password: password
         serviceType  : serviceDesc,
-        accountNo : accountDesc,
         serviceTopic : summDesc,
         serviceDetail : detailDesc,
         serviceLink : videoDesc,
-        accountClass : accountCode
+        accountClass : accountCode,
+        accountNo : accountDesc
     }
 
 
