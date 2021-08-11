@@ -3,7 +3,7 @@ var deliveryInfoTemplate = '';
 deliveryInfoTemplate += '<div class="dInfo_modal" id="dInfo_modal">'
 deliveryInfoTemplate += '     <div class="modal-content">'
 deliveryInfoTemplate += '         <span class="close" @click="closeModal()">&times;</span>'
-deliveryInfoTemplate += '         <section class="detail_title">'
+deliveryInfoTemplate += '         <section class="detail_title_d">'
 deliveryInfoTemplate += '             <h2 class="title">{{ product.productName }}</h2>'
 deliveryInfoTemplate += '         </section>'
 deliveryInfoTemplate += '         <div id="content" class="del_info_content">'

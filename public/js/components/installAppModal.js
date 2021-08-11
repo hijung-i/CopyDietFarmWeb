@@ -11,7 +11,7 @@ installAppTemplate += '        </div>'
 installAppTemplate += '        <a href="https://dietfarm.page.link/pzok">'
 installAppTemplate += '            <p class="app02">다이어트팜 앱으로 보기 ></p>'
 installAppTemplate += '        </a>'
-installAppTemplate += '        <p><span><a href="javascript:;" onclick="todaycloseWin();">모바일웹으로 볼게요.</a></span></p>'
+installAppTemplate += '        <p><span><a href="javascript:;" onclick="closePopup();" id="check">모바일웹으로 볼게요.</a></span></p>'
 installAppTemplate += '    </div>'
 installAppTemplate += '</div>'
 installAppTemplate += '</div>'
@@ -22,13 +22,12 @@ installAppTemplate += '</div>'
 var installAppModal = {
     template: installAppTemplate,
     methods: {
-        
-        closePopupModal: function() {
+        todaycloseWin: function() {
             app.installModal = false;
-            console.log(app.installModal);
+            setCookie("ncookie", "done", 1);
+            document.getElementById('popUp').style.display = "none";
             scrollAllow();
         }
- 
     }
 }
      

@@ -25,11 +25,10 @@ var app = new Vue({
         }
 
         return false;
-    }
-        
+    },
+
     }, created: function() {
         getTimedeal();
-
 
     }
 });

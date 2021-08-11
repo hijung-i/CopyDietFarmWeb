@@ -4851,7 +4851,7 @@ background: url(/images/aftercheck_icon_join.png)no-repeat;
   font-size:14px;
   border-radius:5px
 }
-.service-intro, .service-photo, .service-link, .verif, .account-enroll{
+.service-intro, .service-photo, .service-link, .verif,.email-addr, .account-enroll{
   margin-left:15px;
   margin-right:15px;
   margin-bottom:40px
@@ -4906,6 +4906,15 @@ background: url(/images/aftercheck_icon_join.png)no-repeat;
   }
 
 .service-link form input{
+  width:100%;
+  height:40px;
+  border:1px solid #424242;
+  padding:4px;
+  padding-left:10px;
+  font-size:14px;
+  border-radius:5px
+}
+.email-addr form input{
   width:100%;
   height:40px;
   border:1px solid #424242;

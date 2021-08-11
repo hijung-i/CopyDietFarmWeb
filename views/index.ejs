@@ -101,8 +101,8 @@
             z-index:99999
         }
         .clfix{display:flex;justify-content: space-around;margin-top:-10px}
-        .clfix a:first-child{width:50%;height:45px;background-color:#F1F1F1;text-align: center;padding-top:10px;color:#4E4E4E}
-        .clfix a:last-child{width:50%;height:45px;background-color:#fff;text-align: center;padding-top:10px;color:#4E4E4E}
+        .clfix a:first-child{width:50%;height:45px;background-color:#F1F1F1;text-align: center;padding-top:14px;color:#4E4E4E}
+        .clfix a:last-child{width:50%;height:45px;background-color:#fff;text-align: center;padding-top:14px;color:#4E4E4E}
         .swiper-pagination {width: 64px; height: 26px;border-radius: 13px;background: #fff;line-height: 26px; 
         left: 74%; bottom: 25px}
         .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
@@ -129,7 +129,7 @@ function setCookie( name, value, expiredays ) {
     document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
 }
 
-function todaycloseWin() {
+function todaycloseWin2() {
     setCookie("ncookie", "done", 1);
     document.getElementById('popup2').style.display = "none";
     scrollAllow();
@@ -142,6 +142,21 @@ function closeWin() {
          
 
     </script>
+       <script>
+   function setCookie(name, value, expiredays) {
+        var date = new Date();
+        date.setDate(date.getDate() + expiredays);
+        document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
+    }
+
+    function closePopup() {
+        if (document.getElementById("check").value) {
+            setCookie("popupYN", "N", 1);
+            self.close();
+        }
+    }
+
+        </script>
 </head>
 <body>
    
@@ -152,7 +167,7 @@ function closeWin() {
                     <img src="images/popup@2x.png">
                         <div>
                             <ul class="clfix">
-                                <a href="javascript:;" onclick="todaycloseWin();" alt="오늘 하루 열지 않기"><li>하루 열지 않기</li></a>
+                                <a href="javascript:;" onclick="todaycloseWin2();" alt="오늘 하루 열지 않기"><li>하루 열지 않기</li></a>
                                 <a href="javascript:;" onclick="closeWin();" alt="닫기"><li>닫기</li></a>
                             </ul>
                         </div>
@@ -349,10 +364,11 @@ function closeWin() {
             </div>
        
             </div>-->
-           <!-- <div class="popUp">
-                 <div id="popup_layer"></div> 
-                <install-modal v-if="installModal"></install-modal>
-            </div>-->
+            <!--//
+         <div class="popUp">
+            <install-modal v-if="installModal"> </install-modal>
+         </div>-->
+
         </main>
     
         <script src="/js/components/installAppModal.js"></script>
