@@ -4993,7 +4993,8 @@ background: url(/images/aftercheck_icon_join.png)no-repeat;
   overflow-x:scroll;
   display:flex;
   overflow-y:hidden;
-  margin-top:10px
+  margin-top:10px;
+  border-radius: 5px;
 
 }
 #images_container img{

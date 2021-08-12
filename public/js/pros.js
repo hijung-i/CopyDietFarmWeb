@@ -112,6 +112,19 @@ function submitRequest(){
          })
 
         })
+    //이미지 업로드 및 미리보기
+        function uploadImgPreview() {
 
+            let fileInfo = document.getElementById("upImgFile").files[0];
+            let reader = new FileReader();
+      
+            reader.onload = function() {      
+                document.getElementById ("thumbnailImg").src = reader.result;
+              };
+             if( fileInfo ) {        
+                reader.readAsDataURL( fileInfo );     
+            }        
+        }
+      
 
 
