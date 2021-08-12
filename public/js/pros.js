@@ -62,7 +62,25 @@ function submitRequest(){
     var profileImg = $("#thumbnailImg").val();
     var multiImg = $("#product_detail_image").val();
 
+ 
+    if(serviceDesc == '' || serviceDesc == undefined) {
+        alert('제공 서비스 분야를 선택해주세요.');
+        return;
+    }
+    if(accountDesc == '' || accountDesc == undefined) {
+        alert('계좌 번호를 입력해주세요.');
+        return;
+    }
+    if(summDesc == '' || summDesc == undefined) {
+        alert('한 줄 소개 10-15자 이상을 입력해주세요.');
+        return;
+    }
 
+    if(detailDesc == '' || detailDesc == undefined) {
+        alert('경력 내용 상세 소개 50자 이상을 입력해주세요.')
+        return;
+    }
+    
     /*
     if(userId == '' || userId == undefined || userId.trim() == ''){
         //TODO: Open alert modal

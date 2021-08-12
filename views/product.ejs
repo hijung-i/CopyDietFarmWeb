@@ -330,7 +330,7 @@
                                                             <template v-if="product.options.length > 1">
                                                                 <select name="products" id="products" onchange="onOptionSelected(this)" style="border-color:#BBBBBB">
                                                                     <option value="-1" selected="selected">선택</option>
-                                                                    <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
+                                                                    <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}/ {{ numberFormat(item.optionDiscountPrice)}}원</option>
                                                                 </select>
                                                             </template>
 
@@ -420,7 +420,7 @@
                                     <td>
                                         <select name="products" id="products" onchange="onOptionSelected(this)" style="border-color:#BBBBBB">
                                             <option value="-1" selected="selected">선택</option>
-                                            <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}</option>
+                                            <option v-bind:value="index" v-for="(item, index) in product.options">{{ item.optionDesc }}/ {{ numberFormat(item.optionDiscountPrice)}}원</option>
 
                                         </select>
                                     </td>
