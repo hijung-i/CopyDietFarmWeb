@@ -59,7 +59,7 @@
                       <option value="">기타</option>
                   </select>
                   <form>
-                    <input type="text" id="ServiceDesc" disabled="disabled">
+                    <input type="text" id="ServiceDesc">
                   </form>
                 </div>
                 <div class="service-intro">
@@ -109,7 +109,7 @@
                 <div class="email-addr"> 
                     <h3>7. 이메일 주소  (<span>*</span>)</h3>
                     <form>
-                        <input id="EmailDesc" type="text" placeholder="이메일 주소를 입력해주세요. 예) dietfarm@example.com">
+                        <input id="emailDesc" type="text" placeholder="이메일 주소를 입력해주세요. 예) dietfarm@example.com">
                       </form>
                 </div>
                 <div class="account-enroll"> 
@@ -164,12 +164,7 @@
                 </div>
                 </main>
                 <%-include(webroot + 'views/general/footer') %>
-             <script>
-               $("#s-etc").click(function(event){
-                event.preventDefault();
-                $('#ServiceDesc').prop("disabled", false); // Element(s) are now enabled.
-                });
-             </script>
+
                  <script src="/js/signup.js"></script>
                  <script src="/js/pros.js"></script>
                 </body>

@@ -61,14 +61,12 @@ function submitRequest(){
     var accountCode = $("#accountCode").val();
     var profileImg = $("#thumbnailImg").val();
     var multiImg = $("#product_detail_image").val();
-
+    var userEmail = $("#emailDesc").val();
  
+    //유효성 검사 
+    
     if(serviceDesc == '' || serviceDesc == undefined) {
         alert('제공 서비스 분야를 선택해주세요.');
-        return;
-    }
-    if(accountDesc == '' || accountDesc == undefined) {
-        alert('계좌 번호를 입력해주세요.');
         return;
     }
     if(summDesc == '' || summDesc == undefined) {
@@ -80,6 +78,16 @@ function submitRequest(){
         alert('경력 내용 상세 소개 50자 이상을 입력해주세요.')
         return;
     }
+    if(userEmail == '' || userEmail == undefined) {
+        alert('이메일 주소를 입력해주세요');
+        return;
+    }
+
+    if(accountDesc == '' || accountDesc == undefined) {
+        alert('계좌 번호를 입력해주세요.');
+        return;
+    }
+    
     
     /*
     if(userId == '' || userId == undefined || userId.trim() == ''){
@@ -104,7 +112,8 @@ function submitRequest(){
         serviceLink : videoDesc,
         accountClass : accountCode,
         managerImage :  profileImg,
-        managerServiceImage :  multiImg
+        managerServiceImage :  multiImg,
+        userEmail : emailDesc
     }
 
 
