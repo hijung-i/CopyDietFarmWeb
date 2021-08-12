@@ -8,7 +8,7 @@
         <meta name="format-detection" content="telephone=no, address=no, email=no"/>
         <meta name="format-detection" content="no"/>
 
-        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트 토탈서비스</title>
+        <title>다이어트팜:: 건강부터 쇼핑까지, 다이어트팜</title>
 
       
         <style type="text/css">
@@ -29,22 +29,6 @@
             }
             .buttons img{width:20px}
         </style>
-        <script type="text/javascript">
-
-            function uploadImgPreview() {
-
-                let fileInfo = document.getElementById("upImgFile").files[0];
-                let reader = new FileReader();
-          
-                reader.onload = function() {      
-                    document.getElementById ("thumbnailImg").src = reader.result;
-                  };
-                 if( fileInfo ) {        
-                    reader.readAsDataURL( fileInfo );     
-                }        
-            }
-          
-        </script>
         <%-include(webroot + 'views/general/head') %>
         <%-include(webroot + 'views/general/openGraph.ejs') %>
         </head>
@@ -175,7 +159,7 @@
                   <p><span>*</span> 항목은 필수입니다.</p>
                     <div class="pros-button">
                         <button onclick="">취소</button>
-                        <button>제출</button>
+                        <button  @click="btnSubmit">제출</button>
                     </div>
                 </div>
                 </main>
@@ -186,23 +170,6 @@
                 $('#ServiceDesc').prop("disabled", false); // Element(s) are now enabled.
                 });
              </script>
-             <script>
-                function setDetailImage(event){
-                    for(var image of event.target.files){
-                        var reader = new FileReader();
-                        
-                        reader.onload = function(event){
-                            var img = document.createElement("img");
-                            img.setAttribute("src", event.target.result);
-                            img.setAttribute("class", "col-lg-6");
-                            document.querySelector("div#images_container").appendChild(img);
-                        };
-                        
-                        console.log(image);
-                        reader.readAsDataURL(image);
-                    }
-                }
-            </script>
                  <script src="/js/signup.js"></script>
                  <script src="/js/pros.js"></script>
                 </body>

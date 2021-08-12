@@ -23,7 +23,8 @@ var app = new Vue({
                 $("#ServiceDesc").attr("disabled", "");
             }
             $('#ServiceDesc').val(value);
-        }
+        },
+
     
     }
 });
@@ -58,6 +59,9 @@ function submitRequest(){
     var detailDesc = $("#detailDesc").val();
     var videoDesc = $("#videoDesc").val();
     var accountCode = $("#accountCode").val();
+    var profileImg = $("#thumbnailImg").val();
+    var multiImg = $("#product_detail_image").val();
+
 
     /*
     if(userId == '' || userId == undefined || userId.trim() == ''){
@@ -80,12 +84,15 @@ function submitRequest(){
         serviceTopic : summDesc,
         serviceDetail : detailDesc,
         serviceLink : videoDesc,
-        accountClass : accountCode
+        accountClass : accountCode,
+        managerImage :  profileImg,
+        managerServiceImage :  multiImg
     }
 
 
     ajaxCall('/user/insertManager', params, 'POST'
     , function(data) {
+        alert('문의 등록에 성공했습니다.');
         console.log("manager insert success", data);
         // TODO: Open alert moodal
         location.reload();
@@ -112,7 +119,7 @@ function submitRequest(){
          })
 
         })
-    //이미지 업로드 및 미리보기
+    //다중이미지 업로드 및 미리보기
         function uploadImgPreview() {
 
             let fileInfo = document.getElementById("upImgFile").files[0];
@@ -125,6 +132,21 @@ function submitRequest(){
                 reader.readAsDataURL( fileInfo );     
             }        
         }
-      
+    //프로필 사진 업로드 및 미리보기
+        function setDetailImage(event){
+            for(var image of event.target.files){
+                var reader = new FileReader();
+                
+                reader.onload = function(event){
+                    var img = document.createElement("img");
+                    img.setAttribute("src", event.target.result);
+                    img.setAttribute("class", "col-lg-6");
+                    document.querySelector("div#images_container").appendChild(img);
+                };
+                
+                console.log(image);
+                reader.readAsDataURL(image);
+            }
+        }
 
 
