@@ -593,7 +593,7 @@ function masking(str) {
 }
 
 
-
+//무단복사, f12키 금지 코드(수정할땐 주석처리)
 var keydownCtrl = 0;
 var keydownShit = 0;
 
