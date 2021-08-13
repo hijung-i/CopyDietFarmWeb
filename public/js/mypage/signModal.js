@@ -6,7 +6,7 @@ signModalTemplate += '<span class="close" @click="closeModal()">&times;</span>';
 signModalTemplate += '<div class="signup_wrap">';
 signModalTemplate += '<h2>SNS 계정으로 시작하기</h2>';
 signModalTemplate += '<p style="color:#6B6B6B">1초 간편 회원가입 후, </p>';
-signModalTemplate += '<p class="line02"><span>5000P + 무료배송 </span>쿠폰 혜택을 받아보세요!</p>';
+signModalTemplate += '<p class="line02"><span>포인트쿠폰팩 + 무료배송쿠폰 </span> 혜택을 받아보세요!</p>';
 signModalTemplate += '<p class="line03">3만원 이상 주문 시 쿠폰 사용 가능</p>';
 signModalTemplate += '<div class="signup_btn">';
 signModalTemplate += '<button type="button" class="btnKakao" onclick="loginWithKakaoApi()"><img src="/images/kakao_login@2x.png">카카오 계정으로 시작하기</button>';

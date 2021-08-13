@@ -1751,7 +1751,6 @@
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      position: relative;
       background: #fff;
     }
     .pdt_detai_tabinner_vn>ul.tab_wrap li {
@@ -2280,5 +2279,11 @@ color:#000;font-size:14px;background-color:#F1F1F1}
 .order_list_null img{width:100px;height:75px}
 .no_list{font-size:16px;color:#878787;margin-top:15px} 
 .desc ul li{display:inline}
-
+.fixed_top{
+  position: fixed;
+    background-color: #fff;
+    z-index: 999999;
+    width: 100%;
+    top: 0;
+}
 }
