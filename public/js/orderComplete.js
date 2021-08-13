@@ -20,10 +20,6 @@ $(function() {
             userId: true
         });
     }
-    gtag('event', 'conversion', {
-        'send_to': 'AW-693713323/-076CISNqeYCEKvz5MoC',
-        'transaction_id': ''
-    });
-    
+
 })
 

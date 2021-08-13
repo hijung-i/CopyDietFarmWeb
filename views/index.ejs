@@ -114,7 +114,7 @@
     $( document ).ready(function() {
     cookiedata = document.cookie;
     console.log(cookiedata);
-    if ( cookiedata.indexOf("ncookie=done") < 0 ){
+    if ( cookiedata.indexOf("ycookie=done") < 0 ){
         console.log('cookie 없음')
         document.getElementById('popup2').style.display = "block";
 
@@ -130,7 +130,7 @@ function setCookie( name, value, expiredays ) {
 }
 
 function todaycloseWin2() {
-    setCookie("ncookie", "done", 1);
+    setCookie("ycookie", "done", 1);
     document.getElementById('popup2').style.display = "none";
     scrollAllow();
 }
