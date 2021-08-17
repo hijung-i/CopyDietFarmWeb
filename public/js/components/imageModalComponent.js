@@ -1,25 +1,48 @@
 var imageModalTemplate = '';
 
-imageModalTemplate += '<div class="img_modal" id="img_Modal" style="display:none">'
-imageModalTemplate += '<div class="img-modal-content"  v-bind:style="{ width: ((review.files.length * 110) - 10) }">'
-imageModalTemplate += '    <span class="close" onclick="closeimgModal();">&times;</span>'
-imageModalTemplate += '    <img v-bind:src="RESOURCE_SERVER + item.image.url" style="width:300px;" v-for="(item, image) in review.files">'
-imageModalTemplate += '</div>'
+imageModalTemplate += '<div class="img_modal" id="img_Modal">'
+imageModalTemplate += '    <div class="img-modal-content">'
+imageModalTemplate += '        <span class="close" v-on:click="closeImageModal();">&times;</span>'
+imageModalTemplate += '        <img v-if="currentImage != undefined" v-bind:src="RESOURCE_SERVER + currentImage.url" style="width:300px;">'
+imageModalTemplate += '    </div>'
 imageModalTemplate += '</div>'
 
-var imageModalComponent = {
+var ImageModalComponent = {
     template: imageModalTemplate,
     props: {
-        files: { type: Array, default: () => [] }
-        
+        targetObject: {
+            type: Object,
+            default: function() {
+                return { files: [] }
+            }
+        },
+        initialIndex: {
+            type: Number,
+            default: function() {
+                return 0
+            }
+        }
     },
     data: function(){
-      
+        return { 
+            RESOURCE_SERVER,
+            currentIndex: this.initialIndex
+        }
+    }, computed: {
+        currentImage: function() {
+            return this.targetObject.files[this.currentIndex]
+        }
     }, methods: {
-        closeimageModal: function () {
+        closeImageModal: function () {
             app.imageModalShow = false;
             scrollAllow();
-        },
+        }, previousImage: function () {
+            this.currentIndex = ((this.currentIndex - 1) > 0)? this.currentIndex - 1 : 0;
+        }, nextImage: function() {
+            this.currentIndex = ((this.currentIndex + 1 ) < this.targetObject.files.length - 1)? this.currentIndex + 1 : this.targetObject.files.length - 1;
+        }
+    }, mounted: function() {
+        console.log(this.targetObject, this.initialIndex);
     }
 }
 
