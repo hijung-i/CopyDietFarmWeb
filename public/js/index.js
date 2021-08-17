@@ -6,7 +6,6 @@ var app = new Vue({
     el: 'main',
     data: {
         timedealProductList: [],
-        installModal: false,
 
     },
     components: {

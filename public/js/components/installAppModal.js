@@ -26,20 +26,19 @@ var installAppModal = {
             scrollAllow();
         }
  
+    }, mounted: function() {
+        cookiedata = document.cookie;
+        console.log(cookiedata);
+        if ( cookiedata.indexOf("scookie=done") < 0 ){
+            console.log('cookie 없음')
+            document.getElementById('popup-cookie').style.display = 'block';
+        } else {
+            console.log("cookie 있음")
+            document.getElementById('popup-cookie').style.display = 'none';
+        }
     }
 }
 
-$( document ).ready(function() {
-    cookiedata = document.cookie;
-    console.log(cookiedata);
-    if ( cookiedata.indexOf("mcookie=done") < 0 ){
-        console.log('cookie 없음')
-        document.getElementById('popup-cookie').style.display = 'block';
-    } else {
-        console.log("cookie 있음")
-        document.getElementById('popup-cookie').style.display = 'none';
-    }
-});
 function setCookie( name, value, expiredays ) { 
     var todayDate = new Date();
     todayDate.setDate( todayDate.getDate() + expiredays );
@@ -47,7 +46,7 @@ function setCookie( name, value, expiredays ) {
 }
 
 function todaycloseWin() {
-    setCookie("mcookie", "done", 1);
+    setCookie("scookie", "done", 1);
     document.getElementById('popup-cookie').style.display = 'none';
     scrollAllow();
 }
