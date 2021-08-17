@@ -2,6 +2,8 @@
 
 @media screen and (min-width:1080px) {
   .open-sale {
+    
+    min-height: 430px;
     margin: 40px auto;
   }
   .timedeal-list {

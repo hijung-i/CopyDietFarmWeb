@@ -34,8 +34,9 @@
       height: 120px;
     }
     .open-sale {
-        margin: 40px 15px;
-      }
+      min-height: 290px;
+      margin: 40px 15px;
+    }
     .timedeal {
       padding: 0px 15px;
       padding-bottom: 22px;
@@ -1215,6 +1216,7 @@
     }
     #content .category {
       width: 100%;
+      min-height: 175px;
       border-top: 8px solid #f1f1f1;
     }
     #content .category ul {

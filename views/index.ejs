@@ -27,6 +27,8 @@
         #mHeader .tab_cont {display: none;min-height: 360px}
         #mHeader .tab_cont.active {display: block;background: #fff;position: absolute;
             width: 100%}
+            
+        .swiper-container { width: 100%;height: 100%; min-height: 400px; z-index: 0;}
         @media screen and (max-width:1079px) {
             #popup-cookie2{
 
@@ -57,7 +59,10 @@
                 width:800px
             }
             .popUp{display:none}
-            .swiper-container{margin-top:-2px}
+            .swiper-container{
+                margin-top:-2px;
+                min-height: 363px;
+            }
             .water{margin-bottom:100px}
             .black_bg{
             display:block;
@@ -71,20 +76,20 @@
             .swiper-slide img {display: block;width: 100%;height:360px;object-fit:cover;}
             .slider_main_wrap img {width: 1080px; height: 370px;z-index:100} 
             #popup-cookie2{
-            width: 800px;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            font-size: 14px;
-            overflow-x: hidden;
-            border-radius: 5px;
-            overflow-y: hidden;
-        }
+                width: 800px;
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                font-size: 14px;
+                overflow-x: hidden;
+                border-radius: 5px;
+                overflow-y: hidden;
+
+            }
         }
         /* swiper bundle */
-        .swiper-container { width: 100%;height: 100%;z-index: 0;}
         
         .swiper-slide {text-align: center;font-size: 18px;                /* Center slide text vertically */
             display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;

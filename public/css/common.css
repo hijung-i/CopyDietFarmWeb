@@ -5001,3 +5001,10 @@ background: url(/images/aftercheck_icon_join.png)no-repeat;
   width:291px;
   height:180px
 }
+
+.w_best > ul,
+.protein > ul,
+.sweet > ul,
+.water > ul {
+  min-height: 300px;
+}

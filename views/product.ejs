@@ -281,7 +281,7 @@
                                         <h1 class="v_top_name">{{ product.productName }}</h1>
                                         <p class="v_top_txt">{{ product.productDesc }}</p>
                                         <div class="price_mobile">
-                                            <p class="p1">{{ numberFormat(product.discountPrice) }}원</p>
+                                            <p class="p1">{{ product.formattedDiscountPrice }}원</p>
                                             <p class="p2" v-if="product.discountPrice != product.retailPrice">{{ numberFormat(product.retailPrice) }}원</p>
                                             <p class="p3" v-if="product.discountPrice != product.retailPrice">{{ numberFormat(product.discountRate) }}%</p>
                                         </div>
