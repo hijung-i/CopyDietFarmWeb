@@ -3983,7 +3983,7 @@ input#secret[type="checkbox"]:checked+.secret::before {
 }
 .footer_sns {
   width: 70%;
-  margin: 0 auto;
+  margin-left:-20px;
   margin-bottom: 25px
 }
 .footer_sns ul {

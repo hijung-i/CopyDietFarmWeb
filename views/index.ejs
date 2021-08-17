@@ -64,7 +64,6 @@
             position:absolute;
             width:100%;
             height:360px;
-            ;
             top:0;
             left: 0;
             z-index: 1000;}
@@ -108,71 +107,17 @@
         .swiper-pagination {font-size: 16px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;}
       </style>
       <link rel="stylesheet" href="/css/myPage.css">
-
-   <script>
-        
-    $( document ).ready(function() {
-    cookiedata = document.cookie;
-    console.log(cookiedata);
-    if ( cookiedata.indexOf("ycookie=done") < 0 ){
-        console.log('cookie 없음')
-        document.getElementById('popup2').style.display = "block";
-
-    } else {
-        console.log("cookie 있음")
-        document.getElementById('popup2').style.display = "none";
-    }
-});
-function setCookie( name, value, expiredays ) { 
-    var todayDate = new Date();
-    todayDate.setDate( todayDate.getDate() + expiredays );
-    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-}
-
-function todaycloseWin2() {
-    setCookie("ycookie", "done", 1);
-    document.getElementById('popup2').style.display = "none";
-    scrollAllow();
-}
-
-function closeWin() {
-                    document.getElementById('popup2').style.display = "none";
+      <script type="text/javascript">
     
-            }
-         
+     
+     </script>
+  
 
-    </script>
-       <script>
-   function setCookie(name, value, expiredays) {
-        var date = new Date();
-        date.setDate(date.getDate() + expiredays);
-        document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
-    }
-
-    function closePopup() {
-        if (document.getElementById("check").value) {
-            setCookie("popupYN", "N", 1);
-            self.close();
-        }
-    }
-
-        </script>
 </head>
 <body>
    
         <!-- <button type="button" id="appleid-signin" data-color="black" data-border="true" data-type="sign in" class="btnApple"><img src="">애플 계정으로 시작하기</button> -->
         <main id="content" class="content_main">
-           <div id="popup2">
-              <div id="popup-cookie2">
-                    <img src="images/popup@2x.png">
-                        <div>
-                            <ul class="clfix">
-                                <a href="javascript:;" onclick="todaycloseWin2();" alt="오늘 하루 열지 않기"><li>하루 열지 않기</li></a>
-                                <a href="javascript:;" onclick="closeWin();" alt="닫기"><li>닫기</li></a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
                 <%-include(webroot + 'views/general/header') %>
                     <div class="swiper-container mySwiper">
                     <!--//  <div class="black_bg"> </div>-->
@@ -346,7 +291,9 @@ function closeWin() {
             </div>
           </div>
           <%-include(webroot + 'views/general/footer') %>
-        <!--// <div class="popUp">
+        
+         
+          <!--//<div class="popUp">
          <div class="popup_layer_wrapper" id="popup-cookie">
           <div class="popup_box">
             <div class="popup_cont">
@@ -363,15 +310,14 @@ function closeWin() {
             </div>
             </div>
        
-            </div>-->
-            <!--//
+            </div>
+       
          <div class="popUp">
             <install-modal v-if="installModal"> </install-modal>
-         </div>-->
-
+         </div>
+      -->
         </main>
     
-        <script src="/js/components/installAppModal.js"></script>
         <script src="/js/components/timedealComponent.js"></script>
         <script src="/js/index.js"></script>
 
