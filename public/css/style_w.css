@@ -2404,7 +2404,16 @@
     float: right;
     cursor: pointer
   }
-
+  .img-modal-content {
+    border-radius:5px;
+    left: 50%;
+    top: 270%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding:2000px;
+    z-index:9999;
+  }
   .cancel_header {
     display: -webkit-box;
     display: -ms-flexbox;

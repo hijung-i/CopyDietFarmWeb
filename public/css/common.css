@@ -4076,13 +4076,13 @@ input#secret[type="checkbox"]:checked+.secret::before {
 }
 .ask-buttons button img {
   margin-right: 5px;
-  margin-bottom: -5px
 }
 .ask-buttons button:last-child {
   margin-bottom: 0px;
   padding: 6px;
   padding-left: 14px;
   padding-right: 13px;
+  white-space: nowrap;
 
 }
 .footer-bottom-area {
