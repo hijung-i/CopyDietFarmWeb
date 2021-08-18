@@ -2404,13 +2404,7 @@
     float: right;
     cursor: pointer
   }
-  .img-modal-content .close {
-    font-size: 28px;
-    float: right;
-    cursor: pointer;
-    position:relative;
-    right:100px
-  }
+
   .cancel_header {
     display: -webkit-box;
     display: -ms-flexbox;

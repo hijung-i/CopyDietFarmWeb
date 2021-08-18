@@ -6,7 +6,7 @@ var app = new Vue({
     el: 'main',
     components: {
         'product-review-modal': productReviewModal,
-        'image-modal': imageModalComponent,
+        'image-modal': ImageModalComponent,
         'product-inquiry-modal': productInquiryModal,
         'mypage-modal': signModal
     },
@@ -21,11 +21,14 @@ var app = new Vue({
         
         review: undefined,
         writable: undefined,
+
         reviewList: [],
         writableList: [],
         reviewModal: false,
         
         imageModalShow: false,
+        initialIndex: 0,
+
         currentQuestion: {},
         questionList: [],
         inquiryModal: false,
@@ -46,8 +49,17 @@ var app = new Vue({
         },
         onOptionSelected,
         zzimProduct,
+        onReviewImageClick: function(rIdx, fIdx) {
+            // rIdx: index of review
+            // fIdx: index of file
+            this.review = this.reviewList[rIdx];
+            this.initialIndex = fIdx;
+
+            this.imageModalShow = true;
+
+        },
         onReviewUpdateClick: function(index) {
-            this.currentReview = this.reviewList[index];
+            this.review = this.reviewList[index];
 
             openReviewModal()
         },
@@ -63,7 +75,7 @@ var app = new Vue({
             this.reviewModal = false;
             this.inquiryModal = false; 
 
-            this.currentReview = {};
+            this.review = {};
             this.currentQuestion = {};
         },
         insertReviewComplete: function(data) {

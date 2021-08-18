@@ -604,22 +604,15 @@
                                                 </template>
                                             </div>
                                             <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
+
                                             <div class="review-img-wrapper" v-if="review.contentType == 'I'">
                                                 <div class="review-img" v-bind:style="{ width: ((review.files.length * 110) - 10) }">
-                                                    <img onclick="openImg(this)" v-bind:src="RESOURCE_SERVER + image.url" style="width:104px;height:104px" v-for="image in review.files">
+                                                    <img v-bind:src="RESOURCE_SERVER + image.url" v-on:click="onReviewImageClick(index, fIdx)" style="width:104px;height:104px" v-for="(image, fIdx) in review.files">
                                                 </div>
                                                     
                                                 </div>
                                         
                                             </div>
-                              
-                                            <div class="img_modal" id="img_Modal" style="display:none" v-if="review.contentType == 'I'">
-                                                <div class="img-modal-content"  v-bind:style="{ width: ((review.files.length * 110) - 10) }">
-                                                    <span class="close" onclick="closeImg()">&times;</span>
-                                                    <img v-bind:src="RESOURCE_SERVER + image.url" style="width:340px;" v-for="image in review.files">
-                                               </div>
-                                           </div>
-
                                           
                                             <div class="line_review"></div>
                                         </div>
@@ -736,7 +729,7 @@
             </div>
         </div>
         </div>
-        <image-modal v-if="imageModalShow" v-bind:image="image" v-bind:review="review" ></image-modal>
+        <image-modal v-if="imageModalShow" v-bind:target-object="review" v-bind:initial-index="initialIndex"></image-modal>
         <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="review" v-bind:writable-list="writableList" v-bind:writable="writable"
             v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
         <product-inquiry-modal v-if="inquiryModal" v-bind:product="product" v-bind:inquiry="currentQuestion" v-on:add-complete="insertInquiryComplete" v-on:close="onChildPopupClosed"></product-inquiry-modal>

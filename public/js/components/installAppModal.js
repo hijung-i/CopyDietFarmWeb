@@ -29,7 +29,7 @@ var installAppModal = {
     }, mounted: function() {
         cookiedata = document.cookie;
         console.log(cookiedata);
-        if ( cookiedata.indexOf("scookie=done") < 0 ){
+        if ( cookiedata.indexOf("kcookie=done") < 0 ){
             console.log('cookie 없음')
             document.getElementById('popup-cookie').style.display = 'block';
         } else {
@@ -46,7 +46,7 @@ function setCookie( name, value, expiredays ) {
 }
 
 function todaycloseWin() {
-    setCookie("scookie", "done", 1);
+    setCookie("kcookie", "done", 1);
     document.getElementById('popup-cookie').style.display = 'none';
     scrollAllow();
 }
