@@ -55,11 +55,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hijung-i/CopyDietFarmWeb.git"
+    "url": "git+https://github.com/hijung-i/PriceGod.git"
   },
   "bugs": {
-    "url": "https://github.com/hijung-i/CopyDietFarmWeb/issues"
+    "url": "https://github.com/hijung-i/PriceGod.git/issues"
   },
-  "homepage": "https://github.com/hijung-i/CopyDietFarmWeb#readme",
+  "homepage": "https://github.com/hijung-i/PriceGod.git#readme",
   "description": ""
 }
