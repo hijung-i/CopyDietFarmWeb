@@ -616,11 +616,7 @@
                                                 </template>
                                             </div>
                                             <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
-<<<<<<< HEAD
-
-=======
                                         <div>
->>>>>>> 548c59e6102ba9c46788995099ad0504e108ddef
                                             <div class="review-img-wrapper" v-if="review.contentType == 'I'">
                                                 <div class="review-img" v-bind:style="{ width: ((review.files.length * 110) - 10) }">
                                                     <img v-bind:src="RESOURCE_SERVER + image.url" v-on:click="onReviewImageClick(index, fIdx)" style="width:104px;height:104px" v-for="(image, fIdx) in review.files">
@@ -630,11 +626,7 @@
                                                 
                                         </div> 
                                         
-<<<<<<< HEAD
-                                            </div>
-=======
                                  </div>
->>>>>>> 548c59e6102ba9c46788995099ad0504e108ddef
                                           
                                             <div class="line_review"></div>
                                         </div>
@@ -751,11 +743,7 @@
             </div>
         </div>
         </div>
-<<<<<<< HEAD
-        <image-modal v-if="imageModalShow" v-bind:target-object="review" v-bind:initial-index="initialIndex"></image-modal>
-=======
         <image-modal v-if="imageModalShow" v-bind:target-object="review" v-bind:initial-index="initialIndex"></image-modal>   
->>>>>>> 548c59e6102ba9c46788995099ad0504e108ddef
         <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="review" v-bind:writable-list="writableList" v-bind:writable="writable"
             v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
         <product-inquiry-modal v-if="inquiryModal" v-bind:product="product" v-bind:inquiry="currentQuestion" v-on:add-complete="insertInquiryComplete" v-on:close="onChildPopupClosed"></product-inquiry-modal>
