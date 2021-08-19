@@ -55,11 +55,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dataflow0901/DietFarmWeb.git"
+    "url": "git+https://github.com/hijung-i/CopyDietFarmWeb.git"
   },
   "bugs": {
-    "url": "https://github.com/dataflow0901/DietFarmWeb/issues"
+    "url": "https://github.com/hijung-i/CopyDietFarmWeb/issues"
   },
-  "homepage": "https://github.com/dataflow0901/DietFarmWeb#readme",
+  "homepage": "https://github.com/hijung-i/CopyDietFarmWeb#readme",
   "description": ""
 }
