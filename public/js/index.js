@@ -14,7 +14,7 @@ var app = new Vue({
         'install-modal' : installAppModal
         
     }, computed: {  
-        installModal: function() {
+        installAppModal: function() {
         userAgent = window.navigator.userAgent.toLowerCase()
         isAndroid = /android/i.test(navigator.userAgent);
         isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);

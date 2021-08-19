@@ -36,6 +36,20 @@ var installAppModal = {
             console.log("cookie 있음")
             document.getElementById('popup-cookie').style.display = 'none';
         }
+     
+            userAgent = window.navigator.userAgent.toLowerCase()
+            isAndroid = /android/.test(userAgent);
+            isBrowser = /chrome|ie|msie|chromium|safari|opr|opera|seamonkey|firefox/.test(userAgent);
+            isiOS = /iphone|ipod|ipad/.test(userAgent);
+
+            if(isAndroid && isBrowser && $('html').width() <= 1079) {
+                scrollBlock();
+                return true;
+            }
+            if (isiOS){ 
+                document.getElementById('popup-cookie').style.display = 'none';
+            }
+    
     }
 }
 
