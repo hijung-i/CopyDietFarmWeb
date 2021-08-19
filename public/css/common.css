@@ -403,9 +403,14 @@ a:hover {
   text-overflow: ellipsis;
   margin: 0 auto;
   padding-left:35px;
-  padding-right:35px
+  padding-right:35px;
+  overflow: hidden;
 }
-
+button.deleteSelectBtn{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 .detail_title_header a img {
   position: absolute;
   top: 80px

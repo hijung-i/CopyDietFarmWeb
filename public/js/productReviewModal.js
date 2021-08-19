@@ -1,7 +1,7 @@
 var productReviewTemplate = '';
 
 productReviewTemplate += '<div class="review_modal" id="review_Modal">'
-productReviewTemplate += '  <div class="modal-content" >'
+productReviewTemplate += '  <div class="modal-content"  style="width:auto!important;height:auto!important">'
 productReviewTemplate += '      <span class="close" @click="closeModal()">&times;</span>';
 productReviewTemplate += '      <div class="review_before" v-if="currentWritable.purchaseProductNo == undefined">'
 productReviewTemplate += '          <h2>리뷰쓰기</h2>'

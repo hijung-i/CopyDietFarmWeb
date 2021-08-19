@@ -1,7 +1,7 @@
 var sellerInquiryTemplate = '';
 
 sellerInquiryTemplate+='<div class="s_inquiry_modal" id="s_inquiry_modal">'
-sellerInquiryTemplate+='    <div class="modal-content">'
+sellerInquiryTemplate+='    <div class="modal-content"  style="width:auto!important;height:auto!important">'
 sellerInquiryTemplate+='        <span class="close" @click="closeModal()">&times;</span>'
 sellerInquiryTemplate+='        <h3 class="web_title">판매자 문의(주문건)</h3>'
 sellerInquiryTemplate+='        <div class="inquiryBox">'

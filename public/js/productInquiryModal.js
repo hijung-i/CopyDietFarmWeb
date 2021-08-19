@@ -1,7 +1,7 @@
 var productInquiryTemplate = '';
 
 productInquiryTemplate += '<div class="inquiry_modal" id="inquiry_Modal">'
-productInquiryTemplate += '     <div class="modal-content">'
+productInquiryTemplate += '     <div class="modal-content" style="width:auto!important;height:auto!important">'
 productInquiryTemplate += '         <span class="close" @click="closeModal()" style="float:right">&times;</span>'
 productInquiryTemplate += '         <div>'
 productInquiryTemplate += '             <div class="productInquiryBox">'
