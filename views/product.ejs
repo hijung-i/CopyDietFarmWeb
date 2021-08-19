@@ -164,6 +164,18 @@
         .myReview{border-bottom:2px solid #e6e6e6}
     }
     @media screen and (min-width:1080px) {
+        .close{
+            font-size: 1.5rem;
+            position: absolute;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            opacity: .5;
+            margin-left: 310px;
+            margin-top: -6px;
+            cursor: pointer;
+        }
         .menu_list img{position:relative;top:0px !important;}
         .swiper-container {
             margin-left: 0 !important;
@@ -604,15 +616,25 @@
                                                 </template>
                                             </div>
                                             <p class="review_summ" style="font-size:14px;margin-top:10px">{{ review.content }}</p>
+<<<<<<< HEAD
 
+=======
+                                        <div>
+>>>>>>> 548c59e6102ba9c46788995099ad0504e108ddef
                                             <div class="review-img-wrapper" v-if="review.contentType == 'I'">
                                                 <div class="review-img" v-bind:style="{ width: ((review.files.length * 110) - 10) }">
                                                     <img v-bind:src="RESOURCE_SERVER + image.url" v-on:click="onReviewImageClick(index, fIdx)" style="width:104px;height:104px" v-for="(image, fIdx) in review.files">
                                                 </div>
-                                                    
+                                               
                                                 </div>
+                                                
+                                        </div> 
                                         
+<<<<<<< HEAD
                                             </div>
+=======
+                                 </div>
+>>>>>>> 548c59e6102ba9c46788995099ad0504e108ddef
                                           
                                             <div class="line_review"></div>
                                         </div>
@@ -729,7 +751,11 @@
             </div>
         </div>
         </div>
+<<<<<<< HEAD
         <image-modal v-if="imageModalShow" v-bind:target-object="review" v-bind:initial-index="initialIndex"></image-modal>
+=======
+        <image-modal v-if="imageModalShow" v-bind:target-object="review" v-bind:initial-index="initialIndex"></image-modal>   
+>>>>>>> 548c59e6102ba9c46788995099ad0504e108ddef
         <product-review-modal v-if="reviewModal" v-bind:product="product" v-bind:review="review" v-bind:writable-list="writableList" v-bind:writable="writable"
             v-on:add-complete="insertReviewComplete" v-on:close="onChildPopupClosed"></product-review-modal>
         <product-inquiry-modal v-if="inquiryModal" v-bind:product="product" v-bind:inquiry="currentQuestion" v-on:add-complete="insertInquiryComplete" v-on:close="onChildPopupClosed"></product-inquiry-modal>

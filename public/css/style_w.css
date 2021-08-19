@@ -2404,7 +2404,20 @@
     float: right;
     cursor: pointer
   }
+<<<<<<< HEAD
 
+=======
+  .img-modal-content {
+    border-radius:5px;
+    left: 50%;
+    top: 270%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding:2000px;
+    z-index:9999;
+  }
+>>>>>>> 548c59e6102ba9c46788995099ad0504e108ddef
   .cancel_header {
     display: -webkit-box;
     display: -ms-flexbox;
