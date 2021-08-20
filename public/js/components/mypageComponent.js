@@ -2,7 +2,7 @@ var mypageTemplate = '';
 
 mypageTemplate += '<div class="main_contents_wrap">';
 mypageTemplate += '    <div class="main_contents mypage_myinfo">';
-mypageTemplate += '        <h3>마이팜</h3>';
+mypageTemplate += '        <h3>내정보</h3>';
 mypageTemplate += '        <div class="main_contents_elements_wrap">';
 mypageTemplate += '            <div class="mypage_member_info">';
 // mypageTemplate += '            <% if (!isLoggedIn) { %>';
